@@ -405,9 +405,9 @@
         "current_model_ui_alignment": "exact"
       },
       "repository_custody": {
-        "state": "contest-local-repository-no-commit",
+        "state": "contest-local-repository-commit-present",
         "repository_root": "contest-repository://.",
-        "commit_present": false,
+        "commit_present": true,
         "remote_origin": null,
         "release_proof": false,
         "boundary": "Commit presence is recorded without embedding a self-referential HEAD hash. A local commit or remote association would not prove publication or release acceptance."
