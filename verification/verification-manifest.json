@@ -2,7 +2,7 @@
   "manifest_version": "1.0",
   "target": {
     "name": "Nova the Optimal AI + MIND Build Week candidate",
-    "revision": "post-final-TestForge-review evidence reconciliation",
+    "revision": "post-public-video evidence reconciliation",
     "target_class": "release_candidate"
   },
   "scope": {
@@ -12,10 +12,12 @@
       "Three preserved historical negative TestForge reviews and the current complete-stage TestForge review",
       "Evidence/traceability reconciliation completed after the current review",
       "Hash-bound refreshed video production inputs and production-host doctor receipt",
+      "Hash-bound final local video render and automated verification receipt",
+      "Public YouTube publication, anonymous playability, bounded watch checks, and complete human viewing receipt",
       "Public GitHub repository metadata and first-published revision parity receipt"
     ],
     "excluded": [
-      "Final repository-head parity, signed-out repository readability, public video rendering/upload, feedback/provenance, rights attestation, team acceptance, and Devpost submission"
+      "Final repository-head parity, signed-out repository readability after the final commit, live Devpost feedback/provenance entry, rights attestation, team acceptance, and Devpost submission"
     ],
     "constraints": [
       "Claims are limited to named receipts and their recorded revisions.",
@@ -24,7 +26,7 @@
       "This manifest records the release operator's post-review reconciliation, not a second TestForge review."
     ],
     "safety_boundary": [
-      "No publication, account mutation, destructive operation, or external action is inferred from local evidence."
+      "No publication, account mutation, destructive operation, or external action is inferred from local evidence alone; external actions require their own observed receipt."
     ]
   },
   "claim_custody": {
@@ -40,12 +42,14 @@
       {"id":"C-OBS-009","statement":"The first complete-stage TestForge attempt executed validly but returned REVIEW_FAIL because cited receipt/helper files and an immutable stage revision were absent, while the host policy blocked independent helper execution.","basis":"verification/live-testforge-review-stage-gap-analysis.json","confidence":"high","consequence":"Historical negative review; its custody gaps were re-entry conditions."},
       {"id":"C-OBS-010","statement":"The next TestForge attempt executed validly but returned REVIEW_FAIL because a one-review run overwrote the shared live index, creating a one-versus-six contradiction; it also required public execution receipts.","basis":"verification/live-testforge-review-index-contradiction-analysis.json","confidence":"high","consequence":"Historical negative review; stable-core indexing and public raw receipts were re-entry conditions."},
       {"id":"C-OBS-011","statement":"The final complete-stage TestForge review executed validly against a privacy-clean, Git-bound 513-file public stage and returned REVIEW_PASS_WITH_CONDITIONS for the package's own then-current INSUFFICIENT_EVIDENCE decision. It identified stale manifest/review state, obsolete Markdown traceability IDs, demo re-entry, and bounded residual risks; it did not certify release readiness.","basis":"verification/live-testforge-review-analysis.json; verification/live-testforge-review-public-raw.json","confidence":"high","consequence":"Evidence-quality review only; subsequent documentation reconciliation is separately recorded in this manifest."},
-      {"id":"C-OBS-012","statement":"GitHub reports Stunspot/nova-the-optimal-ai-mind as PUBLIC on main, and the first published remote revision matched the local candidate commit 57857aec41854c328200ac5f636d3962365e1251.","basis":"verification/repository-publication.json","confidence":"high","consequence":"Repository metadata and first-published revision parity only; final-head parity and signed-out readability remain separate."}
+      {"id":"C-OBS-012","statement":"GitHub reports Stunspot/nova-the-optimal-ai-mind as PUBLIC on main, and the first published remote revision matched the local candidate commit 57857aec41854c328200ac5f636d3962365e1251.","basis":"verification/repository-publication.json","confidence":"high","consequence":"Repository metadata and first-published revision parity only; final-head parity and signed-out readability remain separate."},
+      {"id":"C-OBS-013","statement":"The hash-bound 172.066667-second 1080p local final MP4 and matching 43-cue SRT passed 27 of 27 automated checks and three independent quality gates; stunspot confirmed the complete watch without reporting a defect.","basis":"verification/video-render-verification.json","confidence":"high","consequence":"Local render and complete human viewing only; publication and submission require separate evidence."},
+      {"id":"C-OBS-014","statement":"The exact final filename is public at https://youtu.be/1cqEFrP6FZw. Anonymous playability returned OK with 1080p video and audio formats; opening, midpoint, and final-card visual checks passed with burned captions.","basis":"verification/youtube-publication-verification.json","confidence":"high","consequence":"Public video and bounded playback only; Devpost submission remains separate."}
     ],
     "inferred": [],
     "assumed": [],
     "unresolved": [
-      {"id":"C-UNR-002","statement":"Final repository-head parity, signed-out repository readability, public video, feedback/provenance, rights, team acceptance, and Devpost submission are complete.","basis":"External human/account gates.","confidence":"high","consequence":"Human-gated."}
+      {"id":"C-UNR-002","statement":"Final repository-head parity/readability, live Devpost feedback/provenance entry, rights, team acceptance, and Devpost submission are complete.","basis":"External human/account gates.","confidence":"high","consequence":"Human-gated."}
     ]
   },
   "impact_map": [
@@ -53,7 +57,8 @@
     "A valid live scenario establishes only its named oracle.",
     "Historical negative reviews remain audit evidence and are not current product failures.",
     "The final conditional review assessed evidence quality, not external contest completion.",
-    "Observed repository metadata is distinct from final-head and signed-out access; the remaining contest gates remain external."
+    "Observed repository metadata is distinct from final-head and signed-out access; the remaining contest gates remain external.",
+    "Local render verification, complete human viewing, public upload, anonymous playability, and Devpost submission are distinct states with separate receipts."
   ],
   "invariants": [
     {"id":"INV-001","statement":"The current release archives match their current receipt and extracted-release validation."},
@@ -62,7 +67,9 @@
     {"id":"INV-004","statement":"The direct-negative scenario does not load a forbidden specialist."},
     {"id":"INV-005","statement":"Historical TestForge negatives are not represented as current product passes or plugin-defect findings; the current review is represented with its exact conditional verdict and limits."},
     {"id":"INV-006","statement":"Observed public-repository metadata and first-published parity are represented exactly within their receipt boundary."},
-    {"id":"INV-007","statement":"No local receipt is represented as final-head, signed-out access, video, rights, feedback, team, or submission proof."}
+    {"id":"INV-007","statement":"No local or video receipt is represented as final repository-head/readability, rights, live Devpost feedback entry, team, or submission proof."},
+    {"id":"INV-008","statement":"A local final-render claim requires the exact MP4/SRT hashes and a passing bounded verification receipt."},
+    {"id":"INV-009","statement":"A public-video claim requires an observed URL, public playability, matching final filename, video and audio stream availability, and bounded playback checks."}
   ],
   "risks": [
     {"id":"R-001","statement":"Current release payload diverges from its release receipt or contains generated debris.","severity":"critical","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-CURRENT-RELEASE","T-CURRENT-STATIC","T-CURRENT-RELEASE","E-001","E-002"]},
@@ -71,7 +78,9 @@
     {"id":"R-004","statement":"Simple direct work spuriously activates a forbidden specialist.","severity":"medium","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-DIRECT-NEGATIVE","T-DIRECT-NEGATIVE","E-006"]},
     {"id":"R-005","statement":"Live routing or TestForge review evidence is overstated.","severity":"medium","likelihood":"medium","confidence":"high","disposition":"covered","verification":["S-LIVE-INDEX","S-TESTFORGE-CURRENT","T-LIVE-INDEX","T-PRE-FIX-TESTFORGE","T-TESTFORGE-STAGE-GAP","T-TESTFORGE-INDEX-CONTRADICTION","T-TESTFORGE-CURRENT","E-007","E-008","E-009","E-010","E-011"]},
     {"id":"R-006","statement":"The observed public repository or first-published revision parity is absent or misrepresented.","severity":"medium","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-REPOSITORY-PUBLICATION","T-REPOSITORY-PUBLICATION","E-012"]},
-    {"id":"R-007","statement":"Final repository checks, video, feedback, rights, team, or Devpost gates are absent or misrepresented.","severity":"medium","likelihood":"unknown","confidence":"high","disposition":"blocked","verification":["S-EXTERNAL-GATES","T-EXTERNAL-GATES"]}
+    {"id":"R-007","statement":"Final repository checks, live Devpost feedback entry, rights, team, or Devpost gates are absent or misrepresented.","severity":"medium","likelihood":"unknown","confidence":"high","disposition":"blocked","verification":["S-EXTERNAL-GATES","T-EXTERNAL-GATES"]},
+    {"id":"R-008","statement":"The final local video render diverges from canonical inputs or fails bounded media and quality checks.","severity":"medium","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-VIDEO-RENDER","T-VIDEO-RENDER","E-013"]},
+    {"id":"R-009","statement":"The public video is absent, private, wrong, or lacks playable video/audio evidence.","severity":"medium","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-VIDEO-PUBLICATION","T-VIDEO-PUBLICATION","E-014"]}
   ],
   "scenarios": [
     {"id":"S-CURRENT-RELEASE","risk_ids":["R-001"],"title":"Current static and release extraction validation","layer":"static","preconditions":["Current source, release receipt, and archives exist."],"action":["Validate current tree and extracted archives against current receipt/checksums."],"expected":["Tree is clean; both current archives validate and match."],"forbidden":["Claiming host behavior."],"evidence":["E-001","E-002"],"status":"executed"},
@@ -81,7 +90,9 @@
     {"id":"S-LIVE-INDEX","risk_ids":["R-005"],"title":"Stable six-scenario core live execution index","layer":"live","preconditions":["Core bound status and sanitized execution receipts exist."],"action":["Inspect status, six SHA-256-bound analyses, and their public execution receipts."],"expected":["Six valid named executions with one common privacy-clean staged tree and no TestForge self-review entry."],"forbidden":["Universal behavior claim.","Allowing a single TestForge run to overwrite the core index."],"evidence":["E-007"],"status":"executed"},
     {"id":"S-TESTFORGE-CURRENT","risk_ids":["R-005"],"title":"Complete-stage TestForge evidence review","layer":"live","preconditions":["Current evidence documents and receipts are staged."],"action":["Run independent TestForge review against the current complete stage, then reconcile any identified documentary conditions without representing that remediation as a second review."],"expected":["Reviewer returns an evidence-bound verdict and separates residual risk from external authority gates."],"forbidden":["Forcing a favorable verdict.","Treating historical negative reviews as current product results.","Treating post-review reconciliation as reviewer recertification."],"evidence":["E-008","E-009","E-010","E-011"],"status":"executed"},
     {"id":"S-REPOSITORY-PUBLICATION","risk_ids":["R-006"],"title":"Initial public repository observation","layer":"observability","preconditions":["GitHub repository and local candidate revision exist."],"action":["Inspect GitHub visibility/default branch and compare the first published remote revision with local HEAD."],"expected":["Repository reports PUBLIC on main and first-published local/remote revisions match."],"forbidden":["Inferring final-head parity or signed-out readability."],"evidence":["E-012"],"status":"executed"},
-    {"id":"S-EXTERNAL-GATES","risk_ids":["R-007"],"title":"Remaining contest account and submission gates","layer":"observability","preconditions":["Authorized representative and accounts available."],"action":["Confirm final repository head, signed-out readability, video, feedback, rights, team, and Devpost gates."],"expected":["Truthful receipt or URL per gate."],"forbidden":["Inferring external completion from local files or earlier repository metadata."],"evidence":[],"status":"blocked"}
+    {"id":"S-VIDEO-RENDER","risk_ids":["R-008"],"title":"Final local video render verification","layer":"system","preconditions":["Canonical production inputs and final MP4/SRT exist."],"action":["Verify exact artifact hashes, duration, streams, caption custody, and bounded quality checks."],"expected":["The under-three-minute 1080p MP4 and matching SRT pass all recorded automated and independent gates."],"forbidden":["Treating render mechanics alone as publication or submission evidence."],"evidence":["E-013"],"status":"executed"},
+    {"id":"S-VIDEO-PUBLICATION","risk_ids":["R-009"],"title":"Public YouTube publication and playback verification","layer":"observability","preconditions":["Final video is uploaded to YouTube and its URL is available."],"action":["Inspect Studio filename/visibility, query anonymous playability and stream formats, spot-check opening/midpoint/final card, and record the complete human watch."],"expected":["The exact final filename is public, anonymously playable with video/audio streams, visually intact at three checkpoints, and completely viewed by stunspot."],"forbidden":["Inferring Devpost submission from video publication."],"evidence":["E-014"],"status":"executed"},
+    {"id":"S-EXTERNAL-GATES","risk_ids":["R-007"],"title":"Remaining contest account and submission gates","layer":"observability","preconditions":["Authorized representative and accounts available."],"action":["Confirm final repository head/readability, live Devpost feedback/provenance entry, rights, team, and Devpost gates."],"expected":["Truthful receipt or URL per gate."],"forbidden":["Inferring external completion from local files or earlier repository/video metadata."],"evidence":[],"status":"blocked"}
   ],
   "tests": [
     {"id":"T-CURRENT-STATIC","scenario_ids":["S-CURRENT-RELEASE"],"path":"verification/entry-static.json","status":"passed","execution_id":"E-001"},
@@ -98,6 +109,8 @@
     {"id":"T-TESTFORGE-INDEX-CONTRADICTION","scenario_ids":["S-TESTFORGE-CURRENT"],"path":"verification/live-testforge-review-index-contradiction-analysis.json","status":"not_applicable","execution_id":"E-010","note":"Preserved historical negative review; not a current acceptance test."},
     {"id":"T-TESTFORGE-CURRENT","scenario_ids":["S-TESTFORGE-CURRENT"],"path":"verification/live-testforge-review-analysis.json","status":"passed","execution_id":"E-011","note":"Review executed validly; verdict is REVIEW_PASS_WITH_CONDITIONS for the preceding INSUFFICIENT_EVIDENCE decision, not an independent release-ready certification."},
     {"id":"T-REPOSITORY-PUBLICATION","scenario_ids":["S-REPOSITORY-PUBLICATION"],"path":"verification/repository-publication.json","status":"passed","execution_id":"E-012"},
+    {"id":"T-VIDEO-RENDER","scenario_ids":["S-VIDEO-RENDER"],"path":"verification/video-render-verification.json","status":"passed","execution_id":"E-013"},
+    {"id":"T-VIDEO-PUBLICATION","scenario_ids":["S-VIDEO-PUBLICATION"],"path":"verification/youtube-publication-verification.json","status":"passed","execution_id":"E-014"},
     {"id":"T-EXTERNAL-GATES","scenario_ids":["S-EXTERNAL-GATES"],"path":"design/CONTEST-ACCEPTANCE.md","status":"blocked"}
   ],
   "executions": [
@@ -112,19 +125,21 @@
     {"id":"E-009","command":["codex","first complete-stage TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-stage-gap-analysis.json"},
     {"id":"E-010","command":["codex","stable-index TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-index-contradiction-analysis.json"},
     {"id":"E-011","command":["codex","complete-stage TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-analysis.json; verification/live-testforge-review-public-raw.json","stage_git_binding":{"commit_sha":"2b083d3601f2cba3ed056bb91e15c2902bd99839","tree_sha":"a0e0976f51c5de5d232ac1caed62c4cdd0eee2e9","status":"clean"}},
-    {"id":"E-012","command":["gh","repo view","Stunspot/nova-the-optimal-ai-mind","--json","nameWithOwner,url,visibility,defaultBranchRef"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/repository-publication.json"}
+    {"id":"E-012","command":["gh","repo view","Stunspot/nova-the-optimal-ai-mind","--json","nameWithOwner,url,visibility,defaultBranchRef"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/repository-publication.json"},
+    {"id":"E-013","command":["bounded final-video render and verification pipeline"],"working_directory":"nova-video-pipeline-v0.1.0","status":"passed","exit_code":0,"raw_evidence":"verification/video-render-verification.json"},
+    {"id":"E-014","command":["YouTube Studio observation, anonymous player-response check, and bounded watch-UI spot check"],"working_directory":"external YouTube surfaces","status":"passed","exit_code":0,"raw_evidence":"verification/youtube-publication-verification.json"}
   ],
   "findings": [
     {"id":"F-001","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"The preserved pre-fix TestForge review assessed an older sanitized stage that omitted review artifacts.","evidence":["E-008","C-OBS-008"],"confidence":"high","next_action":"Retain for audit; it is superseded by the current complete-stage review.","status":"superseded_by_reentry"},
     {"id":"F-002","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"Successive TestForge attempts exposed missing staged custody and then an index orchestration contradiction; independent helper execution remained blocked by nested host policy.","evidence":["C-OBS-009","C-OBS-010","E-009","E-010"],"confidence":"high","next_action":"Retain historical reviews; current stage supplied stable core, public receipts, Git binding, and documentary reconciliation. Keep nested-host execution limit as residual risk.","status":"remediated_with_residual"},
-    {"id":"F-003","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"Final repository-head parity, signed-out repository readability, video, feedback/provenance, rights, team acceptance, and Devpost remain external human gates.","evidence":["C-OBS-012","C-UNR-002","E-012"],"confidence":"high","next_action":"Authorized representative records each remaining external action.","status":"blocked"}
+    {"id":"F-003","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"Final repository-head parity/readability, live Devpost feedback/provenance entry, rights, team acceptance, and Devpost remain external human gates.","evidence":["C-OBS-012","C-OBS-013","C-OBS-014","C-UNR-002","E-012","E-013","E-014"],"confidence":"high","next_action":"Authorized representative records each remaining external action.","status":"blocked"}
   ],
   "residual_risks": [
     {"id":"RR-001","statement":"The original six clean-host core runs are content-hash-bound but not Git-revision-bound.","treatment":"Limit claims to their named prompts, recorded hashes, model, and receipts; do not infer immutable-revision provenance for those six runs.","owner":"authorized release operator","revisit_condition":"Broader rerun is staged and Git-bound."},
     {"id":"RR-002","statement":"Sanitized public receipts bind ignored local raw through SHA-256, but external reviewers cannot independently compare the private originals.","treatment":"State the public/private evidence boundary; do not claim public raw is the original record.","owner":"authorized release operator","revisit_condition":"A shareable independently auditable raw-evidence policy is authorized."},
     {"id":"RR-003","statement":"Nested host policy blocked independent reruns of verification scripts, Git state, and archive hashes during the final review.","treatment":"Treat supplied receipts as reviewed evidence, not independently re-executed proof.","owner":"host operator","revisit_condition":"A review host with the necessary read/write execution authority is available."},
     {"id":"RR-004","statement":"Six core prompts and one TestForge review prompt are narrow samples, not a routing or quality census.","treatment":"Keep all behavioral claims scenario-bounded.","owner":"authorized release operator","revisit_condition":"A broader ecological evaluation is completed."},
-    {"id":"RR-005","statement":"Final repository-head parity, signed-out readability, video, feedback/provenance, rights, team, and Devpost submission remain external gates.","treatment":"Keep human-gated; require observed URLs/receipts and final human review.","owner":"authorized representative","revisit_condition":"External receipts or URLs are available."}
+    {"id":"RR-005","statement":"Final repository-head parity/readability, live Devpost feedback/provenance entry, rights, team, and Devpost submission remain external gates.","treatment":"Keep human-gated; require observed URLs/receipts and authorized attestations.","owner":"authorized representative","revisit_condition":"External receipts or URLs are available."}
   ],
   "review": {
     "status":"REVIEW_PASS_WITH_CONDITIONS",
@@ -134,7 +149,7 @@
     "conditions":[
       {"id":"C-011-A","statement":"Manifest's current-review state required reconciliation.","disposition":"remediated_in_manifest"},
       {"id":"C-011-B","statement":"Markdown traceability IDs must match manifest IDs.","disposition":"remediated_in_traceability_matrix"},
-      {"id":"C-011-C","statement":"Demo must remain explicitly re-entry-gated until its stale content is refreshed and separately verified.","disposition":"remediated_at_production-input_layer; final render and human viewing remain gated"}
+      {"id":"C-011-C","statement":"Demo must remain explicitly re-entry-gated until its stale content is refreshed and separately verified.","disposition":"remediated_through_local_render, complete human viewing, and public playback receipts"}
     ],
     "remaining_limit":"The final review was not repeated after documentation reconciliation. Its exact verdict and residual risks remain controlling evidence boundaries."
   },
@@ -144,10 +159,11 @@
       "Current package, static, install, tour, and six named live-execution gates are green within their stated boundaries.",
       "The final complete-stage TestForge review executed validly and returned REVIEW_PASS_WITH_CONDITIONS for the preceding INSUFFICIENT_EVIDENCE decision.",
       "Manifest and Markdown traceability conditions have been reconciled without representing that work as a second TestForge review.",
+      "The exact under-three-minute local MP4 and matching SRT passed bounded render verification; stunspot completed the full watch and the exact filename is public with bounded playback evidence.",
       "GitHub public-repository metadata and first-published revision parity are observed; the narrower remaining repository checks stay explicit.",
       "All remaining local limits and external gates are explicit."
     ],
-    "not_a_claim_of":["Universal model behavior.","Independent rerun under the reviewer host.","Final repository-head parity or signed-out readability.","Public video, feedback/provenance, rights, team acceptance, or Devpost submission."],
-    "authority_required":["Authorized representative for final repository checks, feedback/provenance, video, rights, team, and Devpost actions."]
+    "not_a_claim_of":["Universal model behavior.","Independent rerun under the reviewer host.","Final repository-head parity/readability after the final commit.","Live Devpost feedback/provenance entry, rights, team acceptance, or Devpost submission."],
+    "authority_required":["Authorized representative for final repository checks, live Devpost feedback/provenance entry, rights, team, and Devpost actions."]
   }
 }

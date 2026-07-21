@@ -87,7 +87,7 @@ After the contest, we will test the full skill ecology under clean-host conditio
 ## Required links
 
 - Source repository: https://github.com/Stunspot/nova-the-optimal-ai-mind
-- Public YouTube demo: add after upload and signed-out playback verification
+- Public YouTube demo: https://youtu.be/1cqEFrP6FZw
 
 ## Submission media
 

@@ -17,7 +17,7 @@ The public story, first-use path, exact install and recovery instructions, submi
 | Plugin entrypoints | 28 `SKILL.md` files | Present and product-aligned |
 | Plugin picker cards | 28 agent cards | Present, concise, and purpose-led |
 | Nova model-facing prompt modules | 158 physical modules / 127 review units | Separate prompt-surface audit passed with no high- or medium-severity remainder |
-| Local Markdown links | 55 links | No broken local targets |
+| Local Markdown links | 57 links | No broken local targets |
 
 The 220 supporting Markdown files outside the principal document set are runtime knowledge and reference material, not ordinary public onboarding copy. They were inventoried and checked through the package, prompt-surface, reconciliation, and link gates instead of being cosmetically rewritten as if they served one reader journey.
 
@@ -40,4 +40,4 @@ The 220 supporting Markdown files outside the principal document set are runtime
 
 ## Boundary
 
-This is a complete product-documentation and bounded accessibility review, not a formal WCAG conformance claim, assistive-technology certification, universal comprehension study, or proof of external contest actions. Signed-out repository access, final video viewing and publication, feedback provenance, rights attestation, team acceptance, and Devpost submission retain their separate human or external gates.
+This is a complete product-documentation and bounded accessibility review, not a formal WCAG conformance claim, assistive-technology certification, universal comprehension study, or proof of external contest actions. Final repository-head parity and public readability, direct Devpost entry of the retained feedback identifier, rights attestation, team acceptance, and Devpost submission retain their separate human or external gates. The exact final video has a separate hash-bound render receipt, public YouTube receipt, and stunspot complete-watch confirmation.

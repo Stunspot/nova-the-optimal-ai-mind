@@ -19,24 +19,26 @@ Current local receipt: [`../verification/repository-publication.json`](../verifi
 ## Video
 
 - [ ] From the final published checkout, run the no-build judge path in a fresh Codex task: install both plugins, run the tour, and complete at least one judge demonstration. Record any discrepancy before submission.
-- [ ] Record the real product using `demo/VIDEO-SCRIPT.md` and `demo/SHOT-LIST.md`.
-- [ ] Confirm the exported duration is under three minutes and narration is audible.
-- [ ] Confirm the final audible narration explicitly says both “Codex” and “GPT-5.6” and explains their concrete role in building this project.
-- [ ] Upload to YouTube with public or unlisted visibility; do not leave it private.
-- [ ] Play the final URL once while signed out; verify video, audio, captions, and visibility.
-- [ ] Put the URL into Devpost and, if desired, the README.
+- [x] Render the real product using `demo/VIDEO-SCRIPT.md` and `demo/SHOT-LIST.md`.
+- [x] Confirm the exported duration is under three minutes and the local audio/caption verification passes.
+- [x] Confirm the final narration explicitly says both “Codex” and “GPT-5.6” and explains their concrete role in building this project.
+- [x] Record stunspot's complete audiovisual watch and approval of the exact final artifact.
+- [x] Upload the exact final filename to YouTube with public visibility.
+- [x] Verify anonymous playability, 1080p and audio streams, and opening/midpoint/final-card playback with burned captions.
+- [x] Put the public URL into the README and submission copy.
+- [ ] Put the public URL into the live Devpost form.
 
-YouTube URL (public or unlisted): `________________________________________`
+YouTube URL (public): `https://youtu.be/1cqEFrP6FZw`
 
-Canonical inputs: [`../demo/VIDEO-SCRIPT.md`](../demo/VIDEO-SCRIPT.md), [`../demo/SHOT-LIST.md`](../demo/SHOT-LIST.md), and [`../verification/video-production-inputs.json`](../verification/video-production-inputs.json). The final human viewing remains controlling.
+Canonical inputs: [`../demo/VIDEO-SCRIPT.md`](../demo/VIDEO-SCRIPT.md), [`../demo/SHOT-LIST.md`](../demo/SHOT-LIST.md), and [`../verification/video-production-inputs.json`](../verification/video-production-inputs.json). The exact local final render, complete-watch confirmation, and automated checks are recorded in [`../verification/video-render-verification.json`](../verification/video-render-verification.json); the public URL and bounded playback observations are recorded in [`../verification/youtube-publication-verification.json`](../verification/youtube-publication-verification.json). Live Devpost entry remains controlling.
 
 ## Codex provenance
 
-- [ ] Run `/feedback` from the primary build task selected for the contest.
-- [ ] Record the feedback/session identifier returned by the product.
+- [x] Run `/feedback` from the primary build task selected for the contest.
+- [x] Record the feedback/session identifier returned by the product; keep it out of the public repository and enter it directly in Devpost.
 - [ ] Confirm the submission accurately discloses GPT-5.6/Codex use.
 
-Primary `/feedback` identifier: `________________________________________`
+Primary `/feedback` identifier: `[retained for direct Devpost entry; intentionally not committed]`
 
 ## Rights and representative attestations
 

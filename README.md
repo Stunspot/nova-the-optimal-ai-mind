@@ -10,6 +10,8 @@ MIND is the independently installable cognitive system beside her: fifteen focus
 
 A bag of skills is not a mind. It is a drawer. Nova and MIND keep the drawer backstage.
 
+[Watch the public 2:52 Build Week demo.](https://youtu.be/1cqEFrP6FZw)
+
 ## Try Nova in 90 seconds
 
 Download and extract the [public repository](https://github.com/Stunspot/nova-the-optimal-ai-mind), or clone it:

@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "status": "LOCAL_RENDER_VERIFIED_AND_HUMAN_APPROVED",
+  "artifact": {
+    "filename": "nova-mind-contest-sara-gen2-corrected-sample-exact-final.mp4",
+    "sha256": "810C37D229EC71B3A38EDBA7362E35F1379B77675F3B34C94A06C8DA1D17422A",
+    "size_bytes": 14345649,
+    "duration_seconds": 172.066667,
+    "video": "H.264 High, 1920x1080, 30 fps",
+    "audio": "AAC LC, 48 kHz stereo"
+  },
+  "captions": {
+    "filename": "nova-mind-contest-sara-gen2-corrected-sample-exact-final.srt",
+    "sha256": "BB1D49793E60B8C98B3EB611F734BC6B1EE26B58F1DE366084BE91B051C4FC72",
+    "cue_count": 43,
+    "exact_canonical_text": true,
+    "burned_into_video": true
+  },
+  "narration": {
+    "provider": "ElevenLabs",
+    "voice": "Sara - clear and emotive",
+    "model": "Eleven v3",
+    "selected_generation": 2,
+    "source_mp3_sha256": "5A9991F3E4FE1B03F6631FCD7682FD77246DD7857F35B0F54C4D09683864CC71",
+    "selection_approved_by": "stunspot",
+    "complete_video_review_inferred": false
+  },
+  "automated_verification": {
+    "status": "READY",
+    "checks_passed": 27,
+    "checks_total": 27,
+    "independent_quality_gates": {
+      "mechanical": "PASS",
+      "audio_and_captions": "PASS",
+      "visual_and_privacy": "PASS"
+    },
+    "final_card_visible_through_seconds": 172.05,
+    "unintended_black_segments_over_half_second": 0
+  },
+  "production_boundary": {
+    "final_encoder": "libx264",
+    "cpu_threads": 2,
+    "gpu_attempt": "aborted by the runtime protection guard; partial artifact discarded; no limit was relaxed",
+    "webcam_used": false,
+    "microphone_used": false,
+    "live_capture_used": false,
+    "mouse_keyboard_automation_used": false
+  },
+  "human_audiovisual_review": {
+    "status": "observed_complete",
+    "reviewer": "stunspot",
+    "reviewed_at": "2026-07-21T21:30:32.1310442Z",
+    "approved_for_publication": true,
+    "basis": "stunspot confirmed the complete watch; the exact final filename was already published by the user and no defect was reported"
+  },
+  "upload": {
+    "status": "observed_in_separate_receipt",
+    "youtube_url": "https://youtu.be/1cqEFrP6FZw",
+    "visibility": "public",
+    "signed_out_playability": "OK",
+    "complete_signed_out_audiovisual_watch": "not_observed",
+    "evidence": "verification/youtube-publication-verification.json"
+  },
+  "evidence_boundary": "This receipt establishes a hash-bound local final render, automated checks, and stunspot's complete-watch confirmation. The separate publication receipt establishes the public URL and bounded playback observations. Neither establishes Devpost submission."
+}

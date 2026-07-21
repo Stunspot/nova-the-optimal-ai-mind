@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "status": "PUBLIC_VIDEO_VERIFIED",
+  "observed_at": "2026-07-21T21:29:26.8412677Z",
+  "platform": "YouTube",
+  "publication": {
+    "video_id": "1cqEFrP6FZw",
+    "url": "https://youtu.be/1cqEFrP6FZw",
+    "title": "Nova + MIND 1.0 — The AI Agent That Made Its Own Demo",
+    "visibility": "public",
+    "studio_filename": "nova-mind-contest-sara-gen2-corrected-sample-exact-final.mp4",
+    "studio_duration_display": "2:53",
+    "processing_display": [
+      "Standard Definition complete",
+      "High Definition complete",
+      "4K complete"
+    ],
+    "uploaded_by_user": true,
+    "agent_upload_authorized": false
+  },
+  "anonymous_http_observation": {
+    "http_status": 200,
+    "playability_status": "OK",
+    "video_id": "1cqEFrP6FZw",
+    "title": "Nova + MIND 1.0 — The AI Agent That Made Its Own Demo",
+    "length_seconds": 172,
+    "is_private": false,
+    "streaming_data_present": true,
+    "highest_observed_video_format": "1080p H.264",
+    "audio_formats_present": [
+      "AAC",
+      "Opus"
+    ]
+  },
+  "watch_ui_spot_check": {
+    "opening": {
+      "time_seconds": 3,
+      "visual_present": true,
+      "burned_captions_visible": true
+    },
+    "midpoint": {
+      "time_seconds": 86.033333,
+      "visual_present": true,
+      "burned_captions_visible": true,
+      "player_ready_state": 4,
+      "player_muted": false,
+      "decoded_dimensions": "1280x720"
+    },
+    "final_card": {
+      "time_seconds": 172.101,
+      "visual_present": true,
+      "call_to_action_present": true,
+      "player_ready_state": 4
+    }
+  },
+  "source_receipt": {
+    "name": "YOUTUBE-PACKAGE.json",
+    "sha256": "EB2E07E45369D81E9DB507A72EFCB3F7D7A4E2F938C5E9CA14B2AB6E6D94331E"
+  },
+  "human_audiovisual_review": {
+    "status": "observed_complete",
+    "reviewer": "stunspot",
+    "reviewed_at": "2026-07-21T21:30:32.1310442Z",
+    "publication_approved": true,
+    "defect_reported": false
+  },
+  "devpost_submission": {
+    "status": "not_observed",
+    "receipt": null
+  },
+  "evidence_boundary": "This receipt establishes a public YouTube URL, anonymous playability with video and audio stream formats, exact Studio filename, opening/midpoint/final-card visual spot checks, and stunspot's complete-watch confirmation. It does not establish Devpost submission."
+}
