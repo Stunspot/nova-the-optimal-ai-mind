@@ -1,0 +1,16 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.1.0",
+  "episode_mode": "isolated",
+  "files": ["core-transfer-cases.yaml"],
+  "indispensable_dimensions": [
+    "gestalt_before_axes",
+    "conceptual_affinity",
+    "compositional_judgment",
+    "taste_calibration",
+    "epistemic_boundary",
+    "neighbor_custody"
+  ],
+  "synthesis": "Every indispensable dimension must be demonstrated. Fluent adjectives cannot compensate for arbitrary association, universalized taste, evidence laundering, or takeover of a neighboring Faculty's responsibility.",
+  "result_authority": "Behavioral evidence for Aesthetic Intelligence build and regression decisions under the recorded runtime; not universal taste authority, factual provenance, live-host activation, or commercial approval."
+}

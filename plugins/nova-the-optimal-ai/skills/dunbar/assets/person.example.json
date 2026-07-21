@@ -1,0 +1,13 @@
+{
+  "person_id": "person.example",
+  "display_name": "Example Person",
+  "aliases": ["Example", "E. Person"],
+  "circle": "unplaced",
+  "status": "active",
+  "sensitivity": "private",
+  "summary": "Synthetic example only.",
+  "source": {
+    "source_kind": "user_supplied",
+    "label": "Synthetic package example"
+  }
+}

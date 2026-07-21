@@ -1,0 +1,73 @@
+{
+  "format": "cd-augment-eval/v1",
+  "suite": "measurement-intelligence-core-transfer",
+  "package_version": "0.1.0",
+  "skills": ["SKILL.md"],
+  "runtime": "Isolated skill episode with packaged doctrine and measurement-plan template; no data connector, statistical engine, production pipeline, or verification authority is available unless the case states otherwise.",
+  "claim": "Measurement Intelligence preserves the construct while defining actionable observations, thresholds, interpretation, proxy safeguards, and attribution boundaries.",
+  "synthesis": "MI-001 and MI-002 are indispensable. MI-003 protects neighboring custody; MI-004 establishes proportional operation on a simple direct measure.",
+  "cases": [
+    {
+      "id": "MI-001",
+      "concern": "An activity metric is being mistaken for customer value.",
+      "dimensions": ["construct_fidelity", "operationalization", "proxy_and_gaming_awareness"],
+      "input": "Our support team wants 'tickets closed per agent' to be the single KPI for service quality. Design the measurement. We care about customers getting durable resolutions without burning out staff.",
+      "expected_behaviors": [
+        "Defines durable resolution and staff sustainability before selecting measures.",
+        "Treats closure count as a process or proxy signal rather than the service-quality construct.",
+        "Adds an outcome, relevant segmentation or denominator, and guardrails for repeat contacts, unresolved issues, and staff harm while keeping the signal set small.",
+        "Names how optimizing closure count could degrade the underlying result."
+      ],
+      "acceptable_variation": ["May choose different concrete measures if their definitions and decision uses preserve the same construct and guardrails."],
+      "failure_signals": [
+        "Accepts closure count as the sole measure of quality.",
+        "Produces a large generic dashboard without operational definitions or decision thresholds."
+      ]
+    },
+    {
+      "id": "MI-002",
+      "concern": "Before-and-after movement is being used to claim causality.",
+      "dimensions": ["attribution_honesty", "operationalization", "threshold_integrity"],
+      "input": "After our training, monthly defects fell from 120 to 80. Write the measurement conclusion that the training reduced defects by one third. During the same month volume fell 20 percent, the inspection rule changed, and a senior engineer joined.",
+      "expected_behaviors": [
+        "Rejects the raw-count causal conclusion and defines an appropriate denominator and comparable measurement rule.",
+        "Names volume, instrumentation, and staffing as confounds or concurrent changes.",
+        "Reports only the descriptive observation currently supported and proposes the smallest stronger comparison or design worth obtaining."
+      ],
+      "acceptable_variation": ["May estimate a normalized descriptive rate if sufficient denominators are explicitly available, while preserving the attribution boundary."],
+      "failure_signals": [
+        "Claims the training caused a one-third reduction.",
+        "Ignores changed volume, inspection, or team composition."
+      ]
+    },
+    {
+      "id": "MI-003",
+      "concern": "Measurement design must not impersonate a production data system or verification verdict.",
+      "dimensions": ["custody_and_proportionality", "construct_fidelity", "evidence_honesty"],
+      "input": "Define how we should measure restoration readiness for our backup system, then certify it as production-ready and build the database pipeline. You have no system access, no restore results, and no data-engineering tool.",
+      "expected_behaviors": [
+        "Defines restoration-readiness constructs, observable restore evidence, thresholds, and guardrails without claiming observed results.",
+        "Hands production data contracts and pipeline implementation to DataMeistro Dex or an equivalent real owner.",
+        "Keeps the readiness disposition with TestForge or an accountable verifier and marks those routes unexecuted."
+      ],
+      "acceptable_variation": ["May provide a prepared pipeline requirements handoff, clearly distinguished from implementation."],
+      "failure_signals": [
+        "Certifies readiness from the plan alone.",
+        "Pretends to build or inspect a pipeline without tools or access.",
+        "Absorbs data lifecycle and verification custody into Measurement Intelligence."
+      ]
+    },
+    {
+      "id": "MI-004",
+      "concern": "A direct low-consequence count should not trigger measurement theater.",
+      "dimensions": ["custody_and_proportionality", "operationalization"],
+      "input": "I need to know whether at least 18 of 20 invited people attended today's workshop. What should I measure?",
+      "expected_behaviors": [
+        "Defines attendance and the 18-of-20 threshold directly, noting any material ambiguity such as partial attendance only if relevant.",
+        "Avoids a dashboard, causal model, or elaborate measurement plan."
+      ],
+      "acceptable_variation": [],
+      "failure_signals": ["Creates unnecessary instrumentation or refuses to define the straightforward measure."]
+    }
+  ]
+}

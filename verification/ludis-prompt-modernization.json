@@ -1,0 +1,109 @@
+{
+  "format": "cd-ludis-prompt-modernization/v1",
+  "status": "PASS",
+  "scope": {
+    "skill": "ludis-continuum",
+    "instrument_directory": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments",
+    "instrument_core_count": 32,
+    "changed_core_count": 32,
+    "index_changed": true,
+    "manifest_changed": true,
+    "curation_receipt_changed": true
+  },
+  "doctrine": {
+    "name": "pith times puissance",
+    "application": [
+      "lead with the conceptual home and desired creative transformation",
+      "retain only distinctions that steer quality, preserve a boundary, or separate the instrument from a neighbor",
+      "use the form and cadence the desired artifact should continue",
+      "preserve user canon, productive ambiguity, and player agency",
+      "return table, play, fiction, or visual-brief utility instead of named framework theater"
+    ]
+  },
+  "transformation": {
+    "before": {
+      "status": "verbatim top-level extracts from the removed legacy monolith",
+      "manifest_sha256": "ee97eb304c8cc28579f14bb34526890103e55a66c5e24bc464c93d3289e17454",
+      "runtime_output_bytes": 119845
+    },
+    "after": {
+      "status": "semantically_rewritten_derivative",
+      "manifest_sha256": "d29262f83c925a6ad064cba25b6f780e26e7522caa220c55ed0b673d02e2f6a8",
+      "manifest_bytes": 10860,
+      "index_sha256": "ced59febced92ba11c15c18968d43d67ed4029510c0ea709c749621297725aa4",
+      "index_bytes": 3601,
+      "core_bytes": 64041,
+      "runtime_output_bytes": 78502,
+      "runtime_output_bytes_reduced": 41343,
+      "runtime_output_reduction_percent": 34.5
+    }
+  },
+  "named_contracts": {
+    "backstory": "A playable past built from charged relationships, decisions with consequences, a dangerous truth, unfinished pressure, and an opening choice; player identity and future arc remain open.",
+    "art_prompt": "A portable visual brief only. Image creation remains a separate action requiring an explicit surrounding request; dimensions and platform syntax appear only when the destination requires them.",
+    "mechanics": "Exact mechanical claims require supplied authoritative rules; otherwise the instruments return qualitative affordances, calibration points, and a mechanics-confidence note.",
+    "canon": "Supplied canon remains authoritative and generated material remains proposed until the GM or player accepts it."
+  },
+  "removed_prompt_residue": [
+    "forced generic output counts and rigid archetype menus",
+    "pseudo-scientific and branded framework names",
+    "boilerplate Optional details input blocks",
+    "automatic image generation and aspect-ratio defaults",
+    "image-platform assumptions",
+    "unavailable sibling-prompt references",
+    "legacy speaker, promotion, persona, and worked-world residue",
+    "unverified mechanical and system-readiness claims",
+    "Markdown code-fence wrappers around prompts"
+  ],
+  "regeneration_guard": {
+    "script": "tools/curate_ludis_runtime.py",
+    "default_mode": "validate",
+    "write_mode": "explicit --write",
+    "write_scope": [
+      "knowledge/instruments/index.md",
+      "knowledge/instruments/manifest.json",
+      "verification/ludis-toolkit-curation.json"
+    ],
+    "core_authority": "the 32 curated core files",
+    "legacy_source_role": "optional provenance verification only",
+    "legacy_source_used_to_generate_cores": false
+  },
+  "verification": {
+    "curation_check": {
+      "command": "python -B tools\\curate_ludis_runtime.py",
+      "result": "PASS",
+      "core_count": 32
+    },
+    "runtime_self_check": {
+      "command": "python -B plugins\\nova-the-optimal-ai\\skills\\ludis-continuum\\scripts\\self_check.py",
+      "result": "PASS",
+      "core_count": 32
+    },
+    "regeneration_core_immutability": {
+      "command": "hash all cores; run python -B tools\\curate_ludis_runtime.py --write; hash all cores again",
+      "result": "PASS",
+      "core_hashes_before": 32,
+      "core_hashes_after": 32,
+      "changed_core_hashes": 0
+    },
+    "residue_scan": {
+      "scope": "all 32 core Markdown files",
+      "result": "PASS",
+      "matches": 0,
+      "classes": [
+        "automatic image or tool invocation",
+        "named image platform",
+        "unavailable sibling prompt",
+        "generic optional-input boilerplate",
+        "code fence"
+      ]
+    },
+    "review_boundary": "Static checks establish package shape, custody, forbidden-residue absence, and deterministic hashes. They do not prove creative quality, rules fidelity, fun, safety, or table performance."
+  },
+  "evidence": {
+    "instrument_manifest": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/manifest.json",
+    "instrument_manifest_sha256": "d29262f83c925a6ad064cba25b6f780e26e7522caa220c55ed0b673d02e2f6a8",
+    "curation_receipt": "verification/ludis-toolkit-curation.json",
+    "curation_receipt_sha256": "99e98d3f4bb70f89773908bfe36516c2470e4f0242b93e7619276a07915f9011"
+  }
+}

@@ -1,0 +1,1443 @@
+{
+  "format": "cd-nova-prompt-surface-audit/v2",
+  "product": "Nova the Optimal AI 1.0.0",
+  "audit_date": "2026-07-21",
+  "status": "PASS",
+  "doctrine": "Pith times puissance: put the most semantically load-bearing conceptual frame first, then add only distinctions that steer behavior or preserve a real boundary.",
+  "scope": {
+    "inclusion_rule": "Every package-owned file whose contents can be loaded as procedural, persona, or discovery instruction under Nova, whether the load is direct, conditional, or delegated.",
+    "included": {
+      "primary_physical": 30,
+      "conditional_physical": 128,
+      "total_physical": 158,
+      "primary_review_units": 30,
+      "conditional_sha256_equivalence_groups": 97,
+      "total_review_units": 127,
+      "ludis_instrument_cores": 32
+    },
+    "package_files": 296,
+    "excluded_physical": 138,
+    "exclusion_rule": "Exclude machine-executed code and CI; schemas, manifests, receipts, and structured data not presented as instruction; factual dossiers, source catalogs, and knowledge-base records; output/data templates; static assets; and examples not loaded as instruction. Directory names alone never decide scope.",
+    "excluded_by_extension": {
+      ".css": 1,
+      ".html": 3,
+      ".json": 45,
+      ".jsonl": 5,
+      ".md": 26,
+      ".png": 3,
+      ".py": 50,
+      ".yaml": 1,
+      ".yml": 4
+    }
+  },
+  "summary": {
+    "physical_surfaces_reviewed": 158,
+    "physical_changed": 54,
+    "physical_unchanged_after_review": 104,
+    "review_units": 127,
+    "review_units_changed": 52,
+    "review_units_unchanged_after_review": 75,
+    "unreviewed_in_scope": 0,
+    "high_or_medium_findings_remaining": 0,
+    "included_inventory_sha256": "058829b9bcfb5172b3f8be3bc8164aa9b49f53dbfb485c32b28d9e2ffd6ec96c"
+  },
+  "conditional_categories": {
+    "dunbar": {
+      "physical": 3,
+      "review_units": 3
+    },
+    "ludis-continuum": {
+      "physical": 38,
+      "review_units": 38
+    },
+    "omnara-deep-research": {
+      "physical": 11,
+      "review_units": 11
+    },
+    "retrieval": {
+      "physical": 3,
+      "review_units": 3
+    },
+    "rupert-giles-knowledge-steward": {
+      "physical": 1,
+      "review_units": 1
+    },
+    "signal-loom": {
+      "physical": 8,
+      "review_units": 8
+    },
+    "testforge": {
+      "physical": 64,
+      "review_units": 33
+    }
+  },
+  "equivalence_policy": "Only byte-identical conditional modules share a review unit. Thirty-one TestForge operator/reviewer mirror pairs are each represented by one SHA-256 group while retaining both physical paths.",
+  "review_classes": {
+    "primary-retained": "Already concept-first, discriminating, and bounded; retained after direct review.",
+    "primary-repaired": "Salience, routing, authority, privacy, or evidence language was surgically repaired.",
+    "governed-people-retained": "People context stays user-governed, relevance-gated, layered, and recoverable.",
+    "ludis-doctrine-retained": "Choice, consequence, consent, tone, and continuity already form strong creative bearings.",
+    "ludis-boundary-repaired": "Curated instruments are creative bearings, never authority or a route to unavailable legacy machinery.",
+    "ludis-core-repaired": "The core now leads with the creative transformation and preserves canon, agency, and usable form without framework theater.",
+    "ludis-index-repaired": "Routing now distinguishes all 32 creative instruments by the transformation each performs.",
+    "ludis-fallback-retained": "Degraded routes preserve choice-shaped usefulness without pretending unavailable capability.",
+    "omnara-retained": "Research doctrine remains question-led, source-aware, bounded, and explicit about uncertainty.",
+    "omnara-directive-repaired": "The legacy directive was replaced by compact evidence-architecture bearings without quotas or platform assumptions.",
+    "retrieval-retained": "Retrieval doctrine cleanly separates corpus evidence, authority, coverage, and truth.",
+    "rupert-retained": "Knowledge custody remains organized around authority, provenance, finding journeys, and recovery.",
+    "signal-retained": "Visual-story doctrine preserves source boundaries, representation integrity, accessibility, and human publication control.",
+    "signal-faculty-repaired": "The optional faculty library now yields to the live stage and evidence, forbidding ornamental data, tool, and platform assumptions.",
+    "testforge-retained": "Verification modules remain risk-shaped, oracle-led, evidence-bounded, and explicit about claim scope.",
+    "testforge-authority-repaired": "Host overlays now inherit already-granted in-scope change authority while preserving genuine external authority edges."
+  },
+  "validation": {
+    "strict_skill_validator": "PASS: all 12 shipping skill roots, Codex profile, zero findings",
+    "ludis_curator": "PASS: 32 curated cores; explicit regeneration changed zero core hashes",
+    "ludis_self_check": "PASS: 32/32",
+    "ludis_residue_scan": "PASS: zero targeted legacy prompt-residue matches",
+    "audit_check": "PASS when python -X utf8 tools/audit_nova_prompt_surfaces.py --check exits zero",
+    "boundary": "Static review establishes current prompt bytes, semantic review disposition, package shape, and validation hygiene. It does not by itself establish live routing or response quality."
+  },
+  "primary_surfaces": [
+    {
+      "id": "PS-001",
+      "kind": "plugin_manifest",
+      "path": "plugins/nova-the-optimal-ai/.codex-plugin/plugin.json",
+      "sha256": "f4e65e305bbf44f524286e3a29ac20130ce0f23e418301ec8a7bbf1847f8d37d",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-002",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/agentic-coding/SKILL.md",
+      "sha256": "1c9bd3c3b72ff1d2eaf8400af25e7f652a9b829c16524d98a6c3dc25e01ac496",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-003",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/agentic-coding/agents/openai.yaml",
+      "sha256": "650ddea7524ed4c9bd0187c43bf5550df3b0a8217d04f794dd0866ad46d8c23d",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-004",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/corkboard/SKILL.md",
+      "sha256": "f4b9518a6f7b33744d29f9eff53dc48cad40db47f755a3a6951f1849c928d3cd",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-005",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/corkboard/agents/openai.yaml",
+      "sha256": "1bb742a38b373098551c712f666c5c7396b5ea7d509ff9595ca40a2c2193949a",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-006",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/dunbar/SKILL.md",
+      "sha256": "a669734c0e3255de7a32f2e226a3a8b1ccb5ed2d125e271a626ead03dca68980",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-007",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/dunbar/agents/openai.yaml",
+      "sha256": "dc344a4be282f6de5a03bb582efac66861e6d4d1939fa0d6130f0c3d7aaaeb93",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-008",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/SKILL.md",
+      "sha256": "4c748608725eb2608e043d993036218d4e69fb1182f88e49d1267bef60472259",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-009",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/agents/openai.yaml",
+      "sha256": "4f27efc45fd153c8c4199a19813dd3d4c5e2af757dd90c6d1de3565d2922990b",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-010",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/SKILL.md",
+      "sha256": "5477d89d839894c16e1b1136933dc300269358f106b20afb5f9ce7de1579e408",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-011",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/agents/openai.yaml",
+      "sha256": "21d096ed409b3b159db697912e00eea30b67f82bc822438ec3704cd9d03c8538",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-012",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/SKILL.md",
+      "sha256": "cba7bc9c9f3ed98f7ba2ee918e369d321200827fe217ca2cf6d6d10bb4c403f5",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-013",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/agents/openai.yaml",
+      "sha256": "e274080793a0e46890786a0ea7d993095610247bce04dc8c978aa3e4efaa11a6",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-014",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/SKILL.md",
+      "sha256": "aa4f04dce6df1071b3d0a0b796f59ff8c153c203055794b1242d97356500dfc3",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-015",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/agents/openai.yaml",
+      "sha256": "6d4980ae8858cc762c79c9370268e5702b5ceb6d673facc570bebf45c1f24c86",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-016",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer/SKILL.md",
+      "sha256": "7c084aa696f5dfb4688e3a9f5db84cb0895d6c9c5570b98a953564bad893a6ba",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-017",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer/agents/openai.yaml",
+      "sha256": "f16f38624024cabb6c41a3112aa28d125bffaf4ee7e8420c16b563e945d921df",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-018",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/SKILL.md",
+      "sha256": "45f177a0b850fa740303e8cff6ac5145ce4b1b8d479d6dd8a63b1ac1b7e66003",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-019",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/agents/openai.yaml",
+      "sha256": "d2b712554b420f62f04d38fe7cdff89aa6f69d885ab1a7aac75cf9a7491e127b",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-020",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/SKILL.md",
+      "sha256": "e6af181163abd0261478cdb2ed60df021af892bb9f111be7a2fd2ca9af62faf1",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-021",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/agents/openai.yaml",
+      "sha256": "75aba79af64647adbff54ca46020285f1aa08e8f7b664cd64254d00d482dc77f",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-022",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/software-verification/SKILL.md",
+      "sha256": "66e2b9675f499250c58c395a37590a4d83ae1d5338dcdc85ad64a2f30687bcf4",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-023",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/software-verification/agents/openai.yaml",
+      "sha256": "963676a54b53f1f7660dca848fe4b9571824942d3beba47bf3c5244e3bbb6bee",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-024",
+      "kind": "skill_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/verification-reviewer/SKILL.md",
+      "sha256": "4ee5748026fa0f7c17f284f771a005d24268d013b37646b6661ea6a6e72cdd84",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-025",
+      "kind": "openai_discovery_prompt",
+      "path": "plugins/nova-the-optimal-ai/skills/verification-reviewer/agents/openai.yaml",
+      "sha256": "5b76baba55ce7d6ae1b873086546c3abb8772de7b5ea32c0684cd2fe867748c0",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-026",
+      "kind": "nova_direct_reference",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/nova-persona.md",
+      "sha256": "d3ab497a848b60752eab05424e694a6d814d5fdac0b9abf59fe2c7e1899ea9b2",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-027",
+      "kind": "nova_direct_reference",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/capability-routing.md",
+      "sha256": "216b7fcb4e32bc0f3299a8112bcc75da90bb302389bca4c76a53181f31a79b9f",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-028",
+      "kind": "nova_direct_reference",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/mind-compatibility.md",
+      "sha256": "4696babae77a4a71af1d82bd984c158259bbb807b6016d80b50080b1443b0285",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    },
+    {
+      "id": "PS-029",
+      "kind": "nova_direct_reference",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/take-the-tour.md",
+      "sha256": "563b16b6ab9592ee347e654188212bc3fc383a2c1cfaf63fd5ae6a252d13e8e9",
+      "decision": "changed",
+      "review_class": "primary-repaired"
+    },
+    {
+      "id": "PS-030",
+      "kind": "nova_direct_reference",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/cd-brand-canon.md",
+      "sha256": "0d60c436746e97ed2a93bf9b31526a68741d54dbda0dd0a85b6db3eebb88dd40",
+      "decision": "unchanged",
+      "review_class": "primary-retained"
+    }
+  ],
+  "conditional_equivalence_groups": [
+    {
+      "id": "CP-001",
+      "category": "dunbar",
+      "sha256": "6232571184605a64b1613ce163f48f2e3af72f90c00bb3cd456a9615bea1867c",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/dunbar/references/people-intelligence.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "governed-people-retained"
+    },
+    {
+      "id": "CP-002",
+      "category": "dunbar",
+      "sha256": "e02689441982154beccc7ecf3e9c774192cfe5a8b587a7b28b0866858622956b",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/dunbar/references/progressive-disclosure.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "governed-people-retained"
+    },
+    {
+      "id": "CP-003",
+      "category": "dunbar",
+      "sha256": "77ffdfadba7b203f3c6e889f5f1d6fd50bc74e2d9092380016c5fd8943e335d7",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/dunbar/references/store-contract.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "governed-people-retained"
+    },
+    {
+      "id": "CP-004",
+      "category": "ludis-continuum",
+      "sha256": "f4b6da8e02dc320d0c275b1b7650b8138e2d56fd0cd8b2d2530cda077ed2ceef",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/fallbacks/degraded-capability.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "ludis-fallback-retained"
+    },
+    {
+      "id": "CP-005",
+      "category": "ludis-continuum",
+      "sha256": "3f3c92f0981c00418ec43642d6e0746e97c06f060f2d4b7a4d03f3bffe4fb9ce",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/fallbacks/universal-copy-paste-workflow.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "ludis-fallback-retained"
+    },
+    {
+      "id": "CP-006",
+      "category": "ludis-continuum",
+      "sha256": "8103e575f2e7fb8c113c03a663b68ab79fea65bca3333c73f97013878f61226e",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/canonical-boundaries.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-boundary-repaired"
+    },
+    {
+      "id": "CP-007",
+      "category": "ludis-continuum",
+      "sha256": "e07f577c93bdd2d0894fbcd2dfe1d973515bea89cf6bba875306468b4b72467b",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/arcane-language.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-008",
+      "category": "ludis-continuum",
+      "sha256": "bf125794f9bd1e63887b646c9a8b27407bdfeb09248c0fedb5e2164a5644faad",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/art-prompt.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-009",
+      "category": "ludis-continuum",
+      "sha256": "e67329e859f916fc74f3bc05969387c3bd5b060edd1a1059cdedc40cc625531c",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/backstory.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-010",
+      "category": "ludis-continuum",
+      "sha256": "29ef01536ede0cd2559fe8fa5829a235d1189313e8f9897a22864caa3078920e",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/boxtext.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-011",
+      "category": "ludis-continuum",
+      "sha256": "1e5e362443f4fcc84cfd9c37f2e5a999be244761d4812fee1a448085b1a207e0",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/campaign-workflow.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-012",
+      "category": "ludis-continuum",
+      "sha256": "7da914df46592a20fb86169d1ae2fd47923441f37ba7b2c2c6ed52a14ffcde6a",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/creature.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-013",
+      "category": "ludis-continuum",
+      "sha256": "fe01a5c5f8aa40e5138a047721dc07d43ff3f31954e754cf322be7b98722a303",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/cursed-item.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-014",
+      "category": "ludis-continuum",
+      "sha256": "bd9c27d8165a5f1b23e1aa84be50b6aaf6ff8c55d4299c1929e074b4528549f8",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dimensional-gateway.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-015",
+      "category": "ludis-continuum",
+      "sha256": "d55110a674978621c92a6f5abc5355afb8eb8bd4302917aed8cfffcd18ada183",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dungeon.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-016",
+      "category": "ludis-continuum",
+      "sha256": "258656a09d241521e5049908900bf0e75dc9ffd4b6c3e6d9f0fe25b6243507e2",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/encounter-chain.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-017",
+      "category": "ludis-continuum",
+      "sha256": "0547b0a264212b9097571cc0f6766e662300b698d236d323a9a88636d1e4259d",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/faction-allegiance.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-018",
+      "category": "ludis-continuum",
+      "sha256": "8a79be0f4e6ee742432a2c3fad9e51e2938248df7eb186d4014306095da2d532",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/homebrew-mechanics.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-019",
+      "category": "ludis-continuum",
+      "sha256": "9362e6661ed7d34a4d214f7a351c2739bc5c7f22fad4b450fa98f61b68d19c3e",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/impossible-invention.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-020",
+      "category": "ludis-continuum",
+      "sha256": "ced59febced92ba11c15c18968d43d67ed4029510c0ea709c749621297725aa4",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/index.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-index-repaired"
+    },
+    {
+      "id": "CP-021",
+      "category": "ludis-continuum",
+      "sha256": "4265443d7f2dfb08b0db5d6edb7e5709273067159af52a9d28d2995dd18e2036",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/intrigue-web.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-022",
+      "category": "ludis-continuum",
+      "sha256": "e6bac2b4c4eb15fa60ada7cefbb2cae256b4d1a8e43b28afa91147880b9649fd",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/legendary-artifact.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-023",
+      "category": "ludis-continuum",
+      "sha256": "0246659893ffe564dd6137680b72f4d782da2a87c1f6074ab74aa32c7c53637d",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/lost-civilization.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-024",
+      "category": "ludis-continuum",
+      "sha256": "3e4d6767e4305039ce8c67835bc389880948efbd9d68d585c88a5a7a8193e417",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/magic-system.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-025",
+      "category": "ludis-continuum",
+      "sha256": "bf856575a9236e8ba2be5689b1329ac8c0844c61ceb361dcb190f1a687d608d3",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/myth.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-026",
+      "category": "ludis-continuum",
+      "sha256": "a42de29eee8f498306ac49301d34f7c45c84980eb115e8b413c40628997b7d8e",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/npc.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-027",
+      "category": "ludis-continuum",
+      "sha256": "c200c5407ba5b7a0e9bf296d16f3181c34576e3a7d19a0c98b92888f9579cd85",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/party.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-028",
+      "category": "ludis-continuum",
+      "sha256": "90b11ca340ea1b8989a2ec79a7af26bae32eb7621849c39232887e1cc3aba7b1",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/prophecy.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-029",
+      "category": "ludis-continuum",
+      "sha256": "798988fa5c4c3e8a40072cc0ca9f3caecdf79fe4f7ee8aa0d3d5fe5879aaedd8",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/puzzle-trap.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-030",
+      "category": "ludis-continuum",
+      "sha256": "728f868b26b4d3a8f527f04804bb5445e0b73f9f61e4032f79504b77f72e1730",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/quest.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-031",
+      "category": "ludis-continuum",
+      "sha256": "49c0daf03492b45a74e7125054f6dc6bd1614e3df8383a9cff3431613e48cc6c",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/region-map.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-032",
+      "category": "ludis-continuum",
+      "sha256": "bcf3292ddadacb963e8c65a74b35d7f7809dbe3131b03f36e976e5ff20259f1a",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/rumors-headlines.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-033",
+      "category": "ludis-continuum",
+      "sha256": "33ec1128c96ee7672849259cb9033ff219ff1d6a596038f4ef970668c87a1615",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/secret-society.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-034",
+      "category": "ludis-continuum",
+      "sha256": "6397beda6bb6118158146ec8bc32f864c51f074b061fb26f01eed5d7742d04f2",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/settlement-city.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-035",
+      "category": "ludis-continuum",
+      "sha256": "e462f0fa21c49547a83f97af6ac448ee59d2e4810bec15356a4fe6ad4f74061d",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/spell.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-036",
+      "category": "ludis-continuum",
+      "sha256": "a8df0dd483ac14c0765838af317b1136dce5c5aacb2b1617bf7d41f4b0822ac2",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/tavern-menu.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-037",
+      "category": "ludis-continuum",
+      "sha256": "e58dd48ce9904cbb716ae3fd49e3daefd671f4db444deb132a93168b2865e793",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/urban-dungeon.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-038",
+      "category": "ludis-continuum",
+      "sha256": "80a0d3ea1c54eb91dd613b5621b56d1f6916f1df9e610c281ccc1c2840bbf606",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain-scheme.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-039",
+      "category": "ludis-continuum",
+      "sha256": "59fab4a2574070d140916bd30e2d92480a5a4e741112d195f15ac1d1d7c72067",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain.md"
+      ],
+      "decision": "changed",
+      "review_class": "ludis-core-repaired"
+    },
+    {
+      "id": "CP-040",
+      "category": "ludis-continuum",
+      "sha256": "6846821f1004757e93e42dec605c5d4fc992c92890f8ed268b80b9ea4759e09b",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/operating-doctrine.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "ludis-doctrine-retained"
+    },
+    {
+      "id": "CP-041",
+      "category": "ludis-continuum",
+      "sha256": "18e45685662ddd136edca173713d151ab82435ae591ba5021a6fc99eb716c531",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/state-and-authority.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "ludis-doctrine-retained"
+    },
+    {
+      "id": "CP-042",
+      "category": "omnara-deep-research",
+      "sha256": "e3c2e227a0720f548ce2ac275624e33a30e43fcc19604827dd41910ef83a00ad",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/fallbacks/degraded-capability.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-043",
+      "category": "omnara-deep-research",
+      "sha256": "b9ce9edd0036970ec7e4e460f524325537ae60b567304d3c5d32865100f9e0e0",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/fallbacks/universal-copy-paste-workflow.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-044",
+      "category": "omnara-deep-research",
+      "sha256": "44266ef86b073932c8eca8374403ab02b2bd473106bea82bf5b45753d469259a",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/knowledge/source-navigation.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-045",
+      "category": "omnara-deep-research",
+      "sha256": "cd6961b17a115e7d41cbfcf7e2fac231dac7cbbbdab751707d03631a2418edba",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/personas/omnara-investigative-research-intelligence.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-046",
+      "category": "omnara-deep-research",
+      "sha256": "dc909d6a3ef077d556452972889a1949f46c7534cde23196d6e5adb819679727",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/campaign-operations.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-047",
+      "category": "omnara-deep-research",
+      "sha256": "351183c36a1d14b1fa28b1ddce9d0ad0437ecf627cff90150f4acbb02928afd0",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/canonical/inquiry-engine-v1.md"
+      ],
+      "decision": "changed",
+      "review_class": "omnara-directive-repaired"
+    },
+    {
+      "id": "CP-048",
+      "category": "omnara-deep-research",
+      "sha256": "55c65e4745160080b20101201eca6db8b346c068cfa8e4ed87eecedc53ffed02",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/evidence-and-investigation.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-049",
+      "category": "omnara-deep-research",
+      "sha256": "2f3bc7e713537d08d7909cda54aeaf0c8cb47848eeb17037dfb944c30b771f80",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/operating-doctrine.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-050",
+      "category": "omnara-deep-research",
+      "sha256": "11f0d9fbe649f6e372bb2adc32b216012bca641f161dc9c04394fab8642406e7",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/search-cartography.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-051",
+      "category": "omnara-deep-research",
+      "sha256": "4766c2b83c920947dc9b33f867f7f5744c9b8cc83bbbfb65290ffd48b0e85bf6",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/synthesis-and-citation-audit.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-052",
+      "category": "omnara-deep-research",
+      "sha256": "29defbe80dc94f732f0ee5da00116d9fbf3517b29d28de44f767ae74dffa3807",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/tooling-cost-and-security.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "omnara-retained"
+    },
+    {
+      "id": "CP-053",
+      "category": "retrieval",
+      "sha256": "e8268e5beaa4831be49106dc9ebce85976a7fa239cf25e5795a4f915b3c5dbfc",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/references/retrieval-doctrine.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "retrieval-retained"
+    },
+    {
+      "id": "CP-054",
+      "category": "retrieval",
+      "sha256": "7557c02a2f5c94850e24b216f5e2808e7dcc79108d7dcf6fe70e75766662626e",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/references/semantic-fusion-contract.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "retrieval-retained"
+    },
+    {
+      "id": "CP-055",
+      "category": "retrieval",
+      "sha256": "322a64278ca40a80ae9e948f180d9fac54760ed944e91e3bc77c74e4cf3d04f8",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/retrieval-reviewer/references/retrieval-review-rubric.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "retrieval-retained"
+    },
+    {
+      "id": "CP-056",
+      "category": "rupert-giles-knowledge-steward",
+      "sha256": "55090874d75baa1ea76a49a79e850d0ddb1c981c5c440d23f8a94cc3ed51822d",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/references/stewardship-doctrine.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "rupert-retained"
+    },
+    {
+      "id": "CP-057",
+      "category": "signal-loom",
+      "sha256": "cd77955012efb0ec495a772fda9ed2cf088538be320cb90f3fdc67bef34351d7",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/fallbacks/degraded-capability.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-058",
+      "category": "signal-loom",
+      "sha256": "a89352e673faa2ab7e11ff1a66641e82798971af1b49a36d842c0f04fa67bece",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/fallbacks/universal-copy-paste-workflow.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-059",
+      "category": "signal-loom",
+      "sha256": "96ec86aee7fa6e569d07f5aedd2656fbda9a16d6d3b05864f6ea5b8e8f739a99",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/claim-and-currentness-doctrine.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-060",
+      "category": "signal-loom",
+      "sha256": "d623e469a8c7174bd54521e83aef39e11c62724dbe57c5dd3fdca20f9d8ec134",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/html-trust-boundary.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-061",
+      "category": "signal-loom",
+      "sha256": "ae50b706ed5f2562f5a78feee949eaf34648d10088a2f519413a0707ce2a9675",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md"
+      ],
+      "decision": "changed",
+      "review_class": "signal-faculty-repaired"
+    },
+    {
+      "id": "CP-062",
+      "category": "signal-loom",
+      "sha256": "3bb31cced447d05cbaac1e5b0611e580f4c479e2205177f49928ae877f7e469e",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/operating-doctrine.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-063",
+      "category": "signal-loom",
+      "sha256": "ecdd78d896e57a8fcdf711931c479c058c16e429cc3f035a81c42c4ed3d13a48",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/representation-and-chart-integrity.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-064",
+      "category": "signal-loom",
+      "sha256": "3f5f1b42b6d403e89be7c69c46ce7dd495a55d3338543e9d353046a4c5ccadf0",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/stage-and-faculty-routing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "signal-retained"
+    },
+    {
+      "id": "CP-065",
+      "category": "testforge",
+      "sha256": "ed065cde07ac2f2e22128f2e4379eebd95dceada1466bcb228f6618cc16cb435",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/adapters/claude-code.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/claude-code.md"
+      ],
+      "decision": "changed",
+      "review_class": "testforge-authority-repaired"
+    },
+    {
+      "id": "CP-066",
+      "category": "testforge",
+      "sha256": "0bbfe4a81898e19530b71c93e6adc698a86ee230d09f57de0fac19a068115612",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/adapters/codex.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/codex.md"
+      ],
+      "decision": "changed",
+      "review_class": "testforge-authority-repaired"
+    },
+    {
+      "id": "CP-067",
+      "category": "testforge",
+      "sha256": "5906597721b9f69e23e8f8c0568838309af178fbe37f05fc8f61800a3b0e886f",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/adapters/copy-paste-chat.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/copy-paste-chat.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-068",
+      "category": "testforge",
+      "sha256": "44f8256e25ca2ef670e8d4cab4967486aa35c9013e11e18a5e1049fb09e153a5",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/adapters/github.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/github.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-069",
+      "category": "testforge",
+      "sha256": "37e82cbb336026c298004d5d3b43a38b12faeca619bce0815790644447d915be",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/adapters/local-shell.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/local-shell.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-070",
+      "category": "testforge",
+      "sha256": "7f496d9a10aaeee805a60e1777a4337ad6f293532ede1c16d051128bc1695d70",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/fallback/intake-card.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/fallback/intake-card.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-071",
+      "category": "testforge",
+      "sha256": "795b73f2bb758bf3113988b1f5b3639556dfef148f78059656fd5f275f4a7102",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/fallback/master-prompt.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/fallback/master-prompt.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-072",
+      "category": "testforge",
+      "sha256": "dba5c2a713a2cdcb0a328db9a7a41b41de3dc7ad90cbcba020bb187078978639",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/fallback/output-templates.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/fallback/output-templates.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-073",
+      "category": "testforge",
+      "sha256": "77015ca574ebfbe190eb503b39fe914133ff3ee88c09336263f1cb500d86b670",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/fallback/review-prompt.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/fallback/review-prompt.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-074",
+      "category": "testforge",
+      "sha256": "455b2f606ad76b0a8d7e063507d348e9574b5201338c8c3c08cddfce09181cfd",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/boundary-and-equivalence.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/boundary-and-equivalence.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-075",
+      "category": "testforge",
+      "sha256": "b3015eadd9c55bdb2d1fbb05fcca0ecfed8795dea7af047be8f5ddec760c8033",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/oracle-design.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/oracle-design.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-076",
+      "category": "testforge",
+      "sha256": "c40c82b16c5316bd0643a90a33286584b92535500b40b7de705e38bc26566153",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/release-assessment.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/release-assessment.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-077",
+      "category": "testforge",
+      "sha256": "6e74815e26680111d8a7194ad8d64593454a94d8b8a8b1ecd4d0f9de218a30c4",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/risk-based-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/risk-based-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-078",
+      "category": "testforge",
+      "sha256": "227037dbf8cf9fb2d95e8ee4f9b262682d38378643787fd2dab1bd0e3b08d945",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/state-transition-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/state-transition-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-079",
+      "category": "testforge",
+      "sha256": "ef5691c3849e664601f824be321da1a6f22d7d292bfcef4b58ae9346ff812b70",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/test-layer-selection.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/test-layer-selection.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-080",
+      "category": "testforge",
+      "sha256": "493568a4cb3feae487a9b9456d47c6500e4781b130ae42c6b65e7754a0b7585d",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/core/test-smells.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/core/test-smells.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-081",
+      "category": "testforge",
+      "sha256": "6b0628bcd4bf00fbdb764d89b087a4c0d7661d5df386e9639d2da20df711a0f8",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/reliability/concurrency-and-races.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/reliability/concurrency-and-races.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-082",
+      "category": "testforge",
+      "sha256": "b57632c4188e7ea9f84eda2078efc33368abe1e61eabc56d47fbb8c9d13297aa",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/reliability/dependency-failure-modes.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/reliability/dependency-failure-modes.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-083",
+      "category": "testforge",
+      "sha256": "b1fe93d1c67c579b457f973a26c84911cc99c5caddebdd1f7c0e06a41ffe6dd8",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/reliability/observability-verification.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/reliability/observability-verification.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-084",
+      "category": "testforge",
+      "sha256": "dfd2c4164f7cbd74f84776f695da43479c8934ae22702057df70c6899e468cdb",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/reliability/retries-idempotency-timeouts.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/reliability/retries-idempotency-timeouts.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-085",
+      "category": "testforge",
+      "sha256": "f65d58465c53fc64e59650bd744ee87dec435efec1c0cdcdaf0c01c298ea3376",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/security/authorization-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/security/authorization-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-086",
+      "category": "testforge",
+      "sha256": "82ada5f47330260a8a0820013d5f75aa5eb8e1de401e8e2408d7c8365a601681",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/security/input-and-parser-security.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/security/input-and-parser-security.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-087",
+      "category": "testforge",
+      "sha256": "eaba06a902822c672af3a55915ef5d9650aa9dd4f1f43cf93be79a4d926e27ac",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/security/safe-testing-boundaries.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/security/safe-testing-boundaries.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-088",
+      "category": "testforge",
+      "sha256": "36add90a748d545ae1276ad8007dd4f3cc3f4189cc9550dc6abea3d79c5c5c96",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/security/secrets-and-config-review.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/security/secrets-and-config-review.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-089",
+      "category": "testforge",
+      "sha256": "bbb3cb8ccdd135a14136af3d9649634560dce62c1501961fa335222274a8de5f",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/specialized/contract-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/specialized/contract-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-090",
+      "category": "testforge",
+      "sha256": "681875be0a4910ee1cfd8747f7dd391f48c55c29026c6b1fb59aa9eaf3001e2c",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/specialized/migration-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/specialized/migration-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-091",
+      "category": "testforge",
+      "sha256": "60161d47ffa95241b43d035b6c588548a73fe1773cb74f1c2996b5041b91431f",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/specialized/parser-and-compiler-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/specialized/parser-and-compiler-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-092",
+      "category": "testforge",
+      "sha256": "648b1e5440c6a639cdf2ccaa60a872d84c666332353e2b1fb7c851a684060004",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/specialized/property-based-testing.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/specialized/property-based-testing.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-093",
+      "category": "testforge",
+      "sha256": "5aca6159f4e73277d2895dea3ec6b9843f1f9f74e6ae79585331464f2be1b8a8",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/stacks/generic-adapter.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/stacks/generic-adapter.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-094",
+      "category": "testforge",
+      "sha256": "4e0fd68fe34648dd3224cfc42f3cd8bbfa66b7de46c025614d6c2f9956afc7e9",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/stacks/python-pytest.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/stacks/python-pytest.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-095",
+      "category": "testforge",
+      "sha256": "eccd25b5d3f96c67b0d5668e2912272c811496108ea9324f3c8620e6da2d9461",
+      "physical_count": 2,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/software-verification/references/stacks/typescript-vitest-jest.md",
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/references/stacks/typescript-vitest-jest.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-096",
+      "category": "testforge",
+      "sha256": "92f3bb679ec9e08617d0c950617d171ae689d6c35c59d921fc781325c0ca039a",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/adversarial-checks.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    },
+    {
+      "id": "CP-097",
+      "category": "testforge",
+      "sha256": "519299144228feb8f8dc4293a8532af43a50f83e59df1fb04dfe0c35f9a3043a",
+      "physical_count": 1,
+      "paths": [
+        "plugins/nova-the-optimal-ai/skills/verification-reviewer/review-rubric.md"
+      ],
+      "decision": "unchanged",
+      "review_class": "testforge-retained"
+    }
+  ]
+}

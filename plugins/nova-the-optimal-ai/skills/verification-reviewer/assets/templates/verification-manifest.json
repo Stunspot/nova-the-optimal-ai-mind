@@ -1,0 +1,16 @@
+{
+  "manifest_version": "1.0",
+  "target": {"name": "REPLACE", "revision": "REPLACE", "target_class": "change"},
+  "scope": {"included": ["REPLACE"], "excluded": [], "constraints": [], "safety_boundary": ["local non-production verification only"]},
+  "claim_custody": {"observed": [], "inferred": [], "assumed": [], "unresolved": []},
+  "impact_map": [],
+  "invariants": [],
+  "risks": [],
+  "scenarios": [],
+  "tests": [],
+  "executions": [],
+  "findings": [],
+  "residual_risks": [],
+  "review": {"status": "NOT_RUN", "findings": []},
+  "decision": {"status": "INSUFFICIENT_EVIDENCE", "basis": ["manifest not yet populated"], "authority_required": []}
+}

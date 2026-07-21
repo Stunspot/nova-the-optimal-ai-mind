@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal Loom visual plan",
+  "type": "object",
+  "required": ["status", "mobile_first", "representations", "semantic_outline"],
+  "properties": {
+    "status": {"enum": ["not_started", "draft", "reviewed"]},
+    "mobile_first": {"const": true},
+    "representations": {"type": "array", "items": {"type": "object", "required": ["beat_id", "form", "rationale", "claim_ids"], "properties": {"form": {"enum": ["prose", "diagram", "chart", "interaction", "omit"]}}}},
+    "semantic_outline": {"type": "array"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,53 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "direct-negative",
+  "recorded_at": "2026-07-21T18:14:03.201312+00:00",
+  "raw_receipt_local_only": "verification/raw/live-direct-negative.json",
+  "raw_receipt_sha256": "42d4112cebe5e4003c49fca765dea16b96af766ea4150ec87d83fd9b25864a2f",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "3d5dabda7f9e4976cfafd805be958e1cc4eefea4e41e76960d25e88da80f22cc",
+  "loaded_candidate_skills": [
+    "nova"
+  ],
+  "expected_skills": [
+    "nova"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [
+    "agentic-coding",
+    "augment-of-mind",
+    "corkboard",
+    "dunbar",
+    "ludis-continuum",
+    "omnara-deep-research",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "signal-loom",
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "Could we please move the meeting to four o’clock?",
+  "response_sha256": "17f8638dd198c17a0bf0fe45e31da4562b6cce8ca5b5fa7b89d92921de03641b",
+  "response_raw_sha256": "17f8638dd198c17a0bf0fe45e31da4562b6cce8ca5b5fa7b89d92921de03641b",
+  "response_normalization": [
+    "none"
+  ],
+  "public_candidate_stage": {
+    "file_count": 481,
+    "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-direct-negative-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Corkboard"
+  short_description: "📌 Explicit pins and quiet contextual recall."
+  default_prompt: "Use $corkboard to pin this as a standalone reminder with strong future retrieval cues."
+
+policy:
+  allow_implicit_invocation: true

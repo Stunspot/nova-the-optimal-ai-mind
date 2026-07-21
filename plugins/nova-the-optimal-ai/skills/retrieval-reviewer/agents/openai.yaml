@@ -1,0 +1,4 @@
+interface:
+  display_name: "Retrieval Reviewer"
+  short_description: "🔍 Retrieval evidence and citation auditor."
+  default_prompt: "Use $retrieval-reviewer: put this retrieval claim on trial—test corpus authority, query traces, ranking, citations, staleness, injection, and coverage before release."

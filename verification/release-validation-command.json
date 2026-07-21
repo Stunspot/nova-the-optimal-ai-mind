@@ -1,0 +1,21 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "tools\\validate_release.py",
+    "--output",
+    "verification\\release-extraction-validation.json"
+  ],
+  "working_directory": "nova-mind-entry",
+  "started_at": "2026-07-21T16:39:09.365386+00:00",
+  "finished_at": "2026-07-21T16:39:14.075195+00:00",
+  "duration_seconds": 4.709809,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "",
+  "status": "passed"
+}

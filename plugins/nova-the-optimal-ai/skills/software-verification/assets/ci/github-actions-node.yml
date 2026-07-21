@@ -1,0 +1,14 @@
+# Example only. Human approval is required before changing repository CI.
+name: testforge-node-verification
+on: [workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+      - run: npm ci
+      - run: npm test -- --run

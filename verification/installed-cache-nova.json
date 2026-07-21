@@ -1,0 +1,16 @@
+{
+  "format": "codex-installed-plugin-comparison/v1",
+  "recorded_at": "2026-07-21T18:36:56.796084+00:00",
+  "plugin": "nova-the-optimal-ai",
+  "marketplace": "collaborative-dynamics-build-week",
+  "version": "1.0.0",
+  "source_label": "plugins/nova-the-optimal-ai",
+  "installed_label": "$CODEX_HOME/plugins/cache/collaborative-dynamics-build-week/nova-the-optimal-ai/1.0.0",
+  "source_files": 296,
+  "installed_files": 296,
+  "missing": [],
+  "extra": [],
+  "changed": [],
+  "valid": true,
+  "boundary": "Byte equality proves installed payload fidelity only; registration, discovery, invocation, and model behavior require separate evidence."
+}

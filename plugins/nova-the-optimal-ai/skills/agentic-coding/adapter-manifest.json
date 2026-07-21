@@ -1,0 +1,43 @@
+{
+  "format": "cd-agentic-coding-adapter/v1",
+  "name": "agentic-coding",
+  "adapter_id": "cd.adapter.agentic-coding",
+  "version": "0.1.0",
+  "canonical_system": {
+    "id": "cd.agentic-coding-system",
+    "name": "agentic-coding-system",
+    "version": "0.1.0"
+  },
+  "system_class": "repository-execution-system",
+  "host_neutral": true,
+  "required_resources": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "adapter-manifest.json"
+  ],
+  "runtime_boundary": {
+    "is_faculty": false,
+    "emits_faculty_return": false,
+    "runtime_facing_action_owner": "instrumental-agency",
+    "parallel_execution_owner": false
+  },
+  "correlation_requirements": {
+    "canonical_system": {
+      "id": "cd.agentic-coding-system",
+      "version": "0.1.0"
+    },
+    "adapter_identity": [
+      "adapter_id",
+      "version",
+      "provenance",
+      "sha256"
+    ],
+    "adapter_hash_scope": [
+      "SKILL.md",
+      "agents/openai.yaml",
+      "adapter-manifest.json"
+    ],
+    "authority_owner": "instrumental-agency",
+    "recipient": "instrumental-agency"
+  }
+}

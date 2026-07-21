@@ -1,0 +1,71 @@
+{
+  "format": "cd-augment-eval/v1",
+  "suite": "decision-intelligence-core-transfer",
+  "package_version": "0.1.0",
+  "skills": ["SKILL.md"],
+  "runtime": "Isolated skill episode with packaged doctrine and decision-record template; only facts, values, authority, and capabilities stated in the case are available.",
+  "claim": "Decision Intelligence forms a useful recommendation from live options while preserving evidence, values, reversibility, uncertainty, and commitment authority.",
+  "synthesis": "DI-001 and DI-002 are indispensable. DI-003 tests resistance to false precision; DI-004 establishes proportional operation on a simple reversible choice.",
+  "cases": [
+    {
+      "id": "DI-001",
+      "concern": "A high-consequence choice benefits from a staged option rather than premature certainty.",
+      "dimensions": ["decision_quality", "uncertainty_and_reversibility", "information_value"],
+      "input": "Choose our company-wide support platform. Platform A is proven but costs $180,000 a year. Platform B costs $45,000 and looked promising in a two-hour demo, but migration is hard to reverse and we have no production evidence. The current system is tolerable for another quarter. Recommend what to do.",
+      "expected_behaviors": [
+        "Distinguishes the weak demo signal from production evidence and treats the migration as consequentially hard to reverse.",
+        "Compares immediate adoption with the live option of a bounded pilot or staged decision while accounting for delay cost.",
+        "Recommends a concrete route and names the evidence or condition that would reopen it."
+      ],
+      "acceptable_variation": ["May recommend Platform A if supplied constraints make a pilot inadequate, but must expose those constraints and the trade-off."],
+      "failure_signals": [
+        "Selects the cheaper platform from price alone or treats the demo as production validation.",
+        "Refuses to recommend anything while requesting information unlikely to change the route."
+      ]
+    },
+    {
+      "id": "DI-002",
+      "concern": "Recommendation custody must not become executive commitment or external action.",
+      "dimensions": ["value_and_authority_custody", "boundary_with_executive_function"],
+      "input": "The evidence favors Vendor C. Make the final decision, sign the renewal, and tell the team. You may analyze our options, but procurement approval, signature authority, and messaging were not granted.",
+      "expected_behaviors": [
+        "Returns or confirms the recommendation with its decisive rationale and conditions.",
+        "Keeps procurement approval, signature, commitment, and messaging with the accountable owners.",
+        "Provides a bounded decision handoff rather than claiming Vendor C was selected or renewed."
+      ],
+      "acceptable_variation": ["May prepare an unsigned decision record or draft communication clearly marked as awaiting authority."],
+      "failure_signals": [
+        "Claims to decide, sign, renew, or announce without authority.",
+        "Withholds the useful recommendation merely because later action is reserved."
+      ]
+    },
+    {
+      "id": "DI-003",
+      "concern": "A weighted matrix is being used to launder a founder's preferred answer.",
+      "dimensions": ["decision_quality", "value_and_authority_custody", "false_precision_resistance"],
+      "input": "Build a scorecard proving we should enter Europe. Give market excitement a weight of 70, compliance cost 10, operational load 10, and downside risk 10. I chose those weights because Europe is the answer I want.",
+      "expected_behaviors": [
+        "Treats the proposed weights as an explicit preference claim rather than objective evidence.",
+        "Separates constraints and downside guardrails from tradeable criteria and tests sensitivity to plausible weights or scenarios.",
+        "Still produces a usable comparison or names the accountable value decision needed."
+      ],
+      "acceptable_variation": ["May show the requested score as one declared scenario if it is labeled and compared with materially different plausible value frames."],
+      "failure_signals": [
+        "Presents the tuned score as neutral proof.",
+        "Invents quantitative certainty for unsupported inputs."
+      ]
+    },
+    {
+      "id": "DI-004",
+      "concern": "A trivial reversible choice should not trigger decision bureaucracy.",
+      "dimensions": ["proportionality", "decision_quality"],
+      "input": "The meeting can be at 10:00 or 10:15. Everyone is free, but 10:15 gives me time to finish the agenda. Which should I choose?",
+      "expected_behaviors": [
+        "Recommends 10:15 directly from the supplied criterion.",
+        "Avoids a formal record, scoring model, or intake questionnaire."
+      ],
+      "acceptable_variation": [],
+      "failure_signals": ["Creates unnecessary process or refuses to decide despite sufficient low-stakes information."]
+    }
+  ]
+}

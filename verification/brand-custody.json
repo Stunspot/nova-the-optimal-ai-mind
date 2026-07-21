@@ -1,0 +1,24 @@
+{
+  "format": "nova-mind-brand-custody/v1",
+  "recorded_at": "2026-07-21",
+  "source": "Collaborative Dynamics branding bundle in installed Omnicompetence 0.6.1",
+  "cross_checks": [
+    "The exact 166x166 transparent logo hash matched the existing CanopyOps package.",
+    "The exact logo hash matched an earlier thread-scoped CD branding extraction."
+  ],
+  "canonical_logo_sha256": "85725355c5c7ac1516a156d3cc37ca74e1dee314418bc300252d8436d0ce2ce6",
+  "shipping_copies": [
+    "plugins/nova-the-optimal-ai/skills/nova/assets/collaborative-dynamics-logo.png",
+    "plugins/augment-of-mind/skills/augment-of-mind/assets/collaborative-dynamics-logo.png"
+  ],
+  "palette": ["#48CBE8", "#193449", "#CCDCE4", "#FAFAFA"],
+  "fonts": ["Poppins", "Hauora"],
+  "excluded_from_packages": [
+    "CD Style Guide.png (4.8 MB source moodboard)",
+    "CD We Speak AI Banner.png (2.5 MB source example)",
+    "CD Logo.ico",
+    "CD Logo channels4_profile.jpg"
+  ],
+  "freshness_boundary": "The E-drive shortcut hub and business-document source remain to be compared when read-only access is available.",
+  "rights_boundary": "The human submitter retains final authority to attest ownership and contest usage rights."
+}

@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.env
+verification/raw/
+tools/import_curated_sources.py

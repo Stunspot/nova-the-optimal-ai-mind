@@ -1,0 +1,33 @@
+{
+  "format": "cd-ludis-toolkit-curation/v3",
+  "source": "rpg-toolkit-v2.md",
+  "source_sha256": "d2e441f88fa1bfe74fba805cd2e25efbccfdd65e0ca2dac1e254f0cada2bcd29",
+  "source_bytes": 309738,
+  "runtime_output": "knowledge/instruments/",
+  "manifest_sha256": "d29262f83c925a6ad064cba25b6f780e26e7522caa220c55ed0b673d02e2f6a8",
+  "core_count": 32,
+  "core_bytes": 64041,
+  "output_bytes": 78502,
+  "derivation_status": "semantically_rewritten_derivative",
+  "legacy_selection": "top-level instrument cores before first Example heading",
+  "runtime_authority": "curated core files",
+  "legacy_overwrite_prohibited": true,
+  "regeneration_scope": [
+    "index.md",
+    "manifest.json",
+    "this receipt"
+  ],
+  "excluded": [
+    "worked examples and worked worlds",
+    "named settings, campaigns, parties, and factions",
+    "legacy speaker wrappers, promotion, and persona residue",
+    "automatic tool calls, platform assumptions, and sibling-prompt dependencies",
+    "rigid menus, arbitrary output quotas, and generic input boilerplate"
+  ],
+  "discarded_reference": {
+    "source": "rpg-game-design-key-ideas.md",
+    "source_sha256": "69e8a0e59b25379c82880242a0b58b6490ff3188af27553af962bea955d39bec",
+    "source_bytes": 89534,
+    "rationale": "Oversized, duplicated key-ideas compilation with worked examples; selected instrument cores and existing operating doctrine retain the runtime-needed judgment."
+  }
+}

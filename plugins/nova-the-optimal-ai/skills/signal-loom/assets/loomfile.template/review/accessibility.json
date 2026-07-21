@@ -1,0 +1,5 @@
+{
+  "status": "unreviewed",
+  "static_checks": [],
+  "manual_checks_required": ["keyboard", "screen reader", "zoom and reflow", "contrast", "motion", "rendered reading order"]
+}

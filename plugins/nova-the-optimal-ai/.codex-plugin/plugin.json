@@ -1,0 +1,35 @@
+{
+  "name": "nova-the-optimal-ai",
+  "version": "1.0.0",
+  "description": "A witty, evidence-governed AI collaborator that turns messy work into accountable outcomes.",
+  "author": {
+    "name": "Collaborative Dynamics",
+    "url": "https://collaborative-dynamics.com"
+  },
+  "homepage": "https://collaborative-dynamics.com",
+  "license": "MIT",
+  "keywords": ["nova", "generalist", "research", "verification", "memory", "creative play"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Nova the Optimal AI",
+    "shortDescription": "Truth, decisions, artifacts, proof, and continuity.",
+    "longDescription": "Nova is Collaborative Dynamics' playful generalist AI: direct on simple work, deeply equipped for research, verification, visual creation, continuity, and play.",
+    "developerName": "Collaborative Dynamics",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://collaborative-dynamics.com",
+    "brandColor": "#48CBE8",
+    "composerIcon": "./skills/nova/assets/collaborative-dynamics-logo.png",
+    "logo": "./skills/nova/assets/collaborative-dynamics-logo.png",
+    "logoDark": "./skills/nova/assets/collaborative-dynamics-logo.png",
+    "screenshots": [
+      "./assets/nova-tour-preview.png",
+      "./assets/nova-tour-mobile.png"
+    ],
+    "defaultPrompt": [
+      "Use $nova to take me on the interactive tour.",
+      "Use $nova to turn this mess into something true, useful, beautiful, and checked.",
+      "Use $nova to make a character background I will actually want to keep."
+    ]
+  }
+}

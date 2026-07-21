@@ -1,0 +1,255 @@
+{
+  "format": "nova-mind-live-probe-status/v2",
+  "recorded_at": "2026-07-21T19:12:45.387169+00:00",
+  "clean_temporary_codex_home": true,
+  "authentication_copied_temporarily": true,
+  "authentication_persisted_or_recorded": false,
+  "public_candidate_stage": {
+    "file_count": 514,
+    "tree_sha256": "fcf71461285d006f7c09b76eacfb638423774c224ff599b6666f83bc9dbab3a8",
+    "directories": [
+      ".agents",
+      "demo",
+      "design",
+      "docs",
+      "plugins",
+      "release",
+      "submission"
+    ],
+    "files": [
+      "BUILD-WEEK-CONTRIBUTION.md",
+      "LICENSE.md",
+      "README.md",
+      "START-HERE.md",
+      "tools/build_release.py",
+      "tools/check_tour.cjs",
+      "tools/compare_installed.py",
+      "tools/fresh_host_install_probe.py",
+      "tools/inspect_contest_install.py",
+      "tools/install_contest_plugins.py",
+      "tools/run_clean_host_live_probes.py",
+      "tools/validate_release.py",
+      "tools/verify_entry.py",
+      "tools/verify_reproducible_build.py",
+      "verification/brand-custody.json",
+      "verification/build-reproducibility.json",
+      "verification/entry-static.json",
+      "verification/fresh-host-install.json",
+      "verification/current-host-install.json",
+      "verification/installed-cache-mind.json",
+      "verification/installed-cache-nova.json",
+      "verification/installed-discovery.json",
+      "verification/ludis-prompt-modernization.json",
+      "verification/ludis-prompt-modernization.md",
+      "verification/live-agentic-orientation-analysis.json",
+      "verification/live-agentic-orientation-public-raw.json",
+      "verification/live-direct-negative-analysis.json",
+      "verification/live-direct-negative-public-raw.json",
+      "verification/live-ludis-character-analysis.json",
+      "verification/live-ludis-character-public-raw.json",
+      "verification/live-mind-decision-analysis.json",
+      "verification/live-mind-decision-public-raw.json",
+      "verification/live-professional-brief-analysis.json",
+      "verification/live-professional-brief-public-raw.json",
+      "verification/live-core-probe-status.json",
+      "verification/live-testforge-review-pre-fix-analysis.json",
+      "verification/live-testforge-review-pre-fix-public-raw.json",
+      "verification/live-testforge-review-stage-gap-analysis.json",
+      "verification/live-testforge-review-stage-gap-public-raw.json",
+      "verification/live-testforge-review-index-contradiction-analysis.json",
+      "verification/live-testforge-review-index-contradiction-public-raw.json",
+      "verification/live-tour-analysis.json",
+      "verification/live-tour-public-raw.json",
+      "verification/nova-prompt-surface-audit.json",
+      "verification/nova-prompt-surface-audit.md",
+      "verification/nova-skill-reconciliation.json",
+      "verification/release-extraction-validation.json",
+      "verification/risk-register.md",
+      "verification/shipping-content-audit.md",
+      "verification/shipping-directory-inventory.json",
+      "verification/testforge-current-consolidated.json",
+      "verification/tour-browser-command.json",
+      "verification/traceability-matrix.md",
+      "verification/verification-manifest.json",
+      "verification/verification-report.md",
+      "verification/video-production-inputs.json"
+    ],
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": {
+      "commit_sha": "26fe5c60b7f2fd4f10b07b3d57006e195d626902",
+      "tree_sha": "0d6102666c6ceb30fc89eb7bb387454615f7f755",
+      "status": "clean"
+    }
+  },
+  "model": "gpt-5.6-sol",
+  "scenarios": [
+    {
+      "scenario": "direct-negative",
+      "analysis": "verification/live-direct-negative-analysis.json",
+      "analysis_sha256": "2b32126022c422672c88d3368aa7d28e712f8ac0d017ee491b9a2b4e9287dbfb",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "3d5dabda7f9e4976cfafd805be958e1cc4eefea4e41e76960d25e88da80f22cc",
+      "loaded_candidate_skills": [
+        "nova"
+      ],
+      "public_candidate_stage": {
+        "file_count": 481,
+        "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": null
+      },
+      "valid": true
+    },
+    {
+      "scenario": "tour",
+      "analysis": "verification/live-tour-analysis.json",
+      "analysis_sha256": "92296ccd16a2c03350b719a500dc74cb6dcc5a9f725c66d66287e05c1f38919f",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "a96fdbac3551dce3669d69ae279bac93a6df8fdda71e46f5725de01edd13c3a3",
+      "loaded_candidate_skills": [
+        "nova"
+      ],
+      "public_candidate_stage": {
+        "file_count": 481,
+        "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": null
+      },
+      "valid": true
+    },
+    {
+      "scenario": "ludis-character",
+      "analysis": "verification/live-ludis-character-analysis.json",
+      "analysis_sha256": "e1d151e3789c2cf95cab2780a32b2feb0206797440ac6040165daa2407b8af55",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "d23b77c971fdb2138bf768bf276f9290cef8137d020fe22f356ea14dbf9d718f",
+      "loaded_candidate_skills": [
+        "ludis-continuum",
+        "nova"
+      ],
+      "public_candidate_stage": {
+        "file_count": 481,
+        "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": null
+      },
+      "valid": true
+    },
+    {
+      "scenario": "mind-decision",
+      "analysis": "verification/live-mind-decision-analysis.json",
+      "analysis_sha256": "ccb507ff7716b11e2b36575d28941fc1b9d2f2396a823db9b416c40d23537b3b",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "3de182c1967812cd5863214447e54c7af8278038ca58498b75e44c3c82725986",
+      "loaded_candidate_skills": [
+        "augment-of-mind",
+        "decision-intelligence",
+        "deliberative-intelligence",
+        "epistemic-regulation",
+        "kairos",
+        "measurement-intelligence",
+        "prosocial-influence"
+      ],
+      "public_candidate_stage": {
+        "file_count": 481,
+        "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": null
+      },
+      "valid": true
+    },
+    {
+      "scenario": "agentic-orientation",
+      "analysis": "verification/live-agentic-orientation-analysis.json",
+      "analysis_sha256": "c4aa05248fe1324d0e9687636dbee478e6b97a0c9f9faa185015f430d687096e",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "68cc6f72e92521f1dc8c7bbb2f10a9d99630dafe32a666fd069c06e2d133ab13",
+      "loaded_candidate_skills": [
+        "agentic-coding",
+        "nova"
+      ],
+      "public_candidate_stage": {
+        "file_count": 481,
+        "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": null
+      },
+      "valid": true
+    },
+    {
+      "scenario": "testforge-review",
+      "analysis": "verification/live-testforge-review-analysis.json",
+      "analysis_sha256": "d6b7ef5a0d2c090ec2cef304478c2700b6eb56442662f317b29e29f5bc870814",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "ed866722229c1792ddfb5b265a47fba5175de25455fd76dc924fe1cd5e1a479c",
+      "loaded_candidate_skills": [
+        "software-verification",
+        "verification-reviewer"
+      ],
+      "public_candidate_stage": {
+        "file_count": 513,
+        "tree_sha256": "7cf4d086b3becfa9ac17a6f4203fb726496857ff1a9f3dc686805388d75e1a68",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": {
+          "commit_sha": "2b083d3601f2cba3ed056bb91e15c2902bd99839",
+          "tree_sha": "a0e0976f51c5de5d232ac1caed62c4cdd0eee2e9",
+          "status": "clean"
+        }
+      },
+      "valid": true
+    },
+    {
+      "scenario": "professional-brief",
+      "analysis": "verification/live-professional-brief-analysis.json",
+      "analysis_sha256": "7a4a24dccfd903920c9c9bd3f4c377c8c6c4b9206cf9d8cd2803989dfbb42f54",
+      "model": "gpt-5.6-sol",
+      "session_id_sha256": "e9d0ec2699edda36ac7367ac9128ddcb644f6e95fd964aea42674b6c99dc69f2",
+      "loaded_candidate_skills": [
+        "nova"
+      ],
+      "public_candidate_stage": {
+        "file_count": 481,
+        "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+        "plugin_tree_sha256": {
+          "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+          "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+        },
+        "privacy_scan": "PASS",
+        "git_binding": null
+      },
+      "valid": true
+    }
+  ],
+  "valid": true,
+  "errors": [],
+  "authority": "Executed only after explicit user approval for OpenAI GPT-5.6 to read the mechanically allowlisted, sanitized, public-intended contest candidate and bounded scenario prompts.",
+  "boundary": "Successful scenarios prove only the named clean-host executions; publication, rights, and submission remain separate human/external facts."
+}

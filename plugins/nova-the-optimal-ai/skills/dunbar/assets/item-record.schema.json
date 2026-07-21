@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.local/dunbar/item-record.schema.json",
+  "title": "Dunbar person item input",
+  "type": "object",
+  "required": ["person", "category", "text"],
+  "properties": {
+    "item_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,159}$"},
+    "person": {"type": "string", "minLength": 1},
+    "category": {"enum": ["identity", "relationship", "preference", "project", "commitment", "open_loop", "event", "interaction", "context", "biography", "contact", "inference", "correction"]},
+    "text": {"type": "string", "minLength": 1},
+    "status": {"enum": ["active", "disputed", "superseded", "expired", "retracted"]},
+    "evidence_state": {"enum": ["verified", "observed", "reported", "inferred", "unknown", "disputed"]},
+    "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "importance": {"type": "integer", "minimum": 0, "maximum": 100},
+    "sensitivity": {"enum": ["public", "internal", "private", "restricted"]},
+    "effective_at": {"type": ["string", "null"]},
+    "expires_at": {"type": ["string", "null"]},
+    "tags": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "metadata": {"type": "object"},
+    "source": {"type": "object"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0",
+  "case_id": "PL-20260721-001",
+  "status": "ready_with_external_gates",
+  "stage": "Production handoff",
+  "channel_constitution": {
+    "channel_name": "Collaborative Dynamics Build Week entry",
+    "audience_segments": [
+      "Contest judges deciding whether to install and try Nova plus MIND",
+      "Technically curious evaluators who need a bounded evidence trail"
+    ],
+    "voice": "Playful, clear, evidence-governed Nova; pith before explanation.",
+    "visual_language": [
+      "Captured product outputs",
+      "Readable command cards",
+      "Canonical Collaborative Dynamics cyan/navy/mist/near-white palette",
+      "Minimal functional emphasis"
+    ],
+    "values": [
+      "Try the products rather than trust a sales reel",
+      "Evidence boundaries",
+      "Human product and publication authority",
+      "No copyrighted third-party media"
+    ],
+    "privacy_stance": "Crop or blur local paths, account/session data, unrelated plugins, notifications, and private checkout material.",
+    "production_constraints": [
+      "2:45–2:55 total duration",
+      "322 spoken words",
+      "Use only current captured outputs for claimed runtime behavior",
+      "No final-render, upload, public-repository, portability, Windows 11, or independent-reviewer claim"
+    ],
+    "accessibility_practices": [
+      "Captions match final narration",
+      "Readable high-contrast command cards",
+      "Do not communicate material claims through color alone"
+    ],
+    "verified_platform_assumptions": []
+  },
+  "case_brief": {
+    "working_title": "Don’t Judge Nova From This Video. Install Her.",
+    "objective": "Make judges install both plugins and begin the Nova tour, using the video as evidence-bounded invitation rather than a substitute for trying the products.",
+    "viewer_job": "Decide quickly whether this is worth a fresh-task install and first hands-on prompt.",
+    "selected_angle": "Open on the captured Mara Vey and Orison result, move immediately to the exact install path, and show coordinated agency under delight, decision, repository orientation, verification, and artifact-production pressure.",
+    "thesis": "Nova + MIND earns trust by giving a judge a fast first experience and by preserving the boundaries of what each captured result actually proves.",
+    "format": "2:50 narrated product-install invitation with captured outputs and command cards.",
+    "constraints": [
+      "No additional TestForge review run",
+      "No upload or submission before complete human audiovisual viewing",
+      "Final viewing, rights, and publication remain stunspot's authority",
+      "The production manifest may not contain a repository URL placeholder"
+    ],
+    "rejected_angles": [
+      "Feature-tour montage: rejected because it would ask judges to trust coverage instead of install and try.",
+      "Final-release victory lap: rejected because publication and submission remain human/external states.",
+      "Portability pitch: rejected because cross-host claims are outside the captured evidence."
+    ]
+  },
+  "evidence_ledger": [
+    {
+      "id": "E-01",
+      "kind": "observation",
+      "claim": "The exact local marketplace commands and fresh-task tour prompt are documented in the repository judge path.",
+      "source": "START-HERE.md",
+      "recorded_at": "2026-07-21"
+    },
+    {
+      "id": "E-02",
+      "kind": "observation",
+      "claim": "A clean-host authenticated GPT-5.6 Ludis scenario produced Mara Vey, the erased island Orison, two consequential relationships, a dangerous truth, and an opening choice.",
+      "source": "verification/live-ludis-character-analysis.json",
+      "recorded_at": "2026-07-21T18:15:06.864740+00:00"
+    },
+    {
+      "id": "E-03",
+      "kind": "observation",
+      "claim": "A clean-host authenticated GPT-5.6 MIND scenario recommended a quieter proof-centered demo and named a decisive uncertainty.",
+      "source": "verification/live-mind-decision-analysis.json",
+      "recorded_at": "2026-07-21T17:43:50.497203+00:00"
+    },
+    {
+      "id": "E-04",
+      "kind": "observation",
+      "claim": "A clean-host authenticated GPT-5.6 Agentic Coding scenario identified absent Git metadata, named a validation command, and preserved its read-only boundary.",
+      "source": "verification/live-agentic-orientation-analysis.json",
+      "recorded_at": "2026-07-21T17:44:46.490100+00:00"
+    },
+    {
+      "id": "E-05",
+      "kind": "observation",
+      "claim": "The final clean-host authenticated GPT-5.6 TestForge review returned REVIEW_PASS_WITH_CONDITIONS for the package's evidence-bounded decision, while explicitly withholding release-readiness approval.",
+      "source": "verification/live-testforge-review-analysis.json",
+      "recorded_at": "2026-07-21T18:55:28.450670+00:00"
+    },
+    {
+      "id": "E-06",
+      "kind": "observation",
+      "claim": "A clean-host authenticated GPT-5.6 Nova tour scenario offered four routes without requesting personal information.",
+      "source": "verification/live-tour-analysis.json",
+      "recorded_at": "2026-07-21T17:40:41.171469+00:00"
+    },
+    {
+      "id": "E-07",
+      "kind": "supplied_fact",
+      "claim": "Nova coordinated the video build through MIND while stunspot retained intent, product judgment, rights, final viewing, and publication authority.",
+      "source": "Authorized task brief",
+      "recorded_at": "2026-07-21"
+    },
+    {
+      "id": "E-08",
+      "kind": "unknown",
+      "claim": "A public repository URL, final rendered cut, public upload, and publication decision are not observed in the current case.",
+      "source": "Repository inspection and task boundary",
+      "recorded_at": "2026-07-21"
+    }
+  ],
+  "promise_contract": {
+    "viewer": "A contest judge who can install both Codex plugins from the checkout and wants fast evidence that trying them is worthwhile.",
+    "tension": "Is this another polished feature tour, or a product worth installing to test on real work?",
+    "image": "Mara Vey's captured Orison choice beside an immediate, readable three-command install path.",
+    "title_logic": "An earned output creates curiosity; the title resolves it by promising an install-first, evidence-bounded trial rather than a feature dump.",
+    "opening_receipt": "The first screen is a captured clean-host Ludis output with a visible playable premise and choice, followed within seventeen seconds by exact install commands.",
+    "payoff": "The viewer sees concrete, bounded examples of play, decision support, repository orientation, and skeptical verification, then gets a direct instruction to install both plugins and take Nova's tour.",
+    "required_captures": [
+      "Captured Mara Vey and Orison Ludis output and opening choice",
+      "Exact three-command installation card and fresh-task tour prompt",
+      "Captured Nova four-route tour response",
+      "Captured MIND proof-centered decision and reversal condition",
+      "Captured Agentic Coding read-only orientation boundary",
+      "Captured TestForge REVIEW_PASS_WITH_CONDITIONS evidence review and explicit non-readiness boundary",
+      "Accountable-artifact production chain with a separate human authority gate"
+    ],
+    "misunderstanding_risk": "Viewers may mistake one captured scenario for universal performance or mistake a build plan for a published final video.",
+    "integrity_ruling": "ready for production handoff with external gates: the script and shot plan are evidence-bounded; the verified public URL, final render, stunspot's full viewing, rights confirmation, upload, and publication decision remain outstanding."
+  },
+  "build_artifacts": {
+    "hook": "Meet Mara Vey, Royal Cartographer. Orison was erased from every map; now its bells ring beneath dry fields. Don’t judge Nova from this video—install her.",
+    "momentum_map": [
+      "Earned Ludis output",
+      "Immediate install path",
+      "Hesitant-user welcome",
+      "Decision evidence",
+      "Repository orientation boundary",
+      "Skeptical TestForge finding",
+      "Nova-owned production chain",
+      "Human authority and CTA"
+    ],
+    "script_path": "demo/VIDEO-SCRIPT.md",
+    "storyboard_path": "demo/SHOT-LIST.md",
+    "capture_registry_path": "demo/SHOT-LIST.md",
+    "production_plan_path": "demo/SHOT-LIST.md"
+  },
+  "decision_experiment_log": [],
+  "outcome_layer": {
+    "observation_window": "",
+    "metrics": [],
+    "observations": [],
+    "inferences": [],
+    "hypotheses": [],
+    "confounders": []
+  },
+  "memory_promotion": {
+    "candidate_learning": "",
+    "repeated_signals": 0,
+    "context_bounds": [],
+    "disposition": "do_not_promote",
+    "rationale": "No post-release audience evidence exists; do not turn this one bounded production case into channel doctrine."
+  },
+  "next_action": "Publish and verify the public repository URL, then hand the frozen script and shot list to the bounded production pipeline; return the verified MP4 and SRT for Stun's complete viewing before upload."
+}

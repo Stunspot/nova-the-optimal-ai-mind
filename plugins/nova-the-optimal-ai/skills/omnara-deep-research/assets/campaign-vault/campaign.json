@@ -1,0 +1,33 @@
+{
+  "format": "omnara-research-campaign/v1",
+  "title": "Untitled research campaign",
+  "canonical_inquiry": "Replace with the user's verbatim inquiry.",
+  "tier": "deep",
+  "phase": "framing",
+  "status": "active",
+  "created_at": "UNSET",
+  "updated_at": "UNSET",
+  "budgets": {
+    "max_inspected_sources": 350,
+    "max_deeply_read_sources": 120,
+    "max_queries": 120,
+    "max_tool_calls": 500,
+    "max_paid_usd": null
+  },
+  "counters": {
+    "queries": 0,
+    "discovered": 0,
+    "inspected": 0,
+    "opened": 0,
+    "deeply_read": 0,
+    "excluded": 0,
+    "duplicate": 0,
+    "inaccessible": 0,
+    "cited": 0
+  },
+  "active_loci": [],
+  "blockers": [],
+  "routes": [],
+  "last_verified_artifact": null,
+  "resume_point": "Complete the research brief and coverage matrix."
+}

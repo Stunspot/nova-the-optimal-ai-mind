@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/episode-v1.json",
+  "title": "Continuity Episode",
+  "type": "object",
+  "required": ["id", "type", "recorded_at", "valid_from", "scope", "source", "content", "sensitivity", "retention"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^EP-[A-Za-z0-9-]+$"},
+    "type": {"enum": ["message", "assertion", "decision", "permission", "commitment", "correction", "tool_action", "tool_result", "outcome", "import"]},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "valid_from": {"type": "string", "format": "date-time"},
+    "valid_to": {"type": ["string", "null"], "format": "date-time"},
+    "scope": {"$ref": "state-record.schema.json#/$defs/scope"},
+    "source": {
+      "type": "object",
+      "required": ["kind", "authority"],
+      "properties": {
+        "kind": {"enum": ["user", "agent", "tool", "file", "import", "system"]},
+        "locator": {"type": ["string", "null"]},
+        "authority": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "content": {"type": "string", "minLength": 1},
+    "sensitivity": {"enum": ["ordinary", "limited", "sensitive", "restricted"]},
+    "retention": {"type": "string"},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "additionalProperties": false
+}

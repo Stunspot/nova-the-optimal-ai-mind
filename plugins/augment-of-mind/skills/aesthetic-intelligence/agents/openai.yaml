@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aesthetic Intelligence"
+  short_description: "🎨 Aesthetic fit and conceptual bearings."
+  default_prompt: "Use $aesthetic-intelligence to read this artifact's aesthetic character, fit, and nearest conceptual bearings."

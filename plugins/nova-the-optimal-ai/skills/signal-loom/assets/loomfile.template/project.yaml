@@ -1,0 +1,15 @@
+{
+  "loomfile_version": "0.1.0",
+  "project_id": "REPLACE_ME",
+  "title": "Untitled visual story",
+  "created_at": null,
+  "updated_at": null,
+  "stage": "intake",
+  "authority_status": "draft",
+  "publication_status": "manual_only",
+  "audience": "",
+  "intended_change": "",
+  "requested_outputs": ["web"],
+  "constraints": [],
+  "unresolved": []
+}

@@ -1,0 +1,47 @@
+{
+  "format": "cd-agent-striving-state/v1",
+  "pursuit_id": "PURSUIT-REPLACE-ME",
+  "objective": {
+    "statement": "State the authorized objective.",
+    "source_authority": "user",
+    "source_refs": []
+  },
+  "world_change": "Describe what becomes observably true.",
+  "acceptance_criteria": [
+    "Name evidence that would establish attainment."
+  ],
+  "status": "active",
+  "strategy": {
+    "current_hypothesis": "Explain why the current route should work.",
+    "last_revision": null
+  },
+  "progress": {
+    "verified_outcomes": [],
+    "evidence_refs": [],
+    "remaining": [
+      "Name the current unverified edge."
+    ],
+    "stall_count": 0
+  },
+  "next_move": {
+    "action": "Perform the smallest consequential allowed move.",
+    "rationale": "Explain the expected progress or information value.",
+    "authority_required": false
+  },
+  "budgets": {
+    "limits": {},
+    "used": {},
+    "exhausted_dimension": null
+  },
+  "authority": {
+    "allowed_actions": [],
+    "gated_actions": [],
+    "pending_gate": null
+  },
+  "completion_evidence": [],
+  "reentry": {
+    "condition": "State what permits continuation after interruption.",
+    "next_actor": "agent"
+  },
+  "updated_at": "2026-01-01T00:00:00Z"
+}

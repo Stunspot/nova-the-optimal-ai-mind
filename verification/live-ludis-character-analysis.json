@@ -1,0 +1,54 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "ludis-character",
+  "recorded_at": "2026-07-21T18:15:06.864740+00:00",
+  "raw_receipt_local_only": "verification/raw/live-ludis-character.json",
+  "raw_receipt_sha256": "d9342a3e79928dd407ebe9f22e2bbebfcfc27cb741a9aaa4db803e19caf20ecd",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "d23b77c971fdb2138bf768bf276f9290cef8137d020fe22f356ea14dbf9d718f",
+  "loaded_candidate_skills": [
+    "ludis-continuum",
+    "nova"
+  ],
+  "expected_skills": [
+    "ludis-continuum",
+    "nova"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [
+    "agentic-coding",
+    "augment-of-mind",
+    "corkboard",
+    "dunbar",
+    "omnara-deep-research",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "signal-loom",
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "## Mara Vey, Royal Cartographer\n\nMara learned mapmaking in the Crown’s western survey: measuring roads by stride, coastlines by triangulation, and frightened witnesses by the details they omitted. Her maps earned armies safe passage and merchants new fortunes. They also taught her that a border becomes real when enough people agree to bleed for the ink.\n\nTwelve years ago, the Crown sent Mara to chart an island absent from every official record. She found orchards, black-stone harbors, and bell towers whose chimes could be heard underwater. Its inhabitants called the island Orison. They claimed their bells kept “the buried country” asleep.\n\nMara’s sealed orders were simple: erase Orison. Not conquer it. Not evacuate it. Remove its name, alter shipping measurements, falsify old charts, and destroy every contradictory survey.\n\nShe obeyed—but first copied the island onto a square of sailcloth and entrusted it to someone she loved.\n\nWithin three years, ships stopped finding Orison. Survivors of the island began forgetting where they were born. Mara was appointed Royal Cartographer and given rooms above the palace observatory. She told herself she had saved the island from invasion.\n\nLast winter, bells began sounding beneath dry fields hundreds of miles inland. Wherever they ring, wells turn brackish, compasses point downward, and sleepers dream of waves breaking against their ceilings.\n\nMara recognizes the sequence of the bells. It is spelling her name.\n\n### Two Relationships\n\n**Prince-Regent Cael Ardin** commissioned the erasure when he was still an overlooked third son. He made Mara powerful and protected her from every inquiry. Now he wants the hidden sailcloth map, claiming Orison is returning beneath the capital. He fears the island—but Mara suspects he once promised its people something far worse than oblivion.\n\n**Senn Vale**, Mara’s former assistant and former lover, received the sailcloth copy. Senn vanished shortly afterward and is now rumored to guide refugees through roads that do not appear on any map. They still love Mara enough to send warnings, but hate her enough to make each warning hurt. Yesterday, Mara received Senn’s brass compass. Its needle spins whenever the underground bells ring.\n\n### Dangerous Truth\n\nMaps did not merely describe Orison; they anchored it to the world. By erasing the island from every chart, Mara did not hide it—she tore it loose.\n\nOrison has been drifting beneath the kingdom ever since, attaching itself piecemeal to remembered places. The bells are not an attack. They are warnings that the island’s foundations are about to surface through farms, towns, and perhaps the royal capital.\n\nMara alone possesses proof: her original calculations, written in invisible salt ink inside the binding of the Crown’s master atlas. Revealing them could save thousands, but it would expose the Crown’s crime and Mara’s part in it. Destroying them might preserve the realm’s stability while leaving everyone blind.\n\n### Opening Choice\n\nOn the morning of the midsummer coronation, bells sound beneath the palace.\n\nAt the same moment, Mara receives two messages:\n\n- The Prince-Regent orders her to bring the master atlas to the throne room and burn it before witnesses.\n- Senn waits beneath the city with Orison’s last bell-ringer, who can restore the island—but only if Mara publicly redraws it onto the kingdom’s ceremonial map.\n\nMara has time to answer only one summons before the streets begin to flood with seawater.",
+  "response_sha256": "157d11ef55ad32404c82b301a1cd7d8b2e94d21297f38ec651395eab943e23fb",
+  "response_raw_sha256": "157d11ef55ad32404c82b301a1cd7d8b2e94d21297f38ec651395eab943e23fb",
+  "response_normalization": [
+    "none"
+  ],
+  "public_candidate_stage": {
+    "file_count": 481,
+    "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-ludis-character-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

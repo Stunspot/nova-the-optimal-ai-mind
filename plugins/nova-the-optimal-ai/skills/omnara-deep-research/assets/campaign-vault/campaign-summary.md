@@ -1,0 +1,22 @@
+# Campaign Summary
+
+- Scope and evidence cutoff:
+- Current status:
+- Word count and estimated rendered pages:
+- Queries:
+- Discovered:
+- Inspected:
+- Opened:
+- Deeply read:
+- Excluded:
+- Duplicates:
+- Inaccessible:
+- Cited:
+- Coverage disposition:
+- Important contradictions:
+- Structural citation result:
+- Semantic entailment result:
+- Budget use:
+- Limitations:
+- Refresh triggers:
+- Exact resume point:

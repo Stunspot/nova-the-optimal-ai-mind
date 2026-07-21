@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ludis Continuum"
+  short_description: "🎲 Choice-shaped games and fiction."
+  default_prompt: "Use $ludis-continuum to begin a choice-driven game or forge a character, world, or campaign with consequences."

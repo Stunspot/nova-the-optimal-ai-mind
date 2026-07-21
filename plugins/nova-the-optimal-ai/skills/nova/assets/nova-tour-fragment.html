@@ -1,0 +1,384 @@
+<section id="nova-tour" aria-labelledby="nova-tour-heading">
+  <style>
+    #nova-tour {
+      --cd-cyan: #48cbe8;
+      --cd-navy: #193449;
+      --cd-mist: #ccdce4;
+      --cd-white: #fafafa;
+      --nova-line: color-mix(in srgb, var(--border) 72%, transparent);
+      --nova-soft: color-mix(in srgb, var(--viz-series-1) 13%, transparent);
+      --nova-softer: color-mix(in srgb, var(--viz-series-2) 10%, transparent);
+      display: grid;
+      gap: 1rem;
+      min-width: 0;
+      color: var(--foreground);
+    }
+    #nova-tour .nova-header { display: grid; gap: .45rem; }
+    #nova-tour .nova-brandbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .55rem 1rem;
+      padding-block-end: .65rem;
+      border-bottom: 1px solid var(--nova-line);
+    }
+    #nova-tour .nova-brandlockup {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      min-width: 0;
+      color: var(--foreground);
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    #nova-tour .nova-brandlogo {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      object-fit: contain;
+    }
+    #nova-tour .nova-maker {
+      color: var(--muted-foreground);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    #nova-tour .nova-kicker {
+      color: var(--muted-foreground);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    #nova-tour .nova-stage { display: grid; gap: .8rem; min-width: 0; }
+    #nova-tour .nova-constellation {
+      position: relative;
+      min-height: 310px;
+      overflow: hidden;
+    }
+    #nova-tour .nova-map { display: block; width: 100%; max-width: 100%; min-width: 0; height: auto; }
+    #nova-tour .nova-map .orbit,
+    #nova-tour .nova-map .spoke {
+      fill: none;
+      stroke: var(--nova-line);
+      stroke-width: 1.5;
+    }
+    #nova-tour .nova-map .spoke {
+      stroke-dasharray: 5 7;
+      transition: stroke .28s ease, stroke-width .28s ease, stroke-dasharray .28s ease;
+    }
+    #nova-tour .nova-map .node {
+      fill: var(--muted);
+      stroke: var(--border);
+      stroke-width: 1.5;
+      transition: fill .28s ease, stroke .28s ease, transform .28s ease;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    #nova-tour .nova-map .node-label {
+      fill: var(--foreground);
+      font-size: 13px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+    #nova-tour .nova-map .node-sub {
+      fill: var(--muted-foreground);
+      font-size: 10px;
+      text-anchor: middle;
+    }
+    #nova-tour .nova-map .core-halo {
+      fill: var(--nova-soft);
+      stroke: color-mix(in srgb, var(--viz-series-1) 65%, var(--border));
+      stroke-width: 1.5;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: nova-breathe 3.6s ease-in-out infinite;
+    }
+    #nova-tour .nova-map .core {
+      fill: var(--primary);
+      stroke: var(--ring);
+      stroke-width: 2;
+    }
+    #nova-tour .nova-map .core-label {
+      fill: var(--cd-navy);
+      font-size: 16px;
+      font-weight: 500;
+      text-anchor: middle;
+    }
+    #nova-tour .nova-map [data-route].is-active .node {
+      fill: color-mix(in srgb, var(--viz-series-1) 24%, var(--card));
+      stroke: var(--viz-series-1);
+      transform: scale(1.08);
+    }
+    #nova-tour .nova-map [data-route].is-active .spoke {
+      stroke: var(--viz-series-1);
+      stroke-width: 2.5;
+      stroke-dasharray: none;
+    }
+    #nova-tour .nova-route-copy {
+      min-height: 2.6em;
+      color: var(--foreground);
+      overflow-wrap: anywhere;
+    }
+    #nova-tour .nova-route-copy strong { font-weight: 500; }
+    #nova-tour .nova-proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .75rem;
+      align-items: stretch;
+    }
+    #nova-tour .nova-proof-step {
+      display: grid;
+      gap: .3rem;
+      align-content: start;
+      padding-block: .7rem;
+      border-top: 2px solid var(--border);
+    }
+    #nova-tour .nova-proof-step.is-active { border-color: var(--viz-series-1); }
+    #nova-tour .nova-control-map {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: .75rem;
+    }
+    #nova-tour .nova-control-item {
+      display: grid;
+      gap: .35rem;
+      padding-block: .7rem;
+      border-top: 2px solid var(--border);
+    }
+    #nova-tour .nova-number {
+      color: var(--muted-foreground);
+      font-variant-numeric: tabular-nums;
+    }
+    #nova-tour .nova-actions { justify-content: space-between; }
+    #nova-tour [hidden] { display: none !important; }
+    @keyframes nova-breathe {
+      0%, 100% { transform: scale(.96); opacity: .72; }
+      50% { transform: scale(1.05); opacity: 1; }
+    }
+    @media (max-width: 520px) {
+      #nova-tour .nova-brandbar { align-items: flex-start; }
+      #nova-tour .nova-constellation { min-height: 180px; }
+      #nova-tour .nova-proof,
+      #nova-tour .nova-control-map { grid-template-columns: 1fr; }
+      #nova-tour .nova-map .node-sub { display: none; }
+      #nova-tour .nova-map .node-label { font-size: 11px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #nova-tour .nova-map .core-halo { animation: none; }
+      #nova-tour .nova-map .node,
+      #nova-tour .nova-map .spoke { transition: none; }
+    }
+  </style>
+
+  <header class="nova-header">
+    <div class="nova-brandbar">
+      <div class="nova-brandlockup">
+        <img class="nova-brandlogo" src="collaborative-dynamics-logo.png" alt="">
+        <span>Nova · the Optimal AI</span>
+      </div>
+      <span class="nova-maker text-small">Collaborative Dynamics</span>
+    </div>
+    <div class="nova-kicker text-small">90-second tour · step <span id="nova-step-number">1</span> of 3</div>
+    <h1 id="nova-tour-heading">Bring me a mess.</h1>
+    <p id="nova-tour-lede" class="text-muted">You do not need to learn a command language or admire my collection of tiny internal hats.</p>
+  </header>
+
+  <div class="nova-stage" data-stage="routes">
+    <div class="nova-constellation">
+      <svg class="nova-map" viewBox="0 0 720 330" role="img" aria-labelledby="nova-map-title nova-map-desc">
+        <title id="nova-map-title">Nova routes a messy request through the smallest useful set of capabilities</title>
+        <desc id="nova-map-desc">Nova sits at the center. Decision, research, making, and play routes connect to different capability nodes and return one integrated result.</desc>
+        <ellipse class="orbit" cx="360" cy="165" rx="270" ry="128"></ellipse>
+
+        <g data-route="decide">
+          <line class="spoke" x1="360" y1="165" x2="148" y2="76"></line>
+          <circle class="node" cx="148" cy="76" r="42"></circle>
+          <text class="node-label" x="148" y="73">THINK</text>
+          <text class="node-sub" x="148" y="90">map · decide</text>
+        </g>
+        <g data-route="research">
+          <line class="spoke" x1="360" y1="165" x2="572" y2="76"></line>
+          <circle class="node" cx="572" cy="76" r="42"></circle>
+          <text class="node-label" x="572" y="73">RESEARCH</text>
+          <text class="node-sub" x="572" y="90">source · retrieve</text>
+        </g>
+        <g data-route="make">
+          <line class="spoke" x1="360" y1="165" x2="572" y2="254"></line>
+          <circle class="node" cx="572" cy="254" r="42"></circle>
+          <text class="node-label" x="572" y="251">MAKE</text>
+          <text class="node-sub" x="572" y="268">synthesize · shape</text>
+        </g>
+        <g data-route="play">
+          <line class="spoke" x1="360" y1="165" x2="148" y2="254"></line>
+          <circle class="node" cx="148" cy="254" r="42"></circle>
+          <text class="node-label" x="148" y="251">PLAY</text>
+          <text class="node-sub" x="148" y="268">character · world</text>
+        </g>
+        <circle class="core-halo" cx="360" cy="165" r="76"></circle>
+        <circle class="core" cx="360" cy="165" r="58"></circle>
+        <text class="core-label" x="360" y="160">NOVA</text>
+        <text class="core-label" x="360" y="182">🌐‍💠</text>
+      </svg>
+    </div>
+
+    <div class="viz-controls" aria-label="Choose a sample route">
+      <button type="button" class="btn btn-primary" data-route-button="decide" aria-pressed="true">Untangle a decision</button>
+      <button type="button" class="btn" data-route-button="research" aria-pressed="false">Research something slippery</button>
+      <button type="button" class="btn" data-route-button="make" aria-pressed="false">Make something worth keeping</button>
+      <button type="button" class="btn" data-route-button="play" aria-pressed="false">Play — surprise me</button>
+    </div>
+
+    <p class="nova-route-copy" id="nova-route-copy" aria-live="polite"><strong>Sensemaking → decision → check.</strong> You get a recommendation and the condition that would change it.</p>
+    <div class="viz-row nova-actions">
+      <span class="text-small text-muted">No roster recital. One accountable result.</span>
+      <button type="button" class="btn btn-primary" data-next>Show me how you keep it honest</button>
+    </div>
+  </div>
+
+  <div class="nova-stage" data-stage="proof" hidden>
+    <div class="nova-proof" role="list" aria-label="Nova's evidence path">
+      <div class="nova-proof-step is-active" role="listitem">
+        <span class="nova-number text-small">01 · DIRECT FIRST</span>
+        <strong>Use the smallest capable move.</strong>
+        <span class="text-muted">Easy work stays easy.</span>
+      </div>
+      <div class="nova-proof-step is-active" role="listitem">
+        <span class="nova-number text-small">02 · SPECIALIZE WHEN EARNED</span>
+        <strong>Bring in the missing transformation.</strong>
+        <span class="text-muted">Research, visual craft, repository balance, MIND, or play—only when it changes the result.</span>
+      </div>
+      <div class="nova-proof-step is-active" role="listitem">
+        <span class="nova-number text-small">03 · PROVE THE CLAIM</span>
+        <strong>Evidence before swagger.</strong>
+        <span class="text-muted">TestForge is the backplane for software and release truth.</span>
+      </div>
+    </div>
+    <p class="nova-route-copy"><strong>Agentic Coding is balance, not a code cannon.</strong> It keeps me oriented in the repository that actually exists. TestForge makes “worked” pay rent.</p>
+    <div class="viz-row nova-actions">
+      <button type="button" class="btn btn-ghost" data-back>Back</button>
+      <button type="button" class="btn btn-primary" data-next>What about memory and control?</button>
+    </div>
+  </div>
+
+  <div class="nova-stage" data-stage="control" hidden>
+    <div class="nova-control-map" role="list" aria-label="Memory and action controls">
+      <div class="nova-control-item" role="listitem">
+        <span class="nova-number text-small">REMEMBER</span>
+        <strong>Deliberately.</strong>
+        <span class="text-muted">Pins and people memory are explicit. MIND continuity, when installed and active, checkpoints consequential mission state in host scope.</span>
+      </div>
+      <div class="nova-control-item" role="listitem">
+        <span class="nova-number text-small">ACT</span>
+        <strong>With authority.</strong>
+        <span class="text-muted">No quiet publishing, purchases, contact scraping, or consequential changes.</span>
+      </div>
+      <div class="nova-control-item" role="listitem">
+        <span class="nova-number text-small">PLAY</span>
+        <strong>Like the universe owes us a good evening.</strong>
+        <span class="text-muted">Games, characters, backstories, worlds, scenes—and zero preloaded campaign worlds.</span>
+      </div>
+    </div>
+    <label class="form-label" for="nova-starter">Your first prompt</label>
+    <textarea class="form-control" id="nova-starter" rows="3">I have a messy decision. Help me find the real criteria, recommend one move, and tell me what evidence would change your mind.</textarea>
+    <div class="viz-row nova-actions">
+      <button type="button" class="btn btn-ghost" data-back>Back</button>
+      <button type="button" class="btn btn-primary" id="nova-copy">Copy prompt</button>
+    </div>
+    <p class="text-small text-muted" id="nova-copy-status" aria-live="polite">Tour complete. What are we actually here to make true?</p>
+  </div>
+
+  <noscript>
+    <div class="card">
+      <strong>Nova works without this interaction.</strong>
+      <p>Bring a decision, a slippery question, a rough thing you want to make, or a game you want to play. Nova stays direct when she can, enlists specialists when they change the result, and keeps evidence attached to consequential claims.</p>
+      <p>Starter: “I have a messy decision. Find the real criteria, recommend one move, and tell me what would change your mind.”</p>
+    </div>
+  </noscript>
+
+  <script>
+    (() => {
+      const root = document.getElementById('nova-tour');
+      if (!root) return;
+
+      const routeCopy = {
+        decide: {
+          text: '<strong>Sensemaking → decision → check.</strong> You get a recommendation and the condition that would change it.',
+          prompt: 'I have a messy decision. Help me find the real criteria, recommend one move, and tell me what evidence would change your mind.'
+        },
+        research: {
+          text: '<strong>Research → retrieval → challenge.</strong> You get a sourced answer whose uncertainty has nowhere tasteful to hide.',
+          prompt: 'Research this slippery claim. Bound the question, use current sources, separate fact from inference, and show me what remains uncertain.'
+        },
+        make: {
+          text: '<strong>Synthesis → shape → check.</strong> You get something made for its audience, not a warm bucket of content oatmeal.',
+          prompt: 'I have a rough idea I want to make real. Find the intended audience and effect, shape a strong first artifact, and check whether it actually delivers.'
+        },
+        play: {
+          text: '<strong>Character → consequence → continuity.</strong> You make one evocative choice; the world answers back.',
+          prompt: 'Let\'s play. Give me one vivid opening situation and a consequential choice, then let the world respond to what I do.'
+        }
+      };
+
+      let selectedRoute = 'decide';
+      let stageIndex = 0;
+      const stages = [...root.querySelectorAll('[data-stage]')];
+      const heading = root.querySelector('#nova-tour-heading');
+      const lede = root.querySelector('#nova-tour-lede');
+      const stepNumber = root.querySelector('#nova-step-number');
+      const routeDetail = root.querySelector('#nova-route-copy');
+      const starter = root.querySelector('#nova-starter');
+      const copyStatus = root.querySelector('#nova-copy-status');
+      const stageText = [
+        ['Bring me a mess.', 'You do not need to learn a command language or admire my collection of tiny internal hats.'],
+        ['Smallest capable route. Strongest honest claim.', 'The machinery stays backstage. The evidence does not.'],
+        ['You remain in charge.', 'Memory has boundaries. Consequential action keeps its authority edge. Play is allowed to be glorious.']
+      ];
+
+      function setRoute(route) {
+        selectedRoute = route;
+        root.querySelectorAll('[data-route-button]').forEach((button) => {
+          const active = button.dataset.routeButton === route;
+          button.setAttribute('aria-pressed', String(active));
+          button.classList.toggle('btn-primary', active);
+        });
+        root.querySelectorAll('.nova-map [data-route]').forEach((group) => {
+          group.classList.toggle('is-active', group.dataset.route === route);
+        });
+        routeDetail.innerHTML = routeCopy[route].text;
+        starter.value = routeCopy[route].prompt;
+      }
+
+      function showStage(index) {
+        stageIndex = Math.max(0, Math.min(index, stages.length - 1));
+        stages.forEach((stage, current) => { stage.hidden = current !== stageIndex; });
+        stepNumber.textContent = String(stageIndex + 1);
+        heading.textContent = stageText[stageIndex][0];
+        lede.textContent = stageText[stageIndex][1];
+        const focusTarget = stages[stageIndex].querySelector('button, textarea');
+        if (focusTarget) focusTarget.focus({ preventScroll: true });
+      }
+
+      root.querySelectorAll('[data-route-button]').forEach((button) => {
+        button.addEventListener('click', () => setRoute(button.dataset.routeButton));
+      });
+      root.querySelectorAll('[data-next]').forEach((button) => {
+        button.addEventListener('click', () => showStage(stageIndex + 1));
+      });
+      root.querySelectorAll('[data-back]').forEach((button) => {
+        button.addEventListener('click', () => showStage(stageIndex - 1));
+      });
+      root.querySelector('#nova-copy').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(starter.value);
+          copyStatus.textContent = 'Copied. Paste it into Codex—and let\'s make something true.';
+        } catch (_error) {
+          starter.focus();
+          starter.select();
+          copyStatus.textContent = 'Selected. Copy it, paste it into Codex, and let\'s go.';
+        }
+      });
+
+      setRoute(selectedRoute);
+    })();
+  </script>
+</section>

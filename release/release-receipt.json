@@ -1,0 +1,2258 @@
+{
+  "archives": [
+    {
+      "archive": "release/augment-of-mind-1.0.0.zip",
+      "archive_bytes": 233695,
+      "archive_sha256": "a5b1224cafce295dd6a373a2687952cb95fe029df22e4c88461554928653b593",
+      "excluded_paths": [],
+      "member_count": 147,
+      "members": [
+        {
+          "bytes": 1468,
+          "path": "augment-of-mind/.codex-plugin/plugin.json",
+          "sha256": "cc14bf6a1bd8c32b9ade25fa7ba62ef5db5bdcd4543428ed7c7ec32b35a0e5a7"
+        },
+        {
+          "bytes": 3386,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/SKILL.md",
+          "sha256": "cccbc3735870b2c426410f901e9354734ace523d9aacdb9b34c0a52129b9695d"
+        },
+        {
+          "bytes": 250,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/agents/openai.yaml",
+          "sha256": "83215fb0cfbc5c69bcf6104fe8b1d2a3de258e8aa206f882ba759d58d3ccad32"
+        },
+        {
+          "bytes": 1098,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/assets/tastefield-map.template.md",
+          "sha256": "30b8ac24323e75c0abc1ebd1d78fd36bc2aebded6c31214343d97b9ee93f6c07"
+        },
+        {
+          "bytes": 7599,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/evals/core-transfer-cases.yaml",
+          "sha256": "68f7db161af9e7b4cb8d8183b451285f75bc7b03a078c3e1030247c711edcad8"
+        },
+        {
+          "bytes": 791,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/evals/eval-manifest.yaml",
+          "sha256": "2bc572c7ef670f1716c22bdec9dc16d1f44ae91c6cc816d56df3cf910ce9ae8f"
+        },
+        {
+          "bytes": 7557,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/references/aesthetic-intelligence-doctrine.md",
+          "sha256": "427eae3510fa1605f4d73bcf971887c9f7d7637fb970d44b0c20709d19350a6b"
+        },
+        {
+          "bytes": 3193,
+          "path": "augment-of-mind/skills/aesthetic-intelligence/references/source/tastefield-compass-canonical.md",
+          "sha256": "bf76e042af34592f940f2b1e56410a3f2fc44cc91e9893b46e89a7a52b22db4f"
+        },
+        {
+          "bytes": 4241,
+          "path": "augment-of-mind/skills/agent-dreaming/SKILL.md",
+          "sha256": "13064d78effc2f26f68a0d9bd838b13ad4956d0b327c16629a924f6681012775"
+        },
+        {
+          "bytes": 278,
+          "path": "augment-of-mind/skills/agent-dreaming/agents/openai.yaml",
+          "sha256": "4d755614ae4aa890f747066437c6dbfe6133375854944048cbf8cc426c3a46ce"
+        },
+        {
+          "bytes": 1652,
+          "path": "augment-of-mind/skills/agent-dreaming/assets/templates/dream-report.md",
+          "sha256": "e80f378246553e2f05297dab74624d905b40ba85b739827593c4a3638f123bbf"
+        },
+        {
+          "bytes": 694,
+          "path": "augment-of-mind/skills/agent-dreaming/assets/templates/waking-review.md",
+          "sha256": "2633eaeb9d718f7d75f6f146d685f8d34537977a0892be8d3922179f27e03a0c"
+        },
+        {
+          "bytes": 4297,
+          "path": "augment-of-mind/skills/agent-dreaming/references/dream-doctrine.md",
+          "sha256": "a3adb369c8c2ddd319fc16df3fe8a3d8d6a8a89fdea2776d344f14441dfb723f"
+        },
+        {
+          "bytes": 6919,
+          "path": "augment-of-mind/skills/agent-striving/SKILL.md",
+          "sha256": "c18c402a0038b41403e61f9885c8fd2e30b8ceca8c8aa9dfa1848eff34d5afdd"
+        },
+        {
+          "bytes": 317,
+          "path": "augment-of-mind/skills/agent-striving/agents/openai.yaml",
+          "sha256": "ed237c523cfb25ce44dba1e9155424a9970a5c061af7490e09c09c28b7ca3479"
+        },
+        {
+          "bytes": 3743,
+          "path": "augment-of-mind/skills/agent-striving/assets/pursuit-state.schema.json",
+          "sha256": "26aff997c55189e8f08e7b7f006c0187e87c1cd5ff1c38afb13afe17dce3631a"
+        },
+        {
+          "bytes": 1225,
+          "path": "augment-of-mind/skills/agent-striving/assets/pursuit-state.template.json",
+          "sha256": "167224c342eebf26cabaf683164dec0e834656671d87e70fde8b4ff94d5a3b70"
+        },
+        {
+          "bytes": 10363,
+          "path": "augment-of-mind/skills/agent-striving/evals/core-transfer-cases.yaml",
+          "sha256": "5805edb01a18e9cf3d9705c4c2ac319330b26524640dacf2b5da4f2d56eb60ef"
+        },
+        {
+          "bytes": 887,
+          "path": "augment-of-mind/skills/agent-striving/evals/eval-manifest.yaml",
+          "sha256": "ac9e554c364d3929749fe4b92c64962be3aa34e1cfe400318e4868d7004e1e0b"
+        },
+        {
+          "bytes": 1310,
+          "path": "augment-of-mind/skills/agent-striving/examples/interrupted-recovery.md",
+          "sha256": "df6d815b1065c27366eb8e90e1c9e2fb451bc40a315a1265e349ba87d9020fc7"
+        },
+        {
+          "bytes": 4168,
+          "path": "augment-of-mind/skills/agent-striving/references/conation-and-goal-custody.md",
+          "sha256": "b02f1661514d334c4f5d510669672593ea52db43c94b7efa52961ddde8a8813f"
+        },
+        {
+          "bytes": 2193,
+          "path": "augment-of-mind/skills/agent-striving/references/degraded-operation.md",
+          "sha256": "f230b583aab4541390964a212b7790dd43790c900efb92348c4a9a8da8d58ae0"
+        },
+        {
+          "bytes": 5753,
+          "path": "augment-of-mind/skills/agent-striving/references/pursuit-loop.md",
+          "sha256": "025d8cd81cfc700671428c70fcf8bc5b986aaffd9393ffa3c33f76519b3132e2"
+        },
+        {
+          "bytes": 2649,
+          "path": "augment-of-mind/skills/agent-striving/scripts/tests/test_validate_pursuit_state.py",
+          "sha256": "3ac33bace150e4f58e4e2b408e8ed432c0cf274b31c2bd900e0a6480b74d1d8e"
+        },
+        {
+          "bytes": 8941,
+          "path": "augment-of-mind/skills/agent-striving/scripts/validate_pursuit_state.py",
+          "sha256": "bc9fd92b6a7a32f20bd8b713ca5a6e8b7600f9189ca6c0a5e13746f87dffbc3b"
+        },
+        {
+          "bytes": 5058,
+          "path": "augment-of-mind/skills/augment-of-mind/SKILL.md",
+          "sha256": "073fc2494dc6a6f0b9d145d3012dc53238e40b3bdf9c088778e0ec5b38cc0e15"
+        },
+        {
+          "bytes": 404,
+          "path": "augment-of-mind/skills/augment-of-mind/agents/openai.yaml",
+          "sha256": "dcbca0315ee057f30350085ce8e9a0bf606a0bb50bcc5d2781e030fafec984b6"
+        },
+        {
+          "bytes": 30392,
+          "path": "augment-of-mind/skills/augment-of-mind/assets/collaborative-dynamics-logo.png",
+          "sha256": "85725355c5c7ac1516a156d3cc37ca74e1dee314418bc300252d8436d0ce2ce6"
+        },
+        {
+          "bytes": 4195,
+          "path": "augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/faculty-return.schema.json",
+          "sha256": "0eeaf7cf862befaa4d3f180e47c4c0cb902f5741919249c61cb09fd2c23d3648"
+        },
+        {
+          "bytes": 825,
+          "path": "augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/faculty-return.template.json",
+          "sha256": "28d5c055de13442df46c1db9c583116e9a3cbdf1cb4960a32c8da9f25acac2de"
+        },
+        {
+          "bytes": 3777,
+          "path": "augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/mission-capsule.schema.json",
+          "sha256": "a8e61e16a38b2ae858af55e06e8cf73add91ca44358847a52b37930c33f29e1e"
+        },
+        {
+          "bytes": 1240,
+          "path": "augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/mission-capsule.template.json",
+          "sha256": "2f8e3a46b5b3eebd95db6ac37558a0c3801dd3f545de10d59bc30380226bfb32"
+        },
+        {
+          "bytes": 3726,
+          "path": "augment-of-mind/skills/augment-of-mind/assets/integrated-capability-fingerprint.json",
+          "sha256": "54b9de07dc28d8db3d729bdeed792ed5944f7f07e8ac0c59a28705fb0b8dba37"
+        },
+        {
+          "bytes": 859,
+          "path": "augment-of-mind/skills/augment-of-mind/evals/eval-manifest.yaml",
+          "sha256": "a345ba38dc0d55b1bdb651999b2a92dcc0483d8faffc34701cb2329b9da94c55"
+        },
+        {
+          "bytes": 13396,
+          "path": "augment-of-mind/skills/augment-of-mind/evals/faculty-runtime-cases.yaml",
+          "sha256": "3abd5a016dbdb2a177ea7ed6ef2b102fff48aa2688afa8b163493b67321aae73"
+        },
+        {
+          "bytes": 7958,
+          "path": "augment-of-mind/skills/augment-of-mind/references/faculty-runtime/faculty-registry.json",
+          "sha256": "f4b0c4cc41404bb2847455eedadac4e71348c7fa3a61468a0b889b7a66dbce8c"
+        },
+        {
+          "bytes": 7337,
+          "path": "augment-of-mind/skills/augment-of-mind/references/faculty-runtime/runtime.md",
+          "sha256": "6636f51c88aabbb27714b4c462fd1cafc88b5e05e091391109843a4a7ec7c776"
+        },
+        {
+          "bytes": 3561,
+          "path": "augment-of-mind/skills/capability-conductor/SKILL.md",
+          "sha256": "e179fa8766384e475b24b5747e74469ab1aec7abe84a01c6e718c1b77b0716f1"
+        },
+        {
+          "bytes": 280,
+          "path": "augment-of-mind/skills/capability-conductor/agents/openai.yaml",
+          "sha256": "a9dafa48bf68772284f7be4fa3ccde733baf4afcf30b080c1785dd6b2cf0897b"
+        },
+        {
+          "bytes": 439,
+          "path": "augment-of-mind/skills/capability-conductor/assets/capability-registry.template.yaml",
+          "sha256": "98ef5be8192059c183ede5032d092a32985b8de94c990071576c1020ad537343"
+        },
+        {
+          "bytes": 550,
+          "path": "augment-of-mind/skills/capability-conductor/assets/mission-ledger.template.md",
+          "sha256": "6a6de4435f235bba912abf43474504c05600c8e355f989adfe703ac2ae26e44d"
+        },
+        {
+          "bytes": 3491,
+          "path": "augment-of-mind/skills/capability-conductor/evals/core-transfer-cases.yaml",
+          "sha256": "250f68040c0e809b55a840fcf61b956533a5904b2cde1cac614e12fa11cfb4da"
+        },
+        {
+          "bytes": 499,
+          "path": "augment-of-mind/skills/capability-conductor/evals/eval-manifest.yaml",
+          "sha256": "0ca27727b3337d108179abb3ecff50d62c480ad8fb6dcb121798c1cf07c46d81"
+        },
+        {
+          "bytes": 2643,
+          "path": "augment-of-mind/skills/capability-conductor/references/routing-doctrine.md",
+          "sha256": "c13a56123b941aec5a6ea9bdfb941555cd28cec05c27b9bae6146c83fbc76f3b"
+        },
+        {
+          "bytes": 4309,
+          "path": "augment-of-mind/skills/cognitive-continuity/SKILL.md",
+          "sha256": "ca75bee7e2f01d214e49ebe9fda45eef6a099aa9240446b1281b8add32471f6d"
+        },
+        {
+          "bytes": 883,
+          "path": "augment-of-mind/skills/cognitive-continuity/adapters/claude-code.md",
+          "sha256": "0ec097542d4d26c810a591bf55252f4aafb5255acd3a39cb27e1721fc5d36b9e"
+        },
+        {
+          "bytes": 1190,
+          "path": "augment-of-mind/skills/cognitive-continuity/adapters/codex.md",
+          "sha256": "e77025419fae1a6b29b96781f201a3a4bfadd13832cbfee3f41d99cdd7d19af8"
+        },
+        {
+          "bytes": 264,
+          "path": "augment-of-mind/skills/cognitive-continuity/agents/openai.yaml",
+          "sha256": "549bc7141f558d3e20384c4fcd6d51f5ddcd95736b8cd92ba7166f50f2280df0"
+        },
+        {
+          "bytes": 937,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/context-request.schema.json",
+          "sha256": "13087a1decfff366174699d9dfac03955e821ce74a0b8f20d63354f23d53acfd"
+        },
+        {
+          "bytes": 1676,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/continuity-manifest.schema.json",
+          "sha256": "1a6d131fb87385b125cc13772d61823fd546c2a4a75e9e1a19b55496b4271391"
+        },
+        {
+          "bytes": 2591,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/dream-report.schema.json",
+          "sha256": "20bb3e52521722b06ffc111f2ae54680c69d5e58e5dd794280a75f5e72808343"
+        },
+        {
+          "bytes": 1428,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/episode.schema.json",
+          "sha256": "6a2b58438952d80b9437fa8db793d7f445e5e412cf54a1d000f856d40c9007f6"
+        },
+        {
+          "bytes": 981,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/export.schema.json",
+          "sha256": "1733259648923edf3f7821bdf8f47b590e39bac1c81ff603b234e92dd1161a4e"
+        },
+        {
+          "bytes": 1256,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/proposal.schema.json",
+          "sha256": "81fdcecbdb79045682f0e961019ffdb4aad367d288abbf22940e8478b849e53a"
+        },
+        {
+          "bytes": 2590,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/schemas/state-record.schema.json",
+          "sha256": "5f87801c13ae6d3c52556bc488ce62a1b8ab8a28bbe7a2107d205e15fc4b8a43"
+        },
+        {
+          "bytes": 970,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/capability-report.md",
+          "sha256": "1ecb4954797061f51e7bb1648859dc797b620d708fa81e7fa18df70865e6833b"
+        },
+        {
+          "bytes": 882,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/compiled-context.md",
+          "sha256": "f94b007542a84ecb34fb79c401b0b2adc8e2fa17ba9cb919dcd2b04755ba4a83"
+        },
+        {
+          "bytes": 814,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/consolidation-report.md",
+          "sha256": "bb39f14f10cb8c0fcc94ff16808fe5138415cb42037d44df0b2c37746d859a9f"
+        },
+        {
+          "bytes": 331,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/context-request.json",
+          "sha256": "5bf12c47ffbc69ca7caf71a644ec9e7e0ffca7e45affee1ef045491e514242f4"
+        },
+        {
+          "bytes": 624,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/continuity-manifest.json",
+          "sha256": "d90f5c23ef274d3286f927220d2be761f0f71edee774fdb2db4d5ff3111ebb72"
+        },
+        {
+          "bytes": 664,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/contradiction-review.md",
+          "sha256": "d1b1126ff19c20a854f9bd671a23c688f47ee779505dc7e44e090f0d9929d257"
+        },
+        {
+          "bytes": 1110,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/deletion-plan.md",
+          "sha256": "5665bfdb76068c2fce96af7d679a32861a00da025119447eeacab986c2c2b903"
+        },
+        {
+          "bytes": 1652,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/dream-report.md",
+          "sha256": "e80f378246553e2f05297dab74624d905b40ba85b739827593c4a3638f123bbf"
+        },
+        {
+          "bytes": 694,
+          "path": "augment-of-mind/skills/cognitive-continuity/assets/templates/waking-review.md",
+          "sha256": "2633eaeb9d718f7d75f6f146d685f8d34537977a0892be8d3922179f27e03a0c"
+        },
+        {
+          "bytes": 913,
+          "path": "augment-of-mind/skills/cognitive-continuity/examples/correction-and-freshness.md",
+          "sha256": "191f9b8212f0beae7ad6c1cea52630b95666223be3a4e3cc3f6794690c6590f0"
+        },
+        {
+          "bytes": 972,
+          "path": "augment-of-mind/skills/cognitive-continuity/examples/deletion.md",
+          "sha256": "f2eace751f071d74b9537de1eff74cf32913bbf11427ecf83e51159dde24772c"
+        },
+        {
+          "bytes": 1079,
+          "path": "augment-of-mind/skills/cognitive-continuity/examples/dream-incubation.md",
+          "sha256": "3b8b8020cb238b51d0bd525f26ecae9aa3b168d7a69027dc750f91ba605748ad"
+        },
+        {
+          "bytes": 813,
+          "path": "augment-of-mind/skills/cognitive-continuity/examples/permission-revocation.md",
+          "sha256": "4344715c5dc043fb5d28cb634478c017191d7b60d525df284f215c079d1d7165"
+        },
+        {
+          "bytes": 984,
+          "path": "augment-of-mind/skills/cognitive-continuity/examples/portable-transfer.md",
+          "sha256": "a722b685ea6280c6cccd2f5869038a03023c6d2c9bde8546a20384476596ce65"
+        },
+        {
+          "bytes": 1235,
+          "path": "augment-of-mind/skills/cognitive-continuity/examples/project-resumption.md",
+          "sha256": "914eb28e5dd9ee00bd331e4ff16b2e9fcc74abbf3f8a438e94b74c2386e59da8"
+        },
+        {
+          "bytes": 2740,
+          "path": "augment-of-mind/skills/cognitive-continuity/fallbacks/copy-paste-continuity.md",
+          "sha256": "4155c7944fa3fbef797237f70331be86a74551ee4fb6a5813229f8d6d4f0aa85"
+        },
+        {
+          "bytes": 1972,
+          "path": "augment-of-mind/skills/cognitive-continuity/personas/cognitive-ecologist-lyra-anstice.md",
+          "sha256": "0ad396bb0da2f1bb7ee21838cb9694b93675be33318bf6c947d481f88150b279"
+        },
+        {
+          "bytes": 2227,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/consolidation.md",
+          "sha256": "eb139aae8317f1b694b00f0d104ed6db180f81b079f5404ab1f96a6d7680ff57"
+        },
+        {
+          "bytes": 2008,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/context-compilation.md",
+          "sha256": "3865155c5fa27c79479c3a84fba0e73f3a1b69bfdf54ba1dd16d850423d54dbb"
+        },
+        {
+          "bytes": 2534,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/continuity-state-model.md",
+          "sha256": "289e4099fcd2783e7806f2bc0f1767f1c2e9d9fb8333d2e54eeebb7914f09e9c"
+        },
+        {
+          "bytes": 4297,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/dream-doctrine.md",
+          "sha256": "a3adb369c8c2ddd319fc16df3fe8a3d8d6a8a89fdea2776d344f14441dfb723f"
+        },
+        {
+          "bytes": 2704,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/evaluation-doctrine.md",
+          "sha256": "76a6eb274cd4a9341969604968422b86af300c7c1265d4b3126fcbe60a167e49"
+        },
+        {
+          "bytes": 2636,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/operating-method.md",
+          "sha256": "8173d9abe453cd7a17c701160377adbbf7aaf45fc96c6f9b08c54e1129feb701"
+        },
+        {
+          "bytes": 2088,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/portability-and-degraded-operation.md",
+          "sha256": "209811b51b43b15af14a9be261334a7f44cba8377b63e5a2196e31c0801df0af"
+        },
+        {
+          "bytes": 2498,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/privacy-correction-and-forgetting.md",
+          "sha256": "51c86eb0150e2f908eafdc39920aded69ff6f0eea80655365af813449deb90ea"
+        },
+        {
+          "bytes": 2054,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/procedural-learning-handoff.md",
+          "sha256": "5af8cc825222dbce0400a0a2b3155cb05bda6a5201331c8248243ab1fd670bdf"
+        },
+        {
+          "bytes": 2239,
+          "path": "augment-of-mind/skills/cognitive-continuity/references/source-time-and-authority.md",
+          "sha256": "9eaceede160a8aa471c7e36e50724de5dca65a975b03cbd5a08a2e3a7dfd4fd2"
+        },
+        {
+          "bytes": 1266,
+          "path": "augment-of-mind/skills/cognitive-continuity/scripts/README.md",
+          "sha256": "85a6a841ae2822a98327158a85609b53811a5e15d265962faac07251b3579650"
+        },
+        {
+          "bytes": 8781,
+          "path": "augment-of-mind/skills/cognitive-continuity/scripts/compile_context.py",
+          "sha256": "32e9cdda9b9361544f49ea43833968a8d9fba9d1e04c65edf7637086e8821617"
+        },
+        {
+          "bytes": 25080,
+          "path": "augment-of-mind/skills/cognitive-continuity/scripts/continuity_store.py",
+          "sha256": "e9cf9fae9e1fac745a6ac4fb7dd76f061ca16689c9d5076d7fab9bd4c02be02b"
+        },
+        {
+          "bytes": 11636,
+          "path": "augment-of-mind/skills/cognitive-continuity/scripts/tests/test_continuity.py",
+          "sha256": "c90d010158a70d2af347a9d84db16179dedd1c6a971b21b04c4b4be19d337add"
+        },
+        {
+          "bytes": 9137,
+          "path": "augment-of-mind/skills/cognitive-continuity/scripts/validate_continuity.py",
+          "sha256": "5ee570df03a4905f9e8379d7fb33ce08936f76045a4f61213a48dabe9330a7fe"
+        },
+        {
+          "bytes": 1954,
+          "path": "augment-of-mind/skills/creative-synthesis/SKILL.md",
+          "sha256": "3943fab1a55cf561ed7488a8d1df15933eee715d3b18b88ae3b7a932d78e73d8"
+        },
+        {
+          "bytes": 319,
+          "path": "augment-of-mind/skills/creative-synthesis/agents/openai.yaml",
+          "sha256": "f2bca9626bbfe493224676ad7e8480b684282b3dc53203ab3a22880de92edd3f"
+        },
+        {
+          "bytes": 1122,
+          "path": "augment-of-mind/skills/creative-synthesis/assets/concept-field.template.md",
+          "sha256": "900685d22a01d06b700410ce9eff7627ead1989038ac822968a6e38a261b8bef"
+        },
+        {
+          "bytes": 4600,
+          "path": "augment-of-mind/skills/creative-synthesis/evals/core-transfer-cases.yaml",
+          "sha256": "0a8c937fb48199f752d4f88aa077a102e4df49757e7a6e0909ec8c982987bd57"
+        },
+        {
+          "bytes": 650,
+          "path": "augment-of-mind/skills/creative-synthesis/evals/eval-manifest.yaml",
+          "sha256": "825b24cf319f5c1aadbcfd65bc69411ab056b636ff3d4b3855ca870e24974aba"
+        },
+        {
+          "bytes": 6373,
+          "path": "augment-of-mind/skills/creative-synthesis/references/creative-synthesis-doctrine.md",
+          "sha256": "16aaf4f33bd7195ded197d0326b8803153b8508cf5bd9a4652fe922ddac26a36"
+        },
+        {
+          "bytes": 2783,
+          "path": "augment-of-mind/skills/decision-intelligence/SKILL.md",
+          "sha256": "d931c2f80bf0ff2abf408c8d4f7d6577fb7474eaea18f7fbedeada4b3bf867dc"
+        },
+        {
+          "bytes": 332,
+          "path": "augment-of-mind/skills/decision-intelligence/agents/openai.yaml",
+          "sha256": "fb90c5396385e22db17dd6894118813f083e5131af2c411f9467591c8ebf7621"
+        },
+        {
+          "bytes": 1359,
+          "path": "augment-of-mind/skills/decision-intelligence/assets/decision-record.template.md",
+          "sha256": "35f5e131157d1184b0287ef29a8ee78cbec4374e698aadd57b7da85cae46506a"
+        },
+        {
+          "bytes": 4963,
+          "path": "augment-of-mind/skills/decision-intelligence/evals/core-transfer-cases.yaml",
+          "sha256": "d550317475459890819a9c0d3721e9936d540397ed78ee7f0bcc3666484c13aa"
+        },
+        {
+          "bytes": 642,
+          "path": "augment-of-mind/skills/decision-intelligence/evals/eval-manifest.yaml",
+          "sha256": "f22169579bc94020117a03cd2cbe8b09ee3e3a502d866f683be46d20a089c6e3"
+        },
+        {
+          "bytes": 5158,
+          "path": "augment-of-mind/skills/decision-intelligence/references/decision-intelligence-doctrine.md",
+          "sha256": "228448acc50d600229b3b46c838ad90532e7e453228cbb3954dfa8946a96640d"
+        },
+        {
+          "bytes": 2253,
+          "path": "augment-of-mind/skills/deliberative-intelligence/SKILL.md",
+          "sha256": "d938074e4d59d4f29573c8d936ee8b62ac44b605b49e87769121a1abc02ca3c4"
+        },
+        {
+          "bytes": 321,
+          "path": "augment-of-mind/skills/deliberative-intelligence/agents/openai.yaml",
+          "sha256": "cd0c44e03ff744c8bba8b0de6caf4cb4606caf1faf95a6bcb1cdfe45f9406653"
+        },
+        {
+          "bytes": 1547,
+          "path": "augment-of-mind/skills/deliberative-intelligence/assets/deliberation-map.template.md",
+          "sha256": "86cbe09b5b9c5039e6aa32cc524c51b5929092d879676a8668f1d2cefc0b007f"
+        },
+        {
+          "bytes": 4790,
+          "path": "augment-of-mind/skills/deliberative-intelligence/evals/core-transfer-cases.yaml",
+          "sha256": "ef2d6f8268df23b633aa269a76ba7485bd2b7e433531c88945039689d6788952"
+        },
+        {
+          "bytes": 586,
+          "path": "augment-of-mind/skills/deliberative-intelligence/evals/eval-manifest.yaml",
+          "sha256": "f34885680f927318f13a8372c8ee1068282208fcc460f02cd862b9848e53c698"
+        },
+        {
+          "bytes": 7080,
+          "path": "augment-of-mind/skills/deliberative-intelligence/references/deliberative-intelligence-doctrine.md",
+          "sha256": "3b981553ae3d9b951d70ac79ea44adec5a068bd46c570f179bf4c3ae301e8b00"
+        },
+        {
+          "bytes": 2640,
+          "path": "augment-of-mind/skills/epistemic-regulation/SKILL.md",
+          "sha256": "c84926ece0790be6b2092fdd8f9abb3321e499e35c45ddc5319e41e2d39f58f6"
+        },
+        {
+          "bytes": 303,
+          "path": "augment-of-mind/skills/epistemic-regulation/agents/openai.yaml",
+          "sha256": "cad770c8cae0a3388fe89814a54f98557f363db11882ffd3e324493e1ac9cef1"
+        },
+        {
+          "bytes": 938,
+          "path": "augment-of-mind/skills/epistemic-regulation/assets/claim-register.template.md",
+          "sha256": "4e0d58a23d17972f0d55232fe7c8286dd43f84751ef84403eb1c1075d1ee51a6"
+        },
+        {
+          "bytes": 4495,
+          "path": "augment-of-mind/skills/epistemic-regulation/evals/core-transfer-cases.yaml",
+          "sha256": "7bf257d839d8e91990d23823e260283099e9ab43e68407e1ca143bf13869d77b"
+        },
+        {
+          "bytes": 600,
+          "path": "augment-of-mind/skills/epistemic-regulation/evals/eval-manifest.yaml",
+          "sha256": "147c1716e1a60733047436d4e7cd35c92d389e299e158570d81cb50f5321f09f"
+        },
+        {
+          "bytes": 5016,
+          "path": "augment-of-mind/skills/epistemic-regulation/references/epistemic-regulation-doctrine.md",
+          "sha256": "4c6f76fed8863f7f48d4ec6af08762fd330b3838cdc1e2f9a0dec8f0c71c2580"
+        },
+        {
+          "bytes": 2007,
+          "path": "augment-of-mind/skills/executive-function/SKILL.md",
+          "sha256": "007df03f3d384772d40fa146db37547f6e087e22e4a0c92cc6b38757a22c15f9"
+        },
+        {
+          "bytes": 263,
+          "path": "augment-of-mind/skills/executive-function/agents/openai.yaml",
+          "sha256": "52e5c3ee6b4fb21716c75a8bac5a390b8c53c0f83518d6e6e0c39a3a1b0e5e4c"
+        },
+        {
+          "bytes": 286,
+          "path": "augment-of-mind/skills/executive-function/assets/mission-control.template.md",
+          "sha256": "f985525df53f0dc9dadb3d9887276dfc2951a00370497cbe1a8106b60492775b"
+        },
+        {
+          "bytes": 2554,
+          "path": "augment-of-mind/skills/executive-function/evals/core-transfer-cases.yaml",
+          "sha256": "c48b700457ab8b9b21984ae05bdba5c845f73d2a155c22a9a8116fe465b4afe7"
+        },
+        {
+          "bytes": 470,
+          "path": "augment-of-mind/skills/executive-function/evals/eval-manifest.yaml",
+          "sha256": "de95e754b06fef01ca6052fdae9710e8e8911b266e4f6812acc3cbebff7eebca"
+        },
+        {
+          "bytes": 2118,
+          "path": "augment-of-mind/skills/executive-function/references/governance-doctrine.md",
+          "sha256": "437a3a3da81ec93e959cccb577778ffb2e4895ff6b1e71b95b2af765d406a3fb"
+        },
+        {
+          "bytes": 3929,
+          "path": "augment-of-mind/skills/instrumental-agency/SKILL.md",
+          "sha256": "d32ae9c9f49e896a6120dceff9d4baf6751ec74ee0ad056c11ba802931e9dd24"
+        },
+        {
+          "bytes": 321,
+          "path": "augment-of-mind/skills/instrumental-agency/agents/openai.yaml",
+          "sha256": "cc3bb56eb8c9382b735a77a3709b0f83d7c5455eb48c62c4a7fcc121c3ca7414"
+        },
+        {
+          "bytes": 1118,
+          "path": "augment-of-mind/skills/instrumental-agency/assets/action-ledger.template.md",
+          "sha256": "6754f5e8d172934f78f16570ded24d1de1be4c07983879b08df8fe082e48e292"
+        },
+        {
+          "bytes": 4903,
+          "path": "augment-of-mind/skills/instrumental-agency/evals/core-transfer-cases.yaml",
+          "sha256": "54093fc055eb1a53a811aa2a918ef1d16e2bf277dca83368a5ebd28ce5af3eb1"
+        },
+        {
+          "bytes": 648,
+          "path": "augment-of-mind/skills/instrumental-agency/evals/eval-manifest.yaml",
+          "sha256": "94e56f821aace319631c3327ac6c6582747b21ef21e6f13f07fddd8f5f9efd6f"
+        },
+        {
+          "bytes": 5647,
+          "path": "augment-of-mind/skills/instrumental-agency/references/instrumental-agency-doctrine.md",
+          "sha256": "4fd32783638d5ce61d7c46102f75c8f991543ad311613168f37ef8b52841c0f0"
+        },
+        {
+          "bytes": 3146,
+          "path": "augment-of-mind/skills/kairos/SKILL.md",
+          "sha256": "cae753c4d3d5c4ed998e46f9efc85979a80130c5f42059314cbd79a735b8ff10"
+        },
+        {
+          "bytes": 263,
+          "path": "augment-of-mind/skills/kairos/agents/openai.yaml",
+          "sha256": "8e39820c4531e88403f33102073ed4894c223218f09988a419940a294e1e2dea"
+        },
+        {
+          "bytes": 682,
+          "path": "augment-of-mind/skills/kairos/assets/kairos-brief.template.md",
+          "sha256": "2985ad7636d7b923e65ebce24994e1802745b028706e79603fef4f9040fcfd54"
+        },
+        {
+          "bytes": 4752,
+          "path": "augment-of-mind/skills/kairos/evals/core-transfer-cases.yaml",
+          "sha256": "36d3a04f2b6e047ba9bee53174b8b572a8767bc9feb82737a522b7297e6a3cdb"
+        },
+        {
+          "bytes": 584,
+          "path": "augment-of-mind/skills/kairos/evals/eval-manifest.yaml",
+          "sha256": "496c37ac6e0815d4c78608b0115ec92205793d802218fb49dc2cd4c7bba3ba32"
+        },
+        {
+          "bytes": 4436,
+          "path": "augment-of-mind/skills/kairos/references/kairos-doctrine.md",
+          "sha256": "8ba9a901889e910c0fc49f3f4bfeb21d1232c16f9d12945bc5719dcd4e906909"
+        },
+        {
+          "bytes": 3700,
+          "path": "augment-of-mind/skills/measurement-intelligence/SKILL.md",
+          "sha256": "a6a5001b79578992a72f53bb99753954c644df949ea3f3fa4148a8f5525f89f7"
+        },
+        {
+          "bytes": 337,
+          "path": "augment-of-mind/skills/measurement-intelligence/agents/openai.yaml",
+          "sha256": "bffd1f63c17f46727bfaf5430b18088c7289c88b1fcfa32db893b2e6e86ac6a1"
+        },
+        {
+          "bytes": 1944,
+          "path": "augment-of-mind/skills/measurement-intelligence/assets/measurement-plan.template.md",
+          "sha256": "1444adf591ec5acb1fe81f736458a9316c7ca73cc3ce7721f6e4b803f3335c60"
+        },
+        {
+          "bytes": 5207,
+          "path": "augment-of-mind/skills/measurement-intelligence/evals/core-transfer-cases.yaml",
+          "sha256": "52ce4b0c4bc346ea596220f9fef56adc118130c86b0892c53635631b5578310f"
+        },
+        {
+          "bytes": 681,
+          "path": "augment-of-mind/skills/measurement-intelligence/evals/eval-manifest.yaml",
+          "sha256": "c2c2fda7ee66f2023ed30ee87b48167258ab227aa5b91eb06cadba53401a4729"
+        },
+        {
+          "bytes": 7035,
+          "path": "augment-of-mind/skills/measurement-intelligence/references/measurement-intelligence-doctrine.md",
+          "sha256": "4671c837606dbff632f446be1fedc58a2037d65d7fd8b08ba721ad24dd0c879d"
+        },
+        {
+          "bytes": 3457,
+          "path": "augment-of-mind/skills/prosocial-influence/SKILL.md",
+          "sha256": "4e45efa71089e4bdd4211abb3e838944e24e9023b029b4bc325c7cb59dd07374"
+        },
+        {
+          "bytes": 312,
+          "path": "augment-of-mind/skills/prosocial-influence/agents/openai.yaml",
+          "sha256": "d933a21ed6e28b73fda1901123afe3d01f8bd1fb8d019416e4a771c5e2806fa7"
+        },
+        {
+          "bytes": 1001,
+          "path": "augment-of-mind/skills/prosocial-influence/assets/influence-brief.template.md",
+          "sha256": "981a3f2e967ae2fddb566dd224bfbc1b104fb4454d03060dfec4d39d56e29728"
+        },
+        {
+          "bytes": 4741,
+          "path": "augment-of-mind/skills/prosocial-influence/evals/core-transfer-cases.yaml",
+          "sha256": "ed60cc6f8b97a9274dabdec41f33de67abbd2e43da74bb80aeb818e88ed7385e"
+        },
+        {
+          "bytes": 645,
+          "path": "augment-of-mind/skills/prosocial-influence/evals/eval-manifest.yaml",
+          "sha256": "58df6de1ebfb468c688229736bb7e47d64ebbf46e1fcc286d53a9506da255781"
+        },
+        {
+          "bytes": 4861,
+          "path": "augment-of-mind/skills/prosocial-influence/references/prosocial-influence-doctrine.md",
+          "sha256": "62287b8af2b827a39b5bacdb150d6a4d03a8573aca86a6f185bb76f10a6fc42e"
+        },
+        {
+          "bytes": 2115,
+          "path": "augment-of-mind/skills/sensemaking/SKILL.md",
+          "sha256": "35dbbcde6fe937db8c8b44bee79f30cdbe6da4937c08c40440bfcabd1876ed70"
+        },
+        {
+          "bytes": 284,
+          "path": "augment-of-mind/skills/sensemaking/agents/openai.yaml",
+          "sha256": "f19f332944a11be1477ca62f33570eddd8b5eccd399600b902a497a3c9239a7f"
+        },
+        {
+          "bytes": 1056,
+          "path": "augment-of-mind/skills/sensemaking/assets/situation-model.template.md",
+          "sha256": "ac94a1af3b96d1583d317aad2468db616441879460d8f4167a64db51674b0d3e"
+        },
+        {
+          "bytes": 4794,
+          "path": "augment-of-mind/skills/sensemaking/evals/core-transfer-cases.yaml",
+          "sha256": "48c509bab7cb91eba65c91767a04390ad7e6ddc6a95c85f18757861a1ce45458"
+        },
+        {
+          "bytes": 606,
+          "path": "augment-of-mind/skills/sensemaking/evals/eval-manifest.yaml",
+          "sha256": "a03a99befa6d0e23ac16a1361de102014d676caa0863c222f68c3905335f4420"
+        },
+        {
+          "bytes": 4033,
+          "path": "augment-of-mind/skills/sensemaking/references/sensemaking-doctrine.md",
+          "sha256": "fcde9069d6752534b644421eceb20f6d6e4f98543fbb9db78ef40d72219e0dd2"
+        }
+      ],
+      "plugin": "augment-of-mind",
+      "source": "plugins/augment-of-mind",
+      "source_tree_sha256": "1a3950c45bb6d3ff04b2e90e473784a1b34f1ad0fc342afc67713b53df3af679"
+    },
+    {
+      "archive": "release/nova-the-optimal-ai-1.0.0.zip",
+      "archive_bytes": 532245,
+      "archive_sha256": "706445592234baa655af8a7ecee5d096933d6497abe0303d9236ca7dda333651",
+      "excluded_paths": [],
+      "member_count": 296,
+      "members": [
+        {
+          "bytes": 1590,
+          "path": "nova-the-optimal-ai/.codex-plugin/plugin.json",
+          "sha256": "f4e65e305bbf44f524286e3a29ac20130ce0f23e418301ec8a7bbf1847f8d37d"
+        },
+        {
+          "bytes": 46527,
+          "path": "nova-the-optimal-ai/assets/nova-tour-mobile.png",
+          "sha256": "8adf326e7b2b57b037e7a6148528630b1690cada62bbacd7ddb9adf8366cbdb3"
+        },
+        {
+          "bytes": 74573,
+          "path": "nova-the-optimal-ai/assets/nova-tour-preview.png",
+          "sha256": "8acd166033fd321709239664a489ecf667958a15de80d2bc4b88f508643bdc20"
+        },
+        {
+          "bytes": 5161,
+          "path": "nova-the-optimal-ai/skills/agentic-coding/SKILL.md",
+          "sha256": "1c9bd3c3b72ff1d2eaf8400af25e7f652a9b829c16524d98a6c3dc25e01ac496"
+        },
+        {
+          "bytes": 1064,
+          "path": "nova-the-optimal-ai/skills/agentic-coding/adapter-manifest.json",
+          "sha256": "935b378f1d47a3203d4a109ee20564f21fbf2b6780ca1a0c2828b25362c46ec5"
+        },
+        {
+          "bytes": 317,
+          "path": "nova-the-optimal-ai/skills/agentic-coding/agents/openai.yaml",
+          "sha256": "650ddea7524ed4c9bd0187c43bf5550df3b0a8217d04f794dd0866ad46d8c23d"
+        },
+        {
+          "bytes": 4747,
+          "path": "nova-the-optimal-ai/skills/corkboard/SKILL.md",
+          "sha256": "f4b9518a6f7b33744d29f9eff53dc48cad40db47f755a3a6951f1849c928d3cd"
+        },
+        {
+          "bytes": 260,
+          "path": "nova-the-optimal-ai/skills/corkboard/agents/openai.yaml",
+          "sha256": "1bb742a38b373098551c712f666c5c7396b5ea7d509ff9595ca40a2c2193949a"
+        },
+        {
+          "bytes": 25709,
+          "path": "nova-the-optimal-ai/skills/corkboard/scripts/corkboard.py",
+          "sha256": "f010ededabbfeb19d732bb052cb36d7c21e81ec5fa2824a7e5b8605b103be974"
+        },
+        {
+          "bytes": 5514,
+          "path": "nova-the-optimal-ai/skills/dunbar/SKILL.md",
+          "sha256": "a669734c0e3255de7a32f2e226a3a8b1ccb5ed2d125e271a626ead03dca68980"
+        },
+        {
+          "bytes": 287,
+          "path": "nova-the-optimal-ai/skills/dunbar/agents/openai.yaml",
+          "sha256": "dc344a4be282f6de5a03bb582efac66861e6d4d1939fa0d6130f0c3d7aaaeb93"
+        },
+        {
+          "bytes": 1352,
+          "path": "nova-the-optimal-ai/skills/dunbar/assets/item-record.schema.json",
+          "sha256": "9fe635a5ce47c957c95c2f9cbebfc42d3a1a106619168236cbc331b805138375"
+        },
+        {
+          "bytes": 384,
+          "path": "nova-the-optimal-ai/skills/dunbar/assets/item.example.json",
+          "sha256": "e184640ace05d2395b4f75c8cde07b93682064d00f125f9d4d4694e42ca6098f"
+        },
+        {
+          "bytes": 1004,
+          "path": "nova-the-optimal-ai/skills/dunbar/assets/person-record.schema.json",
+          "sha256": "fbda8bd391e47eea41d1382a4e74c8410e1b85443366b3ab9874fbdf343ef254"
+        },
+        {
+          "bytes": 321,
+          "path": "nova-the-optimal-ai/skills/dunbar/assets/person.example.json",
+          "sha256": "fad9159711d94b234d39bc77571ee1c0d94ac5b73a5e09c46f1bdb9ce6deec3e"
+        },
+        {
+          "bytes": 983,
+          "path": "nova-the-optimal-ai/skills/dunbar/assets/relation-record.schema.json",
+          "sha256": "9e5a53e7e1328399f7f45c6d1da3349a5bb53108ae39a0ae54f560eb02d688d8"
+        },
+        {
+          "bytes": 379,
+          "path": "nova-the-optimal-ai/skills/dunbar/assets/relation.example.json",
+          "sha256": "d688d281eaf45cf9649946bb36e1ba6dac6eb7c5aa84da2f09796fef62ca48b6"
+        },
+        {
+          "bytes": 3194,
+          "path": "nova-the-optimal-ai/skills/dunbar/references/people-intelligence.md",
+          "sha256": "6232571184605a64b1613ce163f48f2e3af72f90c00bb3cd456a9615bea1867c"
+        },
+        {
+          "bytes": 2538,
+          "path": "nova-the-optimal-ai/skills/dunbar/references/progressive-disclosure.md",
+          "sha256": "e02689441982154beccc7ecf3e9c774192cfe5a8b587a7b28b0866858622956b"
+        },
+        {
+          "bytes": 2667,
+          "path": "nova-the-optimal-ai/skills/dunbar/references/store-contract.md",
+          "sha256": "77ffdfadba7b203f3c6e889f5f1d6fd50bc74e2d9092380016c5fd8943e335d7"
+        },
+        {
+          "bytes": 46585,
+          "path": "nova-the-optimal-ai/skills/dunbar/scripts/dunbar.py",
+          "sha256": "4aeb2023e8a2a81d8291592996fdc6c04cdcf7161945665e3eb92313a0d8379d"
+        },
+        {
+          "bytes": 9881,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/SKILL.md",
+          "sha256": "4c748608725eb2608e043d993036218d4e69fb1182f88e49d1267bef60472259"
+        },
+        {
+          "bytes": 237,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/agents/openai.yaml",
+          "sha256": "4f27efc45fd153c8c4199a19813dd3d4c5e2af757dd90c6d1de3565d2922990b"
+        },
+        {
+          "bytes": 412,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/assets/campaign.template/campaign-ledger.json",
+          "sha256": "71321bdaec833c6f81e55ddef1ce189490c3182219809fb52e68872522554375"
+        },
+        {
+          "bytes": 230,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/fallbacks/degraded-capability.md",
+          "sha256": "f4b6da8e02dc320d0c275b1b7650b8138e2d56fd0cd8b2d2530cda077ed2ceef"
+        },
+        {
+          "bytes": 280,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/fallbacks/universal-copy-paste-workflow.md",
+          "sha256": "3f3c92f0981c00418ec43642d6e0746e97c06f060f2d4b7a4d03f3bffe4fb9ce"
+        },
+        {
+          "bytes": 854,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/canonical-boundaries.md",
+          "sha256": "8103e575f2e7fb8c113c03a663b68ab79fea65bca3333c73f97013878f61226e"
+        },
+        {
+          "bytes": 2011,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/arcane-language.md",
+          "sha256": "e07f577c93bdd2d0894fbcd2dfe1d973515bea89cf6bba875306468b4b72467b"
+        },
+        {
+          "bytes": 2027,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/art-prompt.md",
+          "sha256": "bf125794f9bd1e63887b646c9a8b27407bdfeb09248c0fedb5e2164a5644faad"
+        },
+        {
+          "bytes": 2091,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/backstory.md",
+          "sha256": "e67329e859f916fc74f3bc05969387c3bd5b060edd1a1059cdedc40cc625531c"
+        },
+        {
+          "bytes": 1714,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/boxtext.md",
+          "sha256": "29ef01536ede0cd2559fe8fa5829a235d1189313e8f9897a22864caa3078920e"
+        },
+        {
+          "bytes": 2198,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/campaign-workflow.md",
+          "sha256": "1e5e362443f4fcc84cfd9c37f2e5a999be244761d4812fee1a448085b1a207e0"
+        },
+        {
+          "bytes": 2013,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/creature.md",
+          "sha256": "7da914df46592a20fb86169d1ae2fd47923441f37ba7b2c2c6ed52a14ffcde6a"
+        },
+        {
+          "bytes": 1907,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/cursed-item.md",
+          "sha256": "fe01a5c5f8aa40e5138a047721dc07d43ff3f31954e754cf322be7b98722a303"
+        },
+        {
+          "bytes": 2068,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dimensional-gateway.md",
+          "sha256": "bd9c27d8165a5f1b23e1aa84be50b6aaf6ff8c55d4299c1929e074b4528549f8"
+        },
+        {
+          "bytes": 2134,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dungeon.md",
+          "sha256": "d55110a674978621c92a6f5abc5355afb8eb8bd4302917aed8cfffcd18ada183"
+        },
+        {
+          "bytes": 2018,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/encounter-chain.md",
+          "sha256": "258656a09d241521e5049908900bf0e75dc9ffd4b6c3e6d9f0fe25b6243507e2"
+        },
+        {
+          "bytes": 2012,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/faction-allegiance.md",
+          "sha256": "0547b0a264212b9097571cc0f6766e662300b698d236d323a9a88636d1e4259d"
+        },
+        {
+          "bytes": 1979,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/homebrew-mechanics.md",
+          "sha256": "8a79be0f4e6ee742432a2c3fad9e51e2938248df7eb186d4014306095da2d532"
+        },
+        {
+          "bytes": 1954,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/impossible-invention.md",
+          "sha256": "9362e6661ed7d34a4d214f7a351c2739bc5c7f22fad4b450fa98f61b68d19c3e"
+        },
+        {
+          "bytes": 3601,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/index.md",
+          "sha256": "ced59febced92ba11c15c18968d43d67ed4029510c0ea709c749621297725aa4"
+        },
+        {
+          "bytes": 1961,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/intrigue-web.md",
+          "sha256": "4265443d7f2dfb08b0db5d6edb7e5709273067159af52a9d28d2995dd18e2036"
+        },
+        {
+          "bytes": 1982,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/legendary-artifact.md",
+          "sha256": "e6bac2b4c4eb15fa60ada7cefbb2cae256b4d1a8e43b28afa91147880b9649fd"
+        },
+        {
+          "bytes": 2132,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/lost-civilization.md",
+          "sha256": "0246659893ffe564dd6137680b72f4d782da2a87c1f6074ab74aa32c7c53637d"
+        },
+        {
+          "bytes": 2219,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/magic-system.md",
+          "sha256": "3e4d6767e4305039ce8c67835bc389880948efbd9d68d585c88a5a7a8193e417"
+        },
+        {
+          "bytes": 10860,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/manifest.json",
+          "sha256": "d29262f83c925a6ad064cba25b6f780e26e7522caa220c55ed0b673d02e2f6a8"
+        },
+        {
+          "bytes": 1833,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/myth.md",
+          "sha256": "bf856575a9236e8ba2be5689b1329ac8c0844c61ceb361dcb190f1a687d608d3"
+        },
+        {
+          "bytes": 1809,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/npc.md",
+          "sha256": "a42de29eee8f498306ac49301d34f7c45c84980eb115e8b413c40628997b7d8e"
+        },
+        {
+          "bytes": 1895,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/party.md",
+          "sha256": "c200c5407ba5b7a0e9bf296d16f3181c34576e3a7d19a0c98b92888f9579cd85"
+        },
+        {
+          "bytes": 1892,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/prophecy.md",
+          "sha256": "90b11ca340ea1b8989a2ec79a7af26bae32eb7621849c39232887e1cc3aba7b1"
+        },
+        {
+          "bytes": 2017,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/puzzle-trap.md",
+          "sha256": "798988fa5c4c3e8a40072cc0ca9f3caecdf79fe4f7ee8aa0d3d5fe5879aaedd8"
+        },
+        {
+          "bytes": 1920,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/quest.md",
+          "sha256": "728f868b26b4d3a8f527f04804bb5445e0b73f9f61e4032f79504b77f72e1730"
+        },
+        {
+          "bytes": 2043,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/region-map.md",
+          "sha256": "49c0daf03492b45a74e7125054f6dc6bd1614e3df8383a9cff3431613e48cc6c"
+        },
+        {
+          "bytes": 1880,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/rumors-headlines.md",
+          "sha256": "bcf3292ddadacb963e8c65a74b35d7f7809dbe3131b03f36e976e5ff20259f1a"
+        },
+        {
+          "bytes": 2100,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/secret-society.md",
+          "sha256": "33ec1128c96ee7672849259cb9033ff219ff1d6a596038f4ef970668c87a1615"
+        },
+        {
+          "bytes": 2026,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/settlement-city.md",
+          "sha256": "6397beda6bb6118158146ec8bc32f864c51f074b061fb26f01eed5d7742d04f2"
+        },
+        {
+          "bytes": 1912,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/spell.md",
+          "sha256": "e462f0fa21c49547a83f97af6ac448ee59d2e4810bec15356a4fe6ad4f74061d"
+        },
+        {
+          "bytes": 1997,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/tavern-menu.md",
+          "sha256": "a8df0dd483ac14c0765838af317b1136dce5c5aacb2b1617bf7d41f4b0822ac2"
+        },
+        {
+          "bytes": 2133,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/urban-dungeon.md",
+          "sha256": "e58dd48ce9904cbb716ae3fd49e3daefd671f4db444deb132a93168b2865e793"
+        },
+        {
+          "bytes": 2011,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain-scheme.md",
+          "sha256": "80a0d3ea1c54eb91dd613b5621b56d1f6916f1df9e610c281ccc1c2840bbf606"
+        },
+        {
+          "bytes": 2153,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain.md",
+          "sha256": "59fab4a2574070d140916bd30e2d92480a5a4e741112d195f15ac1d1d7c72067"
+        },
+        {
+          "bytes": 624,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/operating-doctrine.md",
+          "sha256": "6846821f1004757e93e42dec605c5d4fc992c92890f8ed268b80b9ea4759e09b"
+        },
+        {
+          "bytes": 710,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/knowledge/state-and-authority.md",
+          "sha256": "18e45685662ddd136edca173713d151ab82435ae591ba5021a6fc99eb716c531"
+        },
+        {
+          "bytes": 484,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/schemas/campaign-ledger.schema.json",
+          "sha256": "03ceefe12c50e0dbf1603a4572233e8a97f08d7a3f7329e5fb0b6f2070d7388d"
+        },
+        {
+          "bytes": 773,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/export_player_safe.py",
+          "sha256": "904bdfdc291f3f4841053576338f59dd831fbadbc78698e5ce4d36878dd41d06"
+        },
+        {
+          "bytes": 557,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/init_campaign.py",
+          "sha256": "f80228757e897f25130d4ad76f935d59bd0156353679e38721c8310dff78c60a"
+        },
+        {
+          "bytes": 2459,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/ledgerlib.py",
+          "sha256": "759bcc17ccb8b0ed0bfa969b633c3402e7e58cbb3965b5491584eb84a788c3d7"
+        },
+        {
+          "bytes": 1348,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/promote_object.py",
+          "sha256": "f5ac1b929319acc5ac7274819a071f2f4bd042bb0b7e36e76b7ae741a51bbec9"
+        },
+        {
+          "bytes": 667,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/roll_table.py",
+          "sha256": "a028776c7b1bc6cff368a61b8f23f51df66a870b407aa15b187119218420c8f9"
+        },
+        {
+          "bytes": 5160,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/self_check.py",
+          "sha256": "2c7542cfaeecaab700f7f2ca576833df679b0bcf5dad4fde57232b754a592ccb"
+        },
+        {
+          "bytes": 1238,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/snapshot_campaign.py",
+          "sha256": "0272fbf3d17a47de42dc8e47f324ed771887e6b6ef01238e3c740616ddd3e4c9"
+        },
+        {
+          "bytes": 531,
+          "path": "nova-the-optimal-ai/skills/ludis-continuum/scripts/validate_ledger.py",
+          "sha256": "e040472b0decd391d44c34dd32951fa308f5c1ae6f0facf8aca81617423d3def"
+        },
+        {
+          "bytes": 4840,
+          "path": "nova-the-optimal-ai/skills/nova/SKILL.md",
+          "sha256": "5477d89d839894c16e1b1136933dc300269358f106b20afb5f9ce7de1579e408"
+        },
+        {
+          "bytes": 331,
+          "path": "nova-the-optimal-ai/skills/nova/agents/openai.yaml",
+          "sha256": "21d096ed409b3b159db697912e00eea30b67f82bc822438ec3704cd9d03c8538"
+        },
+        {
+          "bytes": 30392,
+          "path": "nova-the-optimal-ai/skills/nova/assets/collaborative-dynamics-logo.png",
+          "sha256": "85725355c5c7ac1516a156d3cc37ca74e1dee314418bc300252d8436d0ce2ce6"
+        },
+        {
+          "bytes": 19006,
+          "path": "nova-the-optimal-ai/skills/nova/assets/nova-tour-base.css",
+          "sha256": "0fe5768a68413cce9302aed90e84eede464e77618c93c8578a474a5af7e70314"
+        },
+        {
+          "bytes": 17371,
+          "path": "nova-the-optimal-ai/skills/nova/assets/nova-tour-fragment.html",
+          "sha256": "76447a59179fb30cf7b5f031cedcb9788e6882415024c654fd07f17e68505ab0"
+        },
+        {
+          "bytes": 78260,
+          "path": "nova-the-optimal-ai/skills/nova/assets/nova-tour.html",
+          "sha256": "fd9d5a3fdcc0818b3c79b5bb6f11e3c6350b5165f73e89b3fbeda70bc32564a5"
+        },
+        {
+          "bytes": 1587,
+          "path": "nova-the-optimal-ai/skills/nova/references/brand-source-manifest.json",
+          "sha256": "ec242108d35b1ca2cbe111c82404865374c0aa69bc9f8d0046b4d0c8aabf2933"
+        },
+        {
+          "bytes": 2849,
+          "path": "nova-the-optimal-ai/skills/nova/references/capability-routing.md",
+          "sha256": "216b7fcb4e32bc0f3299a8112bcc75da90bb302389bca4c76a53181f31a79b9f"
+        },
+        {
+          "bytes": 2591,
+          "path": "nova-the-optimal-ai/skills/nova/references/cd-brand-canon.md",
+          "sha256": "0d60c436746e97ed2a93bf9b31526a68741d54dbda0dd0a85b6db3eebb88dd40"
+        },
+        {
+          "bytes": 6938,
+          "path": "nova-the-optimal-ai/skills/nova/references/collaborative-dynamics-and-stunspot.md",
+          "sha256": "9be4394358369001fa6a37c5be722ecb062b115edd34eaa7efaa8dda27b2614f"
+        },
+        {
+          "bytes": 1821,
+          "path": "nova-the-optimal-ai/skills/nova/references/mind-compatibility.md",
+          "sha256": "4696babae77a4a71af1d82bd984c158259bbb807b6016d80b50080b1443b0285"
+        },
+        {
+          "bytes": 2938,
+          "path": "nova-the-optimal-ai/skills/nova/references/nova-persona.md",
+          "sha256": "d3ab497a848b60752eab05424e694a6d814d5fdac0b9abf59fe2c7e1899ea9b2"
+        },
+        {
+          "bytes": 4438,
+          "path": "nova-the-optimal-ai/skills/nova/references/professional-source-manifest.json",
+          "sha256": "7e31d500dd1d77ea6478b2bfc9f81aaee0e6e4421c7f6c2cd633dc2b67896510"
+        },
+        {
+          "bytes": 2412,
+          "path": "nova-the-optimal-ai/skills/nova/references/take-the-tour.md",
+          "sha256": "563b16b6ab9592ee347e654188212bc3fc383a2c1cfaf63fd5ae6a252d13e8e9"
+        },
+        {
+          "bytes": 1213,
+          "path": "nova-the-optimal-ai/skills/nova/scripts/materialize_tour.py",
+          "sha256": "19f2bc308c901d7d7f2a4a5f7b70ea98f93f95d81270459dcb790a8dc7520a01"
+        },
+        {
+          "bytes": 5984,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/SKILL.md",
+          "sha256": "cba7bc9c9f3ed98f7ba2ee918e369d321200827fe217ca2cf6d6d10bb4c403f5"
+        },
+        {
+          "bytes": 250,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/agents/openai.yaml",
+          "sha256": "e274080793a0e46890786a0ea7d993095610247bce04dc8c978aa3e4efaa11a6"
+        },
+        {
+          "bytes": 407,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/campaign-summary.md",
+          "sha256": "3bd588b5f6cc3c167d5d229d7cacb1698b005e5b303488e56ff8674fcf0445b8"
+        },
+        {
+          "bytes": 788,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/campaign.json",
+          "sha256": "0d337fc232decd20ef739f364f0c216ee90d55d389b2e5224b09b2bb4f8f0d30"
+        },
+        {
+          "bytes": 244,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/citation-audit.md",
+          "sha256": "8aa28f7b48dbf45f8d59a0fbd0d944ac13385dd83927d1dec1aea1e0362ddc7c"
+        },
+        {
+          "bytes": 1,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/claim-ledger.jsonl",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "bytes": 302,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/contradictions.md",
+          "sha256": "bcf8de93c47d50b0effb7e0eba0e5fe63872abf180f2d01ac2a957829e2b7e11"
+        },
+        {
+          "bytes": 247,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/coverage-matrix.md",
+          "sha256": "94a6e89cd4662d3d53cf8e06cdea40cd9b74bb9814111dccc080439e7415a3c8"
+        },
+        {
+          "bytes": 196,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/evidence-digest.md",
+          "sha256": "5ee4c3e12ad1de6408759790dc620f22b7cbe1b66420799c08dbe698e0c6d812"
+        },
+        {
+          "bytes": 760,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/notes/SOURCE-NOTE-TEMPLATE.md",
+          "sha256": "da1fd7272a317eeb2bda18f281fdabc78e31f11f0cac74f16397316290549532"
+        },
+        {
+          "bytes": 150,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/outline.md",
+          "sha256": "27f1d8e2e6061c4128c543d50966d8ca813eb76cedb9ae08998c16f87d065c5c"
+        },
+        {
+          "bytes": 1,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/query-ledger.jsonl",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "bytes": 48,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/report.md",
+          "sha256": "e6def10acf097f038201c525d14c0ecf93187372d532005fa981f45467684eaa"
+        },
+        {
+          "bytes": 723,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/research-brief.md",
+          "sha256": "61b15df2d308d834bf9aef567047b9953d62b1a414551a5f8f362d7893c31a50"
+        },
+        {
+          "bytes": 1,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/assets/campaign-vault/source-ledger.jsonl",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "bytes": 1782,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/fallbacks/degraded-capability.md",
+          "sha256": "e3c2e227a0720f548ce2ac275624e33a30e43fcc19604827dd41910ef83a00ad"
+        },
+        {
+          "bytes": 2814,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/fallbacks/universal-copy-paste-workflow.md",
+          "sha256": "b9ce9edd0036970ec7e4e460f524325537ae60b567304d3c5d32865100f9e0e0"
+        },
+        {
+          "bytes": 472,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/knowledge/source-navigation.md",
+          "sha256": "44266ef86b073932c8eca8374403ab02b2bd473106bea82bf5b45753d469259a"
+        },
+        {
+          "bytes": 2614,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/personas/omnara-investigative-research-intelligence.md",
+          "sha256": "cd6961b17a115e7d41cbfcf7e2fac231dac7cbbbdab751707d03631a2418edba"
+        },
+        {
+          "bytes": 2022,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/campaign-operations.md",
+          "sha256": "dc909d6a3ef077d556452972889a1949f46c7534cde23196d6e5adb819679727"
+        },
+        {
+          "bytes": 2576,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/canonical/inquiry-engine-v1.md",
+          "sha256": "351183c36a1d14b1fa28b1ddce9d0ad0437ecf627cff90150f4acbb02928afd0"
+        },
+        {
+          "bytes": 2137,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/evidence-and-investigation.md",
+          "sha256": "55c65e4745160080b20101201eca6db8b346c068cfa8e4ed87eecedc53ffed02"
+        },
+        {
+          "bytes": 1686,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/operating-doctrine.md",
+          "sha256": "2f3bc7e713537d08d7909cda54aeaf0c8cb47848eeb17037dfb944c30b771f80"
+        },
+        {
+          "bytes": 2229,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/search-cartography.md",
+          "sha256": "11f0d9fbe649f6e372bb2adc32b216012bca641f161dc9c04394fab8642406e7"
+        },
+        {
+          "bytes": 1968,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/synthesis-and-citation-audit.md",
+          "sha256": "4766c2b83c920947dc9b33f867f7f5744c9b8cc83bbbfb65290ffd48b0e85bf6"
+        },
+        {
+          "bytes": 1648,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/references/tooling-cost-and-security.md",
+          "sha256": "29defbe80dc94f732f0ee5da00116d9fbf3517b29d28de44f767ae74dffa3807"
+        },
+        {
+          "bytes": 1180,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/schemas/research-campaign.schema.json",
+          "sha256": "57ad58dd5db77484bbf437c219d8044b251271ac93be85a21f49e076f042e88b"
+        },
+        {
+          "bytes": 1411,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/scripts/assemble_report.py",
+          "sha256": "ef5db5ca935cb16c38e6b0d8c4a47f630f323ee92ecc30af77f2ea27ce9d080b"
+        },
+        {
+          "bytes": 4693,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/scripts/citation_audit.py",
+          "sha256": "3b44f5ba2e4b9ea8aaeb358c64b55493c89e5b7de3e6274c7c4c747be33e3263"
+        },
+        {
+          "bytes": 14007,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/scripts/research_campaign.py",
+          "sha256": "8f7fb66f109561abc6df0265e0329dd1c3e3389fcb6513bb1fc05b73c9873c8e"
+        },
+        {
+          "bytes": 3050,
+          "path": "nova-the-optimal-ai/skills/omnara-deep-research/scripts/validate_release.py",
+          "sha256": "d6c452496d1804a4129eb95fa68668b3f219f26791c661d6dd34394bec0462ed"
+        },
+        {
+          "bytes": 3936,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/SKILL.md",
+          "sha256": "aa4f04dce6df1071b3d0a0b796f59ff8c153c203055794b1242d97356500dfc3"
+        },
+        {
+          "bytes": 289,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/agents/openai.yaml",
+          "sha256": "6d4980ae8858cc762c79c9370268e5702b5ceb6d673facc570bebf45c1f24c86"
+        },
+        {
+          "bytes": 487,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/assets/corpus-policy.template.json",
+          "sha256": "aa2cebb7a420733969006b4ef003f1ee132d5f6a843d96123b58a558b431de4d"
+        },
+        {
+          "bytes": 325,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/assets/retrieval-run.template.json",
+          "sha256": "dbdfbfb6a237e60dad8a81b6499646f29a3f1189810a2ea221130c399568c4fd"
+        },
+        {
+          "bytes": 473,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/evals/retrieval-cases.example.json",
+          "sha256": "7614ae9299f696db29cb5fc69494ecc08aef65170b66c13983556590695c101f"
+        },
+        {
+          "bytes": 3591,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/references/retrieval-doctrine.md",
+          "sha256": "e8268e5beaa4831be49106dc9ebce85976a7fa239cf25e5795a4f915b3c5dbfc"
+        },
+        {
+          "bytes": 1029,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/references/semantic-fusion-contract.md",
+          "sha256": "7557c02a2f5c94850e24b216f5e2808e7dcc79108d7dcf6fe70e75766662626e"
+        },
+        {
+          "bytes": 7186,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/scripts/evaluate_retrieval.py",
+          "sha256": "82eca835042eae21a33a84ad83eb988a2614a965383265ad5944c8b66d7635ab"
+        },
+        {
+          "bytes": 26188,
+          "path": "nova-the-optimal-ai/skills/retrieval-intelligence/scripts/rag.py",
+          "sha256": "13c0ac6c4a8ad79d8e5b2ced0a5bdb0cdc1072a6d61815ea9a5ea36890a545b1"
+        },
+        {
+          "bytes": 2072,
+          "path": "nova-the-optimal-ai/skills/retrieval-reviewer/SKILL.md",
+          "sha256": "7c084aa696f5dfb4688e3a9f5db84cb0895d6c9c5570b98a953564bad893a6ba"
+        },
+        {
+          "bytes": 306,
+          "path": "nova-the-optimal-ai/skills/retrieval-reviewer/agents/openai.yaml",
+          "sha256": "f16f38624024cabb6c41a3112aa28d125bffaf4ee7e8420c16b563e945d921df"
+        },
+        {
+          "bytes": 2062,
+          "path": "nova-the-optimal-ai/skills/retrieval-reviewer/references/retrieval-review-rubric.md",
+          "sha256": "322a64278ca40a80ae9e948f180d9fac54760ed944e91e3bc77c74e4cf3d04f8"
+        },
+        {
+          "bytes": 2247,
+          "path": "nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/SKILL.md",
+          "sha256": "45f177a0b850fa740303e8cff6ac5145ce4b1b8d479d6dd8a63b1ac1b7e66003"
+        },
+        {
+          "bytes": 317,
+          "path": "nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/agents/openai.yaml",
+          "sha256": "d2b712554b420f62f04d38fe7cdff89aa6f69d885ab1a7aac75cf9a7491e127b"
+        },
+        {
+          "bytes": 824,
+          "path": "nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/assets/knowledge-estate-ledger.template.md",
+          "sha256": "ff1cb8e5889b3d08bea08672e6bb8a6ee98c668732d6bb96f62b7540e0842c42"
+        },
+        {
+          "bytes": 1841,
+          "path": "nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/references/stewardship-doctrine.md",
+          "sha256": "55090874d75baa1ea76a49a79e850d0ddb1c981c5c440d23f8a94cc3ed51822d"
+        },
+        {
+          "bytes": 9301,
+          "path": "nova-the-optimal-ai/skills/signal-loom/SKILL.md",
+          "sha256": "e6af181163abd0261478cdb2ed60df021af892bb9f111be7a2fd2ca9af62faf1"
+        },
+        {
+          "bytes": 362,
+          "path": "nova-the-optimal-ai/skills/signal-loom/agents/openai.yaml",
+          "sha256": "75aba79af64647adbff54ca46020285f1aa08e8f7b664cd64254d00d482dc77f"
+        },
+        {
+          "bytes": 375,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/carousel-package.template.md",
+          "sha256": "ef8c6fd5f0def5a91f326f0f290b71983fd3076ff0902e7921bf1d240805e305"
+        },
+        {
+          "bytes": 341,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/diagnostic-record.template.json",
+          "sha256": "ae5da85e8d40f3c2a3a317827390ba2f9da756410023cfbde59b5e7bec4dcc31"
+        },
+        {
+          "bytes": 351,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/project.yaml",
+          "sha256": "2009c35f551ab2e987acc92eb8856ac34f72ed5923f39f099678b2150c293ed4"
+        },
+        {
+          "bytes": 178,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/review/accessibility.json",
+          "sha256": "3a03cf4d28fb3ae80bb73a367dce6fc144c032997a232f5f126d8fc331fd6dd9"
+        },
+        {
+          "bytes": 298,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/review/diagnostics.json",
+          "sha256": "95368be16c2052f8b37343f1fee5074ef4171e5a30a9007d255899c447410159"
+        },
+        {
+          "bytes": 70,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/review/release-manifest.json",
+          "sha256": "0cb31f8334ac21e92b4efa9fc7b249a5ce2c80aab460c3baec2341023d9ab15a"
+        },
+        {
+          "bytes": 51,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/sources/manifest.json",
+          "sha256": "b32fe4b49c311bfd1c9f1922836ddcdfbe58e38d5e7c9dd7369a4e9b3b8603e4"
+        },
+        {
+          "bytes": 199,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/brief.json",
+          "sha256": "4e0ffe951c42226113e567727dca40ab3391b889d75adcd9cb788e592ebfb782"
+        },
+        {
+          "bytes": 1,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/claims.jsonl",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "bytes": 1,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/decisions.jsonl",
+          "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+        },
+        {
+          "bytes": 68,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/distribution.json",
+          "sha256": "2819c123ccca9b0508fecebad5eabaeadc0c012d476057e42e859e029d9bd8a9"
+        },
+        {
+          "bytes": 71,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/interactions.json",
+          "sha256": "8c6147a3d90275167a8fff1bcf5155b35434e54401c2ddaaa413e26c52af6e06"
+        },
+        {
+          "bytes": 117,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/spine.json",
+          "sha256": "5783631b1d6dccd8619e496fca1e3b0454f7fe15f5b882041841071a2c588891"
+        },
+        {
+          "bytes": 164,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/theme.tokens.json",
+          "sha256": "334922690687de32680bf591327af10e60fb3defe24b259dfb6340e3e75a8425"
+        },
+        {
+          "bytes": 159,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/visual-plan.json",
+          "sha256": "dc80f7f3357e834fca356aef6ea320f65463ca4f01b2c46fee443b0d7dc45193"
+        },
+        {
+          "bytes": 2177,
+          "path": "nova-the-optimal-ai/skills/signal-loom/assets/semantic-infographic.template.html",
+          "sha256": "1b94bb75dfff560bb618687cebaf9afaea17607d07fea5515001cf9bd37166ac"
+        },
+        {
+          "bytes": 1910,
+          "path": "nova-the-optimal-ai/skills/signal-loom/fallbacks/degraded-capability.md",
+          "sha256": "cd77955012efb0ec495a772fda9ed2cf088538be320cb90f3fdc67bef34351d7"
+        },
+        {
+          "bytes": 1278,
+          "path": "nova-the-optimal-ai/skills/signal-loom/fallbacks/universal-copy-paste-workflow.md",
+          "sha256": "a89352e673faa2ab7e11ff1a66641e82798971af1b49a36d842c0f04fa67bece"
+        },
+        {
+          "bytes": 1720,
+          "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/claim-and-currentness-doctrine.md",
+          "sha256": "96ec86aee7fa6e569d07f5aedd2656fbda9a16d6d3b05864f6ea5b8e8f739a99"
+        },
+        {
+          "bytes": 1538,
+          "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/html-trust-boundary.md",
+          "sha256": "d623e469a8c7174bd54521e83aef39e11c62724dbe57c5dd3fdca20f9d8ec134"
+        },
+        {
+          "bytes": 56196,
+          "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md",
+          "sha256": "ae50b706ed5f2562f5a78feee949eaf34648d10088a2f519413a0707ce2a9675"
+        },
+        {
+          "bytes": 2388,
+          "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/operating-doctrine.md",
+          "sha256": "3bb31cced447d05cbaac1e5b0611e580f4c479e2205177f49928ae877f7e469e"
+        },
+        {
+          "bytes": 1763,
+          "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/representation-and-chart-integrity.md",
+          "sha256": "ecdd78d896e57a8fcdf711931c479c058c16e429cc3f035a81c42c4ed3d13a48"
+        },
+        {
+          "bytes": 2048,
+          "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/stage-and-faculty-routing.md",
+          "sha256": "3f5f1b42b6d403e89be7c69c46ce7dd495a55d3338543e9d353046a4c5ccadf0"
+        },
+        {
+          "bytes": 420,
+          "path": "nova-the-optimal-ai/skills/signal-loom/schemas/diagnostic.schema.json",
+          "sha256": "c193f2d45a5abfea69fbe2aee14a94852b92def1c1bceefb05a79138335987bc"
+        },
+        {
+          "bytes": 782,
+          "path": "nova-the-optimal-ai/skills/signal-loom/schemas/project.schema.json",
+          "sha256": "65a8c6e82ba6e2fcc4963dd111e777148ba0a96cd39faa349a40e5a021634ed9"
+        },
+        {
+          "bytes": 900,
+          "path": "nova-the-optimal-ai/skills/signal-loom/schemas/source-manifest.schema.json",
+          "sha256": "39740c7e53c325b73580973fbc27ff5f7947f5f13f5fed0f8e8e1fb09c8beab0"
+        },
+        {
+          "bytes": 459,
+          "path": "nova-the-optimal-ai/skills/signal-loom/schemas/spine.schema.json",
+          "sha256": "938b3b975371ec9cbf0d8f4c5c1410e7f7effcc97022536b0d2cec115d1b5a13"
+        },
+        {
+          "bytes": 617,
+          "path": "nova-the-optimal-ai/skills/signal-loom/schemas/visual-plan.schema.json",
+          "sha256": "3113d96d9db6755e566c95a9994d86feb55b71bc498117f59677b2f40bf83161"
+        },
+        {
+          "bytes": 2170,
+          "path": "nova-the-optimal-ai/skills/signal-loom/scripts/init_loomfile.py",
+          "sha256": "da2c31db06622af4e0995699e10b88d31ba054a040527df28ce709a89be7443f"
+        },
+        {
+          "bytes": 6212,
+          "path": "nova-the-optimal-ai/skills/signal-loom/scripts/inspect_infographic_html.py",
+          "sha256": "7909537a023f326e73a67fcb91216f2e6b90d14a03d79928724825b80e248d7e"
+        },
+        {
+          "bytes": 2948,
+          "path": "nova-the-optimal-ai/skills/signal-loom/scripts/package_loomfile.py",
+          "sha256": "8fc2d51ebfe1f002e6dfbc5fa75adfa5617beccc1f0ee0d7284e85282e9e59f5"
+        },
+        {
+          "bytes": 2934,
+          "path": "nova-the-optimal-ai/skills/signal-loom/scripts/self_check.py",
+          "sha256": "2ddaa2cbc1cde369e216121925663b47e6a1c3c5a2cb0f0588d85d46887c3f10"
+        },
+        {
+          "bytes": 7718,
+          "path": "nova-the-optimal-ai/skills/signal-loom/scripts/validate_loomfile.py",
+          "sha256": "f67448bab5aafa851029f469431d56733aae0f7df1a301e8d858b4de4ef17045"
+        },
+        {
+          "bytes": 8206,
+          "path": "nova-the-optimal-ai/skills/software-verification/SKILL.md",
+          "sha256": "66e2b9675f499250c58c395a37590a4d83ae1d5338dcdc85ad64a2f30687bcf4"
+        },
+        {
+          "bytes": 779,
+          "path": "nova-the-optimal-ai/skills/software-verification/adapters/claude-code.md",
+          "sha256": "ed065cde07ac2f2e22128f2e4379eebd95dceada1466bcb228f6618cc16cb435"
+        },
+        {
+          "bytes": 713,
+          "path": "nova-the-optimal-ai/skills/software-verification/adapters/codex.md",
+          "sha256": "0bbfe4a81898e19530b71c93e6adc698a86ee230d09f57de0fac19a068115612"
+        },
+        {
+          "bytes": 646,
+          "path": "nova-the-optimal-ai/skills/software-verification/adapters/copy-paste-chat.md",
+          "sha256": "5906597721b9f69e23e8f8c0568838309af178fbe37f05fc8f61800a3b0e886f"
+        },
+        {
+          "bytes": 713,
+          "path": "nova-the-optimal-ai/skills/software-verification/adapters/github.md",
+          "sha256": "44f8256e25ca2ef670e8d4cab4967486aa35c9013e11e18a5e1049fb09e153a5"
+        },
+        {
+          "bytes": 698,
+          "path": "nova-the-optimal-ai/skills/software-verification/adapters/local-shell.md",
+          "sha256": "37e82cbb336026c298004d5d3b43a38b12faeca619bce0815790644447d915be"
+        },
+        {
+          "bytes": 284,
+          "path": "nova-the-optimal-ai/skills/software-verification/agents/openai.yaml",
+          "sha256": "963676a54b53f1f7660dca848fe4b9571824942d3beba47bf3c5244e3bbb6bee"
+        },
+        {
+          "bytes": 371,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/ci/github-actions-node.yml",
+          "sha256": "8415e5eb973672f63fdd4199cf801bfb81cd2c248cf8755dac102176b39a9e75"
+        },
+        {
+          "bytes": 416,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/ci/github-actions-python.yml",
+          "sha256": "08fb38e408b9713231988666614610406362f5afba697af4d3acf6759cfb6b85"
+        },
+        {
+          "bytes": 940,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/schemas/finding.schema.json",
+          "sha256": "957010afdf5f07c73600eb6a4945920507d89a65f0316a33d372256d924517d8"
+        },
+        {
+          "bytes": 1212,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/schemas/normalized-results.schema.json",
+          "sha256": "6c6b814387a9c4d1904ad2ab7b8dac27e8f017c58869b774ae983284f157076a"
+        },
+        {
+          "bytes": 1095,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/schemas/scenario.schema.json",
+          "sha256": "8c5c962078b8696adf1b2f3a063dc4badd3f11368998549d30b31f11af3159e6"
+        },
+        {
+          "bytes": 6097,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/schemas/verification-manifest.schema.json",
+          "sha256": "f6a7afd4e0a47c0566972a695301e929d2b970dbdb39b25d1a2c854b697434e9"
+        },
+        {
+          "bytes": 261,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/execution-record.json",
+          "sha256": "5891ec0997c384712a7af882b2ae408dd72e5641938d87b754e500e0f40b294f"
+        },
+        {
+          "bytes": 400,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/exploratory-charter.md",
+          "sha256": "9595b177d6737907c2a368c028e639754b96ea36cee55f8d05b6b22764ae332d"
+        },
+        {
+          "bytes": 462,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/failure-triage.md",
+          "sha256": "de959f3fc53d24e24c427e2d0fc28093724c227fcb840b5e715a3a099c71a34a"
+        },
+        {
+          "bytes": 357,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/residual-risk-ledger.md",
+          "sha256": "4b785b71a5575623e9a7ec615aae63452d1f00e64933daca210e30e41075671c"
+        },
+        {
+          "bytes": 428,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/risk-register.md",
+          "sha256": "1ee52cdc230e2566c80980e495cdfe10572e3027dd06d36499b55d3c295a60ae"
+        },
+        {
+          "bytes": 314,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/traceability-matrix.md",
+          "sha256": "f410da235e3132da596db2f49cbb4b722a2a8043e305bb77617780403c4f02f2"
+        },
+        {
+          "bytes": 529,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/verification-brief.md",
+          "sha256": "e1dc1aace15d01d3d4899d0900e013593989844e324ea999ee13a94dcf5d2eb9"
+        },
+        {
+          "bytes": 656,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/verification-manifest.json",
+          "sha256": "7cbc354a1d595fc83bc7f3c340f11d95d1ef5519d80a18d8b25778eee80027d4"
+        },
+        {
+          "bytes": 577,
+          "path": "nova-the-optimal-ai/skills/software-verification/assets/templates/verification-report.md",
+          "sha256": "62ec2673fd6dc59798f11a6eb29a563425902384e0c16442b555f2ea294a4732"
+        },
+        {
+          "bytes": 543,
+          "path": "nova-the-optimal-ai/skills/software-verification/fallback/intake-card.md",
+          "sha256": "7f496d9a10aaeee805a60e1777a4337ad6f293532ede1c16d051128bc1695d70"
+        },
+        {
+          "bytes": 3392,
+          "path": "nova-the-optimal-ai/skills/software-verification/fallback/master-prompt.md",
+          "sha256": "795b73f2bb758bf3113988b1f5b3639556dfef148f78059656fd5f275f4a7102"
+        },
+        {
+          "bytes": 785,
+          "path": "nova-the-optimal-ai/skills/software-verification/fallback/output-templates.md",
+          "sha256": "dba5c2a713a2cdcb0a328db9a7a41b41de3dc7ad90cbcba020bb187078978639"
+        },
+        {
+          "bytes": 1438,
+          "path": "nova-the-optimal-ai/skills/software-verification/fallback/review-prompt.md",
+          "sha256": "77015ca574ebfbe190eb503b39fe914133ff3ee88c09336263f1cb500d86b670"
+        },
+        {
+          "bytes": 955,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/boundary-and-equivalence.md",
+          "sha256": "455b2f606ad76b0a8d7e063507d348e9574b5201338c8c3c08cddfce09181cfd"
+        },
+        {
+          "bytes": 1033,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/oracle-design.md",
+          "sha256": "b3015eadd9c55bdb2d1fbb05fcca0ecfed8795dea7af047be8f5ddec760c8033"
+        },
+        {
+          "bytes": 1442,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/release-assessment.md",
+          "sha256": "c40c82b16c5316bd0643a90a33286584b92535500b40b7de705e38bc26566153"
+        },
+        {
+          "bytes": 1728,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/risk-based-testing.md",
+          "sha256": "6e74815e26680111d8a7194ad8d64593454a94d8b8a8b1ecd4d0f9de218a30c4"
+        },
+        {
+          "bytes": 797,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/state-transition-testing.md",
+          "sha256": "227037dbf8cf9fb2d95e8ee4f9b262682d38378643787fd2dab1bd0e3b08d945"
+        },
+        {
+          "bytes": 1615,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/test-layer-selection.md",
+          "sha256": "ef5691c3849e664601f824be321da1a6f22d7d292bfcef4b58ae9346ff812b70"
+        },
+        {
+          "bytes": 1222,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/core/test-smells.md",
+          "sha256": "493568a4cb3feae487a9b9456d47c6500e4781b130ae42c6b65e7754a0b7585d"
+        },
+        {
+          "bytes": 650,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/reliability/concurrency-and-races.md",
+          "sha256": "6b0628bcd4bf00fbdb764d89b087a4c0d7661d5df386e9639d2da20df711a0f8"
+        },
+        {
+          "bytes": 748,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/reliability/dependency-failure-modes.md",
+          "sha256": "b57632c4188e7ea9f84eda2078efc33368abe1e61eabc56d47fbb8c9d13297aa"
+        },
+        {
+          "bytes": 625,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/reliability/observability-verification.md",
+          "sha256": "b1fe93d1c67c579b457f973a26c84911cc99c5caddebdd1f7c0e06a41ffe6dd8"
+        },
+        {
+          "bytes": 778,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/reliability/retries-idempotency-timeouts.md",
+          "sha256": "dfd2c4164f7cbd74f84776f695da43479c8934ae22702057df70c6899e468cdb"
+        },
+        {
+          "bytes": 669,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/security/authorization-testing.md",
+          "sha256": "f65d58465c53fc64e59650bd744ee87dec435efec1c0cdcdaf0c01c298ea3376"
+        },
+        {
+          "bytes": 523,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/security/input-and-parser-security.md",
+          "sha256": "82ada5f47330260a8a0820013d5f75aa5eb8e1de401e8e2408d7c8365a601681"
+        },
+        {
+          "bytes": 768,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/security/safe-testing-boundaries.md",
+          "sha256": "eaba06a902822c672af3a55915ef5d9650aa9dd4f1f43cf93be79a4d926e27ac"
+        },
+        {
+          "bytes": 529,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/security/secrets-and-config-review.md",
+          "sha256": "36add90a748d545ae1276ad8007dd4f3cc3f4189cc9550dc6abea3d79c5c5c96"
+        },
+        {
+          "bytes": 512,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/specialized/contract-testing.md",
+          "sha256": "bbb3cb8ccdd135a14136af3d9649634560dce62c1501961fa335222274a8de5f"
+        },
+        {
+          "bytes": 508,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/specialized/migration-testing.md",
+          "sha256": "681875be0a4910ee1cfd8747f7dd391f48c55c29026c6b1fb59aa9eaf3001e2c"
+        },
+        {
+          "bytes": 660,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/specialized/parser-and-compiler-testing.md",
+          "sha256": "60161d47ffa95241b43d035b6c588548a73fe1773cb74f1c2996b5041b91431f"
+        },
+        {
+          "bytes": 596,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/specialized/property-based-testing.md",
+          "sha256": "648b1e5440c6a639cdf2ccaa60a872d84c666332353e2b1fb7c851a684060004"
+        },
+        {
+          "bytes": 689,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/stacks/generic-adapter.md",
+          "sha256": "5aca6159f4e73277d2895dea3ec6b9843f1f9f74e6ae79585331464f2be1b8a8"
+        },
+        {
+          "bytes": 684,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/stacks/python-pytest.md",
+          "sha256": "4e0fd68fe34648dd3224cfc42f3cd8bbfa66b7de46c025614d6c2f9956afc7e9"
+        },
+        {
+          "bytes": 881,
+          "path": "nova-the-optimal-ai/skills/software-verification/references/stacks/typescript-vitest-jest.md",
+          "sha256": "eccd25b5d3f96c67b0d5668e2912272c811496108ea9324f3c8620e6da2d9461"
+        },
+        {
+          "bytes": 2926,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/assemble_report.py",
+          "sha256": "e9499fbd7a36055c203aa6575bcef0651dd0ad9329153374cf6b294e2f124d77"
+        },
+        {
+          "bytes": 2454,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/capture_command.py",
+          "sha256": "2c65a44c7d9fb298e8126fffcd78ccff8c8b138e78a6f00bb44cfce715c8b9e2"
+        },
+        {
+          "bytes": 74,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/common/__init__.py",
+          "sha256": "e29efe317da7e746892083a5918fa21076e7f1a1cbacfcc752552663cda5ffc8"
+        },
+        {
+          "bytes": 546,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/common/command_result.py",
+          "sha256": "c6ee9db9175ab18087bdbbc34b54e291d15fce245c462e30d8fcecd44b9c76a2"
+        },
+        {
+          "bytes": 2095,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/common/filesystem.py",
+          "sha256": "822c21c4f60f50d4e709249fbd74b67a61d2aab51a16785787147bbd3bbc47eb"
+        },
+        {
+          "bytes": 4073,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/detect_test_stack.py",
+          "sha256": "206c85e2f81edc37dffbb219a9eabfb320199f3b19f9ed44989cd211fb019717"
+        },
+        {
+          "bytes": 3967,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/inspect_repo.py",
+          "sha256": "7eb04aa787b41dd5095399441dab95edc5232d4b9bfb6f989633a56024d17410"
+        },
+        {
+          "bytes": 5087,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/normalize_test_results.py",
+          "sha256": "0affac55fd7235e750373dfec53a0da585d5b77127d7251feab2a98c3797bbaf"
+        },
+        {
+          "bytes": 2999,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/scan_test_smells.py",
+          "sha256": "5f63e0ba814b7a2da8bd11abae6dbd394903579ca6560ba77d4a451a335d23eb"
+        },
+        {
+          "bytes": 3144,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/summarize_diff.py",
+          "sha256": "99826e53b2ddbdafc568475c527c7c19ae9511539ca09742e46859a45f099dc0"
+        },
+        {
+          "bytes": 1373,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/validate_eval_suite.py",
+          "sha256": "99883297ea16a400c681f8fcfa297c6d1bf1cc8ad38b8031f44b73d20969b304"
+        },
+        {
+          "bytes": 8700,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/validate_manifest.py",
+          "sha256": "b9060b689167727547c6b7230d7081bc1454dfc7fca284e286b67597005b8a14"
+        },
+        {
+          "bytes": 3170,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/validate_traceability.py",
+          "sha256": "0004ea50991870a5265100cad94a896e9d1a11ab61daa7e740551b2a6e15e1f8"
+        },
+        {
+          "bytes": 3870,
+          "path": "nova-the-optimal-ai/skills/software-verification/scripts/verify_package.py",
+          "sha256": "9f5e7b26b61427e47a500932f4c9b423852aa2f393b622ac9253e8782f46954a"
+        },
+        {
+          "bytes": 3360,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/SKILL.md",
+          "sha256": "4ee5748026fa0f7c17f284f771a005d24268d013b37646b6661ea6a6e72cdd84"
+        },
+        {
+          "bytes": 779,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/adapters/claude-code.md",
+          "sha256": "ed065cde07ac2f2e22128f2e4379eebd95dceada1466bcb228f6618cc16cb435"
+        },
+        {
+          "bytes": 713,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/adapters/codex.md",
+          "sha256": "0bbfe4a81898e19530b71c93e6adc698a86ee230d09f57de0fac19a068115612"
+        },
+        {
+          "bytes": 646,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/adapters/copy-paste-chat.md",
+          "sha256": "5906597721b9f69e23e8f8c0568838309af178fbe37f05fc8f61800a3b0e886f"
+        },
+        {
+          "bytes": 713,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/adapters/github.md",
+          "sha256": "44f8256e25ca2ef670e8d4cab4967486aa35c9013e11e18a5e1049fb09e153a5"
+        },
+        {
+          "bytes": 698,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/adapters/local-shell.md",
+          "sha256": "37e82cbb336026c298004d5d3b43a38b12faeca619bce0815790644447d915be"
+        },
+        {
+          "bytes": 994,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/adversarial-checks.md",
+          "sha256": "92f3bb679ec9e08617d0c950617d171ae689d6c35c59d921fc781325c0ca039a"
+        },
+        {
+          "bytes": 249,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/agents/openai.yaml",
+          "sha256": "5b76baba55ce7d6ae1b873086546c3abb8772de7b5ea32c0684cd2fe867748c0"
+        },
+        {
+          "bytes": 371,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/ci/github-actions-node.yml",
+          "sha256": "8415e5eb973672f63fdd4199cf801bfb81cd2c248cf8755dac102176b39a9e75"
+        },
+        {
+          "bytes": 416,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/ci/github-actions-python.yml",
+          "sha256": "08fb38e408b9713231988666614610406362f5afba697af4d3acf6759cfb6b85"
+        },
+        {
+          "bytes": 940,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/schemas/finding.schema.json",
+          "sha256": "957010afdf5f07c73600eb6a4945920507d89a65f0316a33d372256d924517d8"
+        },
+        {
+          "bytes": 1212,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/schemas/normalized-results.schema.json",
+          "sha256": "6c6b814387a9c4d1904ad2ab7b8dac27e8f017c58869b774ae983284f157076a"
+        },
+        {
+          "bytes": 1095,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/schemas/scenario.schema.json",
+          "sha256": "8c5c962078b8696adf1b2f3a063dc4badd3f11368998549d30b31f11af3159e6"
+        },
+        {
+          "bytes": 6097,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/schemas/verification-manifest.schema.json",
+          "sha256": "f6a7afd4e0a47c0566972a695301e929d2b970dbdb39b25d1a2c854b697434e9"
+        },
+        {
+          "bytes": 261,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/execution-record.json",
+          "sha256": "5891ec0997c384712a7af882b2ae408dd72e5641938d87b754e500e0f40b294f"
+        },
+        {
+          "bytes": 400,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/exploratory-charter.md",
+          "sha256": "9595b177d6737907c2a368c028e639754b96ea36cee55f8d05b6b22764ae332d"
+        },
+        {
+          "bytes": 462,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/failure-triage.md",
+          "sha256": "de959f3fc53d24e24c427e2d0fc28093724c227fcb840b5e715a3a099c71a34a"
+        },
+        {
+          "bytes": 357,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/residual-risk-ledger.md",
+          "sha256": "4b785b71a5575623e9a7ec615aae63452d1f00e64933daca210e30e41075671c"
+        },
+        {
+          "bytes": 428,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/risk-register.md",
+          "sha256": "1ee52cdc230e2566c80980e495cdfe10572e3027dd06d36499b55d3c295a60ae"
+        },
+        {
+          "bytes": 314,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/traceability-matrix.md",
+          "sha256": "f410da235e3132da596db2f49cbb4b722a2a8043e305bb77617780403c4f02f2"
+        },
+        {
+          "bytes": 529,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/verification-brief.md",
+          "sha256": "e1dc1aace15d01d3d4899d0900e013593989844e324ea999ee13a94dcf5d2eb9"
+        },
+        {
+          "bytes": 656,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/verification-manifest.json",
+          "sha256": "7cbc354a1d595fc83bc7f3c340f11d95d1ef5519d80a18d8b25778eee80027d4"
+        },
+        {
+          "bytes": 577,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/assets/templates/verification-report.md",
+          "sha256": "62ec2673fd6dc59798f11a6eb29a563425902384e0c16442b555f2ea294a4732"
+        },
+        {
+          "bytes": 543,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/fallback/intake-card.md",
+          "sha256": "7f496d9a10aaeee805a60e1777a4337ad6f293532ede1c16d051128bc1695d70"
+        },
+        {
+          "bytes": 3392,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/fallback/master-prompt.md",
+          "sha256": "795b73f2bb758bf3113988b1f5b3639556dfef148f78059656fd5f275f4a7102"
+        },
+        {
+          "bytes": 785,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/fallback/output-templates.md",
+          "sha256": "dba5c2a713a2cdcb0a328db9a7a41b41de3dc7ad90cbcba020bb187078978639"
+        },
+        {
+          "bytes": 1438,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/fallback/review-prompt.md",
+          "sha256": "77015ca574ebfbe190eb503b39fe914133ff3ee88c09336263f1cb500d86b670"
+        },
+        {
+          "bytes": 955,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/boundary-and-equivalence.md",
+          "sha256": "455b2f606ad76b0a8d7e063507d348e9574b5201338c8c3c08cddfce09181cfd"
+        },
+        {
+          "bytes": 1033,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/oracle-design.md",
+          "sha256": "b3015eadd9c55bdb2d1fbb05fcca0ecfed8795dea7af047be8f5ddec760c8033"
+        },
+        {
+          "bytes": 1442,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/release-assessment.md",
+          "sha256": "c40c82b16c5316bd0643a90a33286584b92535500b40b7de705e38bc26566153"
+        },
+        {
+          "bytes": 1728,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/risk-based-testing.md",
+          "sha256": "6e74815e26680111d8a7194ad8d64593454a94d8b8a8b1ecd4d0f9de218a30c4"
+        },
+        {
+          "bytes": 797,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/state-transition-testing.md",
+          "sha256": "227037dbf8cf9fb2d95e8ee4f9b262682d38378643787fd2dab1bd0e3b08d945"
+        },
+        {
+          "bytes": 1615,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/test-layer-selection.md",
+          "sha256": "ef5691c3849e664601f824be321da1a6f22d7d292bfcef4b58ae9346ff812b70"
+        },
+        {
+          "bytes": 1222,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/core/test-smells.md",
+          "sha256": "493568a4cb3feae487a9b9456d47c6500e4781b130ae42c6b65e7754a0b7585d"
+        },
+        {
+          "bytes": 650,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/reliability/concurrency-and-races.md",
+          "sha256": "6b0628bcd4bf00fbdb764d89b087a4c0d7661d5df386e9639d2da20df711a0f8"
+        },
+        {
+          "bytes": 748,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/reliability/dependency-failure-modes.md",
+          "sha256": "b57632c4188e7ea9f84eda2078efc33368abe1e61eabc56d47fbb8c9d13297aa"
+        },
+        {
+          "bytes": 625,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/reliability/observability-verification.md",
+          "sha256": "b1fe93d1c67c579b457f973a26c84911cc99c5caddebdd1f7c0e06a41ffe6dd8"
+        },
+        {
+          "bytes": 778,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/reliability/retries-idempotency-timeouts.md",
+          "sha256": "dfd2c4164f7cbd74f84776f695da43479c8934ae22702057df70c6899e468cdb"
+        },
+        {
+          "bytes": 669,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/security/authorization-testing.md",
+          "sha256": "f65d58465c53fc64e59650bd744ee87dec435efec1c0cdcdaf0c01c298ea3376"
+        },
+        {
+          "bytes": 523,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/security/input-and-parser-security.md",
+          "sha256": "82ada5f47330260a8a0820013d5f75aa5eb8e1de401e8e2408d7c8365a601681"
+        },
+        {
+          "bytes": 768,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/security/safe-testing-boundaries.md",
+          "sha256": "eaba06a902822c672af3a55915ef5d9650aa9dd4f1f43cf93be79a4d926e27ac"
+        },
+        {
+          "bytes": 529,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/security/secrets-and-config-review.md",
+          "sha256": "36add90a748d545ae1276ad8007dd4f3cc3f4189cc9550dc6abea3d79c5c5c96"
+        },
+        {
+          "bytes": 512,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/specialized/contract-testing.md",
+          "sha256": "bbb3cb8ccdd135a14136af3d9649634560dce62c1501961fa335222274a8de5f"
+        },
+        {
+          "bytes": 508,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/specialized/migration-testing.md",
+          "sha256": "681875be0a4910ee1cfd8747f7dd391f48c55c29026c6b1fb59aa9eaf3001e2c"
+        },
+        {
+          "bytes": 660,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/specialized/parser-and-compiler-testing.md",
+          "sha256": "60161d47ffa95241b43d035b6c588548a73fe1773cb74f1c2996b5041b91431f"
+        },
+        {
+          "bytes": 596,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/specialized/property-based-testing.md",
+          "sha256": "648b1e5440c6a639cdf2ccaa60a872d84c666332353e2b1fb7c851a684060004"
+        },
+        {
+          "bytes": 689,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/stacks/generic-adapter.md",
+          "sha256": "5aca6159f4e73277d2895dea3ec6b9843f1f9f74e6ae79585331464f2be1b8a8"
+        },
+        {
+          "bytes": 684,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/stacks/python-pytest.md",
+          "sha256": "4e0fd68fe34648dd3224cfc42f3cd8bbfa66b7de46c025614d6c2f9956afc7e9"
+        },
+        {
+          "bytes": 881,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/references/stacks/typescript-vitest-jest.md",
+          "sha256": "eccd25b5d3f96c67b0d5668e2912272c811496108ea9324f3c8620e6da2d9461"
+        },
+        {
+          "bytes": 1748,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/review-rubric.md",
+          "sha256": "519299144228feb8f8dc4293a8532af43a50f83e59df1fb04dfe0c35f9a3043a"
+        },
+        {
+          "bytes": 2926,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/assemble_report.py",
+          "sha256": "e9499fbd7a36055c203aa6575bcef0651dd0ad9329153374cf6b294e2f124d77"
+        },
+        {
+          "bytes": 2454,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/capture_command.py",
+          "sha256": "2c65a44c7d9fb298e8126fffcd78ccff8c8b138e78a6f00bb44cfce715c8b9e2"
+        },
+        {
+          "bytes": 74,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/common/__init__.py",
+          "sha256": "e29efe317da7e746892083a5918fa21076e7f1a1cbacfcc752552663cda5ffc8"
+        },
+        {
+          "bytes": 546,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/common/command_result.py",
+          "sha256": "c6ee9db9175ab18087bdbbc34b54e291d15fce245c462e30d8fcecd44b9c76a2"
+        },
+        {
+          "bytes": 2095,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/common/filesystem.py",
+          "sha256": "822c21c4f60f50d4e709249fbd74b67a61d2aab51a16785787147bbd3bbc47eb"
+        },
+        {
+          "bytes": 4073,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/detect_test_stack.py",
+          "sha256": "206c85e2f81edc37dffbb219a9eabfb320199f3b19f9ed44989cd211fb019717"
+        },
+        {
+          "bytes": 3967,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/inspect_repo.py",
+          "sha256": "7eb04aa787b41dd5095399441dab95edc5232d4b9bfb6f989633a56024d17410"
+        },
+        {
+          "bytes": 5087,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/normalize_test_results.py",
+          "sha256": "0affac55fd7235e750373dfec53a0da585d5b77127d7251feab2a98c3797bbaf"
+        },
+        {
+          "bytes": 2999,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/scan_test_smells.py",
+          "sha256": "5f63e0ba814b7a2da8bd11abae6dbd394903579ca6560ba77d4a451a335d23eb"
+        },
+        {
+          "bytes": 3144,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/summarize_diff.py",
+          "sha256": "99826e53b2ddbdafc568475c527c7c19ae9511539ca09742e46859a45f099dc0"
+        },
+        {
+          "bytes": 1373,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/validate_eval_suite.py",
+          "sha256": "99883297ea16a400c681f8fcfa297c6d1bf1cc8ad38b8031f44b73d20969b304"
+        },
+        {
+          "bytes": 8700,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/validate_manifest.py",
+          "sha256": "b9060b689167727547c6b7230d7081bc1454dfc7fca284e286b67597005b8a14"
+        },
+        {
+          "bytes": 3170,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/validate_traceability.py",
+          "sha256": "0004ea50991870a5265100cad94a896e9d1a11ab61daa7e740551b2a6e15e1f8"
+        },
+        {
+          "bytes": 3870,
+          "path": "nova-the-optimal-ai/skills/verification-reviewer/scripts/verify_package.py",
+          "sha256": "9f5e7b26b61427e47a500932f4c9b423852aa2f393b622ac9253e8782f46954a"
+        }
+      ],
+      "plugin": "nova-the-optimal-ai",
+      "source": "plugins/nova-the-optimal-ai",
+      "source_tree_sha256": "be7d8c2e447c06c53a9ebb9393274aea457eb4c6a84394f3f1b98aade902e639"
+    }
+  ],
+  "determinism": {
+    "archive_root": "one top-level directory matching plugin name",
+    "compression": "ZIP_DEFLATED level 9",
+    "member_mode": "regular file 0644",
+    "member_order": "UTF-8 POSIX path lexicographic",
+    "member_timestamp": "1980-01-01T00:00:00",
+    "targets": [
+      "augment-of-mind",
+      "nova-the-optimal-ai"
+    ],
+    "volatile_fields": "none"
+  },
+  "evidence_boundary": "Hashes establish this exact source snapshot, archive topology, and byte content only; installation, discovery, invocation, and model behavior require separate evidence.",
+  "format": "collaborative-dynamics-build-week-release/v1",
+  "version": "1.0.0"
+}

@@ -1,0 +1,39 @@
+{
+  "format": "cd-brand-source-manifest/v1",
+  "inspected_at": "2026-07-21",
+  "source_bundle": "Collaborative Dynamics branding bundle shipped with Omnicompetence 0.6.1",
+  "source_boundary": "Local canonical asset snapshot; E-drive shortcut hub freshness check remains separate.",
+  "sources": [
+    {
+      "name": "CD Logo Transparent BG 166x166.png",
+      "bytes": 30392,
+      "sha256": "85725355c5c7ac1516a156d3cc37ca74e1dee314418bc300252d8436d0ce2ce6",
+      "use": "Exact shipped logo bytes"
+    },
+    {
+      "name": "CD Style Guide.png",
+      "bytes": 4806539,
+      "sha256": "92b74c80c69b7fbe1dffa2409bdfbe7573b5a45003aed4c11828323007ef60d2",
+      "use": "Palette, typography, and identity layout"
+    },
+    {
+      "name": "CD House Style.md",
+      "bytes": 1113,
+      "sha256": "2748da2e3d9bcfbe3f15adb081d216d3eaefa2b383742345fabc94830a2fe757",
+      "use": "Visual character and composition doctrine"
+    },
+    {
+      "name": "CD We Speak AI Banner.png",
+      "bytes": 2475148,
+      "sha256": "8728e8cf365055c7b6316c48c8b62914543fd40d161babb4a22bd2afee88d594",
+      "use": "House-style cross-check only; not bundled"
+    }
+  ],
+  "exact_palette": ["#48CBE8", "#193449", "#CCDCE4", "#FAFAFA"],
+  "named_fonts": ["Poppins", "Hauora"],
+  "shipping_asset": {
+    "path": "../assets/collaborative-dynamics-logo.png",
+    "sha256": "85725355c5c7ac1516a156d3cc37ca74e1dee314418bc300252d8436d0ce2ce6"
+  },
+  "nova_image_mark": "No separate canonical Nova image logo observed in the inspected bundle; use Nova's name or established glyph without inventing a mark."
+}

@@ -1,0 +1,40 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "testforge-review",
+  "recorded_at": "2026-07-21T17:47:46.863698+00:00",
+  "raw_receipt_local_only": "verification/raw/live-testforge-review-pre-fix.json",
+  "raw_receipt_sha256": "e82f116979ef9a8bc105ff4cf2fc07cfd008060e99952ca0b970f8d3c71f458e",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "8ee5600c6a40bbe0f711431cf6b6d2cad73b9958123a2e7b195d5b5679ce7a1d",
+  "loaded_candidate_skills": [
+    "adversarial-checks.md",
+    "review-rubric.md",
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "expected_skills": [
+    "software-verification"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "## Assessment\n\n**Release status: `INSUFFICIENT_EVIDENCE`**  \n**Reviewer verdict: `REVIEW_FAIL`**\n\nBound to package version 1.0.0, this checkout, and evidence inspected July 21, 2026. No Git revision is available because the directory is not a Git repository.\n\n### Direct evidence\n\nThese are observed records, not independently re-executed results:\n\n- [build-reproducibility.json](./verification/build-reproducibility.json:4) records two byte-identical builds on one host. Its own boundary excludes cross-platform reproducibility.\n- [fresh-host-install.json](./verification/fresh-host-install.json:6) records successful marketplace registration, installation, cache comparison, and discovery of 28 skills in a temporary Codex home. It explicitly records that no model invocation was attempted.\n- [tour-browser-command.json](./verification/tour-browser-command.json:17) contains an exit-zero browser record covering desktop, mobile, dark mode, keyboard, touch, reduced motion, and no-JavaScript behavior.\n- Static Ludis and Nova audits report `PASS`, while explicitly disclaiming creative quality, live routing, and response quality: [Ludis](./verification/ludis-prompt-modernization.json:101), [Nova](./verification/nova-prompt-surface-audit.json:93).\n\n### Derived conclusions\n\n- The captured evidence supports a historical claim that the two plugins installed and were discoverable on the stated Windows/Codex configuration.\n- It supports deterministic same-checkout packaging for the two recorded runs.\n- It provides credible browser evidence for the tour’s tested interactions.\n- It does **not** establish current source-to-archive equality, authenticated model behavior, product-response quality, or overall release readiness.\n\n### Decision-changing gaps and residual risks\n\n- The promised `verification/verification-report.md` and `design/CONTEST-ACCEPTANCE.md` are absent despite being the designated comparison artifacts in [START-HERE.md](./START-HERE.md:51).\n- `entry-static.json` claims it consumed `verification/nova-skill-reconciliation.json`, but that file is absent. Therefore its overall `valid: true` cannot be treated as a current package-integrity oracle ([reference](./verification/entry-static.json:37)).\n- The referenced `submission/HUMAN-ACTIONS.md` is absent.\n- No verification manifest, risk dispositions, traceability matrix, normalized results, or independent review report binds scope → risk → test → evidence → status.\n- Python validation was blocked by this read-only environment; archive hashes and validators were not rerun.\n- Remaining platform, live-model, provenance/rights, and evidence-staleness risks are unresolved.\n\n### Human-only contest actions\n\nRepository publication, public video upload, final `/feedback` selection, rights attestation, Devpost submission, and final acceptance remain human actions, as acknowledged in [README.md](./README.md:75) and [BUILD-WEEK-CONTRIBUTION.md](./BUILD-WEEK-CONTRIBUTION.md:23).",
+  "response_sha256": "446ad6e1e3e12fe43e8e295fd059f04133db4f72f9171fc5cb043e073d0ab57a",
+  "response_raw_sha256": "49de454d102bb1bece17346aa16be6493c6397f782afd68725808f49503e71b3",
+  "response_normalization": [
+    "temporary-public-candidate-path-to-relative"
+  ],
+  "public_candidate_stage": {
+    "file_count": null,
+    "tree_sha256": null,
+    "plugin_tree_sha256": null,
+    "privacy_scan": null,
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-testforge-review-pre-fix-public-raw.json",
+  "valid": false,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

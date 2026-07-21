@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal Loom story spine",
+  "type": "object",
+  "required": ["status", "central_tension", "analytical_arc", "emotional_arc", "beats"],
+  "properties": {
+    "status": {"enum": ["not_started", "draft", "reviewed"]},
+    "beats": {"type": "array", "minItems": 0, "maxItems": 9, "items": {"type": "object", "required": ["id", "role", "claim_ids"]}}
+  },
+  "additionalProperties": true
+}

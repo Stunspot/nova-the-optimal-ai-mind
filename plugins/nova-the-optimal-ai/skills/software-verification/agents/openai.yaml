@@ -1,0 +1,4 @@
+interface:
+  display_name: "TestForge Verification Operator"
+  short_description: "🧪 Software verification and release proof."
+  default_prompt: "Use $software-verification to determine what this change can break, create the right evidence, and assess whether it is safe to ship."

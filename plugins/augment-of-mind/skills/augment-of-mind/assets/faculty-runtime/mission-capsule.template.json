@@ -1,0 +1,45 @@
+{
+  "schema": "collaborative-dynamics-mission-capsule/v1",
+  "mission_id": "replace-with-stable-mission-id",
+  "desired_state": "State the user-authorized world change.",
+  "acceptance": [
+    {
+      "criterion": "State one observable acceptance condition.",
+      "evidence_required": "Name the evidence that could establish it.",
+      "status": "unmet"
+    }
+  ],
+  "phase": "orient",
+  "reasoning_horizon": "Name only the next state change worth coordinating.",
+  "stakes": [],
+  "constraints": [],
+  "authority": {
+    "granted": [],
+    "reserved": []
+  },
+  "decisive_state": {
+    "evidence": [],
+    "contradictions": [],
+    "model_or_recommendation_changes": [],
+    "action_or_verification_changes": []
+  },
+  "commitment": {
+    "current": "",
+    "state": "none",
+    "stop_condition": ""
+  },
+  "active_coalition": [],
+  "unresolved_transformations": [],
+  "cross_cutting_conflicts": [],
+  "budgets": {
+    "context": "Keep the capsule smaller than the work it coordinates.",
+    "time": "",
+    "cost": "",
+    "tool_use": ""
+  },
+  "reassessment_trigger": "Re-score after decisive evidence, completion, failure, phase change, or authority change.",
+  "closure": {
+    "status": "open",
+    "reopening_condition": ""
+  }
+}

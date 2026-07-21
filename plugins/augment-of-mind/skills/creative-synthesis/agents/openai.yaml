@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Synthesis"
+  short_description: "💡 Creative synthesis across domains."
+  default_prompt: "Use $creative-synthesis: break this obvious frame with cross-pollinated analogies, tensions, exceptions, and constraints; return genuinely different candidates while selection stays open."

@@ -1,0 +1,21 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "1.0.0",
+  "episode_mode": "isolated",
+  "files": ["faculty-runtime-cases.yaml"],
+  "indispensable_dimensions": [
+    "simple_task_non_regression",
+    "routing_minimality",
+    "precision_custody",
+    "selective_broadcast",
+    "information_probe",
+    "rescore_and_unload",
+    "collision_recovery",
+    "authority_boundary",
+    "merge_integrity",
+    "explicit_dream_gate",
+    "aesthetic_custody"
+  ],
+  "synthesis": "Every case and indispensable dimension must be demonstrated. Success on easy work cannot offset a custody, authority, selective-broadcast, recovery, DREAM-gate, aesthetic-custody, or premature-closure failure.",
+  "result_authority": "Context-only behavioral evidence for Augment of MIND build iteration; not live-host activation, universal reliability, or release approval."
+}

@@ -1,0 +1,51 @@
+{
+  "format": "nova-video-production-inputs/v1",
+  "recorded_at": "2026-07-21T19:06:26Z",
+  "canonical_inputs": {
+    "script": {
+      "path": "demo/VIDEO-SCRIPT.md",
+      "sha256": "816c0d5bf629c359b31a4394ebf14c885be03d11b3bcbdd3848713a1fd0a49c9",
+      "spoken_words": 322,
+      "scene_count": 8,
+      "planned_duration_seconds": 172,
+      "pipeline_parse": "passed"
+    },
+    "shot_list": {
+      "path": "demo/SHOT-LIST.md",
+      "sha256": "0557a697aed1fc50fa55f6635121ac8edd059a8decdf5efdfd16a819fb1b40e0"
+    },
+    "studio_case": {
+      "path": "demo/STUDIO-CASE.json",
+      "sha256": "08f28d7942730243da7a305c17584d0c5a29503b8a4c358aa495ce61521fa3ac",
+      "json_parse": "passed"
+    }
+  },
+  "pipeline_doctor": {
+    "status": "READY",
+    "ffmpeg": true,
+    "ffprobe": true,
+    "imagemagick": true,
+    "captions_filter": true,
+    "windows_sapi": true,
+    "available_voices": [
+      "Microsoft David Desktop",
+      "Microsoft Zira Desktop"
+    ],
+    "gpu_preflight": {
+      "status": "eligible",
+      "device": "NVIDIA GeForce RTX 3090",
+      "encoder": "h264_nvenc",
+      "fallback": "libx264 with at most two threads"
+    }
+  },
+  "production": {
+    "asset_materialization": "handed_off",
+    "public_repository_url": "pending_observation",
+    "render": "not_run",
+    "verification": "not_run",
+    "human_audiovisual_review": "not_run",
+    "upload": "not_run"
+  },
+  "valid": true,
+  "boundary": "This receipt proves only that the refreshed canonical inputs parse and that the production host doctor was ready at the recorded time. It does not prove final assets, narration quality, rendering, audiovisual quality, upload, or submission."
+}

@@ -1,0 +1,10 @@
+{
+  "format": "cd-context-request/v1",
+  "task": "State the work this packet must support.",
+  "scope": {"user": "user-key", "project": "project-key", "agent": "agent-key", "thread": null},
+  "character_budget": 12000,
+  "sensitivity_ceiling": "limited",
+  "include_recent_episodes": 10,
+  "required_ids": [],
+  "ranked_ids": []
+}

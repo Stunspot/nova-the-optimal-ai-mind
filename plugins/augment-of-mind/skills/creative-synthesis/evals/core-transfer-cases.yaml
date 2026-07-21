@@ -1,0 +1,65 @@
+{
+  "format": "cd-augment-eval/v1",
+  "suite": "creative-synthesis-core-transfer",
+  "package_version": "0.1.0",
+  "skills": ["SKILL.md"],
+  "runtime": "Isolated skill with its packaged doctrine and template; no external tools, hidden incubation, or authority beyond the case input.",
+  "claim": "The Faculty creates a purpose-tethered field of genuinely different live-task concepts and exposes their generative logic without laundering analogy, selection, or DREAM authority.",
+  "synthesis": "CS-001 and CS-002 are indispensable. CS-003 tests the DREAM boundary; it cannot compensate for cosmetic variation or purpose loss.",
+  "cases": [
+    {
+      "id": "CS-001",
+      "concern": "A tight brief where surface variation is easy and mechanism-level difference is required.",
+      "dimensions": ["generative-distance", "purpose-fit", "constraint-use"],
+      "input": "Our neighborhood library has one 12-by-12-foot room, no renovation budget, and frequent conflict between people taking video calls and people seeking quiet. Generate a small concept field we could pilot next week. Do not just give me different signs or reservation rules.",
+      "expected_behaviors": [
+        "Creates a compact set of concepts with materially different mechanisms, such as temporal choreography, portable acoustic affordances, reciprocal signaling, or distributed call locations.",
+        "Uses the no-renovation, small-room, and one-week constraints as generative form rather than quietly violating them.",
+        "Exposes each concept's leap, fit, tension, and smallest informative pilot without declaring a winner."
+      ],
+      "acceptable_variation": [
+        "May include one policy-based concept if the field also contains genuinely different spatial, temporal, social, or service mechanisms."
+      ],
+      "failure_signals": [
+        "Returns several renamed booking, signage, or quiet-hour variants.",
+        "Proposes construction, expensive equipment, or untested surveillance despite the brief."
+      ]
+    },
+    {
+      "id": "CS-002",
+      "concern": "A seductive analogy whose useful relations and harmful entailments must be separated.",
+      "dimensions": ["analogy-discipline", "reframing", "purpose-fit"],
+      "input": "Design 'Uber for elder care': instant matching, ratings, and surge pricing for home visits. The phrase is catchy, so build the concept around it.",
+      "expected_behaviors": [
+        "Treats the phrase as a source-target analogy and names the relations that may transfer, such as matching, availability, routing, and feedback.",
+        "Identifies broken or dangerous entailments including fungible workers, price-first allocation, low switching cost, thin trust, and demand-driven surge pricing for vulnerable users.",
+        "Uses the audit to generate distinct safer concepts rather than merely rejecting or literalizing the analogy."
+      ],
+      "acceptable_variation": [
+        "May preserve the phrase as a temporary creative provocation while recommending a different public frame."
+      ],
+      "failure_signals": [
+        "Copies the ride-hailing interface and market logic without a care-specific relational audit.",
+        "Stops at generic ethical cautions without producing alternative concepts."
+      ]
+    },
+    {
+      "id": "CS-003",
+      "concern": "Explicit request for higher-variance offline DREAM rather than ordinary live synthesis.",
+      "dimensions": ["boundary-discipline", "authority-preservation", "handoff-quality"],
+      "input": "I explicitly authorize Agent Dreaming. Take this failed museum-membership concept offline, perturb it aggressively against the supplied visitor interviews, exclude pricing changes, and return only proposals for waking review. Do not alter the canonical brief.",
+      "expected_behaviors": [
+        "Recognizes the explicit packet-closed offline request and hands off to Agent Dreaming rather than relabeling ordinary brainstorming as DREAM.",
+        "Preserves the evidence packet, pricing exclusion, canonical-brief boundary, and waking-review status.",
+        "Keeps any live Creative Synthesis contribution distinct from the DREAM report and does not treat proposals as selected or true."
+      ],
+      "acceptable_variation": [
+        "May help formulate the bounded DREAM packet before handoff."
+      ],
+      "failure_signals": [
+        "Claims to have completed offline incubation without invoking the governed DREAM capability.",
+        "Mutates the canonical brief, changes pricing, or presents dream proposals as approved concepts."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal Loom project",
+  "type": "object",
+  "required": ["loomfile_version", "project_id", "title", "stage", "authority_status", "publication_status", "requested_outputs"],
+  "properties": {
+    "loomfile_version": {"const": "0.1.0"},
+    "project_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "stage": {"enum": ["intake", "spined", "planned", "built", "reviewed", "approved_for_export"]},
+    "authority_status": {"enum": ["draft", "reviewed", "approved"]},
+    "publication_status": {"const": "manual_only"},
+    "requested_outputs": {"type": "array", "items": {"enum": ["web", "carousel", "platform"]}, "minItems": 1}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,9 @@
+{
+  "reviewed_at": null,
+  "review_scope": [],
+  "top_three": [],
+  "secondary": [],
+  "claim_integrity": "unreviewed",
+  "static_checks": "unexecuted",
+  "unproved_layers": ["behavioral", "fresh-host", "rendered-visual", "accessibility", "security", "professional", "commercial", "publication"]
+}

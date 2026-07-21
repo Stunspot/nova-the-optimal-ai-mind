@@ -1,0 +1,41 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "testforge-review",
+  "recorded_at": "2026-07-21T18:33:33.904215+00:00",
+  "raw_receipt_local_only": "verification/raw/live-testforge-review-stage-gap.json",
+  "raw_receipt_sha256": "95c74472b960f524f1e512c985273376f08da85c70f5474cd7840913c9106f87",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "ad0b733377a1270353c4d2deb3f412f821840dd4c7d7d2a2f1d0d1513d15bab0",
+  "loaded_candidate_skills": [
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "expected_skills": [
+    "software-verification"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "## Verification decision\n\n**INSUFFICIENT_EVIDENCE** for release readiness. Reviewer disposition: **REVIEW_FAIL** for the package’s evidence custody, while several narrower claims remain supported.\n\n### Direct evidence\n\n- The static receipt records 28 skills, 443 plugin files, no reported errors/warnings, and explicitly limits itself to static repository/custody verification. This is evidence of the recorded result, not an independent rerun. [entry-static.json](/./verification/entry-static.json:3)\n- The fresh-host receipt records successful marketplace installation, 16 + 12 discovered skills, and source/cache equality. It explicitly excludes authenticated model behavior. [fresh-host-install.json](/./verification/fresh-host-install.json:3)\n- The live index records six bounded GPT-5.6-sol scenarios as valid and includes SHA-256 bindings. Its own boundary excludes universal behavior, publication, rights, and submission claims. [live-probe-status.json](/./verification/live-probe-status.json:187)\n- Direct filesystem inspection found these cited artifacts absent:\n  - `verification/current-host-install.json`\n  - `verification/live-testforge-review-pre-fix-analysis.json`\n  - `verification/live-testforge-review-analysis.json`\n  - `tools/fresh_host_install_probe.py`\n  - `tools/check_tour.cjs`\n- The manifest itself says the current review is `NOT_RUN` and assigns `INSUFFICIENT_EVIDENCE`. [verification-manifest.json](/./verification/verification-manifest.json:87)\n\n### Derived conclusions\n\n- The shipped receipts support bounded static, installation, browser, and six-scenario claims, assuming their captured provenance is genuine and applicable to this exact tree.\n- The current-host-refresh claim is only partially supported: cache/discovery/fresh-install receipts exist, but one component of the declared raw evidence is missing.\n- The claimed preserved TestForge `REVIEW_FAIL` cannot be independently established because its sole cited raw artifact is absent. Repetition of the result in reports or consolidated JSON does not replace that artifact.\n- The package correctly avoids converting its pending review into readiness; therefore its top-level `INSUFFICIENT_EVIDENCE` status is safer than `READY`.\n\n### Residual risks\n\n- No immutable revision or Git commit binds the report to this candidate.\n- Several execution commands are not reproducible from the shipped repository because their scripts are absent.\n- Receipt hashes and release archives were not independently revalidated: the environment rejected executing the required verification helpers.\n- Six prompts cannot establish general routing, specialist quality, accessibility certification, or behavior on other Codex/OS versions.\n- Demo material is explicitly marked for re-entry before publication. [CONTEST-ACCEPTANCE.md](/./design/CONTEST-ACCEPTANCE.md:36)\n\n### Human-only contest actions\n\nAn authorized representative must choose and publish the repository, confirm final hashes, record/upload and signed-out-check the video, run `/feedback`, record provenance, attest representation and asset rights, accept current terms, complete Devpost fields, submit, and retain the confirmation. Only the MIT license choice is checked complete. [HUMAN-ACTIONS.md](/./submission/HUMAN-ACTIONS.md:5)",
+  "response_sha256": "19009a6c9806b074201346241e995247e58bb90e2adac8b8e0202a57725e2e65",
+  "response_raw_sha256": "5ecd24e535a4153ed5cd8528bd6339b4eedc0f174f4c9cf0e9b5808039515af8",
+  "response_normalization": [
+    "temporary-public-candidate-path-to-relative"
+  ],
+  "public_candidate_stage": {
+    "file_count": 487,
+    "tree_sha256": "c21e7b581b7e2bd89e3afc9c5d18b2093babc4de1d4831297b7296854c2fceff",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-testforge-review-stage-gap-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

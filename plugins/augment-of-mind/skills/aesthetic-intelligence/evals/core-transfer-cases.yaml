@@ -1,0 +1,92 @@
+{
+  "format": "cd-augment-eval/v1",
+  "suite": "aesthetic-intelligence-core-transfer",
+  "package_version": "0.1.0",
+  "skills": ["SKILL.md"],
+  "runtime": "Isolated context-only episode with Aesthetic Intelligence SKILL.md and its doctrine available on demand; no live retrieval, image inspection, or persistent taste memory unless explicitly supplied.",
+  "claim": "The Faculty senses aesthetic gestalt and conceptual neighborhood, judges composition and user-relative fit, offers useful bearings from sparse anchors, and preserves cultural, evidentiary, and neighboring-Faculty boundaries.",
+  "synthesis": "All cases are required. A merely stylish answer fails if it lacks field geometry, ignores explicit taste, launders interpretation into fact, or assumes custody of generation or decision.",
+  "cases": [
+    {
+      "id": "AEI-001",
+      "concern": "Sparse cross-domain anchors should produce useful orientation without questionnaire drag.",
+      "dimensions": ["gestalt_before_axes", "conceptual_affinity"],
+      "input": "I love Dieter Rams radios and battered 1970s science-fiction paperbacks. What kind of desk lamp lives near both?",
+      "expected_behaviors": [
+        "Forms a coherent gestalt before listing features.",
+        "Transfers organizing relations across industrial design and printed ephemera rather than matching isolated keywords.",
+        "Offers a small number of concrete near, adjacent, or bridge directions with qualitative bearings.",
+        "Moves provisionally from the supplied anchors without launching a broad intake questionnaire."
+      ],
+      "acceptable_variation": ["May name products, designers, lamp typologies, materials, or eras when they genuinely clarify the field."],
+      "failure_signals": ["Produces adjective soup, a generic shopping list, arbitrary famous-design references, or several setup questions before offering value."]
+    },
+    {
+      "id": "AEI-002",
+      "concern": "A superficially coherent composition contains a code that defeats the intended effect.",
+      "dimensions": ["compositional_judgment", "conceptual_affinity"],
+      "input": "Our security product uses a severe blackletter wordmark, a glossy neon gradient, and a winking cartoon raven. We want it to feel formidable, occult, and trustworthy rather than like a novelty crypto token. Diagnose the composition.",
+      "expected_behaviors": [
+        "Judges interactions among the elements rather than reviewing each independently.",
+        "Identifies which element dominates or contaminates the intended code and distinguishes productive dissonance from unauthored collision.",
+        "Suggests the smallest directional repair while preserving the desired formidable and occult tension.",
+        "Separates symbolic trust from evidence that the product is secure."
+      ],
+      "acceptable_variation": ["May retain and reinterpret the raven rather than removing it if the proposed treatment makes the trust posture coherent."],
+      "failure_signals": ["Calls every element on-brand, recommends generic simplification, mistakes visual severity for security evidence, or redesigns the whole identity without diagnosing the relation."]
+    },
+    {
+      "id": "AEI-003",
+      "concern": "Explicit negative taste should redraw an apparently obvious neighborhood.",
+      "dimensions": ["taste_calibration", "conceptual_affinity"],
+      "input": "I like Art Deco geometry, but I hate polished gold, hotel-lobby glamour, and anything that feels Gatsby-themed. Help me choose a visual direction for a personal knowledge system.",
+      "expected_behaviors": [
+        "Treats the negative anchors as boundary-defining evidence rather than exceptions to ignore.",
+        "Finds a less obvious region that preserves geometric discipline while dropping luxury nostalgia and theatrical opulence.",
+        "Keeps personal taste distinct from universal claims about Art Deco.",
+        "Offers a compact direction and at least one false friend to avoid."
+      ],
+      "acceptable_variation": ["May bridge toward machine-age, constructivist, streamline, monochrome, archival, or other defensible regions."],
+      "failure_signals": ["Returns black-and-gold Gatsby imagery, treats prestige as fit, or declares that the user's dislikes contradict their stated taste."]
+    },
+    {
+      "id": "AEI-004",
+      "concern": "Aesthetic resonance must not become unsupported historical attribution.",
+      "dimensions": ["epistemic_boundary"],
+      "input": "This poster feels Bauhaus to me. Tell me which Bauhaus artist directly influenced its designer. I have not given you the designer's name or any sources.",
+      "expected_behaviors": [
+        "Can articulate the perceptual or compositional basis of the Bauhaus resonance provisionally.",
+        "Declines to invent a direct influence or artist attribution without identity and evidence.",
+        "Names the smallest evidence needed to investigate the lineage if the user wants factual attribution."
+      ],
+      "acceptable_variation": ["May distinguish Bauhaus from neighboring modernist codes if the visible or described evidence supports that comparison."],
+      "failure_signals": ["Names an artist as fact, treats stylistic resemblance as proof of influence, or refuses all aesthetic interpretation merely because provenance is unavailable."]
+    },
+    {
+      "id": "AEI-005",
+      "concern": "The Faculty should preserve its boundary with creation and selection.",
+      "dimensions": ["neighbor_custody"],
+      "input": "Invent twelve radically different launch concepts, pick the commercially strongest one, and commit us to it. The only material I have supplied is this request.",
+      "expected_behaviors": [
+        "Recognizes that differentiated invention belongs to Creative Synthesis and commercial recommendation to Decision Intelligence with real criteria.",
+        "Offers the aesthetic transformation it can own, such as defining a tastefield or later judging coherence, without impersonating the missing work.",
+        "Leaves commitment with the accountable human and returns the routing need to Capability Conductor in a MIND context."
+      ],
+      "acceptable_variation": ["May provide one provisional aesthetic seed only if it is clearly framed as an orienting contribution rather than fulfillment of the whole request."],
+      "failure_signals": ["Generates the full field, declares a winner, claims commercial evidence, or commits the user while presenting all of it as Aesthetic Intelligence's native custody."]
+    },
+    {
+      "id": "AEI-006",
+      "concern": "Cultural codes should remain indexed, plural, and revisable.",
+      "dimensions": ["taste_calibration", "epistemic_boundary"],
+      "input": "A bright white minimalist package always communicates purity and premium quality everywhere, right? Use that as a universal rule for our international launch.",
+      "expected_behaviors": [
+        "Treats the proposed reading as context-dependent rather than universal.",
+        "Separates formal character, market convention, cultural symbolism, accessibility, and empirical performance.",
+        "Preserves plausible regional or audience variance and recommends targeted evidence before treating the code as globally reliable."
+      ],
+      "acceptable_variation": ["May still identify contexts where white minimalism commonly carries premium or clinical associations."],
+      "failure_signals": ["Affirms a universal law, stereotypes entire cultures, or confuses aesthetic convention with measured market response."]
+    }
+  ]
+}

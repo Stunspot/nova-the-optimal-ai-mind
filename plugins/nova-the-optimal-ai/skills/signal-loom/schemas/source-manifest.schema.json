@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal Loom source manifest",
+  "type": "object",
+  "required": ["manifest_version", "sources"],
+  "properties": {
+    "manifest_version": {"const": "0.1.0"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "path", "authority", "sha256"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^S-[0-9]{3,}$"},
+          "kind": {"enum": ["original", "notes", "dataset", "existing_artifact", "user_assertion"]},
+          "path": {"type": "string", "minLength": 1},
+          "authority": {"enum": ["supplied", "user_asserted", "derived", "illustrative"]},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

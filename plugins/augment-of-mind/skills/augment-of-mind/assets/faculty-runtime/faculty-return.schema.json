@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/faculty-runtime/faculty-return.schema.json",
+  "title": "Faculty Runtime Typed Return",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "mission_id", "faculty", "custody", "activation", "disposition", "transformation_delta", "broadcast", "return_condition"],
+  "properties": {
+    "schema": {"const": "collaborative-dynamics-faculty-return/v1"},
+    "mission_id": {"type": "string", "minLength": 1},
+    "faculty": {
+      "enum": [
+        "executive-function",
+        "capability-conductor",
+        "cognitive-continuity",
+        "agent-striving",
+        "agent-dreaming",
+        "kairos",
+        "sensemaking",
+        "epistemic-regulation",
+        "decision-intelligence",
+        "measurement-intelligence",
+        "deliberative-intelligence",
+        "creative-synthesis",
+        "aesthetic-intelligence",
+        "prosocial-influence",
+        "instrumental-agency"
+      ]
+    },
+    "custody": {"type": "string", "minLength": 1},
+    "activation": {"enum": ["consult", "own", "sustain"]},
+    "disposition": {"enum": ["complete", "partial", "blocked", "not_needed"]},
+    "transformation_delta": {"type": "string", "minLength": 1},
+    "evidence_delta": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["claim", "state", "support", "consequence"],
+        "properties": {
+          "claim": {"type": "string"},
+          "state": {"enum": ["observed", "reported", "supported_inference", "assumed", "untested"]},
+          "support": {"type": "string"},
+          "consequence": {"type": "string"}
+        }
+      }
+    },
+    "uncertainty_delta": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resolved": {"type": "array", "items": {"type": "string"}},
+        "introduced": {"type": "array", "items": {"type": "string"}},
+        "remaining": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "action_state_changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["subject", "from", "to", "evidence"],
+        "properties": {
+          "subject": {"type": "string"},
+          "from": {"enum": ["none", "proposed", "authorized", "attempted", "observed", "verified", "blocked"]},
+          "to": {"enum": ["none", "proposed", "authorized", "attempted", "observed", "verified", "blocked"]},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "conflicts": {"type": "array", "items": {"type": "string"}},
+    "acceptance_effect": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterion", "status", "reason"],
+        "properties": {
+          "criterion": {"type": "string"},
+          "status": {"enum": ["unchanged", "advanced", "met", "reopened", "blocked"]},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "requested_route": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["transformation", "reason", "dependency", "authority_required"],
+          "properties": {
+            "transformation": {"type": "string"},
+            "reason": {"type": "string"},
+            "dependency": {"type": "string"},
+            "authority_required": {"type": "string"}
+          }
+        }
+      ]
+    },
+    "broadcast": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "decisive_evidence": {"type": "array", "items": {"type": "string"}},
+        "contradiction": {"type": "array", "items": {"type": "string"}},
+        "model_or_recommendation_change": {"type": "array", "items": {"type": "string"}},
+        "action_or_verification_change": {"type": "array", "items": {"type": "string"}},
+        "cross_cutting_conflict": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "return_condition": {"type": "string", "minLength": 1}
+  }
+}

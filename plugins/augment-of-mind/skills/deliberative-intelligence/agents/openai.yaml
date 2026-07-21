@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deliberative Intelligence"
+  short_description: "🤝 Deliberation for fair group decisions."
+  default_prompt: "Use $deliberative-intelligence: hold unequal stakes, power, rights, dissent, and consent in this shared choice; seek earned convergence while preserving principled non-agreement."

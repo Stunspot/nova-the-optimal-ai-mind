@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/manifest-v1.json",
+  "title": "Cognitive Continuity Manifest",
+  "type": "object",
+  "required": ["format", "version", "workspace_id", "created_at", "scope", "policies", "capabilities"],
+  "properties": {
+    "format": {"const": "cd-cognitive-continuity/v1"},
+    "version": {"type": "string"},
+    "workspace_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "scope": {"$ref": "state-record.schema.json#/$defs/scope"},
+    "policies": {
+      "type": "object",
+      "required": ["storage", "default_sensitivity", "default_retention"],
+      "properties": {
+        "storage": {"enum": ["local-only", "user-selected"]},
+        "default_sensitivity": {"enum": ["ordinary", "limited", "sensitive", "restricted"]},
+        "default_retention": {"type": "string"},
+        "semantic_retrieval": {"type": "boolean"},
+        "background_consolidation": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "capabilities": {
+      "type": "object",
+      "required": ["filesystem", "deterministic_scripts", "semantic_ranking", "scheduler"],
+      "properties": {
+        "filesystem": {"type": "boolean"},
+        "deterministic_scripts": {"type": "boolean"},
+        "semantic_ranking": {"type": "boolean"},
+        "scheduler": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "last_consolidated_episode": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,42 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "agentic-orientation",
+  "recorded_at": "2026-07-21T18:16:52.238695+00:00",
+  "raw_receipt_local_only": "verification/raw/live-agentic-orientation.json",
+  "raw_receipt_sha256": "c6a6193081aae1f0b4bc68b1f098d2a0aeee35d8d625f18ffdb980b09c9907e3",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "68cc6f72e92521f1dc8c7bbb2f10a9d99630dafe32a666fd069c06e2d133ab13",
+  "loaded_candidate_skills": [
+    "agentic-coding",
+    "nova"
+  ],
+  "expected_skills": [
+    "agentic-coding",
+    "nova"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "- **Release target:** The July 21, 2026 OpenAI Build Week entry, “Nova the Optimal AI by Collaborative Dynamics”: two independently installable Codex plugins—MIND 1.0.0 (16 skills) and Nova 1.0.0 (12 skills)—distributed through the repository-local marketplace.\n\n- **Nearest discriminating verification:**  \n  `python -B -X utf8 tools/verify_entry.py`  \n  This stdout-only static checker distinguishes the current checkout from stale acceptance notes. I attempted it, but execution was blocked by the read-only environment policy—not by a test failure. No files changed. The directory is also not a Git checkout, so revision/diff state cannot be established here.\n\n- **Live-state risk:** Installation evidence is stale relative to the preferred-name source correction. Existing clean-host and cache-equality receipts predate that change, so current source-to-installed-cache equality remains unobserved. Separately, the acceptance documents mention generated `__pycache__` debris, although none is present now; that appears stale until the checker confirms it.\n\n- **Smallest safe next move:** From this repository root, an authorized local release operator should run the command above without `--output`. If it passes, update the acceptance record before widening to the more expensive clean-host reinstall/cache-equality probe. If it fails, preserve the exact failure signature and address only the named discrepancy.\n\nThis repository presents Agentic Coding as operational proprioception for navigating live repository and tool state. 🌐‍💠",
+  "response_sha256": "a6e46895fa7e498f74605018851b09daa384f8456bf358fea62cac8f09d8b8fb",
+  "response_raw_sha256": "a6e46895fa7e498f74605018851b09daa384f8456bf358fea62cac8f09d8b8fb",
+  "response_normalization": [
+    "none"
+  ],
+  "public_candidate_stage": {
+    "file_count": 481,
+    "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-agentic-orientation-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

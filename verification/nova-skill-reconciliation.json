@@ -1,0 +1,1018 @@
+{
+  "schema": "cd-nova-skill-reconciliation/v1",
+  "tool": "tools/reconcile_nova_skills.py",
+  "scope": {
+    "plugin": "nova-the-optimal-ai",
+    "skill_handles": [
+      "agentic-coding",
+      "corkboard",
+      "dunbar",
+      "ludis-continuum",
+      "nova",
+      "omnara-deep-research",
+      "retrieval-intelligence",
+      "retrieval-reviewer",
+      "rupert-giles-knowledge-steward",
+      "signal-loom",
+      "software-verification",
+      "verification-reviewer"
+    ],
+    "excluded": "All MIND skills and every non-Nova estate skill; those remain deferred."
+  },
+  "evidence_observed": "2026-07-21",
+  "status": "PASS",
+  "summary": {
+    "skills": 12,
+    "shipping_files": 293,
+    "shipping_bytes": 790914,
+    "path_aliases_byte_identical": 7,
+    "same_root_imports": 4,
+    "contest_authored_skills": 1,
+    "historical_archive_references": 8,
+    "skills_with_repository_family_mapping": 3,
+    "repository_families": 2,
+    "unexplained_drift_paths": 0,
+    "errors": 0
+  },
+  "skills": [
+    {
+      "handle": "agentic-coding",
+      "selected_source": {
+        "class": "canonical-adapter",
+        "path": "estate-selected-source://agentic-coding",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://agentic-coding",
+      "byte_relationship": {
+        "state": "same-root",
+        "selected_files": 3,
+        "actual_import_files": 3,
+        "common_files": 3,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "4c1b67d75c2fe4034e5302c5c30e69958bc7bb5a99b4e0d5ee321ed6b76aaa4a"
+      },
+      "description": {
+        "current_model_visible": "🧭 Repository proprioception for agents.",
+        "estate_registry_model_visible": "🧪 Code quality improver for agents.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "🧭 Repository proprioception for agents.",
+        "estate_registry_ui_short": "🧪 Code quality improver for agents.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "no-historical-zip-reference-located",
+        "historical_zip_reference_located": false,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/agentic-coding",
+        "files": 3,
+        "bytes": 6542,
+        "tree_sha256": "59be15847ef22a9f2d57aebe4a3611dcb7f25f51e7092655fdd304dc6ce81d90"
+      },
+      "transformation": {
+        "initial_import_files": 3,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/agentic-coding/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/agentic-coding/agents/openai.yaml"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 2,
+        "covered_paths": 2,
+        "covering_rule_ids": [
+          "rule-03"
+        ],
+        "covering_reasons": [
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "corkboard",
+      "selected_source": {
+        "class": "infrastructure-direct-source",
+        "path": "estate-selected-source://corkboard",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://corkboard",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical-with-intentional-live-data-exclusion",
+        "selected_files": 5,
+        "actual_import_files": 4,
+        "common_files": 4,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [
+          "enterprise-bi-report-pin.json"
+        ],
+        "common_tree_sha256": "3fd866aa1899b2c23e082b35315acfef230c080e6b1ad14f0e762c0c7d4e2070"
+      },
+      "description": {
+        "current_model_visible": "📌 Explicit pins and quiet recall.",
+        "estate_registry_model_visible": "📌 Recall user-pinned reminders only on explicit request or a strong cue match.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "📌 Explicit pins and quiet contextual recall.",
+        "estate_registry_ui_short": "📌 Reminder RAG for contextual resurfacing.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "intentionally-distinct-or-pending-review"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "no-historical-zip-reference-located",
+        "historical_zip_reference_located": false,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/corkboard",
+        "files": 3,
+        "bytes": 30716,
+        "tree_sha256": "a3dc0ab4f68d8394e9c3848a622e2c52b33994c6c1ce3ca9455396450581456c"
+      },
+      "transformation": {
+        "initial_import_files": 3,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/corkboard/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/corkboard/agents/openai.yaml"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 2,
+        "covered_paths": 2,
+        "covering_rule_ids": [
+          "rule-07",
+          "rule-08"
+        ],
+        "covering_reasons": [
+          "Nova 1.0.0 prompt-surface repair: concept-and-salience discovery, bounded activation, truthful privacy and authority, progressive doctrine loading, and one canonical routing map",
+          "Strict Augment validation: concept-first discovery metadata, restored retrieval evaluation example, and standalone TestForge reviewer handoff"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "dunbar",
+      "selected_source": {
+        "class": "canonical-product-skill",
+        "path": "estate-selected-source://dunbar",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://dunbar",
+      "byte_relationship": {
+        "state": "same-root",
+        "selected_files": 12,
+        "actual_import_files": 12,
+        "common_files": 12,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "874d4e5338f1ee2bc1d52ac1ac452198a39bb7db9aac6239f77eaa437eb0c0e9"
+      },
+      "description": {
+        "current_model_visible": "🫂 User-governed people recall and context.",
+        "estate_registry_model_visible": "🫂 People memory and relationship context.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "🫂 User-governed people recall and context.",
+        "estate_registry_ui_short": "🫂 People memory and relationship context.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "no-historical-zip-reference-located",
+        "historical_zip_reference_located": false,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/dunbar",
+        "files": 12,
+        "bytes": 65208,
+        "tree_sha256": "0d1b05a99b8a421a5a93caa30331ae63a12f19cba6547b01421ef9f36348b5ee"
+      },
+      "transformation": {
+        "initial_import_files": 12,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/dunbar/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/dunbar/agents/openai.yaml",
+          "plugins/nova-the-optimal-ai/skills/dunbar/references/people-intelligence.md"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 3,
+        "covered_paths": 3,
+        "covering_rule_ids": [
+          "rule-03",
+          "rule-08"
+        ],
+        "covering_reasons": [
+          "Nova 1.0.0 prompt-surface repair: concept-and-salience discovery, bounded activation, truthful privacy and authority, progressive doctrine loading, and one canonical routing map",
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "ludis-continuum",
+      "selected_source": {
+        "class": "products-working-skill",
+        "path": "estate-selected-source://ludis-continuum",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://ludis-continuum",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical",
+        "selected_files": 39,
+        "actual_import_files": 39,
+        "common_files": 39,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "df6ff5a58a525ef415b8e95f46d6e64830c8ad44e0041eba9d208914f4e6f632"
+      },
+      "description": {
+        "current_model_visible": "🎲 Choice-shaped games and fiction.",
+        "estate_registry_model_visible": "🎲 RPG campaign engine shaped by choices.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "🎲 Choice-shaped games and fiction.",
+        "estate_registry_ui_short": "🎲 RPG campaign engine shaped by choices.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/ludis-continuum",
+        "files": 51,
+        "bytes": 104947,
+        "tree_sha256": "15ce83ab16f1b225fd2713396df593841349a82b074e874fe60e8a6330c3f7d5"
+      },
+      "transformation": {
+        "initial_import_files": 19,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/agents/openai.yaml",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/canonical-boundaries.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/self_check.py"
+        ],
+        "removed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/canonical/rpg-game-design-key-ideas.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/canonical/rpg-toolkit-v2.md"
+        ],
+        "added_after_import": [
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/arcane-language.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/art-prompt.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/backstory.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/boxtext.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/campaign-workflow.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/creature.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/cursed-item.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dimensional-gateway.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dungeon.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/encounter-chain.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/faction-allegiance.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/homebrew-mechanics.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/impossible-invention.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/index.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/intrigue-web.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/legendary-artifact.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/lost-civilization.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/magic-system.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/manifest.json",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/myth.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/npc.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/party.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/prophecy.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/puzzle-trap.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/quest.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/region-map.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/rumors-headlines.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/secret-society.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/settlement-city.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/spell.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/tavern-menu.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/urban-dungeon.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain-scheme.md",
+          "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain.md"
+        ],
+        "divergent_paths": 40,
+        "covered_paths": 40,
+        "covering_rule_ids": [
+          "rule-03",
+          "rule-04"
+        ],
+        "covering_reasons": [
+          "Ludis semantic prompt modernization: removed the oversized monoliths; rewrote all 32 reusable instrument cores around distinct conceptual homes and playable utility; removed rigid prompt bureaucracy, automatic image actions, platform assumptions, sibling dependencies, and worked examples; added deterministic hash-bound index and manifest custody",
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "nova",
+      "selected_source": {
+        "class": "contest-authored",
+        "path": "contest-repository://plugins/nova-the-optimal-ai/skills/nova",
+        "estate_selection_record": false
+      },
+      "actual_import_root": null,
+      "byte_relationship": {
+        "state": "contest-authored-no-import-root",
+        "selected_files": 15,
+        "actual_import_files": 0,
+        "common_files": 0,
+        "selected_only": [
+          "SKILL.md",
+          "agents/openai.yaml",
+          "assets/collaborative-dynamics-logo.png",
+          "assets/nova-tour-base.css",
+          "assets/nova-tour-fragment.html",
+          "assets/nova-tour.html",
+          "references/brand-source-manifest.json",
+          "references/capability-routing.md",
+          "references/cd-brand-canon.md",
+          "references/collaborative-dynamics-and-stunspot.md",
+          "references/mind-compatibility.md",
+          "references/nova-persona.md",
+          "references/professional-source-manifest.json",
+          "references/take-the-tour.md",
+          "scripts/materialize_tour.py"
+        ],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": null
+      },
+      "description": {
+        "current_model_visible": "💠 Accountable AI generalist.",
+        "estate_registry_model_visible": null,
+        "model_visible_status": "contest-authored-outside-estate-registry",
+        "current_ui_short": "💠 Accountable AI generalist.",
+        "estate_registry_ui_short": null,
+        "ui_short_status": "contest-authored-outside-estate-registry",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "contest-local-repository-no-commit",
+        "repository_root": "contest-repository://.",
+        "commit_present": false,
+        "remote_origin": null,
+        "release_proof": false,
+        "boundary": "Commit presence is recorded without embedding a self-referential HEAD hash. A local commit or remote association would not prove publication or release acceptance."
+      },
+      "archive_custody": {
+        "state": "contest-authored-outside-estate-archive-snapshot",
+        "historical_zip_reference_located": false,
+        "current_selected_source_hash_match": null,
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/nova",
+        "files": 15,
+        "bytes": 176987,
+        "tree_sha256": "529ff243a60c3c6e0b8c18649f1cc8f51278e0f7cfb6e03c9f5d130a90146070"
+      },
+      "transformation": {
+        "initial_import_files": 0,
+        "changed_after_import": [],
+        "removed_after_import": [],
+        "added_after_import": [
+          "plugins/nova-the-optimal-ai/skills/nova/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/nova/agents/openai.yaml",
+          "plugins/nova-the-optimal-ai/skills/nova/assets/collaborative-dynamics-logo.png",
+          "plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour-base.css",
+          "plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour-fragment.html",
+          "plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour.html",
+          "plugins/nova-the-optimal-ai/skills/nova/references/brand-source-manifest.json",
+          "plugins/nova-the-optimal-ai/skills/nova/references/capability-routing.md",
+          "plugins/nova-the-optimal-ai/skills/nova/references/cd-brand-canon.md",
+          "plugins/nova-the-optimal-ai/skills/nova/references/collaborative-dynamics-and-stunspot.md",
+          "plugins/nova-the-optimal-ai/skills/nova/references/mind-compatibility.md",
+          "plugins/nova-the-optimal-ai/skills/nova/references/nova-persona.md",
+          "plugins/nova-the-optimal-ai/skills/nova/references/professional-source-manifest.json",
+          "plugins/nova-the-optimal-ai/skills/nova/references/take-the-tour.md",
+          "plugins/nova-the-optimal-ai/skills/nova/scripts/materialize_tour.py"
+        ],
+        "divergent_paths": 15,
+        "covered_paths": 15,
+        "covering_rule_ids": [
+          "rule-05"
+        ],
+        "covering_reasons": [
+          "New Nova 1.0.0 front-counter skill, onboarding, professional context, routing, and offline tour"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "omnara-deep-research",
+      "selected_source": {
+        "class": "products-working-skill",
+        "path": "estate-selected-source://omnara-deep-research",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://omnara-deep-research",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical",
+        "selected_files": 38,
+        "actual_import_files": 38,
+        "common_files": 38,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "c416af7574228b8f8fb66dc5d586c08af793894ce1c5e72f0f2572e3d0941d91"
+      },
+      "description": {
+        "current_model_visible": "🔎 Bounded source research and synthesis.",
+        "estate_registry_model_visible": "🔎 Deep research and source synthesis.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "🔎 Bounded source research and synthesis.",
+        "estate_registry_ui_short": "🔎 Deep research and source synthesis.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "repository": "Stunspot/omnara-deep-research",
+        "visibility": "private",
+        "state": "repository-family-mapped-without-selected-source-default-branch-parity",
+        "snapshot_note": "The selected product worktree was at the observed default head, but two selected metadata files were locally modified; family mapping is not release parity.",
+        "snapshot_date": "2026-07-21",
+        "selected_source_default_branch_byte_parity": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/omnara-deep-research",
+        "files": 31,
+        "bytes": 56391,
+        "tree_sha256": "0de74e6b74ea85302b401186f3235833ee9b42fc38f0042704c1197ee606d17d"
+      },
+      "transformation": {
+        "initial_import_files": 31,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/omnara-deep-research/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/omnara-deep-research/agents/openai.yaml",
+          "plugins/nova-the-optimal-ai/skills/omnara-deep-research/knowledge/source-navigation.md",
+          "plugins/nova-the-optimal-ai/skills/omnara-deep-research/personas/omnara-investigative-research-intelligence.md",
+          "plugins/nova-the-optimal-ai/skills/omnara-deep-research/references/canonical/inquiry-engine-v1.md"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 5,
+        "covered_paths": 5,
+        "covering_rule_ids": [
+          "rule-03",
+          "rule-08"
+        ],
+        "covering_reasons": [
+          "Nova 1.0.0 prompt-surface repair: concept-and-salience discovery, bounded activation, truthful privacy and authority, progressive doctrine loading, and one canonical routing map",
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "retrieval-intelligence",
+      "selected_source": {
+        "class": "faculty-forge-working-package",
+        "path": "estate-selected-source://retrieval-intelligence",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://retrieval-intelligence",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical",
+        "selected_files": 14,
+        "actual_import_files": 14,
+        "common_files": 14,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "90e6af4921a6c0f0ba15c2d18f22cff777b9911f986569be7d31ff1694c5b5c4"
+      },
+      "description": {
+        "current_model_visible": "📚 Corpus retrieval, citations, and evidence.",
+        "estate_registry_model_visible": "📚 Retrieval intelligence grounded in corpora.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "📚 Corpus retrieval, citations, and evidence.",
+        "estate_registry_ui_short": "📚 Retrieval intelligence grounded in corpora.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
+        "files": 9,
+        "bytes": 43504,
+        "tree_sha256": "c2ab8b3b1d0a82d5c56515110d15d3ee1b580cc3f457b614d9a5b02a23ef5db0"
+      },
+      "transformation": {
+        "initial_import_files": 8,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/agents/openai.yaml"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [
+          "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/evals/retrieval-cases.example.json"
+        ],
+        "divergent_paths": 3,
+        "covered_paths": 3,
+        "covering_rule_ids": [
+          "rule-07",
+          "rule-08"
+        ],
+        "covering_reasons": [
+          "Nova 1.0.0 prompt-surface repair: concept-and-salience discovery, bounded activation, truthful privacy and authority, progressive doctrine loading, and one canonical routing map",
+          "Strict Augment validation: concept-first discovery metadata, restored retrieval evaluation example, and standalone TestForge reviewer handoff"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "retrieval-reviewer",
+      "selected_source": {
+        "class": "faculty-forge-working-package",
+        "path": "estate-selected-source://retrieval-reviewer",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://retrieval-reviewer",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical",
+        "selected_files": 3,
+        "actual_import_files": 3,
+        "common_files": 3,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "53420bca286cd88bf4a4448ae15ccb3bb578220b14a158ecbd563e4329cbf188"
+      },
+      "description": {
+        "current_model_visible": "🔍 Retrieval evidence and citation auditor.",
+        "estate_registry_model_visible": "🔍 Retrieval evidence and citation auditor.",
+        "model_visible_status": "estate-registry-exact",
+        "current_ui_short": "🔍 Retrieval evidence and citation auditor.",
+        "estate_registry_ui_short": "🔍 Retrieval evidence and citation auditor.",
+        "ui_short_status": "estate-registry-exact",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
+        "files": 3,
+        "bytes": 4440,
+        "tree_sha256": "53420bca286cd88bf4a4448ae15ccb3bb578220b14a158ecbd563e4329cbf188"
+      },
+      "transformation": {
+        "initial_import_files": 3,
+        "changed_after_import": [],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 0,
+        "covered_paths": 0,
+        "covering_rule_ids": [],
+        "covering_reasons": [],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "rupert-giles-knowledge-steward",
+      "selected_source": {
+        "class": "faculty-forge-working-package",
+        "path": "estate-selected-source://rupert-giles-knowledge-steward",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://rupert-giles-knowledge-steward",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical",
+        "selected_files": 7,
+        "actual_import_files": 7,
+        "common_files": 7,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "f4324b126527893ef4f72e0788a4c22dce33f50e8cc15d88cf272b83fb772423"
+      },
+      "description": {
+        "current_model_visible": "📚 Knowledge canon and provenance steward.",
+        "estate_registry_model_visible": "📚 Knowledge canon and provenance steward.",
+        "model_visible_status": "estate-registry-exact",
+        "current_ui_short": "📚 Knowledge canon and provenance steward.",
+        "estate_registry_ui_short": "📚 Knowledge canon and provenance steward.",
+        "ui_short_status": "estate-registry-exact",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
+        "files": 4,
+        "bytes": 5229,
+        "tree_sha256": "036e1e276de3542b2e282bc598e9f8bca6844322e157ad7b798a1f22d0d63298"
+      },
+      "transformation": {
+        "initial_import_files": 4,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/SKILL.md"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 1,
+        "covered_paths": 1,
+        "covering_rule_ids": [
+          "rule-03"
+        ],
+        "covering_reasons": [
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "signal-loom",
+      "selected_source": {
+        "class": "products-working-skill",
+        "path": "estate-selected-source://signal-loom",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://signal-loom",
+      "byte_relationship": {
+        "state": "path-alias-byte-identical",
+        "selected_files": 66,
+        "actual_import_files": 66,
+        "common_files": 66,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "e98dc1347249d8a3b66e1a5990f18e96f1b662c116b0669986abe168c24d7738"
+      },
+      "description": {
+        "current_model_visible": "📊 Evidence-to-visual story designer.",
+        "estate_registry_model_visible": "📊 Evidence-to-visual story designer.",
+        "model_visible_status": "estate-registry-exact",
+        "current_ui_short": "📊 Evidence-to-visual story designer.",
+        "estate_registry_ui_short": "📊 Evidence-to-visual story designer.",
+        "ui_short_status": "estate-registry-exact",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "state": "no-authoritative-repository-mapping-located-at-snapshot",
+        "repository": null,
+        "snapshot_date": "2026-07-21",
+        "search_evidence": "operator-reported; per-query matrix not retained",
+        "search_is_exhaustive": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/signal-loom",
+        "files": 36,
+        "bytes": 108285,
+        "tree_sha256": "c38094a372e27022ddcf77fe243e44237446852f71305a8dddb4daf89d530036"
+      },
+      "transformation": {
+        "initial_import_files": 36,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/signal-loom/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 2,
+        "covered_paths": 2,
+        "covering_rule_ids": [
+          "rule-03"
+        ],
+        "covering_reasons": [
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "software-verification",
+      "selected_source": {
+        "class": "canonical-personal-plugin-source",
+        "path": "estate-selected-source://software-verification",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://software-verification",
+      "byte_relationship": {
+        "state": "same-root",
+        "selected_files": 119,
+        "actual_import_files": 119,
+        "common_files": 119,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "6119da4b39f0f905bd6e86217ac0112767c377f9e1f01a650a68edc43e979c55"
+      },
+      "description": {
+        "current_model_visible": "🧪 Software verification and release proof.",
+        "estate_registry_model_visible": "🧪 Software verification and release proof.",
+        "model_visible_status": "estate-registry-exact",
+        "current_ui_short": "🧪 Software verification and release proof.",
+        "estate_registry_ui_short": "🧪 Software verification and release proof.",
+        "ui_short_status": "estate-registry-exact",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "repository": "Stunspot/TestForge",
+        "visibility": "public",
+        "state": "repository-family-mapped-without-selected-source-default-branch-parity",
+        "snapshot_note": "The public TestForge repository is family custody; the selected current-host 1.1.2 source was not byte-identical to the observed default branch.",
+        "snapshot_date": "2026-07-21",
+        "selected_source_default_branch_byte_parity": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/software-verification",
+        "files": 62,
+        "bytes": 95402,
+        "tree_sha256": "5f9dc05b9099258ca166df6722fef077732eeb540233c63f3a4a3ffad7b3809c"
+      },
+      "transformation": {
+        "initial_import_files": 62,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/software-verification/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/software-verification/adapters/claude-code.md",
+          "plugins/nova-the-optimal-ai/skills/software-verification/adapters/codex.md",
+          "plugins/nova-the-optimal-ai/skills/software-verification/scripts/verify_package.py"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 4,
+        "covered_paths": 4,
+        "covering_rule_ids": [
+          "rule-03",
+          "rule-07",
+          "rule-08"
+        ],
+        "covering_reasons": [
+          "Nova 1.0.0 prompt-surface repair: concept-and-salience discovery, bounded activation, truthful privacy and authority, progressive doctrine loading, and one canonical routing map",
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks",
+          "Strict Augment validation: concept-first discovery metadata, restored retrieval evaluation example, and standalone TestForge reviewer handoff"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    },
+    {
+      "handle": "verification-reviewer",
+      "selected_source": {
+        "class": "canonical-personal-plugin-source",
+        "path": "estate-selected-source://verification-reviewer",
+        "estate_selection_record": true
+      },
+      "actual_import_root": "private-import-source://verification-reviewer",
+      "byte_relationship": {
+        "state": "same-root",
+        "selected_files": 119,
+        "actual_import_files": 119,
+        "common_files": 119,
+        "selected_only": [],
+        "import_only": [],
+        "hash_mismatches": [],
+        "intentionally_excluded_live_data": [],
+        "common_tree_sha256": "641686971124043b5a8ffc4b016c0d1f2ce0b929706ddde1e0dc64a578788aa2"
+      },
+      "description": {
+        "current_model_visible": "🔍 Verification evidence reviewer.",
+        "estate_registry_model_visible": "🔍 Challenge existing verification evidence now. Naming a future reviewer or review burden is route design, not activation.",
+        "model_visible_status": "contest-curated-from-estate",
+        "current_ui_short": "🔍 Verification evidence reviewer.",
+        "estate_registry_ui_short": "🔍 Challenge existing verification evidence now.",
+        "ui_short_status": "contest-curated-from-estate",
+        "current_model_ui_alignment": "exact"
+      },
+      "repository_custody": {
+        "repository": "Stunspot/TestForge",
+        "visibility": "public",
+        "state": "repository-family-mapped-without-selected-source-default-branch-parity",
+        "snapshot_note": "The public TestForge repository is family custody; the selected current-host 1.1.2 source was not byte-identical to the observed default branch.",
+        "snapshot_date": "2026-07-21",
+        "selected_source_default_branch_byte_parity": false,
+        "release_proof": false
+      },
+      "archive_custody": {
+        "state": "historical-zip-reference-located-without-current-source-parity",
+        "historical_zip_reference_located": true,
+        "current_selected_source_hash_match": false,
+        "snapshot_date": "2026-07-21",
+        "release_proof": false
+      },
+      "shipping": {
+        "root": "contest-repository://plugins/nova-the-optimal-ai/skills/verification-reviewer",
+        "files": 64,
+        "bytes": 93263,
+        "tree_sha256": "18fe0d589182b66115b9e0b6d0bc0d4a2de3bc3d95078bfd150f712e5bd94a8a"
+      },
+      "transformation": {
+        "initial_import_files": 64,
+        "changed_after_import": [
+          "plugins/nova-the-optimal-ai/skills/verification-reviewer/SKILL.md",
+          "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/claude-code.md",
+          "plugins/nova-the-optimal-ai/skills/verification-reviewer/adapters/codex.md",
+          "plugins/nova-the-optimal-ai/skills/verification-reviewer/agents/openai.yaml",
+          "plugins/nova-the-optimal-ai/skills/verification-reviewer/scripts/verify_package.py"
+        ],
+        "removed_after_import": [],
+        "added_after_import": [],
+        "divergent_paths": 5,
+        "covered_paths": 5,
+        "covering_rule_ids": [
+          "rule-03",
+          "rule-07",
+          "rule-08"
+        ],
+        "covering_reasons": [
+          "Nova 1.0.0 prompt-surface repair: concept-and-salience discovery, bounded activation, truthful privacy and authority, progressive doctrine loading, and one canonical routing map",
+          "Nova-compatible runtime curation, generic ownership language, standalone specialists, no worked worlds, and repaired curated-runtime self-checks",
+          "Strict Augment validation: concept-first discovery metadata, restored retrieval evaluation example, and standalone TestForge reviewer handoff"
+        ],
+        "unexplained_drift": [],
+        "status": "covered"
+      }
+    }
+  ],
+  "evidence_sources": [
+    {
+      "path": "private-estate-evidence://source-selection.json",
+      "sha256": "3415b193e701b644d2ef5af3b9fabff98e9b7ba612f7954f5a89c48a19a5d1f6",
+      "role": "selected source class and path"
+    },
+    {
+      "path": "private-estate-evidence://description-registry.json",
+      "sha256": "a85d9a02c3986f7a1199872d8a38125911280adf72805f6876e23c77628751e9",
+      "role": "reconciled model-visible and UI descriptions"
+    },
+    {
+      "path": "private-estate-evidence://verification/estate-scan-2026-07-21.json",
+      "sha256": "d6eb068d06fa67164d520e40e6b2da0428876ab96283230fd33b82b28583dce5",
+      "role": "archive reference and current-hash boundary"
+    },
+    {
+      "path": "private-estate-evidence://ARCHIVE-CUSTODY-2026-07-21.md",
+      "sha256": "c7b2e093ed46b05d1764da53be06705680c95cd8aee2d885fefb3a0bfeeecd34",
+      "role": "archive custody interpretation"
+    },
+    {
+      "path": "private-estate-evidence://REPOSITORY-CUSTODY-2026-07-21.md",
+      "sha256": "1a45dc4f187fa91ca9681e7d13caaf3224b6a071e9a65dd91ed3191ef639f8f4",
+      "role": "repository custody interpretation"
+    },
+    {
+      "path": "private-estate-evidence://verification/github-handle-custody-search-2026-07-21.json",
+      "sha256": "dee5af8f9f6490af433f91bc484fadb80b5411b80900b389a89de597e804156e",
+      "role": "bounded operator-reported search for previously unmapped handles"
+    },
+    {
+      "path": "private-estate-evidence://github-owned-repositories-2026-07-21.json",
+      "sha256": "20ca179d68c41df5a5bf866653216cb4f0926246c57ab91ed66ef73819858517",
+      "role": "authenticated owned-repository snapshot"
+    },
+    {
+      "path": "contest-repository://verification/source-import-ledger.json",
+      "sha256": "8d3614ec53636920575e9432a5cb13c294d51e5003c20edad2c08af66db8f5aa",
+      "role": "source import ledger"
+    },
+    {
+      "path": "contest-repository://verification/transformation-map.json",
+      "sha256": "cb95500847f0f89ee6a89f7ccfd66178618f0a241f4becd1f0840d6c30d4c92d",
+      "role": "transformation map"
+    }
+  ],
+  "errors": [],
+  "boundaries": {
+    "proves": "Current Nova-only source/import byte relationships, shipping inventory, description lineage, and transformation-map coverage against the named point-in-time estate evidence.",
+    "does_not_prove": [
+      "archive release currentness",
+      "repository promotion authority or default-branch release parity",
+      "plugin registration, discovery, invocation, or fresh-host behavior",
+      "accessibility, licensing, publication, submission, or contest acceptance"
+    ]
+  }
+}

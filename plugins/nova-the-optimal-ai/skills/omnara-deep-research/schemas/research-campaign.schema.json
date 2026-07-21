@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OMNARA Research Campaign",
+  "type": "object",
+  "required": [
+    "format",
+    "title",
+    "canonical_inquiry",
+    "tier",
+    "phase",
+    "status",
+    "budgets",
+    "counters",
+    "active_loci",
+    "blockers",
+    "routes",
+    "resume_point"
+  ],
+  "properties": {
+    "format": {"const": "omnara-research-campaign/v1"},
+    "title": {"type": "string", "minLength": 1},
+    "canonical_inquiry": {"type": "string", "minLength": 1},
+    "tier": {"enum": ["focused", "deep", "exhaustive"]},
+    "phase": {"enum": ["framing", "mapping", "breadth-sweep", "depth-reading", "reconciliation", "gap-fill", "synthesis", "citation-audit", "review", "complete", "halted"]},
+    "status": {"enum": ["active", "complete", "awaiting-evidence", "awaiting-authority", "capability-limited", "budget-exhausted", "partial-success", "paused"]},
+    "budgets": {"type": "object"},
+    "counters": {"type": "object"},
+    "active_loci": {"type": "array"},
+    "blockers": {"type": "array"},
+    "routes": {"type": "array"},
+    "resume_point": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,21 @@
+format: cd-capability-registry/v1
+portfolio: replace-me
+package_version: 0.1.0
+capabilities:
+  - id: replace-me
+    owns: replace-me
+    activates_for:
+      - replace-me
+    inputs:
+      - replace-me
+    outputs:
+      - replace-me
+    evidence_burden: replace-me
+    authority_boundary: replace-me
+    refuses:
+      - replace-me
+    dependencies: []
+    available_hosts:
+      - codex
+      - claude
+    verification_state: unverified

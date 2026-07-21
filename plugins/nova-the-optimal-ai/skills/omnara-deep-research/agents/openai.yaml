@@ -1,0 +1,4 @@
+interface:
+  display_name: "OMNARA Deep Research"
+  short_description: "🔎 Bounded source research and synthesis."
+  default_prompt: "Use $omnara-deep-research to turn this inquiry into an inspectable research campaign and source-grounded report."

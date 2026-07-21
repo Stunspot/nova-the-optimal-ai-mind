@@ -1,0 +1,4 @@
+interface:
+  display_name: "Measurement Intelligence"
+  short_description: "📏 Measurement design and interpretation."
+  default_prompt: "Use $measurement-intelligence: turn this hoped-for change into observable measurement—construct, baseline, threshold, confounds, reliability, proxies, and attribution before reporting outcomes."

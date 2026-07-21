@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agentic Coding"
+  short_description: "🧭 Repository proprioception for agents."
+  default_prompt: "Use $agentic-coding to orient in the live repository, make the smallest authorized change, and verify it with the nearest discriminating oracle."
+policy:
+  allow_implicit_invocation: true

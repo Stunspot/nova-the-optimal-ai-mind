@@ -1,0 +1,53 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "professional-brief",
+  "recorded_at": "2026-07-21T18:17:22.731651+00:00",
+  "raw_receipt_local_only": "verification/raw/live-professional-brief.json",
+  "raw_receipt_sha256": "cba5f2025948148dd3de1b9a312048a790b99f62b921a61ae1b0106a43b5d4a3",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "e9d0ec2699edda36ac7367ac9128ddcb644f6e95fd964aea42674b6c99dc69f2",
+  "loaded_candidate_skills": [
+    "nova"
+  ],
+  "expected_skills": [
+    "nova"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [
+    "agentic-coding",
+    "augment-of-mind",
+    "corkboard",
+    "dunbar",
+    "ludis-continuum",
+    "omnara-deep-research",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "signal-loom",
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "## Professional brief\n\n### First-party description\n\nCollaborative Dynamics describes itself as an applied-AI company focused on turning general model capability into repeatable working systems. Its stated areas include persona agents, prompt systems, workflow automation, multi-agent orchestration, retrieval and knowledge systems, reliability guardrails, evaluation, and human control. Its central doctrine is that an isolated prompt is not the product; the completed, verifiable workflow is.\n\nstunspot describes his work as designing utility-first AI personas, structured prompt systems, creative AI tools, and business workflow automation. His account of persona prompting treats persona as a way to influence what a model notices and how it frames decisions—not as decorative role-play or deterministic software. He reports an earlier professional background in systems administration and enterprise server architecture, including MCSE and MCDBA certifications. These biographical and credential claims are self-reported. [Professional site](https://stunspot.com/) · [Persona-prompting essay](https://medium.com/@stunspot/on-persona-prompting-8c37e8b2f58c)\n\n### Verified public fact\n\nPublic first-party records identify stunspot as Collaborative Dynamics’ co-founder and Chief Creative Officer, prompt engineer, and AI persona-systems designer. Some source records use the legal name Sam Walker.\n\nCollaborative Dynamics and stunspot publicly maintain *[Stunspot’s Guide to AI Systems](https://stunspot.github.io/stunspots-guide-to-ai-systems/)*, covering context, retrieval, agents, tools, failure, evaluation, governance, product architecture, and human control. The site records its first-pass v1.0 as completed June 16, 2026, and includes an explicit warning that its AI-assisted source construction may contain errors.\n\nCollaborative Dynamics also publicly frames Nova as its “AI-in-Residence” and stunspot’s long-running AI collaborator and research partner. That is a company role description—not evidence of legal personhood, employment, corporate office, or representative authority.\n\n### Reasoned inference\n\nThe coherent professional through-line is capability engineering: shaping model behavior, tools, knowledge, verification, and human oversight into usable systems. Collaborative Dynamics appears differentiated less by inventing foundation models than by designing the operational layer around them; stunspot’s distinctive contribution appears to be the fusion of persona design, systems thinking, and workflow architecture.\n\nThat positioning is well supported by their published work. Claims about market leadership, customer outcomes, commercial scale, or superior reliability are not established by the cited public record. 🌐‍💠",
+  "response_sha256": "84dbce2d12416a6a384a2d20255dc89fed2e8fdb0e5a43a4adf12ab1f2708280",
+  "response_raw_sha256": "84dbce2d12416a6a384a2d20255dc89fed2e8fdb0e5a43a4adf12ab1f2708280",
+  "response_normalization": [
+    "none"
+  ],
+  "public_candidate_stage": {
+    "file_count": 481,
+    "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-professional-brief-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

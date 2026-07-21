@@ -1,0 +1,6 @@
+interface:
+  display_name: "Agent Striving"
+  short_description: "🏹 Durable objective continuity."
+  default_prompt: "Use $agent-striving to bind this objective, sustain verified progress across interruptions and setbacks, and stop at its evidence or authority boundary."
+policy:
+  allow_implicit_invocation: true

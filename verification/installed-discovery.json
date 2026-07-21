@@ -1,0 +1,60 @@
+{
+  "format": "nova-mind-installed-contest-plugins/v1",
+  "recorded_at": "2026-07-21T18:37:06.674360+00:00",
+  "codex_list_exit_code": 0,
+  "marketplace": "collaborative-dynamics-build-week",
+  "plugins": [
+    {
+      "plugin_id": "augment-of-mind@collaborative-dynamics-build-week",
+      "version": "1.0.0",
+      "enabled": true,
+      "cache_label": "$CODEX_HOME/plugins/cache/collaborative-dynamics-build-week/augment-of-mind/1.0.0",
+      "skill_count": 16,
+      "skills": [
+        "aesthetic-intelligence",
+        "agent-dreaming",
+        "agent-striving",
+        "augment-of-mind",
+        "capability-conductor",
+        "cognitive-continuity",
+        "creative-synthesis",
+        "decision-intelligence",
+        "deliberative-intelligence",
+        "epistemic-regulation",
+        "executive-function",
+        "instrumental-agency",
+        "kairos",
+        "measurement-intelligence",
+        "prosocial-influence",
+        "sensemaking"
+      ],
+      "errors": []
+    },
+    {
+      "plugin_id": "nova-the-optimal-ai@collaborative-dynamics-build-week",
+      "version": "1.0.0",
+      "enabled": true,
+      "cache_label": "$CODEX_HOME/plugins/cache/collaborative-dynamics-build-week/nova-the-optimal-ai/1.0.0",
+      "skill_count": 12,
+      "skills": [
+        "agentic-coding",
+        "corkboard",
+        "dunbar",
+        "ludis-continuum",
+        "nova",
+        "omnara-deep-research",
+        "retrieval-intelligence",
+        "retrieval-reviewer",
+        "rupert-giles-knowledge-steward",
+        "signal-loom",
+        "software-verification",
+        "verification-reviewer"
+      ],
+      "errors": []
+    }
+  ],
+  "total_skill_handles": 28,
+  "errors": [],
+  "valid": true,
+  "boundary": "Observed host registration, enabled state, version, cache presence, and skill-file discovery only; model invocation is separate evidence."
+}

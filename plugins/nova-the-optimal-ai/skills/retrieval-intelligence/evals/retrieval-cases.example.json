@@ -1,0 +1,18 @@
+{
+  "schema": "retrieval-eval-cases-v1",
+  "top_k": 5,
+  "minimum_recall_at_k": 1.0,
+  "minimum_mrr": 0.75,
+  "cases": [
+    {
+      "id": "authorization-invariant",
+      "query": "Which authorization invariant must the release preserve?",
+      "relevant_sources": ["requirements.md"]
+    },
+    {
+      "id": "superseded-design",
+      "query": "Which design note is outdated or superseded?",
+      "relevant_sources": ["release-record.md", "old-design.md"]
+    }
+  ]
+}

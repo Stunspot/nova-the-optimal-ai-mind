@@ -1,0 +1,31 @@
+{
+  "name": "augment-of-mind",
+  "version": "1.0.0",
+  "description": "Fifteen Faculties, one coherent adaptive mind for consequential work.",
+  "author": {
+    "name": "Collaborative Dynamics",
+    "url": "https://collaborative-dynamics.com"
+  },
+  "homepage": "https://collaborative-dynamics.com",
+  "license": "MIT",
+  "keywords": ["mind", "faculties", "cognition", "decision-making", "human-ai collaboration"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MIND by Collaborative Dynamics",
+    "shortDescription": "Fifteen Faculties, one coherent adaptive mind.",
+    "longDescription": "Compose only the cognitive Faculties a consequential task needs, then return one accountable result.",
+    "developerName": "Collaborative Dynamics",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://collaborative-dynamics.com",
+    "brandColor": "#48CBE8",
+    "composerIcon": "./skills/augment-of-mind/assets/collaborative-dynamics-logo.png",
+    "logo": "./skills/augment-of-mind/assets/collaborative-dynamics-logo.png",
+    "logoDark": "./skills/augment-of-mind/assets/collaborative-dynamics-logo.png",
+    "defaultPrompt": [
+      "Use $augment-of-mind to compose the smallest useful Faculty coalition for this mission.",
+      "Use $sensemaking to turn this tangled situation into a working map.",
+      "Use $decision-intelligence to compare these choices and recommend one."
+    ]
+  }
+}

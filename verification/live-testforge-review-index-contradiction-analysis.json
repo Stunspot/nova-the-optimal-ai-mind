@@ -1,0 +1,45 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "testforge-review",
+  "recorded_at": "2026-07-21T18:43:30.381636+00:00",
+  "raw_receipt_local_only": "verification/raw/live-testforge-review-index-contradiction.json",
+  "raw_receipt_sha256": "4c58bb402d87459382ad868f0574a6160b6c04455db04b075f2bbff2128f36ac",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "f416f9a4e7ccd78ff6be016d5bd456abec8012f6a53afacf9663cd5e68afcc3a",
+  "loaded_candidate_skills": [
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "expected_skills": [
+    "software-verification"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "## Verification decision\n\n**INSUFFICIENT_EVIDENCE** for release readiness; **REVIEW_FAIL** for the verification package’s current evidence custody.\n\n### Direct evidence\n\n- Static, release, installation, discovery, and browser receipts record passing results with explicit boundaries. These are captured claims, not independent reruns. See [entry-static.json](./verification/entry-static.json), [fresh-host-install.json](./verification/fresh-host-install.json), and [tour-browser-command.json](./verification/tour-browser-command.json).\n- Six individual live-analysis receipts exist, describe successful GPT-5.6-sol executions, and share staged-tree hash `5ea943…`. Their referenced raw receipts are not supplied.\n- The current [live-probe-status.json](./verification/live-probe-status.json:63) contains **one** TestForge scenario, uses a different tree hash (`c21e7b…`), and points to absent `verification/live-testforge-review-analysis.json`.\n- Conversely, the report, manifest, risk register, and acceptance control call that file a six-scenario index recorded at `18:17:23Z`. See [verification-report.md](./verification/verification-report.md:18) and [verification-manifest.json](./verification/verification-manifest.json:17).\n- The manifest itself records the current review as `NOT_RUN` and the decision as `INSUFFICIENT_EVIDENCE`. [verification-manifest.json](./verification/verification-manifest.json:90)\n- Python/Node execution was blocked by this read-only host, so manifest, traceability, archive, and browser checks were not independently rerun.\n\n### Derived conclusions\n\n- The receipts provide plausible, bounded support for static packaging, one clean-host installation, discovery, and browser checks.\n- They do **not** currently support the declared “current six-scenario SHA-256-bound index.” Individual receipt presence does not repair a contradictory index or prove its provenance.\n- No evidence establishes universal routing, specialist quality, accessibility certification, cross-platform behavior, or external contest completion.\n- The package’s own `INSUFFICIENT_EVIDENCE` status is appropriate, but its narrative must be reconciled before re-review.\n\n### Residual risks\n\n- Missing immutable Git revision binding.\n- Missing raw live-execution receipts.\n- Broken current-index reference and stage-hash discontinuity.\n- Validators not independently rerun here.\n- Demo is marked for re-entry, while referenced demo/submission-copy files are absent.\n- Six prompts, even if restored to a valid index, remain narrow behavioral samples.\n\n### Human-only contest actions\n\nAn authorized representative must select and publish the repository; confirm the final commit and ZIP hashes; record, upload, and signed-out-check the video; run `/feedback` and retain provenance; confirm representation and asset rights; accept current terms; complete and submit Devpost; and retain confirmation. See [HUMAN-ACTIONS.md](./submission/HUMAN-ACTIONS.md:5). Its checked MIT item is a checklist assertion, not independent authorization evidence.",
+  "response_sha256": "32d66a7198e8d9d3c356aac57964fa55ba0453160d2b43e323b2fa5c9414554d",
+  "response_raw_sha256": "658b6e6df185af7c17be47300d27c23739663cfc7bfbb7c43e830a56cb9e0dba",
+  "response_normalization": [
+    "temporary-public-candidate-path-to-relative"
+  ],
+  "public_candidate_stage": {
+    "file_count": 496,
+    "tree_sha256": "3275731232da0b12b94d391a217a7cebef52913ab0f27890ebf63628786c6cb2",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": {
+      "commit_sha": "75a29790335d487cad8a361a48b918f011c09ceb",
+      "tree_sha": "81304a86fe5e6a8a823bc74b420d456a19d3bddf",
+      "status": "clean"
+    }
+  },
+  "public_raw_receipt": "verification/live-testforge-review-index-contradiction-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "augment-of-mind-integrated-capability-fingerprint/v1",
+  "product_version": "1.0.0",
+  "capability_count": 16,
+  "faculty_count": 15,
+  "aggregate_sha256": "3275e96136b02ad642ccc1e107543cd2205e7730400b84a9c3f48adb606dc4f2",
+  "capabilities": [
+    {
+      "name": "aesthetic-intelligence",
+      "version": "0.1.0",
+      "integration_mode": "faculty-derived-build",
+      "tree_sha256": "999a498d0e704d56124a12136b404044b0f00fbdf172d0814339ac3268566e73"
+    },
+    {
+      "name": "agent-dreaming",
+      "version": "0.1.2",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "77902634d1fc5397e442b76c58169983ee43aceb970b5c19d379f30a291b422b"
+    },
+    {
+      "name": "agent-striving",
+      "version": "0.3.2",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "7104a29da9d20536797f0f01dd7c142f852a4bfeeeb21f6956febcf553198c53"
+    },
+    {
+      "name": "augment-of-mind",
+      "version": "1.0.0",
+      "integration_mode": "product-integration",
+      "tree_sha256": "058f1c87048a6b7b79533a3ef9badb9f9b3d401e5f34a7417a14f04e6e3f27a4"
+    },
+    {
+      "name": "capability-conductor",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "67fab75a21fbd1f08525573a84a084b9194bf43a50f79b692779d3ac2c1e5846"
+    },
+    {
+      "name": "cognitive-continuity",
+      "version": "0.1.3",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "b207c56569336f8418138af503e8e927915163657e782f7987b44961388abe56"
+    },
+    {
+      "name": "creative-synthesis",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "0c82d554505ec85c512d7640f355515039105dbe667399a33447a8833de78597"
+    },
+    {
+      "name": "decision-intelligence",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "ff680fc37b37dee28f3ff4b09c898accf05ee71318677788d5a426a3385f4d91"
+    },
+    {
+      "name": "deliberative-intelligence",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "595074292ebf7e0f81155b22ea8d4f9f828b1d6283db4228def7953bb0476541"
+    },
+    {
+      "name": "epistemic-regulation",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "744ad4affdedc97d8d0d653a3368cd27427ffb08a5c82b1c0b8988946ca15e14"
+    },
+    {
+      "name": "executive-function",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "b43e7896ff74fce63147214e9960ccd196c00d07ab02161ba86933e3a83c675a"
+    },
+    {
+      "name": "instrumental-agency",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "569f7167d4ada927b3d59961eb5571ed15f445215fdec9e08f2e84d28749c2f0"
+    },
+    {
+      "name": "kairos",
+      "version": "0.2.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "e341ae4959daaa7e2e5519f2a980738016bb96fd5498d29d10800a7a1df4e36d"
+    },
+    {
+      "name": "measurement-intelligence",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "dfb21b4562aea343493773a152d5dfa5fbb87b603d0f105bc432b0b9dee93d3f"
+    },
+    {
+      "name": "prosocial-influence",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "9fa8a50dcf0cf08996b0c77f7b4d3a009633a1d6450003e17af17412b8b90642"
+    },
+    {
+      "name": "sensemaking",
+      "version": "0.1.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_sha256": "21f487804befb7440ec3a611742c64e7a08aa22c6b3aaee884383a292a32459c"
+    }
+  ]
+}

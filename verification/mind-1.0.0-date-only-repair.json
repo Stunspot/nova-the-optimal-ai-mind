@@ -1,0 +1,65 @@
+{
+  "schema": "mind-verification-receipt/v1",
+  "recorded_on": "2026-07-21",
+  "scope": "plugins/augment-of-mind",
+  "release_candidate_version": "1.0.0",
+  "change": {
+    "problem": "A date-only valid_from parsed to a timezone-naive datetime and crashed comparison with UTC now during context compilation.",
+    "repair": "Normalize timezone-naive parsed timestamps to UTC in compile_context.parse_time.",
+    "regression_test": "ContinuityTests.test_compiler_accepts_date_only_valid_from",
+    "validator_cleanup": "Replaced noncompliant model-visible skill labels with concise concept-first labels and localized Agent DREAMing's continuity doctrine and report templates within its own skill root.",
+    "unicode_repair": "Replaced the mojibake PREPARED â€” NOT EXECUTED marker with PREPARED — NOT EXECUTED in the Agent Striving skill and pursuit-loop reference.",
+    "persona_sanitization": "Replaced cognitive-continuity/personas/cognitive-ecologist-lyra-anstice.md with a clean no-promo, no-wrapper derivative after live probing exposed legacy contamination.",
+    "final_runtime_cleanup": [
+      "Removed unused Cognitive Continuity research and provenance payloads.",
+      "Removed the obsolete Executive Function root prompt.",
+      "Removed the exploitative legacy Kairos corpus.",
+      "Removed Aesthetic Intelligence provenance and generalized Agent Striving integration and provenance payloads.",
+      "Neutralized Cognitive Continuity fixtures and removed nonessential Stunspot build-lineage tails."
+    ]
+  },
+  "version_metadata": {
+    "plugin_manifest": "1.0.0",
+    "faculty_runtime": "1.0.0",
+    "integration_eval_manifest": "1.0.0",
+    "integration_eval_cases": "1.0.0",
+    "fingerprint_product": "1.0.0"
+  },
+  "fingerprint": {
+    "method": "launch_common.tree_sha256(tree_manifest(...))",
+    "method_source": "internal launch fingerprint utility",
+    "exclusions": [
+      "__pycache__",
+      "assets/integrated-capability-fingerprint.json"
+    ],
+    "capability_count": 16,
+    "aggregate_sha256": "3275e96136b02ad642ccc1e107543cd2205e7730400b84a9c3f48adb606dc4f2",
+    "cognitive_continuity_tree_sha256": "b207c56569336f8418138af503e8e927915163657e782f7987b44961388abe56",
+    "integration_tree_sha256": "058f1c87048a6b7b79533a3ef9badb9f9b3d401e5f34a7417a14f04e6e3f27a4",
+    "package_file_count": 146,
+    "package_tree_sha256": "e705c61a62f7ebf334f6e0732d934da6c06540ee19f706603691bbc3c4dbe048"
+  },
+  "checks": [
+    {
+      "command": "python -X utf8 -m unittest discover -s plugins/augment-of-mind/skills/cognitive-continuity/scripts/tests -v",
+      "result": "pass",
+      "detail": "10 tests passed after final runtime cleanup, validator repairs, and the Agent Striving Unicode repair, including the date-only valid_from regression."
+    },
+    {
+      "command": "python -X utf8 -c <recompute fingerprints and assert version metadata>",
+      "result": "pass",
+      "detail": "All 16 capability hashes, aggregate hash, and 146-file package tree match fresh computation after final runtime cleanup, validator repairs, and the Agent Striving Unicode repair."
+    },
+    {
+      "command": "python -X utf8 $CODEX_HOME/skills/augment-skill-builder/scripts/validate_augment_package.py <each skill> --profile codex --json",
+      "result": "pass",
+      "detail": "All 16 skill checks pass with zero findings."
+    },
+    {
+      "command": "python -X utf8 $CODEX_HOME/skills/augment-skill-builder/scripts/validate_augment_package.py <root> --profile bundle --json",
+      "result": "pass",
+      "detail": "Bundle check passes with zero findings."
+    }
+  ],
+  "evidence_boundary": "These are static deterministic checks of the contest candidate. They do not establish fresh-host discovery, invocation, or behavioral performance beyond the exercised continuity scripts."
+}

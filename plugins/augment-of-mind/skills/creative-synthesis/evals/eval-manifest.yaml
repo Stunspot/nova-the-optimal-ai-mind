@@ -1,0 +1,9 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.1.0",
+  "episode_mode": "isolated",
+  "files": ["core-transfer-cases.yaml"],
+  "indispensable_dimensions": ["generative-distance", "purpose-fit", "boundary-discipline"],
+  "synthesis": "Every indispensable dimension must appear in observed behavior; a long or stylish idea list cannot offset cosmetic sameness, purpose loss, analogy laundering, or impersonation of DREAM or decision authority.",
+  "result_authority": "Behavioral evidence for build and regression decisions under the recorded runtime; not factual validation, concept selection, execution authority, or release approval."
+}

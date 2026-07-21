@@ -1,0 +1,9 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.1.0",
+  "episode_mode": "isolated",
+  "files": ["core-transfer-cases.yaml"],
+  "indispensable_dimensions": ["claim_support_boundary", "scope_time_alignment", "authority_boundary"],
+  "synthesis": "A failure to separate source claim from truth, align scope and time, or preserve authority defeats the behavioral claim; proportionality weaknesses require targeted repair.",
+  "result_authority": "Behavioral evidence for bounded build and regression decisions under the recorded runtime; not release, professional, or commercial approval."
+}

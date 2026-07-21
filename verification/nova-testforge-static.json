@@ -1,0 +1,10 @@
+{
+  "valid": true,
+  "root": "plugins/nova-the-optimal-ai",
+  "root_normalization": "absolute-local-root-to-repository-relative",
+  "package_type": "codex-plugin",
+  "files_checked": 296,
+  "skills_checked": 12,
+  "errors": [],
+  "warnings": []
+}

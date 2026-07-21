@@ -1,0 +1,4 @@
+interface:
+  display_name: "Executive Function"
+  short_description: "🎯 Mission governance custody."
+  default_prompt: "Use $executive-function: hold this consequential work through priorities, commitments, phases, drift, stops, recovery, and earned closure."

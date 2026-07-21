@@ -1,0 +1,32 @@
+{
+  "name": "collaborative-dynamics-build-week",
+  "interface": {
+    "displayName": "Nova + MIND by Collaborative Dynamics"
+  },
+  "plugins": [
+    {
+      "name": "augment-of-mind",
+      "source": {
+        "source": "local",
+        "path": "./plugins/augment-of-mind"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "nova-the-optimal-ai",
+      "source": {
+        "source": "local",
+        "path": "./plugins/nova-the-optimal-ai"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

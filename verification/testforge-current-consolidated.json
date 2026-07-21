@@ -1,0 +1,25 @@
+{
+  "format": "testforge-current-consolidated-receipt/v3",
+  "recorded_at": "2026-07-21T18:55:29+00:00",
+  "working_directory": "nova-mind-entry",
+  "evidence": [
+    {"id":"E-CURRENT-INVENTORY","status":"passed","receipt":"verification/shipping-directory-inventory.json","observed":{"directories":201,"files":443,"mind_files":147,"nova_files":296,"symlinks":0}},
+    {"id":"E-CURRENT-STATIC","status":"passed","receipt":"verification/entry-static.json","observed":{"valid":true,"generated_debris":0}},
+    {"id":"E-CURRENT-RELEASE","status":"passed","receipt":"release/release-receipt.json; verification/release-extraction-validation.json","observed":"Current release receipt is matched by valid extracted-release validation; consult those current JSON receipts for archive hashes and member counts."},
+    {"id":"E-CURRENT-INSTALL","status":"passed","receipt":"verification/current-host-install.json; verification/installed-cache-mind.json; verification/installed-cache-nova.json; verification/installed-discovery.json; verification/fresh-host-install.json","observed":{"current_host_refresh":true,"mind_source_and_cache_files":147,"nova_source_and_cache_files":296,"discovered_handles":28,"empty_temporary_home_install":true,"model_invocation_attempted":false}},
+    {"id":"E-TOUR","status":"passed","receipt":"verification/tour-browser-command.json","observed":{"layout_viewports":5,"total_activations":7,"reduced_motion":true,"no_javascript":true}},
+    {"id":"E-LIVE-INDEX","status":"passed","receipt":"verification/live-core-probe-status.json; verification/live-*-public-raw.json","observed":{"valid":true,"scenarios":6,"analysis_sha256_bound":true,"stable_nonreview_index":true,"sanitized_public_execution_receipts":true,"core_git_revision_bound":false}},
+    {"id":"E-LIVE-PROFESSIONAL","status":"passed","receipt":"verification/live-professional-brief-analysis.json","observed":{"loaded_candidate_skills":["nova"],"preferred_name":"stunspot","valid":true}},
+    {"id":"E-LIVE-MIND","status":"passed","receipt":"verification/live-mind-decision-analysis.json","observed":{"valid":true,"response_normalization":"transparent"}},
+    {"id":"E-PRE-FIX-TESTFORGE-ROUTING","status":"not_applicable","receipt":"verification/live-testforge-review-pre-fix-analysis.json","observed":{"valid":true,"reason":"Preserved historical negative review; not a current acceptance test."}},
+    {"id":"E-PRE-FIX-TESTFORGE-DECISION","status":"not_applicable","receipt":"verification/live-testforge-review-pre-fix-analysis.json","observed":{"release_status":"INSUFFICIENT_EVIDENCE","reviewer_verdict":"REVIEW_FAIL","reason":"Older sanitized stage omitted review artifacts; preserved as historical evidence."}},
+    {"id":"E-STAGE-GAP-TESTFORGE-DECISION","status":"not_applicable","receipt":"verification/live-testforge-review-stage-gap-analysis.json","observed":{"release_status":"INSUFFICIENT_EVIDENCE","reviewer_verdict":"REVIEW_FAIL","reason":"Prior stage omitted cited artifacts, lacked immutable staging, and blocked independent helper execution; preserved as historical evidence."}},
+    {"id":"E-INDEX-CONTRADICTION-TESTFORGE-DECISION","status":"not_applicable","receipt":"verification/live-testforge-review-index-contradiction-analysis.json","observed":{"release_status":"INSUFFICIENT_EVIDENCE","reviewer_verdict":"REVIEW_FAIL","reason":"A single-review run overwrote the shared index and public raw receipts were absent; preserved as historical evidence."}},
+    {"id":"E-CURRENT-TESTFORGE-REVIEW","status":"passed_with_conditions","receipt":"verification/live-testforge-review-analysis.json; verification/live-testforge-review-public-raw.json","observed":{"valid":true,"reviewer_verdict":"REVIEW_PASS_WITH_CONDITIONS","reviewed_decision":"INSUFFICIENT_EVIDENCE","stage_file_count":513,"stage_privacy_scan":"PASS","stage_git_binding":{"commit_sha":"2b083d3601f2cba3ed056bb91e15c2902bd99839","tree_sha":"a0e0976f51c5de5d232ac1caed62c4cdd0eee2e9","status":"clean"},"release_readiness_certified":false,"conditions_reconciled_after_review":["manifest current-review state","manifest-aligned Markdown traceability"],"condition_not_retested":"The review was not rerun after documentary reconciliation."}}
+  ],
+  "decision": {
+    "status":"READY_WITH_RESIDUAL_RISK",
+    "reason":"Current package, static, install, tour, six live core scenarios, and the final evidence-quality review are green within their named boundaries. The final review passed with conditions for the preceding INSUFFICIENT_EVIDENCE decision; documentary conditions are reconciled after review without claiming a second review or external completion."
+  },
+  "boundary": "The six core scenarios are content-hash-bound but not Git-revision-bound. Sanitized public receipts bind ignored local raw but are not externally comparable originals. The nested review host could not independently rerun scripts, Git state, or archive hashes. Prompts remain narrow. Publication, rights, feedback/provenance, repository access, video, team, and Devpost remain human/external facts."
+}

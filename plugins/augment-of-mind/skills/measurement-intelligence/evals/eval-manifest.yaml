@@ -1,0 +1,9 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.1.0",
+  "episode_mode": "isolated",
+  "files": ["core-transfer-cases.yaml"],
+  "indispensable_dimensions": ["construct_fidelity", "operationalization", "attribution_honesty", "custody_and_proportionality"],
+  "synthesis": "Every indispensable dimension must appear. A polished dashboard or valid formula cannot compensate for construct substitution, causal overreach, invented collection, or absorbed data and verification custody.",
+  "result_authority": "Behavioral evidence for build and regression decisions under the recorded runtime; not proof of data validity, causal effect, verification, or release approval."
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "collaborative-dynamics-faculty-registry/v1",
+  "runtime_version": "1.0.0",
+  "faculty_count": 15,
+  "faculties": [
+    {
+      "name": "executive-function",
+      "owns": "Mission phase, acceptance, commitments, stops, recovery, and closure.",
+      "activate_when": "The work is consequential, ambiguous, multi-phase, interrupted, or vulnerable to premature closure.",
+      "must_not_own": "Capability routing, source truth, measurement validity, specialist judgment, or reserved human decisions.",
+      "return_emphasis": "Current phase, commitment, acceptance effect, stop or recovery decision."
+    },
+    {
+      "name": "capability-conductor",
+      "owns": "Faculty selection, activation depth, sequencing, handoffs, coalition shape, and merge custody.",
+      "activate_when": "More than one transformation may be needed, ownership is unclear, or a handoff or merge could fail.",
+      "must_not_own": "Mission commitment, claim confidence, measurement validity, domain conclusions, or user authority.",
+      "return_emphasis": "Selected owners, dependencies, return contracts, merge decision, and released owners."
+    },
+    {
+      "name": "cognitive-continuity",
+      "owns": "Durable scoped state, provenance, correction, resumption, and forgetting.",
+      "activate_when": "Consequential state must survive the current context; remain ambient only where the host explicitly establishes that relationship.",
+      "must_not_own": "Whether a goal deserves pursuit, capability selection, factual truth, or permission.",
+      "return_emphasis": "State preserved, provenance, supersession, scope, and re-entry cue."
+    },
+    {
+      "name": "agent-striving",
+      "owns": "Authorized long-horizon pursuit across interruption, recoverable failure, and route change.",
+      "activate_when": "The user says persist, finish, become, learn, or establishes a durable objective.",
+      "must_not_own": "Goal invention, permission expansion, evidence standards, or refusal to stop after a terminal condition.",
+      "return_emphasis": "Verified progress delta, route revision, remaining budget, and terminal or continuation condition."
+    },
+    {
+      "name": "agent-dreaming",
+      "owns": "Explicitly authorized, packet-closed replay, perturbation, failure rehearsal, and associative incubation.",
+      "activate_when": "The user explicitly requests DREAM work or authorizes a bounded DREAM packet.",
+      "must_not_own": "Ordinary creativity, external action, canonical memory mutation, or waking approval.",
+      "return_emphasis": "Proposal, counterfactual, discriminating test, uncertainty, and waking-review boundary."
+    },
+    {
+      "name": "kairos",
+      "owns": "Truthful timing, voice, tone, channel, form, pressure ceiling, and rhetorical repair.",
+      "activate_when": "Grounded and legitimate content must fit particular people and circumstances.",
+      "must_not_own": "Evidence, legitimacy, consent, persuasion strategy, decision, or factual content.",
+      "return_emphasis": "Expression fit, timing, pressure boundary, audience risk, and repair option."
+    },
+    {
+      "name": "sensemaking",
+      "owns": "Provisional situation models of actors, forces, causal relations, constraints, feedback, scale, time, and alternative frames.",
+      "activate_when": "The situation is ambiguous, messy, contradictory, or causally unclear.",
+      "must_not_own": "Truth certification, option selection, commitment, or execution.",
+      "return_emphasis": "Model delta, alternative frame, leverage point, contradiction, and discriminating unknown."
+    },
+    {
+      "name": "epistemic-regulation",
+      "owns": "Local claim state, warrant, confidence, assumptions, contradictions, unknowns, and revision conditions.",
+      "activate_when": "Consequential claims mix observation, report, inference, assumption, calculation, or conflicting support.",
+      "must_not_own": "Source authority, measurement design, mission priority, decision commitment, or evidence invention.",
+      "return_emphasis": "Claim-state change, support, contradiction, confidence boundary, and revision trigger."
+    },
+    {
+      "name": "decision-intelligence",
+      "owns": "Criteria, live options, tradeoffs, reversibility, consequences, sensitivity, and recommendation.",
+      "activate_when": "A sufficiently understood choice needs an explicit recommendation.",
+      "must_not_own": "Human commitment, mission priority, evidence fabrication, or action authorization.",
+      "return_emphasis": "Recommendation delta, decisive criteria, sensitivity, reversibility, and information-producing probe."
+    },
+    {
+      "name": "measurement-intelligence",
+      "owns": "Constructs, baselines, measures, proxies, thresholds, collection, interpretation, confounds, and attribution boundaries.",
+      "activate_when": "Success, change, comparison, or a probe must become honestly observable.",
+      "must_not_own": "Data lifecycle, final truth, verification disposition, mission priority, or commitment.",
+      "return_emphasis": "Observation meaning, validity, reliability, proxy limit, confound, and threshold implication."
+    },
+    {
+      "name": "deliberative-intelligence",
+      "owns": "Reciprocal stakeholder models, disagreement, interests, decision rights, negotiation, consent, and legitimate convergence.",
+      "activate_when": "Several people must form a shared problem or choice without manufactured consensus.",
+      "must_not_own": "Coercive advocacy, final authority, factual truth, or rhetorical styling.",
+      "return_emphasis": "Shared state, preserved dissent, decision rights, legitimacy condition, and unresolved value conflict."
+    },
+    {
+      "name": "creative-synthesis",
+      "owns": "Live-task novelty through differentiated candidates, analogies, constraints, exceptions, and reframings.",
+      "activate_when": "The obvious possibility set is inadequate and ordinary live ideation is sufficient.",
+      "must_not_own": "Truth, selection, DREAM authority, commitment, or validation.",
+      "return_emphasis": "Distinct candidate delta, generative principle, useful tension, and selection-relevant difference."
+    },
+    {
+      "name": "aesthetic-intelligence",
+      "owns": "Aesthetic gestalt, conceptual affinity and distance, compositional relations, taste calibration, and aesthetic bearings.",
+      "activate_when": "Fit, vibe, style, coherence, counterpoint, or cross-domain conceptual neighborhood materially affects the work.",
+      "must_not_own": "Candidate generation, audience timing, factual lineage, empirical performance, decision recommendation, or commitment.",
+      "return_emphasis": "Gestalt, decisive fit or tension, taste basis, conceptual bearings, and interpretive uncertainty."
+    },
+    {
+      "name": "prosocial-influence",
+      "owns": "Transparent advocated change through legitimate reasons, motivation, friction, supports, resistance, safeguards, and informed refusal.",
+      "activate_when": "Adoption or behavior change is explicitly sought and the audience must retain agency.",
+      "must_not_own": "Unresolved governance or consent, coercion, evidence inflation, timing and style, or commitment authority.",
+      "return_emphasis": "Legitimate change strategy, safeguards, support, resistance, informed refusal, and stop condition."
+    },
+    {
+      "name": "instrumental-agency",
+      "owns": "Authorized action choreography, preconditions, state checks, idempotence or rollback, recovery, and truthful disposition.",
+      "activate_when": "An authorized intention must become observable state through real tools or environments.",
+      "must_not_own": "Authorization, mission choice, domain truth, measurement validity, or verification merely because a tool returned success.",
+      "return_emphasis": "Precondition, attempted action, observed state, recovery state, and verification still required."
+    }
+  ]
+}

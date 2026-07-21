@@ -1,0 +1,78 @@
+{
+  "format": "nova-mind-current-host-install/v1",
+  "recorded_at": "2026-07-21T18:36:44.319512+00:00",
+  "repository": ".",
+  "marketplace": "collaborative-dynamics-build-week",
+  "selectors": [
+    "augment-of-mind@collaborative-dynamics-build-week",
+    "nova-the-optimal-ai@collaborative-dynamics-build-week"
+  ],
+  "commands": [
+    {
+      "command": "codex plugin list --json (before)",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin remove augment-of-mind@collaborative-dynamics-build-week --json",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin remove nova-the-optimal-ai@collaborative-dynamics-build-week --json",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin marketplace list --json (before)",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin marketplace remove collaborative-dynamics-build-week --json",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin marketplace add <contest-repository> --json",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin add augment-of-mind@collaborative-dynamics-build-week --json",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin add nova-the-optimal-ai@collaborative-dynamics-build-week --json",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    },
+    {
+      "command": "codex plugin list --json (after)",
+      "exit_code": 0,
+      "json_output": true,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "passed"
+    }
+  ],
+  "valid": true,
+  "errors": [],
+  "boundary": "This receipt covers current-host marketplace and selector refresh only. Installed byte equality, skill discovery, and model behavior require separate checks."
+}

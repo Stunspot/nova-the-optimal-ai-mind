@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capability Conductor"
+  short_description: "🧩 Capability route coordination."
+  default_prompt: "Use $capability-conductor to design the smallest sufficient route. Load candidate skills only if their transformations will actually be performed now."

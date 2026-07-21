@@ -1,0 +1,73 @@
+{
+  "format": "nova-mind-build-reproducibility/v1",
+  "recorded_at": "2026-07-21T17:56:26.123001+00:00",
+  "valid": true,
+  "runs": [
+    {
+      "run": 1,
+      "elapsed_seconds": 0.305013,
+      "files": {
+        "augment-of-mind-1.0.0.zip": {
+          "sha256": "a5b1224cafce295dd6a373a2687952cb95fe029df22e4c88461554928653b593",
+          "bytes": 233695
+        },
+        "nova-the-optimal-ai-1.0.0.zip": {
+          "sha256": "706445592234baa655af8a7ecee5d096933d6497abe0303d9236ca7dda333651",
+          "bytes": 532245
+        },
+        "release-receipt.json": {
+          "sha256": "fa57005dd02dacdeacfcddd699d80140b938beacf072271b07fda81e5ea0810f",
+          "bytes": 103581
+        },
+        "SHA256SUMS": {
+          "sha256": "2fc91d81c275bb5e4e639142878467a6b0462e01c17728bd269e08a3f02338eb",
+          "bytes": 188
+        }
+      },
+      "source_trees": {
+        "augment-of-mind": "1a3950c45bb6d3ff04b2e90e473784a1b34f1ad0fc342afc67713b53df3af679",
+        "nova-the-optimal-ai": "be7d8c2e447c06c53a9ebb9393274aea457eb4c6a84394f3f1b98aade902e639"
+      },
+      "member_counts": {
+        "augment-of-mind": 147,
+        "nova-the-optimal-ai": 296
+      }
+    },
+    {
+      "run": 2,
+      "elapsed_seconds": 0.302968,
+      "files": {
+        "augment-of-mind-1.0.0.zip": {
+          "sha256": "a5b1224cafce295dd6a373a2687952cb95fe029df22e4c88461554928653b593",
+          "bytes": 233695
+        },
+        "nova-the-optimal-ai-1.0.0.zip": {
+          "sha256": "706445592234baa655af8a7ecee5d096933d6497abe0303d9236ca7dda333651",
+          "bytes": 532245
+        },
+        "release-receipt.json": {
+          "sha256": "fa57005dd02dacdeacfcddd699d80140b938beacf072271b07fda81e5ea0810f",
+          "bytes": 103581
+        },
+        "SHA256SUMS": {
+          "sha256": "2fc91d81c275bb5e4e639142878467a6b0462e01c17728bd269e08a3f02338eb",
+          "bytes": 188
+        }
+      },
+      "source_trees": {
+        "augment-of-mind": "1a3950c45bb6d3ff04b2e90e473784a1b34f1ad0fc342afc67713b53df3af679",
+        "nova-the-optimal-ai": "be7d8c2e447c06c53a9ebb9393274aea457eb4c6a84394f3f1b98aade902e639"
+      },
+      "member_counts": {
+        "augment-of-mind": 147,
+        "nova-the-optimal-ai": 296
+      }
+    }
+  ],
+  "comparison": {
+    "release_files_byte_identical": true,
+    "source_tree_hashes_identical": true,
+    "member_counts_identical": true
+  },
+  "boundary": "This receipt observes two consecutive builds from one source checkout and host. It proves byte reproducibility for these runs, not cross-platform reproducibility."
+}

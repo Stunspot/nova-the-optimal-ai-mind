@@ -1,0 +1,21 @@
+# Kairos brief
+
+- Communication purpose:
+- Upstream influence or deliberation brief, if any:
+- Audience and relationship:
+- Circumstances and emotional weather:
+- Why speak now, later, or not at all:
+- What they already know:
+- What they value or fear:
+- Time and channel constraints:
+- Speaker and voice invariants:
+- Truth or experience to communicate:
+- Available ground and evidence:
+- Material limitations:
+- Fitting voice, tone, and pace:
+- Fitting channel, form, and sequence:
+- Pressure ceiling appropriate to the real stakes:
+- Strongest reasonable objection:
+- Desired communicative after-state:
+- Audience freedom that must remain intact:
+- Repair or stopping condition:

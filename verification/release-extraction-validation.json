@@ -1,0 +1,512 @@
+{
+  "format": "nova-mind-extracted-release-validation/v1",
+  "recorded_at": "2026-07-21T18:02:18.836510+00:00",
+  "target": "release/augment-of-mind-1.0.0.zip and release/nova-the-optimal-ai-1.0.0.zip",
+  "validator_labels": {
+    "plugin": "$CODEX_HOME/skills/.system/plugin-creator/scripts/validate_plugin.py",
+    "skill": "$CODEX_HOME/skills/.system/skill-creator/scripts/quick_validate.py",
+    "testforge": "plugins/nova-the-optimal-ai/skills/software-verification/scripts/verify_package.py"
+  },
+  "missing_validator_tools": [],
+  "archives": [
+    {
+      "plugin": "augment-of-mind",
+      "archive": "release/augment-of-mind-1.0.0.zip",
+      "sha256": "a5b1224cafce295dd6a373a2687952cb95fe029df22e4c88461554928653b593",
+      "hash_matches_receipt_and_checksums": true,
+      "members_extracted": 147,
+      "expected_members": 147,
+      "plugin_validator": {
+        "command": [
+          "<python>",
+          "-B",
+          "-X",
+          "utf8",
+          "<plugin-validator>",
+          "<temporary-extraction>\\augment-of-mind"
+        ],
+        "exit_code": 0,
+        "stdout": "Plugin validation passed: <temporary-extraction>\\augment-of-mind",
+        "stderr": "",
+        "status": "passed"
+      },
+      "skill_validators": [
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\aesthetic-intelligence"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "aesthetic-intelligence"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\agent-dreaming"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "agent-dreaming"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\agent-striving"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "agent-striving"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\augment-of-mind"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "augment-of-mind"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\capability-conductor"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "capability-conductor"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\cognitive-continuity"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "cognitive-continuity"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\creative-synthesis"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "creative-synthesis"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\decision-intelligence"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "decision-intelligence"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\deliberative-intelligence"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "deliberative-intelligence"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\epistemic-regulation"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "epistemic-regulation"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\executive-function"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "executive-function"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\instrumental-agency"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "instrumental-agency"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\kairos"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "kairos"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\measurement-intelligence"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "measurement-intelligence"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\prosocial-influence"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "prosocial-influence"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\augment-of-mind\\skills\\sensemaking"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "sensemaking"
+        }
+      ],
+      "testforge_validator": {
+        "command": [
+          "<python>",
+          "-B",
+          "-X",
+          "utf8",
+          "<testforge-validator>",
+          "<temporary-extraction>\\augment-of-mind"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"valid\": true,\n  \"root\": \"<temporary-extraction>\\\\augment-of-mind\",\n  \"package_type\": \"codex-plugin\",\n  \"files_checked\": 147,\n  \"skills_checked\": 16,\n  \"errors\": [],\n  \"warnings\": []\n}",
+        "stderr": "",
+        "status": "passed"
+      },
+      "valid": true
+    },
+    {
+      "plugin": "nova-the-optimal-ai",
+      "archive": "release/nova-the-optimal-ai-1.0.0.zip",
+      "sha256": "706445592234baa655af8a7ecee5d096933d6497abe0303d9236ca7dda333651",
+      "hash_matches_receipt_and_checksums": true,
+      "members_extracted": 296,
+      "expected_members": 296,
+      "plugin_validator": {
+        "command": [
+          "<python>",
+          "-B",
+          "-X",
+          "utf8",
+          "<plugin-validator>",
+          "<temporary-extraction>\\nova-the-optimal-ai"
+        ],
+        "exit_code": 0,
+        "stdout": "Plugin validation passed: <temporary-extraction>\\nova-the-optimal-ai",
+        "stderr": "",
+        "status": "passed"
+      },
+      "skill_validators": [
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\agentic-coding"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "agentic-coding"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\corkboard"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "corkboard"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\dunbar"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "dunbar"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\ludis-continuum"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "ludis-continuum"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\nova"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "nova"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\omnara-deep-research"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "omnara-deep-research"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\retrieval-intelligence"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "retrieval-intelligence"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\retrieval-reviewer"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "retrieval-reviewer"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\rupert-giles-knowledge-steward"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "rupert-giles-knowledge-steward"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\signal-loom"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "signal-loom"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\software-verification"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "software-verification"
+        },
+        {
+          "command": [
+            "<python>",
+            "-B",
+            "-X",
+            "utf8",
+            "<skill-validator>",
+            "<temporary-extraction>\\nova-the-optimal-ai\\skills\\verification-reviewer"
+          ],
+          "exit_code": 0,
+          "stdout": "Skill is valid!",
+          "stderr": "",
+          "status": "passed",
+          "skill": "verification-reviewer"
+        }
+      ],
+      "testforge_validator": {
+        "command": [
+          "<python>",
+          "-B",
+          "-X",
+          "utf8",
+          "<testforge-validator>",
+          "<temporary-extraction>\\nova-the-optimal-ai"
+        ],
+        "exit_code": 0,
+        "stdout": "{\n  \"valid\": true,\n  \"root\": \"<temporary-extraction>\\\\nova-the-optimal-ai\",\n  \"package_type\": \"codex-plugin\",\n  \"files_checked\": 296,\n  \"skills_checked\": 12,\n  \"errors\": [],\n  \"warnings\": []\n}",
+        "stderr": "",
+        "status": "passed"
+      },
+      "valid": true
+    }
+  ],
+  "valid": true
+}

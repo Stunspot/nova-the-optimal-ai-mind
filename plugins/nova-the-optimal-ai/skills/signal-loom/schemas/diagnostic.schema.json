@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Signal Loom diagnostic record",
+  "type": "object",
+  "required": ["artifact", "top_three", "secondary", "unproved_layers"],
+  "properties": {
+    "artifact": {"type": "string"},
+    "top_three": {"type": "array", "maxItems": 3},
+    "secondary": {"type": "array"},
+    "unproved_layers": {"type": "array"}
+  },
+  "additionalProperties": true
+}

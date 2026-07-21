@@ -1,0 +1,145 @@
+{
+  "manifest_version": "1.1",
+  "target": {
+    "name": "Nova the Optimal AI + MIND Build Week candidate",
+    "revision": "post-final-TestForge-review evidence reconciliation",
+    "target_class": "release_candidate"
+  },
+  "scope": {
+    "included": [
+      "Current source, release, install, browser-tour, and live-execution receipts",
+      "Stable six-scenario core index with sanitized public execution receipts",
+      "Three preserved historical negative TestForge reviews and the current complete-stage TestForge review",
+      "Evidence/traceability reconciliation completed after the current review",
+      "Hash-bound refreshed video production inputs and production-host doctor receipt"
+    ],
+    "excluded": [
+      "Repository publication, public video rendering/upload, feedback/provenance, rights attestation, and Devpost submission"
+    ],
+    "constraints": [
+      "Claims are limited to named receipts and their recorded revisions.",
+      "A valid live execution is not a universal behavioral claim.",
+      "The final TestForge verdict reviewed the package's then-current INSUFFICIENT_EVIDENCE decision; it did not itself certify release readiness.",
+      "This manifest records the release operator's post-review reconciliation, not a second TestForge review."
+    ],
+    "safety_boundary": [
+      "No publication, account mutation, destructive operation, or external action is inferred from local evidence."
+    ]
+  },
+  "claim_custody": {
+    "observed": [
+      {"id":"C-OBS-001","statement":"The current shipping inventory records 201 directories, 443 files, and zero symlinks: MIND 147 and Nova 296.","basis":"verification/shipping-directory-inventory.json","confidence":"high","consequence":"Inventory only."},
+      {"id":"C-OBS-002","statement":"The current whole-entry verifier passes with an empty generated-debris finding list.","basis":"verification/entry-static.json","confidence":"high","consequence":"Current static repository integrity only."},
+      {"id":"C-OBS-003","statement":"The current release receipt and extracted-release validation bind the two archives; extraction validation is valid and its archive hashes match the release receipt and checksums.","basis":"release/release-receipt.json; verification/release-extraction-validation.json","confidence":"high","consequence":"Current release archive structure and captured bytes."},
+      {"id":"C-OBS-004","statement":"After the preferred-name correction and debris cleanup, current-host refresh, 147/147 and 296/296 installed-cache equality, 28-handle discovery, and an initially empty temporary-home install all pass.","basis":"verification/current-host-install.json; verification/installed-cache-mind.json; verification/installed-cache-nova.json; verification/installed-discovery.json; verification/fresh-host-install.json","confidence":"high","consequence":"Named install and discovery paths only; no model behavior inferred."},
+      {"id":"C-OBS-005","statement":"The browser tour receipt passed five layout viewports, seven activations, reduced-motion checks, and no-JavaScript assertions.","basis":"verification/tour-browser-command.json","confidence":"high","consequence":"Bounded browser coverage."},
+      {"id":"C-OBS-006","statement":"The stable core live-probe status is valid and binds SHA-256 values for six valid clean-host GPT-5.6-sol analyses: direct-negative, tour, Ludis character, MIND decision, Agentic orientation, and professional brief. Each analysis names a sanitized public execution receipt bound by SHA-256 to ignored local raw.","basis":"verification/live-core-probe-status.json; verification/live-*-public-raw.json","confidence":"high","consequence":"Named scenarios only."},
+      {"id":"C-OBS-007","statement":"The professional brief uses the preferred lowercase professional name stunspot; MIND response normalization is transparently recorded.","basis":"verification/live-professional-brief-analysis.json; verification/live-mind-decision-analysis.json","confidence":"high","consequence":"Named response facts only."},
+      {"id":"C-OBS-008","statement":"A preserved pre-fix TestForge scenario executed validly but returned REVIEW_FAIL and INSUFFICIENT_EVIDENCE because its older sanitized stage omitted review artifacts.","basis":"verification/live-testforge-review-pre-fix-analysis.json","confidence":"high","consequence":"Historical negative review; neither a current product pass nor a plugin-defect finding."},
+      {"id":"C-OBS-009","statement":"The first complete-stage TestForge attempt executed validly but returned REVIEW_FAIL because cited receipt/helper files and an immutable stage revision were absent, while the host policy blocked independent helper execution.","basis":"verification/live-testforge-review-stage-gap-analysis.json","confidence":"high","consequence":"Historical negative review; its custody gaps were re-entry conditions."},
+      {"id":"C-OBS-010","statement":"The next TestForge attempt executed validly but returned REVIEW_FAIL because a one-review run overwrote the shared live index, creating a one-versus-six contradiction; it also required public execution receipts.","basis":"verification/live-testforge-review-index-contradiction-analysis.json","confidence":"high","consequence":"Historical negative review; stable-core indexing and public raw receipts were re-entry conditions."},
+      {"id":"C-OBS-011","statement":"The final complete-stage TestForge review executed validly against a privacy-clean, Git-bound 513-file public stage and returned REVIEW_PASS_WITH_CONDITIONS for the package's own then-current INSUFFICIENT_EVIDENCE decision. It identified stale manifest/review state, obsolete Markdown traceability IDs, demo re-entry, and bounded residual risks; it did not certify release readiness.","basis":"verification/live-testforge-review-analysis.json; verification/live-testforge-review-public-raw.json","confidence":"high","consequence":"Evidence-quality review only; subsequent documentation reconciliation is separately recorded in this manifest."}
+    ],
+    "inferred": [],
+    "assumed": [],
+    "unresolved": [
+      {"id":"C-UNR-002","statement":"Repository access, public video, feedback/provenance, rights, and Devpost submission are complete.","basis":"External human/account gates.","confidence":"high","consequence":"Human-gated."}
+    ]
+  },
+  "impact_map": [
+    "Current release validation is distinct from installed-host validation.",
+    "A valid live scenario establishes only its named oracle.",
+    "Historical negative reviews remain audit evidence and are not current product failures.",
+    "The final conditional review assessed evidence quality, not external contest completion.",
+    "External contest gates remain external."
+  ],
+  "invariants": [
+    {"id":"INV-001","statement":"The current release archives match their current receipt and extracted-release validation."},
+    {"id":"INV-002","statement":"Current installation claims require post-correction evidence against the cleaned 147/296 source trees."},
+    {"id":"INV-003","statement":"The tour satisfies its named browser checks."},
+    {"id":"INV-004","statement":"The direct-negative scenario does not load a forbidden specialist."},
+    {"id":"INV-005","statement":"Historical TestForge negatives are not represented as current product passes or plugin-defect findings; the current review is represented with its exact conditional verdict and limits."},
+    {"id":"INV-006","statement":"No local receipt is represented as external publication, rights, feedback, or submission proof."}
+  ],
+  "risks": [
+    {"id":"R-001","statement":"Current release payload diverges from its release receipt or contains generated debris.","severity":"critical","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-CURRENT-RELEASE","T-CURRENT-STATIC","T-CURRENT-RELEASE","E-001","E-002"]},
+    {"id":"R-002","statement":"The corrected, cleaned source/release is not the payload installed or discovered by the host.","severity":"high","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-CURRENT-INSTALL","T-CURRENT-MIND-CACHE","T-CURRENT-NOVA-CACHE","T-CURRENT-DISCOVERY","T-CURRENT-FRESH-INSTALL","E-003","E-004"]},
+    {"id":"R-003","statement":"The browser tour regresses in its named layout or activation checks.","severity":"medium","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-TOUR","T-TOUR","E-005"]},
+    {"id":"R-004","statement":"Simple direct work spuriously activates a forbidden specialist.","severity":"medium","likelihood":"low","confidence":"high","disposition":"covered","verification":["S-DIRECT-NEGATIVE","T-DIRECT-NEGATIVE","E-006"]},
+    {"id":"R-005","statement":"Live routing or TestForge review evidence is overstated.","severity":"medium","likelihood":"medium","confidence":"high","disposition":"covered_with_residual_risk","verification":["S-LIVE-INDEX","S-TESTFORGE-CURRENT","T-LIVE-INDEX","T-PRE-FIX-TESTFORGE","T-TESTFORGE-STAGE-GAP","T-TESTFORGE-INDEX-CONTRADICTION","T-TESTFORGE-CURRENT","E-007","E-008","E-009","E-010","E-011"]},
+    {"id":"R-006","statement":"External contest gates are absent or misrepresented.","severity":"medium","likelihood":"unknown","confidence":"high","disposition":"blocked","verification":["S-EXTERNAL-GATES","T-EXTERNAL-GATES"]}
+  ],
+  "scenarios": [
+    {"id":"S-CURRENT-RELEASE","risk_ids":["R-001"],"title":"Current static and release extraction validation","layer":"static","preconditions":["Current source, release receipt, and archives exist."],"action":["Validate current tree and extracted archives against current receipt/checksums."],"expected":["Tree is clean; both current archives validate and match."],"forbidden":["Claiming host behavior."],"evidence":["E-001","E-002"],"status":"executed"},
+    {"id":"S-CURRENT-INSTALL","risk_ids":["R-002"],"title":"Post-correction cleaned-tree install evidence","layer":"integration","preconditions":["Corrected and cleaned source/current release are available."],"action":["Refresh current selectors, compare caches, inspect discovery, and repeat initially empty-home install."],"expected":["Current source and installed payloads match at 147/296; clean host discovers 28 handles."],"forbidden":["Inferring model behavior from installation."],"evidence":["E-003","E-004"],"status":"executed"},
+    {"id":"S-TOUR","risk_ids":["R-003"],"title":"Tour browser checks","layer":"browser","preconditions":["Browser-check environment available."],"action":["Run tour check."],"expected":["Five layout viewports, seven activations, and named accessibility assertions pass."],"forbidden":["Full accessibility certification."],"evidence":["E-005"],"status":"executed"},
+    {"id":"S-DIRECT-NEGATIVE","risk_ids":["R-004"],"title":"Direct simple-work nonactivation","layer":"live","preconditions":["Bound live receipt exists."],"action":["Inspect direct-negative analysis."],"expected":["nova loads without forbidden specialist."],"forbidden":["Specialist-behavior credit."],"evidence":["E-006"],"status":"executed"},
+    {"id":"S-LIVE-INDEX","risk_ids":["R-005"],"title":"Stable six-scenario core live execution index","layer":"live","preconditions":["Core bound status and sanitized execution receipts exist."],"action":["Inspect status, six SHA-256-bound analyses, and their public execution receipts."],"expected":["Six valid named executions with one common privacy-clean staged tree and no TestForge self-review entry."],"forbidden":["Universal behavior claim.","Allowing a single TestForge run to overwrite the core index."],"evidence":["E-007"],"status":"executed"},
+    {"id":"S-TESTFORGE-CURRENT","risk_ids":["R-005"],"title":"Complete-stage TestForge evidence review","layer":"live","preconditions":["Current evidence documents and receipts are staged."],"action":["Run independent TestForge review against the current complete stage, then reconcile any identified documentary conditions without representing that remediation as a second review."],"expected":["Reviewer returns an evidence-bound verdict and separates residual risk from external authority gates."],"forbidden":["Forcing a favorable verdict.","Treating historical negative reviews as current product results.","Treating post-review reconciliation as reviewer recertification."],"evidence":["E-008","E-009","E-010","E-011"],"status":"executed"},
+    {"id":"S-EXTERNAL-GATES","risk_ids":["R-006"],"title":"Contest account and submission gates","layer":"observability","preconditions":["Authorized representative and accounts available."],"action":["Confirm each external gate."],"expected":["Truthful receipt or URL per gate."],"forbidden":["Inferring external completion from local files."],"evidence":[],"status":"blocked"}
+  ],
+  "tests": [
+    {"id":"T-CURRENT-STATIC","scenario_ids":["S-CURRENT-RELEASE"],"path":"verification/entry-static.json","status":"passed","execution_id":"E-001"},
+    {"id":"T-CURRENT-RELEASE","scenario_ids":["S-CURRENT-RELEASE"],"path":"verification/release-extraction-validation.json","status":"passed","execution_id":"E-002"},
+    {"id":"T-CURRENT-MIND-CACHE","scenario_ids":["S-CURRENT-INSTALL"],"path":"verification/installed-cache-mind.json","status":"passed","execution_id":"E-003"},
+    {"id":"T-CURRENT-NOVA-CACHE","scenario_ids":["S-CURRENT-INSTALL"],"path":"verification/installed-cache-nova.json","status":"passed","execution_id":"E-003"},
+    {"id":"T-CURRENT-DISCOVERY","scenario_ids":["S-CURRENT-INSTALL"],"path":"verification/installed-discovery.json","status":"passed","execution_id":"E-003"},
+    {"id":"T-CURRENT-FRESH-INSTALL","scenario_ids":["S-CURRENT-INSTALL"],"path":"verification/fresh-host-install.json","status":"passed","execution_id":"E-004"},
+    {"id":"T-TOUR","scenario_ids":["S-TOUR"],"path":"verification/tour-browser-command.json","status":"passed","execution_id":"E-005"},
+    {"id":"T-DIRECT-NEGATIVE","scenario_ids":["S-DIRECT-NEGATIVE"],"path":"verification/live-direct-negative-analysis.json","status":"passed","execution_id":"E-006"},
+    {"id":"T-LIVE-INDEX","scenario_ids":["S-LIVE-INDEX"],"path":"verification/live-core-probe-status.json","status":"passed","execution_id":"E-007"},
+    {"id":"T-PRE-FIX-TESTFORGE","scenario_ids":["S-TESTFORGE-CURRENT"],"path":"verification/live-testforge-review-pre-fix-analysis.json","status":"not_applicable","execution_id":"E-008","note":"Preserved historical negative review; not a current acceptance test."},
+    {"id":"T-TESTFORGE-STAGE-GAP","scenario_ids":["S-TESTFORGE-CURRENT"],"path":"verification/live-testforge-review-stage-gap-analysis.json","status":"not_applicable","execution_id":"E-009","note":"Preserved historical negative review; not a current acceptance test."},
+    {"id":"T-TESTFORGE-INDEX-CONTRADICTION","scenario_ids":["S-TESTFORGE-CURRENT"],"path":"verification/live-testforge-review-index-contradiction-analysis.json","status":"not_applicable","execution_id":"E-010","note":"Preserved historical negative review; not a current acceptance test."},
+    {"id":"T-TESTFORGE-CURRENT","scenario_ids":["S-TESTFORGE-CURRENT"],"path":"verification/live-testforge-review-analysis.json","status":"passed","execution_id":"E-011","note":"Review executed validly; verdict is REVIEW_PASS_WITH_CONDITIONS for the preceding INSUFFICIENT_EVIDENCE decision, not an independent release-ready certification."},
+    {"id":"T-EXTERNAL-GATES","scenario_ids":["S-EXTERNAL-GATES"],"path":"design/CONTEST-ACCEPTANCE.md","status":"blocked"}
+  ],
+  "executions": [
+    {"id":"E-001","command":["python","-B","-X","utf8","tools\\verify_entry.py"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/entry-static.json"},
+    {"id":"E-002","command":["python","-B","-X","utf8","tools\\validate_release.py"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/release-extraction-validation.json"},
+    {"id":"E-003","command":["current-host refresh and source/cache/discovery checks"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/current-host-install.json; verification/installed-cache-mind.json; verification/installed-cache-nova.json; verification/installed-discovery.json"},
+    {"id":"E-004","command":["python","-B","-X","utf8","tools\\fresh_host_install_probe.py"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/fresh-host-install.json"},
+    {"id":"E-005","command":["node","tools\\check_tour.cjs"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/tour-browser-command.json"},
+    {"id":"E-006","command":["codex","live direct-negative","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-direct-negative-analysis.json"},
+    {"id":"E-007","command":["codex","stable six-scenario core live index","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-core-probe-status.json; verification/live-*-public-raw.json"},
+    {"id":"E-008","command":["codex","pre-fix TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-pre-fix-analysis.json"},
+    {"id":"E-009","command":["codex","first complete-stage TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-stage-gap-analysis.json"},
+    {"id":"E-010","command":["codex","stable-index TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-index-contradiction-analysis.json"},
+    {"id":"E-011","command":["codex","complete-stage TestForge review scenario","gpt-5.6-sol"],"working_directory":"nova-mind-entry","status":"passed","exit_code":0,"raw_evidence":"verification/live-testforge-review-analysis.json; verification/live-testforge-review-public-raw.json","stage_git_binding":{"commit_sha":"2b083d3601f2cba3ed056bb91e15c2902bd99839","tree_sha":"a0e0976f51c5de5d232ac1caed62c4cdd0eee2e9","status":"clean"}}
+  ],
+  "findings": [
+    {"id":"F-001","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"The preserved pre-fix TestForge review assessed an older sanitized stage that omitted review artifacts.","evidence":["E-008","C-OBS-008"],"confidence":"high","next_action":"Retain for audit; it is superseded by the current complete-stage review.","status":"superseded_by_reentry"},
+    {"id":"F-002","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"Successive TestForge attempts exposed missing staged custody and then an index orchestration contradiction; independent helper execution remained blocked by nested host policy.","evidence":["C-OBS-009","C-OBS-010","E-009","E-010"],"confidence":"high","next_action":"Retain historical reviews; current stage supplied stable core, public receipts, Git binding, and documentary reconciliation. Keep nested-host execution limit as residual risk.","status":"remediated_with_residual"},
+    {"id":"F-003","classification":"INSUFFICIENT_EVIDENCE","severity":"medium","statement":"Repository, video, feedback/provenance, rights, and Devpost remain external human gates.","evidence":["C-UNR-002"],"confidence":"high","next_action":"Authorized representative records each external action.","status":"blocked"}
+  ],
+  "residual_risks": [
+    {"id":"RR-001","statement":"The original six clean-host core runs are content-hash-bound but not Git-revision-bound.","treatment":"Limit claims to their named prompts, recorded hashes, model, and receipts; do not infer immutable-revision provenance for those six runs.","owner":"authorized release operator","revisit_condition":"Broader rerun is staged and Git-bound."},
+    {"id":"RR-002","statement":"Sanitized public receipts bind ignored local raw through SHA-256, but external reviewers cannot independently compare the private originals.","treatment":"State the public/private evidence boundary; do not claim public raw is the original record.","owner":"authorized release operator","revisit_condition":"A shareable independently auditable raw-evidence policy is authorized."},
+    {"id":"RR-003","statement":"Nested host policy blocked independent reruns of verification scripts, Git state, and archive hashes during the final review.","treatment":"Treat supplied receipts as reviewed evidence, not independently re-executed proof.","owner":"host operator","revisit_condition":"A review host with the necessary read/write execution authority is available."},
+    {"id":"RR-004","statement":"Six core prompts and one TestForge review prompt are narrow samples, not a routing or quality census.","treatment":"Keep all behavioral claims scenario-bounded.","owner":"authorized release operator","revisit_condition":"A broader ecological evaluation is completed."},
+    {"id":"RR-005","statement":"Repository access, video, feedback/provenance, rights, team, and Devpost submission remain external gates.","treatment":"Keep human-gated; require observed URLs/receipts and final human review.","owner":"authorized representative","revisit_condition":"External receipts or URLs are available."}
+  ],
+  "review": {
+    "status":"REVIEW_PASS_WITH_CONDITIONS",
+    "reviewer":"TestForge operator plus verification reviewer in one clean-host GPT-5.6-sol scenario",
+    "execution_id":"E-011",
+    "verdict_scope":"The review passed the package's own then-current INSUFFICIENT_EVIDENCE decision with conditions; it did not certify release readiness.",
+    "conditions":[
+      {"id":"C-011-A","statement":"Manifest's current-review state required reconciliation.","disposition":"remediated_in_manifest"},
+      {"id":"C-011-B","statement":"Markdown traceability IDs must match manifest IDs.","disposition":"remediated_in_traceability_matrix"},
+      {"id":"C-011-C","statement":"Demo must remain explicitly re-entry-gated until its stale content is refreshed and separately verified.","disposition":"remediated_at_production-input_layer; final render and human viewing remain gated"}
+    ],
+    "remaining_limit":"The final review was not repeated after documentation reconciliation. Its exact verdict and residual risks remain controlling evidence boundaries."
+  },
+  "decision": {
+    "status":"READY_WITH_RESIDUAL_RISK",
+    "basis":[
+      "Current package, static, install, tour, and six named live-execution gates are green within their stated boundaries.",
+      "The final complete-stage TestForge review executed validly and returned REVIEW_PASS_WITH_CONDITIONS for the preceding INSUFFICIENT_EVIDENCE decision.",
+      "Manifest and Markdown traceability conditions have been reconciled without representing that work as a second TestForge review.",
+      "All remaining local limits and external gates are explicit."
+    ],
+    "not_a_claim_of":["Universal model behavior.","Independent rerun under the reviewer host.","Repository publication, public video, feedback/provenance, rights, team acceptance, or Devpost submission."],
+    "authority_required":["Authorized representative for repository, feedback/provenance, video, rights, team, and Devpost actions."]
+  }
+}

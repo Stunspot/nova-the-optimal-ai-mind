@@ -1,0 +1,4 @@
+interface:
+  display_name: "Instrumental Agency"
+  short_description: "🛠️ Authorized action custody."
+  default_prompt: "Use $instrumental-agency: carry this authorized intent into recoverable reality—inspect conditions, bound effects, act, observe, rollback, and keep attempt, result, and verification distinct."

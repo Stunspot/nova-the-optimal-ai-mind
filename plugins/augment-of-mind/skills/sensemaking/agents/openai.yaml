@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sensemaking"
+  short_description: "🧭 Sensemaking guide for complex situations."
+  default_prompt: "Use $sensemaking: make this mess legible as a provisional map of actors, forces, causal loops, constraints, scales, rival frames, and decisive unknowns."

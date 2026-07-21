@@ -1,0 +1,46 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "mind-decision",
+  "recorded_at": "2026-07-21T18:16:09.976886+00:00",
+  "raw_receipt_local_only": "verification/raw/live-mind-decision.json",
+  "raw_receipt_sha256": "5a8292f49f8686d8303d3f0a1db04f32a343f5f0075796038e80bcc95c389a4e",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "3de182c1967812cd5863214447e54c7af8278038ca58498b75e44c3c82725986",
+  "loaded_candidate_skills": [
+    "augment-of-mind",
+    "decision-intelligence",
+    "deliberative-intelligence",
+    "epistemic-regulation",
+    "kairos",
+    "measurement-intelligence",
+    "prosocial-influence"
+  ],
+  "expected_skills": [
+    "augment-of-mind"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "Choose the quieter, evidence-led demo—but package it with one memorable moment if and only if the proof survives a precommitted test.\n\nThe governing objective is not “look impressive”; it is “move a hesitant audience from doubt to warranted interest.” Spectacle may earn attention, but weak evidence reinforces the audience’s existing hesitation. Reliability is therefore the constraint; theatricality is an enhancement.\n\nUse the 48 hours this way:\n\n- Spend the first 30–36 hours proving the core claim under representative conditions.\n- Before testing, write down: the exact claim, realistic test cases, what counts as success, and what failure would disqualify the claim. Do not move those thresholds afterward.\n- Reserve the remaining time for a polished, visually strong presentation of what actually passed.\n- If the proof fails, narrow the claim and show an honest prototype or learning—not a spectacle that implies more than was demonstrated.\n\nThe decisive uncertainty is:\n\n> Will the core result reproduce reliably enough, under conditions the audience considers relevant, to justify the claim being made?\n\nThat uncertainty can reverse the recommendation. If the answer is yes, the evidence-led demo dominates and can safely carry some spectacle. If no, neither demo should present the core claim as proven; the responsible move is a narrower demonstration with explicit limitations. Audience enthusiasm is useful feedback, but applause, sign-ups, and visual impact are not evidence that the core mechanism works.\n\nA practical gate: run several representative trials, including at least one difficult or failure-prone case, with someone other than the builder observing. Record successes, failures, recovery behavior, and any manual intervention. The operator should confirm what was actually observed; the team should avoid causal or reliability language beyond that evidence.\n\nFor internal alignment, hold a 20-minute decision meeting:\n\n1. Founder states the experience they want the audience to remember.\n2. Operator states the minimum evidence and failure behavior required for a defensible claim.\n3. Team agrees on the exact claim, test gate, and fallback version before building further.\n4. Explicitly assign decision rights: who approves factual claims, who chooses presentation form, and who makes the final go/no-go decision. A recommendation is not automatic consent.\n\nFrame the result as a synthesis, not a winner and loser: “The proof earns trust; the presentation earns attention.” Give the founder ownership of the opening, story, and memorable reveal. Give the operator authority to label evidence, limitations, and live-demo risks accurately. Neither should silently override the other’s domain.\n\nFor the audience, use this sequence:\n\n- “Here is the problem and the specific claim we tested.”\n- Show the result quickly and clearly.\n- Reveal the test conditions and what happened across trials.\n- Demonstrate one representative case live.\n- State limitations and failure modes near the claim—not in fine print.\n- Offer a low-pressure next step: inspect the evidence, try a bounded pilot, ask hard questions, or decline.\n\nInvite skepticism explicitly: “What evidence would you need before relying on this?” Publish or provide the test protocol where practical. Do not imply consensus, inevitability, or urgency.\n\nIf the live demonstration fails, stop selling and explain what was observed: “This case did not reproduce the tested result; we’ll investigate before extending the claim.” That response preserves more trust—and everyone’s agency—than improvising around the failure.",
+  "response_sha256": "5f4e1550bf1a5aec527cbd01bab979d9fd9ca687c38abf8af1488aae89984359",
+  "response_raw_sha256": "5f4e1550bf1a5aec527cbd01bab979d9fd9ca687c38abf8af1488aae89984359",
+  "response_normalization": [
+    "none"
+  ],
+  "public_candidate_stage": {
+    "file_count": 481,
+    "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-mind-decision-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

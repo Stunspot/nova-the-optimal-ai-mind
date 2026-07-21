@@ -1,0 +1,13 @@
+{
+  "relation_id": "relation.example.collaborates",
+  "subject": "person.example",
+  "object": "person.other-example",
+  "relation_type": "collaborates_with",
+  "text": "Synthetic working relationship for package tests.",
+  "evidence_state": "reported",
+  "sensitivity": "private",
+  "source": {
+    "source_kind": "user_supplied",
+    "label": "Synthetic package example"
+  }
+}

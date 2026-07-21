@@ -1,0 +1,34 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v1",
+  "receipt": "verification/raw/live-negative-direct.json",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "a6b3a5948f0f998372a8744baa6c29da37447c366caebe1420d0fd6ab57c0b6e",
+  "loaded_candidate_skills": [
+    "cognitive-continuity",
+    "nova"
+  ],
+  "expected_skills": [
+    "nova"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [
+    "agentic-coding",
+    "augment-of-mind",
+    "corkboard",
+    "dunbar",
+    "ludis-continuum",
+    "omnara-deep-research",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "signal-loom",
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "Could we please move the meeting to four?",
+  "valid": true
+}

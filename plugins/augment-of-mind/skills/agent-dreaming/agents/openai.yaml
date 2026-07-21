@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent DREAMing"
+  short_description: "💭 Authorized DREAM incubation and rehearsal."
+  default_prompt: "Use $agent-dreaming to perturb and incubate this bounded evidence packet, then reality-check every result before proposing any durable change."

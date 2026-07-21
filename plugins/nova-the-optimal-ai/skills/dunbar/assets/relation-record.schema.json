@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.local/dunbar/relation-record.schema.json",
+  "title": "Dunbar relation input",
+  "type": "object",
+  "required": ["subject", "object", "relation_type"],
+  "properties": {
+    "relation_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,159}$"},
+    "subject": {"type": "string", "minLength": 1},
+    "object": {"type": "string", "minLength": 1},
+    "relation_type": {"type": "string", "minLength": 1},
+    "text": {"type": ["string", "null"]},
+    "status": {"enum": ["active", "disputed", "superseded", "expired", "retracted"]},
+    "evidence_state": {"enum": ["verified", "observed", "reported", "inferred", "unknown", "disputed"]},
+    "sensitivity": {"enum": ["public", "internal", "private", "restricted"]},
+    "effective_at": {"type": ["string", "null"]},
+    "metadata": {"type": "object"},
+    "source": {"type": "object"}
+  },
+  "additionalProperties": true
+}

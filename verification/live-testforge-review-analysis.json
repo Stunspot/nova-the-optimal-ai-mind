@@ -1,0 +1,45 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "testforge-review",
+  "recorded_at": "2026-07-21T18:55:28.450670+00:00",
+  "raw_receipt_local_only": "verification/raw/live-testforge-review.json",
+  "raw_receipt_sha256": "fbd72b828b7b79fb09ba9fc32c54735bf58cf2d9baac7e60080a916c8af341be",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "ed866722229c1792ddfb5b265a47fba5175de25455fd76dc924fe1cd5e1a479c",
+  "loaded_candidate_skills": [
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "expected_skills": [
+    "software-verification"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "Review verdict: `REVIEW_PASS_WITH_CONDITIONS` for the package’s own `INSUFFICIENT_EVIDENCE` decision. It does not support release readiness.\n\n### Direct evidence\n\n- [entry-static.json](./verification/entry-static.json:3) records a July 21 execution with `valid: true`, no errors, and no warnings.\n- [release-extraction-validation.json](./verification/release-extraction-validation.json:15) records matching archive hashes and successful plugin, skill, and TestForge validator outputs for 147 MIND and 296 Nova files.\n- [fresh-host-install.json](./verification/fresh-host-install.json:1) records an initially empty temporary Codex home, successful installation/discovery, 28 handles, and source/cache equality. It explicitly records no authentication or model invocation.\n- [tour-browser-command.json](./verification/tour-browser-command.json:1) contains the command, timestamps, exit code 0, and detailed viewport, interaction, reduced-motion, and no-JavaScript observations.\n- Six public live receipts contain command transcripts, timestamps, model identity, exit codes, and responses. The stable index marks all six valid, but its `git_binding` fields are null ([live-core-probe-status.json](./verification/live-core-probe-status.json:57)).\n- Three recorded TestForge reviews returned `REVIEW_FAIL`/`INSUFFICIENT_EVIDENCE`.\n- The manifest says the current complete-stage review is `NOT_RUN` ([verification-manifest.json](./verification/verification-manifest.json:93)).\n- The Markdown traceability matrix uses obsolete scenario, test, and execution IDs that do not match the manifest ([traceability-matrix.md](./verification/traceability-matrix.md:5)).\n\n### Derived conclusions\n\n- The receipts plausibly support bounded package structure, two same-host reproducible builds, installation/discovery, browser checks, and six named model executions.\n- They do not establish universal routing quality, comprehensive accessibility, cross-platform reproducibility, publication, or contest completion.\n- The current `INSUFFICIENT_EVIDENCE` decision is defensible. `READY` and `READY_WITH_RESIDUAL_RISK` are not.\n- The traceability matrix must be reconciled with the manifest before it can serve as reliable traceability evidence.\n\n### Residual risks\n\n- The current complete-stage independent review has not executed.\n- Stable live evidence is content-hash-bound but not Git-revision-bound.\n- Sanitized receipts cite hashes of ignored local raw records; those originals are unavailable for independent comparison.\n- Verification scripts, Git state, and archive hashes could not be independently rerun under this read-only host policy.\n- Six prompts remain narrow samples.\n- Demo materials are explicitly marked for re-entry after final review.\n\n### Human-only contest actions\n\nAn authorized representative must publish the repository and confirm commit/archive hashes; record, upload, and signed-out-check the video; run `/feedback`; verify representation and asset rights; accept current terms; complete Devpost; and retain submission confirmation. The checked MIT-license item is a checklist assertion, not independent authorization evidence ([HUMAN-ACTIONS.md](./submission/HUMAN-ACTIONS.md:5)).",
+  "response_sha256": "3b33fe2b7946f24b1982b15baa7bef3126d5dd80d5e58964581a1e09e5f615d6",
+  "response_raw_sha256": "fb6f9331b816cb306373be4f14e550959a402d937648cebdc31c0279532b0658",
+  "response_normalization": [
+    "temporary-public-candidate-path-to-relative"
+  ],
+  "public_candidate_stage": {
+    "file_count": 513,
+    "tree_sha256": "7cf4d086b3becfa9ac17a6f4203fb726496857ff1a9f3dc686805388d75e1a68",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": {
+      "commit_sha": "2b083d3601f2cba3ed056bb91e15c2902bd99839",
+      "tree_sha": "a0e0976f51c5de5d232ac1caed62c4cdd0eee2e9",
+      "status": "clean"
+    }
+  },
+  "public_raw_receipt": "verification/live-testforge-review-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

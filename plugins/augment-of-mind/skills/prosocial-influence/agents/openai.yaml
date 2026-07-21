@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prosocial Influence"
+  short_description: "🤲 Ethical adoption strategy."
+  default_prompt: "Use $prosocial-influence: turn this desired change into voluntary agency, keeping legitimate reasons, motivation, friction, supports, resistance, safeguards, and informed refusal visible."

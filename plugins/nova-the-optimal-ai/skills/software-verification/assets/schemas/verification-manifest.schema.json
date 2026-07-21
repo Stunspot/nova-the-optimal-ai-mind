@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestForge Verification Manifest",
+  "type": "object",
+  "required": ["manifest_version", "target", "scope", "claim_custody", "risks", "scenarios", "tests", "executions", "findings", "residual_risks", "review", "decision"],
+  "properties": {
+    "manifest_version": {"const": "1.0"},
+    "target": {
+      "type": "object",
+      "required": ["name", "revision", "target_class"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "revision": {"type": "string", "minLength": 1},
+        "target_class": {"enum": ["change", "bug_fix", "api", "library", "repository", "release_candidate", "requirement", "test_failure"]}
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": ["included", "excluded", "constraints", "safety_boundary"],
+      "properties": {
+        "included": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "excluded": {"type": "array", "items": {"type": "string"}},
+        "constraints": {"type": "array", "items": {"type": "string"}},
+        "safety_boundary": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "claim_custody": {
+      "type": "object",
+      "required": ["observed", "inferred", "assumed", "unresolved"],
+      "properties": {
+        "observed": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+        "inferred": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+        "assumed": {"type": "array", "items": {"$ref": "#/$defs/claim"}},
+        "unresolved": {"type": "array", "items": {"$ref": "#/$defs/claim"}}
+      },
+      "additionalProperties": false
+    },
+    "impact_map": {"type": "array", "items": {"type": "string"}},
+    "invariants": {"type": "array", "items": {"$ref": "#/$defs/idStatement"}},
+    "risks": {"type": "array", "items": {"$ref": "#/$defs/risk"}},
+    "scenarios": {"type": "array", "items": {"$ref": "scenario.schema.json"}},
+    "tests": {"type": "array", "items": {"$ref": "#/$defs/test"}},
+    "executions": {"type": "array", "items": {"$ref": "#/$defs/execution"}},
+    "findings": {"type": "array", "items": {"$ref": "finding.schema.json"}},
+    "residual_risks": {"type": "array", "items": {"$ref": "#/$defs/residualRisk"}},
+    "review": {
+      "type": "object",
+      "required": ["status", "findings"],
+      "properties": {
+        "status": {"enum": ["NOT_RUN", "REVIEW_PASS", "REVIEW_PASS_WITH_CONDITIONS", "REVIEW_FAIL"]},
+        "findings": {"type": "array", "items": {"type": "string"}},
+        "reviewer": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "decision": {
+      "type": "object",
+      "required": ["status", "basis", "authority_required"],
+      "properties": {
+        "status": {"enum": ["READY", "READY_WITH_RESIDUAL_RISK", "NOT_READY", "INSUFFICIENT_EVIDENCE", "BLOCKED_BY_ENVIRONMENT"]},
+        "basis": {"type": "array", "items": {"type": "string"}},
+        "authority_required": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    }
+  },
+  "$defs": {
+    "claim": {
+      "type": "object",
+      "required": ["id", "statement", "basis"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9-]+$"},
+        "statement": {"type": "string", "minLength": 1},
+        "basis": {"type": "string", "minLength": 1},
+        "confidence": {"enum": ["low", "medium", "high"]},
+        "consequence": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "idStatement": {
+      "type": "object",
+      "required": ["id", "statement"],
+      "properties": {"id": {"type": "string"}, "statement": {"type": "string"}},
+      "additionalProperties": true
+    },
+    "risk": {
+      "type": "object",
+      "required": ["id", "statement", "severity", "disposition", "verification"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^R-[0-9]{3,}$"},
+        "statement": {"type": "string", "minLength": 1},
+        "severity": {"enum": ["critical", "high", "medium", "low"]},
+        "likelihood": {"enum": ["high", "medium", "low", "unknown"]},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "disposition": {"enum": ["covered", "planned", "accepted_by_human", "blocked", "unresolved"]},
+        "verification": {"type": "array", "items": {"type": "string"}},
+        "acceptance_authority": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "test": {
+      "type": "object",
+      "required": ["id", "scenario_ids", "path", "status"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^T-[A-Z0-9-]+$"},
+        "scenario_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "path": {"type": "string", "minLength": 1},
+        "status": {"enum": ["designed", "unexecuted", "passed", "failed", "blocked", "not_applicable"]},
+        "execution_id": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "execution": {
+      "type": "object",
+      "required": ["id", "command", "working_directory", "status"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^E-[0-9]{3,}$"},
+        "command": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "working_directory": {"type": "string"},
+        "status": {"enum": ["passed", "failed", "blocked", "interrupted", "unparsed", "not_run"]},
+        "exit_code": {"type": ["integer", "null"]},
+        "raw_evidence": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "residualRisk": {
+      "type": "object",
+      "required": ["id", "statement", "treatment"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^RR-[0-9]{3,}$"},
+        "statement": {"type": "string"},
+        "treatment": {"type": "string"},
+        "owner": {"type": "string"},
+        "revisit_condition": {"type": "string"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

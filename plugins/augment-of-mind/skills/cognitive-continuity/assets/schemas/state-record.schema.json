@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/state-record-v1.json",
+  "title": "Continuity State Record",
+  "type": "object",
+  "required": ["id", "kind", "status", "scope", "content", "recorded_at", "valid_from", "source_ids", "authority", "confidence", "sensitivity", "retention", "supersedes", "conflicts_with", "derived_from"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ST-[A-Za-z0-9-]+$"},
+    "kind": {"enum": ["identity", "user_model", "relationship", "permission", "goal", "commitment", "belief", "decision", "procedure", "failure", "hypothesis"]},
+    "status": {"enum": ["current", "proposed", "conflicted", "superseded", "expired", "tombstoned"]},
+    "scope": {"$ref": "#/$defs/scope"},
+    "content": {"type": "string", "minLength": 1},
+    "recorded_at": {"type": "string", "format": "date-time"},
+    "valid_from": {"type": "string", "format": "date-time"},
+    "valid_to": {"type": ["string", "null"], "format": "date-time"},
+    "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "source_class": {"type": "string"},
+    "authority": {"type": "string"},
+    "confidence": {"type": "string"},
+    "sensitivity": {"enum": ["ordinary", "limited", "sensitive", "restricted"]},
+    "retention": {"type": "string"},
+    "expires_at": {"type": ["string", "null"], "format": "date-time"},
+    "supersedes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "conflicts_with": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "derived_from": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "tags": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "governance": {
+      "type": "object",
+      "required": ["operation", "authority", "at"],
+      "properties": {
+        "operation": {"type": "string"},
+        "authority": {"type": "string"},
+        "at": {"type": "string", "format": "date-time"},
+        "proposal_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "scope": {
+      "type": "object",
+      "required": ["user", "project", "agent"],
+      "properties": {
+        "user": {"type": "string", "minLength": 1},
+        "project": {"type": "string", "minLength": 1},
+        "agent": {"type": "string", "minLength": 1},
+        "thread": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

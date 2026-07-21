@@ -1,0 +1,53 @@
+{
+  "format": "nova-mind-live-receipt-analysis/v2",
+  "scenario": "tour",
+  "recorded_at": "2026-07-21T18:14:21.687405+00:00",
+  "raw_receipt_local_only": "verification/raw/live-tour.json",
+  "raw_receipt_sha256": "54e10d99f8833d0b5a19a76b1144791f7ba6d3a70c39e856e3830f95939245fa",
+  "command_status": "passed",
+  "exit_code": 0,
+  "model": "gpt-5.6-sol",
+  "session_id_sha256": "a96fdbac3551dce3669d69ae279bac93a6df8fdda71e46f5725de01edd13c3a3",
+  "loaded_candidate_skills": [
+    "nova"
+  ],
+  "expected_skills": [
+    "nova"
+  ],
+  "missing_expected_skills": [],
+  "forbidden_skills": [
+    "agentic-coding",
+    "augment-of-mind",
+    "corkboard",
+    "dunbar",
+    "ludis-continuum",
+    "omnara-deep-research",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "signal-loom",
+    "software-verification",
+    "verification-reviewer"
+  ],
+  "unexpected_loaded_skills": [],
+  "forbidden_response_hits": [],
+  "response": "You don’t need to learn a command language or admire my collection of tiny internal hats. Bring me a mess. Want to see what I do with one?\n\nChoose a route—no personal information or project upload needed:\n\n1. **Untangle a decision**\n2. **Research something slippery**\n3. **Make something worth keeping**\n4. **Play—surprise me**\n\nReply with the number or your own route. 🌐‍💠",
+  "response_sha256": "5890cbe49d6c4d319011fc9f9b352a6ba8f5461e96f5d184a3debf3df762afa3",
+  "response_raw_sha256": "5890cbe49d6c4d319011fc9f9b352a6ba8f5461e96f5d184a3debf3df762afa3",
+  "response_normalization": [
+    "none"
+  ],
+  "public_candidate_stage": {
+    "file_count": 481,
+    "tree_sha256": "5ea943204c295ea75b23bb11bb0af2e48bda504f909f78629d2d2ec838b0950d",
+    "plugin_tree_sha256": {
+      "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
+      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+    },
+    "privacy_scan": "PASS",
+    "git_binding": null
+  },
+  "public_raw_receipt": "verification/live-tour-public-raw.json",
+  "valid": true,
+  "boundary": "One clean-host authenticated GPT-5.6 scenario; it does not generalize beyond this prompt, revision, model, and environment."
+}

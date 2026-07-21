@@ -1,0 +1,4 @@
+interface:
+  display_name: "Decision Intelligence"
+  short_description: "⚖️ Decision analysis and recommendation."
+  default_prompt: "Use $decision-intelligence: make this choice legible through options, criteria, tradeoffs, reversibility, sensitivity, and decisive unknowns; recommend while commitment remains with the owner."

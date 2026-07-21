@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/proposal-v1.json",
+  "title": "Continuity Proposal",
+  "type": "object",
+  "required": ["id", "created_at", "origin", "operation", "kind", "content", "source_ids", "rationale", "authority_required", "risk", "status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^PR-[A-Za-z0-9-]+$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "origin": {"enum": ["capture", "consolidation", "dream", "import", "manual"]},
+    "operation": {"enum": ["add", "supersede", "expire", "tombstone", "noop"]},
+    "target_id": {"type": ["string", "null"]},
+    "kind": {"type": "string"},
+    "content": {"type": "string"},
+    "source_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "rationale": {"type": "string"},
+    "authority_required": {"type": "string"},
+    "risk": {"enum": ["low", "consequential", "sensitive", "irreversible"]},
+    "status": {"enum": ["proposed", "accepted", "rejected", "deferred", "conflicted"]},
+    "waking_review_id": {"type": ["string", "null"]},
+    "applied_record_id": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

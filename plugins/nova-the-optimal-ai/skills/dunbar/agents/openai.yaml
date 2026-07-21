@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dunbar People Intelligence"
+  short_description: "🫂 User-governed people recall and context."
+  default_prompt: "Use $dunbar to recall governed context about this person and reveal only the smallest useful layer."
+policy:
+  allow_implicit_invocation: true

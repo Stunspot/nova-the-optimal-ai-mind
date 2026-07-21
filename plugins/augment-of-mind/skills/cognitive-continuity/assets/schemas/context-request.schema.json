@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/context-request-v1.json",
+  "title": "Context Compilation Request",
+  "type": "object",
+  "required": ["format", "task", "scope", "character_budget", "sensitivity_ceiling"],
+  "properties": {
+    "format": {"const": "cd-context-request/v1"},
+    "task": {"type": "string", "minLength": 1},
+    "scope": {"$ref": "state-record.schema.json#/$defs/scope"},
+    "character_budget": {"type": "integer", "minimum": 1000},
+    "sensitivity_ceiling": {"enum": ["ordinary", "limited", "sensitive", "restricted"]},
+    "include_recent_episodes": {"type": "integer", "minimum": 0, "maximum": 50},
+    "required_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "ranked_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+  },
+  "additionalProperties": false
+}

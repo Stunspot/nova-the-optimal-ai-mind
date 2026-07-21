@@ -1,0 +1,52 @@
+{
+  "format": "testforge-current-static-receipt/v1",
+  "recorded_at": "2026-07-21T14:51:56Z",
+  "working_directory": "nova-mind-entry",
+  "executions": [
+    {
+      "id": "E-001",
+      "command": ["python", "-B", "-X", "utf8", "tools\\verify_entry.py"],
+      "exit_code": 0,
+      "status": "passed",
+      "observed": {"skill_count": 28, "plugin_file_count": 401, "plugin_bytes": 1428345, "errors": [], "warnings": []}
+    },
+    {
+      "id": "E-002",
+      "command": ["python", "-B", "-X", "utf8", "plugins\\nova-the-optimal-ai\\skills\\software-verification\\scripts\\verify_package.py", "plugins\\augment-of-mind"],
+      "exit_code": 0,
+      "status": "passed",
+      "observed": {"package_type": "codex-plugin", "files_checked": 143, "skills_checked": 16, "errors": [], "warnings": []}
+    },
+    {
+      "id": "E-003",
+      "command": ["python", "-B", "-X", "utf8", "plugins\\nova-the-optimal-ai\\skills\\software-verification\\scripts\\verify_package.py", "plugins\\nova-the-optimal-ai"],
+      "exit_code": 0,
+      "status": "passed",
+      "observed": {"package_type": "codex-plugin", "files_checked": 258, "skills_checked": 12, "errors": [], "warnings": []}
+    },
+    {
+      "id": "E-004",
+      "command": ["python", "-B", "-X", "utf8", "-m", "unittest", "discover", "-s", "plugins\\augment-of-mind\\skills\\cognitive-continuity\\scripts\\tests", "-v"],
+      "exit_code": 0,
+      "status": "passed",
+      "observed": {"tests_run": 10, "failures": 0, "errors": 0, "includes": "test_compiler_accepts_date_only_valid_from"}
+    },
+    {
+      "id": "E-005",
+      "command": ["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "D:\\npm-global\\codex.ps1", "exec", "--ephemeral", "--ignore-rules", "-s", "read-only", "Use $nova. This is a product acceptance probe from a new user. Take me on Nova's 90-second tour."],
+      "exit_code": 0,
+      "status": "passed",
+      "observed": "Previously captured installed-package live probe returned Nova's first interactive turn with four low-pressure choices.",
+      "source_receipt": "verification/nova-tour-live-command.json"
+    },
+    {
+      "id": "E-006",
+      "command": ["node", "tools\\check_tour.cjs"],
+      "exit_code": 1,
+      "status": "blocked",
+      "observed": "Node.js v25.2.0 could not resolve module 'playwright' required by tools/check_tour.cjs.",
+      "classification": "TOOLING_FAILURE"
+    }
+  ],
+  "boundary": "E-001 through E-004 are current deterministic local checks. E-005 is an existing live installed-package receipt, not fresh-host proof for this checkout. E-006 establishes only that browser automation was unavailable in this environment."
+}

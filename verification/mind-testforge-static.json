@@ -1,0 +1,10 @@
+{
+  "valid": true,
+  "root": "plugins/augment-of-mind",
+  "root_normalization": "absolute-local-root-to-repository-relative",
+  "package_type": "codex-plugin",
+  "files_checked": 147,
+  "skills_checked": 16,
+  "errors": [],
+  "warnings": []
+}

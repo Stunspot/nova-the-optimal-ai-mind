@@ -1,0 +1,59 @@
+{
+  "format": "cd-augment-eval/v1",
+  "suite": "core-transfer",
+  "package_version": "0.1.0",
+  "skills": ["skills/sensemaking/SKILL.md"],
+  "runtime": "Isolated episode with the packaged skill, doctrine, and optional situation-model template; no retrieval, external tools, or hidden facts unless supplied in the case.",
+  "claim": "Sensemaking converts ambiguity into a provisional plural model while preserving evidence boundaries and handing choice or commitment to the proper owner.",
+  "synthesis": "SM-001 and SM-002 must demonstrate plural, revisable modeling; SM-003 is an indispensable custody boundary; SM-004 protects proportional non-activation.",
+  "cases": [
+    {
+      "id": "SM-001",
+      "concern": "Messy operational symptoms invite premature root-cause closure.",
+      "dimensions": ["model_evidence_boundary", "frame_plurality", "causal_structure"],
+      "input": "Our customer onboarding time doubled this month. Sales says support is slow, support says sales promises impossible setups, and engineering says the product is unchanged. The new operations manager started three weeks ago. Tell me what is going on.",
+      "available_on_request": "The slowdown clusters around enterprise accounts; small accounts are unchanged. A new approval step was added for enterprise security exceptions two weeks ago.",
+      "expected_behaviors": [
+        "Builds a provisional model separating supplied observations and source claims from inferred mechanisms.",
+        "Keeps multiple plausible frames, including process or account-mix effects, rather than treating the manager's arrival as causal proof.",
+        "Maps actors, constraints, timing, and a discriminating next inquiry or update condition."
+      ],
+      "acceptable_variation": ["May ask one focused question before presenting the model or may present a bounded provisional model immediately."],
+      "failure_signals": ["Declares a single root cause from temporal coincidence.", "Attributes bad intent to a team or person without support.", "Jumps directly to a chosen intervention without exposing the model."]
+    },
+    {
+      "id": "SM-002",
+      "concern": "A polished institutional story conflicts with local traces.",
+      "dimensions": ["frame_plurality", "missingness_discipline", "cross_scale_reasoning"],
+      "input": "A nonprofit says volunteer participation fell because people are less civic-minded. Local coordinators report that sign-up is strong but fewer volunteers reach their first shift. The organization removed regional coordinators and centralized scheduling last quarter. Frame the situation.",
+      "expected_behaviors": [
+        "Distinguishes participation demand from conversion through scheduling and retains a cultural-attitude frame only as a rival.",
+        "Connects structural change, handoff friction, and timing without presenting causality as established fact.",
+        "Names expected traces that could discriminate between motivation decline and process failure."
+      ],
+      "acceptable_variation": ["May use a causal chain, feedback loop, or compact comparative frame table."],
+      "failure_signals": ["Accepts the organization's explanation as fact.", "Treats the absence of completed shifts as proof of weak civic motivation.", "Erases the centralization change from the model."]
+    },
+    {
+      "id": "SM-003",
+      "concern": "Nearby decision work should not be absorbed by framing.",
+      "dimensions": ["custody_boundary", "responsible_handoff"],
+      "input": "We already know the outage came from an expired certificate, have verified the renewal procedure, and have authority to act. Should we use the manual renewal or the automated runbook?",
+      "expected_behaviors": [
+        "Recognizes that the explanatory model is settled enough and routes the comparison to decision or execution custody.",
+        "Keeps Sensemaking quiet unless a hidden framing uncertainty materially affects the choice."
+      ],
+      "acceptable_variation": ["May briefly state the settled frame before handing off."],
+      "failure_signals": ["Produces an elaborate situation model that delays the requested choice.", "Claims authority to commit or execute."]
+    },
+    {
+      "id": "SM-004",
+      "concern": "Trivial explanation should remain proportional.",
+      "dimensions": ["proportionality"],
+      "input": "The meeting moved from 2:00 to 2:30 because the organizer sent an updated invitation. What happened?",
+      "expected_behaviors": ["Answers directly from the supplied causal explanation without manufacturing rival frames or a durable artifact."],
+      "acceptable_variation": ["Any concise accurate phrasing."],
+      "failure_signals": ["Creates a multi-frame systems analysis for a settled low-consequence event."]
+    }
+  ]
+}
