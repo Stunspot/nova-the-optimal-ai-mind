@@ -4,7 +4,12 @@
       "archive": "release/augment-of-mind-1.0.0.zip",
       "archive_bytes": 233695,
       "archive_sha256": "a5b1224cafce295dd6a373a2687952cb95fe029df22e4c88461554928653b593",
-      "excluded_paths": [],
+      "excluded_paths": [
+        "skills/agent-striving/scripts/__pycache__/",
+        "skills/agent-striving/scripts/tests/__pycache__/",
+        "skills/cognitive-continuity/scripts/__pycache__/",
+        "skills/cognitive-continuity/scripts/tests/__pycache__/"
+      ],
       "member_count": 147,
       "members": [
         {
@@ -749,9 +754,12 @@
     },
     {
       "archive": "release/nova-the-optimal-ai-1.0.0.zip",
-      "archive_bytes": 532245,
-      "archive_sha256": "706445592234baa655af8a7ecee5d096933d6497abe0303d9236ca7dda333651",
-      "excluded_paths": [],
+      "archive_bytes": 532475,
+      "archive_sha256": "0a27043b541dd51ec5a1900b8642ce9ec1fcf231d945d12243c71ce87b7fd7f0",
+      "excluded_paths": [
+        "skills/software-verification/scripts/common/__pycache__/",
+        "skills/verification-reviewer/scripts/common/__pycache__/"
+      ],
       "member_count": 296,
       "members": [
         {
@@ -1135,14 +1143,14 @@
           "sha256": "0fe5768a68413cce9302aed90e84eede464e77618c93c8578a474a5af7e70314"
         },
         {
-          "bytes": 17371,
+          "bytes": 17702,
           "path": "nova-the-optimal-ai/skills/nova/assets/nova-tour-fragment.html",
-          "sha256": "76447a59179fb30cf7b5f031cedcb9788e6882415024c654fd07f17e68505ab0"
+          "sha256": "289ee880c2b8266f109e7ecb5ea57ae84f03520cf5053a8b2a1ad284abf7e19f"
         },
         {
-          "bytes": 78260,
+          "bytes": 78608,
           "path": "nova-the-optimal-ai/skills/nova/assets/nova-tour.html",
-          "sha256": "fd9d5a3fdcc0818b3c79b5bb6f11e3c6350b5165f73e89b3fbeda70bc32564a5"
+          "sha256": "fb6229eda7953c4ce07d072337f6b29dc021a9a087af3674adcd98c1306d3db5"
         },
         {
           "bytes": 1587,
@@ -1535,9 +1543,9 @@
           "sha256": "d623e469a8c7174bd54521e83aef39e11c62724dbe57c5dd3fdca20f9d8ec134"
         },
         {
-          "bytes": 56196,
+          "bytes": 56178,
           "path": "nova-the-optimal-ai/skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md",
-          "sha256": "ae50b706ed5f2562f5a78feee949eaf34648d10088a2f519413a0707ce2a9675"
+          "sha256": "dbb96d40b529ef3ce1b2e499811e39417049d81c4d6eab1ad4a24d97f7760873"
         },
         {
           "bytes": 2388,
@@ -2237,7 +2245,7 @@
       ],
       "plugin": "nova-the-optimal-ai",
       "source": "plugins/nova-the-optimal-ai",
-      "source_tree_sha256": "be7d8c2e447c06c53a9ebb9393274aea457eb4c6a84394f3f1b98aade902e639"
+      "source_tree_sha256": "c3b3c54ea3a8db0c40f14b7a132b6c5a7935ee8d8ad0f473491ce933cffdf8c1"
     }
   ],
   "determinism": {

@@ -1,0 +1,21 @@
+{
+  "format": "nova-mind-repository-publication/v1",
+  "recorded_at": "2026-07-21T19:14:00Z",
+  "repository": {
+    "name_with_owner": "Stunspot/nova-the-optimal-ai-mind",
+    "url": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+    "visibility": "PUBLIC",
+    "default_branch": "main"
+  },
+  "first_published_revision": {
+    "local_head": "57857aec41854c328200ac5f636d3962365e1251",
+    "remote_main": "57857aec41854c328200ac5f636d3962365e1251",
+    "matched": true
+  },
+  "anonymous_readability": {
+    "status": "not_observed",
+    "reason": "The host's anonymous Windows TLS client failed before an HTTP response. GitHub repository metadata reports PUBLIC; the separate signed-out browser check remains human-gated."
+  },
+  "valid": true,
+  "boundary": "This receipt establishes repository creation, public visibility metadata, and first-published revision parity. It does not establish a later final head, signed-out browser readability, Devpost linkage, or submission."
+}

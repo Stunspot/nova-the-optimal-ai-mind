@@ -6,7 +6,7 @@ Nova the Optimal AI + MIND
 
 ## Tagline
 
-One AI you can meet. One mind you can install beside her.
+Bring Nova the mess. Add MIND when one kind of thinking is not enough.
 
 ## Category
 
@@ -14,53 +14,81 @@ Work & Productivity
 
 ## Short description
 
-Nova turns messy human work into coherent, evidence-governed outcomes; MIND adds fifteen composable cognitive Faculties. Together: research, decisions, memory, proof, repository balance, and play.
+Nova turns a messy request into one accountable result. MIND adds coordinated faculties for decisions, research, creation, verification, repository work, and play.
 
 ## Full description
 
-Nova the Optimal AI is Collaborative Dynamics' playful generalist AI collaborator for Codex. A new user can simply bring a mess. Nova handles easy work directly, brings in specialist competence only when it changes the result, and returns one coherent answer instead of making the user operate a skill switchboard.
+Bring Nova a messy choice, a research problem, a release that needs proof, or a character who needs a past. She is built to do small jobs directly, bring in specialist competence only when it changes the outcome, and return one coherent answer instead of making the user operate a switchboard.
 
-MIND by Collaborative Dynamics is a separate 1.0.0 Codex plugin that can be installed beside Nova. Its integrator composes the smallest useful coalition drawn from fifteen Faculties: aesthetics, dreaming, striving, capability routing, continuity, creative synthesis, decision intelligence, deliberation, epistemic regulation, executive function, instrumental agency, timing and expression, measurement, prosocial influence, and sensemaking.
+MIND is the separate cognitive system beside her: fifteen focused Faculties and one integrator for work that genuinely needs more than one kind of judgment. A bag of skills is not a mind. It is a drawer. Its integrator is designed to select the smallest useful coalition, keep the faculties from talking over one another, and reunify their work.
 
-The combined contest installation exposes 28 skill handles across two independently installable plugins. Nova adds a low-pressure interactive tour; explicit memory boundaries; public professional context about Collaborative Dynamics and stunspot; deep research, knowledge stewardship, retrieval and citation review; evidence-shaped visual work; Agentic Coding as operational proprioception; TestForge as a universal verification backplane; and Ludis for games, character backgrounds, scenes, worlds, and fiction continuity.
+Together, the two independently installable Codex plugins expose 28 bounded skill handles. Those are not 28 buttons the user must learn.
 
-The deliberately flashy part is useful too. Ask Ludis for a character background and it produces an immediately playable past—relationships, pressure, secrets, and a live choice—not generic decorative biography. No authored campaign world ships in the release. Port Zindra and all other worked worlds were explicitly removed.
+The first experience is deliberately small. Install both plugins, begin a fresh Codex task, and say: `Use $nova to take me on the interactive tour.` Nova offers four doors—decide, investigate, make, or play—plus the option to skip the tour and bring the real problem you arrived with. The visual companion is local, offline, and stores nothing.
 
-The less flashy part is why the result can be trusted. The repository carries source-import custody, a transformation ledger, denylist scans, regression tests, official plugin and skill validation, browser interaction checks, deterministic ZIP builds, fresh-extraction checks, a bounded live negative-control receipt, traceability, and TestForge reviewer materials with an author-led risk decision. Local evidence is kept distinct from human actions such as repository publication, video upload, rights attestation, `/feedback`, and final submission.
+Then there is Ludis. Ask for a background for a royal cartographer who erased an island from every map and now hears its bells beneath dry fields. Ludis returns a playable past, relationships under pressure, a dangerous truth, and an opening choice. It does not hand back a decorative biography. Port Zindra and every other authored campaign world were explicitly excluded from the release.
 
-The no-build judge path targets Codex clients with local plugin-marketplace support. It was exercised through Codex CLI 0.144.5 on Microsoft Windows 10 build 19045. Judges can install and use both plugin roots in the checkout without Python or a rebuild; other operating systems and Codex versions are not claimed as verified for this release.
+Agentic Coding gives the agent balance: operational proprioception in the live repository and tool state. Where am I? What changed? What is the next useful check? Where must I stop? It is not here as generic code-generation cosplay.
 
-The project curates Collaborative Dynamics skills that existed before Build Week and materially extends them rather than relabeling them. The repository's `BUILD-WEEK-CONTRIBUTION.md` separates prior source material from the new product architecture, Nova front counter, MIND 1.0.0 package, rewritten Ludis instruments, onboarding, verification backplane, release system, and contest demonstration work created with GPT-5.6 in Codex.
+TestForge goes in everything. Its operator constructs the evidence chain and its separate reviewer tries to break it. During this release the reviewer rejected three weaker stages. Its final verdict was `REVIEW_PASS_WITH_CONDITIONS` for the package's refusal to overclaim. That is not a blanket release certificate. It is a proof chain with the remaining limits still attached.
+
+This matters because Nova is not pretending that confidence is evidence. The repository separately records source custody, transformations, package integrity, installation, browser behavior, bounded live scenarios, residual risk, and the human actions that only a human can complete.
+
+## What we built during OpenAI Build Week
+
+Collaborative Dynamics entered the week with substantial cognitive doctrine and specialist skills. GPT-5.6 in Codex turned that source estate into two installable 1.0.0 products: Nova's accountable front counter and onboarding; MIND's independent package; rewritten setting-free Ludis instruments; Agentic Coding as an operating surface; TestForge as the release backplane; deterministic archives; fresh-install proof; responsive tour verification; and the contest demonstration and production system.
+
+The repository names what predates the contest and what changed during it. Nothing gets a new birthday because it acquired a manifest.
 
 ## How we used GPT-5.6 and Codex
 
-GPT-5.6 in Codex served as the primary product-building environment: inspecting and curating the source estate, composing the two-plugin architecture, repairing MIND's date-continuity defect, building Nova's front-door behavior and offline tour, writing deterministic validation and packaging tools, exercising the installed candidate, and synthesizing the contest artifacts.
+GPT-5.6 supplied the reasoning work inside Codex: inspecting the source estate, tracing provenance, designing the two-product architecture, rewriting model-facing surfaces, finding defects and contamination, composing the onboarding and public materials, challenging evidence, and coordinating the final artifact.
 
-The collaboration was evidence-driven. We repeatedly enumerated every shipping directory, treated validation findings as defects rather than decoration, used TestForge to separate direct evidence from inference, and retained human authority for publication and contest attestations. The primary build-session identifier is supplied through the contest's required `/feedback` flow by the authorized submitter.
+Codex supplied the working environment and accountable action surface: repository inspection and editing, local tool execution, installation tests, browser checks, deterministic packaging, Git custody, verification receipts, and the bounded video-production handoff. The required primary build-session identifier is supplied through the contest's `/feedback` flow by the authorized submitter.
+
+stunspot supplied product intent, source rights, professional judgment, final viewing, contest attestations, and publication authority. Nova coordinated the build and presentation without inheriting authority she did not have.
+
+## Install and test without rebuilding
+
+From the repository root:
+
+```powershell
+codex plugin marketplace add .
+codex plugin add augment-of-mind@collaborative-dynamics-build-week
+codex plugin add nova-the-optimal-ai@collaborative-dynamics-build-week
+```
+
+Begin a fresh Codex task and use: `Use $nova to take me on the interactive tour.`
+
+The no-build path was exercised with Codex CLI 0.144.5 on Microsoft Windows 10 build 19045. Python is optional and used only for verification helpers. Other operating systems and Codex versions are not claimed as tested for this release.
 
 ## Challenges
 
-- Turning a large skill estate into one comprehensible experience without making the user learn its topology.
-- Preserving useful operational intelligence while removing worked worlds, legacy personas, promotional payloads, private paths, generated caches, and unrelated corpora.
-- Making MIND independently installable while keeping Nova graceful when it is absent.
-- Demonstrating visual delight in under three minutes without trading away evidence or user control.
-- Separating static package integrity, live behavior, fresh-install readiness, and external submission facts.
+- Turning a large skill estate into one comprehensible collaborator without making the user learn its topology.
+- Keeping Nova useful without MIND while making the combined system materially stronger.
+- Preserving operational intelligence while excluding worked worlds, private paths, unrelated corpora, and generated debris.
+- Making visual delight and evidence discipline fit inside the same three-minute story.
+- Separating static integrity, observed behavior, release judgment, and external submission facts.
 
 ## Accomplishments
 
-- Two separately installable 1.0.0 plugins with a coherent combined experience.
-- A skippable offline visual tour that stores nothing and performs no network requests.
-- Fifteen composable MIND Faculties behind one accountable integrator.
-- TestForge operator and separate adversarial reviewer skill included in Nova, with whole-product evidence artifacts.
-- Agentic Coding reframed as repository balance and proprioception.
-- Ludis retained as a high-delight creative engine with every worked campaign excluded.
-- Deterministic release archives and a judge path that requires no rebuild.
+- Two separately installable 1.0.0 plugins with a no-build judge path.
+- A short conversational tour and a responsive offline visual companion.
+- Fifteen MIND Faculties coordinated by one accountable integrator.
+- TestForge operator and adversarial reviewer included as part of the product and used on the release evidence.
+- Agentic Coding framed as repository balance rather than a software vending machine.
+- Ludis retained as the high-delight creative engine with every worked campaign removed.
+- Deterministic release archives, fresh-install comparison, and an evidence-bounded public repository.
 
 ## What is next
 
-After the contest, we will evaluate the full skill ecology under clean-host conditions: implicit selection, activation, yielding, collisions, false positives, missed-use cases, and capability growth. We will also explore richer visual onboarding and carefully bounded additional Ludis settings as optional content rather than silently bundling them into the core product.
+After the contest, we will test the full skill ecology under clean-host conditions: implicit selection, activation, yielding, collisions, false positives, missed-use cases, and capability growth. Richer visual onboarding and additional Ludis settings can follow as explicit optional content rather than stowaways in the core product.
 
 ## Required links
 
-- Source repository: supplied by the authorized submitter after publication.
-- Public YouTube demo: supplied by the authorized submitter after upload and signed-out playback verification.
+- Source repository: https://github.com/Stunspot/nova-the-optimal-ai-mind
+- Public YouTube demo: add after upload and signed-out playback verification
+
+## Submission media
+
+Use `assets/nova-emergent.png` as the project hero at its original aspect ratio. It is the canonical Nova Emergent artwork supplied from Collaborative Dynamics' Branding archive; do not replace it with generated art.

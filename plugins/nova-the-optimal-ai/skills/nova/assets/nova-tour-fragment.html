@@ -50,6 +50,7 @@
       text-transform: uppercase;
     }
     #nova-tour .nova-stage { display: grid; gap: .8rem; min-width: 0; }
+    html.no-js #nova-tour .nova-stage { display: none !important; }
     #nova-tour .nova-constellation {
       position: relative;
       min-height: 310px;
@@ -221,7 +222,7 @@
       </svg>
     </div>
 
-    <div class="viz-controls" aria-label="Choose a sample route">
+    <div class="viz-controls" role="group" aria-label="Choose a sample route">
       <button type="button" class="btn btn-primary" data-route-button="decide" aria-pressed="true">Untangle a decision</button>
       <button type="button" class="btn" data-route-button="research" aria-pressed="false">Research something slippery</button>
       <button type="button" class="btn" data-route-button="make" aria-pressed="false">Make something worth keeping</button>
@@ -291,12 +292,14 @@
     <div class="card">
       <strong>Nova works without this interaction.</strong>
       <p>Bring a decision, a slippery question, a rough thing you want to make, or a game you want to play. Nova stays direct when she can, enlists specialists when they change the result, and keeps evidence attached to consequential claims.</p>
+      <p>Conversation context is immediate. Durable pins and people memory are explicit. Nova does not quietly publish, buy, scrape contacts, or make consequential changes on your behalf.</p>
       <p>Starter: “I have a messy decision. Find the real criteria, recommend one move, and tell me what would change your mind.”</p>
     </div>
   </noscript>
 
   <script>
     (() => {
+      document.documentElement.classList.remove('no-js');
       const root = document.getElementById('nova-tour');
       if (!root) return;
 

@@ -37,7 +37,7 @@ The repairs put conceptual homes and desired transformations before procedure; r
 
 ## Verification
 
-All 12 shipping skill roots pass the strict Codex validator with zero findings. Ludis passes curator validation and its shipping self-check at 32/32; explicit regeneration changes no curated core; the targeted legacy-residue scan returns zero matches. The full included path-and-hash inventory receipt is `058829b9bcfb5172b3f8be3bc8164aa9b49f53dbfb485c32b28d9e2ffd6ec96c`.
+All 12 shipping skill roots pass the strict Codex validator with zero findings. Ludis passes curator validation and its shipping self-check at 32/32; explicit regeneration changes no curated core; the targeted legacy-residue scan returns zero matches. The full included path-and-hash inventory receipt is `80fa49f91b4999bc70d61be3870b9d95b2aa676a6bbc2b495f731b56c0d3b7eb`.
 
 Run `python -X utf8 tools/audit_nova_prompt_surfaces.py --check` to prove that the human-readable report, JSON ledger, live file set, all 158 hashes, counts, decisions, and equivalence topology still agree.
 

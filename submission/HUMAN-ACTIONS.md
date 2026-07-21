@@ -5,13 +5,16 @@ Everything here requires stunspot's account, legal authority, public identity, o
 ## Repository publication
 
 - [x] License choice: public repository under MIT, authorized by stunspot on July 21, 2026.
-- [ ] Choose the public GitHub repository destination.
-- [ ] Confirm the final commit and release ZIP hashes match the local verification report.
-- [ ] Push the final commit.
+- [x] Choose the public GitHub repository destination: `Stunspot/nova-the-optimal-ai-mind`.
+- [x] Create the repository publicly and confirm the first published `main` revision matched the local candidate.
+- [ ] After the final documentation and video-link commit, confirm the final head and release ZIP hashes match the local verification report.
+- [ ] Push that final commit and confirm local `HEAD` equals remote `main`.
 - [ ] Verify while signed out that the final repository is public and readable. If it is private for any reason, invite `testing@devpost.com` and `build-week-event@openai.com`, then verify both invitations.
 - [ ] Put the resulting repository URL into Devpost and the video description.
 
-Repository URL: `________________________________________`
+Repository URL: `https://github.com/Stunspot/nova-the-optimal-ai-mind`
+
+Current local receipt: [`../verification/repository-publication.json`](../verification/repository-publication.json). It proves public metadata and first-published parity, not the **Repository** section's final-head or signed-out checks.
 
 ## Video
 
@@ -24,6 +27,8 @@ Repository URL: `________________________________________`
 - [ ] Put the URL into Devpost and, if desired, the README.
 
 YouTube URL (public or unlisted): `________________________________________`
+
+Canonical inputs: [`../demo/VIDEO-SCRIPT.md`](../demo/VIDEO-SCRIPT.md), [`../demo/SHOT-LIST.md`](../demo/SHOT-LIST.md), and [`../verification/video-production-inputs.json`](../verification/video-production-inputs.json). The final human viewing remains controlling.
 
 ## Codex provenance
 
@@ -44,8 +49,8 @@ Authorized representative: `________________________________________`
 
 ## Final submission
 
-- [ ] Paste and proofread `submission/DEVPOST-COPY.md` in the live form.
-- [ ] Add the verified repository, video, and feedback values above.
+- [ ] Read `submission/DEVPOST-COPY.md` aloud, then paste and proofread it in the live form.
+- [ ] Add the verified repository, video, and feedback values recorded in this checklist.
 - [ ] Confirm **Work & Productivity**, contact, eligibility, and every team member. Confirm every Devpost team invitation has been accepted.
 - [ ] Preview every link from the submission page.
 - [ ] Submit before stunspot's operational cutoff of **July 21, 2026 at 6:15 PM Central**; do not use any later official cutoff as working slack.

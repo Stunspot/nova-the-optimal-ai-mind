@@ -1,5 +1,7 @@
 # Verification report
 
+This report states the current evidence decision and its limits. It is not the install path. To try the product, use [`../START-HERE.md`](../START-HERE.md); to inspect evidence in order, use [`../docs/JUDGE-GUIDE.md`](../docs/JUDGE-GUIDE.md).
+
 ## Decision
 
 **READY_WITH_RESIDUAL_RISK** for the locally evidenced package only. This is a release-operator decision after reconciling the final TestForge review's documentary conditions; it is not a claim that TestForge certified release readiness, reran the package after reconciliation, or observed any external contest action.
@@ -17,10 +19,12 @@ The final complete-stage TestForge review, E-011, validly returned **`REVIEW_PAS
 | `installed-discovery.json` | Both real Codex selectors installed and enabled at 1.0.0; cache present; 16 + 12 = 28 discovered SKILL.md directories | Current host registration and discovery only |
 | `fresh-host-install.json` | Initially empty temporary CODEX_HOME: both selectors enabled at 1.0.0, 16 + 12 handles, exact 147 + 296 source/cache equality | Current clean-host install path; no authentication or model call |
 | `tour-browser-command.json` | Passed five layout viewports with zero overflow; seven total activations (3 pointer, 2 keyboard, 2 touch); reduced-motion and no-JavaScript assertions passed | Bounded browser tour coverage |
+| `documentation-review.md` | Full Hesperos pass across 270 Markdown files, 20 principal documents, 28 skill entrypoints, 28 picker cards, and the separately audited 158-module Nova prompt surface; 55 local links resolve | Complete product-documentation review within its stated accessibility and external-action boundary |
 | `live-core-probe-status.json`, six bound current analyses, and six `live-*-public-raw.json` receipts | Valid stable index for direct-negative, tour, Ludis character, MIND decision, Agentic orientation, and professional brief. Sanitized logs retain a SHA-256 binding to ignored local raw. | Six named clean-host executions only; not universal behavioral proof |
 | `live-testforge-review-pre-fix-analysis.json`, `live-testforge-review-stage-gap-analysis.json`, `live-testforge-review-index-contradiction-analysis.json` | Each is a valid historical execution with `REVIEW_FAIL` / `INSUFFICIENT_EVIDENCE`; together they exposed incomplete staging, missing custody, and index orchestration flaws. | Preserved negative audit record; not a current product pass or plugin-defect finding |
 | `live-testforge-review-analysis.json`, `live-testforge-review-public-raw.json` | E-011 executed against a privacy-clean 513-file staged tree with deterministic Git binding and returned `REVIEW_PASS_WITH_CONDITIONS` for the package's preceding `INSUFFICIENT_EVIDENCE` decision. | Evidence-quality review only. It does not certify release readiness or external completion. |
 | `video-production-inputs.json` | Refreshed script, shot list, and Studio Case are hash-bound; 322 spoken words in eight timed scenes; production parser passed and pipeline doctor returned `READY`. | Production-input readiness only; no final render, viewing, upload, or submission claim. |
+| `repository-publication.json` | GitHub reports `Stunspot/nova-the-optimal-ai-mind` as `PUBLIC` on `main`; the first published remote revision matched local commit `57857ae…`. | Repository publication metadata and first-push parity only; signed-out browser readability and later final-head parity remain separate. |
 
 ## Conditions and residual risks
 
@@ -30,6 +34,6 @@ The final review's current-review-state and traceability-ID conditions are addre
 - Sanitized public receipts are SHA-256-bound derivatives of ignored local raw; an external reviewer cannot compare the private originals.
 - The nested review host blocked independent reruns of helper scripts, Git state, and archive hashes.
 - The six core prompts and the one TestForge prompt are narrow samples.
-- Repository access, public video, feedback/provenance, rights, team acceptance, and Devpost submission remain human/external gates.
+- Signed-out repository readability, public video, feedback/provenance, rights, team acceptance, and Devpost submission remain human/external gates.
 
-Current installation/discovery/cache checks are green within their named boundaries. Do not convert fresh-host installation, browser coverage, the seven named live scenarios, or local `READY_WITH_RESIDUAL_RISK` into universal specialist-behavior, public-repository, video, rights, or submission claims.
+Current installation/discovery/cache checks are green within their named boundaries. Do not convert fresh-host installation, browser coverage, the seven named live scenarios, or local `READY_WITH_RESIDUAL_RISK` into universal specialist-behavior, signed-out repository readability, video, rights, or submission claims.

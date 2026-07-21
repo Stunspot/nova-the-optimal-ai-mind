@@ -2,6 +2,8 @@
 
 These prompts are designed to reveal behavior, not force canned wording. Record the actual model response and preserve any useful surprise.
 
+For installation and a first success, begin with [`../START-HERE.md`](../START-HERE.md). This file is the reusable prompt reference after both plugins are discovered.
+
 ## 1. Tour
 
 ```text

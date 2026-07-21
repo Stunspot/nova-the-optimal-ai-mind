@@ -1,6 +1,6 @@
 {
   "format": "nova-mind-entry-verification/v1",
-  "recorded_at": "2026-07-21T18:13:13.660697+00:00",
+  "recorded_at": "2026-07-21T20:01:28.777670+00:00",
   "valid": true,
   "errors": [],
   "warnings": [],
@@ -12,11 +12,11 @@
       "copyright_holder": "Collaborative Dynamics"
     },
     "plugin_file_count": 443,
-    "plugin_bytes": 1352705,
+    "plugin_bytes": 1353366,
     "repository_files": {
-      "required": 33,
+      "required": 40,
       "missing": [],
-      "local_markdown_links_checked": 23
+      "local_markdown_links_checked": 55
     },
     "required_passing_evidence": {
       "verification/build-reproducibility.json": {

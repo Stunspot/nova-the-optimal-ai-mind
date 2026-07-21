@@ -1,6 +1,6 @@
 {
   "format": "nova-mind-temporary-clean-host-install/v1",
-  "recorded_at": "2026-07-21T18:24:13.969985+00:00",
+  "recorded_at": "2026-07-21T19:58:49.622306+00:00",
   "temporary_empty_codex_home": true,
   "authentication_copied": false,
   "model_invocation_attempted": false,
@@ -9,28 +9,28 @@
       "command": "codex plugin marketplace add <repository> --json",
       "exit_code": 0,
       "json_output": true,
-      "stderr_sha256": "d30bf387ec2ce693bf8373574ab7ace36ef603c54acd91d4daab1b95dd0b9c5d",
+      "stderr_sha256": "2d12b20e3c9898bb08f76ee59dc49cbcd42e92a971e98ca376e77290c729dbf1",
       "status": "passed"
     },
     {
       "command": "codex plugin add augment-of-mind@collaborative-dynamics-build-week --json",
       "exit_code": 0,
       "json_output": true,
-      "stderr_sha256": "d30bf387ec2ce693bf8373574ab7ace36ef603c54acd91d4daab1b95dd0b9c5d",
+      "stderr_sha256": "2d12b20e3c9898bb08f76ee59dc49cbcd42e92a971e98ca376e77290c729dbf1",
       "status": "passed"
     },
     {
       "command": "codex plugin add nova-the-optimal-ai@collaborative-dynamics-build-week --json",
       "exit_code": 0,
       "json_output": true,
-      "stderr_sha256": "d30bf387ec2ce693bf8373574ab7ace36ef603c54acd91d4daab1b95dd0b9c5d",
+      "stderr_sha256": "2d12b20e3c9898bb08f76ee59dc49cbcd42e92a971e98ca376e77290c729dbf1",
       "status": "passed"
     },
     {
       "command": "codex plugin list --json",
       "exit_code": 0,
       "json_output": true,
-      "stderr_sha256": "d30bf387ec2ce693bf8373574ab7ace36ef603c54acd91d4daab1b95dd0b9c5d",
+      "stderr_sha256": "2d12b20e3c9898bb08f76ee59dc49cbcd42e92a971e98ca376e77290c729dbf1",
       "status": "passed"
     }
   ],
@@ -58,8 +58,8 @@
         "prosocial-influence",
         "sensemaking"
       ],
-      "source_files": 147,
-      "installed_files": 147,
+      "source_files": 151,
+      "installed_files": 151,
       "cache_matches_source": true,
       "errors": []
     },
@@ -82,8 +82,8 @@
         "software-verification",
         "verification-reviewer"
       ],
-      "source_files": 296,
-      "installed_files": 296,
+      "source_files": 298,
+      "installed_files": 298,
       "cache_matches_source": true,
       "errors": []
     }

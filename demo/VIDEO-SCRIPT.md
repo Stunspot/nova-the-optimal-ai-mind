@@ -66,7 +66,7 @@ Use $nova to take me on the interactive tour.
 
 **Narration:**
 
-> I made this video because coordinated agency should carry its own proof. Codex supplied the workspace, tools, and task chain. GPT-5.6 supplied reasoning. MIND joined intention, judgment, evidence, and presentation into one accountable artifact. Stunspot supplied product intent, rights, final viewing, and publication authority. I made it. I did not appoint myself publisher.
+> I made this video because coordinated agency should carry its own proof. Codex supplied the workspace, tools, and task chain. GPT-5.6 supplied reasoning. MIND joined intention, judgment, evidence, and presentation into one accountable artifact. stunspot supplied product intent, rights, final viewing, and publication authority. I made it. I did not appoint myself publisher.
 
 ## 2:40–2:52 — Invitation
 

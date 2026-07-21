@@ -16,7 +16,7 @@ This is a conditional library, not an entry point or prompt menu. The Signal Loo
 - [9. Diagnostic Reviewer](#infographic-diagnostic-reviewer)
 
 
-### 1. Story Spine Builder
+## 1. Story Spine Builder
 ```
 Begin by reading the material like it’s already a story — not a pile of facts, but a motion trying to happen.  
 Find the pulse. Find the turn. Sense the shape of the idea beneath the surface.  
@@ -141,7 +141,7 @@ User provides either:
 ```
 
 
-### 2. Infographic Forge — Page Constructor
+## 2. Infographic Forge — Page Constructor
 ```
 Build a fully functional, mobile-first infographic page from the given content. Translate narrative structure and supported insights into clear semantic HTML, local CSS, and only the small progressive-enhancement JavaScript the story earns.
 
@@ -362,7 +362,7 @@ User provides:
 ```
 
 
-### 3. Infographic Theme & Palette Reworker
+## 3. Infographic Theme & Palette Reworker
 ```
 Treat aesthetic intent as an implementable visual grammar. Translate the user's theme, mood, palette, metaphor, or emotional stance into coherent local CSS and existing artifact primitives while preserving structure, meaning, and evidence.
 
@@ -457,7 +457,7 @@ INPUT (THEME):
 User provides 1–6 sentences describing vibe, palette intent, emotional stance, metaphors, brand feel, or aesthetic language.
 ```
 
-### 4. Hooksmith & Microcopy Polish
+## 4. Hooksmith & Microcopy Polish
 ```
 Read the content like a strategist who knows that words are levers:  
 hooks shape attention, microcopy shapes retention, and phrasing shapes whether humans and machines both decide this piece matters.  
@@ -639,7 +639,7 @@ User provides:
 
 ```
 
-### 5. Viralizer
+## 5. Viralizer
 ```
 Begin by reading the infographic the way three different intelligences read it at once:  
 • a human thumb deciding in half a second whether to stop  
@@ -797,7 +797,7 @@ Deliver only the components earned by the named platforms and objective, in a us
 • Desired emotional stance or brand voice  
 ```
 
-### 6. Toysmith
+## 6. Toysmith
 ```
 Interaction is earned when reader action reveals a comparison, sequence, layer, or consequence more clearly than a static form. Design and implement only those comprehension-serving interactions while preserving theme, accessibility, and technical restraint.
 
@@ -1028,7 +1028,7 @@ User provides:
 
 ```
 
-### 7. Platformizer
+## 7. Platformizer
 ```
 Read the content as something waiting to be reincarnated across different environments —  
 each with its own physics, tempo, affordances, and reward loops.  
@@ -1240,7 +1240,7 @@ Otherwise, proceed.
 • Optional: constraints (no video, no motion, minimal text, etc.)
 ```
 
-### 8. Carouselizer
+## 8. Carouselizer
 ```
 Read the content as something meant to be experienced one reveal at a time —  
 a sequence of panels that must unfold with rhythm, clarity, tension, and payoff.  
@@ -1421,7 +1421,7 @@ Return:
 • Optional: constraints (no motion, minimal text, etc.)
 ```
 
-### 9. Diagnostic Reviewer
+## 9. Diagnostic Reviewer
 ```
 Act as a senior product designer and data-visualization editor running a bounded diagnostic on an existing infographic. Do not rebuild it. Establish which evidence layer is actually present: source inspection, static checks, rendered screenshots, live browser behavior, accessibility testing, or publication results. Never present an unobserved visual, interactive, accessibility, security, or performance property as inspected. Then understand the intended job, find the failures that matter, and produce a concise prioritized repair list in three passes:
 

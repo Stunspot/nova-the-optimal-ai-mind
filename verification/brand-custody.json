@@ -1,7 +1,7 @@
 {
   "format": "nova-mind-brand-custody/v1",
   "recorded_at": "2026-07-21",
-  "source": "Collaborative Dynamics branding bundle in installed Omnicompetence 0.6.1",
+  "source": "Collaborative Dynamics branding bundle and first-party Branding archive",
   "cross_checks": [
     "The exact 166x166 transparent logo hash matched the existing CanopyOps package.",
     "The exact logo hash matched an earlier thread-scoped CD branding extraction."
@@ -11,6 +11,15 @@
     "plugins/nova-the-optimal-ai/skills/nova/assets/collaborative-dynamics-logo.png",
     "plugins/augment-of-mind/skills/augment-of-mind/assets/collaborative-dynamics-logo.png"
   ],
+  "documentation_hero": {
+    "name": "Nova Emergent",
+    "source": "Collaborative Dynamics Branding archive: Nova/Nova Emergent.png",
+    "repository_copy": "assets/nova-emergent.png",
+    "sha256": "0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61",
+    "dimensions": "1536x1024",
+    "copy_exact": true,
+    "usage_boundary": "Documentation and submission hero only. The user explicitly did not make this a mandatory video or plugin-package asset. Preserve the original aspect ratio."
+  },
   "palette": ["#48CBE8", "#193449", "#CCDCE4", "#FAFAFA"],
   "fonts": ["Poppins", "Hauora"],
   "excluded_from_packages": [
@@ -19,6 +28,6 @@
     "CD Logo.ico",
     "CD Logo channels4_profile.jpg"
   ],
-  "freshness_boundary": "The E-drive shortcut hub and business-document source remain to be compared when read-only access is available.",
+  "freshness_boundary": "The selected Nova Emergent source was compared byte-for-byte with the repository copy. This receipt does not claim an exhaustive audit of every file in the broader Branding archive.",
   "rights_boundary": "The human submitter retains final authority to attest ownership and contest usage rights."
 }

@@ -1,5 +1,7 @@
 # Source selection and contamination boundary
 
+This reference answers two questions: what was selected for the runtime, and what was deliberately kept out. For the user path, return to [`../README.md`](../README.md); for the evidence order, use [`../docs/JUDGE-GUIDE.md`](../docs/JUDGE-GUIDE.md).
+
 ## Import rule
 
 Import only operational intelligence needed by Nova. Preserve provenance outside model-facing runtime. Exclude completed worlds, finished demo outputs, live stores, personal records, caches, archives, promotional boilerplate, obsolete persona wrappers, and test corpora that need not load during ordinary use.

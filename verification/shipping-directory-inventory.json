@@ -1,6 +1,6 @@
 {
   "format": "nova-mind-shipping-directory-inventory/v1",
-  "recorded_at": "2026-07-21T18:13:12.815221+00:00",
+  "recorded_at": "2026-07-21T19:47:17.099063+00:00",
   "scope": "Every directory and file under the two shipping plugin roots; symlinks are listed and never followed.",
   "plugins": [
     {
@@ -1637,8 +1637,8 @@
       "plugin": "nova-the-optimal-ai",
       "directory_count": 98,
       "file_count": 296,
-      "byte_count": 913604,
-      "tree_sha256": "b1938f064059b1ded174cfdfff7fc86c4c1169f23b39b43a8b7b8431f8872245",
+      "byte_count": 914265,
+      "tree_sha256": "0170baa815c1da3b7abbd36bf68a93a7184ae01123c3a5e3a5b2bbf732fd6df2",
       "symlinks": [],
       "directories": [
         {
@@ -3023,13 +3023,13 @@
         },
         {
           "path": "skills/nova/assets/nova-tour-fragment.html",
-          "bytes": 17371,
-          "sha256": "76447a59179fb30cf7b5f031cedcb9788e6882415024c654fd07f17e68505ab0"
+          "bytes": 17702,
+          "sha256": "289ee880c2b8266f109e7ecb5ea57ae84f03520cf5053a8b2a1ad284abf7e19f"
         },
         {
           "path": "skills/nova/assets/nova-tour.html",
-          "bytes": 78260,
-          "sha256": "fd9d5a3fdcc0818b3c79b5bb6f11e3c6350b5165f73e89b3fbeda70bc32564a5"
+          "bytes": 78608,
+          "sha256": "fb6229eda7953c4ce07d072337f6b29dc021a9a087af3674adcd98c1306d3db5"
         },
         {
           "path": "skills/nova/references/brand-source-manifest.json",
@@ -3423,8 +3423,8 @@
         },
         {
           "path": "skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md",
-          "bytes": 56196,
-          "sha256": "ae50b706ed5f2562f5a78feee949eaf34648d10088a2f519413a0707ce2a9675"
+          "bytes": 56178,
+          "sha256": "dbb96d40b529ef3ce1b2e499811e39417049d81c4d6eab1ad4a24d97f7760873"
         },
         {
           "path": "skills/signal-loom/knowledge/operating-doctrine.md",
@@ -4127,7 +4127,7 @@
   "totals": {
     "directories": 201,
     "files": 443,
-    "bytes": 1352705,
+    "bytes": 1353366,
     "symlinks": 0
   }
 }

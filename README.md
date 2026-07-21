@@ -1,16 +1,25 @@
 # Nova the Optimal AI + MIND
 
-**One AI you can meet. One mind you can install beside her.**
+**Bring Nova the mess. Add MIND when one kind of thinking is not enough.**
 
-Nova is Collaborative Dynamics' playful, evidence-governed AI collaborator. She handles simple work directly, brings in specialist competence only when it changes the result, and returns one coherent answer instead of a tour of the machinery.
+![Nova Emergent, the canonical Nova artwork by Collaborative Dynamics](assets/nova-emergent.png)
 
-MIND is a separate, independently installable cognitive system: fifteen focused Faculties plus one integrator for consequential work that genuinely needs more than one mode of thought.
+Nova is built as the front door to a serious capability ecology: direct on small work, able to bring in research, judgment, verification, repository awareness, or creative fire when the task earns it, and responsible for returning one accountable result instead of a tour of the machinery.
 
-Together, the two Codex plugins expose 28 carefully bounded skills for decisions, research, creation, continuity, verification, repository work, and play.
+MIND is the independently installable cognitive system beside her: fifteen focused Faculties and one integrator for work that genuinely needs more than one mode of thought.
 
-![Nova's branded offline interactive tour](plugins/nova-the-optimal-ai/assets/nova-tour-preview.png)
+A bag of skills is not a mind. It is a drawer. Nova and MIND keep the drawer backstage.
 
-## Install from this checkout
+## Try Nova in 90 seconds
+
+Download and extract the [public repository](https://github.com/Stunspot/nova-the-optimal-ai-mind), or clone it:
+
+```powershell
+git clone https://github.com/Stunspot/nova-the-optimal-ai-mind.git
+Set-Location nova-the-optimal-ai-mind
+```
+
+Then, from the repository root:
 
 ```powershell
 codex plugin marketplace add .
@@ -18,70 +27,77 @@ codex plugin add augment-of-mind@collaborative-dynamics-build-week
 codex plugin add nova-the-optimal-ai@collaborative-dynamics-build-week
 ```
 
-Restart or begin a fresh Codex task after installation so the new skills are discovered cleanly.
-
-Then try:
+Begin a fresh Codex task, then use this exact prompt:
 
 ```text
 Use $nova to take me on the interactive tour.
 ```
 
-The optional visual companion is [`plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour.html`](plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour.html). It is a self-contained local page: no network requests, no analytics, and no storage.
+Nova should offer a short, skippable route through four doors—**decide, investigate, make, or play**—without asking for a biography first. The optional [offline visual companion](plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour.html) makes no network requests and stores nothing.
 
-## Supported path
+That is the whole no-build path. Judges do not need Python, a package manager, or generated artifacts to install and try the products.
 
-This contest build targets current Codex clients with local plugin-marketplace support. The packaged path is exercised through Codex CLI 0.144.5 on Microsoft Windows 10 build 19045. Judges can install and use both plugins directly from the checkout; rebuilding and Python are not required. Python 3 is needed only for optional verification and bounded helper scripts. Other operating systems and Codex versions have not been exercised for this release and are not claimed as verified platforms.
+## Give her something worth installing
 
-## Four judge-sized demonstrations
-
-```text
-Use $nova. I have three good options and no idea what should decide between them. Help me find the real decision and recommend one.
-```
+For the unfairly good bell and whistle:
 
 ```text
-Use $nova and $ludis-continuum. Give me a character background for a disgraced astronomer who discovered something impossible, but make the secret playable rather than merely tragic.
+Use $nova and $ludis-continuum. I need a background for a character: a royal cartographer who erased one island from every map and now hears its bells in dry land. Give me a playable past, two relationships, one dangerous truth, and an opening choice.
 ```
+
+Ludis should return pressure, relationships, secrets, and a live choice—not decorative biography. No Port Zindra or other worked campaign ships in this release.
+
+For integrated judgment:
 
 ```text
 Use $augment-of-mind. We have two days, conflicting evidence, and three stakeholders who mean different things by success. Turn this into one defensible course of action.
 ```
 
+For proof rather than vibes in a lab coat:
+
 ```text
-Use $software-verification. Audit the release evidence in this repository and tell me exactly what is proved, what is residual risk, and what still requires a human.
+Use $software-verification. Audit this release evidence. Tell me exactly what is proved, what remains uncertain, and what still requires a human.
 ```
 
-## What is unusual here
+More exact demonstrations are in [START-HERE.md](START-HERE.md).
 
-- **Nova is the front counter.** Users bring work, not routing syntax. Specialists work backstage unless naming the route improves trust or control.
-- **MIND is real composition, not a bag of personas.** The integrator selects the smallest Faculty coalition that can change the outcome and reunifies the work.
-- **Agentic Coding supplies balance.** It gives an agent operational proprioception in live repository and tool state; it is not marketed as a code generator.
-- **TestForge goes in everything.** The operator builds evidence. A separate adversarial reviewer skill challenges it. Presence, success, and release readiness are kept distinct.
-- **Ludis is delight with custody.** It supports games, character backgrounds, scenes, worlds, and fiction continuity without shipping Port Zindra or any other worked campaign.
-- **Memory has edges.** Conversation context, explicit pins, people memory, and durable mission continuity are different things. Nova says which one is actually in play.
+## What the two plugins do
 
-## Product map
+| Product | Version | What the user gets |
+|---|---:|---|
+| **Nova the Optimal AI** | 1.0.0 | One coherent collaborator with onboarding, research, retrieval, knowledge stewardship, visual reasoning, explicit memory boundaries, Agentic Coding, TestForge, and Ludis |
+| **MIND by Collaborative Dynamics** | 1.0.0 | One integrator coordinating fifteen Faculties for aesthetics, dreaming, striving, continuity, decisions, evidence, execution, timing, measurement, influence, and sensemaking |
 
-| Plugin | Version | Handles | Role |
-|---|---:|---:|---|
-| Nova the Optimal AI | 1.0.0 | 12 | Identity, onboarding, research, knowledge, retrieval, visuals, continuity companions, repository balance, verification, and play |
-| MIND by Collaborative Dynamics | 1.0.0 | 16 | One integrator plus fifteen composable cognitive Faculties |
+Together they expose 28 bounded skill handles. Those are not 28 buttons the user must operate.
 
-Nova remains useful when MIND is absent and never pretends the missing Faculty composition is active. This entry declares no plugin-to-plugin auto-install; the intended experience installs both plugins explicitly.
+Agentic Coding is here because an agent needs balance. It supplies operational proprioception in repository and tool state: where am I, what changed, what is the next real check, and where must I stop? It is not being sold as generic code generation.
 
-## Evidence, not vibes in a lab coat
+TestForge goes in everything. Its operator builds an evidence chain; its separate reviewer attacks that chain. During this release it rejected three weaker stages before returning `REVIEW_PASS_WITH_CONDITIONS` for the package's refusal to overclaim. That is evidence discipline, not a blanket release certificate.
 
-Start with [`START-HERE.md`](START-HERE.md). The full local evidence package is in [`verification/`](verification/), including source custody, transformation records, package hashes, regression evidence, browser checks, traceability, risks, and the TestForge report.
+Nova remains useful if MIND is absent and never pretends Faculty composition is active when it is not. Both products must be installed explicitly; neither silently installs the other.
 
-The release archives in [`release/`](release/) are deterministically built from the two plugin roots. Human-only contest actions—repository publication, public video upload, final `/feedback` selection, rights attestation, and Devpost submission—are kept separate in [`submission/HUMAN-ACTIONS.md`](submission/HUMAN-ACTIONS.md).
+## What Build Week made
 
-## What Build Week added
+Collaborative Dynamics brought prior skills and cognitive doctrine into OpenAI Build Week. GPT-5.6 in Codex turned that source estate into two installable 1.0.0 products: Nova's accountable front counter and onboarding, MIND's independent package, setting-free Ludis instruments, an Agentic Coding operating surface, the TestForge release backplane, deterministic packaging, installation proof, and this contest demonstration system.
 
-Nova and MIND curate Collaborative Dynamics work that predates the contest; the project does not pretend otherwise. Build Week created the two-product Codex architecture, Nova's new accountable front counter and onboarding, MIND's 1.0.0 package, the rewritten setting-free Ludis instruments, the TestForge release backplane, deterministic packaging and installation proof, and the contest demonstration system. [`BUILD-WEEK-CONTRIBUTION.md`](BUILD-WEEK-CONTRIBUTION.md) separates prior source material from the work performed with GPT-5.6 in Codex and points to its custody evidence.
+[BUILD-WEEK-CONTRIBUTION.md](BUILD-WEEK-CONTRIBUTION.md) separates prior source material from the work performed during the contest. Nothing gets a new birthday merely because it learned to wear a plugin manifest.
+
+## Verify it
+
+The supported contest path was exercised with Codex CLI 0.144.5 on Microsoft Windows 10 build 19045. Other operating systems and Codex versions are not claimed as tested for this release.
+
+- [Five-minute judge path](START-HERE.md)
+- [Exact install, expected results, and troubleshooting](docs/JUDGE-GUIDE.md)
+- [Verification decision and evidence boundary](verification/verification-report.md)
+- [Requirement-to-evidence traceability](verification/traceability-matrix.md)
+- [Release archives and SHA-256 verification](release/README.md)
+
+The repository deliberately separates package integrity, observed behavior, release readiness, and human contest actions. A file existing is not proof that the thing it describes happened. Wild concept, apparently.
 
 ## Makers and boundaries
 
-Nova and MIND are products of **Collaborative Dynamics**. **stunspot** is Collaborative Dynamics' co-founder and Chief Creative Officer. Nova's included professional context is deliberately limited to public, work-relevant sources and excludes personal biography, contacts, private clients, and unsupported superlatives.
+Nova and MIND are products of **Collaborative Dynamics**. **stunspot** is Collaborative Dynamics' co-founder and Chief Creative Officer. The included professional context is limited to public, work-relevant sources; it excludes private clients, contacts, personal biography, and unsupported superlatives.
 
-The code is licensed under the [`MIT License`](LICENSE.md). No credentials, live personal stores, worked campaigns, or private customer material are included.
+The code is available under the [MIT License](LICENSE.md). No credentials, private customer material, live personal stores, or authored campaign worlds are included.
 
 🌐‍💠

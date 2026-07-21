@@ -27,7 +27,7 @@
       "2:45–2:55 total duration",
       "322 spoken words",
       "Use only current captured outputs for claimed runtime behavior",
-      "No final-render, upload, public-repository, portability, Windows 11, or independent-reviewer claim"
+      "No final-render, upload, portability, Windows 11, or independent-reviewer claim"
     ],
     "accessibility_practices": [
       "Captions match final narration",
@@ -107,9 +107,16 @@
     },
     {
       "id": "E-08",
+      "kind": "observation",
+      "claim": "GitHub reports Stunspot/nova-the-optimal-ai-mind as PUBLIC on main, and the first published remote revision matched local commit 57857aec41854c328200ac5f636d3962365e1251.",
+      "source": "verification/repository-publication.json",
+      "recorded_at": "2026-07-21"
+    },
+    {
+      "id": "E-09",
       "kind": "unknown",
-      "claim": "A public repository URL, final rendered cut, public upload, and publication decision are not observed in the current case.",
-      "source": "Repository inspection and task boundary",
+      "claim": "A final rendered cut, complete audiovisual viewing, public upload, and publication decision are not observed in the current case.",
+      "source": "Production and human authority boundary",
       "recorded_at": "2026-07-21"
     }
   ],
@@ -130,7 +137,7 @@
       "Accountable-artifact production chain with a separate human authority gate"
     ],
     "misunderstanding_risk": "Viewers may mistake one captured scenario for universal performance or mistake a build plan for a published final video.",
-    "integrity_ruling": "ready for production handoff with external gates: the script and shot plan are evidence-bounded; the verified public URL, final render, stunspot's full viewing, rights confirmation, upload, and publication decision remain outstanding."
+    "integrity_ruling": "ready for production with external gates: the script and shot plan are evidence-bounded and the public repository URL is observed; the final render, Stun's full viewing, rights confirmation, upload, and publication decision remain outstanding."
   },
   "build_artifacts": {
     "hook": "Meet Mara Vey, Royal Cartographer. Orison was erased from every map; now its bells ring beneath dry fields. Don’t judge Nova from this video—install her.",
@@ -165,5 +172,5 @@
     "disposition": "do_not_promote",
     "rationale": "No post-release audience evidence exists; do not turn this one bounded production case into channel doctrine."
   },
-  "next_action": "Publish and verify the public repository URL, then hand the frozen script and shot list to the bounded production pipeline; return the verified MP4 and SRT for Stun's complete viewing before upload."
+  "next_action": "Complete the authorized bounded production render and return the verified MP4 and SRT for Stun's complete viewing before upload."
 }

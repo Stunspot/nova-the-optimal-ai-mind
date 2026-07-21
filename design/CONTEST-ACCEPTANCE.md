@@ -1,5 +1,7 @@
 # Contest acceptance control
 
+This is the local gate ledger, not an installation guide or a claim that human contest actions are complete. Start with [`../START-HERE.md`](../START-HERE.md); use [`../docs/JUDGE-GUIDE.md`](../docs/JUDGE-GUIDE.md) for the evidence reading order.
+
 ## Governing objective
 
 Bring every safe, non-blocked part of the OpenAI Build Week entry to evidence-backed GREEN before stunspot's operational deadline of **July 21, 2026, 6:15 PM Central**. Keep human account actions and external publication gates separate from local readiness.
@@ -34,7 +36,7 @@ Bring every safe, non-blocked part of the OpenAI Build Week entry to evidence-ba
 | Collision/routing | Direct work, MIND Faculties, memory surfaces, research/retrieval, visual, verification, Agentic Coding, and Ludis cases pass with forbidden activations absent | **GREEN for six named core executions only** — six non-TestForge scenarios are valid and SHA-256-bound in the stable live index; the final TestForge review is a separate evidence-quality scenario. No universal routing claim is made. |
 | Judge path | START-HERE, install, support boundary, and no-rebuild path are complete; the on-disk and installation portions are exercised, while model scenarios are tracked separately | **GREEN locally, with residual risk** — installation/discovery, release validation, six named core executions, and the conditional TestForge evidence review are recorded. |
 | Demo | Under-three-minute narrated script and deterministic demo corpus/output are complete and truthful | **GREEN for production inputs; render gate open** — current Mara Vey / Orison and final TestForge evidence are frozen in a 322-word, eight-scene, 2:52 script; Studio Case JSON parses; the production parser passed and pipeline doctor returned `READY`. Final assets, render verification, and complete human audiovisual viewing remain required before upload. |
-| Repository URL/access | Judge-accessible repository and required access grants observed | HUMAN / EXTERNAL |
+| Repository URL/access | Judge-accessible repository and required access grants observed | **PARTIAL GREEN** — GitHub reports `Stunspot/nova-the-optimal-ai-mind` as `PUBLIC` on `main`, and the first published remote revision matched local commit `57857ae…`. A separate signed-out browser readability check remains human-gated because the host's anonymous TLS client failed before receiving an HTTP response. |
 | Video URL | Public or unlisted YouTube upload observed and viewed through its final public path | HUMAN / EXTERNAL |
 | Codex provenance | Correct primary-build feedback session and GPT-5.6 disclosure supplied | HUMAN / EXTERNAL |
 | Rights, team, and submission | Authorized representative confirms rights/terms, team acceptance, and Devpost submission | HUMAN / EXTERNAL |
@@ -47,4 +49,4 @@ A local gate is GREEN only when its artifact and named check exist. File presenc
 
 `verification/live-core-probe-status.json` binds six current analysis SHA-256 values: direct-negative, tour, Ludis character, MIND decision, Agentic orientation, and professional brief. The original six are content-hash-bound but not Git-revision-bound; sanitized public receipts bind ignored local raw, which outside reviewers cannot compare directly. E-011 is a separate clean-host GPT-5.6-sol TestForge review against a privacy-clean Git-bound stage. It returned `REVIEW_PASS_WITH_CONDITIONS` for the package's preceding `INSUFFICIENT_EVIDENCE` decision, then identified documentation conditions that are reconciled in the current manifest and traceability matrix. The reviewer host could not independently rerun helper scripts, Git state, or archive hashes, and the seven total prompts are narrow samples.
 
-Publication, rights, feedback/provenance, repository access, video, team acceptance, and Devpost submission remain human/external gates.
+Signed-out repository readability, rights, feedback/provenance, video, team acceptance, and Devpost submission remain human/external gates.

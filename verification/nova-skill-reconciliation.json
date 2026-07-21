@@ -24,7 +24,7 @@
   "summary": {
     "skills": 12,
     "shipping_files": 293,
-    "shipping_bytes": 790914,
+    "shipping_bytes": 791575,
     "path_aliases_byte_identical": 7,
     "same_root_imports": 4,
     "contest_authored_skills": 1,
@@ -408,7 +408,7 @@
         "state": "contest-local-repository-commit-present",
         "repository_root": "contest-repository://.",
         "commit_present": true,
-        "remote_origin": null,
+        "remote_origin": "https://github.com/Stunspot/nova-the-optimal-ai-mind.git",
         "release_proof": false,
         "boundary": "Commit presence is recorded without embedding a self-referential HEAD hash. A local commit or remote association would not prove publication or release acceptance."
       },
@@ -421,8 +421,8 @@
       "shipping": {
         "root": "contest-repository://plugins/nova-the-optimal-ai/skills/nova",
         "files": 15,
-        "bytes": 176987,
-        "tree_sha256": "529ff243a60c3c6e0b8c18649f1cc8f51278e0f7cfb6e03c9f5d130a90146070"
+        "bytes": 177666,
+        "tree_sha256": "4ff939d7610cac3fbb5820e3ed05feb788144a47cff6ba9f017895281a8e9bf0"
       },
       "transformation": {
         "initial_import_files": 0,
@@ -781,8 +781,8 @@
       "shipping": {
         "root": "contest-repository://plugins/nova-the-optimal-ai/skills/signal-loom",
         "files": 36,
-        "bytes": 108285,
-        "tree_sha256": "c38094a372e27022ddcf77fe243e44237446852f71305a8dddb4daf89d530036"
+        "bytes": 108267,
+        "tree_sha256": "79a9fbc51c3d10e5d643febf8116056f5ddb07d541f4fdc0bb70af5f50bf5969"
       },
       "transformation": {
         "initial_import_files": 36,

@@ -39,7 +39,7 @@
     "review_units_unchanged_after_review": 75,
     "unreviewed_in_scope": 0,
     "high_or_medium_findings_remaining": 0,
-    "included_inventory_sha256": "058829b9bcfb5172b3f8be3bc8164aa9b49f53dbfb485c32b28d9e2ffd6ec96c"
+    "included_inventory_sha256": "80fa49f91b4999bc70d61be3870b9d95b2aa676a6bbc2b495f731b56c0d3b7eb"
   },
   "conditional_categories": {
     "dunbar": {
@@ -1004,7 +1004,7 @@
     {
       "id": "CP-061",
       "category": "signal-loom",
-      "sha256": "ae50b706ed5f2562f5a78feee949eaf34648d10088a2f519413a0707ce2a9675",
+      "sha256": "dbb96d40b529ef3ce1b2e499811e39417049d81c4d6eab1ad4a24d97f7760873",
       "physical_count": 1,
       "paths": [
         "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md"

@@ -1,7 +1,14 @@
 const assert = require('node:assert/strict');
 const path = require('node:path');
 const { pathToFileURL } = require('node:url');
-const { chromium } = require('playwright');
+let playwright;
+try {
+  playwright = require('playwright');
+} catch (error) {
+  if (error.code !== 'MODULE_NOT_FOUND') throw error;
+  playwright = require('playwright-core');
+}
+const { chromium } = playwright;
 
 async function inspectViewport(page, width, height) {
   await page.setViewportSize({ width, height });
@@ -88,6 +95,12 @@ function allDurationsAreZero(value) {
     const pointerContext = await browser.newContext();
     const page = await pointerContext.newPage();
     await page.goto(tourUrl, { waitUntil: 'load' });
+    assert.equal(await page.locator('main').count(), 1, 'standalone tour has no unique main landmark');
+    assert.equal(
+      await page.getByRole('group', { name: 'Choose a sample route' }).count(),
+      1,
+      'route controls have no named semantic group',
+    );
 
     const wide = await inspectViewport(page, 900, 1000);
     const mobile = await inspectViewport(page, 390, 844);
@@ -255,6 +268,9 @@ function allDurationsAreZero(value) {
     assert.match(noJavaScript.text, /Nova works without this interaction/i);
     assert.match(noJavaScript.text, /Starter:/i);
     assert.ok(noJavaScript.text.length >= 180, 'noscript fallback is not meaningfully complete');
+    assert.equal(await noJavaScriptPage.locator('button:visible').count(), 0, 'no-JavaScript path exposes inert buttons');
+    assert.match(noJavaScript.text, /memory/i);
+    assert.match(noJavaScript.text, /does not quietly publish/i);
     const noJavaScriptEvidence = {
       javaScriptEnabled: false,
       layout: noJavaScriptLayout,
@@ -264,7 +280,7 @@ function allDurationsAreZero(value) {
         hasCapabilitySummary: /enlists specialists/i.test(noJavaScript.text),
         hasStarter: /Starter:/i.test(noJavaScript.text),
       },
-      assertions: 8,
+      assertions: 11,
     };
     assert.equal(noJavaScriptEvidence.noscript.hasCapabilitySummary, true);
     assert.equal(noJavaScriptEvidence.noscript.hasStarter, true);

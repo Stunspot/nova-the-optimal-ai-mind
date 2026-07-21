@@ -1,5 +1,7 @@
 # Nova + MIND product architecture
 
+This technical note explains why one contest experience ships as two products. For installation, use [`../START-HERE.md`](../START-HERE.md); for exact evidence and troubleshooting, use [`../docs/JUDGE-GUIDE.md`](../docs/JUDGE-GUIDE.md).
+
 ## One entry, two products
 
 The contest entry is one coherent experience distributed as two separately installable Codex plugins.
@@ -35,7 +37,7 @@ Simple work stays direct. A specialist activates only when the requested transfo
 
 ## Degraded compatibility
 
-Current Codex documentation does not establish plugin-to-plugin dependency auto-installation. The repository marketplace therefore lists both plugins and the judge path installs both explicitly.
+This entry does not rely on automatic plugin-to-plugin installation. The repository marketplace lists both plugins, and the judge path installs both explicitly.
 
 If Nova runs without MIND:
 

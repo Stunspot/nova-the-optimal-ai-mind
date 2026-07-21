@@ -1,6 +1,6 @@
 # Nova-only skill reconciliation
 
-Status: **PASS**. The candidate contains exactly 12 Nova skills, 293 skill files, and 790,914 bytes. Unexplained drift: 0 paths.
+Status: **PASS**. The candidate contains exactly 12 Nova skills, 293 files under those skill roots, and 791,575 skill-root bytes. The complete Nova plugin has 296 files: those skill files plus `.codex-plugin/plugin.json` and two plugin-level tour screenshots. Unexplained drift: 0 paths.
 
 This receipt reconciles selected source, the root actually imported, current contest transformations, description lineage, and point-in-time repository/archive custody. It is provenance evidence, not installation, behavior, publication, or release proof.
 
@@ -10,12 +10,12 @@ This receipt reconciles selected source, the root actually imported, current con
 | `corkboard` | infrastructure-direct-source | path-alias-byte-identical-with-intentional-live-data-exclusion | contest-curated-from-estate | no-authoritative-repository-mapping-located-at-snapshot | no-historical-zip-reference-located | 3 files / 30,716 B | covered (2/2) |
 | `dunbar` | canonical-product-skill | same-root | contest-curated-from-estate | no-authoritative-repository-mapping-located-at-snapshot | no-historical-zip-reference-located | 12 files / 65,208 B | covered (3/3) |
 | `ludis-continuum` | products-working-skill | path-alias-byte-identical | contest-curated-from-estate | no-authoritative-repository-mapping-located-at-snapshot | historical-zip-reference-located-without-current-source-parity | 51 files / 104,947 B | covered (40/40) |
-| `nova` | contest-authored | contest-authored-no-import-root | contest-authored-outside-estate-registry | contest-local-repository-commit-present | contest-authored-outside-estate-archive-snapshot | 15 files / 176,987 B | covered (15/15) |
+| `nova` | contest-authored | contest-authored-no-import-root | contest-authored-outside-estate-registry | contest-local-repository-commit-present | contest-authored-outside-estate-archive-snapshot | 15 files / 177,666 B | covered (15/15) |
 | `omnara-deep-research` | products-working-skill | path-alias-byte-identical | contest-curated-from-estate | repository-family-mapped-without-selected-source-default-branch-parity | historical-zip-reference-located-without-current-source-parity | 31 files / 56,391 B | covered (5/5) |
 | `retrieval-intelligence` | faculty-forge-working-package | path-alias-byte-identical | contest-curated-from-estate | no-authoritative-repository-mapping-located-at-snapshot | historical-zip-reference-located-without-current-source-parity | 9 files / 43,504 B | covered (3/3) |
 | `retrieval-reviewer` | faculty-forge-working-package | path-alias-byte-identical | estate-registry-exact | no-authoritative-repository-mapping-located-at-snapshot | historical-zip-reference-located-without-current-source-parity | 3 files / 4,440 B | covered (0/0) |
 | `rupert-giles-knowledge-steward` | faculty-forge-working-package | path-alias-byte-identical | estate-registry-exact | no-authoritative-repository-mapping-located-at-snapshot | historical-zip-reference-located-without-current-source-parity | 4 files / 5,229 B | covered (1/1) |
-| `signal-loom` | products-working-skill | path-alias-byte-identical | estate-registry-exact | no-authoritative-repository-mapping-located-at-snapshot | historical-zip-reference-located-without-current-source-parity | 36 files / 108,285 B | covered (2/2) |
+| `signal-loom` | products-working-skill | path-alias-byte-identical | estate-registry-exact | no-authoritative-repository-mapping-located-at-snapshot | historical-zip-reference-located-without-current-source-parity | 36 files / 108,267 B | covered (2/2) |
 | `software-verification` | canonical-personal-plugin-source | same-root | estate-registry-exact | repository-family-mapped-without-selected-source-default-branch-parity | historical-zip-reference-located-without-current-source-parity | 62 files / 95,402 B | covered (4/4) |
 | `verification-reviewer` | canonical-personal-plugin-source | same-root | contest-curated-from-estate | repository-family-mapped-without-selected-source-default-branch-parity | historical-zip-reference-located-without-current-source-parity | 64 files / 93,263 B | covered (5/5) |
 

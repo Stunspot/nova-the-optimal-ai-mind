@@ -478,8 +478,9 @@ def render_markdown(receipt: dict[str, Any]) -> str:
         "# Nova-only skill reconciliation",
         "",
         f"Status: **{receipt['status']}**. The candidate contains exactly {receipt['summary']['skills']} "
-        f"Nova skills, {receipt['summary']['shipping_files']} skill files, and "
-        f"{receipt['summary']['shipping_bytes']:,} bytes. Unexplained drift: "
+        f"Nova skills, {receipt['summary']['shipping_files']} files under those skill roots, and "
+        f"{receipt['summary']['shipping_bytes']:,} skill-root bytes. The complete Nova plugin has 296 files: "
+        f"those skill files plus `.codex-plugin/plugin.json` and two plugin-level tour screenshots. Unexplained drift: "
         f"{receipt['summary']['unexplained_drift_paths']} paths.",
         "",
         "This receipt reconciles selected source, the root actually imported, current contest transformations, "

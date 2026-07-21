@@ -74,6 +74,7 @@ PRIVATE_PATH = re.compile(
 EMAIL = re.compile(r"(?<![/\w])[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 REQUIRED_REPOSITORY_FILES = {
+    "assets/nova-emergent.png",
     "BUILD-WEEK-CONTRIBUTION.md",
     "README.md",
     "START-HERE.md",
@@ -89,6 +90,7 @@ REQUIRED_REPOSITORY_FILES = {
     "release/nova-the-optimal-ai-1.0.0.zip",
     "release/release-receipt.json",
     "release/SHA256SUMS",
+    "release/README.md",
     "verification/verification-manifest.json",
     "verification/traceability-matrix.md",
     "verification/risk-register.md",
@@ -96,12 +98,14 @@ REQUIRED_REPOSITORY_FILES = {
     "verification/shipping-content-audit.md",
     "verification/shipping-directory-inventory.json",
     "verification/release-extraction-validation.json",
+    "verification/repository-publication.json",
     "verification/installed-discovery.json",
     "verification/fresh-host-install.json",
     "verification/live-core-probe-status.json",
     "verification/live-probe-status.json",
     "verification/brand-custody.json",
     "verification/build-reproducibility.json",
+    "verification/documentation-review.md",
     "verification/ludis-prompt-modernization.json",
     "verification/ludis-prompt-modernization.md",
     "verification/nova-prompt-surface-audit.json",

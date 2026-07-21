@@ -38,10 +38,10 @@ All 16 skill validators and the MIND bundle validator return zero findings for t
 | Agentic Coding | 3 | Kept operational repository competence and reframed it explicitly as proprioception/balance, not generic code generation or enlarged authority. |
 | Corkboard | 3 | Kept explicit low-pressure pins and recall; no live user database ships. |
 | Dunbar | 12 | Kept governed people/relationship context; replaced stunspot-specific ownership assumptions with generic user control. |
-| Ludis Continuum | 19 | Kept generic play, character, scene, worldbuilding, and continuity instruments. Removed Port Zindra, *The Bell Below Bracken*, every other worked-campaign/example tree, cover images, legacy README, personal biography, promotions, and forced persona wrappers. |
-| Nova | 12 | New front-counter identity, direct-first routing, optional tour, MIND compatibility boundary, professional CD/stunspot dossier, and offline visual asset only. |
+| Ludis Continuum | 51 | Kept generic play, character, scene, worldbuilding, and continuity instruments. Removed Port Zindra, *The Bell Below Bracken*, every other worked-campaign/example tree, cover images, legacy README, personal biography, promotions, and forced persona wrappers. |
+| Nova | 15 | New front-counter identity, direct-first routing, optional tour, MIND compatibility boundary, professional CD/stunspot dossier, and offline visual asset only. |
 | OMNARA Deep Research | 31 | Kept standalone bounded research capability; removed legacy OMNARA/WebWorker personas, completed demonstrations, eval corpus, and optional architecture report. |
-| Retrieval Intelligence | 8 | Kept runtime retrieval intelligence; excluded demo corpus and eval fixtures from ordinary runtime. |
+| Retrieval Intelligence | 9 | Kept runtime retrieval intelligence; excluded demo corpus and eval fixtures from ordinary runtime. |
 | Retrieval Reviewer | 3 | Kept the independent retrieval/citation challenge surface; no unrelated payload retained. |
 | Rupert Giles Knowledge Steward | 4 | Kept canon and provenance stewardship; removed the legacy persona wrapper and contact block. |
 | Signal Loom | 36 | Kept evidence-to-visual doctrine and validators; removed first-value output tree, large cover image, promotional copy, and signatures. |

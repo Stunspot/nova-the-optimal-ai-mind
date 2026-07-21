@@ -1,12 +1,12 @@
 {
   "format": "nova-mind-live-probe-status/v2",
-  "recorded_at": "2026-07-21T19:12:45.387169+00:00",
+  "recorded_at": "2026-07-21T20:01:27.886873+00:00",
   "clean_temporary_codex_home": true,
   "authentication_copied_temporarily": true,
   "authentication_persisted_or_recorded": false,
   "public_candidate_stage": {
-    "file_count": 514,
-    "tree_sha256": "fcf71461285d006f7c09b76eacfb638423774c224ff599b6666f83bc9dbab3a8",
+    "file_count": 517,
+    "tree_sha256": "15adeaeabcdc447571ca4acde45cd52aa7eba699c85bb5adc396db2ff1f2f467",
     "directories": [
       ".agents",
       "demo",
@@ -36,6 +36,7 @@
       "verification/entry-static.json",
       "verification/fresh-host-install.json",
       "verification/current-host-install.json",
+      "verification/documentation-review.md",
       "verification/installed-cache-mind.json",
       "verification/installed-cache-nova.json",
       "verification/installed-discovery.json",
@@ -64,6 +65,7 @@
       "verification/nova-prompt-surface-audit.md",
       "verification/nova-skill-reconciliation.json",
       "verification/release-extraction-validation.json",
+      "verification/repository-publication.json",
       "verification/risk-register.md",
       "verification/shipping-content-audit.md",
       "verification/shipping-directory-inventory.json",
@@ -76,12 +78,12 @@
     ],
     "plugin_tree_sha256": {
       "augment-of-mind": "1c737ad12f52e2ef429313b06d26e13451e495adfc73036d3d55414aa5ea0316",
-      "nova-the-optimal-ai": "c582bc91f5bb549e14e92ce4878dc37551da5364c209715b10206210471ced01"
+      "nova-the-optimal-ai": "a8399d0e543f31d483a6ca762396029c2af84fcdf996706cea564d79f55b771f"
     },
     "privacy_scan": "PASS",
     "git_binding": {
-      "commit_sha": "26fe5c60b7f2fd4f10b07b3d57006e195d626902",
-      "tree_sha": "0d6102666c6ceb30fc89eb7bb387454615f7f755",
+      "commit_sha": "a1863d775a461688a6978ac3795311e1f7ebaccc",
+      "tree_sha": "e5a52ca3e50ce3cbaab902e630a3e3d5d42a30f8",
       "status": "clean"
     }
   },
