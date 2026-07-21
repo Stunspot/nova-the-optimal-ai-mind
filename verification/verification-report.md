@@ -26,7 +26,8 @@ The final complete-stage TestForge review, E-011, validly returned **`REVIEW_PAS
 | `video-production-inputs.json` | Refreshed script, shot list, and Studio Case are hash-bound; 322 spoken words in eight timed scenes; production parser passed and pipeline doctor returned `READY`. | Production-input readiness only; no final render, viewing, upload, or submission claim. |
 | `video-render-verification.json` | Hash-bound 172.066667-second 1080p MP4 and matching 43-cue SRT; 27/27 automated checks and mechanical, audio/caption, and visual/privacy gates passed; stunspot confirmed the complete watch | Local render and complete-viewing evidence; public availability is recorded separately. |
 | `youtube-publication-verification.json` | Exact final filename is public at `https://youtu.be/1cqEFrP6FZw`; anonymous playability exposes 1080p and audio formats; opening, midpoint, and final-card watch checks passed; stunspot confirmed the complete watch | Public video and bounded playback evidence; Devpost submission remains unobserved. |
-| `repository-publication.json` | GitHub reports `Stunspot/nova-the-optimal-ai-mind` as `PUBLIC` on `main`; the first published remote revision matched local commit `57857ae…`. | Repository publication metadata and first-push parity only; signed-out browser readability and later final-head parity remain separate. |
+| `repository-publication.json` | GitHub reports `Stunspot/nova-the-optimal-ai-mind` as `PUBLIC` on `main`; the first published remote revision matched local commit `57857ae…`. | Initial publication metadata and first-push parity only; later judge-facing content is covered by the separate final-content receipt. |
+| `repository-final-content-verification.json` | Judge-facing content commit `8e0f1f8…` matched local `HEAD` and `origin/main`; anonymous repository and raw-README requests returned HTTP 200 with the exact public-video link present; both release ZIP hashes matched. | Final judge-facing content and release readback; no Devpost, rights, or team claim. |
 
 ## Conditions and residual risks
 
@@ -36,6 +37,6 @@ The final review's current-review-state and traceability-ID conditions are addre
 - Sanitized public receipts are SHA-256-bound derivatives of ignored local raw; an external reviewer cannot compare the private originals.
 - The nested review host blocked independent reruns of helper scripts, Git state, and archive hashes.
 - The six core prompts and the one TestForge prompt are narrow samples.
-- Final repository-head parity/readability, live Devpost feedback/provenance entry, rights, team acceptance, and Devpost submission remain human/external gates.
+- Live Devpost feedback/provenance entry, rights, team acceptance, and Devpost submission remain human/external gates.
 
 Current installation/discovery/cache checks and the public video are green within their named boundaries. Do not convert fresh-host installation, browser coverage, the seven named live scenarios, or local `READY_WITH_RESIDUAL_RISK` into universal specialist-behavior, rights, Devpost entry, or submission claims.

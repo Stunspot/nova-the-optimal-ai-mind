@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "case_id": "PL-20260721-001",
   "status": "ready_with_external_gates",
-  "stage": "Human viewing handoff",
+  "stage": "Devpost submission handoff",
   "channel_constitution": {
     "channel_name": "Collaborative Dynamics Build Week entry",
     "audience_segments": [
@@ -27,7 +27,7 @@
       "2:45–2:55 total duration",
       "322 spoken words",
       "Use only current captured outputs for claimed runtime behavior",
-      "Local render claims require a hash-bound receipt; no upload, portability, Windows 11, or independent-reviewer claim"
+      "Local render claims require a hash-bound receipt and publication claims require a separate public-path receipt; no portability, Windows 11, or independent-reviewer claim"
     ],
     "accessibility_practices": [
       "Captions match final narration",
@@ -150,8 +150,8 @@
       "Captured TestForge REVIEW_PASS_WITH_CONDITIONS evidence review and explicit non-readiness boundary",
       "Accountable-artifact production chain with a separate human authority gate"
     ],
-    "misunderstanding_risk": "Viewers may mistake one captured scenario for universal performance or mistake a build plan for a published final video.",
-    "integrity_ruling": "video complete and published with submission gates remaining: the exact local MP4/SRT passed their recorded checks, stunspot completed the full watch, and the public URL passed bounded availability/playback checks; final repository evidence, rights/terms, and Devpost submission remain outstanding."
+    "misunderstanding_risk": "Viewers may mistake one captured scenario for universal performance or mistake Nova's coordinated production role for independence from human intent and publication authority.",
+    "integrity_ruling": "video complete and published with submission gates remaining: the exact local MP4/SRT passed their recorded checks, stunspot completed the full watch, and the public URL passed bounded availability/playback checks; repository content parity and anonymous readability are observed, while rights/terms and Devpost submission remain outstanding."
   },
   "build_artifacts": {
     "hook": "Meet Mara Vey, Royal Cartographer. Orison was erased from every map; now its bells ring beneath dry fields. Don’t judge Nova from this video—install her.",
@@ -186,5 +186,5 @@
     "disposition": "do_not_promote",
     "rationale": "No post-release audience evidence exists; do not turn this one bounded production case into channel doctrine."
   },
-  "next_action": "Finalize the public repository evidence, enter the verified repository/video/feedback values in Devpost, complete the authorized attestations, and obtain the green Submitted receipt."
+  "next_action": "Enter the verified repository, video, and retained feedback values in Devpost; complete the authorized attestations; submit; and obtain the green Submitted receipt."
 }

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "status": "PUBLIC_CONTENT_COMMIT_VERIFIED",
+  "observed_at": "2026-07-21T21:37:31.7431479Z",
+  "repository": {
+    "url": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+    "branch": "main",
+    "verified_content_commit": "8e0f1f8fcb97dad43d975cc8b394a60af97b1b74",
+    "local_head": "8e0f1f8fcb97dad43d975cc8b394a60af97b1b74",
+    "origin_main": "8e0f1f8fcb97dad43d975cc8b394a60af97b1b74",
+    "parity": true
+  },
+  "anonymous_http": {
+    "repository_page": {
+      "url": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+      "status": 200,
+      "response_bytes": 306773,
+      "youtube_video_id_present": true
+    },
+    "raw_readme": {
+      "url": "https://raw.githubusercontent.com/Stunspot/nova-the-optimal-ai-mind/main/README.md",
+      "status": 200,
+      "response_bytes": 6168,
+      "youtube_video_id_present": true
+    }
+  },
+  "release_archives": [
+    {
+      "path": "release/augment-of-mind-1.0.0.zip",
+      "sha256": "a5b1224cafce295dd6a373a2687952cb95fe029df22e4c88461554928653b593"
+    },
+    {
+      "path": "release/nova-the-optimal-ai-1.0.0.zip",
+      "sha256": "0a27043b541dd51ec5a1900b8642ce9ec1fcf231d945d12243c71ce87b7fd7f0"
+    }
+  ],
+  "evidence_boundary": "This receipt establishes local/origin parity and anonymous HTTP readability for the exact judge-facing content commit, including the public video link, plus release archive hash readback. A follow-up receipt-only evidence commit does not alter the verified product, release archives, README, or video link; its final remote parity is rechecked after push. This receipt does not establish any Devpost action, rights attestation, or team state."
+}

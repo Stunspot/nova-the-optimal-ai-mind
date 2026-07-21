@@ -7,14 +7,14 @@ Everything here requires stunspot's account, legal authority, public identity, o
 - [x] License choice: public repository under MIT, authorized by stunspot on July 21, 2026.
 - [x] Choose the public GitHub repository destination: `Stunspot/nova-the-optimal-ai-mind`.
 - [x] Create the repository publicly and confirm the first published `main` revision matched the local candidate.
-- [ ] After the final documentation and video-link commit, confirm the final head and release ZIP hashes match the local verification report.
-- [ ] Push that final commit and confirm local `HEAD` equals remote `main`.
-- [ ] Verify while signed out that the final repository is public and readable. If it is private for any reason, invite `testing@devpost.com` and `build-week-event@openai.com`, then verify both invitations.
+- [x] After the final documentation and video-link commit, confirm the judge-facing content head and release ZIP hashes match the local verification report.
+- [x] Push that content commit and confirm local `HEAD` equals remote `main`.
+- [x] Verify anonymously that the repository page and raw README are public and readable. If visibility changes to private for any reason, invite `testing@devpost.com` and `build-week-event@openai.com`, then verify both invitations.
 - [ ] Put the resulting repository URL into Devpost and the video description.
 
 Repository URL: `https://github.com/Stunspot/nova-the-optimal-ai-mind`
 
-Current local receipt: [`../verification/repository-publication.json`](../verification/repository-publication.json). It proves public metadata and first-published parity, not the **Repository** section's final-head or signed-out checks.
+Current receipts: [`../verification/repository-publication.json`](../verification/repository-publication.json) records the first publication; [`../verification/repository-final-content-verification.json`](../verification/repository-final-content-verification.json) records judge-facing content parity, anonymous HTTP readability, the public-video link, and release hash readback.
 
 ## Video
 
