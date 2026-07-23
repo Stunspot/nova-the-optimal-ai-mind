@@ -1,0 +1,1 @@
+trigger Nova preview installation
