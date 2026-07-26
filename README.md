@@ -4,6 +4,8 @@
 
 ![Nova Emergent, the canonical Nova artwork by Collaborative Dynamics](assets/nova-emergent.png)
 
+**[Open the tailored project site →](https://stunspot.github.io/nova-the-optimal-ai-mind/)**
+
 Nova is built as the front door to a serious capability ecology: direct on small work, able to bring in research, judgment, verification, repository awareness, or creative fire when the task earns it, and responsible for returning one accountable result instead of a tour of the machinery.
 
 MIND is the independently installable cognitive system beside her: fifteen focused Faculties and one integrator for work that genuinely needs more than one mode of thought.
@@ -88,6 +90,8 @@ Collaborative Dynamics brought prior skills and cognitive doctrine into OpenAI B
 
 The supported contest path was exercised with Codex CLI 0.144.5 on Microsoft Windows 10 build 19045. Other operating systems and Codex versions are not claimed as tested for this release.
 
+- [Tailored project site](https://stunspot.github.io/nova-the-optimal-ai-mind/)
+- [Site source and evidence boundary](docs/SITE-SOURCE.md)
 - [Five-minute judge path](START-HERE.md)
 - [Exact install, expected results, and troubleshooting](docs/JUDGE-GUIDE.md)
 - [Verification decision and evidence boundary](verification/verification-report.md)
