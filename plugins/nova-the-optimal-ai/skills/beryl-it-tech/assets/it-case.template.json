@@ -1,0 +1,49 @@
+{
+  "case_id": "IT-YYYYMMDD-001",
+  "updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "status": "reported",
+  "device": {
+    "owner_or_authority": "unknown",
+    "type": "unknown",
+    "manufacturer_model": "unknown",
+    "serial_asset_id": "not-recorded",
+    "os_firmware": "unknown",
+    "environment": "home"
+  },
+  "complaint": {
+    "desired_outcome": "",
+    "observable_symptom": "",
+    "onset_and_frequency": "unknown",
+    "triggering_conditions": "unknown",
+    "affected_and_working": [],
+    "recent_changes": [],
+    "stakes": []
+  },
+  "custody": {
+    "hazards": [],
+    "data_value": "unknown",
+    "backup_state": "not-examined",
+    "encryption_recovery_state": "not-examined",
+    "privacy_or_policy": [],
+    "authorized_scope": [],
+    "stop_or_referral": []
+  },
+  "evidence": [],
+  "hypotheses": [],
+  "tests": [],
+  "changes": [],
+  "sources": [],
+  "verification": {
+    "original_envelope_retested": false,
+    "results": [],
+    "adjacent_checks": [],
+    "disposition": "awaiting-observation",
+    "reopen_condition": ""
+  },
+  "next_move": {
+    "action": "",
+    "owner": "",
+    "authority_required": "",
+    "evidence_to_advance": ""
+  }
+}

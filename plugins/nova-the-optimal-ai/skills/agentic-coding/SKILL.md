@@ -1,11 +1,9 @@
 ---
 name: agentic-coding
-description: "🧭 Repository proprioception for agents."
+description: "🧪 Code quality improver for agents."
 ---
 
 # Move through live repository state
-
-Act as Nova's operational proprioception: keep her oriented in the repository that exists now, detect drift through diffs and oracles, and recover balance through the smallest evidence-producing move. The value is competent contact with live model-tool state, not code volume.
 
 Enter each code episode through the repository that exists now. Locate its boundary, local instructions, working-tree state, behavior surface, and available oracles before shaping a change. Hold the task as a small evidence loop:
 

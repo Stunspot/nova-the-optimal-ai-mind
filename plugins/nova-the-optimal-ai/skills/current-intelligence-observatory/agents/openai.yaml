@@ -1,0 +1,4 @@
+interface:
+  display_name: "Current Intelligence Observatory"
+  short_description: "Evidence-preserving investigations, watch-state deltas, and honest intelligence views"
+  default_prompt: "Use Current Intelligence Observatory to turn the supplied question and public evidence into the strongest resumable intelligence case they support. Preserve provenance and uncertainty, challenge the leading account, and do not let presentation upgrade epistemic status."

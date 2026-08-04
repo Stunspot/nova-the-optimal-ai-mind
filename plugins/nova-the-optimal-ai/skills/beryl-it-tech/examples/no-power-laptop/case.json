@@ -1,0 +1,15 @@
+{
+  "case_id": "IT-EXAMPLE-NOPOWER",
+  "updated_at": "2026-07-18T18:30:00Z",
+  "status": "test-planned",
+  "device": {"owner_or_authority": "owner", "type": "laptop", "manufacturer_model": "Acer Swift 3 SF314; exact submodel pending", "serial_asset_id": "not-recorded", "os_firmware": "Windows 11; build not examined", "environment": "home"},
+  "complaint": {"desired_outcome": "restore reliable charging without risking photos", "observable_symptom": "no charge LED and no power from either USB-C charger", "onset_and_frequency": "after several intermittent shutdowns over one week", "triggering_conditions": "not yet stable", "affected_and_working": ["no power", "no charge indication"], "recent_changes": ["borrowed charger tried"], "stakes": ["unbacked-up family photos"]},
+  "custody": {"hazards": ["battery condition not visually assessed"], "data_value": "high", "backup_state": "not-examined", "encryption_recovery_state": "not-examined", "privacy_or_policy": [], "authorized_scope": ["external inspection and non-invasive checks"], "stop_or_referral": ["stop for heat, swelling, odor, liquid, or damaged port"]},
+  "evidence": [{"id": "E-001", "state": "reported", "value": "two USB-C chargers tried; neither provenance nor wattage confirmed"}],
+  "hypotheses": [{"id": "H-001", "mechanism": "input power source/cable incompatibility or failure", "state": "hypothesis"}, {"id": "H-002", "mechanism": "damaged USB-C port or charge path", "state": "hypothesis"}, {"id": "H-003", "mechanism": "battery protection/failure or board fault", "state": "hypothesis"}],
+  "tests": [{"id": "T-001", "test": "inspect for swelling/heat/damage, then identify exact submodel and OEM charger requirements before known-good source comparison", "state": "test-planned"}],
+  "changes": [],
+  "sources": [],
+  "verification": {"original_envelope_retested": false, "results": [], "adjacent_checks": [], "disposition": "awaiting-observation", "reopen_condition": "inspection and source identity returned"},
+  "next_move": {"action": "perform powered-off external hazard inspection and transcribe exact model/charger labels", "owner": "device owner", "authority_required": "owner", "evidence_to_advance": "photos or exact descriptions of chassis/battery deformation, ports, model label, charger ratings"}
+}

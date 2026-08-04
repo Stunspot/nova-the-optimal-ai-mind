@@ -1,0 +1,85 @@
+{
+  "format": "gridmason-build-spec/v1",
+  "schema_version": 1,
+  "artifact_id": "first-build",
+  "title": "First Build",
+  "target": {
+    "edition": "java",
+    "game_version": "1.21.4",
+    "environment": "vanilla",
+    "loader_or_server": null
+  },
+  "coordinate_frame": {
+    "x": "east-positive",
+    "y": "up-positive",
+    "z": "south-positive",
+    "anchor": "minimum-corner"
+  },
+  "origin": {
+    "x": 120,
+    "y": 64,
+    "z": -34
+  },
+  "size": {
+    "x": 4,
+    "y": 3,
+    "z": 4
+  },
+  "air_policy": "omit",
+  "palette": [
+    {
+      "key": "OAK",
+      "block_id": "minecraft:oak_planks",
+      "states": {},
+      "swatch": "#B88755"
+    },
+    {
+      "key": "STONE",
+      "block_id": "minecraft:cobblestone",
+      "states": {},
+      "swatch": "#7C7C7C"
+    },
+    {
+      "key": "GLASS",
+      "block_id": "minecraft:glass",
+      "states": {},
+      "swatch": "#A9DCEB"
+    }
+  ],
+  "placements": [
+    {"x": 0, "y": 0, "z": 0, "palette": "STONE"},
+    {"x": 1, "y": 0, "z": 0, "palette": "STONE"},
+    {"x": 2, "y": 0, "z": 0, "palette": "STONE"},
+    {"x": 3, "y": 0, "z": 0, "palette": "STONE"},
+    {"x": 0, "y": 0, "z": 1, "palette": "STONE"},
+    {"x": 3, "y": 0, "z": 1, "palette": "STONE"},
+    {"x": 0, "y": 0, "z": 2, "palette": "STONE"},
+    {"x": 3, "y": 0, "z": 2, "palette": "STONE"},
+    {"x": 0, "y": 0, "z": 3, "palette": "STONE"},
+    {"x": 1, "y": 0, "z": 3, "palette": "STONE"},
+    {"x": 2, "y": 0, "z": 3, "palette": "STONE"},
+    {"x": 3, "y": 0, "z": 3, "palette": "STONE"},
+    {"x": 0, "y": 1, "z": 0, "palette": "OAK"},
+    {"x": 3, "y": 1, "z": 0, "palette": "OAK"},
+    {"x": 0, "y": 1, "z": 3, "palette": "OAK"},
+    {"x": 3, "y": 1, "z": 3, "palette": "OAK"},
+    {"x": 1, "y": 1, "z": 0, "palette": "GLASS"},
+    {"x": 2, "y": 1, "z": 0, "palette": "GLASS"}
+  ],
+  "unsupported": [
+    "entities",
+    "block_entities",
+    "scheduled_ticks",
+    "inventories",
+    "biomes",
+    "fluids",
+    "commands",
+    "native_formats",
+    "world_actions"
+  ],
+  "provenance": {
+    "basis": "player-approved formal placements",
+    "evidence_status": "REPORTED",
+    "notes": "A small static example; no world readback was performed."
+  }
+}

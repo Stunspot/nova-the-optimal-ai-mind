@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "officecraft/source-manifest/v1",
+  "type": "object",
+  "required": ["format", "sources"],
+  "properties": {
+    "format": {"const": "officecraft-source-manifest/v1"},
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_id", "path", "source_type", "custody_status", "content_status"],
+        "properties": {
+          "source_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "source_type": {"enum": ["notes", "document", "presentation", "spreadsheet", "csv", "pdf", "image", "template", "url", "other"]},
+          "custody_status": {"enum": ["user_supplied", "verified", "illustrative", "stale", "conflicted", "missing"]},
+          "content_status": {"enum": ["authoritative", "supporting", "illustrative", "unresolved", "conflicted"]},
+          "sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

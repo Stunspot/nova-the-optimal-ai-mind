@@ -1,7 +1,7 @@
 {
-  "name": "collaborative-dynamics-build-week",
+  "name": "collaborative-dynamics-nova-free",
   "interface": {
-    "displayName": "Nova + MIND by Collaborative Dynamics"
+    "displayName": "Nova + MIND Free by Collaborative Dynamics"
   },
   "plugins": [
     {

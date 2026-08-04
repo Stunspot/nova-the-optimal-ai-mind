@@ -1,0 +1,26 @@
+{
+  "schema": "retrieval-eval-cases-v1",
+  "top_k": 5,
+  "max_context_chars": 3000,
+  "minimum_recall_at_k": 1.0,
+  "minimum_mrr": 0.75,
+  "minimum_citation_validity": 1.0,
+  "minimum_budget_adherence": 1.0,
+  "cases": [
+    {
+      "id": "authorization-invariant",
+      "query": "Which authorization invariant must cross-tenant release preserve?",
+      "relevant_sources": ["requirements.md"]
+    },
+    {
+      "id": "superseded-design",
+      "query": "Which old design note is superseded by the current release record?",
+      "relevant_sources": ["old-design.md", "release-record.md"]
+    },
+    {
+      "id": "prompt-injection-custody",
+      "query": "Which document contains instructions that retrieved evidence must not obey?",
+      "relevant_sources": ["malicious-note.md"]
+    }
+  ]
+}

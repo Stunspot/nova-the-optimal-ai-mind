@@ -1,0 +1,68 @@
+{
+    "format":  "mind-capability-promotion-probes/v1",
+    "observed_at":  "2026-08-04T00:00:00Z",
+    "embedding_model":  "qwen3-embedding:0.6b",
+    "cases":  {
+                  "add_skill":  "Add this skill to Nova so she can use it later.",
+                  "add_program":  "We should add a Minecraft analysis program to let you understand builds.",
+                  "install_plugin":  "Install this plugin and wire its abilities into your toolkit.",
+                  "control":  "Help me write a short grocery list for dinner."
+              },
+    "oracle":  "capability-promotion is present for each capability-addition phrase and absent for the unrelated control",
+    "estates":  [
+                    {
+                        "name":  "MIND standalone 2.1",
+                        "snapshot_id":  "snapshot:mind-2.1:qwen3-0.6b:unqualified-r2",
+                        "snapshot_digest":  "696ea0083db3c6e788db2325a42485071508fc7d71a8b9c54d0546840a9caa12",
+                        "radius":  0.4,
+                        "results":  {
+                                        "add_skill":  [
+                                                          "capability-promotion"
+                                                      ],
+                                        "add_program":  [
+                                                            "capability-promotion"
+                                                        ],
+                                        "install_plugin":  [
+                                                               "capability-promotion"
+                                                           ],
+                                        "control":  [
+                                                        "aesthetic-intelligence",
+                                                        "augment-of-mind",
+                                                        "creative-synthesis",
+                                                        "decision-intelligence",
+                                                        "executive-function",
+                                                        "software-verification"
+                                                    ]
+                                    }
+                    },
+                    {
+                        "name":  "Nova + MIND Free 2.0",
+                        "snapshot_id":  "snapshot:nova-free:qwen3-0.6b:unqualified-r2",
+                        "snapshot_digest":  "58aef51c766acbf00e8f3838984b782f693c53d2deebc5125e7830bc8023e429",
+                        "radius":  0.33,
+                        "results":  {
+                                        "add_skill":  [
+                                                          "capability-promotion"
+                                                      ],
+                                        "add_program":  [
+                                                            "capability-promotion",
+                                                            "gridmason",
+                                                            "measurement-intelligence"
+                                                        ],
+                                        "install_plugin":  [
+                                                               "capability-promotion"
+                                                           ],
+                                        "control":  [
+                                                        "kairos",
+                                                        "lex-foster-language-companion"
+                                                    ]
+                                    }
+                    }
+                ],
+    "summary":  {
+                    "passed":  8,
+                    "total":  8,
+                    "verdict":  "PASS"
+                },
+    "evidence_boundary":  "Observed through isolated MIND Core activation and live local embedding queries on this machine. This proves the four declared semantic predicates for these exact snapshots, not fresh-host hook delivery or general profile qualification."
+}

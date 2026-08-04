@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognition-cost/rate-card-v1.json",
+  "title": "AI Cognition Rate Card",
+  "type": "object",
+  "required": ["format", "id", "currency", "provider", "route", "source", "prices"],
+  "properties": {
+    "format": {"const": "cd-cognition-rate-card/v1"},
+    "id": {"type": "string", "minLength": 1},
+    "currency": {"type": "string", "pattern": "^[A-Z]{3}$"},
+    "provider": {"type": "string", "minLength": 1},
+    "model": {"type": ["string", "null"]},
+    "route": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "object",
+      "required": ["kind", "reference", "checked_at", "confidence"],
+      "properties": {
+        "kind": {"enum": ["user-contract", "invoice", "official-public", "official-api", "partner-marketplace", "aggregator", "scenario-assumption"]},
+        "reference": {"type": "string", "minLength": 1},
+        "checked_at": {"type": "string", "format": "date-time"},
+        "effective_at": {"type": ["string", "null"], "format": "date-time"},
+        "confidence": {"enum": ["high", "medium", "low"]}
+      },
+      "additionalProperties": true
+    },
+    "prices": {
+      "type": "object",
+      "properties": {
+        "input_per_million": {"type": ["number", "null"], "minimum": 0},
+        "cached_input_read_per_million": {"type": ["number", "null"], "minimum": 0},
+        "cache_write_per_million": {"type": ["number", "null"], "minimum": 0},
+        "output_per_million": {"type": ["number", "null"], "minimum": 0},
+        "reasoning_per_million": {"type": ["number", "null"], "minimum": 0},
+        "request_each": {"type": ["number", "null"], "minimum": 0},
+        "tool_each": {"type": ["number", "null"], "minimum": 0},
+        "search_each": {"type": ["number", "null"], "minimum": 0},
+        "image_each": {"type": ["number", "null"], "minimum": 0},
+        "storage_gb_hour": {"type": ["number", "null"], "minimum": 0},
+        "infrastructure_hour": {"type": ["number", "null"], "minimum": 0},
+        "review_hour": {"type": ["number", "null"], "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "surcharge_percent": {"type": "number", "minimum": 0, "default": 0},
+    "fixed_cost": {"type": "number", "minimum": 0, "default": 0},
+    "applied_modifiers": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

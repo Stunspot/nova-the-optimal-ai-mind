@@ -1,0 +1,4 @@
+interface:
+  display_name: "TestForge Verification Reviewer"
+  short_description: "Challenge software verification evidence and release claims"
+  default_prompt: "Use $verification-reviewer to challenge this verification package before its release assessment is trusted."

@@ -1,0 +1,6 @@
+{
+  "status": "static_review_only",
+  "static_checks": ["semantic regions present", "single h1", "ordered heading levels", "data table fallback", "SVG title and description", "native buttons", "status region", "reduced-motion CSS"],
+  "manual_checks_required": ["keyboard operation in target browsers", "screen-reader naming and announcements", "200% and 400% zoom", "contrast measurement", "touch behavior", "rendered reading order"],
+  "claim": "No accessibility conformance claim is made."
+}

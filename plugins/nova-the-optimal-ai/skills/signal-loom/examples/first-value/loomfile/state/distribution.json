@@ -1,0 +1,7 @@
+{
+  "status": "reviewed",
+  "targets": ["LinkedIn carousel"],
+  "decisions": [
+    {"target":"LinkedIn carousel","panels":10,"approach":"Rebuild as a hook-to-caution reveal sequence; preserve illustrative labels and source footer on every measurement panel.","artifact":"output/carousel/linkedin-carousel.md"}
+  ]
+}

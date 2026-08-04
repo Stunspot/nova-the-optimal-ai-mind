@@ -1,0 +1,4 @@
+interface:
+  display_name: "Privacy Redline"
+  short_description: "Build a proportional, evidence-backed personal privacy posture."
+  default_prompt: "Use $privacy-redline to turn this privacy concern into a safe, reversible, verifiable next step."

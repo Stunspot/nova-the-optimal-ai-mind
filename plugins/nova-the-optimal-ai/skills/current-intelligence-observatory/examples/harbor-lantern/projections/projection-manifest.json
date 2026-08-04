@@ -1,0 +1,24 @@
+{
+  "format": "cd-observatory-projection-manifest/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "invariant_errors": [],
+  "files": [
+    {
+      "path": "ledger.json",
+      "sha256": "0105C2AB69AED798FB397B3643F037736600CCCF03C72BAD3408BDBEA25715DC"
+    },
+    {
+      "path": "graph.json",
+      "sha256": "44E3429D1ADB383EF36F92342F5F59B6F808EB1D03485FDE94E6292134969E80"
+    },
+    {
+      "path": "timeline.json",
+      "sha256": "D6290C198D4E15FDC4B8411BFC580D4731B2D04991872B352FAA3B3EAEF6C651"
+    },
+    {
+      "path": "map.json",
+      "sha256": "DF1EA0A830743B01F4B301D17219A5748EF6DEB02B9677129DE1D0B38E030A09"
+    }
+  ],
+  "semantic_truth_assessed": false
+}

@@ -1,0 +1,48 @@
+{
+  "format": "lex-foster-learner-profile/v1",
+  "profile_id": "replace-with-a-user-chosen-id",
+  "updated_at": "2026-07-24T00:00:00Z",
+  "working_language": "English",
+  "target_languages": [
+    {
+      "language": "Spanish",
+      "variety": "unspecified",
+      "script": "Latin"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-1",
+      "situation": "Talk with my partner's family over dinner",
+      "success_evidence": "Sustain a five-turn exchange, ask one follow-up question, and repair one misunderstanding",
+      "status": "active"
+    }
+  ],
+  "preferences": {
+    "interruption": "natural-pauses",
+    "correction_focus": "balanced",
+    "explanation_depth": "compact",
+    "challenge": "supported",
+    "working_language_use": "welcome"
+  },
+  "evidence": [
+    {
+      "id": "evidence-1",
+      "observed_at": "2026-07-24T00:00:00Z",
+      "target_language": "Spanish",
+      "item": "Use a polite request to ask for an item at the table",
+      "state": "supported",
+      "task": "Dinner role-play",
+      "support": "One contrastive cue",
+      "notes": "Meaning was clear; article agreement remains fragile"
+    }
+  ],
+  "retrieval_queue": [
+    {
+      "evidence_id": "evidence-1",
+      "when": "next-session",
+      "variation": "Ask a colleague rather than a family member"
+    }
+  ],
+  "privacy_notes": "Optional user-owned file. Remove personal details that are not needed for instruction."
+}

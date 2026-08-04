@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognition-cost/workload-profile-v1.json",
+  "title": "AI Workload Demand Profile",
+  "type": "object",
+  "required": ["format", "id", "accepted_outcome", "hard_floors", "volume"],
+  "properties": {
+    "format": {"const": "cd-cognition-workload-profile/v1"},
+    "id": {"type": "string", "minLength": 1},
+    "accepted_outcome": {"type": "string", "minLength": 1},
+    "acceptance_oracle": {"type": "string", "minLength": 1},
+    "hard_floors": {"type": "object", "additionalProperties": {"type": ["string", "number", "boolean", "array", "null"]}},
+    "volume": {"type": "object", "additionalProperties": {"type": ["number", "string", "null"]}},
+    "baseline": {"type": "object"},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

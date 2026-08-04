@@ -1,0 +1,160 @@
+{
+  "format": "cd-observatory-graph/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "nodes": [
+    {
+      "id": "CLM-72H-CLOSURE",
+      "kind": "claim",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "false duration within fixture; prior capture retained",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "North Harbor terminal will close for 72 hours"
+    },
+    {
+      "id": "CLM-SIX-HOUR-PAUSE",
+      "kind": "claim",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "fixture offers no live verification",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "Gate B vehicle entry is scheduled to pause for six hours while vessel operations continue"
+    },
+    {
+      "id": "CLM-TRANSFORMER-FIRE",
+      "kind": "claim",
+      "status": "unsupported",
+      "confidence": "high",
+      "uncertainty": "correction disavows the description; notice gives no cause",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA",
+        "CAP-ALPHA-V2",
+        "CAP-GAMMA"
+      ],
+      "label": "A transformer fire caused the reported closure"
+    },
+    {
+      "id": "ENT-MORGAN-VALE-A",
+      "kind": "entitie",
+      "status": "excluded",
+      "confidence": "medium",
+      "uncertainty": "no verified connection to inspection",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "Morgan Vale"
+    },
+    {
+      "id": "ENT-MORGAN-VALE-B",
+      "kind": "entitie",
+      "status": "excluded",
+      "confidence": "medium",
+      "uncertainty": "same-name collision remains; identity omitted",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "Morgan Vale"
+    },
+    {
+      "id": "EV-GATE-B-PAUSE",
+      "kind": "event",
+      "status": "scheduled",
+      "confidence": "medium",
+      "uncertainty": "no live observation",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "Scheduled Gate B vehicle-entry pause"
+    },
+    {
+      "id": "EV-REPORTED-CLOSURE",
+      "kind": "event",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "prior report retained but not treated as event truth",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "Reported terminal closure"
+    },
+    {
+      "id": "HYP-INCIDENT",
+      "kind": "hypothese",
+      "status": "unsupported",
+      "confidence": "high",
+      "uncertainty": "cause remains unknown",
+      "provenance_ids": [
+        "CAP-ALPHA-V2",
+        "CAP-GAMMA"
+      ],
+      "label": "A material incident caused a multi-day shutdown"
+    },
+    {
+      "id": "HYP-ROUTINE",
+      "kind": "hypothese",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "motive and cause unknown",
+      "provenance_ids": [
+        "CAP-BETA",
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "A limited inspection was inflated through repetition"
+    },
+    {
+      "id": "SRC-ALPHA",
+      "kind": "source",
+      "status": "corrected",
+      "confidence": "unrated",
+      "uncertainty": "correction supplied within fixture",
+      "provenance_ids": [],
+      "label": "Harbor Lantern Synthetic Wire"
+    },
+    {
+      "id": "SRC-BETA",
+      "kind": "source",
+      "status": "dependent",
+      "confidence": "low",
+      "uncertainty": "explicitly follows Alpha",
+      "provenance_ids": [],
+      "label": "Coastal Desk Roundup"
+    },
+    {
+      "id": "SRC-GAMMA",
+      "kind": "source",
+      "status": "available",
+      "confidence": "medium",
+      "uncertainty": "fixture authenticity only",
+      "provenance_ids": [],
+      "label": "Public Terminal Notice"
+    }
+  ],
+  "edges": [
+    {
+      "id": "REL-BETA-REPEATS-ALPHA",
+      "kind": "relation",
+      "status": "supported",
+      "confidence": "high",
+      "uncertainty": "does not show coordination",
+      "provenance_ids": [
+        "CAP-BETA"
+      ],
+      "from_id": "SRC-BETA",
+      "to_id": "SRC-ALPHA",
+      "relation_type": "explicit-dependence"
+    }
+  ]
+}

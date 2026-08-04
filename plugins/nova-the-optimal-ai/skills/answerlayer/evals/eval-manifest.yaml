@@ -1,0 +1,9 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.1.0",
+  "episode_mode": "isolated",
+  "files": ["core-transfer-cases.yaml"],
+  "indispensable_dimensions": ["answer_change_gate", "authority_boundary", "conflict_custody"],
+  "synthesis": "Failure of the answer-change gate, authority boundary, or conflict custody defeats the release claim. Other weaknesses require targeted repair and rerun.",
+  "result_authority": "Behavioral evidence for build and regression decisions under the recorded runtime; not proof of factual truth, strategic correctness, currentness, or commercial approval."
+}

@@ -1,29 +1,21 @@
-# Nova and MIND compatibility
+# Nova and MIND invariance
 
-Nova and MIND by Collaborative Dynamics are separate Codex plugins.
+Nova and MIND are separately legible plugins packaged and installed together as one cognitive product. The separation preserves standalone MIND use and clean host boundaries; it does not create a Nova-without-MIND product mode.
 
-## Full experience
+## Normal operation
 
-The intended installation includes both `nova-the-optimal-ai` 1.0.0 and `augment-of-mind` 1.0.0. Nova remains the sole front-counter identity. MIND contributes its integrator and fifteen cognitive Faculties only when the requested work earns them.
+Nova remains the sole front-counter identity. MIND supplies sixteen cognitive Faculties, integration, Cognitive Continuity, and Arm's Reach association. TestForge ships inside the MIND plugin as two foundational attached Augments, not as Faculties.
 
-Before claiming full integration, observe that the companion plugin is installed and that `$augment-of-mind` or the required Faculty is discoverable in the current host context. Marketplace co-location, source files, or documentation are not activation evidence.
+At task entry, the prompt-submit hook should either deliver an explicit-identity field, request contextual association after the live task is understood, or disclose the exact unavailable state. Nova then opens only the capabilities whose transformations materially fit. Association is proximity, not selection, invocation, fitness, authority, or proof.
 
-## Nova without MIND
+Before claiming full runtime integration, distinguish package presence, installation, discovery, hook trust, hook delivery, contextual MCP availability, active snapshot, and actual capability use. A successful static validator proves none of the later states.
 
-Nova remains useful through the capabilities physically bundled with her plugin. She may research, retrieve, steward knowledge, make visual stories, operate in repositories, verify software, remember through explicit Nova memory surfaces, and play or create fiction.
+## Degraded installation
 
-She must not claim:
+If MIND is absent, disabled, untrusted, or unavailable, Nova may continue only with capabilities the host actually exposes. Name the lost guarantee once when it changes the task: no verified automatic reminder delivery, no active MIND association field, no Faculty composition, or no continuity receipt, as applicable. Do not browse package folders and call that association. Do not claim a capability was active merely because its name appears in documentation.
 
-- the MIND integrator is active;
-- the fifteen Faculties are available;
-- Cognitive Continuity is checkpointing mission state;
-- Dreaming or Striving is operating;
-- a separately installed skill was loaded merely because it is named here.
+Repair the exact boundary that failed: install both plugins, begin a new task for discovery, review the exact hook bytes through `/hooks`, activate the included estate, or restore Python/MCP access. Reconcile any provisional work affected by the missing guarantee after normal capability returns.
 
-Mention MIND only when its absence materially changes the requested outcome or the user asks about the product. The honest degraded statement is: "Nova is working with her bundled capabilities; MIND's fifteen-Faculty composition is not active in this session."
+## Standalone MIND
 
-## MIND without Nova
-
-MIND is a standalone cognition plugin. Another agent may install and use the integrator and Faculties without adopting Nova's identity, onboarding, companion tools, or professional context.
-
-No automatic plugin-to-plugin installation or dependency claim is part of this contract. The repository marketplace lists both plugins; installation is explicit.
+MIND remains independently installable for another agent without adopting Nova's identity or companion skill catalog. Its sixteen Faculties, TestForge gate, Core, and reminder machinery retain the same evidence and authority boundaries.

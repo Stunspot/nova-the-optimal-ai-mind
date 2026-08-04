@@ -1,0 +1,598 @@
+{
+  "format": "mind-core-bootstrap/v1",
+  "sources": [
+    {
+      "source_id": "source:mind-associative-cards:2.1.0",
+      "locator": "skills/augment-of-mind/assets/associative-capability-cards.json",
+      "digest": "aef2fb143c024a645553cc994a87272753ae114ffd4f26bdcad7402bf56eeb69",
+      "custody_state": "canonical-constructed",
+      "authority_ref": "MIND 2.1.0 reviewed associative card source",
+      "observed_at": "2026-08-04T00:00:00.000000Z"
+    }
+  ],
+  "products": [
+    {
+      "product_id": "product:mind",
+      "name": "MIND",
+      "owner": "Collaborative Dynamics",
+      "canonical_uri": "https://github.com/Stunspot/augment-of-mind",
+      "created_at": "2026-08-04T00:00:00.000000Z"
+    }
+  ],
+  "providers": [
+    {
+      "provider_id": "provider:ollama-qwen3-embedding-0.6b",
+      "name": "Ollama qwen3-embedding 0.6b",
+      "owner": "local operator",
+      "provider_kind": "local_embedding",
+      "canonical_uri": "https://ollama.com/library/qwen3-embedding:0.6b",
+      "created_at": "2026-08-04T00:00:00.000000Z"
+    }
+  ],
+  "capabilities": [
+    {
+      "capability_id": "capability:aesthetic-intelligence",
+      "handle": "aesthetic-intelligence",
+      "name": "Aesthetic Intelligence",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Shape aesthetic fit, style, atmosphere, symbolism, and coherence.",
+      "negative_space": "Taste is not fact or authority.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "aesthetic intelligence",
+          "display_alias": "Aesthetic Intelligence"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:aesthetic-intelligence:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/aesthetic-intelligence/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:agent-dreaming",
+      "handle": "agent-dreaming",
+      "name": "Agent Dreaming",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Incubate unresolved material through authorized associative rehearsal.",
+      "negative_space": "Simulation grants no authority or factual claim.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "agent dreaming",
+          "display_alias": "Agent Dreaming"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:agent-dreaming:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/agent-dreaming/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:agent-striving",
+      "handle": "agent-striving",
+      "name": "Agent Striving",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Keep an authorized long-horizon objective effective across interruption and failure.",
+      "negative_space": "Persistence never enlarges authority or substitutes activity for progress.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "agent striving",
+          "display_alias": "Agent Striving"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:agent-striving:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/agent-striving/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:agentic-eros",
+      "handle": "agentic-eros",
+      "name": "Agentic Eros",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Understand and participate in adult erotic-relational meaning when desire or intimacy materially matters.",
+      "negative_space": "Do not eroticize ordinary care; visible participation requires invitation and durable intimate memory requires explicit authority.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "agentic eros",
+          "display_alias": "Agentic Eros"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:agentic-eros:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/agentic-eros/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:capability-conductor",
+      "handle": "capability-conductor",
+      "name": "Capability Conductor",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Compose the smallest sufficient capability ensemble with coherent roles and handoffs.",
+      "negative_space": "Never collapse contextual fit into one universal scalar ranking.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "capability conductor",
+          "display_alias": "Capability Conductor"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:capability-conductor:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/capability-conductor/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:cognitive-continuity",
+      "handle": "cognitive-continuity",
+      "name": "Cognitive Continuity",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Recover and preserve consequential state across tasks without storing an undifferentiated transcript.",
+      "negative_space": "Memory is scoped evidence, not infallible truth or permission.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "cognitive continuity",
+          "display_alias": "Cognitive Continuity"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:cognitive-continuity:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/cognitive-continuity/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:creative-synthesis",
+      "handle": "creative-synthesis",
+      "name": "Creative Synthesis",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Combine distant concepts into useful new structures while preserving constraints.",
+      "negative_space": "Novelty remains a hypothesis until tested.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "creative synthesis",
+          "display_alias": "Creative Synthesis"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:creative-synthesis:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/creative-synthesis/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:decision-intelligence",
+      "handle": "decision-intelligence",
+      "name": "Decision Intelligence",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Structure consequential choices around objectives, alternatives, uncertainty, and tradeoffs.",
+      "negative_space": "Recommendations cannot manufacture missing authority or evidence.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "decision intelligence",
+          "display_alias": "Decision Intelligence"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:decision-intelligence:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/decision-intelligence/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:deliberative-intelligence",
+      "handle": "deliberative-intelligence",
+      "name": "Deliberative Intelligence",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Help groups reason, disagree, and decide fairly with workable closure.",
+      "negative_space": "Facilitation cannot erase power or replace accountable authority.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "deliberative intelligence",
+          "display_alias": "Deliberative Intelligence"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:deliberative-intelligence:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/deliberative-intelligence/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:epistemic-regulation",
+      "handle": "epistemic-regulation",
+      "name": "Epistemic Regulation",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Keep claims, sources, uncertainty, and inference at the evidence state they earned.",
+      "negative_space": "Skepticism regulates inquiry; it should not become paralysis.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "epistemic regulation",
+          "display_alias": "Epistemic Regulation"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:epistemic-regulation:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/epistemic-regulation/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:executive-function",
+      "handle": "executive-function",
+      "name": "Executive Function",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Hold mission, scope, priorities, sequence, and completion state together.",
+      "negative_space": "Planning must govern action, not become ceremony or scope inflation.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "executive function",
+          "display_alias": "Executive Function"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:executive-function:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/executive-function/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:instrumental-agency",
+      "handle": "instrumental-agency",
+      "name": "Instrumental Agency",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Translate intent into authorized feasible action with commit, recovery, and verification boundaries.",
+      "negative_space": "Possibility and desire do not themselves grant authority.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "instrumental agency",
+          "display_alias": "Instrumental Agency"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:instrumental-agency:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/instrumental-agency/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:kairos",
+      "handle": "kairos",
+      "name": "Kairos",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Choose the right moment, tone, form, and degree of expression.",
+      "negative_space": "Kairos shapes presentation; it does not own domain judgment or override truth and consent.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "kairos",
+          "display_alias": "Kairos"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:kairos:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/kairos/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:measurement-intelligence",
+      "handle": "measurement-intelligence",
+      "name": "Measurement Intelligence",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Design measures connected to the phenomenon, decision, and incentives.",
+      "negative_space": "A precise number may still be a poor measurement.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "measurement intelligence",
+          "display_alias": "Measurement Intelligence"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:measurement-intelligence:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/measurement-intelligence/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:prosocial-influence",
+      "handle": "prosocial-influence",
+      "name": "Prosocial Influence",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Help worthwhile ideas be understood and adopted through ethical persuasion and trust.",
+      "negative_space": "Influence must not become coercion, deception, or concealed tradeoffs.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "prosocial influence",
+          "display_alias": "Prosocial Influence"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:prosocial-influence:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/prosocial-influence/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:sensemaking",
+      "handle": "sensemaking",
+      "name": "Sensemaking",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Build a workable map of a complex ambiguous situation before choosing what it means.",
+      "negative_space": "Every map is provisional and purpose-shaped.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "sensemaking",
+          "display_alias": "Sensemaking"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:sensemaking:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/sensemaking/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:augment-of-mind",
+      "handle": "augment-of-mind",
+      "name": "Augment of MIND",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Integrate the smallest useful Faculty coalition into one accountable outcome.",
+      "negative_space": "MIND coordinates cognition; it does not impersonate missing occupational expertise or enlarge authority.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "augment of mind",
+          "display_alias": "Augment of MIND"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:augment-of-mind:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/augment-of-mind/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:capability-promotion",
+      "handle": "capability-promotion",
+      "name": "Capability Promotion",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Keep MIND's reminder cards and embeddings aligned when the harness gains, changes, or loses a durable capability.",
+      "negative_space": "Semantic recall carries the integration obligation; it does not install capabilities, manufacture authority, or promote one-off material.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "capability promotion",
+          "display_alias": "Capability Promotion"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:capability-promotion:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/capability-promotion/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:software-verification",
+      "handle": "software-verification",
+      "name": "TestForge Software Verification",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Attack the readiness claim of finished software and release candidates with traceable evidence.",
+      "negative_space": "TestForge judges a submitted candidate; it does not become the workshop that finishes it.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "testforge software verification",
+          "display_alias": "TestForge Software Verification"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:software-verification:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/software-verification/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    },
+    {
+      "capability_id": "capability:verification-reviewer",
+      "handle": "verification-reviewer",
+      "name": "TestForge Verification Reviewer",
+      "product_id": "product:mind",
+      "canonical_source_id": "source:mind-associative-cards:2.1.0",
+      "promise": "Independently challenge verification packages for missed risks, weak oracles, and overclaimed status.",
+      "negative_space": "Review requires an inspectable verification package and remains independent from the operator.",
+      "created_at": "2026-08-04T00:00:00.000000Z",
+      "superseded_by": null,
+      "exposure_policy": "public_safe",
+      "owner_agent_instance_id": null,
+      "aliases": [
+        {
+          "namespace": "global",
+          "alias": "testforge verification reviewer",
+          "display_alias": "TestForge Verification Reviewer"
+        }
+      ],
+      "entrypoints": [
+        {
+          "entrypoint_id": "entrypoint:verification-reviewer:skill",
+          "entrypoint_kind": "skill",
+          "locator": "skills/verification-reviewer/SKILL.md",
+          "operation": "Open only when this capability's transformation materially fits the live work."
+        }
+      ]
+    }
+  ],
+  "distributions": [],
+  "receipts": [],
+  "lifecycle_observations": [],
+  "mounts": []
+}

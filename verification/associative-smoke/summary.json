@@ -1,0 +1,71 @@
+{
+    "status":  "PASS",
+    "shipped_snapshot_digest":  "4d1f87029432cef009665b720c8d68cdfd039bbb947ea574cde0148e9f093aaf",
+    "activation_snapshot_digest":  "4d1f87029432cef009665b720c8d68cdfd039bbb947ea574cde0148e9f093aaf",
+    "minecraft_handles":  [
+                              "gridmason",
+                              "measurement-intelligence"
+                          ],
+    "promptcraft_handles":  [
+                                "aesthetic-intelligence",
+                                "agentic-eros",
+                                "ai-cognition-cost-optimizer",
+                                "answerlayer",
+                                "augment-of-mind",
+                                "capability-conductor",
+                                "creative-synthesis",
+                                "current-intelligence-observatory",
+                                "decision-intelligence",
+                                "deliberative-intelligence",
+                                "kairos",
+                                "ludis-continuum",
+                                "measurement-intelligence",
+                                "nova",
+                                "promptcraft",
+                                "prosocial-influence",
+                                "retrieval-intelligence",
+                                "retrieval-reviewer",
+                                "rupert-giles-knowledge-steward"
+                            ],
+    "testforge_handles":  [
+                              "augment-of-mind",
+                              "capability-conductor",
+                              "decision-intelligence",
+                              "gridmason",
+                              "instrumental-agency",
+                              "it-work-reviewer",
+                              "measurement-intelligence",
+                              "officecraft-reviewer",
+                              "owen-burnett-officecraft",
+                              "sensemaking",
+                              "software-verification",
+                              "verification-reviewer"
+                          ],
+    "checks":  [
+                   {
+                       "name":  "activation-current",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "activation-snapshot",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "minecraft-gridmason",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "promptcraft-promptcraft",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "testforge-operator",
+                       "passed":  true
+                   },
+                   {
+                       "name":  "testforge-reviewer",
+                       "passed":  true
+                   }
+               ],
+    "evidence_boundary":  "Isolated Core activation, local embedding queries, and direct hook process execution only. No fresh Codex host trust, automatic delivery, provider receipt, attention, use, or behavioral qualification claim."
+}

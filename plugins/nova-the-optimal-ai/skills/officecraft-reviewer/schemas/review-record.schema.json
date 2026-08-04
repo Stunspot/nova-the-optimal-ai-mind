@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Officecraft independent review record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["record_version", "review_id", "reviewed_at", "reviewer_role", "review_scope", "evidence_basis", "disposition", "disposition_basis", "material_findings", "conditions", "non_blocking_improvements", "reopen_triggers", "authority_boundary"],
+  "properties": {
+    "record_version": {"const": "officecraft-review/v1"},
+    "review_id": {"type": "string"},
+    "reviewed_at": {"type": "string", "format": "date-time"},
+    "reviewer_role": {"const": "officecraft-reviewer"},
+    "review_scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim", "state_id", "artifacts", "exclusions"],
+      "properties": {
+        "claim": {"type": "string"},
+        "state_id": {"type": "string"},
+        "artifacts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["identifier", "relationship", "reviewed"],
+            "properties": {
+              "identifier": {"type": "string"},
+              "relationship": {"type": "string"},
+              "reviewed": {"type": "boolean"}
+            }
+          }
+        },
+        "exclusions": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "evidence_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["observed", "reported", "unobserved"],
+      "properties": {
+        "observed": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["item", "method", "supports"], "properties": {"item": {"type": "string"}, "method": {"type": "string"}, "supports": {"type": "string"}}}},
+        "reported": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["item", "claim", "underlying_evidence_supplied"], "properties": {"item": {"type": "string"}, "claim": {"type": "string"}, "underlying_evidence_supplied": {"type": "boolean"}}}},
+        "unobserved": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "disposition": {"enum": ["PASS", "PASS_WITH_CONDITIONS", "REVISE", "BLOCKED"]},
+    "disposition_basis": {"type": "string"},
+    "material_findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "category", "status", "finding", "evidence", "consequence", "required_disposition", "closure_condition"],
+        "properties": {
+          "id": {"type": "string"},
+          "category": {"enum": ["implementation_defect", "design_ambiguity", "missing_criterion", "unavailable_evidence", "owner_decision", "improvement"]},
+          "status": {"enum": ["open", "closed", "not_applicable"]},
+          "finding": {"type": "string"},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "consequence": {"type": "string"},
+          "required_disposition": {"enum": ["PASS_WITH_CONDITIONS", "REVISE", "BLOCKED"]},
+          "closure_condition": {"type": "string"}
+        }
+      }
+    },
+    "conditions": {"type": "array", "items": {"type": "string"}},
+    "non_blocking_improvements": {"type": "array", "items": {"type": "string"}},
+    "reopen_triggers": {"type": "array", "items": {"type": "string"}},
+    "authority_boundary": {"type": "string"}
+  }
+}

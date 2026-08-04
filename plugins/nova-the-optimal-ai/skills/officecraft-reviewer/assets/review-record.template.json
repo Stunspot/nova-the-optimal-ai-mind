@@ -1,0 +1,53 @@
+{
+  "record_version": "officecraft-review/v1",
+  "review_id": "OCR-YYYYMMDD-001",
+  "reviewed_at": "1970-01-01T00:00:00Z",
+  "reviewer_role": "officecraft-reviewer",
+  "review_scope": {
+    "claim": "The exact readiness claim and intended next use.",
+    "state_id": "Artifact version, Officefile checkpoint, or supplied revision identifier.",
+    "artifacts": [
+      {
+        "identifier": "output/decision-deck.pptx",
+        "relationship": "editable source",
+        "reviewed": true
+      }
+    ],
+    "exclusions": ["Unsupplied native-app observations."]
+  },
+  "evidence_basis": {
+    "observed": [
+      {
+        "item": "review/render-deck.json",
+        "method": "Supplied render inspection report",
+        "supports": "The report's listed pages and findings."
+      }
+    ],
+    "reported": [
+      {
+        "item": "HANDOFF.md",
+        "claim": "Formula scan completed",
+        "underlying_evidence_supplied": false
+      }
+    ],
+    "unobserved": ["Native workbook calculation state."]
+  },
+  "disposition": "PASS_WITH_CONDITIONS",
+  "disposition_basis": "The named internal review may proceed after the stated closure condition.",
+  "material_findings": [
+    {
+      "id": "F-001",
+      "category": "unavailable_evidence",
+      "status": "open",
+      "finding": "The handoff reports a formula scan without its result.",
+      "evidence": ["HANDOFF.md"],
+      "consequence": "The cross-artifact numbers-agree claim is not reviewable.",
+      "required_disposition": "PASS_WITH_CONDITIONS",
+      "closure_condition": "Attach the formula-scan result or remove the unsupported claim."
+    }
+  ],
+  "conditions": ["Close F-001 before representing the packet as numerically reconciled."],
+  "non_blocking_improvements": [],
+  "reopen_triggers": ["Any change to consequential values, source relationships, or cited review evidence."],
+  "authority_boundary": "This review does not approve delivery, publication, overwrite, or user subject truth."
+}

@@ -1,0 +1,100 @@
+{
+  "format": "cd-observatory-timeline/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "items": [
+    {
+      "id": "CAP-ALPHA-V1",
+      "kind": "capture",
+      "status": "superseded",
+      "confidence": "unrated",
+      "uncertainty": "retained as superseded capture",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "time": "2026-07-18T09:00:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-ALPHA-V1"
+    },
+    {
+      "id": "EV-REPORTED-CLOSURE",
+      "kind": "event",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "prior report retained but not treated as event truth",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "time": "2026-07-18T09:00:00Z",
+      "time_kind": "event_start",
+      "label": "Reported terminal closure"
+    },
+    {
+      "id": "CAP-BETA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "depends on Alpha",
+      "provenance_ids": [
+        "SRC-BETA"
+      ],
+      "time": "2026-07-18T10:15:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-BETA"
+    },
+    {
+      "id": "CAP-GAMMA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "contains adversarial embedded text",
+      "provenance_ids": [
+        "SRC-GAMMA"
+      ],
+      "time": "2026-07-18T14:00:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-GAMMA"
+    },
+    {
+      "id": "CLM-SIX-HOUR-PAUSE",
+      "kind": "claim",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "fixture offers no live verification",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "time": "2026-07-18T14:00:00Z",
+      "time_kind": "first_seen_at",
+      "label": "Gate B vehicle entry is scheduled to pause for six hours while vessel operations continue"
+    },
+    {
+      "id": "CAP-ALPHA-V2",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "correction is fixture-scoped",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "time": "2026-07-18T15:30:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-ALPHA-V2"
+    },
+    {
+      "id": "EV-GATE-B-PAUSE",
+      "kind": "event",
+      "status": "scheduled",
+      "confidence": "medium",
+      "uncertainty": "no live observation",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "time": "2026-07-18T16:00:00Z",
+      "time_kind": "event_start",
+      "label": "Scheduled Gate B vehicle-entry pause"
+    }
+  ]
+}

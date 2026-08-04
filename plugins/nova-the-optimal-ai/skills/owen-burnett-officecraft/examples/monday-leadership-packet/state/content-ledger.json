@@ -1,0 +1,18 @@
+{
+  "format": "officecraft-content-ledger/v1",
+  "items": [
+    {"item_id": "LEDGER-PROJECT", "kind": "name", "value": "Northstar Service Co. 90-Day Customer Onboarding Pilot", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-OWNER", "kind": "name", "value": "Maya Chen, VP Operations", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-START", "kind": "date", "value": "2026-09-08", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-CHECKPOINT", "kind": "date", "value": "2026-10-20", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-BUDGET", "kind": "metric", "value": "$90,000 total pilot budget", "source_ids": ["SRC-LEADERSHIP-NOTES", "SRC-PILOT-BUDGET"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-IMPLEMENTATION", "kind": "metric", "value": "$52,000 implementation", "source_ids": ["SRC-PILOT-BUDGET"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-TRAINING", "kind": "metric", "value": "$24,000 training", "source_ids": ["SRC-PILOT-BUDGET"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-CONTINGENCY", "kind": "metric", "value": "$14,000 contingency", "source_ids": ["SRC-PILOT-BUDGET"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-BASELINE", "kind": "metric", "value": "21-day median onboarding baseline", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-TARGET", "kind": "metric", "value": "14-day median onboarding target", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-CSAT", "kind": "metric", "value": "Customer satisfaction at or above 4.5 out of 5", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-RECOMMENDATION", "kind": "decision", "value": "Approve the fictional pilot budget and authorize implementation.", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"},
+    {"item_id": "LEDGER-RISK", "kind": "risk", "value": "September release-window capacity could constrain implementation.", "source_ids": ["SRC-LEADERSHIP-NOTES"], "source_status": "illustrative"}
+  ]
+}

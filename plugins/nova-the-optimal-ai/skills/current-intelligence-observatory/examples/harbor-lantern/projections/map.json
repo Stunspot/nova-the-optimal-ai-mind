@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "observatory_format": "cd-observatory-map/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "EV-GATE-B-PAUSE",
+      "geometry": null,
+      "properties": {
+        "id": "EV-GATE-B-PAUSE",
+        "kind": "event",
+        "status": "scheduled",
+        "confidence": "medium",
+        "uncertainty": "no live observation",
+        "provenance_ids": [
+          "CAP-GAMMA",
+          "CAP-ALPHA-V2"
+        ],
+        "label": "EV-GATE-B-PAUSE",
+        "region": "North Harbor Gate B",
+        "precision": "named facility area"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "OBS-DIRECT-NOTICE",
+      "geometry": null,
+      "properties": {
+        "id": "OBS-DIRECT-NOTICE",
+        "kind": "observation",
+        "status": "observed",
+        "confidence": "medium",
+        "uncertainty": "no cause stated",
+        "provenance_ids": [
+          "CAP-GAMMA"
+        ],
+        "label": "A terminal notice describes a six-hour Gate B entry pause while vessel operations continue",
+        "region": "North Harbor Gate B",
+        "precision": "named facility area"
+      }
+    }
+  ]
+}

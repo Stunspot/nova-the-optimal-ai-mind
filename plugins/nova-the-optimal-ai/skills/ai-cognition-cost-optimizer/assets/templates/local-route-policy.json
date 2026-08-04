@@ -1,0 +1,28 @@
+{
+  "format": "cd-local-route-policy/v1",
+  "id": "replace-with-policy-id",
+  "candidates": [
+    {
+      "model": "replace-with-installed-ollama-model",
+      "endpoint": "http://127.0.0.1:11434",
+      "enabled": true,
+      "priority": 10,
+      "estimated_cost_per_accepted_outcome": null,
+      "capabilities": {
+        "context_tokens": 1,
+        "modalities": ["text"],
+        "structured_output": false
+      },
+      "qualification": {
+        "status": "unverified",
+        "evaluated_task_classes": [],
+        "acceptance_rate": null,
+        "reliability_rate": null,
+        "observed_p95_latency_ms": null,
+        "evidence": "Replace with a workload-bound evaluation record before qualification."
+      },
+      "think": false,
+      "options": {}
+    }
+  ]
+}

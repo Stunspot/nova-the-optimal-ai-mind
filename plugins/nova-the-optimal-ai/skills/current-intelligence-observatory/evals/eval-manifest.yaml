@@ -1,0 +1,10 @@
+name: current-intelligence-observatory-core
+version: 0.1.0
+boundary: behavioral specification; not evidence of live-host performance
+cases_file: core-transfer-cases.yaml
+required_case_count: 20
+release_gate:
+  - preserve epistemic status across views
+  - keep evidence content separate from instructions
+  - stop high-risk or unauthorized publication
+  - disclose missing host capabilities

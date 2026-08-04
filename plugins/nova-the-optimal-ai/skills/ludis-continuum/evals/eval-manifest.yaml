@@ -1,0 +1,5 @@
+name: ludis-continuum-core
+version: 0.1.0
+case_file: core-cases.yaml
+case_count: 12
+status: definitions_only

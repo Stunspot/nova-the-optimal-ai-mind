@@ -1,0 +1,9 @@
+{
+  "format": "officecraft-artifact-register/v1",
+  "artifacts": [
+    {"artifact_id": "ART-EXEC-BRIEF", "path": "output/northstar-onboarding-pilot-executive-brief.docx", "format": "DOCX", "role": "editable_source", "status": "planned", "editable": true, "canonical_source_id": null, "check_evidence": []},
+    {"artifact_id": "ART-DECISION-DECK", "path": "output/northstar-onboarding-pilot-decision-deck.pptx", "format": "PPTX", "role": "editable_source", "status": "planned", "editable": true, "canonical_source_id": null, "check_evidence": []},
+    {"artifact_id": "ART-BUDGET-WORKBOOK", "path": "output/northstar-onboarding-pilot-budget.xlsx", "format": "XLSX", "role": "editable_source", "status": "planned", "editable": true, "canonical_source_id": null, "check_evidence": []},
+    {"artifact_id": "ART-PDF-HANDOUT", "path": "output/northstar-onboarding-pilot-handout.pdf", "format": "PDF", "role": "derivative", "status": "planned", "editable": false, "canonical_source_id": null, "check_evidence": []}
+  ]
+}

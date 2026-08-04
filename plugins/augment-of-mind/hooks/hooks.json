@@ -1,0 +1,19 @@
+{
+  "description": "Compile MIND's Arm's Reach field before each submitted user prompt.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${PLUGIN_ROOT}/hooks/mind_prompt_submit.py\"",
+            "commandWindows": "cmd.exe /d /s /c py -3 \"%PLUGIN_ROOT%\\hooks\\mind_prompt_submit.py\"",
+            "timeout": 25,
+            "statusMessage": "Bringing relevant capabilities within reach",
+            "additionalContextLimit": 0
+          }
+        ]
+      }
+    ]
+  }
+}

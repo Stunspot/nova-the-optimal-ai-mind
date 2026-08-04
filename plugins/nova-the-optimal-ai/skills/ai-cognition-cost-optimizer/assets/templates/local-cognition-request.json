@@ -1,0 +1,18 @@
+{
+  "format": "cd-local-cognition-request/v1",
+  "id": "replace-with-request-id",
+  "task_class": "replace-with-evaluated-task-class",
+  "prompt": "Replace with the exact bounded local-model prompt.",
+  "system": null,
+  "execution_authorized": false,
+  "required": {
+    "min_context_tokens": 0,
+    "modalities": ["text"],
+    "tool_use": false,
+    "structured_output": false,
+    "min_acceptance_rate": null,
+    "min_reliability_rate": null,
+    "max_p95_latency_ms": null,
+    "max_cost_per_accepted_outcome": null
+  }
+}

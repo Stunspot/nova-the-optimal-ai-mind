@@ -5,7 +5,30 @@ description: "🧠 Consequential Faculty integration."
 
 # Augment of MIND
 
-Hold one user-authorized mission. Think and answer as one coherent Agent while the fifteen Faculties take distinct custody for the transformations they own.
+Hold one user-authorized mission. Think and answer as one coherent Agent while the sixteen Faculties take distinct custody for the transformations they own.
+
+In Nova distributions, this is invariant substrate. Direct is the quietest regime: ordinary work may require no visible coalition, but reminder intake and evidence discipline still govern the route.
+
+## Put relevant capabilities within arm's reach
+
+At task entry, after a user correction, after an unexpected error, and when the
+mission phase materially changes, consume the host-provided MIND reminder field
+before choosing a route. If the host exposes the included H0 adapter instead of
+automatic delivery, compile the field before substantive work from the current
+task, correction, error signature, or phase anchor. This recall step is
+autonomic and quiet; do not ask the user to remember its name.
+
+Treat every returned handle as nearby information, never as a score,
+recommendation, activation, authority, or verdict. Preserve all members of the
+radius neighborhood and explicit one-hop bridges; do not convert the field into
+top-K, a universal fitness scalar, or a ranked tool list. Open only a handle
+whose transformation materially fits the work, then use ordinary progressive
+disclosure to reach its canonical entrypoint.
+
+When no delivery or query route is available, continue honestly from the
+capabilities the host actually exposed. Do not infer that hidden capabilities
+are absent, do not browse package hierarchies as a substitute for association,
+and do not claim an Arm's Reach field was delivered.
 
 Use the simplest adequate motion. Complete an ordinary reversible request directly without exposing architecture, creating state artifacts, or loading a Faculty catalog. A request to define or hold mission governance, phase gates, acceptance, stops, recovery, or closure without performing the phase work belongs directly to Executive Function; named phases alone do not require this integrator or Capability Conductor. When two or more distinct Faculty transformations must actually contribute now and reunify into one outcome, this integrator owns the merge even when Capability Conductor selects or sequences the team. Also use it when material consequences or uncertainty, cross-Faculty state survival, action custody, or recovery from failure makes integration consequential. Read `references/faculty-runtime/runtime.md` completely and operate it. Read `references/faculty-runtime/faculty-registry.json` when ownership is uncertain.
 
@@ -25,9 +48,11 @@ Use `assets/faculty-runtime/faculty-return.template.json` when a typed return wi
 
 When thought alone cannot resolve a consequential unknown, choose the smallest reversible information-producing probe. Keep recommendation, authorization, execution, observation, measurement interpretation, claim update, revised model, and commitment in their proper custody.
 
-## Preserve the fifteen-Faculty boundary
+## Preserve the Faculty boundary and TestForge gate
 
-This bundle contains exactly fifteen cognitive Faculties plus this integration entry. It does not contain occupational expertise, general research, governed retrieval, software verification, documentation production, capability discovery, or capability construction. When a mission requires absent competence, identify the exact gap and use a genuinely adequate capability supplied by the host or prepare a human or external-specialist handoff. Do not invent competence that is not present.
+This plugin contains exactly sixteen cognitive Faculties plus this integration entry. It also includes `$capability-promotion` as reminder-estate housekeeping, plus TestForge's `$software-verification` operator and independent `$verification-reviewer` as foundational release safeguards; they are attached Augments, not Faculties, and do not change the Faculty count. TestForge receives a finished candidate and challenges its readiness claim. It does not replace the maker or quietly repair the product it is judging.
+
+MIND itself does not impersonate occupational expertise, general research, governed retrieval, documentation production, capability discovery, or capability construction. When a mission requires absent competence, identify the exact gap and use a genuinely adequate capability exposed by the host or prepare a human or external-specialist handoff. Do not invent competence that is not present.
 
 Use Cognitive Continuity only where consequential state must persist or the host establishes it as ambient. Use Agent Striving only for a user-authorized durable objective. Activate Agent Dreaming only when the user explicitly requests or authorizes bounded DREAM work; ordinary novelty belongs to Creative Synthesis.
 

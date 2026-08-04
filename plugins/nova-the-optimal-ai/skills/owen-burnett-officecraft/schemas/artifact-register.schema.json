@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "officecraft/artifact-register/v1",
+  "type": "object",
+  "required": ["format", "artifacts"],
+  "properties": {
+    "format": {"const": "officecraft-artifact-register/v1"},
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artifact_id", "path", "format", "role", "status", "editable", "check_evidence"],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "format": {"enum": ["DOCX", "PPTX", "XLSX", "CSV", "PDF", "MD", "OTHER"]},
+          "role": {"enum": ["canonical_source", "editable_source", "derivative", "handoff", "specification"]},
+          "status": {"enum": ["planned", "working", "produced", "inspected", "reviewed", "approved", "blocked"]},
+          "editable": {"type": "boolean"},
+          "canonical_source_id": {"type": ["string", "null"]},
+          "check_evidence": {
+            "type": "array",
+            "description": "Saved inspection reports are digest-bound evidence, but validation also re-inspects the current container directly.",
+            "items": {
+              "type": "object",
+              "required": ["path"],
+              "properties": {"path": {"type": "string", "minLength": 1}},
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+{
+  "format": "officecraft-source-manifest/v1",
+  "sources": [
+    {
+      "source_id": "SRC-LEADERSHIP-NOTES",
+      "path": "sources/notes/monday-leadership-notes.md",
+      "source_type": "notes",
+      "custody_status": "illustrative",
+      "content_status": "illustrative",
+      "sha256": "fe65c70e4bdf0ba6e50dca97c5a35513fbdc6990c161f45d5e935bdcb4e99eb8",
+      "description": "Synthetic fictional meeting notes for the Officefile example."
+    },
+    {
+      "source_id": "SRC-PILOT-BUDGET",
+      "path": "sources/data/pilot-budget.csv",
+      "source_type": "csv",
+      "custody_status": "illustrative",
+      "content_status": "illustrative",
+      "sha256": "c062f55ece1987029d7051af84251dcda2d547e1efa6c51943c5cf83c1da8e0e",
+      "description": "Synthetic budget breakdown supporting the example figures."
+    }
+  ]
+}

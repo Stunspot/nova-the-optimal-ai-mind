@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A synthetic visual-story demonstration about route-level heat, shade, surface, and timing.">
+  <meta property="og:title" content="The forecast is not your route">
+  <meta property="og:description" content="A synthetic Signal Loom demonstration—not municipal evidence or advice.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>The forecast is not your route — synthetic demonstration</title>
+  <style>
+    :root { --ink:#17211c; --paper:#f7f2e7; --heat:#d95d39; --sun:#f2b84b; --leaf:#26735b; --cool:#3b718f; --line:#d7cdbb; --white:#fffdf8; --shadow:0 1rem 3rem rgba(23,33,28,.12); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; line-height:1.55; }
+    a { color:var(--leaf); text-underline-offset:.2em; }
+    .wrap { width:min(72rem, calc(100% - 2rem)); margin-inline:auto; }
+    .eyebrow { margin:0 0 .75rem; font-size:.76rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .disclosure { margin:0; padding:.7rem 1rem; color:var(--white); background:var(--ink); font-size:.86rem; text-align:center; }
+    header { position:relative; overflow:hidden; padding:clamp(4rem,10vw,8rem) 0 5rem; background:linear-gradient(135deg,#f4c45f 0 50%,#e6774f 50% 100%); }
+    header::after { content:""; position:absolute; inset:auto -6rem -10rem auto; width:24rem; aspect-ratio:1; border:2.5rem solid rgba(255,253,248,.28); border-radius:50%; }
+    header .wrap { position:relative; z-index:1; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.02; text-wrap:balance; }
+    h1 { max-width:11ch; margin:0; font-size:clamp(3.3rem,10vw,8.2rem); letter-spacing:-.055em; }
+    .dek { max-width:48rem; margin:1.5rem 0 0; font-size:clamp(1.1rem,2.3vw,1.45rem); }
+    main section { padding:clamp(3.75rem,8vw,7rem) 0; border-bottom:1px solid var(--line); }
+    .section-head { display:grid; gap:1rem; margin-bottom:2.5rem; }
+    h2 { max-width:16ch; margin:0; font-size:clamp(2.25rem,6vw,4.7rem); letter-spacing:-.04em; }
+    h3 { margin:.25rem 0 .6rem; font-size:1.65rem; }
+    .lede { max-width:58ch; margin:0; font-size:1.12rem; }
+    .number { color:var(--heat); font:700 clamp(4rem,14vw,9rem)/.85 Georgia,serif; letter-spacing:-.07em; }
+    .contrast { display:grid; gap:1.5rem; align-items:end; }
+    .chart { display:grid; gap:.9rem; margin-top:2.5rem; }
+    .bar-row { display:grid; grid-template-columns:minmax(7rem,1.2fr) 3fr 3.5rem; gap:.75rem; align-items:center; }
+    .track { height:1rem; overflow:hidden; background:#e3daca; border-radius:999px; }
+    .bar { display:block; width:var(--width); height:100%; background:linear-gradient(90deg,var(--sun),var(--heat)); border-radius:inherit; }
+    .bar-row strong { font-variant-numeric:tabular-nums; }
+    .source-note { margin-top:1.5rem; color:#4c5a52; font-size:.88rem; }
+    .lever-grid { display:grid; gap:1rem; }
+    .lever { padding:1.35rem; background:var(--white); border:1px solid var(--line); border-top:.5rem solid var(--leaf); border-radius:.35rem; box-shadow:var(--shadow); }
+    .lever:nth-child(2) { border-top-color:var(--heat); }
+    .lever:nth-child(3) { border-top-color:var(--cool); }
+    .lever .step { display:inline-grid; place-items:center; width:2rem; aspect-ratio:1; margin-bottom:.8rem; color:var(--white); background:var(--ink); border-radius:50%; font-weight:800; }
+    .system-note { max-width:54rem; margin:2rem auto 0; padding:1rem 1.25rem; border-left:.35rem solid var(--sun); background:#fff5d9; }
+    .compare { display:grid; gap:1.5rem; }
+    .compare > * { min-width:0; }
+    .site-controls { display:flex; flex-wrap:wrap; gap:.65rem; }
+    button { min-height:44px; padding:.65rem .9rem; color:var(--ink); background:transparent; border:1px solid var(--ink); border-radius:999px; font:inherit; font-weight:750; cursor:pointer; }
+    button:hover,button:focus-visible,button[aria-pressed="true"] { color:var(--white); background:var(--ink); outline-offset:3px; }
+    .site-card { display:grid; gap:1rem; padding:clamp(1.3rem,4vw,2rem); color:var(--white); background:var(--ink); border-radius:.6rem; box-shadow:var(--shadow); transition:background-color .18s ease; }
+    .site-card .metrics { display:flex; flex-wrap:wrap; gap:2rem; }
+    .metric span { display:block; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; }
+    .metric strong { display:block; font:700 2.8rem/1 Georgia,serif; }
+    .table-wrap { max-width:100%; overflow-x:auto; }
+    table { width:100%; border-collapse:collapse; background:var(--white); }
+    caption { padding:.8rem; font-weight:750; text-align:left; background:#efe7d8; }
+    th,td { padding:.8rem; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap; }
+    th { font-size:.82rem; letter-spacing:.03em; }
+    .turn { background:var(--ink); color:var(--white); }
+    .turn h2 { color:var(--sun); }
+    .priority { display:grid; gap:1rem; margin-top:2.2rem; }
+    .priority article { padding:1.25rem; border:1px solid #506158; border-radius:.35rem; }
+    .limits ul { max-width:60rem; padding-left:1.2rem; }
+    .limits li + li { margin-top:.75rem; }
+    footer { padding:3rem 0; background:#e9e0d1; }
+    footer p { max-width:68ch; }
+    .skip { position:absolute; left:-9999px; top:.5rem; z-index:5; padding:.7rem; background:var(--white); }
+    .skip:focus { left:.5rem; }
+    @media (min-width:48rem) {
+      .contrast { grid-template-columns:.8fr 1.6fr; }
+      .lever-grid { grid-template-columns:repeat(3,1fr); }
+      .compare { grid-template-columns:.85fr 1.15fr; align-items:start; }
+      .priority { grid-template-columns:repeat(3,1fr); }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; animation:none!important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the visual story</a>
+  <p class="disclosure"><strong>Synthetic demonstration:</strong> Northbridge and every measurement on this page are fictional.</p>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">One city. Four illustrative routes.</p>
+      <h1>The forecast is not your route.</h1>
+      <p class="dek">A citywide number can hide the block-by-block conditions people actually walk through. Start with the route, then ask what shade, surface, and timing can change.</p>
+    </div>
+  </header>
+  <main id="main">
+    <section aria-labelledby="spread-title">
+      <div class="wrap">
+        <div class="contrast">
+          <div>
+            <p class="eyebrow">The illustrative spread</p>
+            <div class="number" aria-label="19 degrees Fahrenheit">19°F</div>
+          </div>
+          <div class="section-head">
+            <h2 id="spread-title">Same week. Very different surfaces.</h2>
+            <p class="lede">The fictional table ranges from 89°F at Canopy Court to 108°F at Library Plaza. It demonstrates a comparison layout; it is not a study, forecast, or measurement of a real place.</p>
+          </div>
+        </div>
+        <div class="chart" role="img" aria-label="Illustrative horizontal bars: Library Plaza 108 degrees, Market Walk 102, River Path 94, and Canopy Court 89.">
+          <div class="bar-row"><span>Library Plaza</span><span class="track"><span class="bar" style="--width:100%"></span></span><strong>108°F</strong></div>
+          <div class="bar-row"><span>Market Walk</span><span class="track"><span class="bar" style="--width:94%"></span></span><strong>102°F</strong></div>
+          <div class="bar-row"><span>River Path</span><span class="track"><span class="bar" style="--width:87%"></span></span><strong>94°F</strong></div>
+          <div class="bar-row"><span>Canopy Court</span><span class="track"><span class="bar" style="--width:82%"></span></span><strong>89°F</strong></div>
+        </div>
+        <p class="source-note">Illustrative source: supplied synthetic CSV, “Illustrative July week.” Bars begin at zero through proportional width; exact values are printed.</p>
+      </div>
+    </section>
+    <section aria-labelledby="system-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The planning system</p>
+          <h2 id="system-title">Three levers, one lived route.</h2>
+          <p class="lede">Treating these as a linked system changes the question from “Which place is hottest?” to “Where could an intervention change the route people actually use?”</p>
+        </div>
+        <div class="lever-grid">
+          <article class="lever"><span class="step">1</span><h3>Shade</h3><p>Where direct solar exposure meets walking and waiting.</p></article>
+          <article class="lever"><span class="step">2</span><h3>Surface</h3><p>What the route stores and re-radiates around the pedestrian.</p></article>
+          <article class="lever"><span class="step">3</span><h3>Timing and access</h3><p>Who encounters the condition, when, and by which available path.</p></article>
+        </div>
+        <p class="system-note"><strong>Important:</strong> this framework is illustrative. The supplied four-row table cannot establish causation or intervention effectiveness.</p>
+      </div>
+    </section>
+    <section aria-labelledby="compare-title">
+      <div class="wrap compare">
+        <div class="section-head">
+          <p class="eyebrow">Good toy: deliberate comparison</p>
+          <h2 id="compare-title">Put two conditions in your head at once.</h2>
+          <p class="lede">Choose a fictional site to inspect its paired temperature and shade values. The complete table follows, so the meaning survives without this interaction.</p>
+          <div class="site-controls" aria-label="Choose an illustrative site">
+            <button type="button" data-site="0" aria-pressed="true">Library Plaza</button>
+            <button type="button" data-site="1" aria-pressed="false">Market Walk</button>
+            <button type="button" data-site="2" aria-pressed="false">River Path</button>
+            <button type="button" data-site="3" aria-pressed="false">Canopy Court</button>
+          </div>
+        </div>
+        <div>
+          <article class="site-card" aria-live="polite">
+            <div><p class="eyebrow">Selected illustrative site</p><h3 id="site-name">Library Plaza</h3></div>
+            <div class="metrics">
+              <div class="metric"><span>Surface temperature</span><strong id="site-temp">108°F</strong></div>
+              <div class="metric"><span>Shade</span><strong id="site-shade">12%</strong></div>
+            </div>
+            <p id="site-note">A comparison point, not a causal finding.</p>
+          </article>
+          <div class="table-wrap">
+            <table>
+              <caption>All supplied illustrative values</caption>
+              <thead><tr><th scope="col">Site</th><th scope="col">Surface temp.</th><th scope="col">Shade</th><th scope="col">Period</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Library Plaza</th><td>108°F</td><td>12%</td><td>Illustrative July week</td></tr>
+                <tr><th scope="row">Market Walk</th><td>102°F</td><td>28%</td><td>Illustrative July week</td></tr>
+                <tr><th scope="row">River Path</th><td>94°F</td><td>61%</td><td>Illustrative July week</td></tr>
+                <tr><th scope="row">Canopy Court</th><td>89°F</td><td>78%</td><td>Illustrative July week</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="turn" aria-labelledby="turn-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The turn</p>
+          <h2 id="turn-title">Do not rank heat. Prioritize exposure.</h2>
+          <p class="lede">Real decisions need more than surface temperature. Combine route conditions with how many people use the route, who lacks alternatives, what an intervention costs, and what residents say matters.</p>
+        </div>
+        <div class="priority">
+          <article><h3>Condition</h3><p>Measured heat, shade, surface, and time—with a real method.</p></article>
+          <article><h3>Exposure</h3><p>Foot traffic, waiting time, route necessity, and available alternatives.</p></article>
+          <article><h3>Authority</h3><p>Resident priorities, professional review, budget, and human approval.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="limits" aria-labelledby="limits-title">
+      <div class="wrap">
+        <div class="section-head"><p class="eyebrow">What this does not prove</p><h2 id="limits-title">A useful demonstration should know where it stops.</h2></div>
+        <ul>
+          <li>It does not describe a real Northbridge or any current city ranking.</li>
+          <li>It does not establish medical risk, causation, equity impact, cost, or intervention effectiveness.</li>
+          <li>It has not received rendered accessibility, cross-browser, security, or municipal professional review.</li>
+          <li>Its unsupported “hottest city” note was excluded from the visible story.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <p><strong>Source custody:</strong> synthetic brief, illustrative four-row CSV, and messy planning notes in this Loomfile. Claim ids C-001 through C-005 preserve status and lineage. Publication remains manual only.</p>
+      <p>Built as the Signal Loom first-value example. Static checks are not a substitute for human review.</p>
+    </div>
+  </footer>
+  <script>
+    (() => {
+      const sites = [
+        {name:"Library Plaza",temp:"108°F",shade:"12%"},
+        {name:"Market Walk",temp:"102°F",shade:"28%"},
+        {name:"River Path",temp:"94°F",shade:"61%"},
+        {name:"Canopy Court",temp:"89°F",shade:"78%"}
+      ];
+      const buttons = Array.from(document.querySelectorAll("[data-site]"));
+      const name = document.querySelector("#site-name");
+      const temp = document.querySelector("#site-temp");
+      const shade = document.querySelector("#site-shade");
+      buttons.forEach((button) => button.addEventListener("click", () => {
+        const site = sites[Number(button.dataset.site)];
+        buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        name.textContent = site.name;
+        temp.textContent = site.temp;
+        shade.textContent = site.shade;
+      }));
+    })();
+  </script>
+</body>
+</html>

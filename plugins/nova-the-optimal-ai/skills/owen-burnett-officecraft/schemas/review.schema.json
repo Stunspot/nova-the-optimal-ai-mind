@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "officecraft/review/v1",
+  "type": "object",
+  "required": ["format", "operator_review", "independent_review"],
+  "properties": {
+    "format": {"const": "officecraft-review/v1"},
+    "operator_review": {"$ref": "#/$defs/review"},
+    "independent_review": {"$ref": "#/$defs/review"},
+    "approval_records": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/approval"}
+    }
+  },
+  "$defs": {
+    "review": {
+      "type": "object",
+      "required": ["status", "findings"],
+      "properties": {
+        "status": {"enum": ["not_run", "PASS", "PASS_WITH_CONDITIONS", "REVISE", "BLOCKED"]},
+        "findings": {"type": "array", "items": {"type": "object"}},
+        "officefile_state": {"enum": ["intake", "shaped", "production", "inspection", "reviewable", "handed_off"]},
+        "reviewed_artifacts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/artifactDigest"}
+        }
+      },
+      "allOf": [{
+        "if": {"properties": {"status": {"enum": ["PASS", "PASS_WITH_CONDITIONS"]}}},
+        "then": {"required": ["officefile_state", "reviewed_artifacts"]}
+      }],
+      "additionalProperties": true
+    },
+    "artifactDigest": {
+      "type": "object",
+      "required": ["artifact_id", "sha256"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": true
+    },
+    "approval": {
+      "type": "object",
+      "required": ["artifact_id", "sha256", "approval_owner", "authority_kind", "approved_use", "approved_at"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "approval_owner": {"type": "string", "minLength": 1},
+        "authority_kind": {"enum": ["user", "accountable_owner"]},
+        "approved_use": {"type": "string", "minLength": 1},
+        "approved_at": {"type": "string", "format": "date-time"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

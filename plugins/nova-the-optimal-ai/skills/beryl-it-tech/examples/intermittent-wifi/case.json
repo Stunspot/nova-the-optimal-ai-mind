@@ -1,0 +1,15 @@
+{
+  "case_id": "IT-EXAMPLE-WIFI",
+  "updated_at": "2026-07-18T18:35:00Z",
+  "status": "supported",
+  "device": {"owner_or_authority": "owner", "type": "desktop", "manufacturer_model": "custom PC with Intel AX210", "serial_asset_id": "not-recorded", "os_firmware": "Windows 11", "environment": "home"},
+  "complaint": {"desired_outcome": "stable video calls", "observable_symptom": "browser and video call lose name-based service for 20–40 seconds while Wi-Fi remains connected", "onset_and_frequency": "two to five times daily", "triggering_conditions": "not load-specific", "affected_and_working": ["name lookups fail", "router and literal LAN IP remain reachable"], "recent_changes": ["router firmware update two weeks before onset"], "stakes": ["remote work calls"]},
+  "custody": {"hazards": [], "data_value": "ordinary", "backup_state": "not-applicable", "encryption_recovery_state": "not-applicable", "privacy_or_policy": [], "authorized_scope": ["read-only network observation"], "stop_or_referral": []},
+  "evidence": [{"id": "E-001", "state": "observed", "value": "Wi-Fi association stays connected"}, {"id": "E-002", "state": "measured", "value": "gateway and LAN IP respond during event; DNS query to configured router resolver times out"}],
+  "hypotheses": [{"id": "H-001", "mechanism": "router DNS forwarder intermittently stalls", "state": "supported"}, {"id": "H-002", "mechanism": "RF/link dropout", "state": "falsified"}, {"id": "H-003", "mechanism": "application-specific failure", "state": "falsified"}],
+  "tests": [{"id": "T-001", "test": "during event compare gateway reachability, literal IP connection, and queries to configured versus independent resolver", "state": "test-run", "result": "local path holds; configured resolver times out"}],
+  "changes": [],
+  "sources": [],
+  "verification": {"original_envelope_retested": false, "results": [], "adjacent_checks": [], "disposition": "awaiting-authority", "reopen_condition": "owner chooses controlled resolver comparison or router rollback after current vendor procedure is obtained"},
+  "next_move": {"action": "prepare a reversible DNS resolver comparison and retrieve router-specific rollback/current firmware guidance", "owner": "owner with Beryl guidance", "authority_required": "owner approval for network configuration change", "evidence_to_advance": "recurrence result under controlled resolver change or router vendor remedy"}
+}

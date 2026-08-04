@@ -1,0 +1,64 @@
+{
+  "format": "cd-observatory-case/v1",
+  "case_id": "OBS-HARBOR-LANTERN-BASELINE",
+  "title": "Harbor Lantern baseline",
+  "phase": "watching",
+  "posture": "watch-ready",
+  "question": "What operational change, if any, is occurring at North Harbor, and what evidence would change the assessment?",
+  "audience_or_decision": "A fictional logistics editor deciding whether to monitor or publish",
+  "time_horizon": "2026-07-18 through 2026-07-21",
+  "scope": "Synthetic public-source fixture; North Harbor operational status only",
+  "collection_authority": "Supplied local fixture files only; no external collection",
+  "harm_model": "Avoid identifying personnel, laundering rumors, overstating location, or treating repetition as independence",
+  "evidence_burden": "Direct notice or two genuinely independent sources for operational facts; human approval for allegations",
+  "stop_condition": "Stop at the first publication decision, material identity ambiguity, or evidence request outside supplied authority",
+  "capabilities": {"live_verification": false, "durable_capture": true, "scripts": true, "projections": true, "scheduling": false, "external_connectors": false},
+  "sources": [
+    {"id": "SRC-ALPHA", "title": "Harbor Lantern Synthetic Wire", "status": "available", "confidence": "unrated", "uncertainty": "single unnamed source"},
+    {"id": "SRC-BETA", "title": "Coastal Desk Roundup", "status": "available", "confidence": "low", "uncertainty": "source dependence not yet resolved"}
+  ],
+  "captures": [
+    {"id": "CAP-ALPHA-V1", "source_ids": ["SRC-ALPHA"], "original_url": "https://fixtures.invalid/harbor/alpha?utm_source=roundup", "canonical_url": "https://fixtures.invalid/harbor/alpha", "published_at": "2026-07-18T09:00:00Z", "retrieved_at": "2026-07-18T12:00:00Z", "artifact_path": "fixtures/source-alpha-v1.txt", "sha256": "9DD3D352C7540787623CF0CCD3AE5F214114904842B1DB6E694A1B7A7D74519A", "preservation_status": "preserved", "status": "preserved", "confidence": "unrated", "uncertainty": "authenticity is fixture-scoped"},
+    {"id": "CAP-BETA", "source_ids": ["SRC-BETA"], "original_url": "https://fixtures.invalid/harbor/beta#latest", "canonical_url": "https://fixtures.invalid/harbor/beta", "published_at": "2026-07-18T10:15:00Z", "retrieved_at": "2026-07-18T12:05:00Z", "artifact_path": "fixtures/source-beta.txt", "sha256": "247A69DE7346275961C514C095FE61D648B371AD5F01E8D0CA68A56DE428015C", "preservation_status": "preserved", "status": "preserved", "confidence": "unrated", "uncertainty": "authenticity is fixture-scoped"}
+  ],
+  "observations": [
+    {"id": "OBS-CLOSURE-LANGUAGE", "summary": "Two captures repeat a 72-hour or three-day shutdown claim", "capture_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "status": "observed", "confidence": "high", "uncertainty": "observation concerns text, not event truth", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "location": {"region": "North Harbor area", "precision": "regional"}}
+  ],
+  "claims": [
+    {"id": "CLM-72H-CLOSURE", "statement": "North Harbor terminal will close for 72 hours", "capture_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "status": "provisional", "confidence": "low", "uncertainty": "second report may depend on first", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "first_seen_at": "2026-07-18T09:00:00Z"},
+    {"id": "CLM-TRANSFORMER-FIRE", "statement": "A transformer fire caused the reported closure", "capture_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "status": "unverified", "confidence": "low", "uncertainty": "no direct notice or fire record", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "high_risk": false}
+  ],
+  "events": [
+    {"id": "EV-REPORTED-CLOSURE", "title": "Reported terminal closure", "event_start": "2026-07-18T09:00:00Z", "status": "provisional", "confidence": "low", "uncertainty": "duration and cause unverified", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "location": {"region": "North Harbor area", "precision": "regional"}}
+  ],
+  "entities": [
+    {"id": "ENT-MORGAN-VALE-A", "name": "Morgan Vale", "status": "candidate", "confidence": "low", "uncertainty": "same-name collision unresolved", "resolution_status": "collision", "material_to_publication": true, "provenance_ids": ["CAP-ALPHA-V1"]},
+    {"id": "ENT-MORGAN-VALE-B", "name": "Morgan Vale", "status": "candidate", "confidence": "low", "uncertainty": "distinct person or copied name unknown", "resolution_status": "collision", "material_to_publication": true, "provenance_ids": ["CAP-ALPHA-V1"]}
+  ],
+  "relations": [
+    {"id": "REL-BETA-REPEATS-ALPHA", "from_id": "SRC-BETA", "to_id": "SRC-ALPHA", "relation_type": "possible-dependence", "status": "provisional", "confidence": "medium", "uncertainty": "dependency not explicit at baseline", "provenance_ids": ["CAP-BETA"]}
+  ],
+  "inferences": [
+    {"id": "INF-AMPLIFICATION", "statement": "The closure claim is being amplified", "status": "provisional", "confidence": "medium", "uncertainty": "amplification does not establish coordination or truth", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"]}
+  ],
+  "hypotheses": [
+    {"id": "HYP-INCIDENT", "title": "A material incident caused a multi-day shutdown", "status": "provisional", "confidence": "low", "uncertainty": "lacks direct evidence", "provenance_ids": ["CAP-ALPHA-V1"]},
+    {"id": "HYP-ROUTINE", "title": "A limited inspection was inflated through repetition", "status": "candidate", "confidence": "low", "uncertainty": "no direct terminal notice yet", "provenance_ids": ["CAP-BETA"]}
+  ],
+  "contradictions": [],
+  "assessments": [
+    {"id": "ASM-BASELINE", "summary": "A multi-day closure is possible but weakly supported; independence and identity are unresolved", "status": "provisional", "confidence": "low", "uncertainty": "no direct notice", "provenance_ids": ["CLM-72H-CLOSURE", "REL-BETA-REPEATS-ALPHA"]}
+  ],
+  "recommendations": [{"id": "REC-WATCH", "summary": "Watch for a direct terminal notice or correction", "status": "proposed", "confidence": "medium", "uncertainty": "schedule unavailable", "provenance_ids": ["ASM-BASELINE"]}],
+  "decisions": [],
+  "outcomes": [],
+  "watch": {"baseline_case_id": "OBS-HARBOR-LANTERN-BASELINE", "cadence": "manual fixture update", "triggers": ["direct notice", "correction", "independent observation"], "owner": "fictional logistics editor"},
+  "artifacts": [{"id": "ART-BASELINE", "artifact_type": "baseline-case", "path": "case-baseline.json", "status": "preserved", "confidence": "unrated", "uncertainty": "synthetic proof only"}],
+  "checks": [
+    {"id": "CHK-WATCH-SPEC", "check_type": "watch-specification", "status": "passed", "confidence": "unrated", "uncertainty": "manual cadence"},
+    {"id": "CHK-BASELINE", "check_type": "baseline-integrity", "status": "passed", "confidence": "unrated", "uncertainty": "structural check only"}
+  ],
+  "blockers": [{"id": "BLK-IDENTITY", "severity": "material", "status": "open", "summary": "Same-name collision blocks identity reporting", "confidence": "high", "uncertainty": "identity unresolved"}],
+  "history": [{"id": "HIST-BASELINE", "summary": "Baseline frozen for manual watch", "status": "recorded", "confidence": "unrated", "uncertainty": "synthetic proof"}],
+  "next_action": {"action": "Check for direct notice or correction", "owner": "fictional logistics editor", "advance_when": "A new capture changes or strengthens the assessment"}
+}

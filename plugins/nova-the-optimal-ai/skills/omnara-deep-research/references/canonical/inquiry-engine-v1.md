@@ -1,15 +1,42 @@
-# Inquiry directive bearings
+# Inquiry Engine v1 (name file "Research Prompt Authoring Procedure Instructions" for RAG pickup)
+```
+# Goal
+Author a comprehensive research directive prompt for a deep-research model that synthesizes live web sources into long-form analysis. The engine reads, infers, and writes—it executes no code or visuals. Your job is to author the prompt that tells it how to think, what to prioritize, and how to build coherence from conflicting evidence.
 
-A research directive is an evidence architecture for a decision, not a request for impressive length. Give the research model a stable inquiry, a bounded world to inspect, a clear evidence burden, and a report shape that can preserve disagreement without dissolving into source inventory.
+## Method
+Instruct the model to pursue *appropriate sources for the subject’s ecosystem*—academic when rigor is core, practitioner when utility drives insight, subcultural when early signals matter, and experiential when human behavior defines truth. Credibility is contextual: prefer signal strength, traceable reasoning, and corroboration over institutional prestige. Encourage lateral movement across media types—technical, journalistic, conversational, archival—while judging each source by transparency, authorship, and recency.
 
-Begin with the user's question and why the answer matters. Preserve supplied wording when it carries scope or intent. Name the audience, decision use, consequence of error, time window, geography or population, exclusions, available material, access limits, and the observation that would count as success. Ask for clarification only where an ambiguity changes that architecture.
+### Temporal Awareness  
+Tell the model to stay **time-aware**: detect when evidence or discourse is outdated, when statistics have been superseded, and when narratives have drifted. Weigh recency against durability—recent may be reactive; older may hold established reliability. Highlight any “time skews” where conclusions depend on period-specific assumptions or data windows.
 
-Shape the field before demanding conclusions. Direct the research toward the subject's real source ecology: primary records for documented acts, research for findings inside its methods and samples, official material for declared behavior, accountable reporting for joined events and interviews, and practitioner or community evidence for operational texture and early signals. Require lateral vocabulary, citation trails, source diversity, and disconfirming searches. Many URLs from one ancestral claim remain one evidential lineage.
+### Conflict Resolution  
+When credible sources disagree, the model must identify why. Compare methods, sample populations, incentives, or contextual frames. Note whether contradictions reflect evolution (field learning), interpretation (different metrics), or vested interest. If conflicts remain unresolved, summarize positions neutrally and state which side carries stronger evidential support or logical coherence. Never average away disagreement—**map it.** When neither side’s evidence dominates, propose what new data would resolve the impasse.
 
-Make time and conflict structural. Require dates, versions, definitions, methods, samples, jurisdictions, incentives, and missingness wherever they change interpretation. When credible sources disagree, map the competing claims and the reason for divergence. Do not average them into consensus. State what obtainable evidence would separate the live explanations.
+### Confidence Transparency  
+Encourage explicit, human-readable certainty markers for key findings. Use light-touch qualifiers—*likely*, *probable*, *plausible*, *uncertain*—to communicate epistemic confidence without statistical pretense. Confidence tagging should follow reasoning visibility: disclose what the claim rests on and what would change the rating.
 
-Keep claim states legible without turning the prose into bureaucracy. Distinguish source assertion, direct observation, deterministic result, inference, synthesis, and speculation. Let confidence follow visible support and name what would change it. Require every consequential claim to carry a source marker that resolves to an inspectable record; relevance is not entailment.
+Define the report’s intellectual posture: skeptical, adaptive, synthetic, and transparent. Require clear demarcation between observed fact, reasoned inference, and informed speculation. Track incentive structures, missing data, and rhetorical framing that may bias perception.
 
-Fit the report to the actual work. Orient the reader, define the important concepts and mechanisms, develop the strongest evidence, expose tensions and limits, and end with implications proportional to support. Prefer authored reasoning over scraped-summary cadence. The directive may request sections, tables, or length when the decision genuinely needs them; it should not impose ornamental quotas.
+### Structural Guidance  
+• Open with a concise domain orientation—why this question matters and where it sits in current discourse.  
+• Map key concepts, actors, and tensions shaping the field.  
+• Synthesize dominant schools of thought and novel or contrarian strands.  
+• Integrate temporal and conflict insights into analysis.  
+• Surface exploitable loopholes, fragile assumptions, and emergent opportunities.  
+• Conclude with applied implications, risks, and promising directions for further inquiry.
 
-Return the research directive in the form the current task needs. Do not wrap it in a code fence, prescribe a platform, or add tool actions unless the user or host contract requires that form.
+### Stylistic Adaptation  
+Specify tone and style that fit purpose and audience: analytical, reflective, creative, advisory, investigative, or narrative. Match cadence and diction to context while maintaining clarity and authority. Favor confident, narrative reasoning over list-based summaries unless brevity improves comprehension. Each report should read as authored reasoning, not scraped aggregation.
+
+Demand rigor without rigidity: explicit sourcing, context for quotes, confidence markers, and visible reasoning steps. The output should be a complete, self-contained knowledge document—balanced, time-aware, and ready for human decision or integration.
+
+### Output
+After deeply considering your authoring task and the optimal structure for the prompt, ensuring it includes every detail a subject-matter expert would expect, using proper designer-grade language of fine-distinction:
+
+Compose the prompt and return it with nice H1 title above the containing codefence.
+
+---
+
+**Subject to Research?**:
+**Any Special Notes Or Considerations?**:
+```

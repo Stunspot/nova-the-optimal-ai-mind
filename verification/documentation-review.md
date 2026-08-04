@@ -1,43 +1,26 @@
-# Full-documentation review
+# Documentation review — Nova + MIND Free 2.0.0
 
-This is the evidence record for the complete Hesperos documentation pass. It covers more than the onboarding journey. For the installation path, begin with [`../START-HERE.md`](../START-HERE.md); for the ordered judge path, use [`../docs/JUDGE-GUIDE.md`](../docs/JUDGE-GUIDE.md).
+**Status:** `REVIEW_PASS_WITH_CONDITIONS` for the bounded structural customer journey.
 
-## Decision
+## Scope reviewed
 
-**PASS** for the current repository documentation within the stated boundary.
+README, Start Here, Codex and Claude installation, capability selection and reminders, host matrix, privacy and trust, troubleshooting, upgrade, verification, maintenance, support, security, and release notes.
 
-The public story, first-use path, exact install and recovery instructions, submission copy, demo materials, release notes, design references, evidence hubs, plugin selection surfaces, runtime entrypoints, and Nova-facing prompt surfaces are coherent with the shipped 1.0.0 product and its observed evidence.
+## Evidence inspected
 
-## Corpus reviewed
+- Every customer-facing Markdown file passed the installed Hesperos structural Markdown lint; see `documentation-lint.txt`.
+- The package verifier read all local documentation links successfully in its source pass.
+- The install paths name prerequisites, expected outcomes, safe stopping points, recovery, and what remains unobserved.
+- Capability-reminder copy distinguishes package presence, installation, discovery, hook trust, prepared context, provider receipt, model use, and qualification.
+- The final artwork decoded as a 1536×1024 RGB PNG with SHA-256 `0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61`; see `artwork-inspection.json`.
 
-| Surface | Coverage | Result |
-|---|---:|---|
-| Repository Markdown corpus | 270 files inventoried | Complete structural inventory |
-| Principal human/judge documents | 20 landing, how-to, reference, submission, demo, design, release, and evidence documents | Purpose, sequence, navigation, recovery, claims, and terminology reviewed |
-| Plugin entrypoints | 28 `SKILL.md` files | Present and product-aligned |
-| Plugin picker cards | 28 agent cards | Present, concise, and purpose-led |
-| Nova model-facing prompt modules | 158 physical modules / 127 review units | Separate prompt-surface audit passed with no high- or medium-severity remainder |
-| Local Markdown links | 58 links | No broken local targets |
+## Conditions and untested boundaries
 
-The 220 supporting Markdown files outside the principal document set are runtime knowledge and reference material, not ordinary public onboarding copy. They were inventoried and checked through the package, prompt-surface, reconciliation, and link gates instead of being cosmetically rewritten as if they served one reader journey.
+1. The installed Hesperos package does not contain its prescribed `scripts/hesperos_authorship.py`. Formal Hesperos authorship custody is therefore unavailable; this review does not substitute for that receipt.
+2. The Codex visual inspection helper could not launch. Image decoding and metadata were checked, but visual composition was not human-inspected in this environment.
+3. This is a same-context review. A fresh-context documentation-accessibility review has not been run.
+4. No clean-host install, hook-trust, fresh-task discovery, Claude upload, or assistive-technology walkthrough was observed. The documentation names these limits instead of claiming them.
 
-## Hesperos review dimensions
+## Review conclusion
 
-- **Find and start:** the README supplies the promise and 90-second path; `START-HERE.md` supplies a recoverable five-minute first success; the judge guide supplies the exact reference and troubleshooting path.
-- **Understand the product:** Nova and MIND remain distinct installable plugins; the 12 Nova handles, 16 MIND handles, optional MIND relationship, Agentic Coding role, Ludis role, TestForge boundary, and 1.0.0 versions agree across public surfaces.
-- **Recover safely:** installation recovery names only the contest marketplace and selectors, avoids destructive broad cleanup, and gives an explicit fresh-task re-entry condition.
-- **Evaluate the claims:** the judge guide leads to the verification decision, traceability, risks, acceptance boundary, source custody, and this documentation review in a deliberate order.
-- **Complete the contest submission:** Devpost copy, Build Week contribution, demo script, shot list, and human-action checklist agree on Codex, GPT-5.6, repository, voiceover, video, team, rights, feedback, and submission gates.
-- **Access the tour:** the tour has a `main` landmark, a named control group, visible keyboard focus, touch coverage, reduced-motion handling, and a meaningful no-JavaScript fallback with no inert visible controls.
-
-## Automated and live evidence
-
-- `tools/verify_entry.py` resolves local Markdown links and requires this review record.
-- `tools/audit_nova_prompt_surfaces.py --check` passes 158 physical prompt modules and 127 review units.
-- `tools/reconcile_nova_skills.py --check` passes all 12 Nova skills with no unexplained drift.
-- `verification/tour-browser-command.json` records a passing browser run across five layouts, keyboard, touch, reduced motion, and 11 no-JavaScript assertions.
-- Release extraction, clean-host installation, and current-host cache equality separately check that documented product identity matches the shipped payload.
-
-## Boundary
-
-This is a complete product-documentation and bounded accessibility review, not a formal WCAG conformance claim, assistive-technology certification, universal comprehension study, or proof of external contest actions. Direct Devpost entry of the retained feedback identifier, rights attestation, team acceptance, and Devpost submission retain their separate human or external gates. The judge-facing content commit has a local/origin parity and anonymous-readability receipt; the exact final video has a separate hash-bound render receipt, public YouTube receipt, and stunspot complete-watch confirmation.
+The documentation supplies a coherent, recoverable customer path for the supported structural package and accurately limits its live-host claims. The listed conditions remain before any broad customer-readiness or accessibility-conformance claim.

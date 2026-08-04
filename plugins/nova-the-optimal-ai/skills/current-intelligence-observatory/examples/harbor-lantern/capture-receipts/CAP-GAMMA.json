@@ -1,0 +1,14 @@
+{
+  "id": "CAP-GAMMA",
+  "source_ids": [
+    "SRC-GAMMA"
+  ],
+  "original_url": "https://fixtures.invalid/harbor/gamma?fbclid=discard",
+  "canonical_url": "https://fixtures.invalid/harbor/gamma",
+  "published_at": "2026-07-18T14:00:00Z",
+  "retrieved_at": "2026-07-18T16:00:00Z",
+  "artifact_path": "source-gamma.txt",
+  "sha256": "FF5FD0737F211FB7A25D5161F8BF0F9808E4C8B3367A7F97C09BB5C4BEEC45A9",
+  "preservation_status": "preserved",
+  "failure": null
+}

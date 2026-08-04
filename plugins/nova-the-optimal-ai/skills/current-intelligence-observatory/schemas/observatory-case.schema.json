@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborativedynamics.example/schemas/cd-observatory-case-v1.json",
+  "title": "Current Intelligence Observatory case v1",
+  "type": "object",
+  "required": ["format", "case_id", "title", "phase", "posture", "question", "audience_or_decision", "time_horizon", "scope", "collection_authority", "harm_model", "evidence_burden", "stop_condition", "sources", "captures", "observations", "claims", "events", "entities", "relations", "inferences", "hypotheses", "contradictions", "assessments", "recommendations", "decisions", "outcomes", "artifacts", "checks", "blockers", "history", "next_action"],
+  "properties": {
+    "format": {"const": "cd-observatory-case/v1"},
+    "phase": {"enum": ["orient", "scoped", "collecting", "preserved", "normalized", "related", "challenged", "watching", "presenting", "review", "handoff"]},
+    "posture": {"enum": ["provisional", "blocked", "reviewable", "watch-ready", "publication-ready"]}
+  },
+  "additionalProperties": true
+}
