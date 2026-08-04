@@ -2,9 +2,9 @@
 
 MIND Core `0.2.0` is a persona-neutral local Python runtime for capability
 metadata, lifecycle evidence, associative capability cards, explicit H0 queries,
-and contextual association through the bundled MCP surface. It is included in
-the release archive as a wheel. The Codex plugin does not install Core, create
-its database, or download its embedding model.
+and contextual association through its direct Python library and CLI. It is
+included in the release archive as a wheel. The Codex plugin does not install
+Core, create its database, or download its embedding model.
 
 ## What Core can do
 
@@ -16,13 +16,16 @@ its database, or download its embedding model.
 - compile exact-radius reminder fields, with exhaustive lexical matching for
   caller-supplied hints and typed one-hop relations;
 - return canonical and compact representations with identical membership;
-- serve a framed, query-only stdio protocol.
+- serve a framed, query-only stdio protocol for direct local integrations.
 
 Core does not silently crawl your computer, infer capability meaning from
 filenames, retain raw task text, select a tool, activate a Faculty, or download
 an embedding model. Public MIND includes safe scanners and deterministic
 compilers for explicitly supplied sources, but population still requires
 content review and an administrator-controlled generation build.
+
+MIND does not register or require an MCP server. Skills remain ordinary
+filesystem capabilities discovered and loaded by the host.
 
 The public package contains the reminder mechanisms and sixteen-Faculty
 baseline. It does not include Collaborative Dynamics' private local capability collection. See
@@ -52,10 +55,10 @@ a package index.
 
 ## Initialize and inspect a database
 
-Choose a path you own. The shipped Codex MCP server and prompt-submit hook both
-look for `~/.codex/data/stores/mind_core.sqlite` unless their environment sets
-`MIND_CORE_DATABASE`. The following commands initialize that shared default so the
-plugin surfaces and command-line tools use the same database.
+Choose a path you own. The prompt-submit hook and bundled local query tools look
+for `~/.codex/data/stores/mind_core.sqlite` unless their environment sets
+`MIND_CORE_DATABASE`. The following commands initialize that shared default so
+the plugin hook and command-line tools use the same database.
 
 On Windows PowerShell:
 
@@ -74,9 +77,9 @@ mkdir -p "$(dirname "$MIND_DATABASE")"
 .venv/bin/python -m mind_core init --database "$MIND_DATABASE"
 ```
 
-If you deliberately use another path, configure `MIND_CORE_DATABASE` for both
-the MCP server and hook before launching Codex. A database created only at
-`./mind-data/` is valid for direct CLI use but is not the plugin default.
+If you deliberately use another path, configure `MIND_CORE_DATABASE` for the
+hook and any local query process before launching Codex. A database created only
+at `./mind-data/` is valid for direct CLI use but is not the plugin default.
 
 Expected result: one JSON object containing, among other fields,
 `"runtime_version":"0.2.0"`, `"schema_version":2`,

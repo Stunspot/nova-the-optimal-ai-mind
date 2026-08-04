@@ -50,7 +50,6 @@ ASSET_NAMES = (
 )
 RUNTIME_SCRIPT_NAMES = (
     "build_associative_assets.py",
-    "mind_mcp_server.py",
     "query_associative_field.py",
 )
 SKILL_ALLOWED_ROOT_FILES = {"SKILL.md", "manifest.json", "activation-examples.md", "output-contract.md", "adversarial-checks.md", "review-rubric.md"}
@@ -72,6 +71,11 @@ TEXT_SUFFIXES = {
     ".css", ".html", ".json", ".md", ".py", ".toml", ".txt", ".yaml", ".yml"
 }
 FORBIDDEN_TOP_LEVEL = {".git", ".github", "artifacts", "release-v0.2.0", "tests"}
+FORBIDDEN_MCP_PATHS = {
+    ".mcp.json",
+    "scripts/mind_mcp_server.py",
+    "mind_core/mcp_server.py",
+}
 PRIVATE_PATH = re.compile(
     rb"(?:[A-Za-z]:\\Users\\[^\\\s\[\](){}|]+\\|"
     rb"[A-Za-z]:\\(?:Github|Indranet|Projects)\\|"
@@ -112,8 +116,9 @@ def safe_relative(value: str) -> PurePosixPath:
 def validate_payload_path(value: str) -> None:
     path = safe_relative(value)
     parts = path.parts
+    if value in FORBIDDEN_MCP_PATHS:
+        raise ReleaseError(f"MCP payload is forbidden: {value}")
     if value in ROOT_DOCUMENTS or value in {
-        ".mcp.json",
         ".codex-plugin/plugin.json",
         ".agents/plugins/marketplace.json",
         "COMPONENT-SHA256SUMS.txt",
@@ -339,6 +344,10 @@ def verify(root: Path) -> dict[str, object]:
     if manifest.get("file_count") != len(actual_records) or manifest.get("tree_sha256") != observed_tree:
         raise ReleaseError("manifest count or tree digest does not match release bytes")
 
+    for forbidden in FORBIDDEN_MCP_PATHS:
+        if forbidden in actual_by_path:
+            raise ReleaseError(f"MCP payload is forbidden: {forbidden}")
+
     for relative in sorted(actual_by_path):
         path = root / Path(relative)
         if SECRET_NAME.search(path.name):
@@ -351,6 +360,8 @@ def verify(root: Path) -> dict[str, object]:
     plugin = load_json(root / ".codex-plugin" / "plugin.json")
     if plugin.get("name") != PRODUCT or plugin.get("version") != PLUGIN_VERSION:
         raise ReleaseError("plugin manifest identity does not match the release")
+    if "mcpServers" in plugin:
+        raise ReleaseError("plugin manifest must not register MCP servers")
     skills = sorted((root / "skills").glob("*/SKILL.md"))
     if len(skills) != 20:
         raise ReleaseError(f"expected 20 skill entrypoints, found {len(skills)}")
@@ -369,16 +380,8 @@ def verify(root: Path) -> dict[str, object]:
         if relative not in actual_by_path:
             raise ReleaseError(f"plugin screenshot is missing: {relative}")
 
-    mcp = load_json(root / ".mcp.json")
-    servers = mcp.get("mcpServers")
-    if not isinstance(servers, dict) or "mind-associative-recall" not in servers:
-        raise ReleaseError("MIND contextual MCP server is missing")
     if not (root / "hooks" / "hooks.json").is_file() or not (root / "hooks" / "mind_prompt_submit.py").is_file():
         raise ReleaseError("MIND prompt-submit hook payload is missing")
-    if not (root / "scripts" / "mind_mcp_server.py").is_file():
-        raise ReleaseError("MIND MCP launcher is missing")
-    if not (root / "mind_core" / "mcp_server.py").is_file():
-        raise ReleaseError("MIND Core runtime payload is missing")
 
     marketplace = load_json(root / ".agents" / "plugins" / "marketplace.json")
     verify_marketplace(marketplace)

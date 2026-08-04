@@ -7,16 +7,20 @@ and the bundled MIND Core `0.2.x` component.
 
 ## Security boundary
 
-The plugin bundles local instruction files, a generic contextual-association MCP
-server, and a prompt-submit hook. It asks for no credential. Those surfaces can
-read the configured local Core database and call the configured local Ollama
-endpoint; they cannot enlarge the sandbox, approvals, account access, or tool
-permissions supplied by the active host.
+The plugin bundles local instruction files, a local Core library, and a
+prompt-submit hook. It asks for no credential. Those surfaces can read the
+configured local Core database and call the configured local Ollama endpoint;
+they cannot enlarge the sandbox, approvals, account access, or tool permissions
+supplied by the active host.
 
-The optional Core is local and query-only over its stdio service. It validates
-strict JSON, frame size, schema versions, scope bindings, immutable revisions,
-and SQLite migration checksums. Private reminder queries use expiring opaque
-session capabilities whose hashes—not raw values—are stored.
+The optional Core is local and query-only through its direct Python API and CLI.
+It validates strict JSON, frame size, schema versions, scope bindings, immutable
+revisions, and SQLite migration checksums. Private reminder queries use expiring
+opaque session capabilities whose hashes—not raw values—are stored.
+
+MIND does not register or require an MCP server. Skills are loaded through the
+host's ordinary filesystem skill mechanism and are never exposed as MCP
+resources.
 
 These controls do not make arbitrary host input trustworthy. Do not place
 secrets in manifests, capability cards, lexical hints, test fixtures, or public

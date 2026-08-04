@@ -135,8 +135,8 @@ def verify(include_release: bool) -> dict:
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
     if nova_manifest.get("version") != "2.0.0":
         errors.append("Nova plugin version must be 2.0.0")
-    if mind_manifest.get("version") != "2.1.0":
-        errors.append("MIND plugin version must be 2.1.0")
+    if mind_manifest.get("version") != "2.1.1":
+        errors.append("MIND plugin version must be 2.1.1")
 
     nova_dirs = {path.name for path in (NOVA / "skills").iterdir() if path.is_dir()}
     mind_dirs = {path.name for path in (MIND / "skills").iterdir() if path.is_dir()}

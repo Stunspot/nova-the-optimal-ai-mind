@@ -13,10 +13,10 @@ In Nova distributions, this is invariant substrate. Direct is the quietest regim
 
 At task entry, after a user correction, after an unexpected error, and when the
 mission phase materially changes, consume the host-provided MIND reminder field
-before choosing a route. If the host exposes the included H0 adapter instead of
-automatic delivery, compile the field before substantive work from the current
-task, correction, error signature, or phase anchor. This recall step is
-autonomic and quiet; do not ask the user to remember its name.
+before choosing a route. If the host exposes the included local H0 query adapter
+instead of automatic delivery, compile the field before substantive work from
+the current task, correction, error signature, or phase anchor. This recall step
+is autonomic and quiet; do not ask the user to remember its name.
 
 Treat every returned handle as nearby information, never as a score,
 recommendation, activation, authority, or verdict. Preserve all members of the

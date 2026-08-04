@@ -33,7 +33,6 @@ AGENT_INSTANCE_ID = "agent:mind-codex-prompt-hook"
 _TOKEN = re.compile(r"\$?[A-Za-z0-9][A-Za-z0-9_$:+.-]*")
 
 
-
 class HookUnavailable(RuntimeError):
     """The delivery plane could not compile a current reminder field."""
 
@@ -83,9 +82,6 @@ def lexical_hints(text: str) -> list[str]:
         if len(result) == MAX_LEXICAL_HINTS:
             break
     return result
-
-
-
 
 
 def _observation_hash(prefix: str, value: object) -> str:
@@ -197,9 +193,10 @@ def degraded_context(code: str, run_id: str) -> str:
 
 def deferred_context() -> str:
     return (
-        "MIND · CONTEXTUAL ASSOCIATION READY\n"
-        "Read the live task, derive one or more ad hoc semantic membranes, then use "
-        "associate_capabilities. No pre-sampling field was inferred from the raw prompt."
+        "MIND · CONTEXTUAL ASSOCIATION DEFERRED\n"
+        "No pre-sampling field was inferred from the raw prompt. Continue through "
+        "the host's normal skill-discovery and filesystem skill-loading paths. "
+        "Skills are not MCP resources; do not call MCP tools or resource readers."
     )
 
 
@@ -277,7 +274,8 @@ def prepare_event(
             **receipt_base,
             "evidence_state": "prepared_deferred",
             "claimed_boundary": (
-                "post-context membrane association requested; hook stdout not yet written"
+                "no pre-sampling field inferred; ordinary host skill routing requested; "
+                "hook stdout not yet written"
             ),
             "deferred_code": error.code,
             "additional_context_hash": sha256_text(additional_context),
