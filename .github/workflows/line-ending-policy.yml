@@ -110,3 +110,5 @@ The package does not prohibit or modify unrelated MCP servers configured indepen
               --title "Nova + MIND Free ${version}" \
               --notes-file RELEASE-NOTES.md
           fi
+
+# Synchronization marker for required-check evaluation.
