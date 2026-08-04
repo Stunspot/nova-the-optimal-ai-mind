@@ -17,7 +17,6 @@
     "human-ai collaboration"
   ],
   "skills": "./skills/",
-  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "MIND by Collaborative Dynamics",
     "shortDescription": "Sixteen Faculties plus the TestForge gate.",
