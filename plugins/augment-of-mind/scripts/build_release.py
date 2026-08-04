@@ -41,6 +41,8 @@ from verify_release import (
 
 FIXED_ZIP_TIME = (2026, 1, 1, 0, 0, 0)
 SOURCE_DATE_EPOCH = "1767225600"
+
+
 class BuildError(RuntimeError):
     """Raised when the release cannot be constructed honestly."""
 
@@ -97,6 +99,8 @@ def validate_versions(repo: Path) -> None:
     project = tomllib.loads((repo / "pyproject.toml").read_text(encoding="utf-8"))
     if plugin.get("name") != PRODUCT or plugin.get("version") != PLUGIN_VERSION:
         raise BuildError("plugin manifest version does not match the release builder")
+    if "mcpServers" in plugin:
+        raise BuildError("plugin manifest must not register MCP servers")
     package = project.get("project", {})
     if package.get("name") != "cd-mind-core" or package.get("version") != CORE_VERSION:
         raise BuildError("Core project version does not match the release builder")
@@ -170,7 +174,6 @@ def copy_core_source(repo: Path, root: Path) -> None:
 def selected_source_files(repo: Path) -> list[Path]:
     paths = [
         repo / ".codex-plugin" / "plugin.json",
-        repo / ".mcp.json",
         repo / ".agents" / "plugins" / "marketplace.json",
         repo / "pyproject.toml",
         repo / "scripts" / "build_release.py",
@@ -236,7 +239,6 @@ def stage_release(
     source_digest: str,
 ) -> dict[str, object]:
     copy_regular(repo / ".codex-plugin" / "plugin.json", root / ".codex-plugin" / "plugin.json")
-    copy_regular(repo / ".mcp.json", root / ".mcp.json")
     copy_regular(repo / "hooks" / "hooks.json", root / "hooks" / "hooks.json")
     copy_regular(repo / "hooks" / "mind_prompt_submit.py", root / "hooks" / "mind_prompt_submit.py")
     copy_core_source(repo, root)
