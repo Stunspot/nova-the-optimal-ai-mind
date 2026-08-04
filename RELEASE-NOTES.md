@@ -1,22 +1,23 @@
 # Nova + MIND Free release notes
 
+## 2.0.2
+
+This release rebuilds the public presentation around the actual product: an installable agent architecture for an existing AI harness, not a generic assistant with a list of sample prompts.
+
+The README, public Pages site, onboarding, capability guide, Codex and Claude installation guidance, and standalone MIND entry points now explain:
+
+- why Nova is materially different from the crowded “agent” category;
+- how Nova, MIND, capability reminders, TestForge, skills, and Augments form one system;
+- what the included research, knowledge, making, repair, continuity, modelcraft, learning, and play capabilities actually add;
+- why the Free edition is a substantial demonstration of Collaborative Dynamics’ architecture;
+- how to install by giving the ZIP to the harness, with PowerShell retained as a fallback.
+
+The manual installer’s completion message now reports the correct forty-one-capability reminder map. Nova and MIND runtime skill contents are otherwise unchanged. The canonical Nova Emergent artwork is unchanged.
+
 ## 2.0.1
 
-This documentation-and-packaging correction keeps the Nova and MIND runtime components unchanged. It rebuilds the customer journey around real first use: what Nova helps with, how to install safely, how MIND and its reminder layer behave, what stays local, and how to recover when something stops.
-
-The release also brings the bundled standalone MIND documents and the public Pages landing page into the same customer-first language. The canonical Nova Emergent artwork is unchanged.
+Documentation-and-packaging correction that replaced the original internal inventory copy with a customer journey and synchronized the bundled standalone MIND documentation.
 
 ## 2.0.0
 
-Nova + MIND Free brings the Nova companion and MIND together as one public package.
-
-This release includes:
-
-- Nova with a generous set of practical and creative specialties;
-- MIND’s integrator and sixteen cognitive Faculties;
-- TestForge’s software-verification and independent-review roles;
-- the capability-promotion reminder, so adding a durable capability naturally raises the question of teaching MIND to remember it;
-- a local reminder system for the included public capabilities;
-- Codex installation, optional portable Claude skill archives, privacy guidance, and recovery documentation.
-
-The local reminder profile is installed and structurally checked. Broader real-world qualification, including fresh-host behavior, remains ongoing; see [Verification](docs/VERIFICATION.md) for the exact boundary.
+Established the public Nova + MIND Free package: Nova, MIND’s integrator and sixteen cognitive Faculties, Capability Promotion, TestForge, the public semantic reminder map, and portable skill packages.

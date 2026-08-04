@@ -1,28 +1,11 @@
-# Quick start
+# Confirm MIND is ready
 
-Start a new Codex task after MIND is installed and enabled, then paste:
+Start a new Codex task after installation. MIND and its Faculties are discovered at that boundary.
 
-```text
-Use $augment-of-mind to help me decide whether to run a two-week pilot.
-Separate evidence from assumptions, identify the smallest reversible test that could change the decision, and return one recommendation. Do not take external action.
-```
+Confirm that **MIND by Collaborative Dynamics** is enabled and that the host exposes the MIND integrator and its Faculty skills. The integrator is the general entry point for consequential work involving several kinds of cognition. Individual Faculties remain available when one transformation clearly owns the job.
 
-You should get a decision frame, a clear boundary between evidence and assumption, a reversible next step, and one recommendation—not a transcript of an imaginary committee.
+A healthy installation should preserve one coherent agent response, keep evidence and assumptions distinct when they matter, and retain the user’s authority over consequential action. It should not present a transcript of internal Faculties debating for sport.
 
-When one kind of thinking plainly owns the job, you can call it directly:
-
-```text
-Use $sensemaking to turn this tangled situation into a working map.
-```
-
-```text
-Use $decision-intelligence to compare these options and recommend one.
-```
-
-```text
-Use $aesthetic-intelligence to diagnose why this composition feels wrong.
-```
-
-You keep authority. MIND can analyze, organize, recommend, and draft; it does not send messages, spend money, publish, or take consequential action without separate authorization.
+If MIND or a Faculty is unavailable, return to [Install MIND](START-HERE.md). If the reminder layer is unavailable, use [Troubleshooting](TROUBLESHOOTING.md).
 
 Next: [Use MIND](USER-GUIDE.md).
