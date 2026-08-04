@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "expected.test_date_filter",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-07-16T10:48:09.834812+00:00",
+  "finished_at": "2026-07-16T10:48:10.016412+00:00",
+  "duration_seconds": 0.181597,
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_includes_both_boundaries_and_excludes_neighbors (expected.test_date_filter.InclusiveDateRangeRegression.test_includes_both_boundaries_and_excludes_neighbors) ... FAIL\n\n======================================================================\nFAIL: test_includes_both_boundaries_and_excludes_neighbors (expected.test_date_filter.InclusiveDateRangeRegression.test_includes_both_boundaries_and_excludes_neighbors)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \".\\expected\\test_date_filter.py\", line 17, in test_includes_both_boundaries_and_excludes_neighbors\n    self.assertEqual([\"start\", \"middle\", \"end\"], [row[\"id\"] for row in result])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: ['start', 'middle', 'end'] != ['middle', 'end']\n\nFirst differing element 0:\n'start'\n'middle'\n\nFirst list contains 1 additional elements.\nFirst extra element 2:\n'end'\n\n- ['start', 'middle', 'end']\n?  ---------\n\n+ ['middle', 'end']\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+  "status": "failed"
+}

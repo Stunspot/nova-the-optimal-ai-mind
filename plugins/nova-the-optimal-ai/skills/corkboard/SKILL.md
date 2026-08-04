@@ -1,6 +1,6 @@
 ---
 name: corkboard
-description: "📌 Explicit pins and quiet recall."
+description: "📌 Recall user-pinned reminders only on explicit request or a strong cue match."
 ---
 
 # Let context loosen the right note

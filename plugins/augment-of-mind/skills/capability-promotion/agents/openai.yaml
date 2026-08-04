@@ -1,0 +1,4 @@
+interface:
+  display_name: "Capability Promotion"
+  short_description: "Keep new capabilities within MIND reach"
+  default_prompt: "Use $capability-promotion to add this capability and keep MIND aware of it."

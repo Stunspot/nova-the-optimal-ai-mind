@@ -1,0 +1,82 @@
+{
+    "clusters":  {
+                     "software-release":  [
+                                              "Software and Release",
+                                              "Build, inspect, and challenge technical change."
+                                          ]
+                 },
+    "capabilities":  [
+                         {
+                             "handle":  "augment-of-mind",
+                             "name":  "Augment of MIND",
+                             "cluster":  "governance-agency",
+                             "projection":  "Integrate the smallest useful Faculty coalition into one accountable outcome.",
+                             "boundaries":  "MIND coordinates cognition; it does not impersonate missing occupational expertise or enlarge authority.",
+                             "views":  {
+                                           "transformation":  "Compose distinct cognitive transformations into one coherent mission result.",
+                                           "situation":  "Consequential work needs several Faculties, durable state, or recovery across a phase change.",
+                                           "positive_cue":  "integrate faculties, compose mind, complex mission, recover objective, cognitive coalition",
+                                           "error_or_correction":  "Several useful perspectives appear, but nobody owns their seams, evidence, or reunification.",
+                                           "negative_boundary":  "One direct reversible transformation does not need visible orchestration.",
+                                           "example":  "Unify sensemaking, decision, execution, verification, and continuity for a product release."
+                                       }
+                         },
+                         {
+                             "handle":  "capability-promotion",
+                             "name":  "Capability Promotion",
+                             "cluster":  "governance-agency",
+                             "projection":  "Keep MIND\u0027s reminder cards and embeddings aligned when the harness gains, changes, or loses a durable capability.",
+                             "boundaries":  "Semantic recall carries the integration obligation; it does not install capabilities, manufacture authority, or promote one-off material.",
+                             "views":  {
+                                           "transformation":  "Carry a skill, plugin, tool, program, or durable agent function into MIND\u0027s reminder cards and embeddings, or retire its reminder when removed.",
+                                           "situation":  "The user adds, installs, enables, updates, removes, or proposes something that changes what the harness can do.",
+                                           "positive_cue":  "Add this skill. Install this plugin. Add a program that lets Nova do something new. Wire this tool into your toolkit.",
+                                           "error_or_correction":  "The harness gains useful machinery but MIND never embeds knowledge of it, so Nova forgets the capability until the user remembers for her.",
+                                           "negative_boundary":  "A one-off task, ordinary dependency, document, persona, or knowledge note is not automatically a durable harness capability.",
+                                           "example":  "We should add a program that lets you inspect Minecraft builds; remember to add that ability to MIND\u0027s reminder embeddings as part of the work."
+                                       }
+                         },
+                         {
+                             "handle":  "software-verification",
+                             "name":  "TestForge Software Verification",
+                             "cluster":  "software-release",
+                             "projection":  "Attack the readiness claim of finished software and release candidates with traceable evidence.",
+                             "boundaries":  "TestForge judges a submitted candidate; it does not become the workshop that finishes it.",
+                             "views":  {
+                                           "transformation":  "Turn a claimed-ready change into adversarial risks, oracles, execution evidence, and a bounded verdict.",
+                                           "situation":  "A software change, package, installer, or release is believed finished and needs to survive hostile verification.",
+                                           "positive_cue":  "testforge, verify release, hostile judge, oracle, invariant, readiness claim, regression",
+                                           "error_or_correction":  "Passing commands or polished prose are mistaken for evidence that the dangerous behavior was tested.",
+                                           "negative_boundary":  "Use the maker skill while implementation or product design is still incomplete.",
+                                           "example":  "Challenge whether a fresh-host installer actually discovers both plugins and activates the claimed reminder estate."
+                                       }
+                         },
+                         {
+                             "handle":  "verification-reviewer",
+                             "name":  "TestForge Verification Reviewer",
+                             "cluster":  "software-release",
+                             "projection":  "Independently challenge verification packages for missed risks, weak oracles, and overclaimed status.",
+                             "boundaries":  "Review requires an inspectable verification package and remains independent from the operator.",
+                             "views":  {
+                                           "transformation":  "Audit the chain from scope through risk, tests, evidence, and release status.",
+                                           "situation":  "TestForge has produced a verification package whose decision needs adversarial review.",
+                                           "positive_cue":  "review verification, challenge tests, weak oracle, missed catastrophic risk, traceability",
+                                           "error_or_correction":  "The reviewer accepts the operator narrative or quietly repairs weak work instead of exposing the defect.",
+                                           "negative_boundary":  "Do not invoke before an operator has produced reviewable evidence.",
+                                           "example":  "Find that a package validator never exercised hook trust, yet the report claims automatic pre-prompt delivery."
+                                       }
+                         }
+                     ],
+    "relations":  [
+                      [
+                          "augment-of-mind",
+                          "software-verification",
+                          "complements"
+                      ],
+                      [
+                          "software-verification",
+                          "verification-reviewer",
+                          "requires"
+                      ]
+                  ]
+}

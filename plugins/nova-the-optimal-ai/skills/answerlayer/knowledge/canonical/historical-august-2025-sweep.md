@@ -1,0 +1,173 @@
+# August 2025 - LLM Almanac Monthly Intelligence Delta Sweep
+
+### **A. Executive Brief**
+
+The period of August 2025 has been defined by a fundamental divergence in global policy frameworks, with the U.S. and the EU moving in opposite directions on the governance of artificial intelligence. This geopolitical split is the primary structural event of the month, creating a new environment of heightened complexity for firms and developers. This dynamic is further complicated by a significant technical development: the entry of a leading proprietary model provider, OpenAI, into the open-weight ecosystem. This move blurs the lines between "open" and "closed" platforms, creating new strategic vectors for competition, regulation, and compliance.
+
+The overall signal quality for this reporting period is high. Major policy shifts, judicial rulings, and technical releases are public and well-documented. A key source of epistemic uncertainty, however, is the unpredictable interplay between U.S. executive actions (e.g., tariffs, grant oversight) and the judicial branch, which has actively challenged the scope of presidential authority.
+
+#### **Top 10 Shifts**
+
+| What Changed | Impact | Urgency | Confidence | Mechanism |
+| :---- | :---- | :---- | :---- | :---- |
+| **EU AI Act provisions for GPAI models took effect.** | High | Immediate | High | New legal obligation for transparency and copyright. |
+| **U.S. AI Action Plan adopted deregulation.** | High | Immediate | High | Shifts federal policy to a pro-innovation, anti-regulation stance. |
+| **OpenAI released first open-weight models (GPT-OSS).** | High | Immediate | High | Redefines competition and enables on-premise deployments. |
+| **Widespread third-party SaaS supply chain breaches.** | High | Immediate | High | Shatters security assumptions and mandates new vendor protocols. |
+| **New U.S. tariffs on Brazilian and Indian goods.** | Medium | Immediate | Medium | Realignment of import costs, with legal challenges. |
+| **New CBP cargo manifest rules go live on Sept 27\.** | Medium | Near-term | High | Alters practical workflows for importers and carriers. |
+| **Federal courts check executive authority via rulings.** | Medium | Near-term | High | Reinforces the judiciary's role as a check on presidential power. |
+| **D.C. Circuit allows CFPB layoffs.** | Medium | Immediate | High | A specific ruling with a broader impact on independent agencies. |
+| **Chinese military parade restricts industrial output.** | Low (Compounding) | Immediate | High | Minor short-term iron ore market disruption. |
+| **Paris-Versailles race and other cultural events.** | Low (Compounding) | Watch | High | Normal calendar events, but a reminder to check for local disruptions. |
+
+### **B. High-Impact Shifts**
+
+#### **1\. EU AI Act Provisions for General-Purpose AI Models Enter into Force**
+
+On August 2, 2025, the provisions of the EU AI Act governing general-purpose AI (GPAI) models officially entered into force, marking a transition from voluntary best practices to a binding legal framework. This institutionalization is a significant development, compelling providers to comply with new requirements, including the publication of a mandatory template summarizing their training data.1 The European Commission’s AI Office published this mandatory template on July 24, 2025, which aims to improve transparency regarding the types of data used for training models while protecting trade secrets.3 For a model to be classified as a GPAI and fall under this new regulation, it must have been trained using over
+
+1023 FLOP.2 Providers of models placed on the market after the August 2, 2025, effective date must adhere to these new obligations immediately, while those with models already on the market have until August 2, 2027, to comply.1
+
+This development constitutes a fundamental shift in regulatory policy, moving from a soft-power approach to a hard-law, enforceable framework. It creates a new, standardized disclosure practice that changes the compliance workflow for all global AI model providers. The explicit definition of a GPAI model based on a technical threshold turns a previously theoretical concept into a concrete, measurable trigger for legal obligations.2 Providers who voluntarily sign and adhere to the GPAI Code of Practice can benefit from a reduced administrative burden and increased legal certainty.2
+
+This new framework requires immediate adjustments from a number of actors. All providers of new GPAI models operating in the EU, such as OpenAI and Anthropic, must now have a compliant training data summary published.1 In the near term, developers and firms that use these foundational models must update their understanding of licensing and liability, as the models they rely on now carry a clear regulatory burden. Legal and compliance teams globally will adjust their risk models to account for this new legal precedent.3 The long-term stability of this framework is considered permanent, as it represents a structural shift in global AI governance. The confidence in this development is high, as the effective date and requirements are clear and corroborated across multiple sources.1 The primary cross-domain effect is the creation of a clear regulatory divergence from the U.S. deregulatory approach.1 There is also a speculative cross-domain effect related to legal risks, as the mandatory disclosures could be used as evidence in jurisdictions like the U.S., where fair use for AI training data is still contested.3 Without this, guidance would be based on voluntary best practices, not a binding legal obligation that institutionalizes a new standard of transparency.
+
+#### **2\. U.S. Federal Government’s Pro-Innovation AI Action Plan**
+
+On July 23, 2025, the White House released "Winning the AI Race: America's AI Action Plan," a comprehensive roadmap for AI policy that prioritizes deregulation, accelerated infrastructure development, and the promotion of U.S.-origin AI exports.1 This plan is supported by new Executive Orders aimed at streamlining environmental permits for data centers and removing regulations that hinder AI development.7 The administration’s policy aims to cement American leadership in AI through a pro-innovation, deregulatory approach that contrasts with the EU’s framework.9 The plan also makes federal funding contingent on states adopting a similar deregulatory posture.9
+
+This initiative creates a new incentive landscape, as the plan explicitly directs agencies to eliminate "onerous regulations" and provides new financial and bureaucratic incentives to build and operate AI infrastructure within the U.S..7 The strategy also calls for updating federal procurement guidelines to require frontier large language model developers who contract with the government to ensure their systems are objective and free from ideological bias.6
+
+This represents a high-impact development that requires immediate action from multiple actors. Firms in the AI, semiconductor, and data center industries will begin evaluating new funding opportunities and permit streamlining processes. States with stricter AI regulations may face a federal funding headwind.9 In the near-term, developers will adjust their long-term infrastructure planning and legal teams will evaluate the new compliance landscape and potential for litigation. This marks a fundamental and public shift in the U.S. government's strategic approach to AI, contrasting sharply with the EU's and China's. This is considered a permanent, structural shift, as it establishes the new ideological framework for the administration's AI policy. The confidence in this shift is high, as the plan is a public document with clear, actionable directives corroborated across multiple reports.6 The evidenced cross-domain effect is in the economic climate, as the focus on deregulation and infrastructure buildout is expected to spur private investment and job growth in tech-adjacent sectors.9 Speculatively, the plan to export "American AI Technology Stacks" and prioritize "ideological neutrality" could heighten tensions and formalize a "tech alliance" against competitors, influencing foreign policy and trade agreements.10 Without this, U.S. AI policy would be viewed as lacking a cohesive, high-level strategy and would be perceived as continuing a more cautious, risk-averse approach.
+
+#### **3\. OpenAI Releases First Open-Weight Models (GPT-OSS)**
+
+On August 5, 2025, OpenAI released gpt-oss-120b and gpt-oss-20b, its first open-weight reasoning models licensed under Apache 2.0.13 This move fundamentally alters the competitive landscape, as a leader in the closed-source, API-first model is now directly competing in the open-weight ecosystem.14 These models are free for both commercial and personal use and can be deployed on private hardware, giving developers and enterprises a new, viable pathway for self-hosting powerful models and reducing reliance on external API costs and rate limits.14
+
+This is a canon-breaker development that redefines the competitive landscape and enables a new class of on-premise AI applications that were previously economically or technically unfeasible. For developers and enterprises, this alters their toolchain and workflow, providing a new option for private, local fine-tuning and sandboxing.14 Developers and firms previously limited to open-source models must now re-evaluate their model selection, as a leading "closed" player is now offering a viable "open" alternative. In the near term, cloud providers, enterprise security teams, and IT departments will begin building new workflows and infrastructure to support private deployments of these models. The full implications of this shift will unfold over the next 90 days as enterprises and developers experiment with this new option. The confidence in this development is high, as the release is confirmed by multiple sources and its license and capabilities are explicitly detailed.14 This move puts new pressure on regulatory bodies, as the EU AI Act's GPAI provisions now directly apply to a leading proprietary player's open-weight models, a scenario that was not previously a concern.2 Without this, the proprietary vs. open-source divide would remain distinct, and self-hosted deployments of state-of-the-art models would remain a non-viable path for most actors.
+
+#### **4\. Widespread Third-Party SaaS Supply Chain Breaches**
+
+August 2025 saw a series of high-profile data breaches at major companies, including Google, Workday, and TransUnion, that were publicly disclosed and linked to vulnerabilities in third-party software as a service (SaaS) platforms, such as Salesforce.16 The attack on Google's Salesforce-hosted database began in June 2025 and exposed millions of business contacts, while the breach at Workday, which was also part of the Salesforce exploitation campaign, exposed contact information of Workday contacts.16 The breach at TransUnion was traced to a different third-party application compromise and exposed highly sensitive personally identifiable information (PII) and Social Security Numbers of 4.4 million people.16
+
+This is a structural event that shatters the long-held assumption that major SaaS vendors provide an impenetrable security perimeter. The mechanism of the attacks—exploiting third-party vendor integrations—forces firms to fundamentally re-evaluate their entire digital supply chain and creates an immediate mandate for new vendor risk management protocols and security audits.16 This shifts corporate security from an internal focus to a focus on the external vendor landscape. CISOs and CTOs across all industries must now initiate urgent reviews of their third-party SaaS vendor access, integration points, and contracts. In the near term, vendors like Salesforce and Workday will release new security features and policies, and cyber insurance firms will adjust their premiums and coverage requirements.16 The full-scale re-evaluation of vendor security will take months, giving this development a stability half-life of 180 days. The confidence in this finding is high, as the breaches are publicly disclosed and linked to a common vector across multiple, independent firms.16 This could lead to a slowdown in SaaS adoption or an increase in the cost of doing business due to new compliance requirements. Without this, corporate security guidance would continue to focus on traditional internal and on-premise threats, under-indexing on the systemic risks posed by third-party cloud integrations.
+
+### **C. Medium-Impact Shifts**
+
+#### **1\. New U.S. Tariffs on Brazil and India Amidst Judicial Challenges**
+
+The U.S. government has imposed new, significant tariffs on goods from Brazil and India, which are now in effect. An additional 40% duty on Brazilian goods became effective on August 6, 2025, bringing the total additional duty to 50% when stacked with existing tariffs.17 Separately, a 25% duty on Indian products, linked to Russian oil supply concerns, took effect on August 27, 2025\.17 These actions directly realign costs for importers and consumers, with exemptions for in-transit shipments and humanitarian materials.17
+
+Simultaneously, a U.S. appeals court ruling late on August 29, 2025, stated that most of the President's tariffs are illegal, casting doubt on his authority to impose them and creating significant legal uncertainty.18 This creates a high-stakes counterfactual that businesses must account for in their planning. Importers, logistics firms, manufacturers, and retailers sourcing from Brazil and India will be most impacted. Legal and financial analysts must now model for both a world with tariffs and a world where they are overturned. The legal battle and its market effects will likely play out over the coming 90 days. The tariffs also contribute to ongoing global trade tensions and could contribute to inflationary pressure for U.S. consumers.19
+
+#### **2\. New CBP Cargo Manifest Rules Go Live**
+
+Effective September 27, 2025, the U.S. Customs and Border Protection (CBP) will implement an auto-rejection system for cargo manifests with vague or incomplete descriptions (e.g., “parts,” “freight”) or insufficient shipper/consignee names.17 This is a crucial procedural change that will cause immediate, tangible delays and potential penalties for importers and carriers who do not update their systems and training.17
+
+This is a straightforward operational change that fundamentally alters the practical process for customs filings. Importers, freight forwarders, carriers, and anyone involved in filing cargo manifests for U.S. imports must adjust. While the initial pain will be immediate, firms will take months to fully integrate this change into their standard operating procedures, giving it a stability half-life of 180 days. This shift is expected to cause immediate and widespread disruptions, especially for smaller firms and those with complex supply chains, leading to unexpected costs and delays.17 The confidence in this development is high, as the rule and effective date are explicitly stated and tied to a known government system (ACE Production).17
+
+#### **3\. Key Federal Court Rulings on Executive Authority**
+
+Two key federal court rulings in August 2025 reinforced the judiciary's role in checking the authority of the executive branch, creating a significant shift in actor behavior. On August 15, a D.C. Circuit Court vacated a preliminary injunction, allowing the Consumer Financial Protection Bureau (CFPB) to proceed with layoffs.21 In a separate case, a federal court on August 30 blocked the Trump administration's "fast-track" deportation policy.22
+
+These rulings demonstrate that presidential Executive Orders are not the final word on policy, especially when they clash with existing legal frameworks or independent agency mandates.21 This new precedent creates a critical actor behavior shift, as federal agencies and the administration must now proceed more cautiously. Federal agencies, civil rights organizations, immigration advocates, and anyone whose work intersects with federal policy established by Executive Order must adjust their approach. The litigation and its implications for future policy will continue to unfold over the next year, giving this development a stability half-life of 365 days. The confidence in the reported rulings and their implications is high, as they are clearly detailed by legal sources.21 These rulings underscore a key trend in the U.S. federal power landscape: a rebalancing of power among the three branches of government.23
+
+### **D. Fuzz Zones & Contradictions**
+
+When evidence conflicts or is thin, a nuanced approach is necessary to provide an accurate response. The following table identifies areas of uncertainty.
+
+| Competing Claims | Current Best Read \+ Confidence | Abstention Phrasing | Resolution Indicators |
+| :---- | :---- | :---- | :---- |
+| **U.S. Tariff Authority:** The new 40% and 25% tariffs on Brazilian and Indian goods are legally in effect as of August 6 and 27, respectively.17 A U.S. appeals court ruling late on August 29 stated that most of the President's tariffs are illegal, casting doubt on his authority.18 | The tariffs are legally in effect and will impact prices and supply chains in the short term. However, their long-term permanence is uncertain and subject to ongoing litigation. Confidence: High (for the immediate effect), Low (for long-term stability). | The new U.S. tariffs on Brazilian and Indian goods are currently in effect, but their long-term legality and permanence are being challenged in federal court. | A final ruling from a higher court, a new legislative act that clarifies or supersedes executive authority on tariffs, or a new trade agreement.18 |
+| **State of Solar Activity:** August saw "heightened solar activity" and the month's strongest solar flare (M4.4 on Aug. 6).25 Despite the heightened activity, the flare was only a "mid-strength flare" and the associated coronal mass ejection (CME) was not Earth-directed, posing little threat to Earth-based technology.25 | While solar activity is generally high as Solar Cycle 25 approaches its peak, the August events do not pose a material risk to power grids or most satellite systems. The "strongest flare of the month" is a headline that fails to pass the impact test on its own. Confidence: High. | While solar activity has been notable, recent events, including the M4.4 flare, do not pose a material risk to Earth's critical infrastructure, as the associated CMEs were not Earth-directed. | An X-class flare with an Earth-directed CME. A formal bulletin from NOAA's Space Weather Prediction Center on a new, high-risk event.25 |
+
+### **E. Probes & Regression Traps**
+
+The following questions can now be answered differently based on the new information, and a set of common traps have been identified where guidance may revert to old, incorrect information.
+
+#### **New Probes**
+
+* What are the new legal requirements for providers of general-purpose AI models operating in the EU?  
+* How has the U.S. government's strategic approach to AI changed in August 2025?  
+* What are the main implications of OpenAI’s new GPT-OSS model release for a small business developer?  
+* What are the key risks to a company's data security posed by third-party SaaS vendors, as evidenced by recent events?  
+* What are the specific operational changes required for importers into the U.S. due to the new CBP rules?
+
+#### **Regression Traps**
+
+1. **Trap:** What is the primary U.S. government approach to regulating frontier AI?  
+   * **Old Wrong Answer:** A risk-based framework focused on safety and voluntary commitments.  
+   * **Corrected Reasoning Path:** The U.S. has officially pivoted to a deregulatory, pro-innovation approach aimed at accelerating infrastructure and global leadership, as outlined in the new AI Action Plan.6  
+2. **Trap:** Is OpenAI a closed-source company?  
+   * **Old Wrong Answer:** Yes, OpenAI's models are proprietary and only available via API.  
+   * **Corrected Reasoning Path:** While its most powerful models remain proprietary, OpenAI now offers open-weight, commercially usable models (GPT-OSS) under an Apache 2.0 license, fundamentally changing its business model and the ecosystem.14  
+3. **Trap:** How are U.S. tariffs on Brazilian goods impacting the market?  
+   * **Old Wrong Answer:** The new 40% tariff is creating a permanent shift in supply chains.  
+   * **Corrected Reasoning Path:** While the tariff is in effect, its permanence is uncertain due to an ongoing court challenge that questions the President's authority to impose it, creating a Fuzz Zone for business planning.17  
+4. **Trap:** What is the status of the EU AI Act?  
+   * **Old Wrong Answer:** It's a proposed law that is still being debated.  
+   * **Corrected Reasoning Path:** The provisions for GPAI models are now legally binding and in effect as of August 2, 2025, with new obligations for transparency and copyright.1  
+5. **Trap:** Did a major solar flare cause a disruption to Earth's infrastructure in August?  
+   * **Old Wrong Answer:** Yes, a record solar flare (M4.4) caused a minor radio blackout and highlights growing risks.  
+   * **Corrected Reasoning Path:** The M4.4 flare was a minor event and not Earth-directed. While solar activity is high, there were no material disruptions to infrastructure.25
+
+### **F. Watchlist**
+
+The following threads have not yet crossed a definitive threshold but have credible momentum and are worth monitoring for future escalation.
+
+1. **US-Ukraine Peace Deal & Geopolitical Shifts**  
+   * **Why it Matters:** The potential for a U.S.-brokered peace deal would be a monumental event in global geopolitics and economic relations, fundamentally altering alliances and trade flows.26  
+   * **Key Indicators:** The outcome of President Trump's extraordinary meeting with Ukrainian President Zelensky and European leaders. Any concrete announcements regarding U.S. security guarantees for Ukraine or changes to Russian sanctions.26  
+   * **Escalation Threshold:** A binding peace agreement is announced, or a major new U.S. military aid package is greenlit.  
+2. **Unilateral U.S. Tariff Authority Litigation**  
+   * **Why it Matters:** A final court ruling on the President's authority to impose tariffs via Executive Order would either legitimize the current tariff regime or trigger a widespread unwinding of recent trade actions, causing a canon-breaker in trade policy and a major cost realignment.18  
+   * **Key Indicators:** The next ruling from a federal appeals court or the Supreme Court on the matter.  
+   * **Escalation Threshold:** A definitive ruling that upholds or revokes the President's authority on tariffs.  
+3. **Global Supply Chain Security Re-evaluation**  
+   * **Why it Matters:** The recent SaaS supply chain breaches are not isolated incidents but a pattern. The industry's reaction will dictate future security protocols and liabilities, influencing how all companies manage their digital ecosystems.16  
+   * **Key Indicators:** A major security consortium (e.g., NIST, CISA) issues new guidance on third-party SaaS vendor risk management. Major firms publicly announce changes to their vendor audit protocols. Cyber insurance premiums on SaaS-heavy firms increase materially.  
+   * **Escalation Threshold:** New, enforceable industry-wide standards or a major regulatory body's mandate on third-party security.  
+4. **Public Health & Medicine Research Trends**  
+   * **Why it Matters:** Breakthroughs in gene editing, personalized medicine, and longevity research could create paradigm shifts in healthcare and public policy.28  
+   * **Key Indicators:** The publication of new, peer-reviewed clinical trial data on the efficacy of a new drug or treatment (e.g., Rapamycin/Trametinib combination for life extension).28 Regulatory bodies like the FDA or EMA granting accelerated approval for a new therapy.  
+   * **Escalation Threshold:** A drug or therapy that passes Phase 3 trials and is approved for general use.  
+5. **EU's AI Act Enforcement & Guidelines**  
+   * **Why it Matters:** The initial compliance date is just the beginning. How the AI Office enforces the law and how GPAI providers interpret the mandatory template will set the practical precedent for a new global regulatory model.2  
+   * **Key Indicators:** The AI Office releases new, more granular guidelines on the GPAI template. A provider is formally investigated or fined for non-compliance.  
+   * **Escalation Threshold:** The first enforcement action is taken, or a major model provider (e.g., OpenAI) is publicly found to have a deficient training data summary.  
+6. **U.S. Grantmaking & Federal Priorities**  
+   * **Why it Matters:** A new Executive Order on grantmaking 24 directly alters the incentives for researchers, non-profits, and educational institutions that rely on federal funding. It shifts priorities from previous agendas towards those aligned with the administration.  
+   * **Key Indicators:** The first round of new funding opportunity announcements (FOAs) issued under the new EO, demonstrating the new priorities. The OMB revises the "Uniform Guidance" to include the "termination for convenience" clause.24  
+   * **Escalation Threshold:** Federal grants are rescinded or not renewed based on the new criteria, causing a major public outcry or legal challenge.
+
+#### **Works cited**
+
+1. AI View \- August 2025 | Simmons & Simmons, accessed September 1, 2025, [https://www.simmons-simmons.com/en/publications/cmdyieenb00ueu11o0d8rdavl/ai-view-august-2025](https://www.simmons-simmons.com/en/publications/cmdyieenb00ueu11o0d8rdavl/ai-view-august-2025)  
+2. EU rules on general-purpose AI models start to apply, bringing more transparency, safety and accountability \- Shaping Europe's digital future \- European Union, accessed September 1, 2025, [https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability](https://digital-strategy.ec.europa.eu/en/news/eu-rules-general-purpose-ai-models-start-apply-bringing-more-transparency-safety-and-accountability)  
+3. EU Releases AI Training Data Template \- WILLIAM FRY, accessed September 1, 2025, [https://www.williamfry.com/knowledge/eu-releases-ai-training-data-template/](https://www.williamfry.com/knowledge/eu-releases-ai-training-data-template/)  
+4. European Commission Releases Mandatory Template for Public Disclosure of AI Training Data \- WilmerHale, accessed September 1, 2025, [https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/european-commission-releases-mandatory-template-for-public-disclosure-of-ai-training-data](https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/european-commission-releases-mandatory-template-for-public-disclosure-of-ai-training-data)  
+5. General-Purpose AI Code of Practice now available \- European Commission, accessed September 1, 2025, [https://ec.europa.eu/commission/presscorner/detail/en/ip\_25\_1787](https://ec.europa.eu/commission/presscorner/detail/en/ip_25_1787)  
+6. White House Unveils America's AI Action Plan, accessed September 1, 2025, [https://www.whitehouse.gov/articles/2025/07/white-house-unveils-americas-ai-action-plan/](https://www.whitehouse.gov/articles/2025/07/white-house-unveils-americas-ai-action-plan/)  
+7. The US Government Releases AI Action Plan and Executive Orders on Infrastructure, Exports, and Federal Procurement \- A Fresh Take, accessed September 1, 2025, [https://blog.freshfields.us/post/102kxpx/the-us-government-releases-ai-action-plan-and-executive-orders-on-infrastructure](https://blog.freshfields.us/post/102kxpx/the-us-government-releases-ai-action-plan-and-executive-orders-on-infrastructure)  
+8. Article | Trump AI Action Plan slashes regulation ... \- POLITICO Pro, accessed September 1, 2025, [https://subscriber.politicopro.com/article/2025/07/trump-ai-action-plan-slashes-regulation-speeds-data-center-construction-00469724](https://subscriber.politicopro.com/article/2025/07/trump-ai-action-plan-slashes-regulation-speeds-data-center-construction-00469724)  
+9. A New Era for U.S. AI Policy: How America's AI Action Plan Will Shape Industry and Government | Consumer Finance Monitor, accessed September 1, 2025, [https://www.consumerfinancemonitor.com/2025/07/28/a-new-era-for-u-s-ai-policy-how-americas-ai-action-plan-will-shape-industry-and-government/](https://www.consumerfinancemonitor.com/2025/07/28/a-new-era-for-u-s-ai-policy-how-americas-ai-action-plan-will-shape-industry-and-government/)  
+10. The Trump Administration's 2025 AI Action Plan – Winning the Race: America's AI Action Plan – and Related Executive Orders | Insights | Sidley Austin LLP, accessed September 1, 2025, [https://www.sidley.com/en/insights/newsupdates/2025/07/the-trump-administrations-2025-ai-action-plan](https://www.sidley.com/en/insights/newsupdates/2025/07/the-trump-administrations-2025-ai-action-plan)  
+11. White House Launches AI Action Plan and Executive Orders to Promote Innovation, Infrastructure, and International Diplomacy and Security \- Wiley Rein LLP, accessed September 1, 2025, [https://www.wiley.law/alert-White-House-Launches-AI-Action-Plan-and-Executive-Orders-to-Promote-Innovation-Infrastructure-and-International-Diplomacy-and-Security](https://www.wiley.law/alert-White-House-Launches-AI-Action-Plan-and-Executive-Orders-to-Promote-Innovation-Infrastructure-and-International-Diplomacy-and-Security)  
+12. How the White House's AI Action Plan Aims To Ensure American Leadership in AI, accessed September 1, 2025, [https://perkinscoie.com/insights/update/how-white-houses-ai-action-plan-aims-ensure-american-leadership-ai](https://perkinscoie.com/insights/update/how-white-houses-ai-action-plan-aims-ensure-american-leadership-ai)  
+13. August 2025 \- The Tech News Source, accessed September 1, 2025, [https://thetechnewssource.com/2025/08/](https://thetechnewssource.com/2025/08/)  
+14. AI Update: 5 Latest AI Tools Released in August 2025 \- The AI Library, accessed September 1, 2025, [https://www.theailibrary.co/blog/5-latest-ai-tools-released-in-august-2025](https://www.theailibrary.co/blog/5-latest-ai-tools-released-in-august-2025)  
+15. Model Release Notes \- OpenAI Help Center, accessed September 1, 2025, [https://help.openai.com/en/articles/9624314-model-release-notes](https://help.openai.com/en/articles/9624314-model-release-notes)  
+16. Top 7 Data Breaches in August 2025 That Made Headlines ..., accessed September 1, 2025, [https://securityboulevard.com/2025/08/top-7-data-breaches-in-august-2025-that-made-headlines/](https://securityboulevard.com/2025/08/top-7-data-breaches-in-august-2025-that-made-headlines/)  
+17. Janel Group August 27, 2025 Tariff & Trade Updates — Janel Group, accessed September 1, 2025, [https://www.janelgroup.com/news-and-blog/2025/5/20/market-update-july-8-2025-8fatd-3gwfh-erehz-hy5d6-5pyz9](https://www.janelgroup.com/news-and-blog/2025/5/20/market-update-july-8-2025-8fatd-3gwfh-erehz-hy5d6-5pyz9)  
+18. U.S. Tariff Uncertainty Delays Economic 'Power' Lutnick Predicted | SupplyChainBrain, accessed September 1, 2025, [https://www.supplychainbrain.com/articles/42418-us-tariff-uncertainty-delays-economic-power-lutnick-predicted](https://www.supplychainbrain.com/articles/42418-us-tariff-uncertainty-delays-economic-power-lutnick-predicted)  
+19. World Economic Outlook Update, July 2025: Global Economy: Tenuous Resilience amid Persistent Uncertainty \- International Monetary Fund (IMF), accessed September 1, 2025, [https://www.imf.org/en/Publications/WEO/Issues/2025/07/29/world-economic-outlook-update-july-2025](https://www.imf.org/en/Publications/WEO/Issues/2025/07/29/world-economic-outlook-update-july-2025)  
+20. Economic Developments \- August 2025 \- Fannie Mae, accessed September 1, 2025, [https://www.fanniemae.com/data-and-insights/forecast/economic-developments-august-2025](https://www.fanniemae.com/data-and-insights/forecast/economic-developments-august-2025)  
+21. Federal Court Vacates Preliminary Injunction, Allowing CFPB to Proceed with Layoffs, accessed September 1, 2025, [https://www.hklaw.com/en/insights/publications/2025/08/federal-court-vacates-preliminary-injunction-allowing-cfpb-to-proceed](https://www.hklaw.com/en/insights/publications/2025/08/federal-court-vacates-preliminary-injunction-allowing-cfpb-to-proceed)  
+22. Federal Court Blocks Trump Administration Fast-Track Deportation ..., accessed September 1, 2025, [https://www.aclu.org/press-releases/federal-court-blocks-trump-administration-fast-track-deportation-policy](https://www.aclu.org/press-releases/federal-court-blocks-trump-administration-fast-track-deportation-policy)  
+23. The Trump Administration's Campaign to Undermine the Next Election | Brennan Center for Justice, accessed September 1, 2025, [https://www.brennancenter.org/our-work/research-reports/trump-administrations-campaign-undermine-next-election](https://www.brennancenter.org/our-work/research-reports/trump-administrations-campaign-undermine-next-election)  
+24. Improving Oversight of Federal Grantmaking – The White House, accessed September 1, 2025, [https://www.whitehouse.gov/presidential-actions/2025/08/improving-oversight-of-federal-grantmaking/](https://www.whitehouse.gov/presidential-actions/2025/08/improving-oversight-of-federal-grantmaking/)  
+25. A new solar flare becomes the strongest in August 2025 | NEWS.am TECH, accessed September 1, 2025, [https://tech.news.am/eng/news/5902/a-new-solar-flare-becomes-the-strongest-in-august-2025.html](https://tech.news.am/eng/news/5902/a-new-solar-flare-becomes-the-strongest-in-august-2025.html)  
+26. Frank Kelly's Geopolitical Week Ahead | August 17, 2025 \- DWS, accessed September 1, 2025, [https://www.dws.com/en-us/insights/the-world/geopolitics/frank-kelly-geopolitical-week-ahead-08172025/](https://www.dws.com/en-us/insights/the-world/geopolitics/frank-kelly-geopolitical-week-ahead-08172025/)  
+27. 10 Conflicts to Watch in 2025 | International Crisis Group, accessed September 1, 2025, [https://www.crisisgroup.org/global/10-conflicts-watch-2025](https://www.crisisgroup.org/global/10-conflicts-watch-2025)  
+28. 2025 in science \- Wikipedia, accessed September 1, 2025, [https://en.wikipedia.org/wiki/2025\_in\_science](https://en.wikipedia.org/wiki/2025_in_science)

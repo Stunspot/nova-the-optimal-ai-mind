@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/gridmason-build-spec-v1.json",
+  "title": "Gridmason Build Spec v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "schema_version", "artifact_id", "title", "target", "coordinate_frame", "origin", "size", "air_policy", "palette", "placements", "unsupported", "provenance"],
+  "properties": {
+    "format": {"const": "gridmason-build-spec/v1"},
+    "schema_version": {"type": "integer", "const": 1},
+    "artifact_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,62}(?![\\s\\S])"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 120, "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\uD800-\\uDFFF]{1,120}(?![\\s\\S])"},
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["edition", "game_version", "environment", "loader_or_server"],
+      "properties": {
+        "edition": {"enum": ["java", "bedrock"]},
+        "game_version": {"type": "string", "minLength": 1, "maxLength": 64, "pattern": "^[ -~]{1,64}(?![\\s\\S])"},
+        "environment": {"enum": ["vanilla", "paper", "server", "modded", "realm", "addon", "other"]},
+        "loader_or_server": {"type": ["string", "null"], "maxLength": 120, "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\uD800-\\uDFFF]{1,120}(?![\\s\\S])"}
+      }
+    },
+    "coordinate_frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z", "anchor"],
+      "properties": {
+        "x": {"const": "east-positive"},
+        "y": {"const": "up-positive"},
+        "z": {"const": "south-positive"},
+        "anchor": {"const": "minimum-corner"}
+      }
+    },
+    "origin": {"$ref": "#/$defs/coordinate"},
+    "size": {"$ref": "#/$defs/positiveCoordinate"},
+    "air_policy": {"const": "omit"},
+    "palette": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 256,
+      "uniqueItems": true,
+      "items": {"$ref": "#/$defs/paletteEntry"}
+    },
+    "placements": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 65536,
+      "items": {"$ref": "#/$defs/placement"}
+    },
+    "unsupported": {
+      "type": "array",
+      "maxItems": 32,
+      "uniqueItems": true,
+      "items": {"enum": ["entities", "block_entities", "scheduled_ticks", "inventories", "biomes", "fluids", "commands", "native_formats", "world_actions"]},
+      "allOf": [
+        {"contains": {"const": "entities"}},
+        {"contains": {"const": "block_entities"}}
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["basis", "evidence_status", "notes"],
+      "properties": {
+        "basis": {"type": "string", "minLength": 1, "maxLength": 512, "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\uD800-\\uDFFF]{1,512}(?![\\s\\S])"},
+        "evidence_status": {"enum": ["OBSERVED", "REPORTED", "STATICALLY VALID", "LIKELY", "UNVERIFIED"]},
+        "notes": {"type": "string", "maxLength": 2048, "pattern": "^[^\\u0000-\\u001F\\u007F-\\u009F\\uD800-\\uDFFF]{0,2048}(?![\\s\\S])"}
+      }
+    }
+  },
+  "$defs": {
+    "coordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647},
+        "y": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647},
+        "z": {"type": "integer", "minimum": -2147483648, "maximum": 2147483647}
+      }
+    },
+    "positiveCoordinate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z"],
+      "properties": {
+        "x": {"type": "integer", "minimum": 1, "maximum": 128},
+        "y": {"type": "integer", "minimum": 1, "maximum": 128},
+        "z": {"type": "integer", "minimum": 1, "maximum": 128}
+      }
+    },
+    "paletteEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "block_id", "states", "swatch"],
+      "properties": {
+        "key": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,11}(?![\\s\\S])"},
+        "block_id": {"type": "string", "maxLength": 128, "pattern": "^[a-z0-9_.-]+:[a-z0-9_./-]+(?![\\s\\S])"},
+        "states": {
+          "type": "object",
+          "additionalProperties": {"type": "string", "pattern": "^[a-z0-9_.-]{1,64}(?![\\s\\S])"},
+          "propertyNames": {"pattern": "^[a-z][a-z0-9_]{0,31}(?![\\s\\S])"}
+        },
+        "swatch": {"type": "string", "pattern": "^#[0-9A-F]{6}(?![\\s\\S])"}
+      }
+    },
+    "placement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y", "z", "palette"],
+      "properties": {
+        "x": {"type": "integer", "minimum": 0},
+        "y": {"type": "integer", "minimum": 0},
+        "z": {"type": "integer", "minimum": 0},
+        "palette": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]{0,11}(?![\\s\\S])"}
+      }
+    }
+  }
+}

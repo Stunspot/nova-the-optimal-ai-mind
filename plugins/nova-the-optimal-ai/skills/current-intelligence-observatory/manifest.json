@@ -1,0 +1,14 @@
+{
+  "name": "current-intelligence-observatory",
+  "product_name": "Current Intelligence Observatory",
+  "version": "0.1.0",
+  "category": "Evidence-Preserving Current Intelligence Workbench",
+  "format": "cd-augment-skill/v1",
+  "entrypoint": "SKILL.md",
+  "state_format": "cd-observatory-case/v1",
+  "targets": ["codex", "claude"],
+  "runtime_reference_files": 21,
+  "third_party_runtime_dependencies": [],
+  "license_status": "not-supplied-for-product",
+  "live_host_verification": false
+}

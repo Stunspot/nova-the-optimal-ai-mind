@@ -1,0 +1,210 @@
+{
+  "package": "beryl-it-benchcraft",
+  "version": "0.1.0",
+  "files": {
+    "assets/build-and-migration-checklist.md": {
+      "sha256": "fa4358f28eb28157c35a62b913c6764abb27ae47e3201f3b8c2ba44c4fd587d1",
+      "bytes": 1207
+    },
+    "assets/device-intake-and-custody.md": {
+      "sha256": "89be9d02fd37a07640e303cf1b14ce9168d0ac602afbf08f80a1d1badc1cb5ac",
+      "bytes": 824
+    },
+    "assets/diagnostic-worksheet.md": {
+      "sha256": "c37b22a5815bf827158fc0d6044b33664c904e839d1626d8e41c83dbdf8c61a1",
+      "bytes": 1108
+    },
+    "assets/it-case.template.json": {
+      "sha256": "c7d494affc9be2e7a2d1b95c8e174f593b69204c70fa6e0719ad696346f37621",
+      "bytes": 1165
+    },
+    "assets/verification-record.md": {
+      "sha256": "d045c9858812926107785b819e214260f0723d29a453edd7c1115e127659532c",
+      "bytes": 591
+    },
+    "assets/work-order-and-handoff.md": {
+      "sha256": "ed19f21cb575c533ca642ca99484c36c5356b20b1cd01513c0c58fc5462e19fc",
+      "bytes": 861
+    },
+    "docs/ACCESSIBILITY.md": {
+      "sha256": "8abbbc8e8900d572d960423d8af02b1a697373a5f6046dd067b5eb32981c2757",
+      "bytes": 2250
+    },
+    "docs/CAPABILITY-MATRIX.md": {
+      "sha256": "bef90971ec02c392c4c36e4806433b708d2a92b858690204eb648d5d0728a00f",
+      "bytes": 5206
+    },
+    "docs/CASE-FILES.md": {
+      "sha256": "20ce00b0eecb9bd5ff8ea494c3790fd45ca434479f3af648a1253ba697a54b4a",
+      "bytes": 4616
+    },
+    "docs/DOCUMENTATION-MAINTENANCE.md": {
+      "sha256": "7118278348144e0f05b7120a494591f3710df32812a454bab7e92b412921ac6c",
+      "bytes": 2570
+    },
+    "docs/INSTALLATION.md": {
+      "sha256": "816c09327ee3cae717bd1e3f1e4b0303439e7f89a15bacb53ad8df8e764d4b97",
+      "bytes": 3521
+    },
+    "docs/LIMITATIONS.md": {
+      "sha256": "a0e0281ae9c4ad455d409c751e6165fa52fc42d386279c0a698f7e00f49fd316",
+      "bytes": 3806
+    },
+    "docs/QUICK-START.md": {
+      "sha256": "b93afb98fb5eaa0ee270e651d9fe64b509e9830f5622c7d3ba82336d398ab4d4",
+      "bytes": 3468
+    },
+    "docs/RELEASE-NOTES.md": {
+      "sha256": "855103b3ab80b3ec2c3a836af9afb82f660f2e66e6f8f2136d4edbfbef5cee1b",
+      "bytes": 1922
+    },
+    "docs/SAFETY-AND-DATA.md": {
+      "sha256": "6befa6fcb2e4e238f398fc6bc83342a82ddc17f24198db6f8c636f0e723deb60",
+      "bytes": 4788
+    },
+    "docs/TROUBLESHOOTING.md": {
+      "sha256": "471cee79ed72100e74cfa290c2e492af0ca865612d584b87ccebbdc941e139a4",
+      "bytes": 5031
+    },
+    "docs/USER-GUIDE.md": {
+      "sha256": "ebbd082ba7ac8e982f5c2c2f12cf96e813bcdaea1e050329b50bd3b179585ba4",
+      "bytes": 6359
+    },
+    "docs/VALIDATION-AND-EVALUATION.md": {
+      "sha256": "eb2aded28ac1fd762de62e08d40178c8b33932707481d47d406a42fab43d5ae3",
+      "bytes": 4589
+    },
+    "evals/core-transfer-cases.yaml": {
+      "sha256": "48f7c56cd79affccd5a4962a4f30895f1c951140ee859d59a1fd2b31b05b3308",
+      "bytes": 13301
+    },
+    "evals/eval-manifest.yaml": {
+      "sha256": "91c5753c56813c967d09818f54b0de56f595e854a39e73ca8140ca3dfb68c38f",
+      "bytes": 657
+    },
+    "examples/intermittent-wifi/case.json": {
+      "sha256": "0d6d56bb25fe7fd26bbaa3f808a4f263a1e37ac2c75b339c4dadc6afc06a3cd0",
+      "bytes": 2417
+    },
+    "examples/intermittent-wifi/demonstration.md": {
+      "sha256": "0b2d04646f495c4ba7f6f1844d83385761d498a3b17ca5e3615d101e769d91fb",
+      "bytes": 696
+    },
+    "examples/no-power-laptop/case.json": {
+      "sha256": "c9c3f0336c03bfd2e8d03eb04d89e204b7c7fafc09905711bc2398b90a32692a",
+      "bytes": 2293
+    },
+    "examples/no-power-laptop/demonstration.md": {
+      "sha256": "5093528bbfcd2e68c0dda8ce63b8a860153bff2eedcaa441e6c4c2d9dc3f7049",
+      "bytes": 937
+    },
+    "examples/suspected-compromise/case.json": {
+      "sha256": "772d2108ff70f1db29016e716d43b3a39307b55a453ab3a663a15bbd82d21bde",
+      "bytes": 2264
+    },
+    "examples/suspected-compromise/demonstration.md": {
+      "sha256": "b18363376a19e84066b1438ad975cb9b78ac0964e04d838d21f82fce22b1552e",
+      "bytes": 706
+    },
+    "fallbacks/degraded-capability.md": {
+      "sha256": "fb74030c809a6fd7da9cda6a77f8854433911612b743105b66dba6e14774b171",
+      "bytes": 1976
+    },
+    "fallbacks/universal-copy-paste-workflow.md": {
+      "sha256": "6c9749a03ea9d536bae24aeef53736177837689d290c6839060bd2b532dd2811",
+      "bytes": 2315
+    },
+    "knowledge/network-architecture.md": {
+      "sha256": "6e25234bfd0af301bc5ab89020bd5e0cd58c2ee25f5169197daca0193301eb94",
+      "bytes": 39916
+    },
+    "knowledge/source-navigation.md": {
+      "sha256": "254dc48872608ff7df67f2ee36ab396a8bf92f3f38ee6c6b5b116c453645aea0",
+      "bytes": 936
+    },
+    "knowledge/windows-systems-engineering.md": {
+      "sha256": "fcecb51c9a9432674bcbf54d96a4b240b218d6e908a1cda0d8f8bdf84124031f",
+      "bytes": 48807
+    },
+    "personas/beryl-it-benchcraft-practitioner.md": {
+      "sha256": "14c1a54c32ef41c2c14f4b5cd4da294df387a6e03d6ab25b017b723a74900c9b",
+      "bytes": 5796
+    },
+    "personas/beryl-it-forensics-studio.png": {
+      "sha256": "2030b850bbdd4e997590fc07d6233eeb49bbe6ad0c72be6b7ff44a270829304b",
+      "bytes": 1483786
+    },
+    "PROVENANCE.md": {
+      "sha256": "a2a1102fdf288a15ddf87c28dd8df252d2b7a264faf3b836bfa68f41a7a19ff8",
+      "bytes": 2253
+    },
+    "README.md": {
+      "sha256": "7599b6b529c8cf7cd0a119b85db8d05110384a8a9cd92e569d9fe5ddde80cd99",
+      "bytes": 4462
+    },
+    "references/diagnostic-method.md": {
+      "sha256": "e7944600679f68f87d54c70239d62402db63a1d91d1b10991e41bdd7c44ef2be",
+      "bytes": 2971
+    },
+    "references/evidence-source-and-uncertainty.md": {
+      "sha256": "92ad23dc804a3d3ceee4014aba4eb661e275df831fbdb2965bbbd2fc1933a5eb",
+      "bytes": 1320
+    },
+    "references/network-troubleshooting.md": {
+      "sha256": "596c2a2671b55316a93cf4a8b4ada5bf4476a7d850ed19bfa68164a4eef914e0",
+      "bytes": 2048
+    },
+    "references/operating-doctrine.md": {
+      "sha256": "18194021d9e8f48bcbcad3ccaa7949f519e94951f95f51c76e914fbc6eff2039",
+      "bytes": 1909
+    },
+    "references/platform-configuration-and-recovery.md": {
+      "sha256": "cbcf7885281799f261edb5f68fc5baa275f738d2b2728a265e435bf97e34436e",
+      "bytes": 3210
+    },
+    "references/review-rubric.md": {
+      "sha256": "f43e9a2c6cde91e41a742eb3f4d41fe2ac6bf0616dcd674282872332b09b4764",
+      "bytes": 1433
+    },
+    "references/safety-data-and-authority.md": {
+      "sha256": "342f1337c40c274067bc3865e9f4f97d8fe4d759b1244dc40acd8ef802dcf3a0",
+      "bytes": 2644
+    },
+    "references/security-and-privacy.md": {
+      "sha256": "4a1f06efffbf4fc6bc8c05969ee1ca563620d7eae41554284f07021cd3fa43f3",
+      "bytes": 1699
+    },
+    "references/service-communication-and-handoff.md": {
+      "sha256": "1c64f80cf78f25356eaeee084be3bca6cbc1f67135f8f0ea8f5fdff610390003",
+      "bytes": 1452
+    },
+    "schemas/it-case.schema.json": {
+      "sha256": "5ffa30ed4ae436387e70acc6b9ab7f57eb5897a83d3e0f4a000030fa2e3f342b",
+      "bytes": 2027
+    },
+    "scripts/validate_case_file.py": {
+      "sha256": "d9188985f6d7a69be0d4dd30f2ab89d415961ab17130e294c14ecdd08c23bd66",
+      "bytes": 2441
+    },
+    "scripts/validate_release.py": {
+      "sha256": "6a3400e671d7eff0ce171c937f70bdba1d5eabe6a7d95f90117895c0cb80cbb1",
+      "bytes": 4223
+    },
+    "skills/beryl-it-tech/agents/openai.yaml": {
+      "sha256": "41582ef56c824c5e7e25281eb38a68ed98dda6264c3a51d1df804bf4963b5a74",
+      "bytes": 250
+    },
+    "skills/beryl-it-tech/SKILL.md": {
+      "sha256": "2b99875fa6af56ee9d703dd4936e6c48e4c1d280cde171ac66874e2339f1df57",
+      "bytes": 7916
+    },
+    "skills/it-work-reviewer/agents/openai.yaml": {
+      "sha256": "6001a4c9b605c123d436e2ab39763b93e6ba31397745aa964e186c36580eb938",
+      "bytes": 221
+    },
+    "skills/it-work-reviewer/SKILL.md": {
+      "sha256": "dca36a76c99435f22cf121a3ba56425f8fe5d29140da2103b3c0b54d819bc97e",
+      "bytes": 2112
+    }
+  }
+}

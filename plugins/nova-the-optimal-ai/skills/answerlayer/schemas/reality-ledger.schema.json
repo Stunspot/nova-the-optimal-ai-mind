@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborativedynamics.com/schemas/answerlayer/reality-ledger-v1.json",
+  "title": "AnswerLayer Reality Ledger v1",
+  "type": "object",
+  "required": ["format", "product_version", "ledger_id", "title", "owner", "scope", "decision_use", "created_at", "updated_at", "baseline", "sources", "candidates", "deltas", "rejections", "fuzz", "patches", "probes", "traps", "watch", "approvals", "publication"],
+  "properties": {
+    "format": {"const": "answerlayer/reality-ledger/v1"},
+    "product_version": {"const": "0.1.0"},
+    "ledger_id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "decision_use": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string"},
+    "updated_at": {"type": "string"},
+    "baseline": {
+      "type": "object",
+      "required": ["version", "status", "as_of", "text", "authority", "approved_by", "approved_at", "supersedes"],
+      "properties": {
+        "version": {"type": "integer", "minimum": 1},
+        "status": {"enum": ["candidate", "patched", "superseded", "retired"]},
+        "as_of": {"type": "string"},
+        "text": {"type": "string"},
+        "authority": {"enum": ["model_generated", "machine_validated", "human_reviewed", "human_approved", "executed", "verified"]},
+        "approved_by": {"type": ["string", "null"]},
+        "approved_at": {"type": ["string", "null"]},
+        "supersedes": {"type": ["integer", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "sources": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "candidates": {"type": "array", "items": {"$ref": "#/$defs/candidate"}},
+    "deltas": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "rejections": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "fuzz": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "patches": {"type": "array", "items": {"$ref": "#/$defs/patch"}},
+    "probes": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "traps": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "watch": {"type": "array", "items": {"$ref": "#/$defs/watch"}},
+    "approvals": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
+    "publication": {
+      "type": "object",
+      "required": ["status", "approved_by", "approved_at", "scope"],
+      "properties": {
+        "status": {"enum": ["not_authorized", "approved", "published", "retired"]},
+        "approved_by": {"type": ["string", "null"]},
+        "approved_at": {"type": ["string", "null"]},
+        "scope": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "identified": {
+      "type": "object",
+      "required": ["id", "status"],
+      "properties": {"id": {"type": "string", "minLength": 1}, "status": {"enum": ["candidate", "accepted_delta", "rejected_noise", "fuzz_unresolved", "patched", "superseded", "retired"]}},
+      "additionalProperties": true
+    },
+    "candidate": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {"type": "object", "required": ["claim", "source_ids", "answer_change", "mechanism", "event_date", "publication_date", "effective_date", "threshold_date", "classification", "confidence_basis", "counterfactual", "recheck"]}
+      ]
+    },
+    "patch": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {"type": "object", "required": ["before", "after", "mechanism", "source_ids", "counterfactual", "authority", "approved_by", "approved_at"]}
+      ]
+    },
+    "watch": {
+      "allOf": [
+        {"$ref": "#/$defs/identified"},
+        {"type": "object", "required": ["condition", "operator", "threshold", "observed", "triggered", "next_review"]}
+      ]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,12 @@
+{
+  "format": "cd-skill-manifest/v1",
+  "name": "agentic-eros",
+  "version": "0.2.0",
+  "entrypoint": "SKILL.md",
+  "runtime_dependencies": [],
+  "optional_host_capabilities": [
+    "user-approved memory or file storage for preference capsules",
+    "host-specific policy adapter"
+  ],
+  "privacy_default": "transient conversation state"
+}

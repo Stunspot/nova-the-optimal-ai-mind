@@ -1,0 +1,37 @@
+{
+  "format": "answerlayer/reality-ledger/v1",
+  "product_version": "0.1.0",
+  "ledger_id": "RL-CHANGE-ME",
+  "title": "Untitled decision surface",
+  "owner": "UNASSIGNED",
+  "scope": "UNSET",
+  "decision_use": "UNSET",
+  "created_at": "YYYY-MM-DD",
+  "updated_at": "YYYY-MM-DD",
+  "baseline": {
+    "version": 1,
+    "status": "candidate",
+    "as_of": "YYYY-MM-DD",
+    "text": "UNSET",
+    "authority": "model_generated",
+    "approved_by": null,
+    "approved_at": null,
+    "supersedes": null
+  },
+  "sources": [],
+  "candidates": [],
+  "deltas": [],
+  "rejections": [],
+  "fuzz": [],
+  "patches": [],
+  "probes": [],
+  "traps": [],
+  "watch": [],
+  "approvals": [],
+  "publication": {
+    "status": "not_authorized",
+    "approved_by": null,
+    "approved_at": null,
+    "scope": null
+  }
+}

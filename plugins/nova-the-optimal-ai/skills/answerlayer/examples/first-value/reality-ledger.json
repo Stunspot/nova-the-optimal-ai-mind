@@ -1,0 +1,43 @@
+{
+  "format": "answerlayer/reality-ledger/v1",
+  "product_version": "0.1.0",
+  "ledger_id": "RL-SYNTHETIC-001",
+  "title": "Synthetic Northstar API operating answer",
+  "owner": "Example Operations Lead",
+  "scope": "Fictional vendor decision; demonstration only",
+  "decision_use": "Choose the default integration workflow",
+  "created_at": "2026-07-20",
+  "updated_at": "2026-07-20",
+  "baseline": {
+    "version": 1,
+    "status": "candidate",
+    "as_of": "2026-06-30",
+    "text": "Use synchronous batch upload as the default; regional endpoints remain optional.",
+    "authority": "model_generated",
+    "approved_by": null,
+    "approved_at": null,
+    "supersedes": null
+  },
+  "sources": [
+    {"id": "SRC-001", "status": "candidate", "title": "Synthetic vendor changelog", "locator": "example://vendor/changelog", "publication_date": "2026-07-10", "authority": "fictional_primary"},
+    {"id": "SRC-002", "status": "candidate", "title": "Synthetic support bulletin", "locator": "example://vendor/support", "publication_date": "2026-07-11", "authority": "fictional_primary"},
+    {"id": "SRC-003", "status": "candidate", "title": "Synthetic rumor post", "locator": "example://forum/rumor", "publication_date": "2026-07-12", "authority": "fictional_unverified"}
+  ],
+  "candidates": [
+    {"id": "CAN-001", "status": "accepted_delta", "claim": "Asynchronous jobs became the vendor-recommended default for batches over 10,000 records.", "source_ids": ["SRC-001", "SRC-002"], "answer_change": "Default integration workflow for large batches", "mechanism": "Documented reliability and retry behavior changed the preferred workflow", "event_date": "2026-07-10", "publication_date": "2026-07-10", "effective_date": "2026-07-10", "threshold_date": "2026-07-10", "classification": "structural_event", "confidence_basis": "Two fictional first-party sources agree", "counterfactual": "Small batches and endpoints below the threshold remain unchanged", "recheck": "On vendor rollback or 2026-10-10"},
+    {"id": "CAN-002", "status": "rejected_noise", "claim": "The vendor changed its logo.", "source_ids": ["SRC-001"], "answer_change": "", "mechanism": "No operating mechanism", "event_date": "2026-07-10", "publication_date": "2026-07-10", "effective_date": "not_applicable", "threshold_date": "not_applicable", "classification": "rejected_noise", "confidence_basis": "True but immaterial in this fictional packet", "counterfactual": "Integration decision remains the same", "recheck": "Only if identity or contracting changes"},
+    {"id": "CAN-003", "status": "rejected_noise", "claim": "A 2025 feature announcement was reposted.", "source_ids": ["SRC-003"], "answer_change": "", "mechanism": "No new threshold", "event_date": "2025-08-01", "publication_date": "2026-07-12", "effective_date": "2025-08-01", "threshold_date": "not_applicable", "classification": "rejected_noise", "confidence_basis": "Repetition adds no new state", "counterfactual": "Baseline already incorporates the feature", "recheck": "On a new official change"},
+    {"id": "CAN-004", "status": "candidate", "claim": "A future regional requirement may take effect.", "source_ids": ["SRC-002"], "answer_change": "Regional endpoint requirement", "mechanism": "Would constrain endpoint selection", "event_date": "2026-07-11", "publication_date": "2026-07-11", "effective_date": "2027-01-01", "threshold_date": "2026-11-01", "classification": "watch", "confidence_basis": "Fictional notice states a future date", "counterfactual": "Regional endpoints remain optional until the threshold", "recheck": "2026-11-01"},
+    {"id": "CAN-005", "status": "fuzz_unresolved", "claim": "The new job endpoint may or may not support encrypted archives.", "source_ids": ["SRC-001", "SRC-002"], "answer_change": "Archive upload workflow", "mechanism": "Support status changes feasible workflow", "event_date": "2026-07-10", "publication_date": "2026-07-11", "effective_date": "unknown", "threshold_date": "unknown", "classification": "strong_signal", "confidence_basis": "Two fictional primary sources conflict", "counterfactual": "Keep encrypted archives on the established path", "recheck": "When a reproducible test or corrected bulletin resolves the conflict", "conflict_key": "encrypted-archive-support"},
+    {"id": "CAN-006", "status": "candidate", "claim": "A forum rumor says all batch uploads will be removed tomorrow.", "source_ids": ["SRC-003"], "answer_change": "Potentially all batch workflows", "mechanism": "Unverified discontinuation", "event_date": "unknown", "publication_date": "2026-07-12", "effective_date": "unknown", "threshold_date": "unknown", "classification": "watch", "confidence_basis": "Single fictional rumor", "counterfactual": "No workflow change without official confirmation", "recheck": "On first-party confirmation"}
+  ],
+  "deltas": [{"id": "DEL-001", "status": "accepted_delta", "candidate_id": "CAN-001", "source_ids": ["SRC-001", "SRC-002"], "mechanism": "Large-batch reliability guidance changed"}],
+  "rejections": [{"id": "REJ-001", "status": "rejected_noise", "candidate_id": "CAN-002", "reason": "No answer change"}, {"id": "REJ-002", "status": "rejected_noise", "candidate_id": "CAN-003", "reason": "Old information; no new threshold"}],
+  "fuzz": [{"id": "FUZ-001", "status": "fuzz_unresolved", "candidate_id": "CAN-005", "competing_claims": ["Supported", "Not supported"], "abstention": "Do not move encrypted archives to the new endpoint yet.", "resolution_indicator": "Reproducible test or corrected first-party documentation"}],
+  "patches": [{"id": "PAT-001", "status": "accepted_delta", "before": "Use synchronous batch upload as the default.", "after": "For batches over 10,000 records, prefer asynchronous jobs; retain the current path for smaller or encrypted archives until resolved.", "mechanism": "Changed first-party reliability guidance", "source_ids": ["SRC-001", "SRC-002"], "counterfactual": "If the guidance is withdrawn, restore the prior default after review.", "authority": "model_generated", "approved_by": null, "approved_at": null}],
+  "probes": [{"id": "PRB-001", "status": "candidate", "question": "Does a reproducible 20,000-record test confirm lower failure?"}, {"id": "PRB-002", "status": "candidate", "question": "Does corrected documentation resolve encrypted archives?"}, {"id": "PRB-003", "status": "candidate", "question": "Do retry logs support the claimed mechanism?"}],
+  "traps": [{"id": "TRP-001", "status": "candidate", "condition": "A runbook still says synchronous for all batch sizes"}, {"id": "TRP-002", "status": "candidate", "condition": "Encrypted archives are silently moved before fuzz resolution"}],
+  "watch": [{"id": "WAT-001", "status": "candidate", "condition": "Preparation threshold date reached", "operator": "gte", "threshold": 20261101, "observed": 20260720, "triggered": false, "next_review": "2026-11-01"}, {"id": "WAT-002", "status": "candidate", "condition": "First-party discontinuation notice appears", "operator": "eq", "threshold": 1, "observed": 0, "triggered": false, "next_review": "On authoritative publication"}],
+  "approvals": [],
+  "publication": {"status": "not_authorized", "approved_by": null, "approved_at": null, "scope": null}
+}

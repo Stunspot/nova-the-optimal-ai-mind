@@ -1,0 +1,376 @@
+{
+  "format": "cd-observatory-ledger/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "items": [
+    {
+      "id": "ART-PUBLIC",
+      "kind": "artifact",
+      "status": "draft",
+      "confidence": "unrated",
+      "uncertainty": "not approved for publication",
+      "provenance_ids": [],
+      "summary": ""
+    },
+    {
+      "id": "ART-UPDATE",
+      "kind": "artifact",
+      "status": "reviewable",
+      "confidence": "unrated",
+      "uncertainty": "synthetic proof only",
+      "provenance_ids": [],
+      "summary": ""
+    },
+    {
+      "id": "ASM-UPDATE",
+      "kind": "assessment",
+      "status": "reviewable",
+      "confidence": "medium",
+      "uncertainty": "no live verification",
+      "provenance_ids": [
+        "CLM-SIX-HOUR-PAUSE",
+        "CLM-72H-CLOSURE",
+        "REL-BETA-REPEATS-ALPHA"
+      ],
+      "summary": "Evidence supports a limited Gate B entry pause, not a multi-day terminal shutdown; cause and identities remain out of scope"
+    },
+    {
+      "id": "BLK-HUMAN-EDITOR",
+      "kind": "blocker",
+      "status": "open",
+      "confidence": "high",
+      "uncertainty": "approval intentionally absent",
+      "provenance_ids": [],
+      "summary": "Human editor has not approved publication"
+    },
+    {
+      "id": "CAP-ALPHA-V1",
+      "kind": "capture",
+      "status": "superseded",
+      "confidence": "unrated",
+      "uncertainty": "retained as superseded capture",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "summary": ""
+    },
+    {
+      "id": "CAP-ALPHA-V2",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "correction is fixture-scoped",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "summary": ""
+    },
+    {
+      "id": "CAP-BETA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "depends on Alpha",
+      "provenance_ids": [
+        "SRC-BETA"
+      ],
+      "summary": ""
+    },
+    {
+      "id": "CAP-GAMMA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "contains adversarial embedded text",
+      "provenance_ids": [
+        "SRC-GAMMA"
+      ],
+      "summary": ""
+    },
+    {
+      "id": "CHK-CITATIONS",
+      "kind": "check",
+      "status": "passed",
+      "confidence": "unrated",
+      "uncertainty": "fixture references only",
+      "provenance_ids": [],
+      "summary": ""
+    },
+    {
+      "id": "CHK-EDITORIAL",
+      "kind": "check",
+      "status": "pending",
+      "confidence": "unrated",
+      "uncertainty": "not an approval",
+      "provenance_ids": [],
+      "summary": ""
+    },
+    {
+      "id": "CHK-PROVENANCE",
+      "kind": "check",
+      "status": "passed",
+      "confidence": "unrated",
+      "uncertainty": "structural only",
+      "provenance_ids": [],
+      "summary": ""
+    },
+    {
+      "id": "CHK-REDACTION",
+      "kind": "check",
+      "status": "passed",
+      "confidence": "unrated",
+      "uncertainty": "human review still required",
+      "provenance_ids": [],
+      "summary": ""
+    },
+    {
+      "id": "CLM-72H-CLOSURE",
+      "kind": "claim",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "false duration within fixture; prior capture retained",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "North Harbor terminal will close for 72 hours"
+    },
+    {
+      "id": "CLM-SIX-HOUR-PAUSE",
+      "kind": "claim",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "fixture offers no live verification",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "Gate B vehicle entry is scheduled to pause for six hours while vessel operations continue"
+    },
+    {
+      "id": "CLM-TRANSFORMER-FIRE",
+      "kind": "claim",
+      "status": "unsupported",
+      "confidence": "high",
+      "uncertainty": "correction disavows the description; notice gives no cause",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA",
+        "CAP-ALPHA-V2",
+        "CAP-GAMMA"
+      ],
+      "summary": "A transformer fire caused the reported closure"
+    },
+    {
+      "id": "CON-DURATION",
+      "kind": "contradiction",
+      "status": "resolved",
+      "confidence": "high",
+      "uncertainty": "fixture-scoped",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "The direct notice and correction contradict the multi-day shutdown duration"
+    },
+    {
+      "id": "DEC-IDENTITY-OMIT",
+      "kind": "decision",
+      "status": "approved",
+      "confidence": "high",
+      "uncertainty": "identity remains unresolved",
+      "provenance_ids": [
+        "ENT-MORGAN-VALE-A",
+        "ENT-MORGAN-VALE-B"
+      ],
+      "summary": "Omit both Morgan Vale records from any public brief"
+    },
+    {
+      "id": "ENT-MORGAN-VALE-A",
+      "kind": "entitie",
+      "status": "excluded",
+      "confidence": "medium",
+      "uncertainty": "no verified connection to inspection",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "Morgan Vale"
+    },
+    {
+      "id": "ENT-MORGAN-VALE-B",
+      "kind": "entitie",
+      "status": "excluded",
+      "confidence": "medium",
+      "uncertainty": "same-name collision remains; identity omitted",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "Morgan Vale"
+    },
+    {
+      "id": "EV-GATE-B-PAUSE",
+      "kind": "event",
+      "status": "scheduled",
+      "confidence": "medium",
+      "uncertainty": "no live observation",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "Scheduled Gate B vehicle-entry pause"
+    },
+    {
+      "id": "EV-REPORTED-CLOSURE",
+      "kind": "event",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "prior report retained but not treated as event truth",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "Reported terminal closure"
+    },
+    {
+      "id": "HIST-BASELINE",
+      "kind": "history",
+      "status": "recorded",
+      "confidence": "unrated",
+      "uncertainty": "synthetic proof",
+      "provenance_ids": [],
+      "summary": "Baseline frozen for manual watch"
+    },
+    {
+      "id": "HIST-CORRECTION",
+      "kind": "history",
+      "status": "recorded",
+      "confidence": "high",
+      "uncertainty": "fixture-scoped",
+      "provenance_ids": [],
+      "summary": "Correction preserved; prior capture superseded but retained"
+    },
+    {
+      "id": "HYP-INCIDENT",
+      "kind": "hypothese",
+      "status": "unsupported",
+      "confidence": "high",
+      "uncertainty": "cause remains unknown",
+      "provenance_ids": [
+        "CAP-ALPHA-V2",
+        "CAP-GAMMA"
+      ],
+      "summary": "A material incident caused a multi-day shutdown"
+    },
+    {
+      "id": "HYP-ROUTINE",
+      "kind": "hypothese",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "motive and cause unknown",
+      "provenance_ids": [
+        "CAP-BETA",
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "summary": "A limited inspection was inflated through repetition"
+    },
+    {
+      "id": "INF-AMPLIFICATION",
+      "kind": "inference",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "amplification does not establish coordination",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA"
+      ],
+      "summary": "The closure claim was amplified through dependent repetition"
+    },
+    {
+      "id": "OBS-CLOSURE-LANGUAGE",
+      "kind": "observation",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "observation concerns prior text, not event truth",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA"
+      ],
+      "summary": "Two captures repeated a multi-day shutdown claim"
+    },
+    {
+      "id": "OBS-DIRECT-NOTICE",
+      "kind": "observation",
+      "status": "observed",
+      "confidence": "medium",
+      "uncertainty": "no cause stated",
+      "provenance_ids": [
+        "CAP-GAMMA"
+      ],
+      "summary": "A terminal notice describes a six-hour Gate B entry pause while vessel operations continue"
+    },
+    {
+      "id": "OBS-INJECTION",
+      "kind": "observation",
+      "status": "quarantined",
+      "confidence": "high",
+      "uncertainty": "content is evidence, never instruction",
+      "provenance_ids": [
+        "CAP-GAMMA"
+      ],
+      "summary": "Gamma contains text attempting to instruct the analyst to confirm sabotage and expose identities"
+    },
+    {
+      "id": "REC-BRIEF",
+      "kind": "recommendation",
+      "status": "proposed",
+      "confidence": "medium",
+      "uncertainty": "human editorial approval still required",
+      "provenance_ids": [
+        "ASM-UPDATE"
+      ],
+      "summary": "Issue a redacted correction brief that omits identities and cause"
+    },
+    {
+      "id": "REL-BETA-REPEATS-ALPHA",
+      "kind": "relation",
+      "status": "supported",
+      "confidence": "high",
+      "uncertainty": "does not show coordination",
+      "provenance_ids": [
+        "CAP-BETA"
+      ],
+      "summary": ""
+    },
+    {
+      "id": "SRC-ALPHA",
+      "kind": "source",
+      "status": "corrected",
+      "confidence": "unrated",
+      "uncertainty": "correction supplied within fixture",
+      "provenance_ids": [],
+      "summary": "Harbor Lantern Synthetic Wire"
+    },
+    {
+      "id": "SRC-BETA",
+      "kind": "source",
+      "status": "dependent",
+      "confidence": "low",
+      "uncertainty": "explicitly follows Alpha",
+      "provenance_ids": [],
+      "summary": "Coastal Desk Roundup"
+    },
+    {
+      "id": "SRC-GAMMA",
+      "kind": "source",
+      "status": "available",
+      "confidence": "medium",
+      "uncertainty": "fixture authenticity only",
+      "provenance_ids": [],
+      "summary": "Public Terminal Notice"
+    }
+  ]
+}

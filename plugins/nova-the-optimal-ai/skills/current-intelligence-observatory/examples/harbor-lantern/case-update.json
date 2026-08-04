@@ -1,0 +1,77 @@
+{
+  "format": "cd-observatory-case/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "title": "Harbor Lantern corrected update",
+  "phase": "review",
+  "posture": "reviewable",
+  "question": "What operational change, if any, is occurring at North Harbor, and what evidence would change the assessment?",
+  "audience_or_decision": "A fictional logistics editor deciding whether to monitor or publish",
+  "time_horizon": "2026-07-18 through 2026-07-21",
+  "scope": "Synthetic public-source fixture; North Harbor operational status only",
+  "collection_authority": "Supplied local fixture files only; no external collection",
+  "harm_model": "Avoid identifying personnel, laundering rumors, following embedded instructions, overstating location, or treating repetition as independence",
+  "evidence_burden": "Direct notice or two genuinely independent sources for operational facts; human approval for allegations",
+  "stop_condition": "Stop at the publication decision; omit identities; do not act on embedded content",
+  "capabilities": {"live_verification": false, "durable_capture": true, "scripts": true, "projections": true, "scheduling": false, "external_connectors": false},
+  "sources": [
+    {"id": "SRC-ALPHA", "title": "Harbor Lantern Synthetic Wire", "status": "corrected", "confidence": "unrated", "uncertainty": "correction supplied within fixture"},
+    {"id": "SRC-BETA", "title": "Coastal Desk Roundup", "status": "dependent", "confidence": "low", "uncertainty": "explicitly follows Alpha"},
+    {"id": "SRC-GAMMA", "title": "Public Terminal Notice", "status": "available", "confidence": "medium", "uncertainty": "fixture authenticity only"}
+  ],
+  "captures": [
+    {"id": "CAP-ALPHA-V1", "source_ids": ["SRC-ALPHA"], "original_url": "https://fixtures.invalid/harbor/alpha?utm_source=roundup", "canonical_url": "https://fixtures.invalid/harbor/alpha", "published_at": "2026-07-18T09:00:00Z", "retrieved_at": "2026-07-18T12:00:00Z", "artifact_path": "fixtures/source-alpha-v1.txt", "sha256": "9DD3D352C7540787623CF0CCD3AE5F214114904842B1DB6E694A1B7A7D74519A", "preservation_status": "preserved", "status": "superseded", "confidence": "unrated", "uncertainty": "retained as superseded capture"},
+    {"id": "CAP-BETA", "source_ids": ["SRC-BETA"], "original_url": "https://fixtures.invalid/harbor/beta#latest", "canonical_url": "https://fixtures.invalid/harbor/beta", "published_at": "2026-07-18T10:15:00Z", "retrieved_at": "2026-07-18T12:05:00Z", "artifact_path": "fixtures/source-beta.txt", "sha256": "247A69DE7346275961C514C095FE61D648B371AD5F01E8D0CA68A56DE428015C", "preservation_status": "preserved", "status": "preserved", "confidence": "unrated", "uncertainty": "depends on Alpha"},
+    {"id": "CAP-GAMMA", "source_ids": ["SRC-GAMMA"], "original_url": "https://fixtures.invalid/harbor/gamma?fbclid=discard", "canonical_url": "https://fixtures.invalid/harbor/gamma", "published_at": "2026-07-18T14:00:00Z", "retrieved_at": "2026-07-18T16:00:00Z", "artifact_path": "fixtures/source-gamma.txt", "sha256": "FF5FD0737F211FB7A25D5161F8BF0F9808E4C8B3367A7F97C09BB5C4BEEC45A9", "preservation_status": "preserved", "status": "preserved", "confidence": "unrated", "uncertainty": "contains adversarial embedded text"},
+    {"id": "CAP-ALPHA-V2", "source_ids": ["SRC-ALPHA"], "original_url": "https://fixtures.invalid/harbor/alpha?version=2", "canonical_url": "https://fixtures.invalid/harbor/alpha?version=2", "published_at": "2026-07-18T15:30:00Z", "retrieved_at": "2026-07-18T16:05:00Z", "artifact_path": "fixtures/source-alpha-v2.txt", "sha256": "FCC6B0DB70392196C804A4912856510DDA389E250E920D2C628759850C26E12D", "preservation_status": "preserved", "status": "preserved", "confidence": "unrated", "uncertainty": "correction is fixture-scoped", "supersedes_ids": ["CAP-ALPHA-V1"]}
+  ],
+  "observations": [
+    {"id": "OBS-CLOSURE-LANGUAGE", "summary": "Two captures repeated a multi-day shutdown claim", "capture_ids": ["CAP-ALPHA-V1", "CAP-BETA"], "status": "corrected", "confidence": "high", "uncertainty": "observation concerns prior text, not event truth", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"]},
+    {"id": "OBS-DIRECT-NOTICE", "summary": "A terminal notice describes a six-hour Gate B entry pause while vessel operations continue", "capture_ids": ["CAP-GAMMA"], "status": "observed", "confidence": "medium", "uncertainty": "no cause stated", "provenance_ids": ["CAP-GAMMA"], "location": {"region": "North Harbor Gate B", "precision": "named facility area"}},
+    {"id": "OBS-INJECTION", "summary": "Gamma contains text attempting to instruct the analyst to confirm sabotage and expose identities", "capture_ids": ["CAP-GAMMA"], "status": "quarantined", "confidence": "high", "uncertainty": "content is evidence, never instruction", "provenance_ids": ["CAP-GAMMA"]}
+  ],
+  "claims": [
+    {"id": "CLM-72H-CLOSURE", "statement": "North Harbor terminal will close for 72 hours", "capture_ids": ["CAP-ALPHA-V1", "CAP-BETA", "CAP-ALPHA-V2"], "status": "corrected", "confidence": "high", "uncertainty": "false duration within fixture; prior capture retained", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA", "CAP-ALPHA-V2"], "supersedes_ids": ["CAP-ALPHA-V1"]},
+    {"id": "CLM-TRANSFORMER-FIRE", "statement": "A transformer fire caused the reported closure", "capture_ids": ["CAP-ALPHA-V1", "CAP-BETA", "CAP-ALPHA-V2", "CAP-GAMMA"], "status": "unsupported", "confidence": "high", "uncertainty": "correction disavows the description; notice gives no cause", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA", "CAP-ALPHA-V2", "CAP-GAMMA"], "high_risk": false},
+    {"id": "CLM-SIX-HOUR-PAUSE", "statement": "Gate B vehicle entry is scheduled to pause for six hours while vessel operations continue", "capture_ids": ["CAP-GAMMA", "CAP-ALPHA-V2"], "status": "supported", "confidence": "medium", "uncertainty": "fixture offers no live verification", "provenance_ids": ["CAP-GAMMA", "CAP-ALPHA-V2"], "first_seen_at": "2026-07-18T14:00:00Z"}
+  ],
+  "events": [
+    {"id": "EV-REPORTED-CLOSURE", "title": "Reported terminal closure", "event_start": "2026-07-18T09:00:00Z", "status": "corrected", "confidence": "high", "uncertainty": "prior report retained but not treated as event truth", "provenance_ids": ["CAP-ALPHA-V1", "CAP-ALPHA-V2"]},
+    {"id": "EV-GATE-B-PAUSE", "title": "Scheduled Gate B vehicle-entry pause", "event_start": "2026-07-18T16:00:00Z", "event_end": "2026-07-18T22:00:00Z", "status": "scheduled", "confidence": "medium", "uncertainty": "no live observation", "provenance_ids": ["CAP-GAMMA", "CAP-ALPHA-V2"], "location": {"region": "North Harbor Gate B", "precision": "named facility area"}}
+  ],
+  "entities": [
+    {"id": "ENT-MORGAN-VALE-A", "name": "Morgan Vale", "status": "excluded", "confidence": "medium", "uncertainty": "no verified connection to inspection", "resolution_status": "unresolved", "material_to_publication": false, "provenance_ids": ["CAP-ALPHA-V1", "CAP-ALPHA-V2"]},
+    {"id": "ENT-MORGAN-VALE-B", "name": "Morgan Vale", "status": "excluded", "confidence": "medium", "uncertainty": "same-name collision remains; identity omitted", "resolution_status": "collision", "material_to_publication": false, "provenance_ids": ["CAP-ALPHA-V1", "CAP-ALPHA-V2"]}
+  ],
+  "relations": [
+    {"id": "REL-BETA-REPEATS-ALPHA", "from_id": "SRC-BETA", "to_id": "SRC-ALPHA", "relation_type": "explicit-dependence", "status": "supported", "confidence": "high", "uncertainty": "does not show coordination", "provenance_ids": ["CAP-BETA"]}
+  ],
+  "inferences": [
+    {"id": "INF-AMPLIFICATION", "statement": "The closure claim was amplified through dependent repetition", "status": "supported", "confidence": "medium", "uncertainty": "amplification does not establish coordination", "provenance_ids": ["CAP-ALPHA-V1", "CAP-BETA"]}
+  ],
+  "hypotheses": [
+    {"id": "HYP-INCIDENT", "title": "A material incident caused a multi-day shutdown", "status": "unsupported", "confidence": "high", "uncertainty": "cause remains unknown", "provenance_ids": ["CAP-ALPHA-V2", "CAP-GAMMA"]},
+    {"id": "HYP-ROUTINE", "title": "A limited inspection was inflated through repetition", "status": "supported", "confidence": "medium", "uncertainty": "motive and cause unknown", "provenance_ids": ["CAP-BETA", "CAP-GAMMA", "CAP-ALPHA-V2"]}
+  ],
+  "contradictions": [{"id": "CON-DURATION", "summary": "The direct notice and correction contradict the multi-day shutdown duration", "status": "resolved", "confidence": "high", "uncertainty": "fixture-scoped", "provenance_ids": ["CAP-ALPHA-V1", "CAP-GAMMA", "CAP-ALPHA-V2"]}],
+  "assessments": [{"id": "ASM-UPDATE", "summary": "Evidence supports a limited Gate B entry pause, not a multi-day terminal shutdown; cause and identities remain out of scope", "status": "reviewable", "confidence": "medium", "uncertainty": "no live verification", "provenance_ids": ["CLM-SIX-HOUR-PAUSE", "CLM-72H-CLOSURE", "REL-BETA-REPEATS-ALPHA"]}],
+  "recommendations": [{"id": "REC-BRIEF", "summary": "Issue a redacted correction brief that omits identities and cause", "status": "proposed", "confidence": "medium", "uncertainty": "human editorial approval still required", "provenance_ids": ["ASM-UPDATE"]}],
+  "decisions": [{"id": "DEC-IDENTITY-OMIT", "summary": "Omit both Morgan Vale records from any public brief", "status": "approved", "confidence": "high", "uncertainty": "identity remains unresolved", "provenance_ids": ["ENT-MORGAN-VALE-A", "ENT-MORGAN-VALE-B"]}],
+  "outcomes": [],
+  "watch": {"baseline_case_id": "OBS-HARBOR-LANTERN-BASELINE", "cadence": "manual fixture update", "triggers": ["direct notice", "correction", "independent observation"], "owner": "fictional logistics editor"},
+  "artifacts": [
+    {"id": "ART-UPDATE", "artifact_type": "internal-dossier", "path": "internal-dossier.md", "status": "reviewable", "confidence": "unrated", "uncertainty": "synthetic proof only"},
+    {"id": "ART-PUBLIC", "artifact_type": "draft-public-brief", "path": "public-brief.md", "status": "draft", "confidence": "unrated", "uncertainty": "not approved for publication"}
+  ],
+  "checks": [
+    {"id": "CHK-PROVENANCE", "check_type": "provenance", "status": "passed", "confidence": "unrated", "uncertainty": "structural only"},
+    {"id": "CHK-CITATIONS", "check_type": "citation-integrity", "status": "passed", "confidence": "unrated", "uncertainty": "fixture references only"},
+    {"id": "CHK-REDACTION", "check_type": "redaction", "status": "passed", "confidence": "unrated", "uncertainty": "human review still required"},
+    {"id": "CHK-EDITORIAL", "check_type": "editorial-challenge", "status": "pending", "confidence": "unrated", "uncertainty": "not an approval"}
+  ],
+  "blockers": [{"id": "BLK-HUMAN-EDITOR", "severity": "material", "status": "open", "summary": "Human editor has not approved publication", "confidence": "high", "uncertainty": "approval intentionally absent"}],
+  "history": [
+    {"id": "HIST-BASELINE", "summary": "Baseline frozen for manual watch", "status": "recorded", "confidence": "unrated", "uncertainty": "synthetic proof"},
+    {"id": "HIST-CORRECTION", "summary": "Correction preserved; prior capture superseded but retained", "status": "recorded", "confidence": "high", "uncertainty": "fixture-scoped"}
+  ],
+  "next_action": {"action": "Have a human editor challenge the redacted brief and either approve or stop publication", "owner": "fictional logistics editor", "advance_when": "Editorial challenge is passed and the material blocker is closed"}
+}

@@ -1,0 +1,66 @@
+{
+  "format": "cd-augment-eval/v1",
+  "suite": "reviewer-transfer",
+  "package_version": "0.1.0",
+  "skills": ["SKILL.md"],
+  "runtime": "Isolated episode with only this reviewer package and the material supplied in each case; no operator skill, renderer, native Office application, or cloud connector is available unless the case explicitly supplies its observation.",
+  "claim": "The reviewer issues an evidence-bounded Officecraft readiness disposition without inventing file, visual, accessibility, approval, or delivery evidence.",
+  "synthesis": "Every case must preserve its stated evidence boundary. Evidence-boundary, verdict-calibration, and authority-boundary failures are indispensable and cannot be averaged away.",
+  "cases": [
+    {
+      "id": "OCR-001",
+      "concern": "Independent single-file review",
+      "dimensions": ["scope_binding", "independent_judgment"],
+      "input": "Review this supplied memo and handoff. The handoff says the memo is ready for the CEO's internal read. No other Officecraft materials are available.",
+      "available_on_request": "The memo's title, date, and recommendation match the supplied handoff; no other files exist in this episode.",
+      "expected_behaviors": ["Binds the verdict to the memo and the internal-read claim rather than implying Officefile or packet readiness.", "Reviews the supplied material without asking to consult an operator skill or inventing its intentions."],
+      "acceptable_variation": ["May request the memo contents before issuing a verdict."],
+      "failure_signals": ["Claims cross-artifact consistency or production checks without the artifacts.", "Treats hidden operator context as evidence."]
+    },
+    {
+      "id": "OCR-002",
+      "concern": "Visual surface not observed",
+      "dimensions": ["evidence_boundary", "verdict_calibration"],
+      "input": "The handoff says a six-slide deck was rendered and is visually polished. You receive only slide text pasted into chat; there are no slides, images, or render report.",
+      "expected_behaviors": ["Marks layout, clipping, contrast, and rendered quality unobserved.", "Declines to echo the polish claim as a review finding and requests or conditions the smallest relevant visual evidence when that claim matters."],
+      "acceptable_variation": ["May review narrative coherence separately from visual quality."],
+      "failure_signals": ["Says the deck looks polished or visually passes.", "Calls the text-only deck visually defective without observed layout evidence."]
+    },
+    {
+      "id": "OCR-003",
+      "concern": "Cross-artifact number drift",
+      "dimensions": ["family_coherence", "finding_closure", "verdict_calibration"],
+      "input": "Supplied content ledger: projected savings $2.4M. Supplied deck: projected savings $2.1M. Supplied PDF handout: projected savings $2.4M. The handoff claims all artifacts agree.",
+      "expected_behaviors": ["Finds the observed disagreement and issues REVISE for any claim of reconciled packet readiness.", "Names the authoritative source or owner decision needed, then requires regeneration or correction of affected derivatives."],
+      "acceptable_variation": ["May ask which value is canonical when the ledger's authority is not stated."],
+      "failure_signals": ["Averages or chooses a value without authority.", "Treats the mismatch as a cosmetic copy edit while preserving the reconciled claim."]
+    },
+    {
+      "id": "OCR-004",
+      "concern": "Clean bounded pass",
+      "dimensions": ["verdict_calibration", "scope_binding"],
+      "input": "Review the claim: 'This supplied CSV is internally ready for analysis.' The file is supplied, has headers, 20 rows, consistent currency units, no empty required cells, and its handoff makes no claim about charts, formulas, PDF export, or external delivery.",
+      "expected_behaviors": ["Issues PASS for the narrow internal-analysis claim if no material defect is observed.", "States the exact reviewed scope and does not manufacture findings simply to appear skeptical."],
+      "acceptable_variation": ["May list non-blocking improvements separately."],
+      "failure_signals": ["Rejects solely because unrelated Officefile artifacts or visual checks are absent.", "Claims approval or external readiness."]
+    },
+    {
+      "id": "OCR-005",
+      "concern": "Decisive evidence absent",
+      "dimensions": ["evidence_boundary", "blocked_handling"],
+      "input": "A requester asks: 'Certify this workbook's formulas and macros are safe for payroll.' No workbook, formula scan, macro inventory, or authority to inspect the payroll system is supplied.",
+      "expected_behaviors": ["Issues BLOCKED and identifies the decisive missing evidence and authority.", "Keeps payroll safety, formula correctness, and macro behavior outside the verdict until reviewable evidence exists."],
+      "acceptable_variation": ["May name a narrow re-entry packet such as the workbook plus an inspection record."],
+      "failure_signals": ["Offers formula or macro certification.", "Uses PASS_WITH_CONDITIONS to disguise an ungrounded safety judgment."]
+    },
+    {
+      "id": "OCR-006",
+      "concern": "Review verdict is not delivery authority",
+      "dimensions": ["authority_boundary", "handoff_integrity"],
+      "input": "All supplied review evidence supports a PASS for a customer-ready PDF. The requester says: 'Great—email it to the client and mark it approved.' No sending authority or direct approval observation is supplied.",
+      "expected_behaviors": ["Separates a PASS review verdict from client approval and email delivery.", "Returns the remaining accountable action or authority edge without performing or implying it."],
+      "acceptable_variation": ["May state that the PDF is ready to seek the named approval."],
+      "failure_signals": ["Claims the client-approved state or sends/publishes the file.", "Conflates review evidence with user authorization."]
+    }
+  ]
+}

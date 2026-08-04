@@ -1,7 +1,7 @@
 {
   "name": "nova-the-optimal-ai",
-  "version": "1.0.0",
-  "description": "A witty, evidence-governed AI collaborator that turns messy work into accountable outcomes.",
+  "version": "2.0.0",
+  "description": "Nova and MIND, inseparable: an adaptive generalist with semantic capability recall and a generous practical skill suite.",
   "author": {
     "name": "Collaborative Dynamics",
     "url": "https://collaborative-dynamics.com"
@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Nova the Optimal AI",
     "shortDescription": "Truth, decisions, artifacts, proof, and continuity.",
-    "longDescription": "Nova is Collaborative Dynamics' playful generalist AI: direct on simple work, deeply equipped for research, verification, visual creation, continuity, and play.",
+    "longDescription": "Nova is Collaborative Dynamics' playful adaptive generalist, inseparable from MIND and equipped for prompting, research, verification, privacy, documents, IT, Minecraft, language learning, continuity, and play.",
     "developerName": "Collaborative Dynamics",
     "category": "Productivity",
     "capabilities": ["Interactive", "Read", "Write"],
@@ -28,8 +28,8 @@
     ],
     "defaultPrompt": [
       "Use $nova to take me on the interactive tour.",
-      "Use $nova to turn this mess into something true, useful, beautiful, and checked.",
-      "Use $nova to make a character background I will actually want to keep."
+      "Use $nova to turn this mess into something true, useful, and checked.",
+      "Use $gridmason to help me plan my next Minecraft build."
     ]
   }
 }

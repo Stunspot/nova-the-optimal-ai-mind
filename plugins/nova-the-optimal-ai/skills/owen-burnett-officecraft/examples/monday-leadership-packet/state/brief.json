@@ -1,0 +1,26 @@
+{
+  "format": "officecraft-brief/v1",
+  "project_id": "monday-leadership-packet",
+  "state": "shaped",
+  "title": "Northstar 90-Day Onboarding Pilot - Monday Leadership Packet",
+  "audience": "Northstar Service Co. leadership team",
+  "purpose": "Support a decision on a fictional 90-day customer onboarding pilot.",
+  "requested_outcomes": [
+    "Two-page executive brief",
+    "Seven-slide decision deck",
+    "Readable budget workbook",
+    "Polished PDF handout"
+  ],
+  "constraints": {
+    "deadline": "2026-09-08",
+    "formats": ["DOCX", "PPTX", "XLSX", "PDF"],
+    "editability_required": true,
+    "accessibility_needs": ["Readable hierarchy", "Descriptive chart labels", "Sufficient contrast"],
+    "template_authority": null,
+    "privacy_boundary": "Synthetic example only; do not treat it as a customer or financial record."
+  },
+  "approval_owner": "Fictional Northstar leadership team",
+  "external_delivery_authorized": false,
+  "created_at": "2026-07-21T17:30:00Z",
+  "updated_at": "2026-07-21T17:30:00Z"
+}

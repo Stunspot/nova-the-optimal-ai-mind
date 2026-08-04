@@ -1,4 +1,4 @@
 interface:
   display_name: "Ludis Continuum"
-  short_description: "🎲 Choice-shaped games and fiction."
-  default_prompt: "Use $ludis-continuum to begin a choice-driven game or forge a character, world, or campaign with consequences."
+  short_description: "Create and operate coherent, evolving RPG campaigns"
+  default_prompt: "Use $ludis-continuum to help me frame, prepare, run, record, or advance this campaign. Preserve canon, player agency, table boundaries, GM-only secrets, rules uncertainty, and my final authority."

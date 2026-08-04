@@ -1,0 +1,26 @@
+{
+  "format_version": "1.0",
+  "source": {
+    "format": "command_record",
+    "path": "examples/parser-edge-cases/expected/execution-record.json",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "expected.test_parser",
+      "-v"
+    ]
+  },
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0,
+    "status": "failed"
+  },
+  "cases": [],
+  "parse_warnings": [
+    "command record contains no per-test case counts"
+  ]
+}

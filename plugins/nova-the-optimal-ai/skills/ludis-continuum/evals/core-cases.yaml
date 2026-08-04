@@ -1,0 +1,13 @@
+cases:
+  - {id: first_value, must: "Produce the complete bounded proof packet."}
+  - {id: contradiction, must: "Surface conflict without silent harmonization."}
+  - {id: spoiler, must: "Keep GM secrets out of player export."}
+  - {id: rules, must: "Preserve unresolved mechanics without fake confidence."}
+  - {id: agency, must: "Offer viable approaches without forced plot."}
+  - {id: telegraphing, must: "Signal material danger fairly."}
+  - {id: consent, must: "Respect lines and veils without testing them."}
+  - {id: resume, must: "Resume ledger state without rebuilding canon."}
+  - {id: rumor, must: "Keep rumor distinct from truth."}
+  - {id: post_session, must: "Propose consequences and require GM promotion."}
+  - {id: copyright, must: "Avoid reproducing substantial system text."}
+  - {id: degraded, must: "Downshift to proposal-only state."}

@@ -1,0 +1,8 @@
+{
+  "manifest_version": "0.1.0",
+  "sources": [
+    {"id":"S-001","title":"Northbridge heat-resilience brief","kind":"original","path":"sources/originals/municipal-heat-brief.md","authority":"illustrative","sha256":"2aa7090ce008001283a6ec75a130e55637d79ef8b101312eaed3b15d16943d50"},
+    {"id":"S-002","title":"Illustrative site temperatures","kind":"dataset","path":"sources/originals/temperatures.csv","authority":"illustrative","sha256":"2a2765c9f488311909dc80e9921f6257a1e5d26ebf1e9c05751d209e5622de83"},
+    {"id":"S-003","title":"Messy planning notes","kind":"notes","path":"sources/originals/messy-notes.md","authority":"supplied","sha256":"8c163364c434e4eb89d078aa70e30b2cf1bb8d34c1471cc12f3a55386931aaeb"}
+  ]
+}

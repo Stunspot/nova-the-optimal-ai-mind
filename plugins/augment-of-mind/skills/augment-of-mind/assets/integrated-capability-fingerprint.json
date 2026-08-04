@@ -1,105 +1,153 @@
 {
-  "schema": "augment-of-mind-integrated-capability-fingerprint/v1",
-  "product_version": "1.0.0",
-  "capability_count": 16,
-  "faculty_count": 15,
-  "aggregate_sha256": "3275e96136b02ad642ccc1e107543cd2205e7730400b84a9c3f48adb606dc4f2",
+  "schema": "augment-of-mind-integrated-capability-fingerprint/v2",
+  "product_version": "2.1.0",
+  "capability_count": 20,
+  "faculty_count": 16,
+  "attached_augment_count": 3,
+  "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; cache files excluded",
+  "tree_self_exclusion": "augment-of-mind excludes assets/integrated-capability-fingerprint.json",
+  "aggregate_algorithm": "sha256 over compact UTF-8 JSON serialization of ordered capabilities",
+  "aggregate_sha256": "0f49c34a6f6fad633750ccf3b9f57e61279bdfe9a8e492034a1484cd2353c63e",
   "capabilities": [
     {
       "name": "aesthetic-intelligence",
       "version": "0.1.0",
       "integration_mode": "faculty-derived-build",
-      "tree_sha256": "999a498d0e704d56124a12136b404044b0f00fbdf172d0814339ac3268566e73"
+      "tree_file_count": 7,
+      "tree_sha256": "e09957fc40f0e390d3d42fe4bf307526bc012388f05464344685b35c69aefec9"
     },
     {
       "name": "agent-dreaming",
       "version": "0.1.2",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "77902634d1fc5397e442b76c58169983ee43aceb970b5c19d379f30a291b422b"
+      "tree_file_count": 5,
+      "tree_sha256": "f44fe3d61c165f2a7e255e23b494a2b9f08c619d55a12af679f3d7d2f3e739c2"
     },
     {
       "name": "agent-striving",
       "version": "0.3.2",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "7104a29da9d20536797f0f01dd7c142f852a4bfeeeb21f6956febcf553198c53"
+      "tree_file_count": 12,
+      "tree_sha256": "dd7630062d86aa9f71ad10c6dda278cd412dfd1c8ac1efaf9cbea8bfe5d81d4b"
+    },
+    {
+      "name": "agentic-eros",
+      "version": "0.2.0",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_file_count": 24,
+      "tree_sha256": "39c22a578415776263204a97dea4ea82db84341168bc8173db961823816e9ae9"
     },
     {
       "name": "augment-of-mind",
-      "version": "1.0.0",
+      "version": "2.1.0",
       "integration_mode": "product-integration",
-      "tree_sha256": "058f1c87048a6b7b79533a3ef9badb9f9b3d401e5f34a7417a14f04e6e3f27a4"
+      "tree_file_count": 14,
+      "tree_sha256": "13737199decd350ed39e4663fdbcf8b197720e50633222bd66a928822e326b2c"
     },
     {
       "name": "capability-conductor",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "67fab75a21fbd1f08525573a84a084b9194bf43a50f79b692779d3ac2c1e5846"
+      "tree_file_count": 7,
+      "tree_sha256": "bf836a44b0621733f64ecf3dca35e7acc8d9414e5ff93d4bc1d2bc970f4ac8fe"
+    },
+    {
+      "name": "capability-promotion",
+      "version": "0.1.0",
+      "integration_mode": "reminder-housekeeping-augment",
+      "tree_file_count": 2,
+      "tree_sha256": "be79f44a41bb4d9464b30172bc0fed89e68ce92ba3eef2121a156ab5119e234f"
     },
     {
       "name": "cognitive-continuity",
       "version": "0.1.3",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "b207c56569336f8418138af503e8e927915163657e782f7987b44961388abe56"
+      "tree_file_count": 43,
+      "tree_sha256": "3564d1096b9ffad62ab5e3d61174d6afc813be2cac8b6d46738db2e97aa5fa0e"
     },
     {
       "name": "creative-synthesis",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "0c82d554505ec85c512d7640f355515039105dbe667399a33447a8833de78597"
+      "tree_file_count": 6,
+      "tree_sha256": "ddc15c34ee1ec760f7d35c437885a4ff9c8489a4edeead1434c967b365411a25"
     },
     {
       "name": "decision-intelligence",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "ff680fc37b37dee28f3ff4b09c898accf05ee71318677788d5a426a3385f4d91"
+      "tree_file_count": 6,
+      "tree_sha256": "90a21f2243a3215a9cb3ab0181f6c3f8afca2bae70c36188237003859e92f7d8"
     },
     {
       "name": "deliberative-intelligence",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "595074292ebf7e0f81155b22ea8d4f9f828b1d6283db4228def7953bb0476541"
+      "tree_file_count": 6,
+      "tree_sha256": "63575aac28130cb2f646081fda941cf99bcff9d54d5f81b91dc7c81de992e6eb"
     },
     {
       "name": "epistemic-regulation",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "744ad4affdedc97d8d0d653a3368cd27427ffb08a5c82b1c0b8988946ca15e14"
+      "tree_file_count": 6,
+      "tree_sha256": "c0671f6471f3b2cb33dadea09155bd60713a5b031a9285b31c6c02fe431a989c"
     },
     {
       "name": "executive-function",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "b43e7896ff74fce63147214e9960ccd196c00d07ab02161ba86933e3a83c675a"
+      "tree_file_count": 6,
+      "tree_sha256": "996544945f58ae6b16ef680d51c53015a333f66bfd1128312c960e1af1ced3e1"
     },
     {
       "name": "instrumental-agency",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "569f7167d4ada927b3d59961eb5571ed15f445215fdec9e08f2e84d28749c2f0"
+      "tree_file_count": 6,
+      "tree_sha256": "2fee98f4a38cc327d7fa319d42cdb63884c2fd8aab3209e0d6b734965b48c27a"
     },
     {
       "name": "kairos",
       "version": "0.2.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "e341ae4959daaa7e2e5519f2a980738016bb96fd5498d29d10800a7a1df4e36d"
+      "tree_file_count": 6,
+      "tree_sha256": "53f822f54b20db92cdd50eabfe7052e6eb8855336e4f5b10c80b1ebd9fe02f91"
     },
     {
       "name": "measurement-intelligence",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "dfb21b4562aea343493773a152d5dfa5fbb87b603d0f105bc432b0b9dee93d3f"
+      "tree_file_count": 6,
+      "tree_sha256": "465a698ac29aded5cda271ff27cd19c3c64f3d06a2e5e2c58233525e63358356"
     },
     {
       "name": "prosocial-influence",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "9fa8a50dcf0cf08996b0c77f7b4d3a009633a1d6450003e17af17412b8b90642"
+      "tree_file_count": 6,
+      "tree_sha256": "d22253c20b8632ac4d48b5e1b94a43ee9003c328496307d48002b5aa38096714"
     },
     {
       "name": "sensemaking",
       "version": "0.1.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_sha256": "21f487804befb7440ec3a611742c64e7a08aa22c6b3aaee884383a292a32459c"
+      "tree_file_count": 6,
+      "tree_sha256": "3d99e50dd5764f069d002fa493cbb0cd8cf5664cdce3e13cbc7ffc9d9cba4ec7"
+    },
+    {
+      "name": "software-verification",
+      "version": "1.1.3",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_file_count": 90,
+      "tree_sha256": "d137347dc4b774868273898d7eeffeca93f7704c3c5367b20204b136d6a41076"
+    },
+    {
+      "name": "verification-reviewer",
+      "version": "1.1.3",
+      "integration_mode": "faculty-suite-exact-copy",
+      "tree_file_count": 9,
+      "tree_sha256": "b19f129f7c3651c5ecd3114c43d82d39f3dc89bc3d394cb39b27e19301a3b749"
     }
   ]
 }

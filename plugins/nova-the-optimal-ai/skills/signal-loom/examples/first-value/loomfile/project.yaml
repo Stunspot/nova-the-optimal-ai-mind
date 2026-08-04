@@ -1,0 +1,15 @@
+{
+  "loomfile_version": "0.1.0",
+  "project_id": "northbridge-heat-routes",
+  "title": "The forecast is not your route",
+  "created_at": "2026-07-19T00:00:00Z",
+  "updated_at": "2026-07-19T00:00:00Z",
+  "stage": "reviewed",
+  "authority_status": "reviewed",
+  "publication_status": "manual_only",
+  "audience": "Northbridge residents and municipal planning workshop participants",
+  "intended_change": "Recognize route-level heat differences and understand the linked levers of shade, surface, and timing.",
+  "requested_outputs": ["web", "carousel"],
+  "constraints": ["synthetic demonstration only", "no medical claims", "no external runtime", "mobile first"],
+  "unresolved": ["Unsupported claim that Northbridge is currently the hottest city in the state is excluded."]
+}

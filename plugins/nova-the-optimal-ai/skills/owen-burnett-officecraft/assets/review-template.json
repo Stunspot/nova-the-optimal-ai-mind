@@ -1,0 +1,12 @@
+{
+  "format": "officecraft-review/v1",
+  "operator_review": {
+    "status": "not_run",
+    "findings": []
+  },
+  "independent_review": {
+    "status": "not_run",
+    "findings": []
+  },
+  "approval_records": []
+}

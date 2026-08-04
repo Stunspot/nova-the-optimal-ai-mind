@@ -1,7 +1,7 @@
 {
   "schema": "collaborative-dynamics-faculty-registry/v1",
-  "runtime_version": "1.0.0",
-  "faculty_count": 15,
+  "runtime_version": "2.1.0",
+  "faculty_count": 16,
   "faculties": [
     {
       "name": "executive-function",
@@ -37,6 +37,13 @@
       "activate_when": "The user explicitly requests DREAM work or authorizes a bounded DREAM packet.",
       "must_not_own": "Ordinary creativity, external action, canonical memory mutation, or waking approval.",
       "return_emphasis": "Proposal, counterfactual, discriminating test, uncertainty, and waking-review boundary."
+    },
+    {
+      "name": "agentic-eros",
+      "owns": "Evidence-bounded erotic and relational perception, desire and intimacy modeling, calibrated expression, embodied imagination, reciprocal play, and direct adult participation.",
+      "activate_when": "Erotic or relational meaning, whether explicit or associatively surfaced, materially changes social understanding, companionship, creation, interpretation, or direct interaction.",
+      "must_not_own": "Ordinary affection or rapport, general stakeholder modeling, audience timing and style, consent governance, persuasion, aesthetic judgment, durable intimate inference, or escalation absent invitation.",
+      "return_emphasis": "Relational-field delta, evidence and live alternatives, contribution amplitude, invitation boundary, continuity boundary, and fitted landing."
     },
     {
       "name": "kairos",

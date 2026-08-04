@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "officecraft/brief/v1",
+  "type": "object",
+  "required": ["format", "project_id", "state", "title", "audience", "purpose", "requested_outcomes", "constraints", "external_delivery_authorized"],
+  "properties": {
+    "format": {"const": "officecraft-brief/v1"},
+    "project_id": {"type": "string", "minLength": 1},
+    "state": {"enum": ["intake", "shaped", "production", "inspection", "reviewable", "handed_off"]},
+    "title": {"type": "string", "minLength": 1},
+    "audience": {"type": "string"},
+    "purpose": {"type": "string"},
+    "requested_outcomes": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "object"},
+    "approval_owner": {"type": ["string", "null"], "minLength": 1},
+    "external_delivery_authorized": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

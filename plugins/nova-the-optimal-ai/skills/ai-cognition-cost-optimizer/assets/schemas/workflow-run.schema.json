@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognition-cost/workflow-run-v1.json",
+  "title": "AI Workflow Cost Run",
+  "type": "object",
+  "required": ["format", "id", "mode", "route_id", "attempts", "accepted_outcomes", "quantities", "direct_costs", "eligible", "floor_failures"],
+  "properties": {
+    "format": {"const": "cd-cognition-workflow-run/v1"},
+    "id": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["forecast", "actual"]},
+    "route_id": {"type": "string", "minLength": 1},
+    "attempts": {"type": "integer", "minimum": 1},
+    "accepted_outcomes": {"type": "integer", "minimum": 0},
+    "elapsed_hours": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "eligible": {"type": "boolean"},
+    "floor_failures": {"type": "array", "items": {"type": "string"}},
+    "quantities": {
+      "type": "object",
+      "properties": {
+        "input_tokens": {"type": "number", "minimum": 0},
+        "cached_input_read_tokens": {"type": "number", "minimum": 0},
+        "cache_write_tokens": {"type": "number", "minimum": 0},
+        "output_tokens": {"type": "number", "minimum": 0},
+        "reasoning_tokens": {"type": "number", "minimum": 0},
+        "requests": {"type": "number", "minimum": 0},
+        "tool_calls": {"type": "number", "minimum": 0},
+        "search_calls": {"type": "number", "minimum": 0},
+        "images": {"type": "number", "minimum": 0},
+        "storage_gb_hours": {"type": "number", "minimum": 0},
+        "infrastructure_hours": {"type": "number", "minimum": 0},
+        "review_hours": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "direct_costs": {
+      "type": "object",
+      "properties": {
+        "retrieval": {"type": "number", "minimum": 0},
+        "parsing": {"type": "number", "minimum": 0},
+        "storage": {"type": "number", "minimum": 0},
+        "telemetry": {"type": "number", "minimum": 0},
+        "evaluation": {"type": "number", "minimum": 0},
+        "incident": {"type": "number", "minimum": 0},
+        "rework": {"type": "number", "minimum": 0},
+        "other": {"type": "number", "minimum": 0},
+        "waste": {"type": "number", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "assumptions": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

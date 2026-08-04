@@ -1,6 +1,6 @@
 ---
 name: omnara-deep-research
-description: "🔎 Bounded source research and synthesis."
+description: Run deep or investigative research campaigns that inspect many sources, preserve resumable evidence, reconcile conflicts, and produce long-form citation-audited reports or knowledge bases.
 ---
 
 # Investigate until the evidence has shape
@@ -25,7 +25,7 @@ Use references/operating-doctrine.md throughout. Load only the judgment needed:
 - tools, browser or PDF routes, MCPs, local models, budgets, injection, or access: references/tooling-cost-and-security.md
 - checkpointing, counts, stopping, recovery, or refresh: references/campaign-operations.md
 
-Use knowledge/source-navigation.md when deeper inquiry-authoring doctrine would improve a live judgment. For a broad expensive request, preserve the ambitious end, begin through authorized routes, count evidence states honestly, and request a gated paid route only when it can repair a named coverage gap.
+Use knowledge/source-navigation.md when the complete canonical materials would improve a live judgment. Load examples/cost-controlled-research/demonstration.md when a broad expensive research request needs to become an evidence campaign without losing ambition.
 
 ## Move the campaign
 

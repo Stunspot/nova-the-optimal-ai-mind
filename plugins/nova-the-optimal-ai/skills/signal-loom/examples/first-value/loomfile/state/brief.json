@@ -1,0 +1,10 @@
+{
+  "purpose": "Explain route-level heat exposure as a linked system and invite practical prioritization.",
+  "audience": "Residents and municipal planning workshop participants",
+  "intended_change": "Move from citywide-temperature thinking to route-level shade, surface, and timing thinking.",
+  "source_authority": "synthetic supplied material only",
+  "outputs": ["web", "carousel"],
+  "assumptions": ["Readers understand Fahrenheit", "The artifact is a demonstration, not an actual municipal recommendation"],
+  "constraints": ["No medical or equity-effect claims", "No external JavaScript", "Illustrative values must be visible"],
+  "open_questions": ["Real foot-traffic, intervention cost, and resident-priority data would be needed for actual planning"]
+}

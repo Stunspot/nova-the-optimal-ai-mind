@@ -1,0 +1,472 @@
+{
+  "manifest_version": "1.0",
+  "target": {
+    "name": "MIND Core Phase 1 read-only truth substrate",
+    "revision": "base:b23e866789bd9554fc848cef4d090ec18b123cb0+phase1-sha256:41d0d9550b2cd1d5dbcfb6c9b4336fba51df6f7d15019dcc13fadb2bf26a0116",
+    "target_class": "change"
+  },
+  "scope": {
+    "included": [
+      "persona-neutral Core bootstrap and status",
+      "SQLite schema, migration checksum, startup integrity, restart persistence, and writer lease",
+      "agent-instance and host-session identity and freshness",
+      "capability/provider/distribution/lifecycle metadata",
+      "mount registration, grant, availability, and freshness metadata",
+      "receipt idempotency, scope, ancestry, and append-only behavior",
+      "bounded query-only H0 stdio framing and method dispatch"
+    ],
+    "excluded": [
+      "plugin prompt or Faculty behavior changes",
+      "live host H1, H2, or H3 integration",
+      "automatic capability recruitment or activation",
+      "owner-store reads, writes, or legacy data migration",
+      "embeddings, vectors, corpus content, people records, and continuity records",
+      "capsule transfer, Obsidian integration, external Mnemosyne integration, and TestForge runtime dependency",
+      "release, publication, merge, and fresh-host qualification"
+    ],
+    "constraints": [
+      "Executed on Windows with PowerShell 5.1, Python 3.14.0, and SQLite 3.50.4",
+      "Standard-library-only package; no dependencies installed",
+      "The verified source tree is enumerated and byte-bound in artifacts/testforge/target-snapshot.json",
+      "Test databases were isolated temporary files",
+      "The local Python environment does not contain the declared setuptools build backend"
+    ],
+    "safety_boundary": [
+      "local non-production verification only",
+      "no network, external service, production store, private corpus, or credential access",
+      "no owner-store mutation and no external publication"
+    ]
+  },
+  "claim_custody": {
+    "observed": [
+      {
+        "id": "C-AUTHORITY",
+        "statement": "The implementation packet is bound to the accepted design, contract, case, and evidence-index hashes recorded in the work packet.",
+        "basis": "SHA-256 values were re-observed from the four local authority files before implementation documentation.",
+        "confidence": "high"
+      },
+      {
+        "id": "C-EXECUTION",
+        "statement": "Thirty-four repository-local unittest cases passed in the captured run.",
+        "basis": "artifacts/testforge/unittest-execution.json records exit code 0 and the complete test runner output.",
+        "confidence": "high"
+      },
+      {
+        "id": "C-H0",
+        "statement": "The stdio service exports query methods only and every response declares an H0 evidence ceiling.",
+        "basis": "Direct inspection of mind_core/service.py plus executed protocol service tests.",
+        "confidence": "high"
+      },
+      {
+        "id": "C-TARGET",
+        "statement": "The reviewed Phase 1 source tree has a cross-checkout reproducible aggregate SHA-256 over an exact 30-file path set.",
+        "basis": "artifacts/testforge/target-snapshot.json records the canonical Git-blob source, byte-framing algorithm, ordered file set, per-file sizes and SHA-256 values, and aggregate digest.",
+        "confidence": "high"
+      }
+    ],
+    "inferred": [
+      {
+        "id": "C-RISK-FIT",
+        "statement": "The current scenarios cover the decision-critical risks for the bounded Phase 1 development packet.",
+        "basis": "Risk-to-scenario-to-test traceability validated, and an independent reviewer reproduced the prior failure before passing the corrected revision with a packaging condition.",
+        "confidence": "high",
+        "consequence": "The status applies only to the source/runtime development packet and its named environment."
+      }
+    ],
+    "assumed": [],
+    "unresolved": [
+      {
+        "id": "C-PORTABILITY",
+        "statement": "Python 3.11-3.13 and POSIX file-lock behavior match the tested Python 3.14 Windows behavior.",
+        "basis": "Declared compatibility and separate platform code paths exist, but those environments were not executed.",
+        "confidence": "low",
+        "consequence": "No cross-platform or fresh-host qualification claim is made."
+      },
+      {
+        "id": "C-PACKAGE-BUILD",
+        "statement": "The PEP 517 wheel build succeeds from this checkout.",
+        "basis": "The build could not run because the local Python environment lacks setuptools; no dependency was installed.",
+        "confidence": "low",
+        "consequence": "No package-build or release-readiness claim is made."
+      }
+    ]
+  },
+  "impact_map": [
+    "Incorrect scope enforcement could expose one agent's authority or evidence to another.",
+    "Collapsed provider or lifecycle state could cause a model or host to treat discoverability as activation.",
+    "Mutable or non-idempotent receipts could corrupt the evidence chain under replay.",
+    "Stale session facts could preserve expired permissions, authentication, catalog, or health claims.",
+    "A second writer or damaged migration could corrupt the Core metadata authority.",
+    "Parser or dispatcher ambiguity could permit oversized input, duplicate-key confusion, or mutation through the query surface.",
+    "Availability misclassification could report an unreadable owner store as authoritatively empty."
+  ],
+  "invariants": [
+    {"id": "I-SCOPE", "statement": "Mutable operational facts and their evidence remain inside one exact agent/session scope."},
+    {"id": "I-NO-ACTIVE", "statement": "Capability identity, provider, distribution, lifecycle, invocation, fitness, and health remain distinct; no active bit is derived."},
+    {"id": "I-RECEIPT", "statement": "Receipts and receipt edges are append-only, scope-compatible, acyclic, idempotent within scope, and bound to the exact typed record they evidence."},
+    {"id": "I-FRESHNESS", "statement": "A child observation cannot outlive its host session, and an expired session makes its dependent facts stale."},
+    {"id": "I-WRITER", "statement": "Exactly one process owns the Core writer lease for a database at a time."},
+    {"id": "I-H0", "statement": "Phase 1 records metadata and answers queries without claiming automatic delivery, activation, interception, or dispatch control."},
+    {"id": "I-EMPTY", "statement": "AUTHORITATIVE_EMPTY requires a successful authoritative read through an open, valid owner runtime."}
+  ],
+  "risks": [
+    {
+      "id": "R-001",
+      "statement": "When scoped records cite or expose another agent's receipts, authority and operational truth can leak across agents.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-SCOPE", "T-HANDSHAKE", "T-MOUNT", "T-RECEIPTS", "E-001"]
+    },
+    {
+      "id": "R-002",
+      "statement": "When names or global lifecycle facts collapse providers and operational axes, a caller can infer a capability is active without evidence.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-ESTATE", "T-CORE", "T-HANDSHAKE", "E-001"]
+    },
+    {
+      "id": "R-003",
+      "statement": "When receipts replay, mutate, form cross-scope ancestry, or evidence an unrelated same-scope record, evidence can duplicate, diverge, disclose provenance, or support false operational truth.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-RECEIPTS", "T-RECEIPTS", "E-001"]
+    },
+    {
+      "id": "R-004",
+      "statement": "When child facts outlive their host session, expired catalog, permission, authentication, and health claims can appear current.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-FRESHNESS", "T-HANDSHAKE", "T-MOUNT", "E-001"]
+    },
+    {
+      "id": "R-005",
+      "statement": "When migration integrity or writer exclusion fails, the sole Core metadata authority can corrupt or fork.",
+      "severity": "critical",
+      "likelihood": "low",
+      "confidence": "medium",
+      "disposition": "covered",
+      "verification": ["S-STORE", "T-STORE", "E-001"]
+    },
+    {
+      "id": "R-006",
+      "statement": "When framed input is ambiguous or query dispatch is open-ended, malformed data or a mutation route can cross the H0 boundary.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-PROTOCOL", "T-PROTOCOL", "E-001"]
+    },
+    {
+      "id": "R-007",
+      "statement": "When availability enum membership is accepted without semantic guards, an unreadable owner store can be reported as authoritatively empty.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-MOUNTS", "T-MOUNT", "E-001"]
+    },
+    {
+      "id": "R-008",
+      "statement": "When Core boot requires Nova or optional providers, MIND ceases to be a persona-neutral portable base.",
+      "severity": "high",
+      "likelihood": "low",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": ["S-OPTIONAL", "T-CORE", "E-001"]
+    },
+    {
+      "id": "R-009",
+      "statement": "When the declared build backend is unavailable, source behavior may be verified while the distributable package remains unproved.",
+      "severity": "medium",
+      "likelihood": "low",
+      "confidence": "high",
+      "disposition": "blocked",
+      "verification": ["S-PACKAGE", "T-PACKAGE"]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-SCOPE",
+      "risk_ids": ["R-001"],
+      "title": "Cross-agent receipt, lifecycle, mount, and catalog access is denied",
+      "layer": "security_negative",
+      "preconditions": ["Two agent instances have distinct host sessions and scoped receipts."],
+      "action": ["Use Agent A evidence from Agent B, use an unrelated same-scope receipt, and query each agent's scoped state."],
+      "expected": ["Cross-scope evidence is not found, unrelated same-scope evidence fails typed binding, and Agent B catalog contains no Agent A observation."],
+      "forbidden": ["Creating, linking, or returning Agent A scoped evidence through Agent B, or using an irrelevant receipt as operational evidence."],
+      "evidence": ["tests/test_handshake_isolation.py", "tests/test_mount_semantics.py", "tests/test_receipts.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-ESTATE",
+      "risk_ids": ["R-002"],
+      "title": "Provider and lifecycle truth remains factored",
+      "layer": "integration",
+      "preconditions": ["The public-safe bootstrap fixture is ingested."],
+      "action": ["Resolve EGDOD and MIND by exact handle or alias."],
+      "expected": ["EGDOD is canonical-constructed and not-generated with no distribution; MIND has two distinct provider distributions; derived_active_state is null."],
+      "forbidden": ["Installed, invoked, healthy, or merged-provider state inferred from identity records."],
+      "evidence": ["tests/test_core_truth.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-RECEIPTS",
+      "risk_ids": ["R-003"],
+      "title": "Receipt replay, typed binding, and ancestry preserve one immutable evidence chain",
+      "layer": "integration",
+      "preconditions": ["Global and scoped receipts exist."],
+      "action": ["Replay identical and changed keys, bind lifecycle/mount/grant records, substitute unrelated receipts, add same/cross-scope parents, attempt mutation and a cycle."],
+      "expected": ["Exact replay returns one receipt; target type, ID, and payload must match; changed replay, irrelevant evidence, incompatible ancestry, mutation, deletion, duplicate edges, and cycles fail."],
+      "forbidden": ["Duplicate receipt effect, changed content under one key, irrelevant evidence substitution, or cross-scope parent disclosure."],
+      "evidence": ["tests/test_receipts.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-FRESHNESS",
+      "risk_ids": ["R-004"],
+      "title": "Session expiry bounds dependent facts",
+      "layer": "integration",
+      "preconditions": ["A host session and its catalog snapshot are expired."],
+      "action": ["Read session freshness and scoped observations."],
+      "expected": ["Session, catalog, permission, authentication, grants, lifecycle, and mount observations cannot be rendered fresh after parent expiry."],
+      "forbidden": ["A child timestamp reviving expired host authority."],
+      "evidence": ["tests/test_handshake_isolation.py", "tests/test_mount_semantics.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-STORE",
+      "risk_ids": ["R-005"],
+      "title": "Store startup, restart, migration custody, and writer exclusion fail closed",
+      "layer": "reliability",
+      "preconditions": ["An isolated SQLite path is available."],
+      "action": ["Open competing same-process and child-process writers, tamper migration checksum, supply corrupt bytes, then close and reopen clean state."],
+      "expected": ["Competing writers, tampered schema, and corrupt bytes are rejected; clean close releases the lock and bootstrap state survives restart."],
+      "forbidden": ["Second writer admission, silent migration acceptance, partial metadata loss, or an unreleased clean-close lock."],
+      "evidence": ["tests/test_store_migrations.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-PROTOCOL",
+      "risk_ids": ["R-006"],
+      "title": "Bounded framing and explicit query allowlist preserve H0",
+      "layer": "contract",
+      "preconditions": ["A fresh Core and in-memory binary streams exist."],
+      "action": ["Round-trip Unicode through complete and short-reading streams; send truncated, oversized, duplicate-key, and non-standard-number frames; submit a type-confused parameter; request a mutation-like method."],
+      "expected": ["Complete valid frames survive short reads; malformed and type-confused inputs fail; mutation method is not found; query response declares H0."],
+      "forbidden": ["Ambiguous parse, backend-dependent framing, dynamic dispatch, silent truncation, or an H1-H3 claim."],
+      "evidence": ["tests/test_protocol_service.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-MOUNTS",
+      "risk_ids": ["R-007"],
+      "title": "Availability states require semantically compatible evidence",
+      "layer": "unit",
+      "preconditions": ["A known-unregistered Dunbar mount and scoped observation receipt exist."],
+      "action": ["Record a path-visible runtime-closed result; substitute an unrelated same-scope receipt; bind a grant; and attempt AUTHORITATIVE_EMPTY without a successful read or with reported-only evidence."],
+      "expected": ["The first state is BACKEND_UNAVAILABLE; unrelated receipts, unbound grants, unproved emptiness, and reported-only emptiness are rejected."],
+      "forbidden": ["Treating path visibility, receipt scope alone, runtime failure, or weak evidence as authoritative emptiness."],
+      "evidence": ["tests/test_mount_semantics.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-OPTIONAL",
+      "risk_ids": ["R-008"],
+      "title": "Core boots persona-free without optional providers",
+      "layer": "integration",
+      "preconditions": ["No Nova, TestForge, Obsidian, Dunbar runtime, continuity runtime, or Mnemosyne provider is configured in the Core database."],
+      "action": ["Construct Core and request status."],
+      "expected": ["Core opens, persona_required and persona_inference are false, and maximum conformance is H0."],
+      "forbidden": ["Synthetic persona assignment or import-time optional-provider dependency."],
+      "evidence": ["tests/test_core_truth.py"],
+      "status": "executed"
+    },
+    {
+      "id": "S-PACKAGE",
+      "risk_ids": ["R-009"],
+      "title": "PEP 517 package build requires the declared backend",
+      "layer": "contract",
+      "preconditions": ["Python 3.14 and pip are present; no dependency installation is authorized."],
+      "action": ["Probe the declared setuptools build backend before attempting a wheel build."],
+      "expected": ["The missing backend is recorded as an environment limitation and no package-build claim is made."],
+      "forbidden": ["Installing an undeclared dependency automatically or reporting an unbuilt wheel as verified."],
+      "evidence": ["artifacts/testforge/build-backend-probe.json"],
+      "status": "blocked"
+    }
+  ],
+  "tests": [
+    {"id": "T-CORE", "scenario_ids": ["S-ESTATE", "S-OPTIONAL"], "path": "tests/test_core_truth.py", "status": "passed", "execution_id": "E-001"},
+    {"id": "T-HANDSHAKE", "scenario_ids": ["S-SCOPE", "S-ESTATE", "S-FRESHNESS"], "path": "tests/test_handshake_isolation.py", "status": "passed", "execution_id": "E-001"},
+    {"id": "T-MOUNT", "scenario_ids": ["S-SCOPE", "S-FRESHNESS", "S-MOUNTS"], "path": "tests/test_mount_semantics.py", "status": "passed", "execution_id": "E-001"},
+    {"id": "T-RECEIPTS", "scenario_ids": ["S-SCOPE", "S-RECEIPTS"], "path": "tests/test_receipts.py", "status": "passed", "execution_id": "E-001"},
+    {"id": "T-PROTOCOL", "scenario_ids": ["S-PROTOCOL"], "path": "tests/test_protocol_service.py", "status": "passed", "execution_id": "E-001"},
+    {"id": "T-STORE", "scenario_ids": ["S-STORE"], "path": "tests/test_store_migrations.py", "status": "passed", "execution_id": "E-001"},
+    {"id": "T-PACKAGE", "scenario_ids": ["S-PACKAGE"], "path": "pyproject.toml", "status": "blocked"}
+  ],
+  "executions": [
+    {
+      "id": "E-001",
+      "command": ["python", "-B", "-X", "utf8", "-m", "unittest", "discover", "-s", "tests", "-v"],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "raw_evidence": "artifacts/testforge/unittest-execution.json",
+      "observed_result": "34 tests passed"
+    },
+    {
+      "id": "E-002",
+      "command": ["python", "-B", "-X", "utf8", "-c", "import setuptools; print(setuptools.__version__)"],
+      "working_directory": ".",
+      "status": "failed",
+      "exit_code": 1,
+      "raw_evidence": "artifacts/testforge/build-backend-probe.json",
+      "observed_result": "ModuleNotFoundError: No module named 'setuptools'"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-001",
+      "classification": "PRODUCT_DEFECT",
+      "severity": "high",
+      "statement": "Initial receipt consumers checked evidence existence but not scope compatibility, permitting cross-agent provenance.",
+      "evidence": ["mind_core/receipts.py", "tests/test_handshake_isolation.py", "tests/test_mount_semantics.py", "tests/test_receipts.py"],
+      "confidence": "high",
+      "next_action": "Retain the centralized scope validator, SQL scope guard, and negative regression tests.",
+      "status": "resolved"
+    },
+    {
+      "id": "F-002",
+      "classification": "PRODUCT_DEFECT",
+      "severity": "high",
+      "statement": "Initial repeat handshakes regenerated immutable agent creation time and rejected every later session for the same agent.",
+      "evidence": ["mind_core/handshake.py", "tests/test_handshake_isolation.py"],
+      "confidence": "high",
+      "next_action": "Preserve create-once agent identity and immutable persona/profile tests.",
+      "status": "resolved"
+    },
+    {
+      "id": "F-003",
+      "classification": "TEST_DEFECT",
+      "severity": "low",
+      "statement": "The first EGDOD oracle matched forbidden words inside an explicit non-claim boundary instead of inspecting typed lifecycle states.",
+      "evidence": ["tests/test_core_truth.py", "artifacts/testforge/unittest-execution.json"],
+      "confidence": "high",
+      "next_action": "Keep the corrected typed axis/state assertion.",
+      "status": "resolved"
+    },
+    {
+      "id": "F-004",
+      "classification": "TOOLING_FAILURE",
+      "severity": "informational",
+      "statement": "The heuristic smell scan flagged the identifier catalog_snapshot as a snapshot assertion in helper data and a freshness assertion.",
+      "evidence": ["artifacts/testforge/test-smells.json", "tests/helpers.py", "tests/test_handshake_isolation.py"],
+      "confidence": "high",
+      "next_action": "Treat these three matches as reviewed false positives; do not rename the protocol field to appease a heuristic.",
+      "status": "resolved"
+    },
+    {
+      "id": "F-005",
+      "classification": "PRODUCT_DEFECT",
+      "severity": "high",
+      "statement": "The first reviewed revision enforced receipt scope but allowed an unrelated same-scope receipt to evidence lifecycle and mount truth.",
+      "evidence": ["mind_core/receipts.py", "mind_core/estate.py", "mind_core/mounts.py", "tests/test_handshake_isolation.py", "tests/test_mount_semantics.py"],
+      "confidence": "high",
+      "next_action": "Retain exact receipt-type, subject-kind, target-ID, canonical-payload, scope, and strong-empty-evidence checks; require independent re-review.",
+      "status": "resolved"
+    },
+    {
+      "id": "F-006",
+      "classification": "PRODUCT_DEFECT",
+      "severity": "low",
+      "statement": "The first reviewed revision treated a short read from a complete BinaryIO frame as truncation.",
+      "evidence": ["mind_core/protocol.py", "tests/test_protocol_service.py"],
+      "confidence": "high",
+      "next_action": "Retain exact-read accumulation plus strict duplicate-key, non-standard-number, nesting, and parameter-type rejection tests.",
+      "status": "resolved"
+    },
+    {
+      "id": "F-007",
+      "classification": "ENVIRONMENT_FAILURE",
+      "severity": "medium",
+      "statement": "The local Python environment lacks setuptools, so a PEP 517 wheel build was not executed.",
+      "evidence": ["pyproject.toml", "artifacts/testforge/build-backend-probe.json"],
+      "confidence": "high",
+      "next_action": "Run an isolated no-network build with the declared backend before package or release qualification; do not install dependencies implicitly in this task.",
+      "status": "blocked"
+    },
+    {
+      "id": "F-008",
+      "classification": "TOOLING_FAILURE",
+      "severity": "high",
+      "statement": "The first recorded aggregate target digest omitted its path set and byte-framing contract; the first repair then hashed checkout-dependent working-tree bytes instead of canonical Git blobs.",
+      "evidence": ["artifacts/testforge/target-snapshot.json", "artifacts/testforge/reviewer-disposition.md"],
+      "confidence": "high",
+      "next_action": "Require every reviewed aggregate digest to ship its canonical content source, exact ordered path set, per-file sizes and hashes, framing algorithm, and an independent recomputation receipt.",
+      "status": "resolved"
+    }
+  ],
+  "residual_risks": [
+    {
+      "id": "RR-001",
+      "statement": "Python 3.11-3.13 and POSIX locking paths were not executed.",
+      "treatment": "Run the same suite in a cross-platform Python version matrix before package release or fresh-host qualification.",
+      "owner": "MIND maintainers",
+      "revisit_condition": "Before release or a cross-platform compatibility claim"
+    },
+    {
+      "id": "RR-002",
+      "statement": "No live host adapter proved H1, H2, or H3 event coverage.",
+      "treatment": "Keep every Phase 1 API and document capped at H0; require later host-specific conformance packets.",
+      "owner": "MIND architecture",
+      "revisit_condition": "When a host adapter implementation is authorized"
+    },
+    {
+      "id": "RR-003",
+      "statement": "Schema v1 has no predecessor migration or rollback path to exercise against representative legacy Core data.",
+      "treatment": "Treat v1 as fresh bootstrap only; require forward, coexistence, and recovery tests before schema v2 or legacy import.",
+      "owner": "MIND data architecture",
+      "revisit_condition": "Before the first schema upgrade or legacy migration"
+    },
+    {
+      "id": "RR-004",
+      "statement": "The source/runtime packet is exercised, but its PEP 517 wheel is not built in the current environment.",
+      "treatment": "Keep package build and release out of the present readiness claim; execute the build in a provisioned isolated environment later.",
+      "owner": "MIND maintainers",
+      "revisit_condition": "Before package publication, fresh-host installation, or release"
+    }
+  ],
+  "review": {
+    "status": "REVIEW_PASS_WITH_CONDITIONS",
+    "findings": [
+      "The prior receipt-relevance blocker is repaired: unrelated same-scope evidence and post-receipt record mutation are rejected for lifecycle, mount, and grant records.",
+      "Short-reading streams now complete valid frames through the real H0 service loop.",
+      "The target revision is bound to a reproducible exact-path snapshot and independently recomputed aggregate digest.",
+      "Package build remains unproved because setuptools is absent; build, fresh-host, merge, release, and publication claims remain excluded."
+    ],
+    "reviewer": "independent TestForge verification-reviewer",
+    "evidence": "artifacts/testforge/reviewer-disposition.md"
+  },
+  "decision": {
+    "status": "READY_WITH_RESIDUAL_RISK",
+    "basis": [
+      "The captured 34-test suite passed in the declared Windows/Python/SQLite environment.",
+      "All critical and high risks have covered scenarios, executable tests, and captured passing evidence.",
+      "TestForge manifest and traceability validation passed without warnings.",
+      "The independent reviewer returned REVIEW_PASS_WITH_CONDITIONS after reproducing the prior blocker and re-testing the corrected revision.",
+      "The reviewed source tree is bound to the reproducible target snapshot receipt.",
+      "The remaining blocked package-build check is medium severity and explicitly outside this source/runtime development-packet claim."
+    ],
+    "authority_required": [
+      "Provision and run the declared build backend before package-build or fresh-host qualification",
+      "Sam retains merge, release, publication, and later-phase authority"
+    ]
+  }
+}

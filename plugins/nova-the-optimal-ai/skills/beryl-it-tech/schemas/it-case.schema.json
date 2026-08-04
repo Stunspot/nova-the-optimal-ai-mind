@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/beryl-it-case-v0.1.0.json",
+  "title": "Beryl IT Benchcraft case",
+  "type": "object",
+  "required": ["case_id", "updated_at", "status", "device", "complaint", "custody", "evidence", "hypotheses", "tests", "changes", "sources", "verification", "next_move"],
+  "properties": {
+    "case_id": {"type": "string", "minLength": 1},
+    "updated_at": {"type": "string", "minLength": 1},
+    "status": {"enum": ["reported", "observed", "measured", "retrieved", "assumed", "hypothesis", "test-planned", "test-run", "supported", "falsified", "confirmed", "change-authorized", "change-applied", "rollback-ready", "verification-passed", "verification-failed", "deferred", "referred"]},
+    "device": {"type": "object", "required": ["owner_or_authority", "type", "manufacturer_model", "os_firmware", "environment"]},
+    "complaint": {"type": "object", "required": ["desired_outcome", "observable_symptom", "triggering_conditions", "affected_and_working", "recent_changes", "stakes"]},
+    "custody": {"type": "object", "required": ["hazards", "data_value", "backup_state", "encryption_recovery_state", "privacy_or_policy", "authorized_scope", "stop_or_referral"]},
+    "evidence": {"type": "array"},
+    "hypotheses": {"type": "array"},
+    "tests": {"type": "array"},
+    "changes": {"type": "array"},
+    "sources": {"type": "array"},
+    "verification": {
+      "type": "object",
+      "required": ["original_envelope_retested", "results", "adjacent_checks", "disposition", "reopen_condition"],
+      "properties": {
+        "original_envelope_retested": {"type": "boolean"},
+        "disposition": {"enum": ["verified-resolved", "improved-unresolved", "workaround-only", "awaiting-observation", "awaiting-authority", "referred", "unsafe/incomplete"]}
+      }
+    },
+    "next_move": {"type": "object", "required": ["action", "owner", "authority_required", "evidence_to_advance"]}
+  },
+  "additionalProperties": true
+}

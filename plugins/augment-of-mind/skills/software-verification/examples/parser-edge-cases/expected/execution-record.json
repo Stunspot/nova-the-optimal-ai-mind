@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "expected.test_parser",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-07-16T10:48:09.860822+00:00",
+  "finished_at": "2026-07-16T10:48:10.063531+00:00",
+  "duration_seconds": 0.202706,
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_escaped_delimiter_stays_inside_value (expected.test_parser.EscapedDelimiterContract.test_escaped_delimiter_stays_inside_value) ... ERROR\ntest_parse_then_escape_preserves_semantics (expected.test_parser.EscapedDelimiterContract.test_parse_then_escape_preserves_semantics) ... ERROR\ntest_unescaped_delimiter_still_separates_pairs (expected.test_parser.EscapedDelimiterContract.test_unescaped_delimiter_still_separates_pairs) ... ok\n\n======================================================================\nERROR: test_escaped_delimiter_stays_inside_value (expected.test_parser.EscapedDelimiterContract.test_escaped_delimiter_stays_inside_value)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \".\\expected\\test_parser.py\", line 8, in test_escaped_delimiter_stays_inside_value\n    self.assertEqual({\"message\": \"one;two\", \"mode\": \"safe\"}, parse_pairs(r\"message=one\\;two;mode=safe\"))\n                                                             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \".\\input\\parser.py\", line 8, in parse_pairs\n    key, value = pair.split(\"=\", 1)\n    ^^^^^^^^^^\nValueError: not enough values to unpack (expected 2, got 1)\n\n======================================================================\nERROR: test_parse_then_escape_preserves_semantics (expected.test_parser.EscapedDelimiterContract.test_parse_then_escape_preserves_semantics)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \".\\expected\\test_parser.py\", line 15, in test_parse_then_escape_preserves_semantics\n    parsed = parse_pairs(value)\n  File \".\\input\\parser.py\", line 8, in parse_pairs\n    key, value = pair.split(\"=\", 1)\n    ^^^^^^^^^^\nValueError: not enough values to unpack (expected 2, got 1)\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (errors=2)\n",
+  "status": "failed"
+}

@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1.0",
+  "target": {"name": "inclusive date-range filtering regression", "revision": "synthetic-py-v1", "target_class": "bug_fix"},
+  "scope": {"included": ["date-range inclusion behavior"], "excluded": ["timezone conversion", "database query planning"], "constraints": ["synthetic standard-library fixture"], "safety_boundary": ["local fixture only"]},
+  "claim_custody": {
+    "observed": [{"id": "O-001", "statement": "implementation uses strict comparison at the start boundary", "basis": "input/reporting.py", "confidence": "high"}],
+    "inferred": [{"id": "I-001", "statement": "records dated exactly on start are omitted", "basis": "comparison semantics", "confidence": "high"}],
+    "assumed": [],
+    "unresolved": []
+  },
+  "impact_map": ["report request -> inclusive filter -> returned row set"],
+  "invariants": [{"id": "INV-001", "statement": "a closed date interval includes records equal to start and end and excludes immediate neighbors"}],
+  "risks": [{"id": "R-001", "statement": "start-boundary record -> strict comparison omits valid data -> incomplete report", "severity": "high", "likelihood": "high", "confidence": "high", "disposition": "covered", "verification": ["S-DATE-001", "T-PY-001", "E-001"]}],
+  "scenarios": [{"id": "S-DATE-001", "risk_ids": ["R-001"], "title": "closed interval boundary partition", "layer": "unit", "preconditions": ["rows exist before, at start, inside, at end, and after"], "action": ["filter by closed interval"], "expected": ["start, middle, and end returned in input order"], "forbidden": ["before or after returned", "start omitted"], "evidence": ["T-PY-001", "E-001"], "status": "executed"}],
+  "tests": [{"id": "T-PY-001", "scenario_ids": ["S-DATE-001"], "path": "expected/test_date_filter.py", "status": "failed", "execution_id": "E-001"}],
+  "executions": [{"id": "E-001", "command": ["python", "-m", "unittest", "expected.test_date_filter", "-v"], "working_directory": ".", "status": "failed", "exit_code": 1, "raw_evidence": "expected/execution-record.json"}],
+  "findings": [{"id": "F-001", "classification": "PRODUCT_DEFECT", "severity": "high", "statement": "the implementation excludes the documented inclusive start boundary", "evidence": ["input/reporting.py", "expected/execution-record.json"], "confidence": "high", "next_action": "apply expected/fix.patch and rerun existing plus regression tests", "status": "open"}],
+  "residual_risks": [{"id": "RR-001", "statement": "timezone-aware datetime behavior is outside this date-only fixture", "treatment": "add a separate timezone scenario if production accepts datetimes", "owner": "reporting owner", "revisit_condition": "datetime inputs enter scope"}],
+  "review": {"status": "REVIEW_PASS", "reviewer": "example skeptical pass", "findings": ["failure is reproducible and classification follows source plus execution evidence"]},
+  "decision": {"status": "NOT_READY", "basis": ["high-severity regression test fails on the documented boundary"], "authority_required": ["maintainer approves production patch"]}
+}

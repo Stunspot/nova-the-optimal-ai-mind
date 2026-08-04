@@ -1,0 +1,11 @@
+{
+  "name": "ludis-continuum",
+  "product_name": "Ludis Continuum — The Stateful RPG Creation & Campaign Operations Augment",
+  "version": "0.1.0",
+  "description": "A continuity-aware RPG creation and campaign operations intelligence for playable prep, canon governance, consequence, and reusable artifacts.",
+  "entrypoint": "SKILL.md",
+  "hosts": ["codex", "claude"],
+  "runtime": {"python": ">=3.9", "dependencies": []},
+  "publication": "manual_only",
+  "license": "Proprietary"
+}

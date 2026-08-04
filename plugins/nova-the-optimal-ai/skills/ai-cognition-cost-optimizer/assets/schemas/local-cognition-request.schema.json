@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognition-cost/local-cognition-request-v1.json",
+  "title": "Local Cognition Request",
+  "type": "object",
+  "required": ["format", "id", "task_class", "prompt", "execution_authorized", "required"],
+  "properties": {
+    "format": {"const": "cd-local-cognition-request/v1"},
+    "id": {"type": "string", "minLength": 1},
+    "task_class": {"type": "string", "minLength": 1},
+    "prompt": {"type": "string", "minLength": 1},
+    "system": {"type": ["string", "null"]},
+    "execution_authorized": {"type": "boolean"},
+    "required": {
+      "type": "object",
+      "properties": {
+        "min_context_tokens": {"type": "integer", "minimum": 0},
+        "modalities": {"type": "array", "items": {"type": "string"}},
+        "tool_use": {"type": "boolean"},
+        "structured_output": {"type": "boolean"},
+        "min_acceptance_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "min_reliability_rate": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "max_p95_latency_ms": {"type": ["number", "null"], "minimum": 0},
+        "max_cost_per_accepted_outcome": {"type": ["number", "null"], "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

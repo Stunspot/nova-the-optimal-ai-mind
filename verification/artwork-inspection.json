@@ -1,0 +1,11 @@
+{
+  "evidence_state": "observed",
+  "artifact": "assets/nova-emergent.png",
+  "decode": "System.Drawing.Image.FromFile succeeded",
+  "width": 1536,
+  "height": 1024,
+  "pixel_format": "Format24bppRgb",
+  "bytes": 2513034,
+  "sha256": "0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61",
+  "boundary": "File integrity and decodability observed. Human visual inspection was unavailable because the Codex image helper could not launch."
+}

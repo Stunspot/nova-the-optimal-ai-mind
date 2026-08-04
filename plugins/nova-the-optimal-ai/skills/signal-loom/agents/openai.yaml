@@ -1,4 +1,4 @@
 interface:
   display_name: "Signal Loom"
-  short_description: "📊 Evidence-to-visual story designer."
+  short_description: "Build source-bound visual stories and infographic artifacts"
   default_prompt: "Use $signal-loom to turn my supplied material into a source-bound visual story and real infographic deliverables. Preserve a resumable Loomfile, explain consequential choices, run available checks, and leave publication under my control."

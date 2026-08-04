@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/privacy-redline/receipt.schema.json",
+  "title": "Privacy Redline Verification Receipt",
+  "type": "object",
+  "required": ["control_id", "claim", "owner", "observed_at", "environment", "evidence_type", "result", "residual_exposure", "rollback", "next_review"],
+  "properties": {
+    "control_id": {"type": "string", "minLength": 1},
+    "claim": {"type": "string", "minLength": 1},
+    "owner": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "minLength": 10},
+    "environment": {"type": "string", "minLength": 1},
+    "evidence_type": {"type": "string", "minLength": 1},
+    "evidence": {"type": "string"},
+    "result": {"enum": ["verified", "failed", "partial", "not-tested", "expired"]},
+    "residual_exposure": {"type": "string"},
+    "rollback": {"type": "string"},
+    "next_review": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": true
+}
+

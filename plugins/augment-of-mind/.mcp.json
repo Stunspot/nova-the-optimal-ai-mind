@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mind-associative-recall": {
+      "command": "python",
+      "args": ["scripts/mind_mcp_server.py"],
+      "cwd": ".",
+      "tool_timeout_sec": 60
+    }
+  }
+}

@@ -1,74 +1,91 @@
-# Try Nova in five minutes
+# Start with one useful task
 
-The goal is one useful turn before you have to learn the product. This path installs the actual contest packages; it does not require a rebuild, Python, or prompt-file surgery.
+Goal: install Nova + MIND Free, confirm the integration boundary, and get useful work in about five minutes.
 
-The exercised release path is Codex CLI 0.144.5 on Microsoft Windows 10 build 19045 with local plugin-marketplace support. Other operating systems and Codex versions are not claimed as tested for this release.
+## Before you begin
 
-## 1. Get the checkout
+You need:
 
-Download and extract the [public GitHub repository](https://github.com/Stunspot/nova-the-optimal-ai-mind), or clone it:
+- Windows PowerShell 5.1 or newer for the supplied installer;
+- Codex CLI with `codex plugin` support;
+- Python 3.11 or newer;
+- this repository cloned or extracted to a stable local folder;
+- permission to change your own Codex plugin configuration and create the MIND Core database under your user profile.
 
-```powershell
-git clone https://github.com/Stunspot/nova-the-optimal-ai-mind.git
-Set-Location nova-the-optimal-ai-mind
-```
+If an earlier Nova or MIND plugin is installed, read [Upgrade an existing installation](docs/UPGRADE.md) first. The installer stops rather than silently replacing it.
 
-## 2. Install both plugins
+## 1. Install the package
 
 From the repository root:
 
 ```powershell
-codex plugin marketplace add .
-codex plugin add augment-of-mind@collaborative-dynamics-build-week
-codex plugin add nova-the-optimal-ai@collaborative-dynamics-build-week
+.\install.ps1
 ```
 
-Begin a fresh Codex task so the new skills are discovered cleanly.
+Expected result: the script reports that both Free Nova plugins are installed and that a 40-capability reminder estate is active. It ends with the next manual action.
 
-## 3. Meet Nova
+If the result differs, preserve the complete error and go to [Troubleshooting](docs/TROUBLESHOOTING.md). Do not delete your Codex configuration or existing MIND database to make the error look tidier.
 
-Use this exact first prompt:
+## 2. Review the hook
+
+Open Codex and enter `/hooks`. Inspect the MIND prompt-submit hook from this package. Trust applies to the exact installed bytes and must be reviewed again after a hook change.
+
+Expected result: Codex shows the MIND hook and its `UserPromptSubmit` event. This repository cannot make the trust decision for you or verify the host accepted it until you do.
+
+## 3. Start a new task
+
+Installed skills are discovered at the new-task boundary. Start a fresh task and enter:
 
 ```text
-Use $nova to take me on the interactive tour.
+Use $nova to help me with this.
 ```
 
-A successful first turn is short and skippable. Nova should offer **decide, investigate, make, play**, or your own real problem. She should not demand personal information or unload a skill catalog.
+Give Nova any real task. A successful first response helps with the task. It does not demand a biography, recite 40 skills, or ask you to operate the routing machinery.
 
-For the designed visual companion, open [the local tour](plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour.html). It works offline, makes no network requests, and stores nothing.
+## 4. Confirm the fun bit
 
-If that is enough to decide whether Nova is worth your time, stop reading and use her. The rest is proof and showmanship.
-
-## 4. Make Ludis show off
+Try Gridmason:
 
 ```text
-Use $nova and $ludis-continuum. I need a background for a character: a royal cartographer who erased one island from every map and now hears its bells in dry land. Give me a playable past, two relationships, one dangerous truth, and an opening choice.
+Use $gridmason. I want a survival base built into a ruined aqueduct. I have stone, spruce, copper, and about two evenings. Give me a buildable concept, staged plan, and the first session-sized move. Tell me what dimensions you need before making exact placements.
 ```
 
-Look for an immediately playable character: pressure, relationships, secrets, and a live hook rather than a generic biography. No bundled campaign world should appear.
+Look for a useful Minecraft plan that preserves edition, version, hidden geometry, and in-world verification boundaries. It should not pretend to know exact coordinates or produce a live schematic from thin air.
 
-## 5. Make MIND earn its keep
+## 5. Confirm the foundational bits
+
+Promptcraft:
 
 ```text
-Use $augment-of-mind. A small team has 48 hours to choose between a flashy demo with weak evidence and a quieter demo that proves the core claim. The founder wants spectacle, the operator wants reliability, and the audience is hesitant. Recommend a course, show the decisive uncertainty, and give us a communication plan that preserves everyone's agency.
+Use $promptcraft. Help me turn this rough instruction into a model-facing prompt. Preserve my original, make a derivative, and explain the one behavior the revision improves.
 ```
 
-Look for one integrated result. MIND may coordinate several Faculties, but it should not dump a roster or ask you to manage them.
-
-## 6. Ask TestForge what is actually proved
+TestForge, after a candidate is actually finished:
 
 ```text
-Use $software-verification. Review this repository's verification package. Separate direct evidence, derived conclusions, residual risks, and human-only contest actions. Do not upgrade a claim merely because a file exists.
+Use $software-verification. This installer is believed ready. Attack the readiness claim, identify the catastrophic paths, and tell me what the available evidence can and cannot support.
 ```
 
-Compare the answer with [the verification report](verification/verification-report.md) and [the contest acceptance record](design/CONTEST-ACCEPTANCE.md).
+MIND integration:
 
-## Boundaries worth testing
+```text
+Use $augment-of-mind. We have two days, conflicting evidence, and three stakeholders who mean different things by success. Return one defensible course of action with an exact stop condition.
+```
 
-- Ask Nova to rewrite one sentence. She should do it directly, not summon a procession of specialists.
-- Try Nova without MIND. She should remain useful and name the missing composition only when it matters.
-- Ask about memory. She should not call it durable without an observed persistence result.
-- Search the packages for Port Zindra or another authored campaign. None should be there.
-- Ask whether a local receipt proves an upload, rights attestation, or Devpost submission. It does not.
+## Done
 
-For exact expected selectors, package paths, evidence order, and troubleshooting, continue to [the judge guide](docs/JUDGE-GUIDE.md).
+You are ready when:
+
+- both plugins are installed and enabled;
+- a fresh task exposes `$nova` and `$augment-of-mind`;
+- `/hooks` shows the reviewed MIND hook state;
+- Nova helps without catalog theater;
+- the reminder layer either supplies a field or names its exact unavailable state.
+
+For normal use, continue to [Choose the right capability](docs/CAPABILITY-GUIDE.md). For installation proof, run:
+
+```powershell
+.\verify-install.ps1
+```
+
+That script can read plugin and Core state. It cannot prove hook trust, fresh-task discovery, model attention, or behavioral quality; those require their own observations.

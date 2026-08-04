@@ -1,0 +1,15 @@
+{
+  "case_id": "IT-EXAMPLE-COMPROMISE",
+  "updated_at": "2026-07-18T18:40:00Z",
+  "status": "referred",
+  "device": {"owner_or_authority": "employer; user authority incomplete", "type": "managed laptop", "manufacturer_model": "unknown", "serial_asset_id": "not-recorded", "os_firmware": "Windows; version unknown", "environment": "workplace"},
+  "complaint": {"desired_outcome": "stop unauthorized access and restore safe work", "observable_symptom": "user received MFA prompts and found an unknown remote-support application", "onset_and_frequency": "today", "triggering_conditions": "unknown", "affected_and_working": ["account trust uncertain", "device remains online"], "recent_changes": [], "stakes": ["company data", "credentials", "possible active compromise"]},
+  "custody": {"hazards": ["possible active compromise"], "data_value": "business-sensitive", "backup_state": "not-examined", "encryption_recovery_state": "organization-controlled", "privacy_or_policy": ["managed endpoint", "incident policy unknown"], "authorized_scope": ["user may report and follow company containment instructions"], "stop_or_referral": ["contact company security/help desk from a separate trusted device; preserve evidence; avoid self-directed cleanup"]},
+  "evidence": [{"id": "E-001", "state": "reported", "value": "unsolicited MFA prompts"}, {"id": "E-002", "state": "observed", "value": "unknown remote-support application present; provenance not established"}],
+  "hypotheses": [{"id": "H-001", "mechanism": "credential or session compromise with remote access", "state": "hypothesis"}, {"id": "H-002", "mechanism": "legitimate managed-support installation plus unrelated MFA prompts", "state": "hypothesis"}],
+  "tests": [],
+  "changes": [],
+  "sources": [],
+  "verification": {"original_envelope_retested": false, "results": [], "adjacent_checks": [], "disposition": "referred", "reopen_condition": "organization incident owner returns authorized disposition"},
+  "next_move": {"action": "preserve screenshots/times and contact the employer's security/help desk from a separate trusted device", "owner": "user and organization incident owner", "authority_required": "organization", "evidence_to_advance": "authorized containment and account/session response plan"}
+}

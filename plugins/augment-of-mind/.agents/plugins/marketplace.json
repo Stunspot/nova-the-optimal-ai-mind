@@ -1,0 +1,20 @@
+{
+  "name": "collaborative-dynamics-mind",
+  "interface": {
+    "displayName": "Collaborative Dynamics: MIND"
+  },
+  "plugins": [
+    {
+      "name": "augment-of-mind",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

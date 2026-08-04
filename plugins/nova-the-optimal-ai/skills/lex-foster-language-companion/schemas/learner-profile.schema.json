@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.github.io/lex-foster-language-companion/schemas/learner-profile.schema.json",
+  "title": "Lex Foster learner profile",
+  "type": "object",
+  "required": [
+    "format",
+    "profile_id",
+    "updated_at",
+    "working_language",
+    "target_languages",
+    "goals",
+    "preferences",
+    "evidence",
+    "retrieval_queue"
+  ],
+  "properties": {
+    "format": {
+      "const": "lex-foster-learner-profile/v1"
+    },
+    "profile_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "working_language": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_languages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["language", "variety", "script"],
+        "properties": {
+          "language": {"type": "string", "minLength": 1},
+          "variety": {"type": "string", "minLength": 1},
+          "script": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "goals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "situation", "success_evidence", "status"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "situation": {"type": "string", "minLength": 1},
+          "success_evidence": {"type": "string", "minLength": 1},
+          "status": {
+            "enum": ["active", "paused", "completed", "retired"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "required": [
+        "interruption",
+        "correction_focus",
+        "explanation_depth",
+        "challenge",
+        "working_language_use"
+      ],
+      "properties": {
+        "interruption": {
+          "enum": ["immediate", "natural-pauses", "end-of-turn"]
+        },
+        "correction_focus": {
+          "enum": ["communication-first", "balanced", "fine-grained"]
+        },
+        "explanation_depth": {
+          "enum": ["compact", "contrastive", "deep"]
+        },
+        "challenge": {
+          "enum": ["supported", "stretch", "immersive"]
+        },
+        "working_language_use": {
+          "enum": ["welcome", "minimal", "on-request"]
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "observed_at",
+          "target_language",
+          "item",
+          "state",
+          "task",
+          "support"
+        ],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "observed_at": {"type": "string", "format": "date-time"},
+          "target_language": {"type": "string", "minLength": 1},
+          "item": {"type": "string", "minLength": 1},
+          "state": {
+            "enum": ["new", "supported", "independent", "transferred"]
+          },
+          "task": {"type": "string", "minLength": 1},
+          "support": {"type": "string", "minLength": 1},
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "retrieval_queue": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidence_id", "when", "variation"],
+        "properties": {
+          "evidence_id": {"type": "string", "minLength": 1},
+          "when": {"type": "string", "minLength": 1},
+          "variation": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "privacy_notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,11 @@
+{
+  "format": "officecraft-artifact-specifications/v1",
+  "execution_status": "not_run",
+  "artifacts": [
+    {"artifact_id": "ART-EXEC-BRIEF", "specification": "Two-page editable executive brief: decision, objectives, budget, risk, and requested approval."},
+    {"artifact_id": "ART-DECISION-DECK", "specification": "Seven-slide editable decision deck following the sequence in the style brief."},
+    {"artifact_id": "ART-BUDGET-WORKBOOK", "specification": "Editable workbook with implementation, training, contingency, and total budget values."},
+    {"artifact_id": "ART-PDF-HANDOUT", "specification": "Fixed-format handout derived from the approved source selected during production."}
+  ],
+  "limitations": ["No DOCX, PPTX, XLSX, or PDF was generated.", "No renderer, native application, formula engine, accessibility checker, or visual inspection was run."]
+}
