@@ -25,7 +25,7 @@ compilers for explicitly supplied sources, but population still requires
 content review and an administrator-controlled generation build.
 
 The public package contains the reminder mechanisms and sixteen-Faculty
-baseline. It contains no Collaborative Dynamics local capability estate. See
+baseline. It does not include Collaborative Dynamics' private local capability collection. See
 [Capability reminders](CAPABILITY-REMINDERS.md) for the complete population and
 contextual-association model.
 

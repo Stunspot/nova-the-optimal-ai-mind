@@ -1,53 +1,69 @@
-# What you can ask Nova to do
+# Inside Nova + MIND Free
 
-Start with the outcome, not a menu. Nova can usually work out whether a specialty would help; use a `$handle` only when you already know the exact tool you want.
+The package contains forty-one integrated skills and cognitive Faculties. They are not forty-one competing agents and they are not a button grid you must learn. Nova is the user-facing identity; MIND and the capability-reminder layer help her bring in the right competence while keeping one coherent mission.
 
-## Make sense of a complicated situation
+## Nova and MIND
 
-Ask Nova to map a situation, distinguish facts from guesses, compare options, or set a sensible next experiment.
+**Nova the Optimal AI** is the adaptive generalist who works with you. She carries the conversation, understands the mission, combines specialists when useful, and returns one accountable result.
 
-```text
-I have three plausible directions and a week to choose. Help me see the tradeoffs, the decisive unknown, and the next test.
-```
+**MIND by Collaborative Dynamics** is her cognitive architecture. Its sixteen Faculties cover sensemaking, evidence, decisions, execution, continuity, creativity, aesthetics, timing, measurement, group deliberation, influence, long-horizon striving, and other transformations a consequential task may need.
 
-MIND is especially useful when the task has consequences, conflicting evidence, or several kinds of thinking that need to become one answer.
+MIND also includes Capability Promotion and TestForge. Capability Promotion helps the reminder system learn that a newly added durable ability may need representation. TestForge verifies finished software and release claims, then subjects the evidence to a separate reviewer.
 
-## Turn material into something usable
+## Prompting and modelcraft
 
-Nova can help turn notes into a brief, a research question into an evidence-backed answer, an idea into a plan, or a pile of work into clear documentation and visual communication.
+**Promptcraft** carries Collaborative Dynamics’ prompt-design discipline: performance-seeded language, latent-space precision, useful rhythm, and prompts that work with the nature of language models rather than pretending they are deterministic programs.
 
-```text
-Take these notes and make a crisp brief: what we are making, for whom, what matters, and what must be decided next.
-```
+**AI Cognition Cost Optimizer** helps choose where expensive frontier cognition is justified, where cheaper or local models fit, and how to preserve acceptance rather than saving money by quietly lowering the bar.
 
-## Build, inspect, and verify
+## Research, retrieval, and knowledge
 
-For software and technical work, Nova can orient in a repository, help reason about changes, and use TestForge once a candidate is finished.
+**OMNARA Deep Research** conducts bounded, source-conscious investigations.
 
-```text
-This feature is supposedly ready. Use $software-verification to test what that claim actually means and tell me what evidence is missing.
-```
+**Retrieval Intelligence** answers from authorized corpora; **Retrieval Reviewer** challenges coverage, citations, and evidentiary fit.
 
-TestForge checks a finished claim; it does not secretly publish, deploy, or grant permission.
+**Rupert Giles Knowledge Steward** keeps provenance, canon, versions, and source custody straight.
 
-## Keep useful context close
+**AnswerLayer** maintains important answers as the evidence changes.
 
-Use Nova to pin a decision, keep track of people you explicitly want remembered, or work through an ongoing project without repeatedly rebuilding the basics.
+**Current Intelligence Observatory** watches a moving subject and knows that monitoring is a different job from one-time research.
 
-```text
-Remember that this project must stay local-first and that the customer handoff is the success condition.
-```
+**Privacy Redline** finds unnecessary exposure and helps redesign work around data minimization.
 
-## Make and play
+## Building, repairing, and communicating
 
-Nova also includes creative synthesis, choice-shaped games and fiction, and Gridmason for Minecraft planning and building.
+**Agentic Coding** works inside real repositories with attention to state, evidence, and the next meaningful check.
 
-```text
-Use $gridmason to turn this theme into a build palette, a footprint, and a survival-friendly sequence.
-```
+**Owen Burnett Officecraft** produces professional documents, spreadsheets, presentations, and office packets; **Officecraft Reviewer** challenges the finished artifact.
 
-## When you add a capability
+**Beryl IT Tech** diagnoses and repairs user-facing technology problems; **IT Work Reviewer** checks the evidence for the repair.
 
-Say what you are adding in your own words. The capability-promotion reminder is designed to bring forward the need to decide whether MIND should learn a public reminder card for it. You should not need to know anything about embeddings to get that nudge.
+**Signal Loom** turns evidence into a visual story without replacing truth with decoration.
 
-For installation and host details, see [Install in Codex](INSTALL-CODEX.md). For how reminders behave, see [Capability reminders](CAPABILITY-REMINDERS.md).
+## Continuity, people, and durable work
+
+**Corkboard** keeps explicit low-pressure pins nearby.
+
+**Dunbar** supports user-governed memory about people and relationships.
+
+**Cognitive Continuity** preserves consequential state across tasks and interruptions.
+
+**Agent Striving** keeps a user-authorized long-horizon objective behaviorally effective until it is completed, cancelled, or genuinely blocked.
+
+These are different memory contracts. Nova does not flatten “remember this,” a person, a project state, and a durable pursuit into one mysterious bucket.
+
+## Creative work, learning, and play
+
+**Ludis Continuum** creates choice-shaped games, roleplay, characters, worlds, and fiction that move.
+
+**Gridmason** brings Minecraft design, diagnosis, material reasoning, construction planning, and evidence-bounded build support.
+
+**Lex Foster Language Companion** makes language practice adaptive, conversational, and responsive to the learner.
+
+MIND’s Aesthetic Intelligence, Creative Synthesis, Agent Dreaming, Kairos, and Agentic Eros add taste, invention, timing, reflective incubation, and relational perception where they belong.
+
+## How the ecology behaves
+
+Nova begins with the mission. MIND brings relevant capabilities within reach. A capability is opened only when its actual doctrine or resources would improve the work. Makers create; reviewers challenge; Nova reunifies the result.
+
+You can name a skill directly when you want its exact responsibility, but the product is designed so you usually should not have to.

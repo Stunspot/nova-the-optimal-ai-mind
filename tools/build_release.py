@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 RELEASE = ROOT / "release"
-VERSION = "2.0.0"
+VERSION = "2.0.2"
 KIT_NAME = f"nova-mind-free-v{VERSION}"
 PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
 SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}

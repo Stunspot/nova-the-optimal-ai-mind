@@ -1,61 +1,78 @@
 # Nova + MIND Free
 
-![Nova Emergent](assets/nova-emergent.png)
+![Nova Emergent, the canonical Nova artwork by Collaborative Dynamics](assets/nova-emergent.png)
 
-Nova is the AI you bring a real situation: the deadline, the half-formed plan, the strange technical problem, the research tangle, the game build, the thing you want to make but cannot yet see clearly.
+## Install an actual AI capability system in the harness you already use
 
-Tell her what you want in ordinary language. Nova helps directly when that is enough and reaches for a useful specialty when it genuinely helps. MIND keeps the thinking coherent, and its reminder layer helps Nova remember what is available as your setup grows.
+Nova + MIND Free is Collaborative Dynamics’ public edition of Nova: a complete agent architecture packaged for an AI harness, with her cognitive system, capability memory, verification discipline, and a deliberately generous collection of practical and creative abilities already aboard.
 
-## Start here
+Download one ZIP, give it to a compatible agentic harness, and ask the harness to install and enable Nova + MIND. That is the normal customer path. The scripts and command-line instructions are fallbacks for hosts that cannot install an attached package themselves.
 
-You need Codex with plugin support, PowerShell, and Python 3.11 or newer.
+[Download Nova + MIND Free](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest)
 
-1. Download this release or clone the repository.
-2. In its folder, run:
+## “Agent” is technically true and almost useless
 
-   ```powershell
-   .\install.ps1
-   ```
+There are tens of thousands of things called agents. Many are a persona prompt, a thin tool wrapper, or one workflow wearing a name tag. Nova is built on a different assumption: a serious AI collaborator needs an identity, a mind, specialized competence, memory of what it can do, and a way to test its own claims.
 
-3. In Codex, review the MIND prompt-submit hook through `/hooks` and trust it only if you are comfortable with the exact local code.
-4. Start a new task and describe what you want to do.
+Nova is the person you work with. MIND is the cognitive architecture that helps her reason, choose, recover, and combine abilities without turning every answer into committee theatre. Around them sits a capability ecology: focused skills and larger Augments that add real methods, knowledge, resources, scripts, safeguards, and—in several cases—an independent reviewer.
 
-Try one of these:
+The result is not forty-one buttons for you to operate. It is one coherent agent with forty-one integrated skills and cognitive Faculties available when the work calls for them.
 
-```text
-I have a messy plan for a small project. Find the real goal, the missing decisions, and the next useful move.
-```
+## MIND comes with Nova. Always.
 
-```text
-Help me turn these scattered notes into a clear brief that somebody else can actually use.
-```
+MIND is not an optional “deep thinking mode” or a separate bot you must summon. It is Nova’s cognitive substrate, including sixteen distinct Faculties for sensemaking, evidence, decisions, execution, continuity, creativity, aesthetics, timing, measurement, deliberation, influence, and more.
 
-```text
-I want to build something good in Minecraft. Help me choose a direction and make a practical build plan.
-```
+MIND also gives Nova a semantic capability-reminder layer. Before she commits to a route, relevant abilities can be brought back within reach—even when you never learned their names. When you add a new durable skill, plugin, or tool, Capability Promotion reminds MIND that the new ability may need to be enrolled in that reminder system too.
 
-If the installer stops, that is usually protection rather than catastrophe. Start with [Start here](START-HERE.md) or [Troubleshooting](docs/TROUBLESHOOTING.md).
+TestForge ships inside MIND because “it seems ready” is not a release standard. One skill builds the verification case; a separate reviewer attacks it.
 
-## What Nova can help with
+[See how MIND works](plugins/augment-of-mind/README.md)
 
-Nova + MIND Free includes practical and creative specialties for work that tends to show up in actual life: thinking through choices, research and knowledge work, writing and visual communication, coding and verification, personal continuity, games and stories, and Minecraft planning.
+## What is an Augment?
 
-You do not need a private command vocabulary to get value from it. Ask for the outcome. If you know exactly what you want, you can also name a capability with `$name`.
+A persona changes how an AI sounds. A prompt changes what it does for a turn. An Augment grows what the agent can reliably accomplish.
 
-MIND is always part of Nova here. It keeps a consequential job from turning into a noisy committee, preserves useful distinctions such as evidence versus assumption, and includes TestForge for checking a finished software or release claim.
+Augments package durable operating judgment: domain methods, decision rules, references, tools or scripts where useful, failure boundaries, recovery behavior, and verification. Some are compact specialists. Others are substantial professional systems with a maker and an independent reviewer. Free Nova includes both Augments and lighter skills, integrated behind one user-facing agent.
 
-## Add something later
+## What you get in the Free edition
 
-When you add a skill, plugin, tool, or other durable capability, talk to Nova about the addition normally. The reminder layer is meant to surface the accompanying housekeeping: whether MIND should get a reminder card so the new ability can be recalled naturally in later work. You should not have to remember the mechanism’s name.
+### A formidable thinking partner
 
-Read [Capability guide](docs/CAPABILITY-GUIDE.md) for the kinds of work included and [Capability reminders](docs/CAPABILITY-REMINDERS.md) for how that part behaves.
+Nova and MIND can untangle ambiguous situations, separate evidence from confidence, compare choices, preserve long-running objectives, recover after failure, and assemble several kinds of reasoning into one answer.
 
-## Read only as far as you need
+### Research that knows the difference between finding and knowing
 
-- [Start here](START-HERE.md): install, confirm, and get moving.
-- [Install in Codex](docs/INSTALL-CODEX.md): the careful installation path.
-- [Use MIND by itself](plugins/augment-of-mind/START-HERE.md): standalone MIND.
-- [Privacy and trust](docs/PRIVACY-AND-TRUST.md): local data and authority boundaries.
-- [Troubleshooting](docs/TROUBLESHOOTING.md): recover from a concrete symptom.
+OMNARA Deep Research investigates current questions. Retrieval Intelligence works against bounded corpora. Rupert Giles keeps source custody and canon straight. AnswerLayer maintains answers as evidence changes. Current Intelligence watches moving topics instead of pretending yesterday is permanent.
 
-Nova is here to be useful, not to make you babysit a stack of clever machinery. 🌐‍💠
+### Serious making and checking
+
+Agentic Coding works inside live repositories. Officecraft produces documents, spreadsheets, presentations, and professional packets. Beryl handles user-facing IT diagnosis and repair. Signal Loom turns evidence into visual explanation. Dedicated reviewers challenge Officecraft, IT work, retrieval, and software-verification claims.
+
+### Better use of the models themselves
+
+Promptcraft brings Collaborative Dynamics’ prompt-design discipline. AI Cognition Cost Optimizer helps match expensive cognition to the work that earns it. Privacy Redline reduces unnecessary exposure. Corkboard, Dunbar, Cognitive Continuity, and Agent Striving give different kinds of memory and persistence their proper boundaries.
+
+### Actual fun
+
+Ludis Continuum runs choice-shaped games, characters, worlds, and fiction. Gridmason brings real Minecraft design and build intelligence. Lex Foster makes language practice adaptive and conversational rather than a worksheet with delusions of grandeur.
+
+[Explore the complete capability ecology](docs/CAPABILITY-GUIDE.md)
+
+## This is the free sample
+
+Free Nova is intentionally substantial. A sample of an agent architecture should demonstrate the architecture—not remove every interesting organ and call the resulting torso a conversion funnel.
+
+This package is Collaborative Dynamics’ first public handshake: Nova’s character, MIND’s cognitive architecture, the capability-reminder layer, TestForge, and enough excellent skills and Augments to show how the whole system changes the experience of working with an AI harness.
+
+## Install it
+
+1. Download the latest Nova + MIND Free ZIP.
+2. Drop or attach the ZIP in your agentic harness.
+3. Tell the harness: **Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing any existing Nova or MIND installation.**
+4. Approve the local installation actions you are comfortable with.
+
+Codex is the primary integrated release target. The package also includes portable per-skill ZIPs for Claude-compatible skill hosts. If your harness cannot install from an attachment, use the [manual Codex installation](docs/INSTALL-CODEX.md).
+
+Nova and MIND are products of **Collaborative Dynamics** and are available here under the [MIT License](LICENSE.md). The public package contains no credentials, private customer material, private prompt archive, or live personal store.
+
+🌐‍💠

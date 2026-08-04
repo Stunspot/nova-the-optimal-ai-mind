@@ -1,27 +1,23 @@
-# Start MIND
+# Install MIND
 
-You need Codex with plugin support and Python 3.11 or newer.
+MIND is a standalone cognitive architecture for an existing AI harness. It adds sixteen cognitive Faculties, integrated mission control, local semantic capability reminders, Capability Promotion, and the two-part TestForge verification gate.
 
-1. From this plugin folder, run:
+## The normal installation
 
-   ```powershell
-   .\install.ps1
-   ```
+1. Give the MIND package to a compatible Codex harness.
+2. Ask the harness to install and enable **MIND by Collaborative Dynamics**.
+3. Review the file operations and configuration changes it proposes.
+4. Open `/hooks`, inspect the exact local MIND prompt-submit hook, and decide whether to trust it.
+5. Start a new task so Codex can discover the plugin.
 
-2. Open `/hooks` in Codex. Review and trust the exact MIND hook only if you accept it.
-3. Start a new task.
-4. Give MIND a real decision or complicated piece of work.
+Installation is complete when MIND is enabled, its Faculties are discoverable in a new task, and the local reminder map reports ready—or names the exact part that remains unavailable.
 
-```text
-Use $augment-of-mind. We have conflicting evidence, two days, and stakeholders who mean different things by success. Recommend one course, name the decisive uncertainty, and set a stop condition.
-```
+## Manual fallback
 
-A good result feels like somebody made the situation more navigable. You do not need to manage MIND’s internal Faculties.
+If your harness cannot install an attached package, extract it and follow [Manual Codex installation](INSTALL-CODEX.md).
 
-Once a software or release candidate is finished, try:
+## What you installed
 
-```text
-Use $software-verification. Test this readiness claim and tell me what the evidence really supports.
-```
+MIND is one integrator, sixteen Faculties, Capability Promotion, and two TestForge skills. It coordinates cognition; it does not impersonate every occupational specialist or grant tools and permissions the host does not have.
 
-You are installed when the plugin is enabled, a new task exposes MIND, and your request produces a useful response. If the local reminder layer is unavailable, MIND should name that rather than pretend it was delivered.
+Read [Capabilities and limits](CAPABILITIES-AND-LIMITS.md) for the complete shape and [Use MIND](USER-GUIDE.md) for its operating model.

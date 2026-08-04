@@ -1,7 +1,7 @@
 # Free Nova package map
 
-Status: approved product design under construction  
-Product: **Nova + MIND Free 2.0.0**  
+Status: published product; 2.0.2 presentation correction in progress
+Product: **Nova + MIND Free 2.0.2**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai`

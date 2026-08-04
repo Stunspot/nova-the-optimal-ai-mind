@@ -1,36 +1,37 @@
 # Use MIND
 
-Ask for the result you need. Name a Faculty only when the particular kind of thinking matters.
+MIND is designed to disappear into competent behavior. You ordinarily ask the agent for the outcome; MIND decides whether direct work is sufficient or whether several cognitive transformations need to cooperate.
 
-## When to call MIND
+## When MIND matters most
 
-Use `$augment-of-mind` for a consequential situation, tangled evidence, several necessary kinds of reasoning, durable project state, or a decision that needs a clear recovery path.
+MIND earns its keep when the work contains conflicting evidence, meaningful consequences, several kinds of reasoning, long-running state, a difficult authority boundary, or a failure that needs genuine recovery rather than another hopeful retry.
 
-For a narrow job, call the Faculty directly. The names are listed in [Capabilities and limits](CAPABILITIES-AND-LIMITS.md).
+A narrow task may belong to one Faculty. A consequential mission may require several. The integrator keeps the objective stable and merges their contributions.
 
-## Give it a real brief
+## Four operating motions
 
-Useful requests say what you want, what material matters, the constraints, and the authority boundary.
+**Direct** handles ordinary reversible work without unnecessary machinery.
 
-```text
-Use $augment-of-mind to recommend whether we should renew this vendor.
-Use the attached incident log and contract summary. Treat unverified claims as claims, compare a short renewal with migration, and return one recommendation with the condition that would reverse it. Draft no message and contact nobody.
-```
+**Enlist** opens one Faculty whose doctrine will materially improve the work.
 
-## Correct it without starting over
+**Assemble** coordinates several necessary Faculties while preserving their distinct responsibilities.
 
-```text
-Correction: budget is fixed, not flexible. Preserve the objective and recompute only the options and recommendation affected by that constraint.
-```
+**Recover** protects the last-known-good state, identifies the premise that failed, changes the route, and resumes honestly.
 
-A good correction updates the relevant part of the answer rather than recreating every abandoned branch.
+## Corrections stay local
 
-## Let MIND remember its own additions
+A correction should change the affected assumptions, options, or recommendation without resurrecting every discarded branch. MIND treats a correction as a delta unless the user actually changes the mission.
 
-When you say you are adding, installing, enabling, replacing, or proposing a durable skill, plugin, tool, or program, Capability Promotion is meant to surface the question of adding it to MIND’s reminder map. You should not have to know the phrase “capability promotion” for that to happen.
+## Recommendations are not permissions
 
-## Stop and recover
+MIND can analyze, organize, recommend, draft, and plan. It does not convert those outputs into permission to send, publish, purchase, alter an account, use credentials, destroy data, or take regulated action.
 
-When something that should work does not, preserve the error, identify what actually failed, and change one real premise before trying again. MIND should not decorate a broken route with confidence.
+## Capability memory
 
-For local reminders, see [Capability reminders](CAPABILITY-REMINDERS.md). For the optional Core details, see [Optional MIND Core](OPTIONAL-CORE.md).
+After understanding a task, correction, error, or phase change, MIND can retrieve a semantic neighborhood of potentially relevant capabilities. The agent still decides whether any of them fit.
+
+When a durable capability is added or changed, Capability Promotion should surface the need to update that semantic map. See [Capability reminders](CAPABILITY-REMINDERS.md).
+
+## Recovery
+
+When a tool, credential, store, dependency, or invariant fails, preserve the exact symptom and the state reached. Change a premise-bearing part of the route before retrying. A new directory name is not a new strategy, however emotionally supportive it may feel.

@@ -86,6 +86,5 @@ try {
 }
 
 Write-Host ''
-Write-Host 'Free Nova is installed and its 40-capability reminder estate is active.'
+Write-Host 'Free Nova is installed. Both plugins are enabled and its 41-capability reminder map is active.'
 Write-Host 'Next: open Codex, review the exact MIND prompt-submit hook through /hooks, trust it if the bytes match this package, then start a new task.'
-Write-Host 'First prompt: Use $nova to help me with this.'

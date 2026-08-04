@@ -1,41 +1,33 @@
-# Start Nova + MIND Free
+# Install Nova + MIND Free
 
-This is the short path from download to a useful first conversation.
+Nova + MIND Free is an agent package for your existing AI harness. It installs Nova, her MIND cognitive system, and the included ecology of forty-one skills and cognitive Faculties.
 
-## Before you begin
+## The normal installation
 
-You need Codex with plugin support, PowerShell, and Python 3.11 or newer. Keep this folder intact while installing; the two plugins and their local resources belong together.
+1. [Download the latest Nova + MIND Free ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
+2. Attach or drop the ZIP into a Codex task.
+3. Tell Codex:
 
-## Install
+   ```text
+   Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing any existing Nova or MIND installation.
+   ```
 
-From the folder containing `install.ps1`, run:
+4. Review the installation actions Codex proposes and approve the ones you accept.
+5. When installation finishes, open `/hooks`, inspect the MIND prompt-submit hook, and decide whether to trust those exact local bytes.
+6. Start a new task so the harness can discover the installed package.
 
-```powershell
-.\install.ps1
-```
+A successful installation leaves both **Nova the Optimal AI** and **MIND by Collaborative Dynamics** enabled. MIND’s local capability-reminder system should also report that the included public capability map is ready.
 
-The installer adds the Free Nova marketplace, installs Nova and MIND, creates a new local MIND database, and checks the result. It deliberately stops instead of replacing another Nova/MIND installation or an existing database.
+## Why there are two plugins
 
-## Let Codex use the reminder layer
+You are installing one product. Nova and MIND are separate plugin units only because MIND is also available as a standalone cognitive system and the harness needs clean discovery boundaries. In Free Nova they belong together; there is no reduced Nova-without-MIND mode.
 
-Open `/hooks` in Codex. Review the exact MIND `UserPromptSubmit` hook and trust it only if you accept it. The hook is local code; installing it is not the same thing as trusting it.
+## If the harness cannot install the ZIP itself
 
-Then start a new task. A fresh task matters because that is when Codex discovers installed skills.
+Extract the ZIP and use the included `install.ps1` from PowerShell. This is the fallback path, not the product pitch. Full prerequisites, expected results, and recovery steps are in [Manual Codex installation](docs/INSTALL-CODEX.md).
 
-## Make the first request real
+## What happens next
 
-Do not test Nova with a ceremonial incantation. Give her something you genuinely want help with:
+Nova becomes available as the user-facing agent. MIND operates as her cognitive substrate. The other included skills and Augments become capabilities Nova can draw on rather than a menu you must memorize.
 
-```text
-I need to decide whether this plan is worth a week of work. Here are the constraints and my rough notes. Find the real decision, tell me what matters, and propose the smallest next step that would change your mind.
-```
-
-For a direct capability check, this is fine too:
-
-```text
-Use $gridmason to help me plan a Minecraft build around this idea.
-```
-
-You are ready when both plugins are enabled, a new task can use Nova, and your request produces a useful answer. The reminder layer may quietly make relevant abilities easier for Nova to remember; it does not take action or grant permissions.
-
-Need a different route? See [Install in Codex](docs/INSTALL-CODEX.md), [Capability guide](docs/CAPABILITY-GUIDE.md), and [Troubleshooting](docs/TROUBLESHOOTING.md).
+See [What you just installed](docs/CAPABILITY-GUIDE.md), [How MIND remembers capabilities](docs/CAPABILITY-REMINDERS.md), or [Troubleshooting](docs/TROUBLESHOOTING.md).
