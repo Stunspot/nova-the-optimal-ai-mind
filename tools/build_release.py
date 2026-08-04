@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 RELEASE = ROOT / "release"
-VERSION = "2.0.2"
+VERSION = "2.0.3"
 KIT_NAME = f"nova-mind-free-v{VERSION}"
 PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
 SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}
@@ -118,7 +118,7 @@ def main() -> int:
         "format": "nova-mind-free-release/v1",
         "product": "Nova + MIND Free",
         "version": VERSION,
-        "plugin_versions": {"nova-the-optimal-ai": "2.0.0", "augment-of-mind": "2.1.0"},
+        "plugin_versions": {"nova-the-optimal-ai": "2.0.0", "augment-of-mind": "2.1.1"},
         "codex_plugins": list(PLUGIN_NAMES),
         "claude_skill_count": len(sources),
         "claude_skills": sorted(sources),
