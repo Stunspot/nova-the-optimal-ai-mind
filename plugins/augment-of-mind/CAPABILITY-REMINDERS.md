@@ -1,17 +1,11 @@
 # MIND capability reminders
 
-MIND's standalone 2.1 estate covers the integrator, sixteen Faculties, Capability Promotion, and both TestForge roles. It contains 20 cards and 120 semantic views.
+MIND keeps a small local map of the abilities that ship with it, so an available tool is less likely to vanish from the conversation merely because nobody remembered its exact name.
 
-Capability Promotion is the reminder layer's own housekeeping memory. Natural language about adding, installing, wiring in, enabling, updating, disabling, removing, or proposing a skill, plugin, tool, program, or durable agent ability brings forward the requirement to update MIND's reminder representation. The user does not need to know that the promotion layer or embeddings exist.
+When you talk about adding, installing, wiring in, enabling, updating, disabling, removing, or proposing a skill, plugin, tool, program, or durable agent ability, Capability Promotion should surface the need to decide whether that addition belongs in MIND’s reminder map too. You do not need to know how the map is made.
 
-The Codex prompt-submit hook recalls explicit identity-shaped cues before sampling. When a raw prompt does not reveal the whole task, it asks the model to derive contextual membranes and use the local association service after understanding the request.
+This is triggered by the conversation about the addition. MIND does not scan or hash the whole harness on every response.
 
-Association is an unordered semantic neighborhood plus explicit relation hops. It is not top-K ranking, recommendation, activation, installation evidence, tool health, permission, or a fitness verdict.
+A reminder is not a selection, recommendation, activation, installation check, health check, permission, or authority grant. If the local reminder path is unavailable, MIND should continue with capabilities Codex exposes and name the lost reminder guarantee honestly.
 
-The focused [Capability Promotion probe receipt](verification/capability-promotion-probes.json) records the exact positive and control cases exercised locally.
-
-The 2.1 successor profile is `unqualified`. Its cards and vectors are new because three capabilities were added to the earlier estate. Structural validation and isolated queries do not inherit the prior profile's behavioral qualification.
-
-Review and trust the exact hook bytes through `/hooks`. If Core, snapshot, embedding provider, MCP service, or hook trust is unavailable, continue from host-exposed capabilities and name the exact lost guarantee.
-
-The public estate stores authored metadata and vectors, not private skill bodies, source paths, credentials, personal records, or raw task text. Query sessions preserve hashes and bounded receipts.
+The public map stores authored descriptions and semantic representations, not private skill bodies, credentials, personal records, source paths, or raw task text. It is structurally checked; broader behavioral qualification and fresh-host delivery are still separate work.

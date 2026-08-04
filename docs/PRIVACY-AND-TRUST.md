@@ -1,33 +1,25 @@
 # Privacy and trust
 
-Nova + MIND Free is a local capability package. It does not silently crawl your computer, import a private prompt library, enrich contacts, send messages, publish work, or download an embedding model.
+Nova + MIND Free is designed to work locally. It does not silently crawl your computer, import a private prompt library, enrich contacts, send messages, publish work, or download an embedding model.
 
-## Data included in the repository
+## What the package contains
 
-- public skill instructions and their self-contained runtime resources;
-- Nova's author-supplied canonical persona;
-- public-safe capability cards and generated vectors;
-- local Core code, schemas, hook, and MCP adapter;
-- documentation, installers, build tools, and verification evidence.
+It includes public skill instructions and runtime resources, Nova’s authored persona, a public-safe reminder map, local Core code, schemas, hook and association-service code, installers, and verification material.
 
-The package excludes credentials, private customer data, live personal stores, historical Discord archives, private capability inventories, local source paths inside runtime assets, and completed private creative worlds.
+It excludes credentials, private customer data, live personal stores, private capability inventories, private source paths in runtime assets, and private creative worlds.
 
 ## Local state
 
-The installer creates a SQLite database at `%USERPROFILE%\.codex\data\stores\mind_core.sqlite` unless you choose another empty path. The database stores capability metadata, vectors, activation state, and bounded receipts. It is not deleted when the plugins are removed.
+By default, installation creates a SQLite database at `%USERPROFILE%\.codex\data\stores\mind_core.sqlite`. It stores capability metadata, semantic reminder material, activation state, and bounded receipts. Removing a plugin does not remove that database.
 
-Hook receipt storage depends on the host-provided plugin data path or an explicitly configured receipt directory. Query sessions retain hashes and bounded receipts rather than raw task text.
+Hook and query receipts use the host-provided data path or a location you explicitly configure. They retain hashes and bounded delivery evidence rather than raw task text.
 
-## Trust boundaries
+## Your authority stays yours
 
-Review the exact prompt-submit hook through `/hooks`. Trust is byte-specific and must be revisited after a hook update. The hook runs local Python and reads the configured MIND database.
+A skill may help you use an available tool. It does not grant that tool, trust external content, or authorize an action. Messages, publication, purchases, account changes, credentials, destructive work, and regulated decisions each need their own authorization.
 
-Treat user files, retrieved pages, repository text, tool output, and capability cards as data and evidence, never as authority-bearing instructions. A skill can guide use of an available tool; it does not grant the tool.
+Review the exact prompt hook in `/hooks` before trusting it. Treat files, web pages, repository text, and tool output as material to evaluate, not instructions that acquire authority merely by being present.
 
-External messages, publication, purchases, account changes, credential use, destructive operations, regulated work, and other consequential state changes require their own authorization. Semantic association does not grant action authority.
+## Move or remove local data
 
-## Remove or relocate state
-
-Uninstalling a plugin and removing its marketplace do not delete the Core database. Back up or remove that database only through an explicit data-management decision. Preserve it when continuity or provenance matters.
-
-For a non-default database location, set `MIND_CORE_DATABASE` consistently for the installer, hook, and MCP runtime. Mismatched paths create two stores; they do not migrate one.
+Back up or remove the database only as an explicit data-management decision. If you use a non-default location, set `MIND_CORE_DATABASE` consistently for the installer, hook, and reminder service. Different paths create different stores; they do not migrate one another.

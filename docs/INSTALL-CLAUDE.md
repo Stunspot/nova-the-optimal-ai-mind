@@ -1,40 +1,28 @@
-# Install the portable Claude skills
+# Use the portable Claude skills
 
-The Claude distribution contains one ZIP per skill under `dist/claude/zips/`. Each archive has one matching top-level folder and a direct `SKILL.md`.
+The release includes one ZIP per skill in `dist/claude/zips/`. Each ZIP is a self-contained capability you can upload through Claude’s skill-management interface.
 
-These ZIPs are portable capability components. They do not reproduce the Codex plugin marketplace, prompt-submit hook, MIND Core database, MCP association service, automatic estate activation, or verified Nova-with-MIND invariant runtime.
+These archives are portable skills, not a replica of the Codex package. They do not include the Codex marketplace, prompt hook, shared MIND database, or automatic reminder delivery.
 
-## Build the ZIPs from source
+## Upload a skill
 
-Maintainers run:
+1. Choose the ZIP that matches what you want, such as `gridmason.zip`.
+2. Upload it through Claude’s skill-management interface.
+3. Enable it if Claude asks you to.
+4. Start a new conversation and ask for the outcome you want.
 
-```powershell
-python -X utf8 .\tools\build_release.py
+For example:
+
+```text
+Use Gridmason to help me plan a Minecraft build from this theme.
 ```
 
-Customers using a release download should use the already-built ZIPs and verify them against `dist/SHA256SUMS.txt`.
+The expected result is that Claude can discover and use the contents of that one ZIP, subject to the permissions and limits of the host.
 
-## Upload one skill
+## Use a broader set
 
-1. Choose the ZIP whose filename matches the capability handle, for example `gridmason.zip`.
-2. Upload the ZIP through Claude's skill-management interface.
-3. Enable it if the host requires a separate enablement step.
-4. Start a new conversation and request the capability naturally or by name.
-5. Confirm that the skill's resources load and that any scripts it needs are permitted by the host.
+Upload `nova.zip`, `augment-of-mind.zip`, the sixteen Faculty ZIPs, the two TestForge ZIPs, `promptcraft.zip`, and whichever practical specialties you want. Claude may impose its own limits on skill count, context, scripts, or tools.
 
-Expected result: the individual skill is discoverable and can use only the resources contained in its own ZIP.
+## If an upload fails
 
-## Recreate the broadest portable set
-
-Upload `nova.zip`, `augment-of-mind.zip`, the sixteen Faculty ZIPs, `software-verification.zip`, `verification-reviewer.zip`, `promptcraft.zip`, and any practical specialist ZIPs you want available.
-
-This is a component set, not a claim of Codex-equivalent integration. Claude may impose skill-count, context, script, or tool limits. Cross-skill discovery, automatic reminder delivery, shared persistence, and hook behavior are `not tested` for this release.
-
-## If upload fails
-
-- Confirm the archive contains exactly one top-level folder with the same name as the ZIP.
-- Confirm `SKILL.md` is directly inside that folder.
-- Rebuild the release and rerun `python -X utf8 tools\verify_package.py --release`.
-- Preserve the host error and exact ZIP hash.
-
-Do not unzip several skills into one archive. Do not move references outside the skill root. Those shortcuts produce a topology puzzle wearing a tiny hat.
+Check that the ZIP has one top-level folder matching its filename and that `SKILL.md` sits directly inside it. Preserve the host’s error and the archive hash. The archive can be structurally correct while a host still declines it; those are different problems.
