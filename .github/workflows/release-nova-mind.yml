@@ -1,0 +1,141 @@
+name: Release Nova + MIND Free
+
+on:
+  push:
+    branches:
+      - main
+      - agent/remove-mind-mcp
+
+permissions:
+  contents: write
+
+jobs:
+  prepare-repair-branch:
+    if: github.ref == 'refs/heads/agent/remove-mind-mcp' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synchronize release versions and notes
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def replace(path: str, old: str, new: str) -> None:
+              target = Path(path)
+              text = target.read_text(encoding='utf-8')
+              if old not in text:
+                  raise SystemExit(f'missing expected text in {path}: {old!r}')
+              target.write_text(text.replace(old, new), encoding='utf-8', newline='\n')
+
+          replace('tools/build_release.py', 'VERSION = "2.0.2"', 'VERSION = "2.0.3"')
+          replace('tools/build_release.py', '"augment-of-mind": "2.1.0"', '"augment-of-mind": "2.1.1"')
+          replace('tools/verify_package.py', '2.1.0', '2.1.1')
+          replace('plugins/augment-of-mind/.codex-plugin/plugin.json', '"version": "2.1.0"', '"version": "2.1.1"')
+          replace('plugins/augment-of-mind/scripts/verify_release.py', 'PLUGIN_VERSION = "2.1.0"', 'PLUGIN_VERSION = "2.1.1"')
+          replace('plugins/augment-of-mind/scripts/build_integrated_fingerprint.py', '2.1.0', '2.1.1')
+          replace('plugins/augment-of-mind/skills/augment-of-mind/evals/eval-manifest.yaml', '"package_version": "2.1.0"', '"package_version": "2.1.1"')
+          replace('plugins/augment-of-mind/skills/augment-of-mind/evals/faculty-runtime-cases.yaml', '"package_version": "2.1.0"', '"package_version": "2.1.1"')
+
+          package_map = Path('design/FREE-NOVA-PACKAGE-MAP.md')
+          text = package_map.read_text(encoding='utf-8')
+          text = text.replace(
+              'Status: published product; 2.0.2 presentation correction in progress',
+              'Status: release candidate; 2.0.3 removes bundled Nova/MIND MCP runtime plumbing',
+          ).replace('Product: **Nova + MIND Free 2.0.2**', 'Product: **Nova + MIND Free 2.0.3**')
+          package_map.write_text(text, encoding='utf-8', newline='\n')
+
+          root_notes = Path('RELEASE-NOTES.md')
+          text = root_notes.read_text(encoding='utf-8')
+          section = '''## 2.0.3
+
+This corrective release removes Nova and MIND's bundled MCP server, registration, launcher, and automatic MCP-tool invocation. The bundled skills remain ordinary filesystem capabilities loaded through their `SKILL.md` entrypoints, while the prompt hook and local query path continue to support Arm's Reach association without an MCP dependency.
+
+The change fixes a failure mode where models attempted to load installed skills as MCP resources, repeatedly retried unavailable servers, compacted around the false dependency, and stopped useful work. This package imposes no restriction on unrelated MCP servers a user configures independently.
+
+'''
+          if '## 2.0.3' not in text:
+              text = text.replace('## 2.0.2\n', section + '## 2.0.2\n', 1)
+          root_notes.write_text(text, encoding='utf-8', newline='\n')
+
+          mind_notes = Path('plugins/augment-of-mind/RELEASE-NOTES.md')
+          text = mind_notes.read_text(encoding='utf-8')
+          section = '''## 2.1.1
+
+This patch removes MIND's bundled MCP server, `.mcp.json` registration, launcher, and automatic `associate_capabilities` request. MIND skills remain filesystem capabilities loaded through `SKILL.md`; the prompt hook and bundled local query script retain the non-MCP association path.
+
+The package does not prohibit or modify unrelated MCP servers configured independently by the user or host.
+
+'''
+          if '## 2.1.1' not in text:
+              text = text.replace('## 2.1.0\n', section + '## 2.1.0\n', 1)
+          mind_notes.write_text(text, encoding='utf-8', newline='\n')
+      - name: Regenerate integrated MIND fingerprint
+        run: python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+      - name: Verify source package
+        run: python -X utf8 tools/verify_package.py
+      - name: Commit prepared release source
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          if git diff --cached --quiet; then
+            echo 'No release preparation changes were required.'
+          else
+            git commit -m 'release: bump Nova + MIND Free to 2.0.3'
+            git push
+          fi
+
+  publish-release:
+    if: github.ref == 'refs/heads/main' && github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare Python build tooling
+        run: python -m pip install --upgrade pip setuptools wheel
+      - name: Verify source package
+        run: python -X utf8 tools/verify_package.py
+      - name: Build Nova + MIND Free customer package
+        run: python -X utf8 tools/build_release.py
+      - name: Verify customer package
+        run: python -X utf8 tools/verify_package.py --release
+      - name: Build standalone MIND package
+        run: python -X utf8 plugins/augment-of-mind/scripts/build_release.py --output-dir release/mind --replace
+      - name: Publish GitHub release
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="$(python - <<'PY'
+          import re
+          from pathlib import Path
+          text = Path('tools/build_release.py').read_text(encoding='utf-8')
+          print(re.search(r'^VERSION = "([^"]+)"$', text, re.MULTILINE).group(1))
+          PY
+          )"
+          tag="v${version}"
+          assets=(
+            "release/nova-mind-free-v${version}.zip"
+            "release/nova-mind-free-v${version}.zip.sha256"
+            "release/mind/augment-of-mind-v2.1.1.zip"
+            "release/mind/augment-of-mind-v2.1.1.zip.sha256"
+            "release/mind/augment-of-mind-v2.1.1.build-receipt.json"
+          )
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "${assets[@]}" --clobber
+          else
+            gh release create "$tag" "${assets[@]}" \
+              --target "$GITHUB_SHA" \
+              --title "Nova + MIND Free ${version}" \
+              --notes-file RELEASE-NOTES.md
+          fi
