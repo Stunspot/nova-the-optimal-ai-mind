@@ -5,13 +5,21 @@ on:
     branches:
       - main
   workflow_dispatch:
+  issue_comment:
+    types:
+      - created
 
 permissions:
   contents: write
 
 jobs:
   publish-release:
-    if: github.actor != 'github-actions[bot]'
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      (github.event_name != 'issue_comment' ||
+       (github.event.issue.pull_request &&
+        github.event.comment.body == '/release-2.0.3' &&
+        github.event.comment.author_association == 'OWNER'))
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
