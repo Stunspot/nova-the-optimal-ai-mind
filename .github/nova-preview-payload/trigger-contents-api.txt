@@ -1,1 +1,0 @@
-Trigger the verified Nova preview installer through the contents API.
