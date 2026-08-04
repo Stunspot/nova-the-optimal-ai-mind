@@ -1,5 +1,11 @@
 # Nova + MIND Free release notes
 
+## 2.0.3
+
+This corrective release removes Nova and MIND's bundled MCP server, registration, launcher, and automatic MCP-tool invocation. The bundled skills remain ordinary filesystem capabilities loaded through their `SKILL.md` entrypoints, while the prompt hook and local query path continue to support Arm's Reach association without an MCP dependency.
+
+The change fixes a failure mode where models attempted to load installed skills as MCP resources, repeatedly retried unavailable servers, compacted around the false dependency, and stopped useful work. This package imposes no restriction on unrelated MCP servers a user configures independently.
+
 ## 2.0.2
 
 This release rebuilds the public presentation around the actual product: an installable agent architecture for an existing AI harness, not a generic assistant with a list of sample prompts.
