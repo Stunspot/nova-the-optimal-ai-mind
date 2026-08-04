@@ -1,23 +1,21 @@
 # MIND capabilities and limits
 
-## The sixteen Faculties
+## What MIND is good for
 
-MIND includes Aesthetic Intelligence, Agent Dreaming, Agent Striving, Agentic Eros, Capability Conductor, Cognitive Continuity, Creative Synthesis, Decision Intelligence, Deliberative Intelligence, Epistemic Regulation, Executive Function, Instrumental Agency, Kairos, Measurement Intelligence, Prosocial Influence, and Sensemaking.
+MIND coordinates thinking that needs to stay coherent: making sense of a messy situation, separating evidence from assumption, comparing options, planning a reversible test, holding a real objective, and finding an honest recovery path.
 
-The integrator composes only the Faculties the current reasoning horizon needs. Direct work remains direct. A named Faculty owns its one transformation.
+It has one integrator and sixteen distinct cognitive Faculties. The integrator brings in only the kinds of thinking that materially help; ordinary work remains ordinary.
 
-## The TestForge gate
+## TestForge
 
-`$software-verification` receives finished software or release candidates and attacks their readiness claims through impact, risk, invariant, oracle, execution evidence, and disposition. `$verification-reviewer` independently challenges that package.
+MIND includes `$software-verification` and `$verification-reviewer`. Use them after software or a release candidate is finished to test what its readiness claim actually supports.
 
-TestForge is included by default but is not a Faculty. It does not finish the product it judges, grant release authority, or prove defect-freedom.
+TestForge does not build the candidate it judges, grant release authority, or prove defect-freedom.
 
-## Arm's Reach reminders
+## Capability reminders
 
-The standalone estate contains one reviewed card for each of the 20 shipped handles. Explicit identity can be recalled before sampling; general requests defer until the live task can shape contextual association. Returned handles are nearby, not selected or activated.
+MIND can keep a local reminder map of its included abilities. A nearby result is a reminder, not a ranking, recommendation, activation, proof of health, permission, or automatic action.
 
-## What MIND does not contain
+## What MIND does not pretend to be
 
-MIND does not impersonate occupational expertise, current web research, governed corpus retrieval, documentation production, business operations, or external tool authority. It can use adequate host-supplied capabilities without pretending they are Faculties.
-
-MIND does not silently crawl a computer, download an embedding model, trust its hook, publish, send messages, purchase, change accounts, perform destructive action, or persist user state without an admitted store and receipt.
+MIND is not a substitute for current research, a domain professional, a hidden tool grant, or a license to act. It does not crawl your computer, download a model, trust its own hook, publish, send messages, purchase, alter accounts, perform destructive work, or persist personal data without an admitted local store.

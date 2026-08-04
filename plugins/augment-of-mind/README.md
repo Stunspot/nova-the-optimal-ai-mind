@@ -1,41 +1,29 @@
 # MIND by Collaborative Dynamics
 
-MIND is a standalone cognitive system for consequential work: one integrator, exactly sixteen Faculties, Capability Promotion for its own reminder upkeep, and TestForge as the default adversarial release gate.
+MIND is the thinking system inside Nova, and it also works on its own when you want an agent to take a consequential situation seriously without turning the conversation into sixteen fake committee meetings.
 
-The plugin is independently installable. Nova distributions use it as invariant substrate, but another agent can use MIND without adopting Nova's identity or companion skills.
+Give it the job in plain language. MIND keeps the important distinctions clear: what is known and assumed, what choice is actually being made, what authority exists, and what would change the answer.
 
-## What ships in 2.1.0
+## Start MIND
 
-| Component | Count | Role |
-|---|---:|---|
-| MIND integrator | 1 | compose the smallest useful Faculty coalition and return one result |
-| Cognitive Faculties | 16 | distinct transformations across perception, imagination, governance, memory, evidence, choice, and social intelligence |
-| Capability Promotion | 1 | recall reminder-card and embedding upkeep when durable harness capabilities change |
-| TestForge skills | 2 | verify a finished software or release candidate and independently review that verification |
-| Reminder cards | 20 | public-safe semantic surfaces for every shipped skill handle |
-
-TestForge is bundled with MIND by default because verification is foundational. It is not a Faculty, and its two roles do not change the Faculty count.
-
-## Install MIND alone
-
-From this plugin directory:
+From this plugin folder, run:
 
 ```powershell
 .\install.ps1
 ```
 
-Then review the exact prompt-submit hook through `/hooks`, start a new Codex task, and use:
+Then review the exact prompt-submit hook through `/hooks`, start a new Codex task, and try:
 
 ```text
-Use $augment-of-mind. Turn this consequential mess into one defensible course of action.
+Use $augment-of-mind. We have conflicting evidence, two days, and stakeholders who mean different things by success. Recommend one course, name the decisive uncertainty, and set a stop condition.
 ```
 
-The installer creates a new local Core database and activates the 20-capability estate. It refuses to overwrite an existing database or silently replace another MIND selector.
+MIND may use several kinds of thinking behind the scenes, but the useful result is one coherent answer.
 
-## Evidence boundary
+## What is included
 
-The 20-card successor profile is generated and structurally valid but remains `unqualified` until its expanded geometry and fresh-host delivery path pass separate behavioral gates. The previous 16-Faculty profile's qualification does not automatically transfer.
+MIND has one integrator, sixteen cognitive Faculties, Capability Promotion, and two TestForge skills. TestForge is included because checking a finished software or release claim is foundational; it is not a Faculty and does not alter the sixteen-Faculty count.
 
-Hook presence is not trust. Hook output is not provider receipt. Association is proximity, not selection, activation, fitness, authority, or proof.
+The reminder map covers the included MIND abilities. It is structurally checked and usable locally; broader behavioral qualification and fresh-host delivery remain separate work. See [What has been checked](RELEASE-NOTES.md) and [Capability reminders](CAPABILITY-REMINDERS.md).
 
-Continue with [Start here](START-HERE.md), [Capabilities and limits](CAPABILITIES-AND-LIMITS.md), [Capability reminders](CAPABILITY-REMINDERS.md), or [Troubleshooting](TROUBLESHOOTING.md).
+Continue with [Start here](START-HERE.md), [Use MIND](USER-GUIDE.md), or [Troubleshooting](TROUBLESHOOTING.md).

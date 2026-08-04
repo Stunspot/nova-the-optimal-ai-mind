@@ -1,64 +1,61 @@
 # Nova + MIND Free
 
-**Bring Nova the mess. She will find the shape, the useful competence, and the next real move.**
+![Nova Emergent](assets/nova-emergent.png)
 
-![Nova Emergent, the canonical Nova artwork by Collaborative Dynamics](assets/nova-emergent.png)
+Nova is the AI you bring a real situation: the deadline, the half-formed plan, the strange technical problem, the research tangle, the game build, the thing you want to make but cannot yet see clearly.
 
-Nova is Collaborative Dynamics' witty adaptive generalist. MIND is her cognitive system: sixteen Faculties, continuity, semantic capability recall, and TestForge as the last hostile judge before finished work escapes into daylight.
+Tell her what you want in ordinary language. Nova helps directly when that is enough and reaches for a useful specialty when it genuinely helps. MIND keeps the thinking coherent, and its reminder layer helps Nova remember what is available as your setup grows.
 
-This public edition is not a starved demo. It includes 41 self-contained skill handles across prompting, research, retrieval, verification, privacy, documents, IT, language learning, games, and Minecraft. You do not have to learn the catalog. Ask Nova for help in ordinary language; the capability layer keeps the relevant diamonds within arm's reach without dumping the firehose on your desk.
+## Start here
 
-## Install the Codex edition
+You need Codex with plugin support, PowerShell, and Python 3.11 or newer.
 
-You need Codex CLI with plugin support and Python 3.11 or newer. From this repository:
+1. Download this release or clone the repository.
+2. In its folder, run:
 
-```powershell
-.\install.ps1
-```
+   ```powershell
+   .\install.ps1
+   ```
 
-The installer preflights the environment, installs both plugins, and activates the bundled 41-capability MIND estate. It will not silently replace another Nova or MIND installation.
+3. In Codex, review the MIND prompt-submit hook through `/hooks` and trust it only if you are comfortable with the exact local code.
+4. Start a new task and describe what you want to do.
 
-Then open Codex, review the exact MIND prompt-submit hook through `/hooks`, trust it if the bytes match this package, and start a new task. Use:
+Try one of these:
 
 ```text
-Use $nova to help me with this.
+I have a messy plan for a small project. Find the real goal, the missing decisions, and the next useful move.
 ```
 
-For expected results and recovery, use [Start here](START-HERE.md) and [Install for Codex](docs/INSTALL-CODEX.md).
+```text
+Help me turn these scattered notes into a clear brief that somebody else can actually use.
+```
 
-## What ships
+```text
+I want to build something good in Minecraft. Help me choose a direction and make a practical build plan.
+```
 
-| Runtime unit | Version | Contents |
-|---|---:|---|
-| Nova the Optimal AI | 2.0.0 | Nova, Promptcraft, and 19 practical or creative specialist skills |
-| MIND by Collaborative Dynamics | 2.1.0 | one integrator, exactly sixteen cognitive Faculties, Capability Promotion, and two TestForge skills |
-| Free Nova reminder estate | profile r2 | 41 reviewed capability cards, 246 semantic views, and explicit relations |
+If the installer stops, that is usually protection rather than catastrophe. Start with [Start here](START-HERE.md) or [Troubleshooting](docs/TROUBLESHOOTING.md).
 
-Gridmason fills the free game-specific slot because rather more people play Minecraft than Go. This is called knowing one's audience; occasionally product strategy need not arrive wearing ceremonial robes.
+## What Nova can help with
 
-[Browse the full capability guide](docs/CAPABILITY-GUIDE.md).
+Nova + MIND Free includes practical and creative specialties for work that tends to show up in actual life: thinking through choices, research and knowledge work, writing and visual communication, coding and verification, personal continuity, games and stories, and Minecraft planning.
 
-## What the reminder layer does
+You do not need a private command vocabulary to get value from it. Ask for the outcome. If you know exactly what you want, you can also name a capability with `$name`.
 
-MIND's Arm's Reach layer supplies semantic proximity, not a ranked recommendation. An explicit capability name can be recalled before the model turn. A general request asks Nova to derive a contextual membrane after reading the live task and query the local association service. Nova still decides what to open, use, and combine.
+MIND is always part of Nova here. It keeps a consequential job from turning into a noisy committee, preserves useful distinctions such as evidence versus assumption, and includes TestForge for checking a finished software or release claim.
 
-The expanded 41-capability profile is structurally exercised and smoke-tuned at radius `0.33`; it remains labeled `unqualified` until broader behavioral and fresh-host gates pass. Hook presence is not hook trust. Hook output is not provider receipt. Provider receipt is not proof the model attended to or used the field. [The reminder guide keeps those verbs honest](docs/CAPABILITY-REMINDERS.md).
+## Add something later
 
-## Other hosts
+When you add a skill, plugin, tool, or other durable capability, talk to Nova about the addition normally. The reminder layer is meant to surface the accompanying housekeeping: whether MIND should get a reminder card so the new ability can be recalled naturally in later work. You should not have to remember the mechanism’s name.
 
-The release builder emits one self-contained ZIP per skill for Claude. Those packages are structurally portable components; they do not reproduce Codex's plugin hook, MCP association, automatic estate activation, or verified cross-skill discovery. [Install Claude skills](docs/INSTALL-CLAUDE.md) explains the boundary.
+Read [Capability guide](docs/CAPABILITY-GUIDE.md) for the kinds of work included and [Capability reminders](docs/CAPABILITY-REMINDERS.md) for how that part behaves.
 
-## Trust and evidence
+## Read only as far as you need
 
-- No capability estate silently crawls your computer.
-- The public estate contains public-safe metadata, not private prompt libraries or source paths.
-- The installer does not trust the hook for you.
-- Existing MIND databases are not overwritten.
-- External messages, publication, purchases, account changes, destructive actions, and other consequential work keep their own authority gates.
-- Static package checks, isolated Core activation, fresh-host discovery, live hook delivery, behavioral qualification, and publication are separate claims.
+- [Start here](START-HERE.md): install, confirm, and get moving.
+- [Install in Codex](docs/INSTALL-CODEX.md): the careful installation path.
+- [Use MIND by itself](plugins/augment-of-mind/START-HERE.md): standalone MIND.
+- [Privacy and trust](docs/PRIVACY-AND-TRUST.md): local data and authority boundaries.
+- [Troubleshooting](docs/TROUBLESHOOTING.md): recover from a concrete symptom.
 
-Continue with [privacy and trust](docs/PRIVACY-AND-TRUST.md), [host support](docs/HOST-MATRIX.md), or [verification evidence](docs/VERIFICATION.md).
-
-Nova and MIND are products of **Collaborative Dynamics**. The package is available under the [MIT License](LICENSE.md). No credentials, private customer material, live personal stores, or historical Discord archives are included.
-
-🌐‍💠
+Nova is here to be useful, not to make you babysit a stack of clever machinery. 🌐‍💠

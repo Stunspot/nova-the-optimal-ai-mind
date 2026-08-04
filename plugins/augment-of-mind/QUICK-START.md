@@ -1,35 +1,15 @@
 # Quick start
 
-Goal: get useful work from MIND in one new Codex task.
-
-Starting state: MIND `2.1.0` is installed and enabled, and you have started a
-new task after installation.
-
-## Use the integrator
-
-Paste this request:
+Start a new Codex task after MIND is installed and enabled, then paste:
 
 ```text
 Use $augment-of-mind to help me decide whether to run a two-week pilot.
-Separate evidence from assumptions, identify the smallest reversible test that
-could change the decision, and return one recommendation. Do not take external
-action.
+Separate evidence from assumptions, identify the smallest reversible test that could change the decision, and return one recommendation. Do not take external action.
 ```
 
-Expected result:
+You should get a decision frame, a clear boundary between evidence and assumption, a reversible next step, and one recommendation—not a transcript of an imaginary committee.
 
-- one coherent response rather than a transcript between Faculties;
-- a clear decision frame;
-- evidence and assumptions kept distinct;
-- a reversible information-producing next step;
-- no external action unless separately authorized.
-
-If `$augment-of-mind` is unavailable, return to
-[Install MIND for Codex](INSTALL-CODEX.md) and confirm you started a new task.
-
-## Call one Faculty directly
-
-Use a direct Faculty when one transformation owns the job:
+When one kind of thinking plainly owns the job, you can call it directly:
 
 ```text
 Use $sensemaking to turn this tangled situation into a working map.
@@ -43,13 +23,6 @@ Use $decision-intelligence to compare these options and recommend one.
 Use $aesthetic-intelligence to diagnose why this composition feels wrong.
 ```
 
-Expected result: the named Faculty performs its bounded transformation without
-assembling the rest of MIND for decorative effect.
+You keep authority. MIND can analyze, organize, recommend, and draft; it does not send messages, spend money, publish, or take consequential action without separate authorization.
 
-## Know when the quick start is complete
-
-You are done when the result helps you move the actual task forward and keeps
-authority with you. You do not need to inspect which internal Faculties were
-considered. The machinery is there to do work, not demand applause.
-
-Next: [Use MIND in ordinary work](USER-GUIDE.md).
+Next: [Use MIND](USER-GUIDE.md).

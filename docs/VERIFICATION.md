@@ -1,55 +1,30 @@
-# Verification and evidence
+# What has been checked
 
-The release uses separate checks for package truth, reminder mechanics, host behavior, and documentation. One green layer does not certify the next.
+This page separates what has been tested from what still needs a live host. That is not hedging; it keeps the package’s promises honest.
 
-## Source and package checks
+## Package checks
+
+The release verifier checks the expected skill set, unique handles, metadata, Nova and Promptcraft source integrity, TestForge inclusion, release exclusions, plugin topology, reminder assets, customer links, and portable Claude ZIP shape.
+
+## Reminder checks
+
+In an isolated local test, the included reminder map activated atomically, SQLite integrity and foreign-key checks passed, and representative prompts reached the expected Gridmason, Promptcraft, and TestForge neighborhoods. The prompt hook was also exercised directly.
+
+Those are local mechanical observations. They do not prove that a customer’s host will trust the hook, deliver its output before a model turn, or cause a model to use the reminder.
+
+## What still needs live confirmation
+
+A broad host claim still needs installation from the final ZIP on a clean supported host, review and trust of the exact hook bytes, a fresh task’s discovery behavior, live contextual association through the host, representative Claude uploads if Claude support is claimed, and visual inspection of the published documentation and artwork.
+
+The reminder profile is therefore installed and structurally checked, but not yet broadly behavior-qualified.
+
+## For maintainers
 
 Run:
 
 ```powershell
 python -X utf8 .\tools\verify_package.py
-```
-
-After building release artifacts:
-
-```powershell
 python -X utf8 .\tools\verify_package.py --release
 ```
 
-The verifier checks exact skill sets, unique handles, frontmatter, description limits, canonical Nova and Promptcraft hashes, TestForge policy presence, exclusions, plugin versions, reminder counts and profile state, marketplace topology, customer links, Claude folders, and ZIP shape.
-
-## Reminder mechanics
-
-The isolated smoke suite activates the estate in a temporary database, reads back SQLite integrity and foreign keys, runs contextual queries, executes the hook directly, preserves the evidence and deletes the isolated temporary database after its readback.
-
-Current observed facts:
-
-- 41 capabilities, 41 cards, 246 views, 246 vectors, and 33 relations activated atomically;
-- SQLite integrity returned `ok` with zero foreign-key violations;
-- explicit `$gridmason` hook recall prepared a field;
-- a general prompt produced the contextual-association handoff;
-- radius `0.33` preserved the representative Minecraft, Promptcraft, and TestForge neighborhoods without the earlier saturation.
-
-These are isolated H0 observations. The profile remains `unqualified`.
-
-## TestForge
-
-TestForge receives the finished source and release candidate. Its operator reconstructs impact, risks, invariants, scenarios, oracles, and execution evidence. The independent reviewer challenges the resulting status.
-
-A TestForge pass can support only the exact exercised package and environment. It cannot authorize publication, prove defect-freedom, or substitute for live hook trust and fresh-host use.
-
-## Documentation
-
-Hesperos authors the customer journey from the current evidence packet. The documentation accessibility reviewer then challenges factual integrity, task completion, recovery, findability, semantics, and claim custody. Automated Markdown lint is structural evidence only.
-
-## Required live gates before a broad release claim
-
-- install from the final customer ZIP on a clean supported host;
-- review and trust the exact hook bytes;
-- begin a fresh task and observe all intended discovery surfaces;
-- capture hook/provider delivery evidence;
-- run contextual association through the plugin-host MCP path;
-- exercise broader positive, near-neighbor, false-friend, saturation, and boundary cases;
-- upload and enable representative Claude ZIPs if Claude readiness is claimed;
-- inspect final artwork and documentation presentation in a functioning visual tool;
-- obtain accountable release approval.
+See [Maintainer guide](MAINTAINER-GUIDE.md) for release custody and change triggers.

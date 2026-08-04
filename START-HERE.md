@@ -1,91 +1,41 @@
-# Start with one useful task
+# Start Nova + MIND Free
 
-Goal: install Nova + MIND Free, confirm the integration boundary, and get useful work in about five minutes.
+This is the short path from download to a useful first conversation.
 
 ## Before you begin
 
-You need:
+You need Codex with plugin support, PowerShell, and Python 3.11 or newer. Keep this folder intact while installing; the two plugins and their local resources belong together.
 
-- Windows PowerShell 5.1 or newer for the supplied installer;
-- Codex CLI with `codex plugin` support;
-- Python 3.11 or newer;
-- this repository cloned or extracted to a stable local folder;
-- permission to change your own Codex plugin configuration and create the MIND Core database under your user profile.
+## Install
 
-If an earlier Nova or MIND plugin is installed, read [Upgrade an existing installation](docs/UPGRADE.md) first. The installer stops rather than silently replacing it.
-
-## 1. Install the package
-
-From the repository root:
+From the folder containing `install.ps1`, run:
 
 ```powershell
 .\install.ps1
 ```
 
-Expected result: the script reports that both Free Nova plugins are installed and that a 40-capability reminder estate is active. It ends with the next manual action.
+The installer adds the Free Nova marketplace, installs Nova and MIND, creates a new local MIND database, and checks the result. It deliberately stops instead of replacing another Nova/MIND installation or an existing database.
 
-If the result differs, preserve the complete error and go to [Troubleshooting](docs/TROUBLESHOOTING.md). Do not delete your Codex configuration or existing MIND database to make the error look tidier.
+## Let Codex use the reminder layer
 
-## 2. Review the hook
+Open `/hooks` in Codex. Review the exact MIND `UserPromptSubmit` hook and trust it only if you accept it. The hook is local code; installing it is not the same thing as trusting it.
 
-Open Codex and enter `/hooks`. Inspect the MIND prompt-submit hook from this package. Trust applies to the exact installed bytes and must be reviewed again after a hook change.
+Then start a new task. A fresh task matters because that is when Codex discovers installed skills.
 
-Expected result: Codex shows the MIND hook and its `UserPromptSubmit` event. This repository cannot make the trust decision for you or verify the host accepted it until you do.
+## Make the first request real
 
-## 3. Start a new task
-
-Installed skills are discovered at the new-task boundary. Start a fresh task and enter:
+Do not test Nova with a ceremonial incantation. Give her something you genuinely want help with:
 
 ```text
-Use $nova to help me with this.
+I need to decide whether this plan is worth a week of work. Here are the constraints and my rough notes. Find the real decision, tell me what matters, and propose the smallest next step that would change your mind.
 ```
 
-Give Nova any real task. A successful first response helps with the task. It does not demand a biography, recite 40 skills, or ask you to operate the routing machinery.
-
-## 4. Confirm the fun bit
-
-Try Gridmason:
+For a direct capability check, this is fine too:
 
 ```text
-Use $gridmason. I want a survival base built into a ruined aqueduct. I have stone, spruce, copper, and about two evenings. Give me a buildable concept, staged plan, and the first session-sized move. Tell me what dimensions you need before making exact placements.
+Use $gridmason to help me plan a Minecraft build around this idea.
 ```
 
-Look for a useful Minecraft plan that preserves edition, version, hidden geometry, and in-world verification boundaries. It should not pretend to know exact coordinates or produce a live schematic from thin air.
+You are ready when both plugins are enabled, a new task can use Nova, and your request produces a useful answer. The reminder layer may quietly make relevant abilities easier for Nova to remember; it does not take action or grant permissions.
 
-## 5. Confirm the foundational bits
-
-Promptcraft:
-
-```text
-Use $promptcraft. Help me turn this rough instruction into a model-facing prompt. Preserve my original, make a derivative, and explain the one behavior the revision improves.
-```
-
-TestForge, after a candidate is actually finished:
-
-```text
-Use $software-verification. This installer is believed ready. Attack the readiness claim, identify the catastrophic paths, and tell me what the available evidence can and cannot support.
-```
-
-MIND integration:
-
-```text
-Use $augment-of-mind. We have two days, conflicting evidence, and three stakeholders who mean different things by success. Return one defensible course of action with an exact stop condition.
-```
-
-## Done
-
-You are ready when:
-
-- both plugins are installed and enabled;
-- a fresh task exposes `$nova` and `$augment-of-mind`;
-- `/hooks` shows the reviewed MIND hook state;
-- Nova helps without catalog theater;
-- the reminder layer either supplies a field or names its exact unavailable state.
-
-For normal use, continue to [Choose the right capability](docs/CAPABILITY-GUIDE.md). For installation proof, run:
-
-```powershell
-.\verify-install.ps1
-```
-
-That script can read plugin and Core state. It cannot prove hook trust, fresh-task discovery, model attention, or behavioral quality; those require their own observations.
+Need a different route? See [Install in Codex](docs/INSTALL-CODEX.md), [Capability guide](docs/CAPABILITY-GUIDE.md), and [Troubleshooting](docs/TROUBLESHOOTING.md).

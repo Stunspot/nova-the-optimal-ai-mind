@@ -1,32 +1,21 @@
 # Host compatibility
 
-Host support is an evidence claim, not a mood. This matrix separates package
-shape, installation, discovery, behavior, and automatic reminder delivery.
+MIND is packaged for Codex. Other hosts may be able to read or adapt individual skills, but the local reminder layer is not claimed to work automatically everywhere.
 
-| Host or surface | Release status | What is supported | What is not claimed |
-|---|---|---|---|
-| Codex in the ChatGPT desktop app | Release target | Install the plugin, use its Faculties, and query the local contextual reminder MCP surface in a new task. | Normal hook execution before the exact installed bytes are trusted; IDE-extension support; bundled populated local estate. |
-| Codex CLI | Release target | Configure the GitHub or extracted marketplace, install through `/plugins`, use skills, and review the prompt-submit hook through `/hooks`. | Silent database initialization, model download, or capability-estate population. |
-| Codex IDE extension | Not supported by the current plugin surface | None in this release. | Plugin browsing or installation. |
-| ChatGPT web | Directory publication not performed | The source package remains portable plugin material. | Availability in the universal public plugin directory. |
-| Generic or bare harness | Portable integration surface | Read the bundled skills; optionally install Core and implement the documented delivery envelope. | Automatic compatibility without a host adapter and conformance evidence. |
-| Exoframe | Separate development integration | The private Exoframe repository has a tested transient pre-sampling construction seam for the delivery envelope. | Exoframe source in this archive; complete live H1 or provider receipt. |
-| Claude Code | Not independently packaged or verified | Individual Markdown skills may be readable as source material. | A supported Claude distribution or live behavior claim. |
+## Codex
 
-## MIND Core conformance levels
+On Codex with plugin support, you can install the plugin, use the Faculties in a new task, and use the local contextual reminder service when the relevant host pieces are enabled.
 
-- **H0 — Core-query capable:** a caller can explicitly query Core. No automatic
-  event observation, context delivery, result observation, or action gate is
-  claimed.
-- **H1 — turn-bound:** the adapter observes and durably ingests the task or
-  correction, compiles the correlated field, and proves delivery before the
-  model turn begins.
+The prompt-submit hook must still be reviewed and trusted by you. A local hook result does not by itself prove delivery to a provider or use by a model.
 
-Public MIND includes the H0 query surface, contextual MCP association, and a
-`UserPromptSubmit` hook. A bypass canary established model-visible
-pre-sampling delivery for the tested hook bytes, but persistent normal hook
-trust remains a separate user-controlled gate. A rendered payload does not by
-itself prove provider receipt, sampling, attention, or use. See
-[Capability reminders](CAPABILITY-REMINDERS.md).
+## Other hosts
 
-Current OpenAI surface reference: [Use plugins](https://learn.chatgpt.com/docs/plugins).
+The packaged Markdown skills are portable source material. No automatic MIND integration, shared reminder database, or fresh-host behavior is claimed for a generic harness, Claude Code, the Codex IDE extension, or ChatGPT web in this release.
+
+## Two useful levels of integration
+
+**H0 — query capable:** a host can explicitly ask MIND’s local reminder service for nearby capabilities.
+
+**H1 — turn-bound:** a host can observe a task or correction, build a correlated reminder field, and demonstrate that it was delivered before the model turn.
+
+Public MIND includes the H0 surface and a Codex prompt hook. Persistent normal-hook trust and full H1 delivery are separate, user-controlled and host-dependent matters.

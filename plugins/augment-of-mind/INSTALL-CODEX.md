@@ -1,21 +1,21 @@
-# Install standalone MIND for Codex
+# Install MIND in Codex
 
-From this plugin directory:
+You need Codex with plugin support and Python 3.11 or newer.
+
+From this plugin folder, run:
 
 ```powershell
 .\install.ps1
 ```
 
-Prerequisites are Codex CLI with plugin support and Python 3.11 or newer. The script adds the `collaborative-dynamics-mind` marketplace, installs `augment-of-mind@collaborative-dynamics-mind`, creates a new Core database, activates the 20-capability estate, and reads back status.
-
-It refuses to replace another MIND selector or overwrite an existing database.
+The installer adds the MIND marketplace, installs the plugin, creates a new local Core database, activates the included reminder map, and reads back the status. It does not replace another MIND selector or overwrite an existing database.
 
 After installation:
 
-1. open `/hooks`;
-2. review and trust the exact MIND prompt-submit hook if you accept it;
-3. start a new task;
-4. use `$augment-of-mind` or a named Faculty;
-5. use TestForge only after a candidate is finished.
+1. Open `/hooks`.
+2. Review the exact MIND prompt-submit hook and trust it only if you accept it.
+3. Start a new task.
+4. Ask MIND for a real outcome, or call a named Faculty.
+5. Use TestForge only after the thing being judged is finished.
 
-For a non-default database, pass `-DatabasePath` and configure `MIND_CORE_DATABASE` to the same path for the hook and MCP service.
+To use another empty database location, pass `-DatabasePath` and set `MIND_CORE_DATABASE` to that same path for the hook and reminder service.

@@ -1,88 +1,36 @@
 # Use MIND
 
-MIND coordinates cognitive transformations. Ask for the outcome you need;
-name a Faculty only when the ownership itself matters.
+Ask for the result you need. Name a Faculty only when the particular kind of thinking matters.
 
-## Choose the entry point
+## When to call MIND
 
-Use `$augment-of-mind` when:
+Use `$augment-of-mind` for a consequential situation, tangled evidence, several necessary kinds of reasoning, durable project state, or a decision that needs a clear recovery path.
 
-- two or more distinct transformations must contribute to one result;
-- uncertainty, consequences, durable state, authority, or recovery are
-  material;
-- you are not sure which Faculty owns the work.
+For a narrow job, call the Faculty directly. The names are listed in [Capabilities and limits](CAPABILITIES-AND-LIMITS.md).
 
-Call one Faculty directly when the task is narrow. The complete Faculty map is
-in [Capabilities and limits](CAPABILITIES-AND-LIMITS.md#the-sixteen-faculties).
+## Give it a real brief
 
-## Write a useful mission
-
-A good request states:
-
-1. the outcome;
-2. the evidence or material available;
-3. the consequential constraints;
-4. the authority boundary;
-5. what a useful answer must contain.
-
-Example:
+Useful requests say what you want, what material matters, the constraints, and the authority boundary.
 
 ```text
 Use $augment-of-mind to recommend whether we should renew this vendor.
-Use the attached incident log and contract summary. Treat unverified claims as
-claims, compare a short renewal with migration, and return one recommendation
-with the condition that would reverse it. Draft no message and contact nobody.
+Use the attached incident log and contract summary. Treat unverified claims as claims, compare a short renewal with migration, and return one recommendation with the condition that would reverse it. Draft no message and contact nobody.
 ```
 
-## MIND's four motions
-
-| Motion | What it means |
-|---|---|
-| Direct | Finish ordinary reversible work without unnecessary architecture. |
-| Enlist | Ask one supporting Faculty for a bounded transformation. |
-| Assemble | Coordinate several necessary Faculties with clear ownership. |
-| Recover | Preserve the last-known-good state, change the failed premise or route, and resume honestly. |
-
-Selection is not activation. A Faculty should be opened only when its doctrine
-must materially change the work.
-
-## Corrections
-
-Correct the result directly:
+## Correct it without starting over
 
 ```text
-Correction: budget is fixed, not flexible. Preserve the settled objective and
-recompute only the options and recommendation affected by that constraint.
+Correction: budget is fixed, not flexible. Preserve the objective and recompute only the options and recommendation affected by that constraint.
 ```
 
-A correction is a delta, not an invitation to resurrect every discarded plan.
+A good correction updates the relevant part of the answer rather than recreating every abandoned branch.
 
-## Authority
+## Let MIND remember its own additions
 
-MIND can recommend, draft, analyze, and organize. It does not turn a
-recommendation into permission. External messages, publication, purchases,
-account changes, destructive operations, regulated action, and other
-consequential state changes remain separately authorized and subject to the
-host's sandbox and approval policy.
-
-## Capability reminders
-
-Public MIND includes the reminder layer and the authored sixteen-Faculty
-baseline. It does not include Collaborative Dynamics' populated local estate.
-After reading a task, correction, error, or phase change, MIND can derive ad hoc
-semantic membranes and query `associate_capabilities`. Explicit capability
-names can also use the prompt-submit hook before sampling when the exact hook
-bytes are trusted.
-
-Treat every returned handle as nearby information, never as a score or
-selection. If reminder delivery is unavailable, continue from capabilities the
-host exposes and state that the field was unavailable. See
-[Capability reminders](CAPABILITY-REMINDERS.md) and [Optional MIND Core](OPTIONAL-CORE.md).
+When you say you are adding, installing, enabling, replacing, or proposing a durable skill, plugin, tool, or program, Capability Promotion is meant to surface the question of adding it to MIND’s reminder map. You should not have to know the phrase “capability promotion” for that to happen.
 
 ## Stop and recover
 
-When a tool, credential, data store, or invariant that should work does not,
-pause before building an alternate route. Preserve the error, identify the
-reached boundary, ask why the cause existed, then change one premise-bearing
-thing. Sometimes the final cause is merely “the outside system failed,” but it
-must earn that deeply unsatisfying answer.
+When something that should work does not, preserve the error, identify what actually failed, and change one real premise before trying again. MIND should not decorate a broken route with confidence.
+
+For local reminders, see [Capability reminders](CAPABILITY-REMINDERS.md). For the optional Core details, see [Optional MIND Core](OPTIONAL-CORE.md).

@@ -1,37 +1,18 @@
-# Troubleshoot Nova + MIND Free
+# Troubleshooting
 
-Preserve the full error before changing anything. Begin from the observable symptom.
+Keep the full error before changing anything. The useful question is “what happened?” before “what can I reinstall?”
 
-## The installer reports an earlier Nova or MIND selector
+## The installer finds an older Nova, MIND, or database
 
-The installer found another installation and stopped before replacing it.
+It stopped to avoid replacing something you may care about.
 
-1. List installed selectors:
+Run:
 
-   ```powershell
-   codex plugin list --json
-   ```
+```powershell
+codex plugin list --json
+```
 
-2. Identify only entries named `nova-the-optimal-ai` or `augment-of-mind` from another marketplace.
-3. Read [Upgrade](UPGRADE.md).
-4. Remove an exact selector only when you have decided to replace that installation:
-
-   ```powershell
-   codex plugin remove <exact-selector>
-   ```
-
-5. Rerun `install.ps1`.
-
-Do not remove every plugin or reset Codex configuration.
-
-## The installer reports an existing MIND database
-
-The database was not changed. This protects continuity and other estate state from silent replacement.
-
-Choose one route:
-
-- reconcile the existing estate through [Upgrade](UPGRADE.md); or
-- install to a new approved path with `-DatabasePath`, then configure `MIND_CORE_DATABASE` for the hook and MCP runtime.
+Identify the exact older Nova or MIND selector, then follow [Upgrade](UPGRADE.md). Remove only the selector you have decided to replace. Do not reset Codex or remove unrelated plugins.
 
 ## Python is missing or too old
 
@@ -41,49 +22,28 @@ Run:
 python --version
 ```
 
-Install Python 3.11 or newer, confirm the command resolves in the same PowerShell session, then rerun. The skills remain readable without Python, but the bundled reminder activation and local Core runtime do not.
+Install Python 3.11 or newer, open a fresh PowerShell session, confirm the command works there, and rerun the installer.
 
-## Both plugins install, but a skill is missing
+## The plugins installed but Nova or a skill is missing
 
-Installed skills are discovered when a new task begins.
+Confirm both Free Nova selectors are enabled with `codex plugin list --json`, then start a new task. Codex discovers installed skills at the task boundary.
 
-1. Run `codex plugin list --json` and confirm both Free Nova selectors are enabled.
-2. Start a fresh task.
-3. Try `Use $nova to help me with this.`
-4. If a handle remains absent, preserve the plugin JSON and host version. Do not claim the source folder proves discovery.
+For a direct check, try `Use $nova to help me with this`. If a handle is still absent, keep the plugin JSON and your host version. A source folder on disk does not by itself prove host discovery.
 
-## The hook does not run
+## The hook or reminder field is unavailable
 
-1. Open `/hooks` in Codex.
-2. Confirm the MIND `UserPromptSubmit` hook appears.
-3. Review whether the exact bytes are trusted.
-4. Confirm Python can run and the hook can see the configured database.
-5. Use an explicit probe in a new task: `Use $gridmason to help with Minecraft.`
+Open `/hooks` and confirm the MIND prompt-submit hook is present and trusted. Then confirm Python and the configured MIND database are available.
 
-If the hook returns `MIND · ARM'S REACH UNAVAILABLE`, preserve its failure code and receipt. Repair that exact dependency rather than reinstalling everything.
+If you see `MIND · ARM'S REACH UNAVAILABLE`, preserve the failure code and receipt. Nova can still work with capabilities that Codex exposes; the missing piece is the local reminder field, not all of Nova.
 
-## General prompts say contextual association is ready
+## A reminder seems too broad or misses something
 
-That is expected. The hook deliberately avoids inferring the complete task from raw text. Nova should read the task, derive the semantic membrane, and use the contextual association tool.
+Record the request, nearby handles returned, active snapshot, and whether the result came from a relation or semantic match. The included profile is structurally checked but still undergoing broader behavioral qualification. Do not hide an awkward result by pretending a smaller list is complete.
 
-If the contextual tool is absent, the lost guarantee is post-context semantic recall. Nova may still use capabilities exposed by the host but must not call that an Arm's Reach field.
+## A portable Claude ZIP will not upload
 
-## The semantic field is too broad or misses an obvious skill
+Confirm the archive has one matching top-level folder and a direct `SKILL.md`. The ZIP can be well-formed while a host still declines it; preserve the host error and the ZIP hash.
 
-Record:
+## Ask for help with useful evidence
 
-- the exact input;
-- returned handles;
-- active snapshot ID and profile state;
-- model ID and radius;
-- whether membership came from vectors, lexical identity, or a relation.
-
-The shipped expanded profile is unqualified. A routing defect reopens card content, relations, geometry, or qualification; it is not repaired by hiding inconvenient members after retrieval.
-
-## A Claude ZIP fails to upload
-
-Confirm one matching top-level folder and a direct `SKILL.md`. Rebuild and run the release verifier. Host upload and enablement remain separate from archive structure.
-
-## Escalate with useful evidence
-
-Include the exact command or prompt, complete error, operating system, Codex or Claude version, Python version, plugin selectors, database path with private segments redacted, snapshot ID, and whether the state was package presence, installation, discovery, hook output, or observed behavior.
+Include the exact command or request, complete error, operating system, host version, Python version, plugin selectors, and what changed immediately before the failure. Redact private prompts, credentials, and sensitive paths.
