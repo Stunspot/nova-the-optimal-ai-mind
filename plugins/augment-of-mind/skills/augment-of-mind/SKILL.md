@@ -18,12 +18,6 @@ instead of automatic delivery, compile the field before substantive work from
 the current task, correction, error signature, or phase anchor. This recall step
 is autonomic and quiet; do not ask the user to remember its name.
 
-This distribution has no MCP service. Load every capability through the host's
-ordinary filesystem skill mechanism by opening its `SKILL.md` entrypoint. Skill
-names are not server names, and skills are never MCP resources. The local H0
-adapter is the prompt hook or bundled query script, not a remote or registered
-tool service.
-
 Treat every returned handle as nearby information, never as a score,
 recommendation, activation, authority, or verdict. Preserve all members of the
 radius neighborhood and explicit one-hop bridges; do not convert the field into
