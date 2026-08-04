@@ -8,6 +8,9 @@ on:
   issue_comment:
     types:
       - created
+  pull_request_target:
+    types:
+      - opened
 
 permissions:
   contents: write
@@ -16,21 +19,27 @@ jobs:
   publish-release:
     if: >-
       github.actor != 'github-actions[bot]' &&
-      (github.event_name != 'issue_comment' ||
-       (github.event.issue.pull_request &&
+      (github.event_name == 'push' ||
+       github.event_name == 'workflow_dispatch' ||
+       (github.event_name == 'issue_comment' &&
+        github.event.issue.pull_request &&
         github.event.comment.body == '/release-2.0.3' &&
-        github.event.comment.author_association == 'OWNER'))
+        github.event.comment.author_association == 'OWNER') ||
+       (github.event_name == 'pull_request_target' &&
+        github.event.pull_request.head.ref == 'agent/trigger-release-2.0.3' &&
+        github.event.pull_request.author_association == 'OWNER'))
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Synchronize release metadata
+      - name: Synchronize release metadata in build workspace
         shell: python
         run: |
           from pathlib import Path
@@ -78,17 +87,6 @@ The package does not prohibit or modify unrelated MCP servers configured indepen
           mind_notes.write_text(text, encoding='utf-8', newline='\n')
       - name: Regenerate integrated MIND fingerprint
         run: python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
-      - name: Commit synchronized generated state
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add -A
-          if git diff --cached --quiet; then
-            echo 'Release metadata already synchronized.'
-          else
-            git commit -m 'release: synchronize Nova + MIND Free 2.0.3 [skip release]'
-            git push
-          fi
       - name: Verify source package
         run: python -X utf8 tools/verify_package.py
       - name: Build customer package
