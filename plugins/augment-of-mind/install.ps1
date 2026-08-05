@@ -50,5 +50,5 @@ try {
     $env:PYTHONPATH = $prior
 }
 Write-Host ''
-Write-Host 'MIND 2.1 is installed and its 20-capability estate is active.'
+Write-Host 'MIND 2.1.1 is installed and its 20-capability estate is active.'
 Write-Host 'Next: review the exact hook through /hooks, then start a new task.'

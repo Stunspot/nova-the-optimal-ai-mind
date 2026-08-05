@@ -30,6 +30,6 @@ python -X utf8 tools\build_release.py
 python -X utf8 tools\verify_package.py --release
 ```
 
-Inspect the release manifest, checksums, final customer ZIP, representative Claude archives, public Pages, and the canonical artwork. Run TestForge after the candidate is complete.
+Keep the MIND plugin manifest, standalone builder and verifier, evaluation metadata, Faculty registry, release notes, and integrated fingerprint synchronized. Inspect the release manifest, checksums, final customer ZIP, representative Claude archives, public Pages, and the canonical artwork. Run TestForge after the candidate is complete.
 
 Review the customer docs whenever installation, versions, included capabilities, reminder behavior, host support, privacy, or a recurring support failure changes. Run Hesperos and its accessibility review against the actual final bytes.

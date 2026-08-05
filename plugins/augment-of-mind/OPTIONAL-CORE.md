@@ -24,9 +24,6 @@ an embedding model. Public MIND includes safe scanners and deterministic
 compilers for explicitly supplied sources, but population still requires
 content review and an administrator-controlled generation build.
 
-MIND does not register or require an MCP server. Skills remain ordinary
-filesystem capabilities discovered and loaded by the host.
-
 The public package contains the reminder mechanisms and sixteen-Faculty
 baseline. It does not include Collaborative Dynamics' private local capability collection. See
 [Capability reminders](CAPABILITY-REMINDERS.md) for the complete population and

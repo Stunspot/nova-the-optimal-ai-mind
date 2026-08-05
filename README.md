@@ -8,7 +8,7 @@ Nova + MIND Free is Collaborative Dynamics’ public edition of Nova: a complete
 
 Download one ZIP, give it to a compatible agentic harness, and ask the harness to install and enable Nova + MIND. That is the normal customer path. The scripts and command-line instructions are fallbacks for hosts that cannot install an attached package themselves.
 
-[Download Nova + MIND Free](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest)
+[Download the current Nova + MIND Free source package](https://github.com/Stunspot/nova-the-optimal-ai-mind/archive/refs/heads/main.zip)
 
 ## “Agent” is technically true and almost useless
 
@@ -66,12 +66,12 @@ This package is Collaborative Dynamics’ first public handshake: Nova’s chara
 
 ## Install it
 
-1. Download the latest Nova + MIND Free ZIP.
+1. Download the current Nova + MIND Free source package ZIP.
 2. Drop or attach the ZIP in your agentic harness.
 3. Tell the harness: **Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing any existing Nova or MIND installation.**
 4. Approve the local installation actions you are comfortable with.
 
-Codex is the primary integrated release target. The package also includes portable per-skill ZIPs for Claude-compatible skill hosts. If your harness cannot install from an attachment, use the [manual Codex installation](docs/INSTALL-CODEX.md).
+Codex is the primary integrated release target. The source package includes each portable skill as a self-contained folder; the release builder can also produce per-skill ZIPs for Claude-compatible hosts. If your harness cannot install from an attachment, use the [manual Codex installation](docs/INSTALL-CODEX.md).
 
 Nova and MIND are products of **Collaborative Dynamics** and are available here under the [MIT License](LICENSE.md). The public package contains no credentials, private customer material, private prompt archive, or live personal store.
 

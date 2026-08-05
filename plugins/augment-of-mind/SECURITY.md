@@ -2,8 +2,8 @@
 
 ## Supported release
 
-Security reports currently cover the latest published MIND `1.0.x` release
-and the bundled MIND Core `0.2.x` component.
+Security reports currently cover the MIND `2.1.x` source line and the
+bundled MIND Core `0.2.x` component.
 
 ## Security boundary
 
@@ -18,9 +18,8 @@ It validates strict JSON, frame size, schema versions, scope bindings, immutable
 revisions, and SQLite migration checksums. Private reminder queries use expiring
 opaque session capabilities whose hashes—not raw values—are stored.
 
-MIND does not register or require an MCP server. Skills are loaded through the
-host's ordinary filesystem skill mechanism and are never exposed as MCP
-resources.
+Skills are filesystem entrypoints discovered by the host. Core's direct Python
+API, CLI, and framed query path do not grant host permissions.
 
 These controls do not make arbitrary host input trustworthy. Do not place
 secrets in manifests, capability cards, lexical hints, test fixtures, or public

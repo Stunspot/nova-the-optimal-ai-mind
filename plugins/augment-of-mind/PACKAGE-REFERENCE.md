@@ -13,6 +13,4 @@ This page is for people maintaining or adapting the package.
 | `scripts/` | installation, local query, build, and verification support |
 | `verification/` | evidence boundary for the current reminder profile |
 
-MIND does not register or require MCP. Skills are loaded through the host's ordinary filesystem skill mechanism.
-
 Customer releases exclude development caches, private estates, credentials, user databases, and local source inventories.

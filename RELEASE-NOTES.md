@@ -2,9 +2,9 @@
 
 ## 2.0.3
 
-This corrective release removes Nova and MIND's bundled MCP server, registration, launcher, and automatic MCP-tool invocation. The bundled skills remain ordinary filesystem capabilities loaded through their `SKILL.md` entrypoints, while the prompt hook and local query path continue to support Arm's Reach association without an MCP dependency.
+This corrective source revision removes Nova and MIND's bundled MCP server, registration, launcher, and automatic MCP-tool invocation. The bundled skills remain filesystem capabilities loaded through their `SKILL.md` entrypoints, while the prompt hook and direct local query path continue to support Arm's Reach association.
 
-The change fixes a failure mode where models attempted to load installed skills as MCP resources, repeatedly retried unavailable servers, compacted around the false dependency, and stopped useful work. This package imposes no restriction on unrelated MCP servers a user configures independently.
+The change fixes a failure mode where models attempted to load installed skills as MCP resources, repeatedly retried unavailable servers, compacted around the false dependency, and stopped useful work.
 
 ## 2.0.2
 
