@@ -196,7 +196,8 @@ def deferred_context() -> str:
         "MIND · CONTEXTUAL ASSOCIATION DEFERRED\n"
         "No pre-sampling field was inferred from the raw prompt. Continue through "
         "the host's normal skill-discovery and filesystem skill-loading paths. "
-        "Skills are not MCP resources; do not call MCP tools or resource readers."
+        "Do not treat the unavailable reminder field as evidence that installed "
+        "skills are absent."
     )
 
 

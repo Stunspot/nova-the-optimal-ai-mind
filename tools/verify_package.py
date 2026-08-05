@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import sys
@@ -32,7 +33,7 @@ NOVA_SKILLS = {
 }
 EXCLUDED = {"aji-go-coach", "agent-arena-competition", "impactful-tom"}
 NOVA_PERSONA_SHA256 = "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6"
-PROMPT_DESIGN_SHA256 = "5bcf2f9a4123a600ae48642191dc8ec20d906dc1123d518b5e332a63f21a8087"
+PROMPT_DESIGN_SHA256 = "8de7b3b8f7b3e4a1ab07dc199d3160ba99be513fabf4795f80f679e3372b0afb"
 
 
 def sha256(path: Path) -> str:
@@ -137,6 +138,84 @@ def verify(include_release: bool) -> dict:
         errors.append("Nova plugin version must be 2.0.0")
     if mind_manifest.get("version") != "2.1.1":
         errors.append("MIND plugin version must be 2.1.1")
+
+    mind_version = str(mind_manifest.get("version", ""))
+    if "mcpServers" in mind_manifest:
+        errors.append("MIND plugin manifest still registers an MCP server")
+    for removed_path in (
+        MIND / ".mcp.json",
+        MIND / "mind_core" / "mcp_server.py",
+        MIND / "scripts" / "mind_mcp_server.py",
+    ):
+        if removed_path.exists():
+            errors.append(f"removed MIND runtime path still exists: {removed_path.relative_to(ROOT)}")
+
+    standalone_verifier_text = (MIND / "scripts" / "verify_release.py").read_text(encoding="utf-8")
+    standalone_version = re.search(r'(?m)^PLUGIN_VERSION = "([^"]+)"$', standalone_verifier_text)
+    if not standalone_version or standalone_version.group(1) != mind_version:
+        errors.append("standalone MIND release verifier version does not match the plugin manifest")
+
+    eval_manifest = load_json(MIND / "skills" / "augment-of-mind" / "evals" / "eval-manifest.yaml")
+    eval_cases = load_json(MIND / "skills" / "augment-of-mind" / "evals" / "faculty-runtime-cases.yaml")
+    registry = load_json(MIND / "skills" / "augment-of-mind" / "references" / "faculty-runtime" / "faculty-registry.json")
+    if eval_manifest.get("package_version") != mind_version or eval_cases.get("package_version") != mind_version:
+        errors.append("MIND evaluation metadata does not match the plugin version")
+    if registry.get("runtime_version") != mind_version:
+        errors.append("MIND Faculty registry version does not match the plugin version")
+
+    fingerprint_path = MIND / "skills" / "augment-of-mind" / "assets" / "integrated-capability-fingerprint.json"
+    fingerprint_builder_path = MIND / "scripts" / "build_integrated_fingerprint.py"
+    spec = importlib.util.spec_from_file_location("mind_integrated_fingerprint", fingerprint_builder_path)
+    if spec is None or spec.loader is None:
+        errors.append("cannot load the integrated fingerprint builder")
+    else:
+        module = importlib.util.module_from_spec(spec)
+        prior_dont_write_bytecode = sys.dont_write_bytecode
+        try:
+            sys.dont_write_bytecode = True
+            spec.loader.exec_module(module)
+        finally:
+            sys.dont_write_bytecode = prior_dont_write_bytecode
+        observed_fingerprint = load_json(fingerprint_path)
+        expected_fingerprint = module.build()
+        if observed_fingerprint != expected_fingerprint:
+            errors.append("integrated MIND capability fingerprint is stale")
+        if observed_fingerprint.get("product_version") != mind_version:
+            errors.append("integrated MIND fingerprint version does not match the plugin version")
+
+    hook_text = (MIND / "hooks" / "mind_prompt_submit.py").read_text(encoding="utf-8")
+    for forbidden_hook_phrase in (
+        "do not call MCP tools or resource readers",
+        "read_mcp_resource",
+        "associate_capabilities",
+    ):
+        if forbidden_hook_phrase in hook_text:
+            errors.append(f"obsolete MCP routing instruction remains in the MIND hook: {forbidden_hook_phrase}")
+
+    source_zip = "https://github.com/Stunspot/nova-the-optimal-ai-mind/archive/refs/heads/main.zip"
+    for download_surface in (ROOT / "README.md", ROOT / "START-HERE.md", ROOT / "docs" / "index.html"):
+        if source_zip not in download_surface.read_text(encoding="utf-8"):
+            errors.append(f"current source-package download is missing: {download_surface.relative_to(ROOT)}")
+
+    package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
+    if "Product: **Nova + MIND Free 2.0.3**" not in package_map_text:
+        errors.append("Free Nova package map version is stale")
+    if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
+        errors.append("Free Nova package map points at the wrong canonical repository")
+
+    stale_customer_phrases = {
+        ROOT / "docs" / "PRIVACY-AND-TRUST.md": ("association-service code", "reminder service"),
+        ROOT / "docs" / "INSTALL-CODEX.md": ("reminder service",),
+        MIND / "INSTALL-CODEX.md": ("reminder service",),
+        MIND / "HOST-COMPATIBILITY.md": ("reminder service",),
+        MIND / "DATA-AND-PRIVACY.md": ("reminder service",),
+        MIND / "TROUBLESHOOTING.md": ("reminder service",),
+    }
+    for document, phrases in stale_customer_phrases.items():
+        text = document.read_text(encoding="utf-8")
+        for phrase in phrases:
+            if phrase in text:
+                errors.append(f"stale architecture phrase remains in {document.relative_to(ROOT)}: {phrase}")
 
     nova_dirs = {path.name for path in (NOVA / "skills").iterdir() if path.is_dir()}
     mind_dirs = {path.name for path in (MIND / "skills").iterdir() if path.is_dir()}

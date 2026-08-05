@@ -4,7 +4,7 @@ Nova + MIND Free is an agent package for your existing AI harness. It installs N
 
 ## The normal installation
 
-1. [Download the latest Nova + MIND Free ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
+1. [Download the current Nova + MIND Free source package ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/archive/refs/heads/main.zip).
 2. Attach or drop the ZIP into a Codex task.
 3. Tell Codex:
 
@@ -24,7 +24,7 @@ You are installing one product. Nova and MIND are separate plugin units only bec
 
 ## If the harness cannot install the ZIP itself
 
-Extract the ZIP and use the included `install.ps1` from PowerShell. This is the fallback path, not the product pitch. Full prerequisites, expected results, and recovery steps are in [Manual Codex installation](docs/INSTALL-CODEX.md).
+Extract the source package ZIP and use the included `install.ps1` from PowerShell. This is the fallback path, not the product pitch. Full prerequisites, expected results, and recovery steps are in [Manual Codex installation](docs/INSTALL-CODEX.md).
 
 ## What happens next
 

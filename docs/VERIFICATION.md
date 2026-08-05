@@ -4,7 +4,7 @@ This page separates what has been tested from what still needs a live host. That
 
 ## Package checks
 
-The release verifier checks the expected skill set, unique handles, metadata, Nova and Promptcraft source integrity, TestForge inclusion, release exclusions, plugin topology, reminder assets, customer links, and portable Claude ZIP shape.
+The release verifier checks the expected skill set, unique handles, metadata, Nova and Promptcraft source integrity, TestForge inclusion, release exclusions, plugin topology, reminder assets, customer links, portable Claude ZIP shape, MIND version consistency, integrated fingerprint integrity, and absence of removed runtime paths.
 
 ## Reminder checks
 

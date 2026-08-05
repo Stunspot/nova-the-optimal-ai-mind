@@ -10,9 +10,9 @@ Confirm the intended marketplace is present, then restart the Codex surface and 
 
 Confirm MIND is enabled, start a new task, and call the exact handle such as `$sensemaking`. If the file is present but Codex does not expose it, record a discovery failure; that does not prove the Faculty ran or failed.
 
-## The prompt hook or reminder service is unavailable
+## The prompt hook or reminder runtime is unavailable
 
-Open `/hooks` and check the exact installed MIND hook. Hook trust is byte-specific. Then confirm Python, the configured database, and the local reminder service are available.
+Open `/hooks` and check the exact installed MIND hook. Hook trust is byte-specific. Then confirm Python, the configured database, and the local reminder runtime are available.
 
 If reminders remain unavailable, MIND can continue with the capabilities Codex exposes. The missing guarantee is the local reminder field.
 

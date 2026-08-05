@@ -18,6 +18,6 @@ The installer adds the local MIND marketplace, enables the plugin, creates a new
 
 After installation, open `/hooks`, inspect the exact MIND prompt-submit hook, and decide whether to trust it. Then start a new task so Codex can discover the plugin.
 
-For a non-default empty database location, pass `-DatabasePath` and set `MIND_CORE_DATABASE` to the same path for the hook and reminder service.
+For a non-default empty database location, pass `-DatabasePath` and set `MIND_CORE_DATABASE` to the same path for the hook and direct local query runtime.
 
 If installation stops, preserve the complete error and continue with [Troubleshooting](TROUBLESHOOTING.md).

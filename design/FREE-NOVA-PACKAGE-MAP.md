@@ -1,10 +1,10 @@
 # Free Nova package map
 
-Status: published product; 2.0.2 presentation correction in progress
-Product: **Nova + MIND Free 2.0.2**
+Status: published source package; 2.0.3 runtime correction
+Product: **Nova + MIND Free 2.0.3**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
-Canonical repository: `Stunspot/nova-the-optimal-ai`
+Canonical repository: `Stunspot/nova-the-optimal-ai-mind`
 
 ## Product truth
 
@@ -50,8 +50,6 @@ TestForge is bundled with MIND by default because adversarial verification is fo
 The Free bundle carries a reviewed public-safe estate for all 41 skill handles. Each capability has six semantic views, a compact projection, a negative boundary, and explicit relations. The local `qwen3-embedding:0.6b` model generated 246 vectors. The customer installer activates this estate in MIND Core before first use.
 
 The prompt-submit hook performs explicit-identity recall before sampling. When raw prompt text is insufficient, it records a deferred state and Nova continues through the host's ordinary filesystem skill discovery. Operators may run contextual association explicitly through the bundled local query script after deriving a live semantic membrane. Returned handles are proximity cues, never rankings, activation, fitness judgments, authority, or proof.
-
-MIND does not register or require an MCP server. Skills are host-discovered filesystem capabilities with `SKILL.md` entrypoints.
 
 The current expanded profile is intentionally marked `unqualified`. Isolated activation and routing smoke probes established mechanical operation and informed a radius of `0.33`; fresh-host hook trust, delivery, and broader behavioral qualification remain separate gates.
 

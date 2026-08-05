@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-eval/v1",
   "suite": "hierarchical-adaptive-faculty-runtime-transfer",
-  "package_version": "2.1.0",
+  "package_version": "2.1.1",
   "skills": [
     "SKILL.md"
   ],

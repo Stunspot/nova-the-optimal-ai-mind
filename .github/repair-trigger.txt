@@ -1,1 +1,0 @@
-Run the complete repository integrity repair and verification.

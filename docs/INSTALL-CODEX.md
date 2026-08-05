@@ -35,6 +35,6 @@ A successful readback establishes local package and reminder state. It does not 
 
 ## Use another database location
 
-Pass `-DatabasePath` to `install.ps1` and set `MIND_CORE_DATABASE` to the same path for the hook and reminder service. Different paths create different stores; they do not merge.
+Pass `-DatabasePath` to `install.ps1` and set `MIND_CORE_DATABASE` to the same path for the hook and direct local query runtime. Different paths create different stores; they do not merge.
 
 If installation stops, keep the complete error and continue with [Troubleshooting](TROUBLESHOOTING.md).

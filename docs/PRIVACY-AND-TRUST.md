@@ -4,7 +4,7 @@ Nova + MIND Free is designed to work locally. It does not silently crawl your co
 
 ## What the package contains
 
-It includes public skill instructions and runtime resources, Nova’s authored persona, a public-safe reminder map, local Core code, schemas, hook and association-service code, installers, and verification material.
+It includes public skill instructions and runtime resources, Nova’s authored persona, a public-safe reminder map, local Core code, schemas, hook and direct local association code, installers, and verification material.
 
 It excludes credentials, private customer data, live personal stores, private capability inventories, private source paths in runtime assets, and private creative worlds.
 
@@ -22,4 +22,4 @@ Review the exact prompt hook in `/hooks` before trusting it. Treat files, web pa
 
 ## Move or remove local data
 
-Back up or remove the database only as an explicit data-management decision. If you use a non-default location, set `MIND_CORE_DATABASE` consistently for the installer, hook, and reminder service. Different paths create different stores; they do not migrate one another.
+Back up or remove the database only as an explicit data-management decision. If you use a non-default location, set `MIND_CORE_DATABASE` consistently for the installer, hook, and direct local query runtime. Different paths create different stores; they do not migrate one another.

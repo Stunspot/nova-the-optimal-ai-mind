@@ -1,6 +1,6 @@
 # Data and privacy
 
-MIND is local-first. The plugin contains local instructions, references, schemas, templates, evaluation material, a local reminder service, and a prompt hook. It does not include telemetry, analytics, trackers, credentials, or a required hosted data service.
+MIND is local-first. The plugin contains local instructions, references, schemas, templates, evaluation material, a local reminder runtime, and a prompt hook. It does not include telemetry, analytics, trackers, credentials, or a required hosted data service.
 
 If you install optional MIND Core, it writes only to the SQLite path you supply. That store can hold capability metadata, authored reminder cards and relations, semantic representations, lifecycle evidence, and bounded hashed receipts. It does not persist raw tasks, objectives, corrections, or rendered reminder fields.
 
