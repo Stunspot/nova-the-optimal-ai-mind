@@ -1,1 +1,2 @@
 Final repository integrity audit trigger.
+Synchronize after the side-effect-free verifier update.
