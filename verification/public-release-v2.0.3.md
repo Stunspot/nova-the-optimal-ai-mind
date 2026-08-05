@@ -40,3 +40,7 @@ The final publication run completed all of the following before replacing the pu
 - Evidence artifact SHA-256: `063ce2f9bb360e7b0cae418170d0d703f0b5e9de687c522ceb8ef5e9b2cf0a45`
 
 The release workflow checked out finalized `main`, reported source verification `PASS`, built the archive above, reported release verification `PASS` with no errors, and completed the GitHub Release upload successfully.
+
+## Post-publication cleanup
+
+After the verified assets were published and recorded, the version-specific publication workflow was removed from `main`. This verification record preserves the authoritative run, job, artifact, and archive identities without leaving a served one-release trigger active in the repository.
