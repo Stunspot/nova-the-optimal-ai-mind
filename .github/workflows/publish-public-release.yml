@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   publish-v2-0-3:
-    if: github.event_name == 'pull_request' && github.head_ref == 'agent/publish-nova-mind-v2.0.3'
+    if: github.event_name == 'pull_request' && github.head_ref == 'agent/publish-nova-mind-v2-0-3'
     runs-on: ubuntu-latest
     permissions:
       contents: write
