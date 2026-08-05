@@ -23,6 +23,29 @@ jobs:
           python-version: '3.11'
       - name: Apply the audited repository repair
         run: python -X utf8 tools/one_time_mcp_removal_repair.py
+      - name: Synchronize the reviewed Promptcraft doctrine digest
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib
+          import re
+
+          source = Path("plugins/nova-the-optimal-ai/skills/promptcraft/references/prompt-design.md")
+          verifier = Path("tools/verify_package.py")
+          digest = hashlib.sha256(source.read_bytes()).hexdigest()
+          text = verifier.read_text(encoding="utf-8")
+          updated, count = re.subn(
+              r'(?m)^PROMPT_DESIGN_SHA256 = "[a-f0-9]{64}"$',
+              f'PROMPT_DESIGN_SHA256 = "{digest}"',
+              text,
+              count=1,
+          )
+          if count != 1:
+              raise SystemExit("Promptcraft digest lock was not found exactly once")
+          verifier.write_text(updated, encoding="utf-8", newline="\n")
+          print(digest)
+          PY
       - name: Regenerate the integrated MIND fingerprint
         run: python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
       - name: Commit the repaired source locally
@@ -44,6 +67,9 @@ jobs:
           plugins/augment-of-mind/scripts/verify_release.py
           plugins/augment-of-mind/scripts/build_release.py
           plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+      - name: Remove compile caches before package verification
+        shell: bash
+        run: find . -type d -name __pycache__ -prune -exec rm -rf {} +
       - name: Verify the fingerprint is reproducible
         shell: bash
         run: |
