@@ -118,7 +118,7 @@ def finalize_release_state() -> None:
     write("tools/verify_package.py", verifier)
 
 
-def remove_one_use_machinery() -> None:
+def remove_nonworkflow_machinery() -> None:
     for relative in (
         ".github/PUBLIC-RELEASE-WORKFLOW.md",
         ".github/FINAL-PUBLIC-DOCS-JOB.md",
@@ -128,24 +128,13 @@ def remove_one_use_machinery() -> None:
         if target.exists():
             target.unlink()
 
-    workflow_path = ROOT / ".github/workflows/publish-public-release.yml"
-    workflow = workflow_path.read_text(encoding="utf-8")
-    start_marker = "\n  # BEGIN ONE-TIME FINALIZER\n"
-    end_marker = "\n  # END ONE-TIME FINALIZER\n"
-    start = workflow.find(start_marker)
-    end = workflow.find(end_marker)
-    if start < 0 or end < 0 or end < start:
-        raise RuntimeError("one-time finalizer block markers not found")
-    workflow = workflow[:start] + "\n" + workflow[end + len(end_marker) :]
-    workflow_path.write_text(workflow, encoding="utf-8", newline="\n")
-
     Path(__file__).unlink()
 
 
 def main() -> int:
     finalize_customer_docs()
     finalize_release_state()
-    remove_one_use_machinery()
+    remove_nonworkflow_machinery()
     return 0
 
 
