@@ -192,10 +192,10 @@ def verify(include_release: bool) -> dict:
         if forbidden_hook_phrase in hook_text:
             errors.append(f"obsolete MCP routing instruction remains in the MIND hook: {forbidden_hook_phrase}")
 
-    source_zip = "https://github.com/Stunspot/nova-the-optimal-ai-mind/archive/refs/heads/main.zip"
+    release_url = "https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest"
     for download_surface in (ROOT / "README.md", ROOT / "START-HERE.md", ROOT / "docs" / "index.html"):
-        if source_zip not in download_surface.read_text(encoding="utf-8"):
-            errors.append(f"current source-package download is missing: {download_surface.relative_to(ROOT)}")
+        if release_url not in download_surface.read_text(encoding="utf-8"):
+            errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
     if "Product: **Nova + MIND Free 2.0.3**" not in package_map_text:
