@@ -1,6 +1,6 @@
 # Free Nova package map
 
-Status: published source package; 2.0.3 runtime correction
+Status: published product; 2.0.3 runtime correction
 Audit receipt: 2026-08-05 source verification PASS; combined package build and verification PASS; standalone MIND build and verification PASS.
 Product: **Nova + MIND Free 2.0.3**
 Primary runtime: Codex plugin marketplace  
