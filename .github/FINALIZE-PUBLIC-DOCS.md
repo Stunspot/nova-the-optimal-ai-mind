@@ -1,0 +1,1 @@
+This owner-authored marker triggers final release-link and customer-document convergence, package verification, deterministic rebuild, and evidence upload. The finalizer removes this file and its own workflow block before pushing the verified source commit.
