@@ -1,0 +1,84 @@
+name: One-time Nova repository repair
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  repair-and-verify:
+    if: github.head_ref == 'agent/repo-integrity-repair'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply the audited repository repair
+        run: python -X utf8 tools/one_time_mcp_removal_repair.py
+      - name: Regenerate the integrated MIND fingerprint
+        run: python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+      - name: Commit the repaired source locally
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m "fix: restore Nova and MIND repository integrity"
+      - name: Prepare deterministic build tooling
+        run: python -m pip install --upgrade pip setuptools wheel build
+      - name: Compile affected Python modules
+        run: >-
+          python -m py_compile
+          tools/verify_package.py
+          tools/build_release.py
+          plugins/augment-of-mind/hooks/mind_prompt_submit.py
+          plugins/augment-of-mind/mind_core/contextual_recall.py
+          plugins/augment-of-mind/scripts/verify_release.py
+          plugins/augment-of-mind/scripts/build_release.py
+          plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+      - name: Verify the fingerprint is reproducible
+        shell: bash
+        run: |
+          python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+          git diff --exit-code -- plugins/augment-of-mind/skills/augment-of-mind/assets/integrated-capability-fingerprint.json
+      - name: Verify the source package
+        shell: bash
+        run: python -X utf8 tools/verify_package.py | tee /tmp/source-verification.json
+      - name: Build the combined customer package
+        shell: bash
+        run: python -X utf8 tools/build_release.py | tee /tmp/combined-build.json
+      - name: Verify the combined customer package
+        shell: bash
+        run: python -X utf8 tools/verify_package.py --release | tee /tmp/combined-verification.json
+      - name: Build and verify standalone MIND
+        shell: bash
+        run: |
+          rm -rf /tmp/mind-release
+          python -X utf8 plugins/augment-of-mind/scripts/build_release.py --output-dir /tmp/mind-release --replace | tee /tmp/mind-build.json
+      - name: Confirm verification created no tracked drift
+        shell: bash
+        run: git diff --exit-code HEAD -- . ':!release' ':!dist'
+      - name: Publish the verified repair commit to the PR branch
+        shell: bash
+        run: git push origin HEAD:${{ github.head_ref }}
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-mind-repository-audit
+          path: |
+            /tmp/source-verification.json
+            /tmp/combined-build.json
+            /tmp/combined-verification.json
+            /tmp/mind-build.json
+            /tmp/mind-release/*.json
+            /tmp/mind-release/*.sha256
+            release/nova-mind-free-v2.0.3.zip.sha256
+            plugins/augment-of-mind/skills/augment-of-mind/assets/integrated-capability-fingerprint.json
