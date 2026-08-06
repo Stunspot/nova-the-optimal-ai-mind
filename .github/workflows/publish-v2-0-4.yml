@@ -62,3 +62,4 @@ jobs:
             release/nova-mind-free-v2.0.4.zip.sha256
             dist/release-manifest.json
             dist/SHA256SUMS.txt
+# Owner CI trigger: 2026-08-06T22:46:30Z
