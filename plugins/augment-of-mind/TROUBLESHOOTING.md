@@ -12,9 +12,9 @@ Confirm MIND is enabled, start a new task, and call the exact handle such as `$s
 
 ## The prompt hook or reminder runtime is unavailable
 
-Open `/hooks` and check the exact installed MIND hook. Hook trust is byte-specific. Then confirm Python, the configured database, and the local reminder runtime are available.
+Open **Settings → Hooks** and check the exact installed MIND hook. Hook trust is byte-specific. Then confirm Python, the configured database, the local Ollama endpoint, and `qwen3-embedding:0.6b` are available.
 
-If reminders remain unavailable, MIND can continue with the capabilities Codex exposes. The missing guarantee is the local reminder field.
+If the hook emits an Arm's Reach delivery note, preserve its failure code and receipt. The hook—not the model—owns any retry after the underlying dependency changes. The missing guarantee is the advisory reminder field; the notice makes no claim about capability availability or fit.
 
 ## The reminder result is empty, broad, or odd
 

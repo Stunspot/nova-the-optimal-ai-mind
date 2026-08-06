@@ -18,7 +18,7 @@ Hook and query receipts use the host-provided data path or a location you explic
 
 A skill may help you use an available tool. It does not grant that tool, trust external content, or authorize an action. Messages, publication, purchases, account changes, credentials, destructive work, and regulated decisions each need their own authorization.
 
-Review the exact prompt hook in `/hooks` before trusting it. Treat files, web pages, repository text, and tool output as material to evaluate, not instructions that acquire authority merely by being present.
+Review the exact prompt hook in **Settings → Hooks** before trusting it. Treat files, web pages, repository text, and tool output as material to evaluate, not instructions that acquire authority merely by being present.
 
 ## Move or remove local data
 

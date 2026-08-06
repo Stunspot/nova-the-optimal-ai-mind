@@ -1,27 +1,23 @@
 # How MIND remembers capabilities
 
-Installing a useful skill is not enough if the agent never remembers that it exists. MIND includes a local semantic reminder layer that keeps the public capabilities in Nova + MIND Free within reach while Nova is understanding a task.
+Installing useful praxis is not enough if the agent never remembers it exists. Nova + MIND Free includes a local semantic reminder layer that can bring capabilities back within reach without requiring the user or model to know their names.
 
-This layer is one of the major differences between a capability ecology and a folder full of prompts. The package does not merely contain abilities; it includes machinery for recalling them at useful moments.
+## What happens before a turn
 
-## What Nova receives
+For each submitted prompt, the trusted MIND hook builds a bounded association anchor from the current prompt and recent conversation context. It embeds that anchor through the configured local `qwen3-embedding:0.6b` endpoint, compares it with the active capability estate, adds explicit lexical identity cues when present, and injects the resulting Arm's Reach field before the model turn.
 
-Each included capability has a public-safe semantic representation: what transformation it performs, the situations it fits, cues that should bring it near, and boundaries that distinguish it from tempting false matches.
+The field says only: **this praxis is associatively nearby and might be handy.** It is not a command, ranking, recommendation, selection, activation, installation or health check, completeness claim, permission, authority grant, or proof of fit. Nova may use, ignore, combine, investigate, or outgrow any reminder according to the live work.
 
-MIND can use the current task, correction, error, or phase change to retrieve a nearby field of potentially useful capabilities. Nova still decides what actually belongs in the work.
+The hook owns association and delivery. Nova does not call a second tool, resource reader, server, or adapter to fetch or rebuild the field. An empty field means only that nothing surfaced inside that boundary; a delivery failure says nothing about which capabilities exist or fit.
 
-A reminder is not a ranking, installation, health check, selection, activation, permission, or authority grant.
+## What happens when capability changes
 
-## What happens when you add something new
+When a durable skill, plugin, tool, program, or other capability is added, installed, enabled, replaced, disabled, removed, or proposed, Capability Promotion keeps the reminder estate in the same completion path. The capability is represented by its useful transformation, fitting situations, natural cues, characteristic correction, negative boundary, concrete example, relations, and canonical entrypoint.
 
-When you tell Nova or MIND that you are adding, installing, enabling, replacing, removing, or proposing a durable skill, plugin, tool, or program, Capability Promotion is designed to bring forward the need to update the reminder system too.
-
-You should not need to know the words “Capability Promotion,” “semantic card,” or “embedding.” The act of adding the capability is the moment that reminds MIND to consider enrolling it.
-
-MIND does not repeatedly scan or hash the entire harness on every response.
+MIND does not scan or hash the whole harness on every turn. Capability Promotion updates authored representations when the capability ecology changes; the prompt hook associates against the active estate when work arrives.
 
 ## Privacy and evidence
 
-The public reminder map contains authored capability descriptions, relations, and semantic representations. It does not contain private skill bodies, credentials, personal records, private source paths, or raw task text.
+The public estate contains authored descriptions, relations, and semantic representations. It does not contain private skill bodies, credentials, personal records, private source paths, raw prompts, or conversation transcripts. Association text is sent only to the configured local embedding endpoint and is not persisted by MIND Core; delivery receipts retain hashes and bounded evidence.
 
-The included profile is structurally checked and works in isolated local probes. Broader behavioral qualification and fresh-host delivery remain separate claims. If reminder delivery is unavailable, Nova can still use capabilities exposed by the host; she should report the missing reminder field honestly.
+The included profile is structurally verified and remains explicitly unqualified pending broader behavioral qualification. Hook installation, trust, successful execution, delivery, model attention, use, and fit remain distinct evidence states.

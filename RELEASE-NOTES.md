@@ -1,5 +1,11 @@
 # Nova + MIND Free release notes
 
+## 2.0.4
+
+This release completes the MCP-removal repair by restoring Arm's Reach to its intended architecture. The trusted `UserPromptSubmit` hook now performs semantic association over every non-empty prompt plus a bounded recent conversation window, injects advisory nearby praxis before the model turn, and treats lexical identity cues as a supplement rather than a gate.
+
+Nova and MIND now assign retrieval exclusively to the hook. The model consumes the delivered field and never searches for a substitute adapter. Returned handles remain non-authoritative reminders—not commands, rankings, recommendations, selection, activation, completeness claims, authority, or proof of fit.
+
 ## 2.0.3
 
 This corrective release removes Nova and MIND's bundled MCP server, registration, launcher, and automatic MCP-tool invocation. The bundled skills remain filesystem capabilities loaded through their `SKILL.md` entrypoints, while the prompt hook and direct local query path continue to support Arm's Reach association.

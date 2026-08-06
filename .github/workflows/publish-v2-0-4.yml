@@ -1,0 +1,63 @@
+name: Publish Nova and MIND Free 2.0.4
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-v2-0-4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify semantic Arm's Reach regressions
+        run: python -m unittest discover -s tests -v
+      - name: Regenerate and verify source
+        run: |
+          python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+          python -X utf8 tools/verify_package.py
+      - name: Build and verify customer package
+        run: |
+          python -X utf8 tools/build_release.py
+          python -X utf8 tools/verify_package.py --release
+      - name: Publish GitHub release
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag='v2.0.4'
+          assets=(
+            release/nova-mind-free-v2.0.4.zip
+            release/nova-mind-free-v2.0.4.zip.sha256
+            dist/release-manifest.json
+            dist/SHA256SUMS.txt
+          )
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "${assets[@]}" --clobber
+          else
+            gh release create "$tag" "${assets[@]}" \
+              --target "$(git rev-parse HEAD)" \
+              --title 'Nova + MIND Free 2.0.4' \
+              --notes-file RELEASE-NOTES.md
+          fi
+      - name: Upload release evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: nova-mind-free-v2.0.4
+          path: |
+            release/nova-mind-free-v2.0.4.zip
+            release/nova-mind-free-v2.0.4.zip.sha256
+            dist/release-manifest.json
+            dist/SHA256SUMS.txt

@@ -7,8 +7,12 @@ $marketplace = 'collaborative-dynamics-mind'
 $selector = "augment-of-mind@$marketplace"
 $bootstrap = Join-Path $root 'skills\augment-of-mind\assets\associative-bootstrap.json'
 $index = Join-Path $root 'skills\augment-of-mind\assets\associative-index-qwen3-embedding-0.6b.json'
+$queryScript = Join-Path $root 'scripts\query_associative_field.py'
+$indexManifest = Get-Content -LiteralPath $index -Raw | ConvertFrom-Json
+$embeddingModel = $indexManifest.embedding_profile.model_id
+$ollamaUrl = if ($env:MIND_OLLAMA_URL) { $env:MIND_OLLAMA_URL } else { 'http://127.0.0.1:11434' }
 
-foreach ($required in @($bootstrap, $index, (Join-Path $root 'mind_core\cli.py'))) {
+foreach ($required in @($bootstrap, $index, $queryScript, (Join-Path $root 'mind_core\cli.py'))) {
     if (-not (Test-Path -LiteralPath $required)) { throw "Required MIND file is missing: $required" }
 }
 $python = Get-Command python -ErrorAction SilentlyContinue
@@ -46,9 +50,11 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'MIND Core activation failed.' }
     & $python.Source -X utf8 -m mind_core.cli status --database $DatabasePath
     if ($LASTEXITCODE -ne 0) { throw 'MIND Core status readback failed.' }
+    & $python.Source -X utf8 $queryScript 'MIND semantic association installation probe' --database $DatabasePath --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "MIND estate is active, but semantic association failed. Confirm Ollama is reachable at $ollamaUrl and model '$embeddingModel' is installed." }
 } finally {
     $env:PYTHONPATH = $prior
 }
 Write-Host ''
-Write-Host 'MIND 2.1.1 is installed and its 20-capability estate is active.'
-Write-Host 'Next: review the exact hook through /hooks, then start a new task.'
+Write-Host 'MIND 2.1.2 is installed, its 20-capability estate is active, and semantic association passed.'
+Write-Host 'Next: review the exact hook in Settings → Hooks, then start a new task.'

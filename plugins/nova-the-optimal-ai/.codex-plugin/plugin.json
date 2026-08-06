@@ -1,6 +1,6 @@
 {
   "name": "nova-the-optimal-ai",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Nova and MIND, inseparable: an adaptive generalist with semantic capability recall and a generous practical skill suite.",
   "author": {
     "name": "Collaborative Dynamics",
@@ -8,7 +8,14 @@
   },
   "homepage": "https://collaborative-dynamics.com",
   "license": "MIT",
-  "keywords": ["nova", "generalist", "research", "verification", "memory", "creative play"],
+  "keywords": [
+    "nova",
+    "generalist",
+    "research",
+    "verification",
+    "memory",
+    "creative play"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Nova the Optimal AI",
@@ -16,7 +23,11 @@
     "longDescription": "Nova is Collaborative Dynamics' playful adaptive generalist, inseparable from MIND and equipped for prompting, research, verification, privacy, documents, IT, Minecraft, language learning, continuity, and play.",
     "developerName": "Collaborative Dynamics",
     "category": "Productivity",
-    "capabilities": ["Interactive", "Read", "Write"],
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
     "websiteURL": "https://collaborative-dynamics.com",
     "brandColor": "#48CBE8",
     "composerIcon": "./skills/nova/assets/collaborative-dynamics-logo.png",
