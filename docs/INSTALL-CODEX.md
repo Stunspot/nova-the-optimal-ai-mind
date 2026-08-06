@@ -13,7 +13,7 @@ The installer adds that marketplace, enables both plugins, creates a new local M
 
 ## Requirements
 
-You need Codex with plugin support, PowerShell, Python 3.11 or newer, and the extracted Nova + MIND release folder.
+You need Codex with plugin support, PowerShell, Python 3.11 or newer, the extracted Nova + MIND release folder, and a local Ollama endpoint with `qwen3-embedding:0.6b` available. Model weights are not bundled or silently downloaded.
 
 ## Run the installer
 
@@ -23,7 +23,7 @@ Open PowerShell in the extracted release folder:
 .\install.ps1
 ```
 
-When it finishes, open `/hooks` in Codex. Review the exact MIND `UserPromptSubmit` hook and trust it only if you accept the local code. Then start a new task so Codex can discover both plugins.
+When it finishes, open **Settings → Hooks** in Codex. Review the exact MIND `UserPromptSubmit` hook and trust it only if you accept the local code. Then start a new task so Codex can discover both plugins.
 
 Run the included readback check if you want a mechanical confirmation:
 

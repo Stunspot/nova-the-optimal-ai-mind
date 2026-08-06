@@ -22,9 +22,9 @@ Each Faculty owns a different transformation. The MIND integrator preserves one 
 
 ## Capability memory
 
-MIND includes a local semantic reminder layer. It can bring relevant installed abilities back within reach after reading a task, correction, error, or phase change. The user does not have to memorize every capability name.
+MIND includes a local semantic reminder layer. Before each model turn, its trusted hook associates the current prompt and bounded recent context against the active capability estate, then places nearby praxis in context as a quiet “this might be handy” field. The user does not have to memorize every capability name.
 
-Capability Promotion gives that layer one crucial bit of self-maintenance: when someone adds, replaces, enables, removes, or proposes a durable skill, plugin, tool, or program, MIND is reminded that the capability map may need updating too.
+Capability Promotion gives that layer one crucial bit of self-maintenance: when someone adds, replaces, enables, removes, or proposes a durable skill, plugin, tool, or program, MIND is reminded that the capability map may need updating too. The hook owns association; the model does not fetch or rebuild the field.
 
 ## TestForge is included
 
@@ -32,7 +32,7 @@ TestForge ships with MIND because verification is foundational. Software Verific
 
 ## Install MIND
 
-Give the MIND package to a compatible agentic harness and ask it to install and enable the plugin. On Codex, inspect the local prompt-submit hook through `/hooks` before deciding whether to trust it, then start a new task so the host can discover MIND.
+Give the MIND package to a compatible agentic harness and ask it to install and enable the plugin. On Codex, inspect the local prompt-submit hook in **Settings → Hooks** before deciding whether to trust it, then start a new task so the host can discover MIND.
 
 If the harness cannot install the package itself, use [Manual Codex installation](INSTALL-CODEX.md).
 

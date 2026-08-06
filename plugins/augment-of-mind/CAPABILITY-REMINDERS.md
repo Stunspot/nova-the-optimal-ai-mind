@@ -1,11 +1,11 @@
 # MIND capability reminders
 
-MIND keeps a small local map of the abilities that ship with it, so an available tool is less likely to vanish from the conversation merely because nobody remembered its exact name.
+MIND keeps a local semantic map of durable capabilities so useful praxis can return to attention without requiring the user or model to remember exact names.
 
-When you talk about adding, installing, wiring in, enabling, updating, disabling, removing, or proposing a skill, plugin, tool, program, or durable agent ability, Capability Promotion should surface the need to decide whether that addition belongs in MIND’s reminder map too. You do not need to know how the map is made.
+Before each submitted prompt, the trusted local hook associates the current prompt and a bounded recent conversation window against the active map. The resulting Arm's Reach field is inserted before the model turn as a small advisory cue set: nearby capabilities and relations that might be handy. It is not a command, ranking, recommendation, selection, activation, installation check, health check, completeness claim, permission, authority grant, or proof of fit.
 
-This is triggered by the conversation about the addition. MIND does not scan or hash the whole harness on every response.
+When a capability is added, installed, enabled, updated, disabled, removed, or proposed, Capability Promotion keeps one quiet responsibility attached: decide whether its authored reminder representation should change too. MIND does not scan or hash the whole harness on every response.
 
-A reminder is not a selection, recommendation, activation, installation check, health check, permission, or authority grant. If the local reminder path is unavailable, MIND should continue with capabilities Codex exposes and name the lost reminder guarantee honestly.
+The hook owns association and delivery. The model consumes the field already present in context; it does not call another tool, resource reader, server, or adapter to fetch or rebuild it. An empty field means only that nothing surfaced inside that association boundary. A delivery failure makes no claim about what capabilities exist or fit.
 
-The public map stores authored descriptions and semantic representations, not private skill bodies, credentials, personal records, source paths, or raw task text. It is structurally checked; broader behavioral qualification and fresh-host delivery are still separate work.
+The public map stores authored descriptions, relations, and semantic representations—not private skill bodies, credentials, personal records, source paths, raw prompts, or conversation transcripts. Raw association text is sent only to the configured local embedding endpoint and is not persisted by MIND Core; receipts retain hashes and delivery evidence. Structural verification does not by itself establish behavioral qualification on every host.

@@ -18,4 +18,4 @@ The packaged Markdown skills are portable source material. No automatic MIND int
 
 **H1 — turn-bound:** a host can observe a task or correction, build a correlated reminder field, and demonstrate that it was delivered before the model turn.
 
-Public MIND includes the H0 surface and a Codex prompt hook. Persistent normal-hook trust and full H1 delivery are separate, user-controlled and host-dependent matters.
+Public MIND includes the H0 surface and a Codex prompt hook that performs semantic association on every non-empty submitted prompt. Hook installation, byte-specific trust, successful execution, context injection, model attention, and use remain separate user-controlled and host-dependent evidence states.

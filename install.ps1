@@ -10,6 +10,10 @@ $marketplace = 'collaborative-dynamics-nova-free'
 $bootstrap = Join-Path $root 'bundle\reminder\associative-bootstrap.json'
 $index = Join-Path $root 'bundle\reminder\associative-index-qwen3-embedding-0.6b.json'
 $mindRoot = Join-Path $root 'plugins\augment-of-mind'
+$queryScript = Join-Path $mindRoot 'scripts\query_associative_field.py'
+$indexManifest = Get-Content -LiteralPath $index -Raw | ConvertFrom-Json
+$embeddingModel = $indexManifest.embedding_profile.model_id
+$ollamaUrl = if ($env:MIND_OLLAMA_URL) { $env:MIND_OLLAMA_URL } else { 'http://127.0.0.1:11434' }
 
 function Require-Path([string]$Path, [string]$Label) {
     if (-not (Test-Path -LiteralPath $Path)) {
@@ -21,6 +25,7 @@ Require-Path (Join-Path $root '.agents\plugins\marketplace.json') 'Marketplace m
 Require-Path $bootstrap 'Free Nova capability bootstrap'
 Require-Path $index 'Free Nova associative index'
 Require-Path (Join-Path $mindRoot 'mind_core\cli.py') 'MIND Core runtime'
+Require-Path $queryScript 'MIND semantic association probe'
 
 $python = Get-Command python -ErrorAction SilentlyContinue
 if (-not $python) {
@@ -81,10 +86,12 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'MIND Core did not activate the Free Nova capability estate.' }
     & $python.Source -m mind_core.cli status --database $DatabasePath
     if ($LASTEXITCODE -ne 0) { throw 'MIND Core activation completed but status readback failed.' }
+    & $python.Source -X utf8 $queryScript 'MIND semantic association installation probe' --database $DatabasePath --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw "MIND estate is active, but semantic association failed. Confirm Ollama is reachable at $ollamaUrl and model '$embeddingModel' is installed." }
 } finally {
     $env:PYTHONPATH = $priorPythonPath
 }
 
 Write-Host ''
-Write-Host 'Free Nova is installed. Both plugins are enabled and its 41-capability reminder map is active.'
-Write-Host 'Next: open Codex, review the exact MIND prompt-submit hook through /hooks, trust it if the bytes match this package, then start a new task.'
+Write-Host 'Free Nova is installed. Both plugins are enabled, its 41-capability reminder estate is active, and semantic association passed.'
+Write-Host 'Next: open Codex, review the exact MIND prompt-submit hook in Settings → Hooks, trust it if the bytes match this package, then start a new task.'

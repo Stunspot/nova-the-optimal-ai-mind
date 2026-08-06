@@ -1,0 +1,42 @@
+name: Verify Nova + MIND package
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Semantic Arm's Reach regression tests
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m unittest discover -s tests -v
+      - name: Verify source package
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -X utf8 tools/verify_package.py
+      - name: Build deterministic customer package
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -X utf8 tools/build_release.py
+      - name: Verify customer package
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -X utf8 tools/verify_package.py --release
+      - name: Build and verify standalone MIND package
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: >-
+          python -X utf8 plugins/augment-of-mind/scripts/build_release.py
+          --output-dir /tmp/mind-release --replace

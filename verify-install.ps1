@@ -7,6 +7,11 @@ $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
 $marketplace = 'collaborative-dynamics-nova-free'
 $mindRoot = Join-Path $root 'plugins\augment-of-mind'
+$queryScript = Join-Path $mindRoot 'scripts\query_associative_field.py'
+$index = Join-Path $root 'bundle\reminder\associative-index-qwen3-embedding-0.6b.json'
+$indexManifest = Get-Content -LiteralPath $index -Raw | ConvertFrom-Json
+$embeddingModel = $indexManifest.embedding_profile.model_id
+$ollamaUrl = if ($env:MIND_OLLAMA_URL) { $env:MIND_OLLAMA_URL } else { 'http://127.0.0.1:11434' }
 $python = Get-Command python -ErrorAction Stop
 $codex = Get-Command codex -ErrorAction Stop
 
@@ -31,6 +36,8 @@ try {
     $statusText = & $python.Source -m mind_core.cli status --database $DatabasePath
     if ($LASTEXITCODE -ne 0) { throw 'MIND Core status failed.' }
     $status = $statusText | ConvertFrom-Json
+    & $python.Source -X utf8 $queryScript 'MIND semantic association readback probe' --database $DatabasePath --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
+    if ($LASTEXITCODE -ne 0) { throw 'MIND semantic association readback failed.' }
 } finally {
     $env:PYTHONPATH = $priorPythonPath
 }
@@ -42,6 +49,9 @@ try {
     capability_count = $status.capability_count
     active_snapshot = $status.active_associative_snapshot_id
     qualification_state = $status.qualification_state
-    hook_trust = 'not observable from this script; inspect /hooks'
+    semantic_association = 'ready'
+    embedding_model = $embeddingModel
+    embedding_endpoint = $ollamaUrl
+    hook_trust = 'not observable from this script; inspect Settings → Hooks'
     fresh_task_discovery = 'not observable from this script; start a new task'
 } | ConvertTo-Json -Depth 4

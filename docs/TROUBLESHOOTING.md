@@ -24,9 +24,9 @@ Ask the harness to report which plugin and skill handles it discovered. If Nova 
 
 ## The hook or reminder field is unavailable
 
-Open `/hooks` and confirm the MIND prompt-submit hook is present and trusted. Then confirm Python and the configured MIND database are available.
+Open **Settings → Hooks** and confirm the MIND prompt-submit hook is present and trusted. Then confirm Python, the configured MIND database, the local Ollama endpoint, and `qwen3-embedding:0.6b` are available.
 
-If you see `MIND · ARM'S REACH UNAVAILABLE`, preserve the failure code and receipt. Nova can still use capabilities that Codex exposes; the missing piece is the local semantic reminder field.
+If you see `MIND · ARM'S REACH DELIVERY NOTE`, preserve the failure code and receipt. The hook owns association; do not ask the model to find another adapter. The notice makes no claim about capability availability or fit.
 
 ## A reminder seems too broad or misses something
 

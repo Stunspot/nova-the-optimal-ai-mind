@@ -34,4 +34,4 @@ An automatic legacy-estate merger is not included in this release.
 
 ## Install and confirm
 
-Run `install.ps1`, review `/hooks`, start a new task, and run `verify-install.ps1`. If you roll back, restore the previous selectors and point the runtime at the preserved database. A rollback is complete only after a new task discovers the old skills again.
+Run `install.ps1`, review **Settings → Hooks**, start a new task, and run `verify-install.ps1`. If you roll back, restore the previous selectors and point the runtime at the preserved database. A rollback is complete only after a new task discovers the old skills again.
