@@ -23,7 +23,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat .github/semantic-patch/part-* > /tmp/semantic-arm-reach.patch
+          cp .github/semantic-patch/part-00 /tmp/semantic-arm-reach.patch
+          for part in .github/semantic-patch/part-*.b64; do
+            base64 --decode "$part" >> /tmp/semantic-arm-reach.patch
+          done
           git apply --check /tmp/semantic-arm-reach.patch
           git apply /tmp/semantic-arm-reach.patch
       - name: Run semantic hook regressions
