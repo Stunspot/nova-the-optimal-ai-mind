@@ -1,4 +1,5 @@
 name: Publish Nova and MIND Free 2.0.4
+# One-use publication trigger; remove after the verified release is public.
 
 on:
   push:
