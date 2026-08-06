@@ -1,0 +1,61 @@
+name: Apply semantic Arm's Reach repair
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+
+jobs:
+  apply-and-verify:
+    if: github.head_ref == 'agent/semantic-arm-reach-hook'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Apply reviewed source patch
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .github/semantic-patch/part-* > /tmp/semantic-arm-reach.patch
+          git apply --check /tmp/semantic-arm-reach.patch
+          git apply /tmp/semantic-arm-reach.patch
+      - name: Run semantic hook regressions
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python -m unittest discover -s tests -v
+      - name: Verify and build combined package
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -X utf8 plugins/augment-of-mind/scripts/build_integrated_fingerprint.py
+          python -X utf8 tools/verify_package.py
+          python -X utf8 tools/build_release.py
+          python -X utf8 tools/verify_package.py --release
+      - name: Build and verify standalone MIND
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: >-
+          python -X utf8 plugins/augment-of-mind/scripts/build_release.py
+          --output-dir /tmp/mind-release --replace
+      - name: Commit verified repair and remove one-use machinery
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .github/semantic-patch .github/workflows/apply-semantic-arm-reach.yml
+          rm -rf dist release plugins/augment-of-mind/build plugins/augment-of-mind/cd_mind_core.egg-info
+          find . -type d -name __pycache__ -prune -exec rm -rf {} +
+          find . -type f \( -name '*.pyc' -o -name '*.pyo' \) -delete
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m 'Repair semantic Arm Reach delivery'
+          git push origin HEAD:${{ github.head_ref }}
