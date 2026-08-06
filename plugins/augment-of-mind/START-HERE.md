@@ -7,10 +7,10 @@ MIND is a standalone cognitive architecture for an existing AI harness. It adds 
 1. Give the MIND package to a compatible Codex harness.
 2. Ask the harness to install and enable **MIND by Collaborative Dynamics**.
 3. Review the file operations and configuration changes it proposes.
-4. Open `/hooks`, inspect the exact local MIND prompt-submit hook, and decide whether to trust it.
+4. Open **Settings → Hooks**, inspect the exact local MIND prompt-submit hook, and decide whether to trust it.
 5. Start a new task so Codex can discover the plugin.
 
-Installation is complete when MIND is enabled, its Faculties are discoverable in a new task, and the local reminder map reports ready—or names the exact part that remains unavailable.
+Installation is complete when MIND is enabled, its Faculties are discoverable in a new task, the reminder estate reports active, and the trusted hook can reach the configured local `qwen3-embedding:0.6b` endpoint—or names the exact dependency that remains unavailable.
 
 ## Manual fallback
 

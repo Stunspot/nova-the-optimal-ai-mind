@@ -134,10 +134,10 @@ def verify(include_release: bool) -> dict:
 
     nova_manifest = load_json(NOVA / ".codex-plugin" / "plugin.json")
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
-    if nova_manifest.get("version") != "2.0.0":
-        errors.append("Nova plugin version must be 2.0.0")
-    if mind_manifest.get("version") != "2.1.1":
-        errors.append("MIND plugin version must be 2.1.1")
+    if nova_manifest.get("version") != "2.0.1":
+        errors.append("Nova plugin version must be 2.0.1")
+    if mind_manifest.get("version") != "2.1.2":
+        errors.append("MIND plugin version must be 2.1.2")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -158,8 +158,9 @@ def verify(include_release: bool) -> dict:
     eval_manifest = load_json(MIND / "skills" / "augment-of-mind" / "evals" / "eval-manifest.yaml")
     eval_cases = load_json(MIND / "skills" / "augment-of-mind" / "evals" / "faculty-runtime-cases.yaml")
     registry = load_json(MIND / "skills" / "augment-of-mind" / "references" / "faculty-runtime" / "faculty-registry.json")
-    if eval_manifest.get("package_version") != mind_version or eval_cases.get("package_version") != mind_version:
-        errors.append("MIND evaluation metadata does not match the plugin version")
+    evaluation_baseline = "2.1.1"
+    if eval_manifest.get("package_version") != evaluation_baseline or eval_cases.get("package_version") != evaluation_baseline:
+        errors.append("MIND Faculty evaluation evidence no longer identifies its 2.1.1 baseline")
     if registry.get("runtime_version") != mind_version:
         errors.append("MIND Faculty registry version does not match the plugin version")
 
@@ -183,7 +184,14 @@ def verify(include_release: bool) -> dict:
         if observed_fingerprint.get("product_version") != mind_version:
             errors.append("integrated MIND fingerprint version does not match the plugin version")
 
-    hook_text = (MIND / "hooks" / "mind_prompt_submit.py").read_text(encoding="utf-8")
+    hook_text = "\n".join(
+        path.read_text(encoding="utf-8")
+        for path in (
+            MIND / "hooks" / "mind_prompt_submit.py",
+            MIND / "mind_core" / "hook_context.py",
+            MIND / "mind_core" / "hook_delivery.py",
+        )
+    )
     for forbidden_hook_phrase in (
         "do not call MCP tools or resource readers",
         "read_mcp_resource",
@@ -191,6 +199,32 @@ def verify(include_release: bool) -> dict:
     ):
         if forbidden_hook_phrase in hook_text:
             errors.append(f"obsolete MCP routing instruction remains in the MIND hook: {forbidden_hook_phrase}")
+    for required_hook_phrase in (
+        "association_context(event)",
+        "embed_membranes",
+        '"anchor_kind": "turn_context"',
+        "advisory associative disclosure",
+    ):
+        if required_hook_phrase not in hook_text:
+            errors.append(f"semantic Arm's Reach hook contract is missing: {required_hook_phrase}")
+    for forbidden_hook_phrase in (
+        "HookDeferred",
+        "CONTEXTUAL ASSOCIATION DEFERRED",
+        "ordinary filesystem skill discovery",
+        "local association adapter",
+        "local H0 query adapter",
+    ):
+        if forbidden_hook_phrase in hook_text:
+            errors.append(f"model-side Arm's Reach retrieval remains in the hook: {forbidden_hook_phrase}")
+
+    nova_skill_text = (NOVA / "skills" / "nova" / "SKILL.md").read_text(encoding="utf-8")
+    mind_skill_text = (MIND / "skills" / "augment-of-mind" / "SKILL.md").read_text(encoding="utf-8")
+    for document_name, document_text in (("Nova", nova_skill_text), ("MIND", mind_skill_text)):
+        if "hook owns" not in document_text and "hook owns Arm's Reach" not in document_text:
+            errors.append(f"{document_name} skill does not assign Arm's Reach retrieval to the hook")
+        for stale_phrase in ("local association adapter", "local H0 query adapter"):
+            if stale_phrase in document_text:
+                errors.append(f"{document_name} skill still requests model-side association: {stale_phrase}")
 
     release_url = "https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest"
     for download_surface in (ROOT / "README.md", ROOT / "START-HERE.md", ROOT / "docs" / "index.html"):
@@ -198,7 +232,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.3**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.4**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")

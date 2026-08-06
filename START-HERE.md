@@ -13,10 +13,10 @@ Nova + MIND Free is an agent package for your existing AI harness. It installs N
    ```
 
 4. Review the installation actions Codex proposes and approve the ones you accept.
-5. When installation finishes, open `/hooks`, inspect the MIND prompt-submit hook, and decide whether to trust those exact local bytes.
+5. When installation finishes, open **Settings → Hooks**, inspect the MIND prompt-submit hook, and decide whether to trust those exact local bytes.
 6. Start a new task so the harness can discover the installed package.
 
-A successful installation leaves both **Nova the Optimal AI** and **MIND by Collaborative Dynamics** enabled. MIND’s local capability-reminder system should also report that the included public capability map is ready.
+A successful installation leaves both **Nova the Optimal AI** and **MIND by Collaborative Dynamics** enabled. MIND’s local capability-reminder system should report that the included public estate is active; its trusted prompt hook also requires the configured local `qwen3-embedding:0.6b` endpoint for semantic association.
 
 ## Why there are two plugins
 

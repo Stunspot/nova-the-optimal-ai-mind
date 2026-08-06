@@ -1,6 +1,6 @@
 {
   "schema": "collaborative-dynamics-faculty-registry/v1",
-  "runtime_version": "2.1.1",
+  "runtime_version": "2.1.2",
   "faculty_count": 16,
   "faculties": [
     {

@@ -100,8 +100,9 @@ instance without changing its record counts.
 ## Activate the included reminder generation
 
 The archive includes authored cards for all sixteen MIND Faculties and a
-behavior-qualified index for the local `qwen3-embedding:0.6b` profile. Model
-weights are not bundled or silently downloaded.
+reviewed index for the local `qwen3-embedding:0.6b` profile. The
+current profile remains explicitly unqualified pending separate behavioral
+qualification. Model weights are not bundled or silently downloaded.
 
 Install the named model separately:
 
@@ -125,7 +126,7 @@ Compile one explicit H0 Arm's Reach field:
 Expected result: the field names nearby handles without scores or rank. The
 adapter sends the ephemeral anchor to the local Ollama loopback API, records
 session evidence in Core, and does not persist the raw anchor or rendered field.
-This proves an explicit H0 query, not automatic Codex pre-turn delivery.
+This proves the same H0 semantic path used by the trusted Codex pre-turn hook, without proving hook trust or delivery on a live host.
 
 Add `--hint "exact phrase"` when you want exhaustive lexical matching as well
 as vector association. The adapter does not extract lexical hints from the raw

@@ -11,24 +11,24 @@ In Nova distributions, this is invariant substrate. Direct is the quietest regim
 
 ## Put relevant capabilities within arm's reach
 
-At task entry, after a user correction, after an unexpected error, and when the
-mission phase materially changes, consume the host-provided MIND reminder field
-before choosing a route. If the host exposes the included local H0 query adapter
-instead of automatic delivery, compile the field before substantive work from
-the current task, correction, error signature, or phase anchor. This recall step
-is autonomic and quiet; do not ask the user to remember its name.
+Before each model turn, the MIND prompt-submit hook owns association over the
+current user prompt and a bounded recent conversation window. Consume the Arm's
+Reach field already placed in context. Do not call a tool, resource reader,
+server, or adapter to obtain, repair, or repeat that field; model-side retrieval
+is not part of this contract.
 
-Treat every returned handle as nearby information, never as a score,
-recommendation, activation, authority, or verdict. Preserve all members of the
-radius neighborhood and explicit one-hop bridges; do not convert the field into
-top-K, a universal fitness scalar, or a ranked tool list. Open only a handle
-whose transformation materially fits the work, then use ordinary progressive
-disclosure to reach its canonical entrypoint.
+Treat every returned handle as associatively nearby praxis that might be handy,
+never as a score, ranking, recommendation, selection, activation, authority,
+completeness claim, or verdict. Preserve all members of the radius neighborhood
+and explicit one-hop bridges; do not convert the field into top-K or a universal
+fitness scalar. Open only a handle whose transformation materially fits the
+work, then use ordinary progressive disclosure to reach its canonical
+entrypoint.
 
-When no delivery or query route is available, continue honestly from the
-capabilities the host actually exposed. Do not infer that hidden capabilities
-are absent, do not browse package hierarchies as a substitute for association,
-and do not claim an Arm's Reach field was delivered.
+An empty field means only that nothing occupied that association boundary in the
+named snapshot. A delivery notice means only that the hook did not deliver a
+field. Neither establishes a route, capability absence, irrelevance, or fit, and
+neither initiates a second retrieval attempt.
 
 Use the simplest adequate motion. Complete an ordinary reversible request directly without exposing architecture, creating state artifacts, or loading a Faculty catalog. A request to define or hold mission governance, phase gates, acceptance, stops, recovery, or closure without performing the phase work belongs directly to Executive Function; named phases alone do not require this integrator or Capability Conductor. When two or more distinct Faculty transformations must actually contribute now and reunify into one outcome, this integrator owns the merge even when Capability Conductor selects or sequences the team. Also use it when material consequences or uncertainty, cross-Faculty state survival, action custody, or recovery from failure makes integration consequential. Read `references/faculty-runtime/runtime.md` completely and operate it. Read `references/faculty-runtime/faculty-registry.json` when ownership is uncertain.
 
