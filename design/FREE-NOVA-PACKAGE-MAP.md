@@ -1,7 +1,7 @@
 # Free Nova package map
 
-Status: release candidate; 2.0.4 semantic Arm's Reach correction
-Audit receipt: 2026-08-05 source verification PASS; combined package build and verification PASS; standalone MIND build and verification PASS.
+Status: published; 2.0.4 semantic Arm's Reach correction
+Audit receipt: 2026-08-06 semantic regression tests PASS; source verification PASS; deterministic combined package build and release verification PASS; standalone MIND package build PASS; public release upload PASS.
 Product: **Nova + MIND Free 2.0.4**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
