@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: verified release candidate; 2.0.5 Arm's Reach model-context correction
+Status: release candidate; 2.0.6 Arm's Reach catalog-roaming correction
 Audit receipt: 2026-08-07 semantic regression tests PASS; source verification PASS; deterministic combined package build and release verification PASS; standalone MIND package build and verification PASS.
-Product: **Nova + MIND Free 2.0.5**
+Product: **Nova + MIND Free 2.0.6**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`
@@ -50,7 +50,7 @@ TestForge is bundled with MIND by default because adversarial verification is fo
 
 The Free bundle carries a reviewed public-safe estate for all 41 skill handles. Each capability has six semantic views, a compact projection, a negative boundary, and explicit relations. The local `qwen3-embedding:0.6b` model generated 246 vectors. The customer installer activates this estate in MIND Core before first use.
 
-Before each model turn, the prompt-submit hook semantically associates the current prompt and a bounded recent conversation window against the active estate. It injects the resulting vector-near capability reminders as developer context before sampling; lexical identity cues may supplement a successful vector query. The model-facing preface identifies the entries as an associative presentation of surveyed capabilities, including possible tools, skills, and MCPs from the harness while allowing remembered capabilities with no harness-installed counterpart. The hook owns retrieval and delivery; receipt telemetry retains field, snapshot, mode, vector state, and hashes outside the model-facing prompt.
+Before each model turn, the prompt-submit hook semantically associates the current prompt and a bounded recent conversation window against the active estate. It injects the resulting vector-near capability reminders as developer context before sampling; lexical identity cues may supplement a successful vector query. The model-facing preface directs contextual assessment and integration with capabilities already present in assembled context, while the surveyed memory may extend beyond the current harness. The hook owns retrieval and delivery; receipt telemetry retains field, snapshot, mode, vector state, and hashes outside the model-facing prompt.
 
 The current expanded profile is intentionally marked `unqualified`. Isolated activation and routing smoke probes established mechanical operation and informed a radius of `0.33`; fresh-host hook trust, delivery, and broader behavioral qualification remain separate gates.
 

@@ -1,5 +1,13 @@
 # Nova + MIND Free release notes
 
+## 2.0.6
+
+This release removes capability-catalog discovery pressure from Arm's Reach's model-facing preface. Semantic recall still arrives as vector-near surveyed praxis, while the preface now directs contextual assessment and integration with capabilities already present in assembled context. The surveyed memory may still extend beyond the current harness.
+
+A live local-model trace showed that the earlier phrases `consider exploring candidate capacities` and `tools/skills/mcps from harness configuration` prompted Codex's real plugin catalog to be enumerated and an unrelated OpenClaw URL to be misread as an MCP resource. The revised preface supports every capability already supplied by the host without inventorying its transport or requesting discovery.
+
+MIND is versioned 2.1.4 in this combined release. Capability cards, embeddings, the active estate, and user databases are unchanged.
+
 ## 2.0.5
 
 This release corrects the model-facing prompt semantics of Arm's Reach. Successful semantic recall now enters the model context through one concise preface describing vector-near, semantically related capabilities as an associative presentation of surveyed praxis. It explicitly accommodates tools, skills, and MCPs exposed by a user's harness while preserving reminders for capabilities that are not harness-installed.
