@@ -198,7 +198,18 @@ class SemanticArmReachTests(unittest.TestCase):
         self.assertNotIn(HOOK.LEGACY_FIELD_HEADER, rendered)
         self.assertNotIn("advisory associative disclosure", rendered)
         self.assertNotIn("field=", rendered)
-        self.assertIn("tools/skills/mcps", rendered)
+        header = HOOK.MODEL_CONTEXT_HEADER.casefold()
+        self.assertIn("capabilities already present in assembled context", header)
+        self.assertIn("surveyed memory may extend beyond the current harness", header)
+        for forbidden in (
+            "tools/skills/mcps",
+            "mcp",
+            "explor",
+            "harness configuration",
+            "resources/list",
+            "resources/read",
+        ):
+            self.assertNotIn(forbidden, header)
 
     def test_rendered_field_rejects_nonvector_delivery(self) -> None:
         reminders = FakeReminders()
