@@ -19,26 +19,18 @@ from .contextual_recall import (
 )
 from .errors import ValidationError
 from .hook_context import association_context, lexical_hints
+from .model_context import (
+    LEGACY_FIELD_HEADER,
+    MODEL_CONTEXT_HEADER,
+    ModelContextError,
+    model_context_text,
+)
 from .util import canonical_json, timestamp
 
 DEFAULT_DATABASE = Path.home() / ".codex" / "data" / "stores" / "mind_core.sqlite"
 MAX_ADDITIONAL_CONTEXT_UTF8_BYTES = 12_000
 HOOK_EVENT = "UserPromptSubmit"
 AGENT_INSTANCE_ID = "agent:mind-codex-prompt-hook"
-MODEL_CONTEXT_HEADER = (
-    "**Vector-near semantically related capabilities below**: surfaced from RAG "
-    "memory for this turn as associative presentation of surveyed capabilities. "
-    "Consider such reminders as suggested subset of available praxis affordances, "
-    "not suggested courses of action. Assess contextual relevance and consider "
-    "exploring candidate capacities of likely utility to task. Adjunct helper system "
-    "to others (eg. tools/skills/mcps from harness configuration). Often holds "
-    "capabilities not harness-installed."
-)
-LEGACY_FIELD_HEADER = (
-    "MIND · ARM'S REACH\n"
-    "Notice the nearby handles; treat proximity as memory, not verdict. "
-    "Open only the transformation the work actually needs."
-)
 
 Embedder = Callable[[list[str], str, str, float], list[list[float]]]
 CoreFactory = Callable[[Path], MindCore]
@@ -198,22 +190,17 @@ def compile_associative_field(
     return result, vector_state, sha256_text(context)
 
 
-def _representation_body(value: object) -> str:
-    if not isinstance(value, str):
-        raise HookUnavailable("field_representation_invalid")
-    body = value
-    if body.startswith(LEGACY_FIELD_HEADER):
-        body = body[len(LEGACY_FIELD_HEADER) :]
-    return body.lstrip("\n")
-
-
 def render_additional_context(result: Mapping[str, Any], vector_state: str | None) -> str:
     if vector_state is not None:
         raise HookUnavailable(vector_state)
     representations = result["representations"]
     for representation in ("canonical", "compact"):
-        body = _representation_body(representations[representation]["text"])
-        candidate = MODEL_CONTEXT_HEADER + ("\n\n" + body if body else "")
+        try:
+            candidate = model_context_text(representations[representation]["text"])
+        except (KeyError, TypeError):
+            raise HookUnavailable("field_representation_invalid") from None
+        except ModelContextError as error:
+            raise HookUnavailable(error.code) from error
         if len(candidate.encode("utf-8")) <= MAX_ADDITIONAL_CONTEXT_UTF8_BYTES:
             return candidate
     raise HookUnavailable("field_exceeds_delivery_budget")
@@ -352,5 +339,4 @@ def process_event(
             "could not be persisted."
         )
     return output
-
 
