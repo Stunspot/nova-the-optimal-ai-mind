@@ -136,8 +136,8 @@ def verify(include_release: bool) -> dict:
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
     if nova_manifest.get("version") != "2.0.1":
         errors.append("Nova plugin version must be 2.0.1")
-    if mind_manifest.get("version") != "2.1.2":
-        errors.append("MIND plugin version must be 2.1.2")
+    if mind_manifest.get("version") != "2.1.3":
+        errors.append("MIND plugin version must be 2.1.3")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -181,6 +181,7 @@ def verify(include_release: bool) -> dict:
         expected_fingerprint = module.build()
         if observed_fingerprint != expected_fingerprint:
             errors.append("integrated MIND capability fingerprint is stale")
+            evidence["expected_integrated_fingerprint"] = expected_fingerprint
         if observed_fingerprint.get("product_version") != mind_version:
             errors.append("integrated MIND fingerprint version does not match the plugin version")
 
@@ -196,6 +197,7 @@ def verify(include_release: bool) -> dict:
         "do not call MCP tools or resource readers",
         "read_mcp_resource",
         "associate_capabilities",
+        "hook-delivered advisory associative disclosure",
     ):
         if forbidden_hook_phrase in hook_text:
             errors.append(f"obsolete MCP routing instruction remains in the MIND hook: {forbidden_hook_phrase}")
@@ -203,7 +205,8 @@ def verify(include_release: bool) -> dict:
         "association_context(event)",
         "embed_membranes",
         '"anchor_kind": "turn_context"',
-        "advisory associative disclosure",
+        "**Vector-near semantically related capabilities below**",
+        "tools/skills/mcps from harness configuration",
     ):
         if required_hook_phrase not in hook_text:
             errors.append(f"semantic Arm's Reach hook contract is missing: {required_hook_phrase}")
@@ -232,7 +235,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.4**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.5**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")
@@ -254,7 +257,7 @@ def verify(include_release: bool) -> dict:
     nova_dirs = {path.name for path in (NOVA / "skills").iterdir() if path.is_dir()}
     mind_dirs = {path.name for path in (MIND / "skills").iterdir() if path.is_dir()}
     if nova_dirs != NOVA_SKILLS:
-        errors.append(f"Nova skill set mismatch: missing={sorted(NOVA_SKILLS-nova_dirs)}, extra={sorted(nova_dirs-NOVA_SKILLS)}")
+        errors.append(f"Nova skill set mismatch: missing={sorted(NOVA_SKILLS-nova_dirs)}, extra={sorted(nova_dirs-MIND_SKILLS)}")
     if mind_dirs != MIND_SKILLS:
         errors.append(f"MIND skill set mismatch: missing={sorted(MIND_SKILLS-mind_dirs)}, extra={sorted(mind_dirs-MIND_SKILLS)}")
     if (nova_dirs | mind_dirs) & EXCLUDED:
