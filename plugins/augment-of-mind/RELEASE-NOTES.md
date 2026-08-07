@@ -1,5 +1,11 @@
 # MIND release notes
 
+## 2.1.3
+
+Arm's Reach now presents successful semantic recall through one model-facing context preface identifying the returned entries as vector-near, semantically related capabilities surfaced from RAG memory. The preface accommodates tools, skills, and MCPs exposed by the host harness while allowing remembered capabilities with no harness-installed counterpart.
+
+The hook strips the legacy reminder header and no longer injects H0, field, snapshot, mode, or representation telemetry into the model prompt; those observations remain in delivery receipts. Lexical identity cues supplement successful vector retrieval, while unavailable embeddings produce the bounded degraded notice rather than a lexical-only field described as vector-near. The direct `query_associative_field.py --field-only` surface now uses the same context renderer as the Codex hook.
+
 ## 2.1.2
 
 Arm's Reach association now belongs completely to the trusted pre-prompt hook. On every non-empty submitted prompt, the hook semantically associates the prompt and a bounded recent conversation window against the active estate, adds lexical identity cues when present, and injects a non-authoritative advisory field before the model turn.
