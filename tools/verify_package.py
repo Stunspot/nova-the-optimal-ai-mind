@@ -136,8 +136,8 @@ def verify(include_release: bool) -> dict:
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
     if nova_manifest.get("version") != "2.0.1":
         errors.append("Nova plugin version must be 2.0.1")
-    if mind_manifest.get("version") != "2.1.2":
-        errors.append("MIND plugin version must be 2.1.2")
+    if mind_manifest.get("version") != "2.1.3":
+        errors.append("MIND plugin version must be 2.1.3")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -181,6 +181,7 @@ def verify(include_release: bool) -> dict:
         expected_fingerprint = module.build()
         if observed_fingerprint != expected_fingerprint:
             errors.append("integrated MIND capability fingerprint is stale")
+            evidence["expected_integrated_fingerprint"] = expected_fingerprint
         if observed_fingerprint.get("product_version") != mind_version:
             errors.append("integrated MIND fingerprint version does not match the plugin version")
 
@@ -190,12 +191,14 @@ def verify(include_release: bool) -> dict:
             MIND / "hooks" / "mind_prompt_submit.py",
             MIND / "mind_core" / "hook_context.py",
             MIND / "mind_core" / "hook_delivery.py",
+            MIND / "mind_core" / "model_context.py",
         )
     )
     for forbidden_hook_phrase in (
         "do not call MCP tools or resource readers",
         "read_mcp_resource",
         "associate_capabilities",
+        "hook-delivered advisory associative disclosure",
     ):
         if forbidden_hook_phrase in hook_text:
             errors.append(f"obsolete MCP routing instruction remains in the MIND hook: {forbidden_hook_phrase}")
@@ -203,7 +206,9 @@ def verify(include_release: bool) -> dict:
         "association_context(event)",
         "embed_membranes",
         '"anchor_kind": "turn_context"',
-        "advisory associative disclosure",
+        "**Vector-near semantically related capabilities below**",
+        "tools/skills/mcps from harness configuration",
+        "model_context_text",
     ):
         if required_hook_phrase not in hook_text:
             errors.append(f"semantic Arm's Reach hook contract is missing: {required_hook_phrase}")
@@ -216,6 +221,25 @@ def verify(include_release: bool) -> dict:
     ):
         if forbidden_hook_phrase in hook_text:
             errors.append(f"model-side Arm's Reach retrieval remains in the hook: {forbidden_hook_phrase}")
+
+    delivery_text = (MIND / "mind_core" / "delivery.py").read_text(encoding="utf-8")
+    for required_delivery_phrase in (
+        "model_context_text(raw_text)",
+        "VECTOR_BACKED_MODES",
+        "model-facing delivery requires a vector-backed field",
+    ):
+        if required_delivery_phrase not in delivery_text:
+            errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
+
+    contract = load_json(
+        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.3.json"
+    )
+    if contract.get("mind_version") != mind_version:
+        errors.append("recorded model-context contract version does not match MIND")
+    if contract.get("header") not in hook_text:
+        errors.append("recorded model-context header does not match runtime source")
+    if contract.get("nonvector_delivery") != "degraded":
+        errors.append("recorded model-context contract does not preserve degraded nonvector delivery")
 
     nova_skill_text = (NOVA / "skills" / "nova" / "SKILL.md").read_text(encoding="utf-8")
     mind_skill_text = (MIND / "skills" / "augment-of-mind" / "SKILL.md").read_text(encoding="utf-8")
@@ -232,7 +256,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.4**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.5**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")

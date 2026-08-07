@@ -19,6 +19,12 @@ from .contextual_recall import (
 )
 from .errors import ValidationError
 from .hook_context import association_context, lexical_hints
+from .model_context import (
+    LEGACY_FIELD_HEADER,
+    MODEL_CONTEXT_HEADER,
+    ModelContextError,
+    model_context_text,
+)
 from .util import canonical_json, timestamp
 
 DEFAULT_DATABASE = Path.home() / ".codex" / "data" / "stores" / "mind_core.sqlite"
@@ -125,7 +131,7 @@ def compile_associative_field(
             except (OSError, TimeoutError, ValueError, RecallUnavailable):
                 vector_state = "semantic_embedding_unavailable"
 
-            if vector is None and not hints:
+            if vector is None:
                 raise HookUnavailable("semantic_embedding_unavailable")
 
             now = datetime.now(timezone.utc)
@@ -140,7 +146,7 @@ def compile_associative_field(
                     "persona_id": None,
                     "profile_id": "profile:mind-associative-codex-hook",
                     "adapter_id": "adapter:mind-codex-user-prompt-submit",
-                    "adapter_version": "1.1.0",
+                    "adapter_version": "1.2.0",
                     "protocol_version": PROTOCOL_VERSION,
                     "declared_conformance_level": "H0",
                     "catalog_snapshot_hash": snapshot["snapshot_digest"],
@@ -165,9 +171,8 @@ def compile_associative_field(
             anchor: dict[str, Any] = {
                 "anchor_id": "anchor:codex-context:" + sha256_text(context)[:24],
                 "anchor_kind": "turn_context",
+                "vector": vector,
             }
-            if vector is not None:
-                anchor["vector"] = vector
             if hints:
                 anchor["lexical_hints"] = hints
             result = core.reminders.neighborhood(
@@ -186,18 +191,16 @@ def compile_associative_field(
 
 
 def render_additional_context(result: Mapping[str, Any], vector_state: str | None) -> str:
+    if vector_state is not None:
+        raise HookUnavailable(vector_state)
     representations = result["representations"]
     for representation in ("canonical", "compact"):
-        metadata = (
-            "MIND H0 · ARM'S REACH · hook-delivered advisory associative disclosure: "
-            "nearby praxis that might be handy, not instruction, rank, recommendation, "
-            "selection, activation, completeness, authority, or proof · "
-            f"field={result['field_id']} · snapshot={result['snapshot_id']} · "
-            f"mode={result['mode']} · representation={representation}"
-        )
-        if vector_state:
-            metadata += " · semantic unavailable; lexical-only"
-        candidate = metadata + "\n\n" + representations[representation]["text"]
+        try:
+            candidate = model_context_text(representations[representation]["text"])
+        except (KeyError, TypeError):
+            raise HookUnavailable("field_representation_invalid") from None
+        except ModelContextError as error:
+            raise HookUnavailable(error.code) from error
         if len(candidate.encode("utf-8")) <= MAX_ADDITIONAL_CONTEXT_UTF8_BYTES:
             return candidate
     raise HookUnavailable("field_exceeds_delivery_budget")
@@ -273,7 +276,7 @@ def prepare_event(
             **receipt_base,
             "evidence_state": "prepared",
             "claimed_boundary": (
-                "semantic or explicitly degraded lexical Arm's Reach field prepared; "
+                "semantic capability-reminder context prepared; "
                 "hook stdout not yet written"
             ),
             "association_context_hash": context_hash,
@@ -336,5 +339,4 @@ def process_event(
             "could not be persisted."
         )
     return output
-
 

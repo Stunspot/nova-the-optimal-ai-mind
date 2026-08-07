@@ -49,17 +49,11 @@ class FakeReminders:
         anchors: list[dict[str, Any]],
     ) -> dict[str, Any]:
         self.anchors = anchors
-        canonical = (
-            "MIND · ARM'S REACH\n"
-            "Associatively nearby praxis that might be handy. Proximity is not "
-            "instruction, ranking, recommendation, selection, activation, completeness, "
-            "authority, or proof of fit.\n\n"
-            "$capability-example — Example capability"
-        )
+        canonical = HOOK.LEGACY_FIELD_HEADER + "\n\n$capability-example — Example capability"
         return {
             "field_id": "field:test",
             "snapshot_id": "snapshot:test",
-            "mode": "vector_and_lexical" if anchors[0].get("lexical_hints") else "vector",
+            "mode": "hybrid_current" if anchors[0].get("lexical_hints") else "vector_current",
             "membership_manifest_digest": "digest:members",
             "representations": {
                 "canonical": {"text": canonical},
@@ -141,25 +135,35 @@ class SemanticArmReachTests(unittest.TestCase):
         self.assertIn("Which tradeoff matters now?", context)
         self.assertLessEqual(len(context), HOOK_CONTEXT.MAX_ASSOCIATION_CONTEXT_CHARACTERS)
 
-    def test_lexical_identity_is_a_fallback_not_the_semantic_gate(self) -> None:
+    def test_lexical_identity_supplements_the_semantic_vector(self) -> None:
         reminders = FakeReminders()
         core = FakeCore(reminders)
-
-        def unavailable(*_args: Any) -> list[list[float]]:
-            raise HOOK.RecallUnavailable("embedding unavailable")
 
         result, vector_state, _context_hash = HOOK.compile_associative_field(
             self.event("Please use $capability-promotion for this update."),
             environment=self.environment,
-            embedder=unavailable,
+            embedder=lambda *_args: [[0.25, 0.75]],
             core_factory=lambda _path: core,
         )
 
         self.assertEqual(result["field_id"], "field:test")
-        self.assertEqual(vector_state, "semantic_embedding_unavailable")
+        self.assertIsNone(vector_state)
         anchor = reminders.anchors[0]
-        self.assertNotIn("vector", anchor)
+        self.assertEqual(anchor["vector"], [0.25, 0.75])
         self.assertIn("capability-promotion", anchor["lexical_hints"])
+
+    def test_lexical_identity_does_not_replace_unavailable_semantics(self) -> None:
+        def unavailable(*_args: Any) -> list[list[float]]:
+            raise HOOK.RecallUnavailable("embedding unavailable")
+
+        with self.assertRaises(HOOK.HookUnavailable) as captured:
+            HOOK.compile_associative_field(
+                self.event("Please use $capability-promotion for this update."),
+                environment=self.environment,
+                embedder=unavailable,
+                core_factory=lambda _path: FakeCore(FakeReminders()),
+            )
+        self.assertEqual(captured.exception.code, "semantic_embedding_unavailable")
 
     def test_unavailable_semantics_does_not_delegate_retrieval_to_the_model(self) -> None:
         def unavailable(*_args: Any) -> list[list[float]]:
@@ -185,14 +189,23 @@ class SemanticArmReachTests(unittest.TestCase):
             self.assertNotIn(forbidden, lowered)
         self.assertIn("makes no claim about capability availability", lowered)
 
-    def test_rendered_field_is_explicitly_advisory(self) -> None:
+    def test_rendered_field_uses_the_model_context_contract_exactly(self) -> None:
         reminders = FakeReminders()
         result = reminders.neighborhood("token", "snapshot", [{"anchor_kind": "turn_context"}])
-        rendered = HOOK.render_additional_context(result, None).casefold()
-        self.assertIn("advisory associative disclosure", rendered)
-        self.assertIn("might be handy", rendered)
-        self.assertIn("not instruction", rendered)
-        self.assertNotIn("use this tool now", rendered)
+        rendered = HOOK.render_additional_context(result, None)
+        expected = HOOK.MODEL_CONTEXT_HEADER + "\n\n$capability-example — Example capability"
+        self.assertEqual(rendered, expected)
+        self.assertNotIn(HOOK.LEGACY_FIELD_HEADER, rendered)
+        self.assertNotIn("advisory associative disclosure", rendered)
+        self.assertNotIn("field=", rendered)
+        self.assertIn("tools/skills/mcps", rendered)
+
+    def test_rendered_field_rejects_nonvector_delivery(self) -> None:
+        reminders = FakeReminders()
+        result = reminders.neighborhood("token", "snapshot", [{"anchor_kind": "turn_context"}])
+        with self.assertRaises(HOOK.HookUnavailable) as captured:
+            HOOK.render_additional_context(result, "semantic_embedding_unavailable")
+        self.assertEqual(captured.exception.code, "semantic_embedding_unavailable")
 
     def test_real_core_accepts_the_semantic_turn_context_anchor(self) -> None:
         mind_root = ROOT / "plugins" / "augment-of-mind"
@@ -234,7 +247,8 @@ class SemanticArmReachTests(unittest.TestCase):
         self.assertGreater(len(result["members"]), 0)
         self.assertEqual(result["anchors"][0]["anchor_kind"], "turn_context")
         rendered = HOOK.render_additional_context(result, vector_state)
-        self.assertIn("might be handy", rendered)
+        self.assertTrue(rendered.startswith(HOOK.MODEL_CONTEXT_HEADER + "\n\n"))
+        self.assertNotIn(HOOK.LEGACY_FIELD_HEADER, rendered)
 
     def test_source_has_no_deferred_or_model_side_retrieval_path(self) -> None:
         source = HOOK_PATH.read_text(encoding="utf-8") + DELIVERY_PATH.read_text(encoding="utf-8") + CONTEXT_PATH.read_text(encoding="utf-8")

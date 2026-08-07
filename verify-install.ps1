@@ -75,7 +75,7 @@ $requirements = @(
     [pscustomobject]@{
         internal_name = 'augment-of-mind'
         display_name = 'MIND by Collaborative Dynamics'
-        expected_version = '2.1.2'
+        expected_version = '2.1.3'
     }
 )
 $verifiedPlugins = @()
@@ -112,6 +112,8 @@ $databaseHashBefore = (Get-FileHash -LiteralPath $DatabasePath -Algorithm SHA256
 
 $tempRoot = Join-Path ([System.IO.Path]::GetTempPath()) ('nova-mind-verify-' + [guid]::NewGuid().ToString('N'))
 $tempDatabase = Join-Path $tempRoot 'mind_core.verify.sqlite'
+$backupScript = Join-Path $tempRoot 'backup_mind_database.py'
+$inspectionScript = Join-Path $tempRoot 'inspect_mind_estate.py'
 New-Item -ItemType Directory -Path $tempRoot -Force | Out-Null
 
 $priorPythonPath = $env:PYTHONPATH
@@ -129,7 +131,10 @@ finally:
     target.close()
     source.close()
 '@
-    $backupArguments = @($pythonPrefix) + @('-c', $backupCode, $DatabasePath, $tempDatabase)
+    Set-Content -LiteralPath $backupScript -Value $backupCode -Encoding ASCII
+    $backupArguments = @($pythonPrefix) + @(
+        '-X', 'utf8', $backupScript, $DatabasePath, $tempDatabase
+    )
     & $pythonExe @backupArguments
     if ($LASTEXITCODE -ne 0) {
         throw 'Could not create a read-only verification copy of the MIND database.'
@@ -248,8 +253,9 @@ try:
 finally:
     connection.close()
 '@
+    Set-Content -LiteralPath $inspectionScript -Value $inspectionCode -Encoding ASCII
     $inspectionArguments = @($pythonPrefix) + @(
-        '-X', 'utf8', '-c', $inspectionCode, $tempDatabase
+        '-X', 'utf8', $inspectionScript, $tempDatabase
     )
     $inspectionText = & $pythonExe @inspectionArguments
     if ($LASTEXITCODE -ne 0) {

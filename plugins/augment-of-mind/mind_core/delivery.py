@@ -5,6 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from .errors import ValidationError
+from .model_context import ModelContextError, model_context_text
 from .util import (
     canonical_json,
     require_identifier,
@@ -16,6 +17,7 @@ from .util import (
 
 DELIVERY_FORMAT = "mind-associative-field-delivery/v1"
 DELIVERY_REPRESENTATIONS = frozenset({"canonical", "compact"})
+VECTOR_BACKED_MODES = frozenset({"vector_current", "hybrid_current"})
 
 
 def compile_delivery(
@@ -30,23 +32,37 @@ def compile_delivery(
         membership_digest = require_sha256(
             field["membership_manifest_digest"], "membership_manifest_digest"
         )
-        text = require_text(selected["text"], "delivery text", maximum=1_000_000)
-        body_sha256 = require_sha256(selected["body_sha256"], "body_sha256")
-        utf8_bytes = selected["utf8_bytes"]
+        raw_text = require_text(selected["text"], "delivery text", maximum=1_000_000)
+        raw_body_sha256 = require_sha256(selected["body_sha256"], "body_sha256")
+        raw_utf8_bytes = selected["utf8_bytes"]
         selected_membership_digest = require_sha256(
             selected["membership_manifest_digest"],
             "representation membership_manifest_digest",
         )
     except (KeyError, TypeError):
         raise ValidationError("reminder field is missing a delivery binding") from None
-    if not isinstance(utf8_bytes, int) or isinstance(utf8_bytes, bool) or utf8_bytes < 1:
+    if (
+        not isinstance(raw_utf8_bytes, int)
+        or isinstance(raw_utf8_bytes, bool)
+        or raw_utf8_bytes < 1
+    ):
         raise ValidationError("utf8_bytes must be a positive integer")
-    if sha256_text(text) != body_sha256:
+    if sha256_text(raw_text) != raw_body_sha256:
         raise ValidationError("delivery text does not match body_sha256")
-    if len(text.encode("utf-8")) != utf8_bytes:
+    if len(raw_text.encode("utf-8")) != raw_utf8_bytes:
         raise ValidationError("delivery text does not match utf8_bytes")
     if selected_membership_digest != membership_digest:
         raise ValidationError("delivery representation changed field membership")
+
+    mode = require_identifier(field.get("mode"), "mode")
+    if mode not in VECTOR_BACKED_MODES:
+        raise ValidationError("model-facing delivery requires a vector-backed field")
+    try:
+        text = model_context_text(raw_text)
+    except ModelContextError as error:
+        raise ValidationError(error.code) from error
+    body_sha256 = sha256_text(text)
+    utf8_bytes = len(text.encode("utf-8"))
 
     envelope = {
         "format": DELIVERY_FORMAT,
@@ -56,7 +72,7 @@ def compile_delivery(
             field.get("scoped_estate_digest"), "scoped_estate_digest"
         ),
         "membership_manifest_digest": membership_digest,
-        "mode": require_identifier(field.get("mode"), "mode"),
+        "mode": mode,
         "representation": representation,
         "text": text,
         "body_sha256": body_sha256,
