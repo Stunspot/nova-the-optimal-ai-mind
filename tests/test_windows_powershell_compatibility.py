@@ -30,7 +30,50 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
             "Get-FileHash -LiteralPath $DatabasePath",
         ):
             self.assertIn(required, verifier)
-        self.assertIn("--database', $tempDatabase", verifier)
+        self.assertIn("'--database', $tempDatabase", verifier)
+
+    def test_verifier_tolerates_plugin_list_without_cache_paths(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        self.assertIn("function Get-OptionalPropertyValue", verifier)
+        self.assertNotIn("$plugin.installedPath", verifier)
+        self.assertIn("installed_path = $installedPath", verifier)
+
+    def test_verifier_reports_total_and_active_estate_sizes(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        for required in (
+            "total_capabilities = [int]$inspection.counts.capabilities",
+            "total_cards = [int]$inspection.counts.capability_cards",
+            "total_vectors = [int]$inspection.counts.associative_view_vectors",
+            "active_generation = $inspection.active_generation",
+            "largest_generation_by_cards = $inspection.largest_generation_by_cards",
+            "largest_generation_by_vectors = $inspection.largest_generation_by_vectors",
+        ):
+            self.assertIn(required, verifier)
+        self.assertNotIn("$status.capability_count", verifier)
+        self.assertNotIn("$status.active_associative_snapshot_id", verifier)
+
+    def test_local_store_audit_is_read_only_and_estate_aware(self) -> None:
+        wrapper = (ROOT / "audit-local-stores.ps1").read_text(encoding="ascii")
+        tool = (ROOT / "tools" / "audit_local_stores.py").read_text(encoding="ascii")
+        for required in (
+            "Close Codex desktop before running this store audit",
+            "tools\\audit_local_stores.py",
+            "MIND ESTATES",
+            "LargestCards",
+            "LargestVectors",
+        ):
+            self.assertIn(required, wrapper)
+        for required in (
+            '"?mode=ro"',
+            '"read_only": True',
+            '"largest_generation_by_cards"',
+            '"largest_generation_by_vectors"',
+            '"capability_cards"',
+            '"associative_view_vectors"',
+            '"corkboard"',
+            '"dunbar"',
+        ):
+            self.assertIn(required, tool)
 
 
 if __name__ == "__main__":
