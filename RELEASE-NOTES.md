@@ -1,5 +1,13 @@
 # Nova + MIND Free release notes
 
+## 2.0.5
+
+This release corrects the model-facing prompt semantics of Arm's Reach. Successful semantic recall now enters the model context through one concise preface describing vector-near, semantically related capabilities as an associative presentation of surveyed praxis. It explicitly accommodates tools, skills, and MCPs exposed by a user's harness while preserving reminders for capabilities that are not harness-installed.
+
+The prior nested headers exposed opaque “handles,” urged the model to “open” them, and surrounded the field with internal H0 and receipt metadata. Some tool-using models interpreted those labels as unresolved MCP resources. The hook now strips the legacy reminder header, keeps field and snapshot telemetry in receipts, and supplies the returned capability entries directly beneath the new context preface.
+
+Lexical identity cues continue to supplement successful vector association. If semantic embedding is unavailable, the hook emits its bounded degraded notice rather than presenting lexical-only matches as vector-near results. MIND is versioned 2.1.3 in this combined release.
+
 ## 2.0.4
 
 This release completes the MCP-removal repair by restoring Arm's Reach to its intended architecture. The trusted `UserPromptSubmit` hook now performs semantic association over every non-empty prompt plus a bounded recent conversation window, injects advisory nearby praxis before the model turn, and treats lexical identity cues as a supplement rather than a gate.
