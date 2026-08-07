@@ -63,10 +63,10 @@ class MindDeliveryContextTests(unittest.TestCase):
                 ROOT
                 / "verification"
                 / "associative-smoke"
-                / "model-context-contract-v2.1.3.json"
+                / "model-context-contract-v2.1.4.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(contract["mind_version"], "2.1.3")
+        self.assertEqual(contract["mind_version"], "2.1.4")
         self.assertEqual(contract["header"], MODEL_CONTEXT_HEADER)
         self.assertEqual(
             contract["vector_backed_modes"],
@@ -74,6 +74,7 @@ class MindDeliveryContextTests(unittest.TestCase):
         )
         self.assertEqual(contract["nonvector_delivery"], "degraded")
         self.assertFalse(contract["legacy_headers_present"])
+        self.assertEqual(contract["catalog_discovery"], "not_prompted")
 
 
 if __name__ == "__main__":

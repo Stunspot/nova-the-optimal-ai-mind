@@ -136,8 +136,8 @@ def verify(include_release: bool) -> dict:
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
     if nova_manifest.get("version") != "2.0.1":
         errors.append("Nova plugin version must be 2.0.1")
-    if mind_manifest.get("version") != "2.1.3":
-        errors.append("MIND plugin version must be 2.1.3")
+    if mind_manifest.get("version") != "2.1.4":
+        errors.append("MIND plugin version must be 2.1.4")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -199,6 +199,8 @@ def verify(include_release: bool) -> dict:
         "read_mcp_resource",
         "associate_capabilities",
         "hook-delivered advisory associative disclosure",
+        "consider exploring candidate capacities",
+        "tools/skills/mcps from harness configuration",
     ):
         if forbidden_hook_phrase in hook_text:
             errors.append(f"obsolete MCP routing instruction remains in the MIND hook: {forbidden_hook_phrase}")
@@ -207,7 +209,8 @@ def verify(include_release: bool) -> dict:
         "embed_membranes",
         '"anchor_kind": "turn_context"',
         "**Vector-near semantically related capabilities below**",
-        "tools/skills/mcps from harness configuration",
+        "capabilities already present in assembled context",
+        "surveyed memory may extend beyond the current harness",
         "model_context_text",
     ):
         if required_hook_phrase not in hook_text:
@@ -232,7 +235,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
 
     contract = load_json(
-        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.3.json"
+        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.4.json"
     )
     if contract.get("mind_version") != mind_version:
         errors.append("recorded model-context contract version does not match MIND")
@@ -240,6 +243,8 @@ def verify(include_release: bool) -> dict:
         errors.append("recorded model-context header does not match runtime source")
     if contract.get("nonvector_delivery") != "degraded":
         errors.append("recorded model-context contract does not preserve degraded nonvector delivery")
+    if contract.get("catalog_discovery") != "not_prompted":
+        errors.append("recorded model-context contract prompts capability-catalog discovery")
 
     nova_skill_text = (NOVA / "skills" / "nova" / "SKILL.md").read_text(encoding="utf-8")
     mind_skill_text = (MIND / "skills" / "augment-of-mind" / "SKILL.md").read_text(encoding="utf-8")
@@ -256,7 +261,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.5**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.6**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")

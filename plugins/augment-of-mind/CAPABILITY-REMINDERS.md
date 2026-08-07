@@ -5,7 +5,7 @@ MIND keeps a local semantic map of durable capabilities so useful praxis can ret
 Before each submitted prompt, the trusted local hook associates the current prompt and a bounded recent conversation window against the active map. A successful vector query may be supplemented by lexical identity cues. The hook then inserts the returned capability reminders before the model turn beneath this context preface:
 
 ```text
-**Vector-near semantically related capabilities below**: surfaced from RAG memory for this turn as associative presentation of surveyed capabilities. Consider such reminders as suggested subset of available praxis affordances, not suggested courses of action. Assess contextual relevance and consider exploring candidate capacities of likely utility to task. Adjunct helper system to others (eg. tools/skills/mcps from harness configuration). Often holds capabilities not harness-installed.
+**Vector-near semantically related capabilities below**: surfaced from RAG memory for this turn as associative presentation of surveyed capabilities. Consider such reminders as suggested subset of available praxis affordances, not suggested courses of action. Assess contextual relevance and likely utility to task. Integrate with capabilities already present in assembled context. Surveyed memory may extend beyond the current harness.
 ```
 
 Field, snapshot, mode, vector state, and hash telemetry remains in delivery receipts. If semantic embedding is unavailable, the hook emits its bounded delivery note instead of presenting lexical-only results as vector-near.

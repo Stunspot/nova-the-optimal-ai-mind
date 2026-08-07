@@ -1,5 +1,11 @@
 # MIND release notes
 
+## 2.1.4
+
+The model-facing capability-memory preface no longer asks the model to explore candidate capacities or enumerates tools, skills, and MCPs from harness configuration. It now directs contextual assessment and integration with capabilities already present in assembled context, while preserving vector-near recall and memory beyond the current harness.
+
+This removes the prompt pressure that caused one Codex-compatible local model to list the `codex_apps` plugin catalog and attempt unrelated MCP resource reads. MCP-backed and other host capabilities remain usable through the host context that already exposes them; MIND no longer inventories those transports in every turn.
+
 ## 2.1.3
 
 Arm's Reach now presents successful semantic recall through one model-facing context preface identifying the returned entries as vector-near, semantically related capabilities surfaced from RAG memory. The preface accommodates tools, skills, and MCPs exposed by the host harness while allowing remembered capabilities with no harness-installed counterpart.
