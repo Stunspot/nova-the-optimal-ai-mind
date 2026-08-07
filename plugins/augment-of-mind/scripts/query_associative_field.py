@@ -9,6 +9,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from mind_core import MindCore
 from mind_core.constants import PROTOCOL_VERSION
+from mind_core.hook_delivery import render_additional_context
 from mind_core.util import canonical_json, timestamp
 
 DEFAULT_DATABASE = Path.home() / ".codex" / "data" / "stores" / "mind_core.sqlite"
@@ -57,7 +58,7 @@ def main() -> int:
             "agent_instance_id":args.agent_instance_id,"host_session_id":session_id,
             "host_id":"host:codex-desktop-h0","external_session_id":session_id,"session_epoch":1,
             "persona_id":None,"profile_id":"profile:mind-associative-h0","adapter_id":"adapter:mind-h0-cli",
-            "adapter_version":"1.0.0","protocol_version":PROTOCOL_VERSION,"declared_conformance_level":"H0",
+            "adapter_version":"1.1.0","protocol_version":PROTOCOL_VERSION,"declared_conformance_level":"H0",
             "catalog_snapshot_hash":snapshot["snapshot_digest"],
             "catalog_snapshot_expires_at":timestamp(now+timedelta(minutes=15)),
             "permission_observation_hash":hashlib.sha256(b"h0-permission-not-observed").hexdigest(),
@@ -70,7 +71,7 @@ def main() -> int:
             anchor["lexical_hints"]=args.hint
         result=core.reminders.neighborhood(token,snapshot["associative_index_snapshot_id"],[anchor])
     if args.field_only:
-        print(result["representations"]["canonical"]["text"])
+        print(render_additional_context(result,None))
     else:
         print(canonical_json(result))
     return 0
