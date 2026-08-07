@@ -3,15 +3,7 @@
 from __future__ import annotations
 
 
-MODEL_CONTEXT_HEADER = (
-    "**Vector-near semantically related capabilities below**: surfaced from RAG "
-    "memory for this turn as associative presentation of surveyed capabilities. "
-    "Consider such reminders as suggested subset of available praxis affordances, "
-    "not suggested courses of action. Assess contextual relevance and consider "
-    "exploring candidate capacities of likely utility to task. Adjunct helper system "
-    "to others (eg. tools/skills/mcps from harness configuration). Often holds "
-    "capabilities not harness-installed."
-)
+MODEL_CONTEXT_HEADER = "**Vector-near semantically related capabilities below**: surfaced from RAG memory for this turn as associative presentation of surveyed capabilities. Consider such reminders as suggested subset of available praxis affordances, not suggested courses of action. Assess contextual relevance and consider exploring candidate capacities of likely utility to task. Adjunct helper system to others (eg. tools/skills/mcps from harness configuration). Often holds capabilities not harness-installed."
 LEGACY_FIELD_HEADER = (
     "MIND · ARM'S REACH\n"
     "Notice the nearby handles; treat proximity as memory, not verdict. "
