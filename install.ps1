@@ -47,8 +47,7 @@ if (-not $SkipPluginInstall) {
         $_.name -in @('nova-the-optimal-ai', 'augment-of-mind') -and $_.marketplaceName -ne $marketplace
     })
     if ($conflicts.Count -gt 0) {
-        $selectors = ($conflicts | ForEach-Object { $_.pluginId }) -join ', '
-        throw "Earlier Nova or MIND selectors are enabled or installed: $selectors. Remove those exact selectors with 'codex plugin remove <selector>', then rerun. The installer will not silently replace another installation."
+        throw "Another copy of Nova or MIND is installed from a different source. Open Codex > Settings > Plugins, remove or disable the older Nova or MIND card, then rerun. Nothing was changed."
     }
 
     $knownMarketplaces = & $codex.Source plugin marketplace list --json | ConvertFrom-Json
@@ -57,7 +56,7 @@ if (-not $SkipPluginInstall) {
         & $codex.Source plugin marketplace add $root --json
         if ($LASTEXITCODE -ne 0) { throw 'Codex did not add the Free Nova marketplace.' }
     } elseif ((Resolve-Path -LiteralPath $known[0].root).Path -ne (Resolve-Path -LiteralPath $root).Path) {
-        throw "Marketplace '$marketplace' already points somewhere else: $($known[0].root)"
+        throw "The Nova + MIND plugin source already points somewhere else: $($known[0].root)"
     }
 
     $installedState = & $codex.Source plugin list --json | ConvertFrom-Json
@@ -66,7 +65,7 @@ if (-not $SkipPluginInstall) {
         $present = @($installedState.installed | Where-Object { $_.pluginId -eq $selector -and $_.enabled })
         if ($present.Count -eq 0) {
             & $codex.Source plugin add $selector --json
-            if ($LASTEXITCODE -ne 0) { throw "Codex did not install $selector." }
+            if ($LASTEXITCODE -ne 0) { throw "Codex did not install $name." }
         }
     }
 }
@@ -94,4 +93,4 @@ try {
 
 Write-Host ''
 Write-Host 'Free Nova is installed. Both plugins are enabled, its 41-capability reminder estate is active, and semantic association passed.'
-Write-Host 'Next: open Codex, review the exact MIND prompt-submit hook in Settings → Hooks, trust it if the bytes match this package, then start a new task.'
+Write-Host 'Next: open Codex, review the exact MIND prompt-submit hook in Settings > Hooks, trust it if the bytes match this package, then start a new task.'
