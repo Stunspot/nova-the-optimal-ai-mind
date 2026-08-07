@@ -1,7 +1,7 @@
 # Free Nova package map
 
-Status: release candidate; 2.0.5 Arm's Reach model-context correction
-Audit receipt: pending current semantic regression, source verification, deterministic combined package build, release verification, and standalone MIND package build.
+Status: verified release candidate; 2.0.5 Arm's Reach model-context correction
+Audit receipt: 2026-08-07 semantic regression tests PASS; source verification PASS; deterministic combined package build and release verification PASS; standalone MIND package build and verification PASS.
 Product: **Nova + MIND Free 2.0.5**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
