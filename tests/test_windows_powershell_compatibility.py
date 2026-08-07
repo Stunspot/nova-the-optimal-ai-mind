@@ -26,11 +26,17 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
         for required in (
             "source.backup(target)",
             "$tempDatabase",
+            "$backupScript",
+            "$inspectionScript",
+            "Set-Content -LiteralPath $backupScript",
+            "Set-Content -LiteralPath $inspectionScript",
             "original_unchanged_by_verifier = $true",
             "Get-FileHash -LiteralPath $DatabasePath",
+            "'--database', $tempDatabase",
         ):
             self.assertIn(required, verifier)
-        self.assertIn("'--database', $tempDatabase", verifier)
+        self.assertNotIn("'-c', $backupCode", verifier)
+        self.assertNotIn("'-c', $inspectionCode", verifier)
 
     def test_verifier_tolerates_plugin_list_without_cache_paths(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
@@ -41,6 +47,7 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
     def test_verifier_reports_total_and_active_estate_sizes(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         for required in (
+            "expected_version = '2.1.3'",
             "total_capabilities = [int]$inspection.counts.capabilities",
             "total_cards = [int]$inspection.counts.capability_cards",
             "total_vectors = [int]$inspection.counts.associative_view_vectors",
