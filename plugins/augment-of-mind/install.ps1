@@ -56,5 +56,5 @@ try {
     $env:PYTHONPATH = $prior
 }
 Write-Host ''
-Write-Host 'MIND 2.1.2 is installed, its 20-capability estate is active, and semantic association passed.'
+Write-Host 'MIND 2.1.3 is installed, its 20-capability estate is active, and semantic association passed.'
 Write-Host 'Next: review the exact hook in Settings > Hooks, then start a new task.'
