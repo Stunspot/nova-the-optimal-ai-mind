@@ -25,6 +25,20 @@ DEFAULT_DATABASE = Path.home() / ".codex" / "data" / "stores" / "mind_core.sqlit
 MAX_ADDITIONAL_CONTEXT_UTF8_BYTES = 12_000
 HOOK_EVENT = "UserPromptSubmit"
 AGENT_INSTANCE_ID = "agent:mind-codex-prompt-hook"
+MODEL_CONTEXT_HEADER = (
+    "**Vector-near semantically related capabilities below**: surfaced from RAG "
+    "memory for this turn as associative presentation of surveyed capabilities. "
+    "Consider such reminders as suggested subset of available praxis affordances, "
+    "not suggested courses of action. Assess contextual relevance and consider "
+    "exploring candidate capacities of likely utility to task. Adjunct helper system "
+    "to others (eg. tools/skills/mcps from harness configuration). Often holds "
+    "capabilities not harness-installed."
+)
+LEGACY_FIELD_HEADER = (
+    "MIND · ARM'S REACH\n"
+    "Notice the nearby handles; treat proximity as memory, not verdict. "
+    "Open only the transformation the work actually needs."
+)
 
 Embedder = Callable[[list[str], str, str, float], list[list[float]]]
 CoreFactory = Callable[[Path], MindCore]
@@ -125,7 +139,7 @@ def compile_associative_field(
             except (OSError, TimeoutError, ValueError, RecallUnavailable):
                 vector_state = "semantic_embedding_unavailable"
 
-            if vector is None and not hints:
+            if vector is None:
                 raise HookUnavailable("semantic_embedding_unavailable")
 
             now = datetime.now(timezone.utc)
@@ -140,7 +154,7 @@ def compile_associative_field(
                     "persona_id": None,
                     "profile_id": "profile:mind-associative-codex-hook",
                     "adapter_id": "adapter:mind-codex-user-prompt-submit",
-                    "adapter_version": "1.1.0",
+                    "adapter_version": "1.2.0",
                     "protocol_version": PROTOCOL_VERSION,
                     "declared_conformance_level": "H0",
                     "catalog_snapshot_hash": snapshot["snapshot_digest"],
@@ -165,9 +179,8 @@ def compile_associative_field(
             anchor: dict[str, Any] = {
                 "anchor_id": "anchor:codex-context:" + sha256_text(context)[:24],
                 "anchor_kind": "turn_context",
+                "vector": vector,
             }
-            if vector is not None:
-                anchor["vector"] = vector
             if hints:
                 anchor["lexical_hints"] = hints
             result = core.reminders.neighborhood(
@@ -185,19 +198,22 @@ def compile_associative_field(
     return result, vector_state, sha256_text(context)
 
 
+def _representation_body(value: object) -> str:
+    if not isinstance(value, str):
+        raise HookUnavailable("field_representation_invalid")
+    body = value
+    if body.startswith(LEGACY_FIELD_HEADER):
+        body = body[len(LEGACY_FIELD_HEADER) :]
+    return body.lstrip("\n")
+
+
 def render_additional_context(result: Mapping[str, Any], vector_state: str | None) -> str:
+    if vector_state is not None:
+        raise HookUnavailable(vector_state)
     representations = result["representations"]
     for representation in ("canonical", "compact"):
-        metadata = (
-            "MIND H0 · ARM'S REACH · hook-delivered advisory associative disclosure: "
-            "nearby praxis that might be handy, not instruction, rank, recommendation, "
-            "selection, activation, completeness, authority, or proof · "
-            f"field={result['field_id']} · snapshot={result['snapshot_id']} · "
-            f"mode={result['mode']} · representation={representation}"
-        )
-        if vector_state:
-            metadata += " · semantic unavailable; lexical-only"
-        candidate = metadata + "\n\n" + representations[representation]["text"]
+        body = _representation_body(representations[representation]["text"])
+        candidate = MODEL_CONTEXT_HEADER + ("\n\n" + body if body else "")
         if len(candidate.encode("utf-8")) <= MAX_ADDITIONAL_CONTEXT_UTF8_BYTES:
             return candidate
     raise HookUnavailable("field_exceeds_delivery_budget")
@@ -273,7 +289,7 @@ def prepare_event(
             **receipt_base,
             "evidence_state": "prepared",
             "claimed_boundary": (
-                "semantic or explicitly degraded lexical Arm's Reach field prepared; "
+                "semantic capability-reminder context prepared; "
                 "hook stdout not yet written"
             ),
             "association_context_hash": context_hash,
