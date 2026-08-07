@@ -191,6 +191,7 @@ def verify(include_release: bool) -> dict:
             MIND / "hooks" / "mind_prompt_submit.py",
             MIND / "mind_core" / "hook_context.py",
             MIND / "mind_core" / "hook_delivery.py",
+            MIND / "mind_core" / "model_context.py",
         )
     )
     for forbidden_hook_phrase in (
@@ -207,6 +208,7 @@ def verify(include_release: bool) -> dict:
         '"anchor_kind": "turn_context"',
         "**Vector-near semantically related capabilities below**",
         "tools/skills/mcps from harness configuration",
+        "model_context_text",
     ):
         if required_hook_phrase not in hook_text:
             errors.append(f"semantic Arm's Reach hook contract is missing: {required_hook_phrase}")
@@ -219,6 +221,25 @@ def verify(include_release: bool) -> dict:
     ):
         if forbidden_hook_phrase in hook_text:
             errors.append(f"model-side Arm's Reach retrieval remains in the hook: {forbidden_hook_phrase}")
+
+    delivery_text = (MIND / "mind_core" / "delivery.py").read_text(encoding="utf-8")
+    for required_delivery_phrase in (
+        "model_context_text(raw_text)",
+        "VECTOR_BACKED_MODES",
+        "model-facing delivery requires a vector-backed field",
+    ):
+        if required_delivery_phrase not in delivery_text:
+            errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
+
+    contract = load_json(
+        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.3.json"
+    )
+    if contract.get("mind_version") != mind_version:
+        errors.append("recorded model-context contract version does not match MIND")
+    if contract.get("header") not in hook_text:
+        errors.append("recorded model-context header does not match runtime source")
+    if contract.get("nonvector_delivery") != "degraded":
+        errors.append("recorded model-context contract does not preserve degraded nonvector delivery")
 
     nova_skill_text = (NOVA / "skills" / "nova" / "SKILL.md").read_text(encoding="utf-8")
     mind_skill_text = (MIND / "skills" / "augment-of-mind" / "SKILL.md").read_text(encoding="utf-8")
@@ -257,7 +278,7 @@ def verify(include_release: bool) -> dict:
     nova_dirs = {path.name for path in (NOVA / "skills").iterdir() if path.is_dir()}
     mind_dirs = {path.name for path in (MIND / "skills").iterdir() if path.is_dir()}
     if nova_dirs != NOVA_SKILLS:
-        errors.append(f"Nova skill set mismatch: missing={sorted(NOVA_SKILLS-nova_dirs)}, extra={sorted(nova_dirs-MIND_SKILLS)}")
+        errors.append(f"Nova skill set mismatch: missing={sorted(NOVA_SKILLS-nova_dirs)}, extra={sorted(nova_dirs-NOVA_SKILLS)}")
     if mind_dirs != MIND_SKILLS:
         errors.append(f"MIND skill set mismatch: missing={sorted(MIND_SKILLS-mind_dirs)}, extra={sorted(mind_dirs-MIND_SKILLS)}")
     if (nova_dirs | mind_dirs) & EXCLUDED:
