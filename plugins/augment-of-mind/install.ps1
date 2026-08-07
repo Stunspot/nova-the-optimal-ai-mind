@@ -25,13 +25,13 @@ if ($LASTEXITCODE -ne 0) { throw "Python 3.11 or newer is required; found $versi
 $plugins = & $codex.Source plugin list --json | ConvertFrom-Json
 $conflicts = @($plugins.installed | Where-Object { $_.name -eq 'augment-of-mind' -and $_.pluginId -ne $selector })
 if ($conflicts.Count) {
-    throw "Another MIND selector exists: $(($conflicts.pluginId) -join ', '). Remove only the selector you intend to replace, then rerun."
+    throw "Another copy of MIND is installed from a different source. Open Codex > Settings > Plugins, remove or disable the older MIND card, then rerun. Nothing was changed."
 }
 $markets = & $codex.Source plugin marketplace list --json | ConvertFrom-Json
 $known = @($markets.marketplaces | Where-Object { $_.name -eq $marketplace })
 if (-not $known) {
     & $codex.Source plugin marketplace add $root --json
-    if ($LASTEXITCODE -ne 0) { throw 'Codex did not add the MIND marketplace.' }
+    if ($LASTEXITCODE -ne 0) { throw 'Codex did not add the MIND plugin source.' }
 }
 $plugins = & $codex.Source plugin list --json | ConvertFrom-Json
 if (-not @($plugins.installed | Where-Object { $_.pluginId -eq $selector -and $_.enabled })) {
@@ -57,4 +57,4 @@ try {
 }
 Write-Host ''
 Write-Host 'MIND 2.1.2 is installed, its 20-capability estate is active, and semantic association passed.'
-Write-Host 'Next: review the exact hook in Settings → Hooks, then start a new task.'
+Write-Host 'Next: review the exact hook in Settings > Hooks, then start a new task.'
