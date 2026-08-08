@@ -52,6 +52,18 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         self.assertIn('"source_revision": revision', text)
         self.assertIn('"source_material_sha256": source_digest', text)
 
+    def test_builder_derives_the_customer_archive_mind_link(self) -> None:
+        text = BUILDER.read_text(encoding="utf-8")
+        self.assertIn(
+            'source_mind_link = "plugins/augment-of-mind/README.md"',
+            text,
+        )
+        self.assertIn(
+            'packaged_mind_link = "codex/plugins/augment-of-mind/README.md"',
+            text,
+        )
+        self.assertIn("packaged_readme_text.count(source_mind_link) != 1", text)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -164,6 +164,17 @@ def main(argv: list[str] | None = None) -> int:
     copytree(ROOT / "docs", docs_target)
     for name in ("README.md", "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md", "LICENSE.md", "install.ps1", "verify-install.ps1"):
         shutil.copy2(ROOT / name, DIST / name)
+    packaged_readme = DIST / "README.md"
+    source_mind_link = "plugins/augment-of-mind/README.md"
+    packaged_mind_link = "codex/plugins/augment-of-mind/README.md"
+    packaged_readme_text = packaged_readme.read_text(encoding="utf-8")
+    if packaged_readme_text.count(source_mind_link) != 1:
+        raise RuntimeError("could not derive the packaged MIND README link")
+    packaged_readme.write_text(
+        packaged_readme_text.replace(source_mind_link, packaged_mind_link),
+        encoding="utf-8",
+        newline="\n",
+    )
     (DIST / "assets").mkdir()
     shutil.copy2(ROOT / "assets" / "nova-emergent.png", DIST / "assets" / "nova-emergent.png")
     (DIST / "bundle").mkdir()

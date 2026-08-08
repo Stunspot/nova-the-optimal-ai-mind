@@ -84,6 +84,40 @@ def verify_links(errors: list[str]) -> None:
                 errors.append(f"broken documentation link: {document.relative_to(ROOT)} -> {raw}")
 
 
+def verify_release_links(errors: list[str]) -> None:
+    release_root = ROOT / "dist"
+    documents = [
+        release_root / "README.md",
+        release_root / "START-HERE.md",
+        *sorted((release_root / "docs").glob("*.md")),
+    ]
+    pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+    for document in documents:
+        if not document.is_file():
+            errors.append(
+                f"required release document missing: {document.relative_to(ROOT)}"
+            )
+            continue
+        text = document.read_text(encoding="utf-8")
+        for raw in pattern.findall(text):
+            target = raw.split("#", 1)[0].strip().strip("<>")
+            if not target or "://" in target or target.startswith("mailto:"):
+                continue
+            candidate = (document.parent / target).resolve()
+            try:
+                candidate.relative_to(release_root.resolve())
+            except ValueError:
+                errors.append(
+                    "release documentation link escapes package: "
+                    f"{document.relative_to(ROOT)} -> {raw}"
+                )
+                continue
+            if not candidate.exists():
+                errors.append(
+                    "broken release documentation link: "
+                    f"{document.relative_to(ROOT)} -> {raw}"
+                )
+
 def verify_release(errors: list[str]) -> None:
     release_root = ROOT / "dist"
     codex_plugins = release_root / "codex" / "plugins"
@@ -94,6 +128,7 @@ def verify_release(errors: list[str]) -> None:
             errors.append(f"release path missing: {path.relative_to(ROOT)}")
     if errors:
         return
+    verify_release_links(errors)
     expected = NOVA_SKILLS | MIND_SKILLS
     folders = {path.name for path in claude_folders.iterdir() if path.is_dir()}
     if folders != expected:
