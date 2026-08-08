@@ -1,5 +1,13 @@
 # Nova + MIND Free release notes
 
+## 2.0.7
+
+The installer now completes a disposable MIND estate and live semantic-association preflight before adding the marketplace, installing either plugin, or committing the customer database. A missing Ollama service or embedding model therefore fails before consequential installation state is created.
+
+Plugin steps are idempotent and the verified database moves into place only at the final commit point, making interrupted or partially completed plugin work safe to resume. This combined release carries MIND 2.1.5; its reminder cards, embeddings, and model-context contract are unchanged from 2.1.4.
+
+The release builder now has a non-mutating help path, refuses to overwrite existing outputs without explicit replacement, rejects uncommitted tracked source, and records the source revision and source-material digest in both the customer manifest and build receipt.
+
 ## 2.0.6
 
 This release removes capability-catalog discovery pressure from Arm's Reach's model-facing preface. Semantic recall still arrives as vector-near surveyed praxis, while the preface now directs contextual assessment and integration with capabilities already present in assembled context. The surveyed memory may still extend beyond the current harness.

@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: release candidate; 2.0.6 Arm's Reach catalog-roaming correction
+Status: release candidate; 2.0.7 Arm's Reach catalog-roaming correction
 Audit receipt: 2026-08-07 semantic regression tests PASS; source verification PASS; deterministic combined package build and release verification PASS; standalone MIND package build and verification PASS.
-Product: **Nova + MIND Free 2.0.6**
+Product: **Nova + MIND Free 2.0.7**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`

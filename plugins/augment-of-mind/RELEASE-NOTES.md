@@ -1,5 +1,11 @@
 # MIND release notes
 
+## 2.1.5
+
+Installation now proves Python, Codex state, target-path staging, estate activation, status readback, Ollama reachability, and the required embedding model against a disposable database before it changes plugin state or commits the customer database.
+
+Plugin and marketplace steps remain idempotent. The verified database is moved into place only after those steps succeed, and the temporary estate is removed on failure. A partial Codex mutation can therefore be resumed safely; a failed semantic preflight leaves no plugin installation or target database behind.
+
 ## 2.1.4
 
 The model-facing capability-memory preface no longer asks the model to explore candidate capacities or enumerates tools, skills, and MCPs from harness configuration. It now directs contextual assessment and integration with capabilities already present in assembled context, while preserving vector-near recall and memory beyond the current harness.
