@@ -10,7 +10,9 @@ Set-StrictMode -Version Latest
 $root = $PSScriptRoot
 $sourceId = 'collaborative-dynamics-nova-free'
 $sourceDisplayName = 'Nova + MIND Free by Collaborative Dynamics'
-$mindRoot = Join-Path $root 'plugins\augment-of-mind'
+$sourceMindRoot = Join-Path $root 'plugins\augment-of-mind'
+$marketplaceRoot = if (Test-Path -LiteralPath $sourceMindRoot) { $root } else { Join-Path $root 'codex' }
+$mindRoot = Join-Path $marketplaceRoot 'plugins\augment-of-mind'
 $queryScript = Join-Path $mindRoot 'scripts\query_associative_field.py'
 $index = Join-Path $root 'bundle\reminder\associative-index-qwen3-embedding-0.6b.json'
 $indexManifest = Get-Content -LiteralPath $index -Raw | ConvertFrom-Json

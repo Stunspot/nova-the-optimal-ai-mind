@@ -10,6 +10,8 @@ The release builder now has a non-mutating help path, refuses to overwrite exist
 
 Installer and verifier Python calls suppress bytecode generation so customer execution does not add cache artifacts to the unpacked release.
 
+The root installer and readback verifier now resolve the customer archive's codex/ marketplace layout as well as the maintainer source layout. This closes a source-only verification gap that made the previous 2.0.7 candidate fail before preflight when run from its own ZIP.
+
 ## 2.0.6
 
 This release removes capability-catalog discovery pressure from Arm's Reach's model-facing preface. Semantic recall still arrives as vector-near surveyed praxis, while the preface now directs contextual assessment and integration with capabilities already present in assembled context. The surveyed memory may still extend beyond the current harness.

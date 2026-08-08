@@ -7,9 +7,11 @@ param(
 $ErrorActionPreference = 'Stop'
 $root = $PSScriptRoot
 $marketplace = 'collaborative-dynamics-nova-free'
+$sourceMarketplace = Join-Path $root '.agents\plugins\marketplace.json'
+$marketplaceRoot = if (Test-Path -LiteralPath $sourceMarketplace) { $root } else { Join-Path $root 'codex' }
 $bootstrap = Join-Path $root 'bundle\reminder\associative-bootstrap.json'
 $index = Join-Path $root 'bundle\reminder\associative-index-qwen3-embedding-0.6b.json'
-$mindRoot = Join-Path $root 'plugins\augment-of-mind'
+$mindRoot = Join-Path $marketplaceRoot 'plugins\augment-of-mind'
 $queryScript = Join-Path $mindRoot 'scripts\query_associative_field.py'
 $indexManifest = Get-Content -LiteralPath $index -Raw | ConvertFrom-Json
 $embeddingModel = $indexManifest.embedding_profile.model_id
@@ -21,7 +23,7 @@ function Require-Path([string]$Path, [string]$Label) {
     }
 }
 
-Require-Path (Join-Path $root '.agents\plugins\marketplace.json') 'Marketplace manifest'
+Require-Path (Join-Path $marketplaceRoot '.agents\plugins\marketplace.json') 'Marketplace manifest'
 Require-Path $bootstrap 'Free Nova capability bootstrap'
 Require-Path $index 'Free Nova associative index'
 Require-Path (Join-Path $mindRoot 'mind_core\cli.py') 'MIND Core runtime'
@@ -62,7 +64,7 @@ if (-not $SkipPluginInstall) {
     if ($LASTEXITCODE -ne 0) { throw 'Codex did not return marketplace state.' }
     $knownMarketplaces = $marketplaceJson | ConvertFrom-Json
     $known = @($knownMarketplaces.marketplaces | Where-Object { $_.name -eq $marketplace })
-    if ($known.Count -gt 0 -and (Resolve-Path -LiteralPath $known[0].root).Path -ne (Resolve-Path -LiteralPath $root).Path) {
+    if ($known.Count -gt 0 -and (Resolve-Path -LiteralPath $known[0].root).Path -ne (Resolve-Path -LiteralPath $marketplaceRoot).Path) {
         throw "The Nova + MIND plugin source already points somewhere else: $($known[0].root)"
     }
 }
@@ -93,7 +95,7 @@ try {
 
     if (-not $SkipPluginInstall) {
         if ($known.Count -eq 0) {
-            & $codex.Source plugin marketplace add $root --json | Out-Null
+            & $codex.Source plugin marketplace add $marketplaceRoot --json | Out-Null
             if ($LASTEXITCODE -ne 0) { throw 'Codex did not add the Free Nova marketplace. The preflight database was discarded; rerun after correcting Codex.' }
         }
         $installedJson = & $codex.Source plugin list --json

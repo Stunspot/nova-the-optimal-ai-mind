@@ -38,6 +38,15 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
         self.assertNotIn("'-c', $backupCode", verifier)
         self.assertNotIn("'-c', $inspectionCode", verifier)
 
+    def test_verifier_resolves_the_customer_archive_layout(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        for required in (
+            "$sourceMindRoot = Join-Path $root 'plugins\\augment-of-mind'",
+            "$marketplaceRoot = if (Test-Path -LiteralPath $sourceMindRoot)",
+            "else { Join-Path $root 'codex' }",
+            "$mindRoot = Join-Path $marketplaceRoot 'plugins\\augment-of-mind'",
+        ):
+            self.assertIn(required, verifier)
     def test_verifier_suppresses_python_bytecode(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         self.assertEqual(verifier.count("'-B'"), 4)

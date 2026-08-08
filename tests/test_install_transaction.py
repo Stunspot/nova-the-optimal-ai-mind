@@ -63,6 +63,16 @@ class InstallerTransactionTests(unittest.TestCase):
                 )
 
 
+    def test_combined_installer_resolves_the_customer_archive_layout(self) -> None:
+        text = (ROOT / "install.ps1").read_text(encoding="utf-8")
+        for required in (
+            "$sourceMarketplace = Join-Path $root '.agents\\plugins\\marketplace.json'",
+            "$marketplaceRoot = if (Test-Path -LiteralPath $sourceMarketplace)",
+            "else { Join-Path $root 'codex' }",
+            "$mindRoot = Join-Path $marketplaceRoot 'plugins\\augment-of-mind'",
+            "plugin marketplace add $marketplaceRoot --json",
+        ):
+            self.assertIn(required, text)
     def test_skip_plugin_install_has_a_truthful_completion_message(self) -> None:
         text = (ROOT / "install.ps1").read_text(encoding="utf-8")
         self.assertIn("if ($SkipPluginInstall)", text)
