@@ -72,5 +72,14 @@ class InstallerTransactionTests(unittest.TestCase):
             text.index("if ($SkipPluginInstall)"),
             text.index("Both plugins are enabled"),
         )
+    def test_installer_never_writes_python_bytecode_into_the_package(self) -> None:
+        for path in self._installers():
+            with self.subTest(installer=path.relative_to(ROOT).as_posix()):
+                text = path.read_text(encoding="utf-8")
+                self.assertEqual(text.count("& $python.Source -B"), 4)
+                self.assertNotIn("& $python.Source -m", text)
+                self.assertNotIn("& $python.Source -X utf8", text)
+                self.assertNotIn("& $python.Source -c", text)
+
 if __name__ == "__main__":
     unittest.main()

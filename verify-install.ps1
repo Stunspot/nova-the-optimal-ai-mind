@@ -50,7 +50,7 @@ if (-not $pythonCommand) {
 }
 $pythonExe = $pythonCommand.Source
 $versionArguments = @($pythonPrefix) + @(
-    '-c',
+    '-B', '-c',
     "import sys; print('.'.join(map(str, sys.version_info[:3]))); raise SystemExit(0 if sys.version_info >= (3,11) else 2)"
 )
 $pythonVersion = & $pythonExe @versionArguments
@@ -133,7 +133,7 @@ finally:
 '@
     Set-Content -LiteralPath $backupScript -Value $backupCode -Encoding ASCII
     $backupArguments = @($pythonPrefix) + @(
-        '-X', 'utf8', $backupScript, $DatabasePath, $tempDatabase
+        '-B', '-X', 'utf8', $backupScript, $DatabasePath, $tempDatabase
     )
     & $pythonExe @backupArguments
     if ($LASTEXITCODE -ne 0) {
@@ -255,7 +255,7 @@ finally:
 '@
     Set-Content -LiteralPath $inspectionScript -Value $inspectionCode -Encoding ASCII
     $inspectionArguments = @($pythonPrefix) + @(
-        '-X', 'utf8', $inspectionScript, $tempDatabase
+        '-B', '-X', 'utf8', $inspectionScript, $tempDatabase
     )
     $inspectionText = & $pythonExe @inspectionArguments
     if ($LASTEXITCODE -ne 0) {
@@ -264,7 +264,7 @@ finally:
     $inspection = $inspectionText | ConvertFrom-Json
 
     $probeArguments = @($pythonPrefix) + @(
-        '-X', 'utf8', $queryScript,
+        '-B', '-X', 'utf8', $queryScript,
         'MIND semantic association readback probe',
         '--database', $tempDatabase,
         '--model', $embeddingModel,

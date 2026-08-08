@@ -38,6 +38,9 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
         self.assertNotIn("'-c', $backupCode", verifier)
         self.assertNotIn("'-c', $inspectionCode", verifier)
 
+    def test_verifier_suppresses_python_bytecode(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        self.assertEqual(verifier.count("'-B'"), 4)
     def test_verifier_tolerates_plugin_list_without_cache_paths(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         self.assertIn("function Get-OptionalPropertyValue", verifier)

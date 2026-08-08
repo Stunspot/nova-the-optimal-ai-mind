@@ -19,7 +19,7 @@ $python = Get-Command python -ErrorAction SilentlyContinue
 $codex = Get-Command codex -ErrorAction SilentlyContinue
 if (-not $python) { throw 'Python 3.11 or newer is required.' }
 if (-not $codex) { throw 'Codex CLI with plugin support is required.' }
-$version = & $python.Source -c "import sys; print('.'.join(map(str,sys.version_info[:3]))); raise SystemExit(0 if sys.version_info >= (3,11) else 2)"
+$version = & $python.Source -B -c "import sys; print('.'.join(map(str,sys.version_info[:3]))); raise SystemExit(0 if sys.version_info >= (3,11) else 2)"
 if ($LASTEXITCODE -ne 0) { throw "Python 3.11 or newer is required; found $version." }
 
 $pluginJson = & $codex.Source plugin list --json
@@ -58,11 +58,11 @@ $stagingDatabase = Join-Path $stagingRoot 'mind_core.sqlite'
 $prior = $env:PYTHONPATH
 try {
     $env:PYTHONPATH = if ($prior) { "$root;$prior" } else { $root }
-    & $python.Source -X utf8 -m mind_core.cli activate-estate-generation --database $stagingDatabase --bootstrap $bootstrap --index $index | Out-Null
+    & $python.Source -B -X utf8 -m mind_core.cli activate-estate-generation --database $stagingDatabase --bootstrap $bootstrap --index $index | Out-Null
     if ($LASTEXITCODE -ne 0) { throw 'MIND preflight could not build a disposable capability estate.' }
-    & $python.Source -X utf8 -m mind_core.cli status --database $stagingDatabase | Out-Null
+    & $python.Source -B -X utf8 -m mind_core.cli status --database $stagingDatabase | Out-Null
     if ($LASTEXITCODE -ne 0) { throw 'MIND preflight estate status readback failed.' }
-    & $python.Source -X utf8 $queryScript 'MIND semantic association installation probe' --database $stagingDatabase --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
+    & $python.Source -B -X utf8 $queryScript 'MIND semantic association installation probe' --database $stagingDatabase --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "MIND preflight semantic association failed. Nothing was installed. Confirm Ollama is reachable at $ollamaUrl and model '$embeddingModel' is installed." }
 
     if ($known.Count -eq 0) {

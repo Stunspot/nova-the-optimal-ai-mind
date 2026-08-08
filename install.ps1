@@ -31,7 +31,7 @@ $python = Get-Command python -ErrorAction SilentlyContinue
 if (-not $python) {
     throw 'Python 3.11 or newer is required for MIND capability reminders. Install Python, then rerun this installer.'
 }
-$pythonVersion = & $python.Source -c "import sys; print('.'.join(map(str, sys.version_info[:3]))); raise SystemExit(0 if sys.version_info >= (3,11) else 2)"
+$pythonVersion = & $python.Source -B -c "import sys; print('.'.join(map(str, sys.version_info[:3]))); raise SystemExit(0 if sys.version_info >= (3,11) else 2)"
 if ($LASTEXITCODE -ne 0) {
     throw "Python 3.11 or newer is required; found $pythonVersion."
 }
@@ -84,11 +84,11 @@ $stagingDatabase = Join-Path $stagingRoot 'mind_core.sqlite'
 $priorPythonPath = $env:PYTHONPATH
 try {
     $env:PYTHONPATH = if ($priorPythonPath) { "$mindRoot;$priorPythonPath" } else { $mindRoot }
-    & $python.Source -m mind_core.cli activate-estate-generation --database $stagingDatabase --bootstrap $bootstrap --index $index | Out-Null
+    & $python.Source -B -m mind_core.cli activate-estate-generation --database $stagingDatabase --bootstrap $bootstrap --index $index | Out-Null
     if ($LASTEXITCODE -ne 0) { throw 'MIND preflight could not build a disposable Free Nova capability estate.' }
-    & $python.Source -m mind_core.cli status --database $stagingDatabase | Out-Null
+    & $python.Source -B -m mind_core.cli status --database $stagingDatabase | Out-Null
     if ($LASTEXITCODE -ne 0) { throw 'MIND preflight estate status readback failed.' }
-    & $python.Source -X utf8 $queryScript 'MIND semantic association installation probe' --database $stagingDatabase --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
+    & $python.Source -B -X utf8 $queryScript 'MIND semantic association installation probe' --database $stagingDatabase --model $embeddingModel --ollama-url $ollamaUrl --field-only | Out-Null
     if ($LASTEXITCODE -ne 0) { throw "MIND preflight semantic association failed. Nothing was installed. Confirm Ollama is reachable at $ollamaUrl and model '$embeddingModel' is installed." }
 
     if (-not $SkipPluginInstall) {

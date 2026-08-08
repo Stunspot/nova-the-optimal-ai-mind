@@ -8,6 +8,8 @@ Plugin steps are idempotent and the verified database moves into place only at t
 
 The release builder now has a non-mutating help path, refuses to overwrite existing outputs without explicit replacement, rejects uncommitted tracked source, and records the source revision and source-material digest in both the customer manifest and build receipt.
 
+Installer and verifier Python calls suppress bytecode generation so customer execution does not add cache artifacts to the unpacked release.
+
 ## 2.0.6
 
 This release removes capability-catalog discovery pressure from Arm's Reach's model-facing preface. Semantic recall still arrives as vector-near surveyed praxis, while the preface now directs contextual assessment and integration with capabilities already present in assembled context. The surveyed memory may still extend beyond the current harness.
