@@ -74,6 +74,13 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         self.assertTrue((ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").is_file())
         self.assertTrue((ROOT / "design" / "source-lock.json").is_file())
 
+    def test_ci_installs_standalone_mind_build_requirements(self) -> None:
+        workflow = (ROOT / ".github" / "workflows" / "verify-package.yml").read_text(
+            encoding="utf-8"
+        )
+        self.assertIn("Install deterministic build requirements", workflow)
+        self.assertIn('python -m pip install "setuptools>=69.2" wheel', workflow)
+
 
 if __name__ == "__main__":
     unittest.main()

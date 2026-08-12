@@ -26,6 +26,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
+      - name: Install deterministic build requirements
+        run: python -m pip install "setuptools>=69.2" wheel
       - name: Semantic Arm's Reach regression tests
         env:
           PYTHONDONTWRITEBYTECODE: '1'
