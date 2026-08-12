@@ -54,15 +54,18 @@ class ReleaseBuilderCliTests(unittest.TestCase):
 
     def test_builder_derives_the_customer_archive_mind_link(self) -> None:
         text = BUILDER.read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn(
-            'source_mind_link = "plugins/augment-of-mind/README.md"',
+            'source_mind_link = "plugins/augment-of-mind/USER-GUIDE.md"',
             text,
         )
         self.assertIn(
-            'packaged_mind_link = "codex/plugins/augment-of-mind/README.md"',
+            'packaged_mind_link = "codex/plugins/augment-of-mind/USER-GUIDE.md"',
             text,
         )
         self.assertIn("packaged_readme_text.count(source_mind_link) != 1", text)
+        self.assertEqual(readme.count("plugins/augment-of-mind/USER-GUIDE.md"), 1)
+        self.assertTrue((ROOT / "plugins" / "augment-of-mind" / "USER-GUIDE.md").is_file())
 
 
 if __name__ == "__main__":
