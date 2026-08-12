@@ -1,13 +1,13 @@
 {
   "schema": "augment-of-mind-integrated-capability-fingerprint/v2",
-  "product_version": "2.1.4",
+  "product_version": "2.1.6",
   "capability_count": 20,
   "faculty_count": 16,
   "attached_augment_count": 3,
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; cache files excluded",
   "tree_self_exclusion": "augment-of-mind excludes assets/integrated-capability-fingerprint.json",
   "aggregate_algorithm": "sha256 over compact UTF-8 JSON serialization of ordered capabilities",
-  "aggregate_sha256": "4103b2c895e9c27e242c9858a9e9395666f76bd8a9b2e8d9eaefb86f14014344",
+  "aggregate_sha256": "dfb615f661122d95a1f583ea98a419af1b813b120506aa646dfbfca18a258a55",
   "capabilities": [
     {
       "name": "aesthetic-intelligence",
@@ -39,10 +39,10 @@
     },
     {
       "name": "augment-of-mind",
-      "version": "2.1.4",
+      "version": "2.1.6",
       "integration_mode": "product-integration",
       "tree_file_count": 14,
-      "tree_sha256": "13ead928ee35e92491b22c13ebd22e4b7bb7a1f11dc1d90da7abe1c6679e2874"
+      "tree_sha256": "070c16f30c3716e7233b4e752c490e6694c2e092c79103c9bb51835c56268077"
     },
     {
       "name": "capability-conductor",
@@ -137,17 +137,17 @@
     },
     {
       "name": "software-verification",
-      "version": "1.1.3",
+      "version": "1.1.6",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_file_count": 91,
-      "tree_sha256": "7d15eb7cec6fe3649da3c43c8b349ef95b639688de6d708730c07b0eba3bcf53"
+      "tree_file_count": 96,
+      "tree_sha256": "a075641cfaae67027d6ecc25fbe934177eb394b489c77cac560104085858edd7"
     },
     {
       "name": "verification-reviewer",
-      "version": "1.1.3",
+      "version": "1.1.6",
       "integration_mode": "faculty-suite-exact-copy",
       "tree_file_count": 9,
-      "tree_sha256": "b19f129f7c3651c5ecd3114c43d82d39f3dc89bc3d394cb39b27e19301a3b749"
+      "tree_sha256": "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
     }
   ]
 }

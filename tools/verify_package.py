@@ -40,6 +40,23 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def tree_fingerprint(root: Path) -> dict[str, object]:
+    files = [
+        path
+        for path in root.rglob("*")
+        if path.is_file()
+        and "__pycache__" not in path.parts
+        and path.suffix.lower() not in {".pyc", ".pyo"}
+    ]
+    digest = hashlib.sha256()
+    for path in sorted(files, key=lambda item: item.relative_to(root).as_posix()):
+        relative = path.relative_to(root).as_posix().encode("utf-8")
+        digest.update(relative)
+        digest.update(b"\0")
+        digest.update(hashlib.sha256(path.read_bytes()).digest())
+    return {"file_count": len(files), "tree_sha256": digest.hexdigest()}
+
+
 def load_json(path: Path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
@@ -84,6 +101,40 @@ def verify_links(errors: list[str]) -> None:
                 errors.append(f"broken documentation link: {document.relative_to(ROOT)} -> {raw}")
 
 
+def verify_release_links(errors: list[str]) -> None:
+    release_root = ROOT / "dist"
+    documents = [
+        release_root / "README.md",
+        release_root / "START-HERE.md",
+        *sorted((release_root / "docs").glob("*.md")),
+    ]
+    pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+    for document in documents:
+        if not document.is_file():
+            errors.append(
+                f"required release document missing: {document.relative_to(ROOT)}"
+            )
+            continue
+        text = document.read_text(encoding="utf-8")
+        for raw in pattern.findall(text):
+            target = raw.split("#", 1)[0].strip().strip("<>")
+            if not target or "://" in target or target.startswith("mailto:"):
+                continue
+            candidate = (document.parent / target).resolve()
+            try:
+                candidate.relative_to(release_root.resolve())
+            except ValueError:
+                errors.append(
+                    "release documentation link escapes package: "
+                    f"{document.relative_to(ROOT)} -> {raw}"
+                )
+                continue
+            if not candidate.exists():
+                errors.append(
+                    "broken release documentation link: "
+                    f"{document.relative_to(ROOT)} -> {raw}"
+                )
+
 def verify_release(errors: list[str]) -> None:
     release_root = ROOT / "dist"
     codex_plugins = release_root / "codex" / "plugins"
@@ -94,6 +145,7 @@ def verify_release(errors: list[str]) -> None:
             errors.append(f"release path missing: {path.relative_to(ROOT)}")
     if errors:
         return
+    verify_release_links(errors)
     expected = NOVA_SKILLS | MIND_SKILLS
     folders = {path.name for path in claude_folders.iterdir() if path.is_dir()}
     if folders != expected:
@@ -136,8 +188,8 @@ def verify(include_release: bool) -> dict:
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
     if nova_manifest.get("version") != "2.0.1":
         errors.append("Nova plugin version must be 2.0.1")
-    if mind_manifest.get("version") != "2.1.4":
-        errors.append("MIND plugin version must be 2.1.4")
+    if mind_manifest.get("version") != "2.1.6":
+        errors.append("MIND plugin version must be 2.1.6")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -235,7 +287,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
 
     contract = load_json(
-        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.4.json"
+        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.6.json"
     )
     if contract.get("mind_version") != mind_version:
         errors.append("recorded model-context contract version does not match MIND")
@@ -261,7 +313,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.6**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.8**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")
@@ -346,6 +398,55 @@ def verify(include_release: bool) -> dict:
     lock = load_json(ROOT / "design" / "source-lock.json")
     if len(lock.get("records", [])) != 24 or lock.get("contest_repository_mutated") is not False:
         errors.append("source lock does not preserve the 24-record frozen-contest contract")
+    expected_tree_algorithm = (
+        "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, "
+        "one NUL byte, and raw 32-byte file sha256; Python cache files excluded"
+    )
+    if lock.get("product_version") != "2.0.8" or lock.get("tree_algorithm") != expected_tree_algorithm:
+        errors.append("source lock version or tree algorithm is stale")
+    locked_records = {
+        item.get("component"): item
+        for item in lock.get("records", [])
+        if isinstance(item, dict)
+    }
+    expected_current_sources = {
+        "augment-of-mind": {
+            "repository": "https://github.com/Stunspot/augment-of-mind",
+            "commit": "8b721c06cf0da40a948a26b9131999f5c6814b1e",
+            "source_path": "skills",
+            "imported_path": "plugins/augment-of-mind/skills",
+        },
+        "software-verification": {
+            "repository": "https://github.com/Stunspot/testforge",
+            "commit": "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+            "source_path": "testforge/skills/software-verification",
+            "imported_path": "plugins/augment-of-mind/skills/software-verification",
+        },
+        "verification-reviewer": {
+            "repository": "https://github.com/Stunspot/testforge",
+            "commit": "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+            "source_path": "testforge/skills/verification-reviewer",
+            "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
+        },
+    }
+    for component, expected_source in expected_current_sources.items():
+        record = locked_records.get(component)
+        if not isinstance(record, dict):
+            errors.append(f"source lock lacks current record: {component}")
+            continue
+        for record_key, expected_key in (
+            ("source_repository", "repository"),
+            ("source_commit", "commit"),
+            ("source_path", "source_path"),
+            ("imported_path", "imported_path"),
+        ):
+            if record.get(record_key) != expected_source[expected_key]:
+                errors.append(f"source lock {record_key} is stale: {component}")
+        observed_tree = tree_fingerprint(ROOT / expected_source["imported_path"])
+        if record.get("imported_tree") != observed_tree:
+            errors.append(f"source lock imported tree is stale: {component}")
+        if record.get("source_tree") != observed_tree:
+            errors.append(f"source lock canonical tree does not match imported bytes: {component}")
 
     verify_links(errors)
 

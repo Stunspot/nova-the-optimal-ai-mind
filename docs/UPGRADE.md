@@ -23,7 +23,7 @@ Use one enabled Nova and one enabled MIND source in a task. Two copies can expos
 4. Inspect and trust the new hook bytes separately; trust does not transfer across changed files.
 5. Run `verify-install.ps1` and repeat the fresh-task discovery check.
 
-Nova + MIND Free 2.0.6 does not include an automatic legacy-estate merger. Different database paths are different stores.
+Nova + MIND Free 2.0.8 does not include an automatic legacy-estate merger. Different database paths are different stores.
 
 ## Roll back
 

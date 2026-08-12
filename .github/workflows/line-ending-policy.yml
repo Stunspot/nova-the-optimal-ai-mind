@@ -2,6 +2,7 @@ name: Line ending policy
 
 on:
   push:
+    branches: [main]
   pull_request:
 
 permissions:
@@ -12,5 +13,5 @@ jobs:
     name: line-ending-policy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: Stunspot/testforge/line-ending-policy@24b9b3d5ee375ec7e19a619624bcfc4a7ddb887d

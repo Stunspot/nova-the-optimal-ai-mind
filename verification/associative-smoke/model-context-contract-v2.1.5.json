@@ -1,0 +1,14 @@
+{
+  "format": "mind-model-context-contract/v1",
+  "mind_version": "2.1.5",
+  "delivery_state": "semantic",
+  "vector_backed_modes": [
+    "hybrid_current",
+    "vector_current"
+  ],
+  "header": "**Vector-near semantically related capabilities below**: surfaced from RAG memory for this turn as associative presentation of surveyed capabilities. Consider such reminders as suggested subset of available praxis affordances, not suggested courses of action. Assess contextual relevance and likely utility to task. Integrate with capabilities already present in assembled context; surveyed memory may extend beyond the current harness.",
+  "separator": "\n\n",
+  "legacy_headers_present": false,
+  "catalog_discovery": "not_prompted",
+  "nonvector_delivery": "degraded"
+}

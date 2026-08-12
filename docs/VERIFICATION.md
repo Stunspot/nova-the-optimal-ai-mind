@@ -14,7 +14,11 @@ python -X utf8 .\tools\verify_package.py --release
 python -X utf8 .\plugins\augment-of-mind\scripts\build_release.py --output-dir <empty-path> --replace
 ```
 
-These checks cover the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, excluded capabilities, plugin topology and versions, canonical Nova and Promptcraft bytes, MIND runtime/version synchronization, reminder cards and vectors, release exclusions, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
+The repository suite currently contains 43 deterministic tests. These checks cover the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, metered-capacity arithmetic and authority denial, linked design evidence in the customer archive, standalone MIND build prerequisites in permanent CI, excluded capabilities, plugin topology and versions, canonical Nova and Promptcraft bytes, MIND runtime/version synchronization, reminder cards and vectors, release exclusions, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
+
+The [source lock](../design/source-lock.json) binds the embedded MIND skills to published MIND `v2.1.6` commit `8b721c06cf0da40a948a26b9131999f5c6814b1e` and both TestForge roles to published TestForge `v1.1.6` commit `93120abaa39c26a6f0ec494bdff0c7e6f92344cf`. The package verifier recomputes those imported tree digests instead of trusting the JSON record.
+
+The permanent public workflow runs this suite, source verification, the deterministic combined-package build, portable-release verification, and the embedded standalone MIND build on Linux, Windows, and macOS for each pull request and each push to `main`. Branch pushes do not duplicate pull-request runs.
 
 A source/package pass means the tested tree has those properties. It does not mean a customer installed it, a host discovered it, a hook was trusted, a model used it, or the package works in every environment.
 
@@ -33,7 +37,7 @@ A PASS from that script establishes the observations written in its report for t
 ## Host support evidence
 
 - **Codex plugin source and deterministic packaging:** verified.
-- **Codex installer/readback implementation:** present and mechanically testable; final public release publication and a clean customer installation remain separate observations.
+- **Codex installer/readback implementation:** present and mechanically testable; release publication and a clean customer installation remain separately evidenced observations.
 - **Claude per-skill archives:** structurally verified; representative live upload and cross-skill behavior are not claimed here.
 - **Generic hosts, ChatGPT web, Codex IDE extension, macOS/Linux integrated runtime:** not supported or independently verified by this release.
 
@@ -48,7 +52,7 @@ The final documentation set receives:
 3. a separate TestForge adversarial verification pass;
 4. live HTTP and visual re-entry after GitHub Pages deployment.
 
-Receipts identify the exact commit and documentation fingerprint. Any later content change invalidates those content-bound receipts and requires review again.
+Receipts identify the reviewed candidate and documentation fingerprint. Any later customer-facing content change invalidates those content-bound receipts and requires review again.
 
 ## What is not claimed
 

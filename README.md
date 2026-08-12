@@ -8,7 +8,7 @@ Nova + MIND Free is Collaborative Dynamics’ public AI-agent system for people 
 
 It is for builders, researchers, operators, writers, technologists, and curious generalists who work in an agentic harness and want durable methods, bounded tools, honest evidence, and a personality with an actual pulse. It is not a hosted chatbot or an autonomous service.
 
-[Download Nova + MIND Free 2.0.6](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · [Start here](START-HERE.md) · [Explore the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
+[Download Nova + MIND Free 2.0.8](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · [Start here](START-HERE.md) · [Explore the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
 
 ## What problem it solves
 
@@ -134,7 +134,7 @@ Report vulnerabilities through [GitHub’s private security channel](https://git
 
 ## Versions, provenance, and evidence
 
-**Nova + MIND Free 2.0.6** is the product release. Its plugin manifests identify **Nova 2.0.1** and **MIND 2.1.4**; those version layers are intentionally separate. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova’s canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, portable ZIP shape, links, and deterministic packaging.
+**Nova + MIND Free 2.0.8** is the product release. Its plugin manifests identify **Nova 2.0.1** and **MIND 2.1.6**; those version layers are intentionally separate. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova’s canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, portable ZIP shape, links, and deterministic packaging.
 
 Those checks establish package properties—not universal behavior, fresh-host success, Claude parity, publication, or defect-freedom. See [verification and evidence status](docs/VERIFICATION.md), [host matrix](docs/HOST-MATRIX.md), and [release notes](RELEASE-NOTES.md).
 
