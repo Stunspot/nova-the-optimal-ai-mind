@@ -1,0 +1,57 @@
+{
+  "schema": "portfolio-live-verification/v1",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "content_commit": "48acd8235f3fbe684cd1c5703f45101b71924498",
+  "documentation_fingerprint": "4e6cccea3d128754fc73d50f62a12186e95943a14d63282d344e762a9d37fc24",
+  "verified_at_utc": "2026-08-12T01:25:00Z",
+  "result": "PASS",
+  "repository_url": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+  "pages_url": "https://stunspot.github.io/nova-the-optimal-ai-mind/",
+  "release_url": "https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/tag/v2.0.6",
+  "workflows": {
+    "pages": "https://github.com/Stunspot/nova-the-optimal-ai-mind/actions/runs/31553231948",
+    "package_verification": "https://github.com/Stunspot/nova-the-optimal-ai-mind/actions/runs/31553232019",
+    "line_endings": "https://github.com/Stunspot/nova-the-optimal-ai-mind/actions/runs/31553232047"
+  },
+  "live_checks": {
+    "main_commit": "48acd8235f3fbe684cd1c5703f45101b71924498",
+    "readme": "PASS; final version and live README hero reference present",
+    "pages_routes": "PASS; home, install, workflows, capabilities, trust, and support returned 200",
+    "custom_404": "PASS; HTTP 404 with custom recovery body",
+    "link_navigation": "PASS; 104 deployed link instances exercised with zero failures",
+    "open_graph": "PASS; deployed home references the role-specific social card",
+    "release": "PASS; v2.0.6 is latest, targets content commit, and exposes four complete assets",
+    "release_zip": "PASS; 80,127,792 bytes, SHA-256 691fb9190b97197d8ac6a16c2968c38f238436484be5a94fc9f1c6de1ca92d07"
+  },
+  "assets": {
+    "readme_hero": {
+      "url": "https://stunspot.github.io/nova-the-optimal-ai-mind/assets/nova-mind-readme-hero.png",
+      "dimensions": "1600x720",
+      "sha256": "d80f78dec3afd0613e62958803b1f040b6348c5e7b64fd5e5e1cd88274370065",
+      "visual_verdict": "PASS"
+    },
+    "pages_hero": {
+      "url": "https://stunspot.github.io/nova-the-optimal-ai-mind/assets/nova-mind-pages-hero.png",
+      "dimensions": "1200x800",
+      "sha256": "3c6f2e8d5e59f037c2d981e40d94b59592c061fb19222ec949b36375aa86dffb",
+      "visual_verdict": "PASS"
+    },
+    "social_card": {
+      "url": "https://stunspot.github.io/nova-the-optimal-ai-mind/assets/nova-mind-social-card.png",
+      "dimensions": "1200x630",
+      "sha256": "3682dfecfd7420f01fbbb2649846ec03bd9992cf50120d140f4dca769590260c",
+      "visible_text": "Nova + MIND Free; One agent. 41 capabilities.; Sixteen cognitive Faculties.; TESTFORGE INCLUDED",
+      "visual_verdict": "PASS"
+    }
+  },
+  "review_receipts": {
+    "hesperos": "PASS",
+    "accessibility": "PASS_WITH_BOUNDED_EVIDENCE",
+    "testforge_adversarial": "PASS"
+  },
+  "residual_boundaries": [
+    "The reminder profile remains behaviorally unqualified.",
+    "Claude portable skills are not claimed equivalent to the integrated Codex runtime.",
+    "No universal model-behavior or defect-freedom claim is made."
+  ]
+}
