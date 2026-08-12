@@ -67,6 +67,13 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         self.assertEqual(readme.count("plugins/augment-of-mind/USER-GUIDE.md"), 1)
         self.assertTrue((ROOT / "plugins" / "augment-of-mind" / "USER-GUIDE.md").is_file())
 
+    def test_builder_packages_linked_design_evidence(self) -> None:
+        text = BUILDER.read_text(encoding="utf-8")
+        self.assertIn('design_target = DIST / "design"', text)
+        self.assertIn('("FREE-NOVA-PACKAGE-MAP.md", "source-lock.json")', text)
+        self.assertTrue((ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").is_file())
+        self.assertTrue((ROOT / "design" / "source-lock.json").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()

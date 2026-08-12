@@ -162,6 +162,10 @@ def main(argv: list[str] | None = None) -> int:
 
     docs_target = DIST / "docs"
     copytree(ROOT / "docs", docs_target)
+    design_target = DIST / "design"
+    design_target.mkdir()
+    for name in ("FREE-NOVA-PACKAGE-MAP.md", "source-lock.json"):
+        shutil.copy2(ROOT / "design" / name, design_target / name)
     for name in ("README.md", "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md", "LICENSE.md", "install.ps1", "verify-install.ps1"):
         shutil.copy2(ROOT / name, DIST / name)
     packaged_readme = DIST / "README.md"
