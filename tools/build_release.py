@@ -2,16 +2,18 @@
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import shutil
+import subprocess
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 RELEASE = ROOT / "release"
-VERSION = "2.0.6"
+VERSION = "2.0.7"
 KIT_NAME = f"nova-mind-free-v{VERSION}"
 PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
 SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}
@@ -28,6 +30,40 @@ CLAUDE_DESCRIPTIONS = {
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def git_output(*arguments: str) -> str:
+    result = subprocess.run(
+        ["git", "-C", str(ROOT), *arguments],
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode:
+        raise RuntimeError(f"Git command failed: {result.stderr.strip()}")
+    return result.stdout.strip()
+
+
+def source_state() -> tuple[str, int, str]:
+    tracked_status = git_output("status", "--porcelain", "--untracked-files=no")
+    if tracked_status:
+        raise RuntimeError("tracked source changes must be committed before building the release")
+    revision = git_output("rev-parse", "HEAD")
+    if len(revision) != 40:
+        raise RuntimeError("git did not return a full source revision")
+    tracked = [item for item in git_output("ls-files", "-z").split("\0") if item]
+    digest = hashlib.sha256()
+    counted = 0
+    for relative in sorted(tracked, key=str.casefold):
+        source = ROOT / relative
+        if not source.is_file():
+            continue
+        digest.update(relative.replace("\\", "/").encode("utf-8"))
+        digest.update(b"\0")
+        digest.update(bytes.fromhex(sha256(source)))
+        digest.update(b"\n")
+        counted += 1
+    return revision, counted, digest.hexdigest()
 
 
 def safe_remove(path: Path, expected_parent: Path) -> None:
@@ -60,13 +96,32 @@ def write_zip(source: Path, archive: Path, top_level: str) -> None:
             bundle.writestr(info, path.read_bytes())
 
 
-def main() -> int:
-    safe_remove(DIST, ROOT)
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--replace",
+        action="store_true",
+        help="replace only the existing dist tree and exact 2.0.7 release outputs",
+    )
+    args = parser.parse_args(argv)
+
+    revision, source_file_count, source_digest = source_state()
+    archive_output = RELEASE / f"{KIT_NAME}.zip"
+    checksum_output = RELEASE / f"{KIT_NAME}.zip.sha256"
+    receipt_output = RELEASE / f"{KIT_NAME}.build-receipt.json"
+    existing = [path for path in (DIST, archive_output, checksum_output, receipt_output) if path.exists()]
+    if existing and not args.replace:
+        rendered = ", ".join(str(path.relative_to(ROOT)) for path in existing)
+        raise RuntimeError(f"output exists; rerun with --replace for these exact targets: {rendered}")
+    if DIST.exists():
+        safe_remove(DIST, ROOT)
+    for old in (archive_output, checksum_output, receipt_output):
+        if old.exists():
+            if old.resolve().parent != RELEASE.resolve() or not old.is_file():
+                raise RuntimeError(f"refused replacement outside the release directory: {old}")
+            old.unlink()
     DIST.mkdir()
     RELEASE.mkdir(exist_ok=True)
-    for old in (RELEASE / f"{KIT_NAME}.zip", RELEASE / f"{KIT_NAME}.zip.sha256"):
-        if old.exists():
-            old.unlink()
 
     codex = DIST / "codex"
     (codex / "plugins").mkdir(parents=True)
@@ -109,6 +164,17 @@ def main() -> int:
     copytree(ROOT / "docs", docs_target)
     for name in ("README.md", "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md", "LICENSE.md", "install.ps1", "verify-install.ps1"):
         shutil.copy2(ROOT / name, DIST / name)
+    packaged_readme = DIST / "README.md"
+    source_mind_link = "plugins/augment-of-mind/README.md"
+    packaged_mind_link = "codex/plugins/augment-of-mind/README.md"
+    packaged_readme_text = packaged_readme.read_text(encoding="utf-8")
+    if packaged_readme_text.count(source_mind_link) != 1:
+        raise RuntimeError("could not derive the packaged MIND README link")
+    packaged_readme.write_text(
+        packaged_readme_text.replace(source_mind_link, packaged_mind_link),
+        encoding="utf-8",
+        newline="\n",
+    )
     (DIST / "assets").mkdir()
     shutil.copy2(ROOT / "assets" / "nova-emergent.png", DIST / "assets" / "nova-emergent.png")
     (DIST / "bundle").mkdir()
@@ -118,7 +184,10 @@ def main() -> int:
         "format": "nova-mind-free-release/v1",
         "product": "Nova + MIND Free",
         "version": VERSION,
-        "plugin_versions": {"nova-the-optimal-ai": "2.0.1", "augment-of-mind": "2.1.4"},
+        "source_revision": revision,
+        "source_material_file_count": source_file_count,
+        "source_material_sha256": source_digest,
+        "plugin_versions": {"nova-the-optimal-ai": "2.0.1", "augment-of-mind": "2.1.5"},
         "codex_plugins": list(PLUGIN_NAMES),
         "claude_skill_count": len(sources),
         "claude_skills": sorted(sources),
@@ -140,16 +209,35 @@ def main() -> int:
     checksum_lines = [f"{sha256(path)}  {path.relative_to(DIST).as_posix()}" for path in checksum_targets]
     (DIST / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
 
-    write_zip(DIST, RELEASE / f"{KIT_NAME}.zip", KIT_NAME)
-    release_hash = sha256(RELEASE / f"{KIT_NAME}.zip")
-    (RELEASE / f"{KIT_NAME}.zip.sha256").write_text(f"{release_hash}  {KIT_NAME}.zip\n", encoding="utf-8")
+    write_zip(DIST, archive_output, KIT_NAME)
+    release_hash = sha256(archive_output)
+    checksum_output.write_text(f"{release_hash}  {KIT_NAME}.zip\n", encoding="utf-8")
+    receipt = {
+        "format": "nova-mind-free-build-receipt/v1",
+        "product": "Nova + MIND Free",
+        "version": VERSION,
+        "source_revision": revision,
+        "source_material_file_count": source_file_count,
+        "source_material_sha256": source_digest,
+        "archive": {
+            "name": archive_output.name,
+            "bytes": archive_output.stat().st_size,
+            "sha256": release_hash,
+            "top_level": KIT_NAME,
+        },
+        "structural_builder": "PASS",
+        "evidence_boundary": "Source custody and structural package construction only; live host behavior remains separate.",
+    }
+    receipt_output.write_text(json.dumps(receipt, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     print(json.dumps({
         "status": "PASS",
         "codex_plugins": len(PLUGIN_NAMES),
         "claude_skills": len(sources),
-        "customer_zip": str((RELEASE / f"{KIT_NAME}.zip").relative_to(ROOT)),
+        "source_revision": revision,
+        "customer_zip": str(archive_output.relative_to(ROOT)),
         "customer_zip_sha256": release_hash,
+        "build_receipt": str(receipt_output.relative_to(ROOT)),
     }, indent=2))
     return 0
 

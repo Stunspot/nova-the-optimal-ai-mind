@@ -84,6 +84,40 @@ def verify_links(errors: list[str]) -> None:
                 errors.append(f"broken documentation link: {document.relative_to(ROOT)} -> {raw}")
 
 
+def verify_release_links(errors: list[str]) -> None:
+    release_root = ROOT / "dist"
+    documents = [
+        release_root / "README.md",
+        release_root / "START-HERE.md",
+        *sorted((release_root / "docs").glob("*.md")),
+    ]
+    pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+    for document in documents:
+        if not document.is_file():
+            errors.append(
+                f"required release document missing: {document.relative_to(ROOT)}"
+            )
+            continue
+        text = document.read_text(encoding="utf-8")
+        for raw in pattern.findall(text):
+            target = raw.split("#", 1)[0].strip().strip("<>")
+            if not target or "://" in target or target.startswith("mailto:"):
+                continue
+            candidate = (document.parent / target).resolve()
+            try:
+                candidate.relative_to(release_root.resolve())
+            except ValueError:
+                errors.append(
+                    "release documentation link escapes package: "
+                    f"{document.relative_to(ROOT)} -> {raw}"
+                )
+                continue
+            if not candidate.exists():
+                errors.append(
+                    "broken release documentation link: "
+                    f"{document.relative_to(ROOT)} -> {raw}"
+                )
+
 def verify_release(errors: list[str]) -> None:
     release_root = ROOT / "dist"
     codex_plugins = release_root / "codex" / "plugins"
@@ -94,6 +128,7 @@ def verify_release(errors: list[str]) -> None:
             errors.append(f"release path missing: {path.relative_to(ROOT)}")
     if errors:
         return
+    verify_release_links(errors)
     expected = NOVA_SKILLS | MIND_SKILLS
     folders = {path.name for path in claude_folders.iterdir() if path.is_dir()}
     if folders != expected:
@@ -136,8 +171,8 @@ def verify(include_release: bool) -> dict:
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
     if nova_manifest.get("version") != "2.0.1":
         errors.append("Nova plugin version must be 2.0.1")
-    if mind_manifest.get("version") != "2.1.4":
-        errors.append("MIND plugin version must be 2.1.4")
+    if mind_manifest.get("version") != "2.1.5":
+        errors.append("MIND plugin version must be 2.1.5")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -235,7 +270,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
 
     contract = load_json(
-        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.4.json"
+        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.5.json"
     )
     if contract.get("mind_version") != mind_version:
         errors.append("recorded model-context contract version does not match MIND")
@@ -261,7 +296,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.6**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.7**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")

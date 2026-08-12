@@ -38,6 +38,18 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
         self.assertNotIn("'-c', $backupCode", verifier)
         self.assertNotIn("'-c', $inspectionCode", verifier)
 
+    def test_verifier_resolves_the_customer_archive_layout(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        for required in (
+            "$sourceMindRoot = Join-Path $root 'plugins\\augment-of-mind'",
+            "$marketplaceRoot = if (Test-Path -LiteralPath $sourceMindRoot)",
+            "else { Join-Path $root 'codex' }",
+            "$mindRoot = Join-Path $marketplaceRoot 'plugins\\augment-of-mind'",
+        ):
+            self.assertIn(required, verifier)
+    def test_verifier_suppresses_python_bytecode(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        self.assertEqual(verifier.count("'-B'"), 4)
     def test_verifier_tolerates_plugin_list_without_cache_paths(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         self.assertIn("function Get-OptionalPropertyValue", verifier)
@@ -47,7 +59,7 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
     def test_verifier_reports_total_and_active_estate_sizes(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         for required in (
-            "expected_version = '2.1.4'",
+            "expected_version = '2.1.5'",
             "total_capabilities = [int]$inspection.counts.capabilities",
             "total_cards = [int]$inspection.counts.capability_cards",
             "total_vectors = [int]$inspection.counts.associative_view_vectors",
