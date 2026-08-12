@@ -48,7 +48,7 @@ for p in PAGES:
         if frag and target.suffix=='.html':
             ts=scans.get(target.name)
             if ts and frag not in ts.ids: errors.append(f'{p.name}: missing fragment: {href}')
-expected={'nova-mind-readme-hero.png':(1600,720),'nova-mind-pages-hero.png':(1200,800),'nova-mind-social-card.png':(1200,630)}
+expected={'nova-mind-readme-hero.png':(1536,1024),'nova-mind-pages-hero.png':(1672,941),'nova-mind-social-card.png':(1732,908)}
 asset_hashes=set()
 for name, expected_size in expected.items():
     path=ASSETS/name

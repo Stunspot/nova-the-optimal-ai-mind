@@ -3,8 +3,9 @@
 MIND Core `0.2.0` is a persona-neutral local Python runtime for capability
 metadata, lifecycle evidence, associative capability cards, explicit H0 queries,
 and contextual association through its direct Python library and CLI. It is
-included in the release archive as a wheel. The Codex plugin does not install
-Core, create its database, or download its embedding model.
+included in the release archive and in the Codex plugin source. The bundled
+installer initializes a new database and activates the included estate; it does
+not overwrite an existing database or download the embedding model.
 
 ## What Core can do
 

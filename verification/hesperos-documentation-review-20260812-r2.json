@@ -1,0 +1,26 @@
+{
+    "schema":  "hesperos-documentation-review/v1",
+    "repository":  "Stunspot/nova-the-optimal-ai-mind",
+    "reviewed_source":  "origin/main@8651ccc5fa832b44ba1ad0cbc02ebfa0960dbb89-plus-candidate-diff",
+    "documentation_fingerprint":  "3098874b78fc9dfe1e8db34745960f021697f529923ef80a3d7c444aab16dcc2",
+    "fingerprinted_file_count":  95,
+    "reviewed_at_utc":  "2026-08-12T20:41:50Z",
+    "result":  "PASS",
+    "scope":  [
+                  "root customer journey read completely",
+                  "all Pages source and navigation read completely",
+                  "all packaged MIND customer documents read completely",
+                  "Nova and MIND entrypoints, manifests, installer, verifier, skill estate, and Faculty registry checked against claims",
+                  "three final role-specific images inspected at actual pixels"
+              ],
+    "repairs":  [
+                    "restored canonical Nova identity to README",
+                    "rewrote opening and landing copy around concrete outcomes in Nova voice",
+                    "replaced generic white diagrams with distinct Nova Pages and social compositions",
+                    "restored dark violet/cyan Nova visual identity",
+                    "repaired missing $nova and $lex command handles",
+                    "corrected stale Core installer claim",
+                    "named Signal Loom as an infographic maker"
+                ],
+    "lint":  "PASS except reviewed false positives in immutable MIT/model-context text"
+}

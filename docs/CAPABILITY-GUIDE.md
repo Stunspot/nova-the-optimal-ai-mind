@@ -38,7 +38,7 @@ MIND also includes Capability Promotion and TestForge. Capability Promotion help
 
 **Beryl IT Tech** diagnoses and repairs user-facing technology problems; **IT Work Reviewer** checks the evidence for the repair.
 
-**Signal Loom** turns evidence into a visual story without replacing truth with decoration.
+**Signal Loom** makes infographics from supplied evidence—single graphics, carousels, and interactive web explainers—while keeping claims, sources, and uncertainty attached.
 
 ## Continuity, people, and durable work
 

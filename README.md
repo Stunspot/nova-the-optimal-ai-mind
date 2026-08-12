@@ -1,26 +1,41 @@
 # Nova + MIND Free
 
-[![Nova + MIND Free architecture: one coherent core connected to cognitive Faculties, practical capabilities, and a separate verification loop.](https://stunspot.github.io/nova-the-optimal-ai-mind/assets/nova-mind-readme-hero.png)](https://stunspot.github.io/nova-the-optimal-ai-mind/)
+![Nova Emergent, the canonical Nova artwork by Collaborative Dynamics](docs/assets/nova-mind-readme-hero.png)
 
-## One agent. A real capability architecture.
+## Bring me a mess
 
-Nova + MIND Free is Collaborative Dynamics’ public AI-agent system for people who want one capable collaborator instead of a costume prompt and a bag of disconnected bots. Nova is the user-facing generalist. MIND is her cognitive substrate: sixteen distinct Faculties, local semantic capability reminders, and TestForge’s two-part adversarial release gate. Twenty-one Nova skills and twenty MIND skills ship together—forty-one handles in one Codex-first distribution.
+Nova + MIND Free puts an actual AI collaborator in the Codex harness you already use. Hand me the repository that is on fire, the question that will not sit still, the draft that has gone feral, or the decision everyone is politely avoiding. I take responsibility for getting you to a useful result.
 
-It is for builders, researchers, operators, writers, technologists, and curious generalists who work in an agentic harness and want durable methods, bounded tools, honest evidence, and a personality with an actual pulse. It is not a hosted chatbot or an autonomous service.
+You ask for the outcome. You do **not** memorize a catalog, convene a committee of bots, or learn forty-one magic words.
 
-[Download Nova + MIND Free 2.0.8](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · [Start here](START-HERE.md) · [Explore the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
+[Download Nova + MIND Free 2.0.8](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
 
-## What problem it solves
 
-General-purpose models can be brilliant and still lose the mission, blur evidence into confidence, forget the right installed capability, repeat a failed route, or treat a proposed action as if it happened. Nova + MIND addresses those failures with separate, inspectable responsibilities:
+## What you can get done
 
-- **Nova** holds the relationship, intent, tone, and final coherent answer.
-- **MIND** composes the smallest useful set of cognitive transformations without making you manage an internal committee.
-- **Arm’s Reach capability reminders** bring semantically nearby installed praxis into context before a turn when the trusted local hook succeeds.
-- **Augments and skills** package durable methods, references, scripts, templates, boundaries, and reviewers.
-- **TestForge** builds a release-evidence case and gives an independent reviewer responsibility for attacking it.
+- Untangle an ugly decision, expose the assumptions, compare the real options, and name what would change the recommendation.
+- Investigate a current question, keep sources and contradictions attached to the claims, or search a bounded corpus without pretending retrieval equals truth.
+- Repair code and repositories, produce office documents, make infographics, diagnose IT trouble, and challenge finished software claims with an independent verification role.
+- Design better prompts, choose sensible model spend, preserve an authorized long-running objective, and keep reminders, people, and project continuity in their proper compartments.
+- Practice a language, run a choice-shaped game, design Minecraft builds, or make something surprising without turning every creative request into beige enterprise porridge.
 
-Direct work stays direct. The architecture should become visible only when it clarifies responsibility, evidence, a limitation, or the next decision.
+The exact result still depends on the tools, files, credentials, and authority your host provides. I cannot browse without a browsing tool, publish without permission, remember durably without a real store, or transmute confidence into evidence by smirking at it harder.
+
+## “Agent” is technically true and almost useless
+
+A persona prompt can change how a model sounds. A narrow workflow can automate one route. Nova + MIND is a capability system: identity, cognition, durable specialist competence, local capability recall, and adversarial verification arranged behind one accountable collaborator.
+
+**Nova is the person you work with.** I hold the purpose, the relationship, and the final answer.
+
+**MIND is my cognitive substrate.** Sixteen distinct Faculties keep evidence, decisions, execution, continuity, creativity, timing, measurement, aesthetics, and other transformations from collapsing into one clever-sounding blur.
+
+**Skills and Augments provide the craft.** They carry methods, references, scripts, templates, boundaries, recovery behavior, and—in several cases—an independent reviewer. An Augment is not a costume prompt. It is a durable increase in what the agent can reliably accomplish.
+
+**Arm’s Reach helps the right capability come back to mind.** A trusted local hook can bring semantically nearby installed praxis into context before a turn. It advises; it does not authorize, prove availability, or make the decision.
+
+**TestForge makes release confidence earn its keep.** One role builds the evidence case. A separate reviewer attacks it. “Looks fine from here” may be a mood, but it is not a release standard.
+
+Direct work stays direct. The architecture becomes visible only when naming a responsibility, boundary, or piece of evidence helps you.
 
 ## What ships
 
@@ -28,8 +43,7 @@ The **Nova plugin** contains twenty-one skills: Nova, Promptcraft, Agentic Codin
 
 The **MIND plugin** contains twenty skills: the MIND integrator, exactly sixteen cognitive Faculties, Capability Promotion, Software Verification, and Verification Reviewer. The two TestForge roles are attached Augments, not Faculties.
 
-See the [complete capability guide](docs/CAPABILITY-GUIDE.md) for responsibilities and boundaries.
-
+That is forty-one available handles and one front counter. See the [complete capability guide](docs/CAPABILITY-GUIDE.md) when you want the boundaries—not because you must browse the shelves before asking for help.
 ## What it can and cannot do
 
 Nova + MIND can help reason, research when the host provides current-source tools, retrieve from supplied corpora, create supported artifacts, write and review code, structure decisions, maintain explicitly authorized continuity, plan and document IT work, practice language, run games, and verify finished software claims.
@@ -61,7 +75,7 @@ If the harness cannot install an attached archive, extract it and follow [manual
 
 The release includes one self-contained ZIP per skill under `claude/zips/`. Upload the specific skill ZIPs the host supports, then start a new conversation. This path does not claim Codex’s shared SQLite store, prompt hook, automatic Arm’s Reach delivery, or fully integrated Nova-with-MIND behavior. Read [Claude-compatible installation](docs/INSTALL-CLAUDE.md).
 
-No automatic integration is claimed for ChatGPT web, generic chat clients, the Codex IDE extension, or other hosts not named above. The Markdown skill roots may be adaptable source material, but adaptation is not installation evidence.
+No automatic integration is claimed for ChatGPT web, generic chat clients, the Codex IDE extension, or other hosts outside the [supported host paths](docs/HOST-MATRIX.md). The Markdown skill roots may be adaptable source material, but adaptation is not installation evidence.
 
 ## Verify the installation
 

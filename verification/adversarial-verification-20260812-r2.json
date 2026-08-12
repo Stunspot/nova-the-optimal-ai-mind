@@ -1,0 +1,43 @@
+{
+    "schema":  "adversarial-documentation-verification/v1",
+    "repository":  "Stunspot/nova-the-optimal-ai-mind",
+    "documentation_fingerprint":  "3098874b78fc9dfe1e8db34745960f021697f529923ef80a3d7c444aab16dcc2",
+    "reviewed_at_utc":  "2026-08-12T20:41:50Z",
+    "result":  "PASS_LOCAL_CANDIDATE",
+    "evidence":  {
+                     "unit_tests":  "43/43 PASS",
+                     "package_verifier":  "PASS: 21 Nova skills, 20 MIND skills, 16 Faculties, 41 cards, 246 vectors",
+                     "pages_checker":  "PASS: seven pages, 97 local links",
+                     "external_links":  "all exercised endpoints returned 200",
+                     "visuals":  {
+                                     "readme":  {
+                                                    "path":  "docs/assets/nova-mind-readme-hero.png",
+                                                    "dimensions":  "1536x1024",
+                                                    "sha256":  "0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61",
+                                                    "verdict":  "PASS_CANONICAL_NOVA"
+                                                },
+                                     "pages":  {
+                                                   "path":  "docs/assets/nova-mind-pages-hero.png",
+                                                   "dimensions":  "1672x941",
+                                                   "sha256":  "fa186146a4a2d5fb91804b5a898f94b63ee4f828bc52e5c3251c9e6ab09052b1",
+                                                   "verdict":  "PASS_TEXT_FREE_DISTINCT_COMPOSITION"
+                                               },
+                                     "social":  {
+                                                    "path":  "docs/assets/nova-mind-social-card.png",
+                                                    "dimensions":  "1732x908",
+                                                    "sha256":  "5d232cb69fce39b691ff26a662946a95afd1e94143b1cc2e537110f5aaac3cb6",
+                                                    "verdict":  "PASS_EXACT_TITLE_AND_IDENTIFYING_LINE"
+                                                }
+                                 },
+                     "diff_integrity":  "PASS"
+                 },
+    "challenges":  [
+                       "No current capability claim exceeded the inspected package source.",
+                       "README, Pages, and social assets are different compositions and aspect ratios.",
+                       "Social card visibly contains Nova + MIND Free and One mind. Forty-one ways to get things done.",
+                       "Claude and unsupported-host boundaries remain explicit.",
+                       "Reminder profile remains explicitly unqualified.",
+                       "Current release and plugin versions are 2.0.8, 2.0.1, and 2.1.6."
+                   ],
+    "external_boundary":  "Rendered live Pages interaction and GitHub social-preview rendering require the permitted existing browser or an independent visitor check."
+}

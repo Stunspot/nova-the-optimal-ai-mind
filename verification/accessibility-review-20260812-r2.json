@@ -1,0 +1,19 @@
+{
+    "schema":  "documentation-accessibility-review/v1",
+    "repository":  "Stunspot/nova-the-optimal-ai-mind",
+    "documentation_fingerprint":  "3098874b78fc9dfe1e8db34745960f021697f529923ef80a3d7c444aab16dcc2",
+    "reviewed_at_utc":  "2026-08-12T20:41:50Z",
+    "result":  "PASS_WITH_BOUNDED_EVIDENCE",
+    "checks":  {
+                   "headings_landmarks":  "PASS",
+                   "skip_navigation":  "PASS",
+                   "mobile_navigation_source":  "PASS",
+                   "focus_styles":  "PASS",
+                   "meaningful_links":  "PASS",
+                   "image_alternatives":  "PASS",
+                   "text_contrast_authored_palette":  "PASS",
+                   "reflow_and_overflow_source":  "PASS",
+                   "reduced_motion":  "PASS"
+               },
+    "boundary":  "No assistive-technology lab or rendered-browser session was available; live keyboard, screen-reader, zoom, crop, and cross-browser behavior remain external verification."
+}
