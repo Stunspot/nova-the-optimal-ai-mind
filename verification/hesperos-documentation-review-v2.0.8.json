@@ -1,9 +1,9 @@
 {
   "schema": "hesperos-documentation-review/v1",
   "repository": "Stunspot/nova-the-optimal-ai-mind",
-  "reviewed_source_commit": "54d4529b8f8871e3e440c29506bcc5715b268731-plus-v2.0.8-candidate-diff",
-  "documentation_fingerprint": "51b87209b1eca00e9faec84e0629c94769b3bfff2e7f74ddd925954412441447",
-  "fingerprint_scope": "54 customer-facing documentation, site, installer, manifest, package-map, source-lock, and embedded-MIND documentation files; path plus NUL plus raw file SHA-256",
+  "reviewed_source_commit": "69e58921d00e0ebd2d7b3b243d29149666694e91-plus-final-documentation-delta",
+  "documentation_fingerprint": "8fd1f6d3f622f5b1948dc2d63beb08a86ba44061fa6146cdb123b74b864087d8",
+  "fingerprint_scope": "54 files: eight root customer documents and installers, two public design-evidence files, every file under docs, and every root file in the embedded MIND package; SHA-256 over each UTF-8 POSIX relative path, one NUL byte, and the raw 32-byte file SHA-256, in ordinal exact-case path order",
   "reviewed_at_utc": "2026-08-12T08:50:00Z",
   "result": "PASS",
   "scope": {
@@ -31,7 +31,9 @@
   "material_findings_repaired": [
     "Current download, installation, and version-layer surfaces still named v2.0.6 or MIND v2.1.4; they now name v2.0.8 and MIND v2.1.6.",
     "The source lock named obsolete MIND and TestForge commits and did not declare an enforceable tree algorithm; current published commits and recomputed canonical/imported digests are now verifier-enforced.",
-    "The combined package did not directly exercise TestForge's metered-capacity authority boundary; the 14-case regression suite is now part of the 41-test repository gate.",
+    "The combined package did not directly exercise TestForge's metered-capacity authority boundary; the 14-case regression suite is now part of the 42-test repository gate.",
+    "The combined builder still expected MIND's superseded README link; it now translates the current user-guide link and a regression binds that link to a real source file.",
+    "The downloadable documentation linked to source-lock evidence that the archive omitted; the builder now packages the public package map and source lock, and release link verification enforces the resulting customer path.",
     "The release documentation could imply that TestForge itself grants paid authority; the current wording makes the assessor advisory and the trusted external dispatcher responsible for resolving and consuming any later human decision.",
     "Repository workflows used deprecated action majors and duplicate line-ending runs; current majors and one pull-request plus one main-merge execution path are now documented and configured."
   ],

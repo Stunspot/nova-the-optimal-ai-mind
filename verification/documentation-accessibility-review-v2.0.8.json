@@ -1,8 +1,8 @@
 {
   "schema": "documentation-accessibility-review/v1",
   "repository": "Stunspot/nova-the-optimal-ai-mind",
-  "reviewed_source_commit": "54d4529b8f8871e3e440c29506bcc5715b268731-plus-v2.0.8-candidate-diff",
-  "documentation_fingerprint": "51b87209b1eca00e9faec84e0629c94769b3bfff2e7f74ddd925954412441447",
+  "reviewed_source_commit": "69e58921d00e0ebd2d7b3b243d29149666694e91-plus-final-documentation-delta",
+  "documentation_fingerprint": "8fd1f6d3f622f5b1948dc2d63beb08a86ba44061fa6146cdb123b74b864087d8",
   "reviewed_at_utc": "2026-08-12T08:52:00Z",
   "result": "PASS_WITH_BOUNDED_EVIDENCE",
   "checks": {

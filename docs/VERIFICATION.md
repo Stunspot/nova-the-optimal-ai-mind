@@ -14,7 +14,7 @@ python -X utf8 .\tools\verify_package.py --release
 python -X utf8 .\plugins\augment-of-mind\scripts\build_release.py --output-dir <empty-path> --replace
 ```
 
-The repository suite currently contains 41 deterministic tests. These checks cover the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, metered-capacity arithmetic and authority denial, excluded capabilities, plugin topology and versions, canonical Nova and Promptcraft bytes, MIND runtime/version synchronization, reminder cards and vectors, release exclusions, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
+The repository suite currently contains 42 deterministic tests. These checks cover the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, metered-capacity arithmetic and authority denial, linked design evidence in the customer archive, excluded capabilities, plugin topology and versions, canonical Nova and Promptcraft bytes, MIND runtime/version synchronization, reminder cards and vectors, release exclusions, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
 
 The [source lock](../design/source-lock.json) binds the embedded MIND skills to published MIND `v2.1.6` commit `8b721c06cf0da40a948a26b9131999f5c6814b1e` and both TestForge roles to published TestForge `v1.1.6` commit `93120abaa39c26a6f0ec494bdff0c7e6f92344cf`. The package verifier recomputes those imported tree digests instead of trusting the JSON record.
 
