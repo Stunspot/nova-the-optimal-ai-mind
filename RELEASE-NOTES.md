@@ -1,5 +1,13 @@
 # Nova + MIND Free release notes
 
+## 2.0.8
+
+Nova + MIND Free now carries the exact published MIND 2.1.6 package source, including TestForge 1.1.6's resource-aware verification preflight. Before quota-limited verification is recommended or invoked, TestForge requires a current billing-scope capacity observation, expands the complete trigger, matrix, retry, ceiling, and multiplier arithmetic, preserves the principal's reserve, and exposes the precise guarantee lost by any local or clean-host substitute.
+
+The assessor cannot accept, authenticate, or grant spending authority. When paid capacity would be required, it stops at a bounded request; a trusted dispatcher outside TestForge must resolve and consume any later human authorization. Source-lock records now bind the embedded MIND and both TestForge roles to their published upstream commits and exact tree digests.
+
+The combined package and embedded standalone MIND retain the transactional, package-clean installer introduced in 2.0.7. Permanent public verification now exercises the complete source, combined builder, portable release, and standalone MIND builder on Linux, Windows, and macOS without duplicate branch-and-pull-request runs.
+
 ## 2.0.7
 
 The installer now completes a disposable MIND estate and live semantic-association preflight before adding the marketplace, installing either plugin, or committing the customer database. A missing Ollama service or embedding model therefore fails before consequential installation state is created.
@@ -30,9 +38,9 @@ The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIN
 
 ## Version layers
 
-- Product release: Nova + MIND Free 2.0.6
+- Product release: Nova + MIND Free 2.0.8
 - Nova plugin: 2.0.1
-- MIND plugin: 2.1.4
+- MIND plugin: 2.1.6
 - MIND Core: 0.2.x
 
 These layers version different components and are intentionally not numerically identical.

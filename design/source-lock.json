@@ -1,8 +1,9 @@
 {
     "format":  "nova-free-source-lock/v1",
     "product":  "Nova + MIND Free",
-    "product_version":  "2.0.0",
-    "generated_at":  "2026-08-04",
+    "product_version":  "2.0.8",
+    "generated_at":  "2026-08-12",
+    "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
     "contest_repository_mutated":  false,
     "excluded_capabilities":  [
                                   "aji-go-coach",
@@ -29,50 +30,50 @@
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/augment-of-mind",
-                        "source_commit":  "4b176575c614614a632bf4839990e20e68d9a7c1",
+                        "source_commit":  "8b721c06cf0da40a948a26b9131999f5c6814b1e",
                         "source_path":  "skills",
                         "source_tree":  {
-                                            "file_count":  173,
-                                            "tree_sha256":  "3ca4478fedd902e1905afdd0331e7957689e3983bdcd0f09bf82058eaa60049a"
+                                            "file_count":  280,
+                                            "tree_sha256":  "b0a32e043e544a516afb27e46af6b20468f1a983097f2bb88a0a796ca549778b"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
-                                              "file_count":  273,
-                                              "tree_sha256":  "7d24577e4edf796f35f897214cd009e616bc5af8c7e06637c4033a2129333680"
+                                              "file_count":  280,
+                                              "tree_sha256":  "b0a32e043e544a516afb27e46af6b20468f1a983097f2bb88a0a796ca549778b"
                                           },
-                        "custody":  "current maintained MIND plus bundle integration"
+                        "custody":  "exact published MIND v2.1.6 skills tree"
                     },
                     {
                         "component":  "software-verification",
                         "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "14ee15dce2231cf3eade3b7b0f379d706f96fe6b",
-                        "source_path":  "plugins/testforge/skills/software-verification",
+                        "source_commit":  "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+                        "source_path":  "testforge/skills/software-verification",
                         "source_tree":  {
-                                            "file_count":  91,
-                                            "tree_sha256":  "7b54c25b53346b61944693267220659aa98f9f6d3fd6bd711593bc10417bd145"
+                                            "file_count":  96,
+                                            "tree_sha256":  "a075641cfaae67027d6ecc25fbe934177eb394b489c77cac560104085858edd7"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills/software-verification",
                         "imported_tree":  {
-                                              "file_count":  91,
-                                              "tree_sha256":  "7b54c25b53346b61944693267220659aa98f9f6d3fd6bd711593bc10417bd145"
+                                              "file_count":  96,
+                                              "tree_sha256":  "a075641cfaae67027d6ecc25fbe934177eb394b489c77cac560104085858edd7"
                                           },
-                        "custody":  "working-tree bytes; user-authored TestForge policy revision"
+                        "custody":  "exact published TestForge v1.1.6 operator tree"
                     },
                     {
                         "component":  "verification-reviewer",
                         "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "14ee15dce2231cf3eade3b7b0f379d706f96fe6b",
-                        "source_path":  "plugins/testforge/skills/verification-reviewer",
+                        "source_commit":  "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+                        "source_path":  "testforge/skills/verification-reviewer",
                         "source_tree":  {
                                             "file_count":  9,
-                                            "tree_sha256":  "b556b693c4cfcc025cebb45af8d4e9614a8460f5a5d93e2b589270d24a93064f"
+                                            "tree_sha256":  "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills/verification-reviewer",
                         "imported_tree":  {
                                               "file_count":  9,
-                                              "tree_sha256":  "b556b693c4cfcc025cebb45af8d4e9614a8460f5a5d93e2b589270d24a93064f"
+                                              "tree_sha256":  "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
                                           },
-                        "custody":  "maintained TestForge reviewer"
+                        "custody":  "exact published TestForge v1.1.6 reviewer tree"
                     },
                     {
                         "component":  "agentic-coding",

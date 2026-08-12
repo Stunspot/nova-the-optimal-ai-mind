@@ -10,12 +10,20 @@ permissions:
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    name: verify (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - name: Semantic Arm's Reach regression tests
@@ -39,4 +47,4 @@ jobs:
           PYTHONDONTWRITEBYTECODE: '1'
         run: >-
           python -X utf8 plugins/augment-of-mind/scripts/build_release.py
-          --output-dir /tmp/mind-release --replace
+          --output-dir mind-release-temp --replace

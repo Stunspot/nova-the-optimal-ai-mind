@@ -1,0 +1,28 @@
+{
+  "format": "testforge-metered-verification/v1",
+  "provider": "github-actions",
+  "execution_id": "verify:example-repository:example-revision",
+  "capacity_billing_scope": "user:example-owner",
+  "execution_billing_scope": "user:example-owner",
+  "observed_at": "2026-08-12T12:00:00Z",
+  "valid_until": "2026-08-12T12:30:00Z",
+  "evidence_source": "provider billing page observed by the operator",
+  "refresh_at": "2026-09-01T00:00:00Z",
+  "capacity_status": "observed",
+  "remaining_minutes": 100,
+  "reserve_minutes": 20,
+  "paid_overage_available": false,
+  "planned_runs": [
+    {
+      "name": "pull_request",
+      "jobs": [
+        {
+          "ceiling_minutes": 10,
+          "count": 3,
+          "attempts": 1,
+          "billing_multiplier": 1
+        }
+      ]
+    }
+  ]
+}

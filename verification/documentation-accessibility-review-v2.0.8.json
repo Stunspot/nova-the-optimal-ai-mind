@@ -1,0 +1,34 @@
+{
+  "schema": "documentation-accessibility-review/v1",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "reviewed_source_commit": "54d4529b8f8871e3e440c29506bcc5715b268731-plus-v2.0.8-candidate-diff",
+  "documentation_fingerprint": "51b87209b1eca00e9faec84e0629c94769b3bfff2e7f74ddd925954412441447",
+  "reviewed_at_utc": "2026-08-12T08:52:00Z",
+  "result": "PASS_WITH_BOUNDED_EVIDENCE",
+  "checks": {
+    "descriptive_titles_and_language": "PASS",
+    "logical_heading_and_landmark_structure": "PASS",
+    "skip_navigation": "PASS",
+    "keyboard_visible_focus": "PASS; unchanged reviewed CSS",
+    "navigation_available_on_mobile": "PASS; unchanged reviewed responsive navigation",
+    "meaningful_link_text": "PASS",
+    "image_alternatives": "PASS",
+    "text_contrast": "PASS by unchanged reviewed palette",
+    "zoom_and_reflow": "PASS by unchanged responsive source review",
+    "reduced_motion": "PASS",
+    "code_and_table_overflow": "PASS",
+    "warnings_before_hazards": "PASS",
+    "plain_language_and_recovery": "PASS",
+    "local_site_integrity": "PASS; seven pages, 97 links, and one HTML image reference"
+  },
+  "delta_review": [
+    "Version labels and release links changed without altering heading, landmark, navigation, focus, contrast, or responsive structure.",
+    "New release and verification prose preserves plain-language authority, recovery, and evidence boundaries.",
+    "The three role-specific visual files are byte-identical to the prior concretely inspected set."
+  ],
+  "not_claimed": [
+    "No universal WCAG conformance claim.",
+    "No representative-user or assistive-technology lab run in this review.",
+    "Live deployed keyboard, screen-reader, zoom, and cross-browser behavior requires post-deployment re-entry."
+  ]
+}

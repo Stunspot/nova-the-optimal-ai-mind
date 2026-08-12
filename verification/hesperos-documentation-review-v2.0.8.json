@@ -1,0 +1,49 @@
+{
+  "schema": "hesperos-documentation-review/v1",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "reviewed_source_commit": "54d4529b8f8871e3e440c29506bcc5715b268731-plus-v2.0.8-candidate-diff",
+  "documentation_fingerprint": "51b87209b1eca00e9faec84e0629c94769b3bfff2e7f74ddd925954412441447",
+  "fingerprint_scope": "54 customer-facing documentation, site, installer, manifest, package-map, source-lock, and embedded-MIND documentation files; path plus NUL plus raw file SHA-256",
+  "reviewed_at_utc": "2026-08-12T08:50:00Z",
+  "result": "PASS",
+  "scope": {
+    "root_customer_documents": "read and reconciled for the v2.0.8 customer journey",
+    "embedded_mind_documents": "read and checked against exact published MIND v2.1.6 source",
+    "runtime_claim_sources": "plugin manifests, installer, post-install verifier, package verifier, build workflow, package map, source lock, and model-context contract checked",
+    "pages": "seven-page journey checked for navigation, fragments, images, titles, language, skip links, installation, first value, trust, recovery, lifecycle, and support",
+    "visuals": "prior concrete visual approval carried forward only because all three role-specific assets are unchanged byte-for-byte"
+  },
+  "journey_verdicts": {
+    "orientation_and_audience": "PASS",
+    "problem_and_value": "PASS",
+    "capabilities_and_limits": "PASS",
+    "supported_host_installation": "PASS",
+    "installation_verification": "PASS",
+    "first_value_and_workflows": "PASS",
+    "inputs_and_outputs": "PASS",
+    "configuration": "PASS",
+    "troubleshooting_and_recovery": "PASS",
+    "update_removal_cleanup": "PASS",
+    "privacy_storage_network_security": "PASS",
+    "limitations_provenance_evidence": "PASS",
+    "support_contribution_license_terms": "PASS"
+  },
+  "material_findings_repaired": [
+    "Current download, installation, and version-layer surfaces still named v2.0.6 or MIND v2.1.4; they now name v2.0.8 and MIND v2.1.6.",
+    "The source lock named obsolete MIND and TestForge commits and did not declare an enforceable tree algorithm; current published commits and recomputed canonical/imported digests are now verifier-enforced.",
+    "The combined package did not directly exercise TestForge's metered-capacity authority boundary; the 14-case regression suite is now part of the 41-test repository gate.",
+    "The release documentation could imply that TestForge itself grants paid authority; the current wording makes the assessor advisory and the trusted external dispatcher responsible for resolving and consuming any later human decision.",
+    "Repository workflows used deprecated action majors and duplicate line-ending runs; current majors and one pull-request plus one main-merge execution path are now documented and configured."
+  ],
+  "visual_carry_forward": {
+    "docs/assets/nova-mind-readme-hero.png": "d80f78dec3afd0613e62958803b1f040b6348c5e7b64fd5e5e1cd88274370065",
+    "docs/assets/nova-mind-pages-hero.png": "3c6f2e8d5e59f037c2d981e40d94b59592c061fb19222ec949b36375aa86dffb",
+    "docs/assets/nova-mind-social-card.png": "3682dfecfd7420f01fbbb2649846ec03bd9992cf50120d140f4dca769590260c"
+  },
+  "residual_boundaries": [
+    "The reminder profile remains unqualified for broad behavioral quality.",
+    "Claude packages are structurally verified, not proven behaviorally equivalent to integrated Codex.",
+    "Fresh customer installation, hook trust, delivery, model attention, and specialist behavior remain live-host evidence states.",
+    "Release publication and deployed-site re-entry remain separate observations until the candidate is merged and published."
+  ]
+}

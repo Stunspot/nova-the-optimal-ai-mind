@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 RELEASE = ROOT / "release"
-VERSION = "2.0.7"
+VERSION = "2.0.8"
 KIT_NAME = f"nova-mind-free-v{VERSION}"
 PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
 SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}
@@ -101,7 +101,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--replace",
         action="store_true",
-        help="replace only the existing dist tree and exact 2.0.7 release outputs",
+        help="replace only the existing dist tree and exact 2.0.8 release outputs",
     )
     args = parser.parse_args(argv)
 
@@ -187,7 +187,7 @@ def main(argv: list[str] | None = None) -> int:
         "source_revision": revision,
         "source_material_file_count": source_file_count,
         "source_material_sha256": source_digest,
-        "plugin_versions": {"nova-the-optimal-ai": "2.0.1", "augment-of-mind": "2.1.5"},
+        "plugin_versions": {"nova-the-optimal-ai": "2.0.1", "augment-of-mind": "2.1.6"},
         "codex_plugins": list(PLUGIN_NAMES),
         "claude_skill_count": len(sources),
         "claude_skills": sorted(sources),
