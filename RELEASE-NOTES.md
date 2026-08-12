@@ -1,51 +1,30 @@
 # Nova + MIND Free release notes
 
-## 2.0.6
+## 2.0.6 — current source and release candidate
 
-This release removes capability-catalog discovery pressure from Arm's Reach's model-facing preface. Semantic recall still arrives as vector-near surveyed praxis, while the preface now directs contextual assessment and integration with capabilities already present in assembled context. The surveyed memory may still extend beyond the current harness.
+Nova + MIND Free 2.0.6 packages Nova plugin 2.0.1 with MIND plugin 2.1.4. The Arm’s Reach model-facing preface no longer encourages capability-catalog exploration; it asks the model to assess vector-near reminders in context and integrate only relevant praxis already available through the assembled host context.
 
-A live local-model trace showed that the earlier phrases `consider exploring candidate capacities` and `tools/skills/mcps from harness configuration` prompted Codex's real plugin catalog to be enumerated and an unrelated OpenClaw URL to be misread as an MCP resource. The revised preface supports every capability already supplied by the host without inventorying its transport or requesting discovery.
+The package retains forty-one unique skill handles, sixteen MIND Faculties, Capability Promotion, and both TestForge roles. The public reminder estate contains forty-one cards and 246 vectors and remains explicitly `unqualified` pending broader behavioral qualification.
 
-MIND is versioned 2.1.4 in this combined release. Capability cards, embeddings, the active estate, and user databases are unchanged.
+This documentation remediation adds a complete customer journey, multi-page GitHub Pages site, repository-correct support and security routes, explicit installation/readback semantics, lifecycle cleanup, and three distinct role-specific presentation assets. Final documentation, accessibility, adversarial, publication, and live-reentry evidence is recorded under `verification/`.
 
-## 2.0.5
+## 2.0.5 — hook-owned association
 
-This release corrects the model-facing prompt semantics of Arm's Reach. Successful semantic recall now enters the model context through one concise preface describing vector-near, semantically related capabilities as an associative presentation of surveyed praxis. It explicitly accommodates tools, skills, and MCPs exposed by a user's harness while preserving reminders for capabilities that are not harness-installed.
+Association moved fully into the trusted pre-prompt hook. Nova and MIND no longer ask the model to locate, invoke, or retry an association adapter. Empty or failed delivery makes no claim about capability availability, relevance, or fit.
 
-The prior nested headers exposed opaque “handles,” urged the model to “open” them, and surrounded the field with internal H0 and receipt metadata. Some tool-using models interpreted those labels as unresolved MCP resources. The hook now strips the legacy reminder header, keeps field and snapshot telemetry in receipts, and supplies the returned capability entries directly beneath the new context preface.
+## 2.0.4 — last previously published GitHub release
 
-Lexical identity cues continue to supplement successful vector association. If semantic embedding is unavailable, the hook emits its bounded degraded notice rather than presenting lexical-only matches as vector-near results. MIND is versioned 2.1.3 in this combined release.
+The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIND 2.1.2. It introduced the forty-one-skill product shape and per-skill Claude archives. Do not infer current source behavior from that older artifact after 2.0.6 publication.
 
-## 2.0.4
+## Version layers
 
-This release completes the MCP-removal repair by restoring Arm's Reach to its intended architecture. The trusted `UserPromptSubmit` hook now performs semantic association over every non-empty prompt plus a bounded recent conversation window, injects advisory nearby praxis before the model turn, and treats lexical identity cues as a supplement rather than a gate.
+- Product release: Nova + MIND Free 2.0.6
+- Nova plugin: 2.0.1
+- MIND plugin: 2.1.4
+- MIND Core: 0.2.x
 
-Nova and MIND now assign retrieval exclusively to the hook. The model consumes the delivered field and never searches for a substitute adapter. Returned handles remain non-authoritative reminders—not commands, rankings, recommendations, selection, activation, completeness claims, authority, or proof of fit.
+These layers version different components and are intentionally not numerically identical.
 
-## 2.0.3
+## Evidence boundary
 
-This corrective release removes Nova and MIND's bundled MCP server, registration, launcher, and automatic MCP-tool invocation. The bundled skills remain filesystem capabilities loaded through their `SKILL.md` entrypoints, while the prompt hook and direct local query path continue to support Arm's Reach association.
-
-The change fixes a failure mode where models attempted to load installed skills as MCP resources, repeatedly retried unavailable servers, compacted around the false dependency, and stopped useful work.
-
-## 2.0.2
-
-This release rebuilds the public presentation around the actual product: an installable agent architecture for an existing AI harness, not a generic assistant with a list of sample prompts.
-
-The README, public Pages site, onboarding, capability guide, Codex and Claude installation guidance, and standalone MIND entry points now explain:
-
-- why Nova is materially different from the crowded “agent” category;
-- how Nova, MIND, capability reminders, TestForge, skills, and Augments form one system;
-- what the included research, knowledge, making, repair, continuity, modelcraft, learning, and play capabilities actually add;
-- why the Free edition is a substantial demonstration of Collaborative Dynamics’ architecture;
-- how to install by giving the ZIP to the harness, with PowerShell retained as a fallback.
-
-The manual installer’s completion message now reports the correct forty-one-capability reminder map. Nova and MIND runtime skill contents are otherwise unchanged. The canonical Nova Emergent artwork is unchanged.
-
-## 2.0.1
-
-Documentation-and-packaging correction that replaced the original internal inventory copy with a customer journey and synchronized the bundled standalone MIND documentation.
-
-## 2.0.0
-
-Established the public Nova + MIND Free package: Nova, MIND’s integrator and sixteen cognitive Faculties, Capability Promotion, TestForge, the public semantic reminder map, and portable skill packages.
+Deterministic build and verification can establish package topology, canonical bytes, version synchronization, release exclusions, reminder assets, links, archive shape, and fingerprints. It does not establish fresh-host success, hook trust, pre-turn delivery, model attention, Claude parity, universal behavior, publication, or defect-freedom. Read [What has been checked](docs/VERIFICATION.md).

@@ -1,0 +1,41 @@
+{
+  "schema": "testforge-adversarial-verification/v1",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "reviewed_source_commit": "44fe9f8e07d8944f25a63c6cb9c24704d1408a03-plus-candidate-diff",
+  "documentation_fingerprint": "4e6cccea3d128754fc73d50f62a12186e95943a14d63282d344e762a9d37fc24",
+  "reviewed_at_utc": "2026-08-12T01:55:00Z",
+  "readiness_claim": "The local candidate is coherent, packageable, navigable, visually role-complete, and ready to commit and publish for subsequent live verification.",
+  "result": "PASS",
+  "observed_evidence": {
+    "semantic_regressions": "17 of 17 PASS with PYTHONDONTWRITEBYTECODE=1",
+    "source_verifier": "PASS: 21 Nova skills, 20 MIND skills, 16 Faculties, 41 cards, 246 vectors, radius 0.33, qualification unqualified",
+    "deterministic_combined_build": "PASS: two Codex plugins, 41 Claude skills, product ZIP nova-mind-free-v2.0.6.zip",
+    "combined_release_verifier": "PASS",
+    "pages_checker": "PASS: seven HTML pages, 97 local links, image/alt/title/lang/skip-link checks, exact role dimensions, distinct hashes",
+    "external_links": "13 existing endpoints returned 200; three candidate live Pages paths returned expected prepublication 404 and remain a live gate",
+    "visual_inspection": "All tracked images opened; final README hero, Pages hero, and social card opened and approved as distinct compositions and aspect ratios",
+    "diff_integrity": "git diff --check PASS"
+  },
+  "adversarial_challenges": [
+    {"challenge":"Could one image masquerade as three roles?","result":"NO","evidence":"1600x720, 1200x800, and 1200x630 assets have different compositions and distinct SHA-256 hashes."},
+    {"challenge":"Could the social image omit identity text?","result":"NO","evidence":"Direct pixel inspection shows exact title Nova + MIND Free and the lines One agent. 41 capabilities. Sixteen cognitive Faculties. TESTFORGE INCLUDED."},
+    {"challenge":"Could Pages be a styled marketing fragment?","result":"NO","evidence":"Seven linked pages cover orientation, installation, verification, workflows, inputs/outputs, capabilities, configuration, trust, limitations, support, updates, removal, cleanup, and 404 recovery."},
+    {"challenge":"Could documentation overclaim the 41-card reminder profile?","result":"NO","evidence":"README, Pages, and verification page retain unqualified status and separate proximity, delivery, attention, selection, availability, and authorization."},
+    {"challenge":"Could Claude be presented as integrated parity?","result":"NO","evidence":"Host guidance explicitly limits Claude to structurally verified per-skill archives and disclaims shared database, hook, reminders, and Codex-equivalent integration."},
+    {"challenge":"Could an old live release be mistaken for current candidate evidence?","result":"NO","evidence":"Release notes identify v2.0.4 as the previously published artifact and bind 2.0.6 to Nova 2.0.1 plus MIND 2.1.4."},
+    {"challenge":"Could accessibility pass by inventory?","result":"NO","evidence":"Review found and repaired hidden mobile navigation and insufficient light-section link contrast; remaining limits are explicit."}
+  ],
+  "release_conditions": [
+    "Commit the exact reviewed candidate without content changes.",
+    "Build standalone MIND from the clean commit.",
+    "Publish main and the 2.0.6 release artifact.",
+    "Wait for CI and Pages success.",
+    "Recheck live repository, every Pages route, navigation, all three assets, Open Graph metadata, and latest release metadata.",
+    "Any post-review content change requires a new fingerprint and all three reviews."
+  ],
+  "residual_risk": [
+    "Live publication is not yet observed and remains a mandatory gate.",
+    "The public reminder profile remains behaviorally unqualified.",
+    "No claim of universal model behavior, Claude parity, or defect-freedom."
+  ]
+}

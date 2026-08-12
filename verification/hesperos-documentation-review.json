@@ -1,0 +1,44 @@
+{
+  "schema": "hesperos-documentation-review/v1",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "reviewed_source_commit": "44fe9f8e07d8944f25a63c6cb9c24704d1408a03-plus-candidate-diff",
+  "documentation_fingerprint": "4e6cccea3d128754fc73d50f62a12186e95943a14d63282d344e762a9d37fc24",
+  "reviewed_at_utc": "2026-08-12T01:45:00Z",
+  "result": "PASS",
+  "scope": {
+    "root_customer_documents": "read completely",
+    "current_customer_facing_nested_documents": "read completely, with byte-identical Beryl/reviewer duplicates reviewed once and identity confirmed",
+    "runtime_claim_sources": "plugin manifests, installer, post-install verifier, package verifier, build workflow, package map, source lock, Nova entrypoint, and MIND entrypoint read",
+    "pages": "seven-page customer journey reviewed as orientation, installation, first value, workflows, capability reference, trust, recovery, lifecycle, support, and 404",
+    "visuals": "every tracked visual opened; three final role-specific assets opened separately and approved"
+  },
+  "journey_verdicts": {
+    "orientation_and_audience": "PASS",
+    "problem_and_value": "PASS",
+    "capabilities_and_limits": "PASS",
+    "supported_host_installation": "PASS",
+    "installation_verification": "PASS",
+    "first_value_and_workflows": "PASS",
+    "inputs_and_outputs": "PASS",
+    "configuration": "PASS",
+    "troubleshooting_and_recovery": "PASS",
+    "update_removal_cleanup": "PASS",
+    "privacy_storage_network_security": "PASS",
+    "limitations_provenance_evidence": "PASS",
+    "support_contribution_license_terms": "PASS"
+  },
+  "material_findings_repaired": [
+    "README was product-rich but did not complete the customer lifecycle or clearly distinguish host support and evidence states.",
+    "Pages was a single landing page with incomplete customer guidance and weak navigation into installation, workflows, trust, recovery, and lifecycle.",
+    "README, Pages, and Open Graph reused one canonical illustration; the social surface lacked an exact role-specific textual identity card.",
+    "MIND support and security links routed customers to a different repository.",
+    "Live download was older than the candidate documented in source; release notes now make the product/plugin layers and publication boundary explicit.",
+    "Upgrade guidance omitted complete removal and residual-data cleanup.",
+    "Package verification did not require the three presentation roles or a deterministic Pages link/asset check."
+  ],
+  "residual_boundaries": [
+    "The reminder profile remains unqualified for broad behavioral quality.",
+    "Claude packages are structurally verified, not proven behaviorally equivalent to integrated Codex.",
+    "Fresh customer installation, hook trust, delivery, model attention, and specialist behavior remain live-host evidence states."
+  ]
+}

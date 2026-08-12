@@ -1,33 +1,73 @@
 # Install Nova + MIND Free
 
-Nova + MIND Free is an agent package for your existing AI harness. It installs Nova, her MIND cognitive system, and the included ecology of forty-one skills and cognitive Faculties.
+Nova + MIND Free 2.0.6 installs one product as two Codex plugins: Nova, the user-facing agent, and MIND, her cognitive substrate. Together they expose forty-one skills, including sixteen MIND Faculties and TestForge’s two verification roles.
 
-## The normal installation
+## Choose the supported path
+
+| Host | Supported shape | Evidence boundary |
+|---|---|---|
+| Codex with plugin support | Complete two-plugin product, local MIND Core database, trusted prompt-submit hook, and forty-one-capability reminder estate | Primary integrated target; installation and hook trust still require local confirmation. |
+| Claude-compatible skill host | One self-contained ZIP per selected skill | Package shape only; no shared database, hook, automatic reminders, or Codex-equivalent integration is claimed. |
+| Other hosts | Source may be adaptable | Not a supported installation claim. |
+
+## Before you begin
+
+For the complete Codex installation, you need PowerShell, Python 3.11 or newer, and Ollama serving `qwen3-embedding:0.6b`. The release does not bundle or download model weights. If another Nova or MIND installation or database already exists, read [Upgrade](docs/UPGRADE.md) before changing anything.
+
+## Normal Codex installation
 
 1. [Download the latest Nova + MIND Free ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
-2. Attach or drop the ZIP into a Codex task.
+2. Attach the ZIP to a Codex task.
 3. Tell Codex:
 
    ```text
    Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing any existing Nova or MIND installation.
    ```
 
-4. Review the installation actions Codex proposes and approve the ones you accept.
-5. When installation finishes, open **Settings → Hooks**, inspect the MIND prompt-submit hook, and decide whether to trust those exact local bytes.
-6. Start a new task so the harness can discover the installed package.
+4. Review the proposed file and configuration operations. Installation does not enlarge Codex permissions.
+5. Open **Settings → Hooks**, inspect the exact MIND prompt-submit hook, and decide whether to trust those bytes.
+6. Close Codex desktop and run the read-only verification procedure from the extracted release:
 
-A successful installation leaves both **Nova the Optimal AI** and **MIND by Collaborative Dynamics** enabled. MIND’s local capability-reminder system should report that the included public estate is active; its trusted prompt hook also requires the configured local `qwen3-embedding:0.6b` endpoint for semantic association.
+   ```powershell
+   .\verify-install.ps1 -OutputPath .\nova-mind-install-verification.json
+   ```
 
-## Why there are two plugins
+7. Start a new Codex task so discovery occurs against the installed plugins.
 
-You are installing one product. Nova and MIND are separate plugin units only because MIND is also available as a standalone cognitive system and the harness needs clean discovery boundaries. In Free Nova they belong together; there is no reduced Nova-without-MIND mode.
+## Expected results
 
-## If the harness cannot install the ZIP itself
+A successful mechanical verification reports:
 
-Extract the release ZIP and use the included `install.ps1` from PowerShell. This is the fallback path, not the product pitch. Full prerequisites, expected results, and recovery steps are in [Manual Codex installation](docs/INSTALL-CODEX.md).
+- `Nova the Optimal AI` 2.0.1 enabled from the Free Nova marketplace;
+- `MIND by Collaborative Dynamics` 2.1.4 enabled from the same marketplace;
+- an intact SQLite database with an active forty-one-capability generation;
+- forty-one cards, 246 vectors, and successful local semantic association against a temporary copy;
+- the original database unchanged by the verifier.
 
-## What happens next
+That report does not prove hook trust, pre-turn context delivery, model attention, use of a reminder, or behavioral correctness.
 
-Nova becomes available as the user-facing agent. MIND operates as her cognitive substrate. The other included skills and Augments become capabilities Nova can draw on rather than a menu you must memorize.
+## Fresh-task confirmation
 
-See [What you just installed](docs/CAPABILITY-GUIDE.md), [How MIND remembers capabilities](docs/CAPABILITY-REMINDERS.md), or [Troubleshooting](docs/TROUBLESHOOTING.md).
+In the new task, enter:
+
+```text
+$nova Help me make a concrete first move on this objective: [your objective]. Separate what you know from what you are assuming.
+```
+
+Expected result: Nova responds as one coherent collaborator, makes useful progress, and does not ask you to navigate a capability catalog. If `$nova` is not recognized, record a discovery failure and use [Troubleshooting](docs/TROUBLESHOOTING.md).
+
+## Manual fallback
+
+If Codex cannot install an attached archive, extract the release and run `install.ps1` from PowerShell. The installer adds the local marketplace, enables both plugins, creates a new database, activates the included estate, and checks semantic association. It stops instead of silently replacing another source or overwriting an existing database. Follow [Manual Codex installation](docs/INSTALL-CODEX.md).
+
+## Claude-compatible hosts
+
+Open `claude/zips/` in the release and upload only the skill ZIPs you want. Start a new conversation after the host accepts them. Read [Claude-compatible installation](docs/INSTALL-CLAUDE.md) before claiming Nova/MIND parity.
+
+## Next
+
+- [What you installed](docs/CAPABILITY-GUIDE.md)
+- [Representative workflows](https://stunspot.github.io/nova-the-optimal-ai-mind/workflows.html)
+- [Privacy and trust](docs/PRIVACY-AND-TRUST.md)
+- [Troubleshooting](docs/TROUBLESHOOTING.md)
+- [Update or remove](docs/UPGRADE.md)

@@ -1,0 +1,33 @@
+{
+  "schema": "documentation-accessibility-review/v1",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "reviewed_source_commit": "44fe9f8e07d8944f25a63c6cb9c24704d1408a03-plus-candidate-diff",
+  "documentation_fingerprint": "4e6cccea3d128754fc73d50f62a12186e95943a14d63282d344e762a9d37fc24",
+  "reviewed_at_utc": "2026-08-12T01:47:00Z",
+  "result": "PASS_WITH_BOUNDED_EVIDENCE",
+  "checks": {
+    "descriptive_titles_and_language": "PASS",
+    "logical_heading_and_landmark_structure": "PASS",
+    "skip_navigation": "PASS",
+    "keyboard_visible_focus": "PASS",
+    "navigation_available_on_mobile": "PASS after remediation",
+    "meaningful_link_text": "PASS",
+    "image_alternatives": "PASS",
+    "text_contrast": "PASS by authored palette review; light-section link color remediated",
+    "zoom_and_reflow": "PASS by responsive source review",
+    "reduced_motion": "PASS",
+    "code_and_table_overflow": "PASS",
+    "warnings_before hazards": "PASS",
+    "plain_language_and_recovery": "PASS"
+  },
+  "repairs": [
+    "Restored all primary navigation links at mobile width instead of hiding four of five.",
+    "Added darker link colors on near-white sections to preserve distinguishability and contrast.",
+    "Added explicit table overflow, code wrapping, page titles, language metadata, landmarks, skip links, and focus treatment across the multi-page journey."
+  ],
+  "not_claimed": [
+    "No formal universal WCAG conformance claim.",
+    "No representative-user or assistive-technology lab run in this local review.",
+    "Live deployed keyboard, screen-reader, zoom, and cross-browser behavior requires post-deployment re-entry."
+  ]
+}

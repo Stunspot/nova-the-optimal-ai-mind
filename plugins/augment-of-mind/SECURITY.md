@@ -29,7 +29,7 @@ issues.
 
 Do not publish an exploitable report or real credential in a GitHub issue.
 Use GitHub's private vulnerability reporting for
-[`Stunspot/augment-of-mind`](https://github.com/Stunspot/augment-of-mind/security)
+[`Stunspot/nova-the-optimal-ai-mind`](https://github.com/Stunspot/nova-the-optimal-ai-mind/security)
 when available. Otherwise contact Collaborative Dynamics through
 [collaborative-dynamics.com](https://collaborative-dynamics.com) and request a
 private reporting channel.

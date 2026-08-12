@@ -348,6 +348,18 @@ def verify(include_release: bool) -> dict:
         errors.append("source lock does not preserve the 24-record frozen-contest contract")
 
     verify_links(errors)
+
+    site_check = ROOT / "docs" / "check_site.py"
+    if not site_check.is_file():
+        errors.append("Pages site checker is missing")
+    for required_asset in (
+        ROOT / "docs" / "assets" / "nova-mind-readme-hero.png",
+        ROOT / "docs" / "assets" / "nova-mind-pages-hero.png",
+        ROOT / "docs" / "assets" / "nova-mind-social-card.png",
+    ):
+        if not required_asset.is_file():
+            errors.append(f"required presentation asset missing: {required_asset.relative_to(ROOT)}")
+
     if include_release:
         verify_release(errors)
 
