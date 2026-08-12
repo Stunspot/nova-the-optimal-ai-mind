@@ -1,0 +1,226 @@
+{
+    "schema":  "documentation-fingerprint/v1",
+    "repository":  "Stunspot/nova-the-optimal-ai-mind",
+    "content_commit":  "6bb74778997df83a608e3b89caf40d32153adc43",
+    "file_count":  54,
+    "algorithm":  "sort paths with System.StringComparer.Ordinal; concatenate UTF-8 POSIX path, one NUL byte, and raw 32-byte SHA-256 of file; SHA-256 the concatenation",
+    "documentation_fingerprint":  "91b16637305fade7825c0ddfb2324d620cb407da06ed79a7745f819024d7cc31",
+    "files":  [
+                  {
+                      "path":  "README.md",
+                      "sha256":  "9e47bab2c385cf83509cbfb886c1236b6e4aed72b722eebc5be4c0c10ee9db64"
+                  },
+                  {
+                      "path":  "RELEASE-NOTES.md",
+                      "sha256":  "cf49e9e9605f36c548b5803ec1e6dbc186fb5e5978598837f601080def2e02e2"
+                  },
+                  {
+                      "path":  "SECURITY.md",
+                      "sha256":  "f27420dbbbab6bb760dbf3d72bf2fda9e586059641cf69474d7aa9eee22fd454"
+                  },
+                  {
+                      "path":  "START-HERE.md",
+                      "sha256":  "0890b632cd2ddad835f22192df7863ecda77852f41f8d9fa718c1a9945f8f73b"
+                  },
+                  {
+                      "path":  "SUPPORT.md",
+                      "sha256":  "902f2e1f656f4b23366c003dbe66fed44ad6d66aa5a5012d75872778ca4243b5"
+                  },
+                  {
+                      "path":  "audit-local-stores.ps1",
+                      "sha256":  "2e2183cf504c12978eb0507185aae8268524472cc090c5d62ee7e5bf96985010"
+                  },
+                  {
+                      "path":  "design/FREE-NOVA-PACKAGE-MAP.md",
+                      "sha256":  "8d5e9059faa8d394dc1fdb7bc98a9b797d20fe3f32fffa2031bb34b152c231d7"
+                  },
+                  {
+                      "path":  "design/source-lock.json",
+                      "sha256":  "a42548be6c2666fa5e82690816de25a5fe6a9a363986bd33100ca434f1341d2d"
+                  },
+                  {
+                      "path":  "docs/.nojekyll",
+                      "sha256":  "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+                  },
+                  {
+                      "path":  "docs/404.html",
+                      "sha256":  "1f513abc6b82df995a418496f408d52a2239913a40cedc3ccdeb49bcfd27cb82"
+                  },
+                  {
+                      "path":  "docs/CAPABILITY-GUIDE.md",
+                      "sha256":  "bba4756bbf010e2dea0b72a38546c7ebc2e0e19d08755ec3a8b2f96151846c21"
+                  },
+                  {
+                      "path":  "docs/CAPABILITY-REMINDERS.md",
+                      "sha256":  "ddc2df53cca3c6fdc5b7284366bb3b226e1a8ef6c37277909f8c91b2e9ec6636"
+                  },
+                  {
+                      "path":  "docs/HOST-MATRIX.md",
+                      "sha256":  "6d0d60c603856c582c46caca1dd8778c3243e3a7a02d343dbec49caa33ee68f3"
+                  },
+                  {
+                      "path":  "docs/INSTALL-CLAUDE.md",
+                      "sha256":  "987144cf9b4bc95b8ecda9a7641197832a7851cc7a6e42e859b45885880f00f9"
+                  },
+                  {
+                      "path":  "docs/INSTALL-CODEX.md",
+                      "sha256":  "1ed7a1db70df2e89392fd2c062c9cffd7c35164f756831a012a7239dc03d0aec"
+                  },
+                  {
+                      "path":  "docs/MAINTAINER-GUIDE.md",
+                      "sha256":  "06b4fa66908bf0beff80bb81fd9d574d2f5fe85e2a9ce591789ea41d03b98775"
+                  },
+                  {
+                      "path":  "docs/PRIVACY-AND-TRUST.md",
+                      "sha256":  "48fd070a43d4a2c3a7caff52bbfff6bc2215231d1f61ccb6aac1c967b86a2b17"
+                  },
+                  {
+                      "path":  "docs/TROUBLESHOOTING.md",
+                      "sha256":  "df2b37711b7f4376ca7ae8448f713675ec2e538aaa7afbaa65c9d96a715a6d94"
+                  },
+                  {
+                      "path":  "docs/UPGRADE.md",
+                      "sha256":  "6967fa10d1a9d3260db4d69b4bdd431c01f454de633a2f77035a8e60354f83e8"
+                  },
+                  {
+                      "path":  "docs/VERIFICATION.md",
+                      "sha256":  "8cd882b08c5b7ebddbc591ee7608509f4bd1c843ed5eae6e12ad0e35fd5a79cd"
+                  },
+                  {
+                      "path":  "docs/assets/nova-emergent.png",
+                      "sha256":  "0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61"
+                  },
+                  {
+                      "path":  "docs/assets/nova-mind-pages-hero.png",
+                      "sha256":  "3c6f2e8d5e59f037c2d981e40d94b59592c061fb19222ec949b36375aa86dffb"
+                  },
+                  {
+                      "path":  "docs/assets/nova-mind-readme-hero.png",
+                      "sha256":  "d80f78dec3afd0613e62958803b1f040b6348c5e7b64fd5e5e1cd88274370065"
+                  },
+                  {
+                      "path":  "docs/assets/nova-mind-social-card.png",
+                      "sha256":  "3682dfecfd7420f01fbbb2649846ec03bd9992cf50120d140f4dca769590260c"
+                  },
+                  {
+                      "path":  "docs/capabilities.html",
+                      "sha256":  "a6739da21011399e562a2d7e11ef7fc778c6471107dd71308f0780380aca077b"
+                  },
+                  {
+                      "path":  "docs/check_site.py",
+                      "sha256":  "c2e672bd306e7fc46a5581612bf567f9b4c6099185e7fca8b38e6bc8809342df"
+                  },
+                  {
+                      "path":  "docs/index.html",
+                      "sha256":  "a6b6631a525bcc0d619f4002d8ae117bcf004f4f79960518387eb1d8420263d8"
+                  },
+                  {
+                      "path":  "docs/install.html",
+                      "sha256":  "6ec861998a20f5b9ec1a08fdd8396425cf479e264c16929f0f58fbebf0208abc"
+                  },
+                  {
+                      "path":  "docs/style.css",
+                      "sha256":  "b26436669fce51acf6c0a19bc933ab979d824b74908f72155120e6e66931baa2"
+                  },
+                  {
+                      "path":  "docs/support.html",
+                      "sha256":  "5fb57b836ac617701d26df462cfec88825d2cfe56158b2cb3c336b09ea439ca2"
+                  },
+                  {
+                      "path":  "docs/trust.html",
+                      "sha256":  "b2a6fa698cb42c944176ef2746980f3e66330177accb11620c1c9719e1e178d1"
+                  },
+                  {
+                      "path":  "docs/workflows.html",
+                      "sha256":  "b0bb8a826a487359218a4852a9486ff9ed9aa26626cbd487258ae2b1477b192b"
+                  },
+                  {
+                      "path":  "install.ps1",
+                      "sha256":  "add1023c9ece08701bef2f74eecc07853486f7e7e1b4bcb27f262cb4eb77506a"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/CAPABILITIES-AND-LIMITS.md",
+                      "sha256":  "95ddf923d583345ea7f39082cc65343de6e65f180deaa5eec06e4decf0ec8f00"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/CAPABILITY-REMINDERS.md",
+                      "sha256":  "a164e2631a898c69098a99c58939486d416b893e9f9f515a77c0b7c58377f363"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/DATA-AND-PRIVACY.md",
+                      "sha256":  "de315d60354b9a53542550438b28958caa9aac88f9c1183d85817a09d8588742"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/HOST-COMPATIBILITY.md",
+                      "sha256":  "80165118e17f56b8131f16fc544d2ef4698a00215bee249588300bd0a81a2f4b"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/INSTALL-CODEX.md",
+                      "sha256":  "3d84c248be5c622210d78fc78ff7819a316b1a7ac89c0da71d8cbef93b3e0cc4"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/LICENSE.md",
+                      "sha256":  "2fca94eb398b7232ffef41f9cb0aaaca84afde2ce50a55bd1053acb73e85b10b"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/NOTICE.md",
+                      "sha256":  "4538f50403b262cfab930dca66cf8d76ea86e20981921cb0876811ba8d3f3d0a"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/OPTIONAL-CORE.md",
+                      "sha256":  "a92dcc1c64436be909db5656ce97e01f6e4d8d34963dabee9333814d576a8c34"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/PACKAGE-REFERENCE.md",
+                      "sha256":  "f2400446d893f53b6ba072bc621b30309426273572a575d4dca5ef64f4006ca1"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/QUICK-START.md",
+                      "sha256":  "00dd3dfd47ace483dcafd5a833656be3b9e8edf82c4d841b8cffd5cd08d16929"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/README.md",
+                      "sha256":  "aea448564654285a1c6f14bed1ebe2eb1b120b597d680102d2af3f34e3718e41"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/RELEASE-NOTES.md",
+                      "sha256":  "eafb7c5afa7fb9176f1f4609dadd804a071d3a5c97153c857ac026171060d463"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/SECURITY.md",
+                      "sha256":  "5722eeb539bf997a3b9cb13f6db25dde3e9c06379f5d70e6440ef1721d6fe47a"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/START-HERE.md",
+                      "sha256":  "b5559299f50a4fd643a38b006b27d0b779861a61f74f958d27fb65f82fede480"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/SUPPORT.md",
+                      "sha256":  "7e322e15ca65e4970011cf1e7c4a96c0c6ddd8f272fbedcc21eeaa8b7222882b"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/TERMS-OF-USE.md",
+                      "sha256":  "d48d4eab68f26543f17f026c6830ef15c6297930a944752de84ee7c40cf921c5"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/TROUBLESHOOTING.md",
+                      "sha256":  "6617e039a2cfff3fdc4337ad0a7f63896c4c9f8884f61c5d9094377201565325"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/USER-GUIDE.md",
+                      "sha256":  "dbe0c74ba5bf61d8efe50121cc6aa06d072941910d8c0aa01bd4e03a04fd56ec"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/install.ps1",
+                      "sha256":  "e7ddd250df36484c3a1090468596ccecc7b8b1fe852f84991cce94dead9e6100"
+                  },
+                  {
+                      "path":  "plugins/augment-of-mind/pyproject.toml",
+                      "sha256":  "6867a74de1f946786fed3296fa0734787f79aea69c8a81185c5a05ac744f3840"
+                  },
+                  {
+                      "path":  "verify-install.ps1",
+                      "sha256":  "11835ce1f2609f4ee8fe18f06865299706dbcca45e3f84af222bbcdc0b889f6d"
+                  }
+              ]
+}

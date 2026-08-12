@@ -1,0 +1,51 @@
+{
+    "schema":  "testforge-adversarial-verification/v1",
+    "repository":  "Stunspot/nova-the-optimal-ai-mind",
+    "reviewed_content_commit":  "6bb74778997df83a608e3b89caf40d32153adc43",
+    "documentation_fingerprint":  "91b16637305fade7825c0ddfb2324d620cb407da06ed79a7745f819024d7cc31",
+    "receipt_id":  "NOVA-MIND-ADVERSARIAL-6bb7477-91b16637-20260812",
+    "reviewed_at_utc":  "2026-08-12T17:35:00Z",
+    "result":  "PASS_WITH_LIVE_RENDERING_BOUNDARY",
+    "claim":  "Nova + MIND Free 2.0.8 customer documentation, site source, and role-specific visuals form a coherent publishable public experience at the reviewed fingerprint.",
+    "observed_evidence":  {
+                              "customer_journey":  "54 governed files enumerated and fingerprinted; Hesperos receipt covers orientation through lifecycle, trust, support, and terms",
+                              "repository_tests":  "43 of 43 PASS",
+                              "source_verifier":  "PASS: 21 Nova skills, 20 MIND skills, 16 Faculties, 41 cards, 246 vectors, radius 0.33, qualification unqualified",
+                              "pages_checker":  "PASS: seven pages, 97 local links, titles, language, skip links, fragments, and image references",
+                              "visual_identity":  "Three byte-distinct, previously pixel-inspected role assets unchanged: README 1600x720, Pages 1200x800, social 1200x630",
+                              "diff_integrity":  "git diff --check PASS"
+                          },
+    "challenges":  [
+                       {
+                           "challenge":  "Can stale 2.0.6 review evidence be presented as current?",
+                           "result":  "NO",
+                           "evidence":  "This receipt and the corrected Hesperos/accessibility receipts bind the explicit 2.0.8 fingerprint manifest and content commit."
+                       },
+                       {
+                           "challenge":  "Can the reminder profile be overclaimed as behaviorally qualified?",
+                           "result":  "NO",
+                           "evidence":  "README and verification guidance retain unqualified status and separate installation, hook trust, delivery, attention, selection, and behavior."
+                       },
+                       {
+                           "challenge":  "Can Claude archives be mistaken for integrated Codex parity?",
+                           "result":  "NO",
+                           "evidence":  "Host documentation limits Claude to portable per-skill archives and disclaims the shared database, hook, reminders, and integrated behavior."
+                       },
+                       {
+                           "challenge":  "Can the three asset roles be duplicates or omit social identity text?",
+                           "result":  "NO",
+                           "evidence":  "Distinct hashes and aspect ratios remain bound; direct prior pixel review records exact social text Nova + MIND Free and One agent. 41 capabilities."
+                       },
+                       {
+                           "challenge":  "Can local source checks establish rendered-browser or assistive-technology behavior?",
+                           "result":  "NO",
+                           "evidence":  "Those boundaries remain explicitly NOT TESTED under the task prohibition on browser automation."
+                       }
+                   ],
+    "residual_boundaries":  [
+                                "No browser-rendered visual or interactive walkthrough was performed in this final review.",
+                                "No assistive-technology lab or representative-user run was performed.",
+                                "Fresh-host installation, hook trust, provider delivery, model attention, and broad reminder quality remain separate evidence states."
+                            ],
+    "invalidation_rule":  "Any change to a file enumerated by verification/documentation-fingerprint-v2.0.8.json invalidates this receipt."
+}
