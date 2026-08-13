@@ -1,0 +1,152 @@
+{
+    "format_version":  "1.0",
+    "evidence_boundary":  "local generated-example file production and static verification only; no VTT import or live visibility observed",
+    "started_at":  "2026-08-13T12:18:36.7855536+00:00",
+    "finished_at":  "2026-08-13T12:18:41.8257832+00:00",
+    "status":  "passed",
+    "step_count":  14,
+    "steps":  [
+                  {
+                      "name":  "generic-gm-build",
+                      "command":  "python -B scripts/export_campaign.py build .\\examples\\tonight-pack\\campaign \u003ctemp\u003e\\kindly-cellar-gm.zip --audience gm",
+                      "exit_code":  0,
+                      "duration_seconds":  0.381232,
+                      "output":  "PASS: FINAL: \u003ctemp\u003e\\kindly-cellar-gm.zip\nSHA256: FA6858F8A60942987497EDD4783B3E59A1C9F31568A2E4A33E3B4A54A27629D3\nAUDIT: \u003ctemp\u003e\\kindly-cellar-gm.zip.audit.json\nPREVIEW: \u003ctemp\u003e\\kindly-cellar-gm.zip.preview.html"
+                  },
+                  {
+                      "name":  "generic-gm-verify",
+                      "command":  "python -B scripts/export_campaign.py verify \u003ctemp\u003e\\kindly-cellar-gm.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.194744,
+                      "output":  "PASS: cd-ludis-pack/v1 gm pack; 19 archive members\nSHA256: FA6858F8A60942987497EDD4783B3E59A1C9F31568A2E4A33E3B4A54A27629D3"
+                  },
+                  {
+                      "name":  "generic-player-build",
+                      "command":  "python -B scripts/export_campaign.py build .\\examples\\tonight-pack\\campaign \u003ctemp\u003e\\kindly-cellar-player.candidate.zip --audience player",
+                      "exit_code":  0,
+                      "duration_seconds":  0.321229,
+                      "output":  "PASS: APPROVAL REQUIRED: \u003ctemp\u003e\\kindly-cellar-player.candidate.zip\nSHA256: AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA\nAUDIT: \u003ctemp\u003e\\kindly-cellar-player.candidate.zip.audit.json\nPREVIEW: \u003ctemp\u003e\\kindly-cellar-player.candidate.zip.preview.html\nREVIEW: extract a new review copy; compare every member with the preview and audit; inspect or listen to non-rendered members; treat code as text and do not execute it before approval."
+                  },
+                  {
+                      "name":  "generic-player-candidate-verify",
+                      "command":  "python -B scripts/export_campaign.py verify \u003ctemp\u003e\\kindly-cellar-player.candidate.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.183287,
+                      "output":  "PASS: cd-ludis-pack/v1 player pack; 15 archive members\nSHA256: AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA"
+                  },
+                  {
+                      "name":  "generic-player-approve",
+                      "command":  "python -B scripts/export_campaign.py approve \u003ctemp\u003e\\kindly-cellar-player.candidate.zip --asserted-by verification-local-gm --final \u003ctemp\u003e\\kindly-cellar-player.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.418454,
+                      "output":  "PASS: FINALIZED UNCHANGED: \u003ctemp\u003e\\kindly-cellar-player.zip\nSHA256: AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA\nAPPROVAL: \u003ctemp\u003e\\kindly-cellar-player.zip.approval.json"
+                  },
+                  {
+                      "name":  "generic-player-final-verify",
+                      "command":  "python -B scripts/export_campaign.py verify \u003ctemp\u003e\\kindly-cellar-player.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.193914,
+                      "output":  "PASS: cd-ludis-pack/v1 player pack; 15 archive members\nSHA256: AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA"
+                  },
+                  {
+                      "name":  "alchemy-gm-build",
+                      "command":  "python -B scripts/export_target.py build .\\examples\\tonight-pack\\campaign \u003ctemp\u003e\\mara-alchemy.zip --target alchemy --audience gm",
+                      "exit_code":  0,
+                      "duration_seconds":  0.269766,
+                      "output":  "PASS: FINAL: \u003ctemp\u003e\\mara-alchemy.zip\nTARGET: alchemy\nSHA256: 1AAA6FA5C9C56D37E1EB8889525506A7B424D4B5ADF802883DE7FD562E0F2C0D\nAUDIT: \u003ctemp\u003e\\mara-alchemy.zip.audit.json\nPREVIEW: \u003ctemp\u003e\\mara-alchemy.zip.preview.html\nCOMPATIBILITY: statically validated; live import unverified"
+                  },
+                  {
+                      "name":  "alchemy-gm-verify",
+                      "command":  "python -B scripts/export_target.py verify \u003ctemp\u003e\\mara-alchemy.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.203002,
+                      "output":  "PASS: alchemy target bundle; 3 members\nSHA256: 1AAA6FA5C9C56D37E1EB8889525506A7B424D4B5ADF802883DE7FD562E0F2C0D\nCOMPATIBILITY: statically validated; live import unverified"
+                  },
+                  {
+                      "name":  "foundry-gm-build",
+                      "command":  "python -B scripts/export_target.py build .\\examples\\tonight-pack\\campaign \u003ctemp\u003e\\kindly-cellar-foundry-gm.zip --target foundry-v14 --audience gm",
+                      "exit_code":  0,
+                      "duration_seconds":  0.696077,
+                      "output":  "PASS: FINAL: \u003ctemp\u003e\\kindly-cellar-foundry-gm.zip\nTARGET: foundry-v14\nSHA256: D2C71B77100FB369E3E120286E6EF5B505DC04691ACC160434459AA695117F62\nAUDIT: \u003ctemp\u003e\\kindly-cellar-foundry-gm.zip.audit.json\nPREVIEW: \u003ctemp\u003e\\kindly-cellar-foundry-gm.zip.preview.html\nCOMPATIBILITY: statically validated; live import unverified"
+                  },
+                  {
+                      "name":  "foundry-gm-verify",
+                      "command":  "python -B scripts/export_target.py verify \u003ctemp\u003e\\kindly-cellar-foundry-gm.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.218881,
+                      "output":  "PASS: foundry-v14 target bundle; 6 members\nSHA256: D2C71B77100FB369E3E120286E6EF5B505DC04691ACC160434459AA695117F62\nCOMPATIBILITY: statically validated; live import unverified"
+                  },
+                  {
+                      "name":  "foundry-player-build",
+                      "command":  "python -B scripts/export_target.py build .\\examples\\tonight-pack\\campaign \u003ctemp\u003e\\kindly-cellar-foundry-player.candidate.zip --target foundry-v14 --audience player",
+                      "exit_code":  0,
+                      "duration_seconds":  0.547846,
+                      "output":  "PASS: APPROVAL REQUIRED: \u003ctemp\u003e\\kindly-cellar-foundry-player.candidate.zip\nTARGET: foundry-v14\nSHA256: 85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416\nAUDIT: \u003ctemp\u003e\\kindly-cellar-foundry-player.candidate.zip.audit.json\nPREVIEW: \u003ctemp\u003e\\kindly-cellar-foundry-player.candidate.zip.preview.html\nREVIEW: extract a new review copy; compare every member with the preview and audit; inspect or listen to non-rendered members; treat code as text and do not execute it before approval.\nCOMPATIBILITY: statically validated; live import unverified"
+                  },
+                  {
+                      "name":  "foundry-player-candidate-verify",
+                      "command":  "python -B scripts/export_target.py verify \u003ctemp\u003e\\kindly-cellar-foundry-player.candidate.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.206536,
+                      "output":  "PASS: foundry-v14 target bundle; 5 members\nSHA256: 85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416\nCOMPATIBILITY: statically validated; live import unverified"
+                  },
+                  {
+                      "name":  "foundry-player-approve",
+                      "command":  "python -B scripts/export_target.py approve \u003ctemp\u003e\\kindly-cellar-foundry-player.candidate.zip --asserted-by verification-local-gm --final \u003ctemp\u003e\\kindly-cellar-foundry-player.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.70452,
+                      "output":  "PASS: FINALIZED UNCHANGED: \u003ctemp\u003e\\kindly-cellar-foundry-player.zip\nTARGET: foundry-v14\nSHA256: 85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416\nAPPROVAL: \u003ctemp\u003e\\kindly-cellar-foundry-player.zip.approval.json"
+                  },
+                  {
+                      "name":  "foundry-player-final-verify",
+                      "command":  "python -B scripts/export_target.py verify \u003ctemp\u003e\\kindly-cellar-foundry-player.zip",
+                      "exit_code":  0,
+                      "duration_seconds":  0.208192,
+                      "output":  "PASS: foundry-v14 target bundle; 5 members\nSHA256: 85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416\nCOMPATIBILITY: statically validated; live import unverified"
+                  }
+              ],
+    "artifacts":  {
+                      "generic_gm":  {
+                                         "sha256":  "FA6858F8A60942987497EDD4783B3E59A1C9F31568A2E4A33E3B4A54A27629D3",
+                                         "bytes":  4997038
+                                     },
+                      "generic_player_candidate":  {
+                                                       "sha256":  "AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA",
+                                                       "bytes":  3035297
+                                                   },
+                      "generic_player_final":  {
+                                                   "sha256":  "AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA",
+                                                   "bytes":  3035297
+                                               },
+                      "alchemy_gm":  {
+                                         "sha256":  "1AAA6FA5C9C56D37E1EB8889525506A7B424D4B5ADF802883DE7FD562E0F2C0D",
+                                         "bytes":  5151
+                                     },
+                      "foundry_gm":  {
+                                         "sha256":  "D2C71B77100FB369E3E120286E6EF5B505DC04691ACC160434459AA695117F62",
+                                         "bytes":  5005900
+                                     },
+                      "foundry_player_candidate":  {
+                                                       "sha256":  "85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416",
+                                                       "bytes":  3047446
+                                                   },
+                      "foundry_player_final":  {
+                                                   "sha256":  "85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416",
+                                                   "bytes":  3047446
+                                               }
+                  },
+    "exact_byte_approval":  {
+                                "generic_player":  true,
+                                "foundry_player":  true
+                            },
+    "generated_artwork":  {
+                              "examples/tonight-pack/campaign/assets/abandoned-tollhouse-map.png":  {
+                                                                                                        "sha256":  "8E9ED071B18F60C192056E38FF6740B18DF53BF21570A6B3969163031416BB85",
+                                                                                                        "bytes":  3027518
+                                                                                                    },
+                              "examples/tonight-pack/campaign/assets/mara-venn-token.png":  {
+                                                                                                "sha256":  "75A179016390A2C93A05703BDD25CCB5A228C290BA2895E85EC61C42A85F682B",
+                                                                                                "bytes":  1954573
+                                                                                            }
+                          }
+}

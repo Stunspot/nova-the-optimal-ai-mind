@@ -1,8 +1,8 @@
 {
     "format":  "nova-free-source-lock/v1",
     "product":  "Nova + MIND Free",
-    "product_version":  "2.0.8",
-    "generated_at":  "2026-08-12",
+    "product_version":  "2.0.9",
+    "generated_at":  "2026-08-13",
     "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
     "contest_repository_mutated":  false,
     "excluded_capabilities":  [
@@ -334,18 +334,28 @@
                     {
                         "component":  "ludis-continuum",
                         "source_repository":  "https://github.com/Stunspot/ludis-continuum",
-                        "source_commit":  "6ac1a0420dcd2db56f3e8aa21d3f915b98bd5a2f",
-                        "source_path":  "release-v0.1.0/codex/ludis-continuum",
+                        "source_commit":  "e20d8ee88538e1e5a62ba9f18b5224ebedaa05df",
+                        "source_path":  ".",
                         "source_tree":  {
-                                            "file_count":  39,
-                                            "tree_sha256":  "cfeb6522dc603a349291aac58574e69a36d408daedf67fa68f2e5f60311f0d12"
+                                            "file_count":  122,
+                                            "tree_sha256":  "a79c66757df392747f811331679937b0d1bba534a45a1945286e5b4c295a7a22"
                                         },
+                        "selection_excludes":  [
+                                                   ".github/**",
+                                                   ".editorconfig",
+                                                   ".gitattributes",
+                                                   ".gitignore"
+                                               ],
+                        "selected_tree":  {
+                                              "file_count":  117,
+                                              "tree_sha256":  "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da"
+                                          },
                         "imported_path":  "plugins/nova-the-optimal-ai/skills/ludis-continuum",
                         "imported_tree":  {
-                                              "file_count":  39,
-                                              "tree_sha256":  "cfeb6522dc603a349291aac58574e69a36d408daedf67fa68f2e5f60311f0d12"
+                                              "file_count":  117,
+                                              "tree_sha256":  "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da"
                                           },
-                        "custody":  "release artifact"
+                        "custody":  "exact tracked runtime selection from Ludis Continuum 1.1.0; repository-control files excluded"
                     },
                     {
                         "component":  "lex-foster-language-companion",

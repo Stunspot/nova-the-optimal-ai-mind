@@ -1,0 +1,69 @@
+{
+    "schema":  "cd-documentation-review/v1",
+    "repository":  "Stunspot/ludis-continuum",
+    "base_commit":  "8bc9d2886f6345d7cb77736022806b5e22d4990e",
+    "content_fingerprint_algorithm":  "sha256(sorted sha256 two-space path newline records; final present files; verification/*.json excluded)",
+    "content_fingerprint":  "a8fe914dbf257f4d2a84ea6cdd5766aef8e0dca3bd90c60880a7471411ddd229",
+    "fingerprint_file_count":  76,
+    "reviewed_at_utc":  "2026-08-12T00:33:57Z",
+    "review":  "Hesperos customer documentation cycle",
+    "verdict":  "PASS_FOR_PUBLICATION_CANDIDATE",
+    "documents_read":  [
+                           "README.md",
+                           "START-HERE.md",
+                           "DOCUMENTATION.md",
+                           "SUPPORT.md",
+                           "SECURITY.md",
+                           "PROVENANCE.md",
+                           "ACCESSIBILITY.md",
+                           "CONTRIBUTING.md",
+                           "LICENSE.md",
+                           "verification/README.md",
+                           "docs/README.md",
+                           "docs/index.html",
+                           "docs/start.html",
+                           "docs/guide.html",
+                           "docs/trust.html",
+                           "docs/404.html"
+                       ],
+    "source_read_scope":  [
+                              "SKILL.md",
+                              "agents/openai.yaml",
+                              "knowledge/operating-doctrine.md",
+                              "knowledge/state-and-authority.md",
+                              "knowledge/canonical-boundaries.md",
+                              "fallbacks/degraded-capability.md",
+                              "fallbacks/universal-copy-paste-workflow.md",
+                              "assets/campaign.template/campaign-ledger.json",
+                              "schemas/campaign-ledger.schema.json",
+                              "all scripts/*.py",
+                              "knowledge/instruments/index.md",
+                              "knowledge/instruments/manifest.json",
+                              "all 32 knowledge/instruments/*.md"
+                          ],
+    "coverage":  {
+                     "product_audience":  "PASS",
+                     "problem_scope_limits":  "PASS",
+                     "all_supported_host_paths":  "PASS_WITH_DISCOVERY_EVIDENCE_BOUNDARY",
+                     "install_verification_first_success":  "PASS",
+                     "workflows_inputs_outputs_configuration":  "PASS",
+                     "troubleshooting_recovery":  "PASS",
+                     "update_removal_cleanup":  "PASS",
+                     "privacy_storage_network_security":  "PASS",
+                     "limitations_unsupported_claims":  "PASS",
+                     "provenance_validation_evidence":  "PASS",
+                     "support_contribution_license":  "PASS",
+                     "pages_customer_journey":  "PASS"
+                 },
+    "repairs_during_review":  [
+                                  "Clarified campaign-initialization evidence sentence.",
+                                  "Replaced overbroad Pages validator, promotion, and export claims with executable behavior.",
+                                  "Corrected motion statement to match smooth-scroll CSS and reduced-motion override.",
+                                  "Re-reviewed after repository-policy LF normalization; decoded content and customer journey were unchanged.",
+                                  "Live verification found the Pages guide configuration gap; added a dedicated configuration section and re-read the complete guide."
+                              ],
+    "evidence_limits":  [
+                            "Fresh-host installation, Codex/Claude discovery and invocation, live table quality, balance, rules accuracy, semantic spoiler safety, originality, rights clearance, and VTT behavior were not inferred.",
+                            "Live Pages deployment remains pending and requires a separate receipt."
+                        ]
+}

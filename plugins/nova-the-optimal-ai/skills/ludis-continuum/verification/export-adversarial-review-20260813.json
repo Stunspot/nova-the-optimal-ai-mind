@@ -1,0 +1,32 @@
+{
+    "schema_version":  1,
+    "repository":  "Stunspot/ludis-continuum",
+    "base_revision":  "8ea4ad665e73fc173b75c8d8cd9c314abd846d1f",
+    "content_fingerprint":  "8718f7560de90e07c42e3f7c864df33cfa768ae4c5efd1037f50e98e5d7ed033",
+    "file_count":  106,
+    "evidence_boundary":  "exact local product and documentation tree; verification JSON receipts excluded from the bound content fingerprint",
+    "reviewed_at":  "2026-08-13T06:46:26-05:00",
+    "verdict":  "REVIEW_PASS",
+    "evidence":  [
+                     "Independent exact-tree suite: 126 of 126 Python tests passed; TestForge command receipt is export-python-tests-20260813.json.",
+                     "Independent six-case JournalEntryPage parent-identity classifier probe passed: exact same parent skip; foreign parent, revision drift, and type drift conflict; absent create; invalid identity invalid.",
+                     "Package self-check passed 32 instrument cores; trusted importer Node syntax and repository diff checks passed.",
+                     "Independent late-occupant probes for target, generic, snapshot, and ledger publication fail closed and preserve foreign bytes.",
+                     "Alchemy allowlist, loss state, no-inference, and nested-shape cases; Windows and POSIX ledger seams; full-source capture; strict approval receipts; observation stability; Foundry ownership, identity, executable allowlist, and embedded parent preflight are covered."
+                 ],
+    "reviewed_core_sha256":  {
+                                 "foundry_importer":  "9b49c71e45a8aa05554ceb096b5e705cd98463600f4fccd55d064f9160d44f48",
+                                 "adapters":  "941e0279df7f5556ff89d2bc6b527dc6d8452fcbf1ee5b65496e9110eba50869",
+                                 "adapter_tests":  "7778b38c6d943c1141c9ff3fdfb9c4499f881abe47d127de6e930960d21d813d"
+                             },
+    "material_blockers":  [
+
+                          ],
+    "residuals":  [
+                      "No licensed live Foundry or authenticated Alchemy import was exercised.",
+                      "No actual POSIX host was available; POSIX algorithm regressions ran through direct helper invocation on Windows.",
+                      "Static checks cannot recognize semantic spoilers in ordinary prose.",
+                      "Foundry import is resumable per record rather than globally transactional; existing-world flags are trusted and unrelated manual documents are preserved."
+                  ],
+    "rebind_note":  "Final rebind after Git-policy LF normalization in five product text files; only CR bytes from CRLF sequences were removed, with no token or prose change. Fresh 126-test, 14-step E2E, and eight-check static receipts passed."
+}

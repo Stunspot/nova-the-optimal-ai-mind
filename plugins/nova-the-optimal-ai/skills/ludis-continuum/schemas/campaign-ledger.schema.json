@@ -1,1 +1,229 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","title":"Ludis Continuum Campaign State Ledger","type":"object","required":["ludis_version","campaign","table_contract","objects","sessions","approvals","publication"],"properties":{"ludis_version":{"const":"0.1.0"},"campaign":{"type":"object"},"table_contract":{"type":"object"},"objects":{"type":"array"},"sessions":{"type":"array"},"approvals":{"type":"array"},"publication":{"type":"object"}},"additionalProperties":true}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "cd-ludis-campaign-ledger/v2",
+  "title": "Ludis Continuum Campaign State Ledger",
+  "description": "The v2 ledger contract, with a compatibility branch for read-only recognition of legacy 0.1 ledgers.",
+  "oneOf": [
+    {"$ref": "#/$defs/v2Ledger"},
+    {"$ref": "#/$defs/legacyLedger"}
+  ],
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "nullableString": {
+      "type": ["string", "null"]
+    },
+    "stringArray": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "extensions": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^(legacy_v0_1|[a-z][a-z0-9]*(?:[._-][a-z0-9]+)+)$"
+      },
+      "additionalProperties": true
+    },
+    "campaign": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "title": {"$ref": "#/$defs/nullableString"},
+        "premise": {"$ref": "#/$defs/nullableString"},
+        "system": {"$ref": "#/$defs/nullableString"},
+        "edition": {"$ref": "#/$defs/nullableString"},
+        "tier": {"$ref": "#/$defs/nullableString"},
+        "current_horizon": {"$ref": "#/$defs/nullableString"},
+        "data": {"type": "object", "additionalProperties": true},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "tableContract": {
+      "type": "object",
+      "required": ["player_preferences", "lines", "veils", "other_boundaries"],
+      "properties": {
+        "player_preferences": {"$ref": "#/$defs/stringArray"},
+        "lines": {"$ref": "#/$defs/stringArray"},
+        "veils": {"$ref": "#/$defs/stringArray"},
+        "other_boundaries": {"$ref": "#/$defs/stringArray"},
+        "data": {"type": "object", "additionalProperties": true},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "objectRecord": {
+      "type": "object",
+      "required": [
+        "id", "kind", "status", "visibility", "authority", "provenance",
+        "confidence", "tenure", "links", "asset_ids", "export_eligibility"
+      ],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "kind": {"$ref": "#/$defs/identifier"},
+        "status": {"enum": ["proposed", "active_canon", "disputed", "superseded", "quarantined", "retired"]},
+        "visibility": {"enum": ["gm_only", "player_safe"]},
+        "authority": {"type": "string", "minLength": 1},
+        "provenance": {"$ref": "#/$defs/stringArray"},
+        "confidence": {"enum": ["unknown", "low", "medium", "high"]},
+        "tenure": {"type": "string", "minLength": 1},
+        "title": {"$ref": "#/$defs/nullableString"},
+        "summary": {"$ref": "#/$defs/nullableString"},
+        "content": {"$ref": "#/$defs/nullableString"},
+        "claims": {"$ref": "#/$defs/stringArray"},
+        "links": {"$ref": "#/$defs/stringArray"},
+        "asset_ids": {"$ref": "#/$defs/stringArray"},
+        "contradicts": {"$ref": "#/$defs/stringArray"},
+        "tags": {"$ref": "#/$defs/stringArray"},
+        "export_eligibility": {"enum": ["eligible", "blocked", "quarantined_unmapped"]},
+        "data": {"type": "object", "additionalProperties": true},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "active_canon"}}, "required": ["status"]},
+          "then": {"properties": {"authority": {"const": "gm_approved"}}}
+        }
+      ],
+      "additionalProperties": false
+    },
+    "rights": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["owned", "licensed", "public_domain", "permission_granted", "unknown"]},
+        "license": {"$ref": "#/$defs/nullableString"},
+        "credit": {"$ref": "#/$defs/nullableString"},
+        "source": {"$ref": "#/$defs/nullableString"},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "assetRecord": {
+      "type": "object",
+      "required": ["id", "path", "kind", "visibility", "rights", "provenance"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "path": {"type": "string", "minLength": 1},
+        "kind": {"type": "string", "minLength": 1},
+        "media_type": {"type": "string", "minLength": 1},
+        "visibility": {"enum": ["gm_only", "player_safe"]},
+        "rights": {"$ref": "#/$defs/rights"},
+        "provenance": {"$ref": "#/$defs/stringArray"},
+        "alt_text": {"$ref": "#/$defs/nullableString"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "data": {"type": "object", "additionalProperties": true},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "sessionRecord": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "scheduled_for": {"$ref": "#/$defs/nullableString"},
+        "status": {"type": "string", "minLength": 1},
+        "title": {"$ref": "#/$defs/nullableString"},
+        "notes": {"$ref": "#/$defs/nullableString"},
+        "links": {"$ref": "#/$defs/stringArray"},
+        "data": {"type": "object", "additionalProperties": true},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "promoteApproval": {
+      "type": "object",
+      "required": ["object_id", "action"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "object_id": {"$ref": "#/$defs/identifier"},
+        "action": {"const": "promote_canon"},
+        "at": {"type": "string", "minLength": 1},
+        "asserted_by": {"type": "string", "minLength": 1},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "candidateApproval": {
+      "type": "object",
+      "required": ["id", "action", "run_id", "audience", "candidate_sha256", "preview_sha256", "asserted_by", "asserted_at"],
+      "properties": {
+        "id": {"$ref": "#/$defs/identifier"},
+        "action": {"const": "exact_candidate_approved"},
+        "run_id": {"$ref": "#/$defs/identifier"},
+        "audience": {"type": "string", "minLength": 1},
+        "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "preview_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "asserted_by": {"type": "string", "minLength": 1},
+        "asserted_at": {"type": "string", "minLength": 1},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "approvalRecord": {
+      "oneOf": [
+        {"$ref": "#/$defs/promoteApproval"},
+        {"$ref": "#/$defs/candidateApproval"}
+      ]
+    },
+    "publication": {
+      "type": "object",
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["private_draft", "candidate", "approved", "published", "archived"]},
+        "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "published_at": {"type": "string", "minLength": 1},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "producer": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "v2Ledger": {
+      "type": "object",
+      "required": ["format", "campaign", "table_contract", "objects", "assets", "sessions", "approvals", "publication", "extensions"],
+      "properties": {
+        "format": {"const": "cd-ludis-campaign-ledger/v2"},
+        "producer": {"$ref": "#/$defs/producer"},
+        "updated": {"$ref": "#/$defs/nullableString"},
+        "campaign": {"$ref": "#/$defs/campaign"},
+        "table_contract": {"$ref": "#/$defs/tableContract"},
+        "objects": {"type": "array", "items": {"$ref": "#/$defs/objectRecord"}},
+        "assets": {"type": "array", "items": {"$ref": "#/$defs/assetRecord"}},
+        "sessions": {"type": "array", "items": {"$ref": "#/$defs/sessionRecord"}},
+        "approvals": {"type": "array", "items": {"$ref": "#/$defs/approvalRecord"}},
+        "publication": {"$ref": "#/$defs/publication"},
+        "next_prep": {"$ref": "#/$defs/stringArray"},
+        "extensions": {"$ref": "#/$defs/extensions"}
+      },
+      "additionalProperties": false
+    },
+    "legacyLedger": {
+      "type": "object",
+      "required": ["ludis_version", "campaign", "table_contract", "objects", "sessions", "approvals", "publication"],
+      "properties": {
+        "ludis_version": {"const": "0.1.0"},
+        "campaign": {"type": "object"},
+        "table_contract": {"type": "object"},
+        "objects": {"type": "array"},
+        "sessions": {"type": "array"},
+        "approvals": {"type": "array"},
+        "publication": {"type": "object"}
+      },
+      "additionalProperties": true
+    }
+  }
+}

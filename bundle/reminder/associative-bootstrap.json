@@ -4,7 +4,7 @@
     {
       "source_id": "source:nova-free-associative-cards:2.0.0",
       "locator": "bundle/reminder/associative-capability-cards.json",
-      "digest": "4fec7b3c0fb79757f0823d5533f60eb0d191bc3be99e2c2c68a243ac4f07dd52",
+      "digest": "794fcc712d2c4983a3637a739dc5bdd3b42af14bf46b3752fee3cc7119bd0626",
       "custody_state": "canonical-constructed",
       "authority_ref": "Nova + MIND Free 2.0.0 reviewed associative card source",
       "observed_at": "2026-08-04T00:00:00.000000Z"
@@ -1100,8 +1100,8 @@
       "name": "Ludis Continuum",
       "product_id": "product:nova-free",
       "canonical_source_id": "source:nova-free-associative-cards:2.0.0",
-      "promise": "Run choice-shaped games, characters, scenes, and fictional worlds with meaningful continuity and player agency.",
-      "negative_space": "Play follows the user's chosen genre and boundaries; fiction does not become remembered fact or forced canon.",
+      "promise": "Run choice-shaped games and campaign continuity, then emit portable assets for VTTs and other play tools without surrendering canon custody.",
+      "negative_space": "Play follows the user's genre and boundaries; generated exports are derived handoffs, not proof of live import or new campaign canon.",
       "created_at": "2026-08-04T00:00:00.000000Z",
       "superseded_by": null,
       "exposure_policy": "public_safe",

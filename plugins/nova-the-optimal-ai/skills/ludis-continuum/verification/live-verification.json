@@ -1,0 +1,61 @@
+{
+    "schema":  "cd-live-verification/v1",
+    "repository":  "Stunspot/ludis-continuum",
+    "verified_content_commit":  "3b9aebfdc3a25fb0813e644cf9d50b977f91bf9d",
+    "content_fingerprint":  "a8fe914dbf257f4d2a84ea6cdd5766aef8e0dca3bd90c60880a7471411ddd229",
+    "verified_at_utc":  "2026-08-12T00:38:27Z",
+    "pages_url":  "https://stunspot.github.io/ludis-continuum/",
+    "deployment_run":  {
+                           "id":  31550728939,
+                           "url":  "https://github.com/Stunspot/ludis-continuum/actions/runs/31550728939",
+                           "conclusion":  "success",
+                           "head_sha":  "3b9aebfdc3a25fb0813e644cf9d50b977f91bf9d"
+                       },
+    "routes":  {
+                   "/":  200,
+                   "/start.html":  200,
+                   "/guide.html":  200,
+                   "/trust.html":  200,
+                   "/style.css":  200,
+                   "/definitely-not-a-real-route-20260811b":  404
+               },
+    "route_byte_comparison":  "PASS: index, start, guide, trust, stylesheet, custom 404, and all three assets matched origin/main bytes exactly.",
+    "rendered_content":  {
+                             "home":  "PASS",
+                             "start":  "PASS",
+                             "guide":  "PASS including visible configuration",
+                             "trust":  "PASS",
+                             "custom_404":  "PASS",
+                             "navigation_and_fragments":  "PASS: 76 exercised",
+                             "external_documentation_links":  "PASS: 10 of 10 returned 200",
+                             "open_graph_and_twitter":  "PASS: dedicated social card on every customer page"
+                         },
+    "assets":  {
+                   "https://stunspot.github.io/ludis-continuum/assets/ludis-continuum-readme-hero.png":  {
+                                                                                                             "dimensions":  "1600x720",
+                                                                                                             "sha256":  "e24d4b23bd96cb036aed84ca4f7de8fd568ba853a40690bebe73b70a502821ff",
+                                                                                                             "visual":  "PASS: inspected final pixels"
+                                                                                                         },
+                   "https://stunspot.github.io/ludis-continuum/assets/ludis-continuum-pages-hero.png":  {
+                                                                                                            "dimensions":  "1200x800",
+                                                                                                            "sha256":  "7a812b27232acf7ff0d0f5fce467a5ec1ab29ba8413a15193d0fa5c4ec6a8a2f",
+                                                                                                            "visual":  "PASS: inspected final pixels"
+                                                                                                        },
+                   "https://stunspot.github.io/ludis-continuum/assets/ludis-continuum-social-card.png":  {
+                                                                                                             "dimensions":  "1200x630",
+                                                                                                             "sha256":  "d6f33ff9df17d554ff480b050cda00ef7c538b93699bc6b2059bfb400d434248",
+                                                                                                             "visual":  "PASS: exact title Ludis Continuum and line Choice-shaped RPGs and fiction. legible"
+                                                                                                         }
+               },
+    "repository_url":  "https://github.com/Stunspot/ludis-continuum",
+    "pull_requests":  [
+                          "https://github.com/Stunspot/ludis-continuum/pull/2",
+                          "https://github.com/Stunspot/ludis-continuum/pull/3"
+                      ],
+    "repair_history":  "Initial live verification found the Pages guide configuration omission. PR #3 repaired it; all candidate reviews and the complete live verification reran PASS. The initial custom-404 fragment finding was verifier path resolution, corrected without a site change.",
+    "status":  "PASS",
+    "boundary":  [
+                     "Receipt binds the deployed content commit and documentation fingerprint. The later receipt-only commit is excluded from that fingerprint.",
+                     "Fresh-host discovery/invocation, browser/assistive-technology execution, live table quality, semantic spoiler safety, rules accuracy, originality, rights clearance, and VTT behavior remain outside this verdict."
+                 ]
+}

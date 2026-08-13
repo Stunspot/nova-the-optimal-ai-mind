@@ -1,11 +1,28 @@
 {
-  "ludis_version": "0.1.0",
+  "format": "cd-ludis-campaign-ledger/v2",
   "updated": null,
-  "campaign": {"title": null, "premise": null, "system": null, "edition": null, "tier": null, "current_horizon": null},
-  "table_contract": {"player_preferences": [], "lines": [], "veils": [], "other_boundaries": []},
+  "campaign": {
+    "id": null,
+    "title": null,
+    "premise": null,
+    "system": null,
+    "edition": null,
+    "tier": null,
+    "current_horizon": null
+  },
+  "table_contract": {
+    "player_preferences": [],
+    "lines": [],
+    "veils": [],
+    "other_boundaries": []
+  },
   "objects": [],
+  "assets": [],
   "sessions": [],
   "approvals": [],
-  "publication": {"status": "private_draft", "human_approved": false},
-  "next_prep": []
+  "publication": {
+    "status": "private_draft"
+  },
+  "next_prep": [],
+  "extensions": {}
 }

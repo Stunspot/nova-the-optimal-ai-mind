@@ -1,0 +1,42 @@
+{
+    "schema_version":  1,
+    "repository":  "Stunspot/ludis-continuum",
+    "base_revision":  "8ea4ad665e73fc173b75c8d8cd9c314abd846d1f",
+    "content_fingerprint":  "8718f7560de90e07c42e3f7c864df33cfa768ae4c5efd1037f50e98e5d7ed033",
+    "file_count":  106,
+    "evidence_boundary":  "exact local product and documentation tree; verification JSON receipts excluded from the bound content fingerprint",
+    "reviewed_at":  "2026-08-13",
+    "verdict":  "REVIEW_PASS",
+    "evidence":  {
+                     "pages_routes":  6,
+                     "headings":  79,
+                     "named_links":  121,
+                     "resolved_local_references":  97,
+                     "external_references_not_fetched":  31,
+                     "informative_images_with_authored_alt":  1,
+                     "contrast_pairs_tested":  29,
+                     "minimum_contrast_ratio":  "4.553:1",
+                     "generated_preview_members":  {
+                                                       "generic_player":  "15/15",
+                                                       "foundry_player":  "5/5",
+                                                       "alchemy_gm":  "3/3"
+                                                   },
+                     "checks":  [
+                                    "English language and viewport metadata",
+                                    "one H1, logical headings, main landmark, labeled navigation, and working skip link per route",
+                                    "visible focus treatment with no positive tabindex or outline suppression",
+                                    "48rem reflow, wrapped preformatted content, and fluid images",
+                                    "reduced-motion handling",
+                                    "complete-member review warnings and authored alternatives",
+                                    "CSS label contains two U+00B7 separators and no detected mojibake"
+                                ]
+                 },
+    "material_blockers":  [
+
+                          ],
+    "residuals":  [
+                      "No live browser render, manual keyboard traversal, zoom/reflow observation, screen-reader or assistive-technology session, cognitive usability study, or representative-user test.",
+                      "External links, deployed Pages, and live target imports were not exercised."
+                  ],
+    "rebind_note":  "Final rebind after Git-policy LF normalization in five product text files; only CR bytes from CRLF sequences were removed, with no token or prose change. Fresh 126-test, 14-step E2E, and eight-check static receipts passed."
+}

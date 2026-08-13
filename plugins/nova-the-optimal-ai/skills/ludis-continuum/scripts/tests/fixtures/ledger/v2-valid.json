@@ -1,0 +1,75 @@
+{
+  "format": "cd-ludis-campaign-ledger/v2",
+  "producer": {"name": "ludis-continuum", "version": "1.0.0"},
+  "updated": "2026-08-12T12:00:00Z",
+  "campaign": {
+    "id": "campaign-bell-below-bracken",
+    "title": "The Bell Below Bracken",
+    "premise": "A drowned bell is calling debts the town forgot.",
+    "system": "fantasy d20",
+    "edition": null,
+    "tier": "mid",
+    "current_horizon": "first descent",
+    "data": {"season": "late autumn"},
+    "extensions": {"org.example.weather": {"omen": "rain"}}
+  },
+  "table_contract": {
+    "player_preferences": ["negotiation"],
+    "lines": ["harm to children"],
+    "veils": [],
+    "other_boundaries": ["no forced betrayal"]
+  },
+  "objects": [
+    {
+      "id": "canon-town",
+      "kind": "location",
+      "status": "active_canon",
+      "visibility": "player_safe",
+      "authority": "gm_approved",
+      "provenance": ["brief"],
+      "confidence": "high",
+      "tenure": "campaign",
+      "title": "Bracken",
+      "content": "A river town above a flooded bell tower.",
+      "claims": ["Bracken stands over a flooded bell tower"],
+      "links": [],
+      "asset_ids": ["map-bracken"],
+      "export_eligibility": "eligible"
+    },
+    {
+      "id": "secret-debt",
+      "kind": "secret",
+      "status": "active_canon",
+      "visibility": "gm_only",
+      "authority": "gm_approved",
+      "provenance": ["brief"],
+      "confidence": "high",
+      "tenure": "campaign",
+      "title": "The Debt",
+      "content": "The ferrymen sank the bell.",
+      "links": [],
+      "asset_ids": [],
+      "export_eligibility": "eligible"
+    }
+  ],
+  "assets": [
+    {
+      "id": "map-bracken",
+      "path": "assets/maps/bracken.webp",
+      "kind": "map",
+      "media_type": "image/webp",
+      "visibility": "player_safe",
+      "rights": {"status": "owned", "credit": "The table"},
+      "provenance": ["gm-supplied"],
+      "alt_text": "Map of Bracken and the river.",
+      "sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "sessions": [
+    {"id": "session-001", "scheduled_for": null, "status": "prepared", "links": ["canon-town"]}
+  ],
+  "approvals": [],
+  "publication": {"status": "private_draft"},
+  "next_prep": ["Name the ferrymen's price ceiling"],
+  "extensions": {}
+}

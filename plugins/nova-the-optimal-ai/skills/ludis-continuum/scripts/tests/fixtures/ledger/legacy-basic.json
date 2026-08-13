@@ -1,0 +1,59 @@
+{
+  "ludis_version": "0.1.0",
+  "updated": "2026-08-12T12:00:00Z",
+  "campaign": {
+    "title": "The Bell Below Bracken",
+    "premise": "A drowned bell is calling debts the town forgot.",
+    "system": "fantasy d20",
+    "edition": null,
+    "tier": "mid",
+    "current_horizon": "first descent",
+    "weather_oracle": "rain when the bell rings"
+  },
+  "table_contract": {
+    "player_preferences": ["negotiation", "dangerous exploration"],
+    "lines": ["harm to children"],
+    "veils": [],
+    "other_boundaries": ["no forced betrayal"],
+    "open_door": true
+  },
+  "objects": [
+    {
+      "id": "canon-town",
+      "kind": "location",
+      "status": "active_canon",
+      "visibility": "player_safe",
+      "authority": "gm_approved",
+      "provenance": ["brief"],
+      "confidence": "high",
+      "tenure": "campaign",
+      "claims": ["Bracken stands over a flooded bell tower"],
+      "links": [],
+      "player_export_approved": true
+    },
+    {
+      "id": "oddity-one",
+      "kind": "dream_residue",
+      "status": "active_canon",
+      "visibility": "gm_only",
+      "authority": "gm_approved",
+      "provenance": ["session-001"],
+      "confidence": "medium",
+      "tenure": "campaign",
+      "links": [],
+      "unparsed_oracle": {"faces": ["moon", "key"]}
+    }
+  ],
+  "sessions": [
+    {"id": "session-001", "scheduled_for": null, "status": "played", "weather": "rain"}
+  ],
+  "approvals": [
+    {"object_id": "canon-town", "action": "promote_canon"}
+  ],
+  "publication": {
+    "status": "private_draft",
+    "human_approved": true
+  },
+  "next_prep": ["Decide who first heard the bell"],
+  "house_oracle": {"die": "d6"}
+}

@@ -579,15 +579,15 @@
       "handle": "ludis-continuum",
       "name": "Ludis Continuum",
       "cluster": "play-learning",
-      "projection": "Run choice-shaped games, characters, scenes, and fictional worlds with meaningful continuity and player agency.",
-      "boundaries": "Play follows the user's chosen genre and boundaries; fiction does not become remembered fact or forced canon.",
+      "projection": "Run choice-shaped games and campaign continuity, then emit portable assets for VTTs and other play tools without surrendering canon custody.",
+      "boundaries": "Play follows the user's genre and boundaries; generated exports are derived handoffs, not proof of live import or new campaign canon.",
       "views": {
-        "transformation": "Turn an imaginative premise into playable state, consequential choices, vivid scenes, and coherent continuity.",
-        "situation": "The user wants a game, roleplay, character, setting, story scene, or ongoing fictional campaign.",
-        "positive_cue": "play a game, roleplay, character backstory, worldbuilding, run a scene, campaign continuity",
-        "error_or_correction": "The agent railroads the player, floods exposition, forgets consequences, or treats decorative choices as agency.",
-        "negative_boundary": "Ordinary business writing does not need a game engine merely because creativity helps.",
-        "example": "Create a compact character premise and open with a choice that changes the situation."
+        "transformation": "Turn an imaginative premise and versioned campaign state into consequential play, coherent continuity, maps, tokens, handouts, and importable campaign packs.",
+        "situation": "The user wants a game, roleplay, campaign asset, map, token, handout, character export, or VTT-ready package for an ongoing fictional world.",
+        "positive_cue": "play a game, roleplay, campaign continuity, export campaign, VTT, Foundry module, Alchemy character, map, token, handout",
+        "error_or_correction": "The agent railroads the player, forgets consequences, exports secrets into player files, or claims a static package was successfully imported without live evidence.",
+        "negative_boundary": "Ludis is not a VTT and does not need MCP access to emit documented portable files; ordinary business writing does not need a game engine.",
+        "example": "Export the current ledger as a player-safe Ludis pack, an Alchemy character JSON, and a Foundry v14 offline module with explicit import instructions."
       }
     },
     {

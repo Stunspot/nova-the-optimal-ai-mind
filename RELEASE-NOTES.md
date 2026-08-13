@@ -1,5 +1,11 @@
 # Nova + MIND Free release notes
 
+## 2.0.9
+
+Nova + MIND Free now carries Ludis Continuum 1.1.0 from canonical commit `e20d8ee88538e1e5a62ba9f18b5224ebedaa05df`. Ludis can emit neutral GM and exact-byte-approved player packs, Alchemy Character JSON, and Foundry v14 offline modules while keeping campaign canon in the versioned ledger and naming every static-versus-live boundary.
+
+The embedded runtime is an exact 117-file selection from the 122-file canonical source tree. Only repository-control files are excluded; all customer documentation, generated example artwork, deterministic tools, schemas, regression tests, and verification records travel with the skill. Nova's plugin version advances to 2.0.2; MIND remains 2.1.6 because its Faculty substrate is unchanged.
+
 ## 2.0.8
 
 Nova + MIND Free now carries the exact published MIND 2.1.6 package source, including TestForge 1.1.6's resource-aware verification preflight. Before quota-limited verification is recommended or invoked, TestForge requires a current billing-scope capacity observation, expands the complete trigger, matrix, retry, ceiling, and multiplier arithmetic, preserves the principal's reserve, and exposes the precise guarantee lost by any local or clean-host substitute.
@@ -38,8 +44,8 @@ The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIN
 
 ## Version layers
 
-- Product release: Nova + MIND Free 2.0.8
-- Nova plugin: 2.0.1
+- Product release: Nova + MIND Free 2.0.9
+- Nova plugin: 2.0.2
 - MIND plugin: 2.1.6
 - MIND Core: 0.2.x
 
