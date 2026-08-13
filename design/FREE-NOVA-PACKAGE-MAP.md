@@ -1,7 +1,7 @@
 # Free Nova package map
 
-Status: release candidate; 2.0.9 exact MIND 2.1.6 and TestForge 1.1.6 custody
-Audit receipt: 2026-08-12 exact embedded-MIND parity PASS; source verification and deterministic combined-package gates pending the final committed candidate.
+Status: published current release; 2.0.9 exact Nova 2.0.2, MIND 2.1.6, TestForge 1.1.6, and Ludis Continuum 1.1.0 custody
+Audit receipt: published 2026-08-13 from commit f1e607e44b7d6121dc65278ae8155e3c7dfd09cf; source verification, deterministic package checks, Linux/Windows/macOS CI, Pages deployment, and release-asset digest readback PASS.
 Product: **Nova + MIND Free 2.0.9**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
