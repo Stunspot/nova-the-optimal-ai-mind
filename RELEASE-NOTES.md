@@ -4,7 +4,7 @@
 
 Nova and the embedded TestForge operator now share one completion governor: the requested outcome remains primary, checks must be capable of changing acceptance, failures are classified once, and a failed support-path recovery closes that branch instead of becoming a new objective.
 
-This local candidate packages Nova plugin 2.0.3 with integrated MIND 2.1.7 and exact TestForge 1.1.7 operator and reviewer trees from TestForge commit `d80e029a4b89ec81009256631261f8a308f23bad`. It is built and locally verified here; no tag, push, GitHub release, hosted workflow, publication, fresh-host installation, or live prompt-delivery claim is implied.
+This local candidate packages Nova plugin 2.0.3 with integrated MIND 2.1.7 and exact TestForge 1.1.7 operator and reviewer trees from TestForge commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`. It is built and locally verified here; no tag, push, GitHub release, hosted workflow, publication, fresh-host installation, or live prompt-delivery claim is implied.
 
 ## 2.0.9
 

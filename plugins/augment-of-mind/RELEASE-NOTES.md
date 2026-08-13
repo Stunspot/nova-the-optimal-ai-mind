@@ -2,7 +2,7 @@
 
 ## 2.1.7
 
-Integrated MIND now carries the exact TestForge 1.1.7 operator and reviewer from TestForge commit `d80e029a4b89ec81009256631261f8a308f23bad`. Software Verification is explicitly release-grade work for a completed frozen candidate, runs only decision-changing checks, classifies a failed check once, and permits at most one support-path recovery before it closes that branch and reports the exact evidence limit.
+Integrated MIND now carries the exact TestForge 1.1.7 operator and reviewer from TestForge commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`. Software Verification is explicitly release-grade work for a completed frozen candidate, runs only decision-changing checks, classifies a failed check once, and permits at most one support-path recovery before it closes that branch and reports the exact evidence limit.
 
 This version is the MIND component inside the local Nova + MIND Free 2.0.10 candidate. It is not claimed as a separately published standalone MIND release.
 

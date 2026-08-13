@@ -412,19 +412,19 @@ def verify(include_release: bool) -> dict:
     expected_current_sources = {
         "augment-of-mind": {
             "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-            "commit": "0e4c78a39e29b6245631beabff404af8977fbf12",
+            "commit": "a6f249a730030a5e2a518b8011463a49781a5415",
             "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },
         "software-verification": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "d80e029a4b89ec81009256631261f8a308f23bad",
+            "commit": "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
             "source_path": "testforge/skills/software-verification",
             "imported_path": "plugins/augment-of-mind/skills/software-verification",
         },
         "verification-reviewer": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "d80e029a4b89ec81009256631261f8a308f23bad",
+            "commit": "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
             "source_path": "testforge/skills/verification-reviewer",
             "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
         },

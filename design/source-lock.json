@@ -30,39 +30,39 @@
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "0e4c78a39e29b6245631beabff404af8977fbf12",
+                        "source_commit":  "a6f249a730030a5e2a518b8011463a49781a5415",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  280,
-                                            "tree_sha256":  "913feb56b40cfd68a36f5ab0a26fdaa43bffbe6a47c2d6f2c08f3454ea357359"
+                                            "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  280,
-                                              "tree_sha256":  "913feb56b40cfd68a36f5ab0a26fdaa43bffbe6a47c2d6f2c08f3454ea357359"
+                                              "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
                                           },
                         "custody":  "integrated MIND 2.1.7 component checkpoint derived from published MIND 2.1.6 with exact TestForge 1.1.7 replacement"
                     },
                     {
                         "component":  "software-verification",
                         "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "d80e029a4b89ec81009256631261f8a308f23bad",
+                        "source_commit":  "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
                         "source_path":  "testforge/skills/software-verification",
                         "source_tree":  {
                                             "file_count":  96,
-                                            "tree_sha256":  "421f474399efb564cf2032eb388e92169f1d28c78d13bb2d6660e26ce1b475c7"
+                                            "tree_sha256":  "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills/software-verification",
                         "imported_tree":  {
                                               "file_count":  96,
-                                              "tree_sha256":  "421f474399efb564cf2032eb388e92169f1d28c78d13bb2d6660e26ce1b475c7"
+                                              "tree_sha256":  "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
                                           },
                         "custody":  "exact local TestForge v1.1.7 operator tree"
                     },
                     {
                         "component":  "verification-reviewer",
                         "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "d80e029a4b89ec81009256631261f8a308f23bad",
+                        "source_commit":  "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
                         "source_path":  "testforge/skills/verification-reviewer",
                         "source_tree":  {
                                             "file_count":  9,
