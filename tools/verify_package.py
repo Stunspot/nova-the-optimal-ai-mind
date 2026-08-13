@@ -186,10 +186,10 @@ def verify(include_release: bool) -> dict:
 
     nova_manifest = load_json(NOVA / ".codex-plugin" / "plugin.json")
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
-    if nova_manifest.get("version") != "2.0.2":
-        errors.append("Nova plugin version must be 2.0.2")
-    if mind_manifest.get("version") != "2.1.6":
-        errors.append("MIND plugin version must be 2.1.6")
+    if nova_manifest.get("version") != "2.0.3":
+        errors.append("Nova plugin version must be 2.0.3")
+    if mind_manifest.get("version") != "2.1.7":
+        errors.append("MIND plugin version must be 2.1.7")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -287,7 +287,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
 
     contract = load_json(
-        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.6.json"
+        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.7.json"
     )
     if contract.get("mind_version") != mind_version:
         errors.append("recorded model-context contract version does not match MIND")
@@ -313,7 +313,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.9**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.10**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")
@@ -402,7 +402,7 @@ def verify(include_release: bool) -> dict:
         "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, "
         "one NUL byte, and raw 32-byte file sha256; Python cache files excluded"
     )
-    if lock.get("product_version") != "2.0.9" or lock.get("tree_algorithm") != expected_tree_algorithm:
+    if lock.get("product_version") != "2.0.10" or lock.get("tree_algorithm") != expected_tree_algorithm:
         errors.append("source lock version or tree algorithm is stale")
     locked_records = {
         item.get("component"): item
@@ -411,20 +411,20 @@ def verify(include_release: bool) -> dict:
     }
     expected_current_sources = {
         "augment-of-mind": {
-            "repository": "https://github.com/Stunspot/augment-of-mind",
-            "commit": "8b721c06cf0da40a948a26b9131999f5c6814b1e",
-            "source_path": "skills",
+            "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+            "commit": "0e4c78a39e29b6245631beabff404af8977fbf12",
+            "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },
         "software-verification": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+            "commit": "d80e029a4b89ec81009256631261f8a308f23bad",
             "source_path": "testforge/skills/software-verification",
             "imported_path": "plugins/augment-of-mind/skills/software-verification",
         },
         "verification-reviewer": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+            "commit": "d80e029a4b89ec81009256631261f8a308f23bad",
             "source_path": "testforge/skills/verification-reviewer",
             "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
         },

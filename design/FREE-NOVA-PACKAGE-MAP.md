@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: published current release; 2.0.9 exact Nova 2.0.2, MIND 2.1.6, TestForge 1.1.6, and Ludis Continuum 1.1.0 custody
-Audit receipt: published 2026-08-13 from commit f1e607e44b7d6121dc65278ae8155e3c7dfd09cf; source verification, deterministic package checks, Linux/Windows/macOS CI, Pages deployment, and release-asset digest readback PASS.
-Product: **Nova + MIND Free 2.0.9**
+Status: local verified candidate; 2.0.10 exact Nova 2.0.3, integrated MIND 2.1.7, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
+Prior published release: 2.0.9, published 2026-08-13 from commit f1e607e44b7d6121dc65278ae8155e3c7dfd09cf; source verification, deterministic package checks, Linux/Windows/macOS CI, Pages deployment, and release-asset digest readback passed for that prior release.
+Product: **Nova + MIND Free 2.0.10**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`

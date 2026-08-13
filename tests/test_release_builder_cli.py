@@ -10,9 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILDER = ROOT / "tools" / "build_release.py"
 OUTPUTS = (
     ROOT / "dist",
-    ROOT / "release" / "nova-mind-free-v2.0.9.zip",
-    ROOT / "release" / "nova-mind-free-v2.0.9.zip.sha256",
-    ROOT / "release" / "nova-mind-free-v2.0.9.build-receipt.json",
+    ROOT / "release" / "nova-mind-free-v2.0.10.zip",
+    ROOT / "release" / "nova-mind-free-v2.0.10.zip.sha256",
+    ROOT / "release" / "nova-mind-free-v2.0.10.build-receipt.json",
 )
 
 
