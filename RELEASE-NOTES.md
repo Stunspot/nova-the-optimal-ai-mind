@@ -1,5 +1,11 @@
 # Nova + MIND Free release notes
 
+## 2.0.10
+
+Nova and the embedded TestForge operator now share one completion governor: the requested outcome remains primary, checks must be capable of changing acceptance, failures are classified once, and a failed support-path recovery closes that branch instead of becoming a new objective.
+
+This local candidate packages Nova plugin 2.0.3 with integrated MIND 2.1.7 and exact TestForge 1.1.7 operator and reviewer trees from TestForge commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`. It is built and locally verified here; no tag, push, GitHub release, hosted workflow, publication, fresh-host installation, or live prompt-delivery claim is implied.
+
 ## 2.0.9
 
 Nova + MIND Free now carries Ludis Continuum 1.1.0 from canonical commit `e20d8ee88538e1e5a62ba9f18b5224ebedaa05df`. Ludis can emit neutral GM and exact-byte-approved player packs, Alchemy Character JSON, and Foundry v14 offline modules while keeping campaign canon in the versioned ledger and naming every static-versus-live boundary.
@@ -44,9 +50,9 @@ The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIN
 
 ## Version layers
 
-- Product release: Nova + MIND Free 2.0.9
-- Nova plugin: 2.0.2
-- MIND plugin: 2.1.6
+- Product release: Nova + MIND Free 2.0.10
+- Nova plugin: 2.0.3
+- MIND plugin: 2.1.7
 - MIND Core: 0.2.x
 
 These layers version different components and are intentionally not numerically identical.

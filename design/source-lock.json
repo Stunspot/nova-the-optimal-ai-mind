@@ -1,7 +1,7 @@
 {
     "format":  "nova-free-source-lock/v1",
     "product":  "Nova + MIND Free",
-    "product_version":  "2.0.9",
+    "product_version":  "2.0.10",
     "generated_at":  "2026-08-13",
     "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
     "contest_repository_mutated":  false,
@@ -14,55 +14,55 @@
                     {
                         "component":  "nova",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "321b1504d41eb5eacbd56bc6f2169196d01e07ff",
+                        "source_commit":  "0e4c78a39e29b6245631beabff404af8977fbf12",
                         "source_path":  "plugins/nova-the-optimal-ai/skills/nova",
                         "source_tree":  {
                                             "file_count":  15,
-                                            "tree_sha256":  "3126c1cb40ae5783b7a63376f077df59485c48c596038fd67486873997c27aa9"
+                                            "tree_sha256":  "502669530fe9d627e0ee4f88c8c91c7d4b1baf81af1f0f1e207505ce1e262a08"
                                         },
                         "imported_path":  "plugins/nova-the-optimal-ai/skills/nova",
                         "imported_tree":  {
                                               "file_count":  15,
-                                              "tree_sha256":  "e9eb7470dcf3c6f9d19fbecf3a1c94a35bfdc377d6cb671c15b36e3a1c3077a1"
+                                              "tree_sha256":  "502669530fe9d627e0ee4f88c8c91c7d4b1baf81af1f0f1e207505ce1e262a08"
                                           },
-                        "custody":  "derived-adapter; canonical persona verbatim"
+                        "custody":  "current integrated component checkpoint; canonical persona verbatim"
                     },
                     {
                         "component":  "augment-of-mind",
-                        "source_repository":  "https://github.com/Stunspot/augment-of-mind",
-                        "source_commit":  "8b721c06cf0da40a948a26b9131999f5c6814b1e",
-                        "source_path":  "skills",
+                        "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+                        "source_commit":  "a6f249a730030a5e2a518b8011463a49781a5415",
+                        "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  280,
-                                            "tree_sha256":  "b0a32e043e544a516afb27e46af6b20468f1a983097f2bb88a0a796ca549778b"
+                                            "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  280,
-                                              "tree_sha256":  "b0a32e043e544a516afb27e46af6b20468f1a983097f2bb88a0a796ca549778b"
+                                              "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
                                           },
-                        "custody":  "exact published MIND v2.1.6 skills tree"
+                        "custody":  "integrated MIND 2.1.7 component checkpoint derived from published MIND 2.1.6 with exact TestForge 1.1.7 replacement"
                     },
                     {
                         "component":  "software-verification",
                         "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+                        "source_commit":  "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
                         "source_path":  "testforge/skills/software-verification",
                         "source_tree":  {
                                             "file_count":  96,
-                                            "tree_sha256":  "a075641cfaae67027d6ecc25fbe934177eb394b489c77cac560104085858edd7"
+                                            "tree_sha256":  "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills/software-verification",
                         "imported_tree":  {
                                               "file_count":  96,
-                                              "tree_sha256":  "a075641cfaae67027d6ecc25fbe934177eb394b489c77cac560104085858edd7"
+                                              "tree_sha256":  "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
                                           },
-                        "custody":  "exact published TestForge v1.1.6 operator tree"
+                        "custody":  "exact local TestForge v1.1.7 operator tree"
                     },
                     {
                         "component":  "verification-reviewer",
                         "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "93120abaa39c26a6f0ec494bdff0c7e6f92344cf",
+                        "source_commit":  "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
                         "source_path":  "testforge/skills/verification-reviewer",
                         "source_tree":  {
                                             "file_count":  9,
@@ -73,7 +73,7 @@
                                               "file_count":  9,
                                               "tree_sha256":  "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
                                           },
-                        "custody":  "exact published TestForge v1.1.6 reviewer tree"
+                        "custody":  "exact local TestForge v1.1.7 reviewer tree"
                     },
                     {
                         "component":  "agentic-coding",

@@ -72,12 +72,12 @@ $requirements = @(
     [pscustomobject]@{
         internal_name = 'nova-the-optimal-ai'
         display_name = 'Nova the Optimal AI'
-        expected_version = '2.0.2'
+        expected_version = '2.0.3'
     },
     [pscustomobject]@{
         internal_name = 'augment-of-mind'
         display_name = 'MIND by Collaborative Dynamics'
-        expected_version = '2.1.6'
+        expected_version = '2.1.7'
     }
 )
 $verifiedPlugins = @()

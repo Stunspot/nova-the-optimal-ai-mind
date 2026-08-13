@@ -9,7 +9,7 @@ For each submitted prompt, the trusted MIND hook builds a bounded association an
 Successful semantic delivery begins with this model-facing context:
 
 ```text
-**Vector-near semantically related capabilities below**: surfaced from RAG memory for this turn as associative presentation of surveyed capabilities. Consider such reminders as suggested subset of available praxis affordances, not suggested courses of action. Assess contextual relevance and likely utility to task. Integrate with capabilities already present in assembled context. Surveyed memory may extend beyond the current harness.
+**Vector-near semantically related capabilities**: surfaced from RAG memory for this turn as associative presentation of surveyed capabilities. Consider such reminders as suggested subset of available praxis affordances, not suggested courses of action. Assess contextual relevance and likely utility to task. Integrate with capabilities already present in assembled context. Surveyed memory may extend beyond the current harness.
 ```
 
 The returned entries follow immediately. Field IDs, snapshot IDs, retrieval mode, vector state, and hashes remain in delivery receipts rather than the model-facing prompt. If semantic embedding is unavailable, the hook emits its bounded delivery note instead of presenting lexical-only results as vector-near.

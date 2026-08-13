@@ -16,7 +16,7 @@ python -X utf8 .\plugins\augment-of-mind\scripts\build_release.py --output-dir <
 
 The repository suite currently contains 43 deterministic tests. These checks cover the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, metered-capacity arithmetic and authority denial, linked design evidence in the customer archive, standalone MIND build prerequisites in permanent CI, excluded capabilities, plugin topology and versions, canonical Nova and Promptcraft bytes, MIND runtime/version synchronization, reminder cards and vectors, release exclusions, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
 
-The [source lock](../design/source-lock.json) binds the embedded MIND skills to published MIND `v2.1.6` commit `8b721c06cf0da40a948a26b9131999f5c6814b1e`, both TestForge roles to published TestForge `v1.1.6` commit `93120abaa39c26a6f0ec494bdff0c7e6f92344cf`, and Ludis Continuum to canonical commit `e20d8ee88538e1e5a62ba9f18b5224ebedaa05df`. The package verifier recomputes imported tree digests instead of trusting the JSON record and requires Ludis to match the approved 117-file runtime selection from the 122-file source tree.
+The [source lock](../design/source-lock.json) binds the embedded MIND skills to the integrated MIND 2.1.7 component checkpoint `a6f249a730030a5e2a518b8011463a49781a5415`, both TestForge roles to local TestForge `v1.1.7` candidate commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`, and Ludis Continuum to canonical commit `e20d8ee88538e1e5a62ba9f18b5224ebedaa05df`. The package verifier recomputes imported tree digests instead of trusting the JSON record and requires Ludis to match the approved 117-file runtime selection from the 122-file source tree.
 
 The permanent public workflow runs this suite, source verification, the deterministic combined-package build, portable-release verification, and the embedded standalone MIND build on Linux, Windows, and macOS for each pull request and each push to `main`. Branch pushes do not duplicate pull-request runs.
 
@@ -45,12 +45,12 @@ See [Host matrix](HOST-MATRIX.md) for the exact boundary.
 
 ## Documentation and presentation evidence
 
-The final documentation set receives:
+Before publication, the candidate documentation set requires:
 
 1. a Hesperos customer-journey authorship and review pass;
 2. a separate accessibility review of structure, language, contrast, focus, resizing, reduced motion, alt text, and navigation;
 3. a separate TestForge adversarial verification pass;
-4. live HTTP and visual re-entry after GitHub Pages deployment.
+4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.0.10 candidate.
 
 Receipts identify the reviewed candidate and documentation fingerprint. Any later customer-facing content change invalidates those content-bound receipts and requires review again.
 

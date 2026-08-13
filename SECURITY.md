@@ -2,7 +2,7 @@
 
 ## Supported release
 
-Security reports currently cover Nova + MIND Free 2.0.x, Nova plugin 2.0.2, MIND plugin 2.1.x, and bundled MIND Core 0.2.x.
+Security reports currently cover Nova + MIND Free 2.0.x, Nova plugin 2.0.3, MIND plugin 2.1.x, and bundled MIND Core 0.2.x.
 
 ## Security boundary
 

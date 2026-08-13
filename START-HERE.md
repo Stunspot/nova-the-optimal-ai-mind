@@ -1,6 +1,6 @@
 # Install Nova + MIND Free
 
-Nova + MIND Free 2.0.9 installs one product as two Codex plugins: Nova, the user-facing agent, and MIND, her cognitive substrate. Together they expose forty-one skills, including sixteen MIND Faculties and TestForge’s two verification roles.
+Nova + MIND Free 2.0.10 installs one product as two Codex plugins: Nova, the user-facing agent, and MIND, her cognitive substrate. Together they expose forty-one skills, including sixteen MIND Faculties and TestForge’s two verification roles.
 
 ## Choose the supported path
 
@@ -16,7 +16,7 @@ For the complete Codex installation, you need PowerShell, Python 3.11 or newer, 
 
 ## Normal Codex installation
 
-1. [Download the latest Nova + MIND Free ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
+1. Use the supplied governed `nova-mind-free-v2.0.10.zip`. The [latest public release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) remains 2.0.9 until this candidate is separately published.
 2. Attach the ZIP to a Codex task.
 3. Tell Codex:
 
@@ -38,8 +38,8 @@ For the complete Codex installation, you need PowerShell, Python 3.11 or newer, 
 
 A successful mechanical verification reports:
 
-- `Nova the Optimal AI` 2.0.2 enabled from the Free Nova marketplace;
-- `MIND by Collaborative Dynamics` 2.1.6 enabled from the same marketplace;
+- `Nova the Optimal AI` 2.0.3 enabled from the Free Nova marketplace;
+- `MIND by Collaborative Dynamics` 2.1.7 enabled from the same marketplace;
 - an intact SQLite database with an active forty-one-capability generation;
 - forty-one cards, 246 vectors, and successful local semantic association against a temporary copy;
 - the original database unchanged by the verifier.
