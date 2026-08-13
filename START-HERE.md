@@ -16,7 +16,7 @@ For the complete Codex installation, you need PowerShell, Python 3.11 or newer, 
 
 ## Normal Codex installation
 
-1. [Download the latest Nova + MIND Free ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
+1. Use the supplied governed `nova-mind-free-v2.0.10.zip`. The [latest public release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) remains 2.0.9 until this candidate is separately published.
 2. Attach the ZIP to a Codex task.
 3. Tell Codex:
 

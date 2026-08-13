@@ -8,7 +8,7 @@ Nova + MIND Free puts an actual AI collaborator in the Codex harness you already
 
 You ask for the outcome. You do **not** memorize a catalog, convene a committee of bots, or learn forty-one magic words.
 
-[Download Nova + MIND Free 2.0.10](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
+[Latest published release: 2.0.9](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · Local verified candidate: 2.0.10 · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
 
 
 ## What you can get done
@@ -58,7 +58,7 @@ The included public reminder profile is structurally verified and mechanically e
 
 Codex with plugin support is the primary target. You need PowerShell, Python 3.11 or newer, and local Ollama with `qwen3-embedding:0.6b` already installed. Model weights are not bundled or downloaded for you.
 
-1. Download the [latest release ZIP](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
+1. For the local 2.0.10 candidate, use the supplied governed ZIP. Public users can download the [latest published release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest), which remains 2.0.9 until 2.0.10 is separately published.
 2. Attach it to a Codex task and say:
 
    ```text
@@ -148,7 +148,7 @@ Report vulnerabilities through [GitHub’s private security channel](https://git
 
 ## Versions, provenance, and evidence
 
-**Nova + MIND Free 2.0.10** is the product release. Its plugin manifests identify **Nova 2.0.3** and **MIND 2.1.7**; those version layers are intentionally separate. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova’s canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, portable ZIP shape, links, and deterministic packaging.
+**Nova + MIND Free 2.0.10** is the current local product candidate. Its plugin manifests identify **Nova 2.0.3** and **MIND 2.1.7**; those version layers are intentionally separate. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova’s canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, portable ZIP shape, links, and deterministic packaging.
 
 Those checks establish package properties—not universal behavior, fresh-host success, Claude parity, publication, or defect-freedom. See [verification and evidence status](docs/VERIFICATION.md), [host matrix](docs/HOST-MATRIX.md), and [release notes](RELEASE-NOTES.md).
 

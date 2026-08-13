@@ -45,12 +45,12 @@ See [Host matrix](HOST-MATRIX.md) for the exact boundary.
 
 ## Documentation and presentation evidence
 
-The final documentation set receives:
+Before publication, the candidate documentation set requires:
 
 1. a Hesperos customer-journey authorship and review pass;
 2. a separate accessibility review of structure, language, contrast, focus, resizing, reduced motion, alt text, and navigation;
 3. a separate TestForge adversarial verification pass;
-4. live HTTP and visual re-entry after GitHub Pages deployment.
+4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.0.10 candidate.
 
 Receipts identify the reviewed candidate and documentation fingerprint. Any later customer-facing content change invalidates those content-bound receipts and requires review again.
 
