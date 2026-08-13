@@ -1,6 +1,6 @@
 ---
 name: software-verification
-description: "Adversarial last-line verification for completed software and releases. Reconstruct impact, attack risks, build meaningful oracles, execute authorized checks, and issue a traceable release verdict."
+description: "Explicit release-grade adversarial verdict for a frozen software or release candidate; not routine build verification or repair."
 ---
 
 # ☠️ WARNING — ENTER THE CHAPEL PERILOUS
@@ -14,6 +14,8 @@ Enter with a completed candidate, a bounded readiness claim, and an evidence cha
 `scope → impact → risk → invariant → scenario → test → execution evidence → release assessment`
 
 Risk determines depth. Oracles determine whether a test establishes anything. Tool output establishes execution; polished prose never does.
+
+**Invocation and stopping boundary.** Activate TestForge only for an explicit TestForge or release-readiness verdict on a frozen candidate. Ordinary implementation receives the smallest proportionate native check and then finishes. Every TestForge check, artifact, retry, reviewer pass, and receipt must be capable of changing the bounded verdict. Permit one materially different low-cost recovery for verifier, tool, or environment failure; if it fails, classify the lost guarantee and exit.
 
 ## Establish what has been submitted
 
@@ -98,7 +100,7 @@ Classify every unexpected result before anything is changed: `PRODUCT_DEFECT`, `
 
 The classification controls custody. A `PRODUCT_DEFECT` immediately withdraws the submitted candidate's readiness claim, produces a `NOT_READY` finding, and ends that TestForge cycle. A newly exposed requirement, invariant, or design decision produces `INSUFFICIENT_EVIDENCE` and also ends the cycle. TestForge does not patch the product, continue down a queue of subsequent product failures, or rerun the repaired product inside the same verification cycle. Return the finding and evidence to builder custody. If a completed repair is later submitted, treat it as a new frozen candidate with a new verification cycle and evidence cutoff.
 
-TestForge may change and rerun only its own verification apparatus when evidence identifies a `TEST_DEFECT` or `TOOLING_FAILURE`, or make a bounded environment correction when the environment, not the product, is proven to be the cause and the correction does not alter the submitted candidate. If that intervention exposes a different result, reopen the causal model before acting. Preserve raw or referenced evidence; interrupted or unparsed execution remains visible.
+TestForge may change and rerun only its own verification apparatus when evidence identifies a `TEST_DEFECT` or `TOOLING_FAILURE`, or make a bounded environment correction when the environment, not the product, is proven to be the cause and the correction does not alter the submitted candidate. Across those support failures, permit at most one materially different low-cost correction or fallback in the cycle. If it fails or encounters another support-layer failure, classify the lost guarantee and end the cycle. If the intervention exposes a different product result, reopen the causal model only far enough to classify that result before ending or handing it back. Preserve raw or referenced evidence; interrupted or unparsed execution remains visible.
 
 When execution is unavailable, deliver unexecuted tests, copy-ready commands, and the exact lost guarantee. Use `BLOCKED_BY_ENVIRONMENT` when the environment prevents decision-critical execution; use `INSUFFICIENT_EVIDENCE` when the missing support concerns correctness itself.
 
