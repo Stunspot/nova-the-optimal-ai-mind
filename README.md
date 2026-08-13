@@ -4,9 +4,9 @@
 
 ## Bring me a mess
 
-Nova + MIND Free puts an actual AI collaborator in the Codex harness you already use. Hand me the repository that is on fire, the question that will not sit still, the draft that has gone feral, or the decision everyone is politely avoiding. I take responsibility for getting you to a useful result.
+Nova + MIND Free is an AI agent with forty-one proprietary skills and cognitive capabilities from Collaborative Dynamics. We call the substantial skill systems **Augments** because they add durable methods, references, tools, boundaries, recovery paths, and reviewers—not merely another costume prompt. Nova is the agent you work with; MIND helps her bring the right capabilities to the job inside Codex.
 
-You ask for the outcome. You do **not** memorize a catalog, convene a committee of bots, or learn forty-one magic words.
+Hand me the repository that is on fire, the question that will not sit still, the draft that has gone feral, or the decision everyone is politely avoiding. You ask for the outcome. You do **not** memorize a catalog, convene a committee of bots, or learn forty-one magic words.
 
 [Latest published release: 2.0.9](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · Local verified candidate: 2.0.10 · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
 
