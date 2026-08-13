@@ -1,13 +1,13 @@
 {
   "schema": "augment-of-mind-integrated-capability-fingerprint/v2",
-  "product_version": "2.1.6",
+  "product_version": "2.1.7",
   "capability_count": 20,
   "faculty_count": 16,
   "attached_augment_count": 3,
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; cache files excluded",
   "tree_self_exclusion": "augment-of-mind excludes assets/integrated-capability-fingerprint.json",
   "aggregate_algorithm": "sha256 over compact UTF-8 JSON serialization of ordered capabilities",
-  "aggregate_sha256": "dfb615f661122d95a1f583ea98a419af1b813b120506aa646dfbfca18a258a55",
+  "aggregate_sha256": "87ffea434e77dda6f338a881ab8a93f2d0b07e1df316c3e6be9768ef6052713c",
   "capabilities": [
     {
       "name": "aesthetic-intelligence",
@@ -39,10 +39,10 @@
     },
     {
       "name": "augment-of-mind",
-      "version": "2.1.6",
+      "version": "2.1.7",
       "integration_mode": "product-integration",
       "tree_file_count": 14,
-      "tree_sha256": "070c16f30c3716e7233b4e752c490e6694c2e092c79103c9bb51835c56268077"
+      "tree_sha256": "37322f5eebd586b2d3b1135e7283d9144baef1bc455dc00468b7d6de609edeb5"
     },
     {
       "name": "capability-conductor",
@@ -137,14 +137,14 @@
     },
     {
       "name": "software-verification",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "integration_mode": "faculty-suite-exact-copy",
       "tree_file_count": 96,
-      "tree_sha256": "a075641cfaae67027d6ecc25fbe934177eb394b489c77cac560104085858edd7"
+      "tree_sha256": "421f474399efb564cf2032eb388e92169f1d28c78d13bb2d6660e26ce1b475c7"
     },
     {
       "name": "verification-reviewer",
-      "version": "1.1.6",
+      "version": "1.1.7",
       "integration_mode": "faculty-suite-exact-copy",
       "tree_file_count": 9,
       "tree_sha256": "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"

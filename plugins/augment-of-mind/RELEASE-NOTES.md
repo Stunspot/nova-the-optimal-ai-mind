@@ -1,5 +1,11 @@
 # MIND release notes
 
+## 2.1.7
+
+Integrated MIND now carries the exact TestForge 1.1.7 operator and reviewer from TestForge commit `d80e029a4b89ec81009256631261f8a308f23bad`. Software Verification is explicitly release-grade work for a completed frozen candidate, runs only decision-changing checks, classifies a failed check once, and permits at most one support-path recovery before it closes that branch and reports the exact evidence limit.
+
+This version is the MIND component inside the local Nova + MIND Free 2.0.10 candidate. It is not claimed as a separately published standalone MIND release.
+
 ## 2.1.6
 
 MIND now carries the canonical TestForge 1.1.6 operator and reviewer from published TestForge commit `93120abaa39c26a6f0ec494bdff0c7e6f92344cf`. Quota-limited verification requires a fresh, billing-scope-matched capacity record and a complete expanded-run estimate before hosted execution is proposed or invoked. The deterministic assessor counts duplicate triggers, matrices, retries, runner ceilings, and current provider billing multipliers while preserving a human-set reserve.

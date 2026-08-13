@@ -1,6 +1,6 @@
 {
   "format": "mind-model-context-contract/v1",
-  "mind_version": "2.1.6",
+  "mind_version": "2.1.7",
   "delivery_state": "semantic",
   "vector_backed_modes": [
     "hybrid_current",
