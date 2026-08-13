@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Install, verify, and begin using Ludis Continuum in Codex, Claude Code, or a host-neutral fallback.">
+  <meta name="theme-color" content="#0c1422">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Start with Ludis Continuum">
+  <meta property="og:description" content="Manual installation, honest verification, and a first successful choice-shaped scene.">
+  <meta property="og:url" content="https://stunspot.github.io/ludis-continuum/start.html">
+  <meta property="og:image" content="https://stunspot.github.io/ludis-continuum/assets/ludis-continuum-social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ludis Continuum — choice-shaped RPGs and fiction that remember consequence.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Start · Ludis Continuum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><nav aria-label="Primary"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">◇</span><span>Ludis Continuum</span></a><div class="nav-links"><a aria-current="page" href="start.html">Start</a><a href="guide.html">Guide</a><a href="exports.html">Exports</a><a href="trust.html">Trust</a><a href="index.html">Home</a><a href="https://github.com/Stunspot/ludis-continuum">GitHub</a></div></nav></header>
+<main id="main">
+<section class="section page-intro"><p class="eyebrow">Install, verify, begin</p><h1>Get to a real choice before continuity gets ideas above its station.</h1><p class="lede">Ludis is a standalone skill directory for manual Codex or Claude Code placement, with a copy/paste fallback. There is no marketplace manifest and no one-click-install claim.</p><div class="actions"><a class="button primary" href="#codex">Install for Codex</a><a class="button secondary" href="#verify">Verify behavior</a></div></section>
+
+<section class="section" id="requirements"><div class="section-heading"><p class="eyebrow">Requirements</p><h2>Small package, explicit boundary.</h2></div><div class="trust-grid"><article><h3>Git or archive</h3><p>Clone the repository or extract its source archive into the host's skill directory.</p></article><article><h3>Python 3.10+</h3><p>Required only for deterministic campaign tools. The creative skill is Markdown and JSON.</p></article><article><h3>A skill-capable host</h3><p>Codex or Claude Code can load <code>SKILL.md</code>; any chat can use the fallback workflow.</p></article></div></section>
+
+<section class="section" id="codex"><div class="section-heading"><p class="eyebrow">Codex</p><h2>Clone the complete skill, not one decorative file.</h2></div><p>Windows PowerShell:</p><pre><code>git clone https://github.com/Stunspot/ludis-continuum "$env:USERPROFILE\.codex\skills\ludis-continuum"
+python -B "$env:USERPROFILE\.codex\skills\ludis-continuum\scripts\self_check.py"</code></pre><p>macOS/Linux:</p><pre><code>git clone https://github.com/Stunspot/ludis-continuum "$HOME/.codex/skills/ludis-continuum"
+python3 -B "$HOME/.codex/skills/ludis-continuum/scripts/self_check.py"</code></pre><p>Restart Codex, confirm <strong>Ludis Continuum</strong> in the skill list, then run the acceptance prompt below. For project scope, place the repository at <code>&lt;project&gt;/.codex/skills/ludis-continuum/</code>.</p></section>
+
+<section class="section" id="claude"><div class="section-heading"><p class="eyebrow">Claude Code</p><h2>Use the same complete package under Claude's skill root.</h2></div><p>Windows PowerShell:</p><pre><code>git clone https://github.com/Stunspot/ludis-continuum "$env:USERPROFILE\.claude\skills\ludis-continuum"
+python -B "$env:USERPROFILE\.claude\skills\ludis-continuum\scripts\self_check.py"</code></pre><p>macOS/Linux:</p><pre><code>git clone https://github.com/Stunspot/ludis-continuum "$HOME/.claude/skills/ludis-continuum"
+python3 -B "$HOME/.claude/skills/ludis-continuum/scripts/self_check.py"</code></pre><p>Restart Claude Code. Confirm the skill is listed or <code>/ludis-continuum</code> is available. For project scope, use <code>&lt;project&gt;/.claude/skills/ludis-continuum/</code>. Host UI and invocation syntax may vary by release; observed discovery is the test.</p></section>
+
+<section class="section" id="fallback"><div class="section-heading"><p class="eyebrow">Host-neutral fallback</p><h2>When discovery is unavailable, degrade honestly.</h2></div><p>Open the repository's <a href="https://github.com/Stunspot/ludis-continuum/blob/main/fallbacks/universal-copy-paste-workflow.md">universal copy/paste workflow</a>, paste it into the conversation, and supply only the campaign material needed. This can deliver the method; it does not make the skill installed or discoverable. It can prepare content for manual transfer, but it cannot execute a local exporter or establish exact-byte evidence without filesystem and tool access.</p></section>
+
+<section class="section" id="verify"><div class="section-heading"><p class="eyebrow">Verification</p><h2>File present, package healthy, host discovered, behavior passed: four different claims.</h2></div><ol class="campaign-loop"><li><span>01</span><strong>Package</strong><small>Run <code>python -B scripts/self_check.py</code>. Expect PASS for 32 instrument cores.</small></li><li><span>02</span><strong>Discovery</strong><small>Restart the host and confirm Ludis Continuum in its available skill list.</small></li><li><span>03</span><strong>Invocation</strong><small>Invoke <code>$ludis-continuum</code> or the host's displayed command.</small></li><li><span>04</span><strong>Behavior</strong><small>Judge the response against the acceptance criteria below.</small></li></ol><blockquote>Use $ludis-continuum to open a mystery at a mountain observatory whose warning bell rang with no visible intruder. Give me an immediate situation, three materially different choices, and permission to try another move. Do not invent an authoritative rules system. Mark new setting facts as proposed.</blockquote><p>Pass only when the response begins in a playable situation, offers genuinely different choices, permits another action, makes no fake rules claim, and keeps new setting facts provisional. If the host does not show the skill, discovery is <strong>not verified</strong>.</p></section>
+
+<section class="section" id="campaign"><div class="section-heading"><p class="eyebrow">First campaign workspace</p><h2>Keep campaign data outside the installed skill.</h2></div><pre><code>python -B scripts/init_campaign.py C:\Games\MyCampaign --campaign-seed "my stable campaign seed" --title "My Campaign"
+python -B scripts/validate_ledger.py C:\Games\MyCampaign\campaign-ledger.json</code></pre><p>Initialization creates a v2 ledger with a stable ID derived from the owner-supplied seed and refuses a non-empty destination. The ledger begins empty and private; edit it only with a backup or snapshot and explicit campaign authority.</p><aside class="source-note"><strong>Expected campaign output:</strong> compact GM prep, separately labeled player-safe material, proposed changes, contradictions, checks actually run, approvals still required, and the smallest useful next horizon.</aside><p>When the campaign is ready to leave the chat window, continue to <a href="exports.html">offline exports and VTT handoffs</a>.</p></section>
+
+<section class="section"><div class="section-heading"><p class="eyebrow">Continue</p><h2>Operate the product, export what you need, then understand its trust edge.</h2></div><div class="mode-grid four"><article class="mode-card play"><h3><a href="guide.html">Operating guide</a></h3><p>Inputs, outputs, modes, campaign loop, instruments, and deterministic tools.</p></article><article class="mode-card export"><h3><a href="exports.html">Exports and VTT handoffs</a></h3><p>Neutral packs, player approval, Alchemy JSON, Foundry v14 modules, loss reports, and recovery.</p></article><article class="mode-card campaign"><h3><a href="trust.html">Trust and recovery</a></h3><p>Privacy, storage, limits, troubleshooting, updates, removal, evidence, and support.</p></article><article class="mode-card forge"><h3><a href="https://github.com/Stunspot/ludis-continuum/blob/main/START-HERE.md">Repository guide</a></h3><p>Copyable commands plus complete archive-install and verification detail.</p></article></div></section>
+</main>
+<footer><p><strong>Ludis Continuum</strong> &middot; Choice-shaped games and fiction.</p><p><a href="index.html">Home</a> &middot; <a href="guide.html">Guide</a> &middot; <a href="exports.html">Exports</a> &middot; <a href="trust.html">Trust</a> &middot; <a href="https://github.com/Stunspot/ludis-continuum">Repository</a> &middot; <a href="https://github.com/Stunspot/ludis-continuum/blob/main/LICENSE.md">MIT License</a></p></footer>
+</body>
+</html>

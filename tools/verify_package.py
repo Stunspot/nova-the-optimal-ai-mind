@@ -186,8 +186,8 @@ def verify(include_release: bool) -> dict:
 
     nova_manifest = load_json(NOVA / ".codex-plugin" / "plugin.json")
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
-    if nova_manifest.get("version") != "2.0.1":
-        errors.append("Nova plugin version must be 2.0.1")
+    if nova_manifest.get("version") != "2.0.2":
+        errors.append("Nova plugin version must be 2.0.2")
     if mind_manifest.get("version") != "2.1.6":
         errors.append("MIND plugin version must be 2.1.6")
 
@@ -313,7 +313,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.8**" not in package_map_text:
+    if "Product: **Nova + MIND Free 2.0.9**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")
@@ -402,7 +402,7 @@ def verify(include_release: bool) -> dict:
         "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, "
         "one NUL byte, and raw 32-byte file sha256; Python cache files excluded"
     )
-    if lock.get("product_version") != "2.0.8" or lock.get("tree_algorithm") != expected_tree_algorithm:
+    if lock.get("product_version") != "2.0.9" or lock.get("tree_algorithm") != expected_tree_algorithm:
         errors.append("source lock version or tree algorithm is stale")
     locked_records = {
         item.get("component"): item
@@ -447,6 +447,40 @@ def verify(include_release: bool) -> dict:
             errors.append(f"source lock imported tree is stale: {component}")
         if record.get("source_tree") != observed_tree:
             errors.append(f"source lock canonical tree does not match imported bytes: {component}")
+
+    ludis_record = locked_records.get("ludis-continuum")
+    expected_ludis = {
+        "source_repository": "https://github.com/Stunspot/ludis-continuum",
+        "source_commit": "e20d8ee88538e1e5a62ba9f18b5224ebedaa05df",
+        "source_path": ".",
+        "imported_path": "plugins/nova-the-optimal-ai/skills/ludis-continuum",
+        "source_tree": {
+            "file_count": 122,
+            "tree_sha256": "a79c66757df392747f811331679937b0d1bba534a45a1945286e5b4c295a7a22",
+        },
+        "selection_excludes": [".github/**", ".editorconfig", ".gitattributes", ".gitignore"],
+        "selected_tree": {
+            "file_count": 117,
+            "tree_sha256": "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da",
+        },
+    }
+    if not isinstance(ludis_record, dict):
+        errors.append("source lock lacks current record: ludis-continuum")
+    else:
+        for key, expected_value in expected_ludis.items():
+            if key in {"selected_tree", "imported_path"}:
+                continue
+            if ludis_record.get(key) != expected_value:
+                errors.append(f"source lock {key} is stale: ludis-continuum")
+        observed_ludis_tree = tree_fingerprint(ROOT / expected_ludis["imported_path"])
+        if observed_ludis_tree != expected_ludis["selected_tree"]:
+            errors.append("embedded Ludis tree does not match the approved 1.1.0 selection")
+        if ludis_record.get("selected_tree") != observed_ludis_tree:
+            errors.append("source lock selected tree is stale: ludis-continuum")
+        if ludis_record.get("imported_tree") != observed_ludis_tree:
+            errors.append("source lock imported tree is stale: ludis-continuum")
+        if ludis_record.get("imported_path") != expected_ludis["imported_path"]:
+            errors.append("source lock imported path is stale: ludis-continuum")
 
     verify_links(errors)
 

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborativedynamics.net/schemas/ludis-import-observation-v1.schema.json",
+  "title": "Ludis local import observation v1",
+  "type": "object",
+  "required": [
+    "format",
+    "scope",
+    "promotes_product_compatibility",
+    "assertion_type",
+    "asserted_by",
+    "observed_at",
+    "target",
+    "result",
+    "bundle",
+    "evidence",
+    "notes",
+    "limitations"
+  ],
+  "properties": {
+    "format": {"const": "cd-ludis-import-observation/v1"},
+    "scope": {"const": "campaign_local_observation"},
+    "promotes_product_compatibility": {"const": false},
+    "assertion_type": {"const": "unauthenticated_local_operator_attestation"},
+    "asserted_by": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "target": {
+      "type": "object",
+      "required": ["id", "version"],
+      "properties": {
+        "id": {"enum": ["alchemy", "foundry-v14"]},
+        "version": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "result": {"enum": ["imported", "partial", "failed"]},
+    "bundle": {"$ref": "#/$defs/fileEvidence"},
+    "evidence": {"type": "array", "items": {"$ref": "#/$defs/fileEvidence"}},
+    "notes": {"type": "string"},
+    "limitations": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fileEvidence": {
+      "type": "object",
+      "required": ["name", "bytes", "sha256"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "bytes": {"type": "integer", "minimum": 0},
+        "sha256": {"$ref": "#/$defs/sha256"}
+      },
+      "additionalProperties": false
+    }
+  }
+}

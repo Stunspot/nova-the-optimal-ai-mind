@@ -1,0 +1,74 @@
+{
+    "format_version":  "1.0",
+    "evidence_boundary":  "local static product, skill, authored-documentation-source, and complete staged repository checks; no live VTT or deployment observation",
+    "started_at":  "2026-08-13T12:19:38.8030629+00:00",
+    "finished_at":  "2026-08-13T12:19:42.7157319+00:00",
+    "status":  "passed",
+    "check_count":  8,
+    "checks":  [
+                   {
+                       "name":  "package-self-check",
+                       "command":  "python -B scripts/self_check.py",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: Ludis Continuum curated-runtime self-check (32 instrument cores)"
+                   },
+                   {
+                       "name":  "skill-package-validation",
+                       "command":  "PYTHONUTF8=1 skill-creator quick_validate.py .",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "Skill is valid!"
+                   },
+                   {
+                       "name":  "python-3.10-grammar",
+                       "command":  "ast.parse(feature_version=(3,10)) over product Python files",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: 22 Python files parse as Python 3.10 grammar"
+                   },
+                   {
+                       "name":  "product-json-parse",
+                       "command":  "json.loads over product JSON files excluding verification receipts",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: 11 product JSON files parse"
+                   },
+                   {
+                       "name":  "hesperos-accessible-markdown-lint",
+                       "command":  "Hesperos lint_accessible_markdown.py over authored Markdown, excluding LICENSE.md",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: 52 authored Markdown files; LICENSE.md excluded because legal boilerplate is outside customer-documentation scope"
+                   },
+                   {
+                       "name":  "html-source-accessibility-and-links",
+                       "command":  "static audit over docs HTML source",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: 6 HTML pages have lang, viewport, one h1, skip link, image alt, and resolvable local source links"
+                   },
+                   {
+                       "name":  "node-javascript-syntax",
+                       "command":  "node --check over .mjs files",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: 1 JavaScript module files\nassets\\foundry-v14-module\\scripts\\importer.mjs"
+                   },
+                   {
+                       "name":  "git-staged-diff-check",
+                       "command":  "git diff --cached --check",
+                       "exit_code":  0,
+                       "status":  "passed",
+                       "output":  "PASS: complete staged change set has no whitespace errors"
+                   }
+               ],
+    "counts":  {
+                   "python_files":  22,
+                   "product_json_files":  11,
+                   "authored_markdown_files":  52,
+                   "excluded_license_files":  1,
+                   "html_pages":  6,
+                   "javascript_modules":  1
+               }
+}

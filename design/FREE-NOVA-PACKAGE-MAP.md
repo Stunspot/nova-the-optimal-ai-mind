@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: release candidate; 2.0.8 exact MIND 2.1.6 and TestForge 1.1.6 custody
+Status: release candidate; 2.0.9 exact MIND 2.1.6 and TestForge 1.1.6 custody
 Audit receipt: 2026-08-12 exact embedded-MIND parity PASS; source verification and deterministic combined-package gates pending the final committed candidate.
-Product: **Nova + MIND Free 2.0.8**
+Product: **Nova + MIND Free 2.0.9**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`

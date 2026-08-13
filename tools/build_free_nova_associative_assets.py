@@ -214,7 +214,7 @@ def main() -> int:
         h,n,c,p,b,*view_values = row
         cards_source["cards"].append({"handle":h,"name":n,"cluster":c,"projection":p,"boundaries":b,"views":dict(zip(VIEWS,view_values))})
     card_path = root / "associative-capability-cards.json"
-    card_path.write_text(json.dumps(cards_source,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    card_path.write_text(json.dumps(cards_source,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
     source_digest = hashlib.sha256(card_path.read_bytes()).hexdigest()
     source_id = "source:nova-free-associative-cards:2.0.0"
     provider_id = "provider:ollama-qwen3-embedding-0.6b"
@@ -230,7 +230,7 @@ def main() -> int:
       "products":[{"product_id":"product:nova-free","name":"Nova + MIND Free","owner":"Collaborative Dynamics","canonical_uri":"https://github.com/Stunspot/nova-the-optimal-ai","created_at":CREATED_AT}],
       "providers":[{"provider_id":provider_id,"name":"Ollama qwen3-embedding 0.6b","owner":"local operator","provider_kind":"local_embedding","canonical_uri":"https://ollama.com/library/qwen3-embedding:0.6b","created_at":CREATED_AT}],
       "capabilities":capabilities,"distributions":[],"receipts":[],"lifecycle_observations":[],"mounts":[]}
-    (root/"associative-bootstrap.json").write_text(json.dumps(bootstrap,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    (root/"associative-bootstrap.json").write_text(json.dumps(bootstrap,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
     texts=[]; view_refs=[]
     for card in cards_source["cards"]:
         for kind in VIEWS:
@@ -298,7 +298,7 @@ def main() -> int:
     index={"format":"mind-associative-index/v1","lexical_profile":lexical,"embedding_profile":profile,"clusters":clusters,
       "cards":manifest_cards,"relations":relations,"snapshot":snapshot,"vectors":vector_rows,
       "activation":{"associative_snapshot_activation_id":"activation:nova-free:qwen3-0.6b:unqualified-r2","prior_associative_index_snapshot_id":None,"activated_at":QUALIFIED_AT}}
-    (root/"associative-index-qwen3-embedding-0.6b.json").write_text(json.dumps(index,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
+    (root/"associative-index-qwen3-embedding-0.6b.json").write_text(json.dumps(index,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
     print(json.dumps({"cards":len(manifest_cards),"views":len(vector_rows),"dimensions":dims,"source_sha256":source_digest,"snapshot_sha256":snapshot["snapshot_digest"]},indent=2))
     return 0
 

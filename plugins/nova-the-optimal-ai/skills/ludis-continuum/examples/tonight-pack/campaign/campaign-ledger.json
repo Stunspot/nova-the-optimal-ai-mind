@@ -1,0 +1,207 @@
+{
+  "format": "cd-ludis-campaign-ledger/v2",
+  "producer": {
+    "name": "Ludis Continuum",
+    "version": "1.1.0"
+  },
+  "updated": "2026-08-12",
+  "campaign": {
+    "id": "campaign-kindly-cellar",
+    "title": "The Kindly Cellar",
+    "premise": "A rain-swollen river exposes unfinished business beneath an abandoned tollhouse.",
+    "system": "5e",
+    "edition": "2014 SRD-compatible example",
+    "tier": "low-level",
+    "current_horizon": "Investigate the tollhouse before the river rises again."
+  },
+  "table_contract": {
+    "player_preferences": [
+      "mystery with visible choices",
+      "noncombat solutions remain viable"
+    ],
+    "lines": [],
+    "veils": [],
+    "other_boundaries": []
+  },
+  "objects": [
+    {
+      "id": "scene-tollhouse",
+      "kind": "scene",
+      "status": "active_canon",
+      "visibility": "player_safe",
+      "authority": "gm_approved",
+      "provenance": ["Ludis generated example campaign"],
+      "confidence": "high",
+      "tenure": "campaign",
+      "title": "The Abandoned Tollhouse",
+      "content": "Rain rattles through a breached roof. The river door hangs open, the yard gate is half-collapsed, and muddy bootprints cross the main hall toward the records room.",
+      "links": ["table-tollhouse-rumors"],
+      "asset_ids": ["asset-tollhouse-map"],
+      "tags": ["exploration", "mystery"],
+      "export_eligibility": "eligible",
+      "data": {
+        "width": 1256,
+        "height": 1256,
+        "grid": {
+          "type": "square",
+          "size": 100,
+          "distance": 5,
+          "units": "ft"
+        },
+        "map_asset_id": "asset-tollhouse-map"
+      }
+    },
+    {
+      "id": "npc-mara-venn",
+      "kind": "npc",
+      "status": "active_canon",
+      "visibility": "gm_only",
+      "authority": "gm_approved",
+      "provenance": ["Ludis generated example campaign"],
+      "confidence": "high",
+      "tenure": "campaign",
+      "title": "Mara Venn",
+      "content": "A weathered former tollhouse registrar. Mara wants the missing river ledger recovered before the old debts in it become public. She distrusts the harbor watch but will bargain honestly with anyone who protects the ferrymen.",
+      "links": ["scene-tollhouse", "secret-mara-debt"],
+      "asset_ids": ["asset-mara-token"],
+      "tags": ["human", "registrar", "ally-or-rival"],
+      "export_eligibility": "eligible",
+      "data": {
+        "systemKey": "5e",
+        "isNPC": true,
+        "description": "A former tollhouse registrar who knows which debts were never settled.",
+        "appearance": "Rain-dark auburn hair, gray eyes, a practical wool cloak, and a brass ledger clasp.",
+        "type": "Humanoid",
+        "typeTags": ["Human"],
+        "abilityScores": [
+          {"name": "str", "value": 10},
+          {"name": "dex", "value": 14},
+          {"name": "con", "value": 12},
+          {"name": "int", "value": 13},
+          {"name": "wis", "value": 15},
+          {"name": "cha", "value": 11}
+        ],
+        "currentHp": 11,
+        "maxHp": 11,
+        "armorClass": 12,
+        "movementModes": [
+          {"mode": "Walking", "distance": 30}
+        ],
+        "textBlocks": [
+          {
+            "title": "Portrayal",
+            "textBlocks": [
+              {
+                "title": "Ledger Memory",
+                "body": "Mara can recall a debtor, date, or cargo from years of tollhouse work, but she will not expose a ferryman merely to satisfy curiosity."
+              }
+            ]
+          }
+        ],
+        "token_asset_id": "asset-mara-token"
+      }
+    },
+    {
+      "id": "table-tollhouse-rumors",
+      "kind": "table",
+      "status": "active_canon",
+      "visibility": "player_safe",
+      "authority": "gm_approved",
+      "provenance": ["Ludis generated example campaign"],
+      "confidence": "medium",
+      "tenure": "until investigated",
+      "title": "Tollhouse Rumors",
+      "content": "What travelers have heard about the abandoned tollhouse.",
+      "links": [],
+      "asset_ids": [],
+      "tags": ["rumor"],
+      "export_eligibility": "eligible",
+      "data": {
+        "entries": [
+          {"text": "The old bell rings whenever the river claims a name.", "weight": 2},
+          {"text": "Someone still pays the toll after midnight.", "weight": 1},
+          {"text": "The records room stayed dry during the great flood.", "weight": 1}
+        ]
+      }
+    },
+    {
+      "id": "secret-mara-debt",
+      "kind": "secret",
+      "status": "active_canon",
+      "visibility": "gm_only",
+      "authority": "gm_approved",
+      "provenance": ["Ludis generated example campaign"],
+      "confidence": "high",
+      "tenure": "until revealed",
+      "title": "The Name Mara Removed",
+      "content": "Mara removed her brother's name from the final ledger after he ferried refugees without paying the crown toll. The missing page can expose both the mercy and the forgery.",
+      "links": ["npc-mara-venn"],
+      "asset_ids": [],
+      "tags": ["secret", "leverage"],
+      "export_eligibility": "eligible",
+      "data": {}
+    },
+    {
+      "id": "audio-river-pressure",
+      "kind": "audio_cue",
+      "status": "proposed",
+      "visibility": "gm_only",
+      "authority": "model_proposal",
+      "provenance": ["Ludis generated example campaign"],
+      "confidence": "medium",
+      "tenure": "session",
+      "title": "Rising River",
+      "content": "Begin with steady rain. Add a low wooden groan whenever the party spends too long searching; after the third cue, water crosses the threshold.",
+      "links": ["scene-tollhouse"],
+      "asset_ids": [],
+      "tags": ["pacing"],
+      "export_eligibility": "eligible",
+      "data": {
+        "trigger": "time pressure escalates",
+        "cue": "rain and stressed timber",
+        "source": "supply or choose licensed audio at the table"
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "asset-tollhouse-map",
+      "path": "assets/abandoned-tollhouse-map.png",
+      "kind": "map",
+      "media_type": "image/png",
+      "visibility": "player_safe",
+      "rights": {
+        "status": "permission_granted",
+        "credit": "Generated example artwork; prompt by Collaborative Dynamics",
+        "source": "OpenAI image generation, 2026-08-12"
+      },
+      "provenance": ["Generated specifically for the Ludis Tonight Pack example"],
+      "alt_text": "Top-down map of a roofless stone-and-timber tollhouse beside a river, with a muddy fenced yard and broken cart.",
+      "sha256": "8e9ed071b18f60c192056e38ff6740b18df53bf21570a6b3969163031416bb85"
+    },
+    {
+      "id": "asset-mara-token",
+      "path": "assets/mara-venn-token.png",
+      "kind": "token",
+      "media_type": "image/png",
+      "visibility": "gm_only",
+      "rights": {
+        "status": "permission_granted",
+        "credit": "Generated example artwork; prompt by Collaborative Dynamics",
+        "source": "OpenAI image generation, 2026-08-12"
+      },
+      "provenance": ["Generated specifically for the Ludis Tonight Pack example"],
+      "alt_text": "Circular portrait token of Mara Venn, a guarded woman with tied auburn hair and a dark rain cloak.",
+      "sha256": "75a179016390a2c93a05703bdd25ccb5a228c290ba2895e85ec61c42a85f682b"
+    }
+  ],
+  "sessions": [],
+  "approvals": [],
+  "publication": {
+    "status": "private_draft"
+  },
+  "next_prep": [
+    "Choose what happens when the river reaches the records room."
+  ],
+  "extensions": {}
+}

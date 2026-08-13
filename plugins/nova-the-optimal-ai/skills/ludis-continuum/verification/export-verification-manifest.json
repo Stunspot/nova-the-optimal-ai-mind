@@ -1,0 +1,495 @@
+{
+    "manifest_version":  "1.0",
+    "target":  {
+                   "name":  "Ludis Continuum 1.1 offline export and VTT handoff candidate",
+                   "revision":  "working-tree-on-8ea4ad665e73fc173b75c8d8cd9c314abd846d1f",
+                   "target_class":  "change",
+                   "content_fingerprint_sha256":  "8718f7560de90e07c42e3f7c864df33cfa768ae4c5efd1037f50e98e5d7ed033",
+                   "content_file_count":  106
+               },
+    "scope":  {
+                  "included":  [
+                                   "campaign-ledger v2 and migration",
+                                   "atomic promotion and frozen source capture",
+                                   "neutral GM and player Ludis Packs",
+                                   "exact-byte candidate approval",
+                                   "Alchemy character JSON adapter",
+                                   "Foundry v14.365 offline module adapter",
+                                   "local import-observation receipts",
+                                   "generated example map and token",
+                                   "root and Pages-source customer documentation"
+                               ],
+                  "excluded":  [
+                                   "live Alchemy import",
+                                   "live Foundry recognition, database writes, rendering, grid alignment, or non-GM visibility",
+                                   "GitHub publication, Pages deployment, hosted Actions, marketplace installation, and fresh-host discovery",
+                                   "semantic spoiler detection, rights adjudication, rules certification, balance, and live-table quality"
+                               ],
+                  "constraints":  [
+                                      "local Windows verification; no GitHub-hosted Actions invoked",
+                                      "no MCP or live VTT control",
+                                      "no licensed Foundry runtime or authenticated Alchemy account available",
+                                      "no actual POSIX host available; POSIX commit algorithm exercised by direct regressions on Windows"
+                                  ],
+                  "safety_boundary":  [
+                                          "ledger remains canonical",
+                                          "exports are one-way offline projections",
+                                          "player material requires exact candidate and preview review",
+                                          "static target validation never promotes live compatibility"
+                                      ]
+              },
+    "claim_custody":  {
+                          "observed":  [
+                                           "126 local Python tests passed; exact TestForge command receipt retained.",
+                                           "The generated example completed 14 local generic, Alchemy, and Foundry build, verify, and exact-byte approval steps.",
+                                           "Package self-check passed 32 instrument cores; skill validation, Python 3.10 grammar for 22 files, 11 product JSON parses, 52 authored Markdown lints, six HTML source audits, Node syntax, and diff checks passed.",
+                                           "Independent adversarial, software-architecture, Hesperos documentation, and documentation-accessibility reviews passed on the same 106-file content fingerprint.",
+                                           "Generated map and token were visually inspected at their actual content and their exact hashes are retained in the E2E receipt."
+                                       ],
+                          "inferred":  [
+                                           "Standard-library Python source that parses as Python 3.10 should run on conforming Python 3.10 or later hosts, subject to OS and filesystem behavior."
+                                       ],
+                          "assumed":  [
+                                          "Officially documented Alchemy character JSON and Foundry 14.365 API shapes remain available as researched on 2026-08-13.",
+                                          "Foundry worlds presented to the importer report existing Ludis identity flags accurately."
+                                      ],
+                          "unresolved":  [
+                                             "Live Alchemy and Foundry behavior and non-GM visibility.",
+                                             "Actual POSIX-host filesystem behavior and hard-link support.",
+                                             "Fresh-host Codex and Claude discovery, public deployment, browser rendering, assistive-technology behavior, and representative-user accessibility.",
+                                             "Semantic spoiler safety, rights adjudication, rules accuracy, balance, and live-table quality."
+                                         ]
+                      },
+    "impact_map":  [
+                       {
+                           "source":  "campaign-ledger v2",
+                           "consumers":  [
+                                             "neutral pack",
+                                             "Alchemy adapter",
+                                             "Foundry adapter",
+                                             "snapshot"
+                                         ]
+                       },
+                       {
+                           "source":  "player projection",
+                           "consumers":  [
+                                             "preview",
+                                             "candidate ZIP",
+                                             "target ownership",
+                                             "approval receipt"
+                                         ]
+                       },
+                       {
+                           "source":  "Foundry trusted importer template",
+                           "consumers":  [
+                                             "generated importer",
+                                             "static validator",
+                                             "offline module"
+                                         ]
+                       }
+                   ],
+    "invariants":  [
+                       "canonical ledger writes are atomic and conflicting writers fail closed",
+                       "capture completes only if the ledger and all declared assets still match",
+                       "GM-only objects and assets do not enter player projections",
+                       "approval finalizes the reviewed candidate bytes unchanged",
+                       "Foundry verifier accepts only the exact trusted executable surface",
+                       "local observations never promote product-wide compatibility"
+                   ],
+    "risks":  [
+                  {
+                      "id":  "R1",
+                      "title":  "player material exposes GM state",
+                      "severity":  "critical",
+                      "disposition":  "covered",
+                      "verification":  [
+                                           "S1",
+                                           "T1",
+                                           "T2",
+                                           "EX1",
+                                           "EX2"
+                                       ]
+                  },
+                  {
+                      "id":  "R2",
+                      "title":  "canonical source is lost, raced, or captured inconsistently",
+                      "severity":  "critical",
+                      "disposition":  "covered",
+                      "verification":  [
+                                           "S2",
+                                           "T1",
+                                           "EX1"
+                                       ]
+                  },
+                  {
+                      "id":  "R3",
+                      "title":  "candidate approval or sidecar collision authorizes different bytes",
+                      "severity":  "critical",
+                      "disposition":  "covered",
+                      "verification":  [
+                                           "S3",
+                                           "T2",
+                                           "T4",
+                                           "EX1",
+                                           "EX2"
+                                       ]
+                  },
+                  {
+                      "id":  "R4",
+                      "title":  "adapter invents mechanics or accepts malformed target data",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "verification":  [
+                                           "S4",
+                                           "T3",
+                                           "T4",
+                                           "EX1",
+                                           "EX2"
+                                       ]
+                  },
+                  {
+                      "id":  "R5",
+                      "title":  "Foundry executable or import identity escapes the reviewed boundary",
+                      "severity":  "critical",
+                      "disposition":  "covered",
+                      "verification":  [
+                                           "S5",
+                                           "T3",
+                                           "T4",
+                                           "EX1",
+                                           "EX3"
+                                       ]
+                  },
+                  {
+                      "id":  "R6",
+                      "title":  "static target output fails in a live current service",
+                      "severity":  "medium",
+                      "disposition":  "blocked",
+                      "verification":  [
+                                           "S6",
+                                           "T8",
+                                           "EX4"
+                                       ]
+                  },
+                  {
+                      "id":  "R7",
+                      "title":  "package, documentation, or generated example misstates the evidence",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "verification":  [
+                                           "S7",
+                                           "T5",
+                                           "T6",
+                                           "T7",
+                                           "T9",
+                                           "EX2",
+                                           "EX3",
+                                           "EX5"
+                                       ]
+                  }
+              ],
+    "scenarios":  [
+                      {
+                          "id":  "S1",
+                          "risk_ids":  [
+                                           "R1"
+                                       ],
+                          "expected":  "transitive links, GM-only assets, GM prose, and unapproved bytes cannot silently enter a finalized player handoff"
+                      },
+                      {
+                          "id":  "S2",
+                          "risk_ids":  [
+                                           "R2"
+                                       ],
+                          "expected":  "faults, competing promotions, uncoordinated drift, and late source changes preserve prior canon or fail explicitly"
+                      },
+                      {
+                          "id":  "S3",
+                          "risk_ids":  [
+                                           "R3"
+                                       ],
+                          "expected":  "complete write sets are reserved, changed candidate or preview bytes fail, and final SHA-256 equals candidate SHA-256"
+                      },
+                      {
+                          "id":  "S4",
+                          "risk_ids":  [
+                                           "R4"
+                                       ],
+                          "expected":  "Alchemy requires explicit system identity and nested shape; unsupported data is blocked, omitted, or loss-reported rather than invented"
+                      },
+                      {
+                          "id":  "S5",
+                          "risk_ids":  [
+                                           "R5"
+                                       ],
+                          "expected":  "Foundry importer and manifest are exact, extra executable surfaces fail, identities are campaign-scoped, exact reruns skip, and changed imports conflict"
+                      },
+                      {
+                          "id":  "S6",
+                          "risk_ids":  [
+                                           "R6"
+                                       ],
+                          "expected":  "live compatibility remains explicitly unverified until an exact-bundle target observation exists"
+                      },
+                      {
+                          "id":  "S7",
+                          "risk_ids":  [
+                                           "R7"
+                                       ],
+                          "expected":  "customer journeys, examples, metadata, generated assets, and evidence labels agree with the actual local behavior"
+                      }
+                  ],
+    "tests":  [
+                  {
+                      "id":  "T1",
+                      "name":  "ledger and capture regressions",
+                      "path":  "scripts/tests/test_ledger_v2.py",
+                      "scenario_ids":  [
+                                           "S1",
+                                           "S2"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX1"
+                  },
+                  {
+                      "id":  "T2",
+                      "name":  "neutral pack and approval regressions",
+                      "path":  "scripts/tests/test_export_pack.py",
+                      "scenario_ids":  [
+                                           "S1",
+                                           "S3"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX1"
+                  },
+                  {
+                      "id":  "T3",
+                      "name":  "Alchemy and Foundry adapter regressions",
+                      "path":  "scripts/tests/test_adapters.py",
+                      "scenario_ids":  [
+                                           "S4",
+                                           "S5"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX1"
+                  },
+                  {
+                      "id":  "T4",
+                      "name":  "target build, verify, approval, and injection regressions",
+                      "path":  "scripts/tests/test_export_target.py",
+                      "scenario_ids":  [
+                                           "S3",
+                                           "S4",
+                                           "S5"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX1"
+                  },
+                  {
+                      "id":  "T5",
+                      "name":  "complete generated example workflow",
+                      "scenario_ids":  [
+                                           "S1",
+                                           "S3",
+                                           "S4",
+                                           "S5",
+                                           "S7"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX2"
+                  },
+                  {
+                      "id":  "T6",
+                      "name":  "curated package and skill validation",
+                      "path":  "scripts/self_check.py",
+                      "scenario_ids":  [
+                                           "S7"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX3"
+                  },
+                  {
+                      "id":  "T7",
+                      "name":  "Python 3.10, JSON, Node, Markdown, HTML, and diff static gates",
+                      "scenario_ids":  [
+                                           "S5",
+                                           "S7"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX3"
+                  },
+                  {
+                      "id":  "T8",
+                      "name":  "live Alchemy and Foundry import",
+                      "scenario_ids":  [
+                                           "S6"
+                                       ],
+                      "status":  "blocked",
+                      "execution_id":  "EX4"
+                  },
+                  {
+                      "id":  "T9",
+                      "name":  "generated example artwork inspection",
+                      "path":  "examples/tonight-pack/campaign/assets/abandoned-tollhouse-map.png",
+                      "scenario_ids":  [
+                                           "S7"
+                                       ],
+                      "status":  "passed",
+                      "execution_id":  "EX5"
+                  }
+              ],
+    "executions":  [
+                       {
+                           "id":  "EX1",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  "python -B -m unittest discover -s scripts/tests -p test_*.py -v",
+                           "observed":  "126 tests passed; captured command duration 20.973131 seconds",
+                           "receipt":  "verification/export-python-tests-20260813.json"
+                       },
+                       {
+                           "id":  "EX2",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  "local generated-example GM/player generic, Alchemy, and Foundry build/verify/approve workflow",
+                           "observed":  "14 steps; generic player candidate/final AC2835A504CF646EB7FB4236A0A3F2448BA1CB1C1308012153A70AA28C979FCA; Foundry player candidate/final 85915CA17B630C4972604525BD1B936FF2A30FC3E1DE8AC6FDF822590B2A8416; Foundry GM D2C71B77100FB369E3E120286E6EF5B505DC04691ACC160434459AA695117F62",
+                           "receipt":  "verification/export-e2e-20260813.json"
+                       },
+                       {
+                           "id":  "EX3",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  "self-check, UTF-8 skill validation, Python 3.10 AST parse, product JSON parse, Hesperos lint, HTML source audit, node --check, git diff --check",
+                           "observed":  "32 instrument cores; 22 Python files; 11 product JSON files; 52 authored Markdown files; 6 HTML pages; 1 JavaScript module; complete staged diff whitespace-clean",
+                           "receipt":  "verification/export-static-checks-20260813.json"
+                       },
+                       {
+                           "id":  "EX4",
+                           "status":  "blocked",
+                           "reason":  "No licensed Foundry runtime or authenticated Alchemy account in scope; static validation is the declared local product boundary."
+                       },
+                       {
+                           "id":  "EX5",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  "human visual inspection and exact hashing of generated raster example assets",
+                           "observed":  "map 8E9ED071B18F60C192056E38FF6740B18DF53BF21570A6B3969163031416BB85; token 75A179016390A2C93A05703BDD25CCB5A228C290BA2895E85EC61C42A85F682B",
+                           "receipt":  "verification/export-e2e-20260813.json"
+                       }
+                   ],
+    "findings":  [
+                     {
+                         "id":  "F1",
+                         "severity":  "high",
+                         "status":  "closed",
+                         "summary":  "Noncanonical ZIP aliases, unsafe member paths, extra executable surfaces, and deterministic-name collisions are rejected."
+                     },
+                     {
+                         "id":  "F2",
+                         "severity":  "critical",
+                         "status":  "closed",
+                         "summary":  "Ledger, snapshot, export, and approval final-boundary races fail closed, preserve foreign occupants, and retain ambiguous generations."
+                     },
+                     {
+                         "id":  "F3",
+                         "severity":  "critical",
+                         "status":  "closed",
+                         "summary":  "Complete source sets are frozen and rechecked; import observations bind stable paths, identities, bytes, and hashes."
+                     },
+                     {
+                         "id":  "F4",
+                         "severity":  "critical",
+                         "status":  "closed",
+                         "summary":  "Generic and target approvals require exact candidate, preview, audit, canonical receipt, and immutable final bytes."
+                     },
+                     {
+                         "id":  "F5",
+                         "severity":  "high",
+                         "status":  "closed",
+                         "summary":  "Alchemy nested data, system identity, loss consistency, member allowlist, and no-inference boundaries are enforced."
+                     },
+                     {
+                         "id":  "F6",
+                         "severity":  "critical",
+                         "status":  "closed",
+                         "summary":  "Foundry identity is campaign scoped; executable and manifest surfaces are exact; ownership is audience exact; embedded Levels and JournalEntryPages are parent-aware and preflighted before creation."
+                     },
+                     {
+                         "id":  "F7",
+                         "severity":  "high",
+                         "status":  "closed",
+                         "summary":  "Documentation now completes displaced-ledger recovery and re-entry, preserves Alchemy plan ambiguity, and removes CSS mojibake."
+                     }
+                 ],
+    "residual_risks":  [
+                           {
+                               "id":  "RR1",
+                               "severity":  "medium",
+                               "summary":  "Live Alchemy and Foundry behavior and player visibility remain unobserved.",
+                               "mitigation":  "Label static versus live evidence; first import only in a disposable backed-up destination and record an immutable observation receipt."
+                           },
+                           {
+                               "id":  "RR2",
+                               "severity":  "high",
+                               "summary":  "Structural checks cannot recognize secrets written inside player-safe ordinary prose.",
+                               "mitigation":  "Require complete candidate, rendered, and non-rendered member review before exact-byte approval."
+                           },
+                           {
+                               "id":  "RR3",
+                               "severity":  "medium",
+                               "summary":  "No actual POSIX host or filesystem was exercised.",
+                               "mitigation":  "Direct regressions cover the POSIX algorithm; unsupported hard-link behavior fails closed and the support guide preserves recovery generations."
+                           },
+                           {
+                               "id":  "RR4",
+                               "severity":  "medium",
+                               "summary":  "Foundry import is resumable per record rather than globally transactional, trusts existing Ludis flags, and preserves unrelated manual documents.",
+                               "mitigation":  "Use a disposable backed-up world; rerun exact bundles to resume; restore the pre-import backup for complete rollback."
+                           },
+                           {
+                               "id":  "RR5",
+                               "severity":  "medium",
+                               "summary":  "Fresh-host installation, public deployment, browser rendering, assistive technology, and representative-user testing are outside this local candidate.",
+                               "mitigation":  "Make no installed, published, deployed, or representative-accessibility claim until separately observed."
+                           },
+                           {
+                               "id":  "RR6",
+                               "severity":  "medium",
+                               "summary":  "Runtime importer trusts the generator-validated payload; local tampering after verification is outside the guarantee.",
+                               "mitigation":  "Retain and compare exact bundle SHA-256; rerun the static verifier immediately before installation."
+                           }
+                       ],
+    "review":  {
+                   "status":  "REVIEW_PASS",
+                   "findings":  [
+
+                                ],
+                   "receipts":  [
+                                    "verification/export-adversarial-review-20260813.json",
+                                    "verification/export-architecture-review-20260813.json",
+                                    "verification/export-documentation-review-20260813.json",
+                                    "verification/export-accessibility-review-20260813.json"
+                                ],
+                   "binding":  {
+                                   "content_fingerprint_sha256":  "8718f7560de90e07c42e3f7c864df33cfa768ae4c5efd1037f50e98e5d7ed033",
+                                   "file_count":  106
+                               }
+               },
+    "decision":  {
+                     "status":  "READY_WITH_RESIDUAL_RISK",
+                     "basis":  [
+                                   "The exact local 106-file product and documentation tree passed 126 regressions, the complete generated-example workflow, static gates, and four independent exact-tree reviews.",
+                                   "All critical and high implementation risks in scope are covered or closed; remaining uncertainty belongs to deliberately excluded live services, an unavailable POSIX host, semantic review, deployment, and representative accessibility.",
+                                   "This decision covers the local 1.1 candidate only; it does not authorize or claim publication, deployment, marketplace support, or live VTT compatibility."
+                               ],
+                     "authority_required":  [
+
+                                            ]
+                 },
+    "evidence_binding":  {
+                             "content_fingerprint_receipt":  "verification/export-content-fingerprint-20260813.json",
+                             "content_fingerprint_sha256":  "8718f7560de90e07c42e3f7c864df33cfa768ae4c5efd1037f50e98e5d7ed033",
+                             "file_count":  106,
+                             "verification_json_excluded":  true
+                         }
+}

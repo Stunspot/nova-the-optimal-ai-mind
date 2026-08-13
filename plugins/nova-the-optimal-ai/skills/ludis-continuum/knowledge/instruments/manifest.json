@@ -1,0 +1,275 @@
+{
+  "format": "cd-ludis-instrument-manifest/v2",
+  "source": "rpg-toolkit-v2.md",
+  "source_sha256": "d2e441f88fa1bfe74fba805cd2e25efbccfdd65e0ca2dac1e254f0cada2bcd29",
+  "derivation_status": "semantically_rewritten_derivative",
+  "legacy_selection": "top-level instrument cores before first Example heading",
+  "runtime_authority": "the 32 curated core files listed here",
+  "legacy_source_role": "provenance evidence only; never a regeneration input",
+  "excluded": [
+    "worked examples and worked worlds",
+    "named settings, campaigns, parties, and factions",
+    "legacy speaker wrappers, promotion, and persona residue",
+    "automatic tool calls, platform assumptions, and sibling-prompt dependencies",
+    "rigid menus, arbitrary output quotas, and generic input boilerplate"
+  ],
+  "cores": [
+    {
+      "title": "Region as Consequence Map",
+      "legacy_title": "Region Creating Map Builder",
+      "path": "region-map.md",
+      "when": "regions, travel, or map logic",
+      "sha256": "49c0daf03492b45a74e7125054f6dc6bd1614e3df8383a9cff3431613e48cc6c",
+      "bytes": 2043
+    },
+    {
+      "title": "An Argument in Ruins",
+      "legacy_title": "Lost Civilization Lore Creator",
+      "path": "lost-civilization.md",
+      "when": "ruins, lost cultures, or archaeological mystery",
+      "sha256": "0246659893ffe564dd6137680b72f4d782da2a87c1f6074ab74aa32c7c53637d",
+      "bytes": 2132
+    },
+    {
+      "title": "The Hidden Institution",
+      "legacy_title": "Secret Society Generator",
+      "path": "secret-society.md",
+      "when": "covert groups, agendas, or hidden influence",
+      "sha256": "33ec1128c96ee7672849259cb9033ff219ff1d6a596038f4ef970668c87a1615",
+      "bytes": 2100
+    },
+    {
+      "title": "Allegiance Under Pressure",
+      "legacy_title": "Faction Allegiance Matrix",
+      "path": "faction-allegiance.md",
+      "when": "faction relationships, leverage, or changing loyalties",
+      "sha256": "0547b0a264212b9097571cc0f6766e662300b698d236d323a9a88636d1e4259d",
+      "bytes": 2012
+    },
+    {
+      "title": "A Threshold That Changes Both Sides",
+      "legacy_title": "Dimensional Gateway Locator",
+      "path": "dimensional-gateway.md",
+      "when": "portals, planes, or threshold locations",
+      "sha256": "bd9c27d8165a5f1b23e1aa84be50b6aaf6ff8c55d4299c1929e074b4528549f8",
+      "bytes": 2068
+    },
+    {
+      "title": "Prophecy as Interpretive Pressure",
+      "legacy_title": "Prophecy Maker",
+      "path": "prophecy.md",
+      "when": "prophecy, omen, or ambiguous future pressure",
+      "sha256": "90b11ca340ea1b8989a2ec79a7af26bae32eb7621849c39232887e1cc3aba7b1",
+      "bytes": 1892
+    },
+    {
+      "title": "One Impossible Premise, Rigor Downstream",
+      "legacy_title": "Impossible Invention Speculator",
+      "path": "impossible-invention.md",
+      "when": "speculative invention or impossible technology",
+      "sha256": "9362e6661ed7d34a4d214f7a351c2739bc5c7f22fad4b450fa98f61b68d19c3e",
+      "bytes": 1954
+    },
+    {
+      "title": "Magic as Culture, Practice, and Cost",
+      "legacy_title": "Obscure Magic System Blueprint",
+      "path": "magic-system.md",
+      "when": "a magic system, costs, limits, or cultural integration",
+      "sha256": "3e4d6767e4305039ce8c67835bc389880948efbd9d68d585c88a5a7a8193e417",
+      "bytes": 2219
+    },
+    {
+      "title": "A Rule Under Play",
+      "legacy_title": "Homebrew Mechanic Refiner",
+      "path": "homebrew-mechanics.md",
+      "when": "a proposed rule, procedure, or subsystem",
+      "sha256": "8a79be0f4e6ee742432a2c3fad9e51e2938248df7eb186d4014306095da2d532",
+      "bytes": 1979
+    },
+    {
+      "title": "A Settlement in Motion",
+      "legacy_title": "Settlement and City Builder",
+      "path": "settlement-city.md",
+      "when": "a settlement, city, districts, or civic pressure",
+      "sha256": "6397beda6bb6118158146ec8bc32f864c51f074b061fb26f01eed5d7742d04f2",
+      "bytes": 2026
+    },
+    {
+      "title": "A Menu That Remembers the Place",
+      "legacy_title": "Fantasy Tavern Menu Maker",
+      "path": "tavern-menu.md",
+      "when": "food, hospitality, or a small social texture",
+      "sha256": "a8df0dd483ac14c0765838af317b1136dce5c5aacb2b1617bf7d41f4b0822ac2",
+      "bytes": 1997
+    },
+    {
+      "title": "Rumor as Social Action",
+      "legacy_title": "Rumor Mill and Tabloid Headline Maker",
+      "path": "rumors-headlines.md",
+      "when": "rumors, public chatter, or competing reports",
+      "sha256": "bcf3292ddadacb963e8c65a74b35d7f7809dbe3131b03f36e976e5ff20259f1a",
+      "bytes": 1880
+    },
+    {
+      "title": "An Antagonist Who Can Act Now",
+      "legacy_title": "Big Bad Evil Guy (BBEG) Maker",
+      "path": "villain.md",
+      "when": "an antagonist with pressure, motive, and counterplay",
+      "sha256": "59fab4a2574070d140916bd30e2d92480a5a4e741112d195f15ac1d1d7c72067",
+      "bytes": 2153
+    },
+    {
+      "title": "A Scheme That Moves When Touched",
+      "legacy_title": "Villain\u2019s Scheme Outliner",
+      "path": "villain-scheme.md",
+      "when": "an antagonist plan, escalation, or counterplay",
+      "sha256": "80a0d3ea1c54eb91dd613b5621b56d1f6916f1df9e610c281ccc1c2840bbf606",
+      "bytes": 2011
+    },
+    {
+      "title": "Secrets That Change Relationships",
+      "legacy_title": "Intrigue Web Generator",
+      "path": "intrigue-web.md",
+      "when": "secrets, social conflict, or overlapping interests",
+      "sha256": "4265443d7f2dfb08b0db5d6edb7e5709273067159af52a9d28d2995dd18e2036",
+      "bytes": 1961
+    },
+    {
+      "title": "A Charged Situation, Not a Plot",
+      "legacy_title": "Dynamic Quest Generator",
+      "path": "quest.md",
+      "when": "a quest with choices, clues, and consequences",
+      "sha256": "728f868b26b4d3a8f527f04804bb5445e0b73f9f61e4032f79504b77f72e1730",
+      "bytes": 1920
+    },
+    {
+      "title": "Consequence in Rhythm",
+      "legacy_title": "Encounter Chain Composer",
+      "path": "encounter-chain.md",
+      "when": "a sequence of encounters or escalating situations",
+      "sha256": "258656a09d241521e5049908900bf0e75dc9ffd4b6c3e6d9f0fe25b6243507e2",
+      "bytes": 2018
+    },
+    {
+      "title": "A Place Players Can Learn",
+      "legacy_title": "Dungeon Architect",
+      "path": "dungeon.md",
+      "when": "a dungeon, exploration structure, or keyed location",
+      "sha256": "d55110a674978621c92a6f5abc5355afb8eb8bd4302917aed8cfffcd18ada183",
+      "bytes": 2134
+    },
+    {
+      "title": "The City Beneath Its Public Face",
+      "legacy_title": "Urban Dungeon Generator",
+      "path": "urban-dungeon.md",
+      "when": "an urban exploration site or layered city threat",
+      "sha256": "e58dd48ce9904cbb716ae3fd49e3daefd671f4db444deb132a93168b2865e793",
+      "bytes": 2133
+    },
+    {
+      "title": "A Legible Obstacle with Teeth",
+      "legacy_title": "Puzzle and Trap Maker",
+      "path": "puzzle-trap.md",
+      "when": "a puzzle, trap, or hybrid obstacle",
+      "sha256": "798988fa5c4c3e8a40072cc0ca9f3caecdf79fe4f7ee8aa0d3d5fe5879aaedd8",
+      "bytes": 2017
+    },
+    {
+      "title": "A Creature Readable Before It Is Dangerous",
+      "legacy_title": "Creature Crucible Monster Maker",
+      "path": "creature.md",
+      "when": "a creature with ecology, behavior, and play pressure",
+      "sha256": "7da914df46592a20fb86169d1ae2fd47923441f37ba7b2c2c6ed52a14ffcde6a",
+      "bytes": 2013
+    },
+    {
+      "title": "A Bargain That Learns Your Reasons",
+      "legacy_title": "Cursed Item Lore Generator",
+      "path": "cursed-item.md",
+      "when": "a cursed object and its consequences",
+      "sha256": "fe01a5c5f8aa40e5138a047721dc07d43ff3f31954e754cf322be7b98722a303",
+      "bytes": 1907
+    },
+    {
+      "title": "An Artifact That Reorganizes the World",
+      "legacy_title": "Legendary Artifact Forger",
+      "path": "legendary-artifact.md",
+      "when": "a consequential artifact, history, or tradeoff",
+      "sha256": "e6bac2b4c4eb15fa60ada7cefbb2cae256b4d1a8e43b28afa91147880b9649fd",
+      "bytes": 1982
+    },
+    {
+      "title": "A Spell That Creates a Decision",
+      "legacy_title": "Spell Scriber",
+      "path": "spell.md",
+      "when": "a system-aware spell or magical effect",
+      "sha256": "e462f0fa21c49547a83f97af6ac448ee59d2e4810bec15356a4fe6ad4f74061d",
+      "bytes": 1912
+    },
+    {
+      "title": "A Language That Makes a Worldview Playable",
+      "legacy_title": "Arcane Language Lexicon",
+      "path": "arcane-language.md",
+      "when": "a naming system, symbolic language, or lexicon",
+      "sha256": "e07f577c93bdd2d0894fbcd2dfe1d973515bea89cf6bba875306468b4b72467b",
+      "bytes": 2011
+    },
+    {
+      "title": "The Party as a Relationship Engine",
+      "legacy_title": "Party Creator Tool",
+      "path": "party.md",
+      "when": "a party, ensemble, or relationship-ready cast",
+      "sha256": "c200c5407ba5b7a0e9bf296d16f3181c34576e3a7d19a0c98b92888f9579cd85",
+      "bytes": 1895
+    },
+    {
+      "title": "A Playable Past with Its Hand on the Door",
+      "legacy_title": "Heroic Backstory Weaver",
+      "path": "backstory.md",
+      "when": "a playable character history and future pressure",
+      "sha256": "e67329e859f916fc74f3bc05969387c3bd5b060edd1a1059cdedc40cc625531c",
+      "bytes": 2091
+    },
+    {
+      "title": "Someone Halfway Through a Decision",
+      "legacy_title": "Instant NPC Creator",
+      "path": "npc.md",
+      "when": "an NPC with immediate table utility",
+      "sha256": "a42de29eee8f498306ac49301d34f7c45c84980eb115e8b413c40628997b7d8e",
+      "bytes": 1809
+    },
+    {
+      "title": "What the Characters Perceive Now",
+      "legacy_title": "Boxtext Description Forge",
+      "path": "boxtext.md",
+      "when": "a concise, speakable scene description",
+      "sha256": "29ef01536ede0cd2559fe8fa5829a235d1189313e8f9897a22864caa3078920e",
+      "bytes": 1714
+    },
+    {
+      "title": "A Story a Culture Lives By",
+      "legacy_title": "Instant Myth Generator",
+      "path": "myth.md",
+      "when": "a myth, belief, or cultural story",
+      "sha256": "bf856575a9236e8ba2be5689b1329ac8c0844c61ceb361dcb190f1a687d608d3",
+      "bytes": 1833
+    },
+    {
+      "title": "A Visual Brief with Narrative Weight",
+      "legacy_title": "Art Prompt Alchemist",
+      "path": "art-prompt.md",
+      "when": "an art brief or visual prompt",
+      "sha256": "bf125794f9bd1e63887b646c9a8b27407bdfeb09248c0fedb5e2164a5644faad",
+      "bytes": 2027
+    },
+    {
+      "title": "A Campaign Already in Motion",
+      "legacy_title": "Campaign Builder Workflow",
+      "path": "campaign-workflow.md",
+      "when": "campaign framing, prep, or session advancement",
+      "sha256": "1e5e362443f4fcc84cfd9c37f2e5a999be244761d4812fee1a448085b1a207e0",
+      "bytes": 2198
+    }
+  ],
+  "index_sha256": "ced59febced92ba11c15c18968d43d67ed4029510c0ea709c749621297725aa4"
+}

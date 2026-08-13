@@ -1,0 +1,20 @@
+{
+  "id": "__LUDIS_MODULE_ID__",
+  "title": "__LUDIS_MODULE_TITLE__",
+  "type": "module",
+  "description": "Offline Ludis campaign import bundle. Static compatibility only; live import is unverified.",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Collaborative Dynamics"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/importer.mjs"
+  ],
+  "media": []
+}

@@ -72,7 +72,7 @@ $requirements = @(
     [pscustomobject]@{
         internal_name = 'nova-the-optimal-ai'
         display_name = 'Nova the Optimal AI'
-        expected_version = '2.0.1'
+        expected_version = '2.0.2'
     },
     [pscustomobject]@{
         internal_name = 'augment-of-mind'
