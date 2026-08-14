@@ -43,6 +43,7 @@ from workspace_runtime import (
     generation_path,
     open_snapshot,
     open_workspace,
+    recover_transactions,
     validate_external_target,
     workspace_lock,
     revalidate_resolution,
@@ -1447,6 +1448,44 @@ def cmd_backup_destroy(args: argparse.Namespace) -> dict[str, Any]:
             raise ContinuityError("Backup changed before destruction", "plan_stale")
         return _execute_lifecycle_delete(backup_root, receipt_path, receipt)
 
+def cmd_recover(args: argparse.Namespace) -> dict[str, Any]:
+    authority = require_human_authority(args.authority)
+    root, selector = _open(args, writable=False)
+    before = tree_digest(root)
+    manifest = read_json(root / "manifest.json")
+    if manifest.get("format") == LEGACY_FORMAT:
+        result = {
+            "format": "cd-continuity-recovery/v2",
+            "compatibility_mode": "v1_read_only",
+            "status": "guidance_only",
+            "authority": authority,
+            "recovered_transaction_ids": [],
+            "source_mutated": False,
+            "guidance": "Validate the v1 workspace and copy-migrate to a distinct v2 workspace; this command never repairs or rewrites v1.",
+        }
+        if tree_digest(root) != before:
+            raise ContinuityError("v1 recovery guidance changed source bytes", "source_changed")
+        return result
+    root, selector = _open(args, writable=True)
+    generation_before = int(manifest.get("generation", 0))
+    recovered = recover_transactions(
+        root,
+        lock_timeout=args.lock_timeout_seconds,
+        selector=selector,
+    )
+    current = read_json(root / "manifest.json")
+    return {
+        "format": "cd-continuity-recovery/v2",
+        "compatibility_mode": "v2_native",
+        "status": "recovered" if recovered else "clean",
+        "authority": authority,
+        "recovered_transaction_ids": recovered,
+        "generation_before": generation_before,
+        "generation_after": int(current.get("generation", 0)),
+        "source_mutated": bool(recovered),
+    }
+
+
 def cmd_open(args: argparse.Namespace) -> dict[str, Any]:
     root = workspace(args.workspace, writable=False)
     before = tree_digest(root)
@@ -1492,6 +1531,15 @@ def parser() -> argparse.ArgumentParser:
     open_parser = sub.add_parser("open", help="Probe workspace major format and capability map without writes")
     add_workspace_argument(open_parser)
     open_parser.set_defaults(func=cmd_open)
+
+    recover = sub.add_parser(
+        "recover",
+        help="Reconcile provable v2 transactions or return read-only v1 guidance",
+    )
+    add_workspace_argument(recover)
+    recover.add_argument("--authority", required=True)
+    recover.add_argument("--lock-timeout-seconds", type=float, default=0.0)
+    recover.set_defaults(func=cmd_recover)
 
     init = sub.add_parser("init", help="Initialize a new v2 continuity workspace")
     add_workspace_argument(init)

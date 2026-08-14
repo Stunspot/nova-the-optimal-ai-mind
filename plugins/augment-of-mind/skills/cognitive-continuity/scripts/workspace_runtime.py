@@ -847,8 +847,15 @@ def _recover_transactions_locked(root: Path) -> list[str]:
         recovered.append(_recover_uncommitted(root, path, manifest, journal))
     return recovered
 
-def recover_transactions(root: Path, *, lock_timeout: float = 0.0) -> list[str]:
+def recover_transactions(
+    root: Path,
+    *,
+    lock_timeout: float = 0.0,
+    selector: ResolutionToken | None = None,
+) -> list[str]:
     with workspace_lock(root, lock_timeout, transaction_id="recovery"):
+        if selector is not None:
+            revalidate_resolution(selector, root)
         return _recover_transactions_locked(root)
 
 def request_digest(operation: str, payload: Any) -> str:

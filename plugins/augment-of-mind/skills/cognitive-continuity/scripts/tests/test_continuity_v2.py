@@ -643,6 +643,50 @@ class CompatibilityAndRecoveryTests(WorkspaceCase):
             validated = subprocess.run([sys.executable, str(VALIDATE), str(root)], text=True, capture_output=True, timeout=30)
             self.assertEqual(validated.returncode, 0, validated.stdout + validated.stderr)
 
+    def test_public_recover_reconciles_v2_and_keeps_v1_read_only(self) -> None:
+        clean = self.cli(
+            STORE, "recover", self.root, "--authority", "user-stunspot",
+        )
+        self.assertEqual(clean["status"], "clean")
+        self.assertFalse(clean["source_mutated"])
+        self.assertEqual(clean["generation_before"], clean["generation_after"])
+
+        crashed_root = self.base / "public-recovery"
+        runtime.initialize_workspace(
+            str(crashed_root), user="user", project="project", agent="nova",
+            thread=None, sensitivity="ordinary", retention="manual",
+        )
+        env = dict(os.environ)
+        env["CONTINUITY_TEST_CRASHPOINT"] = "after_bundle_published"
+        crashed = subprocess.run(
+            self._episode_command(crashed_root, "public crash", "public-crash", 0),
+            text=True, capture_output=True, env=env, timeout=30,
+        )
+        self.assertEqual(crashed.returncode, 97)
+        recovered = self.cli(
+            STORE, "recover", crashed_root, "--authority", "user-stunspot",
+        )
+        self.assertEqual(recovered["status"], "recovered")
+        self.assertTrue(recovered["source_mutated"])
+        self.assertEqual(len(recovered["recovered_transaction_ids"]), 1)
+        self.assertEqual(runtime.pending_transactions(crashed_root), [])
+        self.cli(VALIDATE, crashed_root)
+
+        legacy = self.base / "legacy-recovery-guidance"
+        initialized = subprocess.run([
+            sys.executable, str(SCRIPTS / "continuity_store.py"), "init", str(legacy),
+            "--user", "user", "--project", "project", "--agent", "nova",
+        ], text=True, capture_output=True, timeout=30)
+        self.assertEqual(initialized.returncode, 0, initialized.stderr)
+        before = inventory(legacy)
+        guidance = self.cli(
+            STORE, "recover", legacy, "--authority", "user-stunspot",
+        )
+        self.assertEqual(guidance["compatibility_mode"], "v1_read_only")
+        self.assertEqual(guidance["status"], "guidance_only")
+        self.assertFalse(guidance["source_mutated"])
+        self.assertEqual(inventory(legacy), before)
+
     def test_v1_is_read_only_through_v2_and_copy_migration_is_source_exact(self) -> None:
         legacy_store = SCRIPTS / "continuity_store.py"
         legacy = self.base / "legacy"
