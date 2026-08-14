@@ -30,18 +30,18 @@
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "d3216ce27e19e755566a1e01cb4f34566be5b990",
+                        "source_commit":  "4a0054435ec67d3febb69b7719909bff69ef26fa",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  309,
-                                            "tree_sha256":  "87401697781e95621269579764ebe9899b3f81098d61f456eb7424830fcabe8b"
+                                            "tree_sha256":  "8569f4d90b118c8a4c1614ae97179668d9fa735e6a33c9bc95304f5534e75b06"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  309,
-                                              "tree_sha256":  "87401697781e95621269579764ebe9899b3f81098d61f456eb7424830fcabe8b"
+                                              "tree_sha256":  "8569f4d90b118c8a4c1614ae97179668d9fa735e6a33c9bc95304f5534e75b06"
                                           },
-                        "custody":  "integrated MIND 2.2.1 component checkpoint with Cognitive Continuity 0.2.1, guarded Nova successor migration, Worldline, Faultline, live-v1 compatibility and date-only semantic preservation, and exact TestForge 1.1.7"
+                        "custody":  "integrated MIND 2.2.1 component checkpoint with Cognitive Continuity 0.2.1, guarded Nova successor migration and portable selector-registry derivation, Worldline, Faultline, live-v1 compatibility and date-only semantic preservation, and exact TestForge 1.1.7"
                     },
                     {
                         "component":  "software-verification",
