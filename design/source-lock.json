@@ -18,28 +18,28 @@
                         "source_path":  "plugins/nova-the-optimal-ai/skills/nova",
                         "source_tree":  {
                                             "file_count":  15,
-                                            "tree_sha256":  "d723446be8820402eb110831794f9500a562d680699e1858460ed2561eed434f"
+                                            "tree_sha256":  "821f3acdc48a8af0be62837ed301235724458901378011052faa048a1a277210"
                                         },
                         "imported_path":  "plugins/nova-the-optimal-ai/skills/nova",
                         "imported_tree":  {
                                               "file_count":  15,
-                                              "tree_sha256":  "d723446be8820402eb110831794f9500a562d680699e1858460ed2561eed434f"
+                                              "tree_sha256":  "821f3acdc48a8af0be62837ed301235724458901378011052faa048a1a277210"
                                           },
                         "custody":  "integrated Nova 2.1.0 component checkpoint with Worldline and Faultline routing; canonical persona verbatim"
                     },
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "a678d72049f99e999ccd4278ef9596adc0a0743e",
+                        "source_commit":  "19ca6ff51e9889ff1e110ab156fb349fee7ef678",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  309,
-                                            "tree_sha256":  "c8621a65fdac17b29b6286cf9cef213dd1918e843582fd78b890e7a803f2af09"
+                                            "tree_sha256":  "db88e67d512fc978c852a3f1430f285b111befeabea8304681c8c8e3d77fd3b4"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  309,
-                                              "tree_sha256":  "c8621a65fdac17b29b6286cf9cef213dd1918e843582fd78b890e7a803f2af09"
+                                              "tree_sha256":  "db88e67d512fc978c852a3f1430f285b111befeabea8304681c8c8e3d77fd3b4"
                                           },
                         "custody":  "integrated MIND 2.2.0 component checkpoint with Cognitive Continuity 0.2.0, Worldline, Faultline, and exact TestForge 1.1.7"
                     },
