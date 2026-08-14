@@ -36,6 +36,28 @@ function Get-OptionalPropertyValue {
     return $null
 }
 
+function Assert-OllamaEmbeddingReady {
+    param(
+        [Parameter(Mandatory)]
+        [string]$BaseUrl,
+        [Parameter(Mandatory)]
+        [string]$RequiredModel
+    )
+
+    $tagsUrl = $BaseUrl.TrimEnd('/') + '/api/tags'
+    try {
+        $inventory = Invoke-RestMethod -Uri $tagsUrl -Method Get -TimeoutSec 5
+    }
+    catch {
+        throw "MIND semantic association requires Ollama at $BaseUrl, but it is not reachable. Start Ollama with model '$RequiredModel', then rerun this verifier."
+    }
+
+    $availableModels = @($inventory.models | ForEach-Object { $_.name })
+    if ($availableModels -notcontains $RequiredModel) {
+        throw "Ollama is reachable at $BaseUrl, but model '$RequiredModel' is not installed. Install the named model, then rerun this verifier."
+    }
+}
+
 $runningCodex = @(Get-Process -Name ChatGPT, codex -ErrorAction SilentlyContinue)
 if ($runningCodex.Count -gt 0) {
     throw 'Close Codex desktop before running this verifier. The verifier will not stop it or change its state.'
@@ -109,6 +131,7 @@ foreach ($requirement in $requirements) {
 if (-not (Test-Path -LiteralPath $DatabasePath -PathType Leaf)) {
     throw "The MIND capability database is missing: $DatabasePath"
 }
+Assert-OllamaEmbeddingReady -BaseUrl $ollamaUrl -RequiredModel $embeddingModel
 $databaseFile = Get-Item -LiteralPath $DatabasePath
 $databaseHashBefore = (Get-FileHash -LiteralPath $DatabasePath -Algorithm SHA256).Hash.ToLowerInvariant()
 
