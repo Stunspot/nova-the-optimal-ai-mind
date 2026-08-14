@@ -79,6 +79,8 @@ it never changes the live selector.
 python -B -X utf8 continuity_store_v2.py migrate-copy SOURCE DESTINATION --authority user-explicit --source-tree-sha256 SOURCE_SHA256 --destination-mode nova_guarded_successor --destination-grant-id GRANT_ID --expected-selector-registry-sha256 REGISTRY_SHA256 --expected-destination-path-sha256 DESTINATION_PATH_SHA256
 ```
 
+Migration preserves a v1 episode above the ordinary 1,000-character v2 write limit only by attaching `legacy_content_provenance`. Before selecting the candidate, inspect the migration manifest and receipt for identical `legacy_oversize_content_provenance_sha256` values and the expected count, then run `validate_continuity_v2.py`. The validator binds those rows to generation 0, replays every retained transition, and refuses later minting or alteration; prior generations remain protected while the contract exists. New v2 episode writes remain capped at 1,000 characters. Migrated exceptions are bounded to 16,384 characters and 65,536 UTF-8 bytes; no row is truncated.
+
 ## Legacy v1 examples
 
 ```text

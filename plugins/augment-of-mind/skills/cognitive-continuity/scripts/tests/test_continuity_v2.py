@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -797,12 +798,14 @@ class CompatibilityAndRecoveryTests(WorkspaceCase):
             "--user", "user", "--project", "*", "--agent", "nova",
         ], text=True, capture_output=True, timeout=30)
         self.assertEqual(initialized.returncode, 0, initialized.stderr)
+        legacy_content = "legacy migration source " + ("x" * 1328)
         added = subprocess.run([
             sys.executable, str(legacy_store), "episode", str(legacy), "--type", "assertion",
-            "--content", "legacy migration source", "--source-kind", "user", "--authority", "user-stunspot",
+            "--content", legacy_content, "--source-kind", "user", "--authority", "user-stunspot",
             "--valid-from", "2000-01-01",
         ], text=True, capture_output=True, timeout=30)
         self.assertEqual(added.returncode, 0, added.stderr)
+        legacy_episode = runtime.read_jsonl(legacy / "episodes" / "events.jsonl")[0]
         manifest_path = legacy / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         manifest["version"] = "0.2.0"
@@ -841,16 +844,138 @@ class CompatibilityAndRecoveryTests(WorkspaceCase):
             "--source-tree-sha256", digest,
         )
         self.assertEqual(receipt["kind"], "migration-copied")
-        self.assertEqual(receipt["mapping_policy"], "legacy-full-date-normalization/v2")
+        self.assertEqual(receipt["mapping_policy"], "legacy-full-date-and-lossless-oversize-content/v2")
         self.assertEqual(receipt["mapping"]["normalized_temporal_fields"], 1)
+        self.assertEqual(receipt["mapping"]["lossless_oversize_content_rows"], 1)
         self.assertEqual(inventory(legacy), before)
         manifest = json.loads((destination / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["format"], runtime.FORMAT)
         self.assertEqual(manifest["migrated_from"]["source_tree_sha256"], digest)
         self.assertEqual(manifest["migrated_from"]["temporal_normalization_count"], 1)
+        self.assertEqual(manifest["migrated_from"]["legacy_oversize_content_provenance_count"], 1)
+        self.assertEqual(
+            manifest["migrated_from"]["legacy_oversize_content_provenance_sha256"],
+            receipt["legacy_oversize_content_provenance_sha256"],
+        )
         migrated_episode = runtime.read_jsonl(destination / "episodes" / "events.jsonl")[0]
         self.assertEqual(migrated_episode["valid_from"], "2000-01-01T00:00:00Z")
+        self.assertEqual(migrated_episode["content"], legacy_content)
+        provenance = migrated_episode["legacy_content_provenance"]
+        self.assertEqual(provenance["policy"], "legacy-v1-lossless-oversize-content/v1")
+        self.assertEqual(provenance["source_characters"], len(legacy_content))
+        self.assertEqual(provenance["source_utf8_bytes"], len(legacy_content.encode("utf-8")))
+        self.assertEqual(provenance["source_content_sha256"], runtime.sha256_bytes(legacy_content.encode("utf-8")))
+        self.assertEqual(
+            provenance["source_row_sha256"],
+            runtime.sha256_bytes(runtime.dump_canonical(legacy_episode).encode("utf-8")),
+        )
         self.cli(VALIDATE, destination)
+
+        self.cli(
+            STORE, "episode", destination, "--type", "assertion", "--content", "ordinary v2 write",
+            "--source-kind", "user", "--authority", "user-stunspot",
+            "--idempotency-key", "ordinary-short-accepted", "--expected-generation", 0,
+        )
+        episodes_after_short_write = runtime.read_jsonl(destination / "episodes" / "events.jsonl")
+        self.assertEqual(episodes_after_short_write[0], migrated_episode)
+        destination_before_denied_write = inventory(destination)
+        denied_oversize = self.cli(
+            STORE, "episode", destination, "--type", "assertion", "--content", "y" * 1001,
+            "--source-kind", "user", "--authority", "user-stunspot",
+            "--idempotency-key", "ordinary-oversize-denied", "--expected-generation", 1,
+            expected=2,
+        )
+        self.assertIn("workspace_invalid", denied_oversize["text"])
+        self.assertEqual(inventory(destination), destination_before_denied_write)
+        self.assertEqual(runtime.pending_transactions(destination), [])
+
+        token = runtime.open_workspace(str(destination), writable=False)[1]
+        with runtime.transaction(
+            destination, "forget", expected_generation=1, selector=token,
+            authority="user-stunspot", idempotency_key="legacy-tombstone",
+            request_payload={"mode": "tombstone"},
+        ) as tx:
+            tombstoned = [
+                store._tombstone(row, runtime.utc_now()) if row.get("id") == migrated_episode["id"] else row
+                for row in episodes_after_short_write
+            ]
+            tx.write_member("episodes.jsonl", tombstoned)
+            tx.finish("forgotten", {})
+        after_forget = runtime.read_jsonl(destination / "episodes" / "events.jsonl")
+        self.assertNotIn("legacy_content_provenance", after_forget[0])
+        self.cli(VALIDATE, destination)
+
+        token = runtime.open_workspace(str(destination), writable=False)[1]
+        with runtime.transaction(
+            destination, "restore-forget", expected_generation=2, selector=token,
+            authority="user-stunspot", idempotency_key="legacy-restore",
+            request_payload={"mode": "exact-retained-predecessor"},
+        ) as tx:
+            tx.write_member("episodes.jsonl", episodes_after_short_write)
+            tx.finish("forget-restored", {})
+        self.assertEqual(runtime.read_jsonl(destination / "episodes" / "events.jsonl")[0], migrated_episode)
+        self.cli(VALIDATE, destination)
+
+        forged_content = "z" * 1001
+        forged = dict(migrated_episode)
+        forged["id"] = "EP-forged-legacy-content"
+        forged["content"] = forged_content
+        forged_source = dict(forged)
+        forged_source.pop("legacy_content_provenance", None)
+        forged["legacy_content_provenance"] = {
+            "policy": "legacy-v1-lossless-oversize-content/v1",
+            "source_row_sha256": runtime.sha256_bytes(runtime.dump_canonical(forged_source).encode("utf-8")),
+            "source_content_sha256": runtime.sha256_bytes(forged_content.encode("utf-8")),
+            "source_characters": len(forged_content),
+            "source_utf8_bytes": len(forged_content.encode("utf-8")),
+        }
+        before_forgery = inventory(destination)
+        token = runtime.open_workspace(str(destination), writable=False)[1]
+        with self.assertRaises(runtime.ContinuityError) as caught:
+            with runtime.transaction(
+                destination, "forged-provenance", expected_generation=3, selector=token,
+                authority="user-stunspot", idempotency_key="forged-provenance", request_payload={},
+            ) as tx:
+                tx.write_member("episodes.jsonl", runtime.read_jsonl(destination / "episodes" / "events.jsonl") + [forged])
+                tx.finish("forged", {})
+        self.assertEqual(caught.exception.code, "workspace_invalid")
+        self.assertEqual(inventory(destination), before_forgery)
+        self.assertEqual(runtime.pending_transactions(destination), [])
+
+        tampered_destination = self.base / "migrated-tampered-history"
+        self.cli(
+            STORE, "migrate-copy", legacy, tampered_destination, "--authority", "user-stunspot",
+            "--source-tree-sha256", digest,
+        )
+        self.cli(
+            STORE, "episode", tampered_destination, "--type", "assertion", "--content", "ordinary survivor",
+            "--source-kind", "user", "--authority", "user-stunspot",
+            "--idempotency-key", "tampered-history-short", "--expected-generation", 0,
+        )
+        tampered_rows = runtime.read_jsonl(tampered_destination / "episodes" / "events.jsonl")[1:]
+        rewrite_active_member(tampered_destination, "episodes.jsonl", tampered_rows)
+        self.cli(
+            STORE, "episode", tampered_destination, "--type", "assertion", "--content", "ordinary second survivor",
+            "--source-kind", "user", "--authority", "user-stunspot",
+            "--idempotency-key", "tampered-history-second", "--expected-generation", 1,
+        )
+        resurrected_rows = runtime.read_jsonl(tampered_destination / "episodes" / "events.jsonl")
+        rewrite_active_member(tampered_destination, "episodes.jsonl", [migrated_episode, *resurrected_rows])
+        tampered_history = self.cli(VALIDATE, tampered_destination, "--json", expected=1)
+        self.assertEqual(tampered_history["status"], "invalid")
+        self.assertIn(
+            "generation 1 changed legacy content provenance under operation episode",
+            tampered_history["errors"],
+        )
+        self.assertIn(
+            "generation 2 changed legacy content provenance under operation episode",
+            tampered_history["errors"],
+        )
+
+        shutil.rmtree(destination / "generations" / "g-00000000000000000000")
+        missing_origin = self.cli(VALIDATE, destination, "--json", expected=1)
+        self.assertEqual(missing_origin["status"], "invalid")
+        self.assertIn("legacy content provenance origin generation 0 is missing", missing_origin["errors"])
 
 
 if __name__ == "__main__":

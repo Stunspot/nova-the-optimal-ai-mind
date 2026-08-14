@@ -29,7 +29,7 @@ Nova + MIND Free 2.1.1 does not automatically merge MIND Core estates or switch 
 
 Continuity 0.2.1 uses workspace schema v2 and provides an explicit hash-bound copy migration into a distinct successor workspace. Probe the existing workspace read-only before choosing a runtime. Supported v1 operations remain read-only; Faultline is typed unsupported on v1. Do not initialize or mutate a workspace merely to satisfy a Worldline or Faultline request.
 
-A v1-to-v2 transition is an explicit copy migration into a new governed workspace, followed by validation and caller-controlled selector change. Preserve the source workspace and rollback path until the new generation, scope, receipts, and required views have been checked. The Nova + MIND installer does not perform this migration and does not infer that two selectors should merge.
+A v1-to-v2 transition is an explicit copy migration into a new governed workspace, followed by validation and caller-controlled selector change. Preserve the source workspace and rollback path until the new generation, scope, receipts, and required views have been checked. If v1 contains an episode above the ordinary 1,000-character v2 write limit, require exact untruncated content plus `legacy_content_provenance`; confirm its count and digest agree across generation 0, the migration manifest, and the migration receipt, and retain the complete generation chain used to prove governed transitions. New v2 writes remain capped, and migrated exceptions have explicit character and UTF-8 byte ceilings. The Nova + MIND installer does not perform this migration and does not infer that two selectors should merge.
 
 ## Roll back
 

@@ -2,11 +2,11 @@
 
 ## 2.1.1 — local source candidate
 
-This patch packages Nova plugin 2.1.0 with MIND plugin 2.2.1, Cognitive Continuity 0.2.1/workspace schema v2, and MIND Core 0.2.0. Nova, MIND Core, TestForge 1.1.7, Ludis Continuum 1.1.0, and the Continuity workspace schema are unchanged.
+This patch packages Nova plugin 2.1.0 with MIND plugin 2.2.1, Cognitive Continuity 0.2.1/workspace schema v2, and MIND Core 0.2.0. Nova, MIND Core, TestForge 1.1.7, and Ludis Continuum 1.1.0 are unchanged. The Continuity workspace schema major remains v2; its episode contract adds a migration-only legacy-content provenance extension.
 
 Cognitive Continuity now has a guarded Nova-successor migration mode for the legitimate live v1-to-v2 case. It leaves ordinary external-target protection unchanged and accepts only the registry-selected Continuity source plus an exact absent same-parent sibling destination. Human authority, a grant ID, the selector-registry SHA-256, the normalized destination-path SHA-256, process-environment corroboration, active capability-boundary checks, and pre/post-publication revalidation are bound into the migration evidence. A failed or changed grant removes the unpublished candidate and leaves v1 untouched. The selector-registry path is derived from the required `NOVA_DATA_ROOT`, so portable editions do not embed a private workstation drive path.
 
-Migration still creates only a candidate workspace. It never changes `NOVA_CONTINUITY_HOME`; candidate validation, rollback proof, and an explicit selector switch remain separate live operations. The latest published release remains 2.0.9 until a later release is separately completed and published.
+Migration still creates only a candidate workspace. It never changes `NOVA_CONTINUITY_HOME`; candidate validation, rollback proof, and an explicit selector switch remain separate live operations. A v1 episode above the ordinary 1,000-character v2 write limit is preserved without truncation through a bounded, generation-0 provenance record tied to the migration manifest and receipt. Ordinary v2 writes remain capped; forged or altered legacy provenance fails before transaction intent, retained generations are protected while the contract exists, and governed forgetting removes it while exact restoration can recover the retained row. The latest published release remains 2.0.9 until a later release is separately completed and published.
 
 ## 2.1.0 — local source candidate
 

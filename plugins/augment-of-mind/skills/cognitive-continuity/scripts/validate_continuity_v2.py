@@ -12,8 +12,9 @@ from error_neighborhood import contains_secret
 from schema_validation import SchemaCatalog, SchemaError
 from workspace_runtime import (
     FORMAT, LEGACY_FORMAT, GENERATION_FORMAT, TRANSACTION_FORMAT, ContinuityError,
-    dump_canonical, generation_path, open_snapshot, pending_transactions, read_json,
-    read_jsonl, sha256_file, tree_digest,
+    dump_canonical, generation_path, legacy_content_provenance_errors,
+    legacy_content_transformations, open_snapshot, pending_transactions, read_json,
+    read_jsonl, sha256_bytes, sha256_file, tree_digest,
 )
 
 SCHEMAS = {"episodes": "episode-v2.schema.json", "state": "state-record-v2.schema.json", "proposals": "proposal-v2.schema.json"}
@@ -116,6 +117,105 @@ def _generation_inventory(root: Path, catalog: SchemaCatalog, errors: list[str],
             errors.append(f"generation {generation}: predecessor digest mismatch")
     return result
 
+
+def _validate_legacy_content_history(
+    manifest: dict[str, Any],
+    generations: dict[int, tuple[Path, dict[str, Any], str]],
+    catalog: SchemaCatalog,
+    errors: list[str],
+) -> None:
+    generation_zero = generations.get(0)
+    migrated_from = manifest.get("migrated_from") or {}
+    contract_declared = "legacy_oversize_content_provenance_count" in migrated_from
+    retained_provenance = any(
+        any("legacy_content_provenance" in row for row in _physical_jsonl(directory / "episodes.jsonl"))
+        for directory, _, _ in generations.values()
+    )
+    if generation_zero is None:
+        if contract_declared or retained_provenance:
+            errors.append("legacy content provenance origin generation 0 is missing")
+        return
+    g0_path, g0_metadata, _ = generation_zero
+    g0_episodes = _physical_jsonl(g0_path / "episodes.jsonl")
+    transformations = legacy_content_transformations(g0_episodes)
+    digest = sha256_bytes(dump_canonical(transformations).encode("utf-8"))
+    contract_present = bool(transformations) or contract_declared
+    if contract_present:
+        if g0_metadata.get("operation_family") != "migrate-copy":
+            errors.append("legacy content provenance was not created by generation-0 copy migration")
+        if migrated_from.get("legacy_oversize_content_provenance_count") != len(transformations):
+            errors.append("legacy content provenance count does not match generation 0")
+        if migrated_from.get("legacy_oversize_content_provenance_sha256") != digest:
+            errors.append("legacy content provenance digest does not match generation 0")
+        receipts = [
+            row for row in _physical_jsonl(g0_path / "receipts.jsonl")
+            if row.get("operation") == "migrate-copy"
+        ]
+        if len(receipts) != 1:
+            errors.append("legacy content provenance lacks one generation-0 migration receipt")
+        else:
+            receipt = receipts[0]
+            expected_identity = {
+                "kind": "migration-copied",
+                "status": "committed",
+                "workspace_id": manifest.get("workspace_id"),
+                "transaction_id": g0_metadata.get("transaction_id"),
+                "operation": "migrate-copy",
+                "generation_before": -1,
+                "generation_after": 0,
+            }
+            if any(receipt.get(key) != value for key, value in expected_identity.items()):
+                errors.append("migration receipt identity does not match generation 0")
+            if g0_metadata.get("workspace_id") != manifest.get("workspace_id"):
+                errors.append("generation-0 migration workspace identity mismatch")
+            if (receipt.get("mapping") or {}).get("lossless_oversize_content_rows") != len(transformations):
+                errors.append("migration receipt legacy content count mismatch")
+            if receipt.get("legacy_oversize_content_provenance_sha256") != digest:
+                errors.append("migration receipt legacy content digest mismatch")
+            if transformations and "lossless-oversize-content" not in str(receipt.get("mapping_policy") or ""):
+                errors.append("migration receipt does not name the lossless oversize mapping policy")
+    allowed = {
+        str(row.get("id") or ""): dump_canonical(row)
+        for row in g0_episodes
+        if "legacy_content_provenance" in row
+    }
+    provenance_maps: dict[int, dict[str, str]] = {}
+    for generation, (directory, _, _) in sorted(generations.items()):
+        generation_map: dict[str, str] = {}
+        for row in _physical_jsonl(directory / "episodes.jsonl"):
+            if "legacy_content_provenance" not in row:
+                continue
+            rid = str(row.get("id") or "")
+            rendered = dump_canonical(row)
+            generation_map[rid] = rendered
+            for error in catalog.validate(row, "episode-v2.schema.json"):
+                errors.append(f"generation {generation} legacy row {rid} schema {error}")
+            for error in legacy_content_provenance_errors(row):
+                errors.append(f"generation {generation} legacy row {rid}: {error}")
+            if allowed.get(rid) != rendered:
+                errors.append(f"generation {generation} legacy content provenance did not originate unchanged in generation 0")
+        provenance_maps[generation] = generation_map
+    if contract_present:
+        last_generation = max(generations)
+        missing = [generation for generation in range(last_generation + 1) if generation not in generations]
+        if missing:
+            errors.append("legacy content provenance history has missing generations: " + ", ".join(str(item) for item in missing))
+            return
+        for generation in range(1, last_generation + 1):
+            prior_map = provenance_maps[generation - 1]
+            current_map = provenance_maps[generation]
+            operation = str(generations[generation][1].get("operation_family") or "")
+            if operation == "forget":
+                if any(prior_map.get(key) != value for key, value in current_map.items()):
+                    errors.append(f"generation {generation} forget introduced or altered legacy content provenance")
+            elif operation == "restore-forget":
+                previous_operation = str(generations[generation - 1][1].get("operation_family") or "")
+                if generation < 2 or previous_operation != "forget" or current_map != provenance_maps[generation - 2]:
+                    errors.append(f"generation {generation} restore-forget does not match the exact pre-forget provenance map")
+            elif current_map != prior_map:
+                errors.append(f"generation {generation} changed legacy content provenance under operation {operation or 'unknown'}")
+
+
 def _validate_references(collections: dict[str, list[dict[str, Any]]], errors: list[str]) -> None:
     episodes, records, proposals = collections["episodes"], collections["state"], collections["proposals"]
     episode_ids = {row.get("id") for row in episodes}
@@ -180,6 +280,7 @@ def _validate_v2(root: Path, manifest: dict[str, Any], source_before: str) -> di
     except ContinuityError as exc:
         errors.append(str(exc)); stable_manifest = manifest
     generations = _generation_inventory(root, catalog, errors, warnings)
+    _validate_legacy_content_history(stable_manifest, generations, catalog, errors)
     active_generation = int(stable_manifest.get("generation", -1))
     active = generations.get(active_generation)
     if active is None:
@@ -230,6 +331,9 @@ def _validate_v2(root: Path, manifest: dict[str, Any], source_before: str) -> di
             rid = row.get("id") or f"{name}[{index}]"
             for error in catalog.validate(row, SCHEMAS[name]):
                 errors.append(f"{rid} schema {error}")
+            if name == "episodes":
+                for error in legacy_content_provenance_errors(row):
+                    errors.append(f"{rid}: {error}")
             if not scope_within_manifest(row.get("scope"), scope):
                 errors.append(f"{rid}: scope escapes workspace")
     _validate_references(collections, errors)

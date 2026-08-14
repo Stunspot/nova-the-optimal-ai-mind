@@ -815,6 +815,7 @@ def _forgotten_pattern(pattern: dict[str, Any]) -> dict[str, Any]:
 
 def _tombstone(row: dict[str, Any], at: str) -> dict[str, Any]:
     value = json.loads(json.dumps(row))
+    value.pop("legacy_content_provenance", None)
     value["content"] = "[forgotten]"
     value["tags"] = list(dict.fromkeys(list(value.get("tags") or []) + ["forgotten"]))
     if value.get("type") == "failure_occurrence":
@@ -1406,6 +1407,9 @@ def cmd_delete_named_custody(args: argparse.Namespace) -> dict[str, Any]:
     if owner != authority:
         raise ContinuityError("Named-custody destruction owner does not match authority", "authority_denied")
     target, node = _resolve_named_plan_target(root, plan, args.target_class, args.target)
+    migrated_from = manifest.get("migrated_from") or {}
+    if args.target_class == "prior_generation" and "legacy_oversize_content_provenance_count" in migrated_from:
+        raise ContinuityError("Retained generation history is required by the legacy content provenance contract", "protected_target_denied")
     actual = _artifact_digest(target)
     if actual != args.target_sha256 or node.get("artifact_sha256") != actual:
         raise ContinuityError("Named target digest differs from the reviewed graph", "plan_stale")

@@ -1059,6 +1059,106 @@ def _row_count(value: bytes) -> int:
         return 0
     return sum(1 for line in value.splitlines() if line.strip())
 
+LEGACY_OVERSIZE_CONTENT_MAX_CHARACTERS = 16384
+LEGACY_OVERSIZE_CONTENT_MAX_UTF8_BYTES = 65536
+
+
+def legacy_content_provenance_errors(row: dict[str, Any]) -> list[str]:
+    provenance = row.get("legacy_content_provenance")
+    if provenance is None:
+        return []
+    if not isinstance(provenance, dict):
+        return ["legacy content provenance is not an object"]
+    content = row.get("content")
+    if not isinstance(content, str):
+        return ["legacy content provenance requires string content"]
+    content_bytes = content.encode("utf-8")
+    errors: list[str] = []
+    if provenance.get("policy") != "legacy-v1-lossless-oversize-content/v1":
+        errors.append("legacy content provenance policy mismatch")
+    if len(content) <= 1000:
+        errors.append("legacy content provenance is present on non-oversize content")
+    if len(content) > LEGACY_OVERSIZE_CONTENT_MAX_CHARACTERS:
+        errors.append("legacy content exceeds the migration character ceiling")
+    if len(content_bytes) > LEGACY_OVERSIZE_CONTENT_MAX_UTF8_BYTES:
+        errors.append("legacy content exceeds the migration byte ceiling")
+    if provenance.get("source_characters") != len(content):
+        errors.append("legacy content provenance character count mismatch")
+    if provenance.get("source_utf8_bytes") != len(content_bytes):
+        errors.append("legacy content provenance byte count mismatch")
+    if provenance.get("source_content_sha256") != sha256_bytes(content_bytes):
+        errors.append("legacy content provenance digest mismatch")
+    return errors
+
+
+def legacy_content_transformations(episodes: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        {
+            "member": "episodes.jsonl",
+            "row": index,
+            "row_id": str(row.get("id") or ""),
+            "provenance": row["legacy_content_provenance"],
+        }
+        for index, row in enumerate(episodes)
+        if "legacy_content_provenance" in row
+    ]
+
+
+def _legacy_content_provenance_map(episodes: list[dict[str, Any]]) -> dict[str, str]:
+    return {
+        str(row.get("id") or ""): dump_canonical(row)
+        for row in episodes
+        if "legacy_content_provenance" in row
+    }
+
+
+def _validate_initial_legacy_content_binding(
+    manifest: dict[str, Any], rows: dict[str, list[dict[str, Any]]], operation: str,
+) -> None:
+    transformations = legacy_content_transformations(rows["episodes.jsonl"])
+    if transformations and operation != "migrate-copy":
+        raise ContinuityError("Only copy migration may create legacy content provenance", "workspace_invalid")
+    if operation != "migrate-copy":
+        return
+    migrated_from = manifest.get("migrated_from") or {}
+    digest = sha256_bytes(dump_canonical(transformations).encode("utf-8"))
+    if migrated_from.get("legacy_oversize_content_provenance_count") != len(transformations):
+        raise ContinuityError("Migration manifest legacy content count mismatch", "workspace_invalid")
+    if migrated_from.get("legacy_oversize_content_provenance_sha256") != digest:
+        raise ContinuityError("Migration manifest legacy content digest mismatch", "workspace_invalid")
+    receipts = [row for row in rows["receipts.jsonl"] if row.get("operation") == "migrate-copy"]
+    if len(receipts) != 1:
+        raise ContinuityError("Migration legacy content provenance requires one canonical receipt", "workspace_invalid")
+    receipt = receipts[0]
+    mapping = receipt.get("mapping") or {}
+    if mapping.get("lossless_oversize_content_rows") != len(transformations):
+        raise ContinuityError("Migration receipt legacy content count mismatch", "workspace_invalid")
+    if receipt.get("legacy_oversize_content_provenance_sha256") != digest:
+        raise ContinuityError("Migration receipt legacy content digest mismatch", "workspace_invalid")
+
+
+def _validate_legacy_content_transition(
+    before: list[dict[str, Any]],
+    after: list[dict[str, Any]],
+    operation: str,
+    *,
+    restore_source: list[dict[str, Any]] | None = None,
+) -> None:
+    before_map = _legacy_content_provenance_map(before)
+    after_map = _legacy_content_provenance_map(after)
+    if operation == "forget":
+        invalid = {key: value for key, value in after_map.items() if before_map.get(key) != value}
+        if invalid:
+            raise ContinuityError("Forget may only remove unchanged legacy content provenance", "workspace_invalid")
+        return
+    if operation == "restore-forget":
+        if restore_source is None or after_map != _legacy_content_provenance_map(restore_source):
+            raise ContinuityError("Forget restore legacy content provenance does not match the retained predecessor", "workspace_invalid")
+        return
+    if after_map != before_map:
+        raise ContinuityError("Legacy content provenance is immutable outside governed forget and restore", "workspace_invalid")
+
+
 def _validate_bundle_rows(rows: dict[str, list[dict[str, Any]]]) -> None:
     catalog = SchemaCatalog(Path(__file__).resolve().parents[1] / "assets" / "schemas")
     schemas = {
@@ -1073,6 +1173,8 @@ def _validate_bundle_rows(rows: dict[str, list[dict[str, Any]]]) -> None:
             if contains_secret_data(row):
                 raise ContinuityError(f"Secret-bearing row rejected before intent: {member}:{index}", "redaction_rejected")
             errors = catalog.validate(row, schemas[member])
+            if member == "episodes.jsonl":
+                errors.extend(legacy_content_provenance_errors(row))
             if errors:
                 raise ContinuityError(f"Schema-invalid row rejected before intent: {member}:{index}: {'; '.join(errors[:4])}", "workspace_invalid")
         identities = (
@@ -1296,6 +1398,20 @@ class WorkspaceTransaction:
             "affected_members": sorted(self.staged_members),
         }
         rows["receipts.jsonl"].append(receipt)
+        restore_source: list[dict[str, Any]] | None = None
+        if self.operation == "restore-forget":
+            active_metadata = _read_json_path(self.active_bundle / "generation.json")
+            predecessor = active_metadata.get("predecessor_generation")
+            if active_metadata.get("operation_family") != "forget" or predecessor != self.generation_before - 1:
+                raise ContinuityError("Forget restore lacks an exact retained predecessor", "restore_generation_conflict")
+            predecessor_path = self.root / "generations" / f"g-{int(predecessor):020d}" / "episodes.jsonl"
+            restore_source = _read_jsonl_path(predecessor_path)
+        _validate_legacy_content_transition(
+            _read_jsonl_path(self.active_bundle / "episodes.jsonl"),
+            rows["episodes.jsonl"],
+            self.operation,
+            restore_source=restore_source,
+        )
         result_digest = sha256_bytes(dump_canonical(receipt).encode("utf-8"))
         idempotency_entry = {
             "format": "cd-continuity-idempotency/v1",
@@ -1497,6 +1613,7 @@ def _base_manifest(*, workspace_id: str, created_at: str, scope: dict[str, Any],
 
 def _publish_initial_workspace(root: Path, manifest: dict[str, Any], rows: dict[str, list[dict[str, Any]]], transaction_id: str, operation: str) -> None:
     _validate_bundle_rows(rows)
+    _validate_initial_legacy_content_binding(manifest, rows, operation)
     generation_root = root / "generations" / "g-00000000000000000000"
     generation_root.mkdir(parents=True, exist_ok=False)
     members: dict[str, Any] = {}
@@ -1654,6 +1771,40 @@ def normalize_legacy_temporal_rows(source_rows: dict[str, list[dict[str, Any]]])
         migrated[member] = converted
     return migrated, transformations
 
+
+def annotate_legacy_oversize_content_rows(
+    migrated_rows: dict[str, list[dict[str, Any]]],
+    source_rows: dict[str, list[dict[str, Any]]],
+) -> tuple[dict[str, list[dict[str, Any]]], list[dict[str, Any]]]:
+    annotated: dict[str, list[dict[str, Any]]] = {}
+    transformations: list[dict[str, Any]] = []
+    for member, rows in migrated_rows.items():
+        converted: list[dict[str, Any]] = []
+        for index, row in enumerate(rows):
+            mapped = dict(row)
+            original = source_rows[member][index]
+            content = original.get("content")
+            if member == "episodes.jsonl" and isinstance(content, str) and len(content) > 1000:
+                content_bytes = content.encode("utf-8")
+                provenance = {
+                    "policy": "legacy-v1-lossless-oversize-content/v1",
+                    "source_row_sha256": sha256_bytes(dump_canonical(original).encode("utf-8")),
+                    "source_content_sha256": sha256_bytes(content_bytes),
+                    "source_characters": len(content),
+                    "source_utf8_bytes": len(content_bytes),
+                }
+                mapped["legacy_content_provenance"] = provenance
+                transformations.append({
+                    "member": member,
+                    "row": index,
+                    "row_id": str(original.get("id") or ""),
+                    "provenance": provenance,
+                })
+            converted.append(mapped)
+        annotated[member] = converted
+    return annotated, transformations
+
+
 def migrate_copy(
     source_value: str, destination_value: str, *, authority: str,
     expected_source_tree_sha256: str,
@@ -1717,7 +1868,9 @@ def migrate_copy(
         "proposals.jsonl": _read_jsonl_path(source / "proposals" / "proposals.jsonl"),
     }
     migrated_rows, temporal_transformations = normalize_legacy_temporal_rows(source_rows)
+    migrated_rows, legacy_content_transformations = annotate_legacy_oversize_content_rows(migrated_rows, source_rows)
     temporal_normalization_digest = sha256_bytes(dump_canonical(temporal_transformations).encode("utf-8"))
+    legacy_content_provenance_digest = sha256_bytes(dump_canonical(legacy_content_transformations).encode("utf-8"))
     schema_pairs = {
         "episodes.jsonl": ("episode.schema.json", "episode-v2.schema.json"),
         "state.jsonl": ("state-record.schema.json", "state-record-v2.schema.json"),
@@ -1774,6 +1927,8 @@ def migrate_copy(
             "legacy_receipt_file_count": len(receipt_files),
             "temporal_normalization_count": len(temporal_transformations),
             "temporal_normalization_sha256": temporal_normalization_digest,
+            "legacy_oversize_content_provenance_count": len(legacy_content_transformations),
+            "legacy_oversize_content_provenance_sha256": legacy_content_provenance_digest,
         }
         if nova_grant:
             manifest["migrated_from"]["destination_selection"] = destination_selection
@@ -1784,6 +1939,14 @@ def migrate_copy(
         source_after = tree_digest(source)
         if source_after != source_digest_before:
             raise ContinuityError("Migration source changed before destination publication", "source_changed")
+        if temporal_transformations and legacy_content_transformations:
+            mapping_policy = "legacy-full-date-and-lossless-oversize-content/v2"
+        elif temporal_transformations:
+            mapping_policy = "legacy-full-date-normalization/v2"
+        elif legacy_content_transformations:
+            mapping_policy = "legacy-lossless-oversize-content/v1"
+        else:
+            mapping_policy = "schema-valid-identity-copy/v2"
         receipt, idempotency = _initial_receipt_and_idempotency(
             manifest, transaction_id=transaction_id, operation="migrate-copy", kind="migration-copied",
             selector=(f"nova_guarded_successor:{nova_grant.grant_id}:{nova_grant.registry_digest[:16]}" if nova_grant else "generic_explicit"), authority=authority, key=key, request_digest_value=digest,
@@ -1792,9 +1955,10 @@ def migrate_copy(
                 "source_workspace_id": source_manifest.get("workspace_id"), "source_format": LEGACY_FORMAT,
                 "source_tree_sha256": source_digest_before, "source_tree_sha256_after": source_after,
                 "canonical_source_changed": False,
-                "mapping": {"episodes": len(source_rows["episodes.jsonl"]), "state": len(source_rows["state.jsonl"]), "proposals": len(source_rows["proposals.jsonl"]), "unsupported": 0, "normalized_temporal_fields": len(temporal_transformations)},
-                "mapping_policy": "legacy-full-date-normalization/v2" if temporal_transformations else "schema-valid-identity-copy/v2",
+                "mapping": {"episodes": len(source_rows["episodes.jsonl"]), "state": len(source_rows["state.jsonl"]), "proposals": len(source_rows["proposals.jsonl"]), "unsupported": 0, "normalized_temporal_fields": len(temporal_transformations), "lossless_oversize_content_rows": len(legacy_content_transformations)},
+                "mapping_policy": mapping_policy,
                 "temporal_normalization_sha256": temporal_normalization_digest,
+                "legacy_oversize_content_provenance_sha256": legacy_content_provenance_digest,
                 "legacy_receipt_provenance_sha256": receipt_provenance_digest,
                 "legacy_receipt_file_count": len(receipt_files),
                 "legacy_receipt_disposition": "digest-bound-not-promoted-to-v2-authority",

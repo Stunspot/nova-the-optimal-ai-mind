@@ -13,12 +13,27 @@
     "expires_at":{"type":["string","null"],"format":"date-time"},
     "scope":{"$ref":"common-v2.schema.json#/$defs/scope"},
     "source":{"type":"object","required":["kind","authority"],"properties":{"kind":{"enum":["user","agent","tool","file","import","system"]},"locator":{"type":["string","null"]},"authority":{"type":"string","minLength":1}},"additionalProperties":false},
-    "content":{"type":"string","minLength":1,"maxLength":1000},
+    "content":{"type":"string","minLength":1},
+    "legacy_content_provenance":{
+      "type":"object",
+      "required":["policy","source_row_sha256","source_content_sha256","source_characters","source_utf8_bytes"],
+      "properties":{
+        "policy":{"const":"legacy-v1-lossless-oversize-content/v1"},
+        "source_row_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "source_content_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+        "source_characters":{"type":"integer","minimum":1001,"maximum":16384},
+        "source_utf8_bytes":{"type":"integer","minimum":1001,"maximum":65536}
+      },
+      "additionalProperties":false
+    },
     "sensitivity":{"$ref":"common-v2.schema.json#/$defs/sensitivity"},
     "retention":{"type":"string","minLength":1},
     "tags":{"type":"array","items":{"type":"string"},"uniqueItems":true},
     "occurrence":{"$ref":"failure-occurrence.schema.json"}
   },
-  "allOf":[{"if":{"properties":{"type":{"const":"failure_occurrence"}}},"then":{"required":["occurrence"]}}],
+  "allOf":[
+    {"if":{"properties":{"type":{"const":"failure_occurrence"}}},"then":{"required":["occurrence"]}},
+    {"if":{"required":["legacy_content_provenance"]},"then":{"properties":{"content":{"minLength":1001,"maxLength":16384}}},"else":{"properties":{"content":{"maxLength":1000}}}}
+  ],
   "additionalProperties":false
 }
