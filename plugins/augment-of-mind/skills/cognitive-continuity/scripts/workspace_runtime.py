@@ -1479,7 +1479,7 @@ def initialize_workspace(
             shutil.rmtree(root, ignore_errors=True)
         raise
 
-def _normalize_legacy_temporal_rows(source_rows: dict[str, list[dict[str, Any]]]) -> tuple[dict[str, list[dict[str, Any]]], list[dict[str, Any]]]:
+def normalize_legacy_temporal_rows(source_rows: dict[str, list[dict[str, Any]]]) -> tuple[dict[str, list[dict[str, Any]]], list[dict[str, Any]]]:
     fields = {
         "episodes.jsonl": ("valid_from", "valid_to"),
         "state.jsonl": ("valid_from", "valid_to", "expires_at"),
@@ -1539,7 +1539,7 @@ def migrate_copy(
         "state.jsonl": _read_jsonl_path(source / "state" / "records.jsonl"),
         "proposals.jsonl": _read_jsonl_path(source / "proposals" / "proposals.jsonl"),
     }
-    migrated_rows, temporal_transformations = _normalize_legacy_temporal_rows(source_rows)
+    migrated_rows, temporal_transformations = normalize_legacy_temporal_rows(source_rows)
     temporal_normalization_digest = sha256_bytes(dump_canonical(temporal_transformations).encode("utf-8"))
     schema_pairs = {
         "episodes.jsonl": ("episode.schema.json", "episode-v2.schema.json"),

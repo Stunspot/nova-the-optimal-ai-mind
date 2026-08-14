@@ -375,10 +375,10 @@ class WorldlineV2Tests(unittest.TestCase):
             "episode", str(root), "--type", "commitment", "--content", "Resume legacy work",
             "--source-kind", "user", "--authority", "user-test", "--valid-from", "2000-01-01",
         )["episode_id"]
-        run(
+        record_id = run(
             "record", str(root), "--kind", "commitment", "--content", "Resume legacy work",
             "--source-ids", source, "--authority", "user-test", "--valid-from", "2000-01-01",
-        )
+        )["record_id"]
         manifest_path = root / "manifest.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         manifest["version"] = "0.2.0"
@@ -390,6 +390,12 @@ class WorldlineV2Tests(unittest.TestCase):
         self.assertEqual("v1_read_only", view["workspace"]["compatibility_mode"])
         self.assertEqual("durable_v1_read_only", view["durability"]["source_state"])
         self.assertIn("v1_read_only_compatibility", view["degradation"])
+        self.assertEqual([record_id], [item["id"] for item in view["commitments"]])
+        self.assertEqual("Resume legacy work", view["resumption_pointer"]["text"])
+        self.assertEqual([record_id], view["resumption_pointer"]["record_ids"])
+        self.assertEqual(1, view["counts"]["eligible_episodes"])
+        self.assertEqual(1, view["counts"]["eligible_records"])
+        self.assertNotIn("time_malformed", view["omission_counts"])
         self.assertEqual(before, tree_digest(root))
 
 

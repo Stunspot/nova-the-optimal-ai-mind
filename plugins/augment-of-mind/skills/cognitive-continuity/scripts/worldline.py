@@ -18,7 +18,7 @@ from eligibility_policy import POLICY_ID, contains_secret_data, evaluate, saniti
 from schema_validation import SchemaCatalog, SchemaError
 from workspace_runtime import (
     FORMAT, IMPLEMENTATION_VERSION, LEGACY_FORMAT, ContinuityError, dump_canonical, generation_path,
-    open_snapshot, open_workspace, read_json, read_jsonl, sha256_bytes, sha256_file,
+    normalize_legacy_temporal_rows, open_snapshot, open_workspace, read_json, read_jsonl, sha256_bytes, sha256_file,
 )
 
 REQUEST_FORMAT = "cd-worldline-request/v1"
@@ -144,15 +144,24 @@ def _eligible(snapshot: dict[str, Any], request: dict[str, Any], deadline: float
     episode_schema = "episode.schema.json" if v1 else "episode-v2.schema.json"
     state_schema = "state-record.schema.json" if v1 else "state-record-v2.schema.json"
     catalog = SchemaCatalog(SCHEMAS)
-    for row in snapshot["episodes"]:
+    episode_rows = snapshot["episodes"]
+    record_rows = snapshot["records"]
+    for row in episode_rows:
         if catalog.validate(row, episode_schema):
             raise ContinuityError("Episode ledger contains schema-invalid state", "workspace_invalid")
-    for row in snapshot["records"]:
+    for row in record_rows:
         if catalog.validate(row, state_schema):
             raise ContinuityError("State ledger contains schema-invalid state", "workspace_invalid")
+    if v1:
+        normalized, _ = normalize_legacy_temporal_rows({
+            "episodes.jsonl": episode_rows,
+            "state.jsonl": record_rows,
+        })
+        episode_rows = normalized["episodes.jsonl"]
+        record_rows = normalized["state.jsonl"]
     now = _time(request["as_of"])
     environment = request["environment"]
-    raw_episode_ids = {str(row["id"]) for row in snapshot["episodes"]}
+    raw_episode_ids = {str(row["id"]) for row in episode_rows}
     unreachable = set(request["unreachable_source_ids"])
     omissions: dict[str, int] = {}
     omitted: set[str] = set()
@@ -163,7 +172,7 @@ def _eligible(snapshot: dict[str, Any], request: dict[str, Any], deadline: float
         omitted.add(str(row.get("id") or ""))
 
     episodes: list[dict[str, Any]] = []
-    for row in snapshot["episodes"]:
+    for row in episode_rows:
         if time.monotonic() >= deadline:
             partial = True
             reject(row, "deadline_exceeded")
@@ -177,7 +186,7 @@ def _eligible(snapshot: dict[str, Any], request: dict[str, Any], deadline: float
         episodes.append(clean) if allowed and clean is not None else reject(row, reason)
     eligible_episode_ids = {str(row["id"]) for row in episodes}
     records: list[dict[str, Any]] = []
-    for row in snapshot["records"]:
+    for row in record_rows:
         if time.monotonic() >= deadline:
             partial = True
             reject(row, "deadline_exceeded")
