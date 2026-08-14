@@ -18,7 +18,7 @@ From the extracted MIND plugin folder:
 
 Before it changes Codex plugin state, the installer checks Python, Codex, source files, target paths, permissions, Ollama, and the embedding model. It builds a disposable MIND estate, reads its status, and completes a live semantic-association query. Only after that preflight succeeds does it add the marketplace, enable MIND, and move the verified database into its final path.
 
-Expected result: the installer reports MIND 2.1.7 installed, a 20-capability estate active, and semantic association passed.
+Expected result: the installer reports MIND 2.2.0 installed, a 20-capability estate active, and semantic association passed.
 
 ## Trust and discover the hook
 

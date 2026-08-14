@@ -6,6 +6,8 @@ Hold one user-authorized desired state while understanding, evidence, tactics, a
 
 Executive Function owns mission phase, acceptance, commitments, stop conditions, recovery, and closure. Capability Conductor owns selection, activation depth, sequencing, handoffs, and reunification. A selected Faculty owns only the transformation named in the registry. The user or accountable human retains priority, reserved decisions, value conflicts, and authority.
 
+Cognitive Continuity owns durable state and its lifecycle. Worldline is a read-only project view over that state; it does not write or claim a checkpoint was saved. Faultline is a bounded failure-evidence view and governed mutation surface; it does not route work, grant authority, diagnose, retry, repair, or prove safety. Capability Conductor remains the routing owner and Executive Function remains the mission owner.
+
 Routing relevance is not truth confidence. Capability Conductor weighs whether a contribution is likely to matter. Epistemic Regulation calibrates claim warrant and confidence. Measurement Intelligence judges whether an observation or proxy means what the mission needs it to mean. Executive Function binds only authorized commitments.
 
 ## Choose the lightest sufficient regime

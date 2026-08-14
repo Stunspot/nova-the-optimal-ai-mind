@@ -14,11 +14,11 @@ python -X utf8 .\tools\verify_package.py --release
 python -X utf8 .\plugins\augment-of-mind\scripts\build_release.py --output-dir <empty-path> --replace
 ```
 
-The repository suite currently contains 43 deterministic tests. These checks cover the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, metered-capacity arithmetic and authority denial, linked design evidence in the customer archive, standalone MIND build prerequisites in permanent CI, excluded capabilities, plugin topology and versions, canonical Nova and Promptcraft bytes, MIND runtime/version synchronization, reminder cards and vectors, release exclusions, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
+The repository and embedded Continuity suites use deterministic tests for the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, product/plugin/Core/Continuity version contracts, workspace schema v2, all four Worldline views, Faultline Error Neighborhood and mutation controls, metered-capacity arithmetic and authority denial, linked design evidence, standalone MIND prerequisites, exclusions, canonical Nova and Promptcraft bytes, model-context delivery, reminder cards and vectors, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
 
-The [source lock](../design/source-lock.json) binds the embedded MIND skills to the integrated MIND 2.1.7 component checkpoint `a6f249a730030a5e2a518b8011463a49781a5415`, both TestForge roles to local TestForge `v1.1.7` candidate commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`, and Ludis Continuum to canonical commit `e20d8ee88538e1e5a62ba9f18b5224ebedaa05df`. The package verifier recomputes imported tree digests instead of trusting the JSON record and requires Ludis to match the approved 117-file runtime selection from the 122-file source tree.
+The final release gate requires the [source lock](../design/source-lock.json) to bind the frozen product version, imported component commits, selected paths, and exact tree digests. The package verifier recomputes imported trees instead of trusting the JSON record. During this local source freeze the lock and integrated fingerprint remain intentionally deferred; a package PASS is not claimed until both are regenerated from the final bytes and rechecked.
 
-The permanent public workflow runs this suite, source verification, the deterministic combined-package build, portable-release verification, and the embedded standalone MIND build on Linux, Windows, and macOS for each pull request and each push to `main`. Branch pushes do not duplicate pull-request runs.
+The permanent public workflow is configured to run the source suite, deterministic combined-package build, portable-release verification, and embedded standalone MIND build on Linux, Windows, and macOS. A configured workflow is not an executed workflow. Hosted-provider capacity, a successful run on the frozen commit, publication, and asset readback remain separate release evidence.
 
 A source/package pass means the tested tree has those properties. It does not mean a customer installed it, a host discovered it, a hook was trusted, a model used it, or the package works in every environment.
 
@@ -28,11 +28,17 @@ The bundled public estate contains forty-one capability cards and 246 vectors fo
 
 The profile remains `unqualified`. Mechanical operation does not establish broad retrieval quality, hook trust on a customer machine, delivery before a provider turn, model attention, correct route selection, or successful specialist behavior.
 
+## Continuity, Worldline, and Faultline evidence
+
+Local disposable-workspace tests exercise Cognitive Continuity 0.2.0/workspace schema v2, v1 read-only compatibility, immutable generations, expected-generation and idempotency controls, correction, forgetting, export, validation, and recovery. Worldline tests exercise deterministic `resume`, `status`, `checkpoint`, and `inspect` views, generation-race retry, source/provenance selection, false-completion withholding, portable fallback, no-view behavior, and absence of writes. Faultline tests exercise redacted occurrences, governed patterns, zero-to-three-card neighborhoods, expiry, scope and sensitivity filters, retry collapse, noncausal recurrence, human-authority gates, and typed v1 rejection.
+
+Those observations are local source/runtime evidence. They do not establish packaged bytes, installation, fresh-task discovery, live `NOVA_CONTINUITY_HOME` selector resolution, migration of a customer workspace, external-system health, or correct model use. A Worldline view does not prove persistence or completion; a Faultline card does not prove cause, safety, repair, or authority.
+
 ## Installation evidence
 
 `verify-install.ps1` can read the configured marketplace and enabled plugin versions, create a temporary read-only verification copy of the database, inspect its generation and integrity, and exercise semantic association without intentionally modifying the live store.
 
-A PASS from that script establishes the observations written in its report for that machine and run. The user must still inspect the hook, start a fresh task, confirm discovery, and evaluate actual behavior.
+A PASS from that script establishes the observations written in its report for that machine and run. The user must still inspect the hook, start a fresh task, confirm discovery, and evaluate actual behavior. The script does not inspect, create, migrate, or validate a Cognitive Continuity workspace and does not establish Worldline or Faultline health.
 
 ## Host support evidence
 
@@ -50,7 +56,7 @@ Before publication, the candidate documentation set requires:
 1. a Hesperos customer-journey authorship and review pass;
 2. a separate accessibility review of structure, language, contrast, focus, resizing, reduced motion, alt text, and navigation;
 3. a separate TestForge adversarial verification pass;
-4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.0.10 candidate.
+4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.1.0 source candidate.
 
 Receipts identify the reviewed candidate and documentation fingerprint. Any later customer-facing content change invalidates those content-bound receipts and requires review again.
 

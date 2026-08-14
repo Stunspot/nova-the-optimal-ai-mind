@@ -1,5 +1,12 @@
 # MIND release notes
 
+## 2.2.0
+
+This local source candidate introduces Cognitive Continuity 0.2.0 and workspace schema v2 while MIND Core remains 0.2.0. Worldline provides deterministic read-only `resume`, `status`, `checkpoint`, and `inspect` views over Continuity-owned state. Faultline provides the bounded, expiring Error Neighborhood and governed occurrence/pattern lifecycle. They are named services over Cognitive Continuity, not new Faculties, attached Augments, stores, routers, or independently versioned products.
+
+Worldline preserves source, scope, selected/omitted provenance, durability, and false-completion boundaries; its portable fallback is unpersisted and never a save receipt. Faultline keeps recurrence separate from causality, returns at most three advisory cards, requires v2 transaction and authority controls for mutations, has no fallback store, and is typed unsupported on v1.
+
+This version is the MIND component inside the local Nova + MIND Free 2.1.0 source candidate. It does not claim a final fingerprint/source lock, built standalone archive, installation, discovery, live selector resolution, workspace migration, live host behavior, or publication.
 ## 2.1.7
 
 Integrated MIND now carries the exact TestForge 1.1.7 operator and reviewer from TestForge commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`. Software Verification is explicitly release-grade work for a completed frozen candidate, runs only decision-changing checks, classifies a failed check once, and permits at most one support-path recovery before it closes that branch and reports the exact evidence limit.

@@ -20,6 +20,12 @@ It can store capability metadata, authored reminder cards and relations, semanti
 
 Removing a plugin does not remove the database. Different `MIND_CORE_DATABASE` values refer to different stores and do not migrate or merge them.
 
+## Cognitive Continuity custody
+
+Cognitive Continuity is not stored in the MIND Core reminder database. Its governed workspace may hold source-linked project episodes, typed state, proposals, receipts, and minimal redacted failure evidence under a separately resolved `NOVA_CONTINUITY_HOME` selector. Product installation does not create, choose, merge, or migrate that workspace.
+
+Worldline reads Continuity state and emits derivative views; it never persists a checkpoint. Faultline has no private cache or fallback store. Do not put raw logs, transcripts, stack dumps, credentials, tokens, secrets, private payloads, or unnecessary path-shaped evidence into Faultline occurrences. Exported views and receipts keep their named external custody and may still contain scoped metadata that requires review before sharing.
+
 ## Network behavior
 
 Semantic association sends the current prompt and bounded recent context to the configured Ollama endpoint. The default `MIND_OLLAMA_URL` is `http://127.0.0.1:11434`. If you configure a remote endpoint, the text crosses that network boundary and the remote service’s terms, retention, access controls, and logging require separate assessment.

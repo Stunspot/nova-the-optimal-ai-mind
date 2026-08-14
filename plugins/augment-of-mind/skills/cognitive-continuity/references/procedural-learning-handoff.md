@@ -32,7 +32,7 @@ When available:
 4. A human or authorized host installs or integrates the verified result.
 5. Continuity records the decision, evidence, version, and outcome.
 
-A single smooth run rarely earns a SKILL. Repeated failure may still indicate missing facts, permission, tooling, or environment rather than capability. DREAM may propose an eval or capability hypothesis but supplies no privileged evidence.
+A single smooth run rarely earns a SKILL. Repeated failure may still indicate missing facts, permission, tooling, or environment rather than capability. A Faultline pattern or recurring Error Neighborhood match remains failure evidence; similarity and recurrence do not prove cause and never promote a procedure automatically. DREAM may propose an eval or capability hypothesis but supplies no privileged evidence.
 
 ## Handoff without strategic amnesia
 

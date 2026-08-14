@@ -5,19 +5,41 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
+import platform
 import shutil
 import subprocess
+import sys
 import zipfile
+import zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DIST = ROOT / "dist"
-RELEASE = ROOT / "release"
-VERSION = "2.0.10"
+VERSION = "2.1.0"
 KIT_NAME = f"nova-mind-free-v{VERSION}"
 PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
 SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}
 SKIP_SUFFIXES = {".pyc", ".pyo"}
+PACKAGED_DIRECTORIES = (
+    ".agents",
+    "plugins/augment-of-mind",
+    "plugins/nova-the-optimal-ai",
+    "docs",
+    "bundle/reminder",
+)
+PACKAGED_FILES = (
+    "design/FREE-NOVA-PACKAGE-MAP.md",
+    "design/source-lock.json",
+    "README.md",
+    "START-HERE.md",
+    "RELEASE-NOTES.md",
+    "SUPPORT.md",
+    "SECURITY.md",
+    "LICENSE.md",
+    "install.ps1",
+    "verify-install.ps1",
+    "assets/nova-emergent.png",
+)
 FIXED_TIME = (2026, 8, 13, 0, 0, 0)
 CLAUDE_DESCRIPTIONS = {
     "answerlayer": "🔄 Answer maintenance as evidence changes.",
@@ -32,6 +54,33 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def windows_stable_ordinal_key(relative: str) -> tuple[str, str]:
+    """Return a locale-free Windows ordering with an exact-case tie-break."""
+    return relative.casefold(), relative
+
+
+def reproducibility_environment() -> dict[str, object]:
+    """Describe build-affecting runtime details without host or user identity."""
+    return {
+        "python": {
+            "implementation": platform.python_implementation(),
+            "version": platform.python_version(),
+        },
+        "zlib": {
+            "compile_version": zlib.ZLIB_VERSION,
+            "runtime_version": zlib.ZLIB_RUNTIME_VERSION,
+        },
+        "platform": {
+            "os_name": os.name,
+            "sys_platform": sys.platform,
+            "system": platform.system(),
+            "release": platform.release(),
+            "version": platform.version(),
+            "machine": platform.machine(),
+        },
+    }
+
+
 def git_output(*arguments: str) -> str:
     result = subprocess.run(
         ["git", "-C", str(ROOT), *arguments],
@@ -44,26 +93,64 @@ def git_output(*arguments: str) -> str:
     return result.stdout.strip()
 
 
-def source_state() -> tuple[str, int, str]:
+def _skipped(path: Path) -> bool:
+    return any(part in SKIP_NAMES for part in path.parts) or path.suffix in SKIP_SUFFIXES
+
+
+def _assert_payload_is_tracked(tracked: set[str]) -> None:
+    selected: list[Path] = []
+    for relative in PACKAGED_DIRECTORIES:
+        source = ROOT / relative
+        if not source.is_dir():
+            raise RuntimeError(f"packaged source directory is missing: {source}")
+        selected.extend(path for path in source.rglob("*") if path.is_file() and not _skipped(path.relative_to(ROOT)))
+    for relative in PACKAGED_FILES:
+        source = ROOT / relative
+        if not source.is_file():
+            raise RuntimeError(f"packaged source file is missing: {source}")
+        selected.append(source)
+    untracked = sorted(
+        path.relative_to(ROOT).as_posix()
+        for path in selected
+        if path.relative_to(ROOT).as_posix() not in tracked
+    )
+    if untracked:
+        rendered = ", ".join(untracked[:8])
+        suffix = " ..." if len(untracked) > 8 else ""
+        raise RuntimeError(
+            "packaged payload contains files not bound to the Git revision: "
+            + rendered
+            + suffix
+        )
+
+
+def source_state() -> tuple[str, int, str, set[str]]:
     tracked_status = git_output("status", "--porcelain", "--untracked-files=no")
     if tracked_status:
         raise RuntimeError("tracked source changes must be committed before building the release")
     revision = git_output("rev-parse", "HEAD")
     if len(revision) != 40:
         raise RuntimeError("git did not return a full source revision")
-    tracked = [item for item in git_output("ls-files", "-z").split("\0") if item]
+    tracked = {item.replace("\\", "/") for item in git_output("ls-files", "-z").split("\0") if item}
+    _assert_payload_is_tracked(tracked)
     digest = hashlib.sha256()
     counted = 0
-    for relative in sorted(tracked, key=str.casefold):
+    for relative in sorted(tracked, key=windows_stable_ordinal_key):
         source = ROOT / relative
         if not source.is_file():
             continue
-        digest.update(relative.replace("\\", "/").encode("utf-8"))
+        digest.update(relative.encode("utf-8"))
         digest.update(b"\0")
         digest.update(bytes.fromhex(sha256(source)))
         digest.update(b"\n")
         counted += 1
-    return revision, counted, digest.hexdigest()
+    return revision, counted, digest.hexdigest(), tracked
+
+
+def validate_output_root(path: Path) -> None:
+    anchor = Path(path.anchor).resolve()
+    if path.resolve() == anchor:
+        raise RuntimeError(f"output root may not be a filesystem root: {path}")
 
 
 def safe_remove(path: Path, expected_parent: Path) -> None:
@@ -75,12 +162,50 @@ def safe_remove(path: Path, expected_parent: Path) -> None:
     shutil.rmtree(resolved)
 
 
-def ignore(directory: str, names: list[str]) -> set[str]:
-    return {name for name in names if name in SKIP_NAMES or Path(name).suffix in SKIP_SUFFIXES}
+def require_same_release(dist: Path) -> None:
+    manifest_path = dist / "release-manifest.json"
+    if not manifest_path.is_file():
+        raise RuntimeError(
+            f"refused to replace an unrecognized dist tree: {dist}; use a new --output-root"
+        )
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise RuntimeError(f"refused to replace invalid dist manifest: {manifest_path}") from exc
+    if manifest.get("version") != VERSION:
+        raise RuntimeError(
+            f"refused to replace dist version {manifest.get('version')!r} with {VERSION}; "
+            "use a new version-scoped --output-root"
+        )
 
 
-def copytree(source: Path, target: Path) -> None:
-    shutil.copytree(source, target, ignore=ignore, copy_function=shutil.copy2)
+def display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
+def copytree(source: Path, target: Path, tracked: set[str]) -> None:
+    if target.exists():
+        raise RuntimeError(f"refused to copy into an existing target: {target}")
+    source_relative = source.relative_to(ROOT).as_posix()
+    prefix = source_relative + "/"
+    selected = sorted(
+        relative
+        for relative in tracked
+        if relative.startswith(prefix) and not _skipped(Path(relative))
+    )
+    if not selected:
+        raise RuntimeError(f"packaged source directory has no tracked files: {source}")
+    target.mkdir(parents=True)
+    for relative in selected:
+        source_file = ROOT / relative
+        if not source_file.is_file():
+            raise RuntimeError(f"tracked packaged source is missing: {source_file}")
+        destination = target / source_file.relative_to(source)
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source_file, destination)
 
 
 def write_zip(source: Path, archive: Path, top_level: str) -> None:
@@ -101,36 +226,46 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--replace",
         action="store_true",
-        help="replace only the existing dist tree and exact 2.0.10 release outputs",
+        help=f"replace only an existing {VERSION} dist tree and exact {VERSION} release outputs",
+    )
+    parser.add_argument(
+        "--output-root",
+        type=Path,
+        help="write dist/ and release/ below a new version-scoped root (recommended for candidate builds)",
     )
     args = parser.parse_args(argv)
 
-    revision, source_file_count, source_digest = source_state()
-    archive_output = RELEASE / f"{KIT_NAME}.zip"
-    checksum_output = RELEASE / f"{KIT_NAME}.zip.sha256"
-    receipt_output = RELEASE / f"{KIT_NAME}.build-receipt.json"
-    existing = [path for path in (DIST, archive_output, checksum_output, receipt_output) if path.exists()]
+    revision, source_file_count, source_digest, tracked = source_state()
+    output_root = args.output_root.expanduser().resolve() if args.output_root else ROOT
+    validate_output_root(output_root)
+    dist = output_root / "dist"
+    release = output_root / "release"
+    archive_output = release / f"{KIT_NAME}.zip"
+    checksum_output = release / f"{KIT_NAME}.zip.sha256"
+    receipt_output = release / f"{KIT_NAME}.build-receipt.json"
+    existing = [path for path in (dist, archive_output, checksum_output, receipt_output) if path.exists()]
     if existing and not args.replace:
-        rendered = ", ".join(str(path.relative_to(ROOT)) for path in existing)
+        rendered = ", ".join(display_path(path) for path in existing)
         raise RuntimeError(f"output exists; rerun with --replace for these exact targets: {rendered}")
-    if DIST.exists():
-        safe_remove(DIST, ROOT)
+    if dist.exists():
+        require_same_release(dist)
+        safe_remove(dist, output_root)
     for old in (archive_output, checksum_output, receipt_output):
         if old.exists():
-            if old.resolve().parent != RELEASE.resolve() or not old.is_file():
+            if old.resolve().parent != release.resolve() or not old.is_file():
                 raise RuntimeError(f"refused replacement outside the release directory: {old}")
             old.unlink()
-    DIST.mkdir()
-    RELEASE.mkdir(exist_ok=True)
+    dist.mkdir(parents=True)
+    release.mkdir(parents=True, exist_ok=True)
 
-    codex = DIST / "codex"
+    codex = dist / "codex"
     (codex / "plugins").mkdir(parents=True)
-    copytree(ROOT / ".agents", codex / ".agents")
+    copytree(ROOT / ".agents", codex / ".agents", tracked)
     for name in PLUGIN_NAMES:
-        copytree(ROOT / "plugins" / name, codex / "plugins" / name)
+        copytree(ROOT / "plugins" / name, codex / "plugins" / name, tracked)
 
-    claude_folders = DIST / "claude" / "folders"
-    claude_zips = DIST / "claude" / "zips"
+    claude_folders = dist / "claude" / "folders"
+    claude_zips = dist / "claude" / "zips"
     claude_folders.mkdir(parents=True)
     claude_zips.mkdir(parents=True)
     sources: dict[str, Path] = {}
@@ -145,7 +280,7 @@ def main(argv: list[str] | None = None) -> int:
             sources[skill.name] = skill
     for name, source in sorted(sources.items()):
         folder = claude_folders / name
-        copytree(source, folder)
+        copytree(source, folder, tracked)
         if name in CLAUDE_DESCRIPTIONS:
             entry = folder / "SKILL.md"
             content = entry.read_text(encoding="utf-8")
@@ -160,15 +295,15 @@ def main(argv: list[str] | None = None) -> int:
             entry.write_text(content, encoding="utf-8", newline="\n")
         write_zip(folder, claude_zips / f"{name}.zip", name)
 
-    docs_target = DIST / "docs"
-    copytree(ROOT / "docs", docs_target)
-    design_target = DIST / "design"
+    docs_target = dist / "docs"
+    copytree(ROOT / "docs", docs_target, tracked)
+    design_target = dist / "design"
     design_target.mkdir()
     for name in ("FREE-NOVA-PACKAGE-MAP.md", "source-lock.json"):
         shutil.copy2(ROOT / "design" / name, design_target / name)
     for name in ("README.md", "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md", "LICENSE.md", "install.ps1", "verify-install.ps1"):
-        shutil.copy2(ROOT / name, DIST / name)
-    packaged_readme = DIST / "README.md"
+        shutil.copy2(ROOT / name, dist / name)
+    packaged_readme = dist / "README.md"
     source_mind_link = "plugins/augment-of-mind/USER-GUIDE.md"
     packaged_mind_link = "codex/plugins/augment-of-mind/USER-GUIDE.md"
     packaged_readme_text = packaged_readme.read_text(encoding="utf-8")
@@ -179,10 +314,10 @@ def main(argv: list[str] | None = None) -> int:
         encoding="utf-8",
         newline="\n",
     )
-    (DIST / "assets").mkdir()
-    shutil.copy2(ROOT / "assets" / "nova-emergent.png", DIST / "assets" / "nova-emergent.png")
-    (DIST / "bundle").mkdir()
-    copytree(ROOT / "bundle" / "reminder", DIST / "bundle" / "reminder")
+    (dist / "assets").mkdir()
+    shutil.copy2(ROOT / "assets" / "nova-emergent.png", dist / "assets" / "nova-emergent.png")
+    (dist / "bundle").mkdir()
+    copytree(ROOT / "bundle" / "reminder", dist / "bundle" / "reminder", tracked)
 
     manifest = {
         "format": "nova-mind-free-release/v1",
@@ -191,7 +326,7 @@ def main(argv: list[str] | None = None) -> int:
         "source_revision": revision,
         "source_material_file_count": source_file_count,
         "source_material_sha256": source_digest,
-        "plugin_versions": {"nova-the-optimal-ai": "2.0.3", "augment-of-mind": "2.1.7"},
+        "plugin_versions": {"nova-the-optimal-ai": "2.1.0", "augment-of-mind": "2.2.0"},
         "codex_plugins": list(PLUGIN_NAMES),
         "claude_skill_count": len(sources),
         "claude_skills": sorted(sources),
@@ -201,19 +336,19 @@ def main(argv: list[str] | None = None) -> int:
         "reminder_qualification_state": "unqualified",
         "evidence_boundary": "Structural release artifact. Live installation, hook trust, host delivery, behavioral qualification, Claude upload, publication, and commercial approval remain separate.",
     }
-    (DIST / "release-manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (dist / "release-manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
     checksum_targets = [
         *sorted(claude_zips.glob("*.zip")),
-        DIST / "release-manifest.json",
-        DIST / "codex" / "plugins" / "nova-the-optimal-ai" / ".codex-plugin" / "plugin.json",
-        DIST / "codex" / "plugins" / "augment-of-mind" / ".codex-plugin" / "plugin.json",
-        DIST / "bundle" / "reminder" / "associative-index-qwen3-embedding-0.6b.json",
+        dist / "release-manifest.json",
+        dist / "codex" / "plugins" / "nova-the-optimal-ai" / ".codex-plugin" / "plugin.json",
+        dist / "codex" / "plugins" / "augment-of-mind" / ".codex-plugin" / "plugin.json",
+        dist / "bundle" / "reminder" / "associative-index-qwen3-embedding-0.6b.json",
     ]
-    checksum_lines = [f"{sha256(path)}  {path.relative_to(DIST).as_posix()}" for path in checksum_targets]
-    (DIST / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
+    checksum_lines = [f"{sha256(path)}  {path.relative_to(dist).as_posix()}" for path in checksum_targets]
+    (dist / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
 
-    write_zip(DIST, archive_output, KIT_NAME)
+    write_zip(dist, archive_output, KIT_NAME)
     release_hash = sha256(archive_output)
     checksum_output.write_text(f"{release_hash}  {KIT_NAME}.zip\n", encoding="utf-8")
     receipt = {
@@ -229,6 +364,7 @@ def main(argv: list[str] | None = None) -> int:
             "sha256": release_hash,
             "top_level": KIT_NAME,
         },
+        "reproducibility_environment": reproducibility_environment(),
         "structural_builder": "PASS",
         "evidence_boundary": "Source custody and structural package construction only; live host behavior remains separate.",
     }
@@ -239,9 +375,9 @@ def main(argv: list[str] | None = None) -> int:
         "codex_plugins": len(PLUGIN_NAMES),
         "claude_skills": len(sources),
         "source_revision": revision,
-        "customer_zip": str(archive_output.relative_to(ROOT)),
+        "customer_zip": display_path(archive_output),
         "customer_zip_sha256": release_hash,
-        "build_receipt": str(receipt_output.relative_to(ROOT)),
+        "build_receipt": display_path(receipt_output),
     }, indent=2))
     return 0
 

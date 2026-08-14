@@ -1,13 +1,13 @@
 {
   "schema": "augment-of-mind-integrated-capability-fingerprint/v2",
-  "product_version": "2.1.7",
+  "product_version": "2.2.0",
   "capability_count": 20,
   "faculty_count": 16,
   "attached_augment_count": 3,
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; cache files excluded",
   "tree_self_exclusion": "augment-of-mind excludes assets/integrated-capability-fingerprint.json",
   "aggregate_algorithm": "sha256 over compact UTF-8 JSON serialization of ordered capabilities",
-  "aggregate_sha256": "281c0041a07e0410f80152ac2c85f0758105209d20768d5233eace3c9979599a",
+  "aggregate_sha256": "57e581e30ab631f2008b3b6d09058b7ba6efa60fff08e3d5497f53da02fbc2e7",
   "capabilities": [
     {
       "name": "aesthetic-intelligence",
@@ -39,10 +39,10 @@
     },
     {
       "name": "augment-of-mind",
-      "version": "2.1.7",
+      "version": "2.2.0",
       "integration_mode": "product-integration",
       "tree_file_count": 14,
-      "tree_sha256": "37322f5eebd586b2d3b1135e7283d9144baef1bc455dc00468b7d6de609edeb5"
+      "tree_sha256": "b81d4f53eeeaee4d50b0f38789f4d8fb9ddfe7f23d3f9808a4a4c3cb87dd43f0"
     },
     {
       "name": "capability-conductor",
@@ -60,10 +60,10 @@
     },
     {
       "name": "cognitive-continuity",
-      "version": "0.1.3",
+      "version": "0.2.0",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_file_count": 43,
-      "tree_sha256": "5783b5c564425971d10e2bf2470fdf37dc39744d723f3328ff29ece1d9e78775"
+      "tree_file_count": 72,
+      "tree_sha256": "0aed0f8d79fdf85129d025cade4e7e4e8d00300bb53183916f548479e0799fa3"
     },
     {
       "name": "creative-synthesis",

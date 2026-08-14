@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: local verified candidate; 2.0.10 exact Nova 2.0.3, integrated MIND 2.1.7, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
+Status: local source candidate; 2.1.0 exact Nova 2.1.0, integrated MIND 2.2.0, Cognitive Continuity 0.2.0/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
 Prior published release: 2.0.9, published 2026-08-13 from commit f1e607e44b7d6121dc65278ae8155e3c7dfd09cf; source verification, deterministic package checks, Linux/Windows/macOS CI, Pages deployment, and release-asset digest readback passed for that prior release.
-Product: **Nova + MIND Free 2.0.10**
+Product: **Nova + MIND Free 2.1.0**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`
@@ -54,6 +54,14 @@ Before each model turn, the prompt-submit hook semantically associates the curre
 
 The current expanded profile is intentionally marked `unqualified`. Isolated activation and routing smoke probes established mechanical operation and informed a radius of `0.33`; fresh-host hook trust, delivery, and broader behavioral qualification remain separate gates.
 
+## Continuity service contracts
+
+Cognitive Continuity 0.2.0 introduces workspace schema v2 while retaining read-only compatibility for supported v1 operations. Worldline is Nova's named read-only project-continuity view, with `resume`, `status`, `checkpoint`, and `inspect` modes under `cd-worldline-request/v1` and `cd-worldline-view/v1`. Its runtime version follows Continuity 0.2.0 rather than an independent Worldline semver. A view never writes, authorizes, or proves completion; caller-material fallback is explicitly unpersisted and carries no save receipt.
+
+Faultline is MIND's named bounded Error Neighborhood over Continuity-owned failure evidence. It returns zero to three expiring advisory cards, treats similarity and recurrence as noncausal, and leaves routing, diagnosis, repair, and permission with their proper owners. Governed mutations require schema-v2 generation, idempotency, authority, scope, source, sensitivity, and retention controls. Faultline has no fallback store and reports typed unsupported on v1; it likewise has no independent semver.
+
+The source candidate includes deterministic runtime and fresh-process tests. Package presence, installation, discovery, live selector resolution, customer-workspace migration, external-system behavior, and live host health remain separate evidence gates.
+
 ## Excluded by product decision
 
 - **Aji Go Coach**: removed from Free Nova. The earlier inclusion was availability bias; Gridmason has much better expected audience relevance.
@@ -77,8 +85,9 @@ The package is ready to hand off only when:
 3. MIND contains sixteen Faculties plus the integrator, Capability Promotion, and both TestForge roles;
 4. Gridmason and Promptcraft are present; Aji, Agent Arena, and Impactful Tom are absent;
 5. the 41-card estate activates atomically and representative fields route without saturation;
-6. the installer, package verifier, Codex release tree, Claude folders, and final ZIPs pass structural checks;
-7. customer docs carry installation, first value, recovery, privacy, host, and evidence boundaries;
-8. TestForge and its independent reviewer issue an evidence-bounded release disposition;
-9. Hesperos authors the current docs and the accessibility reviewer challenges them;
-10. no publication, push, release, or contest-repository mutation occurs without separate authority.
+6. Continuity v2, all four Worldline modes, and the bounded Faultline lifecycle pass their deterministic suites without creating a live-state claim;
+7. the installer, package verifier, Codex release tree, Claude folders, and final ZIPs pass structural checks;
+8. customer docs carry installation, first value, recovery, privacy, host, continuity, and evidence boundaries;
+9. TestForge and its independent reviewer issue an evidence-bounded release disposition;
+10. Hesperos authors the current docs and the accessibility reviewer challenges them;
+11. no publication, push, release, or contest-repository mutation occurs without separate authority.

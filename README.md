@@ -8,7 +8,7 @@ Nova + MIND Free puts an actual AI collaborator in the Codex harness you already
 
 You ask for the outcome. You do **not** memorize a catalog, convene a committee of bots, or learn forty-one magic words.
 
-[Latest published release: 2.0.9](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · Local verified candidate: 2.0.10 · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
+[Latest published release: 2.0.9](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · Local source candidate: 2.1.0 · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
 
 
 ## What you can get done
@@ -17,6 +17,7 @@ You ask for the outcome. You do **not** memorize a catalog, convene a committee 
 - Investigate a current question, keep sources and contradictions attached to the claims, or search a bounded corpus without pretending retrieval equals truth.
 - Repair code and repositories, produce office documents, make infographics, diagnose IT trouble, and challenge finished software claims with an independent verification role.
 - Design better prompts, choose sensible model spend, preserve an authorized long-running objective, and keep reminders, people, and project continuity in their proper compartments.
+- Resume or inspect source-linked project state through Worldline, and surface a bounded Faultline Error Neighborhood before a materially similar risky operation—without turning either view into permission, proof, or a secret second memory store.
 - Practice a language, run a choice-shaped game, design Minecraft builds, or make something surprising without turning every creative request into beige enterprise porridge.
 
 The exact result still depends on the tools, files, credentials, and authority your host provides. I cannot browse without a browsing tool, publish without permission, remember durably without a real store, or transmute confidence into evidence by smirking at it harder.
@@ -58,7 +59,7 @@ The included public reminder profile is structurally verified and mechanically e
 
 Codex with plugin support is the primary target. You need PowerShell, Python 3.11 or newer, and local Ollama with `qwen3-embedding:0.6b` already installed. Model weights are not bundled or downloaded for you.
 
-1. For the local 2.0.10 candidate, use the supplied governed ZIP. Public users can download the [latest published release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest), which remains 2.0.9 until 2.0.10 is separately published.
+1. Once the local 2.1.0 source candidate has completed its separate build and verification gates, use the governed `nova-mind-free-v2.1.0.zip`. The [latest published release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) remains 2.0.9 until a later release is separately published.
 2. Attach it to a Codex task and say:
 
    ```text
@@ -117,8 +118,9 @@ For more, see [representative workflows](https://stunspot.github.io/nova-the-opt
 | `MIND_OLLAMA_URL` | `http://127.0.0.1:11434` | Local Ollama endpoint used for embeddings. |
 | Embedding model | `qwen3-embedding:0.6b` | Required by the bundled associative index; install it separately. |
 | Hook trust | User decision in Codex | Trust is byte-specific and is not implied by installation. |
+| `NOVA_CONTINUITY_HOME` | Governed selector resolution | Locates an existing Cognitive Continuity workspace for Worldline and Faultline; product installation does not create or migrate one. |
 
-Different database paths create different stores; they do not merge or migrate one another. See [privacy and trust](docs/PRIVACY-AND-TRUST.md) and [capability reminders](docs/CAPABILITY-REMINDERS.md).
+Different database paths create different stores; they do not merge or migrate one another. Cognitive Continuity v2 is a separate, capability-owned workspace contract: Worldline reads it, Faultline can use it under its own mutation gates, and neither lives in the MIND Core reminder database. See [privacy and trust](docs/PRIVACY-AND-TRUST.md) and [capability reminders](docs/CAPABILITY-REMINDERS.md).
 
 ## Troubleshooting and recovery
 
@@ -129,6 +131,8 @@ Preserve the complete symptom before changing anything: release version, plugin 
 - **Another Nova or MIND exists:** stop. The installer intentionally refuses silent replacement; use the [upgrade guide](docs/UPGRADE.md).
 - **Existing database blocks installation:** preserve it. Choose a new database path or perform an explicit migration; no automatic estate merger is included.
 - **Reminder field empty or degraded:** retain its receipt/failure code. Do not describe lexical-only output as vector-near or ask the model to rebuild the field.
+- **Worldline has no durable source:** accept only a source-linked `unpersisted_portable` checkpoint with `save_claim=false`, or no view. Do not describe a portable handoff as saved continuity.
+- **Faultline is unavailable or the workspace is v1:** preserve the typed gap. Faultline has no fallback store, and installation does not migrate or initialize continuity merely to produce a card.
 
 Read [Troubleshooting](docs/TROUBLESHOOTING.md) for exact recovery branches.
 
@@ -148,10 +152,9 @@ Report vulnerabilities through [GitHub’s private security channel](https://git
 
 ## Versions, provenance, and evidence
 
-**Nova + MIND Free 2.0.10** is the current local product candidate. Its plugin manifests identify **Nova 2.0.3** and **MIND 2.1.7**; those version layers are intentionally separate. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova’s canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, portable ZIP shape, links, and deterministic packaging.
+**Nova + MIND Free 2.1.0** is the current local source candidate. Its plugin manifests identify **Nova 2.1.0** and **MIND 2.2.0**. MIND carries **Cognitive Continuity 0.2.0** with workspace schema v2 while bundled **MIND Core remains 0.2.0**. Worldline and Faultline are named service contracts over Continuity, not independently versioned products. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova's canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, Continuity contracts, portable ZIP shape, links, and deterministic packaging.
 
 Those checks establish package properties—not universal behavior, fresh-host success, Claude parity, publication, or defect-freedom. See [verification and evidence status](docs/VERIFICATION.md), [host matrix](docs/HOST-MATRIX.md), and [release notes](RELEASE-NOTES.md).
-
 ## Support, contribution, license, and terms
 
 Use [Support](SUPPORT.md) for safe issue reports and [Troubleshooting](docs/TROUBLESHOOTING.md) first. Contributions are welcome through repository issues and pull requests; preserve provenance, product boundaries, evidence states, and the forty-one-handle topology unless the change explicitly revises the product. Maintainers should read the [maintainer guide](docs/MAINTAINER-GUIDE.md).

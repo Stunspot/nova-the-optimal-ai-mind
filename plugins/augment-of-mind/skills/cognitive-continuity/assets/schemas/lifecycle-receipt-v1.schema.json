@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://collaborative-dynamics.com/schemas/cognitive-continuity/lifecycle-receipt-v1.json",
+  "title":"External Continuity Lifecycle Receipt",
+  "type":"object",
+  "required":["format","id","operation","status","created_at","updated_at","authority","workspace_id","plan_id","plan_digest","target_class","target_identity_sha256","target_content_sha256","stage_identity_sha256","lifecycle_outcomes","physical_erasure","error_code"],
+  "properties":{
+    "format":{"const":"cd-continuity-lifecycle-receipt/v1"},
+    "id":{"type":"string","pattern":"^LCR-[A-Za-z0-9-]+$"},
+    "operation":{"enum":["delete-named-custody","backup-destroy"]},
+    "status":{"enum":["intent_recorded","quarantined","application_deleted","partial_failure"]},
+    "created_at":{"type":"string","format":"date-time"},
+    "updated_at":{"type":"string","format":"date-time"},
+    "authority":{"type":"string","minLength":1},
+    "workspace_id":{"type":"string","minLength":1},
+    "plan_id":{"type":["string","null"]},
+    "plan_digest":{"type":["string","null"]},
+    "target_class":{"type":"string","minLength":1},
+    "target_identity_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "target_content_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},
+    "stage_identity_sha256":{"type":["string","null"],"pattern":"^[a-f0-9]{64}$"},
+    "backup_id":{"type":["string","null"]},
+    "retention_until":{"type":["string","null"],"format":"date-time"},
+    "destruction_owner":{"type":["string","null"]},
+    "lifecycle_outcomes":{"type":"object","required":["deleted_from_named_continuity_custody","physical_erasure_not_established"]},
+    "physical_erasure":{"const":"not_established"},
+    "external_boundaries":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "error_code":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}

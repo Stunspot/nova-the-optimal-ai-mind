@@ -22,6 +22,8 @@ Distinguish:
 
 Several tolerable limits may combine into an unusable result. When the remaining capability cannot preserve the minimum promise - inspectable current state and honest task context - stop claiming continuity and produce a handoff packet instead.
 
+For Worldline, any requested mode may degrade to an `unpersisted_portable` checkpoint only from sufficient source-linked caller material. Preserve the requested mode, make no save claim, issue no persistence receipt, and name the exact lost guarantee. Without sufficient material, return no view. Faultline has no portable store substitute; unsupported or unavailable Error Neighborhood service remains an explicit capability gap rather than inferred safety.
+
 ## Leave re-entry ready
 
 Preserve completed work, blocked guarantee, provisional outputs, next valid operation, and the event that restores the normal path. When capability returns, revalidate and supersede degraded packets rather than placing new output beside stale provisional state.

@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/worldline-view-v1.json",
+  "title": "Worldline View v1",
+  "type": "object",
+  "required": ["format", "view_id", "request_id", "correlation_id", "operation", "requested_mode", "status", "scope", "as_of", "expires_at", "durability", "workspace", "policy_version", "compiler", "current_phase", "current_status", "decisions", "commitments", "blockers", "next_actions", "artifact_locators", "chronology", "conflicts", "source_ids", "omitted_ids", "omitted_id_count", "omission_counts", "degradation", "resumption_pointer", "counts", "value_boundary"],
+  "properties": {
+    "format": {"const": "cd-worldline-view/v1"},
+    "view_id": {"type": "string", "pattern": "^WLV-[a-f0-9]{24}$"},
+    "request_id": {"type": "string", "minLength": 1},
+    "correlation_id": {"type": "string", "minLength": 1},
+    "operation": {"const": "worldline.compile"},
+    "requested_mode": {"enum": ["resume", "status", "checkpoint", "inspect"]},
+    "status": {"enum": ["ok", "degraded", "partial"]},
+    "scope": {"$ref": "common-v2.schema.json#/$defs/scope"},
+    "as_of": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "durability": {"$ref": "#/$defs/durability"},
+    "workspace": {"$ref": "#/$defs/workspace"},
+    "policy_version": {"const": "cd-continuity-eligibility/v2"},
+    "compiler": {"$ref": "#/$defs/compiler"},
+    "current_phase": {"anyOf": [{"$ref": "#/$defs/item"}, {"type": "null"}]},
+    "current_status": {"anyOf": [{"$ref": "#/$defs/item"}, {"type": "null"}]},
+    "decisions": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+    "commitments": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+    "blockers": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+    "next_actions": {"type": "array", "items": {"$ref": "#/$defs/item"}},
+    "artifact_locators": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+    "chronology": {"type": "array", "items": {"$ref": "#/$defs/chronology"}},
+    "conflicts": {"type": "array", "items": {"$ref": "#/$defs/conflict"}},
+    "source_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "omitted_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "omitted_id_count": {"type": "integer", "minimum": 0},
+    "omission_counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "degradation": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "resumption_pointer": {"$ref": "#/$defs/pointer"},
+    "counts": {"$ref": "#/$defs/counts"},
+    "value_boundary": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": ["id", "kind", "statement", "recorded_at", "authority", "confidence", "source_ids", "supersedes", "conflicts_with", "evidence_state"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "kind": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "recorded_at": {"type": ["string", "null"], "format": "date-time"},
+        "authority": {"type": ["string", "null"]},
+        "confidence": {"type": ["string", "null"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "supersedes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "conflicts_with": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "evidence_state": {"enum": ["source_supported", "completion_evidence_present", "caller_supplied_unverified"]}
+      },
+      "additionalProperties": false
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["id", "locator", "custody", "owner", "source_ids", "recorded_at"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "custody": {"const": "source_owned"},
+        "owner": {"type": "string", "minLength": 1},
+        "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "recorded_at": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    },
+    "chronology": {
+      "type": "object",
+      "required": ["id", "item_type", "event_type", "at", "summary", "source_ids"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "item_type": {"enum": ["episode", "state_record", "caller_material"]},
+        "event_type": {"type": "string", "minLength": 1},
+        "at": {"type": ["string", "null"], "format": "date-time"},
+        "summary": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "conflict": {
+      "type": "object",
+      "required": ["id", "statement", "record_ids", "source_ids"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "record_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+        "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "pointer": {
+      "type": "object",
+      "required": ["state", "text", "source_ids", "record_ids"],
+      "properties": {
+        "state": {"enum": ["grounded", "unavailable"]},
+        "text": {"type": ["string", "null"]},
+        "source_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "record_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "durability": {
+      "type": "object",
+      "required": ["source_state", "source_writable", "view_persisted", "portable", "save_claim", "guarantee_lost"],
+      "properties": {
+        "source_state": {"enum": ["durable_v2", "durable_v1_read_only", "caller_material_only"]},
+        "source_writable": {"type": ["boolean", "null"]},
+        "view_persisted": {"const": false},
+        "portable": {"type": "boolean"},
+        "save_claim": {"const": false},
+        "guarantee_lost": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "workspace": {
+      "type": "object",
+      "required": ["availability", "compatibility_mode", "workspace_id", "workspace_format", "workspace_schema_version", "generation", "manifest_sha256"],
+      "properties": {
+        "availability": {"enum": ["available", "missing", "invalid", "unsupported", "unavailable"]},
+        "compatibility_mode": {"enum": ["v2_native", "v1_read_only", "portable_no_store"]},
+        "workspace_id": {"type": ["string", "null"]},
+        "workspace_format": {"type": ["string", "null"]},
+        "workspace_schema_version": {"type": ["integer", "string", "null"]},
+        "generation": {"type": ["integer", "null"], "minimum": 0},
+        "manifest_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "compiler": {
+      "type": "object",
+      "required": ["runtime_id", "runtime_version", "schema_id", "mode", "generation_retry_count"],
+      "properties": {
+        "runtime_id": {"const": "cd-worldline-runtime/v1"},
+        "runtime_version": {"type": "string", "minLength": 1},
+        "schema_id": {"const": "cd-worldline-view/v1"},
+        "mode": {"enum": ["deterministic", "portable_deterministic"]},
+        "generation_retry_count": {"type": "integer", "minimum": 0, "maximum": 1}
+      },
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "required": ["candidate_records", "candidate_episodes", "eligible_records", "eligible_episodes", "selected_material", "conflicts"],
+      "properties": {
+        "candidate_records": {"type": "integer", "minimum": 0},
+        "candidate_episodes": {"type": "integer", "minimum": 0},
+        "eligible_records": {"type": "integer", "minimum": 0},
+        "eligible_episodes": {"type": "integer", "minimum": 0},
+        "selected_material": {"type": "integer", "minimum": 0},
+        "conflicts": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

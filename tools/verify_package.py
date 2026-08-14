@@ -8,12 +8,22 @@ import importlib.util
 import json
 import re
 import sys
+import tomllib
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 NOVA = ROOT / "plugins" / "nova-the-optimal-ai"
 MIND = ROOT / "plugins" / "augment-of-mind"
+PRODUCT_VERSION = "2.1.0"
+NOVA_VERSION = "2.1.0"
+MIND_VERSION = "2.2.0"
+MIND_CORE_VERSION = "0.2.0"
+CONTINUITY_VERSION = "0.2.0"
+CONTINUITY_WORKSPACE_SCHEMA_VERSION = 2
+MODEL_CONTEXT_CONTRACT = (
+    ROOT / "verification" / "associative-smoke" / f"model-context-contract-v{MIND_VERSION}.json"
+)
 
 FACULTIES = {
     "aesthetic-intelligence", "agent-dreaming", "agent-striving", "agentic-eros",
@@ -40,6 +50,15 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def display_path(path: Path, base: Path = ROOT) -> str:
+    """Render a repository- or package-relative path, or a safe absolute fallback."""
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(base.resolve()).as_posix()
+    except ValueError:
+        return str(resolved)
+
+
 def tree_fingerprint(root: Path) -> dict[str, object]:
     files = [
         path
@@ -61,21 +80,21 @@ def load_json(path: Path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception as exc:
-        raise ValueError(f"invalid JSON {path.relative_to(ROOT)}: {exc}") from exc
+        raise ValueError(f"invalid JSON {display_path(path)}: {exc}") from exc
 
 
 def skill_metadata(path: Path) -> tuple[str, str]:
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
-        raise ValueError(f"missing YAML frontmatter: {path.relative_to(ROOT)}")
+        raise ValueError(f"missing YAML frontmatter: {display_path(path)}")
     end = text.find("\n---\n", 4)
     if end < 0:
-        raise ValueError(f"unterminated YAML frontmatter: {path.relative_to(ROOT)}")
+        raise ValueError(f"unterminated YAML frontmatter: {display_path(path)}")
     frontmatter = text[4:end]
     name_match = re.search(r"(?m)^name:\s*[\"']?([^\"'\n]+)", frontmatter)
     desc_match = re.search(r"(?m)^description:\s*[\"']?(.+?)[\"']?\s*$", frontmatter)
     if not name_match or not desc_match:
-        raise ValueError(f"name or description missing: {path.relative_to(ROOT)}")
+        raise ValueError(f"name or description missing: {display_path(path)}")
     return name_match.group(1).strip(), desc_match.group(1).strip().rstrip('"').rstrip("'")
 
 
@@ -101,8 +120,7 @@ def verify_links(errors: list[str]) -> None:
                 errors.append(f"broken documentation link: {document.relative_to(ROOT)} -> {raw}")
 
 
-def verify_release_links(errors: list[str]) -> None:
-    release_root = ROOT / "dist"
+def verify_release_links(errors: list[str], release_root: Path) -> None:
     documents = [
         release_root / "README.md",
         release_root / "START-HERE.md",
@@ -110,10 +128,9 @@ def verify_release_links(errors: list[str]) -> None:
     ]
     pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
     for document in documents:
+        shown_document = display_path(document, release_root)
         if not document.is_file():
-            errors.append(
-                f"required release document missing: {document.relative_to(ROOT)}"
-            )
+            errors.append(f"required release document missing: {shown_document}")
             continue
         text = document.read_text(encoding="utf-8")
         for raw in pattern.findall(text):
@@ -126,26 +143,34 @@ def verify_release_links(errors: list[str]) -> None:
             except ValueError:
                 errors.append(
                     "release documentation link escapes package: "
-                    f"{document.relative_to(ROOT)} -> {raw}"
+                    f"{shown_document} -> {raw}"
                 )
                 continue
             if not candidate.exists():
                 errors.append(
                     "broken release documentation link: "
-                    f"{document.relative_to(ROOT)} -> {raw}"
+                    f"{shown_document} -> {raw}"
                 )
 
-def verify_release(errors: list[str]) -> None:
-    release_root = ROOT / "dist"
+
+def verify_release(errors: list[str], release_root: Path) -> None:
+    release_root = release_root.resolve()
     codex_plugins = release_root / "codex" / "plugins"
     claude_folders = release_root / "claude" / "folders"
     claude_zips = release_root / "claude" / "zips"
-    for path in (codex_plugins / "nova-the-optimal-ai", codex_plugins / "augment-of-mind", claude_folders, claude_zips):
+    missing = False
+    for path in (
+        codex_plugins / "nova-the-optimal-ai",
+        codex_plugins / "augment-of-mind",
+        claude_folders,
+        claude_zips,
+    ):
         if not path.exists():
-            errors.append(f"release path missing: {path.relative_to(ROOT)}")
-    if errors:
+            errors.append(f"release path missing: {display_path(path, release_root)}")
+            missing = True
+    if missing:
         return
-    verify_release_links(errors)
+    verify_release_links(errors, release_root)
     expected = NOVA_SKILLS | MIND_SKILLS
     folders = {path.name for path in claude_folders.iterdir() if path.is_dir()}
     if folders != expected:
@@ -160,21 +185,29 @@ def verify_release(errors: list[str]) -> None:
         with zipfile.ZipFile(archive) as bundle:
             entries = [item.filename for item in bundle.infolist() if not item.is_dir()]
         if not entries or any(not entry.startswith(f"{name}/") for entry in entries):
-            errors.append(f"Claude ZIP has wrong top-level folder: {archive.relative_to(ROOT)}")
+            errors.append(
+                "Claude ZIP has wrong top-level folder: "
+                f"{display_path(archive, release_root)}"
+            )
         if f"{name}/SKILL.md" not in entries:
-            errors.append(f"Claude ZIP lacks direct SKILL.md: {archive.relative_to(ROOT)}")
+            errors.append(
+                f"Claude ZIP lacks direct SKILL.md: {display_path(archive, release_root)}"
+            )
         folder_entry = claude_folders / name / "SKILL.md"
         try:
             declared, description = skill_metadata(folder_entry)
             if declared != name:
                 errors.append(f"Claude folder name mismatch: {name} declares {declared}")
             if not (1 <= len(description) <= 200):
-                errors.append(f"Claude description length invalid ({len(description)}): {folder_entry.relative_to(ROOT)}")
+                errors.append(
+                    f"Claude description length invalid ({len(description)}): "
+                    f"{display_path(folder_entry, release_root)}"
+                )
         except ValueError as exc:
             errors.append(str(exc))
 
 
-def verify(include_release: bool) -> dict:
+def verify(include_release: bool, release_root: Path | None = None) -> dict:
     errors: list[str] = []
     evidence: dict = {}
 
@@ -186,10 +219,10 @@ def verify(include_release: bool) -> dict:
 
     nova_manifest = load_json(NOVA / ".codex-plugin" / "plugin.json")
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
-    if nova_manifest.get("version") != "2.0.3":
-        errors.append("Nova plugin version must be 2.0.3")
-    if mind_manifest.get("version") != "2.1.7":
-        errors.append("MIND plugin version must be 2.1.7")
+    if nova_manifest.get("version") != NOVA_VERSION:
+        errors.append(f"Nova plugin version must be {NOVA_VERSION}")
+    if mind_manifest.get("version") != MIND_VERSION:
+        errors.append(f"MIND plugin version must be {MIND_VERSION}")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -215,6 +248,77 @@ def verify(include_release: bool) -> dict:
         errors.append("MIND Faculty evaluation evidence no longer identifies its 2.1.1 baseline")
     if registry.get("runtime_version") != mind_version:
         errors.append("MIND Faculty registry version does not match the plugin version")
+    registered_faculties = {
+        item.get("name") for item in registry.get("faculties", []) if isinstance(item, dict)
+    }
+    if registry.get("faculty_count") != len(FACULTIES) or registered_faculties != FACULTIES:
+        errors.append("MIND Faculty registry does not match the sixteen-Faculty contract")
+    faculty_return_schema = load_json(
+        MIND
+        / "skills"
+        / "augment-of-mind"
+        / "assets"
+        / "faculty-runtime"
+        / "faculty-return.schema.json"
+    )
+    return_faculties = set(
+        faculty_return_schema.get("properties", {}).get("faculty", {}).get("enum", [])
+    )
+    if return_faculties != FACULTIES:
+        errors.append("MIND Faculty return schema does not cover the sixteen-Faculty registry")
+
+    core_constants_text = (MIND / "mind_core" / "constants.py").read_text(encoding="utf-8")
+    core_match = re.search(r'(?m)^RUNTIME_VERSION = "([^"]+)"$', core_constants_text)
+    if not core_match or core_match.group(1) != MIND_CORE_VERSION:
+        errors.append(f"MIND Core runtime version must remain {MIND_CORE_VERSION}")
+    standalone_core_match = re.search(
+        r'(?m)^CORE_VERSION = "([^"]+)"$', standalone_verifier_text
+    )
+    if not standalone_core_match or standalone_core_match.group(1) != MIND_CORE_VERSION:
+        errors.append("standalone MIND release verifier Core version is stale")
+    core_project = tomllib.loads((MIND / "pyproject.toml").read_text(encoding="utf-8"))
+    if core_project.get("project", {}).get("version") != MIND_CORE_VERSION:
+        errors.append("MIND Core project version is stale")
+
+    continuity_root = MIND / "skills" / "cognitive-continuity"
+    workspace_runtime_text = (
+        continuity_root / "scripts" / "workspace_runtime.py"
+    ).read_text(encoding="utf-8")
+    continuity_match = re.search(
+        r'(?m)^IMPLEMENTATION_VERSION = "([^"]+)"$', workspace_runtime_text
+    )
+    if not continuity_match or continuity_match.group(1) != CONTINUITY_VERSION:
+        errors.append(f"Cognitive Continuity implementation version must be {CONTINUITY_VERSION}")
+    if 'FORMAT = "cd-cognitive-continuity/v2"' not in workspace_runtime_text:
+        errors.append("Cognitive Continuity workspace runtime is not schema v2")
+    continuity_manifest_schema = load_json(
+        continuity_root / "assets" / "schemas" / "continuity-manifest-v2.schema.json"
+    )
+    schema_version = (
+        continuity_manifest_schema.get("properties", {})
+        .get("workspace_schema_version", {})
+        .get("const")
+    )
+    if schema_version != CONTINUITY_WORKSPACE_SCHEMA_VERSION:
+        errors.append("Cognitive Continuity manifest schema version is stale")
+    worldline_text = (continuity_root / "scripts" / "worldline.py").read_text(encoding="utf-8")
+    for required_worldline_phrase in (
+        'REQUEST_FORMAT = "cd-worldline-request/v1"',
+        'VIEW_FORMAT = "cd-worldline-view/v1"',
+        "RUNTIME_VERSION = IMPLEMENTATION_VERSION",
+    ):
+        if required_worldline_phrase not in worldline_text:
+            errors.append(f"Worldline runtime contract is missing: {required_worldline_phrase}")
+    faultline_text = (
+        continuity_root / "scripts" / "error_neighborhood.py"
+    ).read_text(encoding="utf-8")
+    for required_faultline_phrase in (
+        'POLICY_VERSION = "cd-continuity-eligibility/v2"',
+        '"cd-error-neighborhood/v1"',
+        "operation_unsupported_v1",
+    ):
+        if required_faultline_phrase not in faultline_text:
+            errors.append(f"Faultline runtime contract is missing: {required_faultline_phrase}")
 
     fingerprint_path = MIND / "skills" / "augment-of-mind" / "assets" / "integrated-capability-fingerprint.json"
     fingerprint_builder_path = MIND / "scripts" / "build_integrated_fingerprint.py"
@@ -231,6 +335,13 @@ def verify(include_release: bool) -> dict:
             sys.dont_write_bytecode = prior_dont_write_bytecode
         observed_fingerprint = load_json(fingerprint_path)
         expected_fingerprint = module.build()
+        expected_capability_versions = {
+            item.get("name"): item.get("version")
+            for item in expected_fingerprint.get("capabilities", [])
+            if isinstance(item, dict)
+        }
+        if expected_capability_versions.get("cognitive-continuity") != CONTINUITY_VERSION:
+            errors.append("integrated fingerprint builder has a stale Cognitive Continuity version")
         if observed_fingerprint != expected_fingerprint:
             errors.append("integrated MIND capability fingerprint is stale")
             evidence["expected_integrated_fingerprint"] = expected_fingerprint
@@ -287,7 +398,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
 
     contract = load_json(
-        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.7.json"
+        MODEL_CONTEXT_CONTRACT
     )
     if contract.get("mind_version") != mind_version:
         errors.append("recorded model-context contract version does not match MIND")
@@ -313,7 +424,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.10**" not in package_map_text:
+    if f"Product: **Nova + MIND Free {PRODUCT_VERSION}**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")
@@ -402,7 +513,7 @@ def verify(include_release: bool) -> dict:
         "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, "
         "one NUL byte, and raw 32-byte file sha256; Python cache files excluded"
     )
-    if lock.get("product_version") != "2.0.10" or lock.get("tree_algorithm") != expected_tree_algorithm:
+    if lock.get("product_version") != PRODUCT_VERSION or lock.get("tree_algorithm") != expected_tree_algorithm:
         errors.append("source lock version or tree algorithm is stale")
     locked_records = {
         item.get("component"): item
@@ -495,10 +606,19 @@ def verify(include_release: bool) -> dict:
         if not required_asset.is_file():
             errors.append(f"required presentation asset missing: {required_asset.relative_to(ROOT)}")
 
+    selected_release_root = (
+        release_root.expanduser().resolve() if release_root is not None else ROOT / "dist"
+    )
     if include_release:
-        verify_release(errors)
+        verify_release(errors, selected_release_root)
 
     evidence.update({
+        "product_version": PRODUCT_VERSION,
+        "nova_plugin_version": NOVA_VERSION,
+        "mind_plugin_version": MIND_VERSION,
+        "mind_core_version": MIND_CORE_VERSION,
+        "cognitive_continuity_version": CONTINUITY_VERSION,
+        "continuity_workspace_schema_version": CONTINUITY_WORKSPACE_SCHEMA_VERSION,
         "nova_skill_count": len(nova_dirs),
         "mind_skill_count": len(mind_dirs),
         "faculty_count": len(FACULTIES),
@@ -508,17 +628,25 @@ def verify(include_release: bool) -> dict:
         "reminder_radius": profile.get("radius"),
         "reminder_qualification_state": profile.get("qualification_state"),
         "release_checked": include_release,
+        "release_root": display_path(selected_release_root) if include_release else None,
         "errors": errors,
         "status": "PASS" if not errors else "FAIL",
     })
     return evidence
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--release", action="store_true")
-    args = parser.parse_args()
-    evidence = verify(args.release)
+    parser.add_argument(
+        "--release-root",
+        type=Path,
+        metavar="DIST_PATH",
+        help="verify release artifacts at DIST_PATH instead of repository dist/; implies --release",
+    )
+    args = parser.parse_args(argv)
+    release_root = args.release_root.expanduser().resolve() if args.release_root else None
+    evidence = verify(args.release or release_root is not None, release_root)
     print(json.dumps(evidence, indent=2, ensure_ascii=False))
     return 0 if evidence["status"] == "PASS" else 1
 
