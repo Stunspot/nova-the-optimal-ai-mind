@@ -30,16 +30,16 @@
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "19ca6ff51e9889ff1e110ab156fb349fee7ef678",
+                        "source_commit":  "1bbaa1645cd8830179f6f9eb2b779941c62c35c0",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  309,
-                                            "tree_sha256":  "db88e67d512fc978c852a3f1430f285b111befeabea8304681c8c8e3d77fd3b4"
+                                            "tree_sha256":  "3f4a79e5a9e5c60d8391009bd59236e26b97c13273056fa0bdc09d6a0fad9506"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  309,
-                                              "tree_sha256":  "db88e67d512fc978c852a3f1430f285b111befeabea8304681c8c8e3d77fd3b4"
+                                              "tree_sha256":  "3f4a79e5a9e5c60d8391009bd59236e26b97c13273056fa0bdc09d6a0fad9506"
                                           },
                         "custody":  "integrated MIND 2.2.0 component checkpoint with Cognitive Continuity 0.2.0, Worldline, Faultline, and exact TestForge 1.1.7"
                     },
