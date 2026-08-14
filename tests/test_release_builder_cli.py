@@ -66,10 +66,26 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         self.assertIn('parser.add_argument(\n        "--replace"', text)
         self.assertIn('"--output-root"', text)
         self.assertIn("_assert_payload_is_tracked(tracked)", text)
+        self.assertIn("_assert_tracked_bytes_match_revision(tracked, revision)", text)
         self.assertIn("key=windows_stable_ordinal_key", text)
         self.assertIn("require_same_release(dist)", text)
         self.assertIn('"source_revision": revision', text)
         self.assertIn('"source_material_sha256": source_digest', text)
+
+    def test_builder_rejects_clean_but_byte_different_worktree(self) -> None:
+        with mock.patch.object(
+            BUILDER_MODULE,
+            "git_batch_output",
+            side_effect=[
+                ["same-object", "worktree-object"],
+                ["same-object", "revision-object"],
+            ],
+        ):
+            with self.assertRaisesRegex(RuntimeError, "raw tracked worktree bytes differ"):
+                BUILDER_MODULE._assert_tracked_bytes_match_revision(
+                    {"alpha.txt", "beta.txt"},
+                    "a" * 40,
+                )
 
     def test_source_digest_order_is_windows_stable_with_exact_case_tiebreak(self) -> None:
         paths = {"alpha/Z.md", "Alpha/z.md", "alpha/z.md", "beta.md"}

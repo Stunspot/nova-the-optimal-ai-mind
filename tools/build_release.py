@@ -93,6 +93,22 @@ def git_output(*arguments: str) -> str:
     return result.stdout.strip()
 
 
+def git_batch_output(arguments: tuple[str, ...], lines: list[str]) -> list[str]:
+    if any("\n" in line or "\r" in line for line in lines):
+        raise RuntimeError("tracked paths with line breaks are not supported")
+    result = subprocess.run(
+        ["git", "-C", str(ROOT), *arguments],
+        check=False,
+        capture_output=True,
+        input="".join(f"{line}\n" for line in lines),
+        text=True,
+        encoding="utf-8",
+    )
+    if result.returncode:
+        raise RuntimeError(f"Git command failed: {result.stderr.strip()}")
+    return result.stdout.splitlines()
+
+
 def _skipped(path: Path) -> bool:
     return any(part in SKIP_NAMES for part in path.parts) or path.suffix in SKIP_SUFFIXES
 
@@ -124,6 +140,33 @@ def _assert_payload_is_tracked(tracked: set[str]) -> None:
         )
 
 
+def _assert_tracked_bytes_match_revision(tracked: set[str], revision: str) -> None:
+    paths = sorted(tracked, key=windows_stable_ordinal_key)
+    worktree_ids = git_batch_output(
+        ("hash-object", "--no-filters", "--stdin-paths"),
+        paths,
+    )
+    revision_ids = git_batch_output(
+        ("cat-file", "--batch-check=%(objectname)"),
+        [f"{revision}:{relative}" for relative in paths],
+    )
+    if len(worktree_ids) != len(paths) or len(revision_ids) != len(paths):
+        raise RuntimeError("Git byte-parity scan returned an incomplete result")
+    mismatches = [
+        relative
+        for relative, worktree_id, revision_id in zip(paths, worktree_ids, revision_ids)
+        if worktree_id != revision_id
+    ]
+    if mismatches:
+        rendered = ", ".join(mismatches[:8])
+        suffix = " ..." if len(mismatches) > 8 else ""
+        raise RuntimeError(
+            "raw tracked worktree bytes differ from the committed revision: "
+            + rendered
+            + suffix
+        )
+
+
 def source_state() -> tuple[str, int, str, set[str]]:
     tracked_status = git_output("status", "--porcelain", "--untracked-files=no")
     if tracked_status:
@@ -133,6 +176,7 @@ def source_state() -> tuple[str, int, str, set[str]]:
         raise RuntimeError("git did not return a full source revision")
     tracked = {item.replace("\\", "/") for item in git_output("ls-files", "-z").split("\0") if item}
     _assert_payload_is_tracked(tracked)
+    _assert_tracked_bytes_match_revision(tracked, revision)
     digest = hashlib.sha256()
     counted = 0
     for relative in sorted(tracked, key=windows_stable_ordinal_key):
