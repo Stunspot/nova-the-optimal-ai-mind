@@ -2,7 +2,7 @@
 
 ## 2.2.1
 
-This patch carries Cognitive Continuity 0.2.1 over the existing workspace schema v2. The guarded Nova-successor migration mode repairs the live migration path without weakening ordinary external-target custody: it accepts only the active Continuity selector as source and an exact authorized absent sibling as destination, with registry, environment, path-digest, reparse, capability-overlap, and publication-time revalidation.
+This patch carries Cognitive Continuity 0.2.1 over the existing workspace schema v2. The guarded Nova-successor migration mode repairs the live migration path without weakening ordinary external-target custody: it accepts only the active Continuity selector as source and an exact authorized absent sibling as destination, with registry, environment, path-digest, reparse, capability-overlap, and publication-time revalidation. The registry locator is derived from `NOVA_DATA_ROOT`; no private workstation path is embedded in the portable payload.
 
 The copy remains source-preserving and selector-neutral. A migrated v2 candidate does not become live until its validation and rollback gates pass and a separately authorized selector switch is completed. Worldline and Faultline retain their 2.2.0 service contracts and no independent semver.
 

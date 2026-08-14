@@ -245,6 +245,15 @@ class FaultlineTests(WorkspaceCase):
 
 
 class SelectorAndCustodyTests(WorkspaceCase):
+    def test_default_registry_is_derived_from_nova_root_without_private_literal(self) -> None:
+        nova = self.base / "portable-nova"
+        with mock.patch.dict(os.environ, {"NOVA_DATA_ROOT": str(nova)}):
+            self.assertEqual(runtime._default_selector_registry(), nova / "estate" / "path-selectors.json")
+        with mock.patch.dict(os.environ, {}, clear=True):
+            self.assertEqual(runtime._default_selector_registry(), Path("estate") / "path-selectors.json")
+        runtime_source = (SCRIPTS / "workspace_runtime.py").read_text(encoding="utf-8")
+        self.assertNotIn("E:\\Indranet\\Nova", runtime_source)
+
     def _registry(self, root: Path, continuity: Path) -> Path:
         path = self.base / "selectors.json"
         value = {

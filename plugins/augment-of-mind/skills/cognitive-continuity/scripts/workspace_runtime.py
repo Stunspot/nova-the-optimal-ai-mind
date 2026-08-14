@@ -28,7 +28,17 @@ EXPORT_FORMAT = "cd-cognitive-continuity-export/v2"
 IMPLEMENTATION_VERSION = "0.2.1"
 SELECTOR = "NOVA_CONTINUITY_HOME"
 ROOT_SELECTOR = "NOVA_DATA_ROOT"
-SELECTOR_REGISTRY = Path(r"E:\Indranet\Nova\estate\path-selectors.json")
+
+
+def _default_selector_registry() -> Path:
+    raw_root = os.environ.get(ROOT_SELECTOR, "").strip()
+    candidate = Path(raw_root) if raw_root else None
+    if candidate is not None and candidate.is_absolute() and not any(part in {".", ".."} for part in candidate.parts):
+        return candidate / "estate" / "path-selectors.json"
+    return Path("estate") / "path-selectors.json"
+
+
+SELECTOR_REGISTRY = _default_selector_registry()
 LOCK_FORMAT = "cd-continuity-lock-owner/v1"
 TRANSACTION_FORMAT = "cd-continuity-transaction-journal/v1"
 RECEIPT_FORMAT = "cd-continuity-receipt/v2"
@@ -516,16 +526,13 @@ def _filesystem_adapter(root: Path) -> str:
 
 def _selector_custody_boundaries() -> list[Path]:
     """Return every active Nova custody boundary from one stable registry read."""
-    boundaries = {
-        SELECTOR_REGISTRY.resolve(),
-        Path(r"E:\Indranet\Nova\mind").resolve(),
-        Path(r"E:\Indranet\Nova\mind\receipts").resolve(),
-        Path(r"E:\Indranet\Nova\mind\qualification\egdod-r7-prepared-2026-08-12").resolve(),
-        Path(r"E:\Indranet\Nova\archive").resolve(),
-    }
+    boundaries = {SELECTOR_REGISTRY.resolve()}
     if SELECTOR_REGISTRY.is_file():
         _, registry, _ = _registry(SELECTOR_REGISTRY)
         active = registry["active_values"]
+        nova_root = _absolute_local(active.get(ROOT_SELECTOR), ROOT_SELECTOR)
+        boundaries.add((nova_root / "mind").resolve())
+        boundaries.add((nova_root / "archive").resolve())
         for selector_name, raw in active.items():
             selected = _absolute_local(raw, f"active selector {selector_name}")
             # File selectors own their containing capability directory; directory/root/home
