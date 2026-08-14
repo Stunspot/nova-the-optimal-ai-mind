@@ -1,7 +1,7 @@
 {
     "format":  "nova-free-source-lock/v1",
     "product":  "Nova + MIND Free",
-    "product_version":  "2.1.0",
+    "product_version":  "2.1.1",
     "generated_at":  "2026-08-14",
     "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
     "contest_repository_mutated":  false,
@@ -30,18 +30,18 @@
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "48065e1594289f023aee9264582f2cafb31ae602",
+                        "source_commit":  "d3216ce27e19e755566a1e01cb4f34566be5b990",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  309,
-                                            "tree_sha256":  "510e0614f40f9b3ad3e33efc7f6f0258a483abf432d48d182540544d650d209a"
+                                            "tree_sha256":  "87401697781e95621269579764ebe9899b3f81098d61f456eb7424830fcabe8b"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  309,
-                                              "tree_sha256":  "510e0614f40f9b3ad3e33efc7f6f0258a483abf432d48d182540544d650d209a"
+                                              "tree_sha256":  "87401697781e95621269579764ebe9899b3f81098d61f456eb7424830fcabe8b"
                                           },
-                        "custody":  "integrated MIND 2.2.0 component checkpoint with Cognitive Continuity 0.2.0, Worldline, Faultline, live-v1 compatibility and date-only semantic preservation, and exact TestForge 1.1.7"
+                        "custody":  "integrated MIND 2.2.1 component checkpoint with Cognitive Continuity 0.2.1, guarded Nova successor migration, Worldline, Faultline, live-v1 compatibility and date-only semantic preservation, and exact TestForge 1.1.7"
                     },
                     {
                         "component":  "software-verification",
