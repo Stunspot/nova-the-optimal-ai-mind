@@ -543,7 +543,7 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         },
         "augment-of-mind": {
             "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-            "commit": "a44272b092d111b6e37c26ee03e9a52471b536b6",
+            "commit": "c48a25b0a1d510d075bc3a519bbc5fab1c6afa33",
             "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },

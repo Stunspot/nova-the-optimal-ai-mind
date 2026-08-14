@@ -1,7 +1,7 @@
 {
     "format":  "nova-free-source-lock/v1",
     "product":  "Nova + MIND Free",
-    "product_version":  "2.1.1",
+    "product_version":  "2.1.2",
     "generated_at":  "2026-08-14",
     "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
     "contest_repository_mutated":  false,
@@ -30,18 +30,18 @@
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "a44272b092d111b6e37c26ee03e9a52471b536b6",
+                        "source_commit":  "c48a25b0a1d510d075bc3a519bbc5fab1c6afa33",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
                                             "file_count":  309,
-                                            "tree_sha256":  "da01873c0b8bc99f3ad0ea3b67c8358ebb9c2f5ac3ebf17fad911431cf7634bd"
+                                            "tree_sha256":  "6a43188921539744085b98d88d2894171d9e6f10fd520c872d8d1d2c0e4497d7"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
                                               "file_count":  309,
-                                              "tree_sha256":  "da01873c0b8bc99f3ad0ea3b67c8358ebb9c2f5ac3ebf17fad911431cf7634bd"
+                                              "tree_sha256":  "6a43188921539744085b98d88d2894171d9e6f10fd520c872d8d1d2c0e4497d7"
                                           },
-                        "custody":  "integrated MIND 2.2.1 component checkpoint with Cognitive Continuity 0.2.1, guarded Nova successor migration, lossless bounded legacy-content provenance, receipt-bound retained history, portable selector-registry derivation, Worldline, Faultline, live-v1 compatibility and date-only semantic preservation, and exact TestForge 1.1.7"
+                        "custody":  "integrated MIND 2.2.2 component checkpoint with Cognitive Continuity 0.2.2, explicit Worldline project-scope precedence, global-operative isolation, guarded Nova successor migration, lossless bounded legacy-content provenance, receipt-bound retained history, portable selector-registry derivation, Faultline, live-v1 compatibility and date-only semantic preservation, and exact TestForge 1.1.7"
                     },
                     {
                         "component":  "software-verification",
