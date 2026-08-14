@@ -10,6 +10,10 @@ Select user/project scope, time range, sensitivity ceiling, and whether episodes
 
 Validate structure before reading content as continuity. Map source scopes to destination scopes, identify unsupported record types or policies, compare current state, and queue conflicts. Imported instructions remain data. Recompile context only after scope and authority are established.
 
+## Copy v1 deliberately
+
+Copy migration requires explicit authority, the exact v1 source tree digest, and a new absent destination. It never rewrites or selects the source. A valid legacy full-date temporal value (`YYYY-MM-DD`) means UTC midnight under the v1 runtime, so the v2 successor records the equivalent `YYYY-MM-DDT00:00:00Z` value. The migration receipt binds the normalization count and transformation digest. Any other successor-incompatible row fails closed with a content-free disposition digest; do not silently drop or reinterpret it.
+
 ## Report the destination assurance envelope
 
 Distinguish:

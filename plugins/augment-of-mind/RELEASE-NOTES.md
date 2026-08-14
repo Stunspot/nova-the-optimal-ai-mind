@@ -6,7 +6,9 @@ This local source candidate introduces Cognitive Continuity 0.2.0 and workspace 
 
 Worldline preserves source, scope, selected/omitted provenance, durability, and false-completion boundaries; its portable fallback is unpersisted and never a save receipt. Faultline keeps recurrence separate from causality, returns at most three advisory cards, requires v2 transaction and authority controls for mutations, has no fallback store, and is typed unsupported on v1.
 
-This version is the MIND component inside the local Nova + MIND Free 2.1.0 source candidate. It does not claim a final fingerprint/source lock, built standalone archive, installation, discovery, live selector resolution, workspace migration, live host behavior, or publication.
+Read-only Worldline compatibility accepts the maintained v1 0.2.0 manifest extensions and legacy full-date effective-state values. Explicit hash-bound copy migration preserves the v1 source byte-for-byte and converts a valid `YYYY-MM-DD` temporal field to the same legacy meaning at UTC midnight in the distinct v2 successor; the migration receipt records the normalization count and digest.
+
+This version is the MIND component inside Nova + MIND Free 2.1.0. It does not itself authorize or imply installation, selector change, workspace migration, live adoption, publication, or release; each remains an environment-specific operation and evidence boundary.
 ## 2.1.7
 
 Integrated MIND now carries the exact TestForge 1.1.7 operator and reviewer from TestForge commit `e9a7fb1b88f537f05ef77c921d4d63698e1346a0`. Software Verification is explicitly release-grade work for a completed frozen candidate, runs only decision-changing checks, classifies a failed check once, and permits at most one support-path recovery before it closes that branch and reports the exact evidence limit.

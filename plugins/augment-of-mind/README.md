@@ -32,6 +32,8 @@ Cognitive Continuity 0.2.0 carries workspace schema v2. Worldline is Nova's read
 
 Plugin installation does not create, select, or migrate a Continuity workspace. Worldline may return an explicitly unpersisted portable view only from sufficient source-linked caller material; Faultline has no fallback store and is typed unsupported on v1.
 
+An explicit copy migration is authority- and source-hash-bound, writes only to a new absent v2 destination, and leaves v1 bytes unchanged. Valid legacy full-date effective values retain their UTC-midnight meaning in the successor, with the deterministic normalization count and digest recorded in the migration receipt.
+
 ## TestForge is included
 
 TestForge ships with MIND because verification is foundational. Software Verification builds an evidence case against a finished readiness claim. Verification Reviewer independently attacks that case. They are attached Augments, not cognitive Faculties, so MIND still has exactly sixteen Faculties.

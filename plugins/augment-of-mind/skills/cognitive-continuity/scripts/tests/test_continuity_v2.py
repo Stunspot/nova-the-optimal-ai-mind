@@ -692,14 +692,21 @@ class CompatibilityAndRecoveryTests(WorkspaceCase):
         legacy = self.base / "legacy"
         initialized = subprocess.run([
             sys.executable, str(legacy_store), "init", str(legacy),
-            "--user", "user", "--project", "project", "--agent", "nova",
+            "--user", "user", "--project", "*", "--agent", "nova",
         ], text=True, capture_output=True, timeout=30)
         self.assertEqual(initialized.returncode, 0, initialized.stderr)
         added = subprocess.run([
             sys.executable, str(legacy_store), "episode", str(legacy), "--type", "assertion",
             "--content", "legacy migration source", "--source-kind", "user", "--authority", "user-stunspot",
+            "--valid-from", "2000-01-01",
         ], text=True, capture_output=True, timeout=30)
         self.assertEqual(added.returncode, 0, added.stderr)
+        manifest_path = legacy / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest["version"] = "0.2.0"
+        manifest["policies"]["scope_model"] = "harness-global"
+        manifest["capabilities"]["transactional_init"] = True
+        manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n", encoding="utf-8")
         before = inventory(legacy)
         opened = self.cli(STORE, "open", legacy)
         self.assertEqual(opened["compatibility_mode"], "v1_read_only")
@@ -732,10 +739,15 @@ class CompatibilityAndRecoveryTests(WorkspaceCase):
             "--source-tree-sha256", digest,
         )
         self.assertEqual(receipt["kind"], "migration-copied")
+        self.assertEqual(receipt["mapping_policy"], "legacy-full-date-normalization/v2")
+        self.assertEqual(receipt["mapping"]["normalized_temporal_fields"], 1)
         self.assertEqual(inventory(legacy), before)
         manifest = json.loads((destination / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(manifest["format"], runtime.FORMAT)
         self.assertEqual(manifest["migrated_from"]["source_tree_sha256"], digest)
+        self.assertEqual(manifest["migrated_from"]["temporal_normalization_count"], 1)
+        migrated_episode = runtime.read_jsonl(destination / "episodes" / "events.jsonl")[0]
+        self.assertEqual(migrated_episode["valid_from"], "2000-01-01T00:00:00Z")
         self.cli(VALIDATE, destination)
 
 

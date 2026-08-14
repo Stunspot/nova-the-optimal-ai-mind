@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -254,6 +254,13 @@ class SchemaCatalog:
                         raise ValueError("date-time lacks timezone")
                 except ValueError:
                     errors.append(f"{location}: invalid RFC3339-compatible date-time")
+            elif schema.get("format") == "date":
+                try:
+                    parsed_date = date.fromisoformat(instance)
+                    if parsed_date.isoformat() != instance:
+                        raise ValueError("date is not canonical YYYY-MM-DD")
+                except ValueError:
+                    errors.append(f"{location}: invalid RFC3339 full-date")
 
         if isinstance(instance, (int, float)) and not isinstance(instance, bool):
             if "minimum" in schema and instance < schema["minimum"]:

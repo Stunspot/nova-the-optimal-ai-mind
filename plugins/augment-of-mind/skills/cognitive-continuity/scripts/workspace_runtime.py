@@ -1479,6 +1479,37 @@ def initialize_workspace(
             shutil.rmtree(root, ignore_errors=True)
         raise
 
+def _normalize_legacy_temporal_rows(source_rows: dict[str, list[dict[str, Any]]]) -> tuple[dict[str, list[dict[str, Any]]], list[dict[str, Any]]]:
+    fields = {
+        "episodes.jsonl": ("valid_from", "valid_to"),
+        "state.jsonl": ("valid_from", "valid_to", "expires_at"),
+        "proposals.jsonl": (),
+    }
+    migrated: dict[str, list[dict[str, Any]]] = {}
+    transformations: list[dict[str, Any]] = []
+    for member, rows in source_rows.items():
+        converted: list[dict[str, Any]] = []
+        for index, row in enumerate(rows):
+            mapped = dict(row)
+            for field in fields.get(member, ()):
+                value = mapped.get(field)
+                if not isinstance(value, str) or len(value) != 10:
+                    continue
+                try:
+                    parsed = datetime.strptime(value, "%Y-%m-%d")
+                except ValueError:
+                    continue
+                if parsed.strftime("%Y-%m-%d") != value:
+                    continue
+                mapped[field] = f"{value}T00:00:00Z"
+                transformations.append({
+                    "member": member, "row": index, "row_id": str(row.get("id") or ""),
+                    "field": field, "policy": "legacy-full-date-as-utc-midnight",
+                })
+            converted.append(mapped)
+        migrated[member] = converted
+    return migrated, transformations
+
 def migrate_copy(
     source_value: str, destination_value: str, *, authority: str,
     expected_source_tree_sha256: str,
@@ -1508,6 +1539,8 @@ def migrate_copy(
         "state.jsonl": _read_jsonl_path(source / "state" / "records.jsonl"),
         "proposals.jsonl": _read_jsonl_path(source / "proposals" / "proposals.jsonl"),
     }
+    migrated_rows, temporal_transformations = _normalize_legacy_temporal_rows(source_rows)
+    temporal_normalization_digest = sha256_bytes(dump_canonical(temporal_transformations).encode("utf-8"))
     schema_pairs = {
         "episodes.jsonl": ("episode.schema.json", "episode-v2.schema.json"),
         "state.jsonl": ("state-record.schema.json", "state-record-v2.schema.json"),
@@ -1518,7 +1551,7 @@ def migrate_copy(
         legacy_schema, successor_schema = schema_pairs[member]
         for index, row in enumerate(rows):
             legacy_errors = catalog.validate(row, legacy_schema)
-            successor_errors = catalog.validate(row, successor_schema)
+            successor_errors = catalog.validate(migrated_rows[member][index], successor_schema)
             if contains_secret_data(row):
                 unsupported.append({"member": member, "row": index, "disposition": "redaction_rejected"})
             elif legacy_errors:
@@ -1560,6 +1593,8 @@ def migrate_copy(
             "policy": "cd-continuity-copy-migration/v2",
             "legacy_receipt_provenance_sha256": receipt_provenance_digest,
             "legacy_receipt_file_count": len(receipt_files),
+            "temporal_normalization_count": len(temporal_transformations),
+            "temporal_normalization_sha256": temporal_normalization_digest,
         }
         transaction_id = new_id("TX")
         key = f"migrate:{source_digest_before}"
@@ -1575,14 +1610,15 @@ def migrate_copy(
                 "source_workspace_id": source_manifest.get("workspace_id"), "source_format": LEGACY_FORMAT,
                 "source_tree_sha256": source_digest_before, "source_tree_sha256_after": source_after,
                 "canonical_source_changed": False,
-                "mapping": {"episodes": len(source_rows["episodes.jsonl"]), "state": len(source_rows["state.jsonl"]), "proposals": len(source_rows["proposals.jsonl"]), "unsupported": 0},
-                "mapping_policy": "schema-valid-identity-copy/v2",
+                "mapping": {"episodes": len(source_rows["episodes.jsonl"]), "state": len(source_rows["state.jsonl"]), "proposals": len(source_rows["proposals.jsonl"]), "unsupported": 0, "normalized_temporal_fields": len(temporal_transformations)},
+                "mapping_policy": "legacy-full-date-normalization/v2" if temporal_transformations else "schema-valid-identity-copy/v2",
+                "temporal_normalization_sha256": temporal_normalization_digest,
                 "legacy_receipt_provenance_sha256": receipt_provenance_digest,
                 "legacy_receipt_file_count": len(receipt_files),
                 "legacy_receipt_disposition": "digest-bound-not-promoted-to-v2-authority",
             },
         )
-        rows = {name: list(source_rows.get(name, [])) for name in MEMBERS}
+        rows = {name: list(migrated_rows.get(name, [])) for name in MEMBERS}
         rows["receipts.jsonl"] = [receipt]
         rows["idempotency.jsonl"] = [idempotency]
         _publish_initial_workspace(destination, manifest, rows, transaction_id, "migrate-copy")

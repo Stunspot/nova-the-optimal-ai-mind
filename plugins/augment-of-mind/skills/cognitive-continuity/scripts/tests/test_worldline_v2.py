@@ -370,15 +370,21 @@ class WorldlineV2Tests(unittest.TestCase):
             )
             self.assertEqual(0, result.returncode, result.stderr)
             return json.loads(result.stdout)
-        run("init", str(root), "--user", "demo-user", "--project", "demo-project", "--agent", "nova")
+        run("init", str(root), "--user", "demo-user", "--project", "*", "--agent", "nova")
         source = run(
             "episode", str(root), "--type", "commitment", "--content", "Resume legacy work",
-            "--source-kind", "user", "--authority", "user-test",
+            "--source-kind", "user", "--authority", "user-test", "--valid-from", "2000-01-01",
         )["episode_id"]
         run(
             "record", str(root), "--kind", "commitment", "--content", "Resume legacy work",
-            "--source-ids", source, "--authority", "user-test",
+            "--source-ids", source, "--authority", "user-test", "--valid-from", "2000-01-01",
         )
+        manifest_path = root / "manifest.json"
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest["version"] = "0.2.0"
+        manifest["policies"]["scope_model"] = "harness-global"
+        manifest["capabilities"]["transactional_init"] = True
+        manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n", encoding="utf-8")
         before = tree_digest(root)
         view = worldline.compile_worldline(self.request(root, mode="resume"))
         self.assertEqual("v1_read_only", view["workspace"]["compatibility_mode"])
