@@ -198,7 +198,16 @@ def cmd_init(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def cmd_migrate_copy(args: argparse.Namespace) -> dict[str, Any]:
-    return migrate_copy(args.source, args.destination, authority=require_human_authority(args.authority), expected_source_tree_sha256=args.source_tree_sha256)
+    return migrate_copy(
+        args.source,
+        args.destination,
+        authority=require_human_authority(args.authority),
+        expected_source_tree_sha256=args.source_tree_sha256,
+        destination_mode=args.destination_mode,
+        grant_id=args.destination_grant_id,
+        expected_selector_registry_sha256=args.expected_selector_registry_sha256,
+        expected_destination_sha256=args.expected_destination_path_sha256,
+    )
 
 
 def _open(args: argparse.Namespace, *, writable: bool) -> tuple[Path, str]:
@@ -1558,6 +1567,14 @@ def parser() -> argparse.ArgumentParser:
     migrate.add_argument("destination")
     migrate.add_argument("--authority", required=True)
     migrate.add_argument("--source-tree-sha256", required=True)
+    migrate.add_argument(
+        "--destination-mode",
+        choices=["generic_external", "nova_guarded_successor"],
+        default="generic_external",
+    )
+    migrate.add_argument("--destination-grant-id")
+    migrate.add_argument("--expected-selector-registry-sha256")
+    migrate.add_argument("--expected-destination-path-sha256")
     migrate.set_defaults(func=cmd_migrate_copy)
 
     episode = sub.add_parser("episode", help="Append a source episode")

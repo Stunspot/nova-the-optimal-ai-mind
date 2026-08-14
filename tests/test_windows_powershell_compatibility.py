@@ -59,7 +59,7 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
     def test_verifier_reports_total_and_active_estate_sizes(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         for required in (
-            "expected_version = '2.2.0'",
+            "expected_version = '2.2.1'",
             "total_capabilities = [int]$inspection.counts.capabilities",
             "total_cards = [int]$inspection.counts.capability_cards",
             "total_vectors = [int]$inspection.counts.associative_view_vectors",

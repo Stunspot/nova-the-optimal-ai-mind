@@ -1,5 +1,13 @@
 # MIND release notes
 
+## 2.2.1
+
+This patch carries Cognitive Continuity 0.2.1 over the existing workspace schema v2. The guarded Nova-successor migration mode repairs the live migration path without weakening ordinary external-target custody: it accepts only the active Continuity selector as source and an exact authorized absent sibling as destination, with registry, environment, path-digest, reparse, capability-overlap, and publication-time revalidation.
+
+The copy remains source-preserving and selector-neutral. A migrated v2 candidate does not become live until its validation and rollback gates pass and a separately authorized selector switch is completed. Worldline and Faultline retain their 2.2.0 service contracts and no independent semver.
+
+This version is the MIND component inside Nova + MIND Free 2.1.1. It does not imply publication or a public release.
+
 ## 2.2.0
 
 This local source candidate introduces Cognitive Continuity 0.2.0 and workspace schema v2 while MIND Core remains 0.2.0. Worldline provides deterministic read-only `resume`, `status`, `checkpoint`, and `inspect` views over Continuity-owned state. Faultline provides the bounded, expiring Error Neighborhood and governed occurrence/pattern lifecycle. They are named services over Cognitive Continuity, not new Faculties, attached Augments, stores, routers, or independently versioned products.

@@ -46,7 +46,7 @@ MIND also includes Capability Promotion and TestForge. Capability Promotion help
 
 **Dunbar** supports user-governed memory about people and relationships.
 
-**Cognitive Continuity 0.2.0** preserves consequential state across tasks and interruptions in governed workspace schema v2. Supported v1 state remains readable where the operation allows it; migration is explicit and copy-based.
+**Cognitive Continuity 0.2.1** preserves consequential state across tasks and interruptions in governed workspace schema v2. Supported v1 state remains readable where the operation allows it; migration is explicit and copy-based.
 
 **Worldline** is Nova's read-only project-continuity service over that state. `resume`, `status`, `checkpoint`, and `inspect` expose source-linked decisions, commitments, blockers, next actions, artifacts, chronology, and conflicts without writing or claiming completion. A portable checkpoint is unpersisted and is never a save receipt.
 

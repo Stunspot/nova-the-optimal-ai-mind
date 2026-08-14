@@ -28,7 +28,7 @@ Capability Promotion gives that layer one crucial bit of self-maintenance: when 
 
 ## Project continuity and error recall
 
-Cognitive Continuity 0.2.0 carries workspace schema v2. Worldline is Nova's read-only project-continuity view over that governed state: `resume`, `status`, `checkpoint`, and `inspect` preserve source and durability boundaries, and a checkpoint never claims a save. Faultline exposes a zero-to-three-card expiring Error Neighborhood when a materially similar failure could change the next check. Its cards are advisory evidence, not cause, permission, routing, repair, or proof of safety.
+Cognitive Continuity 0.2.1 carries workspace schema v2. Worldline is Nova's read-only project-continuity view over that governed state: `resume`, `status`, `checkpoint`, and `inspect` preserve source and durability boundaries, and a checkpoint never claims a save. Faultline exposes a zero-to-three-card expiring Error Neighborhood when a materially similar failure could change the next check. Its cards are advisory evidence, not cause, permission, routing, repair, or proof of safety.
 
 Plugin installation does not create, select, or migrate a Continuity workspace. Worldline may return an explicitly unpersisted portable view only from sufficient source-linked caller material; Faultline has no fallback store and is typed unsupported on v1.
 

@@ -15,11 +15,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NOVA = ROOT / "plugins" / "nova-the-optimal-ai"
 MIND = ROOT / "plugins" / "augment-of-mind"
-PRODUCT_VERSION = "2.1.0"
+PRODUCT_VERSION = "2.1.1"
 NOVA_VERSION = "2.1.0"
-MIND_VERSION = "2.2.0"
+MIND_VERSION = "2.2.1"
 MIND_CORE_VERSION = "0.2.0"
-CONTINUITY_VERSION = "0.2.0"
+CONTINUITY_VERSION = "0.2.1"
 CONTINUITY_WORKSPACE_SCHEMA_VERSION = 2
 MODEL_CONTEXT_CONTRACT = (
     ROOT / "verification" / "associative-smoke" / f"model-context-contract-v{MIND_VERSION}.json"

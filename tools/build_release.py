@@ -15,7 +15,7 @@ import zlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "2.1.0"
+VERSION = "2.1.1"
 KIT_NAME = f"nova-mind-free-v{VERSION}"
 PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
 SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}
@@ -370,7 +370,7 @@ def main(argv: list[str] | None = None) -> int:
         "source_revision": revision,
         "source_material_file_count": source_file_count,
         "source_material_sha256": source_digest,
-        "plugin_versions": {"nova-the-optimal-ai": "2.1.0", "augment-of-mind": "2.2.0"},
+        "plugin_versions": {"nova-the-optimal-ai": "2.1.0", "augment-of-mind": "2.2.1"},
         "codex_plugins": list(PLUGIN_NAMES),
         "claude_skill_count": len(sources),
         "claude_skills": sorted(sources),

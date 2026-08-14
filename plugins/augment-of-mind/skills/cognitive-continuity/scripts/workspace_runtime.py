@@ -25,7 +25,7 @@ from eligibility_policy import contains_secret_data
 LEGACY_FORMAT = "cd-cognitive-continuity/v1"
 FORMAT = "cd-cognitive-continuity/v2"
 EXPORT_FORMAT = "cd-cognitive-continuity-export/v2"
-IMPLEMENTATION_VERSION = "0.2.0"
+IMPLEMENTATION_VERSION = "0.2.1"
 SELECTOR = "NOVA_CONTINUITY_HOME"
 ROOT_SELECTOR = "NOVA_DATA_ROOT"
 SELECTOR_REGISTRY = Path(r"E:\Indranet\Nova\estate\path-selectors.json")
@@ -51,6 +51,16 @@ class ResolutionToken:
 
     def __str__(self) -> str:
         return self.provenance
+
+@dataclass(frozen=True)
+class NovaMigrationGrant:
+    grant_id: str
+    registry_path: str
+    registry_digest: str
+    custody_root: str
+    ambient_root: str
+    destination_root: str
+    destination_sha256: str
 
 class ContinuityError(RuntimeError):
     def __init__(self, message: str, code: str = "operation_failed"):
@@ -558,6 +568,133 @@ def validate_external_target(source_root: Path, value: str, label: str, *, must_
     if must_be_absent and target.exists():
         raise ContinuityError(f"{label} must be absent", "protected_target_denied")
     return target
+
+def _path_identity(path: Path) -> str:
+    return os.path.normcase(str(path.resolve()))
+
+
+def _corroborate_nova_migration_environment(custody_root: Path, ambient: Path) -> None:
+    observed_root = os.environ.get(ROOT_SELECTOR)
+    observed_continuity = os.environ.get(SELECTOR)
+    if not observed_root or _path_identity(_absolute_local(observed_root, ROOT_SELECTOR)) != _path_identity(custody_root):
+        raise ContinuityError("Process NOVA_DATA_ROOT disagrees with the trusted registry", "nova_root_mismatch")
+    if not observed_continuity or _path_identity(_absolute_local(observed_continuity, SELECTOR)) != _path_identity(ambient):
+        raise ContinuityError("Process NOVA_CONTINUITY_HOME disagrees with the trusted registry", "continuity_selector_mismatch")
+
+
+def validate_nova_migration_destination(
+    source_root: Path,
+    value: str,
+    label: str,
+    *,
+    grant_id: str,
+    expected_registry_sha256: str,
+    expected_destination_sha256: str,
+    must_be_absent: bool = False,
+) -> tuple[Path, NovaMigrationGrant]:
+    """Authorize only an exact new sibling of the active Nova Continuity store."""
+    if not isinstance(grant_id, str) or not grant_id.strip():
+        raise ContinuityError("Nova copy migration requires a recorded grant ID", "authority_denied")
+    if contains_secret_data(grant_id):
+        raise ContinuityError("Migration grant ID failed redaction", "redaction_rejected")
+    expected_registry = str(expected_registry_sha256 or "").strip().casefold()
+    expected_destination = str(expected_destination_sha256 or "").strip().casefold()
+    if len(expected_registry) != 64 or any(char not in "0123456789abcdef" for char in expected_registry):
+        raise ContinuityError("Nova copy migration requires an exact selector registry SHA-256", "selector_registry_invalid")
+    if len(expected_destination) != 64 or any(char not in "0123456789abcdef" for char in expected_destination):
+        raise ContinuityError("Nova copy migration requires an exact normalized destination SHA-256", "selector_registry_invalid")
+
+    registry_path, custody_root, ambient, registry, digest = _nova_registry_values()
+    if digest != expected_registry:
+        raise ContinuityError("Trusted Nova selector registry does not match the migration grant", "selector_registry_changed")
+    _corroborate_nova_migration_environment(custody_root, ambient)
+    source = source_root.resolve()
+    if _path_identity(source) != _path_identity(ambient):
+        raise ContinuityError("Nova copy migration source is not the active Continuity selector", "caller_root_denied")
+
+    provided = str(value or "")
+    raw = provided.strip()
+    if provided != raw:
+        raise ContinuityError(f"{label} has ambiguous surrounding whitespace", "protected_target_denied")
+    lexical = Path(os.path.abspath(raw))
+    if lexical.name.rstrip(" .") != lexical.name:
+        raise ContinuityError(f"{label} has an alias-prone Windows name", "protected_target_denied")
+    if _has_reparse_component(lexical):
+        raise ContinuityError(f"{label} crosses an unverified reparse edge", "custody_reparse_escape")
+    target = _absolute_local(raw, label)
+    _within(custody_root, target, "caller_root_denied")
+    if _path_identity(target.parent) != _path_identity(ambient.parent):
+        raise ContinuityError(f"{label} must be a sibling of the active Continuity store", "protected_target_denied")
+    if source == target or source in target.parents or target in source.parents:
+        raise ContinuityError("Migration requires a distinct non-nested destination", "protected_target_denied")
+    if ".codex" in {part.casefold() for part in target.parts}:
+        raise ContinuityError(f"{label} cannot use host .codex custody", "protected_target_denied")
+
+    for selector_name, selected_raw in registry["active_values"].items():
+        if selector_name == ROOT_SELECTOR:
+            continue
+        selected = _absolute_local(selected_raw, f"active selector {selector_name}")
+        suffix = selected.suffix.casefold()
+        boundary = selected.parent if suffix or selector_name.endswith(("_STORE", "_DATABASE")) else selected
+        if _is_within(target, boundary) or _is_within(boundary, target):
+            raise ContinuityError(f"{label} overlaps active capability selector {selector_name}", "protected_target_denied")
+
+    destination_sha256 = sha256_bytes(_path_identity(target).encode("utf-8"))
+    if destination_sha256 != expected_destination:
+        raise ContinuityError("Migration destination does not match the exact recorded grant", "authority_denied")
+    _filesystem_adapter(target)
+    if must_be_absent and target.exists():
+        raise ContinuityError(f"{label} must be absent", "protected_target_denied")
+    _, _, final_digest = _registry(registry_path)
+    if final_digest != digest:
+        raise ContinuityError("Trusted Nova selector registry changed during destination authorization", "selector_registry_changed")
+    return target, NovaMigrationGrant(
+        grant_id=grant_id.strip(),
+        registry_path=str(registry_path),
+        registry_digest=digest,
+        custody_root=str(custody_root),
+        ambient_root=str(ambient),
+        destination_root=str(target),
+        destination_sha256=destination_sha256,
+    )
+
+
+def revalidate_nova_migration_grant(
+    token: NovaMigrationGrant,
+    source_root: Path,
+    destination: Path,
+    *,
+    require_destination_absent: bool,
+) -> None:
+    registry_path, custody_root, ambient, registry, digest = _nova_registry_values(Path(token.registry_path))
+    if digest != token.registry_digest:
+        raise ContinuityError("Trusted Nova selector registry changed during copy migration", "selector_registry_changed")
+    if _path_identity(registry_path) != _path_identity(Path(token.registry_path)):
+        raise ContinuityError("Trusted Nova selector registry identity changed", "selector_registry_changed")
+    if _path_identity(custody_root) != _path_identity(Path(token.custody_root)):
+        raise ContinuityError("Trusted Nova custody root changed during copy migration", "selector_registry_changed")
+    if _path_identity(ambient) != _path_identity(Path(token.ambient_root)):
+        raise ContinuityError("Active Continuity selector changed during copy migration", "selector_registry_changed")
+    _corroborate_nova_migration_environment(custody_root, ambient)
+    if _path_identity(source_root) != _path_identity(ambient):
+        raise ContinuityError("Copy migration source is no longer the active Continuity selector", "selector_registry_changed")
+    if _path_identity(destination) != _path_identity(Path(token.destination_root)):
+        raise ContinuityError("Copy migration destination changed after authorization", "selector_registry_changed")
+    if sha256_bytes(_path_identity(destination).encode("utf-8")) != token.destination_sha256:
+        raise ContinuityError("Copy migration destination grant no longer matches", "selector_registry_changed")
+    if _has_reparse_component(source_root) or _has_reparse_component(destination):
+        raise ContinuityError("Copy migration path crossed a reparse edge", "custody_reparse_escape")
+    for selector_name, selected_raw in registry["active_values"].items():
+        if selector_name == ROOT_SELECTOR:
+            continue
+        selected = _absolute_local(selected_raw, f"active selector {selector_name}")
+        suffix = selected.suffix.casefold()
+        boundary = selected.parent if suffix or selector_name.endswith(("_STORE", "_DATABASE")) else selected
+        if _is_within(destination, boundary) or _is_within(boundary, destination):
+            raise ContinuityError("Copy migration destination now overlaps an active capability selector", "selector_registry_changed")
+    _filesystem_adapter(destination)
+    if require_destination_absent and destination.exists():
+        raise ContinuityError("Migration destination must remain absent until publication begins", "protected_target_denied")
 
 _PROCESS_STARTED_AT = utc_now()
 _RUNTIME_SESSION_ID = uuid.uuid4().hex
@@ -1513,13 +1650,46 @@ def normalize_legacy_temporal_rows(source_rows: dict[str, list[dict[str, Any]]])
 def migrate_copy(
     source_value: str, destination_value: str, *, authority: str,
     expected_source_tree_sha256: str,
+    destination_mode: str = "generic_external",
+    grant_id: str | None = None,
+    expected_selector_registry_sha256: str | None = None,
+    expected_destination_sha256: str | None = None,
 ) -> dict[str, Any]:
     if not authority or not authority.strip():
         raise ContinuityError("Copy migration requires explicit authority", "authority_denied")
     if contains_secret_data(authority):
         raise ContinuityError("Migration authority identifier failed redaction", "redaction_rejected")
     source = _absolute_local(source_value, "source workspace")
-    destination = validate_external_target(source, destination_value, "migration destination", must_be_absent=True)
+    nova_grant: NovaMigrationGrant | None = None
+    if destination_mode == "generic_external":
+        if grant_id or expected_selector_registry_sha256 or expected_destination_sha256:
+            raise ContinuityError("Generic migration cannot consume a Nova destination grant", "authority_denied")
+        destination = validate_external_target(source, destination_value, "migration destination", must_be_absent=True)
+        destination_selection: dict[str, Any] = {"mode": "generic_external"}
+    elif destination_mode == "nova_guarded_successor":
+        if not authority.lower().startswith(("user", "human", "stunspot")):
+            raise ContinuityError("Nova copy migration requires recorded human authority", "authority_denied")
+        destination, nova_grant = validate_nova_migration_destination(
+            source,
+            destination_value,
+            "migration destination",
+            grant_id=str(grant_id or ""),
+            expected_registry_sha256=str(expected_selector_registry_sha256 or ""),
+            expected_destination_sha256=str(expected_destination_sha256 or ""),
+            must_be_absent=True,
+        )
+        destination_selection = {
+            "mode": "nova_guarded_successor",
+            "grant_id": nova_grant.grant_id,
+            "selector_registry_sha256": nova_grant.registry_digest,
+            "destination_path_sha256": nova_grant.destination_sha256,
+            "destination_path_digest_policy": "normalized-absolute-path-os-normcase-utf8/v1",
+            "source_selector": SELECTOR,
+            "source_was_active": True,
+            "destination_relation": "same-parent-sibling",
+        }
+    else:
+        raise ContinuityError(f"Unsupported migration destination mode: {destination_mode}", "selector_registry_invalid")
     if source == destination or source in destination.parents or destination in source.parents:
         raise ContinuityError("Migration requires a distinct non-nested destination", "protected_target_denied")
     if _has_reparse_component(source):
@@ -1575,6 +1745,8 @@ def migrate_copy(
         for item in sorted(path for path in receipts_root.rglob("*") if path.is_file()):
             receipt_files.append({"path": item.relative_to(source).as_posix(), "sha256": sha256_file(item), "bytes": item.stat().st_size})
     receipt_provenance_digest = sha256_bytes(dump_canonical(receipt_files).encode("utf-8"))
+    if nova_grant:
+        revalidate_nova_migration_grant(nova_grant, source, destination, require_destination_absent=True)
     destination.mkdir(parents=True, exist_ok=False)
     try:
         for name in ("generations", "transactions", "locks", "quarantine"):
@@ -1596,17 +1768,20 @@ def migrate_copy(
             "temporal_normalization_count": len(temporal_transformations),
             "temporal_normalization_sha256": temporal_normalization_digest,
         }
+        if nova_grant:
+            manifest["migrated_from"]["destination_selection"] = destination_selection
         transaction_id = new_id("TX")
         key = f"migrate:{source_digest_before}"
-        payload = {"source_digest": source_digest_before, "destination_digest": sha256_bytes(str(destination).encode("utf-8")), "authority": authority}
+        payload = {"source_digest": source_digest_before, "destination_digest": sha256_bytes(str(destination).encode("utf-8")), "authority": authority, "destination_selection": destination_selection}
         digest = request_digest("migrate-copy", payload)
         source_after = tree_digest(source)
         if source_after != source_digest_before:
             raise ContinuityError("Migration source changed before destination publication", "source_changed")
         receipt, idempotency = _initial_receipt_and_idempotency(
             manifest, transaction_id=transaction_id, operation="migrate-copy", kind="migration-copied",
-            selector="generic_explicit", authority=authority, key=key, request_digest_value=digest,
+            selector=(f"nova_guarded_successor:{nova_grant.grant_id}:{nova_grant.registry_digest[:16]}" if nova_grant else "generic_explicit"), authority=authority, key=key, request_digest_value=digest,
             details={
+                "destination_selection": destination_selection,
                 "source_workspace_id": source_manifest.get("workspace_id"), "source_format": LEGACY_FORMAT,
                 "source_tree_sha256": source_digest_before, "source_tree_sha256_after": source_after,
                 "canonical_source_changed": False,
@@ -1621,7 +1796,11 @@ def migrate_copy(
         rows = {name: list(migrated_rows.get(name, [])) for name in MEMBERS}
         rows["receipts.jsonl"] = [receipt]
         rows["idempotency.jsonl"] = [idempotency]
+        if nova_grant:
+            revalidate_nova_migration_grant(nova_grant, source, destination, require_destination_absent=False)
         _publish_initial_workspace(destination, manifest, rows, transaction_id, "migrate-copy")
+        if nova_grant:
+            revalidate_nova_migration_grant(nova_grant, source, destination, require_destination_absent=False)
         if tree_digest(source) != source_digest_before:
             raise ContinuityError("Migration source changed during copy", "source_changed")
         return receipt

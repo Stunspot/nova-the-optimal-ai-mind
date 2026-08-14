@@ -23,11 +23,11 @@ Use one enabled Nova and one enabled MIND source in a task. Two copies can expos
 4. Inspect and trust the new hook bytes separately; trust does not transfer across changed files.
 5. Run `verify-install.ps1` and repeat the fresh-task discovery check.
 
-Nova + MIND Free 2.1.0 does not include an automatic MIND Core estate merger or Cognitive Continuity workspace migration. Different database paths and continuity selectors identify different stores.
+Nova + MIND Free 2.1.1 does not automatically merge MIND Core estates or switch a Cognitive Continuity selector. Different database paths and continuity selectors identify different stores.
 
 ## Upgrade Cognitive Continuity deliberately
 
-Continuity 0.2.0 uses workspace schema v2. Probe the existing workspace read-only before choosing a runtime. Supported v1 operations remain read-only; Faultline is typed unsupported on v1. Do not initialize or mutate a workspace merely to satisfy a Worldline or Faultline request.
+Continuity 0.2.1 uses workspace schema v2 and provides an explicit hash-bound copy migration into a distinct successor workspace. Probe the existing workspace read-only before choosing a runtime. Supported v1 operations remain read-only; Faultline is typed unsupported on v1. Do not initialize or mutate a workspace merely to satisfy a Worldline or Faultline request.
 
 A v1-to-v2 transition is an explicit copy migration into a new governed workspace, followed by validation and caller-controlled selector change. Preserve the source workspace and rollback path until the new generation, scope, receipts, and required views have been checked. The Nova + MIND installer does not perform this migration and does not infer that two selectors should merge.
 

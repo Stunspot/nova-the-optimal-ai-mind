@@ -77,7 +77,7 @@ $requirements = @(
     [pscustomobject]@{
         internal_name = 'augment-of-mind'
         display_name = 'MIND by Collaborative Dynamics'
-        expected_version = '2.2.0'
+        expected_version = '2.2.1'
     }
 )
 $verifiedPlugins = @()

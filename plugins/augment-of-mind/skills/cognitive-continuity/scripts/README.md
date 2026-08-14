@@ -66,6 +66,19 @@ mutations use expected generation and idempotency controls; proposals remain
 noncanonical until separately authorized and applied. Export destinations,
 forget plans, backups, and receipts stay in their named custody.
 
+Ordinary `migrate-copy` destinations remain outside every selected Nova capability
+boundary. A Nova-owned live successor uses the separate
+`nova_guarded_successor` destination mode. It requires human authority, the exact
+active `NOVA_CONTINUITY_HOME` as source, an absent same-parent sibling as
+destination, a grant ID, the trusted selector registry SHA-256, and the
+normalized destination-path SHA-256. The registry and corroborating process
+environment are rechecked before and after publication. This creates a candidate;
+it never changes the live selector.
+
+```text
+python -B -X utf8 continuity_store_v2.py migrate-copy SOURCE DESTINATION --authority user-explicit --source-tree-sha256 SOURCE_SHA256 --destination-mode nova_guarded_successor --destination-grant-id GRANT_ID --expected-selector-registry-sha256 REGISTRY_SHA256 --expected-destination-path-sha256 DESTINATION_PATH_SHA256
+```
+
 ## Legacy v1 examples
 
 ```text

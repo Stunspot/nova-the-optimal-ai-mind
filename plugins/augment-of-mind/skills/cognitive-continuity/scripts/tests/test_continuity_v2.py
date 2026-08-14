@@ -281,6 +281,99 @@ class SelectorAndCustodyTests(WorkspaceCase):
             resolved = runtime.validate_external_target(self.root, str(prefix), "artifact", must_be_absent=True)
             self.assertEqual(resolved, prefix.resolve())
 
+    def test_guarded_nova_migration_is_exact_active_sibling_and_source_preserving(self) -> None:
+        nova = self.base / "NovaData"
+        legacy = nova / "memory" / "continuity"
+        initialized = subprocess.run([
+            sys.executable, str(SCRIPTS / "continuity_store.py"), "init", str(legacy),
+            "--user", "user", "--project", "*", "--agent", "nova",
+        ], text=True, capture_output=True, timeout=30)
+        self.assertEqual(initialized.returncode, 0, initialized.stderr)
+        registry = self._registry(nova, legacy)
+        registry_bytes = registry.read_bytes()
+        registry_digest = hashlib.sha256(registry_bytes).hexdigest()
+        destination = legacy.with_name("continuity-v2")
+        destination_digest = runtime.sha256_bytes(runtime._path_identity(destination).encode("utf-8"))
+        source_digest = runtime.tree_digest(legacy)
+        before = inventory(legacy)
+        environment = {"NOVA_DATA_ROOT": str(nova), "NOVA_CONTINUITY_HOME": str(legacy)}
+        common = {
+            "authority": "user-stunspot",
+            "expected_source_tree_sha256": source_digest,
+            "destination_mode": "nova_guarded_successor",
+            "grant_id": "GRT-live-v2-test",
+            "expected_selector_registry_sha256": registry_digest,
+            "expected_destination_sha256": destination_digest,
+        }
+        with mock.patch.object(runtime, "SELECTOR_REGISTRY", registry), mock.patch.dict(os.environ, environment):
+            with self.assertRaises(runtime.ContinuityError) as generic:
+                runtime.migrate_copy(
+                    str(legacy), str(destination), authority="user-stunspot",
+                    expected_source_tree_sha256=source_digest,
+                )
+            self.assertEqual(generic.exception.code, "protected_target_denied")
+            self.assertFalse(destination.exists())
+
+            denied_cases = [
+                ({**common, "expected_selector_registry_sha256": "0" * 64}, destination, "selector_registry_changed"),
+                ({**common, "expected_destination_sha256": "0" * 64}, destination, "authority_denied"),
+                ({**common, "authority": "agent-self"}, destination, "authority_denied"),
+                ({**common, "grant_id": "Bearer abcdefghijklmnopqrstuvwxyz"}, destination, "redaction_rejected"),
+                (common, nova / "other" / "continuity-v2", "protected_target_denied"),
+                (common, nova / "memory" / "dunbar", "protected_target_denied"),
+            ]
+            for arguments, target, expected_code in denied_cases:
+                target_digest = runtime.sha256_bytes(runtime._path_identity(target).encode("utf-8"))
+                call = {**arguments}
+                if target != destination and expected_code == "protected_target_denied":
+                    call["expected_destination_sha256"] = target_digest
+                with self.assertRaises(runtime.ContinuityError) as denied:
+                    runtime.migrate_copy(str(legacy), str(target), **call)
+                self.assertEqual(denied.exception.code, expected_code)
+                self.assertFalse(target.exists())
+
+            with mock.patch.dict(os.environ, {"NOVA_CONTINUITY_HOME": str(destination)}):
+                with self.assertRaises(runtime.ContinuityError) as mismatch:
+                    runtime.migrate_copy(str(legacy), str(destination), **common)
+                self.assertEqual(mismatch.exception.code, "continuity_selector_mismatch")
+                self.assertFalse(destination.exists())
+
+            swap_destination = legacy.with_name("continuity-v2-swap")
+            swap_call = {
+                **common,
+                "grant_id": "GRT-live-v2-swap-test",
+                "expected_destination_sha256": runtime.sha256_bytes(runtime._path_identity(swap_destination).encode("utf-8")),
+            }
+            original_revalidate = runtime.revalidate_nova_migration_grant
+            calls = 0
+            def swap_after_publication(*args: object, **kwargs: object) -> None:
+                nonlocal calls
+                calls += 1
+                if calls == 3:
+                    changed = json.loads(registry_bytes.decode("utf-8"))
+                    changed["set_at_utc"] = "2026-08-14T12:34:56Z"
+                    registry.write_text(json.dumps(changed), encoding="utf-8")
+                original_revalidate(*args, **kwargs)
+            try:
+                with mock.patch.object(runtime, "revalidate_nova_migration_grant", side_effect=swap_after_publication):
+                    with self.assertRaises(runtime.ContinuityError) as swapped:
+                        runtime.migrate_copy(str(legacy), str(swap_destination), **swap_call)
+                self.assertEqual(swapped.exception.code, "selector_registry_changed")
+                self.assertFalse(swap_destination.exists())
+            finally:
+                registry.write_bytes(registry_bytes)
+
+            receipt = runtime.migrate_copy(str(legacy), str(destination), **common)
+        self.assertEqual(receipt["kind"], "migration-copied")
+        self.assertEqual(receipt["destination_selection"]["mode"], "nova_guarded_successor")
+        self.assertEqual(receipt["destination_selection"]["grant_id"], "GRT-live-v2-test")
+        self.assertEqual(receipt["destination_selection"]["selector_registry_sha256"], registry_digest)
+        self.assertEqual(receipt["destination_selection"]["destination_path_sha256"], destination_digest)
+        self.assertEqual(inventory(legacy), before)
+        manifest = json.loads((destination / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["migrated_from"]["destination_selection"], receipt["destination_selection"])
+        self.cli(VALIDATE, destination)
+
     def test_registry_swap_after_resolution_is_denied_under_lock_with_zero_creation(self) -> None:
         nova = self.base / "nova"
         first = nova / "memory" / "continuity-a"

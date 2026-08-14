@@ -1,5 +1,13 @@
 # Nova + MIND Free release notes
 
+## 2.1.1 — local source candidate
+
+This patch packages Nova plugin 2.1.0 with MIND plugin 2.2.1, Cognitive Continuity 0.2.1/workspace schema v2, and MIND Core 0.2.0. Nova, MIND Core, TestForge 1.1.7, Ludis Continuum 1.1.0, and the Continuity workspace schema are unchanged.
+
+Cognitive Continuity now has a guarded Nova-successor migration mode for the legitimate live v1-to-v2 case. It leaves ordinary external-target protection unchanged and accepts only the registry-selected Continuity source plus an exact absent same-parent sibling destination. Human authority, a grant ID, the selector-registry SHA-256, the normalized destination-path SHA-256, process-environment corroboration, active capability-boundary checks, and pre/post-publication revalidation are bound into the migration evidence. A failed or changed grant removes the unpublished candidate and leaves v1 untouched.
+
+Migration still creates only a candidate workspace. It never changes `NOVA_CONTINUITY_HOME`; candidate validation, rollback proof, and an explicit selector switch remain separate live operations. The latest published release remains 2.0.9 until a later release is separately completed and published.
+
 ## 2.1.0 — local source candidate
 
 This candidate packages Nova plugin 2.1.0 with MIND plugin 2.2.0, Cognitive Continuity 0.2.0/workspace schema v2, and MIND Core 0.2.0. The exact TestForge 1.1.7 and Ludis Continuum 1.1.0 custody boundaries remain unchanged. Worldline and Faultline are named services over Cognitive Continuity and do not receive independent product versions.
@@ -60,10 +68,10 @@ The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIN
 
 ## Version layers
 
-- Product release: Nova + MIND Free 2.1.0
+- Product release: Nova + MIND Free 2.1.1
 - Nova plugin: 2.1.0
-- MIND plugin: 2.2.0
-- Cognitive Continuity: 0.2.0; workspace schema v2
+- MIND plugin: 2.2.1
+- Cognitive Continuity: 0.2.1; workspace schema v2
 - MIND Core: 0.2.0
 - Worldline/Faultline: no independent semver
 
