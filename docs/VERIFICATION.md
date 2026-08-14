@@ -30,7 +30,7 @@ The profile remains `unqualified`. Mechanical operation does not establish broad
 
 ## Continuity, Worldline, and Faultline evidence
 
-Local disposable-workspace tests exercise Cognitive Continuity 0.2.1/workspace schema v2, v1 read-only compatibility, immutable generations, expected-generation and idempotency controls, correction, forgetting, export, validation, and recovery. The migration regression also proves exact preservation of bounded oversized v1 content, generation-0 manifest/receipt provenance binding, ordinary v2 size enforcement, unchanged carry-forward, governed removal/restoration, and pre-intent denial of self-consistent forged provenance. Worldline tests exercise deterministic `resume`, `status`, `checkpoint`, and `inspect` views, generation-race retry, source/provenance selection, false-completion withholding, portable fallback, no-view behavior, and absence of writes. Faultline tests exercise redacted occurrences, governed patterns, zero-to-three-card neighborhoods, expiry, scope and sensitivity filters, retry collapse, noncausal recurrence, human-authority gates, and typed v1 rejection.
+Local disposable-workspace tests exercise Cognitive Continuity 0.2.2/workspace schema v2, v1 read-only compatibility, immutable generations, expected-generation and idempotency controls, correction, forgetting, export, validation, and recovery. The migration regression also proves exact preservation of bounded oversized v1 content, generation-0 manifest/receipt provenance binding, ordinary v2 size enforcement, unchanged carry-forward, governed removal/restoration, and pre-intent denial of self-consistent forged provenance. Worldline tests exercise deterministic `resume`, `status`, `checkpoint`, and `inspect` views, generation-race retry, source/provenance selection, false-completion withholding, portable fallback, no-view behavior, absence of writes, highly matching global-operative exclusion, and explicit unrepresented-project degradation. Faultline tests exercise redacted occurrences, governed patterns, zero-to-three-card neighborhoods, expiry, scope and sensitivity filters, retry collapse, noncausal recurrence, human-authority gates, and typed v1 rejection.
 
 Those observations are local source/runtime evidence. They do not establish packaged bytes, installation, fresh-task discovery, live `NOVA_CONTINUITY_HOME` selector resolution, migration of a customer workspace, external-system health, or correct model use. A Worldline view does not prove persistence or completion; a Faultline card does not prove cause, safety, repair, or authority.
 
@@ -56,7 +56,7 @@ Before publication, the candidate documentation set requires:
 1. a Hesperos customer-journey authorship and review pass;
 2. a separate accessibility review of structure, language, contrast, focus, resizing, reduced motion, alt text, and navigation;
 3. a separate TestForge adversarial verification pass;
-4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.1.1 source candidate.
+4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.1.2 source candidate.
 
 Receipts identify the reviewed candidate and documentation fingerprint. Any later customer-facing content change invalidates those content-bound receipts and requires review again.
 

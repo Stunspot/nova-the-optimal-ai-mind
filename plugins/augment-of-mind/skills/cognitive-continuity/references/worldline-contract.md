@@ -5,6 +5,7 @@
 - [Architectural place](#architectural-place)
 - [Promise and negative space](#promise-and-negative-space)
 - [Four operations](#four-operations)
+- [Resolve project identity before retrieval](#resolve-project-identity-before-retrieval)
 - [Preserve ownership](#preserve-ownership)
 - [Use existing Continuity records](#use-existing-continuity-records)
 - [Durable and portable delivery](#durable-and-portable-delivery)
@@ -71,6 +72,31 @@ entry points are documented in `../scripts/README.md`.
 After resumption, query Faultline only when its cue applies. The bounded contract
 is `faultline-error-neighborhood-contract.md`; Worldline does not absorb failure
 records or Error Neighborhood routing.
+
+## Resolve project identity before retrieval
+
+The caller, not the Worldline compiler, owns project selection. Stop at the
+first evidence tier that yields a single credible project key:
+
+1. the current user's explicit project, project key, or named handoff;
+2. one governed Executive Function mission or authorized Striving pursuit;
+3. a maintained repository-to-project mapping or project-control artifact;
+4. the current working directory only as an unopposed workspace-local fallback.
+
+Preserve the selected key and source tier in observable task work. If the first
+populated tier contains multiple credible keys, return
+`project_scope_ambiguous` before retrieval. Lower tiers cannot break the tie or
+override the winner. A selector chooses a Continuity workspace; it never chooses
+a project. Do not query the wildcard or several guessed projects and select the
+most narratively convenient result.
+
+For a specific-project request, globally scoped goals, commitments, phases,
+statuses, blockers, and next actions are background at most and cannot become
+operative Worldline material or ground its resumption pointer. When the durable
+workspace has no eligible exact-project state, report
+`project_scope_unrepresented` rather than manufacturing a continuation from
+global state. Reconcile every returned view against the current explicit request
+and the project authority before describing it as current.
 
 ## Preserve ownership
 

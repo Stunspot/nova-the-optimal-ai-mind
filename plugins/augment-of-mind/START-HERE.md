@@ -12,7 +12,7 @@ MIND is a standalone cognitive architecture for an existing AI harness. It adds 
 
 Installation is complete when MIND is enabled, its Faculties are discoverable in a new task, the reminder estate reports active, and the trusted hook can reach the configured local `qwen3-embedding:0.6b` endpoint—or names the exact dependency that remains unavailable.
 
-That installation result covers plugin discovery and the MIND Core reminder estate. It does not initialize, migrate, or prove a Cognitive Continuity workspace. MIND 2.2.1 ships Cognitive Continuity 0.2.1/workspace schema v2, including read-only Worldline views and the bounded Faultline Error Neighborhood; durable use still requires the governed selector, workspace, scope, and authority checks defined by Continuity.
+That installation result covers plugin discovery and the MIND Core reminder estate. It does not initialize, migrate, or prove a Cognitive Continuity workspace. MIND 2.2.2 ships Cognitive Continuity 0.2.2/workspace schema v2, including read-only Worldline views and the bounded Faultline Error Neighborhood; durable use still requires the governed selector, workspace, scope, and authority checks defined by Continuity.
 
 ## Manual fallback
 

@@ -15,11 +15,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NOVA = ROOT / "plugins" / "nova-the-optimal-ai"
 MIND = ROOT / "plugins" / "augment-of-mind"
-PRODUCT_VERSION = "2.1.1"
+PRODUCT_VERSION = "2.1.2"
 NOVA_VERSION = "2.1.0"
-MIND_VERSION = "2.2.1"
+MIND_VERSION = "2.2.2"
 MIND_CORE_VERSION = "0.2.0"
-CONTINUITY_VERSION = "0.2.1"
+CONTINUITY_VERSION = "0.2.2"
 CONTINUITY_WORKSPACE_SCHEMA_VERSION = 2
 MODEL_CONTEXT_CONTRACT = (
     ROOT / "verification" / "associative-smoke" / f"model-context-contract-v{MIND_VERSION}.json"
@@ -306,9 +306,23 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         'REQUEST_FORMAT = "cd-worldline-request/v1"',
         'VIEW_FORMAT = "cd-worldline-view/v1"',
         "RUNTIME_VERSION = IMPLEMENTATION_VERSION",
+        'reject(clean, "global_operative_scope")',
+        'degradation.append("global_operative_scope_withheld")',
+        'degradation.append("project_scope_unrepresented")',
     ):
         if required_worldline_phrase not in worldline_text:
             errors.append(f"Worldline runtime contract is missing: {required_worldline_phrase}")
+    continuity_skill_text = (continuity_root / "SKILL.md").read_text(encoding="utf-8")
+    worldline_contract_text = (
+        continuity_root / "references" / "worldline-contract.md"
+    ).read_text(encoding="utf-8")
+    for required_scope_phrase in (
+        "project_scope_ambiguous",
+        "A selector locates a store, not a project.",
+        "The caller, not the Worldline compiler, owns project selection.",
+    ):
+        if required_scope_phrase not in continuity_skill_text + worldline_contract_text:
+            errors.append(f"Worldline project-scope contract is missing: {required_scope_phrase}")
     faultline_text = (
         continuity_root / "scripts" / "error_neighborhood.py"
     ).read_text(encoding="utf-8")

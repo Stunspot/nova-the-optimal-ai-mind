@@ -30,9 +30,9 @@ if ($conflicts.Count) {
     throw "Another MIND selector exists: $(($conflicts.pluginId) -join ', '). Remove only the selector you intend to replace, then rerun."
 }
 $installedMind = @($plugins.installed | Where-Object { $_.pluginId -eq $selector })
-if ($installedMind.Count -gt 0 -and @($installedMind | Where-Object { $_.version -eq '2.2.1' }).Count -ne $installedMind.Count) {
+if ($installedMind.Count -gt 0 -and @($installedMind | Where-Object { $_.version -eq '2.2.2' }).Count -ne $installedMind.Count) {
     $observed = ($installedMind | ForEach-Object { $_.version }) -join ', '
-    throw "A different MIND version is already installed from this selector: $observed. This installer will not silently reuse it. Remove $selector, confirm this marketplace points at the 2.2.1 package, then rerun. No plugin state was changed."
+    throw "A different MIND version is already installed from this selector: $observed. This installer will not silently reuse it. Remove $selector, confirm this marketplace points at the 2.2.2 package, then rerun. No plugin state was changed."
 }
 
 $marketJson = & $codex.Source plugin marketplace list --json
@@ -95,5 +95,5 @@ try {
     }
 }
 Write-Host ''
-Write-Host 'MIND 2.2.1 is installed, its 20-capability estate is active, and semantic association passed.'
+Write-Host 'MIND 2.2.2 is installed, its 20-capability estate is active, and semantic association passed.'
 Write-Host 'Next: review the exact hook in Settings > Hooks, then start a new task.'

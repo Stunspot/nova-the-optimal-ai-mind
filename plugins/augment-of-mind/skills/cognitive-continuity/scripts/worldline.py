@@ -139,6 +139,24 @@ def _item(row: dict[str, Any], episodes: dict[str, dict[str, Any]]) -> dict[str,
     }
 
 
+def _is_worldline_operative(row: dict[str, Any]) -> bool:
+    """Return whether a state row could prescribe project resumption or status."""
+    tags = {str(value).casefold() for value in row.get("tags") or []}
+    content = str(row.get("content") or "").casefold()
+    return bool(
+        row.get("kind") in {"commitment", "failure", "goal"}
+        or tags & (PHASE_TAGS | STATUS_TAGS | BLOCKER_TAGS | NEXT_TAGS)
+        or content.startswith("phase:")
+        or content.startswith("status:")
+    )
+
+
+def _global_operative_for_specific_project(row: dict[str, Any], request: dict[str, Any]) -> bool:
+    requested_project = request["scope"]["project"]
+    row_scope = row.get("scope") if isinstance(row.get("scope"), dict) else {}
+    return requested_project != "*" and row_scope.get("project") == "*" and _is_worldline_operative(row)
+
+
 def _eligible(snapshot: dict[str, Any], request: dict[str, Any], deadline: float) -> tuple[list[dict[str, Any]], list[dict[str, Any]], set[str], dict[str, int], bool]:
     v1 = snapshot["manifest"]["format"] == LEGACY_FORMAT
     episode_schema = "episode.schema.json" if v1 else "episode-v2.schema.json"
@@ -197,7 +215,12 @@ def _eligible(snapshot: dict[str, Any], request: dict[str, Any], deadline: float
             episode_ids=eligible_episode_ids, unreachable_source_ids=unreachable,
             allowed_statuses=("current", "conflicted"), schema_valid=True,
         )
-        records.append(clean) if allowed and clean is not None else reject(row, reason)
+        if not allowed or clean is None:
+            reject(row, reason)
+        elif _global_operative_for_specific_project(clean, request):
+            reject(clean, "global_operative_scope")
+        else:
+            records.append(clean)
     all_ids = raw_episode_ids | {str(row["id"]) for row in snapshot["records"]}
     eligible_ids = eligible_episode_ids | {str(row["id"]) for row in records}
     missing = sorted(set(request["required_ids"]) - all_ids)
@@ -453,6 +476,14 @@ def _compile_once(request: dict[str, Any], snapshot: dict[str, Any], deadline: f
     phases: list[dict[str, Any]] = []
     statuses: list[dict[str, Any]] = []
     degradation = ["deadline_exceeded"] if partial else []
+    if omissions.get("global_operative_scope"):
+        degradation.append("global_operative_scope_withheld")
+    requested_project = request["scope"]["project"]
+    if requested_project != "*" and not any(
+        isinstance(row.get("scope"), dict) and row["scope"].get("project") == requested_project
+        for row in records
+    ):
+        degradation.append("project_scope_unrepresented")
     for row in records:
         record_id = str(row["id"])
         tags = {str(value).casefold() for value in row.get("tags") or []}

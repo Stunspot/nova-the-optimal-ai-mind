@@ -226,6 +226,89 @@ class WorldlineV2Tests(unittest.TestCase):
         self.assertIn("ST-OTHER-PROJECT", view["omitted_ids"])
         self.assertIn("ST-OTHER-THREAD", view["omitted_ids"])
 
+    def test_specific_project_withholds_highly_matching_global_operative_state(self) -> None:
+        global_scope = {**BASE_SCOPE, "project": "*"}
+        target_scope = {**BASE_SCOPE, "project": "atlas"}
+        episodes = [
+            episode("EP-GLOBAL-GOAL", "Resume Atlas OAuth migration immediately", scope=global_scope),
+            episode("EP-GLOBAL-COMMIT", "Resume Atlas OAuth migration immediately", scope=global_scope),
+            episode("EP-GLOBAL-BLOCK", "Atlas OAuth migration is blocked globally", scope=global_scope),
+            episode("EP-GLOBAL-STATUS", "Status: Atlas OAuth migration active", scope=global_scope),
+            episode("EP-GLOBAL-PHASE", "Phase: Atlas OAuth migration", scope=global_scope),
+            episode("EP-ATLAS-NEXT", "Review the Atlas project control", scope=target_scope),
+        ]
+        records = [
+            record("ST-GLOBAL-GOAL", "goal", "Resume Atlas OAuth migration immediately", ["EP-GLOBAL-GOAL"], scope=global_scope),
+            record("ST-GLOBAL-COMMIT", "commitment", "Resume Atlas OAuth migration immediately", ["EP-GLOBAL-COMMIT"], scope=global_scope),
+            record("ST-GLOBAL-BLOCK", "belief", "Atlas OAuth migration is blocked globally", ["EP-GLOBAL-BLOCK"], scope=global_scope, tags=["blocker"]),
+            record("ST-GLOBAL-STATUS", "belief", "Status: Atlas OAuth migration active", ["EP-GLOBAL-STATUS"], scope=global_scope, tags=["status"]),
+            record("ST-GLOBAL-PHASE", "belief", "Phase: Atlas OAuth migration", ["EP-GLOBAL-PHASE"], scope=global_scope, tags=["phase"]),
+            record("ST-ATLAS-NEXT", "goal", "Review the Atlas project control", ["EP-ATLAS-NEXT"], scope=target_scope),
+        ]
+        root = self.workspace("global-operative-competition", episodes, records, manifest_project="*")
+        view = worldline.compile_worldline(self.request(
+            root,
+            task="Resume Atlas OAuth migration immediately",
+            project="atlas",
+        ))
+        selected_ids = {
+            item["id"]
+            for category in ("commitments", "blockers", "next_actions")
+            for item in view[category]
+        }
+        if view["current_status"]:
+            selected_ids.add(view["current_status"]["id"])
+        if view["current_phase"]:
+            selected_ids.add(view["current_phase"]["id"])
+        self.assertEqual(["ST-ATLAS-NEXT"], [item["id"] for item in view["next_actions"]])
+        self.assertEqual(["ST-ATLAS-NEXT"], view["resumption_pointer"]["record_ids"])
+        for identifier in (
+            "ST-GLOBAL-GOAL", "ST-GLOBAL-COMMIT", "ST-GLOBAL-BLOCK",
+            "ST-GLOBAL-STATUS", "ST-GLOBAL-PHASE",
+        ):
+            self.assertIn(identifier, view["omitted_ids"])
+            self.assertNotIn(identifier, selected_ids)
+        self.assertEqual(5, view["omission_counts"]["global_operative_scope"])
+        self.assertIn("global_operative_scope_withheld", view["degradation"])
+        self.assertNotIn("project_scope_unrepresented", view["degradation"])
+
+    def test_ineligible_global_operative_state_keeps_original_eligibility_reason(self) -> None:
+        global_scope = {**BASE_SCOPE, "project": "*"}
+        protected_episode = episode("EP-GLOBAL-PROTECTED", "Continue the Atlas project", scope=global_scope)
+        protected_episode["sensitivity"] = "restricted"
+        protected_record = record(
+            "ST-GLOBAL-PROTECTED", "goal", "Continue the Atlas project",
+            ["EP-GLOBAL-PROTECTED"], scope=global_scope,
+        )
+        protected_record["sensitivity"] = "restricted"
+        root = self.workspace(
+            "ineligible-global-operative", [protected_episode], [protected_record], manifest_project="*",
+        )
+        view = worldline.compile_worldline(self.request(root, project="atlas"))
+        self.assertEqual(2, view["omission_counts"]["sensitivity_denied"])
+        self.assertNotIn("global_operative_scope", view["omission_counts"])
+        self.assertNotIn("global_operative_scope_withheld", view["degradation"])
+        self.assertIn("project_scope_unrepresented", view["degradation"])
+        self.assertEqual("unavailable", view["resumption_pointer"]["state"])
+
+    def test_global_only_operative_state_cannot_create_project_resumption(self) -> None:
+        global_scope = {**BASE_SCOPE, "project": "*"}
+        episodes = [episode("EP-GLOBAL-ONLY", "Continue the demo project", scope=global_scope)]
+        records = [record(
+            "ST-GLOBAL-ONLY", "goal", "Continue the demo project", ["EP-GLOBAL-ONLY"], scope=global_scope,
+        )]
+        root = self.workspace("global-only-operative", episodes, records, manifest_project="*")
+        view = worldline.compile_worldline(self.request(root, project="atlas"))
+        self.assertEqual([], view["next_actions"])
+        self.assertEqual([], view["commitments"])
+        self.assertEqual([], view["blockers"])
+        self.assertIsNone(view["current_phase"])
+        self.assertIsNone(view["current_status"])
+        self.assertEqual("unavailable", view["resumption_pointer"]["state"])
+        self.assertIn("global_operative_scope_withheld", view["degradation"])
+        self.assertIn("project_scope_unrepresented", view["degradation"])
+        self.assertEqual("degraded", view["status"])
+
     def test_superseded_decision_and_corrected_status(self) -> None:
         episodes = [
             episode("EP-OLD-DEC", "Choose the stale approach", event_type="decision"),
@@ -386,7 +469,7 @@ class WorldlineV2Tests(unittest.TestCase):
         manifest["capabilities"]["transactional_init"] = True
         manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n", encoding="utf-8")
         before = tree_digest(root)
-        view = worldline.compile_worldline(self.request(root, mode="resume"))
+        view = worldline.compile_worldline(self.request(root, mode="resume", project="*"))
         self.assertEqual("v1_read_only", view["workspace"]["compatibility_mode"])
         self.assertEqual("durable_v1_read_only", view["durability"]["source_state"])
         self.assertIn("v1_read_only_compatibility", view["degradation"])

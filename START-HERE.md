@@ -1,6 +1,6 @@
 # Install Nova + MIND Free
 
-Nova + MIND Free 2.1.1 installs one product as two Codex plugins: Nova, the user-facing agent, and MIND, her cognitive substrate. Together they expose forty-one skills, including sixteen MIND Faculties and TestForge’s two verification roles.
+Nova + MIND Free 2.1.2 installs one product as two Codex plugins: Nova, the user-facing agent, and MIND, her cognitive substrate. Together they expose forty-one skills, including sixteen MIND Faculties and TestForge’s two verification roles.
 
 ## Choose the supported path
 
@@ -16,7 +16,7 @@ For the complete Codex installation, you need PowerShell, Python 3.11 or newer, 
 
 ## Normal Codex installation
 
-1. Once the local source candidate completes its separate build and verification gates, use the governed `nova-mind-free-v2.1.1.zip`. The [latest public release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) remains 2.0.9 until a later release is separately published.
+1. Once the local source candidate completes its separate build and verification gates, use the governed `nova-mind-free-v2.1.2.zip`. The [latest public release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) remains 2.0.9 until a later release is separately published.
 2. Attach the ZIP to a Codex task.
 3. Tell Codex:
 
@@ -39,14 +39,14 @@ For the complete Codex installation, you need PowerShell, Python 3.11 or newer, 
 A successful mechanical verification reports:
 
 - `Nova the Optimal AI` 2.1.0 enabled from the Free Nova marketplace;
-- `MIND by Collaborative Dynamics` 2.2.1 enabled from the same marketplace;
+- `MIND by Collaborative Dynamics` 2.2.2 enabled from the same marketplace;
 - an intact SQLite database with an active forty-one-capability generation;
 - forty-one cards, 246 vectors, and successful local semantic association against a temporary copy;
 - the original database unchanged by the verifier.
 
 That report does not prove hook trust, pre-turn context delivery, model attention, use of a reminder, or behavioral correctness. It also does not create, migrate, select, or validate a Cognitive Continuity workspace.
 
-Worldline and Faultline ship as Continuity 0.2.1 surfaces over workspace schema v2. Worldline provides read-only `resume`, `status`, `checkpoint`, and `inspect` views; a checkpoint is not a save. Faultline provides a bounded Error Neighborhood and governed v2 mutations, has no fallback store, and is typed unsupported on v1. Neither service grants authority or proves completion, cause, safety, or repair.
+Worldline and Faultline ship as Continuity 0.2.2 surfaces over workspace schema v2. Worldline provides read-only `resume`, `status`, `checkpoint`, and `inspect` views; a checkpoint is not a save. Faultline provides a bounded Error Neighborhood and governed v2 mutations, has no fallback store, and is typed unsupported on v1. Neither service grants authority or proves completion, cause, safety, or repair.
 
 ## Fresh-task confirmation
 

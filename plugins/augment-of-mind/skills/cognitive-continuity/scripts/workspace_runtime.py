@@ -25,7 +25,7 @@ from eligibility_policy import contains_secret_data
 LEGACY_FORMAT = "cd-cognitive-continuity/v1"
 FORMAT = "cd-cognitive-continuity/v2"
 EXPORT_FORMAT = "cd-cognitive-continuity-export/v2"
-IMPLEMENTATION_VERSION = "0.2.1"
+IMPLEMENTATION_VERSION = "0.2.2"
 SELECTOR = "NOVA_CONTINUITY_HOME"
 ROOT_SELECTOR = "NOVA_DATA_ROOT"
 

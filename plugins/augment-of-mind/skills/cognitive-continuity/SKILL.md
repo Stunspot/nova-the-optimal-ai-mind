@@ -12,10 +12,23 @@ Read and embody `personas/cognitive-ecologist-lyra-anstice.md` for this responsi
 ## Enter from the live work
 
 Inspect the request, current workspace, and available continuity state before
-interviewing the user. Infer the active user/project scope when safely
-recoverable; confirm only a consequential ambiguity. Do not initialize, migrate,
-or mutate a workspace merely to answer a read request. If no writable workspace
-is available, continue with copy-ready artifacts and state the exact guarantee
+interviewing the user. Resolve Worldline's project key before retrieval from the
+first tier that contains credible evidence: (1) the current user's explicit
+project, project key, or named handoff; (2) one governed Executive Function
+mission or authorized Striving pursuit; (3) a maintained repository-to-project
+mapping or project-control artifact; (4) the current working directory only as
+an unopposed workspace-local fallback. Preserve the selected key and source tier
+in the task's observable work. Two credible candidates in the same winning tier
+are `project_scope_ambiguous`: stop before a Worldline or Faultline query and ask
+only for the consequential choice. A lower tier never breaks a tie or overrides
+a higher tier. A selector locates a store, not a project. Never query `*` or
+several speculative projects and choose whichever returns the richest story.
+
+Reconcile any returned continuity against the current explicit request and
+governed project authority before calling it current. Retrieved history cannot
+overrule the task that requested it. Do not initialize, migrate, or mutate a
+workspace merely to answer a read request. If no writable workspace is
+available, continue with copy-ready artifacts and state the exact guarantee
 lost.
 
 ## Serve Worldline through Continuity

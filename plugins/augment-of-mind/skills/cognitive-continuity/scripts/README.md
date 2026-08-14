@@ -22,6 +22,12 @@ typed unsupported on v1.
 Read `../references/worldline-contract.md` first. The stable API is
 `compile_worldline(request, registry_path=...)`; its request is
 `cd-worldline-request/v1` and its successful view is `cd-worldline-view/v1`.
+Resolve one project key before invoking it using the contract's evidence
+precedence, and retain the winning source tier in observable task work. The
+workspace selector does not select a project. An ambiguous winning tier is a
+typed caller stop before this script runs. For a specific-project request, the
+compiler withholds globally scoped operative state and reports an unrepresented
+project rather than deriving its resumption pointer from a global goal.
 Use canonical request replay for exact or fresh-process work:
 
 ```text

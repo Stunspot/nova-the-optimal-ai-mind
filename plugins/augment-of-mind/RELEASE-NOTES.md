@@ -1,5 +1,10 @@
 # MIND release notes
 
+## 2.2.2
+
+This patch carries Cognitive Continuity 0.2.2 over the unchanged workspace schema v2. Its Worldline caller contract resolves project identity by explicit task or handoff authority before governed mission, maintained mapping, and finally an unopposed working-directory fallback; ambiguous winning evidence stops before retrieval. The deterministic view compiler independently prevents global operational records from supplying a specific project's phase, status, blocker, commitment, next action, or resumption pointer.
+
+The patch adds adversarial exact-project versus highly matching global-state coverage and an explicit unrepresented-project degradation. It changes no selector, store owner, workspace schema, Faculty topology, MIND Core runtime, or Faultline contract. This version is the MIND component inside the local Nova + MIND Free 2.1.2 candidate and does not imply publication or a public release.
 ## 2.2.1
 
 This patch carries Cognitive Continuity 0.2.1 over the existing workspace schema v2. The guarded Nova-successor migration mode repairs the live migration path without weakening ordinary external-target custody: it accepts only the active Continuity selector as source and an exact authorized absent sibling as destination, with registry, environment, path-digest, reparse, capability-overlap, and publication-time revalidation. The registry locator is derived from `NOVA_DATA_ROOT`; no private workstation path is embedded in the portable payload.

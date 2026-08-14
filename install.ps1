@@ -61,7 +61,7 @@ if (-not $SkipPluginInstall) {
     }
 
     $expectedPluginVersions = @{
-        'augment-of-mind' = '2.2.1'
+        'augment-of-mind' = '2.2.2'
         'nova-the-optimal-ai' = '2.1.0'
     }
     $staleVersions = @($installedState.installed | Where-Object {

@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: local source candidate; 2.1.1 exact Nova 2.1.0, integrated MIND 2.2.1, Cognitive Continuity 0.2.1/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
+Status: local source candidate; 2.1.2 exact Nova 2.1.0, integrated MIND 2.2.2, Cognitive Continuity 0.2.2/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
 Prior published release: 2.0.9, published 2026-08-13 from commit f1e607e44b7d6121dc65278ae8155e3c7dfd09cf; source verification, deterministic package checks, Linux/Windows/macOS CI, Pages deployment, and release-asset digest readback passed for that prior release.
-Product: **Nova + MIND Free 2.1.1**
+Product: **Nova + MIND Free 2.1.2**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`
@@ -56,7 +56,7 @@ The current expanded profile is intentionally marked `unqualified`. Isolated act
 
 ## Continuity service contracts
 
-Cognitive Continuity 0.2.1 uses workspace schema v2 while retaining read-only compatibility for supported v1 operations. Worldline is Nova's named read-only project-continuity view, with `resume`, `status`, `checkpoint`, and `inspect` modes under `cd-worldline-request/v1` and `cd-worldline-view/v1`. Its runtime version follows Continuity 0.2.1 rather than an independent Worldline semver. A view never writes, authorizes, or proves completion; caller-material fallback is explicitly unpersisted and carries no save receipt.
+Cognitive Continuity 0.2.2 uses workspace schema v2 while retaining read-only compatibility for supported v1 operations. Worldline is Nova's named read-only project-continuity view, with `resume`, `status`, `checkpoint`, and `inspect` modes under `cd-worldline-request/v1` and `cd-worldline-view/v1`. Its runtime version follows Continuity 0.2.2 rather than an independent Worldline semver. The caller resolves one project from explicit task or handoff identity before governed mission, maintained mapping, and finally an unopposed working-directory fallback; ambiguity stops before retrieval. A specific-project view withholds globally scoped operative state and reports an unrepresented scope rather than borrowing a global resumption pointer. A view never writes, authorizes, or proves completion; caller-material fallback is explicitly unpersisted and carries no save receipt.
 
 Faultline is MIND's named bounded Error Neighborhood over Continuity-owned failure evidence. It returns zero to three expiring advisory cards, treats similarity and recurrence as noncausal, and leaves routing, diagnosis, repair, and permission with their proper owners. Governed mutations require schema-v2 generation, idempotency, authority, scope, source, sensitivity, and retention controls. Faultline has no fallback store and reports typed unsupported on v1; it likewise has no independent semver.
 
