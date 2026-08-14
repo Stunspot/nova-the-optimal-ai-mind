@@ -972,6 +972,29 @@ class CompatibilityAndRecoveryTests(WorkspaceCase):
             tampered_history["errors"],
         )
 
+        generation_one_metadata = tampered_destination / "generations" / "g-00000000000000000001" / "generation.json"
+        generation_two_metadata = tampered_destination / "generations" / "g-00000000000000000002" / "generation.json"
+        one = json.loads(generation_one_metadata.read_text(encoding="utf-8"))
+        one["operation_family"] = "forget"
+        generation_one_metadata.write_text(json.dumps(one, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        two = json.loads(generation_two_metadata.read_text(encoding="utf-8"))
+        two["operation_family"] = "restore-forget"
+        two["predecessor_generation_manifest_sha256"] = sha(generation_one_metadata)
+        generation_two_metadata.write_text(json.dumps(two, ensure_ascii=False, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+        tampered_manifest_path = tampered_destination / "manifest.json"
+        tampered_manifest = json.loads(tampered_manifest_path.read_text(encoding="utf-8"))
+        tampered_manifest["active_generation_manifest_sha256"] = sha(generation_two_metadata)
+        tampered_manifest_path.write_text(json.dumps(tampered_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        relabeled_history = self.cli(VALIDATE, tampered_destination, "--json", expected=1)
+        self.assertIn(
+            "generation 1 receipt identity does not match generation metadata",
+            relabeled_history["errors"],
+        )
+        self.assertIn(
+            "generation 2 receipt identity does not match generation metadata",
+            relabeled_history["errors"],
+        )
+
         shutil.rmtree(destination / "generations" / "g-00000000000000000000")
         missing_origin = self.cli(VALIDATE, destination, "--json", expected=1)
         self.assertEqual(missing_origin["status"], "invalid")

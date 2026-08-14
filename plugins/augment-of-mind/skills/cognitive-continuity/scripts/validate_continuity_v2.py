@@ -118,6 +118,39 @@ def _generation_inventory(root: Path, catalog: SchemaCatalog, errors: list[str],
     return result
 
 
+def _validate_generation_receipt_identities(
+    manifest: dict[str, Any],
+    generations: dict[int, tuple[Path, dict[str, Any], str]],
+    catalog: SchemaCatalog,
+    errors: list[str],
+) -> None:
+    for generation, (directory, metadata, _) in sorted(generations.items()):
+        receipts = _physical_jsonl(directory / "receipts.jsonl")
+        candidates = [
+            row for row in receipts
+            if row.get("transaction_id") == metadata.get("transaction_id")
+            and row.get("generation_after") == generation
+        ]
+        if len(candidates) != 1:
+            errors.append(f"generation {generation} lacks one receipt matching its transaction identity")
+            continue
+        receipt = candidates[0]
+        for error in catalog.validate(receipt, "receipt-v2.schema.json"):
+            errors.append(f"generation {generation} receipt schema {error}")
+        expected = {
+            "status": "committed",
+            "workspace_id": manifest.get("workspace_id"),
+            "transaction_id": metadata.get("transaction_id"),
+            "operation": metadata.get("operation_family"),
+            "generation_before": generation - 1,
+            "generation_after": generation,
+        }
+        if any(receipt.get(key) != value for key, value in expected.items()):
+            errors.append(f"generation {generation} receipt identity does not match generation metadata")
+        if metadata.get("workspace_id") != manifest.get("workspace_id"):
+            errors.append(f"generation {generation} metadata workspace identity mismatch")
+
+
 def _validate_legacy_content_history(
     manifest: dict[str, Any],
     generations: dict[int, tuple[Path, dict[str, Any], str]],
@@ -280,6 +313,7 @@ def _validate_v2(root: Path, manifest: dict[str, Any], source_before: str) -> di
     except ContinuityError as exc:
         errors.append(str(exc)); stable_manifest = manifest
     generations = _generation_inventory(root, catalog, errors, warnings)
+    _validate_generation_receipt_identities(stable_manifest, generations, catalog, errors)
     _validate_legacy_content_history(stable_manifest, generations, catalog, errors)
     active_generation = int(stable_manifest.get("generation", -1))
     active = generations.get(active_generation)
