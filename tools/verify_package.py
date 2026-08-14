@@ -521,9 +521,15 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         if isinstance(item, dict)
     }
     expected_current_sources = {
+        "nova": {
+            "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+            "commit": "a678d72049f99e999ccd4278ef9596adc0a0743e",
+            "source_path": "plugins/nova-the-optimal-ai/skills/nova",
+            "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
+        },
         "augment-of-mind": {
             "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-            "commit": "a6f249a730030a5e2a518b8011463a49781a5415",
+            "commit": "a678d72049f99e999ccd4278ef9596adc0a0743e",
             "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },

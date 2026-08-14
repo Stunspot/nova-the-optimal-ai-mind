@@ -1,8 +1,8 @@
 {
     "format":  "nova-free-source-lock/v1",
     "product":  "Nova + MIND Free",
-    "product_version":  "2.0.10",
-    "generated_at":  "2026-08-13",
+    "product_version":  "2.1.0",
+    "generated_at":  "2026-08-14",
     "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
     "contest_repository_mutated":  false,
     "excluded_capabilities":  [
@@ -14,34 +14,34 @@
                     {
                         "component":  "nova",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "0e4c78a39e29b6245631beabff404af8977fbf12",
+                        "source_commit":  "a678d72049f99e999ccd4278ef9596adc0a0743e",
                         "source_path":  "plugins/nova-the-optimal-ai/skills/nova",
                         "source_tree":  {
                                             "file_count":  15,
-                                            "tree_sha256":  "502669530fe9d627e0ee4f88c8c91c7d4b1baf81af1f0f1e207505ce1e262a08"
+                                            "tree_sha256":  "d723446be8820402eb110831794f9500a562d680699e1858460ed2561eed434f"
                                         },
                         "imported_path":  "plugins/nova-the-optimal-ai/skills/nova",
                         "imported_tree":  {
                                               "file_count":  15,
-                                              "tree_sha256":  "502669530fe9d627e0ee4f88c8c91c7d4b1baf81af1f0f1e207505ce1e262a08"
+                                              "tree_sha256":  "d723446be8820402eb110831794f9500a562d680699e1858460ed2561eed434f"
                                           },
-                        "custody":  "current integrated component checkpoint; canonical persona verbatim"
+                        "custody":  "integrated Nova 2.1.0 component checkpoint with Worldline and Faultline routing; canonical persona verbatim"
                     },
                     {
                         "component":  "augment-of-mind",
                         "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "a6f249a730030a5e2a518b8011463a49781a5415",
+                        "source_commit":  "a678d72049f99e999ccd4278ef9596adc0a0743e",
                         "source_path":  "plugins/augment-of-mind/skills",
                         "source_tree":  {
-                                            "file_count":  280,
-                                            "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
+                                            "file_count":  309,
+                                            "tree_sha256":  "c8621a65fdac17b29b6286cf9cef213dd1918e843582fd78b890e7a803f2af09"
                                         },
                         "imported_path":  "plugins/augment-of-mind/skills",
                         "imported_tree":  {
-                                              "file_count":  280,
-                                              "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
+                                              "file_count":  309,
+                                              "tree_sha256":  "c8621a65fdac17b29b6286cf9cef213dd1918e843582fd78b890e7a803f2af09"
                                           },
-                        "custody":  "integrated MIND 2.1.7 component checkpoint derived from published MIND 2.1.6 with exact TestForge 1.1.7 replacement"
+                        "custody":  "integrated MIND 2.2.0 component checkpoint with Cognitive Continuity 0.2.0, Worldline, Faultline, and exact TestForge 1.1.7"
                     },
                     {
                         "component":  "software-verification",
