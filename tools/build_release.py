@@ -392,6 +392,32 @@ def main(argv: list[str] | None = None) -> int:
     checksum_lines = [f"{sha256(path)}  {path.relative_to(dist).as_posix()}" for path in checksum_targets]
     (dist / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
 
+    verify_env = os.environ.copy()
+    verify_env["PYTHONDONTWRITEBYTECODE"] = "1"
+    verification = subprocess.run(
+        [
+            sys.executable,
+            "-X",
+            "utf8",
+            str(ROOT / "tools" / "verify_package.py"),
+            "--release-root",
+            str(dist),
+        ],
+        cwd=ROOT,
+        env=verify_env,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        errors="replace",
+        check=False,
+    )
+    if verification.returncode != 0:
+        raise RuntimeError(
+            "release verification failed before archive sealing:\n"
+            + verification.stdout.strip()
+            + ("\n" + verification.stderr.strip() if verification.stderr.strip() else "")
+        )
+
     write_zip(dist, archive_output, KIT_NAME)
     release_hash = sha256(archive_output)
     checksum_output.write_text(f"{release_hash}  {KIT_NAME}.zip\n", encoding="utf-8")

@@ -229,6 +229,14 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             )
             self.assertTrue(all(str(external_dist.resolve()) not in error for error in errors))
 
+    def test_builder_runs_release_verifier_before_archive_sealing(self) -> None:
+        text = BUILDER.read_text(encoding="utf-8")
+        verify_call = 'str(ROOT / "tools" / "verify_package.py")'
+        seal_call = "write_zip(dist, archive_output, KIT_NAME)"
+        self.assertIn(verify_call, text)
+        self.assertIn('"--release-root"', text)
+        self.assertLess(text.index(verify_call), text.index(seal_call))
+
     def test_ci_installs_standalone_mind_build_requirements(self) -> None:
         workflow = (ROOT / ".github" / "workflows" / "verify-package.yml").read_text(
             encoding="utf-8"

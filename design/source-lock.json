@@ -123,12 +123,12 @@
       "source_path": "release-v0.2.1/codex/ai-cognition-cost-optimizer/skills/ai-cognition-cost-optimizer",
       "source_tree": {
         "file_count": 45,
-        "tree_sha256": "dd879174441061a52d3a25367bbc07e605c49ba3c23bb1c2e9435a22633dc6af"
+        "tree_sha256": "319158e0dd671e62d433a52483c638ce4761f4f6b1938f0e148f22655bd316c1"
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer",
       "imported_tree": {
         "file_count": 45,
-        "tree_sha256": "dd879174441061a52d3a25367bbc07e605c49ba3c23bb1c2e9435a22633dc6af"
+        "tree_sha256": "319158e0dd671e62d433a52483c638ce4761f4f6b1938f0e148f22655bd316c1"
       },
       "custody": "exact current canonical Git tree"
     },
@@ -164,12 +164,12 @@
       "source_path": "release-v0.1.1/codex/current-intelligence-observatory",
       "source_tree": {
         "file_count": 72,
-        "tree_sha256": "2ad90067783f8de38ca411a2844d2e77dcd2fea0ffd69e622672ef650c4bf4e6"
+        "tree_sha256": "a6312c3662e23e3bd411117710fcaa5c1f6b96ade9dd1f659399076556255c9f"
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "2ad90067783f8de38ca411a2844d2e77dcd2fea0ffd69e622672ef650c4bf4e6"
+        "tree_sha256": "a6312c3662e23e3bd411117710fcaa5c1f6b96ade9dd1f659399076556255c9f"
       },
       "custody": "exact current canonical Git tree"
     },
@@ -288,12 +288,12 @@
       "source_path": "release-v0.1.1/codex/privacy-redline",
       "source_tree": {
         "file_count": 41,
-        "tree_sha256": "ebb6dc1aba56188ec35d7b9e8aaac6e994ff68249650d0955c89af0d5032603a"
+        "tree_sha256": "df74bb7e013f798a856dba17af0ff45b0f8e21d2c73499574f65aaf32698d79a"
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
         "file_count": 41,
-        "tree_sha256": "ebb6dc1aba56188ec35d7b9e8aaac6e994ff68249650d0955c89af0d5032603a"
+        "tree_sha256": "df74bb7e013f798a856dba17af0ff45b0f8e21d2c73499574f65aaf32698d79a"
       },
       "custody": "exact current canonical Git tree"
     },
