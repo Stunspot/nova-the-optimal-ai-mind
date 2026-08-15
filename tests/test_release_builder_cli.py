@@ -266,6 +266,7 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             with zipfile.ZipFile(archive, "w") as bundle:
                 bundle.writestr("skill/SKILL.md", b"corrupt")
                 bundle.writestr("../escape.txt", b"unsafe")
+                bundle.writestr("../escape/", b"")
             errors: list[str] = []
             VERIFIER_MODULE.verify_zip_folder_parity(
                 errors, archive, folder, "skill", root
@@ -313,9 +314,12 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             canonical = root / "canonical-install.ps1"
             staged = root / "install.ps1"
             extra = root / "surprise.exe"
+            cache_extra = root / "__pycache__" / "surprise.exe"
             canonical.write_bytes(b"canonical installer")
             staged.write_bytes(b"mutated installer")
             extra.write_bytes(b"unexpected payload")
+            cache_extra.parent.mkdir()
+            cache_extra.write_bytes(b"hidden unexpected payload")
             errors: list[str] = []
             VERIFIER_MODULE.compare_file_bytes(
                 errors, canonical, staged, "installer parity"
@@ -326,6 +330,8 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             self.assertTrue(any("installer parity byte mismatch" in error for error in errors))
             self.assertTrue(any("complete staged file set mismatch" in error for error in errors))
             self.assertTrue(any("surprise.exe" in error for error in errors))
+            self.assertTrue(any("cache debris" in error for error in errors))
+            self.assertTrue(any("__pycache__/surprise.exe" in error for error in errors))
 
     def test_ci_installs_standalone_mind_build_requirements(self) -> None:
         workflow = (ROOT / ".github" / "workflows" / "verify-package.yml").read_text(

@@ -207,7 +207,27 @@ def verify_expected_file_set(
     release_root: Path,
     expected_paths: set[str],
 ) -> None:
-    observed_paths = set(parity_file_map(release_root))
+    staged_items = list(release_root.rglob("*"))
+    symlinks = [
+        path.relative_to(release_root).as_posix()
+        for path in staged_items
+        if path.is_symlink()
+    ]
+    if symlinks:
+        errors.append(f"staged release contains symlink: {symlinks[0]}")
+    observed_paths = {
+        path.relative_to(release_root).as_posix()
+        for path in staged_items
+        if path.is_file()
+    }
+    cache_debris = sorted(
+        relative
+        for relative in observed_paths
+        if "__pycache__" in PurePosixPath(relative).parts
+        or PurePosixPath(relative).suffix.lower() in {".pyc", ".pyo"}
+    )
+    if cache_debris:
+        errors.append(f"staged release contains cache debris: {cache_debris[0]}")
     if observed_paths != expected_paths:
         errors.append(
             "complete staged file set mismatch: "
@@ -236,13 +256,15 @@ def verify_zip_folder_parity(
     }
     try:
         with zipfile.ZipFile(archive) as bundle:
-            infos = [item for item in bundle.infolist() if not item.is_dir()]
-            names = [item.filename for item in infos]
-            if len(names) != len(set(names)) or len({name.casefold() for name in names}) != len(names):
+            all_infos = bundle.infolist()
+            all_names = [item.filename for item in all_infos]
+            collision_keys = [name.rstrip("/").casefold() for name in all_names]
+            if len(all_names) != len(set(all_names)) or len(collision_keys) != len(set(collision_keys)):
                 errors.append(f"Claude ZIP has duplicate or case-colliding paths: {display_path(archive, release_root)}")
-            unsafe = [name for name in names if not safe_zip_member(name)]
+            unsafe = [name for name in all_names if not safe_zip_member(name)]
             if unsafe:
                 errors.append(f"Claude ZIP has unsafe member path: {display_path(archive, release_root)} -> {unsafe[0]}")
+            infos = [item for item in all_infos if not item.is_dir()]
             observed = {}
             for item in infos:
                 mode = (item.external_attr >> 16) & 0o170000
