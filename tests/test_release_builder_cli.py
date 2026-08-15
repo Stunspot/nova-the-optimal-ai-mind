@@ -202,7 +202,7 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             "docs/index.html": f"Latest published: {version}\n",
             "docs/install.html": f"{archive} latest published release\n",
             "docs/UPGRADE.md": f"Nova + MIND Free {version}\n",
-            "docs/VERIFICATION.md": "The committed source lock binds current bytes.\nA package PASS is issued only after archive readback.\n",
+            "docs/VERIFICATION.md": "The committed [source lock](../design/source-lock.json) binds current bytes.\nA package PASS is issued only after archive readback.\n",
             "design/FREE-NOVA-PACKAGE-MAP.md": f"published release; {version}\nProduct: **Nova + MIND Free {version}**\nThe product includes deterministic tests.\n",
             "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis published release corrects customer truth.\n\n## old\nHistorical candidate.\n\n## Version layers\n\n- Product release: Nova + MIND Free {version}\n",
             "plugins/augment-of-mind/RELEASE-NOTES.md": f"# MIND notes\n\n## {mind_version}\nMIND {mind_version} was published as a component of an earlier product and is retained unchanged in {version}.\n\n## old\nThis historical local candidate does not imply publication or a public release.\n",

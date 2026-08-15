@@ -136,7 +136,7 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
         "docs/install.html": (versioned_archive, "latest published release"),
         "docs/UPGRADE.md": (f"Nova + MIND Free {PRODUCT_VERSION}",),
         "docs/VERIFICATION.md": (
-            "The committed source lock",
+            "The committed [source lock]",
             "A package PASS is issued only after",
         ),
         "design/FREE-NOVA-PACKAGE-MAP.md": (
