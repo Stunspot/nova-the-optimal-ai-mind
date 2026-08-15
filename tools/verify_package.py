@@ -11,7 +11,7 @@ import subprocess
 import sys
 import tomllib
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 NOVA = ROOT / "plugins" / "nova-the-optimal-ai"
@@ -154,23 +154,161 @@ def verify_release_links(errors: list[str], release_root: Path) -> None:
                 )
 
 
+def parity_file_map(root: Path) -> dict[str, Path]:
+    return {
+        path.relative_to(root).as_posix(): path
+        for path in root.rglob("*")
+        if path.is_file()
+        and "__pycache__" not in path.parts
+        and path.name not in {".git", ".pytest_cache"}
+        and path.suffix.lower() not in {".pyc", ".pyo"}
+    }
+
+
+def compare_directory_bytes(
+    errors: list[str],
+    expected_root: Path,
+    observed_root: Path,
+    label: str,
+    expected_overrides: dict[str, bytes] | None = None,
+) -> None:
+    expected = parity_file_map(expected_root)
+    observed = parity_file_map(observed_root)
+    if set(expected) != set(observed):
+        missing = sorted(set(expected) - set(observed))
+        extra = sorted(set(observed) - set(expected))
+        errors.append(
+            f"{label} file set mismatch: missing={missing[:5]!r}, extra={extra[:5]!r}"
+        )
+    overrides = expected_overrides or {}
+    for relative in sorted(set(expected) & set(observed)):
+        expected_bytes = overrides.get(relative, expected[relative].read_bytes())
+        if expected_bytes != observed[relative].read_bytes():
+            errors.append(f"{label} byte mismatch: {relative}")
+
+
+def safe_zip_member(name: str) -> bool:
+    if not name or "\\" in name or name.startswith("/"):
+        return False
+    path = PurePosixPath(name)
+    return not path.is_absolute() and all(part not in {"", ".", ".."} for part in path.parts)
+
+
+def verify_zip_folder_parity(
+    errors: list[str],
+    archive: Path,
+    folder: Path,
+    skill_name: str,
+    release_root: Path,
+) -> None:
+    expected = {
+        f"{skill_name}/{relative}": path.read_bytes()
+        for relative, path in parity_file_map(folder).items()
+    }
+    try:
+        with zipfile.ZipFile(archive) as bundle:
+            infos = [item for item in bundle.infolist() if not item.is_dir()]
+            names = [item.filename for item in infos]
+            if len(names) != len(set(names)) or len({name.casefold() for name in names}) != len(names):
+                errors.append(f"Claude ZIP has duplicate or case-colliding paths: {display_path(archive, release_root)}")
+            unsafe = [name for name in names if not safe_zip_member(name)]
+            if unsafe:
+                errors.append(f"Claude ZIP has unsafe member path: {display_path(archive, release_root)} -> {unsafe[0]}")
+            observed = {}
+            for item in infos:
+                mode = (item.external_attr >> 16) & 0o170000
+                if mode == 0o120000:
+                    errors.append(f"Claude ZIP has symlink member: {display_path(archive, release_root)} -> {item.filename}")
+                if item.filename not in observed:
+                    observed[item.filename] = bundle.read(item)
+    except (OSError, zipfile.BadZipFile, RuntimeError) as exc:
+        errors.append(f"Claude ZIP cannot be read: {display_path(archive, release_root)}: {exc}")
+        return
+    if set(expected) != set(observed):
+        missing = sorted(set(expected) - set(observed))
+        extra = sorted(set(observed) - set(expected))
+        errors.append(
+            f"Claude ZIP member set mismatch for {skill_name}: "
+            f"missing={missing[:5]!r}, extra={extra[:5]!r}"
+        )
+    for name in sorted(set(expected) & set(observed)):
+        if expected[name] != observed[name]:
+            errors.append(f"Claude ZIP byte mismatch for {skill_name}: {name}")
+
+
+def verify_staged_checksums(
+    errors: list[str],
+    release_root: Path,
+    expected_targets: set[str],
+) -> None:
+    checksum_file = release_root / "SHA256SUMS.txt"
+    if not checksum_file.is_file():
+        errors.append("staged checksum manifest is missing")
+        return
+    records: dict[str, str] = {}
+    for line_number, line in enumerate(checksum_file.read_text(encoding="utf-8").splitlines(), 1):
+        match = re.fullmatch(r"([0-9a-f]{64})  (.+)", line)
+        if not match:
+            errors.append(f"invalid staged checksum line {line_number}")
+            continue
+        digest, relative = match.groups()
+        if relative in records:
+            errors.append(f"duplicate staged checksum path: {relative}")
+            continue
+        if not safe_zip_member(relative):
+            errors.append(f"unsafe staged checksum path: {relative}")
+            continue
+        records[relative] = digest
+    if set(records) != expected_targets:
+        errors.append(
+            "staged checksum target set mismatch: "
+            f"missing={sorted(expected_targets - set(records))[:5]!r}, "
+            f"extra={sorted(set(records) - expected_targets)[:5]!r}"
+        )
+    for relative, expected_digest in records.items():
+        target = (release_root / relative).resolve()
+        try:
+            target.relative_to(release_root.resolve())
+        except ValueError:
+            errors.append(f"staged checksum path escapes package: {relative}")
+            continue
+        if not target.is_file():
+            errors.append(f"staged checksum target missing: {relative}")
+        elif sha256(target) != expected_digest:
+            errors.append(f"staged checksum mismatch: {relative}")
+
+
+def verify_release_manifest(
+    errors: list[str],
+    manifest_path: Path,
+    expected_manifest: dict[str, object],
+) -> None:
+    try:
+        manifest = load_json(manifest_path)
+    except ValueError as exc:
+        errors.append(str(exc))
+        return
+    if manifest != expected_manifest:
+        errors.append("release manifest claims do not match staged contents and source state")
+
+
 def verify_release(errors: list[str], release_root: Path) -> None:
     release_root = release_root.resolve()
     codex_plugins = release_root / "codex" / "plugins"
     claude_folders = release_root / "claude" / "folders"
     claude_zips = release_root / "claude" / "zips"
-    missing = False
-    for path in (
+    required = (
         codex_plugins / "nova-the-optimal-ai",
         codex_plugins / "augment-of-mind",
         claude_folders,
         claude_zips,
-    ):
-        if not path.exists():
-            errors.append(f"release path missing: {display_path(path, release_root)}")
-            missing = True
+    )
+    missing = [path for path in required if not path.exists()]
+    for path in missing:
+        errors.append(f"release path missing: {display_path(path, release_root)}")
     if missing:
         return
+
     verify_release_links(errors, release_root)
     expected = NOVA_SKILLS | MIND_SKILLS
     folders = {path.name for path in claude_folders.iterdir() if path.is_dir()}
@@ -179,33 +317,104 @@ def verify_release(errors: list[str], release_root: Path) -> None:
     zips = {path.stem for path in claude_zips.glob("*.zip")}
     if zips != expected:
         errors.append(f"Claude ZIP set mismatch: expected {len(expected)}, found {len(zips)}")
+
+    compare_directory_bytes(
+        errors,
+        NOVA,
+        codex_plugins / "nova-the-optimal-ai",
+        "Codex Nova plugin parity",
+    )
+    compare_directory_bytes(
+        errors,
+        MIND,
+        codex_plugins / "augment-of-mind",
+        "Codex MIND plugin parity",
+    )
+
+    builder_path = ROOT / "tools" / "build_release.py"
+    builder_spec = importlib.util.spec_from_file_location("nova_release_builder_for_verify", builder_path)
+    if builder_spec is None or builder_spec.loader is None:
+        errors.append("cannot load release builder for staged-release oracle")
+        return
+    builder = importlib.util.module_from_spec(builder_spec)
+    builder_spec.loader.exec_module(builder)
+
     for name in sorted(expected):
+        source_folder = (NOVA if name in NOVA_SKILLS else MIND) / "skills" / name
+        folder = claude_folders / name
+        overrides: dict[str, bytes] = {}
+        if name in builder.CLAUDE_DESCRIPTIONS:
+            source_text = (source_folder / "SKILL.md").read_text(encoding="utf-8")
+            derived, count = re.subn(
+                r"(?m)^description:\s*.*$",
+                f'description: "{builder.CLAUDE_DESCRIPTIONS[name]}"',
+                source_text,
+                count=1,
+            )
+            if count != 1:
+                errors.append(f"cannot derive expected Claude description: {name}")
+            else:
+                overrides["SKILL.md"] = derived.encode("utf-8")
+        compare_directory_bytes(
+            errors,
+            source_folder,
+            folder,
+            f"Claude folder parity for {name}",
+            overrides,
+        )
         archive = claude_zips / f"{name}.zip"
-        if not archive.is_file():
-            continue
-        with zipfile.ZipFile(archive) as bundle:
-            entries = [item.filename for item in bundle.infolist() if not item.is_dir()]
-        if not entries or any(not entry.startswith(f"{name}/") for entry in entries):
-            errors.append(
-                "Claude ZIP has wrong top-level folder: "
-                f"{display_path(archive, release_root)}"
-            )
-        if f"{name}/SKILL.md" not in entries:
-            errors.append(
-                f"Claude ZIP lacks direct SKILL.md: {display_path(archive, release_root)}"
-            )
-        folder_entry = claude_folders / name / "SKILL.md"
+        if archive.is_file():
+            verify_zip_folder_parity(errors, archive, folder, name, release_root)
+        skill_file = folder / "SKILL.md"
         try:
-            declared, description = skill_metadata(folder_entry)
+            declared, description = skill_metadata(skill_file)
             if declared != name:
                 errors.append(f"Claude folder name mismatch: {name} declares {declared}")
             if not (1 <= len(description) <= 200):
                 errors.append(
                     f"Claude description length invalid ({len(description)}): "
-                    f"{display_path(folder_entry, release_root)}"
+                    f"{display_path(skill_file, release_root)}"
                 )
         except ValueError as exc:
             errors.append(str(exc))
+
+    try:
+        revision, source_count, source_digest, _ = builder.source_state()
+    except RuntimeError as exc:
+        errors.append(f"cannot establish staged release source state: {exc}")
+        revision = source_count = source_digest = None
+    index = load_json(release_root / "bundle" / "reminder" / "associative-index-qwen3-embedding-0.6b.json")
+    manifest_path = release_root / "release-manifest.json"
+    expected_manifest = {
+        "format": "nova-mind-free-release/v1",
+        "product": "Nova + MIND Free",
+        "version": PRODUCT_VERSION,
+        "source_revision": revision,
+        "source_material_file_count": source_count,
+        "source_material_sha256": source_digest,
+        "plugin_versions": {
+            "nova-the-optimal-ai": NOVA_VERSION,
+            "augment-of-mind": MIND_VERSION,
+        },
+        "codex_plugins": list(builder.PLUGIN_NAMES),
+        "claude_skill_count": len(folders),
+        "claude_skills": sorted(folders),
+        "mind_faculty_count": 16,
+        "mind_attached_testforge_count": 2,
+        "reminder_capability_count": len(index.get("cards", [])),
+        "reminder_qualification_state": index.get("embedding_profile", {}).get("qualification_state"),
+        "evidence_boundary": "Structural release artifact. Live installation, hook trust, host delivery, behavioral qualification, Claude upload, publication, and commercial approval remain separate.",
+    }
+    verify_release_manifest(errors, manifest_path, expected_manifest)
+
+    checksum_targets = {
+        *(f"claude/zips/{name}.zip" for name in expected),
+        "release-manifest.json",
+        "codex/plugins/nova-the-optimal-ai/.codex-plugin/plugin.json",
+        "codex/plugins/augment-of-mind/.codex-plugin/plugin.json",
+        "bundle/reminder/associative-index-qwen3-embedding-0.6b.json",
+    }
+    verify_staged_checksums(errors, release_root, checksum_targets)
 
 
 def verify(include_release: bool, release_root: Path | None = None) -> dict:

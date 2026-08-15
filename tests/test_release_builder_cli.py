@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from unittest import mock
 
@@ -236,6 +237,75 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         self.assertIn(verify_call, text)
         self.assertIn('"--release-root"', text)
         self.assertLess(text.index(verify_call), text.index(seal_call))
+
+    def test_directory_parity_rejects_mutated_and_missing_bytes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            expected = root / "expected"
+            observed = root / "observed"
+            expected.mkdir()
+            observed.mkdir()
+            (expected / "kept.txt").write_bytes(b"canonical")
+            (expected / "omitted.txt").write_bytes(b"required")
+            (observed / "kept.txt").write_bytes(b"corrupt")
+            errors: list[str] = []
+            VERIFIER_MODULE.compare_directory_bytes(
+                errors, expected, observed, "adversarial parity"
+            )
+            self.assertTrue(any("file set mismatch" in error for error in errors))
+            self.assertTrue(any("byte mismatch" in error for error in errors))
+
+    def test_zip_parity_rejects_unsafe_omitted_and_mutated_members(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            folder = root / "skill"
+            folder.mkdir()
+            (folder / "SKILL.md").write_bytes(b"canonical")
+            (folder / "required.txt").write_bytes(b"required")
+            archive = root / "skill.zip"
+            with zipfile.ZipFile(archive, "w") as bundle:
+                bundle.writestr("skill/SKILL.md", b"corrupt")
+                bundle.writestr("../escape.txt", b"unsafe")
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_zip_folder_parity(
+                errors, archive, folder, "skill", root
+            )
+            self.assertTrue(any("unsafe member path" in error for error in errors))
+            self.assertTrue(any("member set mismatch" in error for error in errors))
+            self.assertTrue(any("byte mismatch" in error for error in errors))
+
+    def test_staged_checksums_reject_mutation_and_omission(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "payload.bin").write_bytes(b"mutated")
+            (root / "SHA256SUMS.txt").write_text(
+                f'{"0" * 64}  payload.bin\n',
+                encoding="utf-8",
+            )
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_staged_checksums(
+                errors, root, {"payload.bin", "required.bin"}
+            )
+            self.assertTrue(any("target set mismatch" in error for error in errors))
+            self.assertTrue(any("checksum mismatch" in error for error in errors))
+
+    def test_release_manifest_rejects_false_claims(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            manifest = Path(directory) / "release-manifest.json"
+            manifest.write_text(
+                json.dumps({"version": "wrong"}),
+                encoding="utf-8",
+            )
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_release_manifest(
+                errors,
+                manifest,
+                {"version": BUILDER_MODULE.VERSION},
+            )
+            self.assertIn(
+                "release manifest claims do not match staged contents and source state",
+                errors,
+            )
 
     def test_ci_installs_standalone_mind_build_requirements(self) -> None:
         workflow = (ROOT / ".github" / "workflows" / "verify-package.yml").read_text(
