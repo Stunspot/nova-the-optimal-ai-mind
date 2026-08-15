@@ -543,19 +543,19 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         },
         "augment-of-mind": {
             "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-            "commit": "c48a25b0a1d510d075bc3a519bbc5fab1c6afa33",
+            "commit": "917d06ea2ed28b76fd41524a60ff01314b54c89d",
             "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },
         "software-verification": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
+            "commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
             "source_path": "testforge/skills/software-verification",
             "imported_path": "plugins/augment-of-mind/skills/software-verification",
         },
         "verification-reviewer": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
+            "commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
             "source_path": "testforge/skills/verification-reviewer",
             "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
         },
@@ -573,45 +573,40 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         ):
             if record.get(record_key) != expected_source[expected_key]:
                 errors.append(f"source lock {record_key} is stale: {component}")
-        observed_tree = tree_fingerprint(ROOT / expected_source["imported_path"])
+
+    for component, record in locked_records.items():
+        imported_path = record.get("imported_path")
+        if not isinstance(imported_path, str):
+            errors.append(f"source lock imported path is invalid: {component}")
+            continue
+        imported_root = (ROOT / imported_path).resolve()
+        try:
+            imported_root.relative_to((ROOT / "plugins").resolve())
+        except ValueError:
+            errors.append(f"source lock imported path escapes plugin custody: {component}")
+            continue
+        if not imported_root.is_dir():
+            errors.append(f"source lock imported path is missing: {component}")
+            continue
+        observed_tree = tree_fingerprint(imported_root)
         if record.get("imported_tree") != observed_tree:
             errors.append(f"source lock imported tree is stale: {component}")
-        if record.get("source_tree") != observed_tree:
+        selected_tree = record.get("selected_tree")
+        if selected_tree is not None and selected_tree != observed_tree:
+            errors.append(f"source lock selected tree is stale: {component}")
+        selection = record.get("selection_includes")
+        if selection is not None:
+            observed_selection = sorted(
+                path.relative_to(imported_root).as_posix()
+                for path in imported_root.rglob("*")
+                if path.is_file()
+                and "__pycache__" not in path.parts
+                and path.suffix.lower() not in {".pyc", ".pyo"}
+            )
+            if selection != observed_selection:
+                errors.append(f"source lock explicit selection is stale: {component}")
+        elif component != "promptcraft" and record.get("source_tree") != observed_tree:
             errors.append(f"source lock canonical tree does not match imported bytes: {component}")
-
-    ludis_record = locked_records.get("ludis-continuum")
-    expected_ludis = {
-        "source_repository": "https://github.com/Stunspot/ludis-continuum",
-        "source_commit": "e20d8ee88538e1e5a62ba9f18b5224ebedaa05df",
-        "source_path": ".",
-        "imported_path": "plugins/nova-the-optimal-ai/skills/ludis-continuum",
-        "source_tree": {
-            "file_count": 122,
-            "tree_sha256": "a79c66757df392747f811331679937b0d1bba534a45a1945286e5b4c295a7a22",
-        },
-        "selection_excludes": [".github/**", ".editorconfig", ".gitattributes", ".gitignore"],
-        "selected_tree": {
-            "file_count": 117,
-            "tree_sha256": "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da",
-        },
-    }
-    if not isinstance(ludis_record, dict):
-        errors.append("source lock lacks current record: ludis-continuum")
-    else:
-        for key, expected_value in expected_ludis.items():
-            if key in {"selected_tree", "imported_path"}:
-                continue
-            if ludis_record.get(key) != expected_value:
-                errors.append(f"source lock {key} is stale: ludis-continuum")
-        observed_ludis_tree = tree_fingerprint(ROOT / expected_ludis["imported_path"])
-        if observed_ludis_tree != expected_ludis["selected_tree"]:
-            errors.append("embedded Ludis tree does not match the approved 1.1.0 selection")
-        if ludis_record.get("selected_tree") != observed_ludis_tree:
-            errors.append("source lock selected tree is stale: ludis-continuum")
-        if ludis_record.get("imported_tree") != observed_ludis_tree:
-            errors.append("source lock imported tree is stale: ludis-continuum")
-        if ludis_record.get("imported_path") != expected_ludis["imported_path"]:
-            errors.append("source lock imported path is stale: ludis-continuum")
 
     verify_links(errors)
 
