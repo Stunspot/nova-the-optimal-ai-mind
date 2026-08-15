@@ -307,6 +307,26 @@ class ReleaseBuilderCliTests(unittest.TestCase):
                 errors,
             )
 
+    def test_complete_staged_custody_rejects_nonplugin_mutation_and_extra_file(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            canonical = root / "canonical-install.ps1"
+            staged = root / "install.ps1"
+            extra = root / "surprise.exe"
+            canonical.write_bytes(b"canonical installer")
+            staged.write_bytes(b"mutated installer")
+            extra.write_bytes(b"unexpected payload")
+            errors: list[str] = []
+            VERIFIER_MODULE.compare_file_bytes(
+                errors, canonical, staged, "installer parity"
+            )
+            VERIFIER_MODULE.verify_expected_file_set(
+                errors, root, {"install.ps1"}
+            )
+            self.assertTrue(any("installer parity byte mismatch" in error for error in errors))
+            self.assertTrue(any("complete staged file set mismatch" in error for error in errors))
+            self.assertTrue(any("surprise.exe" in error for error in errors))
+
     def test_ci_installs_standalone_mind_build_requirements(self) -> None:
         workflow = (ROOT / ".github" / "workflows" / "verify-package.yml").read_text(
             encoding="utf-8"

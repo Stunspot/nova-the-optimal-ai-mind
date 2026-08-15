@@ -187,6 +187,35 @@ def compare_directory_bytes(
             errors.append(f"{label} byte mismatch: {relative}")
 
 
+def compare_file_bytes(
+    errors: list[str],
+    expected_path: Path,
+    observed_path: Path,
+    label: str,
+    expected_bytes: bytes | None = None,
+) -> None:
+    if not observed_path.is_file():
+        errors.append(f"{label} is missing")
+        return
+    wanted = expected_bytes if expected_bytes is not None else expected_path.read_bytes()
+    if observed_path.read_bytes() != wanted:
+        errors.append(f"{label} byte mismatch")
+
+
+def verify_expected_file_set(
+    errors: list[str],
+    release_root: Path,
+    expected_paths: set[str],
+) -> None:
+    observed_paths = set(parity_file_map(release_root))
+    if observed_paths != expected_paths:
+        errors.append(
+            "complete staged file set mismatch: "
+            f"missing={sorted(expected_paths - observed_paths)[:8]!r}, "
+            f"extra={sorted(observed_paths - expected_paths)[:8]!r}"
+        )
+
+
 def safe_zip_member(name: str) -> bool:
     if not name or "\\" in name or name.startswith("/"):
         return False
@@ -339,6 +368,49 @@ def verify_release(errors: list[str], release_root: Path) -> None:
     builder = importlib.util.module_from_spec(builder_spec)
     builder_spec.loader.exec_module(builder)
 
+    compare_directory_bytes(
+        errors, ROOT / ".agents", release_root / "codex" / ".agents",
+        "Codex marketplace parity",
+    )
+    compare_directory_bytes(
+        errors, ROOT / "docs", release_root / "docs",
+        "customer documentation parity",
+    )
+    compare_directory_bytes(
+        errors, ROOT / "bundle" / "reminder", release_root / "bundle" / "reminder",
+        "reminder bundle parity",
+    )
+    for name in ("FREE-NOVA-PACKAGE-MAP.md", "source-lock.json"):
+        compare_file_bytes(
+            errors, ROOT / "design" / name, release_root / "design" / name,
+            f"packaged design parity for {name}",
+        )
+    for name in (
+        "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md",
+        "LICENSE.md", "install.ps1", "verify-install.ps1",
+    ):
+        compare_file_bytes(
+            errors, ROOT / name, release_root / name,
+            f"packaged root parity for {name}",
+        )
+    source_readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    source_link = "plugins/augment-of-mind/USER-GUIDE.md"
+    packaged_link = "codex/plugins/augment-of-mind/USER-GUIDE.md"
+    if source_readme.count(source_link) != 1:
+        errors.append("cannot derive expected packaged README link")
+        expected_readme = source_readme.encode("utf-8")
+    else:
+        expected_readme = source_readme.replace(source_link, packaged_link).encode("utf-8")
+    compare_file_bytes(
+        errors, ROOT / "README.md", release_root / "README.md",
+        "packaged README parity", expected_readme,
+    )
+    compare_file_bytes(
+        errors, ROOT / "assets" / "nova-emergent.png",
+        release_root / "assets" / "nova-emergent.png",
+        "packaged presentation asset parity",
+    )
+
     for name in sorted(expected):
         source_folder = (NOVA if name in NOVA_SKILLS else MIND) / "skills" / name
         folder = claude_folders / name
@@ -415,6 +487,40 @@ def verify_release(errors: list[str], release_root: Path) -> None:
         "bundle/reminder/associative-index-qwen3-embedding-0.6b.json",
     }
     verify_staged_checksums(errors, release_root, checksum_targets)
+
+    expected_paths: set[str] = {
+        "release-manifest.json",
+        "SHA256SUMS.txt",
+        "design/FREE-NOVA-PACKAGE-MAP.md",
+        "design/source-lock.json",
+        "README.md",
+        "START-HERE.md",
+        "RELEASE-NOTES.md",
+        "SUPPORT.md",
+        "SECURITY.md",
+        "LICENSE.md",
+        "install.ps1",
+        "verify-install.ps1",
+        "assets/nova-emergent.png",
+    }
+    for source_root, prefix in (
+        (ROOT / ".agents", "codex/.agents"),
+        (NOVA, "codex/plugins/nova-the-optimal-ai"),
+        (MIND, "codex/plugins/augment-of-mind"),
+        (ROOT / "docs", "docs"),
+        (ROOT / "bundle" / "reminder", "bundle/reminder"),
+    ):
+        expected_paths.update(
+            f"{prefix}/{relative}" for relative in parity_file_map(source_root)
+        )
+    for name in expected:
+        source_folder = (NOVA if name in NOVA_SKILLS else MIND) / "skills" / name
+        expected_paths.update(
+            f"claude/folders/{name}/{relative}"
+            for relative in parity_file_map(source_folder)
+        )
+        expected_paths.add(f"claude/zips/{name}.zip")
+    verify_expected_file_set(errors, release_root, expected_paths)
 
 
 def verify(include_release: bool, release_root: Path | None = None) -> dict:
