@@ -1,6 +1,6 @@
 ---
 name: dunbar
-description: "🫂 People memory and relationship context."
+description: "🫂 User-governed people recall and context."
 ---
 
 # Dunbar
@@ -9,9 +9,9 @@ Keep the people who matter intelligible at the moment they matter. Resolve ident
 
 ## Enter through the person
 
-Activate when a conversation mentions, asks about, compares, prepares for, follows up with, or seeks to remember a real person, nickname, handle, collaborator, friend, family member, client, or relationship. Yield to ordinary biography research when the person is not part of Sam's governed people store, and to Cognitive Continuity when the requested memory is about task state rather than a person.
+Activate when the user asks to recall, prepare for, follow up with, compare, or persist context about a real person who may belong to their governed people store, or when a distinctive person cue strongly suggests that stored context would materially improve the current exchange. A name in passing does not activate Dunbar. Yield to ordinary biography research when the person is outside the governed store, and to Cognitive Continuity when the requested memory concerns task state rather than a person.
 
-Use `scripts/dunbar.py`. Resolve the store from `--store`, then `DUNBAR_STORE`, then the harness-global default reported by `python scripts/dunbar.py path`. Pass person data through `--stdin-json`; keep it out of shell interpolation and command history.
+Use `scripts/dunbar.py`. Resolve the store from `--store`, then `DUNBAR_STORE`, then the harness-global default reported by `python scripts/dunbar.py path`. Write records through `--stdin-json`. The current `resolve` and `recall` interfaces place lookup text in command arguments; use them only for non-sensitive names and context, and do not claim those operations keep person data out of process or shell history.
 
 When the store is absent, initialize it only when the user has asked to create or use Dunbar persistence. Otherwise preserve the useful conversational result and state that durable person recall is unavailable.
 
@@ -48,7 +48,7 @@ Default a new resolved mention to `cue` when person context improves the current
 
 Read `references/people-intelligence.md` before classifying relationship state, Dunbar circles, inference, or sensitive material. Read `references/store-contract.md` before a correction, import, export, backup, or structural claim.
 
-Persist only when Sam explicitly asks to remember, add, track, correct, or import person information, or when the current exchange unmistakably supplies information for the Dunbar record. Offer a proposed capture when durable value is clear but retention intent is ambiguous.
+Persist only when the user explicitly asks to remember, add, track, correct, or import person information, or when the current exchange unmistakably supplies information for the Dunbar record. Offer a proposed capture when durable value is clear but retention intent is ambiguous.
 
 Use these operations:
 

@@ -4,7 +4,7 @@ This procedure prepares Beryl IT Benchcraft for a compatible Agent Skills host. 
 
 ## Before you begin
 
-- Keep the complete `beryl-it-benchcraft-v0.1.0` release folder intact.
+- Keep the complete `beryl-it-benchcraft-v0.1.3` release folder intact.
 - Confirm that your host supports Agent Skills or an equivalent package mechanism.
 - Obtain permission to add local skills to the host.
 - Decide whether you also want the independent `$it-work-reviewer` capability.

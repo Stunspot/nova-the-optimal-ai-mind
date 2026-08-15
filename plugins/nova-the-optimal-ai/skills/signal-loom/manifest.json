@@ -1,14 +1,14 @@
 {
   "name": "signal-loom",
-  "product_name": "Signal Loom — The Visual Story Production Augment",
-  "version": "0.1.0",
-  "description": "A source-bound visual-story production studio for semantic web infographics and platform-native derivatives.",
+  "product_name": "Signal Loom — The Source-Bound Infographic Augment",
+  "version": "0.1.1",
+  "description": "Makes source-bound web infographics and requested platform derivatives from supplied research, reports, notes, and data.",
   "entrypoint": "SKILL.md",
   "hosts": ["codex", "claude"],
   "runtime": {
-    "python": ">=3.9",
+    "python": ">=3.10",
     "dependencies": []
   },
   "publication": "manual_only",
-  "license": "Proprietary"
+  "license": "MIT"
 }

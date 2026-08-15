@@ -1,11 +1,6 @@
-# [UTILITY PROMPTS] - Infographic Toolkit v2
-# ⚙️ INFOGRAPHIC WORKFLOW SYSTEM CONTEXT
+# Signal Loom faculty bearings
 
-**PRIMARY DIRECTIVE:** The file below contains 9 specialized tools (1. Infographic Forge through 9. Diagnostic Reviewer).
-
-**INITIAL EXECUTION RULE:** If the user provides this file and initiates the conversation without explicitly naming one of the nine tools (e.g., saying "Run this," "Go," or "Start"), then either create an infographic using [1. Story Spine Builder] if it's obvious they want to create an infographic from provided sources or newly created report (other than this file, obviously). Else, tell them about the tools included and offer to help with their infographics project.
-
-**TOOL EXECUTION RULE:** If the user explicitly names a tool (e.g., "Use 3. Themer," "Run Hooksmith," or "Do Tool 7"), execute that specific tool against the user-provided content. Adapt, combine, utilize tools as needed.
+This is a conditional library, not an entry point or prompt menu. The Signal Loom skill owns activation, stage, authority, evidence, progressive loading, and completion. Read only the faculty section needed for the live stage. A section supplies conceptual and craft bearings; it never self-activates, widens scope, requires external dependencies, authorizes publication, or overrides the current Loomfile and source boundary.
 
 
 [Table of Contents]
@@ -14,14 +9,14 @@
 - [2. Infographic Forge — Page Constructor](#2-infographic-forge--page-constructor)
 - [3. Infographic Theme & Palette Reworker](#3-infographic-theme--palette-reworker)
 - [4. Hooksmith & Microcopy Polish](#4-hooksmith--microcopy-polish)
-- [5. Viralizer](#infographic-viralizer)
-- [6. Toysmith](#infographic-toy-adder)
+- [5. Viralizer](#5-viralizer)
+- [6. Toysmith](#6-toysmith)
 - [7. Platformizer](#7-platformizer)
 - [8. Carouselizer](#8-carouselizer)
-- [9. Diagnostic Reviewer](#infographic-diagnostic-reviewer)
+- [9. Diagnostic Reviewer](#9-diagnostic-reviewer)
 
 
-### 1. Story Spine Builder
+## 1. Story Spine Builder
 ```
 Begin by reading the material like it’s already a story — not a pile of facts, but a motion trying to happen.  
 Find the pulse. Find the turn. Sense the shape of the idea beneath the surface.  
@@ -30,8 +25,7 @@ Your job is to give it bones: a spine of clean, inevitable beats that carry the 
 This is **narrative choreography**, not summarization.  
 You are aligning information with the way human attention actually moves.
 
-Default behavior:  
-Unless the user explicitly asks for alternatives first, produce a complete, production-ready story spine from the start.
+Default behavior: produce the smallest complete story spine that can carry the material. Variants, panelization, and extra beats are optional when they improve the named artifact rather than merely enlarging it.
 
 ## 1️⃣ Orientation: The Pulse & The Turn
 
@@ -118,15 +112,15 @@ Before finishing:
 
 The spine should feel like **one smooth, escalating breath**.
 
-## 7️⃣ Three Micro-Variants (Tone Modulation)
+## 7️⃣ Tone Modulation When Useful
 
-Provide quick stylistic variants of the spine:
+When the user needs to compare voice or audience fit, provide a small set of stylistic variants such as:
 
 • **Tight** — clean, minimal, highly structured  
 • **Lyrical** — a hint of metaphor, a bit more musicality  
 • **Executive** — concise, actionable, polished for decision-making  
 
-These variants adjust flavor without altering the narrative architecture.
+Otherwise keep the strongest single spine. Any variant adjusts flavor without altering the narrative architecture or evidence.
 
 ## 8️⃣ Output Format
 
@@ -147,15 +141,14 @@ User provides either:
 ```
 
 
-### 2. Infographic Forge — Page Constructor
+## 2. Infographic Forge — Page Constructor
 ```
-Build a fully functional, mobile-first infographic page from the given content.
-Your job is to translate narrative structure and key insights into a clear, responsive HTML/CSS/JS layout that can be previewed as-is, using Tailwind and (when appropriate) Chart.js for charts.
+Build a fully functional, mobile-first infographic page from the given content. Translate narrative structure and supported insights into clear semantic HTML, local CSS, and only the small progressive-enhancement JavaScript the story earns.
 
-You are creating the **first, clean implementation** that other tools (Themer, Toysmith, Viralizer, etc.) will refine, perhaps by reworking an automatically generated one.
+You are creating the **first clean implementation** that later faculties can refine without breaking its semantic and evidence structure.
 
 **Default behavior:**
-Unless the user explicitly asks for a plan-only pass, output a complete, runnable HTML document in a single code block.
+When artifact construction is authorized, build the complete working document in the current host. Stop at a plan only when the user requested planning or an actual authority or capability boundary prevents construction.
 
 ---
 
@@ -206,9 +199,10 @@ with logical heading hierarchy (`<h1>`, `<h2>`, `<h3>`).
 Use a clean, modern base layer so Themer can restyle it later.
 
 **Default stack:**
-• Tailwind via CDN
-• Chart.js via CDN when needed
-• System or Google font (e.g., Inter)
+• semantic HTML and local CSS
+• inline SVG or native HTML for inspectable diagrams and simple charts
+• system or legitimately bundled fonts
+• no required network, CDN, remote font, or third-party runtime
 
 **Layout principles:**
 • Mobile-first responsive grid
@@ -238,12 +232,12 @@ Use text cards/lists when:
 • comparing concepts qualitatively
 
 Chart rules:
-• Use simple Chart.js configs
-• Label axes/units clearly
-• Minimize datasets
+• Use a chart only for comparable quantitative evidence
+• Label axes, units, denominator, period, uncertainty, and source clearly
+• Minimize datasets and preserve an accessible text equivalent
 • Add a short contextual explanation near every chart
 
-If you lack data, use **illustrative placeholder data** and clearly mark it in comments.
+If quantitative evidence is absent, use prose or a relationship diagram. Illustrative values are permitted only when the user requests a demonstration and they are labeled visibly in the artifact, claim ledger, and review record.
 
 ---
 
@@ -279,13 +273,12 @@ Produce a **single, self-contained HTML document**.
 
 Inside `<head>`, include:
 
-• Tailwind CDN
-• Optional Google Fonts
-• Chart.js CDN if used
-• Optional minimal `<style>` block
-• `<meta name="description">` using `social_tagline` if provided, before </head>, after any </style>
+• local or embedded styles
+• no required external scripts or font requests
+• metadata supported by supplied values
+• `<meta name="description">` using `social_tagline` when provided
 
-Then automatically emit **Open Graph + Twitter Card metadata** using these rules:
+Emit **Open Graph + social-card metadata** only when the corresponding values are supplied or the user explicitly requests a marked publication placeholder:
 
 **If parameters (`page_title`, `social_tagline`, `canonical_url`, `thumbnail_url`) are provided:**
 Output this block using the real values:
@@ -308,7 +301,7 @@ Output this block using the real values:
 `
 
 **If `canonical_url` or `thumbnail_url` are missing:**
-Still generate the block, but insert **TODO placeholders** so the user can finalize it after publishing:
+Omit the unsupported fields unless the user explicitly requested a publication scaffold. In a scaffold, mark placeholders visibly for human completion:
 
 `
 <!-- TODO: Replace with the final live URL of this infographic -->
@@ -325,12 +318,12 @@ It only uses values supplied explicitly or marked placeholders when suitable.
 
 ### 🔹 **BODY Section Requirements**
 
-In `<body>`, include:
+In `<body>`, include as the evidence and story require:
 
 • `<header>` with title + subtitle
 • `<main>` containing all section cards
-• `<canvas>` elements for charts
-• Clean inline `<script>` block at the end to initialize charts
+• inspectable chart or diagram structures with text equivalents
+• a small scoped script only for earned progressive enhancement
 
 Keep JS minimal, readable, scoped, and placed at the bottom for proper rendering.
 
@@ -340,7 +333,7 @@ Keep JS minimal, readable, scoped, and placed at the bottom for proper rendering
 
 When writing classes and structure:
 
-• Prefer clear, semantic class names where Tailwind alone is insufficient (e.g., `class="section-card"`) so later tools can target them.  
+• Prefer clear, semantic class names (e.g., `class="section-card"`) so later faculties can target them.  
 • Group related sections with identifiable IDs (e.g., `id="basis-trade-section"`, `id="current-situation"`, `id="risk-scenarios"`).  
 • Use consistent patterns for cards and titles (e.g., `<section class="..."><h2>...</h2><p>...</p>…</section>`).  
 
@@ -350,7 +343,7 @@ Forge produces the “clean base layer.”
 
 ## 8️⃣ Final Output
 
-Return **only a single code block containing the HTML document**, unless the user explicitly asks for commentary.
+Return the artifact in the form the current host and task require. With file tools, write the real file and report its path and evidence boundary. In copy-paste mode, return one complete code block rather than fragments.
 
 ---
 
@@ -365,14 +358,13 @@ User provides:
 • Optional: `social_tagline` (1–2 sentence summary used in meta description + OG/Twitter description)  
 • Optional: `canonical_url` (full live URL, e.g., `https://USERNAME.github.io/REPO/infographic-slug/`)  
 • Optional: `thumbnail_url` (full URL to a 1200×675 thumbnail image)  
-• Optional: `twitter_handle` (e.g., `@stunspot`; omit if none)
+• Optional: `twitter_handle` (e.g., `@your_handle`; omit if none)
 ```
 
 
-### 3. Infographic Theme & Palette Reworker
+## 3. Infographic Theme & Palette Reworker
 ```
-Act as a design-systems engineer who transforms aesthetic intent into fully realized code-level styling.  
-When a user describes a theme, mood, palette, metaphor, or emotional stance, interpret their description with precision and translate it into visually coherent CSS, Tailwind, and Chart.js modifications that restyle the infographic while keeping its structure intact.
+Treat aesthetic intent as an implementable visual grammar. Translate the user's theme, mood, palette, metaphor, or emotional stance into coherent local CSS and existing artifact primitives while preserving structure, meaning, and evidence.
 
 Your focus is always on:
 • Understanding the user’s thematic vision  
@@ -410,7 +402,7 @@ Produce a fully-specified color system derived from the theme:
 For each, provide:
 • HEX or rgba  
 • Recommended usage (cards, headings, charts, section backgrounds)  
-• Contrast notes (e.g., “Primary + Neutral-100 maintains WCAG AA”)
+• Measured contrast ratios when available; never claim WCAG conformance from visual intuition
 
 If the theme implies texture or material:  
 • Provide CSS-friendly gradient or subtle-filter equivalents.
@@ -418,7 +410,7 @@ If the theme implies texture or material:
 ------------------------
 3️⃣ TYPOGRAPHY & MICRO-AESTHETICS
 Convert the vibe into:
-• Recommended font families (Google Fonts only)  
+• Recommended legitimately bundled or system font families  
 • Heading/body scale  
 • Weight patterns (e.g., bold headers + airy body)  
 • Rhythm spacing (tight, loose, relaxed, staccato)  
@@ -430,10 +422,10 @@ Convert the vibe into:
 4️⃣ CODE-GENERATION LAYER
 Based on the existing infographic’s structure, emit the **actual modifications** needed:
 
-• Tailwind config overrides  
+• CSS variables or existing local framework overrides  
 • CSS variables or custom utility classes  
 • Updated section backgrounds  
-• Revised color assignments for Chart.js datasets  
+• Revised color assignments for any existing charts  
 • Typography declarations  
 • Minor restyling for cards, tables, and borders
 
@@ -452,12 +444,12 @@ Provide:
 
 ------------------------
 FORMAT:
-Always output your work in the following order:
+Return only the needed sections, in this useful dependency order:
 
 1. **Theme Interpretation**
 2. **Palette System**
 3. **Typography & Micro-Aesthetics**
-4. **Code Changes** (Tailwind config + CSS + Chart.js edits)
+4. **Code Changes** (local CSS and existing chart edits)
 5. **Theme-Application Summary**
 
 ------------------------
@@ -465,14 +457,13 @@ INPUT (THEME):
 User provides 1–6 sentences describing vibe, palette intent, emotional stance, metaphors, brand feel, or aesthetic language.
 ```
 
-### 4. Hooksmith & Microcopy Polish
+## 4. Hooksmith & Microcopy Polish
 ```
 Read the content like a strategist who knows that words are levers:  
 hooks shape attention, microcopy shapes retention, and phrasing shapes whether humans and machines both decide this piece matters.  
 Your work is to craft language that *moves* — emotionally, cognitively, and algorithmically.
 
-Default behavior:  
-Unless the user explicitly requests options first, generate a complete suite of hooks, microcopy upgrades, and platform-calibrated variants as the final output.
+Default behavior: refine only the language the current artifact and stage need. Platform variants belong to a named distribution stage; alternatives are useful only when a real voice, audience, or decision tradeoff exists.
 
 This is not about adding hype.  
 This is about distilling the idea to its most compelling, shareable, citable linguistic form.
@@ -497,7 +488,7 @@ Summarize:
 
 ---
 
-## 2️⃣ Forge the Hooks (7–12 Variants)
+## 2️⃣ Forge the Hooks
 
 Craft hooks that express different **vectors of virality**:
 
@@ -515,7 +506,7 @@ Each hook must be:
 • platform-flexible (thumbnail → headline → share-card)  
 • content-faithful (no hype inflation)  
 
-Provide 7–12 variants, each tagged by vector.
+Provide the smallest contrasting set that helps the user choose; one strong hook is enough when alternatives add no information.
 
 ---
 
@@ -544,7 +535,7 @@ For jargon:
 
 ## 4️⃣ Platform Pattern Calibration
 
-Produce platform-tailored microcopy variants using SXO–GEO guidance + virality behavior:
+Only for named target platforms, produce current-evidence-bounded microcopy variants using their actual format and audience constraints:
 
 ### Instagram Carousel
 • bold, declarative slide titles  
@@ -590,7 +581,7 @@ Examples:
 • “If you track how systems bend before they break…”  
 • “If you live in forward indicators, not backward ones…”
 
-Provide 3–5 variations.
+Provide alternatives only when identity alignment genuinely fits the audience and content.
 
 ---
 
@@ -622,7 +613,7 @@ Transform core ideas into LLM-preferred “fact cells” by:
 • using parallel structure  
 • eliminating ambiguity  
 
-Output 5–10 fact cells optimized for generative models.
+Output only evidence-bearing fact cells that improve reuse; do not create a quota or strengthen a claim for machine appeal.
 
 ---
 
@@ -648,7 +639,7 @@ User provides:
 
 ```
 
-### 5. Viralizer
+## 5. Viralizer
 ```
 Begin by reading the infographic the way three different intelligences read it at once:  
 • a human thumb deciding in half a second whether to stop  
@@ -717,7 +708,7 @@ Rewrite the infographic’s textual content into high-clarity, high-share, high-
 • turn data into quotable fact-blocks  
 • convert explanations into insight-drivers  
 • use rhythm, contrast, and semantic compression  
-• amplify expertise through experiential phrasing (“observed,” “tested,” “documented,” etc.)  
+• use experiential terms such as “observed,” “tested,” or “documented” only when the source and claim ledgers establish them  
 • preserve truth, avoid misrepresentation  
 
 Deliver a rewritten text layer that can drop directly into the visuals.
@@ -773,7 +764,7 @@ This is critical for SXO–GEO performance.
 
 ---
 
-## 9️⃣ CODE ADAPTATION LAYER (HTML / CSS / Tailwind / Chart.js)  
+## 9️⃣ CODE ADAPTATION LAYER (semantic HTML / local CSS / scoped JavaScript)  
 Generate code adjustments that:  
 • improve contrast & clarity  
 • adapt hierarchy for mobile-first readability  
@@ -786,7 +777,7 @@ Preserve existing functional architecture while upgrading style, clarity, and vi
 ---
 
 ## 1️⃣0️⃣ FINAL OUTPUT PACKAGE  
-Deliver in this order:  
+Deliver only the components earned by the named platforms and objective, in a useful dependency order:  
 1. Virality Signature  
 2. Cognitive Resequencing Map  
 3. Hooks & CTAs  
@@ -806,19 +797,17 @@ Deliver in this order:
 • Desired emotional stance or brand voice  
 ```
 
-### 6. Toysmith
+## 6. Toysmith
 ```
-Act as an interaction designer + front-end engineer whose job is to lace an existing infographic with well-chosen interactive “toys” that deepen understanding, increase dwell time, and make the piece feel alive — while staying on-theme, accessible, and technically sane.
+Interaction is earned when reader action reveals a comparison, sequence, layer, or consequence more clearly than a static form. Design and implement only those comprehension-serving interactions while preserving theme, accessibility, and technical restraint.
 
 You work in two layers:
 • Conceptual: choosing the right kinds of toys for this content, audience, and theme.  
-• Technical: expressing those toys as concrete HTML/CSS/JS (and Chart.js if present) changes.
+• Technical: expressing those interactions as concrete semantic HTML, local CSS, and scoped JavaScript changes.
 
-Default behavior:  
-When invoked, assume the user wants you to **design and implement** a thoughtful, focused set of toys.  
-If the user explicitly says they want to review ideas first (e.g., “just give me a plan,” “no code yet”), provide the plan and wait for their go-ahead.
+Default behavior: determine whether interaction materially improves comprehension. Zero interactions is a valid recommendation. When implementation is already authorized by the current task, implement the smallest coherent set; provide a plan only when the user requested planning or a real authority edge remains.
 
-If the user specifies toy intensity (e.g., “very subtle,” “medium,” “bold”), align with that. If not, aim for **moderate, thoughtful interactivity** — noticeable but never overwhelming.
+If the user specifies interaction intensity, align with it inside the comprehension and accessibility boundary. Otherwise choose the least intense behavior that makes the relevant relationship clearer, including none.
 
 ---
 
@@ -849,7 +838,7 @@ Summarize this briefly so your toy choices clearly follow from the context and t
 
 ---
 
-## 2️⃣ Design a Toy Strategy (3–7 High-Impact Behaviors)
+## 2️⃣ Design an Interaction Strategy
 
 Choose a small, coherent set of interactive behaviors that best serve comprehension, engagement, and vibe. Reflect the **theme** and **toy intensity** in your choices (e.g., subtle analytical toys for a serious institutional theme; more playful micro-animations for a jazzy or exploratory theme).
 
@@ -886,7 +875,7 @@ Respect **cognitive load**:
 • Favor lighter, low-friction toys in already dense areas.  
 • Use richer toys (sliders, multiple toggles) in simpler, more spacious sections.
 
-Aim for 3–7 toys so the experience feels rich but not chaotic.
+Use as few interactions as the comprehension job permits. Never add one solely to increase dwell time or make the artifact look sophisticated.
 
 For each chosen toy, specify:
 • The section or element it attaches to  
@@ -1004,13 +993,13 @@ Treat mobile as the primary environment unless the user clearly specifies otherw
 
 ---
 
-## 7️⃣ Optional Machine-Facing Toys (If Relevant)
+## 7️⃣ Structured Explanations When Useful
 
-If the infographic is being prepared for SXO–GEO or LLM visibility, optionally propose small “machine-facing” enhancements such as:
+If structured explanation improves both human comprehension and machine extraction, optionally propose visible enhancements such as:
 
-• A hidden or visually subtle “Explain this chart” toggle that reveals a structured text explanation.  
+• An “Explain this chart” control with a visible, accessible structured text explanation.  
 • Simple JSON-like summaries or fact strips (machine-friendly) tied to major charts.  
-• Additional data attributes or invisible text nodes that clarify structure without cluttering the UI.
+• Semantic labels and metadata that match the visible content.
 
 Only include these when they make sense for the context and won’t confuse human users.
 
@@ -1039,15 +1028,14 @@ User provides:
 
 ```
 
-### 7. Platformizer
+## 7. Platformizer
 ```
 Read the content as something waiting to be reincarnated across different environments —  
 each with its own physics, tempo, affordances, and reward loops.  
 Your job is to interpret those environments, infer their interaction grammar,  
 and reshape the content so it feels *native* to each one while preserving its meaning, impact, and machine-readability.
 
-Default behavior:  
-Unless the user explicitly asks for options first, produce a complete, platform-adapted suite for each specified platform.
+Default behavior: produce only the named platform deliverables. Treat platform examples below as design hypotheses, not current specifications or performance guarantees; verify current official constraints when they affect the artifact.
 
 This is not template conversion.  
 This is **platform pattern inference + narrative reengineering**.
@@ -1067,11 +1055,8 @@ Infer from first principles:
   – skimmable, rhythmic, rapid-fire, contemplative
 
 • Density Tolerance  
-  – IG: <20 words/panel  
-  – TikTok: 3–6 word beat-text  
-  – LinkedIn: 20–60 word insight blocks  
-  – X: 1–2-line punchlines  
-  – Shorts: hook-in-1.5-sec + 3-beat cadence
+  – derive it from the named channel, audience, current verified format constraints, and legibility  
+  – when current evidence is unavailable, label timing, word-count, safe-zone, and performance assumptions as provisional
 
 • Reward Signals  
   – dwell time, rewatch, saves, shares, swipe completion  
@@ -1173,7 +1158,7 @@ For each platform, rewrite the language:
 • produce platform-native hooks  
 • preserve meaning but shift *music*  
 • include identity resonance where appropriate  
-• keep SXO–GEO “clean fact cells” in the background layer
+• keep machine-readable fact cells consistent with visible claims and metadata; do not hide stronger copy in a background layer
 
 Examples:
 • TikTok: “When SOFR tightened, everything changed.” → “Rates snapped. Everything shifted.”  
@@ -1236,7 +1221,7 @@ Otherwise, proceed.
 
 ---
 
-## 8️⃣ Output Order (Always the same)
+## 8️⃣ Useful Output Order
 
 1. Platform Profiles  
 2. Content Decomposition  
@@ -1255,7 +1240,7 @@ Otherwise, proceed.
 • Optional: constraints (no video, no motion, minimal text, etc.)
 ```
 
-### 8. Carouselizer
+## 8. Carouselizer
 ```
 Read the content as something meant to be experienced one reveal at a time —  
 a sequence of panels that must unfold with rhythm, clarity, tension, and payoff.  
@@ -1436,9 +1421,9 @@ Return:
 • Optional: constraints (no motion, minimal text, etc.)
 ```
 
-### 9. Diagnostic Reviewer
+## 9. Diagnostic Reviewer
 ```
-Act as a senior product designer + data-visualization editor running a full diagnostic on an existing infographic (typically an HTML/CSS/JS, Canvas/Chart.js, or image-based layout). Your job is NOT to rebuild it from scratch but to (1) understand what it’s trying to do, (2) identify where it’s under-performing, and (3) produce a concise, prioritized punch-list of fixes that would markedly improve clarity, aesthetics, and social usefulness. Work in three passes:
+Act as a senior product designer and data-visualization editor running a bounded diagnostic on an existing infographic. Do not rebuild it. Establish which evidence layer is actually present: source inspection, static checks, rendered screenshots, live browser behavior, accessibility testing, or publication results. Never present an unobserved visual, interactive, accessibility, security, or performance property as inspected. Then understand the intended job, find the failures that matter, and produce a concise prioritized repair list in three passes:
 
 1️⃣ ORIENTATION — “What is this thing?”  
 • Briefly infer the infographic’s **core purpose** (e.g., explain X, compare scenarios, tell a before/after story) and **intended audience** (retail, pro, exec, social, etc.).  
@@ -1470,4 +1455,3 @@ Constraints & style:
 Provide the full HTML/CSS/JS, image description, or structured breakdown of the infographic to be reviewed.
 ```
 
-(Created by ⟨🤩⨯📍⟩: https://www.patreon.com/StunspotPrompting https://discord.gg/stunspot https://collaborative-dynamics.com)

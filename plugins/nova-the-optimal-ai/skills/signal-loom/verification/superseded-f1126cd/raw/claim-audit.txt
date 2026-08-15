@@ -1,0 +1,12 @@
+COMMIT=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
+GOVERNED_FINGERPRINT=aee2427da83b43e5af76c3b0180c136cae265dfe1bdd813e4a2da3901872bf94
+MANIFEST_RUNTIME=>=3.10
+SOURCE_RUNTIME_EVIDENCE=PEP 604 union syntax appears in init_loomfile.py, package_loomfile.py, validate_loomfile.py, and inspect_infographic_html.py; public Python 3.10+ declarations match.
+PYTHON_3_10_GRAMMAR_CHECK=PASS; all five shipped scripts parsed with ast feature_version=(3,10). This is static grammar evidence, not a Python 3.10 runtime execution.
+EXECUTABLE_IMPORT_RESULT=PASS
+EXECUTABLE_IMPORTS=Python standard library plus project-local modules only; no third-party runtime dependency imported.
+NETWORK_TELEMETRY_RESULT=PASS
+NETWORK_TELEMETRY_EVIDENCE=No requests, urllib, http.client, socket, aiohttp, telemetry, analytics, or remote script runtime in executable helpers or Pages source. HTTP(S) strings in Pages are metadata, Git clone commands, and customer navigation links, not executable fetch behavior.
+PACKAGING_CLAIM_RESULT=PASS
+PACKAGING_CLAIM_EVIDENCE=Ten direct tests support output containment, required empty-directory preservation, exact archived payload hashing, extracted-archive validation, registered-source mutation rejection, project immutability, non-overwrite, owned-output cleanup, and retry.
+BOUNDARY=This source audit does not prove security, absence of secrets in user content, host-provider network behavior, fresh-host activation, or publication.

@@ -1,4 +1,4 @@
-# Beryl IT Benchcraft v0.1.0
+# Beryl IT Benchcraft v0.1.3
 
 Beryl IT Benchcraft is an IT technician capability for diagnosing, repair-planning, configuring, recovering, securing, migrating, and documenting computers and small networks. You describe the problem in ordinary language; Beryl turns it into a safe, evidence-led case with a useful next move and an honest completion state.
 

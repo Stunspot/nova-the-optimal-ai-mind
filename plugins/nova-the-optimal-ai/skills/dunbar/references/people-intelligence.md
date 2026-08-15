@@ -14,12 +14,12 @@ Use circles as approximate relationship-maintenance bands, not scientific measur
 - `recognized-1500`: recognizable people with minimal relational continuity;
 - `unplaced`: insufficient or deliberately unclassified relationship context.
 
-Let Sam set or correct a circle. Never infer intimacy from message volume, job title, social status, or data abundance.
+Let the user set or correct a circle. Never infer intimacy from message volume, job title, social status, or data abundance.
 
 ## Keep evidence states different
 
 - `verified`: directly checked against an accountable source for the narrow claim;
-- `observed`: Sam or an authorized tool directly witnessed the event;
+- `observed`: the user or an authorized tool directly witnessed the event;
 - `reported`: someone supplied the claim without independent verification;
 - `inferred`: a bounded interpretation derived from named evidence;
 - `unknown`: the record acknowledges a missing answer;

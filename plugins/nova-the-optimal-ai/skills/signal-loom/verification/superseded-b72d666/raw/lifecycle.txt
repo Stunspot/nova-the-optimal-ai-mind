@@ -1,0 +1,30 @@
+INIT
+Initialized Loomfile: C:\Users\user\AppData\Local\Temp\signal-loom-final-9aa8921d88f840f7a1f03e3008df93f8\sample
+EXIT=0
+VALIDATE
+PASS: Loomfile core checks (0 warning(s))
+EXIT=0
+PACKAGE
+Packaged 13 files: C:\Users\user\AppData\Local\Temp\signal-loom-final-9aa8921d88f840f7a1f03e3008df93f8\sample.zip
+EXIT=0
+ZIP_ENTRIES=13
+ZIP_SINGLE_ROOT=True
+ZIP_MANIFEST=True
+OVERWRITE_REFUSAL
+python.exe : ERROR: output already exists:
+C:\Users\user\AppData\Local\Temp\signal-loom-final-9aa8921d88f840f7a1f03e3008df93f8\sample.zip
+At line:2 char:1487
++ ... se()};$out=(& python scripts/package_loomfile.py $loom $zip 2>&1|Out- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ERROR: output a...93f8\sample.zip:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+EXIT=2
+NONEMPTY_REFUSAL
+python.exe : ERROR: destination exists and is not empty
+At line:2 char:1857
++ ... eep');$out=(& python scripts/init_loomfile.py $occupied --title 'Shou ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ERROR: destinat...nd is not empty:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+EXIT=2
+PASS: lifecycle and negative-path oracles

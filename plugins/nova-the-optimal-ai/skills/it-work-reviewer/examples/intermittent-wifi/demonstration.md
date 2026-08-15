@@ -1,4 +1,4 @@
-# Intermittent “Wi-Fi” that survives below DNS
+# Intermittent “Wi-Fi” with DNS isolated as the failing layer
 
 Beryl refuses the symptom label as a diagnosis. Association stays up, the gateway remains reachable, and literal LAN IP traffic works while the configured resolver times out. That pattern weakens RF and application-only explanations and supports the router DNS-forwarder branch.
 

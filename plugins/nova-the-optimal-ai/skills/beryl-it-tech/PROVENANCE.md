@@ -4,7 +4,6 @@
 
 | Runtime file | Canonical source | Custody |
 |---|---|---|
-| `personas/beryl-it-forensics-studio.png` | matching canonical PNG beside the Beryl prompt | Byte-for-byte identity asset |
 | `knowledge/windows-systems-engineering.md` | *Windows Systems Engineering Knowledge Base* from Winford Portia | Byte-for-byte runtime copy; dense Windows judgment |
 | `knowledge/network-architecture.md` | *Network Architecture Knowledge Base* from Earl Demarquez | Byte-for-byte runtime copy; dense network judgment |
 
@@ -19,6 +18,8 @@
 - Comprehensive Tech Support Issue Tracker.
 - Tech Support Advisor.
 - Prompt Design v3 and Augment Builder/Mapper construction doctrine (build-only; excluded from release).
+
+The canonical studio portrait also remains build-side. Product presentation artwork is maintained separately under the release documentation; the runtime does not ship the retired cast or storefront cargo.
 
 ## Derived and authored material
 

@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-eval/v1",
   "suite": "core-transfer",
-  "package_version": "0.1.0",
+  "package_version": "0.1.2",
   "skills": ["SKILL.md"],
   "runtime": "Isolated episode with the AnswerLayer package, supplied case materials, and no live research unless explicitly stated.",
   "claim": "AnswerLayer distinguishes answer-changing evidence from interesting noise, preserves unresolved conflict, and never silently converts analysis into an authorized baseline patch.",

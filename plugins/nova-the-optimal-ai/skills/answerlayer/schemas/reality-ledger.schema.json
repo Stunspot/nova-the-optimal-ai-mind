@@ -6,7 +6,7 @@
   "required": ["format", "product_version", "ledger_id", "title", "owner", "scope", "decision_use", "created_at", "updated_at", "baseline", "sources", "candidates", "deltas", "rejections", "fuzz", "patches", "probes", "traps", "watch", "approvals", "publication"],
   "properties": {
     "format": {"const": "answerlayer/reality-ledger/v1"},
-    "product_version": {"const": "0.1.0"},
+    "product_version": {"const": "0.1.2"},
     "ledger_id": {"type": "string", "minLength": 1},
     "title": {"type": "string", "minLength": 1},
     "owner": {"type": "string", "minLength": 1},

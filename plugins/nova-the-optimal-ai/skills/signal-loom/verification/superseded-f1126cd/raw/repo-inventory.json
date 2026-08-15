@@ -1,0 +1,29 @@
+{
+  "format_version": "1.0",
+  "root": "E:\\Github\\.portfolio-remediation-019ff22b\\signal-loom",
+  "file_count": 155,
+  "languages": [
+    {
+      "name": "Python",
+      "files": 6
+    },
+    {
+      "name": "PowerShell",
+      "files": 1
+    }
+  ],
+  "manifests": [],
+  "test_directories": [
+    "tests"
+  ],
+  "test_files": [
+    "tests/test_init_loomfile.py"
+  ],
+  "test_file_count": 1,
+  "config_files": [],
+  "ci_files": [
+    ".github/workflows/deploy-pages.yml",
+    ".github/workflows/line-ending-policy.yml"
+  ],
+  "warnings": []
+}

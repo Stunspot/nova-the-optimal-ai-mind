@@ -1,0 +1,559 @@
+{
+    "manifest_version":  "1.0",
+    "target":  {
+                   "name":  "Signal Loom public documentation and presentation remediation",
+                   "revision":  "b72d66645f31de05fee46d1d211ea498a262ecb4",
+                   "target_class":  "release-candidate"
+               },
+    "scope":  {
+                  "included":  [
+                                   "59 governed tracked files at fingerprint a867b9f2c2de881a42e012b6ca3a7dfcd28aa61e9562241ed17d6096335cf9f7",
+                                   "README/customer guide/security/support/contribution/validation/changelog/license",
+                                   "static Pages index/CSS/custom 404",
+                                   "three role-specific visual assets and asset builder",
+                                   "package scripts/schemas/templates/source claims",
+                                   "publication and live verification boundary"
+                               ],
+                  "excluded":  [
+                                   "fresh-host Codex or Claude Code installation",
+                                   "GUI browser or screenshot review",
+                                   "assistive-technology and formal accessibility conformance",
+                                   "active security testing",
+                                   "professional fitness",
+                                   "GitHub Actions execution because capacity is unavailable"
+                               ],
+                  "constraints":  [
+                                      "No GitHub-hosted Actions may be triggered before a fresh capacity read after expected 2026-09-01 refresh",
+                                      "No workflow weakening or ruleset bypass without explicit user authority",
+                                      "No GUI browser or screenshot tooling"
+                                  ],
+                  "safety_boundary":  [
+                                          "local non-production verification and read-only live/API checks only"
+                                      ]
+              },
+    "claim_custody":  {
+                          "observed":  [
+                                           "candidate commit and 59-file governed fingerprint",
+                                           "complete source/docs reads",
+                                           "deterministic test transcripts",
+                                           "three exact image hashes and visual pixel review",
+                                           "current remote main, Pages configuration, ruleset, and live baseline"
+                                       ],
+                          "inferred":  [
+                                           "the finished static candidate should render consistently because it has no scripts or remote runtime"
+                                       ],
+                          "assumed":  [
+
+                                      ],
+                          "unresolved":  [
+                                             "fresh-host host discovery/invocation",
+                                             "rendered candidate behavior after deployment",
+                                             "assistive-technology compatibility",
+                                             "GitHub Actions capacity after September refresh"
+                                         ]
+                      },
+    "impact_map":  [
+                       {
+                           "surface":  "customer docs",
+                           "downstream":  [
+                                              "installation",
+                                              "first use",
+                                              "recovery",
+                                              "trust"
+                                          ]
+                       },
+                       {
+                           "surface":  "Pages and assets",
+                           "downstream":  [
+                                              "visitor journey",
+                                              "social previews",
+                                              "brand identity"
+                                          ]
+                       },
+                       {
+                           "surface":  "package claims",
+                           "downstream":  [
+                                              "security expectations",
+                                              "data custody",
+                                              "publication authority"
+                                          ]
+                       }
+                   ],
+    "invariants":  [
+                       {
+                           "id":  "I1",
+                           "statement":  "Public claims do not exceed actual package source or retained evidence."
+                       },
+                       {
+                           "id":  "I2",
+                           "statement":  "Constructed, packaged, installed, discoverable, invoked, healthy, approved, and published remain distinct."
+                       },
+                       {
+                           "id":  "I3",
+                           "statement":  "All three visual roles use different exact files, compositions, and aspect ratios; the social card visibly names Signal Loom."
+                       },
+                       {
+                           "id":  "I4",
+                           "statement":  "Publication remains manual and no unavailable hosted workflow is triggered."
+                       },
+                       {
+                           "id":  "I5",
+                           "statement":  "A PASS cannot be issued before exact candidate deployment and live re-verification."
+                       }
+                   ],
+    "risks":  [
+                  {
+                      "id":  "R1",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "If documentation outruns product source, customers may rely on nonexistent or unsafe behavior.",
+                      "verification":  [
+                                           "S1",
+                                           "T1",
+                                           "E10"
+                                       ]
+                  },
+                  {
+                      "id":  "R2",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "If installation prose collapses file presence into activation, customers may believe an inert package is healthy.",
+                      "verification":  [
+                                           "S2",
+                                           "T2",
+                                           "E10"
+                                       ]
+                  },
+                  {
+                      "id":  "R3",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "If local navigation or assets are broken, the Pages journey may strand visitors.",
+                      "verification":  [
+                                           "S3",
+                                           "T3",
+                                           "E3",
+                                           "E4",
+                                           "E6"
+                                       ]
+                  },
+                  {
+                      "id":  "R4",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "If visual roles are duplicated, generic, or illegible, the repository fails product presentation requirements.",
+                      "verification":  [
+                                           "S4",
+                                           "T4",
+                                           "E7"
+                                       ]
+                  },
+                  {
+                      "id":  "R5",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "If privacy, network, or security claims are false, users may expose sensitive sources.",
+                      "verification":  [
+                                           "S5",
+                                           "T5",
+                                           "E9"
+                                       ]
+                  },
+                  {
+                      "id":  "R6",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "If package lifecycle behavior regresses, documented initialization, validation, and packaging paths may fail.",
+                      "verification":  [
+                                           "S6",
+                                           "T6",
+                                           "E1",
+                                           "E2",
+                                           "E5"
+                                       ]
+                  },
+                  {
+                      "id":  "R7",
+                      "severity":  "high",
+                      "disposition":  "blocked",
+                      "statement":  "Publishing the candidate would trigger unavailable GitHub-hosted workflows and cannot satisfy the required status check without provider execution or explicit control change.",
+                      "verification":  [
+                                           "S7",
+                                           "T7",
+                                           "E12"
+                                       ]
+                  },
+                  {
+                      "id":  "R8",
+                      "severity":  "high",
+                      "disposition":  "covered",
+                      "statement":  "Until deployment, the live repository and Pages remain on pre-remediation bytes and cannot pass exact live verification.",
+                      "verification":  [
+                                           "S8",
+                                           "T8",
+                                           "E13"
+                                       ]
+                  }
+              ],
+    "scenarios":  [
+                      {
+                          "id":  "S1",
+                          "risk_ids":  [
+                                           "R1"
+                                       ],
+                          "preconditions":  "finished docs and complete package source",
+                          "action":  "trace claims through skill, manifest, scripts, schemas, and fallbacks",
+                          "expected":  "every material claim is supported or explicitly bounded; no invented host/live evidence"
+                      },
+                      {
+                          "id":  "S2",
+                          "risk_ids":  [
+                                           "R2"
+                                       ],
+                          "preconditions":  "host install guidance",
+                          "action":  "walk packaging, installation, discovery, invocation, and health steps",
+                          "expected":  "each state has a distinct observable result and recovery"
+                      },
+                      {
+                          "id":  "S3",
+                          "risk_ids":  [
+                                           "R3"
+                                       ],
+                          "preconditions":  "final static site source",
+                          "action":  "inspect both HTML pages and resolve local links, assets, and anchors",
+                          "expected":  "zero structural errors/warnings and every local target exists"
+                      },
+                      {
+                          "id":  "S4",
+                          "risk_ids":  [
+                                           "R4"
+                                       ],
+                          "preconditions":  "three final PNGs",
+                          "action":  "decode and visually inspect exact pixels and record hashes/dimensions",
+                          "expected":  "distinct compositions/aspects; legible product identity; social title and identifying line visible"
+                      },
+                      {
+                          "id":  "S5",
+                          "risk_ids":  [
+                                           "R5"
+                                       ],
+                          "preconditions":  "final docs and executable source",
+                          "action":  "audit imports, network/telemetry terms, remote runtime, and boundary wording",
+                          "expected":  "claims match source and retain host/security limits"
+                      },
+                      {
+                          "id":  "S6",
+                          "risk_ids":  [
+                                           "R6"
+                                       ],
+                          "preconditions":  "clean temporary workspace",
+                          "action":  "initialize, validate, package, inspect ZIP, retry overwrite, and target non-empty directory",
+                          "expected":  "happy path passes; archive has one root and manifest; unsafe overwrite/merge return exit 2"
+                      },
+                      {
+                          "id":  "S7",
+                          "risk_ids":  [
+                                           "R7"
+                                       ],
+                          "preconditions":  "current GitHub repository configuration",
+                          "action":  "read Pages and branch-rule APIs without workflow execution",
+                          "expected":  "publication route and unavailable required provider execution are identified without triggering Actions"
+                      },
+                      {
+                          "id":  "S8",
+                          "risk_ids":  [
+                                           "R8"
+                                       ],
+                          "preconditions":  "current live Pages",
+                          "action":  "read live HTML and old/new asset URLs",
+                          "expected":  "exact deployment mismatch is detected and no PASS is issued"
+                      }
+                  ],
+    "tests":  [
+                  {
+                      "id":  "T1",
+                      "scenario_ids":  [
+                                           "S1"
+                                       ],
+                      "status":  "passed",
+                      "path":  "verification/remediation-2026-08-12/hesperos-documentation-review.md",
+                      "execution_id":  "E10"
+                  },
+                  {
+                      "id":  "T2",
+                      "scenario_ids":  [
+                                           "S2"
+                                       ],
+                      "status":  "passed",
+                      "path":  "verification/remediation-2026-08-12/hesperos-documentation-review.md",
+                      "execution_id":  "E10"
+                  },
+                  {
+                      "id":  "T3",
+                      "scenario_ids":  [
+                                           "S3"
+                                       ],
+                      "status":  "passed",
+                      "path":  "verification/remediation-2026-08-12/raw/local-links.txt",
+                      "execution_id":  "E6"
+                  },
+                  {
+                      "id":  "T4",
+                      "scenario_ids":  [
+                                           "S4"
+                                       ],
+                      "status":  "passed",
+                      "path":  "verification/remediation-2026-08-12/raw/visual-assets.txt",
+                      "execution_id":  "E7"
+                  },
+                  {
+                      "id":  "T5",
+                      "scenario_ids":  [
+                                           "S5"
+                                       ],
+                      "status":  "passed",
+                      "path":  "verification/remediation-2026-08-12/raw/claim-audit.txt",
+                      "execution_id":  "E9"
+                  },
+                  {
+                      "id":  "T6",
+                      "scenario_ids":  [
+                                           "S6"
+                                       ],
+                      "status":  "passed",
+                      "path":  "verification/remediation-2026-08-12/raw/lifecycle.txt",
+                      "execution_id":  "E5"
+                  },
+                  {
+                      "id":  "T7",
+                      "scenario_ids":  [
+                                           "S7"
+                                       ],
+                      "status":  "blocked",
+                      "path":  "verification/remediation-2026-08-12/raw/publication-boundary.txt",
+                      "execution_id":  "E12"
+                  },
+                  {
+                      "id":  "T8",
+                      "scenario_ids":  [
+                                           "S8"
+                                       ],
+                      "status":  "failed",
+                      "path":  "verification/remediation-2026-08-12/raw/live-baseline.txt",
+                      "execution_id":  "E13"
+                  }
+              ],
+    "executions":  [
+                       {
+                           "id":  "E1",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "python",
+                                           "scripts/self_check.py"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/self-check.txt"
+                       },
+                       {
+                           "id":  "E2",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "python",
+                                           "-m",
+                                           "unittest",
+                                           "discover",
+                                           "-s",
+                                           "tests",
+                                           "-v"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/unit-tests.txt"
+                       },
+                       {
+                           "id":  "E3",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "python",
+                                           "scripts/inspect_infographic_html.py",
+                                           "docs/index.html"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/html-index.txt"
+                       },
+                       {
+                           "id":  "E4",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "python",
+                                           "scripts/inspect_infographic_html.py",
+                                           "docs/404.html"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/html-404.txt"
+                       },
+                       {
+                           "id":  "E5",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "isolated",
+                                           "lifecycle-and-negative-path-probe"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/lifecycle.txt"
+                       },
+                       {
+                           "id":  "E6",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "local",
+                                           "document-link-asset-anchor-check"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/local-links.txt"
+                       },
+                       {
+                           "id":  "E7",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "manual",
+                                           "exact-pixel-visual-review"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/visual-assets.txt"
+                       },
+                       {
+                           "id":  "E8",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "static",
+                                           "contrast-ratio-calculation"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/contrast.txt"
+                       },
+                       {
+                           "id":  "E9",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "source",
+                                           "privacy-network-security-claim-audit"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/claim-audit.txt"
+                       },
+                       {
+                           "id":  "E10",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "Hesperos",
+                                           "complete-documentation-review"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/hesperos-documentation-review.md"
+                       },
+                       {
+                           "id":  "E11",
+                           "status":  "passed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "git",
+                                           "diff",
+                                           "HEAD",
+                                           "--check"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/diff-check.txt"
+                       },
+                       {
+                           "id":  "E12",
+                           "status":  "blocked",
+                           "command":  [
+                                           "gh",
+                                           "api",
+                                           "read-only-publication-boundary"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/publication-boundary.txt"
+                       },
+                       {
+                           "id":  "E13",
+                           "status":  "failed",
+                           "exit_code":  0,
+                           "command":  [
+                                           "read-only",
+                                           "live-pages-baseline-check"
+                                       ],
+                           "raw_evidence":  "verification/remediation-2026-08-12/raw/live-baseline.txt"
+                       }
+                   ],
+    "findings":  [
+                     {
+                         "id":  "F1",
+                         "classification":  "ENVIRONMENT_FAILURE",
+                         "severity":  "high",
+                         "statement":  "Required line-ending-policy status depends on GitHub-hosted Actions whose capacity is unavailable; no workflow may be triggered to discover capacity.",
+                         "status":  "open"
+                     },
+                     {
+                         "id":  "F2",
+                         "classification":  "EXPECTED_CONTRACT_CHANGE",
+                         "severity":  "high",
+                         "statement":  "Live Pages still serves the pre-remediation site and old generic hero; final assets and custom 404 are absent until publication.",
+                         "status":  "open"
+                     },
+                     {
+                         "id":  "F3",
+                         "classification":  "PRODUCT_DEFECT",
+                         "severity":  "high",
+                         "statement":  "The original single particle-wave image was generic, textless, and reused as every visual role.",
+                         "status":  "repaired"
+                     },
+                     {
+                         "id":  "F4",
+                         "classification":  "PRODUCT_DEFECT",
+                         "severity":  "medium",
+                         "statement":  "The original Pages documentation omitted installation, verification, lifecycle, recovery, and support guidance.",
+                         "status":  "repaired"
+                     },
+                     {
+                         "id":  "F5",
+                         "classification":  "PRODUCT_DEFECT",
+                         "severity":  "medium",
+                         "statement":  "The original narrow-screen CSS hid all navigation except Help.",
+                         "status":  "repaired"
+                     }
+                 ],
+    "residual_risks":  [
+                           {
+                               "id":  "RR1",
+                               "statement":  "Fresh-host discovery, invocation, and health are not executed on either declared host.",
+                               "treatment":  "Documentation requires customers to verify each state and does not claim observed host success."
+                           },
+                           {
+                               "id":  "RR2",
+                               "statement":  "Rendered candidate behavior and assistive-technology compatibility are not observed.",
+                               "treatment":  "Static evidence is bounded; rendered/accessibility claims remain unmade pending deployment and appropriate tools."
+                           },
+                           {
+                               "id":  "RR3",
+                               "statement":  "Publication and exact live asset/navigation verification are unavailable.",
+                               "treatment":  "Repository remains BLOCKED; require provider capacity or explicit authority for a bounded control change, then push and recheck exact live bytes."
+                           }
+                       ],
+    "review":  {
+                   "status":  "NOT_RUN",
+                   "findings":  [
+
+                                ]
+               },
+    "decision":  {
+                     "status":  "BLOCKED_BY_ENVIRONMENT",
+                     "basis":  [
+                                   "The completed local candidate passed all reachable source, documentation, lifecycle, visual, and static-site checks.",
+                                   "GitHub branch rules require line-ending-policy, Pages uses workflow deployment, and the owner reports hosted Actions capacity exhausted.",
+                                   "Current live Pages is demonstrably pre-remediation, so repository PASS is forbidden."
+                               ],
+                     "authority_required":  [
+                                                "Either restored GitHub-hosted Actions capacity after a fresh read, or explicit user authority for a narrowly bounded ruleset/workflow/deployment control change.",
+                                                "After publication: exact remote commit, rendered Pages, navigation, custom 404, README hero, Pages hero, social card, metadata, and asset hashes must be rechecked live."
+                                            ]
+                 }
+}

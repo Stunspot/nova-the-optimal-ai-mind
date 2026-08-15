@@ -131,7 +131,7 @@ class SnapshotTests(unittest.TestCase):
             self.assertEqual(occupied_recovery.read_bytes(), recovery_external)
             recoveries = list(output.parent.glob(".checkpoint.zip.*.ludis-unpublished*"))
             self.assertEqual(len(recoveries), 2)
-            published = next(path for path in recoveries if path != occupied_recovery)
+            published = next(path for path in recoveries if path.resolve() != occupied_recovery.resolve())
             with zipfile.ZipFile(published) as archive:
                 self.assertIn("snapshot-manifest.json", archive.namelist())
     def test_snapshot_refuses_to_overwrite_existing_output(self):

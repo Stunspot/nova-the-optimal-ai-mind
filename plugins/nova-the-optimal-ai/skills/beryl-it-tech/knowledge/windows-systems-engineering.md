@@ -94,7 +94,7 @@ Once the kernel executes, it initializes memory managers, the I/O manager, and s
 
 * **SMSS:** The first user-mode process. It creates environment variables, defines DOS device mappings (e.g., C:), and starts csrss.exe (Client/Server Runtime Subsystem) and wininit.exe.14  
 * **"Pending.xml" Blocking:** A pervasive boot failure mode occurs when a Windows Update operation (Component Based Servicing) writes a pending.xml file to perform file replacements at boot. If this XML is malformed or the referenced files are missing, the kernel hangs or loops during the "Applying update operation" phase.  
-  * **Advanced Remediation:** If standard rollback fails, recovery requires loading the system registry hive offline (using WinRE) and modifying the TrustedInstaller service start type, or removing the pending.xml file from C:\\Windows\\WinSxS\\ and its registry references (pendingxmlidentifier) to forcefully break the loop. This is a high-risk operation that leaves the component store in an inconsistent state, requiring subsequent DISM repair.14
+  * **Advanced Remediation:** If standard rollback fails, recovery requires loading the system registry hive offline (using WinRE) and modifying the TrustedInstaller service start type, or removing the pending.xml file from %SystemRoot%\\WinSxS\\ and its registry references (pendingxmlidentifier) to forcefully break the loop. This is a high-risk operation that leaves the component store in an inconsistent state, requiring subsequent DISM repair.14
 
 ## ---
 
@@ -200,9 +200,9 @@ Windows updates are not simple file replacements; they are complex transactions 
 
 ### **6.1 The Component Store (WinSxS)**
 
-Located at C:\\Windows\\WinSxS, this directory contains all versions of system components.
+Located at %SystemRoot%\\WinSxS, this directory contains all versions of system components.
 
-* **The Hard Link Illusion:** Files in C:\\Windows\\System32 are essentially hard links to the WinSxS store. Tools that claim WinSxS is "bloated" often double-count these files. "Deleting" WinSxS to save space effectively deletes the operating system's files.  
+* **The Hard Link Illusion:** Files in %SystemRoot%\\System32 are essentially hard links to the WinSxS store. Tools that claim WinSxS is "bloated" often double-count these files. "Deleting" WinSxS to save space effectively deletes the operating system's files.  
 * **Corruption Repair:** If the component store is corrupt, updates fail. The DISM /Online /Cleanup-Image /RestoreHealth command interacts with the CBS engine to repair the store from a known good source (Windows Update or ISO).  
 * **States:** Packages exist in states: **Absent**, **Staged** (present but inactive), **Installed**, and **Superseded**. Understanding these states prevents the error of trying to "install" a corrupted package when it should be "unstaged" first.49
 

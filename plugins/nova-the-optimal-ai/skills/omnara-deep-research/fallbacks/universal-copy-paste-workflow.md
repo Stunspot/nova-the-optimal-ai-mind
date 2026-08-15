@@ -1,6 +1,6 @@
 # OMNARA Deep Research — Universal Workflow
 
-Turn the inquiry below into a rigorous, long-horizon research campaign and a self-contained report. Preserve the inquiry verbatim. Begin by mapping the field's concepts, actors, mechanisms, history, disputes, source ecosystems, and disconfirming questions; then pursue diverse query families rather than synonym loops.
+Turn the inquiry at the end of this workflow into a rigorous, long-horizon research campaign and a self-contained report. Preserve the inquiry verbatim. Begin by mapping the field's concepts, actors, mechanisms, history, disputes, source ecosystems, and disconfirming questions; then pursue diverse query families rather than synonym loops.
 
 Keep an explicit research ledger throughout. Distinguish discovered locations, inspected locations with a recorded disposition, opened pages, deeply read sources with evidence notes, excluded sources, duplicates, inaccessible sources, and sources actually cited. Let counts follow retained records. Treat snippets as discovery evidence, never full support.
 

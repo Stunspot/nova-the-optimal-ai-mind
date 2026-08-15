@@ -1,6 +1,6 @@
 # Verification output contract
 
-The canonical machine record is one JSON verification manifest conforming to `../../assets/schemas/verification-manifest.schema.json`. The canonical human handoff is the assembled Markdown report.
+The canonical machine record is one JSON verification manifest conforming to `../../assets/schemas/verification-manifest.schema.json`. The canonical human handoff is the assembled Markdown report. Assemble them only after the working evidence reaches a stable cutoff; they are not intake paperwork, package receipts, or authority to run release-sealing tools.
 
 Required state:
 

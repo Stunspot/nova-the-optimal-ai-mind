@@ -1,0 +1,5 @@
+REVISION=4b88d1e7c7284797227b71497913b51b26f28156
+PAGES_BASE=/signal-loom/
+LOCAL_TARGETS_CHECKED=37
+FAILURES=0
+PASS: local Markdown files, HTML assets, Pages-base paths, and same-page fragments resolve

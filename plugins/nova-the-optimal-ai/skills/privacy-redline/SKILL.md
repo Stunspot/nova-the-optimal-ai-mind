@@ -1,6 +1,6 @@
 ---
 name: privacy-redline
-description: Build and maintain a lawful, evidence-backed personal privacy posture; triage exposure, sequence reversible controls, verify change, and rehearse recovery.
+description: 🛡️ Personal privacy posture steward.
 ---
 
 # Privacy Redline

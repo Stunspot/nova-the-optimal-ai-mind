@@ -1,0 +1,80 @@
+{
+    "review_type":  "documentation-accessibility",
+    "result":  "REVIEW_PASS",
+    "candidate_commit":  "bbef3980f9cd3339871c45995bd4367176ceece0",
+    "governed_fingerprint":  "95c83267995416f32e6811af76a26437674e1e0af6216a2fb5c11c3cbf17e62b",
+    "governed_path_count":  59,
+    "binding":  {
+                    "head_verified":  true,
+                    "fingerprint_record_sha256_verified":  true,
+                    "governed_hash_mismatches":  0,
+                    "delta_from_blocked_candidate":  [
+                                                         "docs/style.css"
+                                                     ],
+                    "delta_verified":  "Extended #963f7a from .paper .eyebrow to .paper .eyebrow,.paper .label."
+                },
+    "material_findings":  [
+
+                          ],
+    "repair_retest":  {
+                          "install_label_foreground":  "#963f7a",
+                          "install_label_background":  "#fbfaf6",
+                          "contrast_ratio":  "6.11:1",
+                          "result":  "PASS"
+                      },
+    "previous_blockers":  {
+                              "paper_link":  "8.07:1",
+                              "light_card_link":  "8.96:1",
+                              "paper_focus":  "11.91:1",
+                              "light_card_focus":  "13.23:1",
+                              "stage_grid_reflow":  "PASS",
+                              "preformatted_wrap":  "PASS",
+                              "mobile_navigation":  "PASS"
+                          },
+    "customer_document_review":  {
+                                     "documents_read_completely":  11,
+                                     "characters_read":  39819,
+                                     "heading_level_jumps":  0,
+                                     "empty_link_names":  0,
+                                     "local_links_and_anchors_checked":  21,
+                                     "local_target_failures":  0,
+                                     "journey_result":  "PASS"
+                                 },
+    "pages_source":  {
+                         "index":  "PASS",
+                         "custom_404":  "PASS",
+                         "missing_anchor_targets":  0,
+                         "empty_links":  0,
+                         "bad_alt":  0,
+                         "heading_jumps":  0,
+                         "landmarks":  "PASS",
+                         "language":  "PASS",
+                         "viewport":  "PASS",
+                         "skip_paths":  "PASS"
+                     },
+    "verification":  {
+                         "package_self_check":  "PASS",
+                         "unit_tests":  "2 PASS",
+                         "index_static_html":  "PASS_WITH_ZERO_WARNINGS",
+                         "custom_404_static_html":  "PASS_WITH_ZERO_WARNINGS"
+                     },
+    "asset_evidence":  {
+                           "readme_hero_sha256":  "7f8c710124a7d277def62b997276a2bfb5a39f540f353ab57d2b001708a6d878",
+                           "pages_hero_sha256":  "188d9101651244b17d82b8dd0fa16916b51dfd469cc5665ed8efae5134daeeb7",
+                           "social_card_sha256":  "6446c77f285606f3468a22080fe8494e4de9989f9c1352d4de17e28413931fb2",
+                           "decoded":  true,
+                           "wiring":  "PASS",
+                           "retained_exact_hash_pixel_review":  "MATCHED",
+                           "retained_social_text_result":  "PASS"
+                       },
+    "explicit_testing_boundaries":  [
+                                        "No rendered-browser review was performed.",
+                                        "No live Pages review was performed.",
+                                        "No manual keyboard traversal was performed.",
+                                        "No zoom or browser reflow execution was performed.",
+                                        "No screen-reader or other assistive-technology testing was performed.",
+                                        "No formal WCAG conformance assessment is established.",
+                                        "The retained exact-hash pixel review was verified but visual pixel inspection was not repeated in this rerun."
+                                    ],
+    "files_modified_by_reviewer":  false
+}

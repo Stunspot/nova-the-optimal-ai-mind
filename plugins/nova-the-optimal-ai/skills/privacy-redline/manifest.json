@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-manifest/v1",
   "product": "Privacy Redline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "skill": "privacy-redline",
   "category": "Personal Privacy Posture & Incident Readiness Augment",
   "targets": ["Codex", "Claude"],

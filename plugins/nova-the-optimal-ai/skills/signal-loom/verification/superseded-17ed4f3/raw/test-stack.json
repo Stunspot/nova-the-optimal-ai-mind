@@ -1,0 +1,17 @@
+{
+  "format_version": "1.0",
+  "root": "E:\\Github\\.portfolio-remediation-019ff22b\\signal-loom",
+  "package_managers": [],
+  "candidates": [
+    {
+      "framework": "unittest",
+      "language": "Python",
+      "confidence": "medium",
+      "command": "python -m unittest discover",
+      "evidence": [
+        "tests\\test_init_loomfile.py"
+      ]
+    }
+  ],
+  "warnings": []
+}

@@ -1,4 +1,4 @@
 interface:
   display_name: "Retrieval Intelligence"
-  short_description: "📚 Retrieval intelligence grounded in corpora."
-  default_prompt: "Use $retrieval-intelligence: turn this corpus into inspectable evidence with authority-aware retrieval, citations, context budget, and evaluation for grounded answers."
+  short_description: "📚 Corpus retrieval, citations, and evidence."
+  default_prompt: "Use $retrieval-intelligence to make this corpus answer the question with inspectable citations, authority-aware retrieval, and measured coverage."

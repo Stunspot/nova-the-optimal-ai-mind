@@ -1,0 +1,3 @@
+COMMIT=17ed4f30975081b4a020dd8e28e6a35eb0edda1d
+COMMAND=git diff HEAD --check
+EXIT_CODE=0

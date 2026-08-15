@@ -1,5 +1,5 @@
 name: current-intelligence-observatory-core
-version: 0.1.0
+version: 0.1.1
 boundary: behavioral specification; not evidence of live-host performance
 cases_file: core-transfer-cases.yaml
 required_case_count: 20

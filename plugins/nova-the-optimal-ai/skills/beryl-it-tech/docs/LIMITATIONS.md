@@ -40,6 +40,6 @@ The included evaluation suite tests selected behaviors in isolated text episodes
 
 ## Release-specific verification boundary
 
-The v0.1.0 build passed structural package, resource, schema, example-case, ZIP round-trip, and evidence-integrity checks. Local behavioral runs were useful but showed stochastic completeness variance and one documented weak judge oracle. The independent review disposition was `REVIEW_PASS_WITH_CONDITIONS`, not an unqualified reliability certification.
+The v0.1.3 release passes current static package, manifest, Codex-to-Claude parity, archive-safety, documentation-link, and fresh-extraction checks. The retained v0.1.0 behavioral runs were useful but showed stochastic completeness variance and one documented weak judge oracle. Their independent review disposition was `REVIEW_PASS_WITH_CONDITIONS`, not an unqualified v0.1.3 reliability certification.
 
 Installation, fresh-task discovery in a target host, physical device work, live vendor lookup, credential use, and cross-model reliability were not performed during the build.

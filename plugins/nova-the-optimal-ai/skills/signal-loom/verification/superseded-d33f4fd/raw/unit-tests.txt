@@ -1,0 +1,34 @@
+python : test_competing_output_is_not_overwritten_and_project_is_preserved
+(test_init_loomfile.InitializeLoomfileTests.test_competing_output_is_not_overwritten_and_project_is_preserved) ... ok
+At line:2 char:1
++ python -B -u -m unittest discover -s tests -v *> verification\remedia ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (test_competing_...eserved) ... ok:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+test_existing_archive_refusal_preserves_archive_and_project
+(test_init_loomfile.InitializeLoomfileTests.test_existing_archive_refusal_preserves_archive_and_project) ... ok
+test_fresh_archive_round_trip_preserves_required_directories_and_validates (test_init_loomfile.InitializeLoomfileTests.
+test_fresh_archive_round_trip_preserves_required_directories_and_validates) ... ok
+test_link_side_effect_then_interrupt_removes_owned_output_and_allows_retry (test_init_loomfile.InitializeLoomfileTests.
+test_link_side_effect_then_interrupt_removes_owned_output_and_allows_retry) ... ok
+test_mid_archive_failure_preserves_project_and_allows_retry
+(test_init_loomfile.InitializeLoomfileTests.test_mid_archive_failure_preserves_project_and_allows_retry) ... ok
+test_new_loomfile_immediately_satisfies_the_state_contract
+(test_init_loomfile.InitializeLoomfileTests.test_new_loomfile_immediately_satisfies_the_state_contract) ... ok
+test_output_inside_loomfile_is_rejected_without_project_change
+(test_init_loomfile.InitializeLoomfileTests.test_output_inside_loomfile_is_rejected_without_project_change) ... ok
+test_post_link_replacement_is_preserved_during_interrupted_cleanup
+(test_init_loomfile.InitializeLoomfileTests.test_post_link_replacement_is_preserved_during_interrupted_cleanup) ... ok
+test_registered_source_change_is_rejected_by_archived_state_validation
+(test_init_loomfile.InitializeLoomfileTests.test_registered_source_change_is_rejected_by_archived_state_validation)
+... ok
+test_source_change_during_packaging_matches_archived_payload
+(test_init_loomfile.InitializeLoomfileTests.test_source_change_during_packaging_matches_archived_payload) ... ok
+test_success_manifest_matches_every_archived_payload_without_mutating_project (test_init_loomfile.InitializeLoomfileTes
+ts.test_success_manifest_matches_every_archived_payload_without_mutating_project) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.861s
+
+OK

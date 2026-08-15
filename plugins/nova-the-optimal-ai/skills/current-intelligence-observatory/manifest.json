@@ -1,7 +1,7 @@
 {
   "name": "current-intelligence-observatory",
   "product_name": "Current Intelligence Observatory",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "category": "Evidence-Preserving Current Intelligence Workbench",
   "format": "cd-augment-skill/v1",
   "entrypoint": "SKILL.md",

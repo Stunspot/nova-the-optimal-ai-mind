@@ -1,0 +1,84 @@
+{
+    "review_id":  "SIGNAL-LOOM-ACCESSIBILITY-20260812-FINAL",
+    "review_type":  "independent_documentation_accessibility",
+    "reviewed_at_utc":  "2026-08-12T10:52:07.3552503Z",
+    "candidate_commit":  "17ed4f30975081b4a020dd8e28e6a35eb0edda1d",
+    "governed_fingerprint":  "bc6ca8a21832c6bb3428e5649a0be27feffacc1a34d746510604a194ca2b7ab1",
+    "governed_file_count":  59,
+    "result":  "REVIEW_PASS",
+    "binding":  {
+                    "head_matches_candidate":  true,
+                    "fingerprint_record_hash_matches":  true,
+                    "per_file_mismatches":  0
+                },
+    "checks":  [
+                   {
+                       "name":  "package_self_check",
+                       "result":  "PASS"
+                   },
+                   {
+                       "name":  "package_regression_tests",
+                       "result":  "PASS",
+                       "tests":  7
+                   },
+                   {
+                       "name":  "pages_static_html",
+                       "result":  "PASS",
+                       "warnings":  0
+                   },
+                   {
+                       "name":  "404_static_html",
+                       "result":  "PASS",
+                       "warnings":  0
+                   },
+                   {
+                       "name":  "fresh_local_html_links_and_anchors",
+                       "result":  "PASS",
+                       "failures":  0
+                   },
+                   {
+                       "name":  "source_contrast_review",
+                       "result":  "PASS",
+                       "lowest_ordinary_text_ratio":  "4.69:1",
+                       "paper_focus_ratio":  "11.91:1",
+                       "dark_focus_ratio":  "13.96:1"
+                   },
+                   {
+                       "name":  "source_reflow_review",
+                       "result":  "PASS",
+                       "stage_vertical_reflow":  true,
+                       "narrow_code_wrap":  true,
+                       "navigation_wrap":  true
+                   }
+               ],
+    "manifest_explanation":  {
+                                 "result":  "PASS",
+                                 "project_side_record":  "The Loomfile template record remains unchanged by packaging.",
+                                 "archive_embedded_manifest":  "Packaging generates a fresh packaged-status manifest inside the ZIP from the exact archived payload bytes.",
+                                 "implementation_and_tests_support_claim":  true
+                             },
+    "material_findings":  [
+
+                          ],
+    "conditions":  [
+
+                   ],
+    "visual_evidence":  {
+                            "repeated_pixel_inspection":  false,
+                            "retained_actual_pixel_review_used":  true,
+                            "asset_hashes_unchanged":  true,
+                            "readme_hero_sha256":  "7f8c710124a7d277def62b997276a2bfb5a39f540f353ab57d2b001708a6d878",
+                            "pages_hero_sha256":  "188d9101651244b17d82b8dd0fa16916b51dfd469cc5665ed8efae5134daeeb7",
+                            "social_card_sha256":  "6446c77f285606f3468a22080fe8494e4de9989f9c1352d4de17e28413931fb2"
+                        },
+    "boundaries":  [
+                       "No rendered browser review was performed.",
+                       "No live Pages review was performed.",
+                       "No fresh keyboard interaction test was performed.",
+                       "No zoom session, screen-reader session, or assistive-technology test was performed.",
+                       "No formal accessibility conformance claim is established.",
+                       "No fresh-host installation, discovery, invocation, or publication claim is established.",
+                       "Visual pixels were not reinspected; exact unchanged hashes bind retained prior pixel-inspection evidence."
+                   ],
+    "tracked_files_modified_by_review":  false
+}

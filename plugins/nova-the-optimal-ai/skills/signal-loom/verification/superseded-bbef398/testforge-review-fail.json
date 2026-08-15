@@ -1,0 +1,15 @@
+{
+    "review_type":  "testforge-verification-reviewer",
+    "result":  "REVIEW_FAIL",
+    "candidate_commit":  "bbef3980f9cd3339871c45995bd4367176ceece0",
+    "governed_fingerprint":  "95c83267995416f32e6811af76a26437674e1e0af6216a2fb5c11c3cbf17e62b",
+    "finding":  {
+                    "id":  "RV-F1",
+                    "classification":  "PRODUCT_DEFECT",
+                    "severity":  "high",
+                    "statement":  "Mid-archive write failure mutated release-manifest.json, left a 376-byte partial final ZIP, and blocked retry.",
+                    "required_repair":  "Temporary archive plus in-memory manifest, guarded final commit, cleanup/rollback, and fault-injection regression."
+                },
+    "decision":  "NOT_READY",
+    "superseded_by":  "92f47735896b5baa3d37132880f5ea129079e189"
+}

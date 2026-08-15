@@ -4,7 +4,7 @@ This page defines how release owners keep Beryl IT Benchcraft documentation alig
 
 ## Ownership and scope
 
-- Product version: Beryl IT Benchcraft v0.1.0.
+- Product version: Beryl IT Benchcraft v0.1.3.
 - Documentation owner: the accountable release owner.
 - Approval authority: the person authorized to publish or distribute the release.
 - Canonical product sources: primary and reviewer skills, persona, schemas, validators, references, assets, examples, evaluation contract, release manifest, provenance, and build-side verification record.

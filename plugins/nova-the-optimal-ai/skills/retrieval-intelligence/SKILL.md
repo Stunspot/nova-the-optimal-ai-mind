@@ -1,6 +1,6 @@
 ---
 name: retrieval-intelligence
-description: "📚 Retrieval intelligence grounded in corpora."
+description: "📚 Corpus retrieval, citations, and evidence."
 ---
 
 # Retrieval Intelligence
