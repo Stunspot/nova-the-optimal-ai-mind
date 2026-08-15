@@ -1,19 +1,26 @@
 # Nova + MIND Free release notes
 
-## 2.1.2 — local source candidate
+## 2.1.3
+
+This release corrects the public release-state failure in 2.1.2. Although 2.1.2 was tagged and published, its repository README, installation guide, Pages source, package map, verification guide, and sealed distribution still described 2.0.9 as latest and 2.1.2 as an unpublished local candidate. Version 2.1.3 supersedes that contradictory artifact without replacing the 2.1.2 release asset in place.
+
+The product runtime is unchanged from 2.1.2: Nova 2.1.0, MIND 2.2.2, Cognitive Continuity 0.2.2/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, Ludis Continuum 1.1.0, and the same forty-one-skill topology. The verifier now treats current-release semantics as a release property: customer surfaces must name the exact product version, identify it as published, link the versioned archive, and contain no current-candidate or older-latest-release contradiction.
+
+## 2.1.2
 
 This patch keeps Nova 2.1.0, MIND Core 0.2.0, TestForge 1.1.7, and workspace schema v2 unchanged while advancing MIND to 2.2.2 and Cognitive Continuity to 0.2.2. Worldline project selection now follows explicit current task or handoff identity, then governed mission, then maintained project mapping, with the current working directory only as an unopposed fallback. Same-tier disagreement stops before retrieval as `project_scope_ambiguous`; selectors locate stores and never choose projects.
 
 This candidate also audits all 41 bundled skill handles against their maintained canonical sources. Seventeen embedded trees were reconciled, including the maintained TestForge 1.1.7 operator and reviewer trees at commit `cdbf6c384f7d23071a25f0b31347afcaad8e91c4`; complete customer-kit boundaries remain intact for OMNARA and Signal Loom. The 24-record source lock now fingerprints every imported tree, records explicit file selections where a repository is intentionally broader than its embedded runtime, and the verifier rejects drift in any record rather than checking only a privileged subset.
 
-The deterministic compiler also withholds globally scoped goals, commitments, phases, statuses, blockers, and next actions from specific-project operative fields. A project with no exact eligible state now reports `project_scope_unrepresented` instead of inheriting a global resumption pointer. The workspace schema, store federation, custody boundaries, and selector remain unchanged. This is a local source candidate and installation basis, not a push, tag, public release, or publication claim.
+The deterministic compiler also withholds globally scoped goals, commitments, phases, statuses, blockers, and next actions from specific-project operative fields. A project with no exact eligible state now reports `project_scope_unrepresented` instead of inheriting a global resumption pointer. The workspace schema, store federation, custody boundaries, and selector remain unchanged. This version was published on 2026-08-15, but its customer-facing release-state text incorrectly remained in the pre-publication candidate state; 2.1.3 supersedes it.
+
 ## 2.1.1 — local source candidate
 
 This patch packages Nova plugin 2.1.0 with MIND plugin 2.2.1, Cognitive Continuity 0.2.1/workspace schema v2, and MIND Core 0.2.0. Nova, MIND Core, TestForge 1.1.7, and Ludis Continuum 1.1.0 are unchanged. The Continuity workspace schema major remains v2; its episode contract adds a migration-only legacy-content provenance extension.
 
 Cognitive Continuity now has a guarded Nova-successor migration mode for the legitimate live v1-to-v2 case. It leaves ordinary external-target protection unchanged and accepts only the registry-selected Continuity source plus an exact absent same-parent sibling destination. Human authority, a grant ID, the selector-registry SHA-256, the normalized destination-path SHA-256, process-environment corroboration, active capability-boundary checks, and pre/post-publication revalidation are bound into the migration evidence. A failed or changed grant removes the unpublished candidate and leaves v1 untouched. The selector-registry path is derived from the required `NOVA_DATA_ROOT`, so portable editions do not embed a private workstation drive path.
 
-Migration still creates only a candidate workspace. It never changes `NOVA_CONTINUITY_HOME`; candidate validation, rollback proof, and an explicit selector switch remain separate live operations. A v1 episode above the ordinary 1,000-character v2 write limit is preserved without truncation through a bounded, generation-0 provenance record tied to the migration manifest and receipt. Ordinary v2 writes remain capped; forged or altered legacy provenance fails before transaction intent, retained generations are protected while the contract exists, and governed forgetting removes it while exact restoration can recover the retained row. The latest published release remains 2.0.9 until a later release is separately completed and published.
+Migration still creates only a candidate workspace. It never changes `NOVA_CONTINUITY_HOME`; candidate validation, rollback proof, and an explicit selector switch remain separate live operations. A v1 episode above the ordinary 1,000-character v2 write limit is preserved without truncation through a bounded, generation-0 provenance record tied to the migration manifest and receipt. Ordinary v2 writes remain capped; forged or altered legacy provenance fails before transaction intent, retained generations are protected while the contract exists, and governed forgetting removes it while exact restoration can recover the retained row. At the time this candidate was recorded, the latest published release was 2.0.9.
 
 ## 2.1.0 — local source candidate
 
@@ -23,7 +30,7 @@ Worldline adds deterministic read-only `resume`, `status`, `checkpoint`, and `in
 
 Faultline adds the bounded Error Neighborhood over Continuity-owned failure evidence. It returns zero to three expiring advisory cards, keeps recurrence separate from causality, and cannot grant permission, route work, retry, repair, prove safety, or install a procedure. Occurrence capture and pattern lifecycle operations require Continuity v2 transaction, generation, idempotency, scope, source, and authority controls; v1 is typed unsupported and there is no fallback store.
 
-This is a local source candidate only. It does not claim a final fingerprint or source lock, built archive, fresh-host installation, plugin discovery, live selector resolution, workspace migration, live prompt delivery, hosted workflow, tag, push, GitHub release, Pages deployment, or publication. The latest published release remains 2.0.9 until a later release is separately completed and published.
+This is a local source candidate only. It does not claim a final fingerprint or source lock, built archive, fresh-host installation, plugin discovery, live selector resolution, workspace migration, live prompt delivery, hosted workflow, tag, push, GitHub release, Pages deployment, or publication. At the time this candidate was recorded, the latest published release was 2.0.9.
 
 ## 2.0.10 — prior local candidate
 

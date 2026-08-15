@@ -23,7 +23,7 @@ Use one enabled Nova and one enabled MIND source in a task. Two copies can expos
 4. Inspect and trust the new hook bytes separately; trust does not transfer across changed files.
 5. Run `verify-install.ps1` and repeat the fresh-task discovery check.
 
-Nova + MIND Free 2.1.2 does not automatically merge MIND Core estates or switch a Cognitive Continuity selector. Different database paths and continuity selectors identify different stores.
+Nova + MIND Free 2.1.3 does not automatically merge MIND Core estates or switch a Cognitive Continuity selector. Different database paths and continuity selectors identify different stores.
 
 ## Upgrade Cognitive Continuity deliberately
 

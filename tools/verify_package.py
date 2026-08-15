@@ -16,7 +16,7 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parents[1]
 NOVA = ROOT / "plugins" / "nova-the-optimal-ai"
 MIND = ROOT / "plugins" / "augment-of-mind"
-PRODUCT_VERSION = "2.1.2"
+PRODUCT_VERSION = "2.1.3"
 NOVA_VERSION = "2.1.0"
 MIND_VERSION = "2.2.2"
 MIND_CORE_VERSION = "0.2.0"
@@ -120,6 +120,60 @@ def verify_links(errors: list[str]) -> None:
             if not candidate.exists():
                 errors.append(f"broken documentation link: {document.relative_to(ROOT)} -> {raw}")
 
+
+def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
+    """Reject candidate-state or older-release claims on current customer surfaces."""
+    versioned_archive = f"nova-mind-free-v{PRODUCT_VERSION}.zip"
+    required = {
+        "README.md": (
+            f"Latest published release: {PRODUCT_VERSION}",
+            versioned_archive,
+            f"Nova + MIND Free {PRODUCT_VERSION}",
+            "current published product release",
+        ),
+        "START-HERE.md": (f"Nova + MIND Free {PRODUCT_VERSION}", versioned_archive),
+        "docs/index.html": (f"Latest published: {PRODUCT_VERSION}",),
+        "docs/install.html": (versioned_archive, "latest published release"),
+        "design/FREE-NOVA-PACKAGE-MAP.md": (
+            f"published release; {PRODUCT_VERSION}",
+            f"Product: **Nova + MIND Free {PRODUCT_VERSION}**",
+        ),
+    }
+    forbidden = (
+        "Local source candidate:",
+        "current local source candidate",
+        "latest public release</a> remains",
+        "latest published release] remains",
+    )
+    for relative, phrases in required.items():
+        path = root / relative
+        if not path.is_file():
+            errors.append(f"current-release truth surface missing: {relative}")
+            continue
+        text = path.read_text(encoding="utf-8")
+        for phrase in phrases:
+            if phrase not in text:
+                errors.append(f"current-release truth missing from {relative}: {phrase}")
+        for phrase in forbidden:
+            if phrase.casefold() in text.casefold():
+                errors.append(f"stale candidate release claim remains in {relative}: {phrase}")
+
+    notes = root / "RELEASE-NOTES.md"
+    if not notes.is_file():
+        errors.append("current-release truth surface missing: RELEASE-NOTES.md")
+        return
+    text = notes.read_text(encoding="utf-8")
+    heading = f"## {PRODUCT_VERSION}"
+    first_heading = re.search(r"(?m)^## (.+)$", text)
+    if first_heading is None or first_heading.group(0) != heading:
+        errors.append("release notes do not lead with the current product version")
+        return
+    section = text.split(heading, 1)[1].split("\n## ", 1)[0]
+    if "published" not in section.casefold():
+        errors.append("current release-notes section does not state published release truth")
+    for phrase in ("local source candidate", "not a push", "not a public release", "publication claim"):
+        if phrase in section.casefold():
+            errors.append(f"current release-notes section retains candidate disclaimer: {phrase}")
 
 def verify_release_links(errors: list[str], release_root: Path) -> None:
     documents = [
@@ -961,6 +1015,7 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
             errors.append(f"source lock canonical tree does not match imported bytes: {component}")
 
     verify_links(errors)
+    verify_current_release_truth(errors)
 
     site_check = ROOT / "docs" / "check_site.py"
     if not site_check.is_file():

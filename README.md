@@ -8,7 +8,7 @@ Nova + MIND Free is an AI agent with forty-one proprietary skills and cognitive 
 
 Hand me the repository that is on fire, the question that will not sit still, the draft that has gone feral, or the decision everyone is politely avoiding. You ask for the outcome. You do **not** memorize a catalog, convene a committee of bots, or learn forty-one magic words.
 
-[Latest published release: 2.0.9](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · Local source candidate: 2.1.2 · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
+[Latest published release: 2.1.3](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) · [Download v2.1.3](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/download/v2.1.3/nova-mind-free-v2.1.3.zip) · [Start here](START-HERE.md) · [Use the live guide](https://stunspot.github.io/nova-the-optimal-ai-mind/) · [Read the release notes](RELEASE-NOTES.md)
 
 
 ## What you can get done
@@ -59,7 +59,7 @@ The included public reminder profile is structurally verified and mechanically e
 
 Codex with plugin support is the primary target. You need PowerShell, Python 3.11 or newer, and local Ollama with `qwen3-embedding:0.6b` already installed. Model weights are not bundled or downloaded for you.
 
-1. Once the local 2.1.2 source candidate has completed its separate build and verification gates, use the governed `nova-mind-free-v2.1.2.zip`. The [latest published release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest) remains 2.0.9 until a later release is separately published.
+1. Download the governed `nova-mind-free-v2.1.3.zip` from the [latest published release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
 2. Attach it to a Codex task and say:
 
    ```text
@@ -152,7 +152,7 @@ Report vulnerabilities through [GitHub’s private security channel](https://git
 
 ## Versions, provenance, and evidence
 
-**Nova + MIND Free 2.1.2** is the current local source candidate. Its plugin manifests identify **Nova 2.1.0** and **MIND 2.2.2**. MIND carries **Cognitive Continuity 0.2.2** with workspace schema v2 while bundled **MIND Core remains 0.2.0**. Worldline and Faultline are named service contracts over Continuity, not independently versioned products. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova's canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, Continuity contracts, portable ZIP shape, links, and deterministic packaging.
+**Nova + MIND Free 2.1.3** is the current published product release. Its plugin manifests identify **Nova 2.1.0** and **MIND 2.2.2**. MIND carries **Cognitive Continuity 0.2.2** with workspace schema v2 while bundled **MIND Core remains 0.2.0**. Worldline and Faultline are named service contracts over Continuity, not independently versioned products. The source lock records the origin commit and tree fingerprint for imported capabilities. Nova's canonical persona and Promptcraft doctrine are hash-locked. Release verification checks skill topology, unique handles, exclusions, plugin versions, canonical bytes, reminder assets, Continuity contracts, portable ZIP shape, links, and deterministic packaging.
 
 Those checks establish package properties—not universal behavior, fresh-host success, Claude parity, publication, or defect-freedom. See [verification and evidence status](docs/VERIFICATION.md), [host matrix](docs/HOST-MATRIX.md), and [release notes](RELEASE-NOTES.md).
 ## Support, contribution, license, and terms
