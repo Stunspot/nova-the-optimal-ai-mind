@@ -1,8 +1,8 @@
 # Free Nova package map
 
-Status: local source candidate; 2.1.2 exact Nova 2.1.0, integrated MIND 2.2.2, Cognitive Continuity 0.2.2/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
-Prior published release: 2.0.9, published 2026-08-13 from commit f1e607e44b7d6121dc65278ae8155e3c7dfd09cf; source verification, deterministic package checks, Linux/Windows/macOS CI, Pages deployment, and release-asset digest readback passed for that prior release.
-Product: **Nova + MIND Free 2.1.2**
+Status: published release; 2.1.3 exact Nova 2.1.0, integrated MIND 2.2.2, Cognitive Continuity 0.2.2/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, and Ludis Continuum 1.1.0 custody
+Superseded release: 2.1.2 was published on 2026-08-15 with valid source/package custody but stale pre-publication claims in its customer documentation and sealed ZIP; its asset remains intact and 2.1.3 supersedes it.
+Product: **Nova + MIND Free 2.1.3**
 Primary runtime: Codex plugin marketplace  
 Portable runtime: one self-contained Claude ZIP per skill  
 Canonical repository: `Stunspot/nova-the-optimal-ai-mind`
@@ -60,7 +60,7 @@ Cognitive Continuity 0.2.2 uses workspace schema v2 while retaining read-only co
 
 Faultline is MIND's named bounded Error Neighborhood over Continuity-owned failure evidence. It returns zero to three expiring advisory cards, treats similarity and recurrence as noncausal, and leaves routing, diagnosis, repair, and permission with their proper owners. Governed mutations require schema-v2 generation, idempotency, authority, scope, source, sensitivity, and retention controls. Faultline has no fallback store and reports typed unsupported on v1; it likewise has no independent semver.
 
-The source candidate includes deterministic runtime and fresh-process tests. Package presence, installation, discovery, live selector resolution, customer-workspace migration, external-system behavior, and live host health remain separate evidence gates.
+The product includes deterministic runtime and fresh-process tests. The release gate verifies package presence, deterministic archive construction, and archive readback; installation, discovery, live selector resolution, customer-workspace migration, external-system behavior, and live host health remain separate evidence gates.
 
 ## Excluded by product decision
 

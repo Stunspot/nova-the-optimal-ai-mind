@@ -192,6 +192,191 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         self.assertTrue((ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").is_file())
         self.assertTrue((ROOT / "design" / "source-lock.json").is_file())
 
+    def _release_truth_surfaces(self, **overrides: str) -> dict[str, str]:
+        version = VERIFIER_MODULE.PRODUCT_VERSION
+        mind_version = VERIFIER_MODULE.MIND_VERSION
+        archive = f"nova-mind-free-v{version}.zip"
+        surfaces = {
+            "README.md": f"Latest published release: {version}\n{archive}\nNova + MIND Free {version}\ncurrent published product release\n",
+            "START-HERE.md": f"Nova + MIND Free {version}\n{archive}\n",
+            "docs/index.html": f"Latest published: {version}\n",
+            "docs/install.html": f"{archive} latest published release\n",
+            "docs/UPGRADE.md": f"Nova + MIND Free {version}\n",
+            "docs/VERIFICATION.md": "The committed [source lock](../design/source-lock.json) binds current bytes.\nA package PASS is issued only after archive readback.\n",
+            "design/FREE-NOVA-PACKAGE-MAP.md": f"published release; {version}\nProduct: **Nova + MIND Free {version}**\nThe product includes deterministic tests.\n",
+            "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis published release corrects customer truth.\n\n## old\nHistorical candidate.\n\n## Version layers\n\n- Product release: Nova + MIND Free {version}\n",
+            "plugins/augment-of-mind/RELEASE-NOTES.md": f"# MIND notes\n\n## {mind_version}\nMIND {mind_version} was published as a component of an earlier product and is retained unchanged in {version}.\n\n## old\nThis historical local candidate does not imply publication or a public release.\n",
+        }
+        surfaces.update(overrides)
+        return surfaces
+
+    def _write_release_truth_surfaces(self, root: Path, surfaces: dict[str, str]) -> None:
+        for relative, content in surfaces.items():
+            path = root / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(content, encoding="utf-8")
+
+    def _add_current_claim(self, surfaces: dict[str, str], relative: str, claim: str) -> None:
+        if relative == "RELEASE-NOTES.md":
+            surfaces[relative] = surfaces[relative].replace(
+                "This published release corrects customer truth.",
+                "This published release corrects customer truth. " + claim,
+            )
+        elif relative == "plugins/augment-of-mind/RELEASE-NOTES.md":
+            mind_version = VERIFIER_MODULE.MIND_VERSION
+            current = (
+                f"MIND {mind_version} was published as a component of an earlier product "
+                f"and is retained unchanged in {VERIFIER_MODULE.PRODUCT_VERSION}."
+            )
+            surfaces[relative] = surfaces[relative].replace(current, current + " " + claim)
+        else:
+            surfaces[relative] += "\n" + claim + "\n"
+    def test_current_release_truth_rejects_candidate_state(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            version = VERIFIER_MODULE.PRODUCT_VERSION
+            surfaces = self._release_truth_surfaces(**{
+                "README.md": f"Latest published release: 2.0.9\nLocal source candidate: {version}\n",
+                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis is a local source candidate, not a public release.\n\n## Version layers\n\n- Product release: Nova + MIND Free {version}\n",
+            })
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertTrue(any("README.md current release claims: candidate" in error for error in errors))
+            self.assertTrue(any("RELEASE-NOTES.md current section: candidate" in error for error in errors))
+            self.assertTrue(any("RELEASE-NOTES.md current section: negated release" in error for error in errors))
+
+    def test_current_release_truth_rejects_stale_version_layers(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            version = VERIFIER_MODULE.PRODUCT_VERSION
+            surfaces = self._release_truth_surfaces(**{
+                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis published release corrects customer truth.\n\n## Version layers\n\n- Product release: Nova + MIND Free 2.1.2\n",
+            })
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertEqual(len(errors), 1)
+            self.assertIn("Version layers product value is stale", errors[0])
+
+    def test_current_release_truth_rejects_deferred_packaged_authorities(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            version = VERIFIER_MODULE.PRODUCT_VERSION
+            mind_version = VERIFIER_MODULE.MIND_VERSION
+            surfaces = self._release_truth_surfaces(**{
+                "docs/VERIFICATION.md": "During this local source freeze the lock remains deferred; a package PASS is not claimed.\n",
+                "design/FREE-NOVA-PACKAGE-MAP.md": f"published release; {version}\nProduct: **Nova + MIND Free {version}**\nThe source candidate includes deterministic tests.\n",
+                "plugins/augment-of-mind/RELEASE-NOTES.md": f"# MIND notes\n\n## {mind_version}\nThis version is inside the local Nova + MIND Free 2.1.2 candidate and does not imply publication or a public release.\n",
+            })
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertTrue(any("docs/VERIFICATION.md" in error for error in errors))
+            self.assertTrue(any("design/FREE-NOVA-PACKAGE-MAP.md: candidate" in error for error in errors))
+            self.assertTrue(any("plugins/augment-of-mind/RELEASE-NOTES.md current section: candidate" in error for error in errors))
+
+    def test_unpublished_does_not_satisfy_published_release_truth(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            version = VERIFIER_MODULE.PRODUCT_VERSION
+            surfaces = self._release_truth_surfaces(**{
+                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis unpublished release has no current publication claim.\n\n## Version layers\n\n- Product release: Nova + MIND Free {version}\n",
+            })
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertTrue(any("does not state published release truth" in error for error in errors))
+            self.assertTrue(any("RELEASE-NOTES.md current section: unpublished" in error for error in errors))
+
+    def test_positive_claims_cannot_mask_coexisting_current_contradictions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            surfaces = self._release_truth_surfaces()
+            poison = "\nThis current version is also an unpublished candidate and not a public release.\n"
+            for relative in (
+                "README.md",
+                "START-HERE.md",
+                "docs/index.html",
+                "docs/install.html",
+                "docs/UPGRADE.md",
+                "docs/VERIFICATION.md",
+                "design/FREE-NOVA-PACKAGE-MAP.md",
+            ):
+                surfaces[relative] += poison
+            surfaces["RELEASE-NOTES.md"] = surfaces["RELEASE-NOTES.md"].replace(
+                "This published release corrects customer truth.",
+                "This published release corrects customer truth." + poison,
+            )
+            mind_version = VERIFIER_MODULE.MIND_VERSION
+            surfaces["plugins/augment-of-mind/RELEASE-NOTES.md"] = surfaces[
+                "plugins/augment-of-mind/RELEASE-NOTES.md"
+            ].replace(
+                f"MIND {mind_version} was published as a component of an earlier product and is retained unchanged in {VERIFIER_MODULE.PRODUCT_VERSION}.",
+                f"MIND {mind_version} was published as a component of an earlier product and is retained unchanged in {VERIFIER_MODULE.PRODUCT_VERSION}." + poison,
+            )
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            expected_labels = (
+                "README.md current release claims",
+                "START-HERE.md",
+                "docs/index.html",
+                "docs/install.html",
+                "docs/UPGRADE.md",
+                "docs/VERIFICATION.md source/package section",
+                "design/FREE-NOVA-PACKAGE-MAP.md",
+                "RELEASE-NOTES.md current section",
+                "plugins/augment-of-mind/RELEASE-NOTES.md current section",
+            )
+            for label in expected_labels:
+                self.assertTrue(any(label in error for error in errors), label)
+    def test_release_state_variants_fail_independently_on_every_authority(self) -> None:
+        authority_labels = {
+            "README.md": "README.md current release claims",
+            "START-HERE.md": "START-HERE.md",
+            "docs/index.html": "docs/index.html",
+            "docs/install.html": "docs/install.html",
+            "docs/UPGRADE.md": "docs/UPGRADE.md",
+            "docs/VERIFICATION.md": "docs/VERIFICATION.md source/package section",
+            "design/FREE-NOVA-PACKAGE-MAP.md": "design/FREE-NOVA-PACKAGE-MAP.md",
+            "RELEASE-NOTES.md": "RELEASE-NOTES.md current section",
+            "plugins/augment-of-mind/RELEASE-NOTES.md": "plugins/augment-of-mind/RELEASE-NOTES.md current section",
+        }
+        contradictions = (
+            "This release has not been published.",
+            "This release has never been published.",
+            "This release isn't published.",
+            "This release awaits publication.",
+            "Publication has yet to occur.",
+            "Publication will occur later.",
+            "Version 2.0.9 remains the latest published release.",
+            "The most recent published release is 2.0.9.",
+            "Latest published release: 2.0.9.",
+            "The latest published release is v2.0.9.",
+            "The current public release is 2.0.9.",
+            "Download nova-mind-free-v2.0.9.zip.",
+        )
+        for claim in contradictions:
+            for relative, label in authority_labels.items():
+                with self.subTest(claim=claim, authority=relative), tempfile.TemporaryDirectory() as directory:
+                    root = Path(directory)
+                    surfaces = self._release_truth_surfaces()
+                    self._add_current_claim(surfaces, relative, claim)
+                    self._write_release_truth_surfaces(root, surfaces)
+                    errors: list[str] = []
+                    VERIFIER_MODULE.verify_current_release_truth(errors, root)
+                    self.assertTrue(
+                        any(f"current release contradiction in {label}" in error for error in errors),
+                        errors,
+                    )
+    def test_current_release_truth_accepts_published_surfaces_and_historical_candidates(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            self._write_release_truth_surfaces(root, self._release_truth_surfaces())
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertEqual(errors, [])
     def test_verifier_help_exposes_external_release_root_without_mutation(self) -> None:
         before = {str(path): digest(path) for path in OUTPUTS}
         result = subprocess.run(

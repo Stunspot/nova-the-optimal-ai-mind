@@ -16,7 +16,7 @@ python -X utf8 .\plugins\augment-of-mind\scripts\build_release.py --output-dir <
 
 The repository and embedded Continuity suites use deterministic tests for the forty-one unique skill roots, sixteen-Faculty boundary, two TestForge roles, product/plugin/Core/Continuity version contracts, workspace schema v2, all four Worldline views, Faultline Error Neighborhood and mutation controls, metered-capacity arithmetic and authority denial, linked design evidence, standalone MIND prerequisites, exclusions, canonical Nova and Promptcraft bytes, model-context delivery, reminder cards and vectors, links, portable Claude ZIP shape, deterministic package construction, and integrated fingerprints.
 
-The final release gate requires the [source lock](../design/source-lock.json) to bind the frozen product version, imported component commits, selected paths, and exact tree digests. The package verifier recomputes imported trees instead of trusting the JSON record. During this local source freeze the lock and integrated fingerprint remain intentionally deferred; a package PASS is not claimed until both are regenerated from the final bytes and rechecked.
+The committed [source lock](../design/source-lock.json) binds the frozen product version, imported component commits, selected paths, and exact tree digests. The package verifier recomputes imported trees instead of trusting the JSON record. A package PASS is issued only after the lock, integrated fingerprint, staged bytes, archive manifest, and archive readback agree with the frozen source.
 
 The permanent public workflow is configured to run the source suite, deterministic combined-package build, portable-release verification, and embedded standalone MIND build on Linux, Windows, and macOS. A configured workflow is not an executed workflow. Hosted-provider capacity, a successful run on the frozen commit, publication, and asset readback remain separate release evidence.
 
@@ -56,7 +56,7 @@ Before publication, the candidate documentation set requires:
 1. a Hesperos customer-journey authorship and review pass;
 2. a separate accessibility review of structure, language, contrast, focus, resizing, reduced motion, alt text, and navigation;
 3. a separate TestForge adversarial verification pass;
-4. live HTTP and visual re-entry after GitHub Pages deployment; this remains unexecuted for the local 2.1.2 source candidate.
+4. live HTTP and visual re-entry after GitHub Pages deployment, recorded as release-specific post-publication evidence.
 
 Receipts identify the reviewed candidate and documentation fingerprint. Any later customer-facing content change invalidates those content-bound receipts and requires review again.
 

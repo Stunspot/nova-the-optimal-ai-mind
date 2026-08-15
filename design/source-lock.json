@@ -1,7 +1,7 @@
 {
   "format": "nova-free-source-lock/v1",
   "product": "Nova + MIND Free",
-  "product_version": "2.1.2",
+  "product_version": "2.1.3",
   "generated_at": "2026-08-15",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
   "contest_repository_mutated": false,
