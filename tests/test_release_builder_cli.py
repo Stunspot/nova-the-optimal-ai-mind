@@ -227,8 +227,9 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             self._write_release_truth_surfaces(root, surfaces)
             errors: list[str] = []
             VERIFIER_MODULE.verify_current_release_truth(errors, root)
-            self.assertTrue(any("stale candidate release claim" in error for error in errors))
-            self.assertTrue(any("candidate disclaimer" in error for error in errors))
+            self.assertTrue(any("README.md current release claims: candidate" in error for error in errors))
+            self.assertTrue(any("RELEASE-NOTES.md current section: candidate" in error for error in errors))
+            self.assertTrue(any("RELEASE-NOTES.md current section: negated release" in error for error in errors))
 
     def test_current_release_truth_rejects_stale_version_layers(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -257,9 +258,64 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             errors: list[str] = []
             VERIFIER_MODULE.verify_current_release_truth(errors, root)
             self.assertTrue(any("docs/VERIFICATION.md" in error for error in errors))
-            self.assertTrue(any("package map retains current source-candidate wording" in error for error in errors))
-            self.assertTrue(any("current MIND release" in error for error in errors))
+            self.assertTrue(any("design/FREE-NOVA-PACKAGE-MAP.md: candidate" in error for error in errors))
+            self.assertTrue(any("plugins/augment-of-mind/RELEASE-NOTES.md current section: candidate" in error for error in errors))
 
+    def test_unpublished_does_not_satisfy_published_release_truth(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            version = VERIFIER_MODULE.PRODUCT_VERSION
+            surfaces = self._release_truth_surfaces(**{
+                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis unpublished release has no current publication claim.\n\n## Version layers\n\n- Product release: Nova + MIND Free {version}\n",
+            })
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertTrue(any("does not state published release truth" in error for error in errors))
+            self.assertTrue(any("RELEASE-NOTES.md current section: unpublished" in error for error in errors))
+
+    def test_positive_claims_cannot_mask_coexisting_current_contradictions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            surfaces = self._release_truth_surfaces()
+            poison = "\nThis current version is also an unpublished candidate and not a public release.\n"
+            for relative in (
+                "README.md",
+                "START-HERE.md",
+                "docs/index.html",
+                "docs/install.html",
+                "docs/UPGRADE.md",
+                "docs/VERIFICATION.md",
+                "design/FREE-NOVA-PACKAGE-MAP.md",
+            ):
+                surfaces[relative] += poison
+            surfaces["RELEASE-NOTES.md"] = surfaces["RELEASE-NOTES.md"].replace(
+                "This published release corrects customer truth.",
+                "This published release corrects customer truth." + poison,
+            )
+            mind_version = VERIFIER_MODULE.MIND_VERSION
+            surfaces["plugins/augment-of-mind/RELEASE-NOTES.md"] = surfaces[
+                "plugins/augment-of-mind/RELEASE-NOTES.md"
+            ].replace(
+                f"MIND {mind_version} was published as a component of an earlier product and is retained unchanged in {VERIFIER_MODULE.PRODUCT_VERSION}.",
+                f"MIND {mind_version} was published as a component of an earlier product and is retained unchanged in {VERIFIER_MODULE.PRODUCT_VERSION}." + poison,
+            )
+            self._write_release_truth_surfaces(root, surfaces)
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            expected_labels = (
+                "README.md current release claims",
+                "START-HERE.md",
+                "docs/index.html",
+                "docs/install.html",
+                "docs/UPGRADE.md",
+                "docs/VERIFICATION.md source/package section",
+                "design/FREE-NOVA-PACKAGE-MAP.md",
+                "RELEASE-NOTES.md current section",
+                "plugins/augment-of-mind/RELEASE-NOTES.md current section",
+            )
+            for label in expected_labels:
+                self.assertTrue(any(label in error for error in errors), label)
     def test_current_release_truth_accepts_published_surfaces_and_historical_candidates(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

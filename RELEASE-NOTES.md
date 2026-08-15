@@ -2,9 +2,9 @@
 
 ## 2.1.3
 
-This release corrects the public release-state failure in 2.1.2. Although 2.1.2 was tagged and published, its repository README, installation guide, Pages source, package map, verification guide, and sealed distribution still described 2.0.9 as latest and 2.1.2 as an unpublished local candidate. Version 2.1.3 supersedes that contradictory artifact without replacing the 2.1.2 release asset in place.
+This release corrects the public release-state failure in 2.1.2. Although 2.1.2 was tagged and published, its repository README, installation guide, Pages source, package map, verification guide, and sealed distribution still described 2.0.9 as latest and retained pre-publication status language for 2.1.2. Version 2.1.3 supersedes that contradictory artifact without replacing the 2.1.2 release asset in place.
 
-The product runtime is unchanged from 2.1.2: Nova 2.1.0, MIND 2.2.2, Cognitive Continuity 0.2.2/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, Ludis Continuum 1.1.0, and the same forty-one-skill topology. The verifier now treats current-release semantics as a release property: customer surfaces must name the exact product version, identify it as published, link the versioned archive, and contain no current-candidate or older-latest-release contradiction.
+The product runtime is unchanged from 2.1.2: Nova 2.1.0, MIND 2.2.2, Cognitive Continuity 0.2.2/workspace schema v2, MIND Core 0.2.0, TestForge 1.1.7, Ludis Continuum 1.1.0, and the same forty-one-skill topology. The verifier now treats current-release semantics as a release property: customer surfaces must name the exact product version, identify it as published, link the versioned archive, and contain no pre-publication-state or older-latest-release contradiction.
 
 ## 2.1.2
 

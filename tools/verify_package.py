@@ -122,7 +122,7 @@ def verify_links(errors: list[str]) -> None:
 
 
 def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
-    """Reject candidate-state or older-release claims on current customer surfaces."""
+    """Reject contradictory current release claims while preserving historical notes."""
     versioned_archive = f"nova-mind-free-v{PRODUCT_VERSION}.zip"
     required = {
         "README.md": (
@@ -144,76 +144,97 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
             f"Product: **Nova + MIND Free {PRODUCT_VERSION}**",
         ),
     }
-    forbidden = (
-        "Local source candidate:",
-        "current local source candidate",
-        "latest public release</a> remains",
-        "latest published release] remains",
-    )
+    texts: dict[str, str] = {}
     for relative, phrases in required.items():
         path = root / relative
         if not path.is_file():
             errors.append(f"current-release truth surface missing: {relative}")
             continue
         text = path.read_text(encoding="utf-8")
+        texts[relative] = text
         for phrase in phrases:
             if phrase not in text:
                 errors.append(f"current-release truth missing from {relative}: {phrase}")
-        for phrase in forbidden:
-            if phrase.casefold() in text.casefold():
-                errors.append(f"stale candidate release claim remains in {relative}: {phrase}")
 
-    notes = root / "RELEASE-NOTES.md"
-    if not notes.is_file():
+    def section(text: str, heading: str, next_heading: str = "\n## ") -> str:
+        if heading not in text:
+            return text
+        return text.split(heading, 1)[1].split(next_heading, 1)[0]
+
+    notes_path = root / "RELEASE-NOTES.md"
+    current_notes = ""
+    if not notes_path.is_file():
         errors.append("current-release truth surface missing: RELEASE-NOTES.md")
-        return
-    text = notes.read_text(encoding="utf-8")
-    heading = f"## {PRODUCT_VERSION}"
-    first_heading = re.search(r"(?m)^## (.+)$", text)
-    if first_heading is None or first_heading.group(0) != heading:
-        errors.append("release notes do not lead with the current product version")
-        return
-    section = text.split(heading, 1)[1].split("\n## ", 1)[0]
-    if "published" not in section.casefold():
-        errors.append("current release-notes section does not state published release truth")
-    for phrase in ("local source candidate", "not a push", "not a public release", "publication claim"):
-        if phrase in section.casefold():
-            errors.append(f"current release-notes section retains candidate disclaimer: {phrase}")
-    mind_notes = root / "plugins" / "augment-of-mind" / "RELEASE-NOTES.md"
-    if not mind_notes.is_file():
+    else:
+        notes_text = notes_path.read_text(encoding="utf-8")
+        heading = f"## {PRODUCT_VERSION}"
+        first_heading = re.search(r"(?m)^## (.+)$", notes_text)
+        if first_heading is None or first_heading.group(0) != heading:
+            errors.append("release notes do not lead with the current product version")
+        else:
+            current_notes = section(notes_text, heading)
+            if re.search(r"\bpublished\b", current_notes, flags=re.IGNORECASE) is None:
+                errors.append("current release-notes section does not state published release truth")
+
+        layers_heading = "## Version layers"
+        if layers_heading not in notes_text:
+            errors.append("release notes are missing the current Version layers block")
+        else:
+            layers = section(notes_text, layers_heading)
+            expected_product_layer = f"- Product release: Nova + MIND Free {PRODUCT_VERSION}"
+            if expected_product_layer not in layers:
+                errors.append(
+                    "release notes Version layers product value is stale; "
+                    f"expected: {expected_product_layer}"
+                )
+
+    mind_path = root / "plugins" / "augment-of-mind" / "RELEASE-NOTES.md"
+    current_mind_notes = ""
+    if not mind_path.is_file():
         errors.append("current-release truth surface missing: plugins/augment-of-mind/RELEASE-NOTES.md")
     else:
-        mind_text = mind_notes.read_text(encoding="utf-8")
+        mind_text = mind_path.read_text(encoding="utf-8")
         mind_heading = f"## {MIND_VERSION}"
-        mind_first_heading = re.search(r"(?m)^## (.+)$", mind_text)
-        if mind_first_heading is None or mind_first_heading.group(0) != mind_heading:
+        first_mind_heading = re.search(r"(?m)^## (.+)$", mind_text)
+        if first_mind_heading is None or first_mind_heading.group(0) != mind_heading:
             errors.append("MIND release notes do not lead with the current component version")
         else:
-            mind_section = mind_text.split(mind_heading, 1)[1].split("\n## ", 1)[0]
-            required_mind_truth = (
+            current_mind_notes = section(mind_text, mind_heading)
+            for phrase in (
                 f"MIND {MIND_VERSION} was published as a component",
                 f"retained unchanged in {PRODUCT_VERSION}",
-            )
-            for phrase in required_mind_truth:
-                if phrase not in mind_section:
+            ):
+                if phrase not in current_mind_notes:
                     errors.append(f"current MIND release truth is stale; expected: {phrase}")
-            for phrase in ("local Nova + MIND", "does not imply publication or a public release"):
-                if phrase.casefold() in mind_section.casefold():
-                    errors.append(f"current MIND release section retains candidate disclaimer: {phrase}")
 
-    package_map = (root / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "The source candidate" in package_map:
-        errors.append("package map retains current source-candidate wording")
-
-    layers_heading = "## Version layers"
-    if layers_heading not in text:
-        errors.append("release notes are missing the current Version layers block")
-        return
-    layers = text.split(layers_heading, 1)[1].split("\n## ", 1)[0]
-    expected_product_layer = f"- Product release: Nova + MIND Free {PRODUCT_VERSION}"
-    if expected_product_layer not in layers:
-        errors.append(f"release notes Version layers product value is stale; expected: {expected_product_layer}")
-
+    readme = texts.get("README.md", "")
+    readme_intro = readme.split("\n## What you can get done", 1)[0]
+    readme_versions = section(readme, "## Versions, provenance, and evidence")
+    verification_section = section(texts.get("docs/VERIFICATION.md", ""), "## Source and package verification")
+    governed_claims = {
+        "README.md current release claims": readme_intro + "\n" + readme_versions,
+        "START-HERE.md": texts.get("START-HERE.md", ""),
+        "docs/index.html": texts.get("docs/index.html", ""),
+        "docs/install.html": texts.get("docs/install.html", ""),
+        "docs/UPGRADE.md": texts.get("docs/UPGRADE.md", ""),
+        "docs/VERIFICATION.md source/package section": verification_section,
+        "design/FREE-NOVA-PACKAGE-MAP.md": texts.get("design/FREE-NOVA-PACKAGE-MAP.md", ""),
+        "RELEASE-NOTES.md current section": current_notes,
+        "plugins/augment-of-mind/RELEASE-NOTES.md current section": current_mind_notes,
+    }
+    contradiction_patterns = {
+        "unpublished": r"\bunpublished\b",
+        "candidate": r"\bcandidate\b",
+        "negated release": r"\bnot\s+(?:(?:a|the)\s+)?(?:(?:public|published)\s+)?release\b",
+        "negated publication": r"\b(?:does|do|is|are|was|were)\s+not\b[^.\n]{0,100}\b(?:publication|published|release)\b",
+        "deferred release state": r"\b(?:lock|fingerprint|package\s+pass|publication|release)\b[^.\n]{0,100}\b(?:deferred|not\s+claimed|unclaimed)\b",
+        "older release remains latest": r"\blatest\b[^.\n]{0,120}\bremains\b",
+    }
+    for label, claim_text in governed_claims.items():
+        normalized = " ".join(claim_text.split())
+        for reason, pattern in contradiction_patterns.items():
+            if re.search(pattern, normalized, flags=re.IGNORECASE):
+                errors.append(f"current release contradiction in {label}: {reason}")
 
 def verify_release_links(errors: list[str], release_root: Path) -> None:
     documents = [
