@@ -63,10 +63,10 @@ class MindDeliveryContextTests(unittest.TestCase):
                 ROOT
                 / "verification"
                 / "associative-smoke"
-                / "model-context-contract-v2.1.7.json"
+                / "model-context-contract-v2.2.2.json"
             ).read_text(encoding="utf-8")
         )
-        self.assertEqual(contract["mind_version"], "2.1.7")
+        self.assertEqual(contract["mind_version"], "2.2.2")
         self.assertEqual(contract["header"], MODEL_CONTEXT_HEADER)
         self.assertEqual(
             contract["vector_backed_modes"],

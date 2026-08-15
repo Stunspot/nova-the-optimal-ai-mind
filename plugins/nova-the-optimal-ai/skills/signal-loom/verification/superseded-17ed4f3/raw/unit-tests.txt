@@ -1,0 +1,15 @@
+COMMIT=17ed4f30975081b4a020dd8e28e6a35eb0edda1d
+COMMAND=python -m unittest discover -s tests -v
+test_competing_output_is_not_overwritten_and_project_is_preserved (test_init_loomfile.InitializeLoomfileTests.test_competing_output_is_not_overwritten_and_project_is_preserved) ... ok
+test_existing_archive_refusal_preserves_archive_and_project (test_init_loomfile.InitializeLoomfileTests.test_existing_archive_refusal_preserves_archive_and_project) ... ok
+test_interrupt_after_final_link_removes_output_and_preserves_project (test_init_loomfile.InitializeLoomfileTests.test_interrupt_after_final_link_removes_output_and_preserves_project) ... ok
+test_mid_archive_failure_preserves_project_and_allows_retry (test_init_loomfile.InitializeLoomfileTests.test_mid_archive_failure_preserves_project_and_allows_retry) ... ok
+test_new_loomfile_immediately_satisfies_the_state_contract (test_init_loomfile.InitializeLoomfileTests.test_new_loomfile_immediately_satisfies_the_state_contract) ... ok
+test_source_change_during_packaging_matches_archived_payload (test_init_loomfile.InitializeLoomfileTests.test_source_change_during_packaging_matches_archived_payload) ... ok
+test_success_manifest_matches_every_archived_payload_without_mutating_project (test_init_loomfile.InitializeLoomfileTests.test_success_manifest_matches_every_archived_payload_without_mutating_project) ... ok
+System.Management.Automation.RemoteException
+----------------------------------------------------------------------
+Ran 7 tests in 0.371s
+System.Management.Automation.RemoteException
+OK
+EXIT_CODE=0

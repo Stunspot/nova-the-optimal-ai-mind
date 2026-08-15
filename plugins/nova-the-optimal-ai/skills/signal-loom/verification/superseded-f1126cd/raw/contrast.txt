@@ -1,0 +1,5 @@
+COMMIT=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
+GOVERNED_FINGERPRINT=aee2427da83b43e5af76c3b0180c136cae265dfe1bdd813e4a2da3901872bf94
+CSS_CHANGED_SINCE_REVIEW=False
+#963f7a on #fbfaf6: 6.11:1
+Ordinary-text threshold: PASS (>= 4.5:1)

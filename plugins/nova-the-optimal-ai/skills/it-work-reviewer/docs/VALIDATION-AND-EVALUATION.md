@@ -63,7 +63,9 @@ A behavioral result is evidence only for its exact package fingerprint and runti
 
 ## What was and was not verified
 
-For the v0.1.0 build:
+The current v0.1.3 package passes its one-root skill manifests, Codex-to-Claude byte parity, portable family verifier, safe archive topology, documentation link check, and fresh extraction rerun. Those are static package results; no new live-host or behavioral run was claimed for the presentation repair.
+
+The following behavioral statements apply to the original v0.1.0 build and its exact recorded fingerprint:
 
 - the working package, customer copy, and fresh ZIP extraction passed release and shared package validation;
 - three valid example cases passed the case validator, and a malformed fixture failed as required;

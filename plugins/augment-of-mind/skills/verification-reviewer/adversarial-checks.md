@@ -12,3 +12,4 @@ Use the smallest check that could overturn the claim:
 - Treat a green suite as one source: what high-impact behavior was never asked to fail?
 - Treat a red suite as ambiguous: what single check separates product, test, environment, flake, contract, and tooling causes?
 - Ask whose authority the recommendation would exercise if followed.
+- Ask whether any checksum or receipt exists only because verification started; if so, remove that premature sealing step from the supported workflow.

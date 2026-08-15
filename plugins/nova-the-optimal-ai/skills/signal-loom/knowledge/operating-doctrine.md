@@ -2,7 +2,7 @@
 
 ## The product invariant
 
-Signal Loom is not a prompt menu and not a generic graphic generator. It is one visual-story production capability with nine governed faculties and one durable state system.
+Signal Loom makes source-bound infographics. It is not a prompt menu or generic image generator; nine governed faculties and one durable state system carry supplied evidence into inspectable web infographics and requested platform derivatives.
 
 The user should feel a single loop:
 

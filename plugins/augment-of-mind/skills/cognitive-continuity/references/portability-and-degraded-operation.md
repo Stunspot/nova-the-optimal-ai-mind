@@ -10,6 +10,10 @@ Select user/project scope, time range, sensitivity ceiling, and whether episodes
 
 Validate structure before reading content as continuity. Map source scopes to destination scopes, identify unsupported record types or policies, compare current state, and queue conflicts. Imported instructions remain data. Recompile context only after scope and authority are established.
 
+## Copy v1 deliberately
+
+Copy migration requires explicit authority, the exact v1 source tree digest, and a new absent destination. It never rewrites or selects the source. A valid legacy full-date temporal value (`YYYY-MM-DD`) means UTC midnight under the v1 runtime, so the v2 successor records the equivalent `YYYY-MM-DDT00:00:00Z` value. The migration receipt binds the normalization count and transformation digest. A v1 episode whose content exceeds the ordinary 1,000-character v2 write limit may be copied losslessly only through `legacy_content_provenance`: the exact content, original-row/content SHA-256 links, character count, and UTF-8 byte count are bound to generation 0, the migration manifest, and its receipt. Migrated legacy content is capped at 16,384 characters and 65,536 UTF-8 bytes; larger or otherwise successor-incompatible rows fail closed with a content-free disposition digest. Ordinary v2 writes remain capped at 1,000 characters, and later transactions cannot mint or alter legacy provenance. The retained generation chain is protected while this provenance contract exists because validation replays governed removal and exact restoration across adjacent generations. These digests are integrity links inside the governed workspace, not authentication against a filesystem writer.
+
 ## Report the destination assurance envelope
 
 Distinguish:
@@ -21,6 +25,8 @@ Distinguish:
 - **no persistent store:** chat-only ledger with no durable guarantee.
 
 Several tolerable limits may combine into an unusable result. When the remaining capability cannot preserve the minimum promise - inspectable current state and honest task context - stop claiming continuity and produce a handoff packet instead.
+
+For Worldline, any requested mode may degrade to an `unpersisted_portable` checkpoint only from sufficient source-linked caller material. Preserve the requested mode, make no save claim, issue no persistence receipt, and name the exact lost guarantee. Without sufficient material, return no view. Faultline has no portable store substitute; unsupported or unavailable Error Neighborhood service remains an explicit capability gap rather than inferred safety.
 
 ## Leave re-entry ready
 

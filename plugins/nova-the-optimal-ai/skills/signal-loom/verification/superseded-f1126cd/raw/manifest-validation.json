@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "C:\\Users\\user\\.codex\\plugins\\cache\\collaborative-dynamics-nova-free\\augment-of-mind\\2.1.5\\skills\\software-verification\\scripts\\validate_manifest.py",
+    "verification/remediation-2026-08-12/testforge-manifest.json",
+    "--root",
+    "."
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-12T11:40:43.728322+00:00",
+  "finished_at": "2026-08-12T11:40:43.850278+00:00",
+  "duration_seconds": 0.121954,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\n  \"valid\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"counts\": {\n    \"risks\": 17,\n    \"scenarios\": 17,\n    \"tests\": 17,\n    \"executions\": 16\n  }\n}\n",
+  "stderr": "",
+  "status": "passed"
+}

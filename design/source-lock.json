@@ -1,409 +1,445 @@
 {
-    "format":  "nova-free-source-lock/v1",
-    "product":  "Nova + MIND Free",
-    "product_version":  "2.0.10",
-    "generated_at":  "2026-08-13",
-    "tree_algorithm":  "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
-    "contest_repository_mutated":  false,
-    "excluded_capabilities":  [
-                                  "aji-go-coach",
-                                  "agent-arena-competition",
-                                  "impactful-tom"
-                              ],
-    "records":  [
-                    {
-                        "component":  "nova",
-                        "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "0e4c78a39e29b6245631beabff404af8977fbf12",
-                        "source_path":  "plugins/nova-the-optimal-ai/skills/nova",
-                        "source_tree":  {
-                                            "file_count":  15,
-                                            "tree_sha256":  "502669530fe9d627e0ee4f88c8c91c7d4b1baf81af1f0f1e207505ce1e262a08"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/nova",
-                        "imported_tree":  {
-                                              "file_count":  15,
-                                              "tree_sha256":  "502669530fe9d627e0ee4f88c8c91c7d4b1baf81af1f0f1e207505ce1e262a08"
-                                          },
-                        "custody":  "current integrated component checkpoint; canonical persona verbatim"
-                    },
-                    {
-                        "component":  "augment-of-mind",
-                        "source_repository":  "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-                        "source_commit":  "a6f249a730030a5e2a518b8011463a49781a5415",
-                        "source_path":  "plugins/augment-of-mind/skills",
-                        "source_tree":  {
-                                            "file_count":  280,
-                                            "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
-                                        },
-                        "imported_path":  "plugins/augment-of-mind/skills",
-                        "imported_tree":  {
-                                              "file_count":  280,
-                                              "tree_sha256":  "9e2fd4030761a4554683c16276a07e1033d97214c8aaf64b2e2a5accdc52e0f6"
-                                          },
-                        "custody":  "integrated MIND 2.1.7 component checkpoint derived from published MIND 2.1.6 with exact TestForge 1.1.7 replacement"
-                    },
-                    {
-                        "component":  "software-verification",
-                        "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
-                        "source_path":  "testforge/skills/software-verification",
-                        "source_tree":  {
-                                            "file_count":  96,
-                                            "tree_sha256":  "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
-                                        },
-                        "imported_path":  "plugins/augment-of-mind/skills/software-verification",
-                        "imported_tree":  {
-                                              "file_count":  96,
-                                              "tree_sha256":  "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
-                                          },
-                        "custody":  "exact local TestForge v1.1.7 operator tree"
-                    },
-                    {
-                        "component":  "verification-reviewer",
-                        "source_repository":  "https://github.com/Stunspot/testforge",
-                        "source_commit":  "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
-                        "source_path":  "testforge/skills/verification-reviewer",
-                        "source_tree":  {
-                                            "file_count":  9,
-                                            "tree_sha256":  "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
-                                        },
-                        "imported_path":  "plugins/augment-of-mind/skills/verification-reviewer",
-                        "imported_tree":  {
-                                              "file_count":  9,
-                                              "tree_sha256":  "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
-                                          },
-                        "custody":  "exact local TestForge v1.1.7 reviewer tree"
-                    },
-                    {
-                        "component":  "agentic-coding",
-                        "source_repository":  "https://github.com/Stunspot/agentic-coding",
-                        "source_commit":  "d3a80cbc82ad4bd04dec829dbd70b19509ee56ac",
-                        "source_path":  "release-v0.1.0/codex/agentic-coding/skills/agentic-coding",
-                        "source_tree":  {
-                                            "file_count":  3,
-                                            "tree_sha256":  "16b2f2057de8f179cbf32d8e27f545f64d7b61962214c92f217319c2fd973ed6"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/agentic-coding",
-                        "imported_tree":  {
-                                              "file_count":  3,
-                                              "tree_sha256":  "16b2f2057de8f179cbf32d8e27f545f64d7b61962214c92f217319c2fd973ed6"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "answerlayer",
-                        "source_repository":  "https://github.com/Stunspot/answerlayer",
-                        "source_commit":  "a1d2d45def283a9ba88187b7615566623462a19c",
-                        "source_path":  "release-v0.1.0/codex/answerlayer",
-                        "source_tree":  {
-                                            "file_count":  44,
-                                            "tree_sha256":  "d1189d7b9ff23a484cda7c2185673aeb3c0e0f69a1f5ce2bc9ea72635c4a978c"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/answerlayer",
-                        "imported_tree":  {
-                                              "file_count":  44,
-                                              "tree_sha256":  "d1189d7b9ff23a484cda7c2185673aeb3c0e0f69a1f5ce2bc9ea72635c4a978c"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "ai-cognition-cost-optimizer",
-                        "source_repository":  "https://github.com/Stunspot/ai-cognition-cost-optimizer",
-                        "source_commit":  "15791a326fd3173c70c6337811be0011957ff196",
-                        "source_path":  "release-v0.2.1/codex/ai-cognition-cost-optimizer/skills/ai-cognition-cost-optimizer",
-                        "source_tree":  {
-                                            "file_count":  45,
-                                            "tree_sha256":  "82d507c8e89fa68af8e332f6b3d335c01132e0dd7f1ac82944f0d543bf8f9510"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer",
-                        "imported_tree":  {
-                                              "file_count":  45,
-                                              "tree_sha256":  "82d507c8e89fa68af8e332f6b3d335c01132e0dd7f1ac82944f0d543bf8f9510"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "corkboard",
-                        "source_repository":  "https://github.com/Stunspot/corkboard",
-                        "source_commit":  "fff0aa4d7c8d03323e77b258699ad9732310b5d6",
-                        "source_path":  "release-v0.1.0/codex/corkboard/skills/corkboard",
-                        "source_tree":  {
-                                            "file_count":  5,
-                                            "tree_sha256":  "f115c3dd1b72d610bc061a3799fe45827e9b2f3b7f6814a64b057961ced7af1f"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/corkboard",
-                        "imported_tree":  {
-                                              "file_count":  5,
-                                              "tree_sha256":  "f115c3dd1b72d610bc061a3799fe45827e9b2f3b7f6814a64b057961ced7af1f"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "current-intelligence-observatory",
-                        "source_repository":  "https://github.com/Stunspot/current-intelligence-observatory",
-                        "source_commit":  "8893f0c1d3d54b32e671f9e34d10bc1b591310e6",
-                        "source_path":  "release-v0.1.0/codex/current-intelligence-observatory",
-                        "source_tree":  {
-                                            "file_count":  72,
-                                            "tree_sha256":  "0014376813699e1de4758bea67f42187ff03c1a078ee61831bfa068a2840a017"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
-                        "imported_tree":  {
-                                              "file_count":  72,
-                                              "tree_sha256":  "0014376813699e1de4758bea67f42187ff03c1a078ee61831bfa068a2840a017"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "dunbar",
-                        "source_repository":  "https://github.com/Stunspot/dunbar",
-                        "source_commit":  "fbb9997be8e44e3793547ffbbb942606dc37849c",
-                        "source_path":  "release-v0.1.0/codex/dunbar-people-intelligence/skills/dunbar",
-                        "source_tree":  {
-                                            "file_count":  12,
-                                            "tree_sha256":  "b478ed601256e8354e34312c666f2b5b76922e6735973884a29f826e1622b092"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/dunbar",
-                        "imported_tree":  {
-                                              "file_count":  12,
-                                              "tree_sha256":  "b478ed601256e8354e34312c666f2b5b76922e6735973884a29f826e1622b092"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "omnara-deep-research",
-                        "source_repository":  "https://github.com/Stunspot/omnara-deep-research",
-                        "source_commit":  "41d3c63419976a2482ae8d94508106c84896b146",
-                        "source_path":  "customer-release/omnara-deep-research-v0.1.1/codex/omnara-deep-research",
-                        "source_tree":  {
-                                            "file_count":  38,
-                                            "tree_sha256":  "40ccc0453c3e8ba060b5e2c29f1926a7ca5ce9e6a86aa86060b5cd0e69f41de4"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
-                        "imported_tree":  {
-                                              "file_count":  38,
-                                              "tree_sha256":  "40ccc0453c3e8ba060b5e2c29f1926a7ca5ce9e6a86aa86060b5cd0e69f41de4"
-                                          },
-                        "custody":  "customer release artifact"
-                    },
-                    {
-                        "component":  "retrieval-intelligence",
-                        "source_repository":  "https://github.com/Stunspot/retrieval-intelligence",
-                        "source_commit":  "4ba8d0cec3a30bfe5c2b7456fd59693fef225b6b",
-                        "source_path":  "release-v0.1.0/codex/retrieval-intelligence/skills/retrieval-intelligence",
-                        "source_tree":  {
-                                            "file_count":  14,
-                                            "tree_sha256":  "685d9f5f936772db26ca7d144b3664131a42a70dcdc163df2acf274949c8d799"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
-                        "imported_tree":  {
-                                              "file_count":  14,
-                                              "tree_sha256":  "685d9f5f936772db26ca7d144b3664131a42a70dcdc163df2acf274949c8d799"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "retrieval-reviewer",
-                        "source_repository":  "https://github.com/Stunspot/retrieval-intelligence",
-                        "source_commit":  "4ba8d0cec3a30bfe5c2b7456fd59693fef225b6b",
-                        "source_path":  "release-v0.1.0/codex/retrieval-intelligence/skills/retrieval-reviewer",
-                        "source_tree":  {
-                                            "file_count":  3,
-                                            "tree_sha256":  "6a2789f0622bd7cd5993b5576b0af2e39a1ab71a7e9e08c0a910b52da6313820"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
-                        "imported_tree":  {
-                                              "file_count":  3,
-                                              "tree_sha256":  "6a2789f0622bd7cd5993b5576b0af2e39a1ab71a7e9e08c0a910b52da6313820"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "rupert-giles-knowledge-steward",
-                        "source_repository":  "https://github.com/Stunspot/rupert-giles-knowledge-steward",
-                        "source_commit":  "822f1e975d569ffd7fe0c000b05e2b6a1da242b1",
-                        "source_path":  "release-v0.1.0/codex/rupert-giles-knowledge-steward/skills/rupert-giles-knowledge-steward",
-                        "source_tree":  {
-                                            "file_count":  7,
-                                            "tree_sha256":  "f8c65fc69a2b629a034ed17cc191ad856e406062cbeed0f8f06bc29056096569"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
-                        "imported_tree":  {
-                                              "file_count":  7,
-                                              "tree_sha256":  "f8c65fc69a2b629a034ed17cc191ad856e406062cbeed0f8f06bc29056096569"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "privacy-redline",
-                        "source_repository":  "https://github.com/Stunspot/privacy-redline",
-                        "source_commit":  "1e9f24b930817a3e91d4624c4a8f72a1f2c61f9d",
-                        "source_path":  "release-v0.1.0/codex/privacy-redline",
-                        "source_tree":  {
-                                            "file_count":  41,
-                                            "tree_sha256":  "935aa22261ce11265e86b7566a2e29588a8088ced986d81841e414d6d0f0f6fe"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/privacy-redline",
-                        "imported_tree":  {
-                                              "file_count":  41,
-                                              "tree_sha256":  "935aa22261ce11265e86b7566a2e29588a8088ced986d81841e414d6d0f0f6fe"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "signal-loom",
-                        "source_repository":  "https://github.com/Stunspot/signal-loom",
-                        "source_commit":  "0cedb12c6b624e35fbc3399bcb5d5afeb96c7b93",
-                        "source_path":  "release-v0.1.0/codex/signal-loom",
-                        "source_tree":  {
-                                            "file_count":  66,
-                                            "tree_sha256":  "3137c29ed1c20b51a0e2ad9158f327329b92664a48c4f41ca678e6df98aeef67"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/signal-loom",
-                        "imported_tree":  {
-                                              "file_count":  66,
-                                              "tree_sha256":  "3137c29ed1c20b51a0e2ad9158f327329b92664a48c4f41ca678e6df98aeef67"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "owen-burnett-officecraft",
-                        "source_repository":  "https://github.com/Stunspot/owen-burnett-officecraft",
-                        "source_commit":  "91c76eeed72eef5a386a39ee77d696648ce7da99",
-                        "source_path":  "codex/owen-burnett-officecraft",
-                        "source_tree":  {
-                                            "file_count":  48,
-                                            "tree_sha256":  "5e3ae36418bddc2292b90b08071d02d3e6f909909d7c17940dadd35c0e551b7a"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
-                        "imported_tree":  {
-                                              "file_count":  48,
-                                              "tree_sha256":  "5e3ae36418bddc2292b90b08071d02d3e6f909909d7c17940dadd35c0e551b7a"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "officecraft-reviewer",
-                        "source_repository":  "https://github.com/Stunspot/owen-burnett-officecraft",
-                        "source_commit":  "91c76eeed72eef5a386a39ee77d696648ce7da99",
-                        "source_path":  "codex/officecraft-reviewer",
-                        "source_tree":  {
-                                            "file_count":  9,
-                                            "tree_sha256":  "9780596155f145dfaa4a4df68af7c5b4a662dca0408f09e8f812e8b570e90b5c"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
-                        "imported_tree":  {
-                                              "file_count":  9,
-                                              "tree_sha256":  "9780596155f145dfaa4a4df68af7c5b4a662dca0408f09e8f812e8b570e90b5c"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "beryl-it-tech",
-                        "source_repository":  "https://github.com/Stunspot/beryl-it-benchcraft",
-                        "source_commit":  "e9e14302df52acd555a47f70771c59a13f19e0f2",
-                        "source_path":  "release-v0.1.2/codex/beryl-it-benchcraft/skills/beryl-it-tech",
-                        "source_tree":  {
-                                            "file_count":  50,
-                                            "tree_sha256":  "829b2b56f391ec34b2b2814db854ead22acb06f31e66f1b62b71ba8e8fa278c7"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
-                        "imported_tree":  {
-                                              "file_count":  50,
-                                              "tree_sha256":  "829b2b56f391ec34b2b2814db854ead22acb06f31e66f1b62b71ba8e8fa278c7"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "it-work-reviewer",
-                        "source_repository":  "https://github.com/Stunspot/beryl-it-benchcraft",
-                        "source_commit":  "e9e14302df52acd555a47f70771c59a13f19e0f2",
-                        "source_path":  "release-v0.1.2/codex/beryl-it-benchcraft/skills/it-work-reviewer",
-                        "source_tree":  {
-                                            "file_count":  50,
-                                            "tree_sha256":  "35c5e8774df813d9bce5668fb5da9c0b8fdefd0411ef42a1630965f17736c31d"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
-                        "imported_tree":  {
-                                              "file_count":  50,
-                                              "tree_sha256":  "35c5e8774df813d9bce5668fb5da9c0b8fdefd0411ef42a1630965f17736c31d"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "ludis-continuum",
-                        "source_repository":  "https://github.com/Stunspot/ludis-continuum",
-                        "source_commit":  "e20d8ee88538e1e5a62ba9f18b5224ebedaa05df",
-                        "source_path":  ".",
-                        "source_tree":  {
-                                            "file_count":  122,
-                                            "tree_sha256":  "a79c66757df392747f811331679937b0d1bba534a45a1945286e5b4c295a7a22"
-                                        },
-                        "selection_excludes":  [
-                                                   ".github/**",
-                                                   ".editorconfig",
-                                                   ".gitattributes",
-                                                   ".gitignore"
-                                               ],
-                        "selected_tree":  {
-                                              "file_count":  117,
-                                              "tree_sha256":  "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da"
-                                          },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/ludis-continuum",
-                        "imported_tree":  {
-                                              "file_count":  117,
-                                              "tree_sha256":  "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da"
-                                          },
-                        "custody":  "exact tracked runtime selection from Ludis Continuum 1.1.0; repository-control files excluded"
-                    },
-                    {
-                        "component":  "lex-foster-language-companion",
-                        "source_repository":  "https://github.com/Stunspot/lex-foster-language-companion",
-                        "source_commit":  "dc6baac9f10d97b95873aaec976612eab5f68112",
-                        "source_path":  "release-v0.1.0/codex/lex-foster-language-companion",
-                        "source_tree":  {
-                                            "file_count":  26,
-                                            "tree_sha256":  "9362fb9df30a60b7ff7a68c4d6db4bcb5b1c8d34306c30c71ca229fbe67c5bc2"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion",
-                        "imported_tree":  {
-                                              "file_count":  26,
-                                              "tree_sha256":  "9362fb9df30a60b7ff7a68c4d6db4bcb5b1c8d34306c30c71ca229fbe67c5bc2"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "gridmason",
-                        "source_repository":  "https://github.com/Stunspot/gridmason",
-                        "source_commit":  "2dfba67dc7a69526f57f96ae8fd5d388240a8c6d",
-                        "source_path":  "release-v0.1.0/codex/gridmason/skills/gridmason",
-                        "source_tree":  {
-                                            "file_count":  30,
-                                            "tree_sha256":  "03c9718f226d6cc1dd6d63730af162362154415b1cbb55f7da76c55643c63698"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/gridmason",
-                        "imported_tree":  {
-                                              "file_count":  30,
-                                              "tree_sha256":  "03c9718f226d6cc1dd6d63730af162362154415b1cbb55f7da76c55643c63698"
-                                          },
-                        "custody":  "release artifact"
-                    },
-                    {
-                        "component":  "promptcraft",
-                        "source_repository":  "Collaborative Dynamics canonical promptcraft library",
-                        "source_commit":  null,
-                        "source_path":  "[ADVICE] - Prompt Design.md",
-                        "source_tree":  {
-                                            "file_count":  1,
-                                            "tree_sha256":  "5bcf2f9a4123a600ae48642191dc8ec20d906dc1123d518b5e332a63f21a8087"
-                                        },
-                        "imported_path":  "plugins/nova-the-optimal-ai/skills/promptcraft",
-                        "imported_tree":  {
-                                              "file_count":  2,
-                                              "tree_sha256":  "70b9bf00676ca3dfccdd87512846b382c0bce17e146c334288341cadaca3e901"
-                                          },
-                        "custody":  "new skill wrapper plus runtime-copied canonical doctrine"
-                    }
-                ]
+  "format": "nova-free-source-lock/v1",
+  "product": "Nova + MIND Free",
+  "product_version": "2.1.2",
+  "generated_at": "2026-08-15",
+  "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
+  "contest_repository_mutated": false,
+  "excluded_capabilities": [
+    "aji-go-coach",
+    "agent-arena-competition",
+    "impactful-tom"
+  ],
+  "records": [
+    {
+      "component": "nova",
+      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+      "source_commit": "a678d72049f99e999ccd4278ef9596adc0a0743e",
+      "source_path": "plugins/nova-the-optimal-ai/skills/nova",
+      "source_tree": {
+        "file_count": 15,
+        "tree_sha256": "821f3acdc48a8af0be62837ed301235724458901378011052faa048a1a277210"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
+      "imported_tree": {
+        "file_count": 15,
+        "tree_sha256": "821f3acdc48a8af0be62837ed301235724458901378011052faa048a1a277210"
+      },
+      "custody": "integrated Nova 2.1.0 component checkpoint with Worldline and Faultline routing; canonical persona verbatim"
+    },
+    {
+      "component": "augment-of-mind",
+      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+      "source_commit": "917d06e1474ebf6b8868b09b88909a658cc4afab",
+      "source_path": "plugins/augment-of-mind/skills",
+      "source_tree": {
+        "file_count": 309,
+        "tree_sha256": "269baec64d1c5d922f6a00da12a04e0216466400d43b592956b54a4ccd21c066"
+      },
+      "imported_path": "plugins/augment-of-mind/skills",
+      "imported_tree": {
+        "file_count": 309,
+        "tree_sha256": "269baec64d1c5d922f6a00da12a04e0216466400d43b592956b54a4ccd21c066"
+      },
+      "custody": "integrated MIND 2.2.2 checkpoint after complete bundled-skill currency reconciliation, including maintained TestForge 1.1.7 trees"
+    },
+    {
+      "component": "software-verification",
+      "source_repository": "https://github.com/Stunspot/testforge",
+      "source_commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
+      "source_path": "testforge/skills/software-verification",
+      "source_tree": {
+        "file_count": 96,
+        "tree_sha256": "ab9fd37dd2a6a18eb0bd98794408a95f986c84cd1842c0ff503b6dd00545f064"
+      },
+      "imported_path": "plugins/augment-of-mind/skills/software-verification",
+      "imported_tree": {
+        "file_count": 96,
+        "tree_sha256": "ab9fd37dd2a6a18eb0bd98794408a95f986c84cd1842c0ff503b6dd00545f064"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "verification-reviewer",
+      "source_repository": "https://github.com/Stunspot/testforge",
+      "source_commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
+      "source_path": "testforge/skills/verification-reviewer",
+      "source_tree": {
+        "file_count": 9,
+        "tree_sha256": "6fedf817b214d3e41566d784ce2b4d4a23b34659b87fcb1768105affd72f2f0b"
+      },
+      "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
+      "imported_tree": {
+        "file_count": 9,
+        "tree_sha256": "6fedf817b214d3e41566d784ce2b4d4a23b34659b87fcb1768105affd72f2f0b"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "agentic-coding",
+      "source_repository": "https://github.com/Stunspot/agentic-coding",
+      "source_commit": "b904fb7ebacd5bdcdc687f04149e32aa9dc8e7f9",
+      "source_path": ".",
+      "source_tree": {
+        "file_count": 14,
+        "tree_sha256": "96b47afa7a6fd9b04a4eb81b5e7eb81086746ad28ee1f2821ac252f143cd3abe"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agentic-coding",
+      "imported_tree": {
+        "file_count": 3,
+        "tree_sha256": "44fb29e1f57fd83226e9c09db1de9ff3f081373cad80c59c55fe4e0fba3be1d0"
+      },
+      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
+      "selection_includes": [
+        "SKILL.md",
+        "adapter-manifest.json",
+        "agents/openai.yaml"
+      ],
+      "selected_tree": {
+        "file_count": 3,
+        "tree_sha256": "44fb29e1f57fd83226e9c09db1de9ff3f081373cad80c59c55fe4e0fba3be1d0"
+      }
+    },
+    {
+      "component": "answerlayer",
+      "source_repository": "https://github.com/Stunspot/answerlayer",
+      "source_commit": "be2ca4fe264861744a6c5899be3c91a9923c68ca",
+      "source_path": "release-v0.1.2/codex/answerlayer",
+      "source_tree": {
+        "file_count": 44,
+        "tree_sha256": "ce1a5dd15f33003b4de2adea2b3ce7c78b87ba79b7c871cfd3cb7a6d5c27eca0"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
+      "imported_tree": {
+        "file_count": 44,
+        "tree_sha256": "ce1a5dd15f33003b4de2adea2b3ce7c78b87ba79b7c871cfd3cb7a6d5c27eca0"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "ai-cognition-cost-optimizer",
+      "source_repository": "https://github.com/Stunspot/ai-cognition-cost-optimizer",
+      "source_commit": "15791a326fd3173c70c6337811be0011957ff196",
+      "source_path": "release-v0.2.1/codex/ai-cognition-cost-optimizer/skills/ai-cognition-cost-optimizer",
+      "source_tree": {
+        "file_count": 45,
+        "tree_sha256": "319158e0dd671e62d433a52483c638ce4761f4f6b1938f0e148f22655bd316c1"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer",
+      "imported_tree": {
+        "file_count": 45,
+        "tree_sha256": "319158e0dd671e62d433a52483c638ce4761f4f6b1938f0e148f22655bd316c1"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "corkboard",
+      "source_repository": "https://github.com/Stunspot/corkboard",
+      "source_commit": "460ac80d622a1893085818baee8336c825f0ec82",
+      "source_path": ".",
+      "source_tree": {
+        "file_count": 14,
+        "tree_sha256": "33bf0a236ef1f6d058febd1f34e72d3a62383aaff21d67a1d17541139ae869f2"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
+      "imported_tree": {
+        "file_count": 3,
+        "tree_sha256": "f01a339036c4f4989bfd2dfa8fa029f308f65b48bbb9782619fe29c3726b57a8"
+      },
+      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
+      "selection_includes": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "scripts/corkboard.py"
+      ],
+      "selected_tree": {
+        "file_count": 3,
+        "tree_sha256": "f01a339036c4f4989bfd2dfa8fa029f308f65b48bbb9782619fe29c3726b57a8"
+      }
+    },
+    {
+      "component": "current-intelligence-observatory",
+      "source_repository": "https://github.com/Stunspot/current-intelligence-observatory",
+      "source_commit": "623d3181c873ea551dd748f278391240af761d59",
+      "source_path": "release-v0.1.1/codex/current-intelligence-observatory",
+      "source_tree": {
+        "file_count": 72,
+        "tree_sha256": "a6312c3662e23e3bd411117710fcaa5c1f6b96ade9dd1f659399076556255c9f"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
+      "imported_tree": {
+        "file_count": 72,
+        "tree_sha256": "a6312c3662e23e3bd411117710fcaa5c1f6b96ade9dd1f659399076556255c9f"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "dunbar",
+      "source_repository": "https://github.com/Stunspot/dunbar",
+      "source_commit": "54598f18388f7938880371dfc0cf1c53f598188e",
+      "source_path": ".",
+      "source_tree": {
+        "file_count": 23,
+        "tree_sha256": "5d96bf25b52d4992231121b9d40db5a6a5c9d0622b0e69d0452e687f7c98f54d"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
+      "imported_tree": {
+        "file_count": 12,
+        "tree_sha256": "1ef2d3b7ae09884c1d3f1b7a293645072749b6b596319153779c264a1d5a81ed"
+      },
+      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
+      "selection_includes": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/item-record.schema.json",
+        "assets/item.example.json",
+        "assets/person-record.schema.json",
+        "assets/person.example.json",
+        "assets/relation-record.schema.json",
+        "assets/relation.example.json",
+        "references/people-intelligence.md",
+        "references/progressive-disclosure.md",
+        "references/store-contract.md",
+        "scripts/dunbar.py"
+      ],
+      "selected_tree": {
+        "file_count": 12,
+        "tree_sha256": "1ef2d3b7ae09884c1d3f1b7a293645072749b6b596319153779c264a1d5a81ed"
+      }
+    },
+    {
+      "component": "omnara-deep-research",
+      "source_repository": "https://github.com/Stunspot/omnara-deep-research",
+      "source_commit": "4629c47fda5df93f62e9e2f7e903abae945db5b0",
+      "source_path": ".",
+      "source_tree": {
+        "file_count": 73,
+        "tree_sha256": "56745d2d772b6ebc19ddd0dbb5d3dd81aa8fa1b8d8330fea772655a83d4823c9"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
+      "imported_tree": {
+        "file_count": 73,
+        "tree_sha256": "56745d2d772b6ebc19ddd0dbb5d3dd81aa8fa1b8d8330fea772655a83d4823c9"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "retrieval-intelligence",
+      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
+      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_path": "skills/retrieval-intelligence",
+      "source_tree": {
+        "file_count": 9,
+        "tree_sha256": "360891df188b4aee9a7baa4e5a4c869ab09484a7bd8f8a54bc49e18fd2ce6021"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
+      "imported_tree": {
+        "file_count": 9,
+        "tree_sha256": "360891df188b4aee9a7baa4e5a4c869ab09484a7bd8f8a54bc49e18fd2ce6021"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "retrieval-reviewer",
+      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
+      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_path": "skills/retrieval-reviewer",
+      "source_tree": {
+        "file_count": 3,
+        "tree_sha256": "4e547175230129566f23d5c5c94968161022407ad43a7a66f22a9c68f212f041"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
+      "imported_tree": {
+        "file_count": 3,
+        "tree_sha256": "4e547175230129566f23d5c5c94968161022407ad43a7a66f22a9c68f212f041"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "rupert-giles-knowledge-steward",
+      "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
+      "source_commit": "71ce7f81977d6ccf77c6fa5aeeb67fd101cd0681",
+      "source_path": ".",
+      "source_tree": {
+        "file_count": 15,
+        "tree_sha256": "56422fa25707583548ba6e7244c870ae10c4f840819f84ce5c55c13cfc14a3f2"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
+      "imported_tree": {
+        "file_count": 4,
+        "tree_sha256": "c605f2c61f4e1677af26df1b4d870d7b18076fa6b62acc4e7d04e5094c15d656"
+      },
+      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
+      "selection_includes": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/knowledge-estate-ledger.template.md",
+        "references/stewardship-doctrine.md"
+      ],
+      "selected_tree": {
+        "file_count": 4,
+        "tree_sha256": "c605f2c61f4e1677af26df1b4d870d7b18076fa6b62acc4e7d04e5094c15d656"
+      }
+    },
+    {
+      "component": "privacy-redline",
+      "source_repository": "https://github.com/Stunspot/privacy-redline",
+      "source_commit": "6440ce021f2594665d31aba3ceab69498a7da522",
+      "source_path": "release-v0.1.1/codex/privacy-redline",
+      "source_tree": {
+        "file_count": 41,
+        "tree_sha256": "df74bb7e013f798a856dba17af0ff45b0f8e21d2c73499574f65aaf32698d79a"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
+      "imported_tree": {
+        "file_count": 41,
+        "tree_sha256": "df74bb7e013f798a856dba17af0ff45b0f8e21d2c73499574f65aaf32698d79a"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "signal-loom",
+      "source_repository": "https://github.com/Stunspot/signal-loom",
+      "source_commit": "f106c52e6d0fa3d898e115c9ef73b6c4ce62a266",
+      "source_path": ".",
+      "source_tree": {
+        "file_count": 213,
+        "tree_sha256": "e87bf7b3b2ddd75093e066b18a34d3470325932e83a8ca064b23a2bc1de05372"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/signal-loom",
+      "imported_tree": {
+        "file_count": 213,
+        "tree_sha256": "e87bf7b3b2ddd75093e066b18a34d3470325932e83a8ca064b23a2bc1de05372"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "owen-burnett-officecraft",
+      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
+      "source_commit": "91c76eeed72eef5a386a39ee77d696648ce7da99",
+      "source_path": "codex/owen-burnett-officecraft",
+      "source_tree": {
+        "file_count": 48,
+        "tree_sha256": "4aa77f2743c8d53c401f4247b3e84de4173c8472e9d18e9ce75ac505faf2325d"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
+      "imported_tree": {
+        "file_count": 48,
+        "tree_sha256": "4aa77f2743c8d53c401f4247b3e84de4173c8472e9d18e9ce75ac505faf2325d"
+      },
+      "custody": "release artifact"
+    },
+    {
+      "component": "officecraft-reviewer",
+      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
+      "source_commit": "91c76eeed72eef5a386a39ee77d696648ce7da99",
+      "source_path": "codex/officecraft-reviewer",
+      "source_tree": {
+        "file_count": 9,
+        "tree_sha256": "484244ec63bbb7a8c85b265a54690e78695fb1cd24aabb541727941d1dee13af"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
+      "imported_tree": {
+        "file_count": 9,
+        "tree_sha256": "484244ec63bbb7a8c85b265a54690e78695fb1cd24aabb541727941d1dee13af"
+      },
+      "custody": "release artifact"
+    },
+    {
+      "component": "beryl-it-tech",
+      "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
+      "source_commit": "0aff1012b203bc341515ecaf6469ffb823d9a9a3",
+      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/beryl-it-tech",
+      "source_tree": {
+        "file_count": 49,
+        "tree_sha256": "d80f13b50b45a0131afcde24265d70ae43eba298d7ec4649e7156bb1eade6090"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
+      "imported_tree": {
+        "file_count": 49,
+        "tree_sha256": "d80f13b50b45a0131afcde24265d70ae43eba298d7ec4649e7156bb1eade6090"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "it-work-reviewer",
+      "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
+      "source_commit": "0aff1012b203bc341515ecaf6469ffb823d9a9a3",
+      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/it-work-reviewer",
+      "source_tree": {
+        "file_count": 49,
+        "tree_sha256": "3725ef33a7652f81e1b4bcd99c28927c102ea339661c55bfdcf7fc7187c94fc3"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
+      "imported_tree": {
+        "file_count": 49,
+        "tree_sha256": "3725ef33a7652f81e1b4bcd99c28927c102ea339661c55bfdcf7fc7187c94fc3"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "ludis-continuum",
+      "source_repository": "https://github.com/Stunspot/ludis-continuum",
+      "source_commit": "d6b8fec964a7ca5a222bf7307b06798a815e1721",
+      "source_path": "release-v1.1.0/codex/ludis-continuum",
+      "source_tree": {
+        "file_count": 82,
+        "tree_sha256": "e3feef8346c390eb330ee82edb3df8fa219b4b66fb580f65bfa249c57d8c5643"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/ludis-continuum",
+      "imported_tree": {
+        "file_count": 82,
+        "tree_sha256": "e3feef8346c390eb330ee82edb3df8fa219b4b66fb580f65bfa249c57d8c5643"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "lex-foster-language-companion",
+      "source_repository": "https://github.com/Stunspot/lex-foster-language-companion",
+      "source_commit": "807ee7334dc1c334c8f01277ee932217da47cc0f",
+      "source_path": "release-v0.1.1/codex/lex-foster-language-companion",
+      "source_tree": {
+        "file_count": 26,
+        "tree_sha256": "980c81be1d78069a51e6782e47b7c82e753a94af14adb41ca00d0d0dc7ce42a4"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion",
+      "imported_tree": {
+        "file_count": 26,
+        "tree_sha256": "980c81be1d78069a51e6782e47b7c82e753a94af14adb41ca00d0d0dc7ce42a4"
+      },
+      "custody": "exact current canonical Git tree"
+    },
+    {
+      "component": "gridmason",
+      "source_repository": "https://github.com/Stunspot/gridmason",
+      "source_commit": "2dfba67dc7a69526f57f96ae8fd5d388240a8c6d",
+      "source_path": "release-v0.1.0/codex/gridmason/skills/gridmason",
+      "source_tree": {
+        "file_count": 30,
+        "tree_sha256": "bcfbf44401c2760d2413bfc2f5a3f5f612ec0f91ae3d71579f7fb1970c361473"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/gridmason",
+      "imported_tree": {
+        "file_count": 30,
+        "tree_sha256": "bcfbf44401c2760d2413bfc2f5a3f5f612ec0f91ae3d71579f7fb1970c361473"
+      },
+      "custody": "release artifact"
+    },
+    {
+      "component": "promptcraft",
+      "source_repository": "Collaborative Dynamics canonical promptcraft library",
+      "source_commit": null,
+      "source_path": "[ADVICE] - Prompt Design.md",
+      "source_tree": {
+        "file_count": 1,
+        "tree_sha256": "5bcf2f9a4123a600ae48642191dc8ec20d906dc1123d518b5e332a63f21a8087"
+      },
+      "imported_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
+      "imported_tree": {
+        "file_count": 2,
+        "tree_sha256": "826203ae3166e604c7fc9d2414c2c730e8a71a30e8a9fe033db91ae25e68ea02"
+      },
+      "custody": "new skill wrapper plus runtime-copied canonical doctrine"
+    }
+  ]
 }

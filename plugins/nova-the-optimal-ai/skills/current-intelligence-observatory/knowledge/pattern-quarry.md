@@ -11,4 +11,4 @@ Current Intelligence Observatory learns from public systems without copying thei
 - Evidence: reproducible analytical narratives built from inspectable data.
 - Orrery and the infographic corpus: publishable stories rather than dashboard screenshots.
 
-These are design inspirations only in v0.1.0. No external intelligence platform, crawler, JavaScript visualization library, service, account, or network dependency is bundled. Confirm current project licenses and APIs before any future integration.
+These are design inspirations only in v0.1.1. No external intelligence platform, crawler, JavaScript visualization library, service, account, or network dependency is bundled. Confirm current project licenses and APIs before any future integration.

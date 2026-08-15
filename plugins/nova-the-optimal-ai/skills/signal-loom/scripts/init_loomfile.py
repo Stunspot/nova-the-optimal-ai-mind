@@ -14,6 +14,13 @@ from pathlib import Path
 
 SKILL_ROOT = Path(__file__).resolve().parent.parent
 TEMPLATE_ROOT = SKILL_ROOT / "assets" / "loomfile.template"
+REQUIRED_DIRECTORIES = (
+    "sources/originals",
+    "output/web",
+    "output/carousel",
+    "output/platforms",
+    "checkpoints/snapshots",
+)
 
 
 def slugify(value: str) -> str:
@@ -33,6 +40,8 @@ def initialize(destination: Path, title: str) -> Path:
         destination.rmdir()
     destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copytree(TEMPLATE_ROOT, destination, symlinks=False)
+    for relative in REQUIRED_DIRECTORIES:
+        (destination / relative).mkdir(parents=True, exist_ok=True)
 
     project_path = destination / "project.yaml"
     project = json.loads(project_path.read_text(encoding="utf-8"))
@@ -52,7 +61,7 @@ def initialize(destination: Path, title: str) -> Path:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("destination", type=Path)
-    parser.add_argument("--title", default="Untitled visual story")
+    parser.add_argument("--title", default="Untitled infographic")
     args = parser.parse_args(argv)
     try:
         created = initialize(args.destination, args.title)

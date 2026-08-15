@@ -1,0 +1,8 @@
+COMMIT=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
+GOVERNED_FINGERPRINT=aee2427da83b43e5af76c3b0180c136cae265dfe1bdd813e4a2da3901872bf94
+ASSET_BYTES_CHANGED_SINCE_PIXEL_REVIEW=False
+assets\signal-loom-readme-hero.png	1600x720	ratio=2.2222	sha256=7f8c710124a7d277def62b997276a2bfb5a39f540f353ab57d2b001708a6d878	bytes=49327
+docs\assets\signal-loom-pages-hero.png	1200x800	ratio=1.5	sha256=188d9101651244b17d82b8dd0fa16916b51dfd469cc5665ed8efae5134daeeb7	bytes=40747
+docs\assets\signal-loom-social-card.png	1200x630	ratio=1.9048	sha256=6446c77f285606f3468a22080fe8494e4de9989f9c1352d4de17e28413931fb2	bytes=26117
+PIXEL_REVIEW=PASS: all three exact hashes opened and visually inspected; distinct roles/compositions/aspects; no blank, clipped, transparent, incoherent, or illegible content.
+SOCIAL_TEXT=PASS: visible exact title SIGNAL LOOM and line Evidence-to-visual story production.

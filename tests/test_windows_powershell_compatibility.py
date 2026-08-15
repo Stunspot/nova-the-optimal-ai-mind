@@ -47,6 +47,20 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
             "$mindRoot = Join-Path $marketplaceRoot 'plugins\\augment-of-mind'",
         ):
             self.assertIn(required, verifier)
+    def test_verifier_preflights_ollama_with_actionable_diagnostics(self) -> None:
+        verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
+        preflight = "Assert-OllamaEmbeddingReady -BaseUrl $ollamaUrl -RequiredModel $embeddingModel"
+        probe = "'--ollama-url', $ollamaUrl"
+        for required in (
+            "$BaseUrl.TrimEnd('/') + '/api/tags'",
+            "MIND semantic association requires Ollama at $BaseUrl, but it is not reachable.",
+            "model '$RequiredModel' is not installed.",
+            preflight,
+            probe,
+        ):
+            self.assertIn(required, verifier)
+        self.assertLess(verifier.index(preflight), verifier.index(probe))
+
     def test_verifier_suppresses_python_bytecode(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         self.assertEqual(verifier.count("'-B'"), 4)
@@ -59,7 +73,7 @@ class WindowsPowerShellCompatibilityTests(unittest.TestCase):
     def test_verifier_reports_total_and_active_estate_sizes(self) -> None:
         verifier = (ROOT / "verify-install.ps1").read_text(encoding="ascii")
         for required in (
-            "expected_version = '2.1.7'",
+            "expected_version = '2.2.2'",
             "total_capabilities = [int]$inspection.counts.capabilities",
             "total_cards = [int]$inspection.counts.capability_cards",
             "total_vectors = [int]$inspection.counts.associative_view_vectors",

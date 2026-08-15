@@ -1,6 +1,6 @@
 {
   "schema": "collaborative-dynamics-faculty-registry/v1",
-  "runtime_version": "2.1.7",
+  "runtime_version": "2.2.2",
   "faculty_count": 16,
   "faculties": [
     {
@@ -19,10 +19,10 @@
     },
     {
       "name": "cognitive-continuity",
-      "owns": "Durable scoped state, provenance, correction, resumption, and forgetting.",
-      "activate_when": "Consequential state must survive the current context; remain ambient only where the host explicitly establishes that relationship.",
+      "owns": "Durable scoped state, provenance, correction, resumption, forgetting, Worldline read views, and Faultline failure evidence.",
+      "activate_when": "Consequential state must survive the current context, a Worldline project view is requested, or a materially similar failure could change the next check; remain ambient only where the host explicitly establishes that relationship.",
       "must_not_own": "Whether a goal deserves pursuit, capability selection, factual truth, or permission.",
-      "return_emphasis": "State preserved, provenance, supersession, scope, and re-entry cue."
+      "return_emphasis": "State preserved or viewed, provenance, supersession, scope, durability boundary, and re-entry or Error Neighborhood cue."
     },
     {
       "name": "agent-striving",

@@ -32,7 +32,13 @@ If you see `MIND · ARM'S REACH DELIVERY NOTE`, preserve the failure code and re
 
 Record the task context, nearby handles returned, active snapshot, and whether the result came from a relation or semantic match. The included profile is structurally checked but still undergoing broader behavioral qualification.
 
-## A portable Claude ZIP will not upload
+## Worldline or Faultline is unavailable
+
+Probe the configured workspace read-only and preserve the typed result. A missing, invalid, unsupported, corrupted, or over-deadline Worldline source may return an `unpersisted_portable` view only when the caller supplied sufficient source-linked material; otherwise expect no view. A portable checkpoint is not saved state.
+
+Faultline requires a valid v2 workspace. It has no portable or private fallback store, and v1 returns `operation_unsupported_v1`. Do not initialize or migrate state merely to make an Error Neighborhood appear. Preserve the operation, selector provenance, workspace format, scope, generation, environment/version boundary, and exact error code; redact private paths, raw logs, and secrets.
+
+'## A portable Claude ZIP will not upload
 
 Confirm the archive has one matching top-level folder and a direct `SKILL.md`. A ZIP can be structurally sound while a host still rejects it because of policy or version.
 

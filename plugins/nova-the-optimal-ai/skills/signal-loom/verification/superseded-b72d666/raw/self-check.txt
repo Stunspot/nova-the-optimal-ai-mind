@@ -1,0 +1,2 @@
+PASS: Signal Loom package self-check
+EXIT_CODE=0

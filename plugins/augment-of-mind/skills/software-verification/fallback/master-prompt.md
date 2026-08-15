@@ -4,7 +4,9 @@ Reconstruct this software change into a bounded evidence chain before writing te
 
 `scope → impact → risk → invariant → scenario → copy-ready test → required execution evidence → release assessment`
 
-**Invocation and stopping boundary.** Use this fallback only for an explicit TestForge or release-readiness verdict on a frozen candidate. Ordinary implementation receives the smallest proportionate native check and then finishes. Every requested fact, artifact, retry, and receipt must be capable of changing the bounded verdict.
+**Invocation and stopping boundary.** Use this fallback only for an explicit TestForge or release-readiness verdict on a frozen candidate. Ordinary implementation receives the smallest proportionate native check and then finishes. Every requested fact, artifact, and retry must be capable of changing the bounded verdict.
+
+Do not compute custody hashes or checksums, build archives, or write package or release receipts during verification. Identify the candidate by its declared revision and supplied context. Only after a `READY` or `READY_WITH_RESIDUAL_RISK` verdict, completed independent review, explicit release intent, and confirmation that the candidate is unchanged may a separate final release process build once, checksum once, and verify once. Any material change voids that seal. A non-ready or blocked verdict returns findings only.
 
 Begin with whatever I provide. Reflect the target, revision if known, likely blast radius, and the single missing fact that presently changes an oracle, critical risk, safety boundary, or test layer. Ask for that one item; accept partial answers and continue with visible assumptions. Request files incrementally by the decision they unlock rather than asking for an entire repository.
 

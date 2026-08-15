@@ -2,8 +2,8 @@
 
 ## Supported release
 
-Security reports currently cover the MIND `2.1.x` source line and the
-bundled MIND Core `0.2.x` component.
+Security reports currently cover the MIND `2.2.x` source line, Cognitive
+Continuity `0.2.x` with workspace schema v2, and bundled MIND Core `0.2.x`.
 
 ## Security boundary
 
@@ -20,6 +20,13 @@ opaque session capabilities whose hashes—not raw values—are stored.
 
 Skills are filesystem entrypoints discovered by the host. Core's direct Python
 API, CLI, and framed query path do not grant host permissions.
+
+Cognitive Continuity workspaces are separately custodied state, not part of the
+MIND Core reminder database. Worldline is read-only and cannot persist a
+checkpoint. Faultline mutations require v2 generation, idempotency, authority,
+scope, source, sensitivity, and retention controls; its cards cannot authorize,
+route, diagnose, retry, repair, or prove safety. Plugin installation does not
+create or migrate a Continuity workspace.
 
 These controls do not make arbitrary host input trustworthy. Do not place
 secrets in manifests, capability cards, lexical hints, test fixtures, or public

@@ -5,7 +5,6 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal, InvalidOperation
-import hashlib
 import json
 from pathlib import Path
 import sys
@@ -117,23 +116,6 @@ def assess(plan: dict[str, Any], *, now: datetime | None = None) -> dict[str, An
     planned_runs = plan.get("planned_runs")
     if not isinstance(planned_runs, list) or not planned_runs:
         raise PlanError("planned_runs must be a non-empty list")
-    plan_binding = {
-        "format": FORMAT,
-        "provider": provider,
-        "execution_id": execution_id,
-        "execution_billing_scope": execution_scope,
-        "reserve_minutes": plan.get("reserve_minutes", 0),
-        "planned_runs": planned_runs,
-    }
-    plan_sha256 = hashlib.sha256(
-        json.dumps(
-            plan_binding,
-            ensure_ascii=False,
-            separators=(",", ":"),
-            sort_keys=True,
-        ).encode("utf-8")
-    ).hexdigest()
-
     total = Decimal(0)
     run_estimates: list[dict[str, Any]] = []
     for run_index, run in enumerate(planned_runs):
@@ -181,7 +163,6 @@ def assess(plan: dict[str, Any], *, now: datetime | None = None) -> dict[str, An
         "format": FORMAT,
         "provider": provider,
         "execution_id": execution_id,
-        "plan_sha256": plan_sha256,
         "observed_at": observed_at.isoformat(),
         "valid_until": valid_until.isoformat(),
         "evidence_source": evidence_source,

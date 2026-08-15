@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-eval/v1",
   "suite": "privacy-redline-core-transfer",
-  "package_version": "0.1.0",
+  "package_version": "0.1.1",
   "skills": ["SKILL.md"],
   "runtime": "Isolated episode with the Privacy Redline package resources; current web or account access only when explicitly stated in the case.",
   "claim": "The operator turns privacy pressure into a proportional, lawful, reversible, evidence-bounded posture while preserving human authority and safe escalation.",

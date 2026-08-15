@@ -8,8 +8,8 @@
     "id": {"type": "string", "pattern": "^EP-[A-Za-z0-9-]+$"},
     "type": {"enum": ["message", "assertion", "decision", "permission", "commitment", "correction", "tool_action", "tool_result", "outcome", "import"]},
     "recorded_at": {"type": "string", "format": "date-time"},
-    "valid_from": {"type": "string", "format": "date-time"},
-    "valid_to": {"type": ["string", "null"], "format": "date-time"},
+    "valid_from": {"anyOf": [{"type": "string", "format": "date-time"}, {"type": "string", "format": "date"}]},
+    "valid_to": {"anyOf": [{"type": "string", "format": "date-time"}, {"type": "string", "format": "date"}, {"type": "null"}]},
     "scope": {"$ref": "state-record.schema.json#/$defs/scope"},
     "source": {
       "type": "object",

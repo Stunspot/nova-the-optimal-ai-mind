@@ -1,0 +1,20 @@
+{
+  "review_id": "SIGNAL-LOOM-ACCESSIBILITY-20260812-40D",
+  "review_date": "2026-08-12",
+  "initial_status": "UNKNOWN",
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "candidate_commit": "40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b",
+  "governed_fingerprint": "aee2427da83b43e5af76c3b0180c136cae265dfe1bdd813e4a2da3901872bf94",
+  "governed_file_count": 59,
+  "binding_match": true,
+  "finding": {
+    "id": "DOC-NAV-001",
+    "severity": "condition",
+    "defect": "Three canonical faculty table-of-contents fragments did not resolve: Viralizer, Toysmith, and Diagnostic Reviewer.",
+    "repair": "Change destinations to #5-viralizer, #6-toysmith, and #9-diagnostic-reviewer, or add stable explicit anchors.",
+    "rerun": "UTF-8-aware fragment validation, fingerprint recomputation, and targeted accessibility re-review."
+  },
+  "other_results": "Customer journey, headings, primary customer routes, alt/ARIA, focus source, responsive source, contrast arithmetic, reduced motion, installation/recovery, runtime/security claims, packaging procedure, and claim boundaries passed at their stated static/source boundaries.",
+  "repository_files_modified_by_reviewer": false,
+  "claim_boundary": "Historical receipt only; superseded by the anchor repair and not applicable to later bytes."
+}

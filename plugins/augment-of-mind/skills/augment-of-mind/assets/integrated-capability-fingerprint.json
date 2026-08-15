@@ -1,13 +1,13 @@
 {
   "schema": "augment-of-mind-integrated-capability-fingerprint/v2",
-  "product_version": "2.1.7",
+  "product_version": "2.2.2",
   "capability_count": 20,
   "faculty_count": 16,
   "attached_augment_count": 3,
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; cache files excluded",
   "tree_self_exclusion": "augment-of-mind excludes assets/integrated-capability-fingerprint.json",
   "aggregate_algorithm": "sha256 over compact UTF-8 JSON serialization of ordered capabilities",
-  "aggregate_sha256": "281c0041a07e0410f80152ac2c85f0758105209d20768d5233eace3c9979599a",
+  "aggregate_sha256": "f973c4c55343ef9aa199bd6471ada799e23d1af48adc7424e910bd7b0a02bdfd",
   "capabilities": [
     {
       "name": "aesthetic-intelligence",
@@ -39,10 +39,10 @@
     },
     {
       "name": "augment-of-mind",
-      "version": "2.1.7",
+      "version": "2.2.2",
       "integration_mode": "product-integration",
       "tree_file_count": 14,
-      "tree_sha256": "37322f5eebd586b2d3b1135e7283d9144baef1bc455dc00468b7d6de609edeb5"
+      "tree_sha256": "c11bef0aa2c5faa990d8c2bfd537bc2f87fd66a9b79924eb0c3b5f3638138fb7"
     },
     {
       "name": "capability-conductor",
@@ -60,10 +60,10 @@
     },
     {
       "name": "cognitive-continuity",
-      "version": "0.1.3",
+      "version": "0.2.2",
       "integration_mode": "faculty-suite-exact-copy",
-      "tree_file_count": 43,
-      "tree_sha256": "5783b5c564425971d10e2bf2470fdf37dc39744d723f3328ff29ece1d9e78775"
+      "tree_file_count": 72,
+      "tree_sha256": "47d4f98d297c529d1a8ca70b7ac3341e0f99aee769fc434f260e917b51fa2439"
     },
     {
       "name": "creative-synthesis",
@@ -140,14 +140,14 @@
       "version": "1.1.7",
       "integration_mode": "faculty-suite-exact-copy",
       "tree_file_count": 96,
-      "tree_sha256": "6740e5212cbfd906aaa4f8edf864aa3f6783a0e8d8c1268be9f8f6ee6e0b7a38"
+      "tree_sha256": "ab9fd37dd2a6a18eb0bd98794408a95f986c84cd1842c0ff503b6dd00545f064"
     },
     {
       "name": "verification-reviewer",
       "version": "1.1.7",
       "integration_mode": "faculty-suite-exact-copy",
       "tree_file_count": 9,
-      "tree_sha256": "9e6e05eafa85d5ddd973e8d0aec572ac8ff38870faa81dd4b1929d9e369de465"
+      "tree_sha256": "6fedf817b214d3e41566d784ce2b4d4a23b34659b87fcb1768105affd72f2f0b"
     }
   ]
 }

@@ -22,7 +22,7 @@ This is not a formal WCAG conformance claim. Markdown rendering, theme contrast,
 
 ## Untested paths
 
-The v0.1.0 documentation build did not include representative-user testing, browser rendering across multiple engines, keyboard-only walkthrough in a published site, screen-reader testing, magnification testing, localization, or formal accessibility assessment.
+The v0.1.3 documentation build did not include representative-user testing, browser rendering across multiple engines, keyboard-only walkthrough in a published site, screen-reader testing, magnification testing, localization, or formal accessibility assessment.
 
 Automated Markdown lint and manual semantic review can find selected structural and cognitive defects. They cannot establish usability or conformance.
 

@@ -60,6 +60,20 @@ if (-not $SkipPluginInstall) {
         throw "Another copy of Nova or MIND is installed from a different source. Open Codex > Settings > Plugins, remove or disable the older Nova or MIND card, then rerun. Nothing was changed."
     }
 
+    $expectedPluginVersions = @{
+        'augment-of-mind' = '2.2.2'
+        'nova-the-optimal-ai' = '2.1.0'
+    }
+    $staleVersions = @($installedState.installed | Where-Object {
+        $_.marketplaceName -eq $marketplace -and
+        $expectedPluginVersions.ContainsKey($_.name) -and
+        $_.version -ne $expectedPluginVersions[$_.name]
+    })
+    if ($staleVersions.Count -gt 0) {
+        $observed = ($staleVersions | ForEach-Object { "$($_.name) $($_.version)" }) -join ', '
+        throw "A different Free Nova plugin version is already installed: $observed. This installer will not silently reuse it. Remove the two collaborative-dynamics-nova-free selectors, point the marketplace at this package, then install both selectors again. No plugin state was changed."
+    }
+
     $marketplaceJson = & $codex.Source plugin marketplace list --json
     if ($LASTEXITCODE -ne 0) { throw 'Codex did not return marketplace state.' }
     $knownMarketplaces = $marketplaceJson | ConvertFrom-Json

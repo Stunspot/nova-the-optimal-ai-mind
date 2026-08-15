@@ -252,7 +252,7 @@ class ExportPackTests(unittest.TestCase):
             original_unlink = Path.unlink
 
             def failed_lock_unlink(path, *args, **kwargs):
-                if path == lock:
+                if path.resolve() == lock.resolve():
                     raise OSError("injected cleanup failure")
                 return original_unlink(path, *args, **kwargs)
 
@@ -551,7 +551,7 @@ class ExportPackTests(unittest.TestCase):
             def racing_read(path):
                 nonlocal changed
                 data = original_read(path)
-                if path == moving and not changed:
+                if path.resolve() == moving.resolve() and not changed:
                     changed = True
                     path.write_bytes(data + b" changed")
                 return data

@@ -1,9 +1,0 @@
-{
-  "status": "reviewed",
-  "intent": "Civic field notebook: serious evidence with a warm, approachable route-finding metaphor.",
-  "metaphor": "A cool path drawn across a hot grid.",
-  "color": {"ink":"#17211c","paper":"#f7f2e7","heat":"#d95d39","sun":"#f2b84b","leaf":"#26735b","cool":"#3b718f","line":"#d7cdbb"},
-  "type": {"display":"Georgia, serif","body":"system-ui, sans-serif","measure":"68ch"},
-  "space": {"unit":"0.5rem","section":"clamp(3rem, 8vw, 7rem)"},
-  "motion": {"enabled":true,"purpose":"Brief state-change emphasis only","reduced_motion":true}
-}

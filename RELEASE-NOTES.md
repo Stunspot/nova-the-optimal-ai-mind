@@ -1,6 +1,31 @@
 # Nova + MIND Free release notes
 
-## 2.0.10
+## 2.1.2 — local source candidate
+
+This patch keeps Nova 2.1.0, MIND Core 0.2.0, TestForge 1.1.7, and workspace schema v2 unchanged while advancing MIND to 2.2.2 and Cognitive Continuity to 0.2.2. Worldline project selection now follows explicit current task or handoff identity, then governed mission, then maintained project mapping, with the current working directory only as an unopposed fallback. Same-tier disagreement stops before retrieval as `project_scope_ambiguous`; selectors locate stores and never choose projects.
+
+This candidate also audits all 41 bundled skill handles against their maintained canonical sources. Seventeen embedded trees were reconciled, including the maintained TestForge 1.1.7 operator and reviewer trees at commit `cdbf6c384f7d23071a25f0b31347afcaad8e91c4`; complete customer-kit boundaries remain intact for OMNARA and Signal Loom. The 24-record source lock now fingerprints every imported tree, records explicit file selections where a repository is intentionally broader than its embedded runtime, and the verifier rejects drift in any record rather than checking only a privileged subset.
+
+The deterministic compiler also withholds globally scoped goals, commitments, phases, statuses, blockers, and next actions from specific-project operative fields. A project with no exact eligible state now reports `project_scope_unrepresented` instead of inheriting a global resumption pointer. The workspace schema, store federation, custody boundaries, and selector remain unchanged. This is a local source candidate and installation basis, not a push, tag, public release, or publication claim.
+## 2.1.1 — local source candidate
+
+This patch packages Nova plugin 2.1.0 with MIND plugin 2.2.1, Cognitive Continuity 0.2.1/workspace schema v2, and MIND Core 0.2.0. Nova, MIND Core, TestForge 1.1.7, and Ludis Continuum 1.1.0 are unchanged. The Continuity workspace schema major remains v2; its episode contract adds a migration-only legacy-content provenance extension.
+
+Cognitive Continuity now has a guarded Nova-successor migration mode for the legitimate live v1-to-v2 case. It leaves ordinary external-target protection unchanged and accepts only the registry-selected Continuity source plus an exact absent same-parent sibling destination. Human authority, a grant ID, the selector-registry SHA-256, the normalized destination-path SHA-256, process-environment corroboration, active capability-boundary checks, and pre/post-publication revalidation are bound into the migration evidence. A failed or changed grant removes the unpublished candidate and leaves v1 untouched. The selector-registry path is derived from the required `NOVA_DATA_ROOT`, so portable editions do not embed a private workstation drive path.
+
+Migration still creates only a candidate workspace. It never changes `NOVA_CONTINUITY_HOME`; candidate validation, rollback proof, and an explicit selector switch remain separate live operations. A v1 episode above the ordinary 1,000-character v2 write limit is preserved without truncation through a bounded, generation-0 provenance record tied to the migration manifest and receipt. Ordinary v2 writes remain capped; forged or altered legacy provenance fails before transaction intent, retained generations are protected while the contract exists, and governed forgetting removes it while exact restoration can recover the retained row. The latest published release remains 2.0.9 until a later release is separately completed and published.
+
+## 2.1.0 — local source candidate
+
+This candidate packages Nova plugin 2.1.0 with MIND plugin 2.2.0, Cognitive Continuity 0.2.0/workspace schema v2, and MIND Core 0.2.0. The exact TestForge 1.1.7 and Ludis Continuum 1.1.0 custody boundaries remain unchanged. Worldline and Faultline are named services over Cognitive Continuity and do not receive independent product versions.
+
+Worldline adds deterministic read-only `resume`, `status`, `checkpoint`, and `inspect` views over source-linked Continuity state. It preserves project scope, selected and omitted provenance, correction and supersession, conflicts, blockers, next actions, and false-completion resistance. A portable fallback is explicitly unpersisted, requires sufficient caller-supplied source material, carries `save_claim=false`, and never becomes a persistence receipt.
+
+Faultline adds the bounded Error Neighborhood over Continuity-owned failure evidence. It returns zero to three expiring advisory cards, keeps recurrence separate from causality, and cannot grant permission, route work, retry, repair, prove safety, or install a procedure. Occurrence capture and pattern lifecycle operations require Continuity v2 transaction, generation, idempotency, scope, source, and authority controls; v1 is typed unsupported and there is no fallback store.
+
+This is a local source candidate only. It does not claim a final fingerprint or source lock, built archive, fresh-host installation, plugin discovery, live selector resolution, workspace migration, live prompt delivery, hosted workflow, tag, push, GitHub release, Pages deployment, or publication. The latest published release remains 2.0.9 until a later release is separately completed and published.
+
+## 2.0.10 — prior local candidate
 
 Nova and the embedded TestForge operator now share one completion governor: the requested outcome remains primary, checks must be capable of changing acceptance, failures are classified once, and a failed support-path recovery closes that branch instead of becoming a new objective.
 
@@ -50,10 +75,12 @@ The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIN
 
 ## Version layers
 
-- Product release: Nova + MIND Free 2.0.10
-- Nova plugin: 2.0.3
-- MIND plugin: 2.1.7
-- MIND Core: 0.2.x
+- Product release: Nova + MIND Free 2.1.2
+- Nova plugin: 2.1.0
+- MIND plugin: 2.2.2
+- Cognitive Continuity: 0.2.2; workspace schema v2
+- MIND Core: 0.2.0
+- Worldline/Faultline: no independent semver
 
 These layers version different components and are intentionally not numerically identical.
 

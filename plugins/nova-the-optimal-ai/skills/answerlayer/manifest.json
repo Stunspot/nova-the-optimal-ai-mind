@@ -1,7 +1,7 @@
 {
   "name": "answerlayer",
   "product_name": "AnswerLayer — Operational Reality Patching for Decision Systems",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "A governed decision-integrity instrument for admitting only answer-changing deltas and maintaining traceable operational reality patches.",
   "entrypoint": "SKILL.md",
   "hosts": ["codex", "claude"],

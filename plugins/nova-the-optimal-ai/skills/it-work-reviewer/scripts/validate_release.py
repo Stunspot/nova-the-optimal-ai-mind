@@ -12,8 +12,8 @@ from pathlib import Path
 
 MANIFEST = "release-manifest.json"
 REQUIRED = {
-    "README.md", "PROVENANCE.md", "skills/beryl-it-tech/SKILL.md",
-    "skills/it-work-reviewer/SKILL.md", "personas/beryl-it-benchcraft-practitioner.md",
+    "README.md", "PROVENANCE.md", "SKILL.md",
+    "personas/beryl-it-benchcraft-practitioner.md",
     "knowledge/windows-systems-engineering.md", "knowledge/network-architecture.md",
     "assets/it-case.template.json", "schemas/it-case.schema.json",
     "scripts/validate_case_file.py", "scripts/validate_release.py",
@@ -46,7 +46,7 @@ def validate_paths(root: Path, files: dict[str, dict[str, object]]) -> list[str]
     missing = sorted(REQUIRED - files.keys())
     if missing:
         errors.append("missing required files: " + ", ".join(missing))
-    for rel in ("skills/beryl-it-tech/SKILL.md", "skills/it-work-reviewer/SKILL.md"):
+    for rel in ("SKILL.md",):
         path = root / rel
         if not path.exists():
             continue
@@ -82,8 +82,8 @@ def main() -> int:
     files = inventory(root)
     errors = validate_paths(root, files)
     if args.write_manifest and not errors:
-        payload = {"package": "beryl-it-benchcraft", "version": "0.1.0", "files": files}
-        (root / MANIFEST).write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+        payload = {"package": "beryl-it-benchcraft", "version": "0.1.3", "files": files}
+        (root / MANIFEST).write_bytes((json.dumps(payload, indent=2) + "\n").encode("utf-8"))
     manifest_path = root / MANIFEST
     if manifest_path.exists() and not args.write_manifest:
         try:

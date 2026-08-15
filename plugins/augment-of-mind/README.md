@@ -26,6 +26,14 @@ MIND includes a local semantic reminder layer. Before each model turn, its trust
 
 Capability Promotion gives that layer one crucial bit of self-maintenance: when someone adds, replaces, enables, removes, or proposes a durable skill, plugin, tool, or program, MIND is reminded that the capability map may need updating too. The hook owns association; the model does not fetch or rebuild the field.
 
+## Project continuity and error recall
+
+Cognitive Continuity 0.2.2 carries workspace schema v2. Worldline is Nova's read-only project-continuity view over that governed state: `resume`, `status`, `checkpoint`, and `inspect` preserve source and durability boundaries, and a checkpoint never claims a save. Faultline exposes a zero-to-three-card expiring Error Neighborhood when a materially similar failure could change the next check. Its cards are advisory evidence, not cause, permission, routing, repair, or proof of safety.
+
+Plugin installation does not create, select, or migrate a Continuity workspace. Worldline may return an explicitly unpersisted portable view only from sufficient source-linked caller material; Faultline has no fallback store and is typed unsupported on v1.
+
+An explicit copy migration is authority- and source-hash-bound, writes only to a new absent v2 destination, and leaves v1 bytes unchanged. Valid legacy full-date effective values retain their UTC-midnight meaning in the successor, with the deterministic normalization count and digest recorded in the migration receipt.
+
 ## TestForge is included
 
 TestForge ships with MIND because verification is foundational. Software Verification builds an evidence case against a finished readiness claim. Verification Reviewer independently attacks that case. They are attached Augments, not cognitive Faculties, so MIND still has exactly sixteen Faculties.

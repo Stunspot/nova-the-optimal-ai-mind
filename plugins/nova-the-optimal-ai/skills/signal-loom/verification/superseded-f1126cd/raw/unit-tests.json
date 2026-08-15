@@ -1,0 +1,22 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-12T11:38:38.718478+00:00",
+  "finished_at": "2026-08-12T11:38:39.754653+00:00",
+  "duration_seconds": 1.036172,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_competing_output_is_not_overwritten_and_project_is_preserved (test_init_loomfile.InitializeLoomfileTests.test_competing_output_is_not_overwritten_and_project_is_preserved) ... ok\ntest_existing_archive_refusal_preserves_archive_and_project (test_init_loomfile.InitializeLoomfileTests.test_existing_archive_refusal_preserves_archive_and_project) ... ok\ntest_fresh_archive_round_trip_preserves_required_directories_and_validates (test_init_loomfile.InitializeLoomfileTests.test_fresh_archive_round_trip_preserves_required_directories_and_validates) ... ok\ntest_link_side_effect_then_interrupt_removes_owned_output_and_allows_retry (test_init_loomfile.InitializeLoomfileTests.test_link_side_effect_then_interrupt_removes_owned_output_and_allows_retry) ... ok\ntest_mid_archive_failure_preserves_project_and_allows_retry (test_init_loomfile.InitializeLoomfileTests.test_mid_archive_failure_preserves_project_and_allows_retry) ... ok\ntest_new_loomfile_immediately_satisfies_the_state_contract (test_init_loomfile.InitializeLoomfileTests.test_new_loomfile_immediately_satisfies_the_state_contract) ... ok\ntest_output_inside_loomfile_is_rejected_without_project_change (test_init_loomfile.InitializeLoomfileTests.test_output_inside_loomfile_is_rejected_without_project_change) ... ok\ntest_registered_source_change_is_rejected_by_archived_state_validation (test_init_loomfile.InitializeLoomfileTests.test_registered_source_change_is_rejected_by_archived_state_validation) ... ok\ntest_source_change_during_packaging_matches_archived_payload (test_init_loomfile.InitializeLoomfileTests.test_source_change_during_packaging_matches_archived_payload) ... ok\ntest_success_manifest_matches_every_archived_payload_without_mutating_project (test_init_loomfile.InitializeLoomfileTests.test_success_manifest_matches_every_archived_payload_without_mutating_project) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.764s\n\nOK\n",
+  "status": "passed"
+}

@@ -1,0 +1,3 @@
+REVISION=4b88d1e7c7284797227b71497913b51b26f28156
+CSS_SHA256=ab3b2ef7f87d9e14b4ca7e9ca16a295cda49866e68b4991a4dd5c33078c3d2ce
+Static WCAG relative-luminance calculations retained and rechecked because CSS bytes are unchanged: primary ink/navy combinations 17.9-18.9:1; muted text 9.3-11:1; quiet text 6.768:1; cyan 11.98:1; buttons 9.1-12.1:1; callout 14.78:1; prose 13.3:1; amber focus 11.21:1. All exceed applicable AA text thresholds.

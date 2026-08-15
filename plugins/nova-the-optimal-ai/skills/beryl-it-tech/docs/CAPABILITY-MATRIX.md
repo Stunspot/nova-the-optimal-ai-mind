@@ -1,6 +1,6 @@
 # Check capability coverage and boundaries
 
-This matrix describes what Beryl IT Benchcraft v0.1.0 can contribute when the user or host supplies the necessary evidence and tools. “Can help” means diagnostic reasoning, planning, documentation, or interpretation—not automatic execution.
+This matrix describes what Beryl IT Benchcraft v0.1.3 can contribute when the user or host supplies the necessary evidence and tools. “Can help” means diagnostic reasoning, planning, documentation, or interpretation—not automatic execution.
 
 | Area | Beryl can help with | Evidence or authority required | Boundary |
 |---|---|---|---|

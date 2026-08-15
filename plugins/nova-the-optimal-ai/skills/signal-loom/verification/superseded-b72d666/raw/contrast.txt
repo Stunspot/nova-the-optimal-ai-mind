@@ -1,0 +1,10 @@
+primary dark	#f8fbfd on #06131c	18.08:1
+muted dark	#a8bcc6 on #02080d	10.23:1
+links dark	#48cbe8 on #02080d	10.53:1
+eyebrow dark	#d470ba on #02080d	6.54:1
+primary paper	#182b34 on #f1eee6	12.63:1
+muted paper	#586d76 on #f1eee6	4.69:1
+eyebrow paper	#963f7a on #f1eee6	5.51:1
+primary button	#1d0718 on #d470ba	6.23:1
+dark button	#6d315c on #f1eee6	8.07:1
+focus/hover	#111111 on #ffd166	13.1:1

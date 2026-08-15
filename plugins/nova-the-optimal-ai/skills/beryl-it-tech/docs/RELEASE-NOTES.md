@@ -1,12 +1,30 @@
-# Beryl IT Benchcraft v0.1.0 release notes
+# Beryl IT Benchcraft release notes
+
+## v0.1.3 — reconciled immutable successor
+
+- Promotes the maintained Aug. 10 presentation, documentation, archive, and runtime-custody repair without rewriting the Jul. 21 v0.1.2 tag.
+- Preserves the IT method and the original v0.1.0 behavioral evidence under their existing evidence boundaries.
+- Rebuilds deterministic Codex and Claude packages, manifests, checksums, and current documentation paths at one version.
+
+## v0.1.2 — settled dual-host and presentation repair
+
+Release date: 2026-07-22; presentation repair: 2026-08-10
+
+- Packages `$beryl-it-tech` and `$it-work-reviewer` for Codex and Claude with portable manifests and verification.
+- Keeps Beryl as one practitioner and removes the retired studio portrait from runtime cargo.
+- Adds a product-specific README header and social card under release documentation.
+- Corrects current-version navigation, embedded documentation labels, and one-root skill validators.
+- Preserves the original v0.1.0 behavioral evidence as historical evidence rather than silently relabeling it as a v0.1.2 run.
+
+## v0.1.0 — first customer release
 
 Release date: 2026-07-18
 
-## First customer release
+### First customer release
 
 This release introduces one unified Beryl IT technician capability for computer repair diagnostics, configuration, recovery, security, migration, endpoint support, and small-network troubleshooting.
 
-## Included capabilities
+### Included capabilities
 
 - `$beryl-it-tech` primary practitioner skill.
 - `$it-work-reviewer` independent plan and completion reviewer.
@@ -18,11 +36,11 @@ This release introduces one unified Beryl IT technician capability for computer 
 - Three worked examples and a ten-case behavioral suite.
 - Copy-and-paste fallback for hosts without skill support.
 
-## Documentation in this release
+### Documentation in this release
 
 The customer documentation includes first-use guidance, installation and discovery checks, the full case workflow, safety and data custody, case-file reference, troubleshooting, capability and limitation reference, validation disclosure, accessibility notes, and maintenance governance.
 
-## Known limits
+### Known limits
 
 - The build did not install the skills into a target host.
 - No physical device work, live vendor lookup, credentials, or production action was performed.

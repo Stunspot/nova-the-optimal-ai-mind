@@ -1,0 +1,34 @@
+{
+  "format_version": "1.0",
+  "source": "git:2061709f380d17e511cc94ae8cce23847c6f2764..f1126cd0fc8f0ed1a88fa05928a40b417d8c214b",
+  "changed_file_count": 20,
+  "groups": {
+    "configuration": [
+      "manifest.json"
+    ],
+    "production_code": [
+      "CHANGELOG.md",
+      "CONTRIBUTING.md",
+      "README.md",
+      "SECURITY.md",
+      "SUPPORT.md",
+      "VALIDATION.md",
+      "assets/signal-loom-readme-hero.png",
+      "docs/404.html",
+      "docs/CUSTOMER-GUIDE.md",
+      "docs/SITE-SOURCE.md",
+      "docs/assets/signal-loom-hero.png",
+      "docs/assets/signal-loom-pages-hero.png",
+      "docs/assets/signal-loom-social-card.png",
+      "docs/index.html",
+      "docs/style.css",
+      "knowledge/infographic-toolkit-v2-canonical.md",
+      "scripts/build_brand_assets.ps1",
+      "scripts/package_loomfile.py"
+    ],
+    "tests": [
+      "tests/test_init_loomfile.py"
+    ]
+  },
+  "warnings": []
+}

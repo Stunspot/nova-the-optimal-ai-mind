@@ -16,6 +16,7 @@
       "required": ["storage", "default_sensitivity", "default_retention"],
       "properties": {
         "storage": {"enum": ["local-only", "user-selected"]},
+        "scope_model": {"enum": ["harness-global", "project"]},
         "default_sensitivity": {"enum": ["ordinary", "limited", "sensitive", "restricted"]},
         "default_retention": {"type": "string"},
         "semantic_retrieval": {"type": "boolean"},
@@ -30,7 +31,8 @@
         "filesystem": {"type": "boolean"},
         "deterministic_scripts": {"type": "boolean"},
         "semantic_ranking": {"type": "boolean"},
-        "scheduler": {"type": "boolean"}
+        "scheduler": {"type": "boolean"},
+        "transactional_init": {"type": "boolean"}
       },
       "additionalProperties": false
     },

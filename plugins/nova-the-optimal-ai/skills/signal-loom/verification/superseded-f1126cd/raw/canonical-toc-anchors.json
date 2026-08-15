@@ -1,0 +1,11 @@
+{
+  "commit": "f1126cd0fc8f0ed1a88fa05928a40b417d8c214b",
+  "fingerprint": "e0449cdbf63f6c9d3c87cf60d60394f1ddab25593bef21e210d716c237f92b0b",
+  "document": "knowledge/infographic-toolkit-v2-canonical.md",
+  "toc_links": 9,
+  "numbered_h2_targets": 9,
+  "resolved": 9,
+  "broken": 0,
+  "oracle": "UTF-8 GitHub-style heading fragment resolution preserving per-space hyphens around stripped punctuation",
+  "result": "PASS"
+}

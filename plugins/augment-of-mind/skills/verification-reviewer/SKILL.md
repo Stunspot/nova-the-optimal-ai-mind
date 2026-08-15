@@ -13,7 +13,7 @@ Ask first: **what would have to be false for this recommendation to be unsafe?**
 
 Use `review-rubric.md` and `adversarial-checks.md`. Re-run `scripts/validate_manifest.py` and `scripts/validate_traceability.py` when tool access exists. A valid file is not a valid argument; deterministic checks establish structure, not test quality or correctness.
 
-Challenge in this order. Before scoring any other lens, enforce custody after failure: a product defect or newly exposed requirement must end that candidate's verification cycle. Treat product patching or retesting inside the same cycle as a review failure.
+Challenge in this order. Before scoring any other lens, enforce custody after failure: a product defect or newly exposed requirement must end that candidate's verification cycle. Treat product patching or retesting inside the same cycle as a review failure. Also reject premature sealing: custody hashes, archive checksums, package or release receipts, and integrity-sealing runs are unsupported before the operator verdict and independent review are complete. Existing frozen-artifact digests and checksum behavior under test are narrow exceptions, not permission to seal the candidate.
 
 1. **Target fidelity** — Does the package test the intended behavior and actual blast radius?
 2. **Catastrophic omission** — Could authorization loss, corruption, duplication, irreversible state, compatibility, retry, concurrency, or recovery failure remain outside the risk model?

@@ -252,6 +252,8 @@ def initialize(template: Path, destination: Path, title: str, query: str, tier: 
     if destination.exists() and any(destination.iterdir()):
         raise ValueError(f"destination is not empty: {destination}")
     shutil.copytree(template, destination, dirs_exist_ok=True)
+    (destination / "draft").mkdir(parents=True, exist_ok=True)
+    (destination / "notes").mkdir(parents=True, exist_ok=True)
     campaign_path = destination / "campaign.json"
     campaign = read_json(campaign_path)
     now = datetime.now(timezone.utc).isoformat()

@@ -7,13 +7,24 @@ import hashlib
 import importlib.util
 import json
 import re
+import subprocess
 import sys
+import tomllib
 import zipfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[1]
 NOVA = ROOT / "plugins" / "nova-the-optimal-ai"
 MIND = ROOT / "plugins" / "augment-of-mind"
+PRODUCT_VERSION = "2.1.2"
+NOVA_VERSION = "2.1.0"
+MIND_VERSION = "2.2.2"
+MIND_CORE_VERSION = "0.2.0"
+CONTINUITY_VERSION = "0.2.2"
+CONTINUITY_WORKSPACE_SCHEMA_VERSION = 2
+MODEL_CONTEXT_CONTRACT = (
+    ROOT / "verification" / "associative-smoke" / f"model-context-contract-v{MIND_VERSION}.json"
+)
 
 FACULTIES = {
     "aesthetic-intelligence", "agent-dreaming", "agent-striving", "agentic-eros",
@@ -40,6 +51,15 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def display_path(path: Path, base: Path = ROOT) -> str:
+    """Render a repository- or package-relative path, or a safe absolute fallback."""
+    resolved = path.resolve()
+    try:
+        return resolved.relative_to(base.resolve()).as_posix()
+    except ValueError:
+        return str(resolved)
+
+
 def tree_fingerprint(root: Path) -> dict[str, object]:
     files = [
         path
@@ -61,21 +81,21 @@ def load_json(path: Path):
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception as exc:
-        raise ValueError(f"invalid JSON {path.relative_to(ROOT)}: {exc}") from exc
+        raise ValueError(f"invalid JSON {display_path(path)}: {exc}") from exc
 
 
 def skill_metadata(path: Path) -> tuple[str, str]:
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
-        raise ValueError(f"missing YAML frontmatter: {path.relative_to(ROOT)}")
+        raise ValueError(f"missing YAML frontmatter: {display_path(path)}")
     end = text.find("\n---\n", 4)
     if end < 0:
-        raise ValueError(f"unterminated YAML frontmatter: {path.relative_to(ROOT)}")
+        raise ValueError(f"unterminated YAML frontmatter: {display_path(path)}")
     frontmatter = text[4:end]
     name_match = re.search(r"(?m)^name:\s*[\"']?([^\"'\n]+)", frontmatter)
     desc_match = re.search(r"(?m)^description:\s*[\"']?(.+?)[\"']?\s*$", frontmatter)
     if not name_match or not desc_match:
-        raise ValueError(f"name or description missing: {path.relative_to(ROOT)}")
+        raise ValueError(f"name or description missing: {display_path(path)}")
     return name_match.group(1).strip(), desc_match.group(1).strip().rstrip('"').rstrip("'")
 
 
@@ -101,8 +121,7 @@ def verify_links(errors: list[str]) -> None:
                 errors.append(f"broken documentation link: {document.relative_to(ROOT)} -> {raw}")
 
 
-def verify_release_links(errors: list[str]) -> None:
-    release_root = ROOT / "dist"
+def verify_release_links(errors: list[str], release_root: Path) -> None:
     documents = [
         release_root / "README.md",
         release_root / "START-HERE.md",
@@ -110,10 +129,9 @@ def verify_release_links(errors: list[str]) -> None:
     ]
     pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
     for document in documents:
+        shown_document = display_path(document, release_root)
         if not document.is_file():
-            errors.append(
-                f"required release document missing: {document.relative_to(ROOT)}"
-            )
+            errors.append(f"required release document missing: {shown_document}")
             continue
         text = document.read_text(encoding="utf-8")
         for raw in pattern.findall(text):
@@ -126,26 +144,223 @@ def verify_release_links(errors: list[str]) -> None:
             except ValueError:
                 errors.append(
                     "release documentation link escapes package: "
-                    f"{document.relative_to(ROOT)} -> {raw}"
+                    f"{shown_document} -> {raw}"
                 )
                 continue
             if not candidate.exists():
                 errors.append(
                     "broken release documentation link: "
-                    f"{document.relative_to(ROOT)} -> {raw}"
+                    f"{shown_document} -> {raw}"
                 )
 
-def verify_release(errors: list[str]) -> None:
-    release_root = ROOT / "dist"
+
+def parity_file_map(root: Path) -> dict[str, Path]:
+    return {
+        path.relative_to(root).as_posix(): path
+        for path in root.rglob("*")
+        if path.is_file()
+        and "__pycache__" not in path.parts
+        and path.name not in {".git", ".pytest_cache"}
+        and path.suffix.lower() not in {".pyc", ".pyo"}
+    }
+
+
+def compare_directory_bytes(
+    errors: list[str],
+    expected_root: Path,
+    observed_root: Path,
+    label: str,
+    expected_overrides: dict[str, bytes] | None = None,
+) -> None:
+    expected = parity_file_map(expected_root)
+    observed = parity_file_map(observed_root)
+    if set(expected) != set(observed):
+        missing = sorted(set(expected) - set(observed))
+        extra = sorted(set(observed) - set(expected))
+        errors.append(
+            f"{label} file set mismatch: missing={missing[:5]!r}, extra={extra[:5]!r}"
+        )
+    overrides = expected_overrides or {}
+    for relative in sorted(set(expected) & set(observed)):
+        expected_bytes = overrides.get(relative, expected[relative].read_bytes())
+        if expected_bytes != observed[relative].read_bytes():
+            errors.append(f"{label} byte mismatch: {relative}")
+
+
+def compare_file_bytes(
+    errors: list[str],
+    expected_path: Path,
+    observed_path: Path,
+    label: str,
+    expected_bytes: bytes | None = None,
+) -> None:
+    if not observed_path.is_file():
+        errors.append(f"{label} is missing")
+        return
+    wanted = expected_bytes if expected_bytes is not None else expected_path.read_bytes()
+    if observed_path.read_bytes() != wanted:
+        errors.append(f"{label} byte mismatch")
+
+
+def verify_expected_file_set(
+    errors: list[str],
+    release_root: Path,
+    expected_paths: set[str],
+) -> None:
+    staged_items = list(release_root.rglob("*"))
+    symlinks = [
+        path.relative_to(release_root).as_posix()
+        for path in staged_items
+        if path.is_symlink()
+    ]
+    if symlinks:
+        errors.append(f"staged release contains symlink: {symlinks[0]}")
+    observed_paths = {
+        path.relative_to(release_root).as_posix()
+        for path in staged_items
+        if path.is_file()
+    }
+    cache_debris = sorted(
+        relative
+        for relative in observed_paths
+        if "__pycache__" in PurePosixPath(relative).parts
+        or PurePosixPath(relative).suffix.lower() in {".pyc", ".pyo"}
+    )
+    if cache_debris:
+        errors.append(f"staged release contains cache debris: {cache_debris[0]}")
+    if observed_paths != expected_paths:
+        errors.append(
+            "complete staged file set mismatch: "
+            f"missing={sorted(expected_paths - observed_paths)[:8]!r}, "
+            f"extra={sorted(observed_paths - expected_paths)[:8]!r}"
+        )
+
+
+def safe_zip_member(name: str) -> bool:
+    if not name or "\\" in name or name.startswith("/"):
+        return False
+    path = PurePosixPath(name)
+    return not path.is_absolute() and all(part not in {"", ".", ".."} for part in path.parts)
+
+
+def verify_zip_folder_parity(
+    errors: list[str],
+    archive: Path,
+    folder: Path,
+    skill_name: str,
+    release_root: Path,
+) -> None:
+    expected = {
+        f"{skill_name}/{relative}": path.read_bytes()
+        for relative, path in parity_file_map(folder).items()
+    }
+    try:
+        with zipfile.ZipFile(archive) as bundle:
+            all_infos = bundle.infolist()
+            all_names = [item.filename for item in all_infos]
+            collision_keys = [name.rstrip("/").casefold() for name in all_names]
+            if len(all_names) != len(set(all_names)) or len(collision_keys) != len(set(collision_keys)):
+                errors.append(f"Claude ZIP has duplicate or case-colliding paths: {display_path(archive, release_root)}")
+            unsafe = [name for name in all_names if not safe_zip_member(name)]
+            if unsafe:
+                errors.append(f"Claude ZIP has unsafe member path: {display_path(archive, release_root)} -> {unsafe[0]}")
+            infos = [item for item in all_infos if not item.is_dir()]
+            observed = {}
+            for item in infos:
+                mode = (item.external_attr >> 16) & 0o170000
+                if mode == 0o120000:
+                    errors.append(f"Claude ZIP has symlink member: {display_path(archive, release_root)} -> {item.filename}")
+                if item.filename not in observed:
+                    observed[item.filename] = bundle.read(item)
+    except (OSError, zipfile.BadZipFile, RuntimeError) as exc:
+        errors.append(f"Claude ZIP cannot be read: {display_path(archive, release_root)}: {exc}")
+        return
+    if set(expected) != set(observed):
+        missing = sorted(set(expected) - set(observed))
+        extra = sorted(set(observed) - set(expected))
+        errors.append(
+            f"Claude ZIP member set mismatch for {skill_name}: "
+            f"missing={missing[:5]!r}, extra={extra[:5]!r}"
+        )
+    for name in sorted(set(expected) & set(observed)):
+        if expected[name] != observed[name]:
+            errors.append(f"Claude ZIP byte mismatch for {skill_name}: {name}")
+
+
+def verify_staged_checksums(
+    errors: list[str],
+    release_root: Path,
+    expected_targets: set[str],
+) -> None:
+    checksum_file = release_root / "SHA256SUMS.txt"
+    if not checksum_file.is_file():
+        errors.append("staged checksum manifest is missing")
+        return
+    records: dict[str, str] = {}
+    for line_number, line in enumerate(checksum_file.read_text(encoding="utf-8").splitlines(), 1):
+        match = re.fullmatch(r"([0-9a-f]{64})  (.+)", line)
+        if not match:
+            errors.append(f"invalid staged checksum line {line_number}")
+            continue
+        digest, relative = match.groups()
+        if relative in records:
+            errors.append(f"duplicate staged checksum path: {relative}")
+            continue
+        if not safe_zip_member(relative):
+            errors.append(f"unsafe staged checksum path: {relative}")
+            continue
+        records[relative] = digest
+    if set(records) != expected_targets:
+        errors.append(
+            "staged checksum target set mismatch: "
+            f"missing={sorted(expected_targets - set(records))[:5]!r}, "
+            f"extra={sorted(set(records) - expected_targets)[:5]!r}"
+        )
+    for relative, expected_digest in records.items():
+        target = (release_root / relative).resolve()
+        try:
+            target.relative_to(release_root.resolve())
+        except ValueError:
+            errors.append(f"staged checksum path escapes package: {relative}")
+            continue
+        if not target.is_file():
+            errors.append(f"staged checksum target missing: {relative}")
+        elif sha256(target) != expected_digest:
+            errors.append(f"staged checksum mismatch: {relative}")
+
+
+def verify_release_manifest(
+    errors: list[str],
+    manifest_path: Path,
+    expected_manifest: dict[str, object],
+) -> None:
+    try:
+        manifest = load_json(manifest_path)
+    except ValueError as exc:
+        errors.append(str(exc))
+        return
+    if manifest != expected_manifest:
+        errors.append("release manifest claims do not match staged contents and source state")
+
+
+def verify_release(errors: list[str], release_root: Path) -> None:
+    release_root = release_root.resolve()
     codex_plugins = release_root / "codex" / "plugins"
     claude_folders = release_root / "claude" / "folders"
     claude_zips = release_root / "claude" / "zips"
-    for path in (codex_plugins / "nova-the-optimal-ai", codex_plugins / "augment-of-mind", claude_folders, claude_zips):
-        if not path.exists():
-            errors.append(f"release path missing: {path.relative_to(ROOT)}")
-    if errors:
+    required = (
+        codex_plugins / "nova-the-optimal-ai",
+        codex_plugins / "augment-of-mind",
+        claude_folders,
+        claude_zips,
+    )
+    missing = [path for path in required if not path.exists()]
+    for path in missing:
+        errors.append(f"release path missing: {display_path(path, release_root)}")
+    if missing:
         return
-    verify_release_links(errors)
+
+    verify_release_links(errors, release_root)
     expected = NOVA_SKILLS | MIND_SKILLS
     folders = {path.name for path in claude_folders.iterdir() if path.is_dir()}
     if folders != expected:
@@ -153,28 +368,184 @@ def verify_release(errors: list[str]) -> None:
     zips = {path.stem for path in claude_zips.glob("*.zip")}
     if zips != expected:
         errors.append(f"Claude ZIP set mismatch: expected {len(expected)}, found {len(zips)}")
+
+    compare_directory_bytes(
+        errors,
+        NOVA,
+        codex_plugins / "nova-the-optimal-ai",
+        "Codex Nova plugin parity",
+    )
+    compare_directory_bytes(
+        errors,
+        MIND,
+        codex_plugins / "augment-of-mind",
+        "Codex MIND plugin parity",
+    )
+
+    builder_path = ROOT / "tools" / "build_release.py"
+    builder_spec = importlib.util.spec_from_file_location("nova_release_builder_for_verify", builder_path)
+    if builder_spec is None or builder_spec.loader is None:
+        errors.append("cannot load release builder for staged-release oracle")
+        return
+    builder = importlib.util.module_from_spec(builder_spec)
+    builder_spec.loader.exec_module(builder)
+
+    compare_directory_bytes(
+        errors, ROOT / ".agents", release_root / "codex" / ".agents",
+        "Codex marketplace parity",
+    )
+    compare_directory_bytes(
+        errors, ROOT / "docs", release_root / "docs",
+        "customer documentation parity",
+    )
+    compare_directory_bytes(
+        errors, ROOT / "bundle" / "reminder", release_root / "bundle" / "reminder",
+        "reminder bundle parity",
+    )
+    for name in ("FREE-NOVA-PACKAGE-MAP.md", "source-lock.json"):
+        compare_file_bytes(
+            errors, ROOT / "design" / name, release_root / "design" / name,
+            f"packaged design parity for {name}",
+        )
+    for name in (
+        "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md",
+        "LICENSE.md", "install.ps1", "verify-install.ps1",
+    ):
+        compare_file_bytes(
+            errors, ROOT / name, release_root / name,
+            f"packaged root parity for {name}",
+        )
+    source_readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    source_link = "plugins/augment-of-mind/USER-GUIDE.md"
+    packaged_link = "codex/plugins/augment-of-mind/USER-GUIDE.md"
+    if source_readme.count(source_link) != 1:
+        errors.append("cannot derive expected packaged README link")
+        expected_readme = source_readme.encode("utf-8")
+    else:
+        expected_readme = source_readme.replace(source_link, packaged_link).encode("utf-8")
+    compare_file_bytes(
+        errors, ROOT / "README.md", release_root / "README.md",
+        "packaged README parity", expected_readme,
+    )
+    compare_file_bytes(
+        errors, ROOT / "assets" / "nova-emergent.png",
+        release_root / "assets" / "nova-emergent.png",
+        "packaged presentation asset parity",
+    )
+
     for name in sorted(expected):
+        source_folder = (NOVA if name in NOVA_SKILLS else MIND) / "skills" / name
+        folder = claude_folders / name
+        overrides: dict[str, bytes] = {}
+        if name in builder.CLAUDE_DESCRIPTIONS:
+            source_text = (source_folder / "SKILL.md").read_text(encoding="utf-8")
+            derived, count = re.subn(
+                r"(?m)^description:\s*.*$",
+                f'description: "{builder.CLAUDE_DESCRIPTIONS[name]}"',
+                source_text,
+                count=1,
+            )
+            if count != 1:
+                errors.append(f"cannot derive expected Claude description: {name}")
+            else:
+                overrides["SKILL.md"] = derived.encode("utf-8")
+        compare_directory_bytes(
+            errors,
+            source_folder,
+            folder,
+            f"Claude folder parity for {name}",
+            overrides,
+        )
         archive = claude_zips / f"{name}.zip"
-        if not archive.is_file():
-            continue
-        with zipfile.ZipFile(archive) as bundle:
-            entries = [item.filename for item in bundle.infolist() if not item.is_dir()]
-        if not entries or any(not entry.startswith(f"{name}/") for entry in entries):
-            errors.append(f"Claude ZIP has wrong top-level folder: {archive.relative_to(ROOT)}")
-        if f"{name}/SKILL.md" not in entries:
-            errors.append(f"Claude ZIP lacks direct SKILL.md: {archive.relative_to(ROOT)}")
-        folder_entry = claude_folders / name / "SKILL.md"
+        if archive.is_file():
+            verify_zip_folder_parity(errors, archive, folder, name, release_root)
+        skill_file = folder / "SKILL.md"
         try:
-            declared, description = skill_metadata(folder_entry)
+            declared, description = skill_metadata(skill_file)
             if declared != name:
                 errors.append(f"Claude folder name mismatch: {name} declares {declared}")
             if not (1 <= len(description) <= 200):
-                errors.append(f"Claude description length invalid ({len(description)}): {folder_entry.relative_to(ROOT)}")
+                errors.append(
+                    f"Claude description length invalid ({len(description)}): "
+                    f"{display_path(skill_file, release_root)}"
+                )
         except ValueError as exc:
             errors.append(str(exc))
 
+    try:
+        revision, source_count, source_digest, _ = builder.source_state()
+    except RuntimeError as exc:
+        errors.append(f"cannot establish staged release source state: {exc}")
+        revision = source_count = source_digest = None
+    index = load_json(release_root / "bundle" / "reminder" / "associative-index-qwen3-embedding-0.6b.json")
+    manifest_path = release_root / "release-manifest.json"
+    expected_manifest = {
+        "format": "nova-mind-free-release/v1",
+        "product": "Nova + MIND Free",
+        "version": PRODUCT_VERSION,
+        "source_revision": revision,
+        "source_material_file_count": source_count,
+        "source_material_sha256": source_digest,
+        "plugin_versions": {
+            "nova-the-optimal-ai": NOVA_VERSION,
+            "augment-of-mind": MIND_VERSION,
+        },
+        "codex_plugins": list(builder.PLUGIN_NAMES),
+        "claude_skill_count": len(folders),
+        "claude_skills": sorted(folders),
+        "mind_faculty_count": 16,
+        "mind_attached_testforge_count": 2,
+        "reminder_capability_count": len(index.get("cards", [])),
+        "reminder_qualification_state": index.get("embedding_profile", {}).get("qualification_state"),
+        "evidence_boundary": "Structural release artifact. Live installation, hook trust, host delivery, behavioral qualification, Claude upload, publication, and commercial approval remain separate.",
+    }
+    verify_release_manifest(errors, manifest_path, expected_manifest)
 
-def verify(include_release: bool) -> dict:
+    checksum_targets = {
+        *(f"claude/zips/{name}.zip" for name in expected),
+        "release-manifest.json",
+        "codex/plugins/nova-the-optimal-ai/.codex-plugin/plugin.json",
+        "codex/plugins/augment-of-mind/.codex-plugin/plugin.json",
+        "bundle/reminder/associative-index-qwen3-embedding-0.6b.json",
+    }
+    verify_staged_checksums(errors, release_root, checksum_targets)
+
+    expected_paths: set[str] = {
+        "release-manifest.json",
+        "SHA256SUMS.txt",
+        "design/FREE-NOVA-PACKAGE-MAP.md",
+        "design/source-lock.json",
+        "README.md",
+        "START-HERE.md",
+        "RELEASE-NOTES.md",
+        "SUPPORT.md",
+        "SECURITY.md",
+        "LICENSE.md",
+        "install.ps1",
+        "verify-install.ps1",
+        "assets/nova-emergent.png",
+    }
+    for source_root, prefix in (
+        (ROOT / ".agents", "codex/.agents"),
+        (NOVA, "codex/plugins/nova-the-optimal-ai"),
+        (MIND, "codex/plugins/augment-of-mind"),
+        (ROOT / "docs", "docs"),
+        (ROOT / "bundle" / "reminder", "bundle/reminder"),
+    ):
+        expected_paths.update(
+            f"{prefix}/{relative}" for relative in parity_file_map(source_root)
+        )
+    for name in expected:
+        source_folder = (NOVA if name in NOVA_SKILLS else MIND) / "skills" / name
+        expected_paths.update(
+            f"claude/folders/{name}/{relative}"
+            for relative in parity_file_map(source_folder)
+        )
+        expected_paths.add(f"claude/zips/{name}.zip")
+    verify_expected_file_set(errors, release_root, expected_paths)
+
+
+def verify(include_release: bool, release_root: Path | None = None) -> dict:
     errors: list[str] = []
     evidence: dict = {}
 
@@ -186,10 +557,10 @@ def verify(include_release: bool) -> dict:
 
     nova_manifest = load_json(NOVA / ".codex-plugin" / "plugin.json")
     mind_manifest = load_json(MIND / ".codex-plugin" / "plugin.json")
-    if nova_manifest.get("version") != "2.0.3":
-        errors.append("Nova plugin version must be 2.0.3")
-    if mind_manifest.get("version") != "2.1.7":
-        errors.append("MIND plugin version must be 2.1.7")
+    if nova_manifest.get("version") != NOVA_VERSION:
+        errors.append(f"Nova plugin version must be {NOVA_VERSION}")
+    if mind_manifest.get("version") != MIND_VERSION:
+        errors.append(f"MIND plugin version must be {MIND_VERSION}")
 
     mind_version = str(mind_manifest.get("version", ""))
     if "mcpServers" in mind_manifest:
@@ -215,6 +586,91 @@ def verify(include_release: bool) -> dict:
         errors.append("MIND Faculty evaluation evidence no longer identifies its 2.1.1 baseline")
     if registry.get("runtime_version") != mind_version:
         errors.append("MIND Faculty registry version does not match the plugin version")
+    registered_faculties = {
+        item.get("name") for item in registry.get("faculties", []) if isinstance(item, dict)
+    }
+    if registry.get("faculty_count") != len(FACULTIES) or registered_faculties != FACULTIES:
+        errors.append("MIND Faculty registry does not match the sixteen-Faculty contract")
+    faculty_return_schema = load_json(
+        MIND
+        / "skills"
+        / "augment-of-mind"
+        / "assets"
+        / "faculty-runtime"
+        / "faculty-return.schema.json"
+    )
+    return_faculties = set(
+        faculty_return_schema.get("properties", {}).get("faculty", {}).get("enum", [])
+    )
+    if return_faculties != FACULTIES:
+        errors.append("MIND Faculty return schema does not cover the sixteen-Faculty registry")
+
+    core_constants_text = (MIND / "mind_core" / "constants.py").read_text(encoding="utf-8")
+    core_match = re.search(r'(?m)^RUNTIME_VERSION = "([^"]+)"$', core_constants_text)
+    if not core_match or core_match.group(1) != MIND_CORE_VERSION:
+        errors.append(f"MIND Core runtime version must remain {MIND_CORE_VERSION}")
+    standalone_core_match = re.search(
+        r'(?m)^CORE_VERSION = "([^"]+)"$', standalone_verifier_text
+    )
+    if not standalone_core_match or standalone_core_match.group(1) != MIND_CORE_VERSION:
+        errors.append("standalone MIND release verifier Core version is stale")
+    core_project = tomllib.loads((MIND / "pyproject.toml").read_text(encoding="utf-8"))
+    if core_project.get("project", {}).get("version") != MIND_CORE_VERSION:
+        errors.append("MIND Core project version is stale")
+
+    continuity_root = MIND / "skills" / "cognitive-continuity"
+    workspace_runtime_text = (
+        continuity_root / "scripts" / "workspace_runtime.py"
+    ).read_text(encoding="utf-8")
+    continuity_match = re.search(
+        r'(?m)^IMPLEMENTATION_VERSION = "([^"]+)"$', workspace_runtime_text
+    )
+    if not continuity_match or continuity_match.group(1) != CONTINUITY_VERSION:
+        errors.append(f"Cognitive Continuity implementation version must be {CONTINUITY_VERSION}")
+    if 'FORMAT = "cd-cognitive-continuity/v2"' not in workspace_runtime_text:
+        errors.append("Cognitive Continuity workspace runtime is not schema v2")
+    continuity_manifest_schema = load_json(
+        continuity_root / "assets" / "schemas" / "continuity-manifest-v2.schema.json"
+    )
+    schema_version = (
+        continuity_manifest_schema.get("properties", {})
+        .get("workspace_schema_version", {})
+        .get("const")
+    )
+    if schema_version != CONTINUITY_WORKSPACE_SCHEMA_VERSION:
+        errors.append("Cognitive Continuity manifest schema version is stale")
+    worldline_text = (continuity_root / "scripts" / "worldline.py").read_text(encoding="utf-8")
+    for required_worldline_phrase in (
+        'REQUEST_FORMAT = "cd-worldline-request/v1"',
+        'VIEW_FORMAT = "cd-worldline-view/v1"',
+        "RUNTIME_VERSION = IMPLEMENTATION_VERSION",
+        'reject(clean, "global_operative_scope")',
+        'degradation.append("global_operative_scope_withheld")',
+        'degradation.append("project_scope_unrepresented")',
+    ):
+        if required_worldline_phrase not in worldline_text:
+            errors.append(f"Worldline runtime contract is missing: {required_worldline_phrase}")
+    continuity_skill_text = (continuity_root / "SKILL.md").read_text(encoding="utf-8")
+    worldline_contract_text = (
+        continuity_root / "references" / "worldline-contract.md"
+    ).read_text(encoding="utf-8")
+    for required_scope_phrase in (
+        "project_scope_ambiguous",
+        "A selector locates a store, not a project.",
+        "The caller, not the Worldline compiler, owns project selection.",
+    ):
+        if required_scope_phrase not in continuity_skill_text + worldline_contract_text:
+            errors.append(f"Worldline project-scope contract is missing: {required_scope_phrase}")
+    faultline_text = (
+        continuity_root / "scripts" / "error_neighborhood.py"
+    ).read_text(encoding="utf-8")
+    for required_faultline_phrase in (
+        'POLICY_VERSION = "cd-continuity-eligibility/v2"',
+        '"cd-error-neighborhood/v1"',
+        "operation_unsupported_v1",
+    ):
+        if required_faultline_phrase not in faultline_text:
+            errors.append(f"Faultline runtime contract is missing: {required_faultline_phrase}")
 
     fingerprint_path = MIND / "skills" / "augment-of-mind" / "assets" / "integrated-capability-fingerprint.json"
     fingerprint_builder_path = MIND / "scripts" / "build_integrated_fingerprint.py"
@@ -231,6 +687,13 @@ def verify(include_release: bool) -> dict:
             sys.dont_write_bytecode = prior_dont_write_bytecode
         observed_fingerprint = load_json(fingerprint_path)
         expected_fingerprint = module.build()
+        expected_capability_versions = {
+            item.get("name"): item.get("version")
+            for item in expected_fingerprint.get("capabilities", [])
+            if isinstance(item, dict)
+        }
+        if expected_capability_versions.get("cognitive-continuity") != CONTINUITY_VERSION:
+            errors.append("integrated fingerprint builder has a stale Cognitive Continuity version")
         if observed_fingerprint != expected_fingerprint:
             errors.append("integrated MIND capability fingerprint is stale")
             evidence["expected_integrated_fingerprint"] = expected_fingerprint
@@ -287,7 +750,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"portable delivery contract is missing: {required_delivery_phrase}")
 
     contract = load_json(
-        ROOT / "verification" / "associative-smoke" / "model-context-contract-v2.1.7.json"
+        MODEL_CONTEXT_CONTRACT
     )
     if contract.get("mind_version") != mind_version:
         errors.append("recorded model-context contract version does not match MIND")
@@ -313,7 +776,7 @@ def verify(include_release: bool) -> dict:
             errors.append(f"current release download is missing: {download_surface.relative_to(ROOT)}")
 
     package_map_text = (ROOT / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
-    if "Product: **Nova + MIND Free 2.0.10**" not in package_map_text:
+    if f"Product: **Nova + MIND Free {PRODUCT_VERSION}**" not in package_map_text:
         errors.append("Free Nova package map version is stale")
     if "Canonical repository: `Stunspot/nova-the-optimal-ai-mind`" not in package_map_text:
         errors.append("Free Nova package map points at the wrong canonical repository")
@@ -402,7 +865,7 @@ def verify(include_release: bool) -> dict:
         "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, "
         "one NUL byte, and raw 32-byte file sha256; Python cache files excluded"
     )
-    if lock.get("product_version") != "2.0.10" or lock.get("tree_algorithm") != expected_tree_algorithm:
+    if lock.get("product_version") != PRODUCT_VERSION or lock.get("tree_algorithm") != expected_tree_algorithm:
         errors.append("source lock version or tree algorithm is stale")
     locked_records = {
         item.get("component"): item
@@ -410,21 +873,27 @@ def verify(include_release: bool) -> dict:
         if isinstance(item, dict)
     }
     expected_current_sources = {
+        "nova": {
+            "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+            "commit": "a678d72049f99e999ccd4278ef9596adc0a0743e",
+            "source_path": "plugins/nova-the-optimal-ai/skills/nova",
+            "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
+        },
         "augment-of-mind": {
             "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-            "commit": "a6f249a730030a5e2a518b8011463a49781a5415",
+            "commit": "917d06e1474ebf6b8868b09b88909a658cc4afab",
             "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },
         "software-verification": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
+            "commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
             "source_path": "testforge/skills/software-verification",
             "imported_path": "plugins/augment-of-mind/skills/software-verification",
         },
         "verification-reviewer": {
             "repository": "https://github.com/Stunspot/testforge",
-            "commit": "e9a7fb1b88f537f05ef77c921d4d63698e1346a0",
+            "commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
             "source_path": "testforge/skills/verification-reviewer",
             "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
         },
@@ -442,45 +911,54 @@ def verify(include_release: bool) -> dict:
         ):
             if record.get(record_key) != expected_source[expected_key]:
                 errors.append(f"source lock {record_key} is stale: {component}")
-        observed_tree = tree_fingerprint(ROOT / expected_source["imported_path"])
+        if (
+            expected_source["repository"]
+            == "https://github.com/Stunspot/nova-the-optimal-ai-mind"
+            and (ROOT / ".git").exists()
+        ):
+            object_check = subprocess.run(
+                ["git", "cat-file", "-e", f'{expected_source["commit"]}^{{commit}}'],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if object_check.returncode != 0:
+                errors.append(f"source lock commit object is missing: {component}")
+
+    for component, record in locked_records.items():
+        imported_path = record.get("imported_path")
+        if not isinstance(imported_path, str):
+            errors.append(f"source lock imported path is invalid: {component}")
+            continue
+        imported_root = (ROOT / imported_path).resolve()
+        try:
+            imported_root.relative_to((ROOT / "plugins").resolve())
+        except ValueError:
+            errors.append(f"source lock imported path escapes plugin custody: {component}")
+            continue
+        if not imported_root.is_dir():
+            errors.append(f"source lock imported path is missing: {component}")
+            continue
+        observed_tree = tree_fingerprint(imported_root)
         if record.get("imported_tree") != observed_tree:
             errors.append(f"source lock imported tree is stale: {component}")
-        if record.get("source_tree") != observed_tree:
+        selected_tree = record.get("selected_tree")
+        if selected_tree is not None and selected_tree != observed_tree:
+            errors.append(f"source lock selected tree is stale: {component}")
+        selection = record.get("selection_includes")
+        if selection is not None:
+            observed_selection = sorted(
+                path.relative_to(imported_root).as_posix()
+                for path in imported_root.rglob("*")
+                if path.is_file()
+                and "__pycache__" not in path.parts
+                and path.suffix.lower() not in {".pyc", ".pyo"}
+            )
+            if selection != observed_selection:
+                errors.append(f"source lock explicit selection is stale: {component}")
+        elif component != "promptcraft" and record.get("source_tree") != observed_tree:
             errors.append(f"source lock canonical tree does not match imported bytes: {component}")
-
-    ludis_record = locked_records.get("ludis-continuum")
-    expected_ludis = {
-        "source_repository": "https://github.com/Stunspot/ludis-continuum",
-        "source_commit": "e20d8ee88538e1e5a62ba9f18b5224ebedaa05df",
-        "source_path": ".",
-        "imported_path": "plugins/nova-the-optimal-ai/skills/ludis-continuum",
-        "source_tree": {
-            "file_count": 122,
-            "tree_sha256": "a79c66757df392747f811331679937b0d1bba534a45a1945286e5b4c295a7a22",
-        },
-        "selection_excludes": [".github/**", ".editorconfig", ".gitattributes", ".gitignore"],
-        "selected_tree": {
-            "file_count": 117,
-            "tree_sha256": "d013ded89c075bcbf0f80a248635e30f2c94b6a8602ca8330bc7281fa81e77da",
-        },
-    }
-    if not isinstance(ludis_record, dict):
-        errors.append("source lock lacks current record: ludis-continuum")
-    else:
-        for key, expected_value in expected_ludis.items():
-            if key in {"selected_tree", "imported_path"}:
-                continue
-            if ludis_record.get(key) != expected_value:
-                errors.append(f"source lock {key} is stale: ludis-continuum")
-        observed_ludis_tree = tree_fingerprint(ROOT / expected_ludis["imported_path"])
-        if observed_ludis_tree != expected_ludis["selected_tree"]:
-            errors.append("embedded Ludis tree does not match the approved 1.1.0 selection")
-        if ludis_record.get("selected_tree") != observed_ludis_tree:
-            errors.append("source lock selected tree is stale: ludis-continuum")
-        if ludis_record.get("imported_tree") != observed_ludis_tree:
-            errors.append("source lock imported tree is stale: ludis-continuum")
-        if ludis_record.get("imported_path") != expected_ludis["imported_path"]:
-            errors.append("source lock imported path is stale: ludis-continuum")
 
     verify_links(errors)
 
@@ -495,10 +973,19 @@ def verify(include_release: bool) -> dict:
         if not required_asset.is_file():
             errors.append(f"required presentation asset missing: {required_asset.relative_to(ROOT)}")
 
+    selected_release_root = (
+        release_root.expanduser().resolve() if release_root is not None else ROOT / "dist"
+    )
     if include_release:
-        verify_release(errors)
+        verify_release(errors, selected_release_root)
 
     evidence.update({
+        "product_version": PRODUCT_VERSION,
+        "nova_plugin_version": NOVA_VERSION,
+        "mind_plugin_version": MIND_VERSION,
+        "mind_core_version": MIND_CORE_VERSION,
+        "cognitive_continuity_version": CONTINUITY_VERSION,
+        "continuity_workspace_schema_version": CONTINUITY_WORKSPACE_SCHEMA_VERSION,
         "nova_skill_count": len(nova_dirs),
         "mind_skill_count": len(mind_dirs),
         "faculty_count": len(FACULTIES),
@@ -508,17 +995,25 @@ def verify(include_release: bool) -> dict:
         "reminder_radius": profile.get("radius"),
         "reminder_qualification_state": profile.get("qualification_state"),
         "release_checked": include_release,
+        "release_root": display_path(selected_release_root) if include_release else None,
         "errors": errors,
         "status": "PASS" if not errors else "FAIL",
     })
     return evidence
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--release", action="store_true")
-    args = parser.parse_args()
-    evidence = verify(args.release)
+    parser.add_argument(
+        "--release-root",
+        type=Path,
+        metavar="DIST_PATH",
+        help="verify release artifacts at DIST_PATH instead of repository dist/; implies --release",
+    )
+    args = parser.parse_args(argv)
+    release_root = args.release_root.expanduser().resolve() if args.release_root else None
+    evidence = verify(args.release or release_root is not None, release_root)
     print(json.dumps(evidence, indent=2, ensure_ascii=False))
     return 0 if evidence["status"] == "PASS" else 1
 

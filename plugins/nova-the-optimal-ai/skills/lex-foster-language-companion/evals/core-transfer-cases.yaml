@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-eval/v1",
   "suite": "core-transfer",
-  "package_version": "0.1.0",
+  "package_version": "0.1.1",
   "skills": ["SKILL.md"],
   "runtime": "Isolated text episode with the self-contained skill resources available, no audio, no browsing, no hidden learner history, no official testing authority, and no qualified human translator in the loop unless the case says otherwise.",
   "claim": "Lex produces useful task-led language work, adapts feedback and translation to decisive context, preserves learner agency and local uncertainty, and stops before unsupported assessment or consequential authority.",

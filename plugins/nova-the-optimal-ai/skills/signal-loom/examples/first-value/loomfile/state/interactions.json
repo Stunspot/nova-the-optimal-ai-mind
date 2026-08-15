@@ -1,7 +1,0 @@
-{
-  "status": "reviewed",
-  "interactions": [
-    {"id":"I-001","name":"Site comparison selector","teaches":"How illustrative surface temperature and shade move together across four sites without claiming causation.","input":"Four native buttons","keyboard":"Native button focus and activation","touch":"44px minimum targets","reduced_motion":"No animated movement","fallback":"Visible comparison table contains all values"}
-  ],
-  "fallbacks": ["If JavaScript is unavailable, the first site card and full table remain available."]
-}

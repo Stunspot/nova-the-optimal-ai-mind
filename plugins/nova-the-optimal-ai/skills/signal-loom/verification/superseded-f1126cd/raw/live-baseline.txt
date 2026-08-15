@@ -1,0 +1,15 @@
+OBSERVED_AT_UTC=2026-08-12T11:29:42.0375569Z
+LIVE_URL=https://stunspot.github.io/signal-loom/
+LIVE_INDEX_HTTP=200
+LIVE_INDEX_CONTENT=pre-remediation contest edition 1.0.0; old navigation; old generic hero; old OG image; not candidate 0.1.0 customer journey
+LIVE_OLD_HERO_URL=https://stunspot.github.io/signal-loom/assets/signal-loom-hero.png
+LIVE_OLD_HERO_HTTP=200
+LIVE_NEW_PAGES_HERO_URL=https://stunspot.github.io/signal-loom/assets/signal-loom-pages-hero.png
+LIVE_NEW_PAGES_HERO_HTTP=404
+LIVE_NEW_SOCIAL_CARD_URL=https://stunspot.github.io/signal-loom/assets/signal-loom-social-card.png
+LIVE_NEW_SOCIAL_CARD_HTTP=404
+LIVE_CUSTOM_404_PROBE=https://stunspot.github.io/signal-loom/not-a-real-route-40d78aa
+LIVE_CUSTOM_404_HTTP=404
+REMOTE_MAIN=2061709f380d17e511cc94ae8cce23847c6f2764
+LOCAL_CONTENT_CANDIDATE=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
+VERDICT=LIVE VERIFICATION FAIL; deployed site does not contain candidate HTML or candidate assets

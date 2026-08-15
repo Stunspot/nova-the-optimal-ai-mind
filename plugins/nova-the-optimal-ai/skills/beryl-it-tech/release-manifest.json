@@ -1,7 +1,11 @@
 {
   "package": "beryl-it-benchcraft",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "files": {
+    "agents/openai.yaml": {
+      "sha256": "058cc05be9bf881fe6c0e41e3c4a7cbd75207da542844a7e83a4315a0e4b9a9f",
+      "bytes": 227
+    },
     "assets/build-and-migration-checklist.md": {
       "sha256": "fa4358f28eb28157c35a62b913c6764abb27ae47e3201f3b8c2ba44c4fd587d1",
       "bytes": 1207
@@ -27,11 +31,11 @@
       "bytes": 861
     },
     "docs/ACCESSIBILITY.md": {
-      "sha256": "8abbbc8e8900d572d960423d8af02b1a697373a5f6046dd067b5eb32981c2757",
+      "sha256": "023d1776518b6e2233cec421942a4dd23507cbdf5de3f084be1eaeeb6f31eb42",
       "bytes": 2250
     },
     "docs/CAPABILITY-MATRIX.md": {
-      "sha256": "bef90971ec02c392c4c36e4806433b708d2a92b858690204eb648d5d0728a00f",
+      "sha256": "fcc206babdf8c5784965055897c87a346ba24c2cfa24c1636ac44091dc4afdb4",
       "bytes": 5206
     },
     "docs/CASE-FILES.md": {
@@ -39,24 +43,24 @@
       "bytes": 4616
     },
     "docs/DOCUMENTATION-MAINTENANCE.md": {
-      "sha256": "7118278348144e0f05b7120a494591f3710df32812a454bab7e92b412921ac6c",
+      "sha256": "9489a40aa7222bd9b271e38c3635ab6bbfc97d397b6d97bb14bc4e8771218d13",
       "bytes": 2570
     },
     "docs/INSTALLATION.md": {
-      "sha256": "816c09327ee3cae717bd1e3f1e4b0303439e7f89a15bacb53ad8df8e764d4b97",
+      "sha256": "500ecbc76b2fb96133af605aaf561c907f0b17ed607d0e892de99509f1abd734",
       "bytes": 3521
     },
     "docs/LIMITATIONS.md": {
-      "sha256": "a0e0281ae9c4ad455d409c751e6165fa52fc42d386279c0a698f7e00f49fd316",
-      "bytes": 3806
+      "sha256": "ee95a68cab1654bd4708c2907a66feead8f7bca91abf1091ff2ffe036f9a8617",
+      "bytes": 3855
     },
     "docs/QUICK-START.md": {
       "sha256": "b93afb98fb5eaa0ee270e651d9fe64b509e9830f5622c7d3ba82336d398ab4d4",
       "bytes": 3468
     },
     "docs/RELEASE-NOTES.md": {
-      "sha256": "855103b3ab80b3ec2c3a836af9afb82f660f2e66e6f8f2136d4edbfbef5cee1b",
-      "bytes": 1922
+      "sha256": "467179f9967be8c0e677b18b684378c96c6bee621cbebf04d5c0e2c643f6d96d",
+      "bytes": 3018
     },
     "docs/SAFETY-AND-DATA.md": {
       "sha256": "6befa6fcb2e4e238f398fc6bc83342a82ddc17f24198db6f8c636f0e723deb60",
@@ -71,8 +75,8 @@
       "bytes": 6359
     },
     "docs/VALIDATION-AND-EVALUATION.md": {
-      "sha256": "eb2aded28ac1fd762de62e08d40178c8b33932707481d47d406a42fab43d5ae3",
-      "bytes": 4589
+      "sha256": "0419598f1391872973a7bd4e72a46d41b2318846dc07c516cd0c0a2308033b2b",
+      "bytes": 4981
     },
     "evals/core-transfer-cases.yaml": {
       "sha256": "48f7c56cd79affccd5a4962a4f30895f1c951140ee859d59a1fd2b31b05b3308",
@@ -87,8 +91,8 @@
       "bytes": 2417
     },
     "examples/intermittent-wifi/demonstration.md": {
-      "sha256": "0b2d04646f495c4ba7f6f1844d83385761d498a3b17ca5e3615d101e769d91fb",
-      "bytes": 696
+      "sha256": "62a4017e3c3c2d5e1014137d82f4723a0c8bdc951c057c0196f0838d774db673",
+      "bytes": 711
     },
     "examples/no-power-laptop/case.json": {
       "sha256": "c9c3f0336c03bfd2e8d03eb04d89e204b7c7fafc09905711bc2398b90a32692a",
@@ -123,23 +127,19 @@
       "bytes": 936
     },
     "knowledge/windows-systems-engineering.md": {
-      "sha256": "fcecb51c9a9432674bcbf54d96a4b240b218d6e908a1cda0d8f8bdf84124031f",
-      "bytes": 48807
+      "sha256": "747a52d193fd85110616d0848d06fad6be07ab85522e9bc229a49810192fd57f",
+      "bytes": 48810
     },
     "personas/beryl-it-benchcraft-practitioner.md": {
       "sha256": "14c1a54c32ef41c2c14f4b5cd4da294df387a6e03d6ab25b017b723a74900c9b",
       "bytes": 5796
     },
-    "personas/beryl-it-forensics-studio.png": {
-      "sha256": "2030b850bbdd4e997590fc07d6233eeb49bbe6ad0c72be6b7ff44a270829304b",
-      "bytes": 1483786
-    },
     "PROVENANCE.md": {
-      "sha256": "a2a1102fdf288a15ddf87c28dd8df252d2b7a264faf3b836bfa68f41a7a19ff8",
-      "bytes": 2253
+      "sha256": "dd553cc60c484d56fe22d0cb04ff578dd37dd057a90bace19e078f74cfd5955c",
+      "bytes": 2335
     },
     "README.md": {
-      "sha256": "7599b6b529c8cf7cd0a119b85db8d05110384a8a9cd92e569d9fe5ddde80cd99",
+      "sha256": "c34ca7ed5f1f7fbbfae975090239748097c61a2cb320858f0fa2de8f5f676dbc",
       "bytes": 4462
     },
     "references/diagnostic-method.md": {
@@ -187,24 +187,12 @@
       "bytes": 2441
     },
     "scripts/validate_release.py": {
-      "sha256": "6a3400e671d7eff0ce171c937f70bdba1d5eabe6a7d95f90117895c0cb80cbb1",
-      "bytes": 4223
+      "sha256": "307903938589ff116121d056d07a8ee27ca1e1789d35bd0d0fd6e1ae77f8d9d4",
+      "bytes": 4111
     },
-    "skills/beryl-it-tech/agents/openai.yaml": {
-      "sha256": "41582ef56c824c5e7e25281eb38a68ed98dda6264c3a51d1df804bf4963b5a74",
-      "bytes": 250
-    },
-    "skills/beryl-it-tech/SKILL.md": {
-      "sha256": "2b99875fa6af56ee9d703dd4936e6c48e4c1d280cde171ac66874e2339f1df57",
-      "bytes": 7916
-    },
-    "skills/it-work-reviewer/agents/openai.yaml": {
-      "sha256": "6001a4c9b605c123d436e2ab39763b93e6ba31397745aa964e186c36580eb938",
-      "bytes": 221
-    },
-    "skills/it-work-reviewer/SKILL.md": {
-      "sha256": "dca36a76c99435f22cf121a3ba56425f8fe5d29140da2103b3c0b54d819bc97e",
-      "bytes": 2112
+    "SKILL.md": {
+      "sha256": "ec39c35f17589d91a7befcc55112b5f105ca70d68221cc019811868717d6c6f8",
+      "bytes": 7505
     }
   }
 }
