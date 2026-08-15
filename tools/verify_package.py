@@ -231,18 +231,32 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
         "negated release": r"\bnot\s+(?:(?:a|the)\s+)?(?:(?:public|published)\s+)?release\b",
         "auxiliary publication negation": rf"\b{auxiliary}\s+not\b[^.\n]{{0,100}}\b{publication_term}\b",
         "reverse publication negation": rf"\b{publication_term}\b[^.\n]{{0,100}}\b{auxiliary}\s+not\b[^.\n]{{0,100}}\b(?:{publication_term}|occur(?:red)?)\b",
+        "never published": rf"\bnever\b[^.\n]{{0,100}}\b{publication_term}\b",
+        "awaiting publication": rf"\b(?:awaits?|awaiting)\b[^.\n]{{0,100}}\b{publication_term}\b",
+        "publication has yet to occur": rf"\b{publication_term}\b[^.\n]{{0,100}}\b(?:has|have|had)\s+yet\s+to\s+(?:occur|happen|complete)\b",
         "deferred release state": r"\b(?:lock|fingerprint|package\s+pass|publication|release)\b[^.\n]{0,100}\b(?:deferred|not\s+claimed|unclaimed)\b",
         "future publication state": rf"\b{publication_term}\b[^.\n]{{0,100}}\b{future_term}\b",
         "reverse future publication state": rf"\b{future_term}\b[^.\n]{{0,100}}\b{publication_term}\b",
-        "older release remains latest": r"(?:\blatest\b[^.\n]{0,120}\bremains\b|\bremains\b[^.\n]{0,120}\blatest\b)",
+        "older release remains latest": r"(?:\b(?:latest|most\s+recent|current)\b[^.\n]{0,120}\bremains\b|\bremains\b[^.\n]{0,120}\b(?:latest|most\s+recent|current)\b)",
     }
     latest_version_patterns = (
-        re.compile(r"\blatest(?:\s+published)?\s+release(?:\s*:|\s+is)?\s*(?:version\s*)?(\d+\.\d+\.\d+)", re.IGNORECASE),
-        re.compile(r"\bversion\s+(\d+\.\d+\.\d+)\b[^.\n]{0,100}\blatest(?:\s+published)?\s+release\b", re.IGNORECASE),
+        re.compile(r"\b(?:latest|most\s+recent|current)(?:\s+(?:published|public))?\s+release(?:\s*:|\s+is)?\s*(?:version\s*)?v?(\d+\.\d+\.\d+)", re.IGNORECASE),
+        re.compile(r"\bversion\s+v?(\d+\.\d+\.\d+)\b[^.\n]{0,100}\b(?:latest|most\s+recent|current)(?:\s+(?:published|public))?\s+release\b", re.IGNORECASE),
     )
     archive_pattern = re.compile(r"nova-mind-free-v(\d+\.\d+\.\d+)\.zip", re.IGNORECASE)
     for label, claim_text in governed_claims.items():
         normalized = " ".join(claim_text.split())
+        contractions = {
+            "isn't": "is not",
+            "aren't": "are not",
+            "wasn't": "was not",
+            "weren't": "were not",
+            "hasn't": "has not",
+            "haven't": "have not",
+            "hadn't": "had not",
+        }
+        for contraction, expansion in contractions.items():
+            normalized = re.sub(rf"\b{re.escape(contraction)}\b", expansion, normalized, flags=re.IGNORECASE)
         for reason, pattern in contradiction_patterns.items():
             if re.search(pattern, normalized, flags=re.IGNORECASE):
                 errors.append(f"current release contradiction in {label}: {reason}")

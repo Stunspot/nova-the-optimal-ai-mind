@@ -345,9 +345,16 @@ class ReleaseBuilderCliTests(unittest.TestCase):
         }
         contradictions = (
             "This release has not been published.",
+            "This release has never been published.",
+            "This release isn't published.",
+            "This release awaits publication.",
+            "Publication has yet to occur.",
             "Publication will occur later.",
             "Version 2.0.9 remains the latest published release.",
+            "The most recent published release is 2.0.9.",
             "Latest published release: 2.0.9.",
+            "The latest published release is v2.0.9.",
+            "The current public release is 2.0.9.",
             "Download nova-mind-free-v2.0.9.zip.",
         )
         for claim in contradictions:
