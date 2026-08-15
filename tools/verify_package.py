@@ -222,19 +222,42 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
         "RELEASE-NOTES.md current section": current_notes,
         "plugins/augment-of-mind/RELEASE-NOTES.md current section": current_mind_notes,
     }
+    publication_term = r"(?:publication|publish(?:ed|ing)?|release(?:d)?)"
+    auxiliary = r"(?:has|have|had|is|are|was|were|does|do|did|will|would|can|could|shall|should|may|might|must)"
+    future_term = r"(?:will|shall|planned|pending|later|forthcoming|upcoming|not\s+yet)"
     contradiction_patterns = {
         "unpublished": r"\bunpublished\b",
         "candidate": r"\bcandidate\b",
         "negated release": r"\bnot\s+(?:(?:a|the)\s+)?(?:(?:public|published)\s+)?release\b",
-        "negated publication": r"\b(?:does|do|is|are|was|were)\s+not\b[^.\n]{0,100}\b(?:publication|published|release)\b",
+        "auxiliary publication negation": rf"\b{auxiliary}\s+not\b[^.\n]{{0,100}}\b{publication_term}\b",
+        "reverse publication negation": rf"\b{publication_term}\b[^.\n]{{0,100}}\b{auxiliary}\s+not\b[^.\n]{{0,100}}\b(?:{publication_term}|occur(?:red)?)\b",
         "deferred release state": r"\b(?:lock|fingerprint|package\s+pass|publication|release)\b[^.\n]{0,100}\b(?:deferred|not\s+claimed|unclaimed)\b",
-        "older release remains latest": r"\blatest\b[^.\n]{0,120}\bremains\b",
+        "future publication state": rf"\b{publication_term}\b[^.\n]{{0,100}}\b{future_term}\b",
+        "reverse future publication state": rf"\b{future_term}\b[^.\n]{{0,100}}\b{publication_term}\b",
+        "older release remains latest": r"(?:\blatest\b[^.\n]{0,120}\bremains\b|\bremains\b[^.\n]{0,120}\blatest\b)",
     }
+    latest_version_patterns = (
+        re.compile(r"\blatest(?:\s+published)?\s+release(?:\s*:|\s+is)?\s*(?:version\s*)?(\d+\.\d+\.\d+)", re.IGNORECASE),
+        re.compile(r"\bversion\s+(\d+\.\d+\.\d+)\b[^.\n]{0,100}\blatest(?:\s+published)?\s+release\b", re.IGNORECASE),
+    )
+    archive_pattern = re.compile(r"nova-mind-free-v(\d+\.\d+\.\d+)\.zip", re.IGNORECASE)
     for label, claim_text in governed_claims.items():
         normalized = " ".join(claim_text.split())
         for reason, pattern in contradiction_patterns.items():
             if re.search(pattern, normalized, flags=re.IGNORECASE):
                 errors.append(f"current release contradiction in {label}: {reason}")
+        for pattern in latest_version_patterns:
+            for match in pattern.finditer(normalized):
+                if match.group(1) != PRODUCT_VERSION:
+                    errors.append(
+                        f"current release contradiction in {label}: latest version is {match.group(1)}"
+                    )
+        for match in archive_pattern.finditer(normalized):
+            if match.group(1) != PRODUCT_VERSION:
+                errors.append(
+                    f"current release contradiction in {label}: archive version is {match.group(1)}"
+                )
+
 
 def verify_release_links(errors: list[str], release_root: Path) -> None:
     documents = [

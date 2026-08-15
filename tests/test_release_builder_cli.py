@@ -216,6 +216,21 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
 
+    def _add_current_claim(self, surfaces: dict[str, str], relative: str, claim: str) -> None:
+        if relative == "RELEASE-NOTES.md":
+            surfaces[relative] = surfaces[relative].replace(
+                "This published release corrects customer truth.",
+                "This published release corrects customer truth. " + claim,
+            )
+        elif relative == "plugins/augment-of-mind/RELEASE-NOTES.md":
+            mind_version = VERIFIER_MODULE.MIND_VERSION
+            current = (
+                f"MIND {mind_version} was published as a component of an earlier product "
+                f"and is retained unchanged in {VERIFIER_MODULE.PRODUCT_VERSION}."
+            )
+            surfaces[relative] = surfaces[relative].replace(current, current + " " + claim)
+        else:
+            surfaces[relative] += "\n" + claim + "\n"
     def test_current_release_truth_rejects_candidate_state(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -316,6 +331,38 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             )
             for label in expected_labels:
                 self.assertTrue(any(label in error for error in errors), label)
+    def test_release_state_variants_fail_independently_on_every_authority(self) -> None:
+        authority_labels = {
+            "README.md": "README.md current release claims",
+            "START-HERE.md": "START-HERE.md",
+            "docs/index.html": "docs/index.html",
+            "docs/install.html": "docs/install.html",
+            "docs/UPGRADE.md": "docs/UPGRADE.md",
+            "docs/VERIFICATION.md": "docs/VERIFICATION.md source/package section",
+            "design/FREE-NOVA-PACKAGE-MAP.md": "design/FREE-NOVA-PACKAGE-MAP.md",
+            "RELEASE-NOTES.md": "RELEASE-NOTES.md current section",
+            "plugins/augment-of-mind/RELEASE-NOTES.md": "plugins/augment-of-mind/RELEASE-NOTES.md current section",
+        }
+        contradictions = (
+            "This release has not been published.",
+            "Publication will occur later.",
+            "Version 2.0.9 remains the latest published release.",
+            "Latest published release: 2.0.9.",
+            "Download nova-mind-free-v2.0.9.zip.",
+        )
+        for claim in contradictions:
+            for relative, label in authority_labels.items():
+                with self.subTest(claim=claim, authority=relative), tempfile.TemporaryDirectory() as directory:
+                    root = Path(directory)
+                    surfaces = self._release_truth_surfaces()
+                    self._add_current_claim(surfaces, relative, claim)
+                    self._write_release_truth_surfaces(root, surfaces)
+                    errors: list[str] = []
+                    VERIFIER_MODULE.verify_current_release_truth(errors, root)
+                    self.assertTrue(
+                        any(f"current release contradiction in {label}" in error for error in errors),
+                        errors,
+                    )
     def test_current_release_truth_accepts_published_surfaces_and_historical_candidates(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
