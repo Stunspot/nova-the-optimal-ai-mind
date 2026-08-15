@@ -7,6 +7,7 @@ import hashlib
 import importlib.util
 import json
 import re
+import subprocess
 import sys
 import tomllib
 import zipfile
@@ -543,7 +544,7 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         },
         "augment-of-mind": {
             "repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-            "commit": "917d06ea2ed28b76fd41524a60ff01314b54c89d",
+            "commit": "917d06e1474ebf6b8868b09b88909a658cc4afab",
             "source_path": "plugins/augment-of-mind/skills",
             "imported_path": "plugins/augment-of-mind/skills",
         },
@@ -573,6 +574,20 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         ):
             if record.get(record_key) != expected_source[expected_key]:
                 errors.append(f"source lock {record_key} is stale: {component}")
+        if (
+            expected_source["repository"]
+            == "https://github.com/Stunspot/nova-the-optimal-ai-mind"
+            and (ROOT / ".git").exists()
+        ):
+            object_check = subprocess.run(
+                ["git", "cat-file", "-e", f'{expected_source["commit"]}^{{commit}}'],
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if object_check.returncode != 0:
+                errors.append(f"source lock commit object is missing: {component}")
 
     for component, record in locked_records.items():
         imported_path = record.get("imported_path")

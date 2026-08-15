@@ -30,7 +30,7 @@
     {
       "component": "augment-of-mind",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "917d06ea2ed28b76fd41524a60ff01314b54c89d",
+      "source_commit": "917d06e1474ebf6b8868b09b88909a658cc4afab",
       "source_path": "plugins/augment-of-mind/skills",
       "source_tree": {
         "file_count": 309,
