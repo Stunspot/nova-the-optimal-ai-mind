@@ -134,6 +134,11 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
         "START-HERE.md": (f"Nova + MIND Free {PRODUCT_VERSION}", versioned_archive),
         "docs/index.html": (f"Latest published: {PRODUCT_VERSION}",),
         "docs/install.html": (versioned_archive, "latest published release"),
+        "docs/UPGRADE.md": (f"Nova + MIND Free {PRODUCT_VERSION}",),
+        "docs/VERIFICATION.md": (
+            "The committed source lock",
+            "A package PASS is issued only after",
+        ),
         "design/FREE-NOVA-PACKAGE-MAP.md": (
             f"published release; {PRODUCT_VERSION}",
             f"Product: **Nova + MIND Free {PRODUCT_VERSION}**",
@@ -174,6 +179,32 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
     for phrase in ("local source candidate", "not a push", "not a public release", "publication claim"):
         if phrase in section.casefold():
             errors.append(f"current release-notes section retains candidate disclaimer: {phrase}")
+    mind_notes = root / "plugins" / "augment-of-mind" / "RELEASE-NOTES.md"
+    if not mind_notes.is_file():
+        errors.append("current-release truth surface missing: plugins/augment-of-mind/RELEASE-NOTES.md")
+    else:
+        mind_text = mind_notes.read_text(encoding="utf-8")
+        mind_heading = f"## {MIND_VERSION}"
+        mind_first_heading = re.search(r"(?m)^## (.+)$", mind_text)
+        if mind_first_heading is None or mind_first_heading.group(0) != mind_heading:
+            errors.append("MIND release notes do not lead with the current component version")
+        else:
+            mind_section = mind_text.split(mind_heading, 1)[1].split("\n## ", 1)[0]
+            required_mind_truth = (
+                f"MIND {MIND_VERSION} was published as a component",
+                f"retained unchanged in {PRODUCT_VERSION}",
+            )
+            for phrase in required_mind_truth:
+                if phrase not in mind_section:
+                    errors.append(f"current MIND release truth is stale; expected: {phrase}")
+            for phrase in ("local Nova + MIND", "does not imply publication or a public release"):
+                if phrase.casefold() in mind_section.casefold():
+                    errors.append(f"current MIND release section retains candidate disclaimer: {phrase}")
+
+    package_map = (root / "design" / "FREE-NOVA-PACKAGE-MAP.md").read_text(encoding="utf-8")
+    if "The source candidate" in package_map:
+        errors.append("package map retains current source-candidate wording")
+
     layers_heading = "## Version layers"
     if layers_heading not in text:
         errors.append("release notes are missing the current Version layers block")

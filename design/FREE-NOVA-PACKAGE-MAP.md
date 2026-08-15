@@ -60,7 +60,7 @@ Cognitive Continuity 0.2.2 uses workspace schema v2 while retaining read-only co
 
 Faultline is MIND's named bounded Error Neighborhood over Continuity-owned failure evidence. It returns zero to three expiring advisory cards, treats similarity and recurrence as noncausal, and leaves routing, diagnosis, repair, and permission with their proper owners. Governed mutations require schema-v2 generation, idempotency, authority, scope, source, sensitivity, and retention controls. Faultline has no fallback store and reports typed unsupported on v1; it likewise has no independent semver.
 
-The source candidate includes deterministic runtime and fresh-process tests. Package presence, installation, discovery, live selector resolution, customer-workspace migration, external-system behavior, and live host health remain separate evidence gates.
+The product includes deterministic runtime and fresh-process tests. The release gate verifies package presence, deterministic archive construction, and archive readback; installation, discovery, live selector resolution, customer-workspace migration, external-system behavior, and live host health remain separate evidence gates.
 
 ## Excluded by product decision
 
