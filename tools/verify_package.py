@@ -174,6 +174,15 @@ def verify_current_release_truth(errors: list[str], root: Path = ROOT) -> None:
     for phrase in ("local source candidate", "not a push", "not a public release", "publication claim"):
         if phrase in section.casefold():
             errors.append(f"current release-notes section retains candidate disclaimer: {phrase}")
+    layers_heading = "## Version layers"
+    if layers_heading not in text:
+        errors.append("release notes are missing the current Version layers block")
+        return
+    layers = text.split(layers_heading, 1)[1].split("\n## ", 1)[0]
+    expected_product_layer = f"- Product release: Nova + MIND Free {PRODUCT_VERSION}"
+    if expected_product_layer not in layers:
+        errors.append(f"release notes Version layers product value is stale; expected: {expected_product_layer}")
+
 
 def verify_release_links(errors: list[str], release_root: Path) -> None:
     documents = [

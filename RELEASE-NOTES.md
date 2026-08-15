@@ -82,7 +82,7 @@ The GitHub release previously available before 2.0.6 bundled Nova 2.0.1 with MIN
 
 ## Version layers
 
-- Product release: Nova + MIND Free 2.1.2
+- Product release: Nova + MIND Free 2.1.3
 - Nova plugin: 2.1.0
 - MIND plugin: 2.2.2
 - Cognitive Continuity: 0.2.2; workspace schema v2

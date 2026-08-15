@@ -201,7 +201,7 @@ class ReleaseBuilderCliTests(unittest.TestCase):
                 "docs/index.html": "Latest published: 2.1.3\n",
                 "docs/install.html": "nova-mind-free-v2.1.3.zip latest published release\n",
                 "design/FREE-NOVA-PACKAGE-MAP.md": "published release; 2.1.3\nProduct: **Nova + MIND Free 2.1.3**\n",
-                "RELEASE-NOTES.md": "# Notes\n\n## 2.1.3\nThis is a local source candidate, not a public release.\n",
+                "RELEASE-NOTES.md": "# Notes\n\n## 2.1.3\nThis is a local source candidate, not a public release.\n\n## Version layers\n\n- Product release: Nova + MIND Free 2.1.3\n",
             }
             for relative, content in surfaces.items():
                 path = root / relative
@@ -212,6 +212,27 @@ class ReleaseBuilderCliTests(unittest.TestCase):
             self.assertTrue(any("stale candidate release claim" in error for error in errors))
             self.assertTrue(any("candidate disclaimer" in error for error in errors))
 
+    def test_current_release_truth_rejects_stale_version_layers(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            version = VERIFIER_MODULE.PRODUCT_VERSION
+            archive = f"nova-mind-free-v{version}.zip"
+            surfaces = {
+                "README.md": f"Latest published release: {version}\n{archive}\nNova + MIND Free {version}\ncurrent published product release\n",
+                "START-HERE.md": f"Nova + MIND Free {version}\n{archive}\n",
+                "docs/index.html": f"Latest published: {version}\n",
+                "docs/install.html": f"{archive} latest published release\n",
+                "design/FREE-NOVA-PACKAGE-MAP.md": f"published release; {version}\nProduct: **Nova + MIND Free {version}**\n",
+                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis published release corrects customer truth.\n\n## Version layers\n\n- Product release: Nova + MIND Free 2.1.2\n",
+            }
+            for relative, content in surfaces.items():
+                path = root / relative
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(content, encoding="utf-8")
+            errors: list[str] = []
+            VERIFIER_MODULE.verify_current_release_truth(errors, root)
+            self.assertEqual(len(errors), 1)
+            self.assertIn("Version layers product value is stale", errors[0])
     def test_current_release_truth_accepts_published_surfaces(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -223,7 +244,7 @@ class ReleaseBuilderCliTests(unittest.TestCase):
                 "docs/index.html": f"Latest published: {version}\n",
                 "docs/install.html": f"{archive} latest published release\n",
                 "design/FREE-NOVA-PACKAGE-MAP.md": f"published release; {version}\nProduct: **Nova + MIND Free {version}**\n",
-                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis published release corrects customer truth.\n\n## old\nHistorical candidate.\n",
+                "RELEASE-NOTES.md": f"# Notes\n\n## {version}\nThis published release corrects customer truth.\n\n## old\nHistorical candidate.\n\n## Version layers\n\n- Product release: Nova + MIND Free {version}\n",
             }
             for relative, content in surfaces.items():
                 path = root / relative
