@@ -1,6 +1,6 @@
 ---
 name: decision-intelligence
-description: "⚖️ Decision analysis and recommendation."
+description: "⚖️ Option tradeoffs and recommendations."
 ---
 
 # Decision Intelligence

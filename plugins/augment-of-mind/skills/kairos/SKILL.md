@@ -1,6 +1,6 @@
 ---
 name: kairos
-description: "⏳ Audience-moment expression."
+description: "⏳ Audience-fit wording, timing, and tone."
 ---
 
 # Kairos

@@ -1095,6 +1095,43 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
         observed_tree = tree_fingerprint(imported_root)
         if record.get("imported_tree") != observed_tree:
             errors.append(f"source lock imported tree is stale: {component}")
+        overlay = record.get("metadata_overlay")
+        if overlay is not None:
+            if not isinstance(overlay, dict):
+                errors.append(f"source lock metadata overlay is invalid: {component}")
+            else:
+                overlay_files = overlay.get("files")
+                if (
+                    overlay.get("schema") != "cd-tool-injection-metadata-overlay/v1"
+                    or overlay.get("approved_at") != "2026-08-21"
+                    or overlay.get("canonical_map_sha256")
+                    != "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91"
+                    or not isinstance(overlay_files, list)
+                    or not overlay_files
+                    or overlay_files != sorted(set(overlay_files))
+                ):
+                    errors.append(f"source lock metadata overlay contract is stale: {component}")
+                else:
+                    allowed_derived = "augment-of-mind/assets/integrated-capability-fingerprint.json"
+                    for relative in overlay_files:
+                        if not isinstance(relative, str):
+                            errors.append(f"source lock metadata overlay path is invalid: {component}")
+                            continue
+                        candidate = (imported_root / relative).resolve()
+                        try:
+                            candidate.relative_to(imported_root)
+                        except ValueError:
+                            errors.append(f"source lock metadata overlay path escapes import: {component}")
+                            continue
+                        allowed = (
+                            relative == "SKILL.md"
+                            or relative == "agents/openai.yaml"
+                            or relative.endswith("/SKILL.md")
+                            or relative.endswith("/agents/openai.yaml")
+                            or relative == allowed_derived
+                        )
+                        if not allowed or not candidate.is_file():
+                            errors.append(f"source lock metadata overlay exceeds tooltip boundary: {component} -> {relative}")
         selected_tree = record.get("selected_tree")
         if selected_tree is not None and selected_tree != observed_tree:
             errors.append(f"source lock selected tree is stale: {component}")
@@ -1109,7 +1146,7 @@ def verify(include_release: bool, release_root: Path | None = None) -> dict:
             )
             if selection != observed_selection:
                 errors.append(f"source lock explicit selection is stale: {component}")
-        elif component != "promptcraft" and record.get("source_tree") != observed_tree:
+        elif component != "promptcraft" and overlay is None and record.get("source_tree") != observed_tree:
             errors.append(f"source lock canonical tree does not match imported bytes: {component}")
 
     verify_links(errors)

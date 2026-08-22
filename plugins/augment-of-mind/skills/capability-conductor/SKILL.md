@@ -1,6 +1,6 @@
 ---
 name: capability-conductor
-description: "🧩 Capability route coordination."
+description: "🧩 Specialist selection and work handoffs."
 ---
 
 # Capability Conductor

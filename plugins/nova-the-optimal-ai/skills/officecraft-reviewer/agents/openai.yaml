@@ -1,4 +1,4 @@
 interface:
   display_name: "Officecraft Reviewer"
-  short_description: "🧪 Office deliverable review."
+  short_description: "🧪 Docs, decks, and sheets readiness audit."
   default_prompt: "Use $officecraft-reviewer to put this Officefile, artifact family, or deliverable on trial: bind the review to supplied evidence, separate observed from unobserved checks, and return PASS, PASS_WITH_CONDITIONS, REVISE, or BLOCKED."

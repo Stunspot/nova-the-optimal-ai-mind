@@ -1,6 +1,6 @@
 ---
 name: instrumental-agency
-description: "🛠️ Authorized action custody."
+description: "🛠️ Controlled tool use and state changes."
 ---
 
 # Instrumental Agency

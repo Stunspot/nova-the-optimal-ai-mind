@@ -1,6 +1,6 @@
 ---
 name: beryl-it-tech
-description: "🛠️ IT diagnosis and repair specialist."
+description: "🛠️ Device, system, and network diagnosis."
 ---
 
 # Make the fault legible before making it disappear

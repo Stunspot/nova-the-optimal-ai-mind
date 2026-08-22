@@ -1,6 +1,6 @@
 ---
 name: agent-striving
-description: "🏹 Durable objective continuity."
+description: "🏹 Long-horizon goals across interruptions."
 ---
 
 # Keep the future pulling on the present

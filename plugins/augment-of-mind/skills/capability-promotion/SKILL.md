@@ -1,6 +1,6 @@
 ---
 name: capability-promotion
-description: "🧬 Recall reminder-card and embedding promotion when a user adds, installs, enables, updates, removes, or proposes a skill, plugin, tool, program, or durable agent capability."
+description: "🧬 Recall cues after toolset changes."
 ---
 
 # Keep new capabilities within reach

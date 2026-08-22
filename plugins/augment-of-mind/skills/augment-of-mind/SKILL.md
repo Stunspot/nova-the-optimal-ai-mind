@@ -1,6 +1,6 @@
 ---
 name: augment-of-mind
-description: "🧠 Integrate consequential Faculty work and preserve Worldline/Faultline boundaries. Use when multiple transformations, cross-task state, action custody, or failure recovery must reunify."
+description: "🧠 Multi-skill reasoning with one outcome."
 ---
 
 # Augment of MIND

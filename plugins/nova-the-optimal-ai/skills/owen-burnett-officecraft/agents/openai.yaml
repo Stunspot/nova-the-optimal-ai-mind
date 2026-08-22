@@ -1,6 +1,6 @@
 interface:
   display_name: "Owen Burnett Officecraft"
-  short_description: "📎 Office deliverable production steward."
+  short_description: "📎 Editable documents, slides, and sheets."
   default_prompt: "Use $owen-burnett-officecraft to turn these materials into polished, coherent office files and a truthful handoff."
 policy:
   allow_implicit_invocation: true

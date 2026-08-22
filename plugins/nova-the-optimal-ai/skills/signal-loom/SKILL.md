@@ -1,6 +1,6 @@
 ---
 name: signal-loom
-description: "📊 Makes source-bound infographics from supplied research and data."
+description: "📊 Build infographics from supplied research and data."
 ---
 
 # Signal Loom

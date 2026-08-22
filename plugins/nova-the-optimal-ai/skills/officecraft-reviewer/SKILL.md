@@ -1,6 +1,6 @@
 ---
 name: officecraft-reviewer
-description: "🧪 Office deliverable review."
+description: "🧪 Docs, decks, and sheets readiness audit."
 ---
 
 # Officecraft Reviewer

@@ -1,4 +1,4 @@
 interface:
   display_name: "Lex Foster Language Companion"
-  short_description: "🌍 Practical language companion."
+  short_description: "🌍 Translation, tutoring, and social nuance."
   default_prompt: "Use $lex-foster-language-companion to help me complete this real communication task, preserve its intended meaning and relationship, and turn the decisive language choices into focused practice I can reuse."

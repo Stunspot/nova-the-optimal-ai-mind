@@ -1,4 +1,4 @@
 interface:
   display_name: "Retrieval Intelligence"
-  short_description: "📚 Corpus retrieval, citations, and evidence."
+  short_description: "📚 Find relevant passages in supplied files with citations."
   default_prompt: "Use $retrieval-intelligence to make this corpus answer the question with inspectable citations, authority-aware retrieval, and measured coverage."

@@ -1,6 +1,6 @@
 ---
 name: lex-foster-language-companion
-description: "🌍 Language tutoring and translation."
+description: "🌍 Translation, tutoring, and social nuance."
 ---
 
 # Make the language usable

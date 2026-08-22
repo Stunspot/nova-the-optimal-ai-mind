@@ -1,6 +1,6 @@
 ---
 name: promptcraft
-description: "?? Prompt design and refinement."
+description: "🧠 Use this when writing or improving prompts."
 ---
 
 # Promptcraft

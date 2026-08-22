@@ -1,6 +1,6 @@
 ---
 name: ludis-continuum
-description: "Create and operate choice-driven tabletop RPGs and fiction: play scenes, characters, worlds, campaign ledgers, GM/player Tonight Packs, maps, tokens, handouts, and offline Alchemy or Foundry VTT import bundles."
+description: "🎲 Tabletop gaming, fiction, and campaign state."
 ---
 
 # Ludis Continuum

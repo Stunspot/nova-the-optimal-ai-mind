@@ -42,12 +42,12 @@ PACKAGED_FILES = (
 )
 FIXED_TIME = (2026, 8, 13, 0, 0, 0)
 CLAUDE_DESCRIPTIONS = {
-    "answerlayer": "🔄 Answer maintenance as evidence changes.",
-    "current-intelligence-observatory": "🛰️ Current intelligence and change tracking.",
-    "ludis-continuum": "🎲 Choice-shaped games and fiction continuity.",
-    "signal-loom": "📊 Evidence-to-visual story design.",
-    "agentic-eros": "🔥 Adult erotic-relational intelligence.",
-    "software-verification": "☠️ Adversarial software release verification.",
+    "answerlayer": "🔄 Guidance updates grounded in new facts.",
+    "current-intelligence-observatory": "🛰️ Public-source tracking of live events.",
+    "ludis-continuum": "🎲 Tabletop gaming, fiction, and campaign state.",
+    "signal-loom": "📊 Build infographics from supplied research and data.",
+    "agentic-eros": "🔥 Attraction, intimacy, and adult roleplay.",
+    "software-verification": "☠️ Frozen releases tested for fatal defects.",
 }
 
 def sha256(path: Path) -> str:

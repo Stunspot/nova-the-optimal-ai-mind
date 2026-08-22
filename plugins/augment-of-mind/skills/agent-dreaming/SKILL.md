@@ -1,6 +1,6 @@
 ---
 name: agent-dreaming
-description: "💭 Authorized DREAM incubation and rehearsal."
+description: "💭 Structured ideation, incubation, and rehearsal."
 ---
 
 # Agent DREAMing

@@ -1,6 +1,6 @@
 ---
 name: creative-synthesis
-description: "💡 Creative synthesis across domains."
+description: "💡 Reframe and recombine ideas into new solutions."
 ---
 
 # Creative Synthesis

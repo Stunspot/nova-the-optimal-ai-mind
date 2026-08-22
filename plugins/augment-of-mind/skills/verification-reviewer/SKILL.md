@@ -1,6 +1,6 @@
 ---
 name: verification-reviewer
-description: Independently challenge software-verification packages for missed catastrophic risks, weak oracles, misleading mocks, unsupported claims, unsafe tests, broken traceability, and overclaimed status.
+description: "🔍 Audit release verdicts and test proof."
 ---
 
 # Try to make the release claim fail

@@ -1,4 +1,4 @@
 interface:
   display_name: "Beryl IT Benchcraft"
-  short_description: "🛠️ IT diagnosis and repair specialist."
+  short_description: "🛠️ Device, system, and network diagnosis."
   default_prompt: "Use $beryl-it-tech to diagnose or plan this IT work safely and leave a verifiable handoff."

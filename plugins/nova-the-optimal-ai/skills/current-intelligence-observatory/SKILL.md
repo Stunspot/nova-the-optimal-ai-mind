@@ -1,6 +1,6 @@
 ---
 name: current-intelligence-observatory
-description: Investigate developing situations, preserve source and claim provenance, build watch baselines and deltas, challenge rival explanations, and project one intelligence case into ledgers, graphs, timelines, maps, dossiers, or decision briefs. Use for current intelligence, OSINT-style public-source research, media monitoring, narrative analysis, evidence dossiers, or resumable watch briefs.
+description: "🛰️ Public-source tracking of live events."
 ---
 
 # Current Intelligence Observatory

@@ -1,6 +1,6 @@
 ---
 name: software-verification
-description: "Explicit release-grade adversarial verdict for a frozen software or release candidate; not routine build verification or repair."
+description: "☠️ Frozen releases tested for fatal defects."
 ---
 
 # ☠️ WARNING — ENTER THE CHAPEL PERILOUS

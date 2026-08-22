@@ -23,9 +23,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 15,
-        "tree_sha256": "821f3acdc48a8af0be62837ed301235724458901378011052faa048a1a277210"
+        "tree_sha256": "073bb2cc7c9a5eb4d4f75f93d1adfc02cd21842cce0f5b08531e6118f2d6b95a"
       },
-      "custody": "integrated Nova 2.1.0 component checkpoint with Worldline and Faultline routing; canonical persona verbatim"
+      "custody": "integrated Nova 2.1.0 component checkpoint with Worldline and Faultline routing; canonical persona verbatim",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "augment-of-mind",
@@ -39,9 +49,58 @@
       "imported_path": "plugins/augment-of-mind/skills",
       "imported_tree": {
         "file_count": 309,
-        "tree_sha256": "269baec64d1c5d922f6a00da12a04e0216466400d43b592956b54a4ccd21c066"
+        "tree_sha256": "db3e872ac0576c65f38600ccce9ab137cc286ad95a0a68b905b6cd7a6309e792"
       },
-      "custody": "integrated MIND 2.2.2 checkpoint after complete bundled-skill currency reconciliation, including maintained TestForge 1.1.7 trees"
+      "custody": "integrated MIND 2.2.2 checkpoint after complete bundled-skill currency reconciliation, including maintained TestForge 1.1.7 trees",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "aesthetic-intelligence/SKILL.md",
+          "aesthetic-intelligence/agents/openai.yaml",
+          "agent-dreaming/SKILL.md",
+          "agent-dreaming/agents/openai.yaml",
+          "agent-striving/SKILL.md",
+          "agent-striving/agents/openai.yaml",
+          "agentic-eros/SKILL.md",
+          "agentic-eros/agents/openai.yaml",
+          "augment-of-mind/SKILL.md",
+          "augment-of-mind/agents/openai.yaml",
+          "augment-of-mind/assets/integrated-capability-fingerprint.json",
+          "capability-conductor/SKILL.md",
+          "capability-conductor/agents/openai.yaml",
+          "capability-promotion/SKILL.md",
+          "capability-promotion/agents/openai.yaml",
+          "cognitive-continuity/SKILL.md",
+          "cognitive-continuity/agents/openai.yaml",
+          "creative-synthesis/SKILL.md",
+          "creative-synthesis/agents/openai.yaml",
+          "decision-intelligence/SKILL.md",
+          "decision-intelligence/agents/openai.yaml",
+          "deliberative-intelligence/SKILL.md",
+          "deliberative-intelligence/agents/openai.yaml",
+          "epistemic-regulation/SKILL.md",
+          "epistemic-regulation/agents/openai.yaml",
+          "executive-function/SKILL.md",
+          "executive-function/agents/openai.yaml",
+          "instrumental-agency/SKILL.md",
+          "instrumental-agency/agents/openai.yaml",
+          "kairos/SKILL.md",
+          "kairos/agents/openai.yaml",
+          "measurement-intelligence/SKILL.md",
+          "measurement-intelligence/agents/openai.yaml",
+          "prosocial-influence/SKILL.md",
+          "prosocial-influence/agents/openai.yaml",
+          "sensemaking/SKILL.md",
+          "sensemaking/agents/openai.yaml",
+          "software-verification/SKILL.md",
+          "software-verification/agents/openai.yaml",
+          "verification-reviewer/SKILL.md",
+          "verification-reviewer/agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "software-verification",
@@ -55,9 +114,19 @@
       "imported_path": "plugins/augment-of-mind/skills/software-verification",
       "imported_tree": {
         "file_count": 96,
-        "tree_sha256": "ab9fd37dd2a6a18eb0bd98794408a95f986c84cd1842c0ff503b6dd00545f064"
+        "tree_sha256": "95be575369a906c80d8ac927efde472d44a58dbf212f8693d2361cfa5e424634"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "verification-reviewer",
@@ -71,9 +140,19 @@
       "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
       "imported_tree": {
         "file_count": 9,
-        "tree_sha256": "6fedf817b214d3e41566d784ce2b4d4a23b34659b87fcb1768105affd72f2f0b"
+        "tree_sha256": "4c16f4f4741bfddc2a27963efef5c4391e5945e7b1cceb5035135a67f1514e5e"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "agentic-coding",
@@ -87,7 +166,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/agentic-coding",
       "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "44fb29e1f57fd83226e9c09db1de9ff3f081373cad80c59c55fe4e0fba3be1d0"
+        "tree_sha256": "473cd3d55b496dc00ae190c6269ea923b11648992c5303313bba2c1ed5ac1bfa"
       },
       "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
       "selection_includes": [
@@ -97,7 +176,17 @@
       ],
       "selected_tree": {
         "file_count": 3,
-        "tree_sha256": "44fb29e1f57fd83226e9c09db1de9ff3f081373cad80c59c55fe4e0fba3be1d0"
+        "tree_sha256": "473cd3d55b496dc00ae190c6269ea923b11648992c5303313bba2c1ed5ac1bfa"
+      },
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
       }
     },
     {
@@ -112,9 +201,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
-        "tree_sha256": "ce1a5dd15f33003b4de2adea2b3ce7c78b87ba79b7c871cfd3cb7a6d5c27eca0"
+        "tree_sha256": "fcbc4b173d6a836ef8c14d7211e4e09a389ceee9a04c8c494de91f61fcfdd832"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "ai-cognition-cost-optimizer",
@@ -128,9 +227,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer",
       "imported_tree": {
         "file_count": 45,
-        "tree_sha256": "319158e0dd671e62d433a52483c638ce4761f4f6b1938f0e148f22655bd316c1"
+        "tree_sha256": "e169bfa7ba0cd6fdf60580e2693f148f2a5717cc55074124d28d3eb39d352d98"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "corkboard",
@@ -144,7 +253,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
       "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "f01a339036c4f4989bfd2dfa8fa029f308f65b48bbb9782619fe29c3726b57a8"
+        "tree_sha256": "337013bdf0866fdd31e9eaabbb2470f1932e60b4d2f1ea2870baeddc4c31e3a0"
       },
       "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
       "selection_includes": [
@@ -154,7 +263,17 @@
       ],
       "selected_tree": {
         "file_count": 3,
-        "tree_sha256": "f01a339036c4f4989bfd2dfa8fa029f308f65b48bbb9782619fe29c3726b57a8"
+        "tree_sha256": "337013bdf0866fdd31e9eaabbb2470f1932e60b4d2f1ea2870baeddc4c31e3a0"
+      },
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
       }
     },
     {
@@ -169,9 +288,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "a6312c3662e23e3bd411117710fcaa5c1f6b96ade9dd1f659399076556255c9f"
+        "tree_sha256": "7b4e2fb9c3d4c7f18b59b1691b5f0e6448419d86a22620ce25da578e6035b2f4"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "dunbar",
@@ -185,7 +314,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
       "imported_tree": {
         "file_count": 12,
-        "tree_sha256": "1ef2d3b7ae09884c1d3f1b7a293645072749b6b596319153779c264a1d5a81ed"
+        "tree_sha256": "8e1b2c24558c4d627c017cc5cc91c86e5c757a31c3ad34dbd73b6e43553a7fc6"
       },
       "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
       "selection_includes": [
@@ -204,7 +333,17 @@
       ],
       "selected_tree": {
         "file_count": 12,
-        "tree_sha256": "1ef2d3b7ae09884c1d3f1b7a293645072749b6b596319153779c264a1d5a81ed"
+        "tree_sha256": "8e1b2c24558c4d627c017cc5cc91c86e5c757a31c3ad34dbd73b6e43553a7fc6"
+      },
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
       }
     },
     {
@@ -219,9 +358,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
         "file_count": 73,
-        "tree_sha256": "56745d2d772b6ebc19ddd0dbb5d3dd81aa8fa1b8d8330fea772655a83d4823c9"
+        "tree_sha256": "e537c1b2f0dc80741d27dd03ca4010b7d57c2ded26d677ec3389856eac711af0"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "retrieval-intelligence",
@@ -235,9 +384,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
       "imported_tree": {
         "file_count": 9,
-        "tree_sha256": "360891df188b4aee9a7baa4e5a4c869ab09484a7bd8f8a54bc49e18fd2ce6021"
+        "tree_sha256": "593ea5371145ad3560c67eedaa2a2bcafd958c50e016f04cff29ba7d960cf66f"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "retrieval-reviewer",
@@ -251,9 +410,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
       "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "4e547175230129566f23d5c5c94968161022407ad43a7a66f22a9c68f212f041"
+        "tree_sha256": "18201560b2711962765080c6b57502969a2dda8897c82164c1af380767fb9d27"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "rupert-giles-knowledge-steward",
@@ -267,7 +436,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
       "imported_tree": {
         "file_count": 4,
-        "tree_sha256": "c605f2c61f4e1677af26df1b4d870d7b18076fa6b62acc4e7d04e5094c15d656"
+        "tree_sha256": "29bdbd77e34eaaec1c8e6031d39e223a077fceb2d4b5d49404f56c4f9d5977b3"
       },
       "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
       "selection_includes": [
@@ -278,7 +447,17 @@
       ],
       "selected_tree": {
         "file_count": 4,
-        "tree_sha256": "c605f2c61f4e1677af26df1b4d870d7b18076fa6b62acc4e7d04e5094c15d656"
+        "tree_sha256": "29bdbd77e34eaaec1c8e6031d39e223a077fceb2d4b5d49404f56c4f9d5977b3"
+      },
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
       }
     },
     {
@@ -293,9 +472,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
         "file_count": 41,
-        "tree_sha256": "df74bb7e013f798a856dba17af0ff45b0f8e21d2c73499574f65aaf32698d79a"
+        "tree_sha256": "1972ea3881ccdb4b1310b4f6f4d8051c8febbe0d7fe34f9139def01f98076520"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "signal-loom",
@@ -309,9 +498,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/signal-loom",
       "imported_tree": {
         "file_count": 213,
-        "tree_sha256": "e87bf7b3b2ddd75093e066b18a34d3470325932e83a8ca064b23a2bc1de05372"
+        "tree_sha256": "26108a064b844e0a888507f86a61529ba9aec03ed4e90a0408b80f395186ee21"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "owen-burnett-officecraft",
@@ -325,9 +524,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
       "imported_tree": {
         "file_count": 48,
-        "tree_sha256": "4aa77f2743c8d53c401f4247b3e84de4173c8472e9d18e9ce75ac505faf2325d"
+        "tree_sha256": "3e8fee7e3a10452308a5fa1df27fa629bac543c8943f5da7176fae47bf538a57"
       },
-      "custody": "release artifact"
+      "custody": "release artifact",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "officecraft-reviewer",
@@ -341,9 +550,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
       "imported_tree": {
         "file_count": 9,
-        "tree_sha256": "484244ec63bbb7a8c85b265a54690e78695fb1cd24aabb541727941d1dee13af"
+        "tree_sha256": "45f22ad24bd791d7326ba9e942fef25062136e5f61b371311791a7a32c277ed0"
       },
-      "custody": "release artifact"
+      "custody": "release artifact",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "beryl-it-tech",
@@ -357,9 +576,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
       "imported_tree": {
         "file_count": 49,
-        "tree_sha256": "d80f13b50b45a0131afcde24265d70ae43eba298d7ec4649e7156bb1eade6090"
+        "tree_sha256": "c53eabd96203c749408e7e6ccf2927bc546d263256ac7e152003b1d4f6dfe5d6"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "it-work-reviewer",
@@ -373,9 +602,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
       "imported_tree": {
         "file_count": 49,
-        "tree_sha256": "3725ef33a7652f81e1b4bcd99c28927c102ea339661c55bfdcf7fc7187c94fc3"
+        "tree_sha256": "22bbc548d41533f5337a72cfb237dcfbb13ed2436a890daaf0d80cbafc96fac8"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "ludis-continuum",
@@ -389,9 +628,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/ludis-continuum",
       "imported_tree": {
         "file_count": 82,
-        "tree_sha256": "e3feef8346c390eb330ee82edb3df8fa219b4b66fb580f65bfa249c57d8c5643"
+        "tree_sha256": "9be91cfb50ebca903b9460937656f3fea8bbcc41337172d793d3247ff7619790"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "lex-foster-language-companion",
@@ -405,9 +654,19 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion",
       "imported_tree": {
         "file_count": 26,
-        "tree_sha256": "980c81be1d78069a51e6782e47b7c82e753a94af14adb41ca00d0d0dc7ce42a4"
+        "tree_sha256": "523565da1b7b180a3079982d86b0f659ae7b72c3d34ca6b2691f9b4911f06993"
       },
-      "custody": "exact current canonical Git tree"
+      "custody": "exact current canonical Git tree",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md",
+          "agents/openai.yaml"
+        ]
+      }
     },
     {
       "component": "gridmason",
@@ -437,9 +696,18 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "imported_tree": {
         "file_count": 2,
-        "tree_sha256": "826203ae3166e604c7fc9d2414c2c730e8a71a30e8a9fe033db91ae25e68ea02"
+        "tree_sha256": "5a5ef1cac08dfe93a3d0e3f4d1b04ff83cde2f1eee84a6a3e4ff9838fa4ebff1"
       },
-      "custody": "new skill wrapper plus runtime-copied canonical doctrine"
+      "custody": "new skill wrapper plus runtime-copied canonical doctrine",
+      "metadata_overlay": {
+        "schema": "cd-tool-injection-metadata-overlay/v1",
+        "approved_at": "2026-08-21",
+        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
+        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
+        "files": [
+          "SKILL.md"
+        ]
+      }
     }
   ]
 }

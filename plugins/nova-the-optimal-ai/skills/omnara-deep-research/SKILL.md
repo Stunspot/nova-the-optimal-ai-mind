@@ -1,6 +1,6 @@
 ---
 name: omnara-deep-research
-description: "🔎 Bounded source research and synthesis."
+description: "🔎 Broad source inquiry and long-form reports."
 ---
 
 # Investigate until the evidence has shape

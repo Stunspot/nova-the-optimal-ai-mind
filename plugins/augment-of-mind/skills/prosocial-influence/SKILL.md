@@ -1,6 +1,6 @@
 ---
 name: prosocial-influence
-description: "🤲 Ethical adoption strategy."
+description: "🤲 Ethical persuasion that preserves freedom to refuse."
 ---
 
 # Prosocial Influence

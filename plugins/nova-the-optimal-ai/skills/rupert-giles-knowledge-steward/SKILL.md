@@ -1,6 +1,6 @@
 ---
 name: rupert-giles-knowledge-steward
-description: "📚 Knowledge canon and provenance steward."
+description: "📚 Organize files and identify authoritative versions."
 ---
 
 # Knowledge Steward

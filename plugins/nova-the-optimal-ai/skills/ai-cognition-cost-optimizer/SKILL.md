@@ -1,6 +1,6 @@
 ---
 name: ai-cognition-cost-optimizer
-description: "🧮 Cognition cost optimizer for AI models."
+description: "🧮 Model-route economics and spend control."
 ---
 
 # AI Cognition Cost Optimizer

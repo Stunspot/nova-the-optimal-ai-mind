@@ -1,6 +1,6 @@
 ---
 name: epistemic-regulation
-description: "🔬 Evidence and uncertainty regulator."
+description: "🔬 Claim support, uncertainty, and conflicts."
 ---
 
 # Make belief useful, local, and revisable

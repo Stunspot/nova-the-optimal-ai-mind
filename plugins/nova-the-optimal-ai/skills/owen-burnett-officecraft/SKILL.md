@@ -1,6 +1,6 @@
 ---
 name: owen-burnett-officecraft
-description: "📎 Office deliverable production steward."
+description: "📎 Editable documents, slides, and sheets."
 ---
 
 # Owen Burnett Officecraft

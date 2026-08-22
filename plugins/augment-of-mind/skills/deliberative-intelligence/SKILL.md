@@ -1,6 +1,6 @@
 ---
 name: deliberative-intelligence
-description: "🤝 Deliberation for fair group decisions."
+description: "🤝 Group choices across conflict and power."
 ---
 
 # Deliberative Intelligence

@@ -1,6 +1,6 @@
 interface:
   display_name: "Cognition Economist"
-  short_description: "🧮 Cognition cost optimizer for AI models."
+  short_description: "🧮 Model-route economics and spend control."
   default_prompt: "$ai-cognition-cost-optimizer Measure the complete cost of this AI workflow, preserve its capability and risk floors, and recommend the least-cost eligible route using dated evidence."
 policy:
   allow_implicit_invocation: true

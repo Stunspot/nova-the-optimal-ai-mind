@@ -1,4 +1,4 @@
 interface:
   display_name: "Signal Loom"
-  short_description: "📊 Makes source-bound infographics."
+  short_description: "📊 Build infographics from supplied research and data."
   default_prompt: "Use $signal-loom to turn my supplied material into a source-bound infographic and requested platform derivatives. Preserve a resumable Loomfile, explain consequential choices, run available checks, and leave publication under my control."

@@ -1,6 +1,6 @@
 ---
 name: privacy-redline
-description: 🛡️ Personal privacy posture steward.
+description: "🛡️ Doxxing, exposure, and account safety."
 ---
 
 # Privacy Redline

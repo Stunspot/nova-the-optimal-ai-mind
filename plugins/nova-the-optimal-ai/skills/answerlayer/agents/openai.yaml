@@ -1,4 +1,4 @@
 interface:
   display_name: "AnswerLayer"
-  short_description: "Patch answers only when reality earns the change"
+  short_description: "🔄 Guidance updates grounded in new facts."
   default_prompt: "Use AnswerLayer to compare this dated baseline with the supplied evidence, reject noise, preserve unresolved conflicts, and propose only warranted answer patches."

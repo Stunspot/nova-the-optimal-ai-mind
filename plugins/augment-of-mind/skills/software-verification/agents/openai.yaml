@@ -1,4 +1,4 @@
 interface:
   display_name: "TestForge Verification Operator"
-  short_description: "Judge a frozen release candidate"
+  short_description: "☠️ Frozen releases tested for fatal defects."
   default_prompt: "Use $software-verification to attack this frozen candidate with only decision-changing checks, then issue one bounded release verdict."

@@ -1,6 +1,6 @@
 ---
 name: executive-function
-description: "🎯 Mission governance custody."
+description: "🎯 Goal scope, acceptance, and closure."
 ---
 
 # Executive Function

@@ -1,6 +1,6 @@
 ---
 name: aesthetic-intelligence
-description: "🎨 Aesthetic fit and conceptual bearings."
+description: "🎨 Taste, style, and compositional fit."
 ---
 
 # Aesthetic Intelligence

@@ -1,6 +1,6 @@
 ---
 name: it-work-reviewer
-description: "🔍 IT repair evidence reviewer."
+description: "🔍 Evidence audit for device repair claims."
 ---
 
 # Challenge what the bench record actually earns

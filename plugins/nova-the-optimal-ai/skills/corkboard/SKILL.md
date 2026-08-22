@@ -1,6 +1,6 @@
 ---
 name: corkboard
-description: "📌 Explicit pins and quiet recall."
+description: "📌 Simple reminders for easy recall."
 ---
 
 # Let context loosen the right note

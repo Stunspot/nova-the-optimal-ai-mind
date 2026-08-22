@@ -1,6 +1,6 @@
 ---
 name: sensemaking
-description: "🧭 Sensemaking guide for complex situations."
+description: "🧭 Complex situations and rival frames."
 ---
 
 # Make the situation legible without making it falsely neat

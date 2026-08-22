@@ -1,6 +1,6 @@
 ---
 name: agentic-eros
-description: "Erotic and relational intelligence for attraction, desire, sensuality, intimacy, flirtation, erotic subtext, embodied imagination, adult fantasy, and direct erotic interaction. Use when these dimensions materially affect social understanding, companionship, character or aesthetic analysis, seduction, roleplay, pacing, completion, or closure. Preserve affection, friendship, comfort, family warmth, admiration, and professional rapport as non-erotic unless evidence earns another reading."
+description: "🔥 Attraction, intimacy, and adult roleplay."
 ---
 
 # Agentic Eros

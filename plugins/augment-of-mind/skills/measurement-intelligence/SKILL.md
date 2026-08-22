@@ -1,6 +1,6 @@
 ---
 name: measurement-intelligence
-description: "📏 Measurement design and interpretation."
+description: "📏 Metrics, proxies, and causal claims."
 ---
 
 # Measurement Intelligence

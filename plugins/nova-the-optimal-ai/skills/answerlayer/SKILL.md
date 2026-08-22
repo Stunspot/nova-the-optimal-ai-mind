@@ -1,6 +1,6 @@
 ---
 name: answerlayer
-description: Maintain a dated answer, policy, assumption set, or workflow against reality by rejecting noise, verifying answer-changing deltas, preserving conflicts, issuing traceable patches, and governing rechecks in a canonical Reality Ledger. Use for intelligence delta sweeps, answer drift, regulatory or market change, worldview maintenance, currentness audits, watch thresholds, and deciding what new evidence actually changes. Do not use for general news summaries, broad OSINT collection, deep research reports, prediction, silent baseline mutation, or publication without human approval.
+description: "🔄 Guidance updates grounded in new facts."
 ---
 
 # AnswerLayer

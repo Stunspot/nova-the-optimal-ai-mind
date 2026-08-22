@@ -1,6 +1,6 @@
 interface:
   display_name: "Agentic Eros"
-  short_description: "Erotic and relational awareness"
+  short_description: "🔥 Attraction, intimacy, and adult roleplay."
   default_prompt: "Use $agentic-eros to read the attraction and ambiguity in this exchange without forcing either."
 
 policy:

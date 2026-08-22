@@ -1,6 +1,6 @@
 ---
 name: dunbar
-description: "🫂 User-governed people recall and context."
+description: "🫂 Recall people, relationships, and history."
 ---
 
 # Dunbar

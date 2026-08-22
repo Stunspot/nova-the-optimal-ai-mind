@@ -1,6 +1,6 @@
 interface:
   display_name: "Ludis Continuum"
-  short_description: "RPG play, continuity, and offline VTT exports"
+  short_description: "🎲 Tabletop gaming, fiction, and campaign state."
   default_prompt: "Use $ludis-continuum to prepare my next session and export separate GM and player-ready campaign assets."
 policy:
   allow_implicit_invocation: true
