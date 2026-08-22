@@ -227,7 +227,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer",
       "imported_tree": {
         "file_count": 45,
-        "tree_sha256": "e169bfa7ba0cd6fdf60580e2693f148f2a5717cc55074124d28d3eb39d352d98"
+        "tree_sha256": "7b9d69ed3554d224e46919c665b2e4d06efffd3690580c9214e0f9783b1d32d5"
       },
       "custody": "exact current canonical Git tree",
       "metadata_overlay": {
@@ -288,7 +288,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "7b4e2fb9c3d4c7f18b59b1691b5f0e6448419d86a22620ce25da578e6035b2f4"
+        "tree_sha256": "214d5731c9538c0868c63bf23b6884c8f809707f742611172936d130ca6ea2b2"
       },
       "custody": "exact current canonical Git tree",
       "metadata_overlay": {
@@ -472,7 +472,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
         "file_count": 41,
-        "tree_sha256": "1972ea3881ccdb4b1310b4f6f4d8051c8febbe0d7fe34f9139def01f98076520"
+        "tree_sha256": "3fcff5cbf2b71e1afdd8d30ed1ef05ab4ca9c3aeb9565df63453437fed98c3be"
       },
       "custody": "exact current canonical Git tree",
       "metadata_overlay": {
