@@ -59,6 +59,14 @@ class VerifierAdversarialTests(unittest.TestCase):
         target.write_text(target.read_text(encoding="utf-8") + "\n# CODEX_HOME fallback\n", encoding="utf-8", newline="\n")
         self.assert_finding(verify(package), "Stateful service retains CODEX_HOME fallback")
 
+    def test_premature_candidate_seal_is_rejected(self) -> None:
+        package = self.clone("premature-seal")
+        target = package / "codex" / "BUILD-MANIFEST.json"
+        value = json.loads(target.read_text(encoding="utf-8"))
+        value["sealed_candidate"] = True
+        target.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8", newline="\n")
+        self.assert_finding(verify(package), "prematurely seals the candidate")
+
     def test_false_redistribution_ready_state_is_rejected(self) -> None:
         package = self.clone("license-overclaim")
         target = package / "RELEASE-MANIFEST.json"

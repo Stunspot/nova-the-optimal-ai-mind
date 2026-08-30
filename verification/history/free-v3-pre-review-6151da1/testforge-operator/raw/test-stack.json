@@ -11,9 +11,9 @@
       "evidence": [
         "tests\\test_product_contract.py",
         "tests\\test_release_pipeline.py",
+        "tests\\test_site_checker.py",
         "tests\\test_state_and_operations.py",
-        "tests\\test_verifier_adversarial.py",
-        "plugins\\nova-the-optimal-ai\\skills\\software-verification\\examples\\python-regression\\expected\\test_date_filter.py"
+        "tests\\test_verifier_adversarial.py"
       ]
     }
   ],

@@ -1,0 +1,49 @@
+{
+  "schema": "nova-free-release-artifacts/v3",
+  "observed_at": "2026-08-30T19:41:11.5065644Z",
+  "source_commit": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+  "tracked_source_clean_at_build": true,
+  "sealed_candidate": true,
+  "redistribution_state": "blocked_pending_component_grants",
+  "output_root": "E:\\Github\\nova-the-optimal-ai-mind\\release",
+  "artifacts": [
+    {
+      "file": "release/nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "bytes": 27975502,
+      "sha256": "a85b6f136e54597b26b629477ddd532ade426cab581b377230f409892dafed21"
+    },
+    {
+      "file": "release/nova-the-optimal-ai-free-3.0.0-claude.zip.sha256",
+      "bytes": 108,
+      "sha256": "5019d63a54fae3a82fde799498d26175ba167960429511d1fd471e50ab1db6ee"
+    },
+    {
+      "file": "release/nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "bytes": 9421080,
+      "sha256": "6af2478d68adce1122370cb6755452407a7a875eade70081589ffb22d4325754"
+    },
+    {
+      "file": "release/nova-the-optimal-ai-free-3.0.0-codex.zip.sha256",
+      "bytes": 107,
+      "sha256": "27e2a99f19393c81e426e222ff204baa8779e4d0a3750420fd3b0524eb04fa4b"
+    },
+    {
+      "file": "release/nova-the-optimal-ai-free-3.0.0.zip",
+      "bytes": 40025780,
+      "sha256": "442fd48a21ea52feaccd3c8bd51ee863b5f088ced98a13fdde1ecbda129dcaf5"
+    },
+    {
+      "file": "release/nova-the-optimal-ai-free-3.0.0.zip.sha256",
+      "bytes": 101,
+      "sha256": "0f9c0fdebc45b0382fd4e63273c5742a4c9ca0d80280b0ab53c6cf183441c078"
+    }
+  ],
+  "package_topology": {
+    "plugin_count": 1,
+    "visible_skill_roots": 25,
+    "faculty_core_count": 16,
+    "standalone_claude_skill_zips": 25
+  },
+  "verdict": "BUILT_LOCAL_CANDIDATE",
+  "boundary": "Hashes describe local artifacts only. No push, tag, GitHub release, directory submission, hosted workflow, or public redistribution occurred."
+}

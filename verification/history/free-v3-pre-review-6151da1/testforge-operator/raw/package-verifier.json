@@ -1,0 +1,20 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "tools/verify_package.py",
+    "dist/nova-the-optimal-ai-free-3.0.0"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T19:40:43.034698+00:00",
+  "finished_at": "2026-08-30T19:40:49.319591+00:00",
+  "duration_seconds": 6.28489,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\n  \"schema\": \"nova-free-package-verification/v3\",\n  \"package\": \"E:\\\\Github\\\\nova-the-optimal-ai-mind\\\\dist\\\\nova-the-optimal-ai-free-3.0.0\",\n  \"verdict\": \"PASS\",\n  \"findings\": [],\n  \"observed\": {\n    \"visible_skill_roots\": 25,\n    \"faculty_cores\": 16,\n    \"customer_references_checked\": 131,\n    \"codex_plugin_tree\": {\n      \"file_count\": 757,\n      \"tree_sha256\": \"610034e56244eb97ef37feee4563e03c4ee83ad0b017448e9a8ecc44760c04b4\"\n    },\n    \"claude_plugin_tree\": {\n      \"file_count\": 757,\n      \"tree_sha256\": \"3af6ff0bebc9508f14a1a6d78489a334abbe69ad5d283a878d95d2b7561a6098\"\n    },\n    \"redistribution_state\": \"blocked_pending_component_grants\"\n  },\n  \"evidence_boundary\": \"Static package verification only. Fresh-host installation, discovery, enabled state, invocation, behavior, publication, and outcomes are not established.\"\n}\n",
+  "stderr": "",
+  "status": "passed"
+}

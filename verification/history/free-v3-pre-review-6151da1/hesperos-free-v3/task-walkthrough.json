@@ -1,0 +1,84 @@
+{
+  "schema": "nova-free-hesperos-task-walkthrough/v3",
+  "observed_at": "2026-08-30T19:39:14.0708373Z",
+  "source_commit": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+  "package": "dist/nova-the-optimal-ai-free-3.0.0",
+  "customer_zip_sha256": "442fd48a21ea52feaccd3c8bd51ee863b5f088ced98a13fdde1ecbda129dcaf5",
+  "verdict": "PASS_WITH_CONDITIONS",
+  "steps": [
+    {
+      "id": "entry",
+      "task": "Open the extracted package and understand the edition",
+      "state": "PASS",
+      "evidence": "README.md and START-HERE.md identify Free 3.0.0, one plugin, 25 roots, 16 nested cores, optional state, and the local-candidate boundary."
+    },
+    {
+      "id": "codex-install",
+      "task": "Reach executable Codex installation instructions",
+      "state": "PASS_STATIC",
+      "evidence": "README -> START-HERE -> docs/INSTALL-CODEX.md; marketplace root codex exists; exact marketplace add, plugin add, and plugin list commands are present."
+    },
+    {
+      "id": "codex-cli",
+      "task": "Confirm documented Codex command surface",
+      "state": "PASS_LOCAL_CLI",
+      "evidence": "codex-cli 0.144.5 exposes plugin marketplace add, plugin add --marketplace, and plugin list --json. No host catalog was mutated."
+    },
+    {
+      "id": "invoke",
+      "task": "Start a fresh task and invoke $nova",
+      "state": "NOT_TESTED",
+      "evidence": "The package supplies a minimal invocation prompt, but no host installation or model invocation was authorized or executed."
+    },
+    {
+      "id": "claude",
+      "task": "Choose a Claude-compatible route",
+      "state": "PASS_STATIC",
+      "evidence": "Complete bundle, 25 standalone folders, and 25 deterministic standalone ZIPs are present and explained."
+    },
+    {
+      "id": "state",
+      "task": "Keep state optional or plan explicit initialization",
+      "state": "PASS_STATIC_AND_TESTED_SERVICE",
+      "evidence": "Ordinary use requires no estate; read-only status and plan-before-init prompts are executable; state/operations regression tests passed."
+    },
+    {
+      "id": "upgrade",
+      "task": "Upgrade from 2.x and retain rollback",
+      "state": "PASS",
+      "evidence": "Same plugin ID and replacement semantics are explicit; old package/configuration/state preservation and rollback are described without claiming automatic migration."
+    },
+    {
+      "id": "recovery",
+      "task": "Find troubleshooting, security, support, and license boundaries",
+      "state": "PASS",
+      "evidence": "Styled site pages and maintained Markdown routes are self-contained; security has private-report routes; notices state six redistribution blockers."
+    },
+    {
+      "id": "artifact-boundary",
+      "task": "Follow only links shipped in the deployed docs artifact",
+      "state": "PASS",
+      "evidence": "docs/check_site.py rejects existing targets outside docs; focused regression passes; static site check passes 11 pages."
+    },
+    {
+      "id": "package-parity",
+      "task": "Receive the repaired documentation in the built package",
+      "state": "PASS",
+      "evidence": "24 source/package docs-tree files and 7 root customer documents are byte-identical; package oracle checked 131 customer references."
+    },
+    {
+      "id": "visual",
+      "task": "Read the site on desktop and mobile",
+      "state": "PASS_LOCAL_RENDER",
+      "evidence": "11 final desktop renders plus one true 390x844 CDP mobile render inspected; mobile scrollWidth equals 390."
+    }
+  ],
+  "conditions": [
+    "Fresh-host installation/discovery/restart/invocation not observed.",
+    "Keyboard-only and screen-reader behavior not exercised.",
+    "External links not checked against a published site.",
+    "Representative customer completion not observed.",
+    "Public redistribution remains blocked by component-license gates, independently of documentation quality."
+  ],
+  "evidence_boundary": "A source and extracted-package walkthrough, local CLI surface check, static semantics, link boundary, byte parity, and visual rendering. It is not a fresh-host or assistive-technology acceptance run."
+}

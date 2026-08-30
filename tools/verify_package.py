@@ -34,6 +34,7 @@ REQUIRED_PACKAGE_PATHS = {
     "design/source-lock.json", "design/source-map.json",
     "codex/plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
     "claude/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
+    "codex/BUILD-MANIFEST.json", "claude/BUILD-MANIFEST.json",
     "codex/plugins/nova-the-optimal-ai/notices/testforge/LICENSE.md",
     "claude/nova-the-optimal-ai/notices/testforge/LICENSE.md",
     "codex/plugins/nova-the-optimal-ai/notices/agent-swarm-orchestration/LICENSE.md",
@@ -176,6 +177,25 @@ def verify(package: Path) -> dict[str, object]:
 
     release_manifest = json.loads((package / "RELEASE-MANIFEST.json").read_text(encoding="utf-8"))
     source_lock = json.loads((package / "design" / "source-lock.json").read_text(encoding="utf-8"))
+    build_states: dict[str, dict[str, object]] = {}
+    for binding, manifest_path in (
+        ("codex", package / "codex" / "BUILD-MANIFEST.json"),
+        ("claude-compatible", package / "claude" / "BUILD-MANIFEST.json"),
+    ):
+        state = json.loads(manifest_path.read_text(encoding="utf-8"))
+        build_states[binding] = state
+        if "sealed_candidate" in state:
+            findings.append(f"{binding} build manifest prematurely seals the candidate")
+        if state.get("candidate_state") != "built_awaiting_independent_review":
+            findings.append(f"{binding} build manifest candidate state is invalid")
+        if state.get("independent_review_required") is not True:
+            findings.append(f"{binding} build manifest omits independent review requirement")
+        if state.get("binding") != binding:
+            findings.append(f"{binding} build manifest binding mismatch")
+        if state.get("source_base_commit") != release_manifest.get("source", {}).get("base_commit"):
+            findings.append(f"{binding} build manifest source checkpoint mismatch")
+        if state.get("redistribution_state") != "blocked_pending_component_grants":
+            findings.append(f"{binding} build manifest does not preserve the redistribution blocker")
     if release_manifest.get("topology", {}).get("visible_skill_roots") != 25:
         findings.append("release manifest root count mismatch")
     if not release_manifest.get("host_trees", {}).get("codex_claude_skill_bytes_identical"):
@@ -210,6 +230,7 @@ def verify(package: Path) -> dict[str, object]:
             "codex_plugin_tree": tree_digest(codex_plugin),
             "claude_plugin_tree": tree_digest(claude_plugin),
             "redistribution_state": release_manifest.get("redistribution_state"),
+            "candidate_states": {binding: state.get("candidate_state") for binding, state in build_states.items()},
         },
         "evidence_boundary": "Static package verification only. Fresh-host installation, discovery, enabled state, invocation, behavior, publication, and outcomes are not established.",
     }

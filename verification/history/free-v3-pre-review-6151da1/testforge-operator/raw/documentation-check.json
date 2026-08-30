@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "tools/check_documentation.py"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T19:40:49.444388+00:00",
+  "finished_at": "2026-08-30T19:40:49.566213+00:00",
+  "duration_seconds": 0.121823,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\n  \"schema\": \"nova-free-documentation-lint/v3\",\n  \"maintained_documents\": [\n    \"README.md\",\n    \"START-HERE.md\",\n    \"LICENSE.md\",\n    \"SECURITY.md\",\n    \"SUPPORT.md\",\n    \"THIRD-PARTY-NOTICES.md\",\n    \"RELEASE-NOTES.md\",\n    \"docs/CAPABILITY-GUIDE.md\",\n    \"docs/HOST-MATRIX.md\",\n    \"docs/INSTALL-CLAUDE.md\",\n    \"docs/INSTALL-CODEX.md\",\n    \"docs/MAINTAINER-GUIDE.md\",\n    \"docs/PRIVACY-AND-TRUST.md\",\n    \"docs/TROUBLESHOOTING.md\",\n    \"docs/UPGRADE.md\",\n    \"docs/VERIFICATION.md\"\n  ],\n  \"documents_checked\": 16,\n  \"local_references_checked\": 13,\n  \"findings\": [],\n  \"verdict\": \"PASS\",\n  \"evidence_boundary\": \"Markdown structure, selected semantic contracts, and source-tree local references only; not task usability, assistive-technology behavior, package extraction, or publication.\"\n}\n",
+  "stderr": "",
+  "status": "passed"
+}

@@ -70,7 +70,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
 
     tracked_status = git_value(repo, "status", "--porcelain", "--untracked-files=no") or ""
     if require_clean and tracked_status:
-        raise RuntimeError("Tracked source is not clean; refusing sealed build")
+        raise RuntimeError("Tracked source is not clean; refusing clean-checkpoint build")
 
     package_name = f"{PRODUCT_SLUG}-{version}"
     output_parent.mkdir(parents=True, exist_ok=True)
@@ -129,7 +129,8 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         "product_version": version,
         "source_base_commit": base_commit,
         "tracked_source_clean": not bool(tracked_status),
-        "sealed_candidate": bool(require_clean and not tracked_status),
+        "candidate_state": "built_awaiting_independent_review",
+        "independent_review_required": True,
         "redistribution_state": "blocked_pending_component_grants",
         "skill_roots": roots,
         "evidence_boundary": "Package bytes and deterministic structure only; not fresh-host discovery, invocation, behavior, publication, or outcomes.",
@@ -207,7 +208,8 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         "claude_zip_sha256": claude_zip_sha,
         "visible_skill_roots": len(roots),
         "tracked_source_clean": not bool(tracked_status),
-        "sealed_candidate": bool(require_clean and not tracked_status),
+        "candidate_state": "built_awaiting_independent_review",
+        "independent_review_required": True,
         "redistribution_state": "blocked_pending_component_grants",
     }
 

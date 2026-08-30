@@ -1,0 +1,135 @@
+{
+  "schema": "hesperos-documentation-accessibility-review/v1",
+  "review_id": "HESP-NOVA-FREE-3.0.0-INDEPENDENT",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "source_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+  "reviewed_at_utc": "2026-08-30T19:45:15Z",
+  "reviewer_role": "Independent Hesperos documentation accessibility reviewer",
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "decision": "The maintained source journey and rebuilt extracted customer package are documentation-ready within the explicitly static and local evidence scope. No material product-truth, procedure, path, licensing-candor, source/package-parity, or rendered-layout defect remains.",
+  "scope": {
+    "source_documents": [
+      "README.md",
+      "START-HERE.md",
+      "LICENSE.md",
+      "SECURITY.md",
+      "SUPPORT.md",
+      "THIRD-PARTY-NOTICES.md",
+      "RELEASE-NOTES.md",
+      "docs/*.md",
+      "docs/*.html",
+      "docs/style.css",
+      "docs/assets/nova-mind-readme-hero.png"
+    ],
+    "customer_package": "dist/nova-the-optimal-ai-free-3.0.0",
+    "site_pages": 11,
+    "render_directory": "verification/hesperos-free-v3/renders",
+    "exclusions": [
+      "Fresh-host installation, discovery, enabled state, invocation, and model behavior",
+      "Formal accessibility conformance assessment",
+      "Representative-user outcome testing",
+      "Public redistribution authority"
+    ]
+  },
+  "checks": [
+    {
+      "id": "source-custody",
+      "result": "PASS",
+      "evidence": "HEAD and RELEASE-MANIFEST.json identify checkpoint 6151da1862c93e2af1755a5b79aee239816c5d1f; the manifest records tracked_source_clean=true."
+    },
+    {
+      "id": "static-package-verification",
+      "result": "PASS",
+      "evidence": "Independent rerun observed 25 visible roots, 16 Faculty Cores, 131 customer references, no findings, and redistribution_state=blocked_pending_component_grants."
+    },
+    {
+      "id": "source-package-documentation-parity",
+      "result": "PASS",
+      "evidence": "SHA-256 comparison checked 31 maintained root/site files and found 0 missing files and 0 hash differences."
+    },
+    {
+      "id": "maintained-markdown",
+      "result": "PASS",
+      "evidence": "Independent source and extracted-package reruns checked 16 maintained documents and 13 local references with no findings."
+    },
+    {
+      "id": "site-structure-and-links",
+      "result": "PASS",
+      "evidence": "Source and extracted-package docs/check_site.py each passed 11 HTML pages."
+    },
+    {
+      "id": "deployed-artifact-boundary",
+      "result": "PASS",
+      "evidence": "docs/check_site.py rejects links escaping the deployed docs root; tests.test_site_checker passed the existing-parent-file regression."
+    },
+    {
+      "id": "customer-task-walkthrough",
+      "result": "PASS_STATIC",
+      "evidence": "The package exposes the Codex marketplace, plugin 3.0.0, $nova entrypoint, 25 Codex roots, complete Claude bundle, 25 Claude folders, 25 Claude ZIPs, Nova Operations, checksums, and styled upgrade, troubleshooting, security, and notices routes."
+    },
+    {
+      "id": "visual-and-responsive-inspection",
+      "result": "PASS_WITH_BOUNDARY",
+      "evidence": "All 11 desktop pages were visually inspected with no visible clipping, overlap, unreadable hierarchy, or inconsistent navigation. The final 390x844 mobile overview is legible and unclipped. Authoring-cycle CDP metrics reported innerWidth/clientWidth/scrollWidth/bodyScrollWidth=390/390/390/390."
+    },
+    {
+      "id": "accessibility-static-review",
+      "result": "PASS_WITH_BOUNDARY",
+      "evidence": "Pages use lang=en, one H1, labelled navigation, skip links, main landmarks, useful image alternatives, scoped table headers, visible focus, reduced-motion handling, responsive navigation, and non-color wording. Structural line contrast is at least 3.38:1."
+    },
+    {
+      "id": "evidence-and-license-candor",
+      "result": "PASS",
+      "evidence": "The journey separates presence, installation, discovery, invocation, behavior, publication, and outcomes, and identifies the six unresolved redistribution components without treating notices as permission."
+    },
+    {
+      "id": "authoring-and-project-ledger",
+      "result": "PASS_WITH_CONDITIONS",
+      "evidence": "documentation-project.json now records review-pass-with-conditions, all 27 maintained topics, package parity, authoring evidence, independent review, and the retained untested boundaries; authoring-report.json, task-walkthrough.json, visual-review.json, and codex-cli-surface.json are present."
+    }
+  ],
+  "material_findings": [],
+  "conditions": [
+    {
+      "id": "HESP-COND-001",
+      "category": "assistive-technology-and-users",
+      "affected_claim": "Formal accessibility conformance or representative-user usability",
+      "evidence_gap": "No screen-reader session, complete keyboard walkthrough, assistive-technology matrix, or representative-user study was retained.",
+      "consequence": "This review cannot support a formal conformance claim or claim that every intended user completed the journey.",
+      "smallest_next_step": "Before making such a claim, run keyboard-only and representative screen-reader walkthroughs for install, support, security, upgrade, and troubleshooting.",
+      "rerun": "Independent accessibility review of the new evidence."
+    },
+    {
+      "id": "HESP-COND-002",
+      "category": "responsive-coverage",
+      "affected_claim": "All-page narrow-width and zoom behavior",
+      "evidence_gap": "Every page has a desktop render, but retained narrow-width rendering and CDP overflow metrics cover the overview only; 200% and 400% zoom were not recorded.",
+      "consequence": "Evidence supports the observed overview viewport, not every page at every narrow width or zoom.",
+      "smallest_next_step": "Before claiming comprehensive responsive accessibility, exercise support/trust and install/troubleshooting at narrow widths and 200%/400% zoom.",
+      "rerun": "Visual and keyboard review of those layouts."
+    },
+    {
+      "id": "HESP-COND-003",
+      "category": "live-host-and-external-routes",
+      "affected_claim": "Live installation, discovery, invocation, and external route availability",
+      "evidence_gap": "Package paths and local Codex command syntax were inspected, but no fresh-host Codex or Claude installation was performed and provider-controlled routes were not qualification-tested.",
+      "consequence": "Static documentation readiness does not prove live host behavior or continuing external-route availability.",
+      "smallest_next_step": "Run a separately authorized fresh-host installation and one real Nova invocation; check support/security routes immediately before publication.",
+      "rerun": "Task walkthrough using the live host and observed external routes."
+    }
+  ],
+  "separate_release_gate": {
+    "status": "BLOCKED_PENDING_COMPONENT_GRANTS",
+    "relationship_to_verdict": "Separate from documentation quality",
+    "note": "Public redistribution remains blocked by component terms recorded in THIRD-PARTY-NOTICES.md and the package manifest. This does not reduce the documentation-quality verdict."
+  },
+  "rerun_triggers": [
+    "Any maintained customer-document change",
+    "Any site or CSS change",
+    "Any package-layout or installer-command change",
+    "Any component-license or redistribution-wording change",
+    "Any rebuilt package whose maintained documentation differs from checkpoint 6151da1862c93e2af1755a5b79aee239816c5d1f"
+  ],
+  "evidence_boundary": "Independent review of source and extracted-package documentation, static procedures, local command syntax, retained renders, and deterministic receipts. No fresh-host behavior, assistive-technology session, representative-user outcome, publication, or redistribution authority is established."
+}

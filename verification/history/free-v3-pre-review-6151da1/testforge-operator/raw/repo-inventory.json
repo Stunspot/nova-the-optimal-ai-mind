@@ -1,11 +1,11 @@
 {
   "format_version": "1.0",
   "root": "E:\\Github\\nova-the-optimal-ai-mind",
-  "file_count": 870,
+  "file_count": 892,
   "languages": [
     {
       "name": "Python",
-      "files": 104
+      "files": 105
     },
     {
       "name": "TypeScript",
@@ -50,10 +50,11 @@
     "plugins/nova-the-optimal-ai/skills/software-verification/examples/typescript-api-change/input/tests/cancelSubscription.test.ts",
     "tests/test_product_contract.py",
     "tests/test_release_pipeline.py",
+    "tests/test_site_checker.py",
     "tests/test_state_and_operations.py",
     "tests/test_verifier_adversarial.py"
   ],
-  "test_file_count": 23,
+  "test_file_count": 24,
   "config_files": [],
   "ci_files": [
     ".github/workflows/deploy-pages.yml",

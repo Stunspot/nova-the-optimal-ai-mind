@@ -6,14 +6,14 @@
   "observed": {
     "visible_skill_roots": 25,
     "faculty_cores": 16,
-    "customer_references_checked": 77,
+    "customer_references_checked": 131,
     "codex_plugin_tree": {
       "file_count": 757,
-      "tree_sha256": "120cee8ec85038191d2abffe93f426eb8e76d7eec28619ade8c65e9f14dd5c04"
+      "tree_sha256": "610034e56244eb97ef37feee4563e03c4ee83ad0b017448e9a8ecc44760c04b4"
     },
     "claude_plugin_tree": {
       "file_count": 757,
-      "tree_sha256": "e355f5c65b2c9d088754dfd381fc3b55eba3b1ca24dc14dac5248572840f9f0e"
+      "tree_sha256": "3af6ff0bebc9508f14a1a6d78489a334abbe69ad5d283a878d95d2b7561a6098"
     },
     "redistribution_state": "blocked_pending_component_grants"
   },

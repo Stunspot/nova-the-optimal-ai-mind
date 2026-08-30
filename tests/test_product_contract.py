@@ -77,6 +77,15 @@ class ProductContractTests(unittest.TestCase):
         self.assertNotIn('"project-management"', operations)
         self.assertNotIn('    "DENNIS_PROJECT_HOME",', operations)
 
+    def test_github_workflows_are_manual_and_bounded(self) -> None:
+        workflows = sorted((REPO / ".github" / "workflows").glob("*.yml"))
+        self.assertTrue(workflows)
+        for path in workflows:
+            text = path.read_text(encoding="utf-8")
+            self.assertRegex(text, r"(?m)^  workflow_dispatch:\s*$", path.name)
+            self.assertNotRegex(text, r"(?m)^  (?:push|pull_request|schedule):", path.name)
+            self.assertIn("timeout-minutes:", text, path.name)
+
     def test_required_notice_files_are_present(self) -> None:
         required = (
             "notices/testforge/LICENSE.md",

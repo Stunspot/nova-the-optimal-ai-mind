@@ -31,6 +31,9 @@ class ReleasePipelineTests(unittest.TestCase):
             first = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", check=False)
             self.assertEqual(first.returncode, 0, first.stderr)
             first_result = json.loads(first.stdout)
+            self.assertEqual(first_result["candidate_state"], "built_awaiting_independent_review")
+            self.assertTrue(first_result["independent_review_required"])
+            self.assertNotIn("sealed_candidate", first_result)
             customer = Path(first_result["customer_zip"])
             codex = Path(first_result["codex_zip"])
             claude = Path(first_result["claude_zip"])
@@ -55,6 +58,11 @@ class ReleasePipelineTests(unittest.TestCase):
             self.assertTrue(all(name.startswith(prefix) for name in names))
             self.assertIn(prefix + "codex/.agents/plugins/marketplace.json", names)
             self.assertIn(prefix + "claude/nova-the-optimal-ai/.claude-plugin/plugin.json", names)
+            for binding in ("codex", "claude"):
+                manifest = json.loads((Path(second_result["package_root"]) / binding / "BUILD-MANIFEST.json").read_text(encoding="utf-8"))
+                self.assertEqual(manifest["candidate_state"], "built_awaiting_independent_review")
+                self.assertTrue(manifest["independent_review_required"])
+                self.assertNotIn("sealed_candidate", manifest)
 
 
 if __name__ == "__main__":
