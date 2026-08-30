@@ -1,0 +1,108 @@
+{
+  "schema": "nova-free-testforge-independent-review/v1",
+  "observed_at": "2026-08-30T23:09:19.4540305Z",
+  "reviewer": "independent verification-reviewer",
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "supported_status": "READY_WITH_RESIDUAL_RISK",
+  "target": {
+    "source_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "qualification_package": "dist/qualification/nova-the-optimal-ai-free-3.0.0",
+    "customer_zip_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+    "codex_zip_sha256": "02211a8c69ccdb6e6669c9210b2c1dc6b9661446372a3f96d9e0095d95ee77af",
+    "claude_zip_sha256": "2ebd8c21c9c165f86721f8d41211796d9625595c00d988846092daf19bbc703f",
+    "candidate_state": "built_from_frozen_source",
+    "independent_review_required": true,
+    "publication_state": "not_published"
+  },
+  "accepted_claim": "The exact qualification candidate supports READY_WITH_RESIDUAL_RISK for the bounded local-static claim: product composition, source and rights custody, deterministic package integrity, optional-state contract, customer-surface static checks, and manual workflow governance.",
+  "counts": {
+    "open_release_blockers_at_accepted_boundary": 0,
+    "resolved_operator_packet_defects": 3,
+    "product_contract_tests_passed": 10,
+    "verifier_adversarial_tests_passed": 14,
+    "package_verifier_findings": 0,
+    "manifest_validator_errors": 0,
+    "manifest_validator_warnings": 0,
+    "traceability_validator_errors": 0,
+    "traceability_validator_warnings": 0
+  },
+  "reviewer_findings": [
+    {
+      "id": "TF-R-001",
+      "severity": "medium",
+      "challenged_claim": "The operator packet accurately records metered verification, case-sensitive artifact paths, and validator command custody.",
+      "initial_issue": "The pre-verdict packet had incomplete metering-contract wording, one case-mismatched RELEASE-MANIFEST path, and a validator raw capture that did not record the exact --root . command.",
+      "required_revision": "Repair operator metadata only, preserve frozen source and qualification bytes, and rerun both reviewer validators.",
+      "disposition": "resolved_before_verdict",
+      "resolution_evidence": [
+        "verification/testforge-free-v3/operator/metered-verification.md",
+        "verification/testforge-free-v3/operator/raw/metered-preflight.json",
+        "verification/testforge-free-v3/operator/verification-manifest.json",
+        "verification/testforge-free-v3/reviewer/raw/manifest-validator.json",
+        "verification/testforge-free-v3/reviewer/raw/traceability-validator.json"
+      ],
+      "status_consequence": "No remaining blocker after the repaired packet validated with zero errors and zero warnings; no product or qualification artifact changed."
+    }
+  ],
+  "exact_artifact_condition": "This verdict is bound to source commit 20beac84346465b7fe082c4c169b7d03be57880e and the three qualification hashes above. Any later rebuild with different bytes must be reverified and rebound.",
+  "unexecuted_layers": [
+    {
+      "id": "TF-C-001",
+      "layer": "fresh_host",
+      "state": "unexecuted",
+      "boundary": "Installation, discovery, restart, invocation, rollback, and Claude-compatible import were not observed on disposable fresh hosts."
+    },
+    {
+      "id": "TF-C-002",
+      "layer": "hosted_provider_and_cross_platform",
+      "state": "HOLD_UNKNOWN",
+      "boundary": "GitHub-hosted runner, matrix, permissions, artifacts, statuses, and three-OS behavior were not executed; hosted runs remain zero."
+    },
+    {
+      "id": "TF-C-003",
+      "layer": "visual_and_accessibility",
+      "state": "unexecuted",
+      "boundary": "Renders were captured but pixels were not inspected; keyboard, screen-reader, zoom, device, and accessibility-conformance evidence is absent."
+    },
+    {
+      "id": "TF-C-004",
+      "layer": "specialist_efficacy",
+      "state": "unexecuted",
+      "boundary": "Representative outcome efficacy across the 25 visible skill roots was not established."
+    },
+    {
+      "id": "TF-C-005",
+      "layer": "publication",
+      "state": "not_published",
+      "boundary": "No push, tag, release, Pages deployment, directory submission, distribution, announcement, or public-availability observation occurred."
+    }
+  ],
+  "campaigns": [
+    "Product contract: PASS, 10 of 10",
+    "Verifier adversarial: PASS, 14 of 14",
+    "Qualification package verifier: PASS, zero findings",
+    "Reviewer manifest validator: PASS, zero errors and zero warnings",
+    "Reviewer traceability validator: PASS, zero errors and zero warnings",
+    "Source freeze: PASS, no non-verification delta from target commit"
+  ],
+  "authority_and_safety": {
+    "github_actions_run": false,
+    "publication_performed": false,
+    "host_catalog_or_user_state_mutated": false,
+    "reviewer_writes_limited_to": "verification/testforge-free-v3/reviewer/",
+    "separate_authority_required_for": [
+      "hosted or paid execution",
+      "push, tag, release, or deployment",
+      "publication, distribution, or announcement"
+    ]
+  },
+  "decision_basis": [
+    "The exact source revision, source-lock and source-map hashes, topology, rights state, zero external blockers, three archive hashes, candidate lifecycle, and not-published state are mutually consistent and independently rebound.",
+    "The product-contract and all 14 negative package-custody tests passed independently.",
+    "The exact qualification package passed its real verifier with 2524 checksum entries and zero findings.",
+    "The repaired operator manifest and its complete risk-to-execution chain validate with zero errors and zero warnings.",
+    "All five unexecuted layers remain explicit residual boundaries rather than release claims."
+  ],
+  "artifact_binding": "verification/testforge-free-v3/reviewer/artifact-binding.json",
+  "evidence_boundary": "This review is a bounded local-static release-candidate decision, not a defect-free guarantee or human authorization to publish."
+}

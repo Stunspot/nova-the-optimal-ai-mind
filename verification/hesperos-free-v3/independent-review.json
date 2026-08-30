@@ -1,0 +1,81 @@
+{
+  "schema": "nova-free-hesperos-independent-review/v4",
+  "observed_at": "2026-08-30T22:51:45.3821360+00:00",
+  "reviewer": "independent documentation-accessibility-reviewer",
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "source_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "qualification_package": "dist/qualification/nova-the-optimal-ai-free-3.0.0",
+  "customer_zip_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+  "accepted_claim": "Customer and maintainer documentation is ready for the local static/extracted-package candidate boundary. It may proceed to TestForge but is not visually approved, accessibility-conformant, fresh-host accepted, published, or customer-tested.",
+  "counts": {
+    "open_blockers": 0,
+    "open_documentation_defects": 0,
+    "material_packet_defects_found_and_repaired": 2,
+    "residual_evidence_conditions": 5
+  },
+  "repaired_findings": [
+    {
+      "id": "HES-F-001",
+      "statement": "The original CLI receipt reported failed non-PTY probes while claiming PASS.",
+      "resolution": "Replaced by five exit-zero PTY probes with raw transcripts; the failed TERM=dumb control is explicitly excluded from the oracle.",
+      "status": "resolved"
+    },
+    {
+      "id": "HES-F-002",
+      "statement": "The documentation project used string items where the published schema requires objects and its cutoff preceded successful CLI evidence.",
+      "resolution": "Audience, task, and source records were converted to objects; timestamps advanced; bundled and published-schema validation pass.",
+      "status": "resolved"
+    }
+  ],
+  "conditions": [
+    {
+      "id": "HES-C-001",
+      "title": "Direct visual and responsive review",
+      "state": "open",
+      "statement": "All twelve PNGs were freshly captured and their bytes, dimensions, and hashes verified, but no pixels were inspected. No conclusion may be drawn about clipping, hierarchy, spacing, rendered contrast, visual polish, or mobile behavior beyond capture.",
+      "closure": "Inspect the bound renders through a permitted visual route and capture priority pages at mobile size; rerun the visual-review record."
+    },
+    {
+      "id": "HES-C-002",
+      "title": "Keyboard and assistive technology",
+      "state": "open",
+      "statement": "Static semantics pass, but keyboard-only navigation, focus order in use, screen-reader output, and representative assistive technology were not exercised. No WCAG or assistive-technology conformance is claimed.",
+      "closure": "Run keyboard traversal and at least one representative screen-reader exercise across principal journeys."
+    },
+    {
+      "id": "HES-C-003",
+      "title": "Fresh-host acceptance",
+      "state": "open",
+      "statement": "Codex command syntax is present in local CLI help, but installation, discovery, enabled state, restart behavior, Nova invocation, specialist routing, and Claude-compatible import were not performed.",
+      "closure": "Run fresh-host install, discovery, restart, invocation, and import before live-host claims."
+    },
+    {
+      "id": "HES-C-004",
+      "title": "Publication and external links",
+      "state": "open",
+      "statement": "Redistribution permission is documented, but no tag, push, release, site deployment, directory listing, announcement, or published-link check occurred.",
+      "closure": "After separately authorized publication, check deployed routes and external destinations."
+    },
+    {
+      "id": "HES-C-005",
+      "title": "Representative-user completion",
+      "state": "open",
+      "statement": "No representative customer was observed completing installation, rights-custody, state, upgrade, or recovery tasks.",
+      "closure": "Run bounded representative-user task observation before customer-validated claims."
+    }
+  ],
+  "checked_evidence": [
+    "Hesperos Markdown lint PASS: 20 documents, zero findings",
+    "product documentation checker PASS: 20 documents, 18 local references",
+    "static site checker PASS: 11 pages",
+    "project ledger VALID under bundled validator and published JSON Schema",
+    "package verifier PASS: 25 roots, 16 cores, 137 references, 25 rights envelopes, 2524 checksum entries, zero findings",
+    "source/package parity PASS: 11 root documents and 24 docs files",
+    "detached rights custody PASS: all 25 folders carry seven-file nova-free-rights plus applicable component notices",
+    "Codex CLI surface PASS in PTY without mutation",
+    "rights journey PASS_STATIC",
+    "install, state, upgrade, rollback, troubleshooting, security, and support journeys PASS_STATIC",
+    "render provenance CAPTURED_NOT_INSPECTED"
+  ],
+  "evidence_boundary": "This review establishes documentation source integrity, static accessibility structure, reader-task coverage, procedural and recovery completeness, local CLI-help compatibility, extracted-package parity, and rights custody for the frozen local candidate. It does not establish pixel-level rendering quality, formal accessibility conformance, keyboard or screen-reader behavior, cross-browser behavior, fresh-host installation or invocation, published-link availability, publication, or representative-user outcomes."
+}

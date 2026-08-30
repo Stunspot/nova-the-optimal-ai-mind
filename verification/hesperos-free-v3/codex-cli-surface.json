@@ -1,0 +1,69 @@
+{
+  "schema": "nova-free-codex-cli-surface/v2",
+  "observed_at": "2026-08-30T22:44:04.7988918+00:00",
+  "mode": "read-only PTY help/version inspection; no marketplace or plugin mutation",
+  "terminal": "PTY",
+  "checks": [
+    {
+      "arguments": [
+        "--version"
+      ],
+      "exit_code": 0,
+      "raw_evidence": "verification/hesperos-free-v3/raw/codex-version.txt",
+      "observed": "codex-cli 0.144.5"
+    },
+    {
+      "arguments": [
+        "plugin",
+        "--help"
+      ],
+      "exit_code": 0,
+      "raw_evidence": "verification/hesperos-free-v3/raw/codex-plugin-help.txt",
+      "observed": "Manage Codex plugins"
+    },
+    {
+      "arguments": [
+        "plugin",
+        "marketplace",
+        "add",
+        "--help"
+      ],
+      "exit_code": 0,
+      "raw_evidence": "verification/hesperos-free-v3/raw/codex-marketplace-add-help.txt",
+      "observed": "marketplace add help exposes --json"
+    },
+    {
+      "arguments": [
+        "plugin",
+        "add",
+        "--help"
+      ],
+      "exit_code": 0,
+      "raw_evidence": "verification/hesperos-free-v3/raw/codex-plugin-add-help.txt",
+      "observed": "plugin add help exposes --marketplace and --json"
+    },
+    {
+      "arguments": [
+        "plugin",
+        "list",
+        "--help"
+      ],
+      "exit_code": 0,
+      "raw_evidence": "verification/hesperos-free-v3/raw/codex-plugin-list-help.txt",
+      "observed": "plugin list help exposes --json"
+    }
+  ],
+  "observed": {
+    "plugin_management_supported": true,
+    "marketplace_add_json_supported": true,
+    "plugin_add_marketplace_flag": true,
+    "plugin_add_json_supported": true,
+    "plugin_list_json_supported": true
+  },
+  "verdict": "PASS",
+  "non_pty_control": {
+    "state": "FAILED_AS_EXPECTED_FOR_TERM_DUMB",
+    "consequence": "Non-PTY help output is not used as the command-surface oracle."
+  },
+  "boundary": "This confirms only the local CLI help surface in a PTY, not installation, discovery, restart, invocation, enabled state, behavior, or publication."
+}

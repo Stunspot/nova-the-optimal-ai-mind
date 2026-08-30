@@ -1,0 +1,16 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "--version"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T23:08:58.218637+00:00",
+  "finished_at": "2026-08-30T23:08:58.231747+00:00",
+  "duration_seconds": 0.013108,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "Python 3.14.0\n",
+  "stderr": "",
+  "status": "passed"
+}

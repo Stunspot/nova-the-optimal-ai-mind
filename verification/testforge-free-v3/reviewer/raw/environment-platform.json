@@ -1,0 +1,20 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "platform"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T23:08:57.008469+00:00",
+  "finished_at": "2026-08-30T23:08:57.214092+00:00",
+  "duration_seconds": 0.205617,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "Windows-10-10.0.19045-SP0\n",
+  "stderr": "",
+  "status": "passed"
+}

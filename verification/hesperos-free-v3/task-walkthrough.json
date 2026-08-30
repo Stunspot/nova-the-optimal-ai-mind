@@ -1,0 +1,97 @@
+{
+  "schema": "nova-free-hesperos-task-walkthrough/v4",
+  "observed_at": "2026-08-30T22:45:40.8091116+00:00",
+  "source_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "package": "dist/qualification/nova-the-optimal-ai-free-3.0.0",
+  "customer_zip_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+  "verdict": "PASS_WITH_CONDITIONS",
+  "steps": [
+    {
+      "id": "entry",
+      "task": "Open the extracted package and understand the edition",
+      "state": "PASS",
+      "evidence": "README.md and START-HERE.md identify Free 3.0.0, one plugin, 25 roots, 16 nested cores, optional state, and the local-candidate boundary."
+    },
+    {
+      "id": "rights",
+      "task": "Understand what may be redistributed and what CC BY-ND prohibits",
+      "state": "PASS_STATIC",
+      "evidence": "LICENSE.md, ATTRIBUTION.md, NOTICE.md, TRADEMARKS.md, PROVENANCE.md, and THIRD-PARTY-NOTICES.md explain MIT software rights, CC BY-ND 4.0 authored-material terms, attribution, marks, provenance, and component custody."
+    },
+    {
+      "id": "detached-rights",
+      "task": "Detach a Claude-compatible skill without losing its rights record",
+      "state": "PASS_PACKAGE",
+      "evidence": "All 25 standalone folders and ZIPs carry nova-free-rights; TestForge, Agent Swarm, and career-pair component notices are included where applicable."
+    },
+    {
+      "id": "codex-install",
+      "task": "Reach executable Codex installation instructions",
+      "state": "PASS_STATIC",
+      "evidence": "README -> START-HERE -> docs/INSTALL-CODEX.md; the codex marketplace root exists and exact marketplace add, plugin add, and plugin list commands are present."
+    },
+    {
+      "id": "codex-cli",
+      "task": "Confirm the documented Codex command surface",
+      "state": "PASS_LOCAL_CLI",
+      "evidence": "codex-cli 0.144.5 exposes plugin management, marketplace add, plugin add, plugin list, and the documented JSON flags. No host catalog was mutated."
+    },
+    {
+      "id": "invoke",
+      "task": "Start a fresh task and invoke Nova",
+      "state": "NOT_TESTED",
+      "evidence": "The package supplies an invocation route, but no host installation or model invocation was authorized or executed."
+    },
+    {
+      "id": "claude",
+      "task": "Choose a Claude-compatible route",
+      "state": "PASS_STATIC",
+      "evidence": "Complete bundle, 25 standalone folders, and 25 deterministic standalone ZIPs are present and explained."
+    },
+    {
+      "id": "state",
+      "task": "Keep state optional or plan explicit initialization",
+      "state": "PASS_STATIC_AND_SERVICE_TESTED",
+      "evidence": "Ordinary use requires no estate; read-only status and plan-before-init prompts are documented; state and operations regressions passed."
+    },
+    {
+      "id": "upgrade",
+      "task": "Upgrade from 2.x and retain rollback",
+      "state": "PASS",
+      "evidence": "Same plugin ID and replacement semantics are explicit; old package, configuration, and state preservation plus rollback are described without claiming automatic migration."
+    },
+    {
+      "id": "recovery",
+      "task": "Find troubleshooting, security, support, and rights boundaries",
+      "state": "PASS",
+      "evidence": "Self-contained styled pages and maintained Markdown routes cover recovery, private security reporting, support, split licensing, and third-party custody."
+    },
+    {
+      "id": "artifact-boundary",
+      "task": "Follow only links shipped in the deployed docs artifact",
+      "state": "PASS",
+      "evidence": "docs/check_site.py rejects existing targets outside docs; the focused regression and 11-page site check pass."
+    },
+    {
+      "id": "package-parity",
+      "task": "Receive current documentation in the built package",
+      "state": "PASS",
+      "evidence": "24 source/package docs-tree files and 11 root customer documents are byte-identical; the package oracle checked 137 customer references."
+    },
+    {
+      "id": "visual-capture",
+      "task": "Capture the site at desktop and mobile dimensions",
+      "state": "CAPTURED_NOT_INSPECTED",
+      "evidence": "Eleven desktop and one 390x844 overview PNG were freshly captured and hashed. Direct pixel review was blocked by the in-app browser security policy and was not performed."
+    }
+  ],
+  "conditions": [
+    "Fresh-host installation, discovery, restart, and invocation were not observed.",
+    "Direct pixel-level visual inspection was blocked by the current environment.",
+    "Keyboard-only and screen-reader behavior were not exercised.",
+    "External links were not checked against a published site.",
+    "Representative customer completion was not observed.",
+    "Publication was not authorized or performed."
+  ],
+  "evidence_boundary": "A source and extracted-package walkthrough, local CLI surface check, static semantics, link boundary, byte parity, and render capture. It is not a direct visual, fresh-host, assistive-technology, publication, or customer-outcome acceptance run."
+}

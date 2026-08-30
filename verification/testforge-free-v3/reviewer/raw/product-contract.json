@@ -1,0 +1,26 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_product_contract.py",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T22:59:26.612627+00:00",
+  "finished_at": "2026-08-30T22:59:31.100521+00:00",
+  "duration_seconds": 4.487892,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_component_notice_custody_is_current (test_product_contract.ProductContractTests.test_component_notice_custody_is_current) ... ok\ntest_exact_one_plugin_and_twenty_five_roots (test_product_contract.ProductContractTests.test_exact_one_plugin_and_twenty_five_roots) ... ok\ntest_github_workflows_are_manual_and_bounded (test_product_contract.ProductContractTests.test_github_workflows_are_manual_and_bounded) ... ok\ntest_mind_is_nested_and_persona_is_locked (test_product_contract.ProductContractTests.test_mind_is_nested_and_persona_is_locked) ... ok\ntest_public_split_license_and_rights_bundle_are_bound (test_product_contract.ProductContractTests.test_public_split_license_and_rights_bundle_are_bound) ... ok\ntest_required_old_runtime_is_absent (test_product_contract.ProductContractTests.test_required_old_runtime_is_absent) ... ok\ntest_same_owner_component_metadata_is_reconciled (test_product_contract.ProductContractTests.test_same_owner_component_metadata_is_reconciled) ... ok\ntest_skill_frontmatter_names_match_directories (test_product_contract.ProductContractTests.test_skill_frontmatter_names_match_directories) ... ok\ntest_source_lock_matches_imported_bytes (test_product_contract.ProductContractTests.test_source_lock_matches_imported_bytes) ... ok\ntest_stateful_scripts_have_no_codex_fallback (test_product_contract.ProductContractTests.test_stateful_scripts_have_no_codex_fallback) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 4.170s\n\nOK\n",
+  "status": "passed"
+}

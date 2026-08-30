@@ -1,0 +1,113 @@
+{
+  "schema": "nova-free-hesperos-render-provenance/v2",
+  "observed_at": "2026-08-30T22:37:02.2820629+00:00",
+  "source_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "customer_zip_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+  "docs_git_tree": "9a3b8784f1ef7abffe829496008b5d440ce11a4a",
+  "plugin_git_tree": "6693909b7b69af10b3971cce1137766dcfb33512",
+  "render_source": "current docs tree at source checkpoint",
+  "render_bytes_reused_without_reencoding": false,
+  "fresh_capture": true,
+  "render_count": 12,
+  "tools": [
+    "Google Chrome 151.0.7922.139 headless rendering",
+    "Chrome device metrics override for 390x844 overview",
+    "ImageMagick 7.1.1-32 metadata and contact-sheet generation"
+  ],
+  "hero": {
+    "file": "docs/assets/nova-mind-readme-hero.png",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2513034,
+    "sha256": "0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61"
+  },
+  "renders": [
+    {
+      "file": "verification/hesperos-free-v3/renders/404-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 293512,
+      "sha256": "b0fd252a45f9f34922198fd6150ea86dbcc38f1fb9d269e39bd674f910f3b390"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/capabilities-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 243272,
+      "sha256": "a507e7694e8dc33cb1c31d208b404e3ebe201618690832d1edcca0f011507763"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/index-desktop.png",
+      "width": 1440,
+      "height": 1100,
+      "bytes": 620387,
+      "sha256": "e0f2d9aae5039f21d2c62e49512fb7d92baa72763e04540614237006deafd392"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/index-mobile.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 313925,
+      "sha256": "813391f9696c8f78d897c7d3442a21eb4824383f12a9072aec741a3315950f9c"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/install-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 238849,
+      "sha256": "a018610d9a657b094e28626589fc747e3585034ad74db1a88679af02d97d330c"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/notices-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 263441,
+      "sha256": "164727eb3c1b352a819e65ad3c5e3ce6d1184eb45d1e1b5e2f597bc97d0da5be"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/security-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 256394,
+      "sha256": "00078bd3b80ec00af85b6e7a229d249fec6c7c03056b40c78a0b315e0ff76de5"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/support-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 240750,
+      "sha256": "a8c757629862417b7636b44726de584095d850bd579ef074b3fcd766b4d452de"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/troubleshooting-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 234841,
+      "sha256": "8c4b5fd443444fcaac6952185ddb427815c57fd22d2555c6bd073b607cc657e6"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/trust-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 248792,
+      "sha256": "5f2e756c051f3a1af85107d191e6445cb245825cbfa04a799a30fafeeddbbe51"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/upgrade-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 246064,
+      "sha256": "6dbc751265f8a73bc3280d120652793956a4571ca415374923135f40049337d7"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/workflows-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 354309,
+      "sha256": "582413c4cd82b5329269e5d506422e9efe1cfd88a4ec40ba9f31b1080fe578bf"
+    }
+  ],
+  "direct_visual_inspection": "BLOCKED_BY_ENVIRONMENT",
+  "inspection_attempt": "The in-app browser rejected the local file URL under its security policy; the policy prohibited alternate browser or raw-protocol workarounds.",
+  "evidence_boundary": "This proves fresh render capture, dimensions, byte counts, hashes, and source binding. It does not prove the pixels were visually inspected, cross-browser behavior, assistive-technology behavior, or representative-user outcomes."
+}

@@ -1,0 +1,73 @@
+{
+  "format": "testforge-metered-preflight-boundary/v1",
+  "observed_at": "2026-08-30T23:05:41.9845559+00:00",
+  "provider": "github-actions",
+  "execution_id": "nova-free-v3-local-static-qualification",
+  "capacity_billing_scope": "unknown",
+  "capacity_status": "unknown",
+  "authoritative_capacity_snapshot": null,
+  "reserve_minutes": null,
+  "provider_multiplier": null,
+  "paid_overage_available": null,
+  "assessor": "plugins/nova-the-optimal-ai/skills/software-verification/scripts/assess_metered_verification.py",
+  "assessor_invoked": false,
+  "assessor_reason": "Required authoritative observation time, validity, billing scope, remaining allowance, reserve, and provider multiplier were unavailable; invoking the assessor would require invented inputs.",
+  "planned_runs": [
+    {
+      "name": "verify-package",
+      "triggers": 1,
+      "jobs": 3,
+      "attempts": 1,
+      "ceiling_minutes": 15,
+      "raw_runner_minutes": 45
+    },
+    {
+      "name": "line-ending-policy",
+      "triggers": 1,
+      "jobs": 1,
+      "attempts": 1,
+      "ceiling_minutes": 5,
+      "raw_runner_minutes": 5
+    }
+  ],
+  "verification_total_raw_runner_minutes": 50,
+  "separate_publication_inventory": {
+    "name": "deploy-pages",
+    "triggers": 1,
+    "jobs": 1,
+    "attempts": 1,
+    "ceiling_minutes": 10,
+    "raw_runner_minutes": 10,
+    "authorized": false
+  },
+  "combined_if_separately_authorized_raw_runner_minutes": 60,
+  "decision": "HOLD_UNKNOWN",
+  "automatic_invocation_permitted": false,
+  "paid_dispatch_permitted": false,
+  "hosted_runs": 0,
+  "publication_performed": false,
+  "executed_substitute": [
+    "36-test local unittest campaign",
+    "clean-checkpoint deterministic qualification build",
+    "exact qualification-package verifier",
+    "documentation and static-site checkers",
+    "frozen-source diff and diff-check"
+  ],
+  "prepared_not_executed_substitute": "Clean-host or self-hosted cross-platform verification, pending suitable hosts and authority.",
+  "substitute_does_not_prove": [
+    "provider runner and image behavior",
+    "provider trigger and matrix behavior",
+    "permission and secret integration",
+    "artifact integration",
+    "status integration",
+    "Pages deployment or public availability"
+  ],
+  "missing_authoritative_observation": [
+    "current GitHub Actions billing scope",
+    "observation time and validity",
+    "remaining included allowance",
+    "principal-set reserve",
+    "current provider multiplier",
+    "paid-overage availability"
+  ]
+}

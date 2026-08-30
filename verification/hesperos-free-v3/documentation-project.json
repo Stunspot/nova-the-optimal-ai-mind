@@ -1,0 +1,398 @@
+{
+  "schema": "hesperos-documentation-project/v1",
+  "project_id": "DOC-NOVA-FREE-3.0.0",
+  "title": "Nova the Optimal AI Free 3.0.0 customer and maintainer journey",
+  "product_version": "3.0.0",
+  "source_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "evidence_cutoff": "2026-08-30T23:15:52.4083316+00:00",
+  "status": "accessibility-reviewed",
+  "audiences": [
+    {
+      "id": "AUD-01",
+      "reader": "customer installing the complete Codex plugin"
+    },
+    {
+      "id": "AUD-02",
+      "reader": "customer using a Claude-compatible host"
+    },
+    {
+      "id": "AUD-03",
+      "reader": "customer choosing optional persistent state"
+    },
+    {
+      "id": "AUD-04",
+      "reader": "customer detaching one skill for Claude-compatible use"
+    },
+    {
+      "id": "AUD-05",
+      "reader": "maintainer building and verifying the candidate"
+    }
+  ],
+  "top_tasks": [
+    {
+      "id": "TASK-01",
+      "task": "understand the one-front-door product",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-02",
+      "task": "understand the MIT and CC BY-ND 4.0 split and the no-shared-adaptations condition",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-03",
+      "task": "keep nova-free-rights with every detached skill",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-04",
+      "task": "install one plugin without disturbing existing tools or data",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-05",
+      "task": "confirm discovery and one real invocation",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-06",
+      "task": "configure optional state only with explicit authority",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-07",
+      "task": "recover from discovery or estate failures",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-08",
+      "task": "upgrade from the two-plugin 2.x line",
+      "state": "supported-by-current-documentation"
+    },
+    {
+      "id": "TASK-09",
+      "task": "distinguish licensed redistribution, deterministic build, publication, and live-host behavior",
+      "state": "supported-by-current-documentation"
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC-01",
+      "path": "design/product-contract.json",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-02",
+      "path": "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-03",
+      "path": "plugins/nova-the-optimal-ai/.codex-plugin/plugin.json",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-04",
+      "path": "design/source-map.json",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-05",
+      "path": "design/source-lock.json",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-06",
+      "path": "tools/build_release.py",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-07",
+      "path": "tools/verify_package.py",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-08",
+      "path": "tests/",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-09",
+      "path": "LICENSE.md",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-10",
+      "path": "ATTRIBUTION.md",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-11",
+      "path": "NOTICE.md",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-12",
+      "path": "TRADEMARKS.md",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-13",
+      "path": "PROVENANCE.md",
+      "state": "source-verified"
+    },
+    {
+      "id": "SRC-14",
+      "path": "THIRD-PARTY-NOTICES.md",
+      "state": "source-verified"
+    }
+  ],
+  "topics": [
+    {
+      "path": "README.md",
+      "type": "overview and entry hub",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "START-HERE.md",
+      "type": "installation how-to",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "LICENSE.md",
+      "type": "license reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "ATTRIBUTION.md",
+      "type": "attribution reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "NOTICE.md",
+      "type": "rights notice",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "TRADEMARKS.md",
+      "type": "trademark reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "type": "provenance reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "SECURITY.md",
+      "type": "security policy",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "SUPPORT.md",
+      "type": "support policy",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "type": "component custody reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "type": "release communication",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "type": "capability reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/HOST-MATRIX.md",
+      "type": "compatibility reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/INSTALL-CLAUDE.md",
+      "type": "Claude-compatible how-to",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/INSTALL-CODEX.md",
+      "type": "Codex how-to",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/MAINTAINER-GUIDE.md",
+      "type": "maintainer how-to",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/PRIVACY-AND-TRUST.md",
+      "type": "privacy explanation",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "type": "troubleshooting",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "type": "upgrade and rollback how-to",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "type": "evidence reference",
+      "state": "source-reviewed and qualification-package-identical"
+    },
+    {
+      "path": "docs/index.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/install.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/capabilities.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/workflows.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/trust.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/support.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/security.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/notices.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/upgrade.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/troubleshooting.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    },
+    {
+      "path": "docs/404.html",
+      "type": "static customer site page",
+      "state": "freshly rendered, structurally checked, and qualification-package-identical; pixel inspection unperformed"
+    }
+  ],
+  "package_parity": {
+    "root_documents": 11,
+    "docs_tree_files": 24,
+    "mismatches": 0,
+    "customer_zip_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+    "qualification_package": "dist/qualification/nova-the-optimal-ai-free-3.0.0"
+  },
+  "accessibility_reviews": [
+    {
+      "method": "static semantic and deployed-link audit",
+      "state": "pass",
+      "evidence": "docs/check_site.py: 11 pages; escape-boundary regression in tests/test_site_checker.py"
+    },
+    {
+      "method": "Hesperos accessible Markdown lint",
+      "state": "pass",
+      "evidence": "20 maintained documents; zero findings; verification/hesperos-free-v3/markdown-lint.json"
+    },
+    {
+      "method": "fresh desktop and mobile render capture",
+      "state": "captured",
+      "evidence": "12 current-source PNGs with dimensions, byte counts, and SHA-256 hashes in render-provenance.json"
+    },
+    {
+      "method": "direct pixel-level visual inspection",
+      "state": "blocked-by-environment and unperformed",
+      "evidence": "local file viewing was blocked by the in-app browser security policy; no alternate browser or raw-protocol workaround was attempted"
+    },
+    {
+      "method": "independent Hesperos review",
+      "state": "pass-with-conditions",
+      "evidence": "verification/hesperos-free-v3/independent-review.md and independent-review.json"
+    },
+    {
+      "method": "keyboard, screen reader, and representative assistive technology",
+      "state": "not tested",
+      "evidence": "requires a representative live accessibility exercise"
+    }
+  ],
+  "verification": [
+    {
+      "method": "source documentation checker",
+      "state": "pass",
+      "evidence": "20 maintained documents and 18 local references"
+    },
+    {
+      "method": "static site checker",
+      "state": "pass",
+      "evidence": "11 pages"
+    },
+    {
+      "method": "customer task walkthrough",
+      "state": "pass-with-conditions",
+      "evidence": "verification/hesperos-free-v3/task-walkthrough.json"
+    },
+    {
+      "method": "qualification-package reference and byte-parity check",
+      "state": "pass",
+      "evidence": "137 customer references; 24 docs-tree files and 11 root documents byte-identical"
+    },
+    {
+      "method": "qualification-package verifier",
+      "state": "pass",
+      "evidence": "25 roots; 16 nested cores; 25 complete standalone rights envelopes; zero findings"
+    },
+    {
+      "method": "fresh-host installation and real Nova invocation",
+      "state": "not tested",
+      "evidence": "no customer host was mutated during this build"
+    }
+  ],
+  "residual_conditions": [
+    "direct pixel-level review was blocked by the current environment",
+    "keyboard-only navigation was not exercised",
+    "screen-reader behavior was not exercised",
+    "responsive rendering beyond the overview page was not captured at mobile size",
+    "external-link availability was not checked against a published site",
+    "representative-user task completion was not observed",
+    "fresh-host installation, discovery, restart, and real Nova invocation were not observed"
+  ],
+  "publication_gate": "The included split license permits authentic redistribution under its terms. Publication was neither authorized nor performed in this task and remains a separate action.",
+  "owner": "Collaborative Dynamics",
+  "next_move": "Carry HES-C-001 through HES-C-005 into the TestForge residual-risk decision, freeze final local artifacts, and publish only under separate authority.",
+  "render_binding": {
+    "source_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "docs_git_tree": "9a3b8784f1ef7abffe829496008b5d440ce11a4a",
+    "plugin_git_tree": "6693909b7b69af10b3971cce1137766dcfb33512",
+    "fresh_capture": true,
+    "direct_visual_inspection": "blocked-by-environment and unperformed",
+    "provenance": "verification/hesperos-free-v3/render-provenance.json"
+  }
+}

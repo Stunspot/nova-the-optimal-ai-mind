@@ -1,0 +1,21 @@
+{
+  "format_version": "1.0",
+  "root": "E:\\Github\\nova-the-optimal-ai-mind",
+  "package_managers": [],
+  "candidates": [
+    {
+      "framework": "unittest",
+      "language": "Python",
+      "confidence": "medium",
+      "command": "python -m unittest discover",
+      "evidence": [
+        "tests\\test_product_contract.py",
+        "tests\\test_release_pipeline.py",
+        "tests\\test_site_checker.py",
+        "tests\\test_state_and_operations.py",
+        "tests\\test_verifier_adversarial.py"
+      ]
+    }
+  ],
+  "warnings": []
+}

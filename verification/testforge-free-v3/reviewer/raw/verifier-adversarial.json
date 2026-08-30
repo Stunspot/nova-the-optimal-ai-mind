@@ -1,0 +1,26 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_verifier_adversarial.py",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T22:59:48.331038+00:00",
+  "finished_at": "2026-08-30T23:04:49.965258+00:00",
+  "duration_seconds": 301.634224,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_broken_customer_reference_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_broken_customer_reference_is_rejected) ... ok\ntest_codex_state_fallback_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_codex_state_fallback_is_rejected) ... ok\ntest_duplicate_and_traversal_checksum_rows_are_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_duplicate_and_traversal_checksum_rows_are_rejected) ... ok\ntest_external_rights_blocker_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_external_rights_blocker_is_rejected) ... ok\ntest_false_redistribution_state_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_false_redistribution_state_is_rejected) ... ok\ntest_host_skill_drift_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_host_skill_drift_is_rejected) ... ok\ntest_missing_component_notice_bundle_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_missing_component_notice_bundle_is_rejected) ... ok\ntest_missing_skill_root_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_missing_skill_root_is_rejected) ... ok\ntest_missing_standalone_rights_file_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_missing_standalone_rights_file_is_rejected) ... ok\ntest_omitted_checksum_row_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_omitted_checksum_row_is_rejected) ... ok\ntest_premature_candidate_seal_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_premature_candidate_seal_is_rejected) ... ok\ntest_publication_overclaim_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_publication_overclaim_is_rejected) ... ok\ntest_stale_component_license_metadata_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_stale_component_license_metadata_is_rejected) ... ok\ntest_synchronized_payload_drift_is_rejected_by_source_lock (test_verifier_adversarial.VerifierAdversarialTests.test_synchronized_payload_drift_is_rejected_by_source_lock) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 301.421s\n\nOK\n",
+  "status": "passed"
+}

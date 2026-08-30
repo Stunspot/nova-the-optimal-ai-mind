@@ -1,0 +1,133 @@
+{
+  "schema": "nova-free-hesperos-markdown-lint/v1",
+  "observed_at": "2026-08-30T22:37:02.2820629+00:00",
+  "tool": "Hesperos scripts/lint_accessible_markdown.py",
+  "maintained_documents": [
+    "README.md",
+    "START-HERE.md",
+    "LICENSE.md",
+    "ATTRIBUTION.md",
+    "NOTICE.md",
+    "TRADEMARKS.md",
+    "PROVENANCE.md",
+    "SECURITY.md",
+    "SUPPORT.md",
+    "THIRD-PARTY-NOTICES.md",
+    "RELEASE-NOTES.md",
+    "docs/CAPABILITY-GUIDE.md",
+    "docs/HOST-MATRIX.md",
+    "docs/INSTALL-CLAUDE.md",
+    "docs/INSTALL-CODEX.md",
+    "docs/MAINTAINER-GUIDE.md",
+    "docs/PRIVACY-AND-TRUST.md",
+    "docs/TROUBLESHOOTING.md",
+    "docs/UPGRADE.md",
+    "docs/VERIFICATION.md"
+  ],
+  "documents_checked": 20,
+  "results": [
+    {
+      "path": "README.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "START-HERE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "LICENSE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "ATTRIBUTION.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "NOTICE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "TRADEMARKS.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "PROVENANCE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "SECURITY.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "SUPPORT.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/HOST-MATRIX.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/INSTALL-CLAUDE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/INSTALL-CODEX.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/MAINTAINER-GUIDE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/PRIVACY-AND-TRUST.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "exit_code": 0,
+      "result": "PASS"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "exit_code": 0,
+      "result": "PASS"
+    }
+  ],
+  "findings": [],
+  "verdict": "PASS",
+  "boundary": "Heading progression, generic link text, empty image alt text, directional references, and unsupported conformance wording only; not task usability or assistive-technology behavior."
+}

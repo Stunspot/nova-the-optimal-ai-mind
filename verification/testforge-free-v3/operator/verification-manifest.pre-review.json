@@ -1,0 +1,1179 @@
+{
+  "manifest_version": "1.0",
+  "target": {
+    "name": "Nova the Optimal AI Free 3.0.0 local static qualification candidate",
+    "revision": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "target_class": "release_candidate",
+    "candidate_state": "built_from_frozen_source",
+    "evidence_cutoff_utc": "2026-08-30T23:05:41.9845559+00:00",
+    "qualification_package": "dist/qualification/nova-the-optimal-ai-free-3.0.0",
+    "artifacts": {
+      "customer_zip_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+      "codex_zip_sha256": "02211a8c69ccdb6e6669c9210b2c1dc6b9661446372a3f96d9e0095d95ee77af",
+      "claude_zip_sha256": "2ebd8c21c9c165f86721f8d41211796d9625595c00d988846092daf19bbc703f"
+    }
+  },
+  "scope": {
+    "included": [
+      "one-plugin, 25-root, 16-core topology",
+      "source-map and source-lock custody",
+      "MIT plus CC BY-ND 4.0 split-rights packet",
+      "standalone rights envelopes and component notices",
+      "deterministic Codex and Claude-compatible packages",
+      "checksum, tree, archive, source-map, source-lock, and persona integrity",
+      "optional Nova estate behavior",
+      "customer documentation and static site",
+      "manual workflow governance",
+      "bounded local-static release-candidate decision"
+    ],
+    "excluded": [
+      "publication or distribution",
+      "fresh-host installation, discovery, restart, invocation, and rollback",
+      "GitHub-hosted or three-operating-system execution",
+      "direct pixel-level visual approval",
+      "accessibility conformance",
+      "outcome efficacy across every specialist"
+    ],
+    "constraints": [
+      "local Windows host",
+      "qualification package built from clean checkpoint 20beac84",
+      "current worktree contains verification evidence only; non-verification diff is the freeze oracle",
+      "GitHub Actions capacity, billing multiplier, and reserve are unobserved",
+      "direct local visual viewing blocked by browser security policy"
+    ],
+    "safety_boundary": [
+      "local read-only inspection and disposable test mutations only",
+      "no user-state initialization",
+      "no GitHub Actions, paid action, push, tag, release, Pages deployment, publication, or announcement"
+    ]
+  },
+  "claim_custody": {
+    "observed": [
+      {
+        "id": "O-001",
+        "statement": "The qualification package is bound to clean source checkpoint 20beac84346465b7fe082c4c169b7d03be57880e and three recorded artifact hashes.",
+        "basis": "release manifest and qualification artifact hashes",
+        "confidence": "high"
+      },
+      {
+        "id": "O-002",
+        "statement": "The candidate contains one plugin, 25 visible roots, MIND 0.2.0, 16 nested Faculty Cores, and verified Codex and Claude-compatible plugin trees.",
+        "basis": "E-002 package verifier and release manifest",
+        "confidence": "high"
+      },
+      {
+        "id": "O-003",
+        "statement": "The rights packet declares MIT software/schema rights and CC BY-ND 4.0 authored-material rights, with zero external blockers and 25 complete standalone rights envelopes.",
+        "basis": "rights packet, source lock, and E-002",
+        "confidence": "high"
+      },
+      {
+        "id": "O-004",
+        "statement": "All 36 repository tests passed, including 14 adversarial package-custody tests.",
+        "basis": "E-001",
+        "confidence": "high"
+      },
+      {
+        "id": "O-005",
+        "statement": "The verifier passed 2524 exact checksum entries, 137 customer references, two built_from_frozen_source candidate states, and not_published state.",
+        "basis": "E-002",
+        "confidence": "high"
+      },
+      {
+        "id": "O-006",
+        "statement": "Documentation and site checks passed; independent Hesperos review returned REVIEW_PASS_WITH_CONDITIONS with zero open documentation defects.",
+        "basis": "E-003, E-004, and verification/hesperos-free-v3/independent-review.json",
+        "confidence": "high"
+      },
+      {
+        "id": "O-007",
+        "statement": "No non-verification path differs from checkpoint 20beac84 and its non-verification diff has no whitespace errors.",
+        "basis": "E-005 and E-006",
+        "confidence": "high"
+      },
+      {
+        "id": "O-008",
+        "statement": "GitHub verification would expand to 50 raw runner-minutes and Pages publication would add 10; capacity is unknown, so no hosted or publication workflow ran.",
+        "basis": "metered-preflight.json and workflow contract tests",
+        "confidence": "high"
+      }
+    ],
+    "inferred": [
+      {
+        "id": "I-001",
+        "statement": "The candidate can support READY_WITH_RESIDUAL_RISK for the bounded local-static claim if independent TestForge review accepts the chain.",
+        "basis": "all local decision-critical executions and Hesperos review passed",
+        "confidence": "high"
+      },
+      {
+        "id": "I-002",
+        "statement": "The integrity design materially resists omitted, duplicate, traversal, one-host, and synchronized two-host payload tampering.",
+        "basis": "14 adversarial tests and exact package verification",
+        "confidence": "high"
+      }
+    ],
+    "assumed": [],
+    "unresolved": [
+      {
+        "id": "U-001",
+        "statement": "Fresh-host install, discovery, restart, invocation, and rollback are unobserved.",
+        "basis": "no disposable host run",
+        "confidence": "high",
+        "consequence": "No live-host readiness claim."
+      },
+      {
+        "id": "U-002",
+        "statement": "GitHub runner, matrix, permissions, artifact, status, and cross-platform behavior are unobserved.",
+        "basis": "HOLD_UNKNOWN and zero hosted runs",
+        "confidence": "high",
+        "consequence": "No hosted-CI or cross-platform claim."
+      },
+      {
+        "id": "U-003",
+        "statement": "Direct pixel review, keyboard, screen-reader, and representative-device behavior are unobserved.",
+        "basis": "Hesperos HES-C-001 and HES-C-002",
+        "confidence": "high",
+        "consequence": "No visual approval or accessibility-conformance claim."
+      },
+      {
+        "id": "U-004",
+        "statement": "Representative outcome efficacy across all 25 visible roots is unobserved.",
+        "basis": "packaging and contract tests are not domain efficacy tests",
+        "confidence": "high",
+        "consequence": "No all-specialist efficacy claim."
+      },
+      {
+        "id": "U-005",
+        "statement": "Publication is unperformed and unauthorized in this task.",
+        "basis": "task authority and publication_state not_published",
+        "confidence": "high",
+        "consequence": "No public-availability claim."
+      }
+    ]
+  },
+  "impact_map": [
+    "Topology and routing determine the public product surface.",
+    "Source custody and split rights determine what bytes may ship and under what terms.",
+    "Checksums, locked trees, and archive parity bind delivered bytes to reviewed bytes.",
+    "State behavior affects privacy, recovery, and host isolation.",
+    "Documentation parity affects installation, rights understanding, upgrade, support, and recovery.",
+    "Workflow governance affects cost and accidental publication exposure.",
+    "Static, live-host, hosted-provider, visual, efficacy, and publication claims require different evidence."
+  ],
+  "invariants": [
+    {
+      "id": "INV-001",
+      "statement": "Exactly one Nova plugin exposes 25 visible roots and 16 nested MIND cores."
+    },
+    {
+      "id": "INV-002",
+      "statement": "Imports, persona, notices, source map, and rights hashes match the immutable source lock."
+    },
+    {
+      "id": "INV-003",
+      "statement": "Every physical package file except SHA256SUMS appears exactly once in sorted checksums with a lowercase digest and safe path."
+    },
+    {
+      "id": "INV-004",
+      "statement": "Codex and Claude payloads, standalone folders, and standalone ZIPs match locked source payloads."
+    },
+    {
+      "id": "INV-005",
+      "statement": "Every detached skill retains nova-free-rights and applicable component notices."
+    },
+    {
+      "id": "INV-006",
+      "statement": "Builds are deterministic and state is built_from_frozen_source, never self-approved or published."
+    },
+    {
+      "id": "INV-007",
+      "statement": "Optional state is external to .codex, explicit, atomic, and governed by four selectors."
+    },
+    {
+      "id": "INV-008",
+      "statement": "Docs distinguish license permission, build state, publication, and live behavior."
+    },
+    {
+      "id": "INV-009",
+      "statement": "GitHub workflows are manual and time-bounded; unknown capacity causes HOLD_UNKNOWN and no dispatch."
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-001",
+      "statement": "Topology or source-custody drift exposes a different product than the reviewed Nova Free composition.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-COMPOSITION",
+        "T-PRODUCT-CONTRACT",
+        "T-PACKAGE-VERIFIER",
+        "E-001",
+        "E-002"
+      ]
+    },
+    {
+      "id": "R-002",
+      "statement": "Split-license, portable rights-envelope, or component-notice omission creates an incomplete public distribution.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-RIGHTS",
+        "T-PRODUCT-CONTRACT",
+        "T-PACKAGE-VERIFIER",
+        "E-001",
+        "E-002"
+      ]
+    },
+    {
+      "id": "R-003",
+      "statement": "Omitted, duplicate, traversal, or synchronized payload tampering passes a superficial checksum oracle.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-INTEGRITY-NEGATIVE",
+        "T-VERIFIER-ADVERSARIAL",
+        "T-PACKAGE-VERIFIER",
+        "E-001",
+        "E-002"
+      ]
+    },
+    {
+      "id": "R-004",
+      "statement": "Nondeterministic construction or Codex/Claude payload drift delivers unreviewed bytes.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-BUILD",
+        "T-RELEASE-PIPELINE",
+        "T-PACKAGE-VERIFIER",
+        "E-001",
+        "E-002"
+      ]
+    },
+    {
+      "id": "R-005",
+      "statement": "State fallback, implicit initialization, or partial estate writes violate custody and recovery.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-STATE",
+        "T-STATE-OPERATIONS",
+        "T-VERIFIER-ADVERSARIAL",
+        "E-001"
+      ]
+    },
+    {
+      "id": "R-006",
+      "statement": "Documentation, site, or package drift breaks installation, rights, upgrade, support, or recovery journeys.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-DOCS",
+        "T-SITE-BOUNDARY",
+        "T-PACKAGE-VERIFIER",
+        "T-DOCUMENTATION-CHECK",
+        "T-SITE-CHECK",
+        "E-001",
+        "E-002",
+        "E-003",
+        "E-004"
+      ]
+    },
+    {
+      "id": "R-007",
+      "statement": "Source movement after qualification invalidates the evidence binding.",
+      "severity": "high",
+      "likelihood": "low",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-FREEZE",
+        "T-SOURCE-FREEZE",
+        "T-SOURCE-DIFF-CHECK",
+        "E-005",
+        "E-006"
+      ]
+    },
+    {
+      "id": "R-008",
+      "statement": "Builder or metadata prematurely claims independent review, sealing, or publication.",
+      "severity": "critical",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-REVIEW-LIFECYCLE",
+        "T-RELEASE-PIPELINE",
+        "T-VERIFIER-ADVERSARIAL",
+        "T-PACKAGE-VERIFIER",
+        "E-001",
+        "E-002"
+      ]
+    },
+    {
+      "id": "R-009",
+      "statement": "An automatic or unbounded hosted workflow spends capacity or publishes without authority.",
+      "severity": "high",
+      "likelihood": "low",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-WORKFLOW-GOVERNANCE",
+        "T-PRODUCT-CONTRACT",
+        "E-001"
+      ]
+    },
+    {
+      "id": "R-010",
+      "statement": "Local static evidence is overclaimed as live-host, hosted-provider, visual, accessibility, efficacy, or publication evidence.",
+      "severity": "high",
+      "likelihood": "medium",
+      "confidence": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-CLAIM-BOUNDARY",
+        "T-VERIFIER-ADVERSARIAL",
+        "T-PACKAGE-VERIFIER",
+        "T-DOCUMENTATION-CHECK",
+        "E-001",
+        "E-002",
+        "E-003"
+      ]
+    },
+    {
+      "id": "R-011",
+      "statement": "Fresh-host installation or invocation fails despite a valid static package.",
+      "severity": "medium",
+      "likelihood": "unknown",
+      "confidence": "high",
+      "disposition": "blocked",
+      "verification": [
+        "S-FRESH-HOST",
+        "T-FRESH-HOST",
+        "E-007"
+      ]
+    },
+    {
+      "id": "R-012",
+      "statement": "GitHub-hosted three-operating-system behavior differs from local Windows evidence.",
+      "severity": "medium",
+      "likelihood": "unknown",
+      "confidence": "high",
+      "disposition": "blocked",
+      "verification": [
+        "S-HOSTED-CI",
+        "T-HOSTED-CI",
+        "E-008"
+      ]
+    },
+    {
+      "id": "R-013",
+      "statement": "Rendered pages contain visual or accessibility defects not detected by static checks.",
+      "severity": "medium",
+      "likelihood": "unknown",
+      "confidence": "high",
+      "disposition": "blocked",
+      "verification": [
+        "S-VISUAL",
+        "T-DIRECT-VISUAL",
+        "E-009"
+      ]
+    },
+    {
+      "id": "R-014",
+      "statement": "One or more specialist skills underperform representative real-world tasks.",
+      "severity": "medium",
+      "likelihood": "unknown",
+      "confidence": "high",
+      "disposition": "planned",
+      "verification": [
+        "S-SPECIALIST",
+        "T-SPECIALIST-BEHAVIOR"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-COMPOSITION",
+      "risk_ids": [
+        "R-001"
+      ],
+      "title": "Composition matches the frozen product contract",
+      "layer": "contract",
+      "preconditions": [
+        "source lock and qualification package exist"
+      ],
+      "action": [
+        "compare product contract, loadout, source lock, and built package"
+      ],
+      "expected": [
+        "one plugin, 25 visible roots, 16 nested cores, locked persona and sources"
+      ],
+      "forbidden": [
+        "sibling plugin",
+        "unlocked overlay",
+        "missing root"
+      ],
+      "evidence": [
+        "E-001",
+        "E-002"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-RIGHTS",
+      "risk_ids": [
+        "R-002"
+      ],
+      "title": "Every distribution shape retains the split-rights packet",
+      "layer": "contract",
+      "preconditions": [
+        "current rights packet and qualification package exist"
+      ],
+      "action": [
+        "inspect root and plugin rights hashes, detached envelopes, and component notices"
+      ],
+      "expected": [
+        "six mirrored rights files, 25 complete envelopes, applicable component notices, zero external blockers"
+      ],
+      "forbidden": [
+        "missing attribution",
+        "missing ND terms",
+        "missing detached envelope"
+      ],
+      "evidence": [
+        "E-001",
+        "E-002"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-INTEGRITY-NEGATIVE",
+      "risk_ids": [
+        "R-003"
+      ],
+      "title": "Custody attacks are rejected",
+      "layer": "security_negative",
+      "preconditions": [
+        "disposable package copies can be mutated"
+      ],
+      "action": [
+        "omit checksum row; add duplicate or traversal row; drift one host; synchronize both hosts and ZIP metadata"
+      ],
+      "expected": [
+        "each tampered package is rejected by an independent locked oracle"
+      ],
+      "forbidden": [
+        "accept stale lock",
+        "accept missing inventory row",
+        "accept traversal path"
+      ],
+      "evidence": [
+        "E-001"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-BUILD",
+      "risk_ids": [
+        "R-004"
+      ],
+      "title": "Builds and host artifacts preserve reviewed bytes",
+      "layer": "integration",
+      "preconditions": [
+        "frozen source exists"
+      ],
+      "action": [
+        "build repeatedly, compare archives and host payloads, verify package"
+      ],
+      "expected": [
+        "deterministic archives and locked Codex/Claude payload parity"
+      ],
+      "forbidden": [
+        "silent host drift",
+        "nondeterministic ZIP",
+        "source overwrite"
+      ],
+      "evidence": [
+        "E-001",
+        "E-002"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-STATE",
+      "risk_ids": [
+        "R-005"
+      ],
+      "title": "Optional state stays external, explicit, and atomic",
+      "layer": "integration",
+      "preconditions": [
+        "Nova Operations and temporary fake services exist"
+      ],
+      "action": [
+        "exercise status, plan, init, upgrade, doctor, selector injection, absence, and failure"
+      ],
+      "expected": [
+        "four selectors only, no .codex fallback, no implicit init, atomic failure"
+      ],
+      "forbidden": [
+        "CODEX_HOME custody",
+        "partial state",
+        "retired-selector injection"
+      ],
+      "evidence": [
+        "E-001"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-DOCS",
+      "risk_ids": [
+        "R-006"
+      ],
+      "title": "Customer journeys survive source and package delivery",
+      "layer": "contract",
+      "preconditions": [
+        "maintained docs, site, Hesperos packet, and package exist"
+      ],
+      "action": [
+        "check Markdown, link boundaries, pages, package references, and byte parity"
+      ],
+      "expected": [
+        "20 docs and 11 pages pass; 137 package references; 24 docs-tree and 11 root docs byte-identical"
+      ],
+      "forbidden": [
+        "escaping Pages link",
+        "stale marketplace path",
+        "lost rights guidance"
+      ],
+      "evidence": [
+        "E-001",
+        "E-002",
+        "E-003",
+        "E-004",
+        "verification/hesperos-free-v3"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-FREEZE",
+      "risk_ids": [
+        "R-007"
+      ],
+      "title": "Evidence remains bound to checkpoint 20beac84",
+      "layer": "static",
+      "preconditions": [
+        "checkpoint and qualification package exist"
+      ],
+      "action": [
+        "compare non-verification paths and run diff check"
+      ],
+      "expected": [
+        "no product/source difference and no whitespace defect"
+      ],
+      "forbidden": [
+        "cover later source edit with evidence-only change"
+      ],
+      "evidence": [
+        "E-002",
+        "E-005",
+        "E-006"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-REVIEW-LIFECYCLE",
+      "risk_ids": [
+        "R-008"
+      ],
+      "title": "Build cannot self-approve or claim publication",
+      "layer": "security_negative",
+      "preconditions": [
+        "qualification package exists"
+      ],
+      "action": [
+        "inspect candidate and publication state and mutate disposable metadata toward premature sealing"
+      ],
+      "expected": [
+        "normal build remains built_from_frozen_source and not_published; premature claim is rejected"
+      ],
+      "forbidden": [
+        "builder self-approval",
+        "false publication",
+        "seal before review"
+      ],
+      "evidence": [
+        "E-001",
+        "E-002"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-WORKFLOW-GOVERNANCE",
+      "risk_ids": [
+        "R-009"
+      ],
+      "title": "Hosted workflows remain manual and bounded",
+      "layer": "contract",
+      "preconditions": [
+        "three workflow files exist"
+      ],
+      "action": [
+        "inspect triggers, matrices, timeouts, and publication permissions"
+      ],
+      "expected": [
+        "manual workflow_dispatch only; 45, 5, and 10 raw-minute ceilings"
+      ],
+      "forbidden": [
+        "push trigger",
+        "pull_request trigger",
+        "missing timeout",
+        "dispatch on unknown capacity"
+      ],
+      "evidence": [
+        "E-001",
+        "verification/testforge-free-v3/operator/raw/metered-preflight.json"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-CLAIM-BOUNDARY",
+      "risk_ids": [
+        "R-010"
+      ],
+      "title": "Evidence boundaries prevent category errors",
+      "layer": "contract",
+      "preconditions": [
+        "manifests, docs, and evidence packets exist"
+      ],
+      "action": [
+        "inspect claims for static, live, hosted, visual, efficacy, and publication separation"
+      ],
+      "expected": [
+        "only local-static readiness is proposed; all unexecuted layers stay explicit"
+      ],
+      "forbidden": [
+        "call installed from package presence",
+        "call published from license permission",
+        "call visually approved from render existence"
+      ],
+      "evidence": [
+        "E-001",
+        "E-002",
+        "E-003",
+        "verification/hesperos-free-v3"
+      ],
+      "status": "executed"
+    },
+    {
+      "id": "S-FRESH-HOST",
+      "risk_ids": [
+        "R-011"
+      ],
+      "title": "Clean hosts install and invoke Nova",
+      "layer": "integration",
+      "preconditions": [
+        "disposable Codex and Claude-compatible hosts required"
+      ],
+      "action": [
+        "install, discover, restart, invoke, and roll back"
+      ],
+      "expected": [
+        "Nova is discovered and invoked; rollback restores prior binding"
+      ],
+      "forbidden": [
+        "reuse configured host",
+        "equate file visibility with invocation"
+      ],
+      "evidence": [],
+      "status": "blocked"
+    },
+    {
+      "id": "S-HOSTED-CI",
+      "risk_ids": [
+        "R-012"
+      ],
+      "title": "GitHub three-OS matrix runs the checkpoint",
+      "layer": "integration",
+      "preconditions": [
+        "fresh capacity snapshot, reserve, billing scope, and dispatch authority required"
+      ],
+      "action": [
+        "run manual workflows after the metered gate permits them"
+      ],
+      "expected": [
+        "provider jobs execute on intended images and return integrated status and artifacts"
+      ],
+      "forbidden": [
+        "probe by launch",
+        "unauthorized spend",
+        "duplicate triggers"
+      ],
+      "evidence": [
+        "verification/testforge-free-v3/operator/metered-verification.md"
+      ],
+      "status": "blocked"
+    },
+    {
+      "id": "S-VISUAL",
+      "risk_ids": [
+        "R-013"
+      ],
+      "title": "Representative visual and assistive behavior is inspected",
+      "layer": "browser",
+      "preconditions": [
+        "safe visual viewer and representative assistive technology required"
+      ],
+      "action": [
+        "inspect pixels, keyboard path, screen reader, zoom, and representative viewports"
+      ],
+      "expected": [
+        "no clipping or task obstruction; accessible interaction at claimed depth"
+      ],
+      "forbidden": [
+        "infer pixels from hashes",
+        "claim conformance from static lint"
+      ],
+      "evidence": [
+        "verification/hesperos-free-v3/visual-review.json"
+      ],
+      "status": "blocked"
+    },
+    {
+      "id": "S-SPECIALIST",
+      "risk_ids": [
+        "R-014"
+      ],
+      "title": "Representative specialist outcomes meet domain oracles",
+      "layer": "exploratory",
+      "preconditions": [
+        "representative task set and domain oracles required"
+      ],
+      "action": [
+        "exercise a risk-weighted sample of specialist and reviewer workflows"
+      ],
+      "expected": [
+        "outputs meet domain oracles without state leakage"
+      ],
+      "forbidden": [
+        "generalize packaging into efficacy"
+      ],
+      "evidence": [],
+      "status": "proposed"
+    }
+  ],
+  "tests": [
+    {
+      "id": "T-PRODUCT-CONTRACT",
+      "scenario_ids": [
+        "S-COMPOSITION",
+        "S-RIGHTS",
+        "S-WORKFLOW-GOVERNANCE"
+      ],
+      "path": "tests/test_product_contract.py",
+      "status": "passed",
+      "execution_id": "E-001"
+    },
+    {
+      "id": "T-RELEASE-PIPELINE",
+      "scenario_ids": [
+        "S-BUILD",
+        "S-REVIEW-LIFECYCLE"
+      ],
+      "path": "tests/test_release_pipeline.py",
+      "status": "passed",
+      "execution_id": "E-001"
+    },
+    {
+      "id": "T-STATE-OPERATIONS",
+      "scenario_ids": [
+        "S-STATE"
+      ],
+      "path": "tests/test_state_and_operations.py",
+      "status": "passed",
+      "execution_id": "E-001"
+    },
+    {
+      "id": "T-VERIFIER-ADVERSARIAL",
+      "scenario_ids": [
+        "S-INTEGRITY-NEGATIVE",
+        "S-REVIEW-LIFECYCLE",
+        "S-CLAIM-BOUNDARY"
+      ],
+      "path": "tests/test_verifier_adversarial.py",
+      "status": "passed",
+      "execution_id": "E-001"
+    },
+    {
+      "id": "T-SITE-BOUNDARY",
+      "scenario_ids": [
+        "S-DOCS"
+      ],
+      "path": "tests/test_site_checker.py",
+      "status": "passed",
+      "execution_id": "E-001"
+    },
+    {
+      "id": "T-PACKAGE-VERIFIER",
+      "scenario_ids": [
+        "S-COMPOSITION",
+        "S-RIGHTS",
+        "S-INTEGRITY-NEGATIVE",
+        "S-BUILD",
+        "S-DOCS",
+        "S-FREEZE",
+        "S-CLAIM-BOUNDARY"
+      ],
+      "path": "tools/verify_package.py",
+      "status": "passed",
+      "execution_id": "E-002"
+    },
+    {
+      "id": "T-DOCUMENTATION-CHECK",
+      "scenario_ids": [
+        "S-DOCS",
+        "S-CLAIM-BOUNDARY"
+      ],
+      "path": "tools/check_documentation.py",
+      "status": "passed",
+      "execution_id": "E-003"
+    },
+    {
+      "id": "T-SITE-CHECK",
+      "scenario_ids": [
+        "S-DOCS"
+      ],
+      "path": "docs/check_site.py",
+      "status": "passed",
+      "execution_id": "E-004"
+    },
+    {
+      "id": "T-SOURCE-FREEZE",
+      "scenario_ids": [
+        "S-FREEZE"
+      ],
+      "path": "verification/testforge-free-v3/operator/raw/source-checkpoint-diff.json",
+      "status": "passed",
+      "execution_id": "E-005"
+    },
+    {
+      "id": "T-SOURCE-DIFF-CHECK",
+      "scenario_ids": [
+        "S-FREEZE"
+      ],
+      "path": "verification/testforge-free-v3/operator/raw/source-diff-check.json",
+      "status": "passed",
+      "execution_id": "E-006"
+    },
+    {
+      "id": "T-FRESH-HOST",
+      "scenario_ids": [
+        "S-FRESH-HOST"
+      ],
+      "path": "docs/HOST-MATRIX.md",
+      "status": "blocked",
+      "execution_id": "E-007"
+    },
+    {
+      "id": "T-HOSTED-CI",
+      "scenario_ids": [
+        "S-HOSTED-CI"
+      ],
+      "path": ".github/workflows/verify-package.yml",
+      "status": "blocked",
+      "execution_id": "E-008"
+    },
+    {
+      "id": "T-DIRECT-VISUAL",
+      "scenario_ids": [
+        "S-VISUAL"
+      ],
+      "path": "verification/hesperos-free-v3/visual-review.json",
+      "status": "blocked",
+      "execution_id": "E-009"
+    },
+    {
+      "id": "T-SPECIALIST-BEHAVIOR",
+      "scenario_ids": [
+        "S-SPECIALIST"
+      ],
+      "path": "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
+      "status": "unexecuted"
+    }
+  ],
+  "executions": [
+    {
+      "id": "E-001",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 358.315685,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/full-unittest.json",
+      "observed_result": "PASS: 36 tests, including 14 adversarial custody tests"
+    },
+    {
+      "id": "E-002",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/verify_package.py",
+        "dist/qualification/nova-the-optimal-ai-free-3.0.0"
+      ],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 12.234717,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/package-verifier.json",
+      "observed_result": "PASS: 25 roots, 16 cores, 137 references, 25 rights envelopes, 2524 checksum entries, zero findings"
+    },
+    {
+      "id": "E-003",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "tools/check_documentation.py"
+      ],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.168178,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/documentation-check.json",
+      "observed_result": "PASS: 20 documents and 18 local references"
+    },
+    {
+      "id": "E-004",
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "docs/check_site.py"
+      ],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.227268,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/site-check.json",
+      "observed_result": "PASS: 11 pages"
+    },
+    {
+      "id": "E-005",
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "20beac84346465b7fe082c4c169b7d03be57880e",
+        "--",
+        ".",
+        ":(exclude)verification"
+      ],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.079434,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/source-checkpoint-diff.json",
+      "observed_result": "PASS: no non-verification path differs from source checkpoint"
+    },
+    {
+      "id": "E-006",
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "20beac84346465b7fe082c4c169b7d03be57880e",
+        "--",
+        ".",
+        ":(exclude)verification"
+      ],
+      "working_directory": ".",
+      "status": "passed",
+      "exit_code": 0,
+      "duration_seconds": 0.058529,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/source-diff-check.json",
+      "observed_result": "PASS: no non-verification diff whitespace errors"
+    },
+    {
+      "id": "E-007",
+      "command": [
+        "NOT RUN: clean-host install, discovery, restart, invocation, and rollback"
+      ],
+      "working_directory": "not provisioned",
+      "status": "not_run",
+      "exit_code": null,
+      "raw_evidence": null
+    },
+    {
+      "id": "E-008",
+      "command": [
+        "NOT RUN: GitHub Actions verify-package or line-ending-policy workflow_dispatch"
+      ],
+      "working_directory": "github-hosted provider",
+      "status": "not_run",
+      "exit_code": null,
+      "raw_evidence": "verification/testforge-free-v3/operator/raw/metered-preflight.json"
+    },
+    {
+      "id": "E-009",
+      "command": [
+        "NOT RUN: direct pixel, keyboard, screen-reader, zoom, and representative-device review"
+      ],
+      "working_directory": "visual and assistive environment unavailable",
+      "status": "not_run",
+      "exit_code": null,
+      "raw_evidence": "verification/hesperos-free-v3/visual-review.json"
+    }
+  ],
+  "findings": [
+    {
+      "id": "F-001",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "severity": "medium",
+      "statement": "Fresh-host installation and invocation behavior are unobserved.",
+      "evidence": [
+        "E-007",
+        "docs/HOST-MATRIX.md"
+      ],
+      "confidence": "high",
+      "next_action": "Run the complete customer journey on disposable Codex and Claude-compatible hosts before a live-host claim.",
+      "status": "blocked"
+    },
+    {
+      "id": "F-002",
+      "classification": "ENVIRONMENT_FAILURE",
+      "severity": "medium",
+      "statement": "GitHub-hosted and three-operating-system evidence is absent because capacity, reserve, billing scope, and dispatch authority were not established.",
+      "evidence": [
+        "E-008",
+        "verification/testforge-free-v3/operator/raw/metered-preflight.json"
+      ],
+      "confidence": "high",
+      "next_action": "Obtain a fresh authoritative capacity snapshot and separate dispatch authority, or preserve the local-only claim.",
+      "status": "blocked"
+    },
+    {
+      "id": "F-003",
+      "classification": "ENVIRONMENT_FAILURE",
+      "severity": "medium",
+      "statement": "Fresh render files exist, but direct pixel and assistive-technology review were blocked or unavailable.",
+      "evidence": [
+        "E-009",
+        "verification/hesperos-free-v3/visual-review.json"
+      ],
+      "confidence": "high",
+      "next_action": "Use an authorized visual and assistive environment before visual-approval or accessibility-conformance claims.",
+      "status": "blocked"
+    },
+    {
+      "id": "F-004",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "severity": "medium",
+      "statement": "Static qualification does not establish outcome efficacy across all 25 visible roots.",
+      "evidence": [
+        "E-001",
+        "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json"
+      ],
+      "confidence": "high",
+      "next_action": "Run a risk-weighted representative behavior campaign with domain oracles before an all-specialist efficacy claim.",
+      "status": "open"
+    },
+    {
+      "id": "F-005",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "severity": "informational",
+      "statement": "The candidate is licensed for authentic redistribution but has not been published.",
+      "evidence": [
+        "E-002",
+        "dist/qualification/nova-the-optimal-ai-free-3.0.0/RELEASE-MANIFEST.json"
+      ],
+      "confidence": "high",
+      "next_action": "Publish only under separate explicit authority and then observe the public artifact.",
+      "status": "open"
+    }
+  ],
+  "residual_risks": [
+    {
+      "id": "RR-001",
+      "statement": "Host-specific installation, discovery, restart, invocation, and rollback failures may remain.",
+      "treatment": "Keep the decision local/static; require disposable-host acceptance for a live-host claim.",
+      "owner": "release owner",
+      "revisit_condition": "Disposable Codex and Claude-compatible hosts are available."
+    },
+    {
+      "id": "RR-002",
+      "statement": "GitHub runner, matrix, permissions, artifacts, statuses, and cross-platform behavior remain unproved.",
+      "treatment": "Maintain HOLD_UNKNOWN and zero hosted dispatch until current capacity and authority are observed.",
+      "owner": "GitHub account owner",
+      "revisit_condition": "Fresh capacity, billing scope, reserve, and dispatch authority are available."
+    },
+    {
+      "id": "RR-003",
+      "statement": "Pixel-level defects and keyboard, screen-reader, zoom, or device issues may remain.",
+      "treatment": "Preserve captured-not-inspected wording and avoid accessibility-conformance claims.",
+      "owner": "documentation owner",
+      "revisit_condition": "Authorized visual and assistive-technology coverage is available."
+    },
+    {
+      "id": "RR-004",
+      "statement": "Real-world efficacy across all specialist skills is unproved.",
+      "treatment": "Limit the claim to composition, custody, packaging, state, and customer-surface behavior.",
+      "owner": "product owner",
+      "revisit_condition": "Representative tasks and domain oracles are frozen."
+    },
+    {
+      "id": "RR-005",
+      "statement": "Public availability, downloadable bytes, and published links are unobserved.",
+      "treatment": "Do not call the product published; require separate authority and post-publication observation.",
+      "owner": "publication owner",
+      "revisit_condition": "Publication is explicitly authorized and performed."
+    }
+  ],
+  "review": {
+    "status": "NOT_RUN",
+    "findings": [],
+    "reviewer": "pending verification-reviewer"
+  },
+  "decision": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "proposed_status_after_independent_review": "READY_WITH_RESIDUAL_RISK",
+    "basis": [
+      "All local decision-critical executions passed.",
+      "The qualification package is clean-source-bound and passes exact inventory, rights-custody, tree, archive, and documentation oracles.",
+      "Independent Hesperos review passed with conditions and zero open documentation defects.",
+      "Independent TestForge review has not yet run.",
+      "Fresh-host, hosted-provider, direct visual/accessibility, specialist-efficacy, and publication layers remain residual boundaries."
+    ],
+    "authority_required": [
+      "Separate authority before any GitHub-hosted, paid, publication, push, tag, release, deployment, distribution, or announcement action."
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "git",
+    "diff",
+    "--exit-code",
+    "20beac84346465b7fe082c4c169b7d03be57880e",
+    "--",
+    ".",
+    ":(exclude)verification"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T22:46:30.142120+00:00",
+  "finished_at": "2026-08-30T22:46:30.221551+00:00",
+  "duration_seconds": 0.079434,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "",
+  "status": "passed"
+}

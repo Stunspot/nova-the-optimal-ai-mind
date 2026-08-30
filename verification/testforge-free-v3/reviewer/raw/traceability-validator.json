@@ -1,0 +1,20 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "plugins/nova-the-optimal-ai/skills/verification-reviewer/scripts/validate_traceability.py",
+    "verification/testforge-free-v3/operator/verification-manifest.json"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T23:06:28.384252+00:00",
+  "finished_at": "2026-08-30T23:06:28.496291+00:00",
+  "duration_seconds": 0.112036,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\n  \"valid\": true,\n  \"errors\": [],\n  \"warnings\": [],\n  \"counts\": {\n    \"risks\": 14,\n    \"scenarios\": 14,\n    \"tests\": 14,\n    \"executions\": 9\n  }\n}\n",
+  "stderr": "",
+  "status": "passed"
+}

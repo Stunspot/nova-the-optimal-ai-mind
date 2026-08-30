@@ -1,0 +1,69 @@
+{
+  "schema": "nova-free-hesperos-authoring-report/v4",
+  "observed_at": "2026-08-30T22:58:04.1294962+00:00",
+  "source_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "verdict": "AUTHORING_COMPLETE_REVIEW_PASS_WITH_CONDITIONS",
+  "objective": "Deliver a current Free 3.0.0 customer, rights, recovery, trust, and maintainer journey grounded in the frozen source and qualification package.",
+  "repaired": [
+    "one-plugin and ambient-MIND product explanation",
+    "agentic coding and TestForge positioning",
+    "Officecraft as a quality-gated document, deck, and sheet capability",
+    "correct Codex marketplace root and executable command surface",
+    "complete Claude-compatible bundle plus deterministic detachable folders and ZIPs",
+    "MIT plus CC BY-ND 4.0 split-rights explanation",
+    "portable nova-free-rights envelope and component notice custody for every detached skill",
+    "same-ID 2.x-to-3.0 replacement and rollback language",
+    "optional-state plan-before-write prompts",
+    "self-contained security, notices, upgrade, and troubleshooting pages",
+    "license permission, deterministic build, publication, and live behavior kept distinct"
+  ],
+  "deliverables": [
+    "20 maintained Markdown documents",
+    "11 static HTML pages plus shared CSS and hero asset",
+    "customer task walkthrough",
+    "documentation project ledger",
+    "fresh desktop/mobile render captures and metadata",
+    "independent documentation review complete: REVIEW_PASS_WITH_CONDITIONS"
+  ],
+  "checks": {
+    "markdown_lint": "PASS: 20 documents, zero Hesperos findings",
+    "source_documentation": "PASS: 20 documents, 18 local references",
+    "site": "PASS: 11 pages",
+    "package_parity": "PASS: 24 docs-tree files and 11 root documents byte-identical",
+    "package_references": "PASS: 137",
+    "visual": "CAPTURED_NOT_INSPECTED: 11 desktop and one 390x844 overview render; direct pixel review blocked by environment policy"
+  },
+  "untested": [
+    "direct pixel-level visual inspection",
+    "keyboard-only navigation",
+    "screen reader and representative assistive technology",
+    "responsive rendering beyond the overview page on mobile",
+    "published external links",
+    "representative user task completion",
+    "fresh-host installation and real invocation"
+  ],
+  "separate_boundary": "Redistribution is permitted by the included licenses. Publication and live-host acceptance remain separate and unperformed.",
+  "current_package_sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+  "render_provenance": {
+    "source_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "docs_git_tree": "9a3b8784f1ef7abffe829496008b5d440ce11a4a",
+    "plugin_git_tree": "6693909b7b69af10b3971cce1137766dcfb33512",
+    "fresh_capture": true,
+    "render_count": 12,
+    "direct_visual_inspection": "blocked-by-environment and unperformed"
+  },
+  "independent_review": {
+    "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+    "open_blockers": 0,
+    "open_documentation_defects": 0,
+    "resolved_packet_defects": 2,
+    "residual_conditions": [
+      "direct pixel and broader responsive review",
+      "keyboard and assistive technology",
+      "fresh-host acceptance",
+      "publication and external links",
+      "representative-user completion"
+    ],
+    "evidence": "verification/hesperos-free-v3/independent-review.json"
+  }
+}

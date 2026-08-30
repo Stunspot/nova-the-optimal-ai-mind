@@ -1,0 +1,37 @@
+Install a plugin from a configured marketplace snapshot.
+
+Pass either `PLUGIN@MARKETPLACE` or pass `PLUGIN` with `--marketplace MARKETPLACE`.
+
+Usage: codex plugin add [OPTIONS] <PLUGIN[@MARKETPLACE]>
+
+Arguments:
+  <PLUGIN[@MARKETPLACE]>
+          Plugin selector to install: either PLUGIN@MARKETPLACE or PLUGIN with --marketplace
+
+Options:
+  -c, --config <key=value>
+          Override a configuration value that would otherwise be loaded from `~/.codex/config.toml`.
+          Use a dotted path (`foo.bar.baz`) to override nested values. The `value` portion is parsed
+          as TOML. If it fails to parse as TOML, the raw string is used as a literal.
+          
+          Examples: - `-c model="o3"` - `-c 'sandbox_permissions=["disk-full-read-access"]'` - `-c
+          shell_environment_policy.inherit=all`
+
+  -m, --marketplace <MARKETPLACE>
+          Configured marketplace name to use when PLUGIN does not include @MARKETPLACE
+
+      --enable <FEATURE>
+          Enable a feature (repeatable). Equivalent to `-c features.<name>=true`
+
+      --json
+          Output install result as JSON
+
+      --disable <FEATURE>
+          Disable a feature (repeatable). Equivalent to `-c features.<name>=false`
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Examples:
+  codex plugin add sample@debug
+  codex plugin add sample --marketplace debug

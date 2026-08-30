@@ -1,0 +1,151 @@
+{
+  "schema": "nova-free-testforge-artifact-binding/v1",
+  "observed_at": "2026-08-30T23:09:19.4540305Z",
+  "reviewer": "independent verification-reviewer",
+  "target": {
+    "name": "Nova the Optimal AI Free 3.0.0 local static qualification candidate",
+    "source_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "head_at_review": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "qualification_package": "dist/qualification/nova-the-optimal-ai-free-3.0.0",
+    "operator_manifest": "verification/testforge-free-v3/operator/verification-manifest.pre-review.json",
+    "operator_manifest_sha256": "239931f0e35be0fd3574643a3405bdd0f89ab57ac9422b278769e66fff0aa145",
+    "operator_evidence_cutoff_utc": "2026-08-30T23:05:41.9845559+00:00"
+  },
+  "environment": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "python": "Python 3.14.0",
+    "working_directory": ".",
+    "raw_evidence": [
+      "verification/testforge-free-v3/reviewer/raw/environment-platform.json",
+      "verification/testforge-free-v3/reviewer/raw/environment-python.json"
+    ]
+  },
+  "source_binding": {
+    "head_matches_target": true,
+    "non_verification_diff_from_target": "none",
+    "non_verification_diff_check": "pass",
+    "source_clean_at_build": {
+      "release_manifest": true,
+      "codex_build_manifest": true,
+      "claude_build_manifest": true,
+      "binding_status": "supported_recorded_build_state",
+      "reviewer_boundary": "The reviewer did not observe the historical build invocation. The clean-at-build state is recorded consistently by all three built manifests and corroborated by the exact target revision plus a zero non-verification diff at review."
+    },
+    "raw_evidence": [
+      "verification/testforge-free-v3/reviewer/raw/head-revision.json",
+      "verification/testforge-free-v3/reviewer/raw/source-freeze.json",
+      "verification/testforge-free-v3/reviewer/raw/source-diff-check.json"
+    ]
+  },
+  "custody": {
+    "source_lock": {
+      "path": "design/source-lock.json",
+      "sha256": "d731c31a25e760f3dcdde9eff77a6e99e18b55da77883d35fa018854b8e56467",
+      "package_copy_sha256": "d731c31a25e760f3dcdde9eff77a6e99e18b55da77883d35fa018854b8e56467",
+      "records": 25,
+      "plugin_skill_tree": {
+        "file_count": 737,
+        "tree_sha256": "c14cd241bba8bd3270fed417dfb0a5ad6adcab3729b6d6d6ac3111b629c2e111"
+      },
+      "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
+      "notice_tree_records": 4
+    },
+    "source_map": {
+      "path": "design/source-map.json",
+      "sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
+      "package_copy_sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
+      "records": 25,
+      "notice_records": 4,
+      "bound_by_source_lock": true
+    }
+  },
+  "topology": {
+    "plugin_count": 1,
+    "visible_skill_roots": 25,
+    "mind_version": "0.2.0",
+    "faculty_core_count": 16,
+    "binding_status": "pass"
+  },
+  "rights": {
+    "rights_status": "MIT deterministic software and schemas plus CC BY-ND 4.0 authored Augment material, with attribution, notice, trademark, provenance, and component custody",
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": [],
+    "standalone_rights_envelopes": 25,
+    "rights_bundle_sha256": {
+      "LICENSE.md": "efad021511aee0148db1a4a5a528c2b6e3e4eb7059f9d3f7285f9dfe2e411a1c",
+      "ATTRIBUTION.md": "fc80f3ed8d86ddbf01169cf9f740e6cbbf773fa56e3dd6d52774f723ef67a2d5",
+      "NOTICE.md": "ddda4f55c69b01588cf9c57582e78e27318cb09e2e2a6fb3ec54367fbdc0c966",
+      "TRADEMARKS.md": "7b473341be0279ad1f118d80d5f14769aac1d9a5fb37e4f27f304e1beec580fd",
+      "PROVENANCE.md": "76d36b4366b1d8dc35675c3edfb3f7ba3b5c648b9614afe8c319e4215f46ee9a",
+      "THIRD-PARTY-NOTICES.md": "5c892ce3bee82cc277e47aa1df2f8d4da0b2c5d762e177ad19704f9af4cbb82e"
+    },
+    "binding_status": "pass"
+  },
+  "artifacts": [
+    {
+      "role": "customer",
+      "path": "dist/qualification-artifacts/nova-the-optimal-ai-free-3.0.0.zip",
+      "sha256": "ef9edfba653d2d559db7fda82ec2a6fa25c5fe238e71fc64668978dfc364f55b",
+      "bytes": 40529763,
+      "sidecar_matches": true
+    },
+    {
+      "role": "codex",
+      "path": "dist/qualification-artifacts/nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "sha256": "02211a8c69ccdb6e6669c9210b2c1dc6b9661446372a3f96d9e0095d95ee77af",
+      "bytes": 9427716,
+      "sidecar_matches": true
+    },
+    {
+      "role": "claude-compatible",
+      "path": "dist/qualification-artifacts/nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "sha256": "2ebd8c21c9c165f86721f8d41211796d9625595c00d988846092daf19bbc703f",
+      "bytes": 28461177,
+      "sidecar_matches": true
+    }
+  ],
+  "lifecycle": {
+    "codex_candidate_state": "built_from_frozen_source",
+    "claude_candidate_state": "built_from_frozen_source",
+    "codex_independent_review_required": true,
+    "claude_independent_review_required": true,
+    "independent_review_semantics": "The builder records an unapproved frozen-source candidate and requires an external review; it cannot self-promote the candidate to reviewed or published state.",
+    "publication_state": "not_published",
+    "publication_performed": false,
+    "publication_authority": "separate_user_authorization_required"
+  },
+  "verification": {
+    "product_contract": {
+      "status": "pass",
+      "tests": 10,
+      "raw_evidence": "verification/testforge-free-v3/reviewer/raw/product-contract.json"
+    },
+    "verifier_adversarial": {
+      "status": "pass",
+      "tests": 14,
+      "duration_seconds": 301.634224,
+      "raw_evidence": "verification/testforge-free-v3/reviewer/raw/verifier-adversarial.json"
+    },
+    "package_verifier": {
+      "status": "pass",
+      "findings": 0,
+      "checksum_entries": 2524,
+      "customer_references_checked": 137,
+      "raw_evidence": "verification/testforge-free-v3/reviewer/raw/package-verifier.json"
+    },
+    "manifest_validator": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0,
+      "raw_evidence": "verification/testforge-free-v3/reviewer/raw/manifest-validator.json"
+    },
+    "traceability_validator": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0,
+      "raw_evidence": "verification/testforge-free-v3/reviewer/raw/traceability-validator.json"
+    }
+  },
+  "binding_result": "PASS",
+  "evidence_boundary": "This binding applies only to the exact qualification package and three hashes above at source commit 20beac84346465b7fe082c4c169b7d03be57880e. It does not bind any later rebuild, fresh-host behavior, GitHub-hosted execution, visual or accessibility conformance, specialist efficacy, publication, or public availability."
+}

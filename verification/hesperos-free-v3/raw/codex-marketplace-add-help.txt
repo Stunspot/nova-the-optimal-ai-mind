@@ -1,0 +1,39 @@
+Add a local or Git marketplace to the configured marketplace sources
+
+Usage: codex plugin marketplace add [OPTIONS] <SOURCE>
+
+Arguments:
+  <SOURCE>
+          Marketplace source: a local path, owner/repo[@ref], HTTPS Git URL, or SSH Git URL
+
+Options:
+  -c, --config <key=value>
+          Override a configuration value that would otherwise be loaded from `~/.codex/config.toml`.
+          Use a dotted path (`foo.bar.baz`) to override nested values. The `value` portion is parsed
+          as TOML. If it fails to parse as TOML, the raw string is used as a literal.
+          
+          Examples: - `-c model="o3"` - `-c 'sandbox_permissions=["disk-full-read-access"]'` - `-c
+          shell_environment_policy.inherit=all`
+
+      --ref <REF>
+          Git ref to fetch for Git marketplace sources
+
+      --enable <FEATURE>
+          Enable a feature (repeatable). Equivalent to `-c features.<name>=true`
+
+      --sparse <PATH>
+          Sparse checkout path for Git marketplace sources. Can be repeated
+
+      --disable <FEATURE>
+          Disable a feature (repeatable). Equivalent to `-c features.<name>=false`
+
+      --json
+          Output add result as JSON
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Examples:
+  codex plugin marketplace add ./path/to/marketplace
+  codex plugin marketplace add owner/repo --ref main
+  codex plugin marketplace add https://github.com/owner/repo --sparse plugins/foo
