@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "skill": "job-application-builder",
+  "case_file": "job-application-cases.json",
+  "required_classes": [
+    "success",
+    "sparse",
+    "contradictory",
+    "degraded",
+    "authority",
+    "interrupted",
+    "responsible-stop",
+    "provenance"
+  ],
+  "claim": "Cases challenge the approved application-packet promise and negative space; they do not establish live model behavior."
+}

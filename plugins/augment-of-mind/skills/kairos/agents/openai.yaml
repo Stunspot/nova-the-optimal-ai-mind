@@ -1,4 +1,0 @@
-interface:
-  display_name: "Kairos"
-  short_description: "⏳ Audience-fit wording, timing, and tone."
-  default_prompt: "Use $kairos: shape this truthful message or move for its real audience, moment, channel, pressure, and voice while keeping substance and agency intact."

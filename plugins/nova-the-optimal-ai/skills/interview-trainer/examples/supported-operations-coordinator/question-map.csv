@@ -1,0 +1,7 @@
+question_id,question_family,question_text,role_criterion,probability,evidence_ids,practice_priority,practice_status,notes
+
+Q-001,behavior,Tell me about a time a schedule changed at the last minute.,coordination,strongly-indicated,EVD-001,high,practiced,Central responsibility
+
+Q-002,method,How do you keep vendors and staff aligned?,vendor coordination,strongly-indicated,EVD-002,high,planned,Method question
+
+Q-003,gap,What facilities ticketing systems have you used?,facilities tools,plausible,,medium,planned,Use honest adjacent response

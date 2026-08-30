@@ -1,9 +1,0 @@
-OBSERVATION_TIME=2026-08-12T04:41:50.3024893-05:00
-REMOTE_MAIN=2061709f380d17e511cc94ae8cce23847c6f2764
-===== PAGES API =====
-{"url":"https://api.github.com/repos/Stunspot/signal-loom/pages","status":null,"cname":null,"custom_404":false,"html_url":"https://stunspot.github.io/signal-loom/","build_type":"workflow","source":{"branch":"main","path":"/"},"public":true,"protected_domain_state":null,"pending_domain_unverified_at":null,"https_enforced":true}
-PAGES_EXIT=0
-===== RULES FOR MAIN =====
-[{"type":"required_status_checks","parameters":{"strict_required_status_checks_policy":false,"do_not_enforce_on_create":true,"required_status_checks":[{"context":"line-ending-policy"}]},"ruleset_source_type":"Repository","ruleset_source":"Stunspot/signal-loom","ruleset_id":20252779}]
-RULES_EXIT=0
-CAPACITY: GitHub-hosted Actions allowance reported exhausted by repository owner on 2026-08-12; exact remaining allowance is not exposed by the available read-only repository API and automatic workflow invocation is prohibited until a fresh capacity read after the expected 2026-09-01 refresh.

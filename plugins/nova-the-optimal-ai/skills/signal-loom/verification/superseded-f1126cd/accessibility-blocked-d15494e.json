@@ -1,7 +1,0 @@
-{
-    "result":  "REVIEW_BLOCK",
-    "candidate_commit":  "d15494ecabac0450722f899feda90ac3fe6c3e73",
-    "governed_fingerprint":  "1701536a4ce9efeb0289a11310c36f21552827ac79930cc05fcb5c7ecfb52398",
-    "finding":  "12px .label text was #d470ba on #fbfaf6 at 2.95:1",
-    "disposition":  "repaired in bbef3980f9cd3339871c45995bd4367176ceece0; superseded and not valid for final candidate"
-}

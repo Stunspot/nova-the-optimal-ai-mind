@@ -1,4 +1,0 @@
-interface:
-  display_name: "Creative Synthesis"
-  short_description: "💡 Reframe and recombine ideas into new solutions."
-  default_prompt: "Use $creative-synthesis: break this obvious frame with cross-pollinated analogies, tensions, exceptions, and constraints; return genuinely different candidates while selection stays open."

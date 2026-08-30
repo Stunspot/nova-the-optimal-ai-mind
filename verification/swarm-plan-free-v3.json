@@ -1,0 +1,109 @@
+{
+  "format": "cd-agent-swarm-plan/v1",
+  "plan_id": "swarm-20260830-free-nova-v3",
+  "updated_at": "2026-08-30T00:00:00Z",
+  "mission": "Build the new Free Nova the Optimal AI as a complete dual-host generalist from current canonical sources.",
+  "acceptance": [
+    "One Nova front door carries the current ambient MIND and exactly the settled Free capability loadout.",
+    "Codex and Claude distributions are assembled from pinned canonical sources without private developer runtime dependencies.",
+    "Package, routing, documentation, and independent verification evidence support a local release-candidate handoff."
+  ],
+  "authority": {
+    "allowed": [
+      "Read maintained Nova and capability repositories.",
+      "Edit and build inside E:\\Github\\nova-the-optimal-ai-mind.",
+      "Run local deterministic and bounded behavioral checks."
+    ],
+    "reserved": [
+      "Git push, GitHub release, public publication, store upload, and external announcement require separate user authority."
+    ],
+    "sensitive_material": "Do not copy private developer paths, credentials, customer data, or Nova estate contents into the product."
+  },
+  "regime": "assemble",
+  "admission_basis": "Three independent read-only audits improve source coverage, architecture correctness, and acceptance design while the root retains the only write surface.",
+  "root": {
+    "owner": "/root",
+    "work": "Mission custody, product decisions, all repository writes, build integration, test execution, and final acceptance."
+  },
+  "workers": [
+    {
+      "id": "source-custody",
+      "objective": "Resolve the canonical source tree and current version or commit for every settled Free capability.",
+      "deliverable": "A 25-root source matrix with exact paths, versions, evidence limits, and conflicts.",
+      "depends_on": [],
+      "read_surfaces": [
+        "E:\\Github",
+        "E:\\Indranet\\Augments\\0 Free",
+        "E:\\Github\\nova-emergent"
+      ],
+      "write_surfaces": [],
+      "authority": [
+        "read-only"
+      ],
+      "evidence_required": [
+        "Canonical file paths and repository state for every consequential source claim."
+      ],
+      "status": "planned",
+      "return_condition": "Return the matrix, unresolved custody conflicts, and any capability that cannot be safely assembled."
+    },
+    {
+      "id": "build-architecture",
+      "objective": "Map the smallest migration from Nova 2.1.3 to the current MIND and dual-host edition architecture.",
+      "deliverable": "A concrete target tree, reuse map, build-script changes, and migration risks.",
+      "depends_on": [],
+      "read_surfaces": [
+        "E:\\Github\\nova-the-optimal-ai-mind",
+        "E:\\Github\\nova-emergent"
+      ],
+      "write_surfaces": [],
+      "authority": [
+        "read-only"
+      ],
+      "evidence_required": [
+        "Existing source and build paths supporting the recommendation."
+      ],
+      "status": "planned",
+      "return_condition": "Return the target architecture, precise reuse boundaries, and blockers."
+    },
+    {
+      "id": "acceptance-docs",
+      "objective": "Define the Free edition customer promise, routing collision probes, documentation journey, and release evidence gates.",
+      "deliverable": "A concise acceptance matrix and Hesperos/TestForge gate plan grounded in existing product records.",
+      "depends_on": [],
+      "read_surfaces": [
+        "E:\\Github\\nova-the-optimal-ai-mind",
+        "E:\\Github\\nova-emergent",
+        "E:\\Github\\testforge"
+      ],
+      "write_surfaces": [],
+      "authority": [
+        "read-only"
+      ],
+      "evidence_required": [
+        "Exact governing files for each proposed gate."
+      ],
+      "status": "planned",
+      "return_condition": "Return acceptance criteria, collision cases, documentation requirements, and residual host evidence boundaries."
+    }
+  ],
+  "budgets": {
+    "concurrency_limit": 4,
+    "model_policy": "Use the inherited qualified route; keep architecture and final acceptance at the root.",
+    "stop_condition": "Stop or re-plan when a worker needs the root's not-yet-settled product decision or any write surface."
+  },
+  "merge": {
+    "owner": "/root",
+    "method": "Root observes cited files, resolves conflicts against canonical repository state, then implements through a single writer.",
+    "indispensable_gates": [
+      "authority",
+      "single_writer",
+      "source_custody",
+      "routing",
+      "package",
+      "documentation",
+      "independent_review"
+    ]
+  },
+  "status": "planned",
+  "next_move": "Validate this plan, then dispatch the three read-only audits."
+}

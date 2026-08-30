@@ -79,9 +79,12 @@ def default_store_path() -> Path:
     explicit = os.environ.get("DUNBAR_STORE")
     if explicit:
         return Path(explicit).expanduser().resolve()
-    codex_home = os.environ.get("CODEX_HOME")
-    base = Path(codex_home).expanduser() if codex_home else Path.home() / ".codex"
-    return (base / "data" / "dunbar" / "people.sqlite3").resolve()
+    nova_root = os.environ.get("NOVA_DATA_ROOT")
+    if nova_root:
+        return (Path(nova_root).expanduser() / "memory" / "dunbar" / "people.sqlite3").resolve()
+    raise DunbarError(
+        "DUNBAR_STORE or NOVA_DATA_ROOT is required; use Nova Operations to configure a Nova estate outside .codex"
+    )
 
 
 def normalize_alias(value: str) -> str:
@@ -892,7 +895,7 @@ def restore_test(backup: Path) -> dict[str, Any]:
 
 def parser() -> argparse.ArgumentParser:
     result = argparse.ArgumentParser(description=__doc__)
-    result.add_argument("--store", type=Path, default=default_store_path())
+    result.add_argument("--store", type=Path)
     commands = result.add_subparsers(dest="command", required=True)
     commands.add_parser("path")
     commands.add_parser("init")
@@ -934,6 +937,7 @@ def main(argv: list[str] | None = None) -> int:
         sys.stderr.reconfigure(encoding="utf-8")
     args = parser().parse_args(argv)
     try:
+        args.store = args.store or default_store_path()
         if args.command == "path":
             output: Any = {"schema": "dunbar-path/v1", "store": str(args.store.expanduser().resolve())}
         elif args.command == "init":

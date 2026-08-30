@@ -1,6 +1,0 @@
-COMMAND=python -B scripts/inspect_infographic_html.py docs/404.html
-WORKDIR=E:\Github\.portfolio-remediation-019ff22b\signal-loom
-REVISION=4b88d1e7c7284797227b71497913b51b26f28156
-EXIT_CODE=0
-PASS: bounded static HTML checks (0 warning(s))
-LIMIT: no claim of sanitization, rendered accessibility, browser behavior, security, or visual quality

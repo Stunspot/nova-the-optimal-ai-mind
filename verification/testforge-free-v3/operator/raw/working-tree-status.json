@@ -1,0 +1,3832 @@
+{
+  "observed_at_utc": "2026-08-30T19:28:43.8403488Z",
+  "base_head": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
+  "clean": false,
+  "changed_entry_count": 956,
+  "entries": [
+    {
+      "status": " M",
+      "path": ".agents/plugins/marketplace.json"
+    },
+    {
+      "status": " M",
+      "path": ".github/workflows/deploy-pages.yml"
+    },
+    {
+      "status": " M",
+      "path": ".github/workflows/verify-package.yml"
+    },
+    {
+      "status": " M",
+      "path": ".gitignore"
+    },
+    {
+      "status": " M",
+      "path": "README.md"
+    },
+    {
+      "status": " M",
+      "path": "RELEASE-NOTES.md"
+    },
+    {
+      "status": " M",
+      "path": "SECURITY.md"
+    },
+    {
+      "status": " M",
+      "path": "START-HERE.md"
+    },
+    {
+      "status": " M",
+      "path": "SUPPORT.md"
+    },
+    {
+      "status": " D",
+      "path": "assets/nova-emergent.png"
+    },
+    {
+      "status": " D",
+      "path": "audit-local-stores.ps1"
+    },
+    {
+      "status": " D",
+      "path": "bundle/reminder/associative-bootstrap.json"
+    },
+    {
+      "status": " D",
+      "path": "bundle/reminder/associative-capability-cards.json"
+    },
+    {
+      "status": " D",
+      "path": "bundle/reminder/associative-index-qwen3-embedding-0.6b.json"
+    },
+    {
+      "status": " M",
+      "path": "design/FREE-NOVA-PACKAGE-MAP.md"
+    },
+    {
+      "status": " D",
+      "path": "design/free-nova-extra-capabilities.json"
+    },
+    {
+      "status": " M",
+      "path": "design/source-lock.json"
+    },
+    {
+      "status": " M",
+      "path": "docs/404.html"
+    },
+    {
+      "status": " M",
+      "path": "docs/CAPABILITY-GUIDE.md"
+    },
+    {
+      "status": " D",
+      "path": "docs/CAPABILITY-REMINDERS.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/HOST-MATRIX.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/INSTALL-CLAUDE.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/INSTALL-CODEX.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/MAINTAINER-GUIDE.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/PRIVACY-AND-TRUST.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/TROUBLESHOOTING.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/UPGRADE.md"
+    },
+    {
+      "status": " M",
+      "path": "docs/VERIFICATION.md"
+    },
+    {
+      "status": " D",
+      "path": "docs/assets/nova-emergent.png"
+    },
+    {
+      "status": " D",
+      "path": "docs/assets/nova-mind-pages-hero.png"
+    },
+    {
+      "status": " D",
+      "path": "docs/assets/nova-mind-social-card.png"
+    },
+    {
+      "status": " M",
+      "path": "docs/capabilities.html"
+    },
+    {
+      "status": " M",
+      "path": "docs/check_site.py"
+    },
+    {
+      "status": " M",
+      "path": "docs/index.html"
+    },
+    {
+      "status": " M",
+      "path": "docs/install.html"
+    },
+    {
+      "status": " M",
+      "path": "docs/style.css"
+    },
+    {
+      "status": " M",
+      "path": "docs/support.html"
+    },
+    {
+      "status": " M",
+      "path": "docs/trust.html"
+    },
+    {
+      "status": " M",
+      "path": "docs/workflows.html"
+    },
+    {
+      "status": " D",
+      "path": "install.ps1"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/.agents/plugins/marketplace.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/.codex-plugin/plugin.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/CAPABILITIES-AND-LIMITS.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/CAPABILITY-REMINDERS.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/DATA-AND-PRIVACY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/HOST-COMPATIBILITY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/INSTALL-CODEX.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/LICENSE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/NOTICE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/OPTIONAL-CORE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/PACKAGE-REFERENCE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/QUICK-START.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/README.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/RELEASE-NOTES.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/SECURITY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/START-HERE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/SUPPORT.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/TERMS-OF-USE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/TROUBLESHOOTING.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/USER-GUIDE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/assets/mind-capability-card-1080x1350.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/assets/mind-hero-1600x900.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/assets/mind-icon-1024.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/assets/templates/verification-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/design/mind-extra-capabilities.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/hooks/hooks.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/hooks/mind_prompt_submit.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/install.ps1"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/__main__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/association_math.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/capability_build.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/capability_scan.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/cli.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/constants.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/contextual_field.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/contextual_geometry.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/contextual_recall.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/core.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/delivery.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/errors.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/estate.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/field_tokens.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/handshake.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/hook_context.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/hook_delivery.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/migration_runner.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/migrations/0001_core_metadata.sql"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/migrations/0002_associative_disclosure.sql"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/migrations/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/model_context.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/mounts.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/protocol.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/receipts.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/reminders.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/service.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/store.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/mind_core/util.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/pyproject.toml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/scripts/audit_pages.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/scripts/build_associative_assets.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/scripts/build_integrated_fingerprint.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/scripts/build_release.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/scripts/query_associative_field.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/scripts/verify_release.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/assets/tastefield-map.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/references/aesthetic-intelligence-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/aesthetic-intelligence/references/source/tastefield-compass-canonical.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-dreaming/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-dreaming/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-dreaming/assets/templates/dream-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-dreaming/assets/templates/waking-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-dreaming/references/dream-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/assets/pursuit-state.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/assets/pursuit-state.template.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/examples/interrupted-recovery.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/references/conation-and-goal-custody.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/references/degraded-operation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/references/pursuit-loop.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/scripts/tests/test_validate_pursuit_state.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agent-striving/scripts/validate_pursuit_state.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/assets/preference-capsule.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/assets/scene-state-card.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/examples/ambient-analysis.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/examples/ambiguous-charge.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/examples/completion-variants.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/examples/relational-restraint.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/examples/responsive-pivot.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/examples/sparse-signal.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/fallbacks/copy-paste-prompt.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/desire-and-response.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/discovery-and-personalization.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/eros-and-relational-perception.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/evidence-and-boundaries.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/host-policy-adapter.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/pacing-completion-and-closure.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/roleplay-and-continuity.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/seduction-and-embodiment.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/references/variation-and-inclusion.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/agentic-eros/scripts/validate_package.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/associative-bootstrap.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/associative-capability-cards.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/associative-index-qwen3-embedding-0.6b.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/collaborative-dynamics-logo.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/faculty-return.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/faculty-return.template.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/mission-capsule.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/faculty-runtime/mission-capsule.template.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/assets/integrated-capability-fingerprint.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/evals/faculty-runtime-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/references/faculty-runtime/faculty-registry.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/augment-of-mind/references/faculty-runtime/runtime.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/assets/capability-registry.template.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/assets/mission-ledger.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-conductor/references/routing-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-promotion/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/capability-promotion/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/adapters/claude-code.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/adapters/codex.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/common-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/context-request.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/continuity-manifest-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/continuity-manifest.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/dream-report.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/episode-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/episode.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/error-neighborhood.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/export-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/export.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/failure-occurrence.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/failure-pattern.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/forget-plan-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/generation-v1.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/idempotency-v1.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/lifecycle-receipt-v1.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/proposal-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/proposal.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/receipt-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/state-record-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/state-record.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/transaction-v2.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/worldline-request.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/schemas/worldline-view.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/capability-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/compiled-context.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/consolidation-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/context-request.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/continuity-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/contradiction-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/deletion-plan.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/dream-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/assets/templates/waking-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/examples/correction-and-freshness.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/examples/deletion.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/examples/dream-incubation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/examples/permission-revocation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/examples/portable-transfer.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/examples/project-resumption.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/fallbacks/copy-paste-continuity.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/personas/cognitive-ecologist-lyra-anstice.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/consolidation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/context-compilation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/continuity-state-model.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/dream-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/evaluation-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/faultline-error-neighborhood-contract.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/operating-method.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/portability-and-degraded-operation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/privacy-correction-and-forgetting.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/procedural-learning-handoff.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/source-time-and-authority.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/references/worldline-contract.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/README.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/compile_context.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/compile_context_v2.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/continuity_store.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/continuity_store_v2.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/eligibility_policy.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/error_neighborhood.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/schema_validation.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/tests/test_continuity.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/tests/test_continuity_v2.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/tests/test_worldline_v2.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/validate_continuity.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/validate_continuity_v2.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/workspace_runtime.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/cognitive-continuity/scripts/worldline.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/creative-synthesis/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/creative-synthesis/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/creative-synthesis/assets/concept-field.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/creative-synthesis/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/creative-synthesis/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/creative-synthesis/references/creative-synthesis-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/decision-intelligence/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/decision-intelligence/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/decision-intelligence/assets/decision-record.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/decision-intelligence/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/decision-intelligence/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/decision-intelligence/references/decision-intelligence-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/deliberative-intelligence/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/deliberative-intelligence/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/deliberative-intelligence/assets/deliberation-map.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/deliberative-intelligence/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/deliberative-intelligence/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/deliberative-intelligence/references/deliberative-intelligence-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/epistemic-regulation/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/epistemic-regulation/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/epistemic-regulation/assets/claim-register.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/epistemic-regulation/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/epistemic-regulation/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/epistemic-regulation/references/epistemic-regulation-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/executive-function/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/executive-function/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/executive-function/assets/mission-control.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/executive-function/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/executive-function/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/executive-function/references/governance-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/instrumental-agency/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/instrumental-agency/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/instrumental-agency/assets/action-ledger.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/instrumental-agency/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/instrumental-agency/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/instrumental-agency/references/instrumental-agency-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/kairos/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/kairos/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/kairos/assets/kairos-brief.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/kairos/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/kairos/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/kairos/references/kairos-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/measurement-intelligence/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/measurement-intelligence/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/measurement-intelligence/assets/measurement-plan.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/measurement-intelligence/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/measurement-intelligence/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/measurement-intelligence/references/measurement-intelligence-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/prosocial-influence/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/prosocial-influence/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/prosocial-influence/assets/influence-brief.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/prosocial-influence/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/prosocial-influence/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/prosocial-influence/references/prosocial-influence-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/sensemaking/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/sensemaking/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/sensemaking/assets/situation-model.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/sensemaking/evals/core-transfer-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/sensemaking/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/sensemaking/references/sensemaking-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/activation-examples.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/ci/github-actions-node.yml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/ci/github-actions-python.yml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/schemas/finding.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/schemas/metered-verification-plan.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/schemas/normalized-results.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/schemas/scenario.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/schemas/verification-manifest.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/execution-record.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/exploratory-charter.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/failure-triage.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/metered-verification-plan.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/metered-verification-response.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/residual-risk-ledger.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/risk-register.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/traceability-matrix.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/verification-brief.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/verification-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/assets/templates/verification-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/demonstration.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/expected/execution-record.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/expected/normalized-results.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/expected/test_parser.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/expected/verification-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/expected/verification-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/input/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/input/parser.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/parser-edge-cases/walkthrough.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/demonstration.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/execution-record.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/fix.patch"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/fixed/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/fixed/reporting.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/normalized-results.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/post-fix-execution-record.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/test_date_filter.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/test_fixed_date_filter.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/verification-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/expected/verification-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/input/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/input/reporting.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/input/test_existing.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/python-regression/walkthrough.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/demonstration.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/expected/cancelSubscription.integration.test.ts"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/expected/verification-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/expected/verification-report.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/input/package.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/input/requirement.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/input/src/subscriptionService.ts"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/input/tests/cancelSubscription.test.ts"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/examples/typescript-api-change/walkthrough.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/fallback/intake-card.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/fallback/master-prompt.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/fallback/output-templates.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/fallback/review-prompt.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/output-contract.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/boundary-and-equivalence.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/metered-verification.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/oracle-design.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/release-assessment.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/risk-based-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/state-transition-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/test-layer-selection.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/core/test-smells.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/reliability/concurrency-and-races.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/reliability/dependency-failure-modes.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/reliability/observability-verification.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/reliability/retries-idempotency-timeouts.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/security/authorization-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/security/input-and-parser-security.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/security/safe-testing-boundaries.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/security/secrets-and-config-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/specialized/contract-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/specialized/migration-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/specialized/parser-and-compiler-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/specialized/property-based-testing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/stacks/generic-adapter.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/stacks/python-pytest.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/references/stacks/typescript-vitest-jest.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/assemble_report.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/assess_metered_verification.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/capture_command.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/common/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/common/command_result.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/common/filesystem.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/detect_test_stack.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/inspect_repo.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/normalize_test_results.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/scan_test_smells.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/summarize_diff.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/validate_eval_suite.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/validate_manifest.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/software-verification/scripts/validate_traceability.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/adversarial-checks.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/review-rubric.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/scripts/common/__init__.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/scripts/common/command_result.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/scripts/common/filesystem.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/scripts/validate_manifest.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/skills/verification-reviewer/scripts/validate_traceability.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/verification/capability-promotion-probes.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/augment-of-mind/verification/mind-associative-profile.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/.codex-plugin/plugin.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/assets/nova-tour-mobile.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/assets/nova-tour-preview.png"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/agentic-coding/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/agentic-coding/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/adapters/claude-ai.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/adapters/claude-code.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/adapters/codex.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/cost-report.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/local-cognition-request.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/local-cognition-result.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/local-route-policy.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/rate-card.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/workflow-run.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/schemas/workload-profile.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/cost-incident.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/local-cognition-request.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/local-route-policy.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/rate-card.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/route-decision.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/weekly-cost-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/assets/templates/workload-profile.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/examples/cost-bomb.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/examples/local-vs-api.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/examples/model-route-comparison.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/fallback/chat-only.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/canonical/README.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/canonical/ai-eng-g-model-selection.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/cost-ledger-and-attribution.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/knowledge/README.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/knowledge/ai-eng-ac-ai-operations.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/knowledge/ai-eng-af-ai-product-architecture.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/knowledge/ai-eng-c-economic-physics-of-inference.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/knowledge/ai-eng-z-strategic-telemetry.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/knowledge/dao-kaicheng-capital-allocation.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/local-routing-and-execution.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/local-vs-cloud-total-cost.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/monitoring-and-drift.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/operating-method.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/provenance.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/rate-card-freshness-and-source-policy.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/routing-and-cascade-economics.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/references/spend-authority-and-safety.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/scripts/cognition_cost.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/scripts/local_router.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/scripts/refresh_openrouter.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/scripts/tests/test_cognition_cost.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer/scripts/tests/test_local_router.py"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech/knowledge/network-architecture.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech/knowledge/windows-systems-engineering.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech/release-manifest.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/corkboard/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/corkboard/agents/openai.yaml"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/corkboard/scripts/corkboard.py"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/capture-receipts/CAP-ALPHA-V1.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/capture-receipts/CAP-ALPHA-V2.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/capture-receipts/CAP-BETA.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/capture-receipts/CAP-GAMMA.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/delta.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/projections/graph.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/projections/ledger.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/projections/map.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/projections/projection-manifest.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/examples/harbor-lantern/projections/timeline.json"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/almanac/delta-sweep.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/attribution/investigative-news-intelligence-license.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/a-reality-models-event-ontology-and-public-reality-mapping.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/b-signal-evidence-and-confidence-architecture.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/c-information-ecosystems-source-topologies-and-platform-behavior.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/d-topic-discovery-weak-signal-detection-and-story-emergence.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/e-narrative-divergence-coverage-gaps-and-missingness-analysis.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/f-thread-following-link-expansion-and-investigative-graph-construction.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/g-temporal-dynamics-trend-formation-and-story-evolution.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/h-power-incentives-and-strategic-actor-analysis.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/i-propaganda-narrative-laundering-and-information-operations.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/j-implied-reality-causal-inference-and-unstated-truth-extraction.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/k-editorial-prioritization-escalation-logic-and-intervention-strategy.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/l-failure-modes-hallucinated-patterns-and-analytical-breakdown.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/references/news-canon/m-analyst-workflows-research-artifacts-and-publication-systems.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/dunbar/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/dunbar/agents/openai.yaml"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/dunbar/references/store-contract.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/dunbar/scripts/dunbar.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/DATA-AND-PRIVACY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/LICENSE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/NOTICE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/SECURITY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/SUPPORT.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/TERMS-OF-USE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/THIRD-PARTY-NOTICES.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/evals/eval-manifest.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/evals/gridmason-core-behavior-cases.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/first-build.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/golden/build-spec.canonical.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/golden/build-spec.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/golden/compile-receipt.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/golden/layers.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/golden/materials.csv"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/examples/first-build/golden/preview.svg"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/fallbacks/degraded-capability.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/references/build-spec.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/references/design-studio.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/references/diagnostic-fieldbook.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/references/evidence-and-safety.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/references/world-dossier.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/schemas/build-spec.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/scripts/gridmason_build.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/templates/build-spec.template.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/templates/design-brief.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/templates/diagnostic-capture.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/gridmason/templates/world-dossier.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer/knowledge/network-architecture.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer/knowledge/windows-systems-engineering.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer/release-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/EXPORTS-AND-VTT.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/LICENSE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/SECURITY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/SUPPORT.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/assets/campaign.template/campaign-ledger.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/assets/foundry-v14-module/module.template.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/assets/foundry-v14-module/scripts/importer.mjs"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/examples/tonight-pack/README.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/examples/tonight-pack/campaign/assets/abandoned-tollhouse-map.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/examples/tonight-pack/campaign/assets/mara-venn-token.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/examples/tonight-pack/campaign/campaign-ledger.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/fallbacks/degraded-capability.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/fallbacks/universal-copy-paste-workflow.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/canonical-boundaries.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/export-and-vtt-handoffs.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/arcane-language.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/art-prompt.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/backstory.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/boxtext.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/campaign-workflow.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/creature.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/cursed-item.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dimensional-gateway.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/dungeon.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/encounter-chain.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/faction-allegiance.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/homebrew-mechanics.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/impossible-invention.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/index.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/intrigue-web.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/legendary-artifact.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/lost-civilization.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/magic-system.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/myth.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/npc.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/party.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/prophecy.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/puzzle-trap.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/quest.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/region-map.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/rumors-headlines.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/secret-society.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/settlement-city.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/spell.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/tavern-menu.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/urban-dungeon.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain-scheme.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/instruments/villain.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/operating-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/knowledge/state-and-authority.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/schemas/alchemy-character.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/schemas/campaign-ledger.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/schemas/foundry-v14-bundle.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/schemas/import-observation.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/schemas/ludis-pack.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/adapters.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/export_campaign.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/export_player_safe.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/export_target.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/exportlib.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/init_campaign.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/ledgerlib.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/migrate_ledger.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/promote_object.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/record_import_observation.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/roll_table.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/self_check.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/snapshot_campaign.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/fixtures/ledger/legacy-basic.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/fixtures/ledger/v2-valid.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_adapters.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_capture_consistency.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_commands.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_export_pack.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_export_target.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_import_observation.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_ledger_v2.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/tests/test_snapshot.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/ludis-continuum/scripts/validate_ledger.py"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour-base.css"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour-fragment.html"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/assets/nova-tour.html"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/capability-routing.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/cd-brand-canon.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/mind-compatibility.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/take-the-tour.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/scripts/materialize_tour.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/.github/workflows/deploy-pages.yml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/.github/workflows/line-ending-policy.yml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/CONTRIBUTING.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/README.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/docs/INSTALLATION.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/docs/LIFECYCLE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/docs/MAINTAINERS.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/docs/install.html"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/verification/accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/verification/documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/verification/live-verification.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/verification/public-copy-review-2026-08-13.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/verification/reconciliation-v1.0.1.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research/verification/testforge-review.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/knowledge/avery-structuring-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/knowledge/ronan-threat-modeling-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/personas/avery-docket-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/personas/felix-garrison-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/personas/nadia-traceveil-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/personas/quinn-airlock-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/personas/ronan-redline-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/references/instruments/avery-omnibus-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/references/instruments/felix-omnibus-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/references/instruments/nadia-omnibus-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/references/instruments/quinn-omnibus-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/privacy-redline/references/instruments/ronan-omnibus-canonical.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence/agents/openai.yaml"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer/agents/openai.yaml"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/SKILL.md"
+    },
+    {
+      "status": " M",
+      "path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/.editorconfig"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/.gitattributes"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/.github/workflows/deploy-pages.yml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/.github/workflows/line-ending-policy.yml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/CHANGELOG.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/CONTRIBUTING.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/LICENSE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/README.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/SECURITY.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/SKILL.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/SUPPORT.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/VALIDATION.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/agents/openai.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/carousel-package.template.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/diagnostic-record.template.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/project.yaml"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/review/accessibility.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/review/diagnostics.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/review/release-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/sources/manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/brief.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/claims.jsonl"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/decisions.jsonl"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/distribution.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/interactions.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/spine.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/theme.tokens.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/loomfile.template/state/visual-plan.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/semantic-infographic.template.html"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/assets/signal-loom-readme-hero.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/.nojekyll"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/404.html"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/CUSTOMER-GUIDE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/SITE-SOURCE.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/assets/signal-loom-pages-hero.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/assets/signal-loom-social-card.jpg"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/assets/signal-loom-social-card.png"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/index.html"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/docs/style.css"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/fallbacks/degraded-capability.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/fallbacks/universal-copy-paste-workflow.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/claim-and-currentness-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/html-trust-boundary.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/infographic-toolkit-v2-canonical.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/operating-doctrine.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/representation-and-chart-integrity.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/knowledge/stage-and-faculty-routing.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/schemas/diagnostic.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/schemas/project.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/schemas/source-manifest.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/schemas/spine.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/schemas/visual-plan.schema.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/scripts/init_loomfile.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/scripts/inspect_infographic_html.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/scripts/package_loomfile.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/scripts/self_check.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/scripts/validate_loomfile.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/tests/test_init_loomfile.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/tests/test_public_presentation.py"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/FINGERPRINT.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/adversarial-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/documentation-accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/line-ending-policy-local.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/manifest-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/self-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/test-smells.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/traceability-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/unit-tests.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/raw/visual-assets.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/verification-summary.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/remediation-2026-08-12/visual-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/FINGERPRINT.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/accessibility-blocked-d15494e.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/documentation-accessibility-review.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/documentation-accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/documentation-project.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/fingerprint-records.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/governed-files.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/hesperos-documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/claim-audit.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/contrast.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/diff-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/diff-summary.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/html-404.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/html-index.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/lifecycle.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/live-baseline.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/local-links.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/manifest-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/markdown-lint.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/publication-boundary.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/repo-inventory.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/self-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/test-smells.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/test-stack.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/traceability-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/unit-tests.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/raw/visual-assets.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-17ed4f3/testforge-review-fail.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-40d78aa/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-40d78aa/documentation-accessibility-review.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-92f4773/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-92f4773/documentation-accessibility-review.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-92f4773/documentation-accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-92f4773/hesperos-documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-92f4773/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-92f4773/testforge-review-fail.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/FINGERPRINT.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/documentation-project.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/fingerprint-records.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/governed-files.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/hesperos-documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/claim-audit.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/contrast.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/diff-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/diff-summary.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/html-404.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/html-index.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/lifecycle.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/live-baseline.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/local-links.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/manifest-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/markdown-lint.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/publication-boundary.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/repo-inventory.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/self-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/test-smells.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/test-stack.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/traceability-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/unit-tests.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/raw/visual-assets.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-b72d666/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-bbef398/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-bbef398/documentation-accessibility-review.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-bbef398/documentation-accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-bbef398/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-bbef398/testforge-review-fail.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/FINGERPRINT.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/fingerprint-records.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/governed-files.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/html-404.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/line-ending-policy-local.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/repo-inventory.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/self-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/test-smells.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/test-stack.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-d33f4fd/raw/unit-tests.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/FINGERPRINT.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/adversarial-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/documentation-accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/fingerprint-records.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/governed-files.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/hesperos-documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/publication-preflight.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/contrast.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/html-404.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/html-index.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/line-ending-policy-local.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/local-links.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/manifest-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/repo-inventory.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/self-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/test-smells.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/test-stack.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/tooling-failures.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/traceability-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/unit-tests.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/raw/visual-assets.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-e4a849a/visual-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/FINGERPRINT.sha256"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/SUPERSEDED.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/accessibility-blocked-d15494e.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/documentation-accessibility-review.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/documentation-accessibility-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/documentation-project.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/fingerprint-records.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/governed-files.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/hesperos-documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/canonical-toc-anchors.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/claim-audit.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/contrast.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/diff-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/diff-summary.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/html-404.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/html-404.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/html-index.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/html-index.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/lifecycle.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/line-ending-policy-local.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/live-baseline.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/local-links.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/manifest-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/markdown-lint.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/publication-boundary.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/repo-inventory.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/self-check.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/self-check.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/test-smells-interpretation.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/test-smells.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/test-stack.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/traceability-validation.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/unit-tests.json"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/unit-tests.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/raw/visual-assets.txt"
+    },
+    {
+      "status": " D",
+      "path": "plugins/nova-the-optimal-ai/skills/signal-loom/verification/superseded-f1126cd/testforge-manifest.json"
+    },
+    {
+      "status": " D",
+      "path": "tests/test_install_transaction.py"
+    },
+    {
+      "status": " D",
+      "path": "tests/test_metered_verification.py"
+    },
+    {
+      "status": " D",
+      "path": "tests/test_mind_delivery_context.py"
+    },
+    {
+      "status": " D",
+      "path": "tests/test_mind_prompt_submit.py"
+    },
+    {
+      "status": " D",
+      "path": "tests/test_release_builder_cli.py"
+    },
+    {
+      "status": " D",
+      "path": "tests/test_windows_powershell_compatibility.py"
+    },
+    {
+      "status": " D",
+      "path": "tools/audit_local_stores.py"
+    },
+    {
+      "status": " D",
+      "path": "tools/build_free_nova_associative_assets.py"
+    },
+    {
+      "status": " M",
+      "path": "tools/build_release.py"
+    },
+    {
+      "status": " M",
+      "path": "tools/verify_package.py"
+    },
+    {
+      "status": " D",
+      "path": "verification/accessibility-review-20260812-r2.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/accessibility-review.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/adversarial-verification-20260812-r2.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/artwork-inspection-20260812-r2.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/artwork-inspection.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/321ae1bc8142b407449d1f5e42306eda.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/737ee70cd6e84d66ecd95f1988aec488.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/activation.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/hook-contextual.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/hook-explicit.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/minecraft-field.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.1.3.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.1.4.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.1.5.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.1.7.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.2.0.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.2.1.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/model-context-contract-v2.2.2.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/promptcraft-field.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/status.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/summary.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/associative-smoke/testforge-field.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/capability-promotion-probes.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/documentation-accessibility-review-v2.0.8.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/documentation-fingerprint-v2.0.8.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/documentation-lint.txt"
+    },
+    {
+      "status": " D",
+      "path": "verification/documentation-review.md"
+    },
+    {
+      "status": " D",
+      "path": "verification/free-nova-associative-profile.md"
+    },
+    {
+      "status": " D",
+      "path": "verification/hesperos-documentation-review-20260812-r2.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/hesperos-documentation-review-v2.0.8.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/hesperos-documentation-review.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/live-verification.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/public-copy-review-2026-08-13.md"
+    },
+    {
+      "status": " D",
+      "path": "verification/public-release-v2.0.3.md"
+    },
+    {
+      "status": " D",
+      "path": "verification/public-release-v2.0.4.md"
+    },
+    {
+      "status": " D",
+      "path": "verification/testforge-adversarial-verification-v2.0.8.json"
+    },
+    {
+      "status": " D",
+      "path": "verification/testforge-adversarial-verification.json"
+    },
+    {
+      "status": " D",
+      "path": "verify-install.ps1"
+    },
+    {
+      "status": "??",
+      "path": "THIRD-PARTY-NOTICES.md"
+    },
+    {
+      "status": "??",
+      "path": "design/product-contract.json"
+    },
+    {
+      "status": "??",
+      "path": "design/source-map.json"
+    },
+    {
+      "status": "??",
+      "path": "docs/notices.html"
+    },
+    {
+      "status": "??",
+      "path": "docs/security.html"
+    },
+    {
+      "status": "??",
+      "path": "docs/troubleshooting.html"
+    },
+    {
+      "status": "??",
+      "path": "docs/upgrade.html"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/.claude-plugin/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/LICENSE.md"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/THIRD-PARTY-NOTICES.md"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/notices/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/agent-striving/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/interview-trainer/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/job-application-builder/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/nova-operations/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/assets/nova-icon.png"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/edition/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/nova/references/mind/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/software-verification/"
+    },
+    {
+      "status": "??",
+      "path": "plugins/nova-the-optimal-ai/skills/verification-reviewer/"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_product_contract.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_release_pipeline.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_state_and_operations.py"
+    },
+    {
+      "status": "??",
+      "path": "tests/test_verifier_adversarial.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/check_documentation.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/generate_source_lock.py"
+    },
+    {
+      "status": "??",
+      "path": "tools/release_lib.py"
+    },
+    {
+      "status": "??",
+      "path": "verification/hesperos-free-v3/"
+    },
+    {
+      "status": "??",
+      "path": "verification/history/"
+    },
+    {
+      "status": "??",
+      "path": "verification/license-audit-free-v3.md"
+    },
+    {
+      "status": "??",
+      "path": "verification/package-verification-free-v3.json"
+    },
+    {
+      "status": "??",
+      "path": "verification/skill-plugin-validation-free-v3.json"
+    },
+    {
+      "status": "??",
+      "path": "verification/swarm-plan-free-v3.json"
+    },
+    {
+      "status": "??",
+      "path": "verification/testforge-free-v3/"
+    }
+  ]
+}

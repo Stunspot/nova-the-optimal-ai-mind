@@ -1,454 +1,237 @@
-"""Build deterministic Codex, Claude, and customer-kit artifacts for Nova + MIND Free."""
-
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
-import os
-import platform
-import shutil
-import subprocess
 import sys
-import zipfile
-import zlib
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-VERSION = "2.1.3"
-KIT_NAME = f"nova-mind-free-v{VERSION}"
-PLUGIN_NAMES = ("augment-of-mind", "nova-the-optimal-ai")
-SKIP_NAMES = {".git", "__pycache__", ".pytest_cache"}
-SKIP_SUFFIXES = {".pyc", ".pyo"}
-PACKAGED_DIRECTORIES = (
-    ".agents",
-    "plugins/augment-of-mind",
-    "plugins/nova-the-optimal-ai",
-    "docs",
-    "bundle/reminder",
+from release_lib import (
+    copy_tree,
+    deterministic_zip,
+    files,
+    git_value,
+    replace_directory,
+    sha256_file,
+    tree_digest,
+    write_json,
+    write_text,
 )
-PACKAGED_FILES = (
-    "design/FREE-NOVA-PACKAGE-MAP.md",
-    "design/source-lock.json",
+
+PRODUCT_SLUG = "nova-the-optimal-ai-free"
+PLUGIN_ID = "nova-the-optimal-ai"
+REQUIRED_DOCS = (
     "README.md",
     "START-HERE.md",
-    "RELEASE-NOTES.md",
-    "SUPPORT.md",
-    "SECURITY.md",
     "LICENSE.md",
-    "install.ps1",
-    "verify-install.ps1",
-    "assets/nova-emergent.png",
+    "SECURITY.md",
+    "SUPPORT.md",
+    "THIRD-PARTY-NOTICES.md",
+    "RELEASE-NOTES.md",
 )
-FIXED_TIME = (2026, 8, 13, 0, 0, 0)
-CLAUDE_DESCRIPTIONS = {
-    "answerlayer": "🔄 Guidance updates grounded in new facts.",
-    "current-intelligence-observatory": "🛰️ Public-source tracking of live events.",
-    "ludis-continuum": "🎲 Tabletop gaming, fiction, and campaign state.",
-    "signal-loom": "📊 Build infographics from supplied research and data.",
-    "agentic-eros": "🔥 Attraction, intimacy, and adult roleplay.",
-    "software-verification": "☠️ Frozen releases tested for fatal defects.",
-}
-
-def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
+CURATED_DESIGN = (
+    "FREE-NOVA-PACKAGE-MAP.md",
+    "product-contract.json",
+    "source-lock.json",
+    "source-map.json",
+)
 
 
-def windows_stable_ordinal_key(relative: str) -> tuple[str, str]:
-    """Return a locale-free Windows ordering with an exact-case tie-break."""
-    return relative.casefold(), relative
-
-
-def reproducibility_environment() -> dict[str, object]:
-    """Describe build-affecting runtime details without host or user identity."""
+def marketplace() -> dict[str, object]:
     return {
-        "python": {
-            "implementation": platform.python_implementation(),
-            "version": platform.python_version(),
-        },
-        "zlib": {
-            "compile_version": zlib.ZLIB_VERSION,
-            "runtime_version": zlib.ZLIB_RUNTIME_VERSION,
-        },
-        "platform": {
-            "os_name": os.name,
-            "sys_platform": sys.platform,
-            "system": platform.system(),
-            "release": platform.release(),
-            "version": platform.version(),
-            "machine": platform.machine(),
-        },
-    }
-
-
-def git_output(*arguments: str) -> str:
-    result = subprocess.run(
-        ["git", "-C", str(ROOT), *arguments],
-        check=False,
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode:
-        raise RuntimeError(f"Git command failed: {result.stderr.strip()}")
-    return result.stdout.strip()
-
-
-def git_batch_output(arguments: tuple[str, ...], lines: list[str]) -> list[str]:
-    if any("\n" in line or "\r" in line for line in lines):
-        raise RuntimeError("tracked paths with line breaks are not supported")
-    result = subprocess.run(
-        ["git", "-C", str(ROOT), *arguments],
-        check=False,
-        capture_output=True,
-        input="".join(f"{line}\n" for line in lines),
-        text=True,
-        encoding="utf-8",
-    )
-    if result.returncode:
-        raise RuntimeError(f"Git command failed: {result.stderr.strip()}")
-    return result.stdout.splitlines()
-
-
-def _skipped(path: Path) -> bool:
-    return any(part in SKIP_NAMES for part in path.parts) or path.suffix in SKIP_SUFFIXES
-
-
-def _assert_payload_is_tracked(tracked: set[str]) -> None:
-    selected: list[Path] = []
-    for relative in PACKAGED_DIRECTORIES:
-        source = ROOT / relative
-        if not source.is_dir():
-            raise RuntimeError(f"packaged source directory is missing: {source}")
-        selected.extend(path for path in source.rglob("*") if path.is_file() and not _skipped(path.relative_to(ROOT)))
-    for relative in PACKAGED_FILES:
-        source = ROOT / relative
-        if not source.is_file():
-            raise RuntimeError(f"packaged source file is missing: {source}")
-        selected.append(source)
-    untracked = sorted(
-        path.relative_to(ROOT).as_posix()
-        for path in selected
-        if path.relative_to(ROOT).as_posix() not in tracked
-    )
-    if untracked:
-        rendered = ", ".join(untracked[:8])
-        suffix = " ..." if len(untracked) > 8 else ""
-        raise RuntimeError(
-            "packaged payload contains files not bound to the Git revision: "
-            + rendered
-            + suffix
-        )
-
-
-def _assert_tracked_bytes_match_revision(tracked: set[str], revision: str) -> None:
-    paths = sorted(tracked, key=windows_stable_ordinal_key)
-    worktree_ids = git_batch_output(
-        ("hash-object", "--no-filters", "--stdin-paths"),
-        paths,
-    )
-    revision_ids = git_batch_output(
-        ("cat-file", "--batch-check=%(objectname)"),
-        [f"{revision}:{relative}" for relative in paths],
-    )
-    if len(worktree_ids) != len(paths) or len(revision_ids) != len(paths):
-        raise RuntimeError("Git byte-parity scan returned an incomplete result")
-    mismatches = [
-        relative
-        for relative, worktree_id, revision_id in zip(paths, worktree_ids, revision_ids)
-        if worktree_id != revision_id
-    ]
-    if mismatches:
-        rendered = ", ".join(mismatches[:8])
-        suffix = " ..." if len(mismatches) > 8 else ""
-        raise RuntimeError(
-            "raw tracked worktree bytes differ from the committed revision: "
-            + rendered
-            + suffix
-        )
-
-
-def source_state() -> tuple[str, int, str, set[str]]:
-    tracked_status = git_output("status", "--porcelain", "--untracked-files=no")
-    if tracked_status:
-        raise RuntimeError("tracked source changes must be committed before building the release")
-    revision = git_output("rev-parse", "HEAD")
-    if len(revision) != 40:
-        raise RuntimeError("git did not return a full source revision")
-    tracked = {item.replace("\\", "/") for item in git_output("ls-files", "-z").split("\0") if item}
-    _assert_payload_is_tracked(tracked)
-    _assert_tracked_bytes_match_revision(tracked, revision)
-    digest = hashlib.sha256()
-    counted = 0
-    for relative in sorted(tracked, key=windows_stable_ordinal_key):
-        source = ROOT / relative
-        if not source.is_file():
-            continue
-        digest.update(relative.encode("utf-8"))
-        digest.update(b"\0")
-        digest.update(bytes.fromhex(sha256(source)))
-        digest.update(b"\n")
-        counted += 1
-    return revision, counted, digest.hexdigest(), tracked
-
-
-def validate_output_root(path: Path) -> None:
-    anchor = Path(path.anchor).resolve()
-    if path.resolve() == anchor:
-        raise RuntimeError(f"output root may not be a filesystem root: {path}")
-
-
-def safe_remove(path: Path, expected_parent: Path) -> None:
-    if not path.exists():
-        return
-    resolved = path.resolve()
-    if resolved.parent != expected_parent.resolve():
-        raise RuntimeError(f"refused removal outside expected parent: {resolved}")
-    shutil.rmtree(resolved)
-
-
-def require_same_release(dist: Path) -> None:
-    manifest_path = dist / "release-manifest.json"
-    if not manifest_path.is_file():
-        raise RuntimeError(
-            f"refused to replace an unrecognized dist tree: {dist}; use a new --output-root"
-        )
-    try:
-        manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
-        raise RuntimeError(f"refused to replace invalid dist manifest: {manifest_path}") from exc
-    if manifest.get("version") != VERSION:
-        raise RuntimeError(
-            f"refused to replace dist version {manifest.get('version')!r} with {VERSION}; "
-            "use a new version-scoped --output-root"
-        )
-
-
-def display_path(path: Path) -> str:
-    try:
-        return str(path.relative_to(ROOT))
-    except ValueError:
-        return str(path)
-
-
-def copytree(source: Path, target: Path, tracked: set[str]) -> None:
-    if target.exists():
-        raise RuntimeError(f"refused to copy into an existing target: {target}")
-    source_relative = source.relative_to(ROOT).as_posix()
-    prefix = source_relative + "/"
-    selected = sorted(
-        relative
-        for relative in tracked
-        if relative.startswith(prefix) and not _skipped(Path(relative))
-    )
-    if not selected:
-        raise RuntimeError(f"packaged source directory has no tracked files: {source}")
-    target.mkdir(parents=True)
-    for relative in selected:
-        source_file = ROOT / relative
-        if not source_file.is_file():
-            raise RuntimeError(f"tracked packaged source is missing: {source_file}")
-        destination = target / source_file.relative_to(source)
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source_file, destination)
-
-
-def write_zip(source: Path, archive: Path, top_level: str) -> None:
-    archive.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as bundle:
-        for path in sorted(source.rglob("*"), key=lambda item: item.relative_to(source).as_posix()):
-            if not path.is_file() or path.name in SKIP_NAMES or path.suffix in SKIP_SUFFIXES:
-                continue
-            relative = Path(top_level) / path.relative_to(source)
-            info = zipfile.ZipInfo(relative.as_posix(), FIXED_TIME)
-            info.compress_type = zipfile.ZIP_DEFLATED
-            info.external_attr = 0o100644 << 16
-            bundle.writestr(info, path.read_bytes())
-
-
-def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--replace",
-        action="store_true",
-        help=f"replace only an existing {VERSION} dist tree and exact {VERSION} release outputs",
-    )
-    parser.add_argument(
-        "--output-root",
-        type=Path,
-        help="write dist/ and release/ below a new version-scoped root (recommended for candidate builds)",
-    )
-    args = parser.parse_args(argv)
-
-    revision, source_file_count, source_digest, tracked = source_state()
-    output_root = args.output_root.expanduser().resolve() if args.output_root else ROOT
-    validate_output_root(output_root)
-    dist = output_root / "dist"
-    release = output_root / "release"
-    archive_output = release / f"{KIT_NAME}.zip"
-    checksum_output = release / f"{KIT_NAME}.zip.sha256"
-    receipt_output = release / f"{KIT_NAME}.build-receipt.json"
-    existing = [path for path in (dist, archive_output, checksum_output, receipt_output) if path.exists()]
-    if existing and not args.replace:
-        rendered = ", ".join(display_path(path) for path in existing)
-        raise RuntimeError(f"output exists; rerun with --replace for these exact targets: {rendered}")
-    if dist.exists():
-        require_same_release(dist)
-        safe_remove(dist, output_root)
-    for old in (archive_output, checksum_output, receipt_output):
-        if old.exists():
-            if old.resolve().parent != release.resolve() or not old.is_file():
-                raise RuntimeError(f"refused replacement outside the release directory: {old}")
-            old.unlink()
-    dist.mkdir(parents=True)
-    release.mkdir(parents=True, exist_ok=True)
-
-    codex = dist / "codex"
-    (codex / "plugins").mkdir(parents=True)
-    copytree(ROOT / ".agents", codex / ".agents", tracked)
-    for name in PLUGIN_NAMES:
-        copytree(ROOT / "plugins" / name, codex / "plugins" / name, tracked)
-
-    claude_folders = dist / "claude" / "folders"
-    claude_zips = dist / "claude" / "zips"
-    claude_folders.mkdir(parents=True)
-    claude_zips.mkdir(parents=True)
-    sources: dict[str, Path] = {}
-    for plugin in PLUGIN_NAMES:
-        for skill in sorted((ROOT / "plugins" / plugin / "skills").iterdir()):
-            if not skill.is_dir():
-                continue
-            if skill.name in sources:
-                raise RuntimeError(f"duplicate skill handle across plugins: {skill.name}")
-            if not (skill / "SKILL.md").is_file():
-                raise RuntimeError(f"skill root lacks SKILL.md: {skill}")
-            sources[skill.name] = skill
-    for name, source in sorted(sources.items()):
-        folder = claude_folders / name
-        copytree(source, folder, tracked)
-        if name in CLAUDE_DESCRIPTIONS:
-            entry = folder / "SKILL.md"
-            content = entry.read_text(encoding="utf-8")
-            content, count = __import__("re").subn(
-                r"(?m)^description:\s*.*$",
-                f'description: "{CLAUDE_DESCRIPTIONS[name]}"',
-                content,
-                count=1,
-            )
-            if count != 1:
-                raise RuntimeError(f"could not derive Claude description: {name}")
-            entry.write_text(content, encoding="utf-8", newline="\n")
-        write_zip(folder, claude_zips / f"{name}.zip", name)
-
-    docs_target = dist / "docs"
-    copytree(ROOT / "docs", docs_target, tracked)
-    design_target = dist / "design"
-    design_target.mkdir()
-    for name in ("FREE-NOVA-PACKAGE-MAP.md", "source-lock.json"):
-        shutil.copy2(ROOT / "design" / name, design_target / name)
-    for name in ("README.md", "START-HERE.md", "RELEASE-NOTES.md", "SUPPORT.md", "SECURITY.md", "LICENSE.md", "install.ps1", "verify-install.ps1"):
-        shutil.copy2(ROOT / name, dist / name)
-    packaged_readme = dist / "README.md"
-    source_mind_link = "plugins/augment-of-mind/USER-GUIDE.md"
-    packaged_mind_link = "codex/plugins/augment-of-mind/USER-GUIDE.md"
-    packaged_readme_text = packaged_readme.read_text(encoding="utf-8")
-    if packaged_readme_text.count(source_mind_link) != 1:
-        raise RuntimeError("could not derive the packaged MIND guide link")
-    packaged_readme.write_text(
-        packaged_readme_text.replace(source_mind_link, packaged_mind_link),
-        encoding="utf-8",
-        newline="\n",
-    )
-    (dist / "assets").mkdir()
-    shutil.copy2(ROOT / "assets" / "nova-emergent.png", dist / "assets" / "nova-emergent.png")
-    (dist / "bundle").mkdir()
-    copytree(ROOT / "bundle" / "reminder", dist / "bundle" / "reminder", tracked)
-
-    manifest = {
-        "format": "nova-mind-free-release/v1",
-        "product": "Nova + MIND Free",
-        "version": VERSION,
-        "source_revision": revision,
-        "source_material_file_count": source_file_count,
-        "source_material_sha256": source_digest,
-        "plugin_versions": {"nova-the-optimal-ai": "2.1.0", "augment-of-mind": "2.2.2"},
-        "codex_plugins": list(PLUGIN_NAMES),
-        "claude_skill_count": len(sources),
-        "claude_skills": sorted(sources),
-        "mind_faculty_count": 16,
-        "mind_attached_testforge_count": 2,
-        "reminder_capability_count": 41,
-        "reminder_qualification_state": "unqualified",
-        "evidence_boundary": "Structural release artifact. Live installation, hook trust, host delivery, behavioral qualification, Claude upload, publication, and commercial approval remain separate.",
-    }
-    (dist / "release-manifest.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
-    checksum_targets = [
-        *sorted(claude_zips.glob("*.zip")),
-        dist / "release-manifest.json",
-        dist / "codex" / "plugins" / "nova-the-optimal-ai" / ".codex-plugin" / "plugin.json",
-        dist / "codex" / "plugins" / "augment-of-mind" / ".codex-plugin" / "plugin.json",
-        dist / "bundle" / "reminder" / "associative-index-qwen3-embedding-0.6b.json",
-    ]
-    checksum_lines = [f"{sha256(path)}  {path.relative_to(dist).as_posix()}" for path in checksum_targets]
-    (dist / "SHA256SUMS.txt").write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
-
-    verify_env = os.environ.copy()
-    verify_env["PYTHONDONTWRITEBYTECODE"] = "1"
-    verification = subprocess.run(
-        [
-            sys.executable,
-            "-X",
-            "utf8",
-            str(ROOT / "tools" / "verify_package.py"),
-            "--release-root",
-            str(dist),
+        "name": "collaborative-dynamics-nova-free",
+        "interface": {"displayName": "Nova the Optimal AI Free by Collaborative Dynamics"},
+        "plugins": [
+            {
+                "name": PLUGIN_ID,
+                "source": {"source": "local", "path": f"./plugins/{PLUGIN_ID}"},
+                "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+                "category": "Productivity",
+            }
         ],
-        cwd=ROOT,
-        env=verify_env,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-        errors="replace",
-        check=False,
-    )
-    if verification.returncode != 0:
-        raise RuntimeError(
-            "release verification failed before archive sealing:\n"
-            + verification.stdout.strip()
-            + ("\n" + verification.stderr.strip() if verification.stderr.strip() else "")
+    }
+
+
+def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean: bool) -> dict[str, object]:
+    plugin_source = repo / "plugins" / PLUGIN_ID
+    plugin_manifest_path = plugin_source / ".codex-plugin" / "plugin.json"
+    loadout_path = plugin_source / "LOADOUT-MANIFEST.json"
+    if not plugin_manifest_path.is_file() or not loadout_path.is_file():
+        raise RuntimeError("Nova Free source plugin is incomplete")
+    plugin_manifest = json.loads(plugin_manifest_path.read_text(encoding="utf-8"))
+    loadout = json.loads(loadout_path.read_text(encoding="utf-8"))
+    source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
+    version = str(plugin_manifest["version"])
+    if version != "3.0.0" or loadout.get("product_version") != version:
+        raise RuntimeError("Version contract mismatch")
+    roots = sorted(path.name for path in (plugin_source / "skills").iterdir() if path.is_dir())
+    expected = sorted(loadout["roots"])
+    if roots != expected or len(roots) != 25:
+        raise RuntimeError(f"Loadout mismatch: source={len(roots)} manifest={len(expected)}")
+
+    tracked_status = git_value(repo, "status", "--porcelain", "--untracked-files=no") or ""
+    if require_clean and tracked_status:
+        raise RuntimeError("Tracked source is not clean; refusing sealed build")
+
+    package_name = f"{PRODUCT_SLUG}-{version}"
+    output_parent.mkdir(parents=True, exist_ok=True)
+    artifact_parent.mkdir(parents=True, exist_ok=True)
+    package_root = replace_directory(output_parent / package_name, output_parent)
+
+    for name in REQUIRED_DOCS:
+        source = repo / name
+        if not source.is_file():
+            raise RuntimeError(f"Required customer document missing: {name}")
+        target = package_root / name
+        target.write_bytes(source.read_bytes())
+
+    docs_source = repo / "docs"
+    if not docs_source.is_dir():
+        raise RuntimeError("Curated customer documentation directory missing: docs")
+    copy_tree(docs_source, package_root / "docs")
+    for name in CURATED_DESIGN:
+        source = repo / "design" / name
+        if not source.is_file():
+            raise RuntimeError(f"Required design/custody document missing: design/{name}")
+        target = package_root / "design" / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(source.read_bytes())
+
+    codex_root = package_root / "codex"
+    codex_plugin = codex_root / "plugins" / PLUGIN_ID
+    copy_tree(plugin_source, codex_plugin, exclude_top={".claude-plugin"})
+    write_json(codex_root / ".agents" / "plugins" / "marketplace.json", marketplace())
+
+    claude_root = package_root / "claude"
+    claude_plugin = claude_root / PLUGIN_ID
+    copy_tree(plugin_source, claude_plugin, exclude_top={".codex-plugin"})
+    folders_root = claude_root / "folders"
+    zips_root = claude_root / "zips"
+    skill_records: list[dict[str, object]] = []
+    for skill_id in roots:
+        source_skill = plugin_source / "skills" / skill_id
+        folder = folders_root / skill_id
+        copy_tree(source_skill, folder)
+        zip_path = zips_root / f"{skill_id}-{version}.zip"
+        zip_sha = deterministic_zip(folder, zip_path, prefix=skill_id)
+        skill_records.append(
+            {
+                "id": skill_id,
+                "tree": tree_digest(source_skill),
+                "claude_zip": zip_path.relative_to(package_root).as_posix(),
+                "claude_zip_sha256": zip_sha,
+            }
         )
 
-    write_zip(dist, archive_output, KIT_NAME)
-    release_hash = sha256(archive_output)
-    checksum_output.write_text(f"{release_hash}  {KIT_NAME}.zip\n", encoding="utf-8")
-    receipt = {
-        "format": "nova-mind-free-build-receipt/v1",
-        "product": "Nova + MIND Free",
-        "version": VERSION,
-        "source_revision": revision,
-        "source_material_file_count": source_file_count,
-        "source_material_sha256": source_digest,
-        "archive": {
-            "name": archive_output.name,
-            "bytes": archive_output.stat().st_size,
-            "sha256": release_hash,
-            "top_level": KIT_NAME,
-        },
-        "reproducibility_environment": reproducibility_environment(),
-        "structural_builder": "PASS",
-        "evidence_boundary": "Source custody and structural package construction only; live host behavior remains separate.",
+    base_commit = git_value(repo, "rev-parse", "HEAD")
+    build_state = {
+        "schema": "nova-free-build/v3",
+        "product": "Nova the Optimal AI Free",
+        "product_version": version,
+        "source_base_commit": base_commit,
+        "tracked_source_clean": not bool(tracked_status),
+        "sealed_candidate": bool(require_clean and not tracked_status),
+        "redistribution_state": "blocked_pending_component_grants",
+        "skill_roots": roots,
+        "evidence_boundary": "Package bytes and deterministic structure only; not fresh-host discovery, invocation, behavior, publication, or outcomes.",
     }
-    receipt_output.write_text(json.dumps(receipt, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    write_json(codex_root / "BUILD-MANIFEST.json", {**build_state, "binding": "codex"})
+    write_json(claude_root / "BUILD-MANIFEST.json", {**build_state, "binding": "claude-compatible"})
 
-    print(json.dumps({
-        "status": "PASS",
-        "codex_plugins": len(PLUGIN_NAMES),
-        "claude_skills": len(sources),
-        "source_revision": revision,
-        "customer_zip": display_path(archive_output),
-        "customer_zip_sha256": release_hash,
-        "build_receipt": display_path(receipt_output),
-    }, indent=2))
+    codex_zip = artifact_parent / f"{package_name}-codex.zip"
+    claude_zip = artifact_parent / f"{package_name}-claude.zip"
+    codex_zip_sha = deterministic_zip(codex_root, codex_zip, prefix=f"{package_name}-codex")
+    claude_zip_sha = deterministic_zip(claude_root, claude_zip, prefix=f"{package_name}-claude")
+    write_text(codex_zip.with_suffix(codex_zip.suffix + ".sha256"), f"{codex_zip_sha}  {codex_zip.name}")
+    write_text(claude_zip.with_suffix(claude_zip.suffix + ".sha256"), f"{claude_zip_sha}  {claude_zip.name}")
+
+    release_manifest = {
+        "schema": "nova-free-release-manifest/v3",
+        "product": "Nova the Optimal AI Free",
+        "brand": "Nova the Optimal AI",
+        "product_version": version,
+        "plugin_id": PLUGIN_ID,
+        "topology": {
+            "plugin_count": 1,
+            "visible_skill_roots": 25,
+            "mind_version": loadout["topology"]["mind_version"],
+            "faculty_core_count": loadout["topology"]["faculty_core_count"],
+        },
+        "source": {
+            "base_commit": base_commit,
+            "tracked_source_clean": not bool(tracked_status),
+            "source_lock": "design/source-lock.json",
+        },
+        "host_trees": {
+            "codex_plugin": tree_digest(codex_plugin),
+            "claude_plugin": tree_digest(claude_plugin),
+            "codex_claude_skill_bytes_identical": all(
+                (codex_plugin / "skills" / record["id"] / relative).read_bytes()
+                == (claude_plugin / "skills" / record["id"] / relative).read_bytes()
+                for record in skill_records
+                for relative in [
+                    path.relative_to(plugin_source / "skills" / str(record["id"]))
+                    for path in files(plugin_source / "skills" / str(record["id"]))
+                ]
+            ),
+        },
+        "skills": skill_records,
+        "host_artifacts": [
+            {"binding": "codex", "file": codex_zip.name, "sha256": codex_zip_sha},
+            {"binding": "claude-compatible", "file": claude_zip.name, "sha256": claude_zip_sha},
+        ],
+        "required_absences": loadout["required_absences"],
+        "redistribution_state": "blocked_pending_component_grants",
+        "release_blockers": source_lock["release_blockers"],
+        "evidence_boundary": "This manifest establishes built bytes and internal parity. Installation, discovery, enabled state, restart state, invocation, service configuration, behavior, publication, and customer outcomes remain separate observations.",
+    }
+    write_json(package_root / "RELEASE-MANIFEST.json", release_manifest)
+
+    checksum_rows = []
+    for path in files(package_root):
+        if path.name == "SHA256SUMS.txt":
+            continue
+        checksum_rows.append(f"{sha256_file(path)}  {path.relative_to(package_root).as_posix()}")
+    write_text(package_root / "SHA256SUMS.txt", "\n".join(checksum_rows))
+
+    customer_zip = artifact_parent / f"{package_name}.zip"
+    customer_zip_sha = deterministic_zip(package_root, customer_zip, prefix=package_name)
+    write_text(customer_zip.with_suffix(customer_zip.suffix + ".sha256"), f"{customer_zip_sha}  {customer_zip.name}")
+    return {
+        "schema": "nova-free-build-result/v3",
+        "package_root": str(package_root),
+        "customer_zip": str(customer_zip),
+        "customer_zip_sha256": customer_zip_sha,
+        "codex_zip": str(codex_zip),
+        "codex_zip_sha256": codex_zip_sha,
+        "claude_zip": str(claude_zip),
+        "claude_zip_sha256": claude_zip_sha,
+        "visible_skill_roots": len(roots),
+        "tracked_source_clean": not bool(tracked_status),
+        "sealed_candidate": bool(require_clean and not tracked_status),
+        "redistribution_state": "blocked_pending_component_grants",
+    }
+
+
+def parser() -> argparse.ArgumentParser:
+    result = argparse.ArgumentParser(description="Build deterministic Nova the Optimal AI Free host and customer packages.")
+    result.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
+    result.add_argument("--output-parent", type=Path)
+    result.add_argument("--artifact-parent", type=Path)
+    result.add_argument("--require-clean", action="store_true")
+    return result
+
+
+def main() -> int:
+    args = parser().parse_args()
+    repo = args.repo.resolve()
+    output_parent = (args.output_parent or repo / "dist").resolve()
+    artifact_parent = (args.artifact_parent or repo / "release").resolve()
+    try:
+        value = build(repo, output_parent, artifact_parent, args.require_clean)
+    except (OSError, ValueError, RuntimeError, KeyError, json.JSONDecodeError) as exc:
+        print(json.dumps({"schema": "nova-free-build-error/v3", "error": str(exc)}, indent=2), file=sys.stderr)
+        return 2
+    print(json.dumps(value, indent=2))
     return 0
 
 

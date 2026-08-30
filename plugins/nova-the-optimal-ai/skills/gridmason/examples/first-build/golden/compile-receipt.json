@@ -1,1 +1,0 @@
-{"artifact_id":"first-build","format":"gridmason-build-spec/v1","schema_version":1,"status":"STATICALLY VALID","unsupported":["biomes","block_entities","commands","entities","fluids","inventories","native_formats","scheduled_ticks","world_actions"],"validation_scope":["closed-schema","coordinate-bounds","palette-references","placement-uniqueness","deterministic-derivatives"]}

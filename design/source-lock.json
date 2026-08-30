@@ -1,323 +1,183 @@
 {
-  "format": "nova-free-source-lock/v1",
-  "product": "Nova + MIND Free",
-  "product_version": "2.1.3",
-  "generated_at": "2026-08-15",
-  "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python cache files excluded",
-  "contest_repository_mutated": false,
-  "excluded_capabilities": [
-    "aji-go-coach",
-    "agent-arena-competition",
-    "impactful-tom"
-  ],
+  "schema": "nova-free-source-lock/v3",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "source_map_sha256": "071d301ed2c7f7c134eaf3e2094d40f2d866be674988341d9e9f258c6158e2e0",
+  "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
-      "component": "nova",
+      "id": "agent-striving",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "a678d72049f99e999ccd4278ef9596adc0a0743e",
-      "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_tree": {
-        "file_count": 15,
-        "tree_sha256": "821f3acdc48a8af0be62837ed301235724458901378011052faa048a1a277210"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
+      "source_commit": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
+      "source_path": "plugins/augment-of-mind/skills/agent-striving",
+      "source_version": "2.2.2 lineage",
+      "selection": [
+        "complete skill tree"
+      ],
+      "edition_overlays": [
+        "references/conation-and-goal-custody.md"
+      ],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agent-striving",
       "imported_tree": {
-        "file_count": 15,
-        "tree_sha256": "073bb2cc7c9a5eb4d4f75f93d1adfc02cd21842cce0f5b08531e6118f2d6b95a"
+        "file_count": 12,
+        "tree_sha256": "61f8b903cc9dfc25cbf34fedc9ac4397370c9eb482cfa2e53a60c13bca71c929"
       },
-      "custody": "integrated Nova 2.1.0 component checkpoint with Worldline and Faultline routing; canonical persona verbatim",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "edition_overlay"
     },
     {
-      "component": "augment-of-mind",
-      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "917d06e1474ebf6b8868b09b88909a658cc4afab",
-      "source_path": "plugins/augment-of-mind/skills",
-      "source_tree": {
-        "file_count": 309,
-        "tree_sha256": "269baec64d1c5d922f6a00da12a04e0216466400d43b592956b54a4ccd21c066"
-      },
-      "imported_path": "plugins/augment-of-mind/skills",
+      "id": "agent-swarm-orchestration",
+      "source_repository": "https://github.com/Stunspot/agent-swarm-orchestration",
+      "source_commit": "01504f8e47af467883aa8dbfe4831cd6ad49faa9",
+      "source_path": "canonical/skills/agent-swarm-orchestration",
+      "source_version": "0.2.3",
+      "selection": [
+        "complete canonical skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration",
       "imported_tree": {
-        "file_count": 309,
-        "tree_sha256": "db3e872ac0576c65f38600ccce9ab137cc286ad95a0a68b905b6cd7a6309e792"
+        "file_count": 17,
+        "tree_sha256": "c7522abe4f92aedcf3cd089bfe6ed9d87c6a1ca6dbc3b4feb3009cd91bbceedb"
       },
-      "custody": "integrated MIND 2.2.2 checkpoint after complete bundled-skill currency reconciliation, including maintained TestForge 1.1.7 trees",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "aesthetic-intelligence/SKILL.md",
-          "aesthetic-intelligence/agents/openai.yaml",
-          "agent-dreaming/SKILL.md",
-          "agent-dreaming/agents/openai.yaml",
-          "agent-striving/SKILL.md",
-          "agent-striving/agents/openai.yaml",
-          "agentic-eros/SKILL.md",
-          "agentic-eros/agents/openai.yaml",
-          "augment-of-mind/SKILL.md",
-          "augment-of-mind/agents/openai.yaml",
-          "augment-of-mind/assets/integrated-capability-fingerprint.json",
-          "capability-conductor/SKILL.md",
-          "capability-conductor/agents/openai.yaml",
-          "capability-promotion/SKILL.md",
-          "capability-promotion/agents/openai.yaml",
-          "cognitive-continuity/SKILL.md",
-          "cognitive-continuity/agents/openai.yaml",
-          "creative-synthesis/SKILL.md",
-          "creative-synthesis/agents/openai.yaml",
-          "decision-intelligence/SKILL.md",
-          "decision-intelligence/agents/openai.yaml",
-          "deliberative-intelligence/SKILL.md",
-          "deliberative-intelligence/agents/openai.yaml",
-          "epistemic-regulation/SKILL.md",
-          "epistemic-regulation/agents/openai.yaml",
-          "executive-function/SKILL.md",
-          "executive-function/agents/openai.yaml",
-          "instrumental-agency/SKILL.md",
-          "instrumental-agency/agents/openai.yaml",
-          "kairos/SKILL.md",
-          "kairos/agents/openai.yaml",
-          "measurement-intelligence/SKILL.md",
-          "measurement-intelligence/agents/openai.yaml",
-          "prosocial-influence/SKILL.md",
-          "prosocial-influence/agents/openai.yaml",
-          "sensemaking/SKILL.md",
-          "sensemaking/agents/openai.yaml",
-          "software-verification/SKILL.md",
-          "software-verification/agents/openai.yaml",
-          "verification-reviewer/SKILL.md",
-          "verification-reviewer/agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "software-verification",
-      "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
-      "source_path": "testforge/skills/software-verification",
-      "source_tree": {
-        "file_count": 96,
-        "tree_sha256": "ab9fd37dd2a6a18eb0bd98794408a95f986c84cd1842c0ff503b6dd00545f064"
-      },
-      "imported_path": "plugins/augment-of-mind/skills/software-verification",
-      "imported_tree": {
-        "file_count": 96,
-        "tree_sha256": "95be575369a906c80d8ac927efde472d44a58dbf212f8693d2361cfa5e424634"
-      },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "verification-reviewer",
-      "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "cdbf6c384f7d23071a25f0b31347afcaad8e91c4",
-      "source_path": "testforge/skills/verification-reviewer",
-      "source_tree": {
-        "file_count": 9,
-        "tree_sha256": "6fedf817b214d3e41566d784ce2b4d4a23b34659b87fcb1768105affd72f2f0b"
-      },
-      "imported_path": "plugins/augment-of-mind/skills/verification-reviewer",
-      "imported_tree": {
-        "file_count": 9,
-        "tree_sha256": "4c16f4f4741bfddc2a27963efef5c4391e5945e7b1cceb5035135a67f1514e5e"
-      },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "agentic-coding",
+      "id": "agentic-coding",
       "source_repository": "https://github.com/Stunspot/agentic-coding",
       "source_commit": "b904fb7ebacd5bdcdc687f04149e32aa9dc8e7f9",
       "source_path": ".",
-      "source_tree": {
-        "file_count": 14,
-        "tree_sha256": "96b47afa7a6fd9b04a4eb81b5e7eb81086746ad28ee1f2821ac252f143cd3abe"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/agentic-coding",
-      "imported_tree": {
-        "file_count": 3,
-        "tree_sha256": "473cd3d55b496dc00ae190c6269ea923b11648992c5303313bba2c1ed5ac1bfa"
-      },
-      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
-      "selection_includes": [
+      "source_version": "",
+      "selection": [
         "SKILL.md",
         "adapter-manifest.json",
         "agents/openai.yaml"
       ],
-      "selected_tree": {
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agentic-coding",
+      "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "473cd3d55b496dc00ae190c6269ea923b11648992c5303313bba2c1ed5ac1bfa"
+        "tree_sha256": "44fb29e1f57fd83226e9c09db1de9ff3f081373cad80c59c55fe4e0fba3be1d0"
       },
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "answerlayer",
+      "id": "answerlayer",
       "source_repository": "https://github.com/Stunspot/answerlayer",
-      "source_commit": "be2ca4fe264861744a6c5899be3c91a9923c68ca",
+      "source_commit": "4d1a494038b8a010542946b1bf51ad5dd70f9d4e",
       "source_path": "release-v0.1.2/codex/answerlayer",
-      "source_tree": {
-        "file_count": 44,
-        "tree_sha256": "ce1a5dd15f33003b4de2adea2b3ce7c78b87ba79b7c871cfd3cb7a6d5c27eca0"
-      },
+      "source_version": "0.1.2",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
         "tree_sha256": "fcbc4b173d6a836ef8c14d7211e4e09a389ceee9a04c8c494de91f61fcfdd832"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "ai-cognition-cost-optimizer",
-      "source_repository": "https://github.com/Stunspot/ai-cognition-cost-optimizer",
-      "source_commit": "15791a326fd3173c70c6337811be0011957ff196",
-      "source_path": "release-v0.2.1/codex/ai-cognition-cost-optimizer/skills/ai-cognition-cost-optimizer",
-      "source_tree": {
-        "file_count": 45,
-        "tree_sha256": "319158e0dd671e62d433a52483c638ce4761f4f6b1938f0e148f22655bd316c1"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/ai-cognition-cost-optimizer",
+      "id": "beryl-it-tech",
+      "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
+      "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
+      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/beryl-it-tech",
+      "source_version": "0.1.3",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
       "imported_tree": {
-        "file_count": 45,
-        "tree_sha256": "7b9d69ed3554d224e46919c665b2e4d06efffd3690580c9214e0f9783b1d32d5"
+        "file_count": 49,
+        "tree_sha256": "c9a3a6cfd1fde38fa762d278e676c4f72ac9b2e1ce44efa4763dd4a22c373424"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "corkboard",
+      "id": "cognitive-continuity",
+      "source_repository": "https://github.com/Stunspot/cognitive-continuity",
+      "source_commit": "9c4a629c4e493431c77385d2983529c4f68ecc99",
+      "source_path": "release-manifest.json#lineage_synchronized_paths",
+      "source_version": "0.2.4",
+      "selection": [
+        "SKILL.md",
+        "adapters/",
+        "agents/",
+        "assets/",
+        "examples/",
+        "fallbacks/",
+        "personas/",
+        "references/",
+        "scripts/"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "adapters/codex.md",
+        "adapters/claude-code.md",
+        "examples/dream-incubation.md"
+      ],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity",
+      "imported_tree": {
+        "file_count": 73,
+        "tree_sha256": "393682e5dfc78ff90b9963c1b05ba5b2dde74dabe2d867debc488c2552857615"
+      },
+      "overlay_state": "edition_overlay"
+    },
+    {
+      "id": "corkboard",
       "source_repository": "https://github.com/Stunspot/corkboard",
       "source_commit": "460ac80d622a1893085818baee8336c825f0ec82",
       "source_path": ".",
-      "source_tree": {
-        "file_count": 14,
-        "tree_sha256": "33bf0a236ef1f6d058febd1f34e72d3a62383aaff21d67a1d17541139ae869f2"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
-      "imported_tree": {
-        "file_count": 3,
-        "tree_sha256": "337013bdf0866fdd31e9eaabbb2470f1932e60b4d2f1ea2870baeddc4c31e3a0"
-      },
-      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
-      "selection_includes": [
+      "source_version": "",
+      "selection": [
         "SKILL.md",
         "agents/openai.yaml",
         "scripts/corkboard.py"
       ],
-      "selected_tree": {
+      "edition_overlays": [
+        "SKILL.md",
+        "scripts/corkboard.py"
+      ],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
+      "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "337013bdf0866fdd31e9eaabbb2470f1932e60b4d2f1ea2870baeddc4c31e3a0"
+        "tree_sha256": "2bd92e672b6250c48fbfa2dddba0b27c74262f7fe6714d43b18abe958f37818d"
       },
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "edition_overlay"
     },
     {
-      "component": "current-intelligence-observatory",
+      "id": "current-intelligence-observatory",
       "source_repository": "https://github.com/Stunspot/current-intelligence-observatory",
-      "source_commit": "623d3181c873ea551dd748f278391240af761d59",
+      "source_commit": "18ad94d4400abff919f8cd5feacb15274af2dc95",
       "source_path": "release-v0.1.1/codex/current-intelligence-observatory",
-      "source_tree": {
-        "file_count": 72,
-        "tree_sha256": "a6312c3662e23e3bd411117710fcaa5c1f6b96ade9dd1f659399076556255c9f"
-      },
+      "source_version": "0.1.1",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "214d5731c9538c0868c63bf23b6884c8f809707f742611172936d130ca6ea2b2"
+        "tree_sha256": "7b4e2fb9c3d4c7f18b59b1691b5f0e6448419d86a22620ce25da578e6035b2f4"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "dunbar",
+      "id": "dunbar",
       "source_repository": "https://github.com/Stunspot/dunbar",
       "source_commit": "54598f18388f7938880371dfc0cf1c53f598188e",
       "source_path": ".",
-      "source_tree": {
-        "file_count": 23,
-        "tree_sha256": "5d96bf25b52d4992231121b9d40db5a6a5c9d0622b0e69d0452e687f7c98f54d"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
-      "imported_tree": {
-        "file_count": 12,
-        "tree_sha256": "8e1b2c24558c4d627c017cc5cc91c86e5c757a31c3ad34dbd73b6e43553a7fc6"
-      },
-      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
-      "selection_includes": [
+      "source_version": "",
+      "selection": [
         "SKILL.md",
         "agents/openai.yaml",
         "assets/item-record.schema.json",
@@ -331,383 +191,355 @@
         "references/store-contract.md",
         "scripts/dunbar.py"
       ],
-      "selected_tree": {
-        "file_count": 12,
-        "tree_sha256": "8e1b2c24558c4d627c017cc5cc91c86e5c757a31c3ad34dbd73b6e43553a7fc6"
-      },
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "omnara-deep-research",
-      "source_repository": "https://github.com/Stunspot/omnara-deep-research",
-      "source_commit": "4629c47fda5df93f62e9e2f7e903abae945db5b0",
-      "source_path": ".",
-      "source_tree": {
-        "file_count": 73,
-        "tree_sha256": "56745d2d772b6ebc19ddd0dbb5d3dd81aa8fa1b8d8330fea772655a83d4823c9"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
-      "imported_tree": {
-        "file_count": 73,
-        "tree_sha256": "e537c1b2f0dc80741d27dd03ca4010b7d57c2ded26d677ec3389856eac711af0"
-      },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "retrieval-intelligence",
-      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
-      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
-      "source_path": "skills/retrieval-intelligence",
-      "source_tree": {
-        "file_count": 9,
-        "tree_sha256": "360891df188b4aee9a7baa4e5a4c869ab09484a7bd8f8a54bc49e18fd2ce6021"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
-      "imported_tree": {
-        "file_count": 9,
-        "tree_sha256": "593ea5371145ad3560c67eedaa2a2bcafd958c50e016f04cff29ba7d960cf66f"
-      },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "retrieval-reviewer",
-      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
-      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
-      "source_path": "skills/retrieval-reviewer",
-      "source_tree": {
-        "file_count": 3,
-        "tree_sha256": "4e547175230129566f23d5c5c94968161022407ad43a7a66f22a9c68f212f041"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
-      "imported_tree": {
-        "file_count": 3,
-        "tree_sha256": "18201560b2711962765080c6b57502969a2dda8897c82164c1af380767fb9d27"
-      },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "rupert-giles-knowledge-steward",
-      "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
-      "source_commit": "71ce7f81977d6ccf77c6fa5aeeb67fd101cd0681",
-      "source_path": ".",
-      "source_tree": {
-        "file_count": 15,
-        "tree_sha256": "56422fa25707583548ba6e7244c870ae10c4f840819f84ce5c55c13cfc14a3f2"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
-      "imported_tree": {
-        "file_count": 4,
-        "tree_sha256": "29bdbd77e34eaaec1c8e6031d39e223a077fceb2d4b5d49404f56c4f9d5977b3"
-      },
-      "custody": "explicit runtime selection from current maintained repository; selection list is exact and reviewable",
-      "selection_includes": [
+      "edition_overlays": [
         "SKILL.md",
-        "agents/openai.yaml",
-        "assets/knowledge-estate-ledger.template.md",
-        "references/stewardship-doctrine.md"
+        "references/store-contract.md",
+        "scripts/dunbar.py"
       ],
-      "selected_tree": {
-        "file_count": 4,
-        "tree_sha256": "29bdbd77e34eaaec1c8e6031d39e223a077fceb2d4b5d49404f56c4f9d5977b3"
-      },
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "privacy-redline",
-      "source_repository": "https://github.com/Stunspot/privacy-redline",
-      "source_commit": "6440ce021f2594665d31aba3ceab69498a7da522",
-      "source_path": "release-v0.1.1/codex/privacy-redline",
-      "source_tree": {
-        "file_count": 41,
-        "tree_sha256": "df74bb7e013f798a856dba17af0ff45b0f8e21d2c73499574f65aaf32698d79a"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
       "imported_tree": {
-        "file_count": 41,
-        "tree_sha256": "3fcff5cbf2b71e1afdd8d30ed1ef05ab4ca9c3aeb9565df63453437fed98c3be"
+        "file_count": 12,
+        "tree_sha256": "c44a827981f4b0d696f027eb7e4aa01550aff7f0630673166c61563667d2b41d"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "edition_overlay"
     },
     {
-      "component": "signal-loom",
-      "source_repository": "https://github.com/Stunspot/signal-loom",
-      "source_commit": "f106c52e6d0fa3d898e115c9ef73b6c4ce62a266",
-      "source_path": ".",
-      "source_tree": {
-        "file_count": 213,
-        "tree_sha256": "e87bf7b3b2ddd75093e066b18a34d3470325932e83a8ca064b23a2bc1de05372"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/signal-loom",
+      "id": "interview-trainer",
+      "source_repository": "https://github.com/Stunspot/nova-emergent-interview-trainer",
+      "source_commit": "82c3d95d05d3dd2011be79422652257d349c808d",
+      "source_path": "source/interview-trainer",
+      "source_version": "0.1.2",
+      "selection": [
+        "complete canonical source tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/interview-trainer",
       "imported_tree": {
-        "file_count": 213,
-        "tree_sha256": "26108a064b844e0a888507f86a61529ba9aec03ed4e90a0408b80f395186ee21"
+        "file_count": 30,
+        "tree_sha256": "5600bb318126167273950e1ee834208b74e702553dd0d4b92e66053b0fafb700"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "owen-burnett-officecraft",
-      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
-      "source_commit": "91c76eeed72eef5a386a39ee77d696648ce7da99",
-      "source_path": "codex/owen-burnett-officecraft",
-      "source_tree": {
-        "file_count": 48,
-        "tree_sha256": "4aa77f2743c8d53c401f4247b3e84de4173c8472e9d18e9ce75ac505faf2325d"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
-      "imported_tree": {
-        "file_count": 48,
-        "tree_sha256": "3e8fee7e3a10452308a5fa1df27fa629bac543c8943f5da7176fae47bf538a57"
-      },
-      "custody": "release artifact",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "officecraft-reviewer",
-      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
-      "source_commit": "91c76eeed72eef5a386a39ee77d696648ce7da99",
-      "source_path": "codex/officecraft-reviewer",
-      "source_tree": {
-        "file_count": 9,
-        "tree_sha256": "484244ec63bbb7a8c85b265a54690e78695fb1cd24aabb541727941d1dee13af"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
-      "imported_tree": {
-        "file_count": 9,
-        "tree_sha256": "45f22ad24bd791d7326ba9e942fef25062136e5f61b371311791a7a32c277ed0"
-      },
-      "custody": "release artifact",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "beryl-it-tech",
+      "id": "it-work-reviewer",
       "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
-      "source_commit": "0aff1012b203bc341515ecaf6469ffb823d9a9a3",
-      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/beryl-it-tech",
-      "source_tree": {
-        "file_count": 49,
-        "tree_sha256": "d80f13b50b45a0131afcde24265d70ae43eba298d7ec4649e7156bb1eade6090"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
-      "imported_tree": {
-        "file_count": 49,
-        "tree_sha256": "c53eabd96203c749408e7e6ccf2927bc546d263256ac7e152003b1d4f6dfe5d6"
-      },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
-    },
-    {
-      "component": "it-work-reviewer",
-      "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
-      "source_commit": "0aff1012b203bc341515ecaf6469ffb823d9a9a3",
+      "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
       "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/it-work-reviewer",
-      "source_tree": {
-        "file_count": 49,
-        "tree_sha256": "3725ef33a7652f81e1b4bcd99c28927c102ea339661c55bfdcf7fc7187c94fc3"
-      },
+      "source_version": "0.1.3",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
       "imported_path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
       "imported_tree": {
         "file_count": 49,
-        "tree_sha256": "22bbc548d41533f5337a72cfb237dcfbb13ed2436a890daaf0d80cbafc96fac8"
+        "tree_sha256": "a4dbaf05ae331d6affabe86914956f170318db30e717641cab470fd42fbeee3d"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "ludis-continuum",
-      "source_repository": "https://github.com/Stunspot/ludis-continuum",
-      "source_commit": "d6b8fec964a7ca5a222bf7307b06798a815e1721",
-      "source_path": "release-v1.1.0/codex/ludis-continuum",
-      "source_tree": {
-        "file_count": 82,
-        "tree_sha256": "e3feef8346c390eb330ee82edb3df8fa219b4b66fb580f65bfa249c57d8c5643"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/ludis-continuum",
+      "id": "job-application-builder",
+      "source_repository": "https://github.com/Stunspot/nova-emergent-job-application-builder",
+      "source_commit": "621d674a179ce3399a9133b6f1d31ff94b328a3c",
+      "source_path": "source/job-application-builder",
+      "source_version": "0.1.2",
+      "selection": [
+        "complete canonical source tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/job-application-builder",
       "imported_tree": {
-        "file_count": 82,
-        "tree_sha256": "9be91cfb50ebca903b9460937656f3fea8bbcc41337172d793d3247ff7619790"
+        "file_count": 27,
+        "tree_sha256": "1502d8898c911d4c484669060456c5298c1a3560c907c3017cef46a1190db674"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "lex-foster-language-companion",
+      "id": "lex-foster-language-companion",
       "source_repository": "https://github.com/Stunspot/lex-foster-language-companion",
-      "source_commit": "807ee7334dc1c334c8f01277ee932217da47cc0f",
+      "source_commit": "290f1a074fe9c3d600c756ad1fab62bce0c04abb",
       "source_path": "release-v0.1.1/codex/lex-foster-language-companion",
-      "source_tree": {
-        "file_count": 26,
-        "tree_sha256": "980c81be1d78069a51e6782e47b7c82e753a94af14adb41ca00d0d0dc7ce42a4"
-      },
+      "source_version": "0.1.1",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "local_commit_ahead_of_origin",
       "imported_path": "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion",
       "imported_tree": {
         "file_count": 26,
         "tree_sha256": "523565da1b7b180a3079982d86b0f659ae7b72c3d34ca6b2691f9b4911f06993"
       },
-      "custody": "exact current canonical Git tree",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md",
-          "agents/openai.yaml"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
     },
     {
-      "component": "gridmason",
-      "source_repository": "https://github.com/Stunspot/gridmason",
-      "source_commit": "2dfba67dc7a69526f57f96ae8fd5d388240a8c6d",
-      "source_path": "release-v0.1.0/codex/gridmason/skills/gridmason",
-      "source_tree": {
-        "file_count": 30,
-        "tree_sha256": "bcfbf44401c2760d2413bfc2f5a3f5f612ec0f91ae3d71579f7fb1970c361473"
-      },
-      "imported_path": "plugins/nova-the-optimal-ai/skills/gridmason",
+      "id": "nova",
+      "source_repository": "",
+      "source_commit": "",
+      "source_path": "working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
+      "source_version": "MIND 0.2.0",
+      "selection": [
+        "complete component tree"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "references/edition/index.md",
+        "references/take-the-tour.md (trailing newline normalization)"
+      ],
+      "source_state": "local_construction_source_imported_for_git_custody",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
-        "file_count": 30,
-        "tree_sha256": "bcfbf44401c2760d2413bfc2f5a3f5f612ec0f91ae3d71579f7fb1970c361473"
+        "file_count": 31,
+        "tree_sha256": "cadf470779c442a5d04f9285060a52a2ef237ce6e3f5d11fe9e439bea7827b96"
       },
-      "custody": "release artifact"
+      "overlay_state": "edition_overlay"
     },
     {
-      "component": "promptcraft",
-      "source_repository": "Collaborative Dynamics canonical promptcraft library",
-      "source_commit": null,
-      "source_path": "[ADVICE] - Prompt Design.md",
-      "source_tree": {
-        "file_count": 1,
-        "tree_sha256": "5bcf2f9a4123a600ae48642191dc8ec20d906dc1123d518b5e332a63f21a8087"
+      "id": "nova-operations",
+      "source_repository": "",
+      "source_commit": "",
+      "source_path": "working/product-integration/source/base-skills/nova-operations",
+      "source_version": "3.0.0 Free binding from 1.0.3 base",
+      "selection": [
+        "complete authored base tree"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/estate-contract.md",
+        "scripts/nova_estate.py"
+      ],
+      "source_state": "local_construction_source_imported_for_git_custody",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
+      "imported_tree": {
+        "file_count": 5,
+        "tree_sha256": "296b8c6b3870fb11e360d2eee4ae4bd506ecfa5ec96130101a4038ce2c60627a"
       },
+      "overlay_state": "edition_overlay"
+    },
+    {
+      "id": "officecraft-reviewer",
+      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
+      "source_commit": "3d6f7379e094f09260075b76fd2b7ccbc9e29eaf",
+      "source_path": "codex/officecraft-reviewer",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete maintained Codex root"
+      ],
+      "edition_overlays": [],
+      "source_state": "local_commit_ahead_of_origin",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
+      "imported_tree": {
+        "file_count": 9,
+        "tree_sha256": "45f22ad24bd791d7326ba9e942fef25062136e5f61b371311791a7a32c277ed0"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "omnara-deep-research",
+      "source_repository": "https://github.com/Stunspot/omnara-deep-research",
+      "source_commit": "fa2c51aaa86410c8afed241f144e94f2f76028a3",
+      "source_path": ".",
+      "source_version": "1.0.1",
+      "selection": [
+        "tracked files except .github/ verification/ CONTRIBUTING.md docs/MAINTAINERS.md"
+      ],
+      "edition_overlays": [
+        "README.md",
+        "docs/INSTALLATION.md",
+        "docs/LIFECYCLE.md",
+        "docs/install.html"
+      ],
+      "source_state": "local_commit_ahead_of_origin",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
+      "imported_tree": {
+        "file_count": 63,
+        "tree_sha256": "e72fd59e8ce37db6cca658a52c7cdddb249ebbbf285120543ad0c10a64dc35d3"
+      },
+      "overlay_state": "edition_overlay"
+    },
+    {
+      "id": "owen-burnett-officecraft",
+      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
+      "source_commit": "3d6f7379e094f09260075b76fd2b7ccbc9e29eaf",
+      "source_path": "codex/owen-burnett-officecraft",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete maintained Codex root"
+      ],
+      "edition_overlays": [],
+      "source_state": "local_commit_ahead_of_origin",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
+      "imported_tree": {
+        "file_count": 48,
+        "tree_sha256": "3e8fee7e3a10452308a5fa1df27fa629bac543c8943f5da7176fae47bf538a57"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "privacy-redline",
+      "source_repository": "https://github.com/Stunspot/privacy-redline",
+      "source_commit": "9188e9a04f1217f2dbac5a1d94ade508be05a7ba",
+      "source_path": "release-v0.1.1/codex/privacy-redline",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
+      "imported_tree": {
+        "file_count": 41,
+        "tree_sha256": "1972ea3881ccdb4b1310b4f6f4d8051c8febbe0d7fe34f9139def01f98076520"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "promptcraft",
+      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+      "source_commit": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
+      "source_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "references/prompt-design.md"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
       "imported_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "imported_tree": {
         "file_count": 2,
         "tree_sha256": "5a5ef1cac08dfe93a3d0e3f4d1b04ff83cde2f1eee84a6a3e4ff9838fa4ebff1"
       },
-      "custody": "new skill wrapper plus runtime-copied canonical doctrine",
-      "metadata_overlay": {
-        "schema": "cd-tool-injection-metadata-overlay/v1",
-        "approved_at": "2026-08-21",
-        "canonical_map_sha256": "a8e156947b3946448a9023c31a90f37c03ca493b008faa3a65ece1aaf1befc91",
-        "boundary": "Approved model-visible description and matching short_description changes, plus directly derived capability fingerprint when applicable.",
-        "files": [
-          "SKILL.md"
-        ]
-      }
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "retrieval-intelligence",
+      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
+      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_path": "skills/retrieval-intelligence",
+      "source_version": "",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
+      "imported_tree": {
+        "file_count": 9,
+        "tree_sha256": "360891df188b4aee9a7baa4e5a4c869ab09484a7bd8f8a54bc49e18fd2ce6021"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "retrieval-reviewer",
+      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
+      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_path": "skills/retrieval-reviewer",
+      "source_version": "",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
+      "imported_tree": {
+        "file_count": 3,
+        "tree_sha256": "4e547175230129566f23d5c5c94968161022407ad43a7a66f22a9c68f212f041"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "rupert-giles-knowledge-steward",
+      "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
+      "source_commit": "71ce7f81977d6ccf77c6fa5aeeb67fd101cd0681",
+      "source_path": ".",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/knowledge-estate-ledger.template.md",
+        "references/stewardship-doctrine.md"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
+      "imported_tree": {
+        "file_count": 4,
+        "tree_sha256": "c605f2c61f4e1677af26df1b4d870d7b18076fa6b62acc4e7d04e5094c15d656"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "software-verification",
+      "source_repository": "https://github.com/Stunspot/testforge",
+      "source_commit": "ce19f5f91bec96cedb497311757e0656ffaef718",
+      "source_path": "testforge/skills/software-verification",
+      "source_version": "1.1.7 metadata branch",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "checked_out_unmerged_metadata_branch",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/software-verification",
+      "imported_tree": {
+        "file_count": 96,
+        "tree_sha256": "95be575369a906c80d8ac927efde472d44a58dbf212f8693d2361cfa5e424634"
+      },
+      "overlay_state": "exact_selected_source"
+    },
+    {
+      "id": "verification-reviewer",
+      "source_repository": "https://github.com/Stunspot/testforge",
+      "source_commit": "ce19f5f91bec96cedb497311757e0656ffaef718",
+      "source_path": "testforge/skills/verification-reviewer",
+      "source_version": "1.1.7 metadata branch",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "checked_out_unmerged_metadata_branch",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/verification-reviewer",
+      "imported_tree": {
+        "file_count": 9,
+        "tree_sha256": "4c16f4f4741bfddc2a27963efef5c4391e5945e7b1cceb5035135a67f1514e5e"
+      },
+      "overlay_state": "exact_selected_source"
     }
-  ]
+  ],
+  "plugin_skill_tree": {
+    "file_count": 737,
+    "tree_sha256": "cd9128798dd090abb30624c882e326c6827530261be02fa9f403f8c38e7d4de2"
+  },
+  "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
+  "notices": {
+    "agent-swarm-orchestration": {
+      "file_count": 6,
+      "tree_sha256": "46ea4c2f959715b9f92bfd36f8e500f80f09a91a60c4e76fda565adf70f67c42"
+    },
+    "interview-trainer": {
+      "file_count": 2,
+      "tree_sha256": "3296cb389f381483078e8f42678ea3fc7b7d206103b9493d200b0b0ce97291ce"
+    },
+    "job-application-builder": {
+      "file_count": 2,
+      "tree_sha256": "30e998e42f6193d72479430fc41c083e29665a73fee15f9f6cb124b091090147"
+    },
+    "testforge": {
+      "file_count": 6,
+      "tree_sha256": "8de2186e995c4a6f172734693cdb1edc3089ab597c382f76373210fe99502a0f"
+    }
+  },
+  "release_blockers": [
+    "nova-mind, nova-operations, answerlayer, and current-intelligence-observatory require explicit Free-edition grants",
+    "job-application-builder and interview-trainer prohibit inclusion without separate written permission",
+    "answerlayer and current-intelligence-observatory metadata require license reconciliation",
+    "fresh-host discovery and invocation unobserved",
+    "publication authority absent"
+  ],
+  "evidence_boundary": "Imported package bytes and recorded source identity. This lock does not establish remote publication state, fresh-host behavior, or license compatibility."
 }

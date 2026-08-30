@@ -1,8 +1,0 @@
-COMMIT=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
-SCANNER=TestForge scan_test_smells.py
-RAW=verification/remediation-2026-08-12/raw/test-smells.json
-RAW_FINDINGS=7 low-severity snapshot_assertion heuristic hits
-INTERPRETATION=TEST_TOOL_FALSE_POSITIVE
-EVIDENCE=All seven hits are the identifier project_snapshot, its local list variable, or calls comparing the complete project path/type/file-hash post-state before and after a rejected operation. No framework snapshot file, approval snapshot, or bulk rendered-output snapshot is used.
-ORACLE_VALUE=The complete tree and SHA-256 comparison is intentional forbidden-side-effect evidence for the output-containment risk.
-ACTION=No product or test change; retain raw warning and interpretation.

@@ -1,6 +1,6 @@
 # Update, remove, and clean up Omnara
 
-Treat the installed skill, helper-created campaign data, downloaded archives, and Nova + MIND state as separate things. Removing one does not silently remove the others.
+Treat the installed skill, helper-created campaign data, downloaded archives, and Nova installation state as separate things. Removing one does not silently remove the others.
 
 ## Update an individual Omnara skill
 
@@ -15,9 +15,9 @@ Treat the installed skill, helper-created campaign data, downloaded archives, an
 
 Do not merge old and new skill directories file by file. A partial replacement can leave stale references behind.
 
-## Update through Nova + MIND
+## Update through Nova Free
 
-Follow the [Nova + MIND upgrade guide](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/UPGRADE.md). That upgrade can affect plugins, hooks, and the MIND database in addition to Omnara. Do not delete or replace those components solely to update one skill unless the integrated guide explicitly directs it.
+Follow the [Nova Free upgrade guide](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/UPGRADE.md). The complete product update can affect Nova, OMNARA, and the other bundled skill roots. Preserve customer state and do not replace the complete plugin merely to update one skill unless the integrated guide directs it.
 
 ## Remove the individual skill
 
@@ -26,7 +26,7 @@ Follow the [Nova + MIND upgrade guide](https://github.com/Stunspot/nova-the-opti
 3. Remove only that skill through the host's skill manager.
 4. Start a fresh task and verify that the selector is no longer discoverable.
 
-Removing Omnara does not remove campaigns, downloaded ZIPs, generated reports, source caches, browser history, model-provider logs, or Nova + MIND state.
+Removing Omnara does not remove campaigns, downloaded ZIPs, generated reports, source caches, browser history, model-provider logs, or Nova installation state.
 
 ## Campaign data cleanup
 

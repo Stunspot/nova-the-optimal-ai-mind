@@ -1,6 +1,0 @@
-OBSERVATION_TIME=2026-08-12T05:30:20.2984131-05:00
-CANDIDATE=17ed4f30975081b4a020dd8e28e6a35eb0edda1d
-REMOTE_MAIN=2061709f380d17e511cc94ae8cce23847c6f2764
-PAGES={"html_url":"https://stunspot.github.io/signal-loom/","build_type":"workflow","source":{"branch":"main","path":"/"},"custom_404":false,"https_enforced":true}
-REQUIRED_STATUS={"type":"required_status_checks","parameters":{"strict_required_status_checks_policy":false,"do_not_enforce_on_create":true,"required_status_checks":[{"context":"line-ending-policy"}]},"ruleset_source_type":"Repository","ruleset_source":"Stunspot/signal-loom","ruleset_id":20252779}
-CAPACITY=Owner reported GitHub-hosted Actions exhausted on 2026-08-12. Remaining allowance cannot be read with available API; automatic invocation prohibited until a fresh capacity read on or after expected 2026-09-01 refresh.

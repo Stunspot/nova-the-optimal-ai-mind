@@ -1,6 +1,6 @@
 # Install Omnara
 
-Omnara can run as an integrated Nova + MIND skill, as a portable individual skill in a compatible host, or as a degraded copy/paste workflow. Choose the route your host actually supports.
+Omnara can run inside the single Nova the Optimal AI Free plugin, as a portable individual skill in a compatible host, or as a degraded copy/paste workflow. Choose the route your host actually supports.
 
 ## Before installing
 
@@ -13,29 +13,29 @@ Confirm:
 
 Inspect the ZIP before installation. Its top-level skill directory must contain SKILL.md, personas, references, knowledge, fallbacks, assets, schemas, and scripts.
 
-## Codex: integrated Nova + MIND route
+## Codex: integrated Nova route
 
 This is the primary integrated route.
 
-1. Download the current Nova + MIND release.
-2. Attach the release ZIP to Codex.
-3. Ask: "Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing an existing Nova or MIND installation."
+1. Download the current Nova the Optimal AI Free customer package.
+2. Attach the customer ZIP to Codex.
+3. Ask: "Install Nova the Optimal AI Free as one complete plugin. Ask before replacing another governing Nova installation."
 4. Review and approve the exact local actions.
 5. Follow the [current manual Codex instructions](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/INSTALL-CODEX.md) if attachment installation is unavailable.
 6. Start a new task so Codex can discover the installed skills.
 7. Verify Omnara using [Verify discovery](#verify-discovery) and [Verify invocation](#verify-invocation).
 
-The Nova package has its own Python, Ollama, hook, and MIND database requirements. Those are requirements of the integrated runtime, not of Omnara's research doctrine.
+Nova the Optimal AI Free 3.0.0 adds no Python, local-model, hook, or MIND-database requirement for ordinary work. OMNARA's live research campaigns still depend on whatever browsing, file, and citation tools the active host exposes.
 
 ## Claude-compatible skill host
 
-1. Download the Omnara release ZIP or the Omnara per-skill ZIP included in Nova + MIND.
+1. Download the Omnara release ZIP or the Omnara per-skill ZIP included with Nova Free.
 2. Upload the ZIP through the host's skill-management interface.
 3. Enable the skill if enablement is a separate step.
 4. Start a new conversation so the host can refresh discovery.
 5. Run [Verify discovery](#verify-discovery) and [Verify invocation](#verify-invocation).
 
-This route provides the individual skill contents. It does not establish Nova's shared MIND database, prompt hook, automatic capability reminders, or identical behavior across Claude-compatible hosts.
+This route provides the individual skill contents. It does not establish Nova's complete plugin topology, automatic specialist routing, or identical behavior across Claude-compatible hosts.
 
 ## Other skill-capable hosts
 

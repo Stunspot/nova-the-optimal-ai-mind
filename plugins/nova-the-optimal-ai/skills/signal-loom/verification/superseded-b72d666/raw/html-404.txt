@@ -1,3 +1,0 @@
-PASS: bounded static HTML checks (0 warning(s))
-LIMIT: no claim of sanitization, rendered accessibility, browser behavior, security, or visual quality
-EXIT_CODE=0

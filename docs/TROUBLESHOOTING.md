@@ -1,47 +1,33 @@
 # Troubleshooting
 
-Keep the full error before changing anything. Establish what happened before deciding what to reinstall.
+Preserve the exact symptom before changing anything: product version, package hash, host and operating system, installation route, command or request, complete sanitized error, and whether the failure concerns package presence, discovery, enabled state, restart state, invocation, optional estate configuration, tool availability, or behavior.
 
-## The harness could not install the attached ZIP
+## Plugin not found
 
-Confirm that the complete Nova + MIND release ZIP was attached and accessible to the task. Ask the harness to explain the exact installation boundary it reached.
+Confirm the local marketplace path points to the extracted codex directory. Inspect codex plugin marketplace list and codex plugin list as JSON. Do not delete other marketplaces as a shortcut. Open a new task after catalog changes.
 
-If the host cannot install a package from an attachment, extract the ZIP and use [Manual Codex installation](INSTALL-CODEX.md).
+## Nova responds but a specialist is absent
 
-## The installer finds an older Nova, MIND, or database
+Inspect the installed plugin's skills directory and compare it with LOADOUT-MANIFEST.json. A named skill is not proof that the host discovered or invoked it. Preserve the missing handle and one minimal activation request.
 
-It stopped to avoid replacing something you may care about. Identify the exact older Nova or MIND plugin and follow [Upgrade](UPGRADE.md). Remove only the installation you have deliberately chosen to replace. Do not reset Codex or remove unrelated plugins.
+## Persistent services unavailable
 
-## Python is missing or too old
+Ordinary Nova work should continue. For stateful services, confirm Python 3.10 or newer is already available, then invoke:
 
-The manual installer and local MIND reminder runtime require Python 3.11 or newer. Confirm the Python version in the same environment performing the installation, then rerun the installer.
+    $nova-operations Show status for my existing Free Nova estate. Read only; do not initialize, repair, or move anything.
 
-## The plugins installed but Nova or a skill is missing
+Do not silently install Python, initialize a new estate, or move a selector to make a read request pass.
 
-Confirm that both **Nova the Optimal AI** and **MIND by Collaborative Dynamics** are enabled, then start a new task. Codex discovers installed skills at that boundary.
+A missing estate is not corruption. To create one, name an absolute customer-controlled root and invoke:
 
-Ask the harness to report which plugin and skill handles it discovered. If Nova remains absent, preserve that report and the host version. A package folder on disk does not prove host discovery.
+    $nova-operations Plan Free Nova estate initialization at <absolute path>. Show every proposed selector and write. Do not execute until I approve.
 
-## The hook or reminder field is unavailable
+A registry error, unsupported mutation filesystem, and missing service entrypoint are different failures. Preserve the exact status or doctor output before requesting repair.
 
-Open **Settings → Hooks** and confirm the MIND prompt-submit hook is present and trusted. Then confirm Python, the configured MIND database, the local Ollama endpoint, and `qwen3-embedding:0.6b` are available.
+## Upgrade collision
 
-If you see `MIND · ARM'S REACH DELIVERY NOTE`, preserve the failure code and receipt. The hook owns association; do not ask the model to find another adapter. The notice makes no claim about capability availability or fit.
+If another Nova or MIND is installed, stop before replacement. Record its selector, version, and any data locations. Follow the [upgrade guide](UPGRADE.md). Never infer that uninstalling a plugin deletes its database, hook configuration, model, or user records.
 
-## A reminder seems too broad or misses something
+## Verification mismatch
 
-Record the task context, nearby handles returned, active snapshot, and whether the result came from a relation or semantic match. The included profile is structurally checked but still undergoing broader behavioral qualification.
-
-## Worldline or Faultline is unavailable
-
-Probe the configured workspace read-only and preserve the typed result. A missing, invalid, unsupported, corrupted, or over-deadline Worldline source may return an `unpersisted_portable` view only when the caller supplied sufficient source-linked material; otherwise expect no view. A portable checkpoint is not saved state.
-
-Faultline requires a valid v2 workspace. It has no portable or private fallback store, and v1 returns `operation_unsupported_v1`. Do not initialize or migrate state merely to make an Error Neighborhood appear. Preserve the operation, selector provenance, workspace format, scope, generation, environment/version boundary, and exact error code; redact private paths, raw logs, and secrets.
-
-'## A portable Claude ZIP will not upload
-
-Confirm the archive has one matching top-level folder and a direct `SKILL.md`. A ZIP can be structurally sound while a host still rejects it because of policy or version.
-
-## Ask for help with useful evidence
-
-Include the package version, exact host and operating system, complete error, discovered plugin state, what changed immediately before the failure, and the smallest safe reproduction. Redact private prompts, credentials, and sensitive paths.
+If you have the source repository, rebuild and rerun `tools/verify_package.py` against the extracted package directory. The extracted customer package is not a buildable source checkout; without the repository, compare the supplied archive digest and `SHA256SUMS.txt`, preserve the failing artifact, and report the mismatch. A static PASS does not settle fresh-host behavior. Preserve the failing artifact and digest instead of editing a built ZIP in place.

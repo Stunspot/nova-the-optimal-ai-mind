@@ -46,10 +46,12 @@ def resolve_home(override: str | None = None) -> Path:
     configured = os.environ.get("CORKBOARD_HOME")
     if configured:
         return Path(configured).expanduser()
-    codex_home = os.environ.get("CODEX_HOME")
-    if codex_home:
-        return Path(codex_home).expanduser() / "corkboard"
-    return Path.home() / ".codex" / "corkboard"
+    nova_root = os.environ.get("NOVA_DATA_ROOT")
+    if nova_root:
+        return Path(nova_root).expanduser() / "memory" / "corkboard"
+    raise RuntimeError(
+        "CORKBOARD_HOME or NOVA_DATA_ROOT is required; use Nova Operations to configure a Nova estate outside .codex"
+    )
 
 
 def database_path(home: Path) -> Path:
@@ -663,8 +665,8 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     configure_stdio()
     args = build_parser().parse_args(argv)
-    home = resolve_home(args.home)
     try:
+        home = resolve_home(args.home)
         if args.command == "pin":
             payload = read_stdin_object()
             text_value = payload.get("text")

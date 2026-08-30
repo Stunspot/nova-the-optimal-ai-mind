@@ -1,4 +1,0 @@
-interface:
-  display_name: "Cognitive Continuity"
-  short_description: "🧵 Resumable task state across interruptions."
-  default_prompt: "Use $cognitive-continuity to inspect the available state, compile what this task needs, and continue without inventing continuity."

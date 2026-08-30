@@ -1,75 +1,47 @@
-# Install Nova + MIND Free
+# Install Nova the Optimal AI Free
 
-Nova + MIND Free 2.1.3 installs one product as two Codex plugins: Nova, the user-facing agent, and MIND, her cognitive substrate. Together they expose forty-one skills, including sixteen MIND Faculties and TestForge’s two verification roles.
+Nova the Optimal AI Free 3.0.0 is one product and one plugin. Its twenty-five native skills include the Nova front door, ambient MIND with sixteen nested Faculty Cores, optional governed continuity, Agentic Coding, paired TestForge verification, Officecraft and its reviewer, research and retrieval, IT, privacy, language, career workflows, reminders, people context, and durable goals.
 
-## Choose the supported path
+Ordinary use needs no local model, embedding service, vector database, prompt hook, daemon, or persistent estate.
 
-| Host | Supported shape | Evidence boundary |
-|---|---|---|
-| Codex with plugin support | Complete two-plugin product, local MIND Core database, trusted prompt-submit hook, and forty-one-capability reminder estate | Primary integrated target; installation and hook trust still require local confirmation. |
-| Claude-compatible skill host | One self-contained ZIP per selected skill | Package shape only; no shared database, hook, automatic reminders, or Codex-equivalent integration is claimed. |
-| Other hosts | Source may be adaptable | Not a supported installation claim. |
+## Give the package to an installing agent
 
-## Before you begin
+Attach the complete customer ZIP on the harness where Nova should run and say:
 
-For the complete Codex installation, you need PowerShell, Python 3.11 or newer, and Ollama serving `qwen3-embedding:0.6b`. The release does not bundle or download model weights. If another Nova or MIND installation or database already exists, read [Upgrade](docs/UPGRADE.md) before changing anything.
+    Install Nova the Optimal AI Free as one complete edition. Preserve my existing plugins, skills, tools, connectors, project instructions, and data. Ask before replacing or disabling another governing Nova installation. Do not configure persistent state unless I separately request it.
 
-## Normal Codex installation
+Installation authorizes package installation on that harness. It does not authorize data import, account changes, messages, purchases, publication, a local model, background services, or persistent Nova data.
 
-1. Download the governed `nova-mind-free-v2.1.3.zip` from the [latest published release](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/latest).
-2. Attach the ZIP to a Codex task.
-3. Tell Codex:
+## Manual Codex recovery
 
-   ```text
-   Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing any existing Nova or MIND installation.
-   ```
+Extract the customer ZIP to a stable local folder. Add its codex directory as a local marketplace, install the single plugin, and inspect the resulting catalog:
 
-4. Review the proposed file and configuration operations. Installation does not enlarge Codex permissions.
-5. Open **Settings → Hooks**, inspect the exact MIND prompt-submit hook, and decide whether to trust those bytes.
-6. Close Codex desktop and run the read-only verification procedure from the extracted release:
+    codex plugin marketplace add "<extracted package>/codex" --json
+    codex plugin add nova-the-optimal-ai --marketplace collaborative-dynamics-nova-free --json
+    codex plugin list --json
 
-   ```powershell
-   .\verify-install.ps1 -OutputPath .\nova-mind-install-verification.json
-   ```
+Use the path syntax expected by the operating system and shell. Restart the desktop host or open a new task after changing plugin state so the native catalog can refresh.
 
-7. Start a new Codex task so discovery occurs against the installed plugins.
+Confirm with a real invocation:
 
-## Expected results
+    $nova Help me turn this rough objective into one concrete first move. Separate what you observed from what you assumed.
 
-A successful mechanical verification reports:
+A structurally present plugin is not yet discovered, enabled, invoked, or behaviorally healthy. Record those states separately.
 
-- `Nova the Optimal AI` 2.1.0 enabled from the Free Nova marketplace;
-- `MIND by Collaborative Dynamics` 2.2.2 enabled from the same marketplace;
-- an intact SQLite database with an active forty-one-capability generation;
-- forty-one cards, 246 vectors, and successful local semantic association against a temporary copy;
-- the original database unchanged by the verifier.
+## Claude-compatible routes
 
-That report does not prove hook trust, pre-turn context delivery, model attention, use of a reminder, or behavioral correctness. It also does not create, migrate, select, or validate a Cognitive Continuity workspace.
+The claude/nova-the-optimal-ai directory is the complete multi-skill bundle. The claude/folders directory contains one folder per skill, and claude/zips contains deterministic per-skill archives. Use the complete edition when the host supports it. A host that accepts only individual skills can install selected folders or ZIPs, but that narrower route does not establish complete-edition behavior.
 
-Worldline and Faultline ship as Continuity 0.2.2 surfaces over workspace schema v2. Worldline provides read-only `resume`, `status`, `checkpoint`, and `inspect` views; a checkpoint is not a save. Faultline provides a bounded Error Neighborhood and governed v2 mutations, has no fallback store, and is typed unsupported on v1. Neither service grants authority or proves completion, cause, safety, or repair.
+Host conventions change. Verify the live host's supported skill or plugin mechanism before treating these paths as installed.
 
-## Fresh-task confirmation
+## Optional persistent state
 
-In the new task, enter:
+Talk to Nova immediately without setup. Configure the Nova estate only when durable Continuity, people context, or reminders are actually wanted. Nova Operations first plans the exact customer-controlled root, then asks for confirmation before initialization. It never stores Nova-owned state under .codex.
 
-```text
-$nova Help me make a concrete first move on this objective: [your objective]. Separate what you know from what you are assuming.
-```
+Python 3.10 or newer must already be available for deterministic persistent services. The package does not silently install or replace Python.
 
-Expected result: Nova responds as one coherent collaborator, makes useful progress, and does not ask you to navigate a capability catalog. If `$nova` is not recognized, record a discovery failure and use [Troubleshooting](docs/TROUBLESHOOTING.md).
+## Upgrade from Free 2.x
 
-## Manual fallback
+Free 2.x used two plugins, a prompt hook, an Ollama embedding model, a vector database, and forty-one visible handles. The old and new Nova front doors share the `nova-the-optimal-ai` plugin ID: extracting 3.0.0 beside 2.x is safe staging, but installing it replaces that plugin binding rather than creating a side-by-side active Nova. Preserve the old package and configuration for rollback before approving replacement. Free 3.0.0 does not mutate the old database or uninstall Ollama. Ask before disabling another Nova or MIND source. Preserve any Continuity data and decide separately whether obsolete hook, database, model, or plugin artifacts should be removed.
 
-If Codex cannot install an attached archive, extract the release and run `install.ps1` from PowerShell. The installer adds the local marketplace, enables both plugins, creates a new database, activates the included estate, and checks semantic association. It stops instead of silently replacing another source or overwriting an existing database. Follow [Manual Codex installation](docs/INSTALL-CODEX.md).
-
-## Claude-compatible hosts
-
-Open `claude/zips/` in the release and upload only the skill ZIPs you want. Start a new conversation after the host accepts them. Read [Claude-compatible installation](docs/INSTALL-CLAUDE.md) before claiming Nova/MIND parity.
-
-## Next
-
-- [What you installed](docs/CAPABILITY-GUIDE.md)
-- [Representative workflows](https://stunspot.github.io/nova-the-optimal-ai-mind/workflows.html)
-- [Privacy and trust](docs/PRIVACY-AND-TRUST.md)
-- [Troubleshooting](docs/TROUBLESHOOTING.md)
-- [Update or remove](docs/UPGRADE.md)
+Continue with the [upgrade guide](docs/UPGRADE.md) and [troubleshooting guide](docs/TROUBLESHOOTING.md).

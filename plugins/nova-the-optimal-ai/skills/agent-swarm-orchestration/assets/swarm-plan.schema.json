@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.example/schemas/cd-agent-swarm-plan-v1.json",
+  "title": "CD Agent Swarm Plan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "plan_id", "updated_at", "mission", "acceptance", "authority", "regime", "admission_basis", "root", "workers", "budgets", "merge", "status", "next_move"],
+  "properties": {
+    "format": {"const": "cd-agent-swarm-plan/v1"},
+    "plan_id": {"type": "string", "minLength": 3},
+    "updated_at": {"type": "string", "minLength": 10},
+    "mission": {"type": "string", "minLength": 3},
+    "acceptance": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed", "reserved", "sensitive_material"],
+      "properties": {
+        "allowed": {"type": "array", "items": {"type": "string"}},
+        "reserved": {"type": "array", "items": {"type": "string"}},
+        "sensitive_material": {"type": "string"}
+      }
+    },
+    "regime": {"enum": ["direct", "enlist", "assemble", "chain", "recover"]},
+    "admission_basis": {"type": "string", "minLength": 3},
+    "root": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "work"],
+      "properties": {"owner": {"type": "string"}, "work": {"type": "string"}}
+    },
+    "workers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "objective", "deliverable", "depends_on", "read_surfaces", "write_surfaces", "authority", "evidence_required", "status", "return_condition"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "objective": {"type": "string", "minLength": 1},
+          "deliverable": {"type": "string", "minLength": 1},
+          "depends_on": {"type": "array", "items": {"type": "string"}},
+          "read_surfaces": {"type": "array", "items": {"type": "string"}},
+          "write_surfaces": {"type": "array", "items": {"type": "string"}},
+          "authority": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "evidence_required": {"type": "array", "items": {"type": "string"}},
+          "status": {"enum": ["planned", "dispatched", "working", "returned", "reconciled", "failed", "interrupted", "cancelled", "closed"]},
+          "return_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["concurrency_limit", "model_policy", "stop_condition"],
+      "properties": {
+        "concurrency_limit": {"type": "integer", "minimum": 1},
+        "model_policy": {"type": "string"},
+        "stop_condition": {"type": "string"}
+      }
+    },
+    "merge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["owner", "method", "indispensable_gates"],
+      "properties": {
+        "owner": {"type": "string"},
+        "method": {"type": "string"},
+        "indispensable_gates": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    },
+    "status": {"enum": ["planned", "active", "recovering", "awaiting_evidence", "awaiting_authority", "closed", "cancelled"]},
+    "next_move": {"type": "string"}
+  }
+}

@@ -1,6 +1,6 @@
 ---
 name: dunbar
-description: "🫂 Recall people, relationships, and history."
+description: "🫂 User-governed people recall and context."
 ---
 
 # Dunbar
@@ -11,7 +11,7 @@ Keep the people who matter intelligible at the moment they matter. Resolve ident
 
 Activate when the user asks to recall, prepare for, follow up with, compare, or persist context about a real person who may belong to their governed people store, or when a distinctive person cue strongly suggests that stored context would materially improve the current exchange. A name in passing does not activate Dunbar. Yield to ordinary biography research when the person is outside the governed store, and to Cognitive Continuity when the requested memory concerns task state rather than a person.
 
-Use `scripts/dunbar.py`. Resolve the store from `--store`, then `DUNBAR_STORE`, then the harness-global default reported by `python scripts/dunbar.py path`. Write records through `--stdin-json`. The current `resolve` and `recall` interfaces place lookup text in command arguments; use them only for non-sensitive names and context, and do not claim those operations keep person data out of process or shell history.
+In Nova the Optimal AI Free, invoke Dunbar through the sibling Nova Operations registry-backed run dunbar command. It injects the exact DUNBAR_STORE registry value and never falls back to .codex. Use an explicit --store only for isolated tests. Write records through --stdin-json. The current resolve and recall interfaces place lookup text in command arguments; use them only for non-sensitive names and context, and do not claim those operations keep person data out of process or shell history.
 
 When the store is absent, initialize it only when the user has asked to create or use Dunbar persistence. Otherwise preserve the useful conversational result and state that durable person recall is unavailable.
 

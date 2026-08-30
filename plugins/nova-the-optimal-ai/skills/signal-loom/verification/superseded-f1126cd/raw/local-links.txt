@@ -1,5 +1,0 @@
-COMMIT=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
-PAGES_BASE=/signal-loom/
-LOCAL_TARGETS_CHECKED=35
-FAILURES=0
-PASS: local document, asset, GitHub Pages project-base, and same-page HTML anchor targets resolve

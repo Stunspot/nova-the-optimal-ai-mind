@@ -1,6 +1,6 @@
 ---
 name: agentic-coding
-description: "🧭 Live repository changes grounded by tests."
+description: "🧭 Repository proprioception for agents."
 ---
 
 # Move through live repository state

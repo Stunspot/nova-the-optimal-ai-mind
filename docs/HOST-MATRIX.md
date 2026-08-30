@@ -1,15 +1,10 @@
-# Host support
+# Host matrix
 
-This is the evidence boundary for this release. It tells you what the package can do in its tested local shape and what still needs a live host check.
+| Host route | Packaged shape | Established by this repository | Still requires live observation |
+|---|---|---|---|
+| Codex with plugin support | Local marketplace plus one complete plugin | Manifest validity, exact roots, byte hashes, deterministic archive | Marketplace acceptance, discovery, enabled state, restart behavior, invocation, tools, model behavior |
+| Claude-compatible complete bundle | One plugin-shaped directory with twenty-five skills | Structure, exact roots, host-byte parity | Current host convention, discovery, invocation, permissions, behavior |
+| Claude-compatible individual skills | Twenty-five folders and per-skill ZIPs | Inventory, hashes, deterministic ZIP contents | Whether the host accepts the selected skill and how it composes with others |
+| Other hosts | Adaptable source only | Readable source material | Every installation and behavior claim |
 
-| Where you use it | What you can rely on here | What still needs confirmation |
-|---|---|---|
-| Codex package source | Two installable plugins with the included skill roots and local reminder assets. | A clean customer install and fresh-task discovery on a supported host. |
-| Local MIND reminder map | Local activation, readback, SQLite integrity, and representative semantic probes were exercised. | Broader behavioral qualification and live host delivery. |
-| MIND prompt hook | The local hook code was exercised directly. | Your review and trust of the exact bytes, then actual pre-turn delivery in your host. |
-| Cognitive Continuity v2 | Local disposable workspaces exercise version detection, immutable generations, governed mutation, correction, forgetting, export, validation, and v1 read-only compatibility. | Your selector, existing workspace, migration choice, custody, and live project state. Installation creates none of these. |
-| Worldline and Faultline | Deterministic local tests exercise all four Worldline views, portable/no-view degradation, bounded Error Neighborhood cards, and governed v2 lifecycle paths. | Installed discovery, live selector resolution, customer-workspace migration, and actual host invocation or health. |
-| Claude skill ZIPs | The release builds self-contained skill archives. | Upload, enablement, and behavior in Claude. |
-| Claude automatic reminders | No equivalent adapter is included. | Not available in this release. |
-
-The development checks ran on Windows with PowerShell 5.1 and Python 3.14 in UTF-8 mode. The package requires Python 3.11 or newer. A successful package check does not prove that a particular host installation, trusted hook, or model response has happened.
+Package presence is not installation. Installation is not discovery. Discovery is not invocation. Invocation is not healthy behavior.

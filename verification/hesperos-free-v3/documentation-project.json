@@ -1,0 +1,109 @@
+{
+  "project_id": "DOC-NOVA-FREE-3.0.0",
+  "title": "Nova the Optimal AI Free 3.0.0 customer and maintainer journey",
+  "product_version": "3.0.0",
+  "status": "review-needed",
+  "audiences": [
+    "customer installing the complete Codex plugin",
+    "customer using a Claude-compatible host",
+    "customer choosing optional persistent state",
+    "maintainer building and verifying the candidate"
+  ],
+  "top_tasks": [
+    "understand the one-front-door product",
+    "install one plugin without disturbing existing tools or data",
+    "confirm discovery and one real invocation",
+    "configure optional state only with explicit authority",
+    "recover from discovery or estate failures",
+    "upgrade from the two-plugin 2.x line",
+    "distinguish static build evidence from fresh-host and publication evidence"
+  ],
+  "sources": [
+    "design/product-contract.json",
+    "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
+    "plugins/nova-the-optimal-ai/.codex-plugin/plugin.json",
+    "design/source-map.json",
+    "design/source-lock.json",
+    "tools/build_release.py",
+    "tools/verify_package.py",
+    "tests/",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "topics": [
+    {
+      "path": "README.md",
+      "type": "explanation and entry hub",
+      "state": "draft"
+    },
+    {
+      "path": "START-HERE.md",
+      "type": "installation how-to",
+      "state": "draft"
+    },
+    {
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "type": "reference",
+      "state": "draft"
+    },
+    {
+      "path": "docs/INSTALL-CODEX.md",
+      "type": "how-to",
+      "state": "draft"
+    },
+    {
+      "path": "docs/INSTALL-CLAUDE.md",
+      "type": "how-to",
+      "state": "draft"
+    },
+    {
+      "path": "docs/PRIVACY-AND-TRUST.md",
+      "type": "explanation",
+      "state": "draft"
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "type": "how-to and recovery",
+      "state": "draft"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "type": "troubleshooting",
+      "state": "draft"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "type": "evidence reference",
+      "state": "draft"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "type": "release communication",
+      "state": "draft"
+    }
+  ],
+  "accessibility_reviews": [],
+  "verification": [
+    {
+      "method": "source reconstruction",
+      "state": "source-verified",
+      "evidence": "product contract, loadout, executable builder/verifier, and regression suite"
+    },
+    {
+      "method": "accessible Markdown lint",
+      "state": "not tested",
+      "evidence": "pending"
+    },
+    {
+      "method": "task walkthrough",
+      "state": "not tested",
+      "evidence": "pending"
+    },
+    {
+      "method": "browser and assistive technology",
+      "state": "not tested",
+      "evidence": "not exposed in this local cycle"
+    }
+  ],
+  "owner": "Collaborative Dynamics",
+  "next_move": "lint maintained Markdown, inspect the visual asset, walk installation and recovery paths, repair, then run independent accessibility review"
+}

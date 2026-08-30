@@ -1,9 +1,7 @@
-name: Verify Nova + MIND package
+name: Manual verify Nova Free candidate
 
 on:
-  pull_request:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -12,6 +10,7 @@ jobs:
   verify:
     name: verify (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
@@ -26,27 +25,15 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
-      - name: Install deterministic build requirements
-        run: python -m pip install "setuptools>=69.2" wheel
-      - name: Semantic Arm's Reach regression tests
+      - name: Run repository regressions
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: python -m unittest discover -s tests -v
-      - name: Verify source package
-        env:
-          PYTHONDONTWRITEBYTECODE: '1'
-        run: python -X utf8 tools/verify_package.py
       - name: Build deterministic customer package
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: python -X utf8 tools/build_release.py
-      - name: Verify customer package
+      - name: Verify built customer package
         env:
           PYTHONDONTWRITEBYTECODE: '1'
-        run: python -X utf8 tools/verify_package.py --release
-      - name: Build and verify standalone MIND package
-        env:
-          PYTHONDONTWRITEBYTECODE: '1'
-        run: >-
-          python -X utf8 plugins/augment-of-mind/scripts/build_release.py
-          --output-dir mind-release-temp --replace
+        run: python -X utf8 tools/verify_package.py dist/nova-the-optimal-ai-free-3.0.0

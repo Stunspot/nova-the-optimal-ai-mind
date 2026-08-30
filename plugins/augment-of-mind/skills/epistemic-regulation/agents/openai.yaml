@@ -1,4 +1,0 @@
-interface:
-  display_name: "Epistemic Regulation"
-  short_description: "🔬 Claim support, uncertainty, and conflicts."
-  default_prompt: "Use $epistemic-regulation: separate what is observed, reported, inferred, and assumed; calibrate warrant, contradiction, confidence, missingness, and the next revision."

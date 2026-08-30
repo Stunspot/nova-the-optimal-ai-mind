@@ -1,0 +1,156 @@
+{
+  "schema": "nova-free-loadout/v3",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "plugin_id": "nova-the-optimal-ai",
+  "topology": {
+    "visible_skill_roots": 25,
+    "front_doors": [
+      "nova"
+    ],
+    "mind_version": "0.2.0",
+    "faculty_core_count": 16,
+    "faculty_cores_are_nested_references": true,
+    "required_external_runtime": false
+  },
+  "groups": [
+    {
+      "id": "front-door",
+      "title": "Nova and MIND",
+      "skills": [
+        "nova"
+      ]
+    },
+    {
+      "id": "continuity-and-agency",
+      "title": "Continuity and agency",
+      "skills": [
+        "nova-operations",
+        "cognitive-continuity",
+        "agent-striving",
+        "agent-swarm-orchestration",
+        "corkboard",
+        "dunbar"
+      ]
+    },
+    {
+      "id": "coding-and-proof",
+      "title": "Coding and proof",
+      "skills": [
+        "agentic-coding",
+        "software-verification",
+        "verification-reviewer"
+      ]
+    },
+    {
+      "id": "research-and-knowledge",
+      "title": "Research and knowledge",
+      "skills": [
+        "answerlayer",
+        "current-intelligence-observatory",
+        "retrieval-intelligence",
+        "retrieval-reviewer",
+        "rupert-giles-knowledge-steward",
+        "omnara-deep-research"
+      ]
+    },
+    {
+      "id": "making-and-office",
+      "title": "Making and office work",
+      "skills": [
+        "promptcraft",
+        "owen-burnett-officecraft",
+        "officecraft-reviewer"
+      ]
+    },
+    {
+      "id": "technology-and-safety",
+      "title": "Technology and safety",
+      "skills": [
+        "beryl-it-tech",
+        "it-work-reviewer",
+        "privacy-redline"
+      ]
+    },
+    {
+      "id": "language-and-career",
+      "title": "Language and career",
+      "skills": [
+        "lex-foster-language-companion",
+        "job-application-builder",
+        "interview-trainer"
+      ]
+    }
+  ],
+  "roots": [
+    "nova",
+    "nova-operations",
+    "cognitive-continuity",
+    "agent-striving",
+    "agent-swarm-orchestration",
+    "corkboard",
+    "dunbar",
+    "agentic-coding",
+    "software-verification",
+    "verification-reviewer",
+    "answerlayer",
+    "current-intelligence-observatory",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "omnara-deep-research",
+    "promptcraft",
+    "owen-burnett-officecraft",
+    "officecraft-reviewer",
+    "beryl-it-tech",
+    "it-work-reviewer",
+    "privacy-redline",
+    "lex-foster-language-companion",
+    "job-application-builder",
+    "interview-trainer"
+  ],
+  "required_absences": [
+    "augment-of-mind sibling plugin",
+    "prompt-submit hook",
+    "Ollama requirement",
+    "embedding model requirement",
+    "vector database",
+    "MIND Core daemon",
+    "Faculty skills as sibling handles"
+  ],
+  "explicit_nondefault_products": [
+    {
+      "id": "signal-loom",
+      "reason": "free standalone creative add-on rather than default generalist weight"
+    },
+    {
+      "id": "ludis-continuum",
+      "reason": "free opt-in games and fiction pack"
+    },
+    {
+      "id": "canopyops",
+      "reason": "free regulated-domain standalone with its own evidence boundary"
+    },
+    {
+      "id": "praxis-mine",
+      "reason": "maintainer capability-gardening tool"
+    },
+    {
+      "id": "yammerknit",
+      "reason": "requires repair and reseal before distribution"
+    },
+    {
+      "id": "omniview",
+      "reason": "independent provenance and product decision"
+    },
+    {
+      "id": "impactful-tom",
+      "reason": "excluded from Nova distributions"
+    },
+    {
+      "id": "dennis-stratton-project-management",
+      "reason": "larger-edition project-governance foundation, not required by the Free estate"
+    }
+  ],
+  "evidence_boundary": "This manifest establishes intended composition. Installation, host discovery, invocation, service configuration, live behavior, publication, and outcomes require separate observations."
+}

@@ -1,72 +1,81 @@
 from __future__ import annotations
+
+import re
+import sys
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
-import re
+from urllib.parse import unquote, urlsplit
 
-ROOT=Path(__file__).resolve().parent
-PAGES=sorted(ROOT.glob('*.html'))
-ASSETS=ROOT/'assets'
+DOCS = Path(__file__).resolve().parent
+REQUIRED = {"index.html", "install.html", "capabilities.html", "workflows.html", "trust.html", "support.html", "security.html", "notices.html", "upgrade.html", "troubleshooting.html", "404.html", "style.css"}
+STALE_RUNTIME_PHRASES = ("forty-one visible", "shared MIND database", "automatic capability reminders", "standalone MIND package", "semantic arm's reach regression")
 
-class Scan(HTMLParser):
-    def __init__(self):
-        super().__init__(); self.links=[]; self.ids=set(); self.images=[]; self.title=''; self._title=False
-    def handle_starttag(self,tag,attrs):
-        a=dict(attrs)
-        if 'id' in a: self.ids.add(a['id'])
-        if tag=='a' and 'href' in a: self.links.append(a['href'])
-        if tag=='img': self.images.append((a.get('src',''),a.get('alt')))
-    def handle_data(self,data):
-        if self._title: self.title+=data
-    def handle_startendtag(self,tag,attrs): self.handle_starttag(tag,attrs)
-    def handle_endtag(self,tag):
-        if tag=='title': self._title=False
-    def handle_starttag(self,tag,attrs):
-        a=dict(attrs)
-        if tag=='title': self._title=True
-        if 'id' in a: self.ids.add(a['id'])
-        if tag=='a' and 'href' in a: self.links.append(a['href'])
-        if tag=='img': self.images.append((a.get('src',''),a.get('alt')))
+class PageParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.links: list[str] = []
+        self.ids: set[str] = set()
+        self.images: list[dict[str, str]] = []
+        self.h1_count = 0
+        self.html_lang = ""
+        self.main_ids: set[str] = set()
+        self.skip_link = False
+        self.nav_label = False
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        data = {key: value or "" for key, value in attrs}
+        if tag == "html": self.html_lang = data.get("lang", "")
+        if data.get("id"): self.ids.add(data["id"])
+        if tag == "a" and data.get("href"):
+            self.links.append(data["href"])
+            if data.get("class") == "skip-link" and data["href"] == "#main": self.skip_link = True
+        if tag == "img": self.images.append(data)
+        if tag == "h1": self.h1_count += 1
+        if tag == "main" and data.get("id"): self.main_ids.add(data["id"])
+        if tag == "nav" and data.get("aria-label"): self.nav_label = True
 
-scans={}
-errors=[]
-for p in PAGES:
-    s=Scan(); s.feed(p.read_text(encoding='utf-8')); scans[p.name]=s
-    if not s.title.strip(): errors.append(f'{p.name}: missing title')
-    if not re.search(r'<html\s+lang="[^"]+"',p.read_text(encoding='utf-8')): errors.append(f'{p.name}: missing html lang')
-    if 'Skip to content' not in p.read_text(encoding='utf-8'): errors.append(f'{p.name}: missing skip link')
-    for src,alt in s.images:
-        if alt is None: errors.append(f'{p.name}: image missing alt: {src}')
-        if src and not urlparse(src).scheme and not (p.parent/src.split('#',1)[0]).exists(): errors.append(f'{p.name}: missing image: {src}')
-for p in PAGES:
-    for href in scans[p.name].links:
-        parsed=urlparse(href)
-        if parsed.scheme or href.startswith('mailto:'): continue
-        base,_,frag=href.partition('#')
-        target=p if not base else p.parent/base
-        if not target.exists(): errors.append(f'{p.name}: missing link target: {href}'); continue
-        if frag and target.suffix=='.html':
-            ts=scans.get(target.name)
-            if ts and frag not in ts.ids: errors.append(f'{p.name}: missing fragment: {href}')
-expected={'nova-mind-readme-hero.png':(1536,1024),'nova-mind-pages-hero.png':(1672,941),'nova-mind-social-card.png':(1732,908)}
-asset_hashes=set()
-for name, expected_size in expected.items():
-    path=ASSETS/name
-    if not path.exists():
-        errors.append(f'missing required asset: {name}')
-        continue
-    data=path.read_bytes()
-    if data[:8] != b'\x89PNG\r\n\x1a\n':
-        errors.append(f'asset is not PNG: {name}')
-        continue
-    import hashlib, struct
-    width,height=struct.unpack('>II',data[16:24])
-    if (width,height) != expected_size:
-        errors.append(f'wrong asset dimensions: {name} {(width,height)} expected {expected_size}')
-    asset_hashes.add(hashlib.sha256(data).hexdigest())
-if len(asset_hashes) != len(expected):
-    errors.append('role-specific assets are not three distinct files')
-print(f'pages={len(PAGES)} links={sum(len(s.links) for s in scans.values())} images={sum(len(s.images) for s in scans.values())}')
-if errors:
-    print('\n'.join('FAIL '+e for e in errors)); raise SystemExit(1)
-print('PASS local Pages navigation, fragments, images, titles, language, and skip links')
+def check_page(path: Path) -> list[str]:
+    failures: list[str] = []
+    text = path.read_text(encoding="utf-8")
+    parser = PageParser(); parser.feed(text)
+    if parser.html_lang != "en": failures.append("missing html lang=en")
+    if parser.h1_count != 1: failures.append(f"expected one h1, found {parser.h1_count}")
+    if "main" not in parser.main_ids or not parser.skip_link: failures.append("missing working skip link and #main landmark")
+    if not parser.nav_label: failures.append("navigation lacks an accessible label")
+    for image in parser.images:
+        if "alt" not in image or not image["alt"].strip(): failures.append(f"image lacks useful alt text: {image.get('src', '<unknown>')}")
+    lowered = text.casefold()
+    for phrase in STALE_RUNTIME_PHRASES:
+        if phrase.casefold() in lowered: failures.append(f"stale runtime phrase: {phrase}")
+    for href in parser.links:
+        split = urlsplit(href)
+        if split.scheme or split.netloc or href.startswith(("mailto:", "tel:")): continue
+        raw_path = unquote(split.path)
+        target = path if not raw_path else (path.parent / raw_path).resolve()
+        try:
+            target.relative_to(DOCS)
+        except ValueError:
+            failures.append(f"link escapes deployed docs artifact: {href}"); continue
+        if not target.exists():
+            failures.append(f"missing link target: {href}"); continue
+        if split.fragment and target.suffix.casefold() == ".html":
+            target_parser = PageParser(); target_parser.feed(target.read_text(encoding="utf-8"))
+            if split.fragment not in target_parser.ids: failures.append(f"missing link fragment: {href}")
+    return failures
+
+def main() -> int:
+    failures: list[str] = []
+    missing = sorted(REQUIRED - {path.name for path in DOCS.iterdir()})
+    failures.extend(f"missing required site file: {name}" for name in missing)
+    for page in sorted(DOCS.glob("*.html")):
+        failures.extend(f"{page.name}: {failure}" for failure in check_page(page))
+    css = (DOCS / "style.css").read_text(encoding="utf-8") if (DOCS / "style.css").exists() else ""
+    if "prefers-reduced-motion" not in css: failures.append("style.css: missing reduced-motion accommodation")
+    if not re.search(r":focus-visible|:focus\b", css): failures.append("style.css: missing visible focus treatment")
+    if failures:
+        print("SITE CHECK: FAIL")
+        for item in failures: print(f"- {item}")
+        return 1
+    print(f"SITE CHECK: PASS ({len(list(DOCS.glob('*.html')))} pages)")
+    return 0
+
+if __name__ == "__main__": sys.exit(main())

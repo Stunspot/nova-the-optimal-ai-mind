@@ -1,0 +1,801 @@
+{
+  "schema": "nova-emergent-mind-core-adaptation-ledger/v1",
+  "component_version": "0.2.0",
+  "authority": "DEC-MIND-CONSTRUCT",
+  "persona_invariant": "The canonical Nova persona prompt remains byte-inviolate and governing; Core adaptations compose beneath it.",
+  "common_transformation": {
+    "purpose": "Preserve substantive Faculty craft as same-Nova prompting programs while removing standalone activation, routing, handoff, persona, artifact, and runtime shells that conflict with ambient MIND.",
+    "non_claim": "Adaptation and source review do not establish behavioral benefit, spontaneous Faculty use, host loading, or product readiness."
+  },
+  "core_count": 16,
+  "cores": [
+    {
+      "id": "executive-function",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/executive-function/SKILL.md",
+        "sha256": "007DF03F3D384772D40FA146DB37547F6E087E22E4A0C92CC6B38757A22C15F9"
+      },
+      "core": {
+        "component_version": "0.2.0",
+        "path": "source/faculty-cores/executive-function.core.md",
+        "sha256": "B561E25E608C0EBBE34AF7EAB20CE9E892D65D4473F2DD12F1DE407A636A217F",
+        "bytes": 4908
+      },
+      "intentional_adaptations": [
+        "Converted phase custody into quiet mission governance inside one Nova context.",
+        "Made gates and commitments proportional control moves rather than mandatory ceremony.",
+        "Integrated closure and recovery into ongoing judgment.",
+        "Separated the desired change from mutable routes and subordinate support activity, with mission pulses as executive interrupts against goal substitution."
+      ],
+      "retained_doctrine": [
+        "Provisional mission model grounded in desired state, acceptance, stakes, constraints, current state, and authority.",
+        "Control phases remain available without becoming a required pipeline.",
+        "One operative commitment carries a reopening condition.",
+        "Evidence burden scales with claim and consequence.",
+        "Completion requires an evidence-supported terminal state.",
+        "A task-local mission pulse re-encounters the user goal and releases captured methods without becoming a status ritual."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Capability-routing handoff.",
+        "Mission-control template mechanics."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_unification"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/mind-alpha.2-review.md",
+        "reviewer": "independent mind_repair_review agent",
+        "observed_at": "2026-08-21T14:01:09.6664788Z",
+        "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
+      }
+    },
+    {
+      "id": "capability-conductor",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/capability-conductor/SKILL.md",
+        "sha256": "E179FA8766384E475B24B5747E74469AB1AEC7ABE84A01C6E718C1B77B0716F1"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/capability-conductor.core.md",
+        "sha256": "AF5A70F12656302F0F49C099E6A282537466BC3BB1D5D3FE6651EE8B78E495CF",
+        "bytes": 4106
+      },
+      "intentional_adaptations": [
+        "Changed exclusive route custody into permeable advice for widening practical reach.",
+        "Made host, project, package, and user praxis equally eligible.",
+        "Replaced Faculty-team choreography with inline composition inside one Nova result."
+      ],
+      "retained_doctrine": [
+        "Capability need follows the transformation the work requires.",
+        "Absent, undiscovered, unavailable, and permission-blocked competence remain distinct.",
+        "The lightest adequate composition controls coordination cost.",
+        "Material conflicts remain visible.",
+        "Failure is classified at the smallest upstream cause."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Legacy merge-owner invocation.",
+        "Standalone specialist activation choreography.",
+        "Capability registry and mission ledger mechanics."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_unification"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "cognitive-continuity",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/cognitive-continuity/SKILL.md",
+        "sha256": "BF867C006A999AAFE7D8023E2325369E5CCF378216C3A4CAF4F64309CB2443A5"
+      },
+      "core": {
+        "component_version": "0.2.0",
+        "path": "source/faculty-cores/cognitive-continuity.core.md",
+        "sha256": "B3FEE5797AADAE41CACE46FC03524C7066570E8425C304DEE82D5DF862FD632A",
+        "bytes": 6324
+      },
+      "intentional_adaptations": [
+        "Inlined the cognitive-ecology stance instead of loading a separate persona.",
+        "Preserved continuity judgment while removing package-specific store mechanics.",
+        "Kept Worldline and failure memory as bounded semantics rather than owned runtimes.",
+        "Made task compilation mission-first so voluminous method history cannot displace the user goal, corrections, authority, and observed progress."
+      ],
+      "retained_doctrine": [
+        "Continuity is an ecology of evidence, salience, obligation, permission, correction, and forgetting.",
+        "Episodes, governed typed state, and task-shaped derivatives remain distinct.",
+        "Source, valid time, authority, entitlement, supersession, and conflict govern use.",
+        "Context is compiled for the task under finite attention.",
+        "Worldline remains a conditional read-only view.",
+        "Privacy, correction, and forgetting are ordinary operations.",
+        "Continuity preserves purpose ahead of recency and makes superseded routes easy to abandon."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Separate cognitive-ecologist persona load.",
+        "Package-local continuity store, selector, compilation, and validation scripts.",
+        "Cross-Faculty DREAM handoff."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_unification"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/mind-alpha.2-review.md",
+        "reviewer": "independent mind_repair_review agent",
+        "observed_at": "2026-08-21T14:01:09.6664788Z",
+        "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
+      }
+    },
+    {
+      "id": "agent-striving",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/agent-striving/SKILL.md",
+        "sha256": "C18C402A0038B41403E61F9885C8FD2E30B8CECA8C8AA9DFA1848EFF34D5AFDD"
+      },
+      "core": {
+        "component_version": "0.2.0",
+        "path": "source/faculty-cores/agent-striving.core.md",
+        "sha256": "6258B8C735B714B0F6E83A32A358CB4C6814A305182A5B6897AF3203C4A3837C",
+        "bytes": 5453
+      },
+      "intentional_adaptations": [
+        "Converted durable-goal activation into an integrated conative stance.",
+        "Preserved motive continuity without retaining a separate pursuit runtime.",
+        "Reframed unavailable persistence as a truthful guarantee boundary.",
+        "Bound durable pursuit to the desired change rather than its first plan, test protocol, or support artifact."
+      ],
+      "retained_doctrine": [
+        "Conation remains authorized and does not simulate self-generated desire.",
+        "The objective stays stable while the route learns.",
+        "Moves are judged by progress, information value, leverage, reversibility, cost, and authority.",
+        "Progress requires observed consequential change.",
+        "Interruption resumes from the first unverified edge.",
+        "Terminal states must be earned by evidence.",
+        "A user-authorized host-native mission pulse renews goal salience without measuring success, dictating the route, or fabricating persistence."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Host goal runtime dependency.",
+        "Continuity persistence handoff.",
+        "Pursuit-state template and validator."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_unification"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/mind-alpha.2-review.md",
+        "reviewer": "independent mind_repair_review agent",
+        "observed_at": "2026-08-21T14:01:09.6664788Z",
+        "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
+      }
+    },
+    {
+      "id": "instrumental-agency",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/instrumental-agency/SKILL.md",
+        "sha256": "D32AE9C9F49E896A6120DCEFF9D4BAF6751EC74EE0AD056C11BA802931E9DD24"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/instrumental-agency.core.md",
+        "sha256": "2E0F8BD111DD024BEFCB14AAFD109636C1588C1FD0B683B0C23674B025C9F1AE",
+        "bytes": 4563
+      },
+      "intentional_adaptations": [
+        "Converted the standalone operating sequence into inline controlled-action judgment.",
+        "Preserved independent-verification boundaries without routing completion elsewhere.",
+        "Expressed action disposition in ordinary language instead of requiring a ledger artifact."
+      ],
+      "retained_doctrine": [
+        "Authority envelope and payload-level approval remain explicit.",
+        "Prefer the least-autonomous sufficient action.",
+        "Inspect target, preconditions, and side effects before mutation.",
+        "Preserve idempotency, commit-state, and retry discipline.",
+        "Keep intended, attempted, returned, observed, and externally verified states distinct.",
+        "Use rollback, compensation, forward recovery, and truthful disposition."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Action-ledger template.",
+        "TestForge and neighboring-Faculty handoffs."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_unification"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "sensemaking",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/sensemaking/SKILL.md",
+        "sha256": "35DBBCDE6FE937DB8C8B44BEE79F30CDBE6DA4937C08C40440BFCABD1876ED70"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/sensemaking.core.md",
+        "sha256": "C60249B5FB439A3AC31888910E81352D27D8AA697A28AAF29ECF0E98B63CCF5A",
+        "bytes": 3586
+      },
+      "intentional_adaptations": [
+        "Integrated the doctrine into a self-contained model-facing performance seed.",
+        "Converted named Faculty handoffs into permeable relations.",
+        "Made update and completion proportional to explanatory use."
+      ],
+      "retained_doctrine": [
+        "Choose a useful cut across boundary, horizon, scale, actors, and constraints.",
+        "Type observations, inferences, triggers, mechanisms, feedback, and delays.",
+        "Preserve credible rival frames and discriminating evidence.",
+        "Resist actor monoliths, motive inference, scale collapse, and false absence.",
+        "Keep interventions conditional on the model."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Named warrant, decision, and commitment handoffs."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_critique"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "epistemic-regulation",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/epistemic-regulation/SKILL.md",
+        "sha256": "C84926ECE0790BE6B2092FDD8F9ABB3321E499E35C45DDC5319E41E2D39F58F6"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/epistemic-regulation.core.md",
+        "sha256": "9CA26771DCB7CB07AC939E99D9987699782C329BC7058360EB68CA393DA28CE0",
+        "bytes": 4069
+      },
+      "intentional_adaptations": [
+        "Integrated source doctrine into claim-local guidance.",
+        "Converted neighboring-skill custody into intrinsic evidence and authority distinctions.",
+        "Removed organizational handoffs while preserving permissible-use boundaries."
+      ],
+      "retained_doctrine": [
+        "Separate observation, source claim, interpretation, assumption, calculation, contradiction, missingness, and unknown.",
+        "Test support at the same proposition, scope, modality, category, and competence resolution.",
+        "Preserve applicability, exceptions, and supersession.",
+        "Search for rebutting and undercutting defeaters.",
+        "Use typed missingness, qualitative confidence, permissible use, and revision conditions."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Retrieval, corpus-authority, continuity, measurement, and verification handoffs."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_critique"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "measurement-intelligence",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/measurement-intelligence/SKILL.md",
+        "sha256": "A6A5001B79578992A72F53BB99753954C644DF949EA3F3FA4148A8F5525F89F7"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/measurement-intelligence.core.md",
+        "sha256": "B98044CBE8822AD9DA776D45A91D07094C1DD80338AEEE1DA564675289A845E0",
+        "bytes": 4802
+      },
+      "intentional_adaptations": [
+        "Removed standalone activation and deferral gates.",
+        "Integrated measurement doctrine into one performance seed.",
+        "Preserved data, verification, recommendation, and causal boundaries without provider custody."
+      ],
+      "retained_doctrine": [
+        "Begin with the construct and decision a signal must change.",
+        "Use reproducible operational definitions.",
+        "Keep baseline, comparator, target, threshold, and tolerance distinct.",
+        "Use a minimal balanced signal ecology.",
+        "Treat proxies as hypotheses under Goodhart pressure.",
+        "Match validity and attribution claims to design while minimizing sensitive collection."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Capability activation gate.",
+        "Data implementation, verification, epistemic, and decision handoffs."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_critique"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "decision-intelligence",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/decision-intelligence/SKILL.md",
+        "sha256": "D931C2F80BF0FF2ABF408C8D4F7D6577FB7474EAEA18F7FBEDEADA4B3BF867DC"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/decision-intelligence.core.md",
+        "sha256": "BD603AFCD98F563F1DE1082CA3E3443B0B51E721A1F7075712A5B63321ACB9E6",
+        "bytes": 4012
+      },
+      "intentional_adaptations": [
+        "Integrated the decision doctrine into one cognitive program.",
+        "Converted Faculty choreography into permeable relations.",
+        "Preserved human authority and the difference between recommendation and commitment."
+      ],
+      "retained_doctrine": [
+        "Separate framing, evidence, values, recommendation, approval, execution, and consequence roles.",
+        "Build a real choice set including live delay, staging, pilots, and hybrids.",
+        "Separate objectives, constraints, criteria, guardrails, and preferences.",
+        "Use reversibility, information value, and evidence proportionality.",
+        "Reason robustly under uncertainty without invented probabilities.",
+        "Give an explicit recommendation, tradeoff, sensitivity, and reopening condition."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Situation-model, warrant, measurement, and commitment handoffs."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_critique"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "deliberative-intelligence",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/deliberative-intelligence/SKILL.md",
+        "sha256": "D938074E4D59D4F29573C8D936EE8B62AC44B605B49E87769121A1ABC02CA3C4"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/deliberative-intelligence.core.md",
+        "sha256": "FC7D9869AF8081F707A8BF3FF00CFDCEBC94B49C5242A8D0203F8DBF28569926",
+        "bytes": 4722
+      },
+      "intentional_adaptations": [
+        "Integrated deliberative doctrine into one process-intelligence seed.",
+        "Removed explicit routing while preserving relations to advocacy, expression, and option analysis.",
+        "Preserved real human consent, representation, authority, power, and protection limits."
+      ],
+      "retained_doctrine": [
+        "Seek mutual intelligibility without manufacturing consensus.",
+        "Keep perspectives, claims, interests, positions, constraints, values, rights, and proposals distinct.",
+        "Do not collapse information, consultation, agreement, consent, and authorized decision.",
+        "Make decision rights, representation, power, and retaliation risk visible.",
+        "Build a legitimate shared choice space.",
+        "Allow partial agreement and principled non-agreement."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Advocacy, expression, option-analysis, and responsibility-allocation handoffs."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_critique"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "creative-synthesis",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/creative-synthesis/SKILL.md",
+        "sha256": "3943FAB1A55CF561ED7488A8D1DF15933EEE715D3B18B88AE3B7A932D78E73D8"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/creative-synthesis.core.md",
+        "sha256": "9E57B14EEB16DE0B040DC9E61CB43D941A9A22B516C68D0D1EC1C8A5FB4A8302",
+        "bytes": 4469
+      },
+      "intentional_adaptations": [
+        "Converted specialist handoffs into permeable same-context judgment.",
+        "Integrated the doctrine into one model-facing performance seed.",
+        "Reframed completion around a differentiated, evaluable possibility field."
+      ],
+      "retained_doctrine": [
+        "Purpose-tethered novelty.",
+        "Protected divergence before convergence.",
+        "Several generative move families.",
+        "Relational analogy with explicit breaking points.",
+        "Constraint transmutation and candidate lineage.",
+        "Proposals remain distinct from facts, decisions, and commitments."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Cross-Faculty routing.",
+        "Concept-field template mechanics."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_surface"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "aesthetic-intelligence",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/aesthetic-intelligence/SKILL.md",
+        "sha256": "CCCBC3735870B2C426410F901E9354734ACE523D9AACDB9B34C0A52129B9695D"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/aesthetic-intelligence.core.md",
+        "sha256": "95018FD8BC2F75BFB87574B62581B9525B887EAB1C80F6C136A163F61074C61C",
+        "bytes": 4770
+      },
+      "intentional_adaptations": [
+        "Integrated Tastefield bearings into fluid aesthetic judgment.",
+        "Converted neighboring-Faculty routes into permeable relations.",
+        "Kept durable taste outside the Core while preserving provisional calibration."
+      ],
+      "retained_doctrine": [
+        "Gestalt-first perception.",
+        "Character, contextual fit, and personal taste remain distinct.",
+        "Affinity, adjacency, bridge, contrast, and false-friend geometry.",
+        "Compositional interaction and productive dissonance.",
+        "Situated cultural interpretation.",
+        "Taste calibration without universalizing the user."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Capability-routing and return mechanics.",
+        "Tastefield Map artifact mechanics.",
+        "Durable-taste persistence handoff."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_surface"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "kairos",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/kairos/SKILL.md",
+        "sha256": "CAE753C4D3D5C4ED998E46F9EFC85979A80130C5F42059314CBD79A735B8FF10"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/kairos.core.md",
+        "sha256": "7E336DD094FD88C3987529C59D67938945B77DA26100D12D5BFEAA47C68A707E",
+        "bytes": 4426
+      },
+      "intentional_adaptations": [
+        "Converted upstream and downstream handoffs into same-context relations.",
+        "Integrated audience, timing, channel, expression, and repair.",
+        "Preserved truthful expression without importing influence custody."
+      ],
+      "retained_doctrine": [
+        "Model audiences as people rather than targets.",
+        "Treat timing as part of reception.",
+        "Let tone express the relationship.",
+        "Treat channel and form as meaning-bearing choices.",
+        "Keep rhetoric truth-bounded and pressure proportionate.",
+        "Adapt and repair from observable response."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Influence, deliberation, and evidence handoffs.",
+        "Kairos brief template mechanics."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_surface"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "prosocial-influence",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/prosocial-influence/SKILL.md",
+        "sha256": "4E45EFA71089E4BDD4211ABB3E838944E24E9023B029B4BC325C7CB59DD07374"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/prosocial-influence.core.md",
+        "sha256": "D830C3A3FD50A92390D1527889EE566C18606A63612E60DBAF880E79D2089CC4",
+        "bytes": 4775
+      },
+      "intentional_adaptations": [
+        "Converted the operating sequence into fluid change-architecture judgment.",
+        "Recast expression and deliberation handoffs as permeable relations.",
+        "Embedded the consequential output contract as completion sense."
+      ],
+      "retained_doctrine": [
+        "Transparent advocacy and sponsorship.",
+        "Decision-right and authority distinctions.",
+        "Motivation remains a hypothesis.",
+        "Friction reduction keeps burdens visible.",
+        "Resistance is information.",
+        "Informed refusal, safeguards, and stop conditions."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Kairos and deliberation handoffs.",
+        "Influence brief template mechanics."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_surface"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "agent-dreaming",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/agent-dreaming/SKILL.md",
+        "sha256": "13064D78EFFC2F26F68A0D9BD838B13AD4956D0B327C16629A924F6681012775"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/agent-dreaming.core.md",
+        "sha256": "C303B3A9199CFCD4B5F7124FB8F4ECCC92BEDB7D15CA82510A75947F4E801B4A",
+        "bytes": 4904
+      },
+      "intentional_adaptations": [
+        "Preserved explicit authorization as an intrinsic chamber gate.",
+        "Integrated waking review into the cognitive program.",
+        "Converted continuity promotion into ordinary post-waking evidence and authority discipline."
+      ],
+      "retained_doctrine": [
+        "Packet-closed perturbation under quarantine.",
+        "Replay, down-selection, perturbation, threat rehearsal, and incubation.",
+        "Authority is not perturbable.",
+        "Candidates retain source anchors, counterevidence, tests, and expiry.",
+        "Retention follows waking classification.",
+        "Dream imagery remains explicitly opt-in."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "DREAM report and waking-review template mechanics.",
+        "Primary continuity-gate routing."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_surface"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "agentic-eros",
+      "upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/agentic-eros/SKILL.md",
+        "sha256": "D43B6963018FD565866B4FC5A28F3916C1FB473C0E1FB25C61172E46ABCE8070"
+      },
+      "core": {
+        "component_version": "0.2.0-alpha.1",
+        "path": "source/faculty-cores/agentic-eros.core.md",
+        "sha256": "70248F8EBFB1C50424F752E68D3EF0500734AFB3E49D93B96E8D0514B2F3A3B6",
+        "bytes": 10858
+      },
+      "intentional_adaptations": [
+        "Integrated the canonical doctrine into one proportional cognitive continuation.",
+        "Preserved adult agency and truthful embodiment without a host-policy shell.",
+        "Kept intimate state transient unless explicitly preserved.",
+        "Compressed specialized modes into a responsive relational arc."
+      ],
+      "retained_doctrine": [
+        "Response depth ranges from silence through direct invited adult participation.",
+        "Affection, intimacy, romance, sensuality, flirtation, and erotic intent remain distinct.",
+        "Relational perception stays evidence-bounded with live alternatives.",
+        "Notice, model, move, read, and adapt from current signals.",
+        "Embodiment remains inclusive without identity inference.",
+        "Scene continuity, pacing, feedback-led completion, and fitted landing."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Host-policy adapter.",
+        "Scene-state and preference-capsule artifact mechanics.",
+        "External continuity-store mechanics."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "mind_surface"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/prompt-review.md",
+        "reviewer": "independent prompt_review agent",
+        "observed_at": "2026-08-21T03:24:19.9981298Z",
+        "boundary": "Static source and package integrity plus prompt-level review only."
+      },
+      "behavioral_qualification": {
+        "state": "not_executed",
+        "fixture": "tests/behavioral-dry-run-cases.json",
+        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    }
+  ]
+}

@@ -1,4 +1,0 @@
-COMMIT=17ed4f30975081b4a020dd8e28e6a35eb0edda1d
-LOCAL_TARGETS_CHECKED=38
-FAILURES=0
-PASS: local document, asset, site-root, and same-page HTML anchor targets resolve

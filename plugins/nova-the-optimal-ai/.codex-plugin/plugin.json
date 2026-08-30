@@ -1,26 +1,28 @@
 {
   "name": "nova-the-optimal-ai",
-  "version": "2.1.0",
-  "description": "Nova and MIND, inseparable: an adaptive generalist with semantic capability recall and a generous practical skill suite.",
+  "version": "3.0.0",
+  "description": "Nova the Optimal AI Free: one vivid Nova front door, ambient MIND, governed continuity, and twenty-four native practical capabilities.",
   "author": {
     "name": "Collaborative Dynamics",
     "url": "https://collaborative-dynamics.com"
   },
   "homepage": "https://collaborative-dynamics.com",
-  "license": "MIT",
+  "license": "SEE LICENSE.md AND THIRD-PARTY-NOTICES.md",
   "keywords": [
     "nova",
     "generalist",
-    "research",
+    "mind",
+    "coding",
     "verification",
-    "memory",
-    "creative play"
+    "research",
+    "documents",
+    "continuity"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Nova the Optimal AI",
-    "shortDescription": "Truth, decisions, artifacts, proof, and continuity.",
-    "longDescription": "Nova is Collaborative Dynamics' playful adaptive generalist, inseparable from MIND and equipped for prompting, research, verification, privacy, documents, IT, Minecraft, language learning, continuity, and play.",
+    "shortDescription": "One sharp generalist. Useful before the tour.",
+    "longDescription": "Give Nova the real thing you need done. Free 3.0.0 combines the governing Nova persona, ambient MIND, optional governed continuity, coding and paired verification, research and retrieval, editable office work and review, IT diagnosis, privacy, language, career workflows, reminders, and people context without a required local model, hook, daemon, embeddings, or vector database.",
     "developerName": "Collaborative Dynamics",
     "category": "Productivity",
     "capabilities": [
@@ -30,17 +32,13 @@
     ],
     "websiteURL": "https://collaborative-dynamics.com",
     "brandColor": "#48CBE8",
-    "composerIcon": "./skills/nova/assets/collaborative-dynamics-logo.png",
-    "logo": "./skills/nova/assets/collaborative-dynamics-logo.png",
-    "logoDark": "./skills/nova/assets/collaborative-dynamics-logo.png",
-    "screenshots": [
-      "./assets/nova-tour-preview.png",
-      "./assets/nova-tour-mobile.png"
-    ],
+    "composerIcon": "./skills/nova/assets/nova-icon.png",
+    "logo": "./skills/nova/assets/nova-icon.png",
+    "logoDark": "./skills/nova/assets/nova-icon.png",
     "defaultPrompt": [
-      "Use $nova to take me on the interactive tour.",
-      "Use $nova to turn this mess into something true, useful, and checked.",
-      "Use $gridmason to help me plan my next Minecraft build."
+      "Use $nova to turn this mess into one clear, useful, checked result.",
+      "Use $nova to help me decide what actually matters here.",
+      "Use $nova to take me on the optional ninety-second tour."
     ]
   }
 }

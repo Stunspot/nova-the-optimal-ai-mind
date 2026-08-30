@@ -1,4 +1,0 @@
-interface:
-  display_name: "Capability Promotion"
-  short_description: "🧬 Recall cues after toolset changes."
-  default_prompt: "Use $capability-promotion to add this capability and keep MIND aware of it."

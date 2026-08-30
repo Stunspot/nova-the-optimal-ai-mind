@@ -1,21 +1,9 @@
 {
   "name": "collaborative-dynamics-nova-free",
   "interface": {
-    "displayName": "Nova + MIND Free by Collaborative Dynamics"
+    "displayName": "Nova the Optimal AI Free by Collaborative Dynamics"
   },
   "plugins": [
-    {
-      "name": "augment-of-mind",
-      "source": {
-        "source": "local",
-        "path": "./plugins/augment-of-mind"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
     {
       "name": "nova-the-optimal-ai",
       "source": {

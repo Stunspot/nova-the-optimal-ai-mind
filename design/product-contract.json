@@ -1,0 +1,84 @@
+{
+  "schema": "nova-free-product-contract/v3",
+  "product": "Nova the Optimal AI Free",
+  "brand": "Nova the Optimal AI",
+  "product_version": "3.0.0",
+  "state": "local_source_candidate",
+  "plugin": {
+    "count": 1,
+    "id": "nova-the-optimal-ai",
+    "front_door": "nova"
+  },
+  "mind": {
+    "version": "0.2.0",
+    "resident": true,
+    "faculty_core_count": 16,
+    "faculty_cores_are_nested_references": true
+  },
+  "loadout": {
+    "visible_skill_roots": 25,
+    "manifest": "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json"
+  },
+  "ordinary_runtime": {
+    "python_required": false,
+    "ollama_required": false,
+    "embedding_model_required": false,
+    "vector_database_required": false,
+    "prompt_hook_required": false,
+    "daemon_required": false,
+    "persistent_estate_required": false
+  },
+  "optional_estate": {
+    "owner": "nova-operations",
+    "registry_schema": "nova-path-selectors/v1",
+    "manifest_schema": "nova-estate-manifest/v1",
+    "required_selectors": [
+      "NOVA_DATA_ROOT",
+      "NOVA_CONTINUITY_HOME",
+      "DUNBAR_STORE",
+      "CORKBOARD_HOME"
+    ],
+    "unknown_extra_selectors": "preserved_not_injected",
+    "forbidden_custody": ".codex"
+  },
+  "host_bindings": [
+    "codex-local-marketplace",
+    "claude-compatible-complete-bundle",
+    "claude-compatible-individual-skills"
+  ],
+  "release_gates": [
+    "exact source lock",
+    "deterministic build",
+    "static package verification",
+    "skill and plugin validators",
+    "focused regression suite",
+    "Hesperos documentation authoring and accessibility review",
+    "TestForge operator and independent reviewer",
+    "license compatibility",
+    "clean local checkpoint",
+    "separate publication authority"
+  ],
+  "current_blockers": [
+    {
+      "id": "free-edition-license-scope",
+      "detail": "Nova with MIND 0.2.0, Nova Operations, AnswerLayer, and Current Intelligence require explicit rights-holder Free-edition grants naming the integrated versions or tree digests."
+    },
+    {
+      "id": "career-pair-license",
+      "detail": "Job Application Builder and Interview Trainer retain private-customer terms that prohibit inclusion in another distributed product without separate written permission."
+    },
+    {
+      "id": "component-metadata-reconciliation",
+      "detail": "AnswerLayer and Current Intelligence package metadata must be reconciled with any approved Free-edition grants before public distribution."
+    },
+    {
+      "id": "fresh-host-evidence",
+      "detail": "Package work does not establish installation, discovery, invocation, or behavior on a clean host."
+    },
+    {
+      "id": "publication-authority",
+      "detail": "No tag, push, GitHub release, directory submission, hosted workflow, or announcement is authorized by the build request."
+    }
+  ],
+  "evidence_boundary": "Local source composition, build bytes, and exercised verification only."
+}

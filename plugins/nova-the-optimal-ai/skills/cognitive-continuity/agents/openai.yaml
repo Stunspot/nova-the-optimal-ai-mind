@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cognitive Continuity"
+  short_description: "🧵 Cognitive continuity across tasks."
+  default_prompt: "Use $cognitive-continuity to inspect the available state, compile what this task needs, and continue without inventing continuity."

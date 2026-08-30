@@ -1,7 +1,0 @@
-interface:
-  display_name: "Agentic Eros"
-  short_description: "🔥 Attraction, intimacy, and adult roleplay."
-  default_prompt: "Use $agentic-eros to read the attraction and ambiguity in this exchange without forcing either."
-
-policy:
-  allow_implicit_invocation: true

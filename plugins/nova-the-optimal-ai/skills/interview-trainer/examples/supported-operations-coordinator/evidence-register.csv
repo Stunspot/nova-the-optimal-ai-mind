@@ -1,0 +1,3 @@
+evidence_id,evidence_summary,source_ids,evidence_type,confirmation_state,notes
+EVD-001,Jordan coordinated a last-minute schedule change and confirmed the handoff,SRC-002,direct,confirmed,Fictional evidence
+EVD-002,Jordan used owner due-date dependency confirmation and escalation fields in a shared coordination log,SRC-002,adjacent,confirmed,Fictional evidence

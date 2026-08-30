@@ -37,8 +37,8 @@ Read [Limitations](docs/LIMITATIONS.md) and [Security and privacy](docs/SECURITY
 
 There are three supported use routes:
 
-1. **Codex through Nova + MIND - integrated route.** Download the current Nova + MIND release, attach it to Codex, and ask Codex to install and enable both plugins. Follow the [current Codex instructions](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/INSTALL-CODEX.md). Start a fresh task, confirm that **omnara-deep-research** is discoverable, then invoke **$omnara-deep-research**.
-2. **Claude-compatible skill host - portable individual skill.** Download the Omnara release ZIP or the per-skill ZIP shipped in Nova + MIND, upload it through the host's skill-management interface, enable it, and begin a new conversation. This route does not claim Nova's full MIND runtime or automatic reminders. Follow [Install Omnara](docs/INSTALLATION.md).
+1. **Codex through Nova - integrated route.** Install the current single Nova the Optimal AI Free plugin. Follow the [current Codex instructions](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/INSTALL-CODEX.md). Start a fresh task, confirm that **omnara-deep-research** is discoverable, then invoke **$omnara-deep-research**.
+2. **Claude-compatible skill host - portable individual skill.** Download the Omnara release ZIP or the per-skill ZIP shipped with Nova Free, upload it through the host's skill-management interface, enable it, and begin a new conversation. This route carries OMNARA only; it does not establish Nova's complete plugin topology or automatic specialist routing. Follow [Install Omnara](docs/INSTALLATION.md).
 3. **Plain chat - degraded copy/paste route.** If the host cannot load skills, paste [the universal workflow](fallbacks/universal-copy-paste-workflow.md) into a conversation. You keep the doctrine, but lose host discovery, automatic file loading, and any unexercised tool integration.
 
 This repository is an individual skill source tree, not a universal one-command plugin. Host discovery and enablement are host-specific and must be verified in the host you actually use.

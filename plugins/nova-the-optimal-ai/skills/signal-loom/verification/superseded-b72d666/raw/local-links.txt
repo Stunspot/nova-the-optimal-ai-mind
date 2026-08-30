@@ -1,2 +1,0 @@
-LOCAL_LINKS_CHECKED=32
-PASS: local document, asset, and anchor targets resolve

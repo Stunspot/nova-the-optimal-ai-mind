@@ -1,6 +1,6 @@
 ---
 name: retrieval-reviewer
-description: "🔍 Corpus search and citation evidence audit."
+description: "🔍 Retrieval evidence and citation auditor."
 ---
 
 # Retrieval Reviewer

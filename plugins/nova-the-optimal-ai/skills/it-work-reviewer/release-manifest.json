@@ -3,8 +3,8 @@
   "version": "0.1.3",
   "files": {
     "agents/openai.yaml": {
-      "sha256": "60674bf5a75d0768e8c79780afa0a9f1294ea4f5c24c2cac24b75c128a0b0061",
-      "bytes": 191
+      "sha256": "19f1692a8f94725ef8d2b29c5517c980b2dabb586acec01fb081d5eff4000208",
+      "bytes": 203
     },
     "assets/build-and-migration-checklist.md": {
       "sha256": "fa4358f28eb28157c35a62b913c6764abb27ae47e3201f3b8c2ba44c4fd587d1",
@@ -191,8 +191,8 @@
       "bytes": 4111
     },
     "SKILL.md": {
-      "sha256": "e311e4f2071ca8873c733cf7c88255468c996e9ba8bf56ad20b0eadb8e212753",
-      "bytes": 1902
+      "sha256": "32ffdc802bcde1e7fef0253bbf08526681cf373a926b6854b775560897e149cf",
+      "bytes": 1914
     }
   }
 }

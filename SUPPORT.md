@@ -1,16 +1,9 @@
 # Support
 
-Start with [Troubleshooting](docs/TROUBLESHOOTING.md). If the problem remains, open an issue in [Stunspot/nova-the-optimal-ai-mind](https://github.com/Stunspot/nova-the-optimal-ai-mind/issues) for package defects, installation failures, documentation barriers, or bounded feature proposals.
+Use the [troubleshooting guide](docs/TROUBLESHOOTING.md) first. If the problem remains, open a bounded issue in [Stunspot/nova-the-optimal-ai-mind](https://github.com/Stunspot/nova-the-optimal-ai-mind/issues) for a package defect, installation failure, documentation barrier, or focused proposal.
 
-Include:
+Include Free product version 3.0.0, host and operating system, installation source, exact command or request, complete sanitized error, expected result, smallest safe reproduction, and the state that failed: package presence, host discovery, enabled state, restart state, invocation, optional estate configuration, tool availability, or behavior.
 
-- Nova + MIND product version and both plugin versions;
-- host, operating system, and Python version;
-- installation source and exact selector when relevant;
-- command or request and the complete error or surprising result;
-- expected result and smallest safe reproduction;
-- whether the failure concerns package presence, host discovery, hook trust, hook execution, context delivery, model behavior, or a specialist skill.
+Remove credentials, private prompts, personal data, customer material, sensitive paths, databases, and raw receipts. Use [Security](SECURITY.md) instead of a public issue for vulnerabilities or privacy exposure.
 
-Remove credentials, private prompts, personal data, customer material, sensitive paths, databases, and raw hook receipts unless a private channel specifically requires a sanitized excerpt.
-
-For a security or privacy concern, follow [Security](SECURITY.md) instead of posting exploit details publicly. This open-source release has no service-level agreement, response-time guarantee, hosted service, or entitlement to custom implementation.
+This free source candidate provides no hosted Nova service, service-level agreement, response-time guarantee, account entitlement, or promise of custom implementation.

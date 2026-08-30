@@ -1,0 +1,369 @@
+{
+  "schema": "nova-free-source-map/v3",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "records": [
+    {
+      "id": "nova",
+      "source_repository": "",
+      "source_commit": "",
+      "source_path": "working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
+      "source_version": "MIND 0.2.0",
+      "selection": [
+        "complete component tree"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "references/edition/index.md",
+        "references/take-the-tour.md (trailing newline normalization)"
+      ],
+      "source_state": "local_construction_source_imported_for_git_custody"
+    },
+    {
+      "id": "rupert-giles-knowledge-steward",
+      "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
+      "source_commit": "71ce7f81977d6ccf77c6fa5aeeb67fd101cd0681",
+      "source_path": ".",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/knowledge-estate-ledger.template.md",
+        "references/stewardship-doctrine.md"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "retrieval-reviewer",
+      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
+      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_path": "skills/retrieval-reviewer",
+      "source_version": "",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "retrieval-intelligence",
+      "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
+      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_path": "skills/retrieval-intelligence",
+      "source_version": "",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "promptcraft",
+      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+      "source_commit": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
+      "source_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "references/prompt-design.md"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "privacy-redline",
+      "source_repository": "https://github.com/Stunspot/privacy-redline",
+      "source_commit": "9188e9a04f1217f2dbac5a1d94ade508be05a7ba",
+      "source_path": "release-v0.1.1/codex/privacy-redline",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "owen-burnett-officecraft",
+      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
+      "source_commit": "3d6f7379e094f09260075b76fd2b7ccbc9e29eaf",
+      "source_path": "codex/owen-burnett-officecraft",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete maintained Codex root"
+      ],
+      "edition_overlays": [],
+      "source_state": "local_commit_ahead_of_origin"
+    },
+    {
+      "id": "omnara-deep-research",
+      "source_repository": "https://github.com/Stunspot/omnara-deep-research",
+      "source_commit": "fa2c51aaa86410c8afed241f144e94f2f76028a3",
+      "source_path": ".",
+      "source_version": "1.0.1",
+      "selection": [
+        "tracked files except .github/ verification/ CONTRIBUTING.md docs/MAINTAINERS.md"
+      ],
+      "edition_overlays": [
+        "README.md",
+        "docs/INSTALLATION.md",
+        "docs/LIFECYCLE.md",
+        "docs/install.html"
+      ],
+      "source_state": "local_commit_ahead_of_origin"
+    },
+    {
+      "id": "officecraft-reviewer",
+      "source_repository": "https://github.com/Stunspot/owen-burnett-officecraft",
+      "source_commit": "3d6f7379e094f09260075b76fd2b7ccbc9e29eaf",
+      "source_path": "codex/officecraft-reviewer",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete maintained Codex root"
+      ],
+      "edition_overlays": [],
+      "source_state": "local_commit_ahead_of_origin"
+    },
+    {
+      "id": "lex-foster-language-companion",
+      "source_repository": "https://github.com/Stunspot/lex-foster-language-companion",
+      "source_commit": "290f1a074fe9c3d600c756ad1fab62bce0c04abb",
+      "source_path": "release-v0.1.1/codex/lex-foster-language-companion",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "local_commit_ahead_of_origin"
+    },
+    {
+      "id": "job-application-builder",
+      "source_repository": "https://github.com/Stunspot/nova-emergent-job-application-builder",
+      "source_commit": "621d674a179ce3399a9133b6f1d31ff94b328a3c",
+      "source_path": "source/job-application-builder",
+      "source_version": "0.1.2",
+      "selection": [
+        "complete canonical source tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "software-verification",
+      "source_repository": "https://github.com/Stunspot/testforge",
+      "source_commit": "ce19f5f91bec96cedb497311757e0656ffaef718",
+      "source_path": "testforge/skills/software-verification",
+      "source_version": "1.1.7 metadata branch",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "checked_out_unmerged_metadata_branch"
+    },
+    {
+      "id": "it-work-reviewer",
+      "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
+      "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
+      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/it-work-reviewer",
+      "source_version": "0.1.3",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "dunbar",
+      "source_repository": "https://github.com/Stunspot/dunbar",
+      "source_commit": "54598f18388f7938880371dfc0cf1c53f598188e",
+      "source_path": ".",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "assets/item-record.schema.json",
+        "assets/item.example.json",
+        "assets/person-record.schema.json",
+        "assets/person.example.json",
+        "assets/relation-record.schema.json",
+        "assets/relation.example.json",
+        "references/people-intelligence.md",
+        "references/progressive-disclosure.md",
+        "references/store-contract.md",
+        "scripts/dunbar.py"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "references/store-contract.md",
+        "scripts/dunbar.py"
+      ],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "current-intelligence-observatory",
+      "source_repository": "https://github.com/Stunspot/current-intelligence-observatory",
+      "source_commit": "18ad94d4400abff919f8cd5feacb15274af2dc95",
+      "source_path": "release-v0.1.1/codex/current-intelligence-observatory",
+      "source_version": "0.1.1",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "corkboard",
+      "source_repository": "https://github.com/Stunspot/corkboard",
+      "source_commit": "460ac80d622a1893085818baee8336c825f0ec82",
+      "source_path": ".",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "scripts/corkboard.py"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "scripts/corkboard.py"
+      ],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "beryl-it-tech",
+      "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
+      "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
+      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/beryl-it-tech",
+      "source_version": "0.1.3",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "answerlayer",
+      "source_repository": "https://github.com/Stunspot/answerlayer",
+      "source_commit": "4d1a494038b8a010542946b1bf51ad5dd70f9d4e",
+      "source_path": "release-v0.1.2/codex/answerlayer",
+      "source_version": "0.1.2",
+      "selection": [
+        "complete release skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "agentic-coding",
+      "source_repository": "https://github.com/Stunspot/agentic-coding",
+      "source_commit": "b904fb7ebacd5bdcdc687f04149e32aa9dc8e7f9",
+      "source_path": ".",
+      "source_version": "",
+      "selection": [
+        "SKILL.md",
+        "adapter-manifest.json",
+        "agents/openai.yaml"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "agent-swarm-orchestration",
+      "source_repository": "https://github.com/Stunspot/agent-swarm-orchestration",
+      "source_commit": "01504f8e47af467883aa8dbfe4831cd6ad49faa9",
+      "source_path": "canonical/skills/agent-swarm-orchestration",
+      "source_version": "0.2.3",
+      "selection": [
+        "complete canonical skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "agent-striving",
+      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
+      "source_commit": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
+      "source_path": "plugins/augment-of-mind/skills/agent-striving",
+      "source_version": "2.2.2 lineage",
+      "selection": [
+        "complete skill tree"
+      ],
+      "edition_overlays": [
+        "references/conation-and-goal-custody.md"
+      ],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "cognitive-continuity",
+      "source_repository": "https://github.com/Stunspot/cognitive-continuity",
+      "source_commit": "9c4a629c4e493431c77385d2983529c4f68ecc99",
+      "source_path": "release-manifest.json#lineage_synchronized_paths",
+      "source_version": "0.2.4",
+      "selection": [
+        "SKILL.md",
+        "adapters/",
+        "agents/",
+        "assets/",
+        "examples/",
+        "fallbacks/",
+        "personas/",
+        "references/",
+        "scripts/"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "adapters/codex.md",
+        "adapters/claude-code.md",
+        "examples/dream-incubation.md"
+      ],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "nova-operations",
+      "source_repository": "",
+      "source_commit": "",
+      "source_path": "working/product-integration/source/base-skills/nova-operations",
+      "source_version": "3.0.0 Free binding from 1.0.3 base",
+      "selection": [
+        "complete authored base tree"
+      ],
+      "edition_overlays": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/estate-contract.md",
+        "scripts/nova_estate.py"
+      ],
+      "source_state": "local_construction_source_imported_for_git_custody"
+    },
+    {
+      "id": "interview-trainer",
+      "source_repository": "https://github.com/Stunspot/nova-emergent-interview-trainer",
+      "source_commit": "82c3d95d05d3dd2011be79422652257d349c808d",
+      "source_path": "source/interview-trainer",
+      "source_version": "0.1.2",
+      "selection": [
+        "complete canonical source tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "verification-reviewer",
+      "source_repository": "https://github.com/Stunspot/testforge",
+      "source_commit": "ce19f5f91bec96cedb497311757e0656ffaef718",
+      "source_path": "testforge/skills/verification-reviewer",
+      "source_version": "1.1.7 metadata branch",
+      "selection": [
+        "complete maintained skill root"
+      ],
+      "edition_overlays": [],
+      "source_state": "checked_out_unmerged_metadata_branch"
+    }
+  ],
+  "notices": [
+    "testforge",
+    "agent-swarm-orchestration",
+    "job-application-builder",
+    "interview-trainer"
+  ],
+  "evidence_boundary": "Source identity and explicit selection. Imported bytes are frozen separately by design/source-lock.json."
+}

@@ -1,4 +1,0 @@
-TOOLING_FAILURE 1: a composite PowerShell capture pipeline buffered the child and exceeded its 120-second wrapper timeout; a direct unbuffered run immediately passed all 11 tests in 0.845 seconds.
-TOOLING_FAILURE 2: a parallel shell evidence batch returned an aggregate failure although its created unit transcript ended OK, self-check passed, and 404 inspection passed; the missing index inspection was run directly and passed.
-TOOLING_FAILURE 3: a later Start-Process helper used the reserved automatic PowerShell variable `$args`, supplied an empty ArgumentList, and launched no child. It was not retried; already-observed exact-revision results were recorded above.
-DOCUMENTATION_LINT TOOLING NOTE: `--help` is unsupported and was interpreted as a filename; actual files were then supplied. Eight authored Markdown files passed. The MIT License produced one heuristic warning for its standard phrase `The above copyright notice`; the license text was preserved.

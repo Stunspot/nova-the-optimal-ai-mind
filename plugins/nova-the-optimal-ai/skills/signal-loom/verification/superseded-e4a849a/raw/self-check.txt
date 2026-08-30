@@ -1,5 +1,0 @@
-COMMAND=python -B scripts/self_check.py
-WORKDIR=E:\Github\.portfolio-remediation-019ff22b\signal-loom
-REVISION=4b88d1e7c7284797227b71497913b51b26f28156
-EXIT_CODE=0
-PASS: Signal Loom package self-check

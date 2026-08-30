@@ -5,3 +5,6 @@ Thumbs.db
 .env
 verification/raw/
 tools/import_curated_sources.py
+/dist/
+/release/
+/working/

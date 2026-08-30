@@ -1,0 +1,46 @@
+{
+  "format": "cd-agent-swarm-plan/v1",
+  "plan_id": "swarm-YYYYMMDD-short-name",
+  "updated_at": "YYYY-MM-DDTHH:MM:SSZ",
+  "mission": "The user-authorized world-change.",
+  "acceptance": [
+    "Observable condition that establishes success."
+  ],
+  "authority": {
+    "allowed": ["Read the named sources."],
+    "reserved": ["External publication requires the user."],
+    "sensitive_material": "none"
+  },
+  "regime": "enlist",
+  "admission_basis": "One bounded worker improves the root task enough to repay packet and merge cost.",
+  "root": {
+    "owner": "/root",
+    "work": "Mission custody, cross-cutting analysis, merge, and verification."
+  },
+  "workers": [
+    {
+      "id": "worker-a",
+      "objective": "Complete one bounded transformation.",
+      "deliverable": "A mergeable evidence-backed return.",
+      "depends_on": [],
+      "read_surfaces": ["path/or/source"],
+      "write_surfaces": [],
+      "authority": ["read-only"],
+      "evidence_required": ["Source locations for consequential claims."],
+      "status": "planned",
+      "return_condition": "Return the result, evidence, uncertainty, conflicts, and touched state."
+    }
+  ],
+  "budgets": {
+    "concurrency_limit": 2,
+    "model_policy": "Use the least expensive qualified route without lowering acceptance.",
+    "stop_condition": "Stop or re-plan when coordination cost exceeds expected benefit."
+  },
+  "merge": {
+    "owner": "/root",
+    "method": "Reconcile claims and authoritative state, then verify the integrated result.",
+    "indispensable_gates": ["authority", "single_writer", "evidence"]
+  },
+  "status": "planned",
+  "next_move": "Dispatch the ready frontier through the live host contract."
+}

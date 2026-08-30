@@ -1,0 +1,332 @@
+{
+  "schema": "nova-emergent-mind-core-registry/v1",
+  "component_version": "0.2.0",
+  "semantics": "Aliases are human discovery handles, not task classifiers, rankings, or proof of fit.",
+  "core_count": 16,
+  "cores": [
+    {
+      "id": "executive-function",
+      "display_name": "Executive Function",
+      "aliases": [
+        "mission governance",
+        "executive function",
+        "closure and recovery"
+      ],
+      "core_path": "references/mind/faculty-cores/executive-function.core.md",
+      "core_sha256": "B561E25E608C0EBBE34AF7EAB20CE9E892D65D4473F2DD12F1DE407A636A217F",
+      "core_bytes": 4908,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/executive-function/SKILL.md",
+      "upstream_sha256": "007DF03F3D384772D40FA146DB37547F6E087E22E4A0C92CC6B38757A22C15F9",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "capability-conductor",
+      "display_name": "Capability Conductor",
+      "aliases": [
+        "capability composition",
+        "method combination",
+        "practical reach"
+      ],
+      "core_path": "references/mind/faculty-cores/capability-conductor.core.md",
+      "core_sha256": "AF5A70F12656302F0F49C099E6A282537466BC3BB1D5D3FE6651EE8B78E495CF",
+      "core_bytes": 4106,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/capability-conductor/SKILL.md",
+      "upstream_sha256": "E179FA8766384E475B24B5747E74469AB1AEC7ABE84A01C6E718C1B77B0716F1",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "cognitive-continuity",
+      "display_name": "Cognitive Continuity",
+      "aliases": [
+        "continuity",
+        "Worldline",
+        "governed memory",
+        "resume"
+      ],
+      "core_path": "references/mind/faculty-cores/cognitive-continuity.core.md",
+      "core_sha256": "B3FEE5797AADAE41CACE46FC03524C7066570E8425C304DEE82D5DF862FD632A",
+      "core_bytes": 6324,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/cognitive-continuity/SKILL.md",
+      "upstream_sha256": "BF867C006A999AAFE7D8023E2325369E5CCF378216C3A4CAF4F64309CB2443A5",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "agent-striving",
+      "display_name": "Agent Striving",
+      "aliases": [
+        "striving",
+        "durable objective",
+        "persistent pursuit"
+      ],
+      "core_path": "references/mind/faculty-cores/agent-striving.core.md",
+      "core_sha256": "6258B8C735B714B0F6E83A32A358CB4C6814A305182A5B6897AF3203C4A3837C",
+      "core_bytes": 5453,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/agent-striving/SKILL.md",
+      "upstream_sha256": "C18C402A0038B41403E61F9885C8FD2E30B8CECA8C8AA9DFA1848EFF34D5AFDD",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "agent-dreaming",
+      "display_name": "Agent DREAMing",
+      "aliases": [
+        "DREAM",
+        "dreaming",
+        "bounded incubation",
+        "failure rehearsal"
+      ],
+      "core_path": "references/mind/faculty-cores/agent-dreaming.core.md",
+      "core_sha256": "C303B3A9199CFCD4B5F7124FB8F4ECCC92BEDB7D15CA82510A75947F4E801B4A",
+      "core_bytes": 4904,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/agent-dreaming/SKILL.md",
+      "upstream_sha256": "13064D78EFFC2F26F68A0D9BD838B13AD4956D0B327C16629A924F6681012775",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "agentic-eros",
+      "display_name": "Agentic Eros",
+      "aliases": [
+        "eros",
+        "erotic intelligence",
+        "relational charge",
+        "desire and intimacy"
+      ],
+      "core_path": "references/mind/faculty-cores/agentic-eros.core.md",
+      "core_sha256": "70248F8EBFB1C50424F752E68D3EF0500734AFB3E49D93B96E8D0514B2F3A3B6",
+      "core_bytes": 10858,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/agentic-eros/SKILL.md",
+      "upstream_sha256": "D43B6963018FD565866B4FC5A28F3916C1FB473C0E1FB25C61172E46ABCE8070",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "kairos",
+      "display_name": "Kairos",
+      "aliases": [
+        "audience and moment",
+        "fitting expression",
+        "rhetorical timing"
+      ],
+      "core_path": "references/mind/faculty-cores/kairos.core.md",
+      "core_sha256": "7E336DD094FD88C3987529C59D67938945B77DA26100D12D5BFEAA47C68A707E",
+      "core_bytes": 4426,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/kairos/SKILL.md",
+      "upstream_sha256": "CAE753C4D3D5C4ED998E46F9EFC85979A80130C5F42059314CBD79A735B8FF10",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "sensemaking",
+      "display_name": "Sensemaking",
+      "aliases": [
+        "situation model",
+        "causal framing",
+        "make sense of this"
+      ],
+      "core_path": "references/mind/faculty-cores/sensemaking.core.md",
+      "core_sha256": "C60249B5FB439A3AC31888910E81352D27D8AA697A28AAF29ECF0E98B63CCF5A",
+      "core_bytes": 3586,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/sensemaking/SKILL.md",
+      "upstream_sha256": "35DBBCDE6FE937DB8C8B44BEE79F30CDBE6DA4937C08C40440BFCABD1876ED70",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "epistemic-regulation",
+      "display_name": "Epistemic Regulation",
+      "aliases": [
+        "evidence calibration",
+        "claim warrant",
+        "uncertainty"
+      ],
+      "core_path": "references/mind/faculty-cores/epistemic-regulation.core.md",
+      "core_sha256": "9CA26771DCB7CB07AC939E99D9987699782C329BC7058360EB68CA393DA28CE0",
+      "core_bytes": 4069,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/epistemic-regulation/SKILL.md",
+      "upstream_sha256": "C84926ECE0790BE6B2092FDD8F9ABB3321E499E35C45DDC5319E41E2D39F58F6",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "decision-intelligence",
+      "display_name": "Decision Intelligence",
+      "aliases": [
+        "decision analysis",
+        "recommendation",
+        "tradeoffs"
+      ],
+      "core_path": "references/mind/faculty-cores/decision-intelligence.core.md",
+      "core_sha256": "BD603AFCD98F563F1DE1082CA3E3443B0B51E721A1F7075712A5B63321ACB9E6",
+      "core_bytes": 4012,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/decision-intelligence/SKILL.md",
+      "upstream_sha256": "D931C2F80BF0FF2ABF408C8D4F7D6577FB7474EAEA18F7FBEDEADA4B3BF867DC",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "measurement-intelligence",
+      "display_name": "Measurement Intelligence",
+      "aliases": [
+        "measurement design",
+        "metrics",
+        "attribution"
+      ],
+      "core_path": "references/mind/faculty-cores/measurement-intelligence.core.md",
+      "core_sha256": "B98044CBE8822AD9DA776D45A91D07094C1DD80338AEEE1DA564675289A845E0",
+      "core_bytes": 4802,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/measurement-intelligence/SKILL.md",
+      "upstream_sha256": "A6A5001B79578992A72F53BB99753954C644DF949EA3F3FA4148A8F5525F89F7",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "deliberative-intelligence",
+      "display_name": "Deliberative Intelligence",
+      "aliases": [
+        "deliberation",
+        "shared decision",
+        "legitimate disagreement"
+      ],
+      "core_path": "references/mind/faculty-cores/deliberative-intelligence.core.md",
+      "core_sha256": "FC7D9869AF8081F707A8BF3FF00CFDCEBC94B49C5242A8D0203F8DBF28569926",
+      "core_bytes": 4722,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/deliberative-intelligence/SKILL.md",
+      "upstream_sha256": "D938074E4D59D4F29573C8D936EE8B62AC44B605B49E87769121A1ABC02CA3C4",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "creative-synthesis",
+      "display_name": "Creative Synthesis",
+      "aliases": [
+        "creative synthesis",
+        "ideation",
+        "possibility field"
+      ],
+      "core_path": "references/mind/faculty-cores/creative-synthesis.core.md",
+      "core_sha256": "9E57B14EEB16DE0B040DC9E61CB43D941A9A22B516C68D0D1EC1C8A5FB4A8302",
+      "core_bytes": 4469,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/creative-synthesis/SKILL.md",
+      "upstream_sha256": "3943FAB1A55CF561ED7488A8D1DF15933EEE715D3B18B88AE3B7A932D78E73D8",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "aesthetic-intelligence",
+      "display_name": "Aesthetic Intelligence",
+      "aliases": [
+        "aesthetic sense",
+        "tastefield",
+        "fit and vibe",
+        "art direction"
+      ],
+      "core_path": "references/mind/faculty-cores/aesthetic-intelligence.core.md",
+      "core_sha256": "95018FD8BC2F75BFB87574B62581B9525B887EAB1C80F6C136A163F61074C61C",
+      "core_bytes": 4770,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/aesthetic-intelligence/SKILL.md",
+      "upstream_sha256": "CCCBC3735870B2C426410F901E9354734ACE523D9AACDB9B34C0A52129B9695D",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "prosocial-influence",
+      "display_name": "Pro-social Influence",
+      "aliases": [
+        "ethical influence",
+        "adoption strategy",
+        "behavior change"
+      ],
+      "core_path": "references/mind/faculty-cores/prosocial-influence.core.md",
+      "core_sha256": "D830C3A3FD50A92390D1527889EE566C18606A63612E60DBAF880E79D2089CC4",
+      "core_bytes": 4775,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/prosocial-influence/SKILL.md",
+      "upstream_sha256": "4E45EFA71089E4BDD4211ABB3E838944E24E9023B029B4BC325C7CB59DD07374",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    },
+    {
+      "id": "instrumental-agency",
+      "display_name": "Instrumental Agency",
+      "aliases": [
+        "controlled action",
+        "execution custody",
+        "side-effect truth"
+      ],
+      "core_path": "references/mind/faculty-cores/instrumental-agency.core.md",
+      "core_sha256": "2E0F8BD111DD024BEFCB14AAFD109636C1588C1FD0B683B0C23674B025C9F1AE",
+      "core_bytes": 4563,
+      "upstream_coordinate": "augment-of-mind@2.2.2/skills/instrumental-agency/SKILL.md",
+      "upstream_sha256": "D32AE9C9F49E896A6120DCEFF9D4BAF6751EC74EE0AD056C11BA802931E9DD24",
+      "adaptation_state": "component_complete",
+      "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
+      "custody_ledger_sha256": "87FC00D24D9EA1ED2D9BDDF781BFA059AD9E048A302E833143630AFE3E1863EB",
+      "author_review_state": "author_reviewed",
+      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "behavioral_qualification_state": "not_executed"
+    }
+  ]
+}

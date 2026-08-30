@@ -1,4 +1,0 @@
-COMMIT=17ed4f30975081b4a020dd8e28e6a35eb0edda1d
-COMMAND=python scripts/self_check.py
-PASS: Signal Loom package self-check
-EXIT_CODE=0

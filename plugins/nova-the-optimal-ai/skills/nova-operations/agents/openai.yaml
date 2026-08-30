@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nova Operations"
+  short_description: "Registry-backed setup, services, diagnostics, and recovery."
+  default_prompt: "Use $nova-operations to inspect or repair this Nova the Optimal AI installation without disturbing unrelated tools or data."

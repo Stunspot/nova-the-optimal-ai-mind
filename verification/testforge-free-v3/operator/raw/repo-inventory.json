@@ -1,0 +1,64 @@
+{
+  "format_version": "1.0",
+  "root": "E:\\Github\\nova-the-optimal-ai-mind",
+  "file_count": 870,
+  "languages": [
+    {
+      "name": "Python",
+      "files": 104
+    },
+    {
+      "name": "TypeScript",
+      "files": 3
+    }
+  ],
+  "manifests": [
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/typescript-api-change/input/package.json"
+  ],
+  "test_directories": [
+    "plugins/nova-the-optimal-ai/skills/agent-striving/scripts/tests",
+    "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration/tests",
+    "plugins/nova-the-optimal-ai/skills/answerlayer/scripts/tests",
+    "plugins/nova-the-optimal-ai/skills/cognitive-continuity/scripts/tests",
+    "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/scripts/tests",
+    "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion/scripts/tests",
+    "plugins/nova-the-optimal-ai/skills/omnara-deep-research/tests",
+    "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft/tests",
+    "plugins/nova-the-optimal-ai/skills/privacy-redline/scripts/tests",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/typescript-api-change/input/tests",
+    "tests"
+  ],
+  "test_files": [
+    "plugins/nova-the-optimal-ai/skills/agent-striving/scripts/tests/test_validate_pursuit_state.py",
+    "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration/tests/test_validate_swarm_plan.py",
+    "plugins/nova-the-optimal-ai/skills/answerlayer/scripts/tests/test_answerlayer.py",
+    "plugins/nova-the-optimal-ai/skills/cognitive-continuity/scripts/tests/test_continuity.py",
+    "plugins/nova-the-optimal-ai/skills/cognitive-continuity/scripts/tests/test_continuity_v2.py",
+    "plugins/nova-the-optimal-ai/skills/cognitive-continuity/scripts/tests/test_workspace_portability.py",
+    "plugins/nova-the-optimal-ai/skills/cognitive-continuity/scripts/tests/test_worldline_v2.py",
+    "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory/scripts/tests/test_observatory_guardrail.py",
+    "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion/scripts/tests/test_validate_learner_profile.py",
+    "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion/scripts/tests/test_validate_release.py",
+    "plugins/nova-the-optimal-ai/skills/omnara-deep-research/tests/test_validate_release_profiles.py",
+    "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft/tests/test_officefile_scripts.py",
+    "plugins/nova-the-optimal-ai/skills/privacy-redline/scripts/tests/test_privacy_case_guardrail.py",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/parser-edge-cases/expected/test_parser.py",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/python-regression/expected/test_date_filter.py",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/python-regression/expected/test_fixed_date_filter.py",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/python-regression/input/test_existing.py",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/typescript-api-change/expected/cancelSubscription.integration.test.ts",
+    "plugins/nova-the-optimal-ai/skills/software-verification/examples/typescript-api-change/input/tests/cancelSubscription.test.ts",
+    "tests/test_product_contract.py",
+    "tests/test_release_pipeline.py",
+    "tests/test_state_and_operations.py",
+    "tests/test_verifier_adversarial.py"
+  ],
+  "test_file_count": 23,
+  "config_files": [],
+  "ci_files": [
+    ".github/workflows/deploy-pages.yml",
+    ".github/workflows/line-ending-policy.yml",
+    ".github/workflows/verify-package.yml"
+  ],
+  "warnings": []
+}

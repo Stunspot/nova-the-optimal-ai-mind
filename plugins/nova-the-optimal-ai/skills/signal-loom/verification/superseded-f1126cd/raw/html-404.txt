@@ -1,5 +1,0 @@
-COMMIT=40d78aafa2ae4dda3024a0c6c6a0e360b2d69d9b
-COMMAND=python scripts/inspect_infographic_html.py docs/404.html
-PASS: bounded static HTML checks (0 warning(s))
-LIMIT: no claim of sanitization, rendered accessibility, browser behavior, security, or visual quality
-EXIT_CODE=0

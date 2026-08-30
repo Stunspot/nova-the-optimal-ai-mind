@@ -1,0 +1,4 @@
+interface:
+  display_name: "Job Application Builder"
+  short_description: "💼 Vacancy-matched résumé, letter, answers."
+  default_prompt: "Use $job-application-builder to build a truthful application for this vacancy from my posting and work history."

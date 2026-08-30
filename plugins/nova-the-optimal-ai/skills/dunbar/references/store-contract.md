@@ -4,14 +4,7 @@ The SQLite database is canonical runtime state. Full-text search is a rebuildabl
 
 ## Location
 
-The runtime selects the database in this order:
-
-1. `--store <path>`
-2. `DUNBAR_STORE`
-3. `%CODEX_HOME%\data\dunbar\people.sqlite3`
-4. `%USERPROFILE%\.codex\data\dunbar\people.sqlite3`
-
-Use an explicit development path for tests and product verification. Keep live personal data out of release archives.
+Nova the Optimal AI Free never falls back to a Dunbar store under .codex. Invoke Dunbar through the sibling Nova Operations registry-backed run dunbar command so the exact DUNBAR_STORE selector, rather than inherited environment, governs the subprocess. An explicit --store path remains valid for isolated development tests and product verification. Keep live personal data out of release archives.
 
 ## Canonical objects
 

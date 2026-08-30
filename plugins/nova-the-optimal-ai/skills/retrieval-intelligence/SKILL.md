@@ -1,6 +1,6 @@
 ---
 name: retrieval-intelligence
-description: "📚 Find relevant passages in supplied files with citations."
+description: "📚 Corpus retrieval, citations, and evidence."
 ---
 
 # Retrieval Intelligence
