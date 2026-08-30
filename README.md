@@ -30,6 +30,12 @@ For manual Codex recovery, see [Start Here](START-HERE.md). For Claude-compatibl
 
 Local build and verification can establish package topology, exact source bytes, host parity, hashes, archive determinism, and static contracts. They do not establish fresh-host installation, discovery, enabled state, model behavior, publication, or customer outcomes. Those remain separate observations.
 
-This repository currently contains the Free 3.0.0 source candidate. It is not a claim that a tag, GitHub release, directory listing, hosted workflow, or public distribution has occurred. Six included components still need rights-holder action before public redistribution: Nova/MIND, Nova Operations, AnswerLayer, and Current Intelligence need explicit Free-edition terms; the two career skills currently prohibit bundling outright. The local candidate includes them for product review, not as a claim of publication authority. See [Third-Party Notices](THIRD-PARTY-NOTICES.md).
+## Rights and distribution
+
+Nova Free uses the standard Collaborative Dynamics public-Augment split license: deterministic software and schemas are MIT; authored Augment material is CC BY-ND 4.0. Public redistribution of the authentic, unmodified product is permitted when its attribution, trademark policy, notice, provenance, and component notices stay attached. Every detachable Claude skill folder and ZIP carries a self-contained rights envelope named nova-free-rights.
+
+Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
+
+This repository contains the Free 3.0.0 local release candidate. License permission does not claim that a tag, push, GitHub release, directory listing, website deployment, announcement, or other publication action has occurred. No GitHub Actions run on a GitHub-hosted runner is claimed as evidence for this candidate.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠

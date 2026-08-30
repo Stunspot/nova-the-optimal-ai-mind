@@ -6,9 +6,13 @@
   "format": "cd-augment-skill/v1",
   "entrypoint": "SKILL.md",
   "state_format": "cd-observatory-case/v1",
-  "targets": ["codex", "claude"],
+  "targets": [
+    "codex",
+    "claude"
+  ],
   "runtime_reference_files": 21,
   "third_party_runtime_dependencies": [],
-  "license_status": "not-supplied-for-product",
-  "live_host_verification": false
+  "rights_status": "public-inclusion-authorized-for-nova-free-3.0.0",
+  "live_host_verification": false,
+  "license": "Nova Free 3.0.0 public split license; see the containing product LICENSE.md"
 }

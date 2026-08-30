@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.0.0",
-  "source_map_sha256": "071d301ed2c7f7c134eaf3e2094d40f2d866be674988341d9e9f258c6158e2e0",
+  "source_map_sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -72,14 +72,18 @@
       "selection": [
         "complete release skill tree"
       ],
-      "edition_overlays": [],
+      "edition_overlays": [
+        "README.md",
+        "knowledge/canonical-source-boundaries.md",
+        "manifest.json"
+      ],
       "source_state": "git_commit",
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
-        "tree_sha256": "fcbc4b173d6a836ef8c14d7211e4e09a389ceee9a04c8c494de91f61fcfdd832"
+        "tree_sha256": "8630a18f282d315dc968e90fffd0df33bc042cfbf3ae0d06f7f998706b7fad41"
       },
-      "overlay_state": "exact_selected_source"
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "beryl-it-tech",
@@ -162,14 +166,16 @@
       "selection": [
         "complete release skill tree"
       ],
-      "edition_overlays": [],
+      "edition_overlays": [
+        "manifest.json"
+      ],
       "source_state": "git_commit",
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "7b4e2fb9c3d4c7f18b59b1691b5f0e6448419d86a22620ce25da578e6035b2f4"
+        "tree_sha256": "5e4c0747e1b0608c43d9b5d655cedae53ed28270789b742bf83d6af3ece57ad8"
       },
-      "overlay_state": "exact_selected_source"
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "dunbar",
@@ -513,7 +519,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 737,
-    "tree_sha256": "cd9128798dd090abb30624c882e326c6827530261be02fa9f403f8c38e7d4de2"
+    "tree_sha256": "c14cd241bba8bd3270fed417dfb0a5ad6adcab3729b6d6d6ac3111b629c2e111"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -523,23 +529,33 @@
     },
     "interview-trainer": {
       "file_count": 2,
-      "tree_sha256": "3296cb389f381483078e8f42678ea3fc7b7d206103b9493d200b0b0ce97291ce"
+      "tree_sha256": "19300046065c694505f97ed27035037ebfbff238746cb78d955d91cfa73ccc85"
     },
     "job-application-builder": {
       "file_count": 2,
-      "tree_sha256": "30e998e42f6193d72479430fc41c083e29665a73fee15f9f6cb124b091090147"
+      "tree_sha256": "696ea38e99f246eb44bda5791bb8673c2831c4116423afe8150e11488ecac181"
     },
     "testforge": {
       "file_count": 6,
       "tree_sha256": "8de2186e995c4a6f172734693cdb1edc3089ab597c382f76373210fe99502a0f"
     }
   },
-  "release_blockers": [
-    "nova-mind, nova-operations, answerlayer, and current-intelligence-observatory require explicit Free-edition grants",
-    "job-application-builder and interview-trainer prohibit inclusion without separate written permission",
-    "answerlayer and current-intelligence-observatory metadata require license reconciliation",
-    "fresh-host discovery and invocation unobserved",
-    "publication authority absent"
+  "rights_bundle": {
+    "files": {
+      "LICENSE.md": "efad021511aee0148db1a4a5a528c2b6e3e4eb7059f9d3f7285f9dfe2e411a1c",
+      "ATTRIBUTION.md": "fc80f3ed8d86ddbf01169cf9f740e6cbbf773fa56e3dd6d52774f723ef67a2d5",
+      "NOTICE.md": "ddda4f55c69b01588cf9c57582e78e27318cb09e2e2a6fb3ec54367fbdc0c966",
+      "TRADEMARKS.md": "7b473341be0279ad1f118d80d5f14769aac1d9a5fb37e4f27f304e1beec580fd",
+      "PROVENANCE.md": "76d36b4366b1d8dc35675c3edfb3f7ba3b5c648b9614afe8c319e4215f46ee9a",
+      "THIRD-PARTY-NOTICES.md": "5c892ce3bee82cc277e47aa1df2f8d4da0b2c5d762e177ad19704f9af4cbb82e"
+    },
+    "state": "public_split_license_applied",
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": []
+  },
+  "open_evidence_boundaries": [
+    "fresh-host discovery and invocation require separate observation",
+    "publication is a separate authorized and observed action"
   ],
-  "evidence_boundary": "Imported package bytes and recorded source identity. This lock does not establish remote publication state, fresh-host behavior, or license compatibility."
+  "evidence_boundary": "Imported package bytes, source identity, and product-rights bundle custody. This lock does not establish live-host behavior or external publication."
 }

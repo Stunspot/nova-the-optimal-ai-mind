@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import json
 import re
 import sys
@@ -20,6 +19,10 @@ EXPECTED = {
     "privacy-redline", "promptcraft", "retrieval-intelligence", "retrieval-reviewer",
     "rupert-giles-knowledge-steward", "software-verification", "verification-reviewer",
 }
+RIGHTS_DOCS = (
+    "LICENSE.md", "ATTRIBUTION.md", "NOTICE.md", "TRADEMARKS.md",
+    "PROVENANCE.md", "THIRD-PARTY-NOTICES.md",
+)
 
 
 class ProductContractTests(unittest.TestCase):
@@ -58,6 +61,39 @@ class ProductContractTests(unittest.TestCase):
             self.assertEqual(tree_digest(imported), record["imported_tree"], record["id"])
         self.assertEqual(tree_digest(self.plugin / "skills"), self.lock["plugin_skill_tree"])
 
+    def test_public_split_license_and_rights_bundle_are_bound(self) -> None:
+        self.assertEqual(self.loadout["license"], "LICENSE.md")
+        self.assertIn("MIT", self.loadout["rights_status"])
+        self.assertIn("CC BY-ND 4.0", self.loadout["rights_status"])
+        rights = self.lock["rights_bundle"]
+        self.assertEqual(rights["state"], "public_split_license_applied")
+        self.assertEqual(rights["redistribution_state"], "permitted_under_included_licenses")
+        self.assertEqual(rights["external_rights_blockers"], [])
+        for name in RIGHTS_DOCS:
+            root = REPO / name
+            plugin = self.plugin / name
+            self.assertTrue(root.is_file(), name)
+            self.assertTrue(plugin.is_file(), name)
+            self.assertEqual(root.read_bytes(), plugin.read_bytes(), name)
+            self.assertEqual(sha256_file(root), rights["files"][name], name)
+        license_text = (REPO / "LICENSE.md").read_text(encoding="utf-8")
+        self.assertIn("standard Collaborative Dynamics public-Augment split license", license_text)
+        self.assertIn("CC-BY-ND-4.0", license_text)
+
+    def test_same_owner_component_metadata_is_reconciled(self) -> None:
+        answer = json.loads((self.plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
+        current = json.loads((self.plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
+        for manifest in (answer, current):
+            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.0.0")
+            self.assertIn("Nova Free 3.0.0 public split license", manifest["license"])
+        source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
+        records = {record["id"]: record for record in source_map["records"]}
+        self.assertEqual(
+            records["answerlayer"]["edition_overlays"],
+            ["README.md", "knowledge/canonical-source-boundaries.md", "manifest.json"],
+        )
+        self.assertEqual(records["current-intelligence-observatory"]["edition_overlays"], ["manifest.json"])
+
     def test_required_old_runtime_is_absent(self) -> None:
         forbidden = ("augment-of-mind", "mind_prompt_submit.py", "mind_core", "bundle/reminder")
         observed = [
@@ -86,7 +122,7 @@ class ProductContractTests(unittest.TestCase):
             self.assertNotRegex(text, r"(?m)^  (?:push|pull_request|schedule):", path.name)
             self.assertIn("timeout-minutes:", text, path.name)
 
-    def test_required_notice_files_are_present(self) -> None:
+    def test_component_notice_custody_is_current(self) -> None:
         required = (
             "notices/testforge/LICENSE.md",
             "notices/testforge/NOTICE.md",
@@ -94,11 +130,13 @@ class ProductContractTests(unittest.TestCase):
             "notices/testforge/TRADEMARKS.md",
             "notices/agent-swarm-orchestration/LICENSE.md",
             "notices/agent-swarm-orchestration/TERMS-OF-USE.md",
-            "notices/job-application-builder/LICENSE-STATUS.md",
-            "notices/interview-trainer/LICENSE-STATUS.md",
+            "notices/job-application-builder/INCLUSION-NOTICE.md",
+            "notices/interview-trainer/INCLUSION-NOTICE.md",
         )
         for relative in required:
             self.assertTrue((self.plugin / relative).is_file(), relative)
+        self.assertFalse((self.plugin / "notices/job-application-builder/LICENSE-STATUS.md").exists())
+        self.assertFalse((self.plugin / "notices/interview-trainer/LICENSE-STATUS.md").exists())
 
 
 if __name__ == "__main__":

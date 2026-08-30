@@ -208,7 +208,9 @@
       "selection": [
         "complete release skill tree"
       ],
-      "edition_overlays": [],
+      "edition_overlays": [
+        "manifest.json"
+      ],
       "source_state": "git_commit"
     },
     {
@@ -249,7 +251,11 @@
       "selection": [
         "complete release skill tree"
       ],
-      "edition_overlays": [],
+      "edition_overlays": [
+        "README.md",
+        "knowledge/canonical-source-boundaries.md",
+        "manifest.json"
+      ],
       "source_state": "git_commit"
     },
     {

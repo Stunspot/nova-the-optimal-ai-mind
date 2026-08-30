@@ -1,14 +1,30 @@
 # Verification and evidence
 
-The Free 3.0.0 verifier checks one-plugin topology, exact twenty-five-root parity across Codex and Claude-compatible bindings, sixteen nested MIND Cores, plugin identities and versions, required absences, state-custody fallbacks, per-file checksums, per-skill ZIP inventories, and deterministic host bytes.
+Nova Free 3.0.0 separates source qualification from final archive construction.
 
-The following commands are source-repository maintainer commands. They are not an executable promise inside the extracted customer package.
+## Source qualification
 
-Run from the source repository:
+From the source repository, regenerate custody and run the local deterministic checks:
 
-    python -B -X utf8 tools/build_release.py
+    python -B -X utf8 tools/generate_source_lock.py
+    python -B -X utf8 -m unittest discover -s tests -v
+    python -B -X utf8 tools/check_documentation.py
+    python -B -X utf8 docs/check_site.py
+    git diff --check
+
+These checks cover one-plugin topology, exact twenty-five-root source parity, sixteen nested MIND Cores, rights-bundle parity, reconciled component metadata, forbidden-runtime absence, state-custody boundaries, build determinism, documentation structure, local links, and adversarial verifier behavior.
+
+A frozen source candidate then receives a full Hesperos documentation cycle and a TestForge operator campaign with independent review. Their records must identify the source checkpoint, environment, executed commands, evidence limits, and rerun conditions.
+
+## Final build and package verification
+
+After qualification evidence is accepted and committed, confirm that Git reports no tracked or untracked source drift, then run:
+
+    python -B -X utf8 tools/build_release.py --repo . --require-clean
     python -B -X utf8 tools/verify_package.py dist/nova-the-optimal-ai-free-3.0.0
 
-A PASS establishes static package properties at the tested source state. It does not establish installation on a new machine, marketplace discovery, enabled state, restart behavior, model attention, correct routing, live tools, publication, or outcomes.
+The builder creates the complete customer, Codex, and Claude-compatible archives plus twenty-five standalone Claude folders and ZIPs. Each standalone artifact carries a nova-free-rights envelope; relevant TestForge, Agent Swarm, or career component notices travel inside it.
 
-A sealed candidate additionally requires clean tracked source, an exact source lock, a full Hesperos documentation cycle, a fresh TestForge operator packet, an independent TestForge reviewer verdict, and resolution of every release-blocking license term. GitHub-hosted workflow capacity is a provider boundary and is not inferred from local checks.
+A package PASS establishes the exercised archive inventory, exact payload bytes, rights custody, per-file checksums, deterministic structure, host parity, source binding, and truthful not-published state. It does not establish fresh-host marketplace acceptance, installation, discovery, enabled state, restart behavior, model attention, routing quality, live tools, external-service behavior, publication, or customer outcomes.
+
+No GitHub Actions run on a GitHub-hosted runner is claimed unless a specific authorized run and result are recorded. Local evidence neither impersonates nor requires hosted execution.

@@ -32,7 +32,7 @@ A structurally present plugin is not yet discovered, enabled, invoked, or behavi
 
 The claude/nova-the-optimal-ai directory is the complete multi-skill bundle. The claude/folders directory contains one folder per skill, and claude/zips contains deterministic per-skill archives. Use the complete edition when the host supports it. A host that accepts only individual skills can install selected folders or ZIPs, but that narrower route does not establish complete-edition behavior.
 
-Host conventions change. Verify the live host's supported skill or plugin mechanism before treating these paths as installed.
+Every detachable folder and ZIP carries a nova-free-rights directory with the product license, attribution, notice, trademark policy, provenance, and component notices. Preserve it with the skill. Host conventions change, so verify the live host's supported skill or plugin mechanism before treating these paths as installed.
 
 ## Optional persistent state
 

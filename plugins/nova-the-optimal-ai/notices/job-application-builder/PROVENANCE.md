@@ -1,6 +1,6 @@
 # Provenance
 
-Job Application Builder is an independently authored private Nova Emergent task Augment.
+Job Application Builder was independently authored for a private Nova Emergent source edition. Its exact inclusion in Nova Free 3.0.0 is authorized by INCLUSION-NOTICE.md and the containing product license.
 
 ## Product authority
 

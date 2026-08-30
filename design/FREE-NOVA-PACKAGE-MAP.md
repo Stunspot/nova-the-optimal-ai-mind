@@ -4,7 +4,7 @@ Free 3.0.0 is one product, one plugin, and one Nova front door.
 
 The nova-the-optimal-ai plugin contains exactly twenty-five sibling skill roots. Nova carries the governing persona and resident MIND 0.2.0. Sixteen Faculty Cores live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
 
-The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Coding and release verification remain distinct. Agentic Coding owns normal repository implementation; Software Verification and Verification Reviewer form the paired TestForge release gate. Officecraft and its reviewer are included as high-quality generalist craft, with native host artifact skills retaining execution and visual-verification ownership. The career pair is included in the local build but remains a public-redistribution license blocker.
+The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Coding and release verification remain distinct. Agentic Coding owns normal repository implementation; Software Verification and Verification Reviewer form the paired TestForge release gate. Officecraft and its reviewer are included as high-quality generalist craft, with native host artifact skills retaining execution and visual-verification ownership. The career pair is authorized for this public Free edition under the product license; its separate private construction sources and standalone source packages remain outside the distribution.
 
 The optional estate contains only Continuity, Dunbar, and Corkboard selectors plus NOVA_DATA_ROOT. Free Nova preserves unknown selectors from larger editions without creating or injecting them. Agent Striving uses host-native goal custody rather than a new Nova store.
 

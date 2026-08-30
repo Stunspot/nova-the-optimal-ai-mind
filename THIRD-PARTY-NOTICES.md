@@ -1,42 +1,41 @@
-# Third-party and component notices
+# Component and third-party notices
 
-Nova the Optimal AI Free is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories. The root MIT license covers original integration material except where an included component states different terms. Component terms control for that component.
+Nova the Optimal AI Free 3.0.0 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
 
 ## TestForge
 
 Software Verification and Verification Reviewer are copied byte-for-byte from the maintained TestForge snapshot at https://github.com/Stunspot/testforge commit `ce19f5f91bec96cedb497311757e0656ffaef718`. That snapshot describes itself as TestForge 1.1.7 plus three post-tag commits; it is not the v1.1.7 tag byte-for-byte.
 
-TestForge uses a split license: scripts and machine-readable schemas are MIT; other authored Augment material is CC BY-ND 4.0. The exact license, notice, attribution, trademark, provenance, and changelog files ship inside each host plugin under `notices/testforge`. The Free edition does not modify either TestForge skill root.
+TestForge uses a split license: deterministic software and machine-readable schemas are MIT; other authored Augment material is CC BY-ND 4.0. Its exact license, notice, attribution, trademark, provenance, and changelog files ship in the complete plugin under `notices/testforge` and beside a detached skill under `nova-free-rights/component-notices/testforge`. Nova Free does not modify either TestForge skill root.
 
 ## Agent Swarm Orchestration
 
 Agent Swarm Orchestration is copied byte-for-byte from https://github.com/Stunspot/agent-swarm-orchestration commit `01504f8e47af467883aa8dbfe4831cd6ad49faa9`. That snapshot is one metadata commit beyond tag v0.2.3; it is not the tag byte-for-byte.
 
-Its scripts and schemas are MIT; other authored Augment material is CC BY-ND 4.0. The exact license, terms, data and privacy terms, attribution, provenance, and trademark files ship inside each host plugin under `notices/agent-swarm-orchestration`. The Free edition does not modify this skill root.
+Its deterministic software and schemas are MIT; other authored Augment material is CC BY-ND 4.0. Its exact license, terms, data and privacy terms, attribution, provenance, and trademark files ship in the complete plugin under `notices/agent-swarm-orchestration` and beside the detached skill under `nova-free-rights/component-notices/agent-swarm-orchestration`. Nova Free does not modify this skill root.
 
-## License-ready roots
+## Existing MIT component grants
 
-Nineteen roots have a defensible redistribution basis in the assembled bytes. Twelve carry their own MIT terms: Cognitive Continuity, Agentic Coding, Corkboard, Dunbar, the Retrieval operator and reviewer, Rupert Giles Knowledge Steward, OMNARA Deep Research, Promptcraft, the Officecraft operator and reviewer, and Lex Foster Language Companion. Agent Striving was previously distributed as part of Free under MIT. The Beryl operator and reviewer and Privacy Redline are unchanged or non-substantively overlaid descendants of bytes already distributed in Free 2.1.3 under MIT.
+Several included capabilities have also been released under MIT, including Cognitive Continuity, Agentic Coding, Corkboard, Dunbar, Retrieval Intelligence, Retrieval Reviewer, Rupert Giles Knowledge Steward, OMNARA Deep Research, Promptcraft, Owen Burnett Officecraft, Officecraft Reviewer, and Lex Foster Language Companion. Existing MIT permissions remain available and are not narrowed by Nova Free's product license.
 
-Agent Swarm Orchestration and the two TestForge roots are redistribution-ready only while their protected skill trees remain byte-identical to the named snapshots above. Free 3.0.0 keeps its edition routing outside those roots.
+Agent Striving has prior Free MIT distribution. The Beryl operator and reviewer and Privacy Redline retain their documented prior Free lineage. Nova Free's product license supplies a clear current-edition grant without revoking any earlier permission.
 
-## Terms requiring Free-edition clarification
+## Same-owner public-edition authorization
 
-The following locally assembled components need an explicit rights-holder Free-edition grant naming the exact version or tree digest before public redistribution:
+Collaborative Dynamics authorizes the exact Nova Free 3.0.0 inclusion of Nova with MIND 0.2.0, Nova Operations, AnswerLayer 0.1.2, Current Intelligence Observatory 0.1.1, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
 
-- Nova with MIND 0.2.0, imported from the proprietary Nova Emergent construction source.
-- Nova Operations, imported from the proprietary construction source.
-- AnswerLayer 0.1.2, whose current manifest and license-status material say proprietary.
-- Current Intelligence Observatory 0.1.1, whose current manifest says it is not supplied for product redistribution and whose repository terms do not grant redistribution for the complete root.
+This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.0.0 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
 
-The future grant should also name the Beryl pair and Privacy Redline to remove residual ambiguity even though the integrated bytes have prior Free MIT distribution evidence.
+AnswerLayer and Current Intelligence Observatory carry explicit Nova Free license metadata overlays recorded in `design/source-map.json`. The career pair's source lineage and edition-specific authorization are recorded in the complete plugin under `notices/job-application-builder` and `notices/interview-trainer`, and beside detached skills under the matching `nova-free-rights/component-notices` directories.
 
-## Hard redistribution blockers
+## Current Intelligence attributed material
 
-Job Application Builder 0.1.2 and Interview Trainer 0.1.2 currently carry private Patreon customer-use licenses that expressly prohibit redistribution or inclusion in another product without separate written permission. Their exact license-status and provenance files ship inside each host plugin under `notices`. Those notices document the blocker; they do not cure it.
+Current Intelligence Observatory preserves `references/attribution/investigative-news-intelligence-license.md`, which licenses the identified Collaborative Dynamics material under CC BY 4.0. That more permissive grant remains in force.
 
-## Candidate boundary
-
-All six unresolved components are present only in this local Free 3.0.0 candidate for rights-holder product review. The candidate must not be publicly redistributed until an authorized rights holder supplies compatible written grants and the conflicting AnswerLayer and Current Intelligence metadata is reconciled. Building the candidate is not publication authority.
+## Third-party sources, services, and marks
 
 Other included Collaborative Dynamics components retain their source-repository licenses and provenance. Third-party publications, facts, names, links, marks, host platforms, and services retain their respective rights. No license grants trademark rights except as an included trademark file expressly permits.
+
+## Distribution and publication boundary
+
+The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.0.0 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.

@@ -19,13 +19,20 @@ from release_lib import (
 
 PRODUCT_SLUG = "nova-the-optimal-ai-free"
 PLUGIN_ID = "nova-the-optimal-ai"
+RIGHTS_DOCS = (
+    "LICENSE.md",
+    "ATTRIBUTION.md",
+    "NOTICE.md",
+    "TRADEMARKS.md",
+    "PROVENANCE.md",
+    "THIRD-PARTY-NOTICES.md",
+)
 REQUIRED_DOCS = (
     "README.md",
     "START-HERE.md",
-    "LICENSE.md",
+    *RIGHTS_DOCS,
     "SECURITY.md",
     "SUPPORT.md",
-    "THIRD-PARTY-NOTICES.md",
     "RELEASE-NOTES.md",
 )
 CURATED_DESIGN = (
@@ -34,6 +41,15 @@ CURATED_DESIGN = (
     "source-lock.json",
     "source-map.json",
 )
+STANDALONE_RIGHTS_DIR = "nova-free-rights"
+COMPONENT_NOTICE_MAP = {
+    "agent-swarm-orchestration": "agent-swarm-orchestration",
+    "software-verification": "testforge",
+    "verification-reviewer": "testforge",
+    "job-application-builder": "job-application-builder",
+    "interview-trainer": "interview-trainer",
+}
+REDISTRIBUTION_STATE = "permitted_under_included_licenses"
 
 
 def marketplace() -> dict[str, object]:
@@ -51,6 +67,93 @@ def marketplace() -> dict[str, object]:
     }
 
 
+def attach_standalone_rights(repo: Path, plugin_source: Path, folder: Path, skill_id: str) -> str | None:
+    rights_root = folder / STANDALONE_RIGHTS_DIR
+    for name in RIGHTS_DOCS:
+        source = repo / name
+        target = rights_root / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(source.read_bytes())
+    component_notice = COMPONENT_NOTICE_MAP.get(skill_id)
+    if component_notice:
+        copy_tree(plugin_source / "notices" / component_notice, rights_root / "component-notices" / component_notice)
+    notice_text = (
+        f"# Rights envelope for {skill_id}\n\n"
+        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free 3.0.0. "
+        "Preserve it when copying or redistributing the authentic, unmodified artifact.\n\n"
+        "LICENSE.md defines the product-level public split license. ATTRIBUTION.md, NOTICE.md, "
+        "TRADEMARKS.md, PROVENANCE.md, and THIRD-PARTY-NOTICES.md preserve identity, limits, and source custody."
+    )
+    if component_notice:
+        notice_text += (
+            f"\n\nThe component-specific packet under component-notices/{component_notice} also applies "
+            "and must remain with this artifact."
+        )
+    write_text(rights_root / "README.md", notice_text)
+    return component_notice
+
+
+def validate_source_lock(repo: Path, plugin_source: Path, source_lock: dict[str, object]) -> list[str]:
+    source_map = repo / "design" / "source-map.json"
+    if not source_map.is_file() or sha256_file(source_map) != source_lock.get("source_map_sha256"):
+        raise RuntimeError("Source map does not match the frozen source lock")
+
+    roots = sorted(path.name for path in (plugin_source / "skills").iterdir() if path.is_dir())
+    records = source_lock.get("records")
+    if not isinstance(records, list):
+        raise RuntimeError("Source lock records are missing or malformed")
+    record_by_id: dict[str, dict[str, object]] = {}
+    for record in records:
+        if not isinstance(record, dict) or not isinstance(record.get("id"), str):
+            raise RuntimeError("Source lock contains a malformed skill record")
+        skill_id = str(record["id"])
+        if skill_id in record_by_id:
+            raise RuntimeError(f"Source lock contains duplicate skill record: {skill_id}")
+        record_by_id[skill_id] = record
+    if set(record_by_id) != set(roots):
+        raise RuntimeError("Source lock skill records do not match the live plugin roots")
+
+    actual_skill_tree = tree_digest(plugin_source / "skills")
+    if actual_skill_tree != source_lock.get("plugin_skill_tree"):
+        raise RuntimeError("Live plugin skill tree does not match the frozen source lock")
+    for skill_id in roots:
+        actual = tree_digest(plugin_source / "skills" / skill_id)
+        if actual != record_by_id[skill_id].get("imported_tree"):
+            raise RuntimeError(f"Live skill tree does not match the frozen source lock: {skill_id}")
+
+    persona = plugin_source / "skills" / "nova" / "references" / "nova-persona.md"
+    if not persona.is_file() or sha256_file(persona) != source_lock.get("persona_sha256"):
+        raise RuntimeError("Nova persona does not match the frozen source lock")
+
+    notices = source_lock.get("notices")
+    notice_root = plugin_source / "notices"
+    if not isinstance(notices, dict):
+        raise RuntimeError("Source lock notice records are missing or malformed")
+    actual_notice_ids = {path.name for path in notice_root.iterdir() if path.is_dir()}
+    if set(notices) != actual_notice_ids:
+        raise RuntimeError("Source lock notice records do not match the live notice roots")
+    for notice_id, expected in notices.items():
+        if tree_digest(notice_root / notice_id) != expected:
+            raise RuntimeError(f"Live notice tree does not match the frozen source lock: {notice_id}")
+
+    rights = source_lock.get("rights_bundle")
+    rights_files = rights.get("files") if isinstance(rights, dict) else None
+    if not isinstance(rights_files, dict) or set(rights_files) != set(RIGHTS_DOCS):
+        raise RuntimeError("Source lock rights-file records are missing or malformed")
+    for name in RIGHTS_DOCS:
+        root_file = repo / name
+        plugin_file = plugin_source / name
+        expected = rights_files[name]
+        if (
+            not root_file.is_file()
+            or not plugin_file.is_file()
+            or sha256_file(root_file) != expected
+            or sha256_file(plugin_file) != expected
+        ):
+            raise RuntimeError(f"Rights file does not match the frozen source lock: {name}")
+    return roots
+
+
 def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean: bool) -> dict[str, object]:
     plugin_source = repo / "plugins" / PLUGIN_ID
     plugin_manifest_path = plugin_source / ".codex-plugin" / "plugin.json"
@@ -63,14 +166,25 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     version = str(plugin_manifest["version"])
     if version != "3.0.0" or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
-    roots = sorted(path.name for path in (plugin_source / "skills").iterdir() if path.is_dir())
+    if loadout.get("license") != "LICENSE.md":
+        raise RuntimeError("Loadout does not identify the Nova Free product license")
+    rights_bundle = source_lock.get("rights_bundle", {})
+    if rights_bundle.get("redistribution_state") != REDISTRIBUTION_STATE:
+        raise RuntimeError("Source lock does not carry the approved public redistribution state")
+    if rights_bundle.get("external_rights_blockers") != []:
+        raise RuntimeError("Source lock still contains external rights blockers")
+    roots = validate_source_lock(repo, plugin_source, source_lock)
     expected = sorted(loadout["roots"])
     if roots != expected or len(roots) != 25:
         raise RuntimeError(f"Loadout mismatch: source={len(roots)} manifest={len(expected)}")
 
-    tracked_status = git_value(repo, "status", "--porcelain", "--untracked-files=no") or ""
-    if require_clean and tracked_status:
-        raise RuntimeError("Tracked source is not clean; refusing clean-checkpoint build")
+    base_commit = git_value(repo, "rev-parse", "HEAD")
+    source_status = git_value(repo, "status", "--porcelain=v1", "--untracked-files=all")
+    if base_commit is None or source_status is None:
+        raise RuntimeError("Source repository identity or status could not be read")
+    source_clean = not bool(source_status)
+    if require_clean and not source_clean:
+        raise RuntimeError("Source is not clean, including untracked files; refusing clean-checkpoint build")
 
     package_name = f"{PRODUCT_SLUG}-{version}"
     output_parent.mkdir(parents=True, exist_ok=True)
@@ -111,27 +225,39 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         source_skill = plugin_source / "skills" / skill_id
         folder = folders_root / skill_id
         copy_tree(source_skill, folder)
+        component_notice = attach_standalone_rights(repo, plugin_source, folder, skill_id)
         zip_path = zips_root / f"{skill_id}-{version}.zip"
         zip_sha = deterministic_zip(folder, zip_path, prefix=skill_id)
         skill_records.append(
             {
                 "id": skill_id,
-                "tree": tree_digest(source_skill),
+                "payload_tree": tree_digest(source_skill),
+                "standalone_rights_envelope": STANDALONE_RIGHTS_DIR,
+                "component_notice_bundle": component_notice,
                 "claude_zip": zip_path.relative_to(package_root).as_posix(),
                 "claude_zip_sha256": zip_sha,
             }
         )
 
-    base_commit = git_value(repo, "rev-parse", "HEAD")
+    rights_state = {
+        "license": "LICENSE.md",
+        "rights_status": loadout["rights_status"],
+        "redistribution_state": REDISTRIBUTION_STATE,
+        "external_rights_blockers": [],
+        "rights_bundle": rights_bundle["files"],
+    }
     build_state = {
         "schema": "nova-free-build/v3",
         "product": "Nova the Optimal AI Free",
         "product_version": version,
         "source_base_commit": base_commit,
-        "tracked_source_clean": not bool(tracked_status),
-        "candidate_state": "built_awaiting_independent_review",
+        "source_lock_sha256": sha256_file(repo / "design" / "source-lock.json"),
+        "source_map_sha256": source_lock["source_map_sha256"],
+        "source_clean": source_clean,
+        "candidate_state": "built_from_frozen_source",
         "independent_review_required": True,
-        "redistribution_state": "blocked_pending_component_grants",
+        "rights": rights_state,
+        "publication_state": "not_published",
         "skill_roots": roots,
         "evidence_boundary": "Package bytes and deterministic structure only; not fresh-host discovery, invocation, behavior, publication, or outcomes.",
     }
@@ -159,8 +285,10 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         },
         "source": {
             "base_commit": base_commit,
-            "tracked_source_clean": not bool(tracked_status),
+            "clean": source_clean,
             "source_lock": "design/source-lock.json",
+            "source_lock_sha256": sha256_file(repo / "design" / "source-lock.json"),
+            "source_map_sha256": source_lock["source_map_sha256"],
         },
         "host_trees": {
             "codex_plugin": tree_digest(codex_plugin),
@@ -181,15 +309,17 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
             {"binding": "claude-compatible", "file": claude_zip.name, "sha256": claude_zip_sha},
         ],
         "required_absences": loadout["required_absences"],
-        "redistribution_state": "blocked_pending_component_grants",
-        "release_blockers": source_lock["release_blockers"],
-        "evidence_boundary": "This manifest establishes built bytes and internal parity. Installation, discovery, enabled state, restart state, invocation, service configuration, behavior, publication, and customer outcomes remain separate observations.",
+        "rights": rights_state,
+        "release_blockers": [],
+        "open_evidence_boundaries": source_lock["open_evidence_boundaries"],
+        "publication_state": "not_published",
+        "evidence_boundary": "This manifest establishes built bytes, rights custody, and internal parity. Installation, discovery, enabled state, restart state, invocation, service configuration, behavior, publication, and customer outcomes remain separate observations.",
     }
     write_json(package_root / "RELEASE-MANIFEST.json", release_manifest)
 
     checksum_rows = []
     for path in files(package_root):
-        if path.name == "SHA256SUMS.txt":
+        if path == package_root / "SHA256SUMS.txt":
             continue
         checksum_rows.append(f"{sha256_file(path)}  {path.relative_to(package_root).as_posix()}")
     write_text(package_root / "SHA256SUMS.txt", "\n".join(checksum_rows))
@@ -207,10 +337,11 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         "claude_zip": str(claude_zip),
         "claude_zip_sha256": claude_zip_sha,
         "visible_skill_roots": len(roots),
-        "tracked_source_clean": not bool(tracked_status),
-        "candidate_state": "built_awaiting_independent_review",
+        "source_clean": source_clean,
+        "candidate_state": "built_from_frozen_source",
         "independent_review_required": True,
-        "redistribution_state": "blocked_pending_component_grants",
+        "redistribution_state": REDISTRIBUTION_STATE,
+        "publication_state": "not_published",
     }
 
 

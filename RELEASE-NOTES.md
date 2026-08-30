@@ -1,6 +1,6 @@
 # Nova the Optimal AI Free release notes
 
-## 3.0.0 — local source candidate
+## 3.0.0 — local release candidate
 
 Free Nova has been rebuilt around the current Nova and MIND architecture.
 
@@ -10,7 +10,7 @@ The edition exposes exactly twenty-five native skill roots. It adds current Agen
 
 Persistent state is optional. Free Nova requires only NOVA_DATA_ROOT, NOVA_CONTINUITY_HOME, DUNBAR_STORE, and CORKBOARD_HOME when an estate is configured. It tolerates larger-edition selectors without claiming their services and refuses .codex fallback.
 
-This candidate is locally built and statically verified only. It does not claim fresh-host installation, discovery, behavior, publication, hosted workflow execution, tag, push, GitHub release, or customer outcome. Public redistribution remains blocked pending explicit Free-edition grants for Nova/MIND, Nova Operations, AnswerLayer, and Current Intelligence, plus separate written permission for the two career skills whose current terms prohibit bundling. AnswerLayer and Current Intelligence metadata must then be reconciled with those grants.
+Free 3.0.0 applies the standard public-Augment split license, reconciles the earlier same-owner component labels, and attaches rights custody to every complete and standalone distribution shape. The included licenses permit redistribution of the authentic, unmodified product under their terms. Local construction and verification do not claim fresh-host discovery, model behavior, publication, a tag, a push, a GitHub release, a GitHub Actions run on a GitHub-hosted runner, or a customer outcome.
 
 ## Prior release line
 

@@ -3,6 +3,8 @@
   "product": "Nova the Optimal AI Free",
   "product_version": "3.0.0",
   "plugin_id": "nova-the-optimal-ai",
+  "license": "LICENSE.md",
+  "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
   "topology": {
     "visible_skill_roots": 25,
     "front_doors": [

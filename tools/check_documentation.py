@@ -8,7 +8,8 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 MAINTAINED = (
-    "README.md", "START-HERE.md", "LICENSE.md", "SECURITY.md", "SUPPORT.md",
+    "README.md", "START-HERE.md", "LICENSE.md", "ATTRIBUTION.md", "NOTICE.md",
+    "TRADEMARKS.md", "PROVENANCE.md", "SECURITY.md", "SUPPORT.md",
     "THIRD-PARTY-NOTICES.md", "RELEASE-NOTES.md", "docs/CAPABILITY-GUIDE.md",
     "docs/HOST-MATRIX.md", "docs/INSTALL-CLAUDE.md", "docs/INSTALL-CODEX.md",
     "docs/MAINTAINER-GUIDE.md", "docs/PRIVACY-AND-TRUST.md",
@@ -17,12 +18,25 @@ MAINTAINED = (
 LINK = re.compile(r"(!?)\[([^\]]*)\]\(([^)]+)\)")
 HEADING = re.compile(r"^(#{1,6})\s+\S")
 REQUIRED_FACTS = {
-    "README.md": ("one plugin", "twenty-five", "sixteen", "public redistribution"),
-    "START-HERE.md": ("one product and one plugin", "real invocation", "optional persistent state"),
-    "THIRD-PARTY-NOTICES.md": ("must not be publicly redistributed", "hard redistribution blockers"),
-    "docs/INSTALL-CODEX.md": ("codex plugin marketplace add", "codex plugin add", "real Nova invocation"),
-    "docs/VERIFICATION.md": ("tools/build_release.py", "tools/verify_package.py", "does not establish"),
+    "README.md": ("one plugin", "twenty-five", "sixteen", "CC BY-ND 4.0", "nova-free-rights"),
+    "START-HERE.md": ("one product and one plugin", "real invocation", "optional persistent state", "nova-free-rights"),
+    "LICENSE.md": ("standard Collaborative Dynamics public-Augment split license", "MIT", "CC-BY-ND-4.0", "authentic, unmodified"),
+    "ATTRIBUTION.md": ("Created by Sam Walker", "CC-BY-ND-4.0", "MIT"),
+    "NOTICE.md": ("Permission and publication are different", "not a published release"),
+    "TRADEMARKS.md": ("authentic, unmodified", "distinct identity"),
+    "PROVENANCE.md": ("design/source-map.json", "design/source-lock.json", "separate source packages"),
+    "THIRD-PARTY-NOTICES.md": ("Same-owner public-edition authorization", "permit public redistribution", "TestForge"),
+    "docs/INSTALL-CLAUDE.md": ("nova-free-rights", "component notice packet"),
+    "docs/MAINTAINER-GUIDE.md": ("rights bundle", "including untracked files", "separate user authority"),
+    "docs/VERIFICATION.md": ("tools/build_release.py", "tools/verify_package.py", "does not establish", "nova-free-rights"),
 }
+FORBIDDEN_STALE_CLAIMS = (
+    "blocked_pending_component_grants",
+    "six included components still need",
+    "six component-license matters remain",
+    "must not be publicly redistributed",
+    "hard redistribution blockers",
+)
 
 
 def local_reference_problem(source: Path, raw: str, repo: Path) -> str | None:
@@ -64,7 +78,7 @@ def inspect(repo: Path) -> dict[str, object]:
         for number, line in enumerate(lines, 1):
             if line.rstrip() != line:
                 findings.append({"path": relative, "line": number, "problem": "trailing whitespace"})
-            if line.lstrip().startswith(("```", "~~~")):
+            if line.lstrip().startswith((chr(96) * 3, "~~~")):
                 fenced = not fenced
             match = HEADING.match(line)
             if match and not fenced:
@@ -84,6 +98,9 @@ def inspect(repo: Path) -> dict[str, object]:
         for phrase in REQUIRED_FACTS.get(relative, ()):
             if phrase.casefold() not in text.casefold():
                 findings.append({"path": relative, "line": 0, "problem": f"required product boundary absent: {phrase}"})
+        for phrase in FORBIDDEN_STALE_CLAIMS:
+            if phrase.casefold() in text.casefold():
+                findings.append({"path": relative, "line": 0, "problem": f"obsolete rights claim remains: {phrase}"})
     return {
         "schema": "nova-free-documentation-lint/v3",
         "maintained_documents": list(MAINTAINED),

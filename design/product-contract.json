@@ -3,7 +3,7 @@
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
   "product_version": "3.0.0",
-  "state": "local_source_candidate",
+  "state": "source_ready_for_qualification",
   "plugin": {
     "count": 1,
     "id": "nova-the-optimal-ai",
@@ -18,6 +18,20 @@
   "loadout": {
     "visible_skill_roots": 25,
     "manifest": "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json"
+  },
+  "rights": {
+    "license": "LICENSE.md",
+    "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": [],
+    "companion_files": [
+      "ATTRIBUTION.md",
+      "NOTICE.md",
+      "TRADEMARKS.md",
+      "PROVENANCE.md",
+      "THIRD-PARTY-NOTICES.md"
+    ],
+    "standalone_skill_rights_envelope": "nova-free-rights"
   },
   "ordinary_runtime": {
     "python_required": false,
@@ -58,27 +72,19 @@
     "clean local checkpoint",
     "separate publication authority"
   ],
-  "current_blockers": [
-    {
-      "id": "free-edition-license-scope",
-      "detail": "Nova with MIND 0.2.0, Nova Operations, AnswerLayer, and Current Intelligence require explicit rights-holder Free-edition grants naming the integrated versions or tree digests."
-    },
-    {
-      "id": "career-pair-license",
-      "detail": "Job Application Builder and Interview Trainer retain private-customer terms that prohibit inclusion in another distributed product without separate written permission."
-    },
-    {
-      "id": "component-metadata-reconciliation",
-      "detail": "AnswerLayer and Current Intelligence package metadata must be reconciled with any approved Free-edition grants before public distribution."
-    },
+  "qualification_boundaries": [
     {
       "id": "fresh-host-evidence",
-      "detail": "Package work does not establish installation, discovery, invocation, or behavior on a clean host."
+      "detail": "Package construction and static checks do not by themselves establish installation, discovery, invocation, or behavior on a clean host."
     },
     {
-      "id": "publication-authority",
-      "detail": "No tag, push, GitHub release, directory submission, hosted workflow, or announcement is authorized by the build request."
+      "id": "publication-state",
+      "detail": "License permission does not assert that a tag, push, GitHub release, directory submission, website deployment, hosted GitHub Actions run, or announcement occurred."
     }
   ],
-  "evidence_boundary": "Local source composition, build bytes, and exercised verification only."
+  "publication": {
+    "state": "not_performed_by_build",
+    "authority": "separate_user_authorization_required"
+  },
+  "evidence_boundary": "Local source composition, rights custody, built bytes, and exercised verification only."
 }

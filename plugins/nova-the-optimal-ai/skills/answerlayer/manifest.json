@@ -4,8 +4,15 @@
   "version": "0.1.2",
   "description": "A governed decision-integrity instrument for admitting only answer-changing deltas and maintaining traceable operational reality patches.",
   "entrypoint": "SKILL.md",
-  "hosts": ["codex", "claude"],
-  "runtime": {"python": ">=3.9", "dependencies": []},
+  "hosts": [
+    "codex",
+    "claude"
+  ],
+  "runtime": {
+    "python": ">=3.9",
+    "dependencies": []
+  },
   "publication": "manual_only",
-  "license": "Proprietary"
+  "license": "Nova Free 3.0.0 public split license; see the containing product LICENSE.md",
+  "rights_status": "public-inclusion-authorized-for-nova-free-3.0.0"
 }
