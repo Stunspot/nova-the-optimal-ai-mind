@@ -8,9 +8,9 @@
 
 ## Findings
 
-**Open blockers:** 0  
-**Open documentation defects:** 0  
-**Material packet defects found and repaired during review:** 2  
+**Open blockers:** 0
+**Open documentation defects:** 0
+**Material packet defects found and repaired during review:** 2
 **Residual evidence conditions:** 5
 
 `HES-F-001` — The original CLI receipt reported failed non-PTY probes while claiming PASS. It was repaired with five exit-zero PTY probes and raw transcripts; the failed `TERM=dumb` control is now explicitly excluded from the oracle.
