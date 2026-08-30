@@ -1,0 +1,43 @@
+{
+  "schema": "nova-free-final-artifact-hashes/v1",
+  "observed_at": "2026-08-30T23:20:10.2593256Z",
+  "algorithm": "SHA256",
+  "artifacts": [
+    {
+      "role": "customer",
+      "archive": "release/nova-the-optimal-ai-free-3.0.0.zip",
+      "archive_bytes": 40529761,
+      "archive_sha256": "d797fb8c99012b2253e8b3316f2f75556c1f62f5c7a786ac88cd8dfa46052abe",
+      "sidecar": "release/nova-the-optimal-ai-free-3.0.0.zip.sha256",
+      "sidecar_bytes": 101,
+      "sidecar_file_sha256": "4c33e683eb5cfc23ff5d16f091543d944e94eb0d2edd38807a312abccd436e30",
+      "sidecar_recorded_sha256": "d797fb8c99012b2253e8b3316f2f75556c1f62f5c7a786ac88cd8dfa46052abe",
+      "sidecar_recorded_filename": "nova-the-optimal-ai-free-3.0.0.zip",
+      "sidecar_matches": true
+    },
+    {
+      "role": "codex",
+      "archive": "release/nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "archive_bytes": 9427718,
+      "archive_sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0",
+      "sidecar": "release/nova-the-optimal-ai-free-3.0.0-codex.zip.sha256",
+      "sidecar_bytes": 107,
+      "sidecar_file_sha256": "4a4d4270db2a49fbb70d312e38667492c67ec820c4f2f00b80737ab3dccc85dd",
+      "sidecar_recorded_sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0",
+      "sidecar_recorded_filename": "nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "sidecar_matches": true
+    },
+    {
+      "role": "claude-compatible",
+      "archive": "release/nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "archive_bytes": 28461179,
+      "archive_sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425",
+      "sidecar": "release/nova-the-optimal-ai-free-3.0.0-claude.zip.sha256",
+      "sidecar_bytes": 108,
+      "sidecar_file_sha256": "3b7edccc612a4e171f9c5585dcfbcdff604289b63f555ceda0b62f6f9f638557",
+      "sidecar_recorded_sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425",
+      "sidecar_recorded_filename": "nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "sidecar_matches": true
+    }
+  ]
+}

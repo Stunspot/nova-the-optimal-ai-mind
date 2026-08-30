@@ -1,0 +1,93 @@
+{
+  "format_version": "1.0",
+  "record_type": "nova_free_release_decision",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "recorded_at": "2026-08-30T23:25:19.5805830+00:00",
+  "decision": "READY_WITH_RESIDUAL_RISK",
+  "decision_boundary": "local_static_and_extracted_package",
+  "claim": "The exact final Nova Free 3.0.0 archives are internally coherent, source-bound, rights-complete, package-verified, and independently reviewed for local static and extracted-package readiness.",
+  "source": {
+    "build_checkpoint": "c27b3337c1e338b0c6791882911aaf1a9f3570bc",
+    "reviewed_product_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "intervening_tracked_changes": "verification_only",
+    "non_verification_source_drift": false,
+    "product_payload_changed": false
+  },
+  "lifecycle": {
+    "candidate_state": "built_from_frozen_source",
+    "redistribution_state": "permitted_under_included_licenses",
+    "publication_state": "not_published"
+  },
+  "final_artifacts": {
+    "receipt": "verification/release-artifacts-free-v3.json",
+    "customer_zip_sha256": "d797fb8c99012b2253e8b3316f2f75556c1f62f5c7a786ac88cd8dfa46052abe",
+    "codex_zip_sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0",
+    "claude_zip_sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425"
+  },
+  "evidence_summary": {
+    "repository_tests": "PASS: 36",
+    "independent_product_contract_tests": "PASS: 10 of 10",
+    "independent_verifier_adversarial_tests": "PASS: 14 of 14",
+    "final_package_verifier": "PASS: zero findings, 2524 checksum entries, 137 customer references",
+    "system_skill_validation": "PASS: 25 of 25",
+    "system_plugin_validation": "PASS",
+    "testforge_review": "REVIEW_PASS_WITH_CONDITIONS",
+    "hesperos_review": "REVIEW_PASS_WITH_CONDITIONS",
+    "open_blockers_at_decision_boundary": 0
+  },
+  "residual_risks": [
+    {
+      "id": "RR-001",
+      "layer": "fresh_host",
+      "state": "unexecuted",
+      "boundary": "Fresh-host installation, discovery, restart, enabled state, invocation, rollback, and Claude-compatible import were not observed."
+    },
+    {
+      "id": "RR-002",
+      "layer": "github_hosted_and_cross_platform_ci",
+      "state": "HOLD_UNKNOWN",
+      "boundary": "GitHub-hosted runner, matrix, permissions, artifact, status, and three-operating-system behavior were not executed; hosted runs remain zero."
+    },
+    {
+      "id": "RR-003",
+      "layer": "visual_and_accessibility",
+      "state": "unexecuted",
+      "boundary": "Direct pixel inspection, keyboard navigation, screen-reader use, representative assistive technology, device coverage, and accessibility conformance remain unestablished."
+    },
+    {
+      "id": "RR-004",
+      "layer": "specialist_efficacy",
+      "state": "unexecuted",
+      "boundary": "Representative outcome efficacy across all 25 visible skill roots remains unestablished."
+    },
+    {
+      "id": "RR-005",
+      "layer": "publication_and_customer_outcome",
+      "state": "not_published",
+      "boundary": "No push, tag, release, deployment, distribution, announcement, published-link check, or representative-user outcome observation occurred."
+    }
+  ],
+  "actions_not_performed": [
+    "push",
+    "tag",
+    "GitHub release",
+    "site deployment",
+    "directory submission",
+    "distribution",
+    "announcement",
+    "GitHub Actions"
+  ],
+  "authority_boundary": "This decision does not authorize publication, hosted or paid execution, mutation of a user host, distribution, or announcement. Each requires separate authority and evidence appropriate to that layer.",
+  "evidence": [
+    "verification/release-artifacts-free-v3.json",
+    "verification/package-verification-free-v3.json",
+    "verification/skill-plugin-validation-free-v3.json",
+    "verification/license-audit-free-v3.md",
+    "verification/hesperos-free-v3/independent-review.json",
+    "verification/testforge-free-v3/reviewer/independent-review.json",
+    "verification/testforge-free-v3/reviewer/final-artifact-binding.json",
+    "verification/testforge-free-v3/reviewer/final-review-addendum.json"
+  ],
+  "evidence_boundary": "READY_WITH_RESIDUAL_RISK applies only to the exact local static and extracted-package artifacts named above. It is not a defect-free guarantee, fresh-host acceptance, hosted-CI result, visual or accessibility approval, specialist-efficacy certification, publication record, or public-availability claim."
+}

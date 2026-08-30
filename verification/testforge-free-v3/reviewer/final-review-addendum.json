@@ -1,0 +1,100 @@
+{
+  "schema": "nova-free-testforge-final-review-addendum/v1",
+  "observed_at": "2026-08-30T23:21:16.7849299Z",
+  "reviewer": "independent verification-reviewer",
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "supported_status": "READY_WITH_RESIDUAL_RISK",
+  "final_artifact_status": "BOUND",
+  "final_source_commit": "c27b3337c1e338b0c6791882911aaf1a9f3570bc",
+  "prior_reviewed_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "accepted_claim": "The exact final archives are a mechanically rebound local-static form of the previously reviewed Nova Free 3.0.0 product payload. Their changed bytes are fully explained by embedded build-revision metadata and the resulting checksum/archive cascade, not product-source drift.",
+  "final_hashes": {
+    "customer_zip_sha256": "d797fb8c99012b2253e8b3316f2f75556c1f62f5c7a786ac88cd8dfa46052abe",
+    "codex_zip_sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0",
+    "claude_zip_sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425"
+  },
+  "decision": {
+    "open_blockers_at_local_static_boundary": 0,
+    "final_package_verifier": "PASS",
+    "final_package_findings": 0,
+    "non_verification_source_drift": false,
+    "source_lock_and_map_unchanged": true,
+    "topology_unchanged": true,
+    "host_plugin_trees_unchanged": true,
+    "rights_state_unchanged": true,
+    "external_rights_blockers": 0,
+    "candidate_state": "built_from_frozen_source",
+    "publication_state": "not_published",
+    "sidecars_match": true
+  },
+  "promotion_explanation": {
+    "qualification_files": 2525,
+    "final_files": 2525,
+    "identical_files": 2521,
+    "added_files": 0,
+    "removed_files": 0,
+    "changed_files": 4,
+    "changed_paths": [
+      "claude/BUILD-MANIFEST.json",
+      "codex/BUILD-MANIFEST.json",
+      "RELEASE-MANIFEST.json",
+      "SHA256SUMS.txt"
+    ],
+    "cause": "The final clean checkpoint embeds c27b3337 instead of 20beac84 in the two host build manifests. Those two changed members change the host archive hashes recorded in the release manifest. The three changed JSON files then change the checksum inventory, and the customer ZIP incorporates the resulting four-file metadata cascade.",
+    "product_payload_conclusion": "UNCHANGED"
+  },
+  "test_scope": {
+    "final_package_verifier_rerun": true,
+    "source_freeze_rerun": true,
+    "heavy_suites_rerun": false,
+    "heavy_suite_reuse_basis": "The exact non-verification tree between the reviewed and final checkpoints is unchanged, and final source-lock, source-map, skill trees, host plugin trees, rights bundle, and package verifier observations remain identical."
+  },
+  "conditions": [
+    {
+      "id": "TF-FINAL-C-001",
+      "layer": "fresh_host",
+      "state": "unexecuted",
+      "boundary": "Installation, discovery, restart, invocation, rollback, and Claude-compatible import remain unobserved on disposable fresh hosts."
+    },
+    {
+      "id": "TF-FINAL-C-002",
+      "layer": "hosted_provider_and_cross_platform",
+      "state": "HOLD_UNKNOWN",
+      "boundary": "GitHub-hosted runner, matrix, permissions, artifact, status, and three-OS behavior remain unexecuted; hosted runs are zero."
+    },
+    {
+      "id": "TF-FINAL-C-003",
+      "layer": "visual_and_accessibility",
+      "state": "unexecuted",
+      "boundary": "Pixel inspection, keyboard and screen-reader use, representative devices, and accessibility conformance remain unexecuted."
+    },
+    {
+      "id": "TF-FINAL-C-004",
+      "layer": "specialist_efficacy",
+      "state": "unexecuted",
+      "boundary": "Representative outcome efficacy across the 25 visible skill roots remains unestablished."
+    },
+    {
+      "id": "TF-FINAL-C-005",
+      "layer": "publication",
+      "state": "not_published",
+      "boundary": "No push, tag, release, Pages deployment, directory submission, distribution, announcement, or public-availability observation occurred."
+    }
+  ],
+  "authority_and_safety": {
+    "github_actions_run": false,
+    "publication_performed": false,
+    "host_catalog_or_user_state_mutated": false,
+    "separate_authority_required_for_hosted_or_public_action": true
+  },
+  "artifact_binding": "verification/testforge-free-v3/reviewer/final-artifact-binding.json",
+  "raw_evidence": [
+    "verification/testforge-free-v3/reviewer/raw/final-package-verifier.json",
+    "verification/testforge-free-v3/reviewer/raw/final-source-freeze.json",
+    "verification/testforge-free-v3/reviewer/raw/final-source-diff-check.json",
+    "verification/testforge-free-v3/reviewer/raw/final-artifact-hashes.json",
+    "verification/testforge-free-v3/reviewer/raw/final-vs-qualification-diff.json",
+    "verification/testforge-free-v3/reviewer/raw/final-metadata-cascade.json"
+  ],
+  "evidence_boundary": "This addendum binds the exact final archive hashes for local-static READY_WITH_RESIDUAL_RISK only. It does not authorize publication or expand the prior review into any of the five unexecuted layers."
+}

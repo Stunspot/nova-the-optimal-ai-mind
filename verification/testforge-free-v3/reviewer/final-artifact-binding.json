@@ -1,0 +1,147 @@
+{
+  "schema": "nova-free-testforge-final-artifact-binding/v1",
+  "observed_at": "2026-08-30T23:21:16.7849299Z",
+  "reviewer": "independent verification-reviewer",
+  "binding_result": "PASS",
+  "target": {
+    "product": "Nova the Optimal AI Free",
+    "product_version": "3.0.0",
+    "final_source_commit": "c27b3337c1e338b0c6791882911aaf1a9f3570bc",
+    "reviewed_product_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "final_package": "dist/nova-the-optimal-ai-free-3.0.0",
+    "prior_review": "verification/testforge-free-v3/reviewer/independent-review.json",
+    "prior_binding": "verification/testforge-free-v3/reviewer/artifact-binding.json"
+  },
+  "source_promotion": {
+    "head_matches_final_source_commit": true,
+    "non_verification_diff_from_reviewed_checkpoint": "none",
+    "non_verification_diff_check": "pass",
+    "product_payload_changed": false,
+    "intervening_change_class": "verification_history_only",
+    "raw_evidence": [
+      "verification/testforge-free-v3/reviewer/raw/final-head-revision.json",
+      "verification/testforge-free-v3/reviewer/raw/final-source-freeze.json",
+      "verification/testforge-free-v3/reviewer/raw/final-source-diff-check.json"
+    ]
+  },
+  "source_custody": {
+    "source_lock_sha256": "d731c31a25e760f3dcdde9eff77a6e99e18b55da77883d35fa018854b8e56467",
+    "source_map_sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
+    "source_qualification_final_copies_equal": true,
+    "source_lock_records": 25,
+    "plugin_skill_tree": {
+      "file_count": 737,
+      "tree_sha256": "c14cd241bba8bd3270fed417dfb0a5ad6adcab3729b6d6d6ac3111b629c2e111"
+    },
+    "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
+    "notice_tree_records": 4
+  },
+  "topology": {
+    "plugin_count": 1,
+    "visible_skill_roots": 25,
+    "mind_version": "0.2.0",
+    "faculty_core_count": 16,
+    "codex_plugin_tree": {
+      "file_count": 761,
+      "tree_sha256": "ba1628db6415a7a6134377cbfef36d0ac23ac9b2aeb4432dc7f35b74da4e4875"
+    },
+    "claude_plugin_tree": {
+      "file_count": 761,
+      "tree_sha256": "c6d0f62b422dd735b23292f0f14bdec26e44f433e888b855e13af006a401eca0"
+    },
+    "qualification_host_trees_equal": true
+  },
+  "rights": {
+    "rights_status": "MIT deterministic software and schemas plus CC BY-ND 4.0 authored Augment material, with attribution, notice, trademark, provenance, and component custody",
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": [],
+    "standalone_rights_envelopes": 25,
+    "rights_bundle_sha256": {
+      "LICENSE.md": "efad021511aee0148db1a4a5a528c2b6e3e4eb7059f9d3f7285f9dfe2e411a1c",
+      "ATTRIBUTION.md": "fc80f3ed8d86ddbf01169cf9f740e6cbbf773fa56e3dd6d52774f723ef67a2d5",
+      "NOTICE.md": "ddda4f55c69b01588cf9c57582e78e27318cb09e2e2a6fb3ec54367fbdc0c966",
+      "TRADEMARKS.md": "7b473341be0279ad1f118d80d5f14769aac1d9a5fb37e4f27f304e1beec580fd",
+      "PROVENANCE.md": "76d36b4366b1d8dc35675c3edfb3f7ba3b5c648b9614afe8c319e4215f46ee9a",
+      "THIRD-PARTY-NOTICES.md": "5c892ce3bee82cc277e47aa1df2f8d4da0b2c5d762e177ad19704f9af4cbb82e"
+    }
+  },
+  "final_artifacts": [
+    {
+      "role": "customer",
+      "path": "release/nova-the-optimal-ai-free-3.0.0.zip",
+      "bytes": 40529761,
+      "sha256": "d797fb8c99012b2253e8b3316f2f75556c1f62f5c7a786ac88cd8dfa46052abe",
+      "sidecar": "release/nova-the-optimal-ai-free-3.0.0.zip.sha256",
+      "sidecar_file_sha256": "4c33e683eb5cfc23ff5d16f091543d944e94eb0d2edd38807a312abccd436e30",
+      "sidecar_matches": true
+    },
+    {
+      "role": "codex",
+      "path": "release/nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "bytes": 9427718,
+      "sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0",
+      "sidecar": "release/nova-the-optimal-ai-free-3.0.0-codex.zip.sha256",
+      "sidecar_file_sha256": "4a4d4270db2a49fbb70d312e38667492c67ec820c4f2f00b80737ab3dccc85dd",
+      "sidecar_matches": true
+    },
+    {
+      "role": "claude-compatible",
+      "path": "release/nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "bytes": 28461179,
+      "sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425",
+      "sidecar": "release/nova-the-optimal-ai-free-3.0.0-claude.zip.sha256",
+      "sidecar_file_sha256": "3b7edccc612a4e171f9c5585dcfbcdff604289b63f555ceda0b62f6f9f638557",
+      "sidecar_matches": true
+    }
+  ],
+  "lifecycle": {
+    "source_clean_at_build": true,
+    "codex_candidate_state": "built_from_frozen_source",
+    "claude_candidate_state": "built_from_frozen_source",
+    "codex_independent_review_required": true,
+    "claude_independent_review_required": true,
+    "publication_state": "not_published",
+    "publication_performed": false
+  },
+  "final_package_verification": {
+    "verdict": "PASS",
+    "findings": 0,
+    "customer_references_checked": 137,
+    "checksum_entries": 2524,
+    "external_rights_blockers": 0,
+    "raw_evidence": "verification/testforge-free-v3/reviewer/raw/final-package-verifier.json"
+  },
+  "qualification_to_final": {
+    "qualification_file_count": 2525,
+    "final_file_count": 2525,
+    "identical_file_count": 2521,
+    "added": [],
+    "removed": [],
+    "changed_files": [
+      "claude/BUILD-MANIFEST.json",
+      "codex/BUILD-MANIFEST.json",
+      "RELEASE-MANIFEST.json",
+      "SHA256SUMS.txt"
+    ],
+    "changed_file_count": 4,
+    "codex_build_manifest_diff_only_source_base_commit": true,
+    "claude_build_manifest_diff_only_source_base_commit": true,
+    "release_manifest_diff_only_base_commit_and_host_archive_hashes": true,
+    "checksum_entry_changes": 3,
+    "explanation": "The evidence-only checkpoint changes source_base_commit in both host BUILD-MANIFEST files. Those changed manifest bytes change both host archive hashes, which are embedded in RELEASE-MANIFEST.json. The three changed JSON files then change their SHA256SUMS entries. The customer archive contains that four-file metadata/checksum cascade; product payload, source custody, skill trees, and host plugin trees remain unchanged.",
+    "raw_evidence": [
+      "verification/testforge-free-v3/reviewer/raw/final-vs-qualification-diff.json",
+      "verification/testforge-free-v3/reviewer/raw/final-metadata-cascade.json"
+    ]
+  },
+  "test_reuse": {
+    "heavy_suites_rerun": false,
+    "reason": "No non-verification source drift was found. The final real-package verifier passed and the product payload, source custody, and host trees remain identical to the independently reviewed qualification candidate.",
+    "prior_independent_campaigns_retained": [
+      "10 product-contract tests passed",
+      "14 verifier-adversarial tests passed"
+    ]
+  },
+  "raw_artifact_hashes": "verification/testforge-free-v3/reviewer/raw/final-artifact-hashes.json",
+  "evidence_boundary": "This binding covers the exact final archive and sidecar hashes above for local-static release-candidate readiness. It does not establish fresh-host behavior, hosted or cross-platform execution, visual or accessibility conformance, specialist efficacy, publication, or public availability."
+}

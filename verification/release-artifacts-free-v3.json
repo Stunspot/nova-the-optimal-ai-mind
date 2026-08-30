@@ -1,0 +1,110 @@
+{
+  "format_version": "1.0",
+  "record_type": "nova_free_release_artifact_receipt",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "recorded_at": "2026-08-30T23:25:19.5805830+00:00",
+  "source": {
+    "build_checkpoint": "c27b3337c1e338b0c6791882911aaf1a9f3570bc",
+    "reviewed_product_checkpoint": "20beac84346465b7fe082c4c169b7d03be57880e",
+    "intervening_tracked_changes": "verification_only",
+    "product_payload_changed": false,
+    "evidence": [
+      "verification/testforge-free-v3/reviewer/raw/final-head-revision.json",
+      "verification/testforge-free-v3/reviewer/raw/final-source-freeze.json",
+      "verification/testforge-free-v3/reviewer/raw/final-source-diff-check.json"
+    ]
+  },
+  "package": {
+    "path": "dist/nova-the-optimal-ai-free-3.0.0",
+    "candidate_state": "built_from_frozen_source",
+    "source_clean_at_build": true,
+    "verification_verdict": "PASS",
+    "verification_findings": 0,
+    "customer_references_checked": 137,
+    "checksum_entries": 2524
+  },
+  "artifacts": [
+    {
+      "role": "customer",
+      "path": "release/nova-the-optimal-ai-free-3.0.0.zip",
+      "bytes": 40529761,
+      "sha256": "d797fb8c99012b2253e8b3316f2f75556c1f62f5c7a786ac88cd8dfa46052abe",
+      "sidecar": {
+        "path": "release/nova-the-optimal-ai-free-3.0.0.zip.sha256",
+        "bytes": 101,
+        "sha256": "4c33e683eb5cfc23ff5d16f091543d944e94eb0d2edd38807a312abccd436e30",
+        "matches_artifact": true
+      }
+    },
+    {
+      "role": "codex",
+      "path": "release/nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "bytes": 9427718,
+      "sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0",
+      "sidecar": {
+        "path": "release/nova-the-optimal-ai-free-3.0.0-codex.zip.sha256",
+        "bytes": 107,
+        "sha256": "4a4d4270db2a49fbb70d312e38667492c67ec820c4f2f00b80737ab3dccc85dd",
+        "matches_artifact": true
+      }
+    },
+    {
+      "role": "claude-compatible",
+      "path": "release/nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "bytes": 28461179,
+      "sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425",
+      "sidecar": {
+        "path": "release/nova-the-optimal-ai-free-3.0.0-claude.zip.sha256",
+        "bytes": 108,
+        "sha256": "3b7edccc612a4e171f9c5585dcfbcdff604289b63f555ceda0b62f6f9f638557",
+        "matches_artifact": true
+      }
+    }
+  ],
+  "qualification_to_final": {
+    "qualification_files": 2525,
+    "final_files": 2525,
+    "identical_files": 2521,
+    "changed_files": [
+      "claude/BUILD-MANIFEST.json",
+      "codex/BUILD-MANIFEST.json",
+      "RELEASE-MANIFEST.json",
+      "SHA256SUMS.txt"
+    ],
+    "change_cause": "Evidence-only build checkpoint metadata changed the two host build manifests, their archive hashes in the release manifest, and the corresponding checksum inventory entries.",
+    "product_payload_conclusion": "UNCHANGED"
+  },
+  "rights": {
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": 0,
+    "standalone_rights_envelopes": 25
+  },
+  "review": {
+    "testforge_verdict": "REVIEW_PASS_WITH_CONDITIONS",
+    "testforge_supported_status": "READY_WITH_RESIDUAL_RISK",
+    "hesperos_verdict": "REVIEW_PASS_WITH_CONDITIONS",
+    "final_artifact_binding": "PASS",
+    "system_skill_validators": "PASS: 25 of 25",
+    "system_plugin_validator": "PASS"
+  },
+  "publication": {
+    "state": "not_published",
+    "push_performed": false,
+    "tag_performed": false,
+    "release_performed": false,
+    "deployment_performed": false,
+    "github_actions_run": false
+  },
+  "evidence": [
+    "verification/package-verification-free-v3.json",
+    "verification/skill-plugin-validation-free-v3.json",
+    "verification/license-audit-free-v3.md",
+    "verification/hesperos-free-v3/independent-review.json",
+    "verification/testforge-free-v3/reviewer/independent-review.json",
+    "verification/testforge-free-v3/reviewer/final-artifact-binding.json",
+    "verification/testforge-free-v3/reviewer/final-review-addendum.json",
+    "verification/testforge-free-v3/reviewer/raw/final-artifact-hashes.json"
+  ],
+  "evidence_boundary": "Exact local release archives, sidecars, source promotion, package integrity, rights custody, and independent-review binding only. Fresh-host behavior, GitHub-hosted or cross-platform execution, direct visual and assistive behavior, specialist efficacy, publication, external-link availability, and representative-user outcomes remain unestablished."
+}

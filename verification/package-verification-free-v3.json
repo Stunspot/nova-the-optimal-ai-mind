@@ -1,0 +1,29 @@
+{
+  "schema": "nova-free-package-verification/v3",
+  "package": "E:\\Github\\nova-the-optimal-ai-mind\\dist\\nova-the-optimal-ai-free-3.0.0",
+  "verdict": "PASS",
+  "findings": [],
+  "observed": {
+    "visible_skill_roots": 25,
+    "faculty_cores": 16,
+    "customer_references_checked": 137,
+    "codex_plugin_tree": {
+      "file_count": 761,
+      "tree_sha256": "ba1628db6415a7a6134377cbfef36d0ac23ac9b2aeb4432dc7f35b74da4e4875"
+    },
+    "claude_plugin_tree": {
+      "file_count": 761,
+      "tree_sha256": "c6d0f62b422dd735b23292f0f14bdec26e44f433e888b855e13af006a401eca0"
+    },
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": [],
+    "standalone_rights_envelopes": 25,
+    "checksum_entries": 2524,
+    "candidate_states": {
+      "codex": "built_from_frozen_source",
+      "claude-compatible": "built_from_frozen_source"
+    },
+    "publication_state": "not_published"
+  },
+  "evidence_boundary": "Static package and rights-custody verification only. Fresh-host installation, discovery, enabled state, invocation, behavior, publication, and outcomes are not established."
+}

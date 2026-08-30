@@ -1,0 +1,68 @@
+{
+  "schema": "nova-free-final-metadata-cascade/v1",
+  "observed_at": "2026-08-30T23:21:16.7849299Z",
+  "qualification_commit": "20beac84346465b7fe082c4c169b7d03be57880e",
+  "final_commit": "c27b3337c1e338b0c6791882911aaf1a9f3570bc",
+  "codex_build_manifest_diff_only_source_base_commit": true,
+  "claude_build_manifest_diff_only_source_base_commit": true,
+  "release_manifest_diff_only_base_commit_and_host_archive_hashes": true,
+  "qualification_host_artifact_hashes": [
+    {
+      "binding": "codex",
+      "file": "nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "sha256": "02211a8c69ccdb6e6669c9210b2c1dc6b9661446372a3f96d9e0095d95ee77af"
+    },
+    {
+      "binding": "claude-compatible",
+      "file": "nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "sha256": "2ebd8c21c9c165f86721f8d41211796d9625595c00d988846092daf19bbc703f"
+    }
+  ],
+  "final_host_artifact_hashes": [
+    {
+      "binding": "codex",
+      "file": "nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "sha256": "9b13217e044e38fe2f73de71a3e1eb8be4e823ed1119b53a1ebfdc8b119755f0"
+    },
+    {
+      "binding": "claude-compatible",
+      "file": "nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "sha256": "e3e6fd0f86246c691064c6f6584e905ab08a4995ef342845e5182adfbb2b2425"
+    }
+  ],
+  "checksum_entry_changes": [
+    {
+      "path": "claude/BUILD-MANIFEST.json",
+      "qualification_sha256": "f45051b04be5df55528c60b3d5495a936cfa7c7d742f2c598ae33bffcce7fec5",
+      "final_sha256": "3b5a104a71ae8f623157fac6e6fff191af012fc16fe360098b37aa9a4f2cfea2"
+    },
+    {
+      "path": "codex/BUILD-MANIFEST.json",
+      "qualification_sha256": "fd858544b415df5c7f4b1af42e6991ab81d464566ae3b44a487d4efb6ecc5727",
+      "final_sha256": "a694cfe396b8b1460c462eb2fc7a6ac66ac73937b7f085278bc66a410e9ce243"
+    },
+    {
+      "path": "RELEASE-MANIFEST.json",
+      "qualification_sha256": "57975160b8da3181814a78c47a70b9021674ec744d553e88ff9db1f65630c74c",
+      "final_sha256": "f1e8e0a1080361c3becfdc86d8888c0ae3c8d10671d9d92a877d498abf3a7c50"
+    }
+  ],
+  "checksum_entry_change_count": 3,
+  "source_custody": [
+    {
+      "path": "design/source-lock.json",
+      "source_sha256": "d731c31a25e760f3dcdde9eff77a6e99e18b55da77883d35fa018854b8e56467",
+      "qualification_sha256": "d731c31a25e760f3dcdde9eff77a6e99e18b55da77883d35fa018854b8e56467",
+      "final_sha256": "d731c31a25e760f3dcdde9eff77a6e99e18b55da77883d35fa018854b8e56467",
+      "all_equal": true
+    },
+    {
+      "path": "design/source-map.json",
+      "source_sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
+      "qualification_sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
+      "final_sha256": "f86215d793c0b5dbc05fe1ea716305a84a6572eb67578ffb62bd0427116f14b1",
+      "all_equal": true
+    }
+  ],
+  "explanation": "The evidence-only commit changes source_base_commit in both host BUILD-MANIFEST files. Those changed manifest bytes change both host archive hashes, which are embedded in RELEASE-MANIFEST.json. The three changed JSON files then change their SHA256SUMS entries. The customer archive contains that four-file metadata/checksum cascade; product payload, source custody, skill trees, and host plugin trees remain unchanged."
+}

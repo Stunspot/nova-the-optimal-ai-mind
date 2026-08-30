@@ -1,0 +1,42 @@
+{
+  "schema": "nova-free-qualification-final-diff/v1",
+  "observed_at": "2026-08-30T23:20:32.1340914Z",
+  "qualification": "dist/qualification/nova-the-optimal-ai-free-3.0.0",
+  "final": "dist/nova-the-optimal-ai-free-3.0.0",
+  "qualification_file_count": 2525,
+  "final_file_count": 2525,
+  "identical_file_count": 2521,
+  "added": [],
+  "removed": [],
+  "changed": [
+    {
+      "path": "claude/BUILD-MANIFEST.json",
+      "qualification_bytes": 2299,
+      "final_bytes": 2299,
+      "qualification_sha256": "f45051b04be5df55528c60b3d5495a936cfa7c7d742f2c598ae33bffcce7fec5",
+      "final_sha256": "3b5a104a71ae8f623157fac6e6fff191af012fc16fe360098b37aa9a4f2cfea2"
+    },
+    {
+      "path": "codex/BUILD-MANIFEST.json",
+      "qualification_bytes": 2287,
+      "final_bytes": 2287,
+      "qualification_sha256": "fd858544b415df5c7f4b1af42e6991ab81d464566ae3b44a487d4efb6ecc5727",
+      "final_sha256": "a694cfe396b8b1460c462eb2fc7a6ac66ac73937b7f085278bc66a410e9ce243"
+    },
+    {
+      "path": "RELEASE-MANIFEST.json",
+      "qualification_bytes": 14398,
+      "final_bytes": 14398,
+      "qualification_sha256": "57975160b8da3181814a78c47a70b9021674ec744d553e88ff9db1f65630c74c",
+      "final_sha256": "f1e8e0a1080361c3becfdc86d8888c0ae3c8d10671d9d92a877d498abf3a7c50"
+    },
+    {
+      "path": "SHA256SUMS.txt",
+      "qualification_bytes": 377131,
+      "final_bytes": 377131,
+      "qualification_sha256": "4b2b427210eda25c538bc58511c7988bb5cb43b125874d891be315ddec06b9ec",
+      "final_sha256": "720234922bfd2ed3d7f9e3509115cc093c21b788535ec2068d2a5ac024110293"
+    }
+  ],
+  "changed_count": 4
+}

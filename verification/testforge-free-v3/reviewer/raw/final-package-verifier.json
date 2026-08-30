@@ -1,0 +1,20 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "tools/verify_package.py",
+    "dist/nova-the-optimal-ai-free-3.0.0"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T23:19:23.607206+00:00",
+  "finished_at": "2026-08-30T23:19:33.919596+00:00",
+  "duration_seconds": 10.312386,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "{\n  \"schema\": \"nova-free-package-verification/v3\",\n  \"package\": \"E:\\\\Github\\\\nova-the-optimal-ai-mind\\\\dist\\\\nova-the-optimal-ai-free-3.0.0\",\n  \"verdict\": \"PASS\",\n  \"findings\": [],\n  \"observed\": {\n    \"visible_skill_roots\": 25,\n    \"faculty_cores\": 16,\n    \"customer_references_checked\": 137,\n    \"codex_plugin_tree\": {\n      \"file_count\": 761,\n      \"tree_sha256\": \"ba1628db6415a7a6134377cbfef36d0ac23ac9b2aeb4432dc7f35b74da4e4875\"\n    },\n    \"claude_plugin_tree\": {\n      \"file_count\": 761,\n      \"tree_sha256\": \"c6d0f62b422dd735b23292f0f14bdec26e44f433e888b855e13af006a401eca0\"\n    },\n    \"redistribution_state\": \"permitted_under_included_licenses\",\n    \"external_rights_blockers\": [],\n    \"standalone_rights_envelopes\": 25,\n    \"checksum_entries\": 2524,\n    \"candidate_states\": {\n      \"codex\": \"built_from_frozen_source\",\n      \"claude-compatible\": \"built_from_frozen_source\"\n    },\n    \"publication_state\": \"not_published\"\n  },\n  \"evidence_boundary\": \"Static package and rights-custody verification only. Fresh-host installation, discovery, enabled state, invocation, behavior, publication, and outcomes are not established.\"\n}\n",
+  "stderr": "",
+  "status": "passed"
+}

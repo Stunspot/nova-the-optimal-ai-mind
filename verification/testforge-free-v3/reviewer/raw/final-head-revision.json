@@ -1,0 +1,17 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T23:19:24.174196+00:00",
+  "finished_at": "2026-08-30T23:19:24.205280+00:00",
+  "duration_seconds": 0.031082,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "c27b3337c1e338b0c6791882911aaf1a9f3570bc\n",
+  "stderr": "",
+  "status": "passed"
+}
