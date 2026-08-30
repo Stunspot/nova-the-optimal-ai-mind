@@ -1,0 +1,51 @@
+{
+  "schema": "testforge-metered-preflight-boundary/v1",
+  "provider": "github-actions",
+  "repository": "private nova-the-optimal-ai-mind repository",
+  "capacity_status": "unknown",
+  "authoritative_snapshot": "not_available",
+  "exact_billing_scope": "unknown",
+  "remaining_allowance_minutes": null,
+  "principal_reserve_minutes": null,
+  "paid_overage_state": "unknown_and_unauthorized",
+  "refresh_boundary": "expected 2026-09-01 monthly boundary per current session policy; not a fresh provider observation",
+  "workflows": [
+    {
+      "name": "verify-package",
+      "trigger": "workflow_dispatch only",
+      "matrix_jobs": 3,
+      "attempts": 1,
+      "ceiling_minutes": 15,
+      "raw_runner_minutes": 45,
+      "publication_action": false
+    },
+    {
+      "name": "line-ending-policy",
+      "trigger": "workflow_dispatch only",
+      "matrix_jobs": 1,
+      "attempts": 1,
+      "ceiling_minutes": 5,
+      "raw_runner_minutes": 5,
+      "publication_action": false
+    },
+    {
+      "name": "deploy-pages",
+      "trigger": "workflow_dispatch only",
+      "matrix_jobs": 1,
+      "attempts": 1,
+      "ceiling_minutes": 10,
+      "raw_runner_minutes": 10,
+      "publication_action": true
+    }
+  ],
+  "complete_raw_runner_minutes": 60,
+  "provider_multiplier": "unknown",
+  "estimated_billed_minutes": "unknown",
+  "decision": "HOLD_UNKNOWN",
+  "automatic_invocation_permitted": false,
+  "paid_dispatch_permitted": false,
+  "assessor_status": "NOT_RUN_MISSING_AUTHORITATIVE_REQUIRED_INPUTS",
+  "assessor_boundary": "The canonical assessor requires a matching exact billing scope, a dated provider snapshot, refresh boundary, and numeric principal reserve. Those facts are unavailable; inventing them to obtain an assessor output is prohibited.",
+  "hosted_runs_executed": 0,
+  "publication_authority": false
+}

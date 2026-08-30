@@ -1,0 +1,68 @@
+{
+  "format_version": "1.0",
+  "source": "git:6151da1862c93e2af1755a5b79aee239816c5d1f..06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "changed_file_count": 52,
+  "groups": {
+    "configuration": [
+      "verification/hesperos-free-v3/documentation-project.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/authoring-report.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/codex-cli-surface.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/documentation-project.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/independent-review.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/markdown-lint.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/task-walkthrough.json",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/visual-review.json",
+      "verification/history/free-v3-pre-review-6151da1/package-verification-free-v3.json",
+      "verification/history/free-v3-pre-review-6151da1/release-artifacts-free-v3.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/diff-summary.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/documentation-check.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/full-unittest.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/intake-command-results.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/manifest-validation.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/package-verifier.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/repo-inventory.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/site-check.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/source-checkpoint-diff.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/test-smells.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/test-stack.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/raw/traceability-validation.json",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/verification-manifest.json",
+      "verification/testforge-free-v3/operator/raw/diff-summary.json",
+      "verification/testforge-free-v3/operator/raw/static-intake-results.json",
+      "verification/testforge-free-v3/operator/raw/working-tree-status.json"
+    ],
+    "infrastructure": [
+      ".github/workflows/line-ending-policy.yml"
+    ],
+    "production_code": [
+      "tools/build_release.py",
+      "tools/verify_package.py",
+      "verification/history/README.md",
+      "verification/history/free-v3-pre-review-6151da1/README.md",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/authoring-report.md",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/independent-review.md",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/404-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/capabilities-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/index-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/index-mobile.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/install-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/notices-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/security-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/support-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/troubleshooting-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/trust-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/upgrade-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/renders/workflows-desktop.png",
+      "verification/history/free-v3-pre-review-6151da1/hesperos-free-v3/visual-review.md",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/metered-verification.md",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/operator-report.md",
+      "verification/history/free-v3-pre-review-6151da1/testforge-operator/risk-register.md"
+    ],
+    "tests": [
+      "tests/test_product_contract.py",
+      "tests/test_release_pipeline.py",
+      "tests/test_verifier_adversarial.py"
+    ]
+  },
+  "warnings": []
+}

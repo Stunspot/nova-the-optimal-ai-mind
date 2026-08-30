@@ -1,0 +1,250 @@
+{
+  "schema": "hesperos-documentation-project/v1",
+  "project_id": "DOC-NOVA-FREE-3.0.0",
+  "title": "Nova the Optimal AI Free 3.0.0 customer and maintainer journey",
+  "product_version": "3.0.0",
+  "source_commit": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "evidence_cutoff": "2026-08-30T20:18:11.2009490Z",
+  "status": "review-pass-with-conditions",
+  "audiences": [
+    "customer installing the complete Codex plugin",
+    "customer using a Claude-compatible host",
+    "customer choosing optional persistent state",
+    "maintainer building and verifying the candidate"
+  ],
+  "top_tasks": [
+    "understand the one-front-door product",
+    "install one plugin without disturbing existing tools or data",
+    "confirm discovery and one real invocation",
+    "configure optional state only with explicit authority",
+    "recover from discovery or estate failures",
+    "upgrade from the two-plugin 2.x line",
+    "distinguish static build evidence from fresh-host and publication evidence"
+  ],
+  "sources": [
+    "design/product-contract.json",
+    "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
+    "plugins/nova-the-optimal-ai/.codex-plugin/plugin.json",
+    "design/source-map.json",
+    "design/source-lock.json",
+    "tools/build_release.py",
+    "tools/verify_package.py",
+    "tests/",
+    "THIRD-PARTY-NOTICES.md"
+  ],
+  "topics": [
+    {
+      "path": "README.md",
+      "type": "explanation and entry hub",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "START-HERE.md",
+      "type": "installation how-to",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "LICENSE.md",
+      "type": "license reference",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "SECURITY.md",
+      "type": "security policy",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "SUPPORT.md",
+      "type": "support policy",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "type": "license and provenance reference",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "type": "release communication",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "type": "reference",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/HOST-MATRIX.md",
+      "type": "compatibility reference",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/INSTALL-CLAUDE.md",
+      "type": "how-to",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/INSTALL-CODEX.md",
+      "type": "how-to",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/MAINTAINER-GUIDE.md",
+      "type": "maintainer how-to",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/PRIVACY-AND-TRUST.md",
+      "type": "explanation",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/TROUBLESHOOTING.md",
+      "type": "troubleshooting",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "type": "upgrade and rollback how-to",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "type": "evidence reference",
+      "state": "source-reviewed and package-identical"
+    },
+    {
+      "path": "docs/index.html",
+      "type": "site overview",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/install.html",
+      "type": "site installation",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/capabilities.html",
+      "type": "site capability reference",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/workflows.html",
+      "type": "site workflow examples",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/trust.html",
+      "type": "site trust explanation",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/support.html",
+      "type": "site support routing",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/security.html",
+      "type": "site security routing",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/notices.html",
+      "type": "site licensing reference",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/upgrade.html",
+      "type": "site upgrade and rollback",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/troubleshooting.html",
+      "type": "site troubleshooting",
+      "state": "rendered and package-identical"
+    },
+    {
+      "path": "docs/404.html",
+      "type": "site recovery page",
+      "state": "rendered and package-identical"
+    }
+  ],
+  "package_parity": {
+    "root_documents": 7,
+    "docs_tree_files": 24,
+    "mismatches": 0,
+    "customer_zip_sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71",
+    "receipt": "verification/package-verification-free-v3.json"
+  },
+  "accessibility_reviews": [
+    {
+      "method": "static semantic and deployed-link audit",
+      "state": "pass",
+      "evidence": "docs/check_site.py; 11 HTML pages; escape-boundary regression in tests/test_site_checker.py"
+    },
+    {
+      "method": "color contrast analysis",
+      "state": "pass for measured palette",
+      "evidence": "text contrast 8.24:1 to 18.68:1; structural boundaries 3.38:1 to 4.10:1 against used dark surfaces"
+    },
+    {
+      "method": "desktop and mobile visual inspection",
+      "state": "pass for retained exact-source renders after current independent reinspection",
+      "evidence": "verification/hesperos-free-v3/renders and render-provenance.json; docs Git tree a33fb1111297986410ec6e2fae2c97c21a0a603e is identical across checkpoints"
+    },
+    {
+      "method": "independent Hesperos review",
+      "state": "review-pass-with-conditions",
+      "evidence": "verification/hesperos-free-v3/independent-review.md and independent-review.json"
+    },
+    {
+      "method": "keyboard, screen reader, and representative assistive technology",
+      "state": "not tested",
+      "evidence": "requires a live accessibility exercise on a representative host"
+    }
+  ],
+  "verification": [
+    {
+      "method": "maintained Markdown lint",
+      "state": "pass",
+      "evidence": "16 documents and 13 local references; verification/hesperos-free-v3/markdown-lint.json"
+    },
+    {
+      "method": "static site check",
+      "state": "pass",
+      "evidence": "11 pages; docs/check_site.py"
+    },
+    {
+      "method": "customer task walkthrough",
+      "state": "pass-with-conditions",
+      "evidence": "verification/hesperos-free-v3/task-walkthrough.json"
+    },
+    {
+      "method": "package reference and byte-parity check",
+      "state": "pass",
+      "evidence": "131 customer references; 24 docs-tree files and 7 root documents byte-identical"
+    },
+    {
+      "method": "fresh-host installation and real Nova invocation",
+      "state": "not tested",
+      "evidence": "no customer host was mutated during this build"
+    }
+  ],
+  "residual_conditions": [
+    "exercise keyboard-only navigation",
+    "exercise representative screen-reader behavior",
+    "render responsive layouts beyond the overview page on representative devices",
+    "check external-link availability at publication time",
+    "observe representative-user task completion",
+    "perform fresh-host installation, discovery, restart, and real Nova invocation"
+  ],
+  "publication_gate": "Documentation quality is not the public-redistribution gate. Six component-license matters and publication authority remain unresolved.",
+  "owner": "Collaborative Dynamics",
+  "next_move": "Resolve redistribution authority and run fresh-host, live accessibility, and customer-task acceptance before publication.",
+  "render_binding": {
+    "origin_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+    "current_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+    "exact_source_equivalence": true,
+    "provenance": "verification/hesperos-free-v3/render-provenance.json"
+  }
+}

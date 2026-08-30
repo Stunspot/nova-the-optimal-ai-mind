@@ -1,0 +1,26 @@
+{
+  "schema": "nova-free-documentation-lint/v3",
+  "maintained_documents": [
+    "README.md",
+    "START-HERE.md",
+    "LICENSE.md",
+    "SECURITY.md",
+    "SUPPORT.md",
+    "THIRD-PARTY-NOTICES.md",
+    "RELEASE-NOTES.md",
+    "docs/CAPABILITY-GUIDE.md",
+    "docs/HOST-MATRIX.md",
+    "docs/INSTALL-CLAUDE.md",
+    "docs/INSTALL-CODEX.md",
+    "docs/MAINTAINER-GUIDE.md",
+    "docs/PRIVACY-AND-TRUST.md",
+    "docs/TROUBLESHOOTING.md",
+    "docs/UPGRADE.md",
+    "docs/VERIFICATION.md"
+  ],
+  "documents_checked": 16,
+  "local_references_checked": 13,
+  "findings": [],
+  "verdict": "PASS",
+  "evidence_boundary": "Markdown structure, selected semantic contracts, and source-tree local references only; not task usability, assistive-technology behavior, package extraction, or publication."
+}

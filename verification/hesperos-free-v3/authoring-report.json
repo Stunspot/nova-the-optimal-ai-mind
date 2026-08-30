@@ -1,0 +1,52 @@
+{
+  "schema": "nova-free-hesperos-authoring-report/v3",
+  "observed_at": "2026-08-30T20:18:11.2009490Z",
+  "source_commit": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "verdict": "AUTHORING_COMPLETE_REVIEW_PASS_WITH_CONDITIONS",
+  "objective": "Replace the stale 2.x journey with a complete Free 3.0.0 customer, recovery, trust, and maintainer path grounded in the actual package.",
+  "repaired": [
+    "single-plugin and ambient-MIND product explanation",
+    "correct Codex marketplace root and executable commands",
+    "same-ID 2.x-to-3.0 replacement and rollback language",
+    "optional-state plan-before-write prompts",
+    "self-contained security, notices, upgrade, and troubleshooting site pages",
+    "candid six-component redistribution block",
+    "navigable Markdown next steps",
+    "deployed-docs artifact boundary enforcement",
+    "responsive dark-site layout and structural contrast"
+  ],
+  "deliverables": [
+    "16 maintained Markdown documents",
+    "11 static HTML pages plus shared CSS and hero asset",
+    "task walkthrough",
+    "documentation project ledger",
+    "final desktop/mobile renders",
+    "independent documentation review (complete with conditions)"
+  ],
+  "checks": {
+    "markdown_lint": "PASS: 16 documents, 13 local references",
+    "site": "PASS: 11 pages",
+    "package_parity": "PASS: 24 docs-tree files and 7 root docs byte-identical",
+    "package_references": "PASS: 131",
+    "visual": "PASS_WITH_BOUNDARY: retained 11 desktop and one 390px overview render without re-encoding because the docs Git tree is byte-identical across checkpoints; current independent reinspection complete"
+  },
+  "untested": [
+    "keyboard-only navigation",
+    "screen reader and representative assistive technology",
+    "responsive rendering beyond the overview page on representative devices",
+    "published external links",
+    "representative user task completion",
+    "fresh-host installation and real invocation"
+  ],
+  "separate_blocker": "Documentation is fit for a local candidate. Public redistribution is not authorized until the six component-license matters and publication authority are resolved.",
+  "current_package_sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71",
+  "render_provenance": {
+    "origin_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+    "current_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+    "docs_git_tree": "a33fb1111297986410ec6e2fae2c97c21a0a603e",
+    "exact_source_equivalence": true,
+    "reused_without_reencoding": true,
+    "fresh_capture": "unavailable_admin_browser_policy",
+    "independent_reinspection_required": false
+  }
+}

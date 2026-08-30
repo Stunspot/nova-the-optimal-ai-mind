@@ -1,0 +1,149 @@
+{
+  "schema": "hesperos-documentation-accessibility-review/v1",
+  "review_id": "HESP-NOVA-FREE-3.0.0-INDEPENDENT-REPAIRED",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "source_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "customer_zip_sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71",
+  "reviewed_at_utc": "2026-08-30T20:27:43Z",
+  "reviewer_role": "Independent Hesperos documentation accessibility reviewer",
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "decision": "The maintained source journey and extracted customer package are documentation-ready within the explicitly static and local evidence scope. Exact rendered-input tree equivalence, render-byte continuity, and current independent visual reinspection support carrying the visual finding across the repaired checkpoint without claiming a fresh browser capture. No material product-truth, unsafe-procedure, access-path, licensing-candor, source/package-parity, or rendered-layout defect remains.",
+  "scope": {
+    "source_documents": [
+      "README.md",
+      "START-HERE.md",
+      "LICENSE.md",
+      "SECURITY.md",
+      "SUPPORT.md",
+      "THIRD-PARTY-NOTICES.md",
+      "RELEASE-NOTES.md",
+      "docs/*.md",
+      "docs/*.html",
+      "docs/style.css",
+      "docs/assets/nova-mind-readme-hero.png"
+    ],
+    "customer_package": "dist/nova-the-optimal-ai-free-3.0.0",
+    "site_pages": 11,
+    "render_directory": "verification/hesperos-free-v3/renders",
+    "exclusions": [
+      "Fresh browser capture at the repaired checkpoint",
+      "Fresh-host installation, discovery, enabled state, invocation, and model behavior",
+      "Formal accessibility conformance assessment",
+      "Representative-user outcome testing",
+      "Public redistribution authority"
+    ]
+  },
+  "source_equivalence": {
+    "origin_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+    "current_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+    "docs_git_tree": "a33fb1111297986410ec6e2fae2c97c21a0a603e",
+    "plugin_git_tree": "0acfbddbe6c2553ee3132262a1740fbad95a80c6",
+    "render_count": 12,
+    "render_manifest_mismatches": 0,
+    "historical_render_byte_differences": 0,
+    "current_visual_reinspection": "COMPLETE",
+    "fresh_capture_status": "UNAVAILABLE_ADMIN_BROWSER_POLICY",
+    "disposition": "Sufficient for current static visual closure because every rendered input and retained pixel artifact is identical and the current reviewer reinspected the retained views; insufficient for fresh-browser or cross-browser claims."
+  },
+  "checks": [
+    {
+      "id": "source-custody",
+      "result": "PASS",
+      "evidence": "HEAD is 06b89ea3b27600452056edbdfad9ccaff3c7fcaf; current root documents, docs, and plugins/nova-the-optimal-ai have no drift from that checkpoint."
+    },
+    {
+      "id": "render-carryforward-binding",
+      "result": "PASS",
+      "evidence": "Current and origin docs Git trees are both a33fb1111297986410ec6e2fae2c97c21a0a603e; plugin trees are both 0acfbddbe6c2553ee3132262a1740fbad95a80c6. All 12 PNGs match their manifest dimensions and hashes and are byte-identical to the archived origin packet."
+    },
+    {
+      "id": "current-visual-reinspection",
+      "result": "PASS_WITH_BOUNDARY",
+      "evidence": "The reviewer inspected a disposable contact sheet generated from all 11 retained desktop PNGs and a separate view of the retained 390x844 mobile overview. Hierarchy, navigation, spacing, calls to action, and hero presentation remain coherent with no visible clipping or overlap. Inspection did not create a new browser capture."
+    },
+    {
+      "id": "customer-archive-digest",
+      "result": "PASS",
+      "evidence": "release/nova-the-optimal-ai-free-3.0.0.zip independently hashes to e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71."
+    },
+    {
+      "id": "static-package-verification",
+      "result": "PASS",
+      "evidence": "The current receipt reports 25 visible roots, 16 Faculty Cores, 131 customer references, no findings, candidate_state=built_awaiting_independent_review, and redistribution_state=blocked_pending_component_grants."
+    },
+    {
+      "id": "source-package-documentation-parity",
+      "result": "PASS",
+      "evidence": "Independent SHA-256 comparison checked 7 maintained root documents and 24 docs-tree files and found 0 missing files and 0 byte differences."
+    },
+    {
+      "id": "maintained-markdown",
+      "result": "PASS",
+      "evidence": "Independent rerun checked 16 maintained documents and 13 local references with no findings."
+    },
+    {
+      "id": "site-structure-and-links",
+      "result": "PASS",
+      "evidence": "Independent rerun of docs/check_site.py passed 11 HTML pages."
+    },
+    {
+      "id": "customer-task-walkthrough",
+      "result": "PASS_STATIC",
+      "evidence": "The documentation provides entry, complete Codex install commands, one real-invocation prompt, Claude-compatible alternatives, optional-state authority, same-ID upgrade and rollback, troubleshooting, support, security, notices, and explicit evidence boundaries."
+    },
+    {
+      "id": "accessibility-static-review",
+      "result": "PASS_WITH_BOUNDARY",
+      "evidence": "Pages use lang=en, one H1, labelled navigation, skip links, main landmarks, useful image alternatives, scoped table headers, visible focus, reduced-motion handling, responsive navigation, and non-sensory warning wording. This is static and visual evidence, not an assistive-technology session."
+    },
+    {
+      "id": "evidence-and-license-candor",
+      "result": "PASS",
+      "evidence": "The journey separates package presence, installation, discovery, invocation, behavior, publication, and outcomes, and identifies the six unresolved redistribution components without treating notices as permission."
+    }
+  ],
+  "material_findings": [],
+  "conditions": [
+    {
+      "id": "HESP-COND-001",
+      "category": "assistive-technology-and-users",
+      "affected_user_task": "Customers navigating installation, trust, support, security, upgrade, and troubleshooting with keyboard, screen reader, zoom, or other assistive technology.",
+      "evidence_gap": "No complete keyboard walkthrough, screen-reader session, assistive-technology matrix, or representative-user study was retained.",
+      "consequence": "This review cannot support a formal accessibility-conformance claim or a claim that representative users completed the journey.",
+      "smallest_next_step": "Before making either claim, run keyboard-only and representative screen-reader walkthroughs over the main customer tasks.",
+      "rerun": "Independent accessibility review of those observed sessions."
+    },
+    {
+      "id": "HESP-COND-002",
+      "category": "responsive-and-browser-coverage",
+      "affected_user_task": "Customers reading the site at narrow widths, high zoom, or in browsers other than the historical Chrome capture environment.",
+      "evidence_gap": "Every page has a retained desktop render and the overview has a true 390x844 capture, but narrow-width coverage does not include every page, 200% and 400% zoom were not recorded, and a current browser capture was unavailable under administrative browser policy.",
+      "consequence": "Exact source and render continuity supports the observed retained layouts, not comprehensive responsive, zoom, cross-browser, or cross-operating-system behavior.",
+      "smallest_next_step": "Before claiming comprehensive responsive accessibility, exercise support/trust and install/troubleshooting at narrow widths and 200%/400% zoom in representative browsers.",
+      "rerun": "Visual and keyboard review of those layouts."
+    },
+    {
+      "id": "HESP-COND-003",
+      "category": "live-host-and-external-routes",
+      "affected_user_task": "Customers installing Nova on a current Codex or Claude-compatible host, invoking it, or following provider-controlled support and security routes.",
+      "evidence_gap": "Package paths and the local Codex command surface were inspected, but no fresh-host installation, discovery, restart, real Nova invocation, or publication-time external-link check was performed.",
+      "consequence": "Static documentation readiness does not prove live host behavior or continuing external-route availability.",
+      "smallest_next_step": "Run a separately authorized fresh-host install and one real Nova invocation; check provider-controlled support and security routes immediately before publication.",
+      "rerun": "Customer-task walkthrough using the observed live host and external routes."
+    }
+  ],
+  "separate_release_gate": {
+    "status": "BLOCKED_PENDING_COMPONENT_GRANTS",
+    "relationship_to_verdict": "Separate from documentation quality",
+    "note": "Public redistribution remains blocked by the six rights matters recorded in THIRD-PARTY-NOTICES.md. This verdict does not authorize publication, redistribution, tag, release, directory submission, or announcement."
+  },
+  "rerun_triggers": [
+    "Any maintained customer-document change",
+    "Any site, CSS, or visual-asset change",
+    "Any package-layout or installer-command change",
+    "Any component-license or redistribution-wording change",
+    "Any rendered-input tree or retained-render-byte change"
+  ],
+  "evidence_boundary": "Independent review of current source and extracted-package documentation, static procedures, local command syntax, source/package parity, exact render provenance, and retained layouts. No fresh browser capture, fresh-host behavior, assistive-technology session, representative-user outcome, publication, or redistribution authority is established."
+}

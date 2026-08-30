@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "docs/check_site.py"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T20:28:10.746924+00:00",
+  "finished_at": "2026-08-30T20:28:10.867756+00:00",
+  "duration_seconds": 0.120828,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "SITE CHECK: PASS (11 pages)\n",
+  "stderr": "",
+  "status": "passed"
+}

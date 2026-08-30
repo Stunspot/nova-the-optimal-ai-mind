@@ -1,0 +1,46 @@
+{
+  "schema": "testforge-independent-artifact-binding/v1",
+  "observed_at_utc": "2026-08-30T20:44:08.5824243+00:00",
+  "reviewed_source": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "artifacts": {
+    "customer": {
+      "path": "release\\nova-the-optimal-ai-free-3.0.0.zip",
+      "sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71"
+    },
+    "codex": {
+      "path": "release\\nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "sha256": "99d2541fe6102b8320a3826d88337591eb6eacc87934d70f49e2e3dd3c50fef8"
+    },
+    "claude": {
+      "path": "release\\nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "sha256": "d1cae2260a4013945075a26316e7cd4b120a6d34302aba3d40b8fa1821b6da9d"
+    }
+  },
+  "archive_entries": {
+    "release_manifest": "nova-the-optimal-ai-free-3.0.0/RELEASE-MANIFEST.json",
+    "customer_codex_build_manifest": "nova-the-optimal-ai-free-3.0.0/codex/BUILD-MANIFEST.json",
+    "customer_claude_build_manifest": "nova-the-optimal-ai-free-3.0.0/claude/BUILD-MANIFEST.json",
+    "standalone_codex_build_manifest": "nova-the-optimal-ai-free-3.0.0-codex/BUILD-MANIFEST.json",
+    "standalone_claude_build_manifest": "nova-the-optimal-ai-free-3.0.0-claude/BUILD-MANIFEST.json"
+  },
+  "checks": {
+    "customer_hash_matches": true,
+    "codex_hash_matches": true,
+    "claude_hash_matches": true,
+    "release_source_matches": true,
+    "release_source_clean": true,
+    "release_redistribution_blocked": true,
+    "release_codex_hash_matches": true,
+    "release_claude_hash_matches": true,
+    "customer_codex_source_matches": true,
+    "customer_claude_source_matches": true,
+    "standalone_codex_source_matches": true,
+    "standalone_claude_source_matches": true,
+    "all_candidates_await_review": true,
+    "all_require_independent_review": true,
+    "no_manifest_seal": true
+  },
+  "failed_checks": [],
+  "verdict": "PASS",
+  "boundary": "Frozen local archive identity and embedded manifest binding only; no installation, invocation, publication, redistribution authority, or candidate seal."
+}

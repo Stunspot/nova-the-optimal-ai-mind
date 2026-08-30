@@ -1,0 +1,25 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_verifier_adversarial.py",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T20:40:22.6149574+00:00",
+  "finished_at": "2026-08-30T20:42:34.3913194+00:00",
+  "duration_seconds": 131.762678,
+  "exit_code": 0,
+  "stdout": null,
+  "stderr": "test_broken_customer_reference_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_broken_customer_reference_is_rejected) ... ok\r\ntest_codex_state_fallback_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_codex_state_fallback_is_rejected) ... ok\r\ntest_false_redistribution_ready_state_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_false_redistribution_ready_state_is_rejected) ... ok\r\ntest_host_skill_drift_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_host_skill_drift_is_rejected) ... ok\r\ntest_missing_skill_root_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_missing_skill_root_is_rejected) ... ok\r\ntest_premature_candidate_seal_is_rejected (test_verifier_adversarial.VerifierAdversarialTests.test_premature_candidate_seal_is_rejected) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 6 tests in 131.380s\r\n\r\nOK\r\n",
+  "status": "passed"
+}

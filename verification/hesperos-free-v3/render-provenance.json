@@ -1,0 +1,17 @@
+{
+  "schema": "nova-free-hesperos-render-provenance/v1",
+  "observed_at": "2026-08-30T20:18:11.2009490Z",
+  "current_source_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "origin_source_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+  "current_customer_zip_sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71",
+  "docs_git_tree_current": "a33fb1111297986410ec6e2fae2c97c21a0a603e",
+  "docs_git_tree_origin": "a33fb1111297986410ec6e2fae2c97c21a0a603e",
+  "plugin_git_tree_current": "0acfbddbe6c2553ee3132262a1740fbad95a80c6",
+  "plugin_git_tree_origin": "0acfbddbe6c2553ee3132262a1740fbad95a80c6",
+  "rendered_inputs_byte_identical": true,
+  "render_bytes_reused_without_reencoding": true,
+  "render_count": 12,
+  "fresh_capture_attempt": "BLOCKED_BY_ADMIN_BROWSER_POLICY",
+  "current_independent_reinspection_required": false,
+  "evidence_boundary": "This proves exact rendered-input and render-byte continuity. It is not a fresh browser capture, cross-browser exercise, assistive-technology run, or representative-user outcome."
+}

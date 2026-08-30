@@ -1,0 +1,93 @@
+{
+  "schema": "nova-free-qualification-decision/v3",
+  "observed_at": "2026-08-30T20:47:21.0260806Z",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "source_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "artifacts": {
+    "customer": {
+      "file": "release/nova-the-optimal-ai-free-3.0.0.zip",
+      "sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71"
+    },
+    "codex": {
+      "file": "release/nova-the-optimal-ai-free-3.0.0-codex.zip",
+      "sha256": "99d2541fe6102b8320a3826d88337591eb6eacc87934d70f49e2e3dd3c50fef8"
+    },
+    "claude": {
+      "file": "release/nova-the-optimal-ai-free-3.0.0-claude.zip",
+      "sha256": "d1cae2260a4013945075a26316e7cd4b120a6d34302aba3d40b8fa1821b6da9d"
+    }
+  },
+  "build_state": {
+    "manifest_state": "built_awaiting_independent_review",
+    "independent_review_required": true,
+    "interpretation": "The immutable build manifests record the build-time gate. Completed independent receipts qualify the exact hashes but do not seal, publish, or alter those manifests."
+  },
+  "qualification": {
+    "independent_review_complete": true,
+    "local_candidate": "PASS_WITH_EXPLICIT_EVIDENCE_BOUNDARIES",
+    "testforge": "REVIEW_PASS_WITH_CONDITIONS",
+    "hesperos": "REVIEW_PASS_WITH_CONDITIONS",
+    "public_redistribution": "NOT_READY_BLOCKED_PENDING_COMPONENT_GRANTS",
+    "publishable": false,
+    "release_authority": false
+  },
+  "evidence": {
+    "product_topology": {
+      "plugin_count": 1,
+      "visible_skill_roots": 25,
+      "mind_version": "0.2.0",
+      "faculty_core_count": 16,
+      "customer_references": 131
+    },
+    "full_regression": {
+      "passed": 24,
+      "failed": 0,
+      "duration_seconds": 151.415
+    },
+    "independent_focused_reruns": {
+      "adversarial_passed": 6,
+      "contract_passed": 8
+    },
+    "documentation": {
+      "markdown_documents": 16,
+      "local_references": 13,
+      "site_pages": 11,
+      "hesperos_material_findings": 0
+    },
+    "traceability": {
+      "risks": 14,
+      "scenarios": 13,
+      "tests": 14,
+      "executions": 7,
+      "validator_errors": 0,
+      "validator_warnings": 0
+    },
+    "hosted_runs": 0,
+    "metered_decision": "HOLD_UNKNOWN",
+    "planned_raw_runner_minutes": 60
+  },
+  "supported_claims": [
+    "One Codex plugin and Claude-compatible distributions contain 25 visible skill roots with MIND 0.2.0 and 16 nested Faculty Cores.",
+    "Agentic Coding, paired TestForge, Officecraft and its reviewer, research, retrieval, continuity, IT, privacy, language, and career capabilities are present in the frozen package.",
+    "The three exact archives are deterministic local artifacts bound to the reviewed source checkpoint.",
+    "The exercised local Windows composition, package lifecycle, optional-state controls, static documentation, site, and workflow-governance contracts pass.",
+    "All root workflows are manual-only and time-bounded; no hosted workflow was dispatched."
+  ],
+  "unsupported_claims": [
+    "Public redistribution, publication, directory listing, release, or announcement authority.",
+    "Fresh-host installation, discovery, restart, invocation, rollback, or healthy service behavior.",
+    "Hosted cross-platform workflow behavior or current GitHub capacity.",
+    "Formal accessibility conformance, representative-user outcomes, comprehensive responsive behavior, or efficacy across every specialist.",
+    "A sealed or publicly released candidate."
+  ],
+  "blockers": [
+    "Explicit Free-edition grants for Nova/MIND, Nova Operations, AnswerLayer, and Current Intelligence Observatory.",
+    "Separate written bundling permission for Job Application Builder and Interview Trainer.",
+    "AnswerLayer and Current Intelligence metadata reconciliation after grants.",
+    "Separate authority for push, tag, release, deployment, submission, redistribution, or announcement."
+  ],
+  "next_gate": "Obtain the six rights grants and reconcile the two metadata sets; rebuild and rerun package, Hesperos, TestForge, and separately authorized fresh-host acceptance against the resulting exact revision.",
+  "verdict": "LOCAL_CANDIDATE_QUALIFIED_WITH_EXPLICIT_BOUNDARIES_PUBLIC_RELEASE_BLOCKED",
+  "boundary": "This decision qualifies the exact local source checkpoint and archive hashes only. It is not a release seal, rights grant, hosted result, installation record, or publication event."
+}

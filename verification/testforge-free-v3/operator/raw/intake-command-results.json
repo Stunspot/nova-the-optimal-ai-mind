@@ -1,0 +1,6 @@
+{
+  "inspect_repo_exit": 0,
+  "detect_test_stack_exit": 0,
+  "summarize_repair_diff_exit": 0,
+  "test_smells_exit": 0
+}

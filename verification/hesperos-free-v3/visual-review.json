@@ -1,0 +1,137 @@
+{
+  "schema": "nova-free-hesperos-visual-review/v3",
+  "observed_at": "2026-08-30T20:18:11.2009490Z",
+  "source_commit": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+  "verdict": "PASS_SOURCE_EQUIVALENCE_WITH_CONDITIONS",
+  "tools": [
+    "Google Chrome 151.0.7922.139 headless rendering",
+    "Chrome DevTools Protocol device metrics override",
+    "ImageMagick 7.1.1-32 disposable contact sheet"
+  ],
+  "hero": {
+    "file": "docs/assets/nova-mind-readme-hero.png",
+    "width": 1536,
+    "height": 1024,
+    "bytes": 2513034,
+    "sha256": "0c9236a90f421552bf469d8e78fb980ac083aa03be011fbe4e5ca92b50e8ea61"
+  },
+  "renders": [
+    {
+      "file": "verification/hesperos-free-v3/renders/404-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 293512,
+      "sha256": "b0fd252a45f9f34922198fd6150ea86dbcc38f1fb9d269e39bd674f910f3b390"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/capabilities-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 243272,
+      "sha256": "a507e7694e8dc33cb1c31d208b404e3ebe201618690832d1edcca0f011507763"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/index-desktop.png",
+      "width": 1440,
+      "height": 1100,
+      "bytes": 620558,
+      "sha256": "785c5b154f1c2dd2f0c97f05bb59b5adbfcacc28cd5bbefa811350860a959634"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/index-mobile.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 278983,
+      "sha256": "49d2e949364c2638bae7e6af8017244002be361347bfa57b836cf6e21d76dc44"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/install-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 240570,
+      "sha256": "6cd24b6aebe0a5b87b15186f19836248f0e1f5b66ae706ede05b8ecd5c363564"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/notices-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 248081,
+      "sha256": "1e4cf5f1a5b6a389c8c267f037690782cad7edc42633d6ea36695660b8683886"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/security-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 256099,
+      "sha256": "cc533fd98c1ad6824da885fa39a1f43dd3f4f9a256da7acdd56b008484189547"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/support-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 240750,
+      "sha256": "a8c757629862417b7636b44726de584095d850bd579ef074b3fcd766b4d452de"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/troubleshooting-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 234841,
+      "sha256": "8c4b5fd443444fcaac6952185ddb427815c57fd22d2555c6bd073b607cc657e6"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/trust-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 249325,
+      "sha256": "e71adecedb1fc96a542155187d3d67721011f57402bd741f0a3500f83e5ccc6e"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/upgrade-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 244806,
+      "sha256": "4d88601d2b0d8acfff0d56b067fb7f49245f2c55117a1ec5ee5e6b219b1ecab2"
+    },
+    {
+      "file": "verification/hesperos-free-v3/renders/workflows-desktop.png",
+      "width": 1280,
+      "height": 1000,
+      "bytes": 354309,
+      "sha256": "582413c4cd82b5329269e5d506422e9efe1cfd88a4ec40ba9f31b1080fe578bf"
+    }
+  ],
+  "mobile_metrics": {
+    "innerWidth": 390,
+    "innerHeight": 844,
+    "devicePixelRatio": 1,
+    "clientWidth": 390,
+    "scrollWidth": 390,
+    "bodyScrollWidth": 390
+  },
+  "observations": [
+    "Eleven final desktop views have a consistent, readable dark visual system and intact navigation.",
+    "The overview at a true 390x844 device-emulated viewport has no horizontal overflow, clipped brand, clipped navigation, or clipped hero content.",
+    "The hero clearly presents Nova at a neon systems desk and supports the product identity; tiny decorative panel text is not used to convey required instructions.",
+    "Visible focus styling, skip links, high-contrast text, structural boundaries, and reduced-motion CSS are present.",
+    "No obsolete social card or stale 2.x artwork remains in the current site asset set."
+  ],
+  "conditions": [
+    "Only the overview page received true mobile device-emulation inspection.",
+    "Keyboard and screen-reader behavior were not exercised.",
+    "Rendering establishes appearance on this local browser version, not every customer browser or operating system.",
+    "The repaired cycle retains exact historical render bytes because every rendered input is byte-identical; the current independent reviewer reinspected those bytes; this supports static visual closure, not a fresh browser capture."
+  ],
+  "evidence_boundary": "Visual inspection and measured viewport behavior only; not assistive-technology, fresh-host, publication, or customer-outcome evidence.",
+  "current_binding": {
+    "origin_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+    "current_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+    "docs_git_tree": "a33fb1111297986410ec6e2fae2c97c21a0a603e",
+    "plugin_git_tree": "0acfbddbe6c2553ee3132262a1740fbad95a80c6",
+    "source_inputs_byte_identical": true,
+    "render_bytes_reused_without_reencoding": true,
+    "current_customer_zip_sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71",
+    "fresh_capture_status": "unavailable_admin_browser_policy",
+    "independent_reinspection": "complete"
+  }
+}

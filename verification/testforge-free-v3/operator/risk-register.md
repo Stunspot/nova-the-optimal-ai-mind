@@ -1,0 +1,22 @@
+# Nova Free 3.0.0 repaired-candidate risk register
+
+Bound target: source checkpoint `06b89ea3b27600452056edbdfad9ccaff3c7fcaf` and the current rebuilt customer package. The build state is `built_awaiting_independent_review`; this register neither seals the candidate nor grants publication authority.
+
+| ID | Condition → failure → consequence | Severity | Likelihood | Confidence | Disposition | Evidence / next evidence | Owner or authority |
+|---|---|---|---|---|---|---|---|
+| R-001 | If six unresolved component rights are not granted and reconciled, public distribution includes material without established permission. | critical | high | high | unresolved | `verification/license-audit-free-v3.md`; obtain written grants and reconcile two metadata sets. | Rights holder and affected licensors |
+| R-002 | If the package erases the rights blocker, a structurally green archive can falsely claim redistribution readiness. | high | medium | high | covered | Adversarial verifier rejects false `redistribution_state`; E-001. | Builder / TestForge |
+| R-003 | If the one-plugin, 25-root, 16-core topology drifts, installation or routing exposes the wrong product. | critical | medium | high | covered | Product-contract tests and final package oracle; E-001/E-002. | Builder |
+| R-004 | If custody drifts or protected Agent Swarm/TestForge roots change, provenance and the unchanged-work basis fail. | critical | low | high | covered | Source-lock/persona regressions; exact protected roots; E-001. | Builder / rights custodian |
+| R-005 | If builds are nondeterministic or host trees drift, customers receive unreviewed bytes and rollback weakens. | high | medium | high | covered | Two-build regression, host parity, ZIP inventory, package oracle; E-001/E-002. | Builder |
+| R-006 | If optional state falls into `.codex`, injects retired selectors, or partially initializes, custody or recovery fails. | high | medium | high | covered | State-transition and adversarial regressions; E-001. | Nova Operations maintainer |
+| R-007 | If source and package documentation diverge, customers receive broken install, upgrade, security, or rights journeys. | high | low after parity gate | high | covered | 131 package references, 16-doc/11-page checks, unchanged documentation diff, and current Hesperos independent REVIEW_PASS_WITH_CONDITIONS. | Builder / documentation owner |
+| R-008 | If no clean host installs, discovers, restarts, invokes, and rolls back Nova, static success may hide binding failures. | high | unknown | high | blocked | Fresh-host journey designed but not executed. | Release owner with clean-host access |
+| R-009 | If a root workflow regains automatic triggers or lacks a ceiling, capacity or publication actions can run without a bounded decision. | high | low after regression | high | covered | `test_github_workflows_are_manual_and_bounded`; E-001. | Maintainer |
+| R-010 | If local Windows evidence is overclaimed as GitHub-hosted cross-platform evidence, provider and platform defects may escape. | medium | unknown | high | blocked | All three workflows unrun; capacity `HOLD_UNKNOWN`; see `metered-verification.md`. | GitHub account owner |
+| R-011 | If a moving source tree is treated as frozen, later edits invalidate earlier observations. | high | low | high | covered | Clean build checkpoint `06b89ea3`; E-005 confirms no non-verification path differs. | Builder |
+| R-012 | If packaging evidence is generalized into proof of every specialist's efficacy, the product claim exceeds exercised behavior. | medium | medium | high | planned | Representative domain-oracle campaign remains unexecuted. | Product owner |
+| R-013 | If publication occurs under build-only authority, an unlicensed candidate becomes public. | critical | low while controls hold | high | blocked | No external action; Pages remains manual and separately unauthorized. | Release principal |
+| R-014 | If a built candidate claims sealing before independent review, an incomplete release state can masquerade as final. | high | medium before repair; low after regression | high | covered | Host build manifests require `built_awaiting_independent_review` and `independent_review_required=true`; adversarial seal mutation is rejected; E-001/E-002. | Builder / independent reviewer |
+
+`covered` is bounded local evidence for the named mechanism. It does not establish redistribution rights, fresh-host behavior, GitHub-hosted execution, publication, or user outcomes.

@@ -1,0 +1,208 @@
+{
+  "schema": "testforge-independent-review/v1",
+  "review_id": "TESTFORGE-NOVA-FREE-3.0.0-06B89EA3",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "3.0.0",
+  "reviewed_at_utc": "2026-08-30T20:45:52.9537190+00:00",
+  "reviewer_role": "Independent TestForge verification reviewer",
+  "reviewed_target": {
+    "source_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+    "candidate_state": "built_awaiting_independent_review",
+    "environment": "Local Windows repository and frozen local archives",
+    "artifacts": {
+      "customer_sha256": "e5a443591e05efe3d0df648fd7a8ececcf64f23deca79440483486b47a5cbb71",
+      "codex_sha256": "99d2541fe6102b8320a3826d88337591eb6eacc87934d70f49e2e3dd3c50fef8",
+      "claude_sha256": "d1cae2260a4013945075a26316e7cd4b120a6d34302aba3d40b8fa1821b6da9d"
+    }
+  },
+  "evidence_cutoff": {
+    "operator_utc": "2026-08-30T20:28:13.880216Z",
+    "reviewer_utc": "2026-08-30T20:45:52.9537190+00:00"
+  },
+  "operator_proposal": {
+    "status": "NOT_READY",
+    "proposed_local_qualification": "PASS_WITH_EXPLICIT_EVIDENCE_BOUNDARIES",
+    "public_redistribution": "BLOCKED"
+  },
+  "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+  "decision": {
+    "operator_status_supported": true,
+    "local_qualification_supported": true,
+    "public_redistribution": "NOT_READY",
+    "release_authority": false,
+    "summary": "The operator NOT_READY decision is defensible. Local static composition, deterministic packaging, candidate-lifecycle, state, documentation, and workflow-governance claims are supported at the stated Windows and static boundaries. Six unresolved component grants, two metadata reconciliations, fresh-host evidence, hosted-provider evidence, and publication authority remain absent. This review does not seal or authorize release."
+  },
+  "unsafe_if_false": [
+    "The reviewed source or archive bytes are not the stated target.",
+    "The builder or verifier can still represent the candidate as sealed before independent review.",
+    "Any root workflow can run automatically or without a timeout ceiling.",
+    "A rights notice is being treated as redistribution permission.",
+    "Local static evidence is being represented as fresh-host, hosted cross-platform, accessibility-conformance, or specialist-efficacy evidence."
+  ],
+  "repair_challenge": {
+    "superseded_cycle": {
+      "source_checkpoint": "6151da1862c93e2af1755a5b79aee239816c5d1f",
+      "status": "QUARANTINED_NOT_CURRENT",
+      "evidence": "verification/history/free-v3-pre-review-6151da1/README.md",
+      "result": "PASS"
+    },
+    "premature_sealing": {
+      "result": "PASS",
+      "evidence": [
+        "Current embedded build manifests use built_awaiting_independent_review and independent_review_required=true.",
+        "No embedded build manifest has sealed_candidate.",
+        "Independent adversarial rerun passed all 6 tests, including test_premature_candidate_seal_is_rejected."
+      ],
+      "receipt": "verification/testforge-free-v3/reviewer/raw/adversarial-rerun.json",
+      "interpretation": "Frozen artifact hashes identify the review target only; they are not a release seal or readiness verdict."
+    },
+    "workflow_governance": {
+      "result": "PASS",
+      "workflow_count": 3,
+      "triggers": "workflow_dispatch only",
+      "timeout_minutes": {
+        "verify-package": 15,
+        "line-ending-policy": 5,
+        "deploy-pages": 10
+      },
+      "receipt": "verification/testforge-free-v3/reviewer/raw/contract-rerun.json"
+    }
+  },
+  "source_and_artifact_binding": {
+    "result": "PASS",
+    "receipt": "verification/testforge-free-v3/reviewer/raw/artifact-binding.json",
+    "checks": 14,
+    "failed_checks": 0,
+    "non_verification_drift": 0
+  },
+  "traceability": {
+    "manifest": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "counts": {
+        "risks": 14,
+        "scenarios": 13,
+        "tests": 14,
+        "executions": 7
+      },
+      "receipt": "verification/testforge-free-v3/reviewer/raw/manifest-validation.json"
+    },
+    "risk_chain": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0,
+      "counts": {
+        "risks": 14,
+        "scenarios": 13,
+        "tests": 14,
+        "executions": 7
+      },
+      "receipt": "verification/testforge-free-v3/reviewer/raw/traceability-validation.json"
+    }
+  },
+  "metered_execution": {
+    "decision": "HOLD_UNKNOWN",
+    "verify_package_raw_runner_minutes": 45,
+    "line_ending_raw_runner_minutes": 5,
+    "pages_raw_runner_minutes": 10,
+    "complete_raw_runner_minutes": 60,
+    "hosted_runs_executed": 0,
+    "automatic_invocation_permitted": false,
+    "paid_dispatch_permitted": false,
+    "publication_authority": false,
+    "disposition": "Correctly held. No workflow may be launched merely to discover capacity."
+  },
+  "hesperos": {
+    "verdict": "REVIEW_PASS_WITH_CONDITIONS",
+    "material_findings": 0,
+    "source_checkpoint": "06b89ea3b27600452056edbdfad9ccaff3c7fcaf",
+    "receipt": "verification/hesperos-free-v3/independent-review.json",
+    "boundary": "Static documentation and retained-render continuity only; no fresh browser capture, formal assistive-technology conformance, representative-user outcome, or live-host behavior."
+  },
+  "lens_review": [
+    {
+      "lens": "target_fidelity",
+      "result": "PASS_WITH_BOUNDARY",
+      "basis": "Exact revision, archive digests, embedded source checkpoints, topology, and exclusions are bound. Fresh-host and hosted-provider behavior are explicit exclusions."
+    },
+    {
+      "lens": "catastrophic_omission",
+      "result": "PASS",
+      "basis": "Rights, publication authority, state custody, source drift, workflow quota, fresh-host binding, and premature sealing have explicit risk dispositions."
+    },
+    {
+      "lens": "oracle_strength",
+      "result": "PASS_WITH_BOUNDARY",
+      "basis": "Negative mutation tests discriminate missing roots, host drift, broken references, forbidden state fallback, false rights readiness, and premature sealing. They do not claim specialist efficacy or live-host behavior."
+    },
+    {
+      "lens": "boundary_realism",
+      "result": "PASS_WITH_BOUNDARY",
+      "basis": "Deterministic package and state tests exercise local boundaries; unexercised host, provider, accessibility, and real-world specialist layers remain conditions rather than inferred passes."
+    },
+    {
+      "lens": "evidence_custody",
+      "result": "PASS",
+      "basis": "Execution claims point to captured command results; not-run hosted and fresh-host checks are labeled not_run; source and artifact identity were independently rechecked."
+    },
+    {
+      "lens": "seal_discipline",
+      "result": "PASS",
+      "basis": "The rejected pre-repair packet is quarantined; current manifests await independent review; no current candidate seal is asserted."
+    },
+    {
+      "lens": "traceability",
+      "result": "PASS",
+      "basis": "Canonical reviewer validators report valid=true with zero errors and warnings."
+    },
+    {
+      "lens": "authority_and_safety",
+      "result": "PASS",
+      "basis": "No hosted run, install, paid action, push, tag, publication, redistribution, or announcement occurred."
+    },
+    {
+      "lens": "decision_fit",
+      "result": "PASS",
+      "basis": "NOT_READY follows from the unresolved critical rights risk and absent authority while retaining a narrowly supported local qualification."
+    }
+  ],
+  "material_findings": [],
+  "conditions": [
+    {
+      "id": "TF-COND-001",
+      "category": "redistribution-rights",
+      "required": "Obtain authorized written grants covering Nova/MIND, Nova Operations, AnswerLayer, Current Intelligence Observatory, Job Application Builder, and Interview Trainer; reconcile AnswerLayer and Current Intelligence metadata; rerun all affected gates against the resulting revision.",
+      "status_until_satisfied": "Public redistribution remains NOT_READY and BLOCKED."
+    },
+    {
+      "id": "TF-COND-002",
+      "category": "fresh-host-behavior",
+      "required": "Run separately authorized install, discovery, restart, real Nova invocation, and rollback journeys on disposable Codex and Claude-compatible hosts.",
+      "status_until_satisfied": "No installed, discoverable, invoked, or healthy host claim is supported."
+    },
+    {
+      "id": "TF-COND-003",
+      "category": "hosted-provider-and-metered-capacity",
+      "required": "Before any hosted dispatch, obtain an authoritative capacity snapshot for the exact billing scope, refresh boundary, principal-set reserve, and required authority. Preserve the complete 60 raw-runner-minute plan and publication distinction.",
+      "status_until_satisfied": "GitHub-hosted and cross-platform claims remain unproved; decision stays HOLD_UNKNOWN; zero hosted runs."
+    },
+    {
+      "id": "TF-COND-004",
+      "category": "claim-scope",
+      "required": "Preserve Hesperos conditions and run representative specialist behavior qualification before making formal accessibility, representative-user, comprehensive responsive, or all-skill efficacy claims.",
+      "status_until_satisfied": "Local qualification remains limited to the exercised static and Windows evidence boundary."
+    }
+  ],
+  "residual_risks": [
+    "Host-specific installation and invocation defects may remain.",
+    "GitHub runner, matrix, permissions, artifacts, Pages, and status integration remain unproved.",
+    "Formal accessibility, representative-user, broader browser/zoom, and specialist-efficacy claims remain unsupported."
+  ],
+  "reopen_triggers": [
+    "Any product, test, workflow, build, package, artifact, rights, documentation, or source-lock change.",
+    "Any attempt to change candidate state, public status, or publication authority.",
+    "Any new host or provider evidence used to broaden the claim."
+  ],
+  "evidence_boundary": "Independent review supports the operator NOT_READY verdict and a bounded local static qualification for the exact repaired checkpoint and frozen archive hashes. It does not establish fresh-host installation, discovery, invocation, hosted CI, formal accessibility conformance, representative-user outcomes, all-skill efficacy, redistribution authority, publication, or a sealed release."
+}

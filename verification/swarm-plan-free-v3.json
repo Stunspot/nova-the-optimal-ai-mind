@@ -1,7 +1,7 @@
 {
   "format": "cd-agent-swarm-plan/v1",
   "plan_id": "swarm-20260830-free-nova-v3",
-  "updated_at": "2026-08-30T00:00:00Z",
+  "updated_at": "2026-08-30T20:47:53.8187843Z",
   "mission": "Build the new Free Nova the Optimal AI as a complete dual-host generalist from current canonical sources.",
   "acceptance": [
     "One Nova front door carries the current ambient MIND and exactly the settled Free capability loadout.",
@@ -20,10 +20,10 @@
     "sensitive_material": "Do not copy private developer paths, credentials, customer data, or Nova estate contents into the product."
   },
   "regime": "assemble",
-  "admission_basis": "Three independent read-only audits improve source coverage, architecture correctness, and acceptance design while the root retains the only write surface.",
+  "admission_basis": "Three initial bounded audits improved source, architecture, and acceptance coverage; the root recovered one interrupted architecture return, then separate Hesperos and TestForge roles supplied disjoint authoring/operator/reviewer evidence.",
   "root": {
     "owner": "/root",
-    "work": "Mission custody, product decisions, all repository writes, build integration, test execution, and final acceptance."
+    "work": "Mission custody, all product and build writes, recovery of the interrupted architecture branch, evidence reconciliation, final validation, and handoff."
   },
   "workers": [
     {
@@ -43,7 +43,7 @@
       "evidence_required": [
         "Canonical file paths and repository state for every consequential source claim."
       ],
-      "status": "planned",
+      "status": "reconciled",
       "return_condition": "Return the matrix, unresolved custody conflicts, and any capability that cannot be safely assembled."
     },
     {
@@ -62,7 +62,7 @@
       "evidence_required": [
         "Existing source and build paths supporting the recommendation."
       ],
-      "status": "planned",
+      "status": "interrupted",
       "return_condition": "Return the target architecture, precise reuse boundaries, and blockers."
     },
     {
@@ -82,8 +82,90 @@
       "evidence_required": [
         "Exact governing files for each proposed gate."
       ],
-      "status": "planned",
+      "status": "reconciled",
       "return_condition": "Return acceptance criteria, collision cases, documentation requirements, and residual host evidence boundaries."
+    },
+    {
+      "id": "hesperos-current-review",
+      "objective": "Independently review the repaired customer documentation, package parity, render provenance, and accessibility boundaries.",
+      "deliverable": "Current Hesperos independent-review receipts bound to checkpoint 06b89ea3 and the customer ZIP.",
+      "depends_on": [
+        "acceptance-docs"
+      ],
+      "read_surfaces": [
+        "README.md",
+        "docs",
+        "dist/nova-the-optimal-ai-free-3.0.0",
+        "verification/hesperos-free-v3"
+      ],
+      "write_surfaces": [
+        "verification/hesperos-free-v3/independent-review.md",
+        "verification/hesperos-free-v3/independent-review.json"
+      ],
+      "authority": [
+        "bounded evidence writes only"
+      ],
+      "evidence_required": [
+        "Exact source/package parity, render hashes and dimensions, visual reinspection, explicit untested boundaries."
+      ],
+      "status": "reconciled",
+      "return_condition": "Return verdict, material findings, residual conditions, evidence boundary, and touched state."
+    },
+    {
+      "id": "testforge-operator",
+      "objective": "Run the repaired candidate through the TestForge operator cycle.",
+      "deliverable": "Fresh regression, package, documentation, site, risk, traceability, metered, and operator receipts.",
+      "depends_on": [
+        "source-custody",
+        "acceptance-docs"
+      ],
+      "read_surfaces": [
+        "06b89ea3 source checkpoint",
+        "dist",
+        "release",
+        "tests",
+        "verification/hesperos-free-v3"
+      ],
+      "write_surfaces": [
+        "verification/testforge-free-v3/operator"
+      ],
+      "authority": [
+        "bounded verification writes only",
+        "no hosted dispatch"
+      ],
+      "evidence_required": [
+        "Fresh captured execution results, canonical manifest and traceability validation, explicit not-run states."
+      ],
+      "status": "reconciled",
+      "return_condition": "Return operator decision, local qualification proposal, validator results, blockers, and metered disposition."
+    },
+    {
+      "id": "testforge-independent-review",
+      "objective": "Challenge the stable TestForge packet, repaired lifecycle/workflow defects, artifact binding, and overclaim boundaries.",
+      "deliverable": "Independent reviewer verdict and focused adversarial, contract, binding, and validator receipts.",
+      "depends_on": [
+        "hesperos-current-review",
+        "testforge-operator"
+      ],
+      "read_surfaces": [
+        "06b89ea3 source checkpoint",
+        "release",
+        "verification/hesperos-free-v3",
+        "verification/testforge-free-v3/operator"
+      ],
+      "write_surfaces": [
+        "verification/testforge-free-v3/reviewer"
+      ],
+      "authority": [
+        "bounded reviewer evidence writes only",
+        "no product repair",
+        "no hosted dispatch"
+      ],
+      "evidence_required": [
+        "Independent artifact hashes, focused reruns, reviewer validation, explicit public and host boundaries."
+      ],
+      "status": "reconciled",
+      "return_condition": "Return bounded verdict, material findings, conditions, reopen triggers, and touched state."
     }
   ],
   "budgets": {
@@ -93,7 +175,7 @@
   },
   "merge": {
     "owner": "/root",
-    "method": "Root observes cited files, resolves conflicts against canonical repository state, then implements through a single writer.",
+    "method": "Root independently observed canonical state, recovered the interrupted architecture branch through a single writer, froze checkpoint 06b89ea3, reconciled fresh Hesperos and TestForge returns against exact archive hashes, and retained public rights and publication as separate gates.",
     "indispensable_gates": [
       "authority",
       "single_writer",
@@ -104,6 +186,6 @@
       "independent_review"
     ]
   },
-  "status": "planned",
-  "next_move": "Validate this plan, then dispatch the three read-only audits."
+  "status": "closed",
+  "next_move": "Handoff the qualified local candidate. Before public distribution, obtain six component grants, reconcile two metadata sets, rebuild, and rerun package, Hesperos, TestForge, and separately authorized fresh-host acceptance."
 }

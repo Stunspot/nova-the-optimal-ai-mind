@@ -1,0 +1,25 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_product_contract.py",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-08-30T20:41:31.7253544+00:00",
+  "finished_at": "2026-08-30T20:41:52.1629458+00:00",
+  "duration_seconds": 20.437576,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_exact_one_plugin_and_twenty_five_roots (test_product_contract.ProductContractTests.test_exact_one_plugin_and_twenty_five_roots) ... ok\r\ntest_github_workflows_are_manual_and_bounded (test_product_contract.ProductContractTests.test_github_workflows_are_manual_and_bounded) ... ok\r\ntest_mind_is_nested_and_persona_is_locked (test_product_contract.ProductContractTests.test_mind_is_nested_and_persona_is_locked) ... ok\r\ntest_required_notice_files_are_present (test_product_contract.ProductContractTests.test_required_notice_files_are_present) ... ok\r\ntest_required_old_runtime_is_absent (test_product_contract.ProductContractTests.test_required_old_runtime_is_absent) ... ok\r\ntest_skill_frontmatter_names_match_directories (test_product_contract.ProductContractTests.test_skill_frontmatter_names_match_directories) ... ok\r\ntest_source_lock_matches_imported_bytes (test_product_contract.ProductContractTests.test_source_lock_matches_imported_bytes) ... ok\r\ntest_stateful_scripts_have_no_codex_fallback (test_product_contract.ProductContractTests.test_stateful_scripts_have_no_codex_fallback) ... ok\r\n\r\n----------------------------------------------------------------------\r\nRan 8 tests in 20.168s\r\n\r\nOK\r\n",
+  "status": "passed"
+}
