@@ -84,7 +84,7 @@ class VerifierAdversarialTests(unittest.TestCase):
         ):
             target.write_text(drifted, encoding="utf-8", newline="\n")
 
-        zip_path = package / "claude" / "zips" / f"{skill_id}-3.0.0.zip"
+        zip_path = package / "claude" / "zips" / f"{skill_id}-3.1.0.zip"
         zip_sha = deterministic_zip(folder, zip_path, prefix=skill_id)
         manifest_path = package / "RELEASE-MANIFEST.json"
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))

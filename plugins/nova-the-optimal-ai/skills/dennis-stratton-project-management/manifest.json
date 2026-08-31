@@ -1,0 +1,30 @@
+{
+  "format": "cd-project-management-runtime/v1",
+  "name": "dennis-stratton-project-management",
+  "version": "0.3.0",
+  "entrypoint": "SKILL.md",
+  "canonical_state": "cd-project-control/v2",
+  "artifacts": {
+    "canonical": [
+      "store.json",
+      "projects/<stable-project-key>/project-control.json",
+      "projects/<stable-project-key>/records/"
+    ],
+    "derived": [
+      "project status Markdown",
+      "validation diagnostics",
+      "SHA-256 fingerprint",
+      "explicit v1-to-v2 migrated derivative",
+      "side-effect-free project lookup",
+      "source-preserving external-record adoption"
+    ]
+  },
+  "runtime_dependencies": [
+    "Host model capable of reading Markdown skill resources",
+    "Python 3.10 or newer standard library for deterministic project-control commands"
+  ],
+  "network_dependencies": [],
+  "credential_dependencies": [],
+  "execution_boundary": "The deterministic tool validates structure, references, and declared state only; it does not prove delivery, authority, acceptance, health, or value.",
+  "canonical_estate": "cd-project-record-store/v1"
+}

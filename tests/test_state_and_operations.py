@@ -12,8 +12,11 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[1]
 PLUGIN = REPO / "plugins" / "nova-the-optimal-ai"
-SELECTORS = ("NOVA_DATA_ROOT", "NOVA_CONTINUITY_HOME", "DUNBAR_STORE", "CORKBOARD_HOME")
-MANAGED = SELECTORS + ("DENNIS_PROJECT_HOME", "MIND_CORE_DATABASE", "MIND_HOOK_RECEIPT_DIRECTORY")
+SELECTORS = (
+    "NOVA_DATA_ROOT", "NOVA_CONTINUITY_HOME", "DUNBAR_STORE", "CORKBOARD_HOME",
+    "DENNIS_PROJECT_HOME", "NOVA_COMMONPLACE_HOME", "NOVA_CONCORDANCE_HOME",
+)
+MANAGED = SELECTORS + ("MIND_CORE_DATABASE", "MIND_HOOK_RECEIPT_DIRECTORY")
 
 SERVICE = """from __future__ import annotations
 import json
@@ -64,6 +67,7 @@ class NovaOperationsFreeTests(unittest.TestCase):
         shutil.copy2(source / "nova_estate.py", ops / "nova_estate.py")
         shutil.copy2(source / "probe_continuity_mutation.py", ops / "probe_continuity_mutation.py")
         self.cli = ops / "nova_estate.py"
+        shutil.copytree(PLUGIN / "skills" / "commonplace", self.skills / "commonplace")
         scripts = {
             self.skills / "cognitive-continuity" / "scripts" / "continuity_store_v2.py": SERVICE,
             self.skills / "cognitive-continuity" / "scripts" / "worldline.py": SERVICE,
@@ -71,6 +75,7 @@ class NovaOperationsFreeTests(unittest.TestCase):
             self.skills / "cognitive-continuity" / "scripts" / "workspace_runtime.py": RUNTIME,
             self.skills / "dunbar" / "scripts" / "dunbar.py": SERVICE,
             self.skills / "corkboard" / "scripts" / "corkboard.py": SERVICE,
+            self.skills / "dennis-stratton-project-management" / "scripts" / "project_control.py": SERVICE,
         }
         for path, content in scripts.items():
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -113,6 +118,9 @@ class NovaOperationsFreeTests(unittest.TestCase):
             "NOVA_CONTINUITY_HOME": str((root / "memory" / "continuity-v2").resolve()),
             "DUNBAR_STORE": str((root / "memory" / "dunbar" / "people.sqlite3").resolve()),
             "CORKBOARD_HOME": str((root / "memory" / "corkboard").resolve()),
+            "DENNIS_PROJECT_HOME": str((root / "projects" / "project-records").resolve()),
+            "NOVA_COMMONPLACE_HOME": str((root / "memory" / "commonplace").resolve()),
+            "NOVA_CONCORDANCE_HOME": str((root / "derived" / "concordance").resolve()),
         }
 
     def configure(self, root: Path, *, extra_dennis: bool = False) -> dict[str, str]:
@@ -120,9 +128,10 @@ class NovaOperationsFreeTests(unittest.TestCase):
         Path(values["NOVA_CONTINUITY_HOME"]).mkdir(parents=True)
         Path(values["DUNBAR_STORE"]).parent.mkdir(parents=True)
         Path(values["CORKBOARD_HOME"]).mkdir(parents=True)
+        Path(values["DENNIS_PROJECT_HOME"]).mkdir(parents=True)
+        Path(values["NOVA_COMMONPLACE_HOME"]).mkdir(parents=True)
+        Path(values["NOVA_CONCORDANCE_HOME"]).mkdir(parents=True)
         active = dict(values)
-        if extra_dennis:
-            active["DENNIS_PROJECT_HOME"] = str((root / "projects" / "project-records").resolve())
         estate = root / "estate"
         estate.mkdir(parents=True)
         (estate / "path-selectors.json").write_text(json.dumps({
@@ -133,19 +142,30 @@ class NovaOperationsFreeTests(unittest.TestCase):
             "format": "nova-estate-manifest/v1",
             "product": "Older Nova Edition",
             "product_version": "1.0.3",
-            "services": {"project_management": "projects/project-records"},
+            "services": {
+                "continuity": "memory/continuity-v2",
+                "dunbar": "memory/dunbar/people.sqlite3",
+                "corkboard": "memory/corkboard",
+                "project_management": "projects/project-records",
+                "commonplace": "memory/commonplace",
+                "concordance": "derived/concordance",
+            },
         }) + "\n", encoding="utf-8")
         return values
 
-    def test_init_has_only_four_free_selectors_and_no_project_directory(self) -> None:
+    def test_init_has_all_current_foundation_selectors(self) -> None:
         root = self.base / "estate"
         result = self.run_cli("init", "--root", str(root), "--user", "tester")
         self.assertEqual(result.returncode, 0, result.stderr)
         registry = json.loads((root / "estate" / "path-selectors.json").read_text(encoding="utf-8"))
         self.assertEqual({key for key, value in registry["active_values"].items() if value is not None}, set(SELECTORS))
-        self.assertFalse((root / "projects").exists())
+        self.assertTrue((root / "projects" / "project-records").is_dir())
+        self.assertTrue((root / "memory" / "commonplace" / "CURRENT.json").is_file())
+        self.assertTrue((root / "derived" / "concordance").is_dir())
         manifest = json.loads((root / "estate" / "manifest.json").read_text(encoding="utf-8"))
-        self.assertNotIn("project_management", manifest["services"])
+        self.assertIn("project_management", manifest["services"])
+        self.assertIn("commonplace", manifest["services"])
+        self.assertIn("concordance", manifest["services"])
         self.assertEqual(manifest["product"], "Nova the Optimal AI Free")
 
     def test_launcher_injects_core_registry_and_strips_extra_selectors(self) -> None:
@@ -157,11 +177,11 @@ class NovaOperationsFreeTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             observed = json.loads(result.stdout)
             self.assertEqual(observed["selectors"], values)
-            self.assertFalse(observed["dennis_present"])
+            self.assertTrue(observed["dennis_present"])
             self.assertFalse(observed["mind_core_present"])
             self.assertFalse(observed["mind_hook_present"])
 
-    def test_upgrade_preserves_unknown_selector_without_claiming_service(self) -> None:
+    def test_upgrade_preserves_current_foundation_selectors(self) -> None:
         root = self.base / "estate"
         self.configure(root, extra_dennis=True)
         registry_path = root / "estate" / "path-selectors.json"
@@ -169,13 +189,11 @@ class NovaOperationsFreeTests(unittest.TestCase):
         result = self.run_cli("upgrade", "--root", str(root))
         self.assertEqual(result.returncode, 0, result.stderr)
         receipt = json.loads(result.stdout)
-        self.assertIn("DENNIS_PROJECT_HOME", receipt["preserved_extra_selectors"])
+        self.assertIn(receipt["state"], ("upgraded", "already_current"))
+        self.assertEqual(receipt["added_selectors"], [])
         registry = json.loads(registry_path.read_text(encoding="utf-8"))
         self.assertEqual(registry["active_values"]["DENNIS_PROJECT_HOME"], before)
-        manifest = json.loads((root / "estate" / "manifest.json").read_text(encoding="utf-8"))
-        self.assertEqual(manifest["product"], "Nova the Optimal AI Free")
-        self.assertNotIn("project_management", {key: value for key, value in manifest["services"].items() if key in ("continuity", "dunbar", "corkboard")})
-        self.assertEqual(manifest["services"]["project_management"], "projects/project-records")
+        self.assertEqual(set(receipt["selectors"]), set(SELECTORS))
 
     def test_failed_init_leaves_no_estate_or_stage(self) -> None:
         root = self.base / "parent" / "estate"
@@ -194,7 +212,7 @@ class NovaOperationsFreeTests(unittest.TestCase):
         self.assertTrue(doctor["continuity_read_support"]["supported"])
         self.assertFalse(doctor["continuity_mutation_support"]["supported"])
 
-    def test_status_accepts_old_registry_without_dennis(self) -> None:
+    def test_status_accepts_current_foundation_registry(self) -> None:
         root = self.base / "estate"
         self.configure(root)
         result = self.run_cli("status", "--root", str(root))

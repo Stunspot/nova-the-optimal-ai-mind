@@ -1,0 +1,275 @@
+{
+  "schema_version": "cd-project-control/v2",
+  "project": {
+    "id": "project-id",
+    "name": "Project Name",
+    "outcome": "State the observable world-change this project exists to produce.",
+    "status": "proposed",
+    "owner": "Project owner",
+    "updated_at": "2026-08-15T00:00:00Z"
+  },
+  "source_authority": [
+    {
+      "id": "SRC-001",
+      "rank": 1,
+      "kind": "owner_decision",
+      "locator": "Current explicit owner request",
+      "scope": "Project purpose, authority, and terminal state",
+      "observed_at": "2026-08-15T00:00:00Z",
+      "status": "current"
+    }
+  ],
+  "hierarchy": [
+    {
+      "id": "PHASE-1",
+      "kind": "phase",
+      "label": "Phase 1",
+      "parent_id": null,
+      "status": "planned",
+      "purpose": "Establish the first outcome-bearing phase.",
+      "exit_criteria_ids": []
+    },
+    {
+      "id": "M1",
+      "kind": "milestone",
+      "label": "Milestone 1",
+      "parent_id": "PHASE-1",
+      "status": "planned",
+      "purpose": "Deliver the first verifiable project state.",
+      "exit_criteria_ids": [
+        "EC-M1-001"
+      ]
+    }
+  ],
+  "current": {
+    "path": [
+      "PHASE-1",
+      "M1"
+    ],
+    "active_commitment_id": null,
+    "as_of": "2026-08-15T00:00:00Z",
+    "posture": "provisional",
+    "purpose_connection": "This proposed first unit would create the first verifiable state needed by the project outcome.",
+    "next_action": "Confirm the charter, completion contract, and authority before starting execution.",
+    "next_decision": null
+  },
+  "scope": {
+    "in": [
+      "The smallest complete first outcome"
+    ],
+    "out": [],
+    "non_goals": []
+  },
+  "authority": {
+    "project_owner": "Project owner",
+    "grants": [
+      {
+        "id": "AUTH-001",
+        "actor": "Project team",
+        "issued_by": "Project owner",
+        "scope": "Project-control proposal only",
+        "kind": "owner_policy",
+        "may": [
+          "Prepare and validate this project-control proposal"
+        ],
+        "may_not": [
+          "Begin project execution or take irreversible external action without separate authority"
+        ],
+        "source_id": "SRC-001",
+        "rationale": "Preserve owner control over consequential actions.",
+        "effective_at": "2026-08-15T00:00:00Z",
+        "expires_at": null,
+        "revisit_trigger": "The owner changes scope or terminal state.",
+        "status": "proposed"
+      }
+    ],
+    "reserved": [
+      "External publication, spend, and irreversible production changes"
+    ]
+  },
+  "work_packages": [
+    {
+      "id": "WP-M1-001",
+      "parent_id": "M1",
+      "outcome": "Produce the first verifiable project state.",
+      "status": "planned",
+      "dependency_ids": [],
+      "acceptance_criteria_ids": [
+        "EC-M1-001"
+      ],
+      "authority_ids": [
+        "AUTH-001"
+      ],
+      "owner": "Project team",
+      "next_action": "Execute the smallest evidence-bearing slice."
+    }
+  ],
+  "exit_criteria": [
+    {
+      "id": "EC-M1-001",
+      "owner_id": "M1",
+      "description": "The milestone outcome is demonstrated by the named evidence method.",
+      "status": "pending",
+      "evidence_ids": [],
+      "waiver_decision_id": null
+    }
+  ],
+  "completion_contract": {
+    "unit_id": "M1",
+    "definition": "M1 is done only when the required states below are satisfied or explicitly waived by an authorized decision.",
+    "states": [
+      {
+        "name": "BUILT",
+        "required": true,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "VERIFIED",
+        "required": true,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "LOCALLY_CHECKPOINTED",
+        "required": true,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      }
+    ]
+  },
+  "decisions": [],
+  "changes": [],
+  "controls": [
+    {
+      "id": "ASM-001",
+      "kind": "assumption",
+      "description": "The first commitment is small enough to complete under current capacity.",
+      "owner": "Project lead",
+      "status": "open",
+      "trigger": "The commitment exceeds the current control interval.",
+      "next_action": "Validate by decomposing and checking capacity.",
+      "due": null,
+      "objective": "Protect the first commitment from capacity failure.",
+      "cause_event_effect": "Because capacity is unverified, an oversized commitment may exceed the control interval and delay the first evidence-bearing outcome.",
+      "exposure": "Schedule, flow, and confidence exposure are unknown until capacity is checked.",
+      "treatment": "Decompose the work and compare demand with available capacity before authorization.",
+      "resource_commitment": "Project lead time for one capacity review.",
+      "residual_state": "Residual uncertainty remains until real throughput is observed.",
+      "escalation_threshold": "Escalate if the first commitment exceeds the control interval or WIP limit.",
+      "acceptance_decision_id": null
+    }
+  ],
+  "evidence": [],
+  "checkpoints": [
+    {
+      "id": "CP-001",
+      "timestamp": "2026-08-15T00:00:00Z",
+      "hierarchy_path": [
+        "PHASE-1",
+        "M1"
+      ],
+      "completed": [],
+      "remaining": [
+        "Replace template values and validate the first commitment."
+      ],
+      "blockers": [],
+      "repository_state": null,
+      "next_action": "Create the first evidence-bearing work package."
+    }
+  ],
+  "justification": {
+    "status": "proposed",
+    "reason": "State why this project is the best authorized intervention for the intended outcome.",
+    "alternatives": [
+      "Describe the credible do-nothing or lower-cost alternative."
+    ],
+    "viability": "Record the evidence and constraints that make the project viable or doubtful.",
+    "sponsor": "Project sponsor",
+    "benefit_owner": "Benefit owner",
+    "last_reviewed_at": "2026-08-15T00:00:00Z",
+    "revisit_trigger": "Material change to value, viability, cost, risk, or strategic fit."
+  },
+  "benefits": [
+    {
+      "id": "BEN-001",
+      "outcome": "Describe the measurable benefit expected after operational transition.",
+      "measure": "Name the measure and collection method.",
+      "baseline": "Record the current state or state that it is unknown.",
+      "target": "Record the intended target and horizon.",
+      "owner": "Benefit owner",
+      "status": "proposed",
+      "evidence_ids": [],
+      "review_at": "After operational transition at the agreed benefit horizon."
+    }
+  ],
+  "governance": {
+    "sponsor": "Project sponsor",
+    "accountable_owner": "Project owner",
+    "cadence": "Review at each control interval and exception trigger.",
+    "tolerances": [
+      "Escalate forecast, benefit, risk, quality, or capacity exceptions beyond agreed limits."
+    ],
+    "gates": [
+      {
+        "id": "GATE-001",
+        "decision": "Authorize the first execution baseline.",
+        "authority": "Project sponsor or delegated decision owner",
+        "due": "Before execution begins",
+        "status": "planned",
+        "evidence_ids": []
+      }
+    ],
+    "decision_latency_target": "Record the maximum decision age before escalation."
+  },
+  "forecast": {
+    "as_of": "2026-08-15T00:00:00Z",
+    "unit": "days from authorization",
+    "lower": 1,
+    "upper": 5,
+    "confidence": "low",
+    "basis": "Provisional range pending decomposition, dependency, and capacity evidence.",
+    "baseline": "No approved baseline yet.",
+    "variance": "Not applicable until a baseline is approved.",
+    "next_update": "After the first work-package and capacity review."
+  },
+  "capacity": {
+    "constraints": [
+      "Confirm actual people, time, specialist, environment, and decision capacity."
+    ],
+    "bottleneck": "Unknown until flow and dependency review.",
+    "wip_limit": 1,
+    "active_wip": 0,
+    "queue": [
+      "WP-M1-001"
+    ],
+    "next_action": "Validate capacity and the bottleneck before authorizing concurrent work."
+  },
+  "stakeholders": [
+    {
+      "id": "STK-001",
+      "role": "Project sponsor",
+      "position": "unknown",
+      "readiness": "unknown",
+      "incentive": "Clarify the outcome, risk, and decision incentive.",
+      "evidence": "No direct stakeholder evidence recorded yet.",
+      "owner": "Project owner",
+      "next_move": "Confirm sponsorship, decision rights, and readiness."
+    }
+  ],
+  "commercial_alignment": [],
+  "transition": {
+    "operational_owner": "Operational owner to be confirmed",
+    "acceptance_state": "not_ready",
+    "support_state": "not_ready",
+    "benefit_review_owner": "Benefit owner",
+    "benefit_review_at": "At the agreed post-transition benefit horizon.",
+    "residuals": [
+      "Confirm operational ownership, support readiness, and benefit-review timing."
+    ],
+    "evidence_ids": []
+  }
+}

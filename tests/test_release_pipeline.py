@@ -56,7 +56,7 @@ class ReleasePipelineTests(unittest.TestCase):
             self.assertEqual(verify.returncode, 0, verify.stdout + verify.stderr)
             verification = json.loads(verify.stdout)
             self.assertEqual(verification["verdict"], "PASS")
-            self.assertEqual(verification["observed"]["standalone_rights_envelopes"], 25)
+            self.assertEqual(verification["observed"]["standalone_rights_envelopes"], 27)
 
             second = subprocess.run(command, capture_output=True, text=True, encoding="utf-8", check=False)
             self.assertEqual(second.returncode, 0, second.stderr)
@@ -67,7 +67,7 @@ class ReleasePipelineTests(unittest.TestCase):
             package_root = Path(second_result["package_root"])
             with zipfile.ZipFile(second_result["customer_zip"]) as archive:
                 names = archive.namelist()
-            prefix = "nova-the-optimal-ai-free-3.0.0/"
+            prefix = "nova-the-optimal-ai-free-3.1.0/"
             self.assertTrue(all(name.startswith(prefix) for name in names))
             self.assertIn(prefix + "codex/.agents/plugins/marketplace.json", names)
             self.assertIn(prefix + "claude/nova-the-optimal-ai/.claude-plugin/plugin.json", names)

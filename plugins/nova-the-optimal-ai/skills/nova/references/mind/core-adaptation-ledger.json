@@ -1,13 +1,13 @@
 {
   "schema": "nova-emergent-mind-core-adaptation-ledger/v1",
-  "component_version": "0.2.0",
+  "component_version": "0.3.0",
   "authority": "DEC-MIND-CONSTRUCT",
   "persona_invariant": "The canonical Nova persona prompt remains byte-inviolate and governing; Core adaptations compose beneath it.",
   "common_transformation": {
     "purpose": "Preserve substantive Faculty craft as same-Nova prompting programs while removing standalone activation, routing, handoff, persona, artifact, and runtime shells that conflict with ambient MIND.",
     "non_claim": "Adaptation and source review do not establish behavioral benefit, spontaneous Faculty use, host loading, or product readiness."
   },
-  "core_count": 16,
+  "core_count": 17,
   "cores": [
     {
       "id": "executive-function",
@@ -306,6 +306,68 @@
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
         "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+      }
+    },
+    {
+      "id": "strategic-intelligence",
+      "upstream": {
+        "component_version": "0.1.0",
+        "coordinate": "nova-strategic-intelligence-faculty@7b812d5c9fab46a716fd44e35d44eb7a421b7b5b/skills/strategic-intelligence/SKILL.md",
+        "sha256": "51BE27BBEAE1067C6DDB4BA00B6674EBA915ED5B96A91B89AF20DA6A2D2468D1"
+      },
+      "core": {
+        "component_version": "0.3.0",
+        "path": "source/faculty-cores/strategic-intelligence.core.md",
+        "sha256": "944285477CB98298B2C32100C8D387023417B9125151CB7F22E6613405C62237",
+        "bytes": 7010
+      },
+      "intentional_adaptations": [
+        "Integrated the Faculty as a same-Nova ambient Core rather than a standalone specialist.",
+        "Generalized strategic craft beyond warfare while preserving its useful planning mechanics.",
+        "Kept the three full knowledge canons upstream and retrieval-bound instead of injecting or copying them into MIND.",
+        "Preserved Wiki Brain 2 custody by creating no index, graph, corpus copy, embedding store, fact store, or promotion path."
+      ],
+      "retained_doctrine": [
+        "Activation depends on reciprocal actor response, commitment-shaped option sets, or consequential regime change rather than the word strategy.",
+        "Plural actors, constraints, capacities, exposures, and human agency remain evidence-bounded.",
+        "Ends, ways, means, risk, performance, and effectiveness remain distinct.",
+        "Mechanisms and minimal structural levers take priority over theatrical campaigns.",
+        "Assumptions retain warrants, rivals, disconfirmers, signposts, hedges, and calibrated probability discipline.",
+        "Policies preserve option value, deliberate commitment sequence, reversibility, learning, legitimacy, and humane restraint.",
+        "Termination, consolidation, and viability after apparent success are designed from the start."
+      ],
+      "removed_standalone_shell": true,
+      "removed_dependencies": [
+        "Standalone activation, routing, deferral, and reporting shell.",
+        "Ares Magnus identity, military command voice, adversarial default, and combat taxonomy.",
+        "Full-corpus prompt injection, retrieval service, index, graph, embedding store, fact store, or duplicate canonical store.",
+        "Deterministic opponent rationality, macroeconomic prophecy, biochemical diagnosis, and authority claims.",
+        "Military report artifacts and domain-specific command choreography."
+      ],
+      "author_review": {
+        "state": "author_reviewed",
+        "actor": "Nova / upstream Faculty source review"
+      },
+      "independent_prompt_review": {
+        "state": "bounded_pass_static_prompt_review",
+        "evidence": "evidence/strategic-intelligence-prompt-review.md",
+        "reviewer": "independent core_review agent",
+        "observed_at": "2026-08-30T23:21:57.6507889Z",
+        "boundary": "Independent static review of the exact Strategic Intelligence Core and Faculty Field after four bounded repairs."
+      },
+      "behavioral_qualification": {
+        "state": "dry_run_observed",
+        "fixture": "tests/strategic-intelligence-cases.json",
+        "fixture_sha256": "75245B42A223F8DDF75AE1F14A2B70B58157B68607769F7734DC33484EB4EF21",
+        "input": "evidence/strategic-intelligence-behavioral/prompts-only.json",
+        "input_sha256": "DAD7C8B0995A5B410A74A54E605B84C33437ECAA8A4471AAA7120AD08B6FC215",
+        "raw_executions": "evidence/strategic-intelligence-behavioral/raw-executions.json",
+        "raw_executions_sha256": "267BC7977E165C8860E1E0113DE0A90F5FC7F521F7FC40E30A9EF5671DE4F017",
+        "judgment": "evidence/strategic-intelligence-behavioral/independent-judgment.json",
+        "judgment_sha256": "363CD2C1A74308FAD802D5DB50A2CC6157FFD79C134E81F36455F2CB66FBA1E8",
+        "review": "evidence/strategic-intelligence-behavioral/behavioral-review.md",
+        "review_sha256": "5FCECCC21F34145D1ACA0854843F5699D316FA0363161DE3D0908E2459BD84F1",
+        "evidence_boundary": "AUTHORING_HARNESS_MODEL_EXECUTION_JUDGED; NOT FRESH_HOST_OR_SPONTANEOUS_LOADING"
       }
     },
     {

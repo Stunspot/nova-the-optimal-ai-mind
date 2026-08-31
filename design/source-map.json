@@ -1,14 +1,14 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.0.0",
+  "product_version": "3.1.0",
   "records": [
     {
       "id": "nova",
       "source_repository": "",
       "source_commit": "",
-      "source_path": "working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
-      "source_version": "MIND 0.2.0",
+      "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/build/codex/nova-emergent/skills/nova/references/mind",
+      "source_version": "MIND 0.3.0",
       "selection": [
         "complete component tree"
       ],
@@ -61,7 +61,7 @@
     {
       "id": "promptcraft",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
+      "source_commit": "f4387548e08130fcf094d52226651fb39753dc9c",
       "source_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "source_version": "",
       "selection": [
@@ -286,10 +286,10 @@
     },
     {
       "id": "agent-striving",
-      "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "f130b24ef5d511daf26fd1c31ccef47118a59a12",
-      "source_path": "plugins/augment-of-mind/skills/agent-striving",
-      "source_version": "2.2.2 lineage",
+      "source_repository": "https://github.com/Stunspot/augment-of-mind",
+      "source_commit": "8b721c06cf0da40a948a26b9131999f5c6814b1e",
+      "source_path": "plugins/augment-of-mind/skills/agent-striving with maintained SKILL.md and agents/openai.yaml",
+      "source_version": "2.2.2",
       "selection": [
         "complete skill tree"
       ],
@@ -327,8 +327,8 @@
       "id": "nova-operations",
       "source_repository": "",
       "source_commit": "",
-      "source_path": "working/product-integration/source/base-skills/nova-operations",
-      "source_version": "3.0.0 Free binding from 1.0.3 base",
+      "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
+      "source_version": "1.0.4 with Free 3.1.0 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -336,9 +336,33 @@
         "SKILL.md",
         "agents/openai.yaml",
         "references/estate-contract.md",
-        "scripts/nova_estate.py"
+        "scripts/nova_estate.py product identity strings"
       ],
-      "source_state": "local_construction_source_imported_for_git_custody"
+      "source_state": "accepted_emergent_1.0.4_source_with_free_edition_overlay"
+    },
+    {
+      "id": "commonplace",
+      "source_repository": "https://github.com/Stunspot/nova-commonplace",
+      "source_commit": "f5651627252c23cf55913999485524ac02836dbb",
+      "source_path": "selected runtime: SKILL.md, agents/, references/, scripts/",
+      "source_version": "0.2.0",
+      "selection": [
+        "complete accepted Nova Emergent 1.0.4 runtime skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "git_commit"
+    },
+    {
+      "id": "dennis-stratton-project-management",
+      "source_repository": "",
+      "source_commit": "",
+      "source_path": "1 Member Tier/Dennis Stratton Project Management v0.3.0.zip#dennis-stratton-project-management-v0.3.0/codex/dennis-stratton-project-management",
+      "source_version": "0.3.0",
+      "selection": [
+        "complete accepted Nova Emergent 1.0.4 skill tree"
+      ],
+      "edition_overlays": [],
+      "source_state": "catalog_archive_sha256_BEB4E6E89578EC98D36F18FB0DF9C288E5C996655580833483349D914A868108"
     },
     {
       "id": "interview-trainer",

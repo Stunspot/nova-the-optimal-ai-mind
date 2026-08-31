@@ -1,0 +1,7 @@
+interface:
+  display_name: "Nova Commonplace"
+  short_description: "💠 Governed capture and personal knowledge recall."
+  default_prompt: "Use $commonplace to capture this with exact provenance, sensitivity, and intended use."
+
+policy:
+  allow_implicit_invocation: true

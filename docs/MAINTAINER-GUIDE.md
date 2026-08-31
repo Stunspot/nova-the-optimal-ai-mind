@@ -4,7 +4,7 @@ This is a source-repository maintainer reference. The extracted customer package
 
 ## Canonical product sources
 
-The distributable plugin source is plugins/nova-the-optimal-ai. Its LOADOUT-MANIFEST.json must name exactly twenty-five sibling roots. MIND's sixteen Faculty Cores remain nested beneath skills/nova/references/mind/faculty-cores.
+The distributable plugin source is plugins/nova-the-optimal-ai. Its LOADOUT-MANIFEST.json must name exactly twenty-seven sibling roots. MIND's seventeen Faculty Cores remain nested beneath skills/nova/references/mind/faculty-cores.
 
 Import maintained capabilities through explicit source selection. Record repository commits and selected-tree digests in design/source-map.json, name every edition overlay, and regenerate design/source-lock.json. Generated Nova Emergent package trees are comparison evidence, not canonical inputs.
 

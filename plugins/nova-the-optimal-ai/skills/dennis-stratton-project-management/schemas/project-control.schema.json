@@ -1,0 +1,1391 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cd-project-control-v2.schema.json",
+  "title": "Collaborative Dynamics Project Control Record v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "project",
+    "source_authority",
+    "hierarchy",
+    "current",
+    "scope",
+    "authority",
+    "justification",
+    "benefits",
+    "governance",
+    "forecast",
+    "capacity",
+    "stakeholders",
+    "commercial_alignment",
+    "work_packages",
+    "exit_criteria",
+    "completion_contract",
+    "decisions",
+    "changes",
+    "controls",
+    "evidence",
+    "transition",
+    "checkpoints"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "cd-project-control/v2"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "outcome",
+        "status",
+        "owner",
+        "updated_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "outcome": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "active",
+            "paused",
+            "recovering",
+            "closing",
+            "closed",
+            "cancelled"
+          ]
+        },
+        "owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "source_authority": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "hierarchy": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/hierarchy_node"
+      }
+    },
+    "current": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "active_commitment_id",
+        "as_of",
+        "posture",
+        "purpose_connection",
+        "next_action",
+        "next_decision"
+      ],
+      "properties": {
+        "path": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "active_commitment_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "as_of": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "posture": {
+          "enum": [
+            "provisional",
+            "authorized",
+            "executing",
+            "blocked",
+            "recovering",
+            "review",
+            "complete"
+          ]
+        },
+        "purpose_connection": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "next_action": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "next_decision": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "in",
+        "out",
+        "non_goals"
+      ],
+      "properties": {
+        "in": {
+          "$ref": "#/$defs/string_array"
+        },
+        "out": {
+          "$ref": "#/$defs/string_array"
+        },
+        "non_goals": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_owner",
+        "grants",
+        "reserved"
+      ],
+      "properties": {
+        "project_owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "grants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/grant"
+          }
+        },
+        "reserved": {
+          "$ref": "#/$defs/string_array"
+        }
+      }
+    },
+    "work_packages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/work_package"
+      }
+    },
+    "exit_criteria": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/criterion"
+      }
+    },
+    "completion_contract": {
+      "$ref": "#/$defs/completion_contract"
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decision"
+      }
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/control"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/evidence"
+      }
+    },
+    "checkpoints": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/checkpoint"
+      }
+    },
+    "transition": {
+      "$ref": "#/$defs/transition"
+    },
+    "commercial_alignment": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/commercial_commitment"
+      }
+    },
+    "governance": {
+      "$ref": "#/$defs/governance"
+    },
+    "forecast": {
+      "$ref": "#/$defs/forecast"
+    },
+    "benefits": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/benefit"
+      }
+    },
+    "justification": {
+      "$ref": "#/$defs/justification"
+    },
+    "stakeholders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/stakeholder"
+      }
+    },
+    "capacity": {
+      "$ref": "#/$defs/capacity"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]{1,127}$"
+    },
+    "nonempty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "string_array": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/nonempty"
+      }
+    },
+    "id_array": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "rank",
+        "kind",
+        "locator",
+        "scope",
+        "observed_at",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "rank": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "kind": {
+          "enum": [
+            "owner_decision",
+            "accepted_decision",
+            "charter",
+            "roadmap",
+            "repository",
+            "runtime",
+            "verification",
+            "task_history",
+            "derived_summary",
+            "external_requirement",
+            "other"
+          ]
+        },
+        "locator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "observed_at": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "current",
+            "stale",
+            "superseded",
+            "unavailable",
+            "disputed"
+          ]
+        }
+      }
+    },
+    "hierarchy_node": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "label",
+        "parent_id",
+        "status",
+        "purpose",
+        "exit_criteria_ids"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "phase",
+            "stage",
+            "milestone",
+            "workstream"
+          ]
+        },
+        "label": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "active",
+            "blocked",
+            "complete",
+            "cancelled",
+            "superseded"
+          ]
+        },
+        "purpose": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exit_criteria_ids": {
+          "$ref": "#/$defs/id_array"
+        }
+      }
+    },
+    "grant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "actor",
+        "issued_by",
+        "scope",
+        "kind",
+        "may",
+        "may_not",
+        "source_id",
+        "rationale",
+        "effective_at",
+        "expires_at",
+        "revisit_trigger",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "actor": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "issued_by": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "scope": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "kind": {
+          "enum": [
+            "owner_policy",
+            "external_requirement",
+            "repository_rule",
+            "technical_limit",
+            "agent_safeguard"
+          ]
+        },
+        "may": {
+          "$ref": "#/$defs/string_array"
+        },
+        "may_not": {
+          "$ref": "#/$defs/string_array"
+        },
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "effective_at": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "revisit_trigger": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "active",
+            "expired",
+            "superseded",
+            "proposed"
+          ]
+        }
+      }
+    },
+    "work_package": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "parent_id",
+        "outcome",
+        "status",
+        "dependency_ids",
+        "acceptance_criteria_ids",
+        "authority_ids",
+        "owner",
+        "next_action"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "parent_id": {
+          "$ref": "#/$defs/id"
+        },
+        "outcome": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "ready",
+            "active",
+            "blocked",
+            "complete",
+            "cancelled"
+          ]
+        },
+        "dependency_ids": {
+          "$ref": "#/$defs/id_array"
+        },
+        "acceptance_criteria_ids": {
+          "$ref": "#/$defs/id_array"
+        },
+        "authority_ids": {
+          "$ref": "#/$defs/id_array"
+        },
+        "owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "next_action": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "criterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "owner_id",
+        "description",
+        "status",
+        "evidence_ids",
+        "waiver_decision_id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "owner_id": {
+          "$ref": "#/$defs/id"
+        },
+        "description": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "pending",
+            "observed",
+            "verified",
+            "accepted",
+            "waived",
+            "failed"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/id_array"
+        },
+        "waiver_decision_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "completion_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "unit_id",
+        "definition",
+        "states"
+      ],
+      "properties": {
+        "unit_id": {
+          "$ref": "#/$defs/id"
+        },
+        "definition": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "states": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "required",
+              "status",
+              "evidence_ids",
+              "waiver_decision_id"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[A-Z][A-Z0-9_]{1,63}$"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "status": {
+                "enum": [
+                  "pending",
+                  "satisfied",
+                  "waived",
+                  "unknown",
+                  "not_applicable"
+                ]
+              },
+              "evidence_ids": {
+                "$ref": "#/$defs/id_array"
+              },
+              "waiver_decision_id": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/id"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "decision",
+        "options",
+        "rationale",
+        "authority",
+        "source_id",
+        "date",
+        "supersedes_ids"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "accepted",
+            "rejected",
+            "superseded"
+          ]
+        },
+        "decision": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "options": {
+          "$ref": "#/$defs/string_array"
+        },
+        "rationale": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "authority": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "source_id": {
+          "$ref": "#/$defs/id"
+        },
+        "date": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "supersedes_ids": {
+          "$ref": "#/$defs/id_array"
+        }
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "status",
+        "request",
+        "impact",
+        "authority",
+        "decision_id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "approved",
+            "rejected",
+            "implemented",
+            "withdrawn"
+          ]
+        },
+        "request": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "impact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "scope",
+            "schedule",
+            "cost",
+            "risk",
+            "quality",
+            "benefits"
+          ],
+          "properties": {
+            "scope": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "schedule": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "cost": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "risk": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "quality": {
+              "$ref": "#/$defs/nonempty"
+            },
+            "benefits": {
+              "$ref": "#/$defs/nonempty"
+            }
+          }
+        },
+        "authority": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "decision_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "control": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "description",
+        "objective",
+        "cause_event_effect",
+        "exposure",
+        "treatment",
+        "resource_commitment",
+        "residual_state",
+        "owner",
+        "status",
+        "trigger",
+        "escalation_threshold",
+        "next_action",
+        "due",
+        "acceptance_decision_id"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "risk",
+            "assumption",
+            "issue",
+            "dependency"
+          ]
+        },
+        "description": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "open",
+            "watch",
+            "blocked",
+            "mitigated",
+            "resolved",
+            "accepted",
+            "invalidated"
+          ]
+        },
+        "trigger": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "next_action": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "due": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "objective": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cause_event_effect": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "exposure": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "treatment": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "resource_commitment": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "residual_state": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "escalation_threshold": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "acceptance_decision_id": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "claim",
+        "level",
+        "locator",
+        "observed_at",
+        "method",
+        "limits",
+        "actor"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "claim": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "level": {
+          "enum": [
+            "proposed",
+            "reported",
+            "observed",
+            "verified",
+            "accepted",
+            "rejected"
+          ]
+        },
+        "locator": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "observed_at": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "method": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "limits": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "actor": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "timestamp",
+        "hierarchy_path",
+        "completed",
+        "remaining",
+        "blockers",
+        "repository_state",
+        "next_action"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "timestamp": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "hierarchy_path": {
+          "$ref": "#/$defs/id_array"
+        },
+        "completed": {
+          "$ref": "#/$defs/string_array"
+        },
+        "remaining": {
+          "$ref": "#/$defs/string_array"
+        },
+        "blockers": {
+          "$ref": "#/$defs/string_array"
+        },
+        "repository_state": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "branch",
+                "head",
+                "worktree",
+                "remote_state"
+              ],
+              "properties": {
+                "branch": {
+                  "$ref": "#/$defs/nonempty"
+                },
+                "head": {
+                  "$ref": "#/$defs/nonempty"
+                },
+                "worktree": {
+                  "enum": [
+                    "clean",
+                    "dirty",
+                    "unknown"
+                  ]
+                },
+                "remote_state": {
+                  "enum": [
+                    "synchronized",
+                    "ahead",
+                    "behind",
+                    "diverged",
+                    "unconfigured",
+                    "unknown"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "next_action": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "benefit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "outcome",
+        "measure",
+        "baseline",
+        "target",
+        "owner",
+        "status",
+        "evidence_ids",
+        "review_at"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "outcome": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "measure": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "baseline": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "target": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "tracking",
+            "realized",
+            "at_risk",
+            "not_realized",
+            "retired"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/id_array"
+        },
+        "review_at": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "justification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason",
+        "alternatives",
+        "viability",
+        "sponsor",
+        "benefit_owner",
+        "last_reviewed_at",
+        "revisit_trigger"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "proposed",
+            "authorized",
+            "challenged",
+            "withdrawn",
+            "invalidated"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "alternatives": {
+          "$ref": "#/$defs/string_array"
+        },
+        "viability": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "sponsor": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "benefit_owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "last_reviewed_at": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "revisit_trigger": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "commercial_commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "party",
+        "commitment",
+        "owner",
+        "status",
+        "due",
+        "escalation"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "party": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "commitment": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "active",
+            "at_risk",
+            "fulfilled",
+            "breached",
+            "closed"
+          ]
+        },
+        "due": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "escalation": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "capacity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraints",
+        "bottleneck",
+        "wip_limit",
+        "active_wip",
+        "queue",
+        "next_action"
+      ],
+      "properties": {
+        "constraints": {
+          "$ref": "#/$defs/string_array"
+        },
+        "bottleneck": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "wip_limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "active_wip": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "queue": {
+          "$ref": "#/$defs/string_array"
+        },
+        "next_action": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "stakeholder": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "role",
+        "position",
+        "readiness",
+        "incentive",
+        "evidence",
+        "owner",
+        "next_move"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "role": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "position": {
+          "enum": [
+            "supportive",
+            "neutral",
+            "concerned",
+            "resistant",
+            "unknown"
+          ]
+        },
+        "readiness": {
+          "enum": [
+            "ready",
+            "preparing",
+            "blocked",
+            "not_ready",
+            "unknown"
+          ]
+        },
+        "incentive": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "evidence": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "next_move": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operational_owner",
+        "acceptance_state",
+        "support_state",
+        "benefit_review_owner",
+        "benefit_review_at",
+        "residuals",
+        "evidence_ids"
+      ],
+      "properties": {
+        "operational_owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "acceptance_state": {
+          "enum": [
+            "not_ready",
+            "ready",
+            "accepted",
+            "rejected",
+            "not_applicable"
+          ]
+        },
+        "support_state": {
+          "enum": [
+            "not_ready",
+            "ready",
+            "accepted",
+            "not_applicable"
+          ]
+        },
+        "benefit_review_owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "benefit_review_at": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "residuals": {
+          "$ref": "#/$defs/string_array"
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/id_array"
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "decision",
+        "authority",
+        "due",
+        "status",
+        "evidence_ids"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "decision": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "authority": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "due": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "status": {
+          "enum": [
+            "planned",
+            "ready",
+            "blocked",
+            "approved",
+            "rejected",
+            "deferred"
+          ]
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/id_array"
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sponsor",
+        "accountable_owner",
+        "cadence",
+        "tolerances",
+        "gates",
+        "decision_latency_target"
+      ],
+      "properties": {
+        "sponsor": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "accountable_owner": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "cadence": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "tolerances": {
+          "$ref": "#/$defs/string_array"
+        },
+        "gates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/gate"
+          }
+        },
+        "decision_latency_target": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    },
+    "forecast": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "as_of",
+        "unit",
+        "lower",
+        "upper",
+        "confidence",
+        "basis",
+        "baseline",
+        "variance",
+        "next_update"
+      ],
+      "properties": {
+        "as_of": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "unit": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "lower": {
+          "type": "number"
+        },
+        "upper": {
+          "type": "number"
+        },
+        "confidence": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "basis": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "baseline": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "variance": {
+          "$ref": "#/$defs/nonempty"
+        },
+        "next_update": {
+          "$ref": "#/$defs/nonempty"
+        }
+      }
+    }
+  }
+}

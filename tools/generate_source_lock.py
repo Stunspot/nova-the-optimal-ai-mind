@@ -23,7 +23,7 @@ def main() -> int:
     roots = {path.name for path in (plugin / "skills").iterdir() if path.is_dir()}
     records = source_map.get("records", [])
     mapped = {record["id"] for record in records}
-    if roots != mapped or len(roots) != 25:
+    if roots != mapped or len(roots) != 27:
         raise RuntimeError(f"Source-map mismatch: roots={len(roots)} mapped={len(mapped)}")
     locked = []
     for record in sorted(records, key=lambda value: value["id"]):

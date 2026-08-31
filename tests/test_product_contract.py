@@ -11,7 +11,8 @@ sys.path.insert(0, str(REPO / "tools"))
 from release_lib import sha256_file, tree_digest
 
 EXPECTED = {
-    "nova", "nova-operations", "cognitive-continuity", "agent-striving",
+    "nova", "nova-operations", "commonplace", "cognitive-continuity",
+    "dennis-stratton-project-management", "agent-striving",
     "agent-swarm-orchestration", "agentic-coding", "answerlayer", "beryl-it-tech",
     "corkboard", "current-intelligence-observatory", "dunbar", "interview-trainer",
     "it-work-reviewer", "job-application-builder", "lex-foster-language-companion",
@@ -32,13 +33,13 @@ class ProductContractTests(unittest.TestCase):
         cls.loadout = json.loads((cls.plugin / "LOADOUT-MANIFEST.json").read_text(encoding="utf-8"))
         cls.lock = json.loads((REPO / "design" / "source-lock.json").read_text(encoding="utf-8"))
 
-    def test_exact_one_plugin_and_twenty_five_roots(self) -> None:
+    def test_exact_one_plugin_and_twenty_seven_roots(self) -> None:
         marketplace = json.loads((REPO / ".agents" / "plugins" / "marketplace.json").read_text(encoding="utf-8"))
         self.assertEqual([item["name"] for item in marketplace["plugins"]], ["nova-the-optimal-ai"])
         roots = {path.name for path in (self.plugin / "skills").iterdir() if path.is_dir()}
         self.assertEqual(roots, EXPECTED)
         self.assertEqual(set(self.loadout["roots"]), EXPECTED)
-        self.assertEqual(self.loadout["topology"]["visible_skill_roots"], 25)
+        self.assertEqual(self.loadout["topology"]["visible_skill_roots"], 27)
 
     def test_skill_frontmatter_names_match_directories(self) -> None:
         for skill_id in sorted(EXPECTED):
@@ -49,13 +50,13 @@ class ProductContractTests(unittest.TestCase):
 
     def test_mind_is_nested_and_persona_is_locked(self) -> None:
         cores = list((self.plugin / "skills" / "nova" / "references" / "mind" / "faculty-cores").glob("*.core.md"))
-        self.assertEqual(len(cores), 16)
+        self.assertEqual(len(cores), 17)
         self.assertFalse((REPO / "plugins" / "augment-of-mind").exists())
         persona = self.plugin / "skills" / "nova" / "references" / "nova-persona.md"
         self.assertEqual(sha256_file(persona), self.lock["persona_sha256"])
 
     def test_source_lock_matches_imported_bytes(self) -> None:
-        self.assertEqual(len(self.lock["records"]), 25)
+        self.assertEqual(len(self.lock["records"]), 27)
         for record in self.lock["records"]:
             imported = REPO / record["imported_path"]
             self.assertEqual(tree_digest(imported), record["imported_tree"], record["id"])
@@ -84,8 +85,8 @@ class ProductContractTests(unittest.TestCase):
         answer = json.loads((self.plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
         current = json.loads((self.plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
         for manifest in (answer, current):
-            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.0.0")
-            self.assertIn("Nova Free 3.0.0 public split license", manifest["license"])
+            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.1.0")
+            self.assertIn("Nova Free 3.1.0 public split license", manifest["license"])
         source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
         records = {record["id"]: record for record in source_map["records"]}
         self.assertEqual(
@@ -110,8 +111,10 @@ class ProductContractTests(unittest.TestCase):
         operations = (self.plugin / "skills" / "nova-operations" / "scripts" / "nova_estate.py").read_text(encoding="utf-8")
         self.assertNotIn("CODEX_HOME", cork)
         self.assertNotIn("CODEX_HOME", dunbar)
-        self.assertNotIn('"project-management"', operations)
-        self.assertNotIn('    "DENNIS_PROJECT_HOME",', operations)
+        self.assertIn('"project-management"', operations)
+        self.assertIn('    "DENNIS_PROJECT_HOME",', operations)
+        self.assertIn('    "NOVA_COMMONPLACE_HOME",', operations)
+        self.assertIn('    "NOVA_CONCORDANCE_HOME",', operations)
 
     def test_github_workflows_are_manual_and_bounded(self) -> None:
         workflows = sorted((REPO / ".github" / "workflows").glob("*.yml"))

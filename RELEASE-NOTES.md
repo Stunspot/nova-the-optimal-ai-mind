@@ -1,5 +1,14 @@
 # Nova the Optimal AI Free release notes
 
+## 3.1.0 — current foundation alignment
+
+Free Nova now shares Nova Emergent 1.0.4's current foundational layer while retaining the Free edition's smaller practical capability ecology. MIND advances to 0.3.0 and adds Strategic Intelligence as its seventeenth nested Faculty Core.
+
+Commonplace 0.2.0 and Dennis Stratton Project Management 0.3.0 become native Free foundations. Nova Operations rebases onto 1.0.4 so optional estates can govern Continuity, projects, people, reminders, deliberate notes, and rebuildable Concordance through one registry-backed launcher. Ordinary work still requires no estate, local model, embeddings, vector database, hook, or daemon.
+
+The edition exposes twenty-seven native skill roots. Every committed canonical source pin remains current. Agent Striving receives the maintained 2.2.2 discovery metadata. Agent Swarm Orchestration remains at released 0.2.3; uncommitted vNext work in its source repository is deliberately not represented as a released version.
+
+This source and any locally built archives remain a qualification candidate until the current bytes complete their own verification and any separately authorized publication occurs. The accepted 3.0.0 release and its receipts remain immutable historical evidence.
 ## 3.0.0 — local release candidate
 
 Free Nova has been rebuilt around the current Nova and MIND architecture.

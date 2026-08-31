@@ -1,17 +1,17 @@
 {
   "schema": "nova-free-loadout/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.0.0",
+  "product_version": "3.1.0",
   "plugin_id": "nova-the-optimal-ai",
   "license": "LICENSE.md",
   "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
   "topology": {
-    "visible_skill_roots": 25,
+    "visible_skill_roots": 27,
     "front_doors": [
       "nova"
     ],
-    "mind_version": "0.2.0",
-    "faculty_core_count": 16,
+    "mind_version": "0.3.0",
+    "faculty_core_count": 17,
     "faculty_cores_are_nested_references": true,
     "required_external_runtime": false
   },
@@ -25,10 +25,12 @@
     },
     {
       "id": "continuity-and-agency",
-      "title": "Continuity and agency",
+      "title": "Continuity, projects, and personal knowledge",
       "skills": [
         "nova-operations",
+        "commonplace",
         "cognitive-continuity",
+        "dennis-stratton-project-management",
         "agent-striving",
         "agent-swarm-orchestration",
         "corkboard",
@@ -87,7 +89,9 @@
   "roots": [
     "nova",
     "nova-operations",
+    "commonplace",
     "cognitive-continuity",
+    "dennis-stratton-project-management",
     "agent-striving",
     "agent-swarm-orchestration",
     "corkboard",
@@ -148,10 +152,6 @@
     {
       "id": "impactful-tom",
       "reason": "excluded from Nova distributions"
-    },
-    {
-      "id": "dennis-stratton-project-management",
-      "reason": "larger-edition project-governance foundation, not required by the Free estate"
     }
   ],
   "evidence_boundary": "This manifest establishes intended composition. Installation, host discovery, invocation, service configuration, live behavior, publication, and outcomes require separate observations."

@@ -1,10 +1,10 @@
-# Nova the Optimal AI — Free 3.0.0
+# Nova the Optimal AI — Free 3.1.0
 
 ![Illustration of Nova at a neon command desk surrounded by systems and skill panels.](docs/assets/nova-mind-readme-hero.png)
 
 Bring me the repository that is on fire, the research question that refuses to sit still, the office file breeding revisions in the dark, or the decision everyone is politely avoiding. Nova is one sharp, playful generalist: useful before the tour, accountable through the finish, and considerably less interested in making you admire her filing system than older agents were.
 
-Free 3.0.0 is a major rebuild. Nova and MIND now arrive as one plugin with one front door. MIND is ambient cognition inside Nova; its sixteen Faculty Cores are nested depth, not sixteen extra bots or menu items. Twenty-four sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, reminders, people context, and long-running goals.
+Free 3.1.0 is a major rebuild. Nova and MIND now arrive as one plugin with one front door. MIND is ambient cognition inside Nova; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-six sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
 
 Ordinary work requires no Ollama service, embedding model, vector database, prompt hook, daemon, onboarding interview, or persistent data setup. That entire Rube Goldberg annex has been thanked for its service and shown the door.
 
@@ -12,13 +12,13 @@ Ordinary work requires no Ollama service, embedding model, vector database, prom
 
 Nova holds the purpose, relationship, authorization boundaries, cross-skill coherence, and final handoff. A matching specialist owns its method and artifact contract. Agentic Coding handles ordinary repository change; paired TestForge roles handle an explicit readiness campaign and its independent challenge. Officecraft handles editable, source-sensitive office jobs while native document, presentation, spreadsheet, and PDF capabilities execute the real formats exposed by the host.
 
-Continuity is optional and customer-controlled. Cognitive Continuity owns governed task state and the read-only Worldline view. Corkboard owns loose pins. Dunbar owns people context. Agent Striving owns explicitly durable objectives. Conversation context is not a save receipt, however confidently anyone raises an eyebrow.
+Continuity is optional and customer-controlled. Cognitive Continuity owns governed task state and the read-only Worldline view. Dennis owns governed project records. Commonplace owns deliberate notes and rebuildable Concordance navigation. Corkboard owns loose pins. Dunbar owns people context. Agent Striving owns explicitly durable objectives. Conversation context is not a save receipt, however confidently anyone raises an eyebrow.
 
-The exact twenty-five roots and their boundaries are recorded in `LOADOUT-MANIFEST.json` inside each host plugin (`codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai`) and explained in the [capability guide](docs/CAPABILITY-GUIDE.md). The source repository keeps the canonical plugin at `plugins/nova-the-optimal-ai`.
+The exact twenty-seven roots and their boundaries are recorded in `LOADOUT-MANIFEST.json` inside each host plugin (`codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai`) and explained in the [capability guide](docs/CAPABILITY-GUIDE.md). The source repository keeps the canonical plugin at `plugins/nova-the-optimal-ai`.
 
 ## Install
 
-The customer package contains a Codex local marketplace, a Claude-compatible complete bundle, twenty-five standalone Claude skill folders and deterministic per-skill ZIPs.
+The customer package contains a Codex local marketplace, a Claude-compatible complete bundle, twenty-seven standalone Claude skill folders and deterministic per-skill ZIPs.
 
 For Codex, give the complete customer ZIP to the installing agent and say:
 
@@ -36,6 +36,6 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 3.0.0 local release candidate. License permission does not claim that a tag, push, GitHub release, directory listing, website deployment, announcement, or other publication action has occurred. No GitHub Actions run on a GitHub-hosted runner is claimed as evidence for this candidate.
+This repository contains the Free 3.1.0 local release candidate. License permission does not claim that a tag, push, GitHub release, directory listing, website deployment, announcement, or other publication action has occurred. No GitHub Actions run on a GitHub-hosted runner is claimed as evidence for this candidate.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠

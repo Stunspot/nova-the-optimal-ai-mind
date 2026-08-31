@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Nova the Optimal AI Free estate bootstrap, registry-backed launcher, and diagnostics."""
+"""Nova Free estate bootstrap, registry-backed launcher, and diagnostics."""
 
 from __future__ import annotations
 
 import argparse
+import copy
 import ctypes
 import json
 import os
@@ -18,25 +19,46 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
-PRODUCT_VERSION = "3.0.0"
+PRODUCT_VERSION = "1.0.4"
 REGISTRY_FORMAT = "nova-path-selectors/v1"
 MANIFEST_FORMAT = "nova-estate-manifest/v1"
-ERROR_FORMAT = "nova-operation-error/v1"
+LEGACY_MANIFEST_FORMAT = "nova-data-estate/v1"
+SERVICE_MANIFEST_FORMAT = "nova-emergent-estate-services/v1"
+ERROR_FORMAT = "nova-emergent-operation-error/v1"
 REPARSE_ATTRIBUTE = 0x400
-SELECTOR_KEYS = (
+CORE_SELECTOR_KEYS = (
     "NOVA_DATA_ROOT",
     "NOVA_CONTINUITY_HOME",
     "DUNBAR_STORE",
     "CORKBOARD_HOME",
 )
-OPTIONAL_FUTURE_SELECTOR_KEYS = ("DENNIS_PROJECT_HOME",)
-DISABLED_SELECTOR_KEYS = ("MIND_CORE_DATABASE", "MIND_HOOK_RECEIPT_DIRECTORY")
-MANAGED_ENVIRONMENT_KEYS = SELECTOR_KEYS + OPTIONAL_FUTURE_SELECTOR_KEYS + DISABLED_SELECTOR_KEYS
+KNOWN_ADDITIVE_SELECTOR_KEYS = (
+    "DENNIS_PROJECT_HOME",
+    "NOVA_COMMONPLACE_HOME",
+    "NOVA_CONCORDANCE_HOME",
+)
+SELECTOR_KEYS = CORE_SELECTOR_KEYS + KNOWN_ADDITIVE_SELECTOR_KEYS
+LEGACY_MIND_SELECTOR_KEYS = ("MIND_CORE_DATABASE", "MIND_HOOK_RECEIPT_DIRECTORY")
+MANAGED_ENVIRONMENT_KEYS = SELECTOR_KEYS + LEGACY_MIND_SELECTOR_KEYS
 SERVICE_ENTRYPOINTS = {
     "continuity": ("cognitive-continuity", "scripts", "continuity_store_v2.py"),
     "worldline": ("cognitive-continuity", "scripts", "worldline.py"),
     "dunbar": ("dunbar", "scripts", "dunbar.py"),
     "corkboard": ("corkboard", "scripts", "corkboard.py"),
+    "project-management": (
+        "dennis-stratton-project-management",
+        "scripts",
+        "project_control.py",
+    ),
+    "commonplace": ("commonplace", "scripts", "commonplace.py"),
+}
+SERVICE_LOCATIONS = {
+    "continuity": "memory/continuity-v2",
+    "dunbar": "memory/dunbar/people.sqlite3",
+    "corkboard": "memory/corkboard",
+    "project_management": "projects/project-records",
+    "commonplace": "memory/commonplace",
+    "concordance": "derived/concordance",
 }
 
 
@@ -140,6 +162,31 @@ def _assert_no_link_or_reparse(path: Path, label: str) -> None:
         current = current.parent
 
 
+def _assert_plain_tree(root: Path, label: str) -> None:
+    """Reject links, reparse points, and special files before staging an owner tree."""
+    _assert_no_link_or_reparse(root, label)
+    pending = [root]
+    while pending:
+        current = pending.pop()
+        try:
+            entries = list(os.scandir(current))
+        except OSError as exc:
+            raise NovaEstateError(f"Could not inspect {label} directory {current}: {exc}") from exc
+        for entry in entries:
+            path = Path(entry.path)
+            try:
+                observed = entry.stat(follow_symlinks=False)
+            except OSError as exc:
+                raise NovaEstateError(f"Could not inspect {label} path {path}: {exc}") from exc
+            if stat.S_ISLNK(observed.st_mode):
+                raise NovaEstateError(f"{label} contains a symbolic link: {path}")
+            if getattr(observed, "st_file_attributes", 0) & REPARSE_ATTRIBUTE:
+                raise NovaEstateError(f"{label} contains a reparse edge: {path}")
+            if stat.S_ISDIR(observed.st_mode):
+                pending.append(path)
+            elif not stat.S_ISREG(observed.st_mode):
+                raise NovaEstateError(f"{label} contains a non-regular file: {path}")
+
 def normalize_root(value: str | None) -> Path:
     candidate = Path(value).expanduser() if value else default_root()
     if not candidate.is_absolute():
@@ -159,8 +206,12 @@ def layout(root: Path) -> dict[str, Path]:
         "NOVA_CONTINUITY_HOME": root / "memory" / "continuity-v2",
         "DUNBAR_STORE": root / "memory" / "dunbar" / "people.sqlite3",
         "CORKBOARD_HOME": root / "memory" / "corkboard",
+        "DENNIS_PROJECT_HOME": root / "projects" / "project-records",
+        "NOVA_COMMONPLACE_HOME": root / "memory" / "commonplace",
+        "NOVA_CONCORDANCE_HOME": root / "derived" / "concordance",
         "registry": root / "estate" / "path-selectors.json",
         "manifest": root / "estate" / "manifest.json",
+        "service_manifest": root / "estate" / "nova-emergent-services.json",
         "env_file": root / "estate" / "nova.env",
     }
 
@@ -248,31 +299,55 @@ def read_json(path: Path) -> dict[str, Any]:
     return value
 
 
-def registry_values(registry: dict[str, Any], root: Path) -> dict[str, str]:
-    if registry.get("format") != REGISTRY_FORMAT:
-        raise NovaEstateError(f"Unsupported selector registry format: {registry.get('format')!r}")
-    active = registry.get("active_values")
-    if not isinstance(active, dict):
-        raise NovaEstateError("Selector registry lacks active_values")
-    values: dict[str, str] = {}
-    for key in SELECTOR_KEYS:
-        raw = active.get(key)
-        if not isinstance(raw, str) or not raw.strip():
-            raise NovaEstateError(f"Selector registry lacks {key}")
-        lexical = _lexical_absolute(Path(raw).expanduser())
-        _assert_no_link_or_reparse(lexical, key)
-        values[key] = str(lexical.resolve(strict=False))
-    if Path(values["NOVA_DATA_ROOT"]) != root:
-        raise NovaEstateError("Registry NOVA_DATA_ROOT does not match the selected root")
-    for key in SELECTOR_KEYS[1:]:
-        target = Path(values[key])
+def _normalized_selector(key: str, raw: Any, root: Path) -> str:
+    if not isinstance(raw, str) or not raw.strip():
+        raise NovaEstateError(f"Selector registry lacks {key}")
+    lexical = _lexical_absolute(Path(raw).expanduser())
+    _assert_no_link_or_reparse(lexical, key)
+    target = lexical.resolve(strict=False)
+    expected = layout(root)[key].resolve(strict=False)
+    if target != expected:
+        raise NovaEstateError(f"Existing {key} conflicts with the Nova Free estate layout")
+    if key != "NOVA_DATA_ROOT":
         try:
             target.relative_to(root)
         except ValueError:
             raise NovaEstateError(f"{key} escapes NOVA_DATA_ROOT") from None
         if any(part.casefold() == ".codex" for part in target.parts):
             raise NovaEstateError(f"{key} resolves under .codex")
-    return values
+    return str(target)
+
+
+def registry_upgrade_analysis(
+    registry: dict[str, Any], root: Path
+) -> tuple[dict[str, Any], dict[str, str], list[str]]:
+    if registry.get("format") != REGISTRY_FORMAT:
+        raise NovaEstateError(f"Unsupported selector registry format: {registry.get('format')!r}")
+    active = registry.get("active_values")
+    if not isinstance(active, dict):
+        raise NovaEstateError("Selector registry lacks active_values")
+    values: dict[str, str] = {}
+    for key in CORE_SELECTOR_KEYS:
+        values[key] = _normalized_selector(key, active.get(key), root)
+    missing: list[str] = []
+    for key in KNOWN_ADDITIVE_SELECTOR_KEYS:
+        raw = active.get(key)
+        if not isinstance(raw, str) or not raw.strip():
+            missing.append(key)
+            continue
+        values[key] = _normalized_selector(key, raw, root)
+    for key in LEGACY_MIND_SELECTOR_KEYS:
+        legacy_value = active.get(key)
+        if legacy_value is not None and (not isinstance(legacy_value, str) or not legacy_value.strip()):
+            raise NovaEstateError(f"Existing {key} must be null or a nonempty legacy selector string")
+    return active, values, missing
+
+
+def registry_values(registry: dict[str, Any], root: Path) -> dict[str, str]:
+    _, values, missing = registry_upgrade_analysis(registry, root)
+    if missing:
+        raise NovaEstateError("Selector registry lacks " + ", ".join(missing))
+    return {key: values[key] for key in SELECTOR_KEYS}
 
 
 def _fsync_parent(path: Path) -> None:
@@ -404,11 +479,17 @@ def apply_windows_user_environment(values: dict[str, str]) -> None:
         pass
 
 
-def run_json(command: Sequence[str], *, env: dict[str, str] | None = None) -> tuple[int, Any, str]:
+def run_json(
+    command: Sequence[str],
+    *,
+    env: dict[str, str] | None = None,
+    input_value: Any = None,
+) -> tuple[int, Any, str]:
     completed = subprocess.run(
         list(command),
         env=env,
-        stdin=subprocess.DEVNULL,
+        input=(json.dumps(input_value, ensure_ascii=False) + "\n" if input_value is not None else None),
+        stdin=(None if input_value is not None else subprocess.DEVNULL),
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         text=True,
@@ -453,6 +534,47 @@ def run_service_process(
             stderr=subprocess.PIPE,
         )
     return subprocess.run(command, **options)
+
+
+def commonplace_support(values: dict[str, str], *, verify: bool) -> dict[str, Any]:
+    operation = "verify" if verify else "status"
+    try:
+        command = service_command(
+            "commonplace",
+            ["--estate-root", values["NOVA_DATA_ROOT"], operation, "--json"],
+        )
+    except NovaEstateError as exc:
+        return {
+            "available": False,
+            "exit_code": None,
+            "operation": operation,
+            "result": None,
+            "error": str(exc),
+            "canonical": None,
+            "concordance": {"status": "unavailable", "reason": "entrypoint_missing"},
+        }
+    code, result, stderr = run_json(
+        command,
+        env=process_environment(values),
+    )
+    payload: dict[str, Any] = {
+        "available": code == 0,
+        "exit_code": code,
+        "operation": operation,
+        "result": result,
+    }
+    if stderr:
+        payload["stderr"] = stderr
+    if isinstance(result, dict):
+        if verify:
+            payload["canonical"] = result.get("canonical")
+            payload["concordance"] = result.get("concordance")
+        else:
+            payload["canonical"] = {
+                key: value for key, value in result.items() if key != "concordance"
+            }
+            payload["concordance"] = result.get("concordance")
+    return payload
 
 
 def launcher_payload() -> dict[str, Any]:
@@ -548,7 +670,7 @@ def load_configured_root(root_value: str | None) -> tuple[Path, dict[str, str], 
 def status_payload(root: Path, *, root_source: str = "explicit") -> dict[str, Any]:
     paths = layout(root)
     payload: dict[str, Any] = {
-        "format": "nova-free-estate-status/v3",
+        "format": "nova-emergent-estate-status/v2",
         "product_version": PRODUCT_VERSION,
         "root": str(root),
         "root_selection_source": root_source,
@@ -574,12 +696,31 @@ def status_payload(root: Path, *, root_source: str = "explicit") -> dict[str, An
         return payload
     try:
         registry = read_json(paths["registry"])
-
+        _, _, missing = registry_upgrade_analysis(registry, root)
+        if missing:
+            payload["state"] = "upgrade_required"
+            payload["missing_selectors"] = missing
+            payload["upgrade_paths"] = {key: str(paths[key]) for key in missing}
+            return payload
         values = registry_values(registry, root)
         support = continuity_support(values, validate=False)
+        commonplace = commonplace_support(values, verify=False)
         launcher = launcher_payload()
         environment_matches = {key: os.environ.get(key) == value for key, value in values.items()}
         continuity_present = Path(values["NOVA_CONTINUITY_HOME"]).is_dir()
+        project_records_present = Path(values["DENNIS_PROJECT_HOME"]).is_dir()
+        commonplace_present = Path(values["NOVA_COMMONPLACE_HOME"]).is_dir()
+        concordance_present = Path(values["NOVA_CONCORDANCE_HOME"]).is_dir()
+        canonical_commonplace = commonplace.get("canonical")
+        commonplace_initialized = bool(
+            commonplace.get("available")
+            and isinstance(canonical_commonplace, dict)
+            and canonical_commonplace.get("initialized")
+        )
+        concordance = commonplace.get("concordance")
+        concordance_state = (
+            concordance.get("status", "unavailable") if isinstance(concordance, dict) else "unavailable"
+        )
         read_supported = bool(support["read"].get("supported"))
         mutation_supported = bool(support["mutation"].get("supported"))
         if read_supported and mutation_supported:
@@ -597,14 +738,31 @@ def status_payload(root: Path, *, root_source: str = "explicit") -> dict[str, An
             },
             configured=True,
             continuity_present=continuity_present,
+            project_records_present=project_records_present,
+            commonplace_present=commonplace_present,
+            concordance_present=concordance_present,
             continuity_read_support=support["read"],
             continuity_mutation_support=support["mutation"],
             continuity_operating_mode=operating_mode,
+            commonplace=commonplace,
+            commonplace_initialized=commonplace_initialized,
+            concordance_state=concordance_state,
             launcher=launcher,
             state=(
-                "configured"
-                if continuity_present and launcher["ready"]
-                else "configured_service_missing"
+                "configured_service_missing"
+                if not (
+                    continuity_present
+                    and project_records_present
+                    and commonplace_present
+                    and concordance_present
+                    and launcher["ready"]
+                    and commonplace_initialized
+                )
+                else (
+                    "configured_service_attention"
+                    if concordance_state not in {"current", "unavailable"}
+                    else "configured"
+                )
             ),
         )
     except NovaEstateError as exc:
@@ -615,35 +773,87 @@ def status_payload(root: Path, *, root_source: str = "explicit") -> dict[str, An
 def command_plan(args: argparse.Namespace) -> int:
     root = normalize_root(args.root)
     paths = layout(root)
+    current = status_payload(root, root_source=root_selection_source(args.root))
+    state = current.get("state")
+    manifest_format: str | None = None
+    if paths["manifest"].is_file():
+        try:
+            observed_manifest_format = read_json(paths["manifest"]).get("format")
+            if isinstance(observed_manifest_format, str):
+                manifest_format = observed_manifest_format
+        except NovaEstateError:
+            manifest_format = None
+
+    if state == "upgrade_required":
+        missing = [key for key in current.get("missing_selectors", []) if key in KNOWN_ADDITIVE_SELECTOR_KEYS]
+        exact_commonplace_addition = missing == ["NOVA_COMMONPLACE_HOME", "NOVA_CONCORDANCE_HOME"]
+        operation = "add_commonplace_and_concordance" if exact_commonplace_addition else "additive_upgrade"
+        proposed_selectors = {key: str(paths[key]) for key in missing}
+        effects = [
+            "add only the missing approved selectors to the authoritative registry",
+            "stage and publish an empty generation-zero Commonplace plus its bound empty lexical, model-free Concordance",
+            "update the Nova environment helper and product-service metadata before the registry commit point",
+            "preserve every existing canonical owner and its bytes unchanged",
+        ]
+        if "DENNIS_PROJECT_HOME" in missing:
+            effects.insert(1, "create the missing centralized Project Management location")
+        does_not = [
+            "initialize, move, rewrite, or delete existing Cognitive Continuity",
+            "modify existing Corkboard, Dunbar, Project Management, MIND, pursuit, persona, repository, or external-corpus state",
+            "capture notes, crawl files, or copy specialist-owner state into Commonplace or Concordance",
+            "replace or relabel a historical nova-data-estate/v1 manifest",
+            "install or replace the Nova Free plugin, publish, or migrate a live estate without separate execution authority",
+        ]
+    elif state in {"configured", "configured_service_attention", "configured_service_missing"}:
+        operation = "no_selector_change"
+        proposed_selectors = {}
+        effects = ["make no selector or estate mutation; inspect the reported service state"]
+        does_not = ["initialize or overwrite any configured service"]
+    elif state == "registry_invalid":
+        operation = "blocked_for_inspection"
+        proposed_selectors = {}
+        effects = ["make no mutation until the invalid registry condition is resolved"]
+        does_not = ["guess, replace, or normalize conflicting owner selectors"]
+    else:
+        operation = "initialize_estate"
+        proposed_selectors = {key: str(paths[key]) for key in SELECTOR_KEYS}
+        effects = [
+            "initialize one absent Cognitive Continuity v2 workspace",
+            "publish one complete selector registry and estate manifest",
+            "create empty Corkboard, Dunbar, and centralized Project Management locations plus an empty generation-zero Commonplace and bound lexical, model-free Concordance",
+            "optionally set current-user environment selectors on Windows",
+        ]
+        does_not = [
+            "install or replace the Nova Free plugin",
+            "import contacts, conversations, projects, reminders, or existing stores",
+            "capture notes, crawl files, or copy specialist-owner state into Commonplace or Concordance",
+            "enable Arm's Reach, a prompt hook, a local model, embeddings, or a vector database",
+            "delete, migrate, merge, or publish data",
+        ]
+
     emit(
         {
-            "format": "nova-free-estate-plan/v3",
+            "format": "nova-emergent-estate-plan/v2",
             "product_version": PRODUCT_VERSION,
             "root": str(root),
-            "current": status_payload(root, root_source=root_selection_source(args.root)),
-            "proposed_selectors": {key: str(paths[key]) for key in SELECTOR_KEYS},
-            "effects_if_authorized": [
-                "initialize one absent Cognitive Continuity v2 workspace",
-                "publish one complete selector registry and estate manifest",
-                "create empty Corkboard and Dunbar locations",
-                "optionally set current-user environment selectors on Windows",
-            ],
+            "operation": operation,
+            "current": current,
+            "proposed_selectors": proposed_selectors,
+            "manifest_strategy": (
+                "preserve_historical_manifest_and_publish_additive_product_service_sidecar"
+                if manifest_format == LEGACY_MANIFEST_FORMAT
+                else "use_product_estate_manifest"
+            ),
+            "effects_if_authorized": effects,
             "runtime_contract": {
                 "selector_authority": "registry",
                 "global_environment_required": False,
                 "launcher": "nova_estate.py run",
             },
-            "does_not": [
-                "install or replace the Nova the Optimal AI plugin",
-                "import contacts, conversations, projects, reminders, or existing stores",
-                "enable Arm's Reach, a prompt hook, a local model, embeddings, or a vector database",
-                "delete, migrate, merge, or publish data",
-            ],
+            "does_not": does_not,
         }
     )
     return 0
-
-
 def command_status(args: argparse.Namespace) -> int:
     root = normalize_root(args.root)
     emit(status_payload(root, root_source=root_selection_source(args.root)))
@@ -694,8 +904,16 @@ def _selector_values(paths: dict[str, Path]) -> dict[str, str]:
     return {key: str(paths[key]) for key in SELECTOR_KEYS}
 
 
-def _env_text(values: dict[str, str]) -> str:
-    return "\n".join(f"export {key}={json.dumps(value)}" for key, value in values.items()) + "\n"
+def _env_text(
+    values: dict[str, str], *, active_values: dict[str, Any] | None = None
+) -> str:
+    exported = dict(values)
+    if active_values is not None:
+        for key in LEGACY_MIND_SELECTOR_KEYS:
+            value = active_values.get(key)
+            if isinstance(value, str) and value.strip():
+                exported[key] = value
+    return "\n".join(f"export {key}={json.dumps(value)}" for key, value in exported.items()) + "\n"
 
 
 def command_init(args: argparse.Namespace) -> int:
@@ -709,7 +927,7 @@ def command_init(args: argparse.Namespace) -> int:
         if current.get("configured"):
             emit(
                 {
-                    "format": "nova-free-estate-init/v3",
+                    "format": "nova-emergent-estate-init/v2",
                     "state": "already_configured",
                     "status": current,
                     "source_mutated": False,
@@ -732,6 +950,9 @@ def command_init(args: argparse.Namespace) -> int:
         staged_paths = layout(staging)
         staged_paths["CORKBOARD_HOME"].mkdir(parents=True, exist_ok=False)
         staged_paths["DUNBAR_STORE"].parent.mkdir(parents=True, exist_ok=False)
+        staged_paths["DENNIS_PROJECT_HOME"].mkdir(parents=True, exist_ok=False)
+        staged_paths["NOVA_COMMONPLACE_HOME"].mkdir(parents=True, exist_ok=False)
+        staged_paths["NOVA_CONCORDANCE_HOME"].mkdir(parents=True, exist_ok=False)
         continuity = staged_paths["NOVA_CONTINUITY_HOME"]
         code, receipt, stderr = run_json(
             [
@@ -753,6 +974,49 @@ def command_init(args: argparse.Namespace) -> int:
         )
         if code != 0:
             raise NovaEstateError(f"Cognitive Continuity initialization failed: {stderr or receipt}")
+
+        staged_selector_values = _selector_values(staged_paths)
+        atomic_json(
+            staged_paths["registry"],
+            {
+                "format": REGISTRY_FORMAT,
+                "active_values": {
+                    **staged_selector_values,
+                    "MIND_CORE_DATABASE": None,
+                    "MIND_HOOK_RECEIPT_DIRECTORY": None,
+                },
+            },
+        )
+        commonplace_code, commonplace_receipt, commonplace_error = run_json(
+            service_command(
+                "commonplace",
+                ["--estate-root", str(staging), "init", "--stdin-json", "--json"],
+            ),
+            env=process_environment(staged_selector_values),
+            input_value={
+                "authority": {
+                    "actor": "Nova Operations",
+                    "source": "estate-init",
+                    "reason": f"Nova Free {PRODUCT_VERSION} estate initialization authorized for {args.user}",
+                }
+            },
+        )
+        if commonplace_code != 0:
+            raise NovaEstateError(
+                f"Commonplace initialization failed: {commonplace_error or commonplace_receipt}"
+            )
+        concordance_code, concordance_receipt, concordance_error = run_json(
+            service_command(
+                "commonplace",
+                ["--estate-root", str(staging), "rebuild", "--stdin-json", "--json"],
+            ),
+            env=process_environment(staged_selector_values),
+            input_value={"allowed_sensitivities": ["public", "personal"]},
+        )
+        if concordance_code != 0:
+            raise NovaEstateError(
+                f"Concordance initialization failed: {concordance_error or concordance_receipt}"
+            )
 
         selector_values = _selector_values(paths)
         previous = (
@@ -780,11 +1044,7 @@ def command_init(args: argparse.Namespace) -> int:
             "created_at_utc": utc_now(),
             "selector_registry": "estate/path-selectors.json",
             "service_launcher": "nova-operations/scripts/nova_estate.py run",
-            "services": {
-                "continuity": "memory/continuity-v2",
-                "dunbar": "memory/dunbar/people.sqlite3",
-                "corkboard": "memory/corkboard",
-            },
+            "services": dict(SERVICE_LOCATIONS),
             "source_imported": False,
         }
         atomic_json(staged_paths["manifest"], manifest)
@@ -830,11 +1090,21 @@ def command_init(args: argparse.Namespace) -> int:
         environment_applied = True
     emit(
         {
-            "format": "nova-free-estate-init/v3",
+            "format": "nova-emergent-estate-init/v2",
             "state": "initialized",
             "root": str(root),
             "selectors": selector_values,
             "continuity_receipt": receipt,
+            "commonplace_binding": {
+                key: commonplace_receipt.get(key)
+                for key in ("workspace_id", "generation", "snapshot_sha256")
+                if isinstance(commonplace_receipt, dict) and key in commonplace_receipt
+            },
+            "concordance_binding": {
+                key: concordance_receipt.get(key)
+                for key in ("workspace_id", "generation", "canonical_snapshot_digest", "status")
+                if isinstance(concordance_receipt, dict) and key in concordance_receipt
+            },
             "environment_applied": environment_applied,
             "global_environment_required": False,
             "restart_required": environment_applied,
@@ -845,77 +1115,355 @@ def command_init(args: argparse.Namespace) -> int:
     return 0
 
 
+def _optional_file_bytes(path: Path) -> bytes | None:
+    if not os.path.lexists(path):
+        return None
+    _assert_no_link_or_reparse(path, "Estate transaction file")
+    if not path.is_file():
+        raise NovaEstateError(f"Estate transaction path is not a regular file: {path}")
+    return path.read_bytes()
+
+
+def _restore_transaction_file(path: Path, original: bytes | None) -> None:
+    if original is None:
+        if os.path.lexists(path):
+            path.unlink()
+            _fsync_parent(path.parent)
+        return
+    atomic_text(path, original.decode("utf-8"))
+
+
+def _prepare_commonplace_upgrade(
+    root: Path,
+    paths: dict[str, Path],
+    *,
+    initialize_commonplace: bool,
+    rebuild_concordance: bool,
+) -> tuple[Path | None, dict[str, Any] | None, dict[str, Any] | None]:
+    if not initialize_commonplace and not rebuild_concordance:
+        return None, None, None
+    staging = Path(tempfile.mkdtemp(prefix=f".{root.name}.commonplace-upgrade-", dir=root.parent))
+    try:
+        staged_paths = layout(staging)
+        staged_values = _selector_values(staged_paths)
+        atomic_json(
+            staged_paths["registry"],
+            {
+                "format": REGISTRY_FORMAT,
+                "active_values": {
+                    **staged_values,
+                    "MIND_CORE_DATABASE": None,
+                    "MIND_HOOK_RECEIPT_DIRECTORY": None,
+                },
+            },
+        )
+        if initialize_commonplace:
+            code, commonplace_receipt, error = run_json(
+                service_command(
+                    "commonplace",
+                    ["--estate-root", str(staging), "init", "--stdin-json", "--json"],
+                ),
+                env=process_environment(staged_values),
+                input_value={
+                    "authority": {
+                        "actor": "Nova Operations",
+                        "source": "estate-upgrade",
+                        "reason": f"Known additive Nova Free {PRODUCT_VERSION} estate migration",
+                    }
+                },
+            )
+            if code != 0:
+                raise NovaEstateError(f"Commonplace upgrade initialization failed: {error or commonplace_receipt}")
+        else:
+            _assert_plain_tree(paths["NOVA_COMMONPLACE_HOME"], "Existing Commonplace")
+            shutil.copytree(paths["NOVA_COMMONPLACE_HOME"], staged_paths["NOVA_COMMONPLACE_HOME"])
+            code, verified, error = run_json(
+                service_command(
+                    "commonplace",
+                    ["--estate-root", str(staging), "verify", "--json"],
+                ),
+                env=process_environment(staged_values),
+            )
+            if code != 0 or not isinstance(verified, dict) or not verified.get("ok"):
+                raise NovaEstateError(f"Existing Commonplace could not be verified for Concordance migration: {error or verified}")
+            commonplace_receipt = verified.get("canonical")
+
+        concordance_receipt: dict[str, Any] | None = None
+        if rebuild_concordance:
+            code, rebuilt, error = run_json(
+                service_command(
+                    "commonplace",
+                    ["--estate-root", str(staging), "rebuild", "--stdin-json", "--json"],
+                ),
+                env=process_environment(staged_values),
+                input_value={"allowed_sensitivities": ["public", "personal"]},
+            )
+            if code != 0 or not isinstance(rebuilt, dict):
+                raise NovaEstateError(f"Concordance upgrade initialization failed: {error or rebuilt}")
+            concordance_receipt = rebuilt
+        return staging, commonplace_receipt, concordance_receipt
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
+
+
 def command_upgrade(args: argparse.Namespace) -> int:
-    """Refresh a compatible Nova estate without claiming optional edition selectors."""
     require_windows_environment_flag_supported(args.apply_user_environment)
     root = normalize_root(args.root)
-    assert_locator_conflict_free(root)
+    locator_preexisting = assert_locator_conflict_free(root)
     paths = layout(root)
     registry = read_json(paths["registry"])
     manifest = read_json(paths["manifest"])
-    values = registry_values(registry, root)
-    if manifest.get("format") != MANIFEST_FORMAT:
-        raise NovaEstateError(f"Unsupported estate manifest format: {manifest.get('format')!r}")
+    manifest_format = manifest.get("format")
+    legacy_manifest = manifest_format == LEGACY_MANIFEST_FORMAT
+    if manifest_format not in {MANIFEST_FORMAT, LEGACY_MANIFEST_FORMAT}:
+        raise NovaEstateError(f"Unsupported estate manifest format: {manifest_format!r}")
 
-    source_mutated = False
-    if manifest.get("product") != "Nova the Optimal AI Free" or manifest.get("product_version") != PRODUCT_VERSION:
-        manifest["product"] = "Nova the Optimal AI Free"
-        manifest["product_version"] = PRODUCT_VERSION
-        manifest["upgraded_at_utc"] = utc_now()
-        source_mutated = True
-    services = manifest.get("services")
+    manifest_original = paths["manifest"].read_bytes()
+    if legacy_manifest:
+        legacy_root = manifest.get("root")
+        if (
+            not isinstance(legacy_root, str)
+            or not legacy_root.strip()
+            or _lexical_absolute(Path(legacy_root).expanduser()).resolve(strict=False) != root
+        ):
+            raise NovaEstateError("Legacy estate manifest root does not match the selected root")
+        if not isinstance(manifest.get("stores"), list):
+            raise NovaEstateError("Legacy estate manifest lacks its historical stores list")
+        service_document_path = paths["service_manifest"]
+        service_document_original = _optional_file_bytes(service_document_path)
+        if service_document_original is None:
+            service_document = {
+                "format": SERVICE_MANIFEST_FORMAT,
+                "product": "Nova the Optimal AI Free",
+                "source_manifest": "estate/manifest.json",
+                "source_manifest_format": LEGACY_MANIFEST_FORMAT,
+                "services": {},
+            }
+        else:
+            service_document = read_json(service_document_path)
+            if service_document.get("format") != SERVICE_MANIFEST_FORMAT:
+                raise NovaEstateError(
+                    f"Unsupported product-service manifest format: {service_document.get('format')!r}"
+                )
+            if service_document.get("source_manifest") != "estate/manifest.json":
+                raise NovaEstateError("Product-service manifest does not bind the historical estate manifest")
+    else:
+        service_document_path = paths["manifest"]
+        service_document_original = manifest_original
+        service_document = manifest
+
+    active, _, missing = registry_upgrade_analysis(registry, root)
+    services = service_document.get("services")
     if not isinstance(services, dict):
-        services = {}
-        manifest["services"] = services
-        source_mutated = True
-    expected_services = {
-        "continuity": "memory/continuity-v2",
-        "dunbar": "memory/dunbar/people.sqlite3",
-        "corkboard": "memory/corkboard",
-    }
-    for name, relative in expected_services.items():
-        if services.get(name) != relative:
-            services[name] = relative
-            source_mutated = True
-    if manifest.get("service_launcher") != "nova-operations/scripts/nova_estate.py run":
-        manifest["service_launcher"] = "nova-operations/scripts/nova_estate.py run"
-        source_mutated = True
+        raise NovaEstateError("Product service metadata lacks services")
+    for service, expected in SERVICE_LOCATIONS.items():
+        current = services.get(service)
+        if current is not None and current != expected:
+            raise NovaEstateError(f"Existing {service} service location conflicts with the Nova Free estate layout")
 
-    registry["set_at_utc"] = utc_now()
-    registry["upgraded_for_product_version"] = PRODUCT_VERSION
-    registry["requires_codex_restart"] = bool(args.apply_user_environment)
-    registry["note"] = "The registry is authoritative. Global environment selectors are optional Windows convenience only."
-    write_current_estate_locator(root)
-    atomic_json(paths["manifest"], manifest)
-    atomic_text(paths["env_file"], _env_text(values))
-    atomic_json(paths["registry"], registry)
+    missing_set = set(missing)
+    for key in ("NOVA_COMMONPLACE_HOME", "NOVA_CONCORDANCE_HOME"):
+        target = paths[key]
+        _assert_no_link_or_reparse(target, key)
+        if os.path.lexists(target):
+            if not target.is_dir():
+                raise NovaEstateError(f"{key} target exists but is not a directory: {target}")
+            if key in missing_set:
+                raise NovaEstateError(
+                    f"Unregistered {key} target already exists; preserving it unchanged for review: {target}"
+                )
+
+    commonplace_exists = paths["NOVA_COMMONPLACE_HOME"].is_dir()
+    concordance_exists = paths["NOVA_CONCORDANCE_HOME"].is_dir()
+    if "NOVA_COMMONPLACE_HOME" not in missing_set and not commonplace_exists:
+        raise NovaEstateError(
+            "The registry names a canonical Commonplace but its directory is missing; "
+            "use governed recovery rather than initializing an empty replacement"
+        )
+    initialize_commonplace = "NOVA_COMMONPLACE_HOME" in missing_set
+    rebuild_concordance = "NOVA_CONCORDANCE_HOME" in missing_set or not concordance_exists
+    if initialize_commonplace and concordance_exists:
+        raise NovaEstateError(
+            "Cannot initialize a new canonical Commonplace while an existing Concordance target is present"
+        )
+
+    registry_original = paths["registry"].read_bytes()
+    env_original = _optional_file_bytes(paths["env_file"])
+    desired_registry = copy.deepcopy(registry)
+    desired_service_document = copy.deepcopy(service_document)
+    desired_active = desired_registry["active_values"]
+    previous = desired_registry.get("previous_user_values")
+    if not isinstance(previous, dict):
+        previous = {}
+        desired_registry["previous_user_values"] = previous
+    for key in missing:
+        previous.setdefault(key, None)
+        desired_active[key] = str(paths[key])
+    for key in LEGACY_MIND_SELECTOR_KEYS:
+        desired_active.setdefault(key, None)
+
+    desired_services = desired_service_document["services"]
+    desired_services.update(SERVICE_LOCATIONS)
+    desired_service_document["product_version"] = PRODUCT_VERSION
+    desired_service_document["service_launcher"] = "nova-operations/scripts/nova_estate.py run"
+    desired_values = _selector_values(paths)
+    desired_env = _env_text(desired_values, active_values=desired_active)
+
+    dennis_needs_directory = not paths["DENNIS_PROJECT_HOME"].is_dir()
+    locator_needs_publication = custom_root_requires_locator(root) and locator_preexisting is None
+    content_change = (
+        desired_registry != registry
+        or desired_service_document != service_document
+        or env_original != desired_env.encode("utf-8")
+        or initialize_commonplace
+        or rebuild_concordance
+        or dennis_needs_directory
+        or locator_needs_publication
+    )
+
+    if content_change:
+        timestamp = utc_now()
+        desired_registry["set_at_utc"] = timestamp
+        desired_registry["upgraded_for_product_version"] = PRODUCT_VERSION
+        desired_registry["requires_codex_restart"] = bool(args.apply_user_environment)
+        desired_registry["note"] = "The registry is authoritative. Global environment selectors are optional Windows convenience only."
+        desired_service_document["upgraded_at_utc"] = timestamp
+
+    staging: Path | None = None
+    commonplace_receipt: dict[str, Any] | None = None
+    concordance_receipt: dict[str, Any] | None = None
+    created_parents: list[Path] = []
+    published: list[tuple[Path, Path]] = []
+    dennis_created = False
+    estate_write_started = False
+    try:
+        staging, commonplace_receipt, concordance_receipt = _prepare_commonplace_upgrade(
+            root,
+            paths,
+            initialize_commonplace=initialize_commonplace,
+            rebuild_concordance=rebuild_concordance,
+        )
+        if content_change:
+            if dennis_needs_directory:
+                created_parents.extend(_create_parent_chain(paths["DENNIS_PROJECT_HOME"].parent))
+                paths["DENNIS_PROJECT_HOME"].mkdir()
+                dennis_created = True
+            if staging is not None and initialize_commonplace:
+                created_parents.extend(_create_parent_chain(paths["NOVA_COMMONPLACE_HOME"].parent))
+                staged_commonplace = layout(staging)["NOVA_COMMONPLACE_HOME"]
+                os.rename(staged_commonplace, paths["NOVA_COMMONPLACE_HOME"])
+                published.append((paths["NOVA_COMMONPLACE_HOME"], staged_commonplace))
+            if staging is not None and rebuild_concordance:
+                created_parents.extend(_create_parent_chain(paths["NOVA_CONCORDANCE_HOME"].parent))
+                staged_concordance = layout(staging)["NOVA_CONCORDANCE_HOME"]
+                os.rename(staged_concordance, paths["NOVA_CONCORDANCE_HOME"])
+                published.append((paths["NOVA_CONCORDANCE_HOME"], staged_concordance))
+
+            estate_write_started = True
+            atomic_json(service_document_path, desired_service_document)
+            atomic_text(paths["env_file"], desired_env)
+            if locator_needs_publication:
+                write_current_estate_locator(root)
+            # The authoritative selector registry is the transaction commit point.
+            # Publish every ancillary locator/helper before this final replacement.
+            atomic_json(paths["registry"], desired_registry)
+    except BaseException as exc:
+        rollback_errors: list[str] = []
+        if estate_write_started:
+            try:
+                _restore_transaction_file(service_document_path, service_document_original)
+                _restore_transaction_file(paths["env_file"], env_original)
+                _restore_transaction_file(paths["registry"], registry_original)
+            except BaseException as rollback_error:
+                rollback_errors.append(f"estate files: {rollback_error}")
+        if locator_preexisting is None:
+            remove_current_estate_locator_if_owned(root)
+        if not rollback_errors:
+            for target, staged_target in reversed(published):
+                try:
+                    staged_target.parent.mkdir(parents=True, exist_ok=True)
+                    if target.exists() and not staged_target.exists():
+                        os.rename(target, staged_target)
+                except BaseException as rollback_error:
+                    rollback_errors.append(f"{target}: {rollback_error}")
+            if dennis_created:
+                try:
+                    paths["DENNIS_PROJECT_HOME"].rmdir()
+                except OSError as rollback_error:
+                    rollback_errors.append(f"{paths['DENNIS_PROJECT_HOME']}: {rollback_error}")
+            _cleanup_empty_parents(created_parents)
+        if staging is not None and staging.exists():
+            shutil.rmtree(staging, ignore_errors=True)
+        if rollback_errors:
+            raise NovaEstateError(
+                "Estate upgrade failed and rollback was incomplete: " + "; ".join(rollback_errors)
+            ) from exc
+        raise
+    finally:
+        if staging is not None and staging.exists():
+            shutil.rmtree(staging, ignore_errors=True)
+
     environment_applied = False
     if args.apply_user_environment:
-        apply_windows_user_environment(values)
+        apply_windows_user_environment(desired_values)
         environment_applied = True
     emit(
         {
-            "format": "nova-free-estate-upgrade/v3",
-            "state": "upgraded" if source_mutated else "already_current",
+            "format": "nova-emergent-estate-upgrade/v2",
+            "state": "upgraded" if content_change else "already_current",
             "product_version": PRODUCT_VERSION,
             "root": str(root),
-            "selectors": values,
-            "preserved_extra_selectors": sorted(
-                key for key in registry.get("active_values", {}) if key not in SELECTOR_KEYS
+            "selectors": desired_values,
+            "added_selectors": missing,
+            "project_records": str(paths["DENNIS_PROJECT_HOME"]),
+            "commonplace": str(paths["NOVA_COMMONPLACE_HOME"]),
+            "concordance": str(paths["NOVA_CONCORDANCE_HOME"]),
+            "commonplace_binding": (
+                {
+                    key: commonplace_receipt.get(key)
+                    for key in ("workspace_id", "generation", "snapshot_sha256")
+                    if key in commonplace_receipt
+                }
+                if isinstance(commonplace_receipt, dict)
+                else None
             ),
+            "concordance_binding": (
+                {
+                    key: concordance_receipt.get(key)
+                    for key in ("workspace_id", "generation", "canonical_snapshot_digest", "status")
+                    if key in concordance_receipt
+                }
+                if isinstance(concordance_receipt, dict)
+                else None
+            ),
+            "registry_commit_point": str(paths["registry"]),
+            "estate_manifest": str(paths["manifest"]),
+            "estate_manifest_format": manifest_format,
+            "legacy_manifest_preserved": legacy_manifest,
+            "service_manifest": str(service_document_path),
+            "preserved_legacy_mind_selectors": [
+                key for key in LEGACY_MIND_SELECTOR_KEYS if desired_active.get(key) is not None
+            ],
             "environment_applied": environment_applied,
             "global_environment_required": False,
             "restart_required": environment_applied,
-            "source_mutated": source_mutated,
+            "source_mutated": content_change,
         }
     )
     return 0
 
 def command_run(args: argparse.Namespace) -> int:
-    _, values, _ = load_configured_root(args.root)
+    root, values, _ = load_configured_root(args.root)
     forwarded = list(args.service_args)
     if forwarded and forwarded[0] == "--":
         forwarded = forwarded[1:]
+    if args.service == "commonplace":
+        if "--estate-root" in forwarded:
+            raise NovaEstateError(
+                "Commonplace estate root is supplied by Nova Operations and must not be overridden"
+            )
+        forwarded = ["--estate-root", str(root), *forwarded]
     completed = run_service_process(args.service, forwarded, values)
     return int(completed.returncode)
 
@@ -923,26 +1471,40 @@ def command_run(args: argparse.Namespace) -> int:
 def command_doctor(args: argparse.Namespace) -> int:
     root, values, _ = load_configured_root(args.root)
     support = continuity_support(values, validate=True)
+    commonplace = commonplace_support(values, verify=True)
     launcher = launcher_payload()
     locations = {
         "continuity": Path(values["NOVA_CONTINUITY_HOME"]).is_dir(),
         "dunbar_parent": Path(values["DUNBAR_STORE"]).parent.is_dir(),
         "corkboard": Path(values["CORKBOARD_HOME"]).is_dir(),
+        "project_management": Path(values["DENNIS_PROJECT_HOME"]).is_dir(),
+        "commonplace": Path(values["NOVA_COMMONPLACE_HOME"]).is_dir(),
+        "concordance": Path(values["NOVA_CONCORDANCE_HOME"]).is_dir(),
     }
     read_supported = bool(support["read"].get("supported"))
     mutation_supported = bool(support["mutation"].get("supported"))
     validation_supported = bool(support["validation"].get("supported"))
+    canonical_commonplace = commonplace.get("canonical")
+    commonplace_valid = bool(
+        commonplace.get("available")
+        and isinstance(canonical_commonplace, dict)
+        and canonical_commonplace.get("ok")
+    )
+    concordance = commonplace.get("concordance")
+    concordance_state = concordance.get("status", "unavailable") if isinstance(concordance, dict) else "unavailable"
     healthy = (
         read_supported
         and mutation_supported
         and validation_supported
+        and commonplace_valid
+        and concordance_state in {"current", "unavailable"}
         and launcher["ready"]
         and all(locations.values())
     )
     operating_mode = "full" if read_supported and mutation_supported else ("read_only" if read_supported else "unavailable")
     emit(
         {
-            "format": "nova-free-estate-doctor/v3",
+            "format": "nova-emergent-estate-doctor/v2",
             "product_version": PRODUCT_VERSION,
             "root": str(root),
             "healthy": healthy,
@@ -961,6 +1523,9 @@ def command_doctor(args: argparse.Namespace) -> int:
             "continuity_read_support": support["read"],
             "continuity_mutation_support": support["mutation"],
             "continuity_validation": support["validation"],
+            "commonplace": commonplace,
+            "commonplace_valid": commonplace_valid,
+            "concordance_state": concordance_state,
             "source_mutated": False,
         }
     )

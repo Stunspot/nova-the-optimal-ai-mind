@@ -79,7 +79,7 @@ def attach_standalone_rights(repo: Path, plugin_source: Path, folder: Path, skil
         copy_tree(plugin_source / "notices" / component_notice, rights_root / "component-notices" / component_notice)
     notice_text = (
         f"# Rights envelope for {skill_id}\n\n"
-        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free 3.0.0. "
+        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free 3.1.0. "
         "Preserve it when copying or redistributing the authentic, unmodified artifact.\n\n"
         "LICENSE.md defines the product-level public split license. ATTRIBUTION.md, NOTICE.md, "
         "TRADEMARKS.md, PROVENANCE.md, and THIRD-PARTY-NOTICES.md preserve identity, limits, and source custody."
@@ -164,7 +164,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     loadout = json.loads(loadout_path.read_text(encoding="utf-8"))
     source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
     version = str(plugin_manifest["version"])
-    if version != "3.0.0" or loadout.get("product_version") != version:
+    if version != "3.1.0" or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
     if loadout.get("license") != "LICENSE.md":
         raise RuntimeError("Loadout does not identify the Nova Free product license")
@@ -175,7 +175,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         raise RuntimeError("Source lock still contains external rights blockers")
     roots = validate_source_lock(repo, plugin_source, source_lock)
     expected = sorted(loadout["roots"])
-    if roots != expected or len(roots) != 25:
+    if roots != expected or len(roots) != 27:
         raise RuntimeError(f"Loadout mismatch: source={len(roots)} manifest={len(expected)}")
 
     base_commit = git_value(repo, "rev-parse", "HEAD")
@@ -279,7 +279,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         "plugin_id": PLUGIN_ID,
         "topology": {
             "plugin_count": 1,
-            "visible_skill_roots": 25,
+            "visible_skill_roots": 27,
             "mind_version": loadout["topology"]["mind_version"],
             "faculty_core_count": loadout["topology"]["faculty_core_count"],
         },

@@ -1,0 +1,30 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.3.0",
+  "episode_mode": "isolated",
+  "files": [
+    "dennis-core-behavior-cases.yaml"
+  ],
+  "indispensable_dimensions": [
+    "record_estate_custody",
+    "project_entry_recovery",
+    "purpose_and_hierarchy_custody",
+    "continued_justification",
+    "benefits",
+    "governance",
+    "forecasting",
+    "capacity",
+    "stakeholders",
+    "adoption",
+    "commercial_alignment",
+    "completion_truth",
+    "authority_provenance",
+    "evidence_honesty",
+    "change_control",
+    "correction_and_recovery",
+    "project_scale_reporting",
+    "transition"
+  ],
+  "synthesis": "A failure in any indispensable dimension defeats Dennis Stratton v0.3.0's behavioral claim. Polish cannot average away a skipped project-store check, split canonical custody, false completion, unjustified continuation, invented authority, fabricated forecasts, hidden capacity displacement, ownerless transition, or benefits theater.",
+  "result_authority": "Behavioral evidence for Dennis Stratton v0.3.0 build and regression decisions under the recorded runtime; not proof of delivery, human acceptance, repository synchronization, framework compliance, or project value."
+}

@@ -1,0 +1,443 @@
+{
+  "schema_version": "cd-project-control/v2",
+  "project": {
+    "id": "example-foundry",
+    "name": "Project Example Foundry",
+    "outcome": "Deliver a maintainable internal capability through evidence-bearing phases without losing purpose, authority, or completion state.",
+    "status": "active",
+    "owner": "Project owner",
+    "updated_at": "2026-08-13T18:00:00Z"
+  },
+  "source_authority": [
+    {
+      "id": "SRC-OWNER-001",
+      "rank": 1,
+      "kind": "owner_decision",
+      "locator": "Anonymized current owner correction and milestone authority",
+      "scope": "M0 completion, local checkpoint authority, and the boundary before M1",
+      "observed_at": "2026-08-13T17:30:00Z",
+      "status": "current"
+    },
+    {
+      "id": "SRC-REPO-001",
+      "rank": 2,
+      "kind": "repository",
+      "locator": "Synthetic repository snapshot at example-m0-checkpoint",
+      "scope": "Local M0 artifacts, verification, checkpoint, worktree, and remote relationship",
+      "observed_at": "2026-08-13T17:45:00Z",
+      "status": "current"
+    },
+    {
+      "id": "SRC-VERIFY-001",
+      "rank": 3,
+      "kind": "verification",
+      "locator": "Synthetic independent M0 verification receipt",
+      "scope": "M0 acceptance criteria only",
+      "observed_at": "2026-08-13T17:40:00Z",
+      "status": "current"
+    },
+    {
+      "id": "SRC-HISTORY-001",
+      "rank": 4,
+      "kind": "task_history",
+      "locator": "Anonymized recovery history",
+      "scope": "Provenance of the superseded safeguard and hierarchy confusion",
+      "observed_at": "2026-08-13T17:20:00Z",
+      "status": "current"
+    }
+  ],
+  "hierarchy": [
+    {
+      "id": "PHASE-4",
+      "kind": "phase",
+      "label": "Phase 4",
+      "parent_id": null,
+      "status": "active",
+      "purpose": "Build and prove the internal capability through governed milestones.",
+      "exit_criteria_ids": []
+    },
+    {
+      "id": "M0",
+      "kind": "milestone",
+      "label": "M0 - Internal foundation cut",
+      "parent_id": "PHASE-4",
+      "status": "complete",
+      "purpose": "Establish a verified and locally checkpointed foundation for later work.",
+      "exit_criteria_ids": [
+        "EC-M0-BUILT",
+        "EC-M0-VERIFIED",
+        "EC-M0-CHECKPOINTED"
+      ]
+    },
+    {
+      "id": "M1",
+      "kind": "milestone",
+      "label": "M1 - First capability slice",
+      "parent_id": "PHASE-4",
+      "status": "planned",
+      "purpose": "Begin the first capability slice only after M0 closeout is accepted.",
+      "exit_criteria_ids": []
+    }
+  ],
+  "current": {
+    "path": [
+      "PHASE-4",
+      "M0"
+    ],
+    "active_commitment_id": "WP-M0-FOUNDATION",
+    "as_of": "2026-08-13T18:00:00Z",
+    "posture": "complete",
+    "purpose_connection": "M0 makes a verified, durable foundation available for controlled Phase 4 delivery.",
+    "next_action": "Complete the M0 closeout review; start M1 only after that closeout is accepted.",
+    "next_decision": "Project-owner acceptance of M0 closeout and the residual remote-synchronization condition."
+  },
+  "scope": {
+    "in": [
+      "Phase 4 hierarchy",
+      "M0 completion and local checkpoint",
+      "The controlled transition to M1"
+    ],
+    "out": [
+      "Starting M1 before M0 closeout",
+      "External deployment or publication"
+    ],
+    "non_goals": [
+      "Making optional remote synchronization mandatory",
+      "Replacing the roadmap with implementation detail"
+    ]
+  },
+  "authority": {
+    "project_owner": "Project owner",
+    "grants": [
+      {
+        "id": "AUTH-SAFEGUARD-001",
+        "actor": "Delivery agent",
+        "issued_by": "Delivery agent",
+        "scope": "M0 local implementation and checkpoint actions",
+        "expires_at": "2026-08-13T17:30:00Z",
+        "kind": "agent_safeguard",
+        "may": [
+          "Build and verify M0 locally"
+        ],
+        "may_not": [
+          "Create a local checkpoint without later permission",
+          "Synchronize the remote"
+        ],
+        "source_id": "SRC-HISTORY-001",
+        "rationale": "A self-authored caution separated implementation from repository mutation but made local completion unreachable.",
+        "effective_at": "2026-08-13T16:00:00Z",
+        "revisit_trigger": "The owner clarifies the terminal state or the safeguard blocks completion.",
+        "status": "superseded"
+      },
+      {
+        "id": "AUTH-OWNER-001",
+        "actor": "Delivery team",
+        "issued_by": "Project owner",
+        "scope": "M0 build, verification, local checkpoint, and the transition boundary into M1",
+        "expires_at": null,
+        "kind": "owner_policy",
+        "may": [
+          "Perform reversible M0 work",
+          "Run M0 verification",
+          "Create the verified local M0 checkpoint"
+        ],
+        "may_not": [
+          "Synchronize the remote without separate authority",
+          "Start M1 before M0 closeout"
+        ],
+        "source_id": "SRC-OWNER-001",
+        "rationale": "The owner requires a durable local milestone while retaining remote and transition authority.",
+        "effective_at": "2026-08-13T17:30:00Z",
+        "revisit_trigger": "M0 closeout is accepted or repository authority changes.",
+        "status": "active"
+      }
+    ],
+    "reserved": [
+      "Remote synchronization",
+      "Starting M1 before M0 closeout",
+      "External deployment and publication"
+    ]
+  },
+  "work_packages": [
+    {
+      "id": "WP-M0-FOUNDATION",
+      "parent_id": "M0",
+      "outcome": "Produce a sound, verified, and locally checkpointed M0 foundation.",
+      "status": "complete",
+      "dependency_ids": [],
+      "acceptance_criteria_ids": [
+        "EC-M0-BUILT",
+        "EC-M0-VERIFIED",
+        "EC-M0-CHECKPOINTED"
+      ],
+      "authority_ids": [
+        "AUTH-OWNER-001"
+      ],
+      "owner": "Delivery lead",
+      "next_action": "Submit the evidenced M0 baseline for closeout before activating M1."
+    }
+  ],
+  "exit_criteria": [
+    {
+      "id": "EC-M0-BUILT",
+      "owner_id": "M0",
+      "description": "The complete M0 foundation exists in the canonical local workspace.",
+      "status": "verified",
+      "evidence_ids": [
+        "EV-M0-BUILT"
+      ],
+      "waiver_decision_id": null
+    },
+    {
+      "id": "EC-M0-VERIFIED",
+      "owner_id": "M0",
+      "description": "The named M0 verification passes against the intended baseline.",
+      "status": "verified",
+      "evidence_ids": [
+        "EV-M0-VERIFIED"
+      ],
+      "waiver_decision_id": null
+    },
+    {
+      "id": "EC-M0-CHECKPOINTED",
+      "owner_id": "M0",
+      "description": "An authorized durable local checkpoint records the verified M0 baseline.",
+      "status": "verified",
+      "evidence_ids": [
+        "EV-M0-CHECKPOINT"
+      ],
+      "waiver_decision_id": null
+    }
+  ],
+  "completion_contract": {
+    "unit_id": "M0",
+    "definition": "M0 is complete when BUILT, VERIFIED, and LOCALLY_CHECKPOINTED are evidenced; REMOTE_SYNCHRONIZED is optional and may remain pending.",
+    "states": [
+      {
+        "name": "BUILT",
+        "required": true,
+        "status": "satisfied",
+        "evidence_ids": [
+          "EV-M0-BUILT"
+        ],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "VERIFIED",
+        "required": true,
+        "status": "satisfied",
+        "evidence_ids": [
+          "EV-M0-VERIFIED"
+        ],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "LOCALLY_CHECKPOINTED",
+        "required": true,
+        "status": "satisfied",
+        "evidence_ids": [
+          "EV-M0-CHECKPOINT"
+        ],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "REMOTE_SYNCHRONIZED",
+        "required": false,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "id": "DEC-OWNER-001",
+      "status": "accepted",
+      "decision": "M0 requires an authorized local checkpoint; remote synchronization is optional, and M1 begins only after M0 closeout.",
+      "options": [
+        "Retain the no-checkpoint safeguard",
+        "Authorize local checkpoint and reserve remote sync",
+        "Require local and remote checkpoint"
+      ],
+      "rationale": "This makes milestone completion durable without expanding authority into remote mutation.",
+      "authority": "Project owner",
+      "source_id": "SRC-OWNER-001",
+      "date": "2026-08-13T17:30:00Z",
+      "supersedes_ids": [
+        "AUTH-SAFEGUARD-001"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "id": "CHG-M0-001",
+      "status": "implemented",
+      "request": "Replace the self-authored no-checkpoint restriction with the owner-authorized local-checkpoint boundary.",
+      "impact": {
+        "scope": "No product scope change; completion authority is clarified.",
+        "schedule": "Removes an artificial blocker without advancing M1.",
+        "cost": "No material cost change in this example.",
+        "risk": "Remote control remains reserved while local completion becomes explicit.",
+        "quality": "The checkpoint is tied to the verified M0 baseline.",
+        "benefits": "Creates a durable transition point for Phase 4."
+      },
+      "authority": "Project owner",
+      "decision_id": "DEC-OWNER-001"
+    }
+  ],
+  "controls": [
+    {
+      "id": "ISSUE-MAP-001",
+      "kind": "issue",
+      "description": "Completion and repository authority were conflated, obscuring M0 state.",
+      "owner": "Delivery lead",
+      "status": "resolved",
+      "trigger": "A status answer changes after a repository-state challenge.",
+      "next_action": "Use explicit completion states and qualified repository state at closeout.",
+      "due": null,
+      "objective": "Control the consequence of: Completion and repository authority were conflated, obscuring M0 state.",
+      "cause_event_effect": "Legacy v1 control; restate cause, event, and effect for: Completion and repository authority were conflated, obscuring M0 state.",
+      "exposure": "Reassess exposure after migration.",
+      "treatment": "Use explicit completion states and qualified repository state at closeout.",
+      "resource_commitment": "Reconfirm the resources committed to treatment.",
+      "residual_state": "Reassess residual exposure after treatment.",
+      "escalation_threshold": "A status answer changes after a repository-state challenge.",
+      "acceptance_decision_id": null
+    },
+    {
+      "id": "DEP-REMOTE-001",
+      "kind": "dependency",
+      "description": "Remote synchronization needs separate authority and is not required for M0.",
+      "owner": "Project owner",
+      "status": "watch",
+      "trigger": "A later gate or collaboration need makes remote sync necessary.",
+      "next_action": "Request authority only when the optional remote action becomes decision-relevant.",
+      "due": null,
+      "objective": "Control the consequence of: Remote synchronization needs separate authority and is not required for M0.",
+      "cause_event_effect": "Legacy v1 control; restate cause, event, and effect for: Remote synchronization needs separate authority and is not required for M0.",
+      "exposure": "Reassess exposure after migration.",
+      "treatment": "Request authority only when the optional remote action becomes decision-relevant.",
+      "resource_commitment": "Reconfirm the resources committed to treatment.",
+      "residual_state": "Reassess residual exposure after treatment.",
+      "escalation_threshold": "A later gate or collaboration need makes remote sync necessary.",
+      "acceptance_decision_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EV-M0-BUILT",
+      "claim": "The complete M0 foundation exists in the synthetic local workspace.",
+      "level": "verified",
+      "locator": "example://repository/m0/foundation-inventory",
+      "observed_at": "2026-08-13T17:35:00Z",
+      "method": "Compared the anonymized inventory and structural contracts to accepted M0 scope.",
+      "limits": "Synthetic example only; no real repository or product state is proved.",
+      "actor": "Example verifier"
+    },
+    {
+      "id": "EV-M0-VERIFIED",
+      "claim": "The synthetic M0 verification passes against the demonstrated baseline.",
+      "level": "verified",
+      "locator": "example://verification/m0/receipt",
+      "observed_at": "2026-08-13T17:40:00Z",
+      "method": "Matched the anonymized verification receipt to the local baseline.",
+      "limits": "Synthetic only; runtime operation, acceptance, and value are not established.",
+      "actor": "Example verifier"
+    },
+    {
+      "id": "EV-M0-CHECKPOINT",
+      "claim": "The verified M0 baseline has an authorized local checkpoint and clean worktree.",
+      "level": "verified",
+      "locator": "example://repository/checkpoint/example-m0-checkpoint",
+      "observed_at": "2026-08-13T17:45:00Z",
+      "method": "Matched the checkpoint identifier to the verified baseline and inspected worktree state.",
+      "limits": "The local branch is ahead; remote sync, deployment, operation, and acceptance are not proved.",
+      "actor": "Example verifier"
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-M0-CLOSEOUT",
+      "timestamp": "2026-08-13T18:00:00Z",
+      "hierarchy_path": [
+        "PHASE-4",
+        "M0"
+      ],
+      "completed": [
+        "M0 built",
+        "M0 verified",
+        "M0 locally checkpointed",
+        "Agent safeguard superseded by DEC-OWNER-001"
+      ],
+      "remaining": [
+        "Owner closeout acceptance before M1",
+        "Optional remote synchronization remains pending"
+      ],
+      "blockers": [],
+      "repository_state": {
+        "branch": "main",
+        "head": "example-m0-checkpoint",
+        "worktree": "clean",
+        "remote_state": "ahead"
+      },
+      "next_action": "Complete the M0 closeout review; start M1 only after that closeout is accepted."
+    }
+  ],
+  "justification": {
+    "status": "proposed",
+    "reason": "Reconfirm why this project remains the best intervention.",
+    "alternatives": [
+      "Reassess the do-nothing and lower-cost alternatives."
+    ],
+    "viability": "Not yet reassessed during migration.",
+    "sponsor": "Project owner",
+    "benefit_owner": "Project owner",
+    "last_reviewed_at": "2026-08-13T18:00:00Z",
+    "revisit_trigger": "Value, viability, cost, risk, or strategic fit changes."
+  },
+  "benefits": [],
+  "governance": {
+    "sponsor": "Project owner",
+    "accountable_owner": "Project owner",
+    "cadence": "Reconfirm the governance cadence after migration.",
+    "tolerances": [
+      "Escalate material scope, forecast, benefit, risk, quality, or capacity exceptions."
+    ],
+    "gates": [],
+    "decision_latency_target": "Reconfirm after migration."
+  },
+  "forecast": {
+    "as_of": "2026-08-13T18:00:00Z",
+    "unit": "unspecified",
+    "lower": 0,
+    "upper": 0,
+    "confidence": "low",
+    "basis": "No v1 forecast migrated.",
+    "baseline": "Reconfirm after migration.",
+    "variance": "Unknown.",
+    "next_update": "At the next project-control review."
+  },
+  "capacity": {
+    "constraints": [
+      "Capacity was not first-class in v1; reassess it."
+    ],
+    "bottleneck": "Unknown after migration.",
+    "wip_limit": 1,
+    "active_wip": 0,
+    "queue": [],
+    "next_action": "Assess capacity, WIP, queue, and bottleneck."
+  },
+  "stakeholders": [],
+  "commercial_alignment": [],
+  "transition": {
+    "operational_owner": "Project owner",
+    "acceptance_state": "not_ready",
+    "support_state": "not_ready",
+    "benefit_review_owner": "Project owner",
+    "benefit_review_at": "Reconfirm after migration.",
+    "residuals": [
+      "Operational acceptance, support readiness, and benefit review require confirmation."
+    ],
+    "evidence_ids": []
+  }
+}
