@@ -23,7 +23,7 @@ After qualification evidence is accepted and committed, confirm that Git reports
     python -B -X utf8 tools/build_release.py --repo . --require-clean
     python -B -X utf8 tools/verify_package.py dist/nova-the-optimal-ai-free-3.1.1
 
-The builder creates the complete customer, Codex, and Claude-compatible archives plus twenty-seven standalone Claude folders and ZIPs. Each standalone artifact carries a nova-free-rights envelope; relevant TestForge, Agent Swarm, or career component notices travel inside it.
+The builder creates the complete customer, Codex, and Claude-compatible archives plus twenty-seven standalone Claude folders and ZIPs. It raw-validates local and central filename bytes as strict UTF-8, requires the UTF-8 flag for non-ASCII names, compares exact staged inventory, and reads every member before accepting any archive. Each standalone artifact carries a nova-free-rights envelope; relevant TestForge, Agent Swarm, or career component notices travel inside it.
 
 A package PASS establishes the exercised archive inventory, exact payload bytes, rights custody, per-file checksums, deterministic structure, host parity, source binding, and truthful not-published state. It does not establish fresh-host marketplace acceptance, installation, discovery, enabled state, restart behavior, model attention, routing quality, live tools, external-service behavior, publication, or customer outcomes.
 

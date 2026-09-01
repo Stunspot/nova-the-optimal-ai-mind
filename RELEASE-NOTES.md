@@ -7,6 +7,9 @@ Agent Striving advances to the complete canonical 0.3.3 tree. It now preserves a
 Dennis Stratton Project Management remains the accepted 0.3.0 Nova-bound package and is re-bound to its canonical source commit plus the explicit Nova estate overlay. The public site now leads with Nova Free's actual promise: create a capable AI agent quickly, easily, and without cost, then put a highly competent generalist to work immediately.
 
 Agent Swarm Orchestration advances to the exact canonical 0.3.0 tree: twenty-six files bound to commit 31ab913afb4981daf7b2aa1d70687e90118183fc, runtime fingerprint ec4fd5afdee16512cb1561639521844d07a11300975633447766e419bc8886ca, and the refreshed six-file rights and privacy packet. It adds adaptive organization design above the preserved Direct, Enlist, Assemble, Chain, and Recover execution kernel.
+
+Release construction now raw-validates every local and central ZIP filename as strict UTF-8, requires the ZIP UTF-8 flag for non-ASCII names, checks exact staged inventory, and reads every member before accepting an archive. Nova Free's current filenames remain ASCII; this is preventive hardening against the invalid-filename defect observed in the larger edition.
+
 ## 3.1.0 — current foundation alignment
 
 Free Nova now shares Nova Emergent 1.0.4's current foundational layer while retaining the Free edition's smaller practical capability ecology. MIND advances to 0.3.0 and adds Strategic Intelligence as its seventeenth nested Faculty Core.

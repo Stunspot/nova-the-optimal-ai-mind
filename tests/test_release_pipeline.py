@@ -13,6 +13,7 @@ from unittest.mock import patch
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "tools"))
 import build_release
+from release_lib import deterministic_zip, zip_filename_findings
 
 BUILDER = REPO / "tools" / "build_release.py"
 VERIFIER = REPO / "tools" / "verify_package.py"
@@ -41,6 +42,10 @@ class ReleasePipelineTests(unittest.TestCase):
             first_result = json.loads(first.stdout)
             self.assertEqual(first_result["candidate_state"], "built_from_frozen_source")
             self.assertTrue(first_result["independent_review_required"])
+            self.assertEqual(
+                first_result["archive_filename_encoding"],
+                "strict_utf8_local_and_central_headers",
+            )
             self.assertEqual(first_result["redistribution_state"], "permitted_under_included_licenses")
             self.assertEqual(first_result["publication_state"], "not_published")
             self.assertNotIn("sealed_candidate", first_result)
@@ -87,10 +92,101 @@ class ReleasePipelineTests(unittest.TestCase):
                 manifest = json.loads((package_root / binding / "BUILD-MANIFEST.json").read_text(encoding="utf-8"))
                 self.assertEqual(manifest["candidate_state"], "built_from_frozen_source")
                 self.assertTrue(manifest["independent_review_required"])
+                self.assertEqual(
+                    manifest["archive_filename_encoding"],
+                    "strict_utf8_local_and_central_headers",
+                )
                 self.assertEqual(manifest["rights"]["external_rights_blockers"], [])
                 self.assertRegex(manifest["source_lock_sha256"], r"^[0-9a-f]{64}$")
                 self.assertRegex(manifest["source_map_sha256"], r"^[0-9a-f]{64}$")
                 self.assertNotIn("sealed_candidate", manifest)
+
+    def test_unicode_archive_names_use_strict_utf8_headers(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="nova-free-unicode-zip-") as directory:
+            base = Path(directory)
+            source = base / "source"
+            names = (
+                "guides/en–dash.md",
+                "guides/em—dash.md",
+                "guides/smart’apostrophe.md",
+            )
+            for index, name in enumerate(names):
+                target = source / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(f"fixture {index}\n".encode("utf-8"))
+            archive_path = base / "unicode.zip"
+            deterministic_zip(source, archive_path, prefix="fixture")
+            expected = sorted(f"fixture/{name}" for name in names)
+            self.assertEqual([], zip_filename_findings(archive_path, expected))
+            with zipfile.ZipFile(archive_path) as archive:
+                info_by_name = {info.filename: info for info in archive.infolist()}
+                self.assertEqual(set(expected), set(info_by_name))
+                for name in expected:
+                    self.assertTrue(info_by_name[name].flag_bits & 0x0800)
+                    self.assertEqual(
+                        (source / name.removeprefix("fixture/")).read_bytes(),
+                        archive.read(name),
+                    )
+
+    def test_malformed_utf8_archive_name_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="nova-free-bad-zip-name-") as directory:
+            base = Path(directory)
+            source = base / "source"
+            target = source / "guide—review.md"
+            target.parent.mkdir(parents=True)
+            target.write_text("fixture\n", encoding="utf-8", newline="\n")
+            archive_path = base / "malformed.zip"
+            deterministic_zip(source, archive_path, prefix="fixture")
+            raw = archive_path.read_bytes()
+            valid = "—".encode("utf-8")
+            self.assertEqual(raw.count(valid), 2)
+            archive_path.write_bytes(raw.replace(valid, b"\xd4\xc7\xf4"))
+            findings = zip_filename_findings(
+                archive_path,
+                ["fixture/guide—review.md"],
+            )
+            self.assertTrue(
+                any("not valid UTF-8" in finding for finding in findings),
+                findings,
+            )
+
+            unflagged_path = base / "unflagged.zip"
+            unflagged = bytearray(archive_path.read_bytes())
+            for signature, flag_offset in ((b"PK\x03\x04", 6), (b"PK\x01\x02", 8)):
+                header = unflagged.find(signature)
+                self.assertNotEqual(header, -1)
+                flags = int.from_bytes(
+                    unflagged[header + flag_offset:header + flag_offset + 2],
+                    "little",
+                )
+                unflagged[header + flag_offset:header + flag_offset + 2] = (
+                    flags & ~0x0800
+                ).to_bytes(2, "little")
+            unflagged_path.write_bytes(unflagged)
+            unflagged_findings = zip_filename_findings(
+                unflagged_path,
+                ["fixture/guide—review.md"],
+            )
+            self.assertTrue(
+                any("not valid UTF-8" in finding for finding in unflagged_findings),
+                unflagged_findings,
+            )
+            self.assertTrue(
+                any("lacks the UTF-8 flag" in finding for finding in unflagged_findings),
+                unflagged_findings,
+            )
+
+            drive_path = base / "drive-qualified.zip"
+            with zipfile.ZipFile(drive_path, "w") as archive:
+                archive.writestr("C:/escape.txt", b"escape")
+            drive_findings = zip_filename_findings(
+                drive_path,
+                ["C:/escape.txt"],
+            )
+            self.assertTrue(
+                any("unsafe ZIP member name" in finding for finding in drive_findings),
+                drive_findings,
+            )
 
     def test_source_lock_validation_rejects_stale_source_map(self) -> None:
         source_lock = json.loads((REPO / "design" / "source-lock.json").read_text(encoding="utf-8"))

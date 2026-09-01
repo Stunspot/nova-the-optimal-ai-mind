@@ -256,6 +256,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         "source_clean": source_clean,
         "candidate_state": "built_from_frozen_source",
         "independent_review_required": True,
+        "archive_filename_encoding": "strict_utf8_local_and_central_headers",
         "rights": rights_state,
         "publication_state": "not_published",
         "skill_roots": roots,
@@ -309,6 +310,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
             {"binding": "claude-compatible", "file": claude_zip.name, "sha256": claude_zip_sha},
         ],
         "required_absences": loadout["required_absences"],
+        "archive_filename_encoding": "strict_utf8_local_and_central_headers",
         "rights": rights_state,
         "release_blockers": [],
         "open_evidence_boundaries": source_lock["open_evidence_boundaries"],
@@ -340,6 +342,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         "source_clean": source_clean,
         "candidate_state": "built_from_frozen_source",
         "independent_review_required": True,
+        "archive_filename_encoding": "strict_utf8_local_and_central_headers",
         "redistribution_state": REDISTRIBUTION_STATE,
         "publication_state": "not_published",
     }

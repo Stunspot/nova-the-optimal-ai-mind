@@ -9,7 +9,7 @@ from html.parser import HTMLParser
 from pathlib import Path, PurePosixPath
 from urllib.parse import unquote, urlsplit
 
-from release_lib import files, sha256_file, tree_digest
+from release_lib import files, sha256_file, tree_digest, zip_filename_findings
 
 EXPECTED_ROOTS = {
     "nova", "nova-operations", "commonplace", "cognitive-continuity",
@@ -414,6 +414,8 @@ def verify(package: Path) -> dict[str, object]:
             findings.append(f"{binding} build manifest candidate state is invalid")
         if state.get("independent_review_required") is not True:
             findings.append(f"{binding} build manifest omits independent review requirement")
+        if state.get("archive_filename_encoding") != "strict_utf8_local_and_central_headers":
+            findings.append(f"{binding} build manifest omits the UTF-8 archive filename contract")
         if state.get("binding") != binding:
             findings.append(f"{binding} build manifest binding mismatch")
         if state.get("source_base_commit") != release_source.get("base_commit"):
@@ -449,6 +451,8 @@ def verify(package: Path) -> dict[str, object]:
         findings.append("release manifest evidence boundaries differ from the frozen source lock")
     if release_manifest.get("publication_state") != "not_published":
         findings.append("release manifest overclaims publication")
+    if release_manifest.get("archive_filename_encoding") != "strict_utf8_local_and_central_headers":
+        findings.append("release manifest omits the UTF-8 archive filename contract")
 
     zips_root = package / "claude" / "zips"
     release_skill_records = release_manifest.get("skills")
@@ -474,15 +478,19 @@ def verify(package: Path) -> dict[str, object]:
             continue
         expected_files = files(folders / skill_id)
         expected_names = {f"{skill_id}/{path.relative_to(folders / skill_id).as_posix()}" for path in expected_files}
-        with zipfile.ZipFile(zip_path) as archive:
-            if set(archive.namelist()) != expected_names:
-                findings.append(f"Claude skill ZIP inventory mismatch: {skill_id}")
-            else:
-                for path in expected_files:
-                    name = f"{skill_id}/{path.relative_to(folders / skill_id).as_posix()}"
-                    if archive.read(name) != path.read_bytes():
-                        findings.append(f"Claude skill ZIP bytes differ from folder: {skill_id}/{path.relative_to(folders / skill_id).as_posix()}")
-                        break
+        name_problems = zip_filename_findings(zip_path, sorted(expected_names))
+        for problem in name_problems:
+            findings.append(f"Claude skill ZIP filename encoding failed for {skill_id}: {problem}")
+        if not name_problems:
+            with zipfile.ZipFile(zip_path) as archive:
+                if set(archive.namelist()) != expected_names:
+                    findings.append(f"Claude skill ZIP inventory mismatch: {skill_id}")
+                else:
+                    for path in expected_files:
+                        name = f"{skill_id}/{path.relative_to(folders / skill_id).as_posix()}"
+                        if archive.read(name) != path.read_bytes():
+                            findings.append(f"Claude skill ZIP bytes differ from folder: {skill_id}/{path.relative_to(folders / skill_id).as_posix()}")
+                            break
         record = record_by_id.get(skill_id, {})
         actual_payload_tree = tree_digest(codex_plugin / "skills" / skill_id)
         if record.get("payload_tree") != actual_payload_tree:
