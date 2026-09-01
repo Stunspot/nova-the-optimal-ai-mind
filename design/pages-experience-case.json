@@ -2,15 +2,29 @@
   "schema": "arcweft-experience-case/v1",
   "id": "nova-free-pages-3.1.1",
   "entry_mode": "diagnosis_and_repair",
-  "status": "implementation_candidate",
+  "status": "deployed_static_verified",
   "authority": "Owner requested copy and design replacement and authorized Pages deployment.",
   "audience": "People who want a capable personal AI agent without understanding skill architecture.",
   "primary_task": "Understand the offer, decide Nova fits, get the free package, and complete installation.",
   "platform": "Static responsive GitHub Pages site with keyboard, pointer, and touch navigation.",
-  "evidence_state": "Owner brief plus repository/package facts; no representative-user study or outcome analytics.",
+  "evidence_state": "Owner brief plus repository/package facts; static 11-page acceptance passed locally and in the public Pages deployment. Browser visual inspection was attempted on localhost and the deployed HTTPS page but was blocked by an unavailable admin-enforced browser security check. No representative-user study or outcome analytics.",
   "selected_direction": "agent_launchpad",
   "rejected_direction": "capability_atlas",
-  "artifacts": ["design/pages-experience-contract.md", "design/pages-options-and-decision.md", "docs/index.html", "docs/install.html", "docs/capabilities.html", "docs/workflows.html", "docs/style.css"],
-  "highest_supportable_claim": "Implemented static site candidate with deterministic structure checks and planned target-browser inspection; usability outcomes and formal accessibility conformance are not established.",
-  "next_gate": "target-runtime visual, responsive, keyboard, and link inspection"
+  "artifacts": [
+    "design/pages-experience-contract.md",
+    "design/pages-options-and-decision.md",
+    "docs/index.html",
+    "docs/install.html",
+    "docs/capabilities.html",
+    "docs/workflows.html",
+    "docs/style.css"
+  ],
+  "highest_supportable_claim": "Deployed static site with deterministic structure, link, metadata, responsive-style, and accessibility-baseline checks. Browser visual inspection, representative usability outcomes, and formal accessibility conformance are not established.",
+  "next_gate": "Optional human or policy-enabled target-browser visual review; a contrary observation reopens only the affected page or style rule.",
+  "deployment": {
+    "workflow_run": "https://github.com/Stunspot/nova-the-optimal-ai-mind/actions/runs/33476912717",
+    "result": "PASS",
+    "source_commit": "3c02d8be30ab984fa85895d87ca89b33b3343d16",
+    "site": "https://stunspot.github.io/nova-the-optimal-ai-mind/"
+  }
 }

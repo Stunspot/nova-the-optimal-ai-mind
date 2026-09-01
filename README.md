@@ -36,6 +36,6 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 3.1.1 local release candidate. License permission does not claim that a tag, push, GitHub release, directory listing, website deployment, announcement, or other publication action has occurred. No GitHub Actions run on a GitHub-hosted runner is claimed as evidence for this candidate.
+This repository contains the Free 3.1.1 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠
