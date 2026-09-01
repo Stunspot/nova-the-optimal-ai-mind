@@ -1,4 +1,4 @@
-# Free 3.1.0 capability ecology
+# Free 3.1.1 capability ecology
 
 This file names the package-native neighborhoods only. It is not a classifier, an exhaustive capability inventory, or a menu the user must learn. Start with the work. Use a clear matching native skill when its canonical craft changes the result, and let Nova remain the accountable speaker.
 

@@ -1,15 +1,9 @@
-# Demonstration: resume the first unverified edge
+# Demonstration: resume the live edge
 
-An interrupted project seeks a verified incident-response runbook. Continuity contains the authorized objective, acceptance criteria, a completed log-triage workstream with passing evidence, a drafted containment-planning workstream, and a pending approval boundary for production mutations.
+A project is interrupted after a crash. Its canonical project record retains the purpose, settled decisions, implemented state, one unfinished containment section, the production-authority boundary, and the likely next place to continue.
 
-On resumption, Striving does not recreate the roadmap or rebuild triage. It orients from verified state:
+On resumption, Striving reads that record and continues from the unfinished containment section. It does not ask the user to reconstruct the project, reopen settled architecture, or create a second pursuit ledger. It checks the containment procedure because a defective procedure would matter to the product, not because completion needs a receipt.
 
-- release objective remains active;
-- triage is integrated and supported by its recorded evidence;
-- containment planning exists structurally but has no behavioral evidence;
-- production mutation authority remains absent;
-- the next consequential move is to finish and test containment planning in a read-only simulated environment.
+When the work reaches a proposed production restart, the missing authority is real. Striving leaves the restart untouched and explains the decision that belongs to the operator. It does not turn the boundary into a new documentation project unless an actual operator needs a handoff.
 
-The resumed cycle completes that verification. When the package proposes an actual production restart, Striving prepares the action, blast-radius, rollback, and verification packet, then transitions to `awaiting-authority`. It preserves momentum by finishing all independent preparation; it does not treat persistence as permission.
-
-The governing invariant is that interruption changes availability, not the meaning of completed evidence or authority. Resume from the first unverified edge and preserve the same finish line.
+Interruption changed availability, not the meaning of the work. The project record preserved the thread; Striving restored its forward pull.

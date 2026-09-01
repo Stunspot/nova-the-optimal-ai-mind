@@ -1,7 +1,7 @@
 interface:
   display_name: "Agent Swarm Orchestration"
-  short_description: "🐝 Coordinate many workers on split tasks."
-  default_prompt: "Use $agent-swarm-orchestration to decide and coordinate the right agent topology for this task."
+  short_description: "🐝 Design and adapt accountable agent organizations."
+  default_prompt: "Use $agent-swarm-orchestration to shape the temporary organization this work needs, compile its next phase into a safe execution regime, and adapt it from evidence."
 
 policy:
   allow_implicit_invocation: true

@@ -1,16 +1,17 @@
 {
   "format": "cd-augment-eval/v1",
-  "package_version": "0.1.2",
+  "package_version": "0.3.3",
   "episode_mode": "isolated",
   "files": ["core-transfer-cases.yaml"],
   "indispensable_dimensions": [
-    "authorized_goal_custody",
-    "verified_progress",
+    "authorized_pursuit_custody",
+    "resolution_fidelity",
+    "mode_fit",
     "strategy_adaptation",
     "interruption_recovery",
     "authority_boundary",
-    "disciplined_termination"
+    "natural_rest"
   ],
-  "synthesis": "Failure of authorized goal custody, verified-progress discrimination, adaptive recovery, interruption continuity, authority preservation, or disciplined termination defeats the Agent Striving claim. Easier activity or planning successes cannot average away a central conative failure.",
+  "synthesis": "Failure to preserve the user's actual direction, keep an emerging pursuit at its real resolution, work in the mode the situation needs, recover from interruption, adapt without bureaucracy, preserve authority, or rest naturally defeats the Agent Striving claim.",
   "result_authority": "Behavioral evidence for private build and regression decisions under the recorded runtime; not proof of subjective motivation, universal autonomy, unattended host execution, or authority beyond the user and harness."
 }

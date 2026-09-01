@@ -8,7 +8,11 @@
 
 ## Evidence
 
-<Sources, locations, commands, outputs, hashes, runtime, and evidence level.>
+<Sources, locations, commands, outputs, hashes, runtime, and evidence level. A citation remains agent-reported until root observation.>
+
+## Contribution effect
+
+<New evidence, transformation, error caught, uncertainty reduced, acceptance advanced, or `no unique contribution observed`. Name any new contributor, interaction, or reform that is causally warranted.>
 
 ## Artifacts and state touched
 
@@ -16,12 +20,12 @@
 
 ## Assumptions and unresolved facts
 
-<Only matters that can change integration or acceptance.>
+<Only matters that can change integration, organization, or acceptance.>
 
-## Conflicts and downstream effect
+## Conflicts, dissent, and downstream effect
 
-<Contradictions, overlapping ownership, changed dependencies, or `none observed`.>
+<Contradictions, minority evidence, overlapping ownership, changed dependencies, contamination, or `none observed`.>
 
-## Verification and return condition
+## Verification, completion, and release
 
-<What was checked, what remains unverified, and what the root can safely do next.>
+<What was checked, what remains unverified, whether this contribution is complete or should be released, and what the root can safely do next.>

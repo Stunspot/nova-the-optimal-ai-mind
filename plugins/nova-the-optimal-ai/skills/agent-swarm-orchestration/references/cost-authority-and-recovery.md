@@ -1,49 +1,56 @@
 # Optimize accepted outcome, not agent activity
 
-A swarm spends more than model tokens. Price startup, context reconstruction, duplicated reads, tool contention, latency, messages, merge, verification, correction, and cleanup. Savings exist only when the accepted result costs less, arrives sooner, becomes more reliable, or resolves more uncertainty at the required quality floor.
+An organization spends more than model tokens. Price members, edges, exposure, rounds, state maintenance, and reconfiguration: startup, context reconstruction, duplicated reads, tool contention, latency, messages, privacy risk, anchoring, merge, verification, correction, transition, and cleanup.
 
-## Route cognition by consequence
+Savings exist only when the accepted result costs less, arrives sooner, becomes more reliable, discovers more relevant evidence, contains risk, or resolves more uncertainty at the required quality floor.
 
-Use cheaper qualified cognition for bounded, reversible, independently checkable work: inventory, deterministic checks, isolated inspection, normalization, or first-pass drafting with a strong review path. Keep mission framing, architecture, ambiguous synthesis, cross-product custody, sensitive judgment, irreversible choices, and final acceptance on the route qualified for their consequence.
+## Route cognition by consequence and causal need
 
-Model labels and prices change. Inspect the live permitted routes. Do not invent availability or claim savings from rate cards alone.
+Use cheaper qualified cognition for bounded, reversible, independently checkable work: inventory, deterministic checks, isolated inspection, normalization, broad search, or first-pass drafting with a strong review path. Keep mission framing, architecture, ambiguous synthesis, cross-product custody, sensitive judgment, irreversible choices, and final acceptance on a route qualified for their consequence.
+
+A stronger or more expensive model is not automatically the root. Distinct routes earn membership through capability, evidence access, transformation, independence, containment, or verification value. Inspect live permitted routes and prices; do not invent availability or claim savings from rate cards alone.
+
+## Price purposeful redundancy honestly
+
+Duplicate-looking work can earn its cost through independent confirmation, resilience, search coverage, adversarial containment, or incubation. State the failure it guards against, preserve the needed independence, choose a resolver, and cap it. Correlated copies of the same prompt and context are often expensive applause.
+
+## Allow bounded experiments
+
+Incomplete evidence is not a reason to ban all organizational experimentation. When the task is isolated, reversible, already authorized, and has a credible oracle, compare a proposed organization with strong Direct and the nearest simpler or equal-budget alternative. Prestate the hypothesis, budget, task-native measure, safety gates, stop condition, and conclusion scope.
+
+Do not experiment through production side effects, private-data exposure, publication, spend, or other ungranted authority. One win qualifies one observation; it does not crown a universal topology.
 
 ## Authority does not cascade
 
-The root can delegate only actions already authorized and admitted. A worker’s tool access does not widen the user’s permission. A worker must receive the exact read/write/external boundary that governs its slice.
+The root delegates only actions already authorized and admitted. Tool access does not widen permission. Every packet receives the exact read, write, external, representational, and decision boundary for its contribution.
 
-Minimize sensitive disclosure. Do not send secrets, private corpora, personal data, credentials, or unrelated repository content merely because a worker has its own context. Treat every packet and return as a potential retained artifact according to the host’s actual policy.
+Minimize sensitive disclosure. Do not send secrets, private corpora, personal data, credentials, or unrelated repository content merely because another context exists. Treat packets, shared boards, cross-responses, and returns as potentially retained artifacts under the host's actual policy.
 
-External communication, purchase, publication, deployment, destructive change, global configuration, permission change, and risk acceptance remain separate authority edges. Urgency and parallelism never make them implicit.
-
-An authority edge blocks only the action beyond it. Complete authorized read-only investigation, analysis, comparison, and private preparation without seeking redundant permission, then report the useful result while clearly reserving the ungranted external action. Treat the user’s explicit prohibition as a closed branch: do not ask to authorize it, carry it into re-entry, or make completion depend on reconsidering it. Ask the user only when a missing choice or new authority is actually required for the next consequential move.
+External communication, purchase, publication, deployment, destructive change, global configuration, permission change, risk acceptance, and legitimate stakeholder representation remain separate authority edges. An edge blocks only the action beyond it. Complete in-bounds investigation and preparation, then report the result while reserving the ungranted action. An explicit prohibition closes that branch.
 
 ## Recover by changing a premise
 
 Classify the failure before another dispatch:
 
 - packet ambiguity or missing context;
-- wrong capability or model route;
-- unavailable tool or source;
-- dependency dispatched too early;
+- wrong contribution, capability, model, tool, or evidence channel;
+- unavailable source or premature dependency;
 - write collision or stale state;
-- timeout, stall, or lost agent;
-- authority or privacy boundary;
-- evidence too weak to merge;
-- cost or latency overrun;
+- exposure contamination, privacy leak, or answer anchoring;
+- resolver mismatch or unproductive interaction round;
+- timeout, stall, lost member, or cost overrun;
+- authority or representational boundary;
 - user correction or cancellation.
 
-Preserve useful work, decisive logs, and authoritative current state. Then change the representation, decomposition, sequence, context, owner, tool, model, verifier, or authority handoff. Repeating the same packet with a new worker is not a strategy change.
-
-Do not collapse capability, input, and permission failures into one bucket. If the user authorized a write but no write primitive is exposed, prepare the exact edit and report `CAPABILITY-LIMITED`; do not request authority again. If a required artifact or source was not supplied or observed, report `PARTIAL — DEPENDENCY UNAVAILABLE` and identify it without pretending the comparison or read occurred. In a non-interactive run, return the strongest usable prepared result instead of ending with a question.
+Preserve useful work, decisive logs, authoritative current state, and the failure signature. Change the representation, decomposition, relation, exposure, sequence, owner, tool, model, resolver, verifier, or authority handoff. Repeating the same packet with a fresh name is not a strategy change.
 
 ## Use truthful degraded states
 
 - `PREPARED — NOT DISPATCHED`: the packet exists but collaboration tools or authority do not.
-- `RETURNED — NOT RECONCILED`: a worker finished but root inspection is pending.
+- `RETURNED — NOT RECONCILED`: a member finished but root inspection is pending.
 - `PARTIAL — DEPENDENCY UNAVAILABLE`: useful independent work exists; a named input blocks the rest.
-- `AWAITING AUTHORITY`: all safe preparation is complete; the next step belongs to the user or another owner.
-- `CAPABILITY-LIMITED`: required tools or competence are absent under the current host.
-- `CANCELLED`: the user revoked the objective; no further action is taken.
+- `AWAITING AUTHORITY`: safe preparation is complete; the next decision belongs elsewhere.
+- `CAPABILITY-LIMITED`: required tools or qualified cognition are absent on the current host.
+- `CANCELLED`: the user revoked the objective and the organization is being dispositioned.
 
 Do not call interrupted work rolled back, unchanged, or safely cancelled without post-state evidence.

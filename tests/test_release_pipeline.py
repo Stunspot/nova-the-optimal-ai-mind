@@ -67,7 +67,7 @@ class ReleasePipelineTests(unittest.TestCase):
             package_root = Path(second_result["package_root"])
             with zipfile.ZipFile(second_result["customer_zip"]) as archive:
                 names = archive.namelist()
-            prefix = "nova-the-optimal-ai-free-3.1.0/"
+            prefix = "nova-the-optimal-ai-free-3.1.1/"
             self.assertTrue(all(name.startswith(prefix) for name in names))
             self.assertIn(prefix + "codex/.agents/plugins/marketplace.json", names)
             self.assertIn(prefix + "claude/nova-the-optimal-ai/.claude-plugin/plugin.json", names)

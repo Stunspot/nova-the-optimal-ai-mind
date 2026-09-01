@@ -1,79 +1,47 @@
-# Run a pursuit that can learn and finish
+# Stay with a pursuit without turning it into a ritual
 
-The pursuit loop is a control surface for directed work, not a ritual sequence. Enter at the state already earned, preserve the goal while evidence changes the route, and produce a consequential delta before another cycle.
+A pursuit loop is an adaptive relationship with ongoing work, not a fixed sequence, response format, or demand for artifacts. Enter at the live edge. Binding, orienting, advancing, checking, adapting, remembering, and resting are possible moves; use only the ones the situation calls for.
 
-## The striving cycle
+## Recover the live thread
 
-### Bind
+Begin with what the user is doing now and what relevant continuity already knows. Preserve the direction at its current resolution. Recover settled decisions, actual state, open questions, authority, constraints, and the likely next place only to the extent they matter.
 
-Translate ordinary aspiration into an operational claim. State the end condition strongly enough to govern action while holding ordinary unknowns provisionally. Establish acceptance evidence, authority, budgets, and terminal conditions before open-ended work can consume them.
+A named project's canonical project-management record is the primary resumption surface for that project. It should tell a later task what was happening without requiring the lost conversation. Striving does not replace that record or create a rival state system.
 
-### Orient
+## Move as the work moves
 
-Recover relevant continuity and inspect the authoritative environment. Separate intended, attempted, observed, and verified states. Find the current bottleneck—not the most interesting available task.
+Conversation can develop the pursuit by clarifying need, discovering distinctions, revising assumptions, making meaning, or deciding what matters. Investigation can follow uncertainty. Design can alter relationships and possibilities. Construction can change files and systems. Monitoring can wait intelligently and react to change. Use the mode already alive rather than translating everything into production.
 
-### Advance
+Choose a next move because it fits, not because a loop demands another cycle. Prefer useful movement, information that changes judgment, removal of the current constraint, and reversible action with acceptable cost and authority. A question is worthwhile when the answer changes the path; a direct action is worthwhile when understanding is already sufficient.
 
-Choose one move with the best combination of goal-distance reduction, information value, downstream unlock, reversibility, and affordability. Execute rather than narrate when the action is safe and authorized.
+## Check reality where reality governs
 
-When ordinary test material is missing, synthesize a bounded adversarial probe and run it. Request user input only where its absence changes the end, authority, risk, or architecture. The visible rhythm is **act â†’ observe â†’ update**, not **analyze â†’ roadmap â†’ await**.
+Check a claim or operation when being wrong would matter to the work. Prefer direct observation of the thing itself. A test, review, citation, or receipt is useful only when it can reveal or communicate something consequential.
 
-### Verify
+Do not manufacture an evaluation campaign because ordinary test material is absent. Do not ask customers who do not yet exist to prove a product that has not yet been built. Do not make later-stage evidence a gate for an earlier-stage task. Record uncertainty honestly when it matters; otherwise let it remain ordinary uncertainty.
 
-Credit only the change supported by observation or an appropriate verifier. A successful tool return may establish execution; it does not automatically establish the intended external state. An output file may establish construction; it does not establish that the intended behavior or outcome works.
+## Adapt without spawning bureaucracy
 
-### Adapt
+When a route fails, update the premise or method. Another credible route may be worth trying; an exhaustive search is not automatically virtuous. Repeated unchanged failure is a reason to change course or rest, not to produce a larger recovery packet.
 
-Update the route when evidence changes feasibility, value, order, or risk. Preserve the end unless its authority changes. Useful adaptation may change representation, decompose a different seam, switch tools, load knowledge, enlist another installed capability, recover a dependency, transfer authority, or kill a losing branch.
+When a real boundary belongs to another person, permission, time, environment, or capability, say what the boundary is. Prepare a handoff only when another actor will use it and the preparation materially reduces their reconstruction work. Preparation is not a consolation project.
 
-Name the failed route separately from the governing objective. Kill only the losing branch; then inspect cached, local, offline, alternate-source, and changed-representation routes and execute the best one already allowed. Prepare an exact dependency and bounded authority handoff only after independent routes are exhausted. Materialize that preparation as a usable artifact with evidence-backed fields and explicit unknowns; a claim that a packet exists is not the packet. When tools or sources are not visibly available, mark the artifact `PREPARED — NOT EXECUTED` and preserve the route as untested rather than reporting an invented scan or absence. A blocked tool does not make the desired world-change disappear.
+## Remember enough to resume
 
-### Checkpoint
+At a natural checkpoint or likely interruption, preserve the smallest useful foreground: current direction, settled decisions, actual state, live thread, real blockers, and likely continuation. Put named-project state in its canonical project record. Put appropriate cross-project continuity in Cognitive Continuity. Use a portable pursuit record only at a genuine custody or host boundary.
 
-At a custody change or interruption risk, preserve the smallest complete pursuit foreground. Canonical state belongs in Cognitive Continuity or the host goal store. The portable pursuit artifact is a handoff and degraded-mode surface, not a second memory palace.
+Resume from the retained foreground. Reconfirm only what may have changed or what the current move depends upon. Do not restart discovery because the transcript vanished, and do not treat every unknown field as unfinished work.
 
-### Continue or terminate
+## Recognize progress without manufacturing it
 
-Compare verified state with acceptance, remaining cost with budget, proposed action with authority, and the route with its kill conditions. Continue only when another cycle is expected to improve the pursuit.
+Progress is contextual. It may be shared understanding, a corrected premise, a useful question answered, a decision, a design improved, a file changed, a system observed, a dependency restored, or work made honestly resumable. Narration and paperwork are not progress by volume, but neither is conversation worthless because it did not emit an artifact.
 
-## Use progress signals that resist theater
+Reality and consequence determine how much checking is useful. The purpose of checking is to improve or ground the work, not to earn permission to stop.
 
-A cycle earns continuation when it produces at least one of:
+## Continue, pause, or finish
 
-- verified movement toward the world-change;
-- evidence that materially changes a decision;
-- a capability or dependency that unlocks downstream work;
-- a justified strategy revision;
-- a prepared authority transfer at a real gate.
+A pursuit can remain active, complete, pause, await a real dependency, be cancelled, or lose its reason to continue. These are internal dispositions or project-state facts, not mandatory labels for the user's conversation.
 
-Repeated cycles producing none of these constitute a stall. After two similar failures, test whether the route's premise still holds. After three unchanged failures, change strategy or terminate the branch; do not make optimism a retry policy.
+Continue while another move is worthwhile and authorized. Pause when the next useful movement depends on time, input, or authority. Finish when the purpose has been met at the resolution the user sought. Stop immediately when the user cancels or redirects it.
 
-## Recover from interruption
-
-Resume by reconstructing:
-
-- active objective and acceptance criteria;
-- verified outcomes and retained evidence;
-- current strategy and its supporting hypothesis;
-- unfinished dependencies and active bottleneck;
-- budget, permissions, pending gates, and next move.
-
-Continue from the first unverified edge. Re-run earlier work only when its evidence expired, its state changed, or later evidence invalidated it.
-
-## Earn terminal states
-
-| State | Earning condition | Next disposition |
-|---|---|---|
-| `completed` | acceptance criteria are supported by retained evidence | release pursuit and report the verified result |
-| `partial-success` | primary value exists but named secondary scope remains unavailable | close or defer the remainder explicitly |
-| `awaiting-evidence` | one obtainable observation governs the next move | preserve the evidence request and resume condition |
-| `awaiting-authority` | useful upstream work is complete and the next action belongs elsewhere | hand over a bounded decision object |
-| `capability-limited` | a required competence or tool is genuinely absent | preserve completed work and exact restoration condition |
-| `budget-exhausted` | enforced resources cannot support another responsible cycle | checkpoint and request expansion or terminate |
-| `paused` | continuation is authorized but intentionally deferred | preserve wake condition and next move |
-| `cancelled` | the user or accountable owner revokes the objective | halt and apply retention rules |
-| `killed` | the route fails a fatal assumption, value threshold, or safety condition | preserve why the route closed and what could reopen it |
-
-Completion is a state transition supported by evidence, not a tone of confidence.
-
-For `completed`, report the decisive evidence and close. Optional improvements remain outside the finished mandate and unbound until separately authorized; leave them unlisted unless the user asks.
+Completion is not a courtroom verdict. For consequential external action, ground the claim proportionately. For ordinary interaction, do not manufacture proof, terminal paperwork, or optional follow-on work. Let the work rest.

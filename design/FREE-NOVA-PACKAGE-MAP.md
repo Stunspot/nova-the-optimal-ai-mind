@@ -1,6 +1,6 @@
-# Free Nova 3.1.0 package map
+# Free Nova 3.1.1 package map
 
-Free 3.1.0 is one product, one plugin, and one Nova front door.
+Free 3.1.1 is one product, one plugin, and one Nova front door.
 
 The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and resident MIND 0.3.0. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
 
@@ -8,7 +8,7 @@ The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Co
 
 The optional estate now uses the shared Nova 1.0.4 foundation: Cognitive Continuity owns Worldline, Dennis owns project records, Commonplace owns deliberate notes and captures, Concordance is rebuildable navigation, Dunbar owns people context, and Corkboard owns reminders. Nova Operations plans, initializes, diagnoses, and upgrades those selectors without storing Nova-owned state under .codex. Ordinary work still requires no persistent estate, local model, embedding service, vector database, hook, or daemon.
 
-Agent Striving remains 2.2.2 with current discovery metadata. Agent Swarm Orchestration remains the current committed 0.2.3 release; its separate canonical repository contains uncommitted vNext development that is not imported as a release.
+Agent Striving is the exact canonical 0.3.3 tree. Agent Swarm Orchestration is the exact canonical 0.3.0 tree and refreshed six-file notice packet, bound to the accepted handoff fingerprints.
 
 Retired from the default runtime are the augment-of-mind sibling plugin, prompt-submit hook, MIND Core daemon, Ollama requirement, embedding model, vector database, reminder bundle, Faculty handles, Capability Promotion handle, and old two-plugin installer.
 

@@ -86,6 +86,162 @@ class ValidateSwarmPlanTests(unittest.TestCase):
         errors = MODULE.validate(self.plan)
         self.assertIn("terminal plan has non-terminal workers: worker-a", errors)
 
+    def test_assemble_rejects_internal_dependency(self):
+        second = copy.deepcopy(self.plan["workers"][0])
+        second["id"] = "worker-b"
+        second["depends_on"] = ["worker-a"]
+        self.plan["workers"].append(second)
+        self.plan["regime"] = "assemble"
+        errors = MODULE.validate(self.plan)
+        self.assertIn("assemble regime workers must be independent; dependencies declared by: worker-b", errors)
+
+    def test_chain_requires_one_linear_dependency_path(self):
+        second = copy.deepcopy(self.plan["workers"][0])
+        second["id"] = "worker-b"
+        self.plan["workers"].append(second)
+        self.plan["regime"] = "chain"
+        errors = MODULE.validate(self.plan)
+        self.assertIn("chain regime must form one linear dependency path across all workers", errors)
+
+    def test_started_downstream_requires_reconciled_dependency(self):
+        second = copy.deepcopy(self.plan["workers"][0])
+        second["id"] = "worker-b"
+        second["depends_on"] = ["worker-a"]
+        second["status"] = "working"
+        self.plan["workers"][0]["status"] = "returned"
+        self.plan["workers"].append(second)
+        self.plan["regime"] = "chain"
+        errors = MODULE.validate(self.plan)
+        self.assertIn("worker worker-b status working requires accepted dependency worker-a; found returned", errors)
+
+    def test_worker_authority_must_be_drawn_from_plan_allowed(self):
+        self.plan["workers"][0]["authority"] = ["Publish externally."]
+        errors = MODULE.validate(self.plan)
+        self.assertIn("workers[0].authority exceeds plan authority.allowed: Publish externally.", errors)
+
+    def test_dependency_sequenced_same_surface_is_allowed_while_downstream_planned(self):
+        second = copy.deepcopy(self.plan["workers"][0])
+        second["id"] = "worker-b"
+        second["depends_on"] = ["worker-a"]
+        self.plan["workers"][0]["write_surfaces"] = ["shared.md"]
+        second["write_surfaces"] = ["./shared.md"]
+        self.plan["workers"].append(second)
+        self.plan["regime"] = "chain"
+        errors = MODULE.validate(self.plan)
+        self.assertFalse(any("active workers share write surface" in error for error in errors), errors)
+        self.assertFalse(any("linear dependency path" in error for error in errors), errors)
+
+    def test_evidence_burden_must_not_be_empty(self):
+        self.plan["workers"][0]["evidence_required"] = []
+        errors = MODULE.validate(self.plan)
+        self.assertIn("workers[0].evidence_required must be a non-empty array of strings", errors)
+
+    def test_terminal_plan_rejects_action_next_move(self):
+        self.plan["workers"][0]["status"] = "reconciled"
+        self.plan["status"] = "closed"
+        self.plan["next_move"] = "Dispatch this worker again."
+        errors = MODULE.validate(self.plan)
+        self.assertIn("terminal plan next_move must be an exact closure or an explicit re-entry-only-if condition", errors)
+
+    def test_terminal_plan_accepts_explicit_reentry_condition(self):
+        self.plan["workers"][0]["status"] = "reconciled"
+        self.plan["status"] = "closed"
+        self.plan["next_move"] = "Re-entry only if new evidence reopens the mission."
+        self.assertEqual([], MODULE.validate(self.plan))
+
+    def test_empty_allowed_authority_cannot_disable_worker_subset_check(self):
+        self.plan["authority"]["allowed"] = []
+        self.plan["workers"][0]["authority"] = ["Publish externally."]
+        errors = MODULE.validate(self.plan)
+        self.assertIn(
+            "workers[0].authority exceeds plan authority.allowed: Publish externally.",
+            errors,
+        )
+
+    def test_started_downstream_rejects_closed_dependency(self):
+        second = copy.deepcopy(self.plan["workers"][0])
+        second["id"] = "worker-b"
+        second["depends_on"] = ["worker-a"]
+        second["status"] = "working"
+        self.plan["workers"][0]["status"] = "closed"
+        self.plan["workers"].append(second)
+        self.plan["regime"] = "chain"
+        errors = MODULE.validate(self.plan)
+        self.assertIn(
+            "worker worker-b status working requires accepted dependency worker-a; found closed",
+            errors,
+        )
+
+    def test_started_downstream_accepts_reconciled_dependency(self):
+        second = copy.deepcopy(self.plan["workers"][0])
+        second["id"] = "worker-b"
+        second["depends_on"] = ["worker-a"]
+        second["status"] = "working"
+        self.plan["workers"][0]["status"] = "reconciled"
+        self.plan["workers"].append(second)
+        self.plan["regime"] = "chain"
+        self.assertEqual([], MODULE.validate(self.plan))
+
+    def test_placeholder_evidence_is_rejected(self):
+        for placeholder in ("none", "N/A", "n-a", "not required", "not_required"):
+            with self.subTest(placeholder=placeholder):
+                plan = copy.deepcopy(self.plan)
+                plan["workers"][0]["evidence_required"] = [placeholder]
+                errors = MODULE.validate(plan)
+                self.assertIn(
+                    f"workers[0].evidence_required contains placeholder evidence: {placeholder}",
+                    errors,
+                )
+
+    def test_concrete_evidence_burden_remains_valid(self):
+        self.plan["workers"][0]["evidence_required"] = [
+            "Observe the cited source location and retained command output."
+        ]
+        self.assertEqual([], MODULE.validate(self.plan))
+
+    def test_terminal_plan_rejects_closure_prefix_smuggling(self):
+        self.plan["workers"][0]["status"] = "reconciled"
+        self.plan["status"] = "closed"
+        self.plan["next_move"] = "None; dispatch this worker again."
+        errors = MODULE.validate(self.plan)
+        self.assertIn(
+            "terminal plan next_move must be an exact closure or an explicit re-entry-only-if condition",
+            errors,
+        )
+
+    def test_terminal_plan_accepts_exact_closure_forms(self):
+        for next_move in ("None", "No further action.", "Closed.", "Cancelled"):
+            with self.subTest(next_move=next_move):
+                plan = copy.deepcopy(self.plan)
+                plan["workers"][0]["status"] = "reconciled"
+                plan["status"] = "closed"
+                plan["next_move"] = next_move
+                self.assertEqual([], MODULE.validate(plan))
+
+    def test_windows_trailing_dot_or_space_write_aliases_collide(self):
+        for alias in ("shared.md.", "shared.md "):
+            with self.subTest(alias=alias):
+                plan = copy.deepcopy(self.plan)
+                second = copy.deepcopy(plan["workers"][0])
+                second["id"] = "worker-b"
+                plan["workers"][0]["write_surfaces"] = ["shared.md"]
+                second["write_surfaces"] = [alias]
+                plan["workers"].append(second)
+                plan["regime"] = "assemble"
+                errors = MODULE.validate(plan)
+                self.assertIn(
+                    "active workers share write surface shared.md: worker-a, worker-b",
+                    errors,
+                )
+
+    def test_schema_requires_nonempty_authority_and_concrete_evidence(self):
+        schema = json.loads((SKILL_ROOT / "assets" / "swarm-plan.schema.json").read_text(encoding="utf-8"))
+        allowed = schema["properties"]["authority"]["properties"]["allowed"]
+        evidence_item = schema["properties"]["workers"]["items"]["properties"]["evidence_required"]["items"]
+        self.assertEqual(1, allowed["minItems"])
+        self.assertEqual(1, allowed["items"]["minLength"])
+        self.assertIn("pattern", evidence_item)
+
 
 if __name__ == "__main__":
     unittest.main()

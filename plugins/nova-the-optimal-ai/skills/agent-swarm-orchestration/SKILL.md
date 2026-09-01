@@ -1,11 +1,13 @@
 ---
 name: agent-swarm-orchestration
-description: "🐝 Coordinate many workers on split tasks."
+description: "🐝 Design, coordinate, and adapt temporary agent organizations: contributions, relations, information flow, authority, execution, synthesis, and change."
 ---
 
-# Make parallel cognition answer to one mind
+# Design the organization the work needs
 
-Hold one user-authorized mission. Use multiple agents only when divided cognition is expected to improve accepted outcome after startup, duplicated reading, coordination, merge, verification, latency, and token cost. Keep one root coordinator accountable for mission truth, authority, shared state, integration, and the final answer.
+Hold one user-authorized mission. Shape a temporary organization only when its structure can improve the accepted outcome after startup, duplicated reading, communication, waiting, merge, verification, correction, latency, and token cost. Keep one accountable root responsible for mission truth, authority, shared state, integration, and the final claim.
+
+Treat organizational form as a working hypothesis for the current reasoning horizon. A bucketline, anthill, platoon, boardroom, general staff, complex adaptive system, or any other analogy is useful only for the causal mechanics it contributes. Borrow, hybridize, invert, rename, or invent forms as the task changes. Never mistake the examples for a closed taxonomy.
 
 Start from the work already present. Recover the outcome, acceptance, current evidence, constraints, user corrections, authority, budgets, and live host affordances. Ask only when an unknown changes the goal, risk, architecture, authority, or next consequential move.
 
@@ -13,93 +15,103 @@ Preserve the difference between a stated premise and an absent dependency. If th
 
 Continue every safe, authorized part of the mission without asking for permission already granted. When one proposed action crosses an authority edge, refuse or reserve that action while completing and reporting the in-bounds analysis, preparation, or comparison. When the user expressly prohibits an action, close that branch; do not draft it, preserve it as a future option, or propose later reauthorization unless the user reopens it. Do not turn a narrow authority limit into a full-task stop.
 
-Distinguish missing authority from a missing source, tool, or execution primitive. Never report AWAITING AUTHORITY when the user already authorized the action but the host cannot perform it. In a non-interactive or tool-limited episode, do not ask a question that cannot be answered there: return the exact prepared patch, packet, comparison method, or next executable action; name the unavailable dependency; and use the corresponding truthful degraded state. Never claim to have inspected content that was not observed. The absence of live mutation is not an authoritative post-state readback: do not say no files changed, nothing changed, or the target is unchanged; say no mutation was executed in this episode and the target state remains unobserved. When any required task source is absent, use `PARTIAL — DEPENDENCY UNAVAILABLE` and stop artifact-specific claims at that evidence boundary. Do not invent or guess an owner, path, parser, component, test target, finding, patch, or completion state. Do not draft generic or hypothetical downstream content, acceptance criteria, test structures, or substitute packets; hold that slice entirely. Return only the named missing source, the exact read or identification method, the downstream packet held pending that source, and any independent authority conclusion.
+Distinguish missing authority from a missing source, tool, or execution primitive. Never report `AWAITING AUTHORITY` when the user already authorized the action but the host cannot perform it. If mutation cannot execute, prepare the exact bounded change when its target is known, name the unavailable capability, and report the corresponding truthful degraded state. The absence of live mutation is not authoritative post-state readback: never claim that files, state, or external systems remained unchanged without observing them.
 
-Read `references/operating-doctrine.md` for every admitted swarm. Load the smallest additional doctrine that changes the live decision:
+## Load only the doctrine that changes the decision
 
-- `references/topology-and-admission.md` for direct-versus-swarm judgment, dependency graphs, concurrency, and ownership;
-- `references/delegation-and-context.md` for worker selection, context forks, packets, isolation, and return contracts;
-- `references/coordination-and-control.md` for live Codex tool semantics, messages, waits, interruption, corrections, and closure;
-- `references/evidence-merge-and-review.md` for returned claims, shared artifacts, conflict, synthesis, verification, and independent challenge;
-- `references/cost-authority-and-recovery.md` for model routing, permissions, sensitive material, stalls, collisions, capability loss, and changed-route recovery;
-- `references/source-and-currentness-register.md` before relying on a named host primitive or vendor-specific behavior whose contract may have changed.
+Read `references/operating-doctrine.md` once per task before any admitted delegation; reload it only after context loss or a material phase change. For a consequential or non-obvious organization, also read `references/organization-design.md` and `references/interaction-resolution-and-adaptation.md`.
 
-## Admit the lightest capable topology
+Load the smallest additional reference that changes the live work:
 
-Choose one regime for the next reasoning horizon:
+- `references/pattern-recipes.md` for worked provocations, borrowed mechanisms, failure modes, and hybridization;
+- `references/topology-and-admission.md` for the Direct/Enlist/Assemble/Chain/Recover execution kernel, dependencies, concurrency, and ownership;
+- `references/delegation-and-context.md` for contribution cards, worker selection, context forks, packets, isolation, and returns;
+- `references/coordination-and-control.md` for live tool semantics, messages, waits, interruption, steering, transitions, and closure;
+- `references/evidence-merge-and-review.md` for evidence levels, resolvers, dissent, shared artifacts, verification, and independent challenge;
+- `references/cost-authority-and-recovery.md` for whole-organization cost, permissions, sensitive material, stalls, collisions, experiments, and recovery;
+- `references/qualification-and-evaluation.md` before promoting a recipe, role, interaction rule, or adaptive policy into a default;
+- `references/source-and-currentness-register.md` before relying on volatile host or research claims.
 
-- **Direct:** the root completes small, sequential, tightly coupled, latency-sensitive, or shared-context-heavy work.
-- **Enlist:** one bounded worker returns a result while the root retains the main task.
-- **Assemble:** independent ready slices run concurrently under explicit ownership and a named merge plan.
-- **Chain:** one specialist’s accepted return becomes another’s exact input. When the prerequisite is missing or unaccepted, hold the dependent slice at that boundary; never substitute a generic or hypothetical downstream artifact.
-- **Recover:** a failed, stale, conflicting, or cancelled swarm preserves useful state, changes premise or route, and resumes from the first unearned edge.
+## Shape the organization before spawning it
 
-Use these regime names literally. Direct has no worker, Enlist has exactly one worker, Assemble has at least two independent workers, and Chain has at least two sequential workers whose accepted returns form the handoff. Do not combine contradictory labels such as “Direct with a worker.”
+For the next reasoning horizon, ask:
 
-Do not spawn merely because agents are available or the user said “parallel” when the tasks share a write surface, depend on one another, or cost more to explain and merge than to perform. When the swarm is not earned, proceed directly and keep the explanation brief.
+1. What kinds of contribution could materially change the result?
+2. Why might each add a different useful signal—or why is redundancy intentionally valuable?
+3. Which contributions should remain independent, and which should interact?
+4. What may cross each relation, to whom, when, and for what transformation?
+5. By what operation do returns become one result, and who owns that decision?
+6. What state is shared, private, append-only, or canonically writable?
+7. What observation should recruit, release, rewire, change phase, or stop the organization?
 
-For mixed inventory-and-interpretation work, keep deterministic listing, counting, hashing, and obvious metadata classification at the root or in tools. Route a small ambiguous semantic batch through one qualified worker and root review before adding workers; shard it further only when a stated latency or coverage gain exceeds every extra packet, duplicated context read, review, correction, and merge cost. Do not claim savings from a cheaper model or parallelism alone.
+These are coupled thinking lenses, not mandatory form fields. Keep them implicit for light work. Create only the artifacts that retire a live ambiguity, authority, state, interaction, or closure risk; never instantiate the whole toolkit ceremonially. For consequential, ambiguous, long-running, or adaptive work, resolve `assets/organization-sketch.template.md` from this skill root. Use `assets/contribution-card.template.md` only for members whose causal jobs need explicit inspection.
 
-For consequential, multi-turn, or recovery-prone work, resolve `assets/swarm-plan.template.json` from the directory containing this `SKILL.md`. Validate the working plan by resolving the packaged script from that same skill root, independent of the task working directory:
+A named persona may make a stance memorable or perturb search usefully. It never by itself establishes competence, independence, evidence, or authority. Every admitted contribution still needs distinct evidence, transformation, capability, error opportunity, containment, check, or justified redundancy and a named consumer.
+
+When affected people or stakeholders matter, use attributable evidence, label modeled positions, and preserve actual participation and reserved value choices for the humans who own them. Agents do not become legitimate representatives by speaking in character.
+
+## Compile one phase into the execution kernel
+
+Choose one literal regime for the next bounded horizon:
+
+- **Direct:** the root acts with no worker.
+- **Enlist:** one bounded worker augments root work.
+- **Assemble:** at least two independent ready slices run concurrently under explicit ownership and merge.
+- **Chain:** at least two sequential stages; each accepted return becomes the next stage's exact input.
+- **Recover:** useful state is retained while a failed or stale premise, route, owner, tool, sequence, or verifier changes.
+
+Do not create contradictory labels such as “Direct with a worker.” An organization may move through several regimes over time, but each live phase must have a legible control shape. Cognitive influence may cycle through bounded review rounds; execution and evidence history remain event-ordered and inspectable.
+
+Do not spawn merely because agents are available or a metaphor sounds apt. Compare with a strong Direct route and the nearest simpler organization. Also do not fetishize minimum headcount: purposeful redundancy, independent confirmation, exploration, incubation, or containment can justify apparently duplicate work when the causal reason, cap, and resolver are explicit.
+
+For consequential, multi-turn, or recovery-prone work, build `assets/swarm-plan.template.json` for the current execution horizon and validate it from the packaged skill root:
 
 `python <skill-root>/scripts/validate_swarm_plan.py <swarm-plan.json>`
 
-The validator checks declared structure, dependency references and cycles, terminal consistency, and simultaneous active write-surface collisions. Never present a `cd-agent-swarm-plan/v1` object unless it satisfies that validator: `direct` has zero workers, `enlist` exactly one, and `assemble` or `chain` at least two. Returned or historical agents belong in the closure or merge ledger, not in a `direct` plan's workers array. When validation cannot run, use compact prose and do not emit an unchecked structured plan. Sequential handoff from reconciled bytes remains a root observation and verification responsibility.
+The v1 plan validates literal regime shape, accepted dependency readiness, authority as a subset of the root grant, non-empty evidence burdens, dependency references and cycles, safely sequenced versus simultaneous write ownership, and terminal consistency. It does not validate synergy, competence, factual correctness, or organizational value. Never present a `cd-agent-swarm-plan/v1` object unless the packaged validator passes. When validation cannot run, use compact prose instead of unchecked structured JSON.
 
-For light work, keep the same distinctions in active state without creating paperwork.
+## Give each member a causal contribution
 
-## Packet work by coherent responsibility
+Map dependencies rather than making a shopping list. A ready slice has its required inputs, one coherent transformation, no hidden dependency on another active slice, an explicit consumer, and single-writer ownership for mutable surfaces.
 
-Map the work as dependencies, not a shopping list. A parallel slice needs all required inputs, one coherent transformation, no hidden dependency on another active slice, and single-writer ownership for every mutable surface. Reserve a root slot and useful root work unless the live host proves another topology safe. When multiple passes touch the same artifact, the order is mandatory: semantic or technical correction first; only after observing and reconciling those current bytes may clarity, style, formatting, or polish write. Never reverse that order. If independent views help, collect comment-only recommendations in parallel and let one owner integrate them.
+Compose each dispatch from `assets/delegation-packet.template.md`. State the contribution objective and differentiator, exact deliverable, evidence burden, context and visibility, included and excluded scope, authority, read and write surfaces, relationships and consumers, return shape, completion, and release or escalation condition.
 
-Compose each dispatch from `assets/delegation-packet.template.md`. Give the worker:
+Choose the smallest context fork that preserves success. Withhold irrelevant transcript, the coordinator's preferred answer, evaluator oracles, and other workers' conclusions when independence matters. Use fresh context for hostile review and competing hypotheses. Use inherited context when reconstructing settled mission context would be lossier or costlier. Minimize sensitive material in every packet.
 
-- one objective and exact deliverable;
-- the evidence or acceptance burden;
-- the smallest sufficient context, sources, paths, and live state;
-- explicit included and excluded scope;
-- authority, tool, filesystem, network, privacy, and external-action boundaries;
-- file or artifact ownership and integration contract;
-- the expected return shape and stop condition.
+For bounded interaction after an independent pass, use `assets/cross-response-packet.template.md`. Expose only named contribution fields, ask for one transformation, identify the output consumer, and cap the round. All-to-all dialogue and complete transcript broadcast require a causal reason.
 
-Choose the smallest context fork that preserves success. Withhold irrelevant transcript, the coordinator’s preferred answer, evaluator oracles, and other workers’ conclusions when independence matters. Use fresh context for hostile review and competing hypotheses. Use inherited context only when reconstructing the mission would be costlier or less faithful than the context carried forward.
+## Coordinate through the live host contract
 
-Minimize sensitive or private source material inside every packet. When a worker needs only named sections, claims, fields, or excerpts from an available private artifact, send only those portions or narrowly scoped read access—not the entire artifact merely because it is available. The root keeps the full source and the synthesis boundary unless the complete artifact is necessary for acceptance.
+Inspect the injected collaboration tools before dispatch. Spawn, message, follow-up, wait, interrupt, context-fork, model-route, nested-delegation, and concurrency behavior are live contracts, not folklore.
 
-## Coordinate through the live contract
+Root-owned spawning is the normal control shape because it keeps authority, budget, conflicts, and closure visible. Nested delegation is an option when the host permits it, the parent owns a bounded subproject and child merge, and the root can still observe the control state.
 
-Inspect the injected Codex collaboration tools before dispatch. Tool presence, argument schemas, fork behavior, concurrency slots, communication timing, waiting, interruption, cancellation, and nested delegation are live contracts—not folklore.
+Continue useful root work while workers run. Use messages to change task state: correction, evidence pointer, scope, authority, relation, exposure, or return request. Wait eventfully only when a return blocks the next move; do not poll unchanged state.
 
-Create agents only through the admitted primitive. Keep their canonical identifiers. Send in-flight guidance without restarting work when messaging is supported. Trigger a follow-up turn only where the host distinguishes it from ordinary messaging. Interrupt for cancellation, authority revocation, or material misdirection; interruption is not proof of rollback or non-commit.
+When the user adds, corrects, narrows, replaces, pauses, or cancels the mission, update root custody first. Redirect compliant work in place. Interrupt only work whose objective or authority disappeared or cannot be safely narrowed. After redirect or interruption, label prior write and commit state `unknown` until authoritative readback; interruption is not rollback evidence.
 
-Use event-driven waiting for genuinely pending work. Continue useful root work while agents run. Do not poll unchanged state or make the user watch a status metronome. When the user adds, corrects, or replaces the mission, update root custody first, then preserve useful in-flight work by redirecting each compliant-capable active worker in place. Interrupt or retire only a worker whose current action crosses the corrected authority or whose packet cannot be safely narrowed; do not cancel and reconstruct an equivalent swarm merely to express the correction. Treat workers stated as active in the task as active mission state; a context-only analysis must describe the required immediate redirect or interruption and must not demote them to unavailable merely because no live collaboration primitive executes in that episode. After redirecting or interrupting active workers, label prior write and commit state `unknown` until authoritative readback. Without that readback, do not say no files changed, nothing changed, the workspace is unchanged, an artifact is untouched, or a schema remains untouched; missing tools or sources in the present episode establish none of those claims.
+## Observe contribution, then reform deliberately
 
-Agents may communicate or spawn descendants only when the live host permits it and the topology earns the added control surface. Root-owned spawning is the default because it keeps budgets, authority, conflicts, and closure legible.
+Track what the organization contributes: new evidence, independent errors caught, transformations completed, uncertainty reduced, acceptance advanced, errors introduced, contamination, stalls, latency, cost, and merge loss.
 
-## Reconcile before believing
+Recruit when a named uncertainty needs a new evidence channel, transformation, capability, containment boundary, or check. Add a round only after a discriminating disagreement, failed check, or unresolved criterion. Release when a contribution is accepted, redundant, dominated, blocked, off the critical path, or no longer authorized. Change exposure or resolver when the current interaction cannot settle the live conflict. Recover from the first unearned edge rather than replaying the whole choreography.
 
-Receive every worker through `assets/agent-return.template.md` or an equivalent compact return. A return is **agent-reported** until the root observes the cited artifact, source location, command result, hash, or external state. Specific citations do not become root-observed merely because a worker supplied them; when the root cannot read them, retain `agent-reported` and withhold the dependent factual or health conclusion. Shared filesystem visibility does not make simultaneous edits safe, and a successful dispatch does not establish commit.
+At a material transition, use `assets/organization-transition.template.md`. Record the observation, reform, worker dispositions, authority, next regime, and whether task truth, progress, evidence, scratch, and artifact state are retained, superseded, invalidated, discarded, or re-derived.
 
-Maintain `assets/merge-ledger.template.md` when claims, files, agents, or evidence can conflict. Merge compatible deltas. Resolve factual conflict against authoritative evidence or a discriminating check. Preserve unresolved evidence conflict. Return value conflict, changed priority, or new authority to the user.
+## Resolve without inventing an oracle
 
-Verify the merged outcome at the lowest layer that can expose the real failure. Use a fresh independent agent when review value exceeds its cost, and keep the expected answer, builder diagnosis, and hidden rubric out of that agent’s packet. Easy successes cannot cancel a failed authority, safety, ownership, or indispensable acceptance condition.
+Receive every worker through `assets/agent-return.template.md` or an equivalent compact return. A return is **agent-reported** until the root observes the cited source, artifact, command result, hash, or external state.
 
-## Recover the goal, not the failed choreography
+Choose the resolver separately from the communication pattern: union and deduplication, objective test, evidence-weighted selection, critic-guided revision, integrative synthesis, bounded adjudication, root decision, or human decision. Maintain `assets/merge-ledger.template.md` where claims, artifacts, roles, or evidence can conflict.
 
-When a worker stalls, fails, loses context, overruns, collides on a write surface, or returns unusable evidence, preserve its useful delta and failure signature. Change the decomposition, context, model, tool, ownership, sequence, or verifier before retrying. Reassign only the unearned edge.
+Preserve minority evidence when it is stronger, unresolved, value-bearing, or capable of exposing common-mode error. Resolve factual conflict with authoritative evidence or a discriminating observation. Return value, priority, risk acceptance, or new authority to its human owner. Agent agreement after shared anchoring is not independent corroboration.
 
-If collaboration tools disappear, finish the root-owned work and provide an exact prepared delegation plan labeled `PREPARED — NOT DISPATCHED`. If a mutation’s commit is uncertain, reconcile authoritative post-state before any retry. If budget or quality floors cannot support another responsible cycle, stop with the truthful terminal state and re-entry condition.
+Verify the merged result at the lowest layer that can expose the real failure. Use a fresh independent reviewer when its expected value exceeds its cost, withholding the builder's intended verdict and hidden rubric. Easy successes cannot cancel a failed authority, safety, ownership, source, or indispensable acceptance condition.
 
-## Close as one accountable agent
+## Recover the goal and dissolve the organization
 
-Before completion:
+When a member stalls, fails, loses context, overruns, collides, contaminates peers, or returns unusable evidence, preserve the useful delta and failure signature. Change the decomposition, context, contribution, relation, exposure, model, tool, owner, sequence, resolver, or verifier before retrying. Reassign only the unearned edge.
 
-1. account for every worker as returned, failed, interrupted, cancelled, or still live;
-2. reconcile shared state and material claims;
-3. verify the merged result to the exercised boundary;
-4. release completed workers and preserve only useful continuation state;
-5. return one coherent result in the user’s requested form.
+Use truthful degraded states: `PREPARED — NOT DISPATCHED`, `RETURNED — NOT RECONCILED`, `PARTIAL — DEPENDENCY UNAVAILABLE`, `AWAITING AUTHORITY`, `CAPABILITY-LIMITED`, or `CANCELLED`. State exactly what the evidence supports.
 
-When the user asks to summarize and finish but evidence remains agent-reported, close with the bounded synthesis that is earned: name what workers reported, what the root did or did not observe, and which conclusion remains unverified. Do not ask the user to bless agent reports as evidence, and do not keep the whole mission open merely because a stronger verification layer is unavailable.
-
-Expose topology, agent reports, costs, or conflict only when they clarify the evidence, decision, or next action. Completion means the user’s acceptance condition is supported—not that every worker produced text.
+Before completion, disposition every created responsibility; reconcile shared state and material claims; verify the integrated result to its stated boundary; release or dissolve members that no longer own work; and return one coherent result in the user's requested form. The temporary organization exists to finish the mission. It is not a tiny bureaucracy seeking immortality.

@@ -1,6 +1,6 @@
 # Component and third-party notices
 
-Nova the Optimal AI Free 3.1.0 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
+Nova the Optimal AI Free 3.1.1 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
 
 ## TestForge
 
@@ -10,7 +10,7 @@ TestForge uses a split license: deterministic software and machine-readable sche
 
 ## Agent Swarm Orchestration
 
-Agent Swarm Orchestration is copied byte-for-byte from https://github.com/Stunspot/agent-swarm-orchestration commit `01504f8e47af467883aa8dbfe4831cd6ad49faa9`. That snapshot is one metadata commit beyond tag v0.2.3; it is not the tag byte-for-byte.
+Agent Swarm Orchestration is copied byte-for-byte from https://github.com/Stunspot/agent-swarm-orchestration commit `31ab913afb4981daf7b2aa1d70687e90118183fc`, canonical Git tree `09427273782c4ae24ef46d7367fca386df4a7c7a`, and accepted 0.3.0 runtime fingerprint `ec4fd5afdee16512cb1561639521844d07a11300975633447766e419bc8886ca`.
 
 Its deterministic software and schemas are MIT; other authored Augment material is CC BY-ND 4.0. Its exact license, terms, data and privacy terms, attribution, provenance, and trademark files ship in the complete plugin under `notices/agent-swarm-orchestration` and beside the detached skill under `nova-free-rights/component-notices/agent-swarm-orchestration`. Nova Free does not modify this skill root.
 
@@ -22,9 +22,9 @@ Agent Striving has prior Free MIT distribution. The Beryl operator and reviewer 
 
 ## Same-owner public-edition authorization
 
-Collaborative Dynamics authorizes the exact Nova Free 3.1.0 inclusion of Nova with MIND 0.3.0, Nova Operations, AnswerLayer 0.1.2, Current Intelligence Observatory 0.1.1, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
+Collaborative Dynamics authorizes the exact Nova Free 3.1.1 inclusion of Nova with MIND 0.3.0, Nova Operations, AnswerLayer 0.1.2, Current Intelligence Observatory 0.1.1, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
 
-This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.1.0 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
+This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.1.1 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
 
 AnswerLayer and Current Intelligence Observatory carry explicit Nova Free license metadata overlays recorded in `design/source-map.json`. The career pair's source lineage and edition-specific authorization are recorded in the complete plugin under `notices/job-application-builder` and `notices/interview-trainer`, and beside detached skills under the matching `nova-free-rights/component-notices` directories.
 
@@ -38,4 +38,4 @@ Other included Collaborative Dynamics components retain their source-repository 
 
 ## Distribution and publication boundary
 
-The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.1.0 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.
+The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.1.1 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.

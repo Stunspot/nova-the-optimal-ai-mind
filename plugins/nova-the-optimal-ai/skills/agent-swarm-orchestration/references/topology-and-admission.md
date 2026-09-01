@@ -1,39 +1,41 @@
-# Choose the smallest topology that earns itself
+# Compile the next horizon into the lightest capable execution regime
 
-The admission question is not “can this be delegated?” It is “will this delegation improve the accepted result after all coordination costs?”
+The organization workbench decides what kinds of contribution and interaction the task needs. The execution kernel decides how the next ready work runs safely. Do not force organization semantics into the dependency graph.
 
-## Read the task graph
+## Read the dependency graph
 
-Represent each candidate slice by its required inputs, transformation, output, owner, read surfaces, write surfaces, evidence burden, and downstream consumer. An edge means one slice’s accepted output or state transition is required before another can begin.
+Represent each candidate slice by its accepted inputs, transformation, output, owner, consumer, read surfaces, write surfaces, evidence burden, and return condition. An execution edge means one slice's accepted output or state transition is required before another begins.
 
-Ready work has no unresolved incoming edge. A worker is useful only when its slice is coherent enough to complete independently and its result can be consumed without reconstructing its hidden process.
+Ready work has no unresolved incoming edge. A worker is useful only when its slice can complete coherently and its return can be consumed without reconstructing hidden process. Cognitive challenge or visibility does not create an execution dependency unless the downstream transformation truly requires the exposed return.
 
-## Select by marginal value
+## Use the literal regimes
 
-| Topology | Use when | Characteristic failure |
+| Execution regime | Use when | Characteristic failure |
 |---|---|---|
-| Direct | Small, sequential, shared-context-heavy, same-surface, or latency-sensitive work | Delegation overhead exceeds work |
-| Enlist | One bounded, noisy, specialist, or independently checkable slice helps the root | Worker receives the whole mission and drifts |
-| Assemble | Two or more independent ready slices improve speed, coverage, or challenge | Hidden dependencies or overlapping writes |
-| Chain | Accepted output from one slice defines the next | Fake parallelism produces stale work |
-| Competing hypotheses | Rival explanations can be tested independently without answer leakage | Agents converge from shared framing rather than evidence |
-| Independent review | Consequence warrants fresh challenge of an existing artifact or evidence chain | Reviewer sees the intended answer and rubber-stamps it |
-| Recover | Existing swarm state is stale, conflicting, failed, or interrupted | Repeating the same route without changed premise |
+| Direct | Root work is small, sequential, tightly coupled, latency-sensitive, or shared-context-heavy | delegation overhead exceeds work |
+| Enlist | One bounded specialist, noisy, contained, or independently checkable contribution helps root work | worker receives the whole mission and drifts |
+| Assemble | At least two independent ready slices improve speed, coverage, search, challenge, resilience, or isolation | hidden dependencies, duplicated work without purpose, or overlapping writes |
+| Chain | One accepted return defines another stage's exact input | fake parallelism creates stale downstream work |
+| Recover | Existing work is failed, stale, conflicting, contaminated, interrupted, or based on a wrong premise | identical retry without a changed premise |
 
-## Price the whole swarm
+Competing hypotheses, independent review, boardroom, anthill, platoon, general staff, and other patterns are organization or interaction recipes. They compile into one or more of these regimes; they are not additional regime labels.
 
-Estimate worker startup, context reconstruction, duplicated reads, model cost, tool contention, latency, messages, merge, verification, correction, and cleanup. Compare that complete cost with expected speed, recall, specialist depth, independence, output isolation, or uncertainty reduction.
+## Select by whole marginal value
 
-More workers can increase wall-clock speed while worsening total cost and merge quality. Use the fewest workers that cover the independent ready frontier. Preserve one coordinator slot unless the live runtime explicitly supplies separate coordination capacity.
+Estimate startup, context reconstruction, duplicated reads, tool contention, latency, messages, exposure risk, rounds, merge, verification, correction, and cleanup. Compare the complete cost with expected speed, recall, evidence access, specialist depth, independence, resilience, output isolation, uncertainty reduction, or error detection.
+
+Prefer the least cumbersome organization that is sufficient for acceptance. This is not always the fewest agents. Purposeful redundancy, independent confirmation, broad exploration, incubation, or containment can justify more members when their causal reason, budget, resolver, and release signals are explicit.
+
+Preserve coordination capacity. On a constrained host, the root may keep a slot and perform one slice locally. On a host with separate coordination capacity, another arrangement may be safe. Inspect the live contract.
 
 ## Protect single-writer integrity
 
-Assign one writer per file, record, database row set, external object, or other mutable surface at a time. Parallel agents may inspect the same evidence. They should not make overlapping edits unless the work is deliberately sequenced and the next writer begins from reconciled current state.
+Assign one writer per file, record, database row set, external object, or other mutable surface at a time. Parallel members may inspect the same evidence. They do not make overlapping edits unless work is deliberately sequenced and the next writer begins from reconciled current state.
 
-Sequence correctness-bearing changes before presentation changes. Technical, factual, schema, security, or policy correction should establish the accepted substrate; clarity, style, formatting, and polish follow from observed current bytes. When both perspectives can be formed independently, use comment-only review packets and one integration owner instead of multiple writers.
+Sequence correctness-bearing changes before presentation changes. Technical, factual, schema, security, or policy correction establishes the accepted substrate; clarity, style, formatting, and polish follow from observed current bytes. Independent perspectives can return comment-only recommendations to one integration owner.
 
-Partition by directory or module only when those boundaries match the actual change. A cross-cutting contract, shared schema, lockfile, generated index, or documentation manifest may create hidden overlap across apparently separate folders.
+Partition by directory or module only when those boundaries match the actual change. Shared schemas, locks, generated indexes, manifests, decision records, or external objects can couple apparently separate folders.
 
-## Re-score at real changes
+## Re-score at meaningful events
 
-Reconsider topology after decisive evidence, a user correction, completion, failure, authority change, budget change, or newly exposed dependency. Do not continuously churn the team because another possible decomposition can be imagined.
+Reconsider the execution regime and organization after decisive evidence, accepted dependency, verifier failure, user correction, contribution completion, stall, authority change, budget change, contamination, newly exposed dependency, or supported acceptance. Do not churn the team continuously, and do not preserve a topology after its causal job disappears.

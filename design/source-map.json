@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.0",
+  "product_version": "3.1.1",
   "records": [
     {
       "id": "nova",
@@ -275,27 +275,33 @@
     {
       "id": "agent-swarm-orchestration",
       "source_repository": "https://github.com/Stunspot/agent-swarm-orchestration",
-      "source_commit": "01504f8e47af467883aa8dbfe4831cd6ad49faa9",
+      "source_commit": "31ab913afb4981daf7b2aa1d70687e90118183fc",
       "source_path": "canonical/skills/agent-swarm-orchestration",
-      "source_version": "0.2.3",
+      "source_version": "0.3.0",
       "selection": [
         "complete canonical skill tree"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit"
+      "source_state": "git_commit",
+      "source_commit_tree": "6d91235a471bb7e5f3c263d2b56a869ace237b1b",
+      "source_git_tree": "09427273782c4ae24ef46d7367fca386df4a7c7a",
+      "source_file_count": 26,
+      "source_tree_sha256": "ec4fd5afdee16512cb1561639521844d07a11300975633447766e419bc8886ca",
+      "source_archive": "release-assets/v0.3.0/Skill-agent-swarm-orchestration-v0.3.0.zip",
+      "source_archive_sha256": "68292da08974225278ef19704830606354c124c2695e4ae0a1e9cd1e4e70eb3b",
+      "notice_file_count": 6,
+      "notice_tree_sha256": "a1a3bdbfde3c97af9aa8de7722aa48bfd49f51f7aa2275654d47a3d497257c52"
     },
     {
       "id": "agent-striving",
       "source_repository": "https://github.com/Stunspot/augment-of-mind",
-      "source_commit": "8b721c06cf0da40a948a26b9131999f5c6814b1e",
-      "source_path": "plugins/augment-of-mind/skills/agent-striving with maintained SKILL.md and agents/openai.yaml",
-      "source_version": "2.2.2",
+      "source_commit": "d45b035a56204fe706a50256dc3aefb855990e3c",
+      "source_path": "skills/agent-striving",
+      "source_version": "0.3.3",
       "selection": [
-        "complete skill tree"
+        "complete canonical skill tree"
       ],
-      "edition_overlays": [
-        "references/conation-and-goal-custody.md"
-      ],
+      "edition_overlays": [],
       "source_state": "git_commit"
     },
     {
@@ -328,7 +334,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.0 edition binding",
+      "source_version": "1.0.4 with Free 3.1.1 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -354,15 +360,17 @@
     },
     {
       "id": "dennis-stratton-project-management",
-      "source_repository": "",
-      "source_commit": "",
-      "source_path": "1 Member Tier/Dennis Stratton Project Management v0.3.0.zip#dennis-stratton-project-management-v0.3.0/codex/dennis-stratton-project-management",
+      "source_repository": "https://github.com/Stunspot/dennis-stratton-project-management",
+      "source_commit": "09008b5beaffb900732edbd23ab6bf9ddac9f8d3",
+      "source_path": "complete v0.3.0 skill tree with the accepted Nova estate and customer-support overlay",
       "source_version": "0.3.0",
       "selection": [
-        "complete accepted Nova Emergent 1.0.4 skill tree"
+        "complete accepted Nova-bound skill tree"
       ],
-      "edition_overlays": [],
-      "source_state": "catalog_archive_sha256_BEB4E6E89578EC98D36F18FB0DF9C288E5C996655580833483349D914A868108"
+      "edition_overlays": [
+        "Nova estate selector and customer-support overlay shared with Nova Emergent 1.0.5"
+      ],
+      "source_state": "git_commit_plus_nova_edition_overlay"
     },
     {
       "id": "interview-trainer",

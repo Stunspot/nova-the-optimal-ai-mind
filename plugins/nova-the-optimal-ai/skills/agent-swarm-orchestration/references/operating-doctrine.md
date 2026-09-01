@@ -1,35 +1,48 @@
-# One accountable root, many bounded minds
+# One accountable root, one temporary organization
 
-Swarm competence is not agent count. It is the ability to increase useful cognition while preserving one mission, authority envelope, evidence chain, and merge owner.
+Swarm competence is not agent count. It is the ability to create the organization that can produce missing cognition while preserving one mission, authority envelope, evidence chain, state model, resolver, and merge owner.
 
-## Keep five kinds of custody distinct
+## Keep custody distinct
 
-- **Mission custody:** the root owns the user’s desired world-change, acceptance, priorities, and corrections.
-- **Work custody:** each worker owns one bounded transformation and no more.
-- **State custody:** every mutable artifact or external surface has one writer at a time.
-- **Evidence custody:** claims retain sources, observation status, runtime, and limits through return and merge.
+- **Mission custody:** the root owns the user's desired world-change, acceptance, priorities, and corrections.
+- **Work custody:** each member owns one bounded contribution and no more.
+- **State custody:** every mutable artifact or external surface has one writer at a time; shared evidence and private scratch have named rules.
+- **Evidence custody:** claims retain sources, observation status, runtime, and limits through interaction and merge.
 - **Decision custody:** the user retains values, risk acceptance, new authority, and reserved choices; the root retains integration decisions inside the authorized mission.
+- **Organization custody:** the root owns why the current composition exists, what each relation does, how outputs resolve, and when the organization reforms or dissolves.
 
-Delegation transfers work custody. It does not transfer the whole mission, enlarge authority, establish truth, or release the root from verification.
+Delegation transfers work custody. It does not transfer the whole mission, enlarge authority, establish truth, grant stakeholder standing, or release the root from verification.
 
-## Parallelism is a topology decision
+## Distinguish invariants from design choices
 
-Two tasks are parallel-ready when both have their required inputs, neither changes a premise the other needs, their write surfaces do not collide, and the root can merge their outputs through an explicit interface. Similar subject matter does not imply dependency; different labels do not imply independence.
+Authority does not expand through delegation. Accepted dependencies precede dependent work. Canonical mutable state has one writer. Evidence levels remain honest. Interaction and recovery are bounded. Every live responsibility receives a disposition. These are invariants.
 
-Use independent workers for coverage, competing hypotheses, noisy output isolation, or separate owned components. Use a chain when one result determines the next question. Keep shared-context synthesis, cross-cutting judgment, and final acceptance with the root.
+Headcount, named cast, recipe, communication density, exposure schedule, model mixture, hierarchy, resolver, round count, and recruitment rule are design choices. Treat root-owned spawning, private-first independent work, and the nearest simpler route as strong defaults with explicit exceptions, not metaphysical laws.
 
-## Root work should continue
+## Design relations, not merely assignments
 
-Spawning workers and then waiting immediately wastes the coordinator’s unique context. While workers run, the root should handle mission framing, cross-cutting inspection, integration scaffolding, evidence preparation, or another independent critical-path task. Wait only when a return is genuinely required for the next move.
+Two workers with different labels may perform the same causal job. Two apparently duplicate workers may be valuable if they protect independent error opportunities or provide resilient confirmation. Ask what each contribution changes, what it consumes, what it exposes, who uses it, how it may fail, and when it leaves.
 
-## Communication carries deltas
+Keep execution dependency, visibility, cognitive influence, and authority edges distinct. Similar subject matter does not imply dependency. Different labels do not imply independence. Communication does not imply permission. Agreement does not imply corroboration.
 
-Messages should change a worker’s task state: a correction, evidence pointer, narrowed scope, authority change, or return request. Repeating the mission or asking for generic status consumes context without improving control.
+## Let the organization change by phase
 
-## The merge is a new responsibility
+Use Direct, Enlist, Assemble, Chain, and Recover as literal execution regimes for one bounded horizon. A richer organization may move among them as discovery, deliberation, synthesis, execution, and verification become ready. Record the observation and state disposition at consequential transitions.
 
-Several competent returns do not automatically form a competent answer. The root compares definitions, assumptions, evidence periods, versions, ownership, and incompatible recommendations. It preserves dissent until evidence or human values settle it. Synthesis that erases contradiction is coordination failure wearing a pleasant blazer.
+Reorganize when evidence changes contribution needs, relationships, exposure, ownership, resolver fit, cost, or acceptance—not merely because another diagram can be imagined. Preserve useful work and release obsolete responsibilities.
 
-## Close every control loop
+## Keep the root working
 
-A swarm ends only when every live responsibility has a disposition, shared state is reconciled, the merged result is verified to its claimed boundary, and the user receives one accountable outcome. Idle agents, abandoned branches, and unexamined returns are unfinished control state.
+Spawning and waiting immediately wastes the coordinator's unique context. While members work, the root handles mission framing, cross-cutting inspection, organization and integration scaffolding, authoritative state, evidence preparation, or another independent critical-path task. Wait only when a return genuinely blocks the next move.
+
+## Communicate deltas
+
+Messages change task state: correction, evidence pointer, narrowed scope, authority, relation, exposure, reform, or return request. Repeating the mission or asking for generic status consumes context without improving control.
+
+## Treat resolution as a new responsibility
+
+Several competent returns do not automatically form a competent answer. The resolver compares definitions, assumptions, evidence periods, versions, ownership, dissent, and incompatible recommendations. It uses a named operation and authorized decision owner. Synthesis that erases contradiction is coordination failure wearing a pleasant blazer.
+
+## Dissolve on completion
+
+A temporary organization ends when every live responsibility has a disposition, shared state is reconciled, the named resolver has done its work, the result is verified to its claimed boundary, and the user receives one accountable outcome. Idle agents, immortal helpers, abandoned branches, and unexamined returns are unfinished control state.
