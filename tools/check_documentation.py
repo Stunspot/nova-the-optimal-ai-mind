@@ -17,6 +17,7 @@ MAINTAINED = (
 )
 LINK = re.compile(r"(!?)\[([^\]]*)\]\(([^)]+)\)")
 HEADING = re.compile(r"^(#{1,6})\s+\S")
+CONTROL_CHARACTER = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 REQUIRED_FACTS = {
     "README.md": ("one plugin", "twenty-seven", "seventeen", "CC BY-ND 4.0", "nova-free-rights"),
     "START-HERE.md": ("one product and one plugin", "real invocation", "optional persistent state", "nova-free-rights"),
@@ -68,6 +69,12 @@ def inspect(repo: Path) -> dict[str, object]:
             continue
         text = path.read_text(encoding="utf-8")
         lines = text.splitlines()
+        for match in CONTROL_CHARACTER.finditer(text):
+            findings.append({
+                "path": relative,
+                "line": text[:match.start()].count("\n") + 1,
+                "problem": f"unexpected control character U+{ord(match.group()):04X}",
+            })
         if not lines or not lines[0].startswith("# "):
             findings.append({"path": relative, "line": 1, "problem": "document does not begin with one H1"})
         h1 = sum(1 for line in lines if line.startswith("# "))

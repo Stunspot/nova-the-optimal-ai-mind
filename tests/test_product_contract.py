@@ -9,6 +9,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "tools"))
 from release_lib import sha256_file, tree_digest
+from check_documentation import inspect as inspect_documentation
 
 EXPECTED = {
     "nova", "nova-operations", "commonplace", "cognitive-continuity",
@@ -124,6 +125,14 @@ class ProductContractTests(unittest.TestCase):
             self.assertRegex(text, r"(?m)^  workflow_dispatch:\s*$", path.name)
             self.assertNotRegex(text, r"(?m)^  (?:push|pull_request|schedule):", path.name)
             self.assertIn("timeout-minutes:", text, path.name)
+
+    def test_maintained_documentation_contains_no_control_characters(self) -> None:
+        result = inspect_documentation(REPO)
+        control_findings = [
+            finding for finding in result["findings"]
+            if "control character" in str(finding["problem"])
+        ]
+        self.assertEqual(control_findings, [])
 
     def test_component_notice_custody_is_current(self) -> None:
         required = (
