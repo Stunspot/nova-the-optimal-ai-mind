@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/model-set-v1.json",
+  "title": "Epistemic Model Agnosticism model set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract", "model_set_id", "revision", "case_ref", "question", "scope", "observation_contract", "models", "comparison_contract", "reframe_policy", "provenance"],
+  "properties": {
+    "contract": {"const": "cd-model-agnosticism-model-set/v1"},
+    "model_set_id": {"$ref": "#/$defs/id"},
+    "revision": {"type": "integer", "minimum": 1},
+    "case_ref": {"$ref": "#/$defs/ref"},
+    "question": {"$ref": "#/$defs/text"},
+    "scope": {"$ref": "#/$defs/text"},
+    "observation_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["encoder_id", "encoder_version", "encoder_digest", "step_semantics", "ordering_rule", "missing_policy", "oov_policy", "symbols"],
+      "properties": {
+        "encoder_id": {"$ref": "#/$defs/id"},
+        "encoder_version": {"$ref": "#/$defs/id"},
+        "encoder_digest": {"$ref": "#/$defs/digest"},
+        "step_semantics": {"$ref": "#/$defs/text"},
+        "ordering_rule": {"const": "event_time_ascending_then_observation_id/v1"},
+        "missing_policy": {"$ref": "#/$defs/text"},
+        "oov_policy": {"const": "error"},
+        "symbols": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 512,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["symbol_id", "definition", "coding_rule"],
+            "properties": {
+              "symbol_id": {"$ref": "#/$defs/id"},
+              "definition": {"$ref": "#/$defs/text"},
+              "coding_rule": {"$ref": "#/$defs/text"}
+            }
+          }
+        }
+      }
+    },
+    "models": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["model_id", "label", "model_version", "family", "prior_model_weight", "state_order", "states", "initial", "transition", "emission", "assumptions", "parameter_basis", "evidence_refs", "calibration_ref", "comparison_eligible"],
+        "properties": {
+          "model_id": {"$ref": "#/$defs/id"},
+          "label": {"$ref": "#/$defs/text"},
+          "model_version": {"$ref": "#/$defs/id"},
+          "family": {"const": "discrete_first_order_hmm"},
+          "prior_model_weight": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+          "state_order": {"type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+          "states": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 64,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["state_id", "meaning"],
+              "properties": {"state_id": {"$ref": "#/$defs/id"}, "meaning": {"$ref": "#/$defs/text"}}
+            }
+          },
+          "initial": {"$ref": "#/$defs/probabilityVector"},
+          "transition": {"$ref": "#/$defs/probabilityMatrix"},
+          "emission": {"$ref": "#/$defs/probabilityMatrix"},
+          "assumptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["markov_order", "output_independence", "one_observation_per_step", "stationarity_window"],
+            "properties": {
+              "markov_order": {"type": "integer", "const": 1},
+              "output_independence": {"$ref": "#/$defs/text"},
+              "one_observation_per_step": {"$ref": "#/$defs/text"},
+              "stationarity_window": {"$ref": "#/$defs/text"}
+            }
+          },
+          "parameter_basis": {"$ref": "#/$defs/text"},
+          "evidence_refs": {"$ref": "#/$defs/refs"},
+          "calibration_ref": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/calibrationRef"}]},
+          "comparison_eligible": {"type": "boolean"}
+        }
+      }
+    },
+    "comparison_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "shared_observation_semantics_required", "shared_sequence_required", "prior_basis", "calibration_basis", "absolute_fit_policy"],
+      "properties": {
+        "status": {"enum": ["eligible", "ineligible"]},
+        "shared_observation_semantics_required": {"type": "boolean"},
+        "shared_sequence_required": {"type": "boolean"},
+        "prior_basis": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+        "calibration_basis": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/text"}]},
+        "absolute_fit_policy": {
+          "oneOf": [
+            {"type": "null"},
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["metric", "log_base", "unit", "threshold", "direction", "calibration_ref"],
+              "properties": {
+                "metric": {"const": "mean_predictive_surprisal"},
+                "log_base": {"const": "e"},
+                "unit": {"const": "nats_per_observation"},
+                "threshold": {"type": "number", "minimum": 0},
+                "direction": {"const": "lte"},
+                "calibration_ref": {"$ref": "#/$defs/calibrationRef"}
+              }
+            }
+          ]
+        }
+      }
+    },
+    "reframe_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["all_zero_likelihood", "all_absolute_fit_fail"],
+      "properties": {"all_zero_likelihood": {"const": "required"}, "all_absolute_fit_fail": {"const": "required"}}
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_by", "source_refs"],
+      "properties": {"created_by": {"$ref": "#/$defs/text"}, "source_refs": {"$ref": "#/$defs/refs"}}
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^(?=.*\\S)[^\\u0000-\\u001F]+$"},
+    "text": {"type": "string", "minLength": 1, "maxLength": 16384, "pattern": "\\S"},
+    "ref": {"type": "string", "minLength": 1, "maxLength": 2048, "pattern": "\\S"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "refs": {"type": "array", "minItems": 1, "maxItems": 128, "uniqueItems": true, "items": {"$ref": "#/$defs/ref"}},
+    "probabilityVector": {"type": "array", "minItems": 1, "maxItems": 512, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+    "probabilityMatrix": {"type": "array", "minItems": 1, "maxItems": 64, "items": {"$ref": "#/$defs/probabilityVector"}},
+    "calibrationRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calibration_id", "revision", "digest", "metric", "log_base", "unit", "encoder_digest", "step_semantics"],
+      "properties": {
+        "calibration_id": {"$ref": "#/$defs/id"},
+        "revision": {"type": "integer", "minimum": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "metric": {"const": "mean_predictive_surprisal"},
+        "log_base": {"const": "e"},
+        "unit": {"const": "nats_per_observation"},
+        "encoder_digest": {"$ref": "#/$defs/digest"},
+        "step_semantics": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}

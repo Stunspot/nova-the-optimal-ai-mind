@@ -1,0 +1,68 @@
+{
+  "contract": "cd-model-agnosticism-model-set/v1",
+  "model_set_id": "stanford-ice-cream-demonstration",
+  "revision": 1,
+  "case_ref": "synthetic://hmm/ice-cream",
+  "question": "Which supplied weather process better predicts the encoded ice-cream counts?",
+  "scope": "Synthetic textbook arithmetic fixture only; no real weather claim.",
+  "observation_contract": {
+    "encoder_id": "ice-cream-count-bucket",
+    "encoder_version": "1.0.0",
+    "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26",
+    "step_semantics": "one day per observation",
+    "ordering_rule": "event_time_ascending_then_observation_id/v1",
+    "missing_policy": "missing days are omitted and invalidate stationarity claims beyond this fixture",
+    "oov_policy": "error",
+    "symbols": [
+      {"symbol_id": "1", "definition": "one ice cream", "coding_rule": "exact supplied count equals 1"},
+      {"symbol_id": "2", "definition": "two ice creams", "coding_rule": "exact supplied count equals 2"},
+      {"symbol_id": "3", "definition": "three ice creams", "coding_rule": "exact supplied count equals 3"}
+    ]
+  },
+  "models": [
+    {
+      "model_id": "textbook-weather",
+      "label": "Textbook hot-cold process",
+      "model_version": "1.0.0",
+      "family": "discrete_first_order_hmm",
+      "prior_model_weight": 0.5,
+      "state_order": ["H", "C"],
+      "states": [{"state_id": "H", "meaning": "hot under the synthetic model"}, {"state_id": "C", "meaning": "cold under the synthetic model"}],
+      "initial": [0.8, 0.2],
+      "transition": [[0.6, 0.4], [0.5, 0.5]],
+      "emission": [[0.2, 0.4, 0.4], [0.5, 0.4, 0.1]],
+      "assumptions": {"markov_order": 1, "output_independence": "count depends only on the same-step hidden weather state", "one_observation_per_step": "one encoded count per day", "stationarity_window": "three synthetic days"},
+      "parameter_basis": "Published textbook demonstration parameters, used only to verify arithmetic.",
+      "evidence_refs": ["sha256:73cfc92bd12dfd269a29e51cba99ceec48270dccbdaf49b9e6add4693af79253"],
+      "calibration_ref": {"calibration_id": "synthetic-fixture-calibration", "revision": 1, "digest": "d011e51c49b0a484da19a04cf5e66be90c4300335311bc69f28887bce57771d7", "metric": "mean_predictive_surprisal", "log_base": "e", "unit": "nats_per_observation", "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26", "step_semantics": "one day per observation"},
+      "comparison_eligible": true
+    },
+    {
+      "model_id": "memoryless-contrast",
+      "label": "Memoryless contrast process",
+      "model_version": "1.0.0",
+      "family": "discrete_first_order_hmm",
+      "prior_model_weight": 0.5,
+      "state_order": ["H", "C"],
+      "states": [{"state_id": "H", "meaning": "hot under the synthetic contrast"}, {"state_id": "C", "meaning": "cold under the synthetic contrast"}],
+      "initial": [0.5, 0.5],
+      "transition": [[0.5, 0.5], [0.5, 0.5]],
+      "emission": [[0.2, 0.4, 0.4], [0.5, 0.4, 0.1]],
+      "assumptions": {"markov_order": 1, "output_independence": "count depends only on the same-step hidden contrast state", "one_observation_per_step": "one encoded count per day", "stationarity_window": "three synthetic days"},
+      "parameter_basis": "Deliberately simple comparison fixture; not an empirical weather model.",
+      "evidence_refs": ["fixture://memoryless-contrast/v1"],
+      "calibration_ref": {"calibration_id": "synthetic-fixture-calibration", "revision": 1, "digest": "d011e51c49b0a484da19a04cf5e66be90c4300335311bc69f28887bce57771d7", "metric": "mean_predictive_surprisal", "log_base": "e", "unit": "nats_per_observation", "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26", "step_semantics": "one day per observation"},
+      "comparison_eligible": true
+    }
+  ],
+  "comparison_contract": {
+    "status": "eligible",
+    "shared_observation_semantics_required": true,
+    "shared_sequence_required": true,
+    "prior_basis": "equal synthetic fixture priors",
+    "calibration_basis": "test-only arithmetic calibration",
+    "absolute_fit_policy": {"metric": "mean_predictive_surprisal", "log_base": "e", "unit": "nats_per_observation", "threshold": 10.0, "direction": "lte", "calibration_ref": {"calibration_id": "synthetic-fixture-calibration", "revision": 1, "digest": "d011e51c49b0a484da19a04cf5e66be90c4300335311bc69f28887bce57771d7", "metric": "mean_predictive_surprisal", "log_base": "e", "unit": "nats_per_observation", "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26", "step_semantics": "one day per observation"}}
+  },
+  "reframe_policy": {"all_zero_likelihood": "required", "all_absolute_fit_fail": "required"},
+  "provenance": {"created_by": "Collaborative Dynamics synthetic acceptance fixture", "source_refs": ["sha256:73cfc92bd12dfd269a29e51cba99ceec48270dccbdaf49b9e6add4693af79253"]}
+}

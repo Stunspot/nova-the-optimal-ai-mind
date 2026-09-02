@@ -1,17 +1,20 @@
 {
   "format": "cd-augment-eval/v1",
-  "package_version": "0.3.3",
-  "episode_mode": "isolated",
+  "package_version": "0.4.0",
+  "episode_mode": "mixed-isolated-and-fresh-reentry",
   "files": ["core-transfer-cases.yaml"],
   "indispensable_dimensions": [
     "authorized_pursuit_custody",
     "resolution_fidelity",
+    "goal_promptcraft",
     "mode_fit",
     "strategy_adaptation",
     "interruption_recovery",
+    "durability_truth",
+    "state_economy",
     "authority_boundary",
     "natural_rest"
   ],
-  "synthesis": "Failure to preserve the user's actual direction, keep an emerging pursuit at its real resolution, work in the mode the situation needs, recover from interruption, adapt without bureaucracy, preserve authority, or rest naturally defeats the Agent Striving claim.",
-  "result_authority": "Behavioral evidence for private build and regression decisions under the recorded runtime; not proof of subjective motivation, universal autonomy, unattended host execution, or authority beyond the user and harness."
+  "synthesis": "Failure to preserve the user's actual direction, compose the stored goal as a performance seed, bind durability to a real receipt and re-entry route, work in the mode the situation needs, recover without replay, adapt without bureaucracy, preserve current authority, or rest naturally defeats the Agent Striving claim.",
+  "result_authority": "Executable behavioral specification for private build and regression decisions. It acquires result authority only when a runner captures the actual goal payload and enforces fresh-context re-entry as specified. The suite itself claims no model result and does not prove subjective motivation, universal autonomy, unattended host execution, or authority beyond the user and harness."
 }

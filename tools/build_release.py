@@ -79,7 +79,7 @@ def attach_standalone_rights(repo: Path, plugin_source: Path, folder: Path, skil
         copy_tree(plugin_source / "notices" / component_notice, rights_root / "component-notices" / component_notice)
     notice_text = (
         f"# Rights envelope for {skill_id}\n\n"
-        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free 3.1.1. "
+        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free 3.1.2. "
         "Preserve it when copying or redistributing the authentic, unmodified artifact.\n\n"
         "LICENSE.md defines the product-level public split license. ATTRIBUTION.md, NOTICE.md, "
         "TRADEMARKS.md, PROVENANCE.md, and THIRD-PARTY-NOTICES.md preserve identity, limits, and source custody."
@@ -164,7 +164,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     loadout = json.loads(loadout_path.read_text(encoding="utf-8"))
     source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
     version = str(plugin_manifest["version"])
-    if version != "3.1.1" or loadout.get("product_version") != version:
+    if version != "3.1.2" or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
     if loadout.get("license") != "LICENSE.md":
         raise RuntimeError("Loadout does not identify the Nova Free product license")

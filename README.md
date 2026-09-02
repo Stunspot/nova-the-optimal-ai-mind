@@ -1,10 +1,10 @@
-# Nova the Optimal AI — Free 3.1.1
+# Nova the Optimal AI — Free 3.1.2
 
 ![Illustration of Nova at a neon command desk surrounded by systems and skill panels.](docs/assets/nova-mind-readme-hero.png)
 
 Bring me the repository that is on fire, the research question that refuses to sit still, the office file breeding revisions in the dark, or the decision everyone is politely avoiding. Nova is one sharp, playful generalist: useful before the tour, accountable through the finish, and considerably less interested in making you admire her filing system than older agents were.
 
-Free 3.1.1 is the current foundation-and-agent release. Nova and MIND now arrive as one plugin with one front door. MIND is ambient cognition inside Nova; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-six sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
+Free 3.1.2 is the current foundation-and-agent release. Nova and MIND now arrive as one plugin with one front door. MIND is ambient cognition inside Nova; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-six sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
 
 Ordinary work requires no Ollama service, embedding model, vector database, prompt hook, daemon, onboarding interview, or persistent data setup. That entire Rube Goldberg annex has been thanked for its service and shown the door.
 
@@ -36,6 +36,6 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 3.1.1 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
+This repository contains the Free 3.1.2 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠

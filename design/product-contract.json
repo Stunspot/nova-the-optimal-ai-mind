@@ -2,7 +2,7 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "3.1.1",
+  "product_version": "3.1.2",
   "state": "source_ready_for_qualification",
   "plugin": {
     "count": 1,
@@ -10,7 +10,7 @@
     "front_door": "nova"
   },
   "mind": {
-    "version": "0.3.0",
+    "version": "0.3.1",
     "resident": true,
     "faculty_core_count": 17,
     "faculty_cores_are_nested_references": true

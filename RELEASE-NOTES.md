@@ -1,5 +1,11 @@
 # Nova the Optimal AI Free release notes
 
+## 3.1.2 — rival models without doctrinal capture
+
+MIND advances to 0.3.1 with Model Agnosticism: explanatory and predictive models remain bounded instruments, evidence can redistribute weight among viable rivals, and poor fit reopens the model set instead of forcing a winner. The optional deterministic Trellis performs explicit versioned Hidden Markov Model inference without retrieval, networking, persistence, background execution, training, or authority mutation.
+
+Agent Striving advances to the canonical 0.4.0 fourteen-file tree at commit 5bccd0867bf9905b7775741c7344a4570974c917. Goal objectives become compact performance seeds rather than disguised requirements records, while changing state remains with its proper project or continuity owner. Nova Free remains twenty-seven native skill roots with seventeen nested MIND Faculty Cores.
+
 ## 3.1.1 — current pursuit and project custody
 
 Agent Striving advances to the complete canonical 0.3.3 tree. It now preserves authorized durable direction without hardening ordinary conversation into campaigns, keeps named-project state with Project Management, resumes from the live edge, adapts without evidence ceremony, and rests naturally.

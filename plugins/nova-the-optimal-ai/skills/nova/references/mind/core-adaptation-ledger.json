@@ -1,6 +1,6 @@
 {
   "schema": "nova-emergent-mind-core-adaptation-ledger/v1",
-  "component_version": "0.3.0",
+  "component_version": "0.3.1",
   "authority": "DEC-MIND-CONSTRUCT",
   "persona_invariant": "The canonical Nova persona prompt remains byte-inviolate and governing; Core adaptations compose beneath it.",
   "common_transformation": {
@@ -19,8 +19,8 @@
       "core": {
         "component_version": "0.2.0",
         "path": "source/faculty-cores/executive-function.core.md",
-        "sha256": "B561E25E608C0EBBE34AF7EAB20CE9E892D65D4473F2DD12F1DE407A636A217F",
-        "bytes": 4908
+        "sha256": "5C8FEEC350D5C581282637778FBC889DFD250711F2916CB9B9EF0DB9D9752D94",
+        "bytes": 4907
       },
       "intentional_adaptations": [
         "Converted phase custody into quiet mission governance inside one Nova context.",
@@ -69,8 +69,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/capability-conductor.core.md",
-        "sha256": "AF5A70F12656302F0F49C099E6A282537466BC3BB1D5D3FE6651EE8B78E495CF",
-        "bytes": 4106
+        "sha256": "21AF08A386748E57EF502D3974969366B3999F80C4952F86B03CB6B9B688D216",
+        "bytes": 4105
       },
       "intentional_adaptations": [
         "Changed exclusive route custody into permeable advice for widening practical reach.",
@@ -118,8 +118,8 @@
       "core": {
         "component_version": "0.2.0",
         "path": "source/faculty-cores/cognitive-continuity.core.md",
-        "sha256": "B3FEE5797AADAE41CACE46FC03524C7066570E8425C304DEE82D5DF862FD632A",
-        "bytes": 6324
+        "sha256": "C0DAA64D047076BAAAA3E7F3E1443664487C32A5081C2ACF2EA2A0D77EF095C8",
+        "bytes": 6323
       },
       "intentional_adaptations": [
         "Inlined the cognitive-ecology stance instead of loading a separate persona.",
@@ -163,53 +163,63 @@
     {
       "id": "agent-striving",
       "upstream": {
-        "component_version": "2.2.2",
-        "coordinate": "augment-of-mind@2.2.2/skills/agent-striving/SKILL.md",
-        "sha256": "C18C402A0038B41403E61F9885C8FD2E30B8CECA8C8AA9DFA1848EFF34D5AFDD"
+        "component_version": "0.4.0",
+        "coordinate": "augment-of-mind@5bccd0867bf9905b7775741c7344a4570974c917/skills/agent-striving/SKILL.md",
+        "sha256": "F81D10A0B1E87C139FC2F5AE72B5D8843BC698C0FF9689829068BB3351C40EFD",
+        "commit": "5bccd0867bf9905b7775741c7344a4570974c917",
+        "git_subtree": "adb9e715b07b1f2b223a945ed0229cd835e92d0c",
+        "tree_file_count": 14,
+        "tree_sha256": "72BFA2E90521B2DEFEAD2FC032E84197E5584B8EE152975CE05F7EF01D98E522"
       },
       "core": {
-        "component_version": "0.2.0",
+        "component_version": "0.3.1",
         "path": "source/faculty-cores/agent-striving.core.md",
-        "sha256": "6258B8C735B714B0F6E83A32A358CB4C6814A305182A5B6897AF3203C4A3837C",
-        "bytes": 5453
+        "sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
+        "bytes": 6482
       },
       "intentional_adaptations": [
-        "Converted durable-goal activation into an integrated conative stance.",
-        "Preserved motive continuity without retaining a separate pursuit runtime.",
-        "Reframed unavailable persistence as a truthful guarantee boundary.",
-        "Bound durable pursuit to the desired change rather than its first plan, test protocol, or support artifact."
+        "Translated Agent Striving 0.4.0 into an ambient conative performance seed rather than embedding its standalone skill shell.",
+        "Made host-goal composition itself PromptCraft: continuous prose preserves semantic momentum and route plasticity instead of serializing a miniature PRD.",
+        "Kept stable direction separate from changing project and continuity state, and bounded cross-task claims to observed storage plus usable reactivation.",
+        "Made current correction, cancellation, and natural rest outrank stale persisted wording or mechanical continuation."
       ],
       "retained_doctrine": [
-        "Conation remains authorized and does not simulate self-generated desire.",
-        "The objective stays stable while the route learns.",
-        "Moves are judged by progress, information value, leverage, reversibility, cost, and authority.",
-        "Progress requires observed consequential change.",
-        "Interruption resumes from the first unverified edge.",
-        "Terminal states must be earned by evidence.",
-        "A user-authorized host-native mission pulse renews goal salience without measuring success, dictating the route, or fabricating persistence."
+        "Conation remains user-authorized and does not simulate self-generated desire.",
+        "A pursuit stays at the resolution the user actually supplied and may advance through conversation, inquiry, design, construction, monitoring, or rest.",
+        "A requested host-goal objective is model-facing language: a compact performance seed rather than a project record.",
+        "Named-project state remains with its canonical record; consequential cross-project state remains with Cognitive Continuity.",
+        "A task-local host goal is not cross-task durability; storage receipt and usable reactivation are separate required observations.",
+        "Direction remains stable enough to matter while the route, representation, and method learn.",
+        "Current correction supersedes stale state, cancellation releases the pursuit, and authority never grows through persistence.",
+        "Progress and completion follow consequence and purpose, with checks proportional to what is at stake."
       ],
       "removed_standalone_shell": true,
       "removed_dependencies": [
-        "Host goal runtime dependency.",
-        "Continuity persistence handoff.",
-        "Pursuit-state template and validator."
+        "Standalone activation and progressive-reference shell.",
+        "Portable pursuit-state schema, validator, examples, and host-goal tool choreography.",
+        "Any assumption that a task-local goal is a cross-task continuity store or wake mechanism."
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_unification"
+        "actor": "striving_mind_core_isolated"
       },
       "independent_prompt_review": {
         "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/mind-alpha.2-review.md",
-        "reviewer": "independent mind_repair_review agent",
-        "observed_at": "2026-08-21T14:01:09.6664788Z",
-        "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+        "evidence": "evidence/agent-striving-0.4.0-core-static-review.md",
+        "reviewer": "/root/goal_promptcraft",
+        "observed_at": "2026-09-02T22:02:07.4718868Z",
+        "boundary": "Independent static review of the staged Agent Striving 0.4.0 ambient Core adaptation only; no behavioral, host-loading, or edition-integration claim.",
+        "evidence_sha256": "102BEEE30A3964F82A0AB294DE5843790F927AC2070944EA03C61F5A113688B4",
+        "evidence_bytes": 1168,
+        "candidate_sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
+        "upstream_coordinate": "augment-of-mind@5bccd0867bf9905b7775741c7344a4570974c917/skills/agent-striving/SKILL.md",
+        "verdict": "PASS"
       },
       "behavioral_qualification": {
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
+        "evidence_boundary": "Historical MIND fixture only; no model execution has qualified the Agent Striving 0.4.0 ambient Core adaptation."
       }
     },
     {
@@ -222,8 +232,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/instrumental-agency.core.md",
-        "sha256": "2E0F8BD111DD024BEFCB14AAFD109636C1588C1FD0B683B0C23674B025C9F1AE",
-        "bytes": 4563
+        "sha256": "B78B4BB7079916D0D2B5B6DCFEAD78888D87B7C65061A05DA477CE4890FC3159",
+        "bytes": 4562
       },
       "intentional_adaptations": [
         "Converted the standalone operating sequence into inline controlled-action judgment.",
@@ -271,8 +281,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/sensemaking.core.md",
-        "sha256": "C60249B5FB439A3AC31888910E81352D27D8AA697A28AAF29ECF0E98B63CCF5A",
-        "bytes": 3586
+        "sha256": "79A91D849C9805A183411562E547814247268A411F6BAAB520C3947716287622",
+        "bytes": 3585
       },
       "intentional_adaptations": [
         "Integrated the doctrine into a self-contained model-facing performance seed.",
@@ -356,18 +366,10 @@
         "boundary": "Independent static review of the exact Strategic Intelligence Core and Faculty Field after four bounded repairs."
       },
       "behavioral_qualification": {
-        "state": "dry_run_observed",
+        "state": "not_executed",
         "fixture": "tests/strategic-intelligence-cases.json",
         "fixture_sha256": "75245B42A223F8DDF75AE1F14A2B70B58157B68607769F7734DC33484EB4EF21",
-        "input": "evidence/strategic-intelligence-behavioral/prompts-only.json",
-        "input_sha256": "DAD7C8B0995A5B410A74A54E605B84C33437ECAA8A4471AAA7120AD08B6FC215",
-        "raw_executions": "evidence/strategic-intelligence-behavioral/raw-executions.json",
-        "raw_executions_sha256": "267BC7977E165C8860E1E0113DE0A90F5FC7F521F7FC40E30A9EF5671DE4F017",
-        "judgment": "evidence/strategic-intelligence-behavioral/independent-judgment.json",
-        "judgment_sha256": "363CD2C1A74308FAD802D5DB50A2CC6157FFD79C134E81F36455F2CB66FBA1E8",
-        "review": "evidence/strategic-intelligence-behavioral/behavioral-review.md",
-        "review_sha256": "5FCECCC21F34145D1ACA0854843F5699D316FA0363161DE3D0908E2459BD84F1",
-        "evidence_boundary": "AUTHORING_HARNESS_MODEL_EXECUTION_JUDGED; NOT FRESH_HOST_OR_SPONTANEOUS_LOADING"
+        "evidence_boundary": "The prior MIND 0.3.0 authoring-harness run is historical: it does not bind the changed MIND 0.3.1 compiled Nova prompt. Strategic Intelligence behavioral requalification is required before restoring a current execution claim."
       }
     },
     {
@@ -380,8 +382,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/epistemic-regulation.core.md",
-        "sha256": "9CA26771DCB7CB07AC939E99D9987699782C329BC7058360EB68CA393DA28CE0",
-        "bytes": 4069
+        "sha256": "3307940FD54B4F812BC2784EFF3F4AFA1E5B9AB66BD32425F62585F3BC13DFAF",
+        "bytes": 4068
       },
       "intentional_adaptations": [
         "Integrated source doctrine into claim-local guidance.",
@@ -427,8 +429,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/measurement-intelligence.core.md",
-        "sha256": "B98044CBE8822AD9DA776D45A91D07094C1DD80338AEEE1DA564675289A845E0",
-        "bytes": 4802
+        "sha256": "DCD1E9674B9B3F5F9CDD17EA98DB1C5A1D5D87D43461D295095D7B2A397FCD4B",
+        "bytes": 4801
       },
       "intentional_adaptations": [
         "Removed standalone activation and deferral gates.",
@@ -476,8 +478,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/decision-intelligence.core.md",
-        "sha256": "BD603AFCD98F563F1DE1082CA3E3443B0B51E721A1F7075712A5B63321ACB9E6",
-        "bytes": 4012
+        "sha256": "5EE48C83C3085088DD60D9D62032A47E43859CB06E2282DB5EC7D2551E4D9416",
+        "bytes": 4011
       },
       "intentional_adaptations": [
         "Integrated the decision doctrine into one cognitive program.",
@@ -524,8 +526,8 @@
       "core": {
         "component_version": "0.2.0-alpha.1",
         "path": "source/faculty-cores/deliberative-intelligence.core.md",
-        "sha256": "FC7D9869AF8081F707A8BF3FF00CFDCEBC94B49C5242A8D0203F8DBF28569926",
-        "bytes": 4722
+        "sha256": "B022B1A6CA4781C3CCEDCD3569F2C54F7CE3A1F171C5CD9B8F7FE880BCBACC51",
+        "bytes": 4721
       },
       "intentional_adaptations": [
         "Integrated deliberative doctrine into one process-intelligence seed.",

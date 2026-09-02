@@ -1,6 +1,6 @@
 interface:
   display_name: "Agent Striving"
-  short_description: "🏹 Durable objective continuity."
-  default_prompt: "Use $agent-striving to keep this authorized pursuit alive across changing work and interruption, recover its current thread, make the next fitting move, and rest without manufacturing proof or ceremony."
+  short_description: "🏹 Keep authorized pursuits alive through interruption."
+  default_prompt: "Use $agent-striving to keep this pursuit alive without freezing it: recover what matters, carry it through interruption, choose the next fitting move, and let the route learn from reality."
 policy:
   allow_implicit_invocation: true

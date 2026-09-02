@@ -1,21 +1,21 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.1",
+  "product_version": "3.1.2",
   "records": [
     {
       "id": "nova",
       "source_repository": "",
       "source_commit": "",
-      "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/build/codex/nova-emergent/skills/nova/references/mind",
-      "source_version": "MIND 0.3.0",
+      "source_path": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
+      "source_version": "MIND 0.3.1",
       "selection": [
-        "complete component tree"
+        "complete Codex Nova skill root from the current MIND 0.3.1 build"
       ],
       "edition_overlays": [
-        "SKILL.md",
-        "references/edition/index.md",
-        "references/take-the-tour.md (trailing newline normalization)"
+        "SKILL.md terminal Free edition binding appended to the canonical MIND body",
+        "references/edition/index.md Free capability ecology",
+        "references/take-the-tour.md remove one surplus terminal LF"
       ],
       "source_state": "local_construction_source_imported_for_git_custody"
     },
@@ -295,14 +295,18 @@
     {
       "id": "agent-striving",
       "source_repository": "https://github.com/Stunspot/augment-of-mind",
-      "source_commit": "d45b035a56204fe706a50256dc3aefb855990e3c",
+      "source_commit": "5bccd0867bf9905b7775741c7344a4570974c917",
       "source_path": "skills/agent-striving",
-      "source_version": "0.3.3",
+      "source_version": "0.4.0",
       "selection": [
         "complete canonical skill tree"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit"
+      "source_state": "git_commit",
+      "source_commit_tree": "1c5662b5a734c9a1cf5277d64153d92acea4e618",
+      "source_git_tree": "adb9e715b07b1f2b223a945ed0229cd835e92d0c",
+      "source_file_count": 14,
+      "source_tree_sha256": "72bfa2e90521b2defead2fc032e84197e5584b8ee152975ce05f7ef01d98e522"
     },
     {
       "id": "cognitive-continuity",
@@ -334,7 +338,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.1 edition binding",
+      "source_version": "1.0.4 with Free 3.1.2 edition binding",
       "selection": [
         "complete authored base tree"
       ],

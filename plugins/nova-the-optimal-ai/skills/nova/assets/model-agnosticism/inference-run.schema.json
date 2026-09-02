@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/receipt-envelope-v1.json",
+  "title": "Epistemic Model Agnosticism receipt envelope",
+  "oneOf": [
+    {"$ref": "#/$defs/analyzeReceipt"},
+    {"$ref": "#/$defs/validationReceipt"},
+    {"$ref": "#/$defs/errorReceipt"}
+  ],
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "maxLength": 256},
+    "text": {"type": "string", "minLength": 1, "maxLength": 16384},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "shaId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "stringArray": {"type": "array", "maxItems": 128, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 2048}},
+    "calibrationRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["calibration_id", "revision", "digest", "metric", "log_base", "unit", "encoder_digest", "step_semantics"],
+      "properties": {
+        "calibration_id": {"$ref": "#/$defs/id"},
+        "revision": {"type": "integer", "minimum": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "metric": {"const": "mean_predictive_surprisal"},
+        "log_base": {"const": "e"},
+        "unit": {"const": "nats_per_observation"},
+        "encoder_digest": {"$ref": "#/$defs/digest"},
+        "step_semantics": {"$ref": "#/$defs/text"}
+      }
+    },
+    "priorSequence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_id", "revision", "digest"],
+      "properties": {
+        "sequence_id": {"$ref": "#/$defs/id"},
+        "revision": {"type": "integer", "minimum": 1},
+        "digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engine_id", "engine_version", "artifact_sha256", "numeric_kernel", "numeric_runtime", "schema_versions"],
+      "properties": {
+        "engine_id": {"const": "cd-model-agnosticism-trellis"},
+        "engine_version": {"const": "1.0.0"},
+        "artifact_sha256": {"$ref": "#/$defs/digest"},
+        "numeric_kernel": {"const": "logsumexp-forward_logsumexp-backward_log-viterbi"},
+        "numeric_runtime": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["implementation", "python_version", "float_radix", "float_mant_dig", "float_max_exp"],
+          "properties": {
+            "implementation": {"type": "string", "minLength": 1, "maxLength": 64},
+            "python_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
+            "float_radix": {"type": "integer", "minimum": 2},
+            "float_mant_dig": {"type": "integer", "minimum": 1},
+            "float_max_exp": {"type": "integer", "minimum": 1}
+          }
+        },
+        "schema_versions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model_set", "observation_sequence", "receipt_envelope"],
+          "properties": {
+            "model_set": {"const": "cd-model-agnosticism-model-set/v1"},
+            "observation_sequence": {"const": "cd-model-agnosticism-observation-sequence/v1"},
+            "receipt_envelope": {"const": "cd-model-agnosticism-receipt-envelope/v1"}
+          }
+        }
+      }
+    },
+    "resourceEstimate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["work_units", "posterior_cells", "estimated_output_bytes", "limits"],
+      "properties": {
+        "work_units": {"type": "integer", "minimum": 0, "maximum": 10000000},
+        "posterior_cells": {"type": "integer", "minimum": 0, "maximum": 500000},
+        "estimated_output_bytes": {"type": "integer", "minimum": 0, "maximum": 33554432},
+        "limits": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["max_work_units", "max_posterior_cells", "max_output_bytes"],
+          "properties": {
+            "max_work_units": {"const": 10000000},
+            "max_posterior_cells": {"const": 500000},
+            "max_output_bytes": {"const": 33554432}
+          }
+        }
+      }
+    },
+    "posteriorVector": {"type": "array", "minItems": 1, "maxItems": 64, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+    "filteredRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_index", "log_predictive_probability", "predictive_probability", "predictive_probability_underflow", "posterior"],
+      "properties": {
+        "sequence_index": {"type": "integer", "minimum": 0},
+        "log_predictive_probability": {"type": ["number", "null"]},
+        "predictive_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "predictive_probability_underflow": {"type": "boolean"},
+        "posterior": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/posteriorVector"}]}
+      }
+    },
+    "smoothedRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sequence_index", "posterior", "uses_later_observations"],
+      "properties": {
+        "sequence_index": {"type": "integer", "minimum": 0},
+        "posterior": {"$ref": "#/$defs/posteriorVector"},
+        "uses_later_observations": {"type": "boolean"}
+      }
+    },
+    "absoluteFit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reason", "metric", "log_base", "unit", "threshold", "calibration_ref"],
+      "properties": {
+        "status": {"enum": ["pass", "fail", "unassessed"]},
+        "reason": {"$ref": "#/$defs/stringArray"},
+        "metric": {"const": "mean_predictive_surprisal"},
+        "log_base": {"const": "e"},
+        "unit": {"const": "nats_per_observation"},
+        "threshold": {"type": ["number", "null"], "minimum": 0},
+        "calibration_ref": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/calibrationRef"}]}
+      }
+    },
+    "viterbi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state_indices", "log_joint_probability", "joint_probability", "joint_probability_underflow", "tie_breaking"],
+      "properties": {
+        "state_indices": {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"type": "integer", "minimum": 0, "maximum": 63}},
+        "log_joint_probability": {"type": "number"},
+        "joint_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "joint_probability_underflow": {"type": "boolean"},
+        "tie_breaking": {"const": "lowest_predecessor_and_terminal_index_in_declared_state_order"}
+      }
+    },
+    "modelResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_id", "model_version", "model_artifact_digest", "effective_model_digest", "observation_contract_digest", "state_order", "inference_status", "log_sequence_likelihood", "sequence_likelihood", "sequence_likelihood_underflow", "mean_predictive_surprisal", "surprisal_log_base", "surprisal_unit", "absolute_fit", "filtered_state_posteriors"],
+      "properties": {
+        "model_id": {"$ref": "#/$defs/id"},
+        "model_version": {"$ref": "#/$defs/id"},
+        "model_artifact_digest": {"$ref": "#/$defs/digest"},
+        "effective_model_digest": {"$ref": "#/$defs/digest"},
+        "observation_contract_digest": {"$ref": "#/$defs/digest"},
+        "state_order": {"type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+        "inference_status": {"enum": ["completed", "zero_likelihood"]},
+        "log_sequence_likelihood": {"type": ["number", "null"]},
+        "sequence_likelihood": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "sequence_likelihood_underflow": {"type": "boolean"},
+        "mean_predictive_surprisal": {"type": ["number", "null"], "minimum": 0},
+        "surprisal_log_base": {"const": "e"},
+        "surprisal_unit": {"const": "nats_per_observation"},
+        "absolute_fit": {"$ref": "#/$defs/absoluteFit"},
+        "filtered_state_posteriors": {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/filteredRow"}},
+        "zero_likelihood_at_sequence_index": {"type": "integer", "minimum": 0},
+        "smoothed_state_posteriors": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/smoothedRow"}}]},
+        "viterbi": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/viterbi"}]}
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["weights_status", "reason", "conditional_on_model_set", "relative_model_weights"],
+      "properties": {
+        "weights_status": {"enum": ["computed", "unsupported"]},
+        "reason": {"$ref": "#/$defs/stringArray"},
+        "conditional_on_model_set": {"const": true},
+        "relative_model_weights": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["model_id", "weight"],
+            "properties": {"model_id": {"$ref": "#/$defs/id"}, "weight": {"type": "number", "minimum": 0, "maximum": 1}}
+          }
+        }
+      }
+    },
+    "reframe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reasons"],
+      "properties": {"status": {"enum": ["required", "not_required", "unassessed"]}, "reasons": {"$ref": "#/$defs/stringArray"}}
+    },
+    "semanticBoundary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["epistemic_model_agnosticism", "model_relative", "claim_confidence", "truth_certification", "source_confidence_modified", "authority_effect", "decision_authority", "persistence_performed", "filtered_temporal_mode", "filtered_is_as_known_then", "smoothed_is_retrospective"],
+      "properties": {
+        "epistemic_model_agnosticism": {"const": true},
+        "model_relative": {"const": true},
+        "claim_confidence": {"const": false},
+        "truth_certification": {"const": false},
+        "source_confidence_modified": {"const": false},
+        "authority_effect": {"const": "none"},
+        "decision_authority": {"const": false},
+        "persistence_performed": {"const": false},
+        "filtered_temporal_mode": {"enum": ["historical_prefix", "retrospective_event_order"]},
+        "filtered_is_as_known_then": {"type": "boolean"},
+        "smoothed_is_retrospective": {"type": "boolean"}
+      }
+    },
+    "analyzeReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "run_id", "engine", "inputs", "options", "resource_estimate", "run_status", "per_model", "comparison", "reframe", "diagnostics", "semantic_boundary"],
+      "properties": {
+        "contract": {"const": "cd-model-agnosticism-inference-run/v1"},
+        "run_id": {"$ref": "#/$defs/shaId"},
+        "engine": {"$ref": "#/$defs/engine"},
+        "inputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model_set_id", "model_set_revision", "model_set_digest", "sequence_id", "sequence_revision", "sequence_digest", "prior_sequence", "observation_ids", "temporal_mode"],
+          "properties": {
+            "model_set_id": {"$ref": "#/$defs/id"},
+            "model_set_revision": {"type": "integer", "minimum": 1},
+            "model_set_digest": {"$ref": "#/$defs/digest"},
+            "sequence_id": {"$ref": "#/$defs/id"},
+            "sequence_revision": {"type": "integer", "minimum": 1},
+            "sequence_digest": {"$ref": "#/$defs/digest"},
+            "prior_sequence": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/priorSequence"}]},
+            "observation_ids": {"type": "array", "minItems": 1, "maxItems": 10000, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+            "temporal_mode": {"enum": ["historical_prefix", "retrospective_event_order"]}
+          }
+        },
+        "options": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["filter", "decode", "smooth"],
+          "properties": {"filter": {"const": true}, "decode": {"type": "boolean"}, "smooth": {"type": "boolean"}}
+        },
+        "resource_estimate": {"$ref": "#/$defs/resourceEstimate"},
+        "run_status": {"enum": ["completed", "reframe_required"]},
+        "per_model": {"type": "array", "minItems": 1, "maxItems": 32, "items": {"$ref": "#/$defs/modelResult"}},
+        "comparison": {"$ref": "#/$defs/comparison"},
+        "reframe": {"$ref": "#/$defs/reframe"},
+        "diagnostics": {"$ref": "#/$defs/stringArray"},
+        "semantic_boundary": {"$ref": "#/$defs/semanticBoundary"}
+      }
+    },
+    "validationReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "validation_id", "status", "engine", "inputs", "resource_estimate", "comparison_declared", "temporal_semantics", "semantic_boundary"],
+      "properties": {
+        "contract": {"const": "cd-model-agnosticism-validation/v1"},
+        "validation_id": {"$ref": "#/$defs/shaId"},
+        "status": {"const": "valid"},
+        "engine": {"$ref": "#/$defs/engine"},
+        "inputs": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["model_set_digest", "sequence_digest", "model_count", "observation_count"],
+          "properties": {
+            "model_set_digest": {"$ref": "#/$defs/digest"},
+            "sequence_digest": {"$ref": "#/$defs/digest"},
+            "model_count": {"type": "integer", "minimum": 1, "maximum": 32},
+            "observation_count": {"type": "integer", "minimum": 1, "maximum": 10000}
+          }
+        },
+        "resource_estimate": {"$ref": "#/$defs/resourceEstimate"},
+        "comparison_declared": {"enum": ["eligible", "ineligible"]},
+        "temporal_semantics": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "filtered_is_as_known_then"],
+          "properties": {"mode": {"enum": ["historical_prefix", "retrospective_event_order"]}, "filtered_is_as_known_then": {"type": "boolean"}}
+        },
+        "semantic_boundary": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["structural_and_stochastic_only", "ontology_validated", "calibration_truth_validated", "semantic_truth_certified", "authority_effect"],
+          "properties": {
+            "structural_and_stochastic_only": {"const": true},
+            "ontology_validated": {"const": false},
+            "calibration_truth_validated": {"const": false},
+            "semantic_truth_certified": {"const": false},
+            "authority_effect": {"const": "none"}
+          }
+        }
+      }
+    },
+    "errorReceipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract", "error_id", "status", "engine", "code", "message"],
+      "properties": {
+        "contract": {"const": "cd-model-agnosticism-error/v1"},
+        "error_id": {"$ref": "#/$defs/shaId"},
+        "status": {"const": "error"},
+        "engine": {"$ref": "#/$defs/engine"},
+        "code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$", "maxLength": 128},
+        "message": {"$ref": "#/$defs/text"}
+      }
+    }
+  }
+}

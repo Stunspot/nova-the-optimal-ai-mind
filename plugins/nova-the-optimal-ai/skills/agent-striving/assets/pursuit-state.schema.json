@@ -1,114 +1,84 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://collaborative-dynamics.local/schemas/agent-striving-pursuit-state-v1.json",
-  "title": "Agent Striving Pursuit State v1",
+  "$id": "https://collaborative-dynamics.local/schemas/agent-striving-pursuit-state-v2.json",
+  "title": "Agent Striving Portable Pursuit Handoff v2",
+  "description": "A sparse custody envelope for a genuine host or state-owner boundary. It is not a host-goal prompt, project ledger, or universal pursuit model.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "format",
-    "pursuit_id",
-    "objective",
-    "world_change",
-    "acceptance_criteria",
-    "status",
-    "strategy",
-    "progress",
-    "next_move",
-    "budgets",
-    "authority",
-    "completion_evidence",
-    "reentry",
+    "pursuit_ref",
+    "authority_source",
+    "current_direction",
+    "disposition",
+    "continuity",
     "updated_at"
   ],
   "properties": {
-    "format": {"const": "cd-agent-striving-state/v1"},
-    "pursuit_id": {"type": "string", "minLength": 1},
-    "objective": {
+    "format": {"const": "cd-agent-striving-handoff/v2"},
+    "pursuit_ref": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "authority_source": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "current_direction": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "disposition": {"enum": ["live", "resting", "released"]},
+    "current_state_ref": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "foreground": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["statement", "source_authority", "source_refs"],
+      "minProperties": 1,
       "properties": {
-        "statement": {"type": "string", "minLength": 1},
-        "source_authority": {"type": "string", "minLength": 1},
-        "source_refs": {"type": "array", "items": {"type": "string"}}
+        "settled": {"type": "array", "items": {"type": "string", "minLength": 1, "pattern": "\\S"}},
+        "actual_state": {"type": "string", "minLength": 1, "pattern": "\\S"},
+        "blockers": {"type": "array", "items": {"type": "string", "minLength": 1, "pattern": "\\S"}},
+        "likely_continuation": {"type": "string", "minLength": 1, "pattern": "\\S"}
       }
     },
-    "world_change": {"type": "string", "minLength": 1},
-    "acceptance_criteria": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
-    "status": {
-      "enum": [
-        "active",
-        "completed",
-        "partial-success",
-        "awaiting-evidence",
-        "awaiting-authority",
-        "capability-limited",
-        "budget-exhausted",
-        "paused",
-        "cancelled",
-        "killed"
+    "continuity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "persistence",
+        "persistence_receipt",
+        "reactivation",
+        "reactivation_cue",
+        "lost_guarantee"
+      ],
+      "properties": {
+        "persistence": {"enum": ["confirmed", "prepared", "unavailable"]},
+        "persistence_receipt": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"},
+        "reactivation": {"enum": ["confirmed", "manual", "unavailable"]},
+        "reactivation_cue": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"},
+        "lost_guarantee": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"persistence": {"const": "confirmed"}}, "required": ["persistence"]},
+          "then": {"properties": {"persistence_receipt": {"type": "string", "minLength": 1, "pattern": "\\S"}}},
+          "else": {"properties": {"persistence_receipt": {"const": null}}}
+        },
+        {
+          "if": {"properties": {"reactivation": {"enum": ["confirmed", "manual"]}}, "required": ["reactivation"]},
+          "then": {"properties": {"reactivation_cue": {"type": "string", "minLength": 1, "pattern": "\\S"}}},
+          "else": {"properties": {"reactivation_cue": {"const": null}}}
+        },
+        {
+          "if": {
+            "allOf": [
+              {"properties": {"persistence": {"const": "confirmed"}}, "required": ["persistence"]},
+              {"properties": {"reactivation": {"enum": ["confirmed", "manual"]}}, "required": ["reactivation"]}
+            ]
+          },
+          "then": {"properties": {"lost_guarantee": {"const": null}}},
+          "else": {"properties": {"lost_guarantee": {"type": "string", "minLength": 1, "pattern": "\\S"}}}
+        }
       ]
     },
-    "strategy": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["current_hypothesis", "last_revision"],
-      "properties": {
-        "current_hypothesis": {"type": "string", "minLength": 1},
-        "last_revision": {"type": ["string", "null"]}
-      }
-    },
-    "progress": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["verified_outcomes", "evidence_refs", "remaining", "stall_count"],
-      "properties": {
-        "verified_outcomes": {"type": "array", "items": {"type": "string", "minLength": 1}},
-        "evidence_refs": {"type": "array", "items": {"type": "string"}},
-        "remaining": {"type": "array", "items": {"type": "string", "minLength": 1}},
-        "stall_count": {"type": "integer", "minimum": 0}
-      }
-    },
-    "next_move": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["action", "rationale", "authority_required"],
-      "properties": {
-        "action": {"type": "string", "minLength": 1},
-        "rationale": {"type": "string"},
-        "authority_required": {"type": "boolean"}
-      }
-    },
-    "budgets": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["limits", "used", "exhausted_dimension"],
-      "properties": {
-        "limits": {"type": "object"},
-        "used": {"type": "object"},
-        "exhausted_dimension": {"type": ["string", "null"]}
-      }
-    },
-    "authority": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["allowed_actions", "gated_actions", "pending_gate"],
-      "properties": {
-        "allowed_actions": {"type": "array", "items": {"type": "string"}},
-        "gated_actions": {"type": "array", "items": {"type": "string"}},
-        "pending_gate": {"type": ["string", "null"]}
-      }
-    },
-    "completion_evidence": {"type": "array", "items": {"type": "string", "minLength": 1}},
-    "reentry": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["condition", "next_actor"],
-      "properties": {
-        "condition": {"type": "string", "minLength": 1},
-        "next_actor": {"type": "string", "minLength": 1}
-      }
-    },
-    "updated_at": {"type": "string", "format": "date-time"}
-  }
+    "supersedes": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "updated_at": {"type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"disposition": {"const": "released"}}, "required": ["disposition"]},
+      "then": {"properties": {"foreground": {"not": {"required": ["likely_continuation"]}}}}
+    }
+  ]
 }

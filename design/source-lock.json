@@ -1,27 +1,31 @@
 {
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.1",
-  "source_map_sha256": "09d2c0f0c88fa3d94bacccc69e4a2ff42134aa4ddd6a37370044eb82f5adea9f",
+  "product_version": "3.1.2",
+  "source_map_sha256": "50e20f55f3da1e4928ed6b8a5c2542a7e62b88e8bfaa50330132fdff58fa0043",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
       "id": "agent-striving",
       "source_repository": "https://github.com/Stunspot/augment-of-mind",
-      "source_commit": "d45b035a56204fe706a50256dc3aefb855990e3c",
+      "source_commit": "5bccd0867bf9905b7775741c7344a4570974c917",
       "source_path": "skills/agent-striving",
-      "source_version": "0.3.3",
+      "source_version": "0.4.0",
       "selection": [
         "complete canonical skill tree"
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
+      "source_commit_tree": "1c5662b5a734c9a1cf5277d64153d92acea4e618",
+      "source_git_tree": "adb9e715b07b1f2b223a945ed0229cd835e92d0c",
+      "source_file_count": 14,
+      "source_tree_sha256": "72bfa2e90521b2defead2fc032e84197e5584b8ee152975ce05f7ef01d98e522",
       "imported_path": "plugins/nova-the-optimal-ai/skills/agent-striving",
       "imported_tree": {
-        "file_count": 12,
-        "tree_sha256": "7047552dbc3a1ba28b5942eb22ab2b4770f51175598ac3a700bbcbafbd64aeb3"
+        "file_count": 14,
+        "tree_sha256": "72bfa2e90521b2defead2fc032e84197e5584b8ee152975ce05f7ef01d98e522"
       },
-      "overlay_state": "exact_canonical_source"
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "agent-swarm-orchestration",
@@ -34,12 +38,6 @@
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "imported_path": "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration",
-      "imported_tree": {
-        "file_count": 26,
-        "tree_sha256": "ec4fd5afdee16512cb1561639521844d07a11300975633447766e419bc8886ca"
-      },
-      "overlay_state": "exact_canonical_source",
       "source_commit_tree": "6d91235a471bb7e5f3c263d2b56a869ace237b1b",
       "source_git_tree": "09427273782c4ae24ef46d7367fca386df4a7c7a",
       "source_file_count": 26,
@@ -47,7 +45,13 @@
       "source_archive": "release-assets/v0.3.0/Skill-agent-swarm-orchestration-v0.3.0.zip",
       "source_archive_sha256": "68292da08974225278ef19704830606354c124c2695e4ae0a1e9cd1e4e70eb3b",
       "notice_file_count": 6,
-      "notice_tree_sha256": "a1a3bdbfde3c97af9aa8de7722aa48bfd49f51f7aa2275654d47a3d497257c52"
+      "notice_tree_sha256": "a1a3bdbfde3c97af9aa8de7722aa48bfd49f51f7aa2275654d47a3d497257c52",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration",
+      "imported_tree": {
+        "file_count": 26,
+        "tree_sha256": "ec4fd5afdee16512cb1561639521844d07a11300975633447766e419bc8886ca"
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "agentic-coding",
@@ -87,7 +91,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
-        "tree_sha256": "4a14bbcd99ec9bfd63ed4ade630226b7fd8d5d9b0dc9fd7037c8f33982bac7de"
+        "tree_sha256": "cc30338bcc25b6d8b688c2bf0030559b02df4dc8b147e4c3394da496de2d14a9"
       },
       "overlay_state": "edition_overlay"
     },
@@ -197,7 +201,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "9a4633bad4325c02779b7e9b070aa4922181838d38bfff3d8fd5d28b1b167d18"
+        "tree_sha256": "4e0148db2acf855ef8dd6debb4906241ea857e6f51308fdd693a9a04612b48a2"
       },
       "overlay_state": "edition_overlay"
     },
@@ -219,7 +223,7 @@
         "file_count": 48,
         "tree_sha256": "4844e65919e75c617fe644880e46e6029dd79d52aa902908cfa147f71881efb5"
       },
-      "overlay_state": "accepted_nova_edition_overlay"
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "dunbar",
@@ -330,21 +334,21 @@
       "id": "nova",
       "source_repository": "",
       "source_commit": "",
-      "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/build/codex/nova-emergent/skills/nova/references/mind",
-      "source_version": "MIND 0.3.0",
+      "source_path": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
+      "source_version": "MIND 0.3.1",
       "selection": [
-        "complete component tree"
+        "complete Codex Nova skill root from the current MIND 0.3.1 build"
       ],
       "edition_overlays": [
-        "SKILL.md",
-        "references/edition/index.md",
-        "references/take-the-tour.md (trailing newline normalization)"
+        "SKILL.md terminal Free edition binding appended to the canonical MIND body",
+        "references/edition/index.md Free capability ecology",
+        "references/take-the-tour.md remove one surplus terminal LF"
       ],
       "source_state": "local_construction_source_imported_for_git_custody",
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
-        "file_count": 32,
-        "tree_sha256": "186884494381ab34daf2fa9f41d9d35476179ee1c0ff1f56b71bfc6220e0b7f6"
+        "file_count": 39,
+        "tree_sha256": "cc4d4283bc28db0301398f23e239a2f1ce456aa2403d54e2888e70c72bede170"
       },
       "overlay_state": "edition_overlay"
     },
@@ -353,7 +357,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.1 edition binding",
+      "source_version": "1.0.4 with Free 3.1.2 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -408,7 +412,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
         "file_count": 63,
-        "tree_sha256": "23362b601d1dd3302633d26e64664f8bffa9a417e0855ec61e30851fb6b37083"
+        "tree_sha256": "1d7f137a0e0aa72a4a771a29f24ee16530a7464237177bbef30ac5e547a585cf"
       },
       "overlay_state": "edition_overlay"
     },
@@ -562,8 +566,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 811,
-    "tree_sha256": "82f09288e1b38ac176afebcc233dde916f555c245ba94f131194f583dad7b8fc"
+    "file_count": 820,
+    "tree_sha256": "ed13a365d02967b3938ef874b730b65f8def96eac211b4597956ca6e0be12452"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -573,11 +577,11 @@
     },
     "interview-trainer": {
       "file_count": 2,
-      "tree_sha256": "39c665e046ea1ba7d82874efe6cf5a518e3a63c5b6595a33099219091ff9eccd"
+      "tree_sha256": "5af5f0fa975deeec6516e88dcc920b483bf93c62e4296fb4c95e4f4d00c178b0"
     },
     "job-application-builder": {
       "file_count": 2,
-      "tree_sha256": "4438a3418b5936378bce070a243749f2d4ef4c5dc3ac6840405fb495af9b1fe3"
+      "tree_sha256": "28fbd95317b34a3b51333a78d33b3c3c2f58ae7d672b2b15b5f889f7dcec5ae2"
     },
     "testforge": {
       "file_count": 6,
@@ -586,12 +590,12 @@
   },
   "rights_bundle": {
     "files": {
-      "LICENSE.md": "9ea41548d751f914cc2718c7c096394aaad8827c2f0e49f957265205a6e010ff",
+      "LICENSE.md": "9810da035fc7e47f46b9c688fc9211a0bf99a5d7b7739eb180f6f7a0aa7ff8ce",
       "ATTRIBUTION.md": "fc80f3ed8d86ddbf01169cf9f740e6cbbf773fa56e3dd6d52774f723ef67a2d5",
-      "NOTICE.md": "9c9f4bbc02caa04f0fe365bc4e4b8a9150bc42417ec909ab1c71d269b29b904d",
+      "NOTICE.md": "f96849f861fefd551428ed361f525c2784ade2f3f01f7e3388ca0ad5c4925ec1",
       "TRADEMARKS.md": "7b473341be0279ad1f118d80d5f14769aac1d9a5fb37e4f27f304e1beec580fd",
-      "PROVENANCE.md": "412cac1a7fd2f5dd6afaef2bd04c553a60542dece3ac1dda03a5c68323558eae",
-      "THIRD-PARTY-NOTICES.md": "c5927bacfc03ff5666bdd0dec7a7f176b8133b9af295457ce6ae243acfb254e9"
+      "PROVENANCE.md": "e3a7e7a703611975fd619037a6712f11dd79e6dbe327c6ba704474a3a4c11e92",
+      "THIRD-PARTY-NOTICES.md": "c115af94dc4c4838e4261b0bbce819bbf9ea575ad4ae0b8d0e4c2beef806adec"
     },
     "state": "public_split_license_applied",
     "redistribution_state": "permitted_under_included_licenses",

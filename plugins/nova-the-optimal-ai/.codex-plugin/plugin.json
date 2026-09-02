@@ -1,6 +1,6 @@
 {
   "name": "nova-the-optimal-ai",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "Nova the Optimal AI Free: one vivid Nova front door, ambient MIND, governed continuity, projects, personal knowledge, and twenty-six native practical capabilities.",
   "author": {
     "name": "Collaborative Dynamics",
@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "Nova the Optimal AI",
     "shortDescription": "One sharp generalist. Useful before the tour.",
-    "longDescription": "Give Nova the real thing you need done. Free 3.1.1 combines the governing Nova persona, ambient MIND, optional governed continuity, coding and paired verification, research and retrieval, editable office work and review, IT diagnosis, privacy, language, career workflows, reminders, and people context without a required local model, hook, daemon, embeddings, or vector database.",
+    "longDescription": "Give Nova the real thing you need done. Free 3.1.2 combines the governing Nova persona, ambient MIND, optional governed continuity, coding and paired verification, research and retrieval, editable office work and review, IT diagnosis, privacy, language, career workflows, reminders, and people context without a required local model, hook, daemon, embeddings, or vector database.",
     "developerName": "Collaborative Dynamics",
     "category": "Productivity",
     "capabilities": [

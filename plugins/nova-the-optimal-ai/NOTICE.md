@@ -6,7 +6,7 @@ Nova provides model-mediated assistance. Output can be incomplete, incorrect, st
 
 ## Product boundary
 
-Free 3.1.1 contains one Nova plugin, ambient MIND, and twenty-six sibling capability roots. Ordinary use does not require a local model, embedding service, vector database, prompt hook, daemon, separate Nova account, telemetry service, or persistent Nova estate. Host capabilities, tools, connectors, network access, and permissions remain controlled by the host and user.
+Free 3.1.2 contains one Nova plugin, ambient MIND, and twenty-six sibling capability roots. Ordinary use does not require a local model, embedding service, vector database, prompt hook, daemon, separate Nova account, telemetry service, or persistent Nova estate. Host capabilities, tools, connectors, network access, and permissions remain controlled by the host and user.
 
 The complete customer distribution carries its source map, source lock, loadout manifest, component notices, and per-file checksums. These establish identity and custody within their stated boundaries; they do not prove fresh-host discovery, model behavior, external-service behavior, or customer outcomes.
 
