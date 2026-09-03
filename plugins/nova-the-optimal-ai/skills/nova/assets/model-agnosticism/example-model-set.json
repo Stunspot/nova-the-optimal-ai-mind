@@ -59,7 +59,7 @@
     "status": "eligible",
     "shared_observation_semantics_required": true,
     "shared_sequence_required": true,
-    "prior_basis": "equal synthetic fixture priors",
+    "prior_basis": "equal, strictly positive synthetic fixture priors across both admitted rivals",
     "calibration_basis": "test-only arithmetic calibration",
     "absolute_fit_policy": {"metric": "mean_predictive_surprisal", "log_base": "e", "unit": "nats_per_observation", "threshold": 10.0, "direction": "lte", "calibration_ref": {"calibration_id": "synthetic-fixture-calibration", "revision": 1, "digest": "d011e51c49b0a484da19a04cf5e66be90c4300335311bc69f28887bce57771d7", "metric": "mean_predictive_surprisal", "log_base": "e", "unit": "nats_per_observation", "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26", "step_semantics": "one day per observation"}}
   },

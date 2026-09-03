@@ -348,7 +348,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 39,
-        "tree_sha256": "cc4d4283bc28db0301398f23e239a2f1ce456aa2403d54e2888e70c72bede170"
+        "tree_sha256": "a1da277cb22bd1a390ec3888502a7c9c0fa9f85e76033f9fe5e99076b80c527f"
       },
       "overlay_state": "edition_overlay"
     },
@@ -567,7 +567,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 820,
-    "tree_sha256": "ed13a365d02967b3938ef874b730b65f8def96eac211b4597956ca6e0be12452"
+    "tree_sha256": "aaa9f5203b633a399b508e2b67ee08a398652607431724f4b62e8560f3ea6abc"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

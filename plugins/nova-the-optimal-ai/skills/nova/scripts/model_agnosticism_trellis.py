@@ -397,6 +397,12 @@ def validate_model_set(document: dict[str, Any]) -> dict[str, Any]:
         calibration_ref = _validate_calibration(model["calibration_ref"], f"{prefix}.calibration_ref")
         comparison_eligible = _need_bool(model["comparison_eligible"], f"{prefix}.comparison_eligible")
         prior = _probability(model["prior_model_weight"], f"{prefix}.prior_model_weight", allow_none=True)
+        if prior is not None and prior <= 0.0:
+            raise TrellisError(
+                "INVALID_PROBABILITY",
+                f"{prefix}.prior_model_weight must be strictly positive when declared; "
+                "exact zero is reserved for structural probabilities within the bounded supplied HMM",
+            )
         normalized_models.append(
             {
                 "raw": model,

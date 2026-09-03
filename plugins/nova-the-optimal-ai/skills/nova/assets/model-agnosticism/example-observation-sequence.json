@@ -6,7 +6,7 @@
   "case_ref": "synthetic://hmm/ice-cream",
   "model_set_id": "stanford-ice-cream-demonstration",
   "model_set_revision": 1,
-  "model_set_digest": "fb064413dd68f3429dbfc78298f3ba89e35c933cd125f40f055670ae3a961edf",
+  "model_set_digest": "ed4a21a5feaffa75c6ffc57a60a679e7da4b2ecc23eed59d47c5c2f7da97b77e",
   "encoder": {"encoder_id": "ice-cream-count-bucket", "encoder_version": "1.0.0", "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26"},
   "analysis_as_of": "2026-09-02T00:00:00Z",
   "ordering_rule": "event_time_ascending_then_observation_id/v1",
