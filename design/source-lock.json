@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.1.2",
-  "source_map_sha256": "08c55a006c7e099012e5be6f3022c1453a0d714e9d398ea4cc510a0d425cdcb4",
+  "source_map_sha256": "5ed73bf930de1f4d234c532820c73d0febd19dbfec1dfc5685549f759ed6fd27",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -333,18 +333,18 @@
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "ac08910c8a11986f302db30a8a6b5f0607a01328",
+      "source_commit": "d967ee0bd7745f39de16532a70e607c67bd09eda",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
       "source_version": "MIND 0.3.1 / Nova Free 3.1.2",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
       "edition_overlays": [],
-      "source_state": "local_commit_ahead_of_origin",
-      "source_commit_tree": "4646a7ece54d53da7176d9336abb80f326bf661c",
-      "source_git_tree": "d4abda7d8ba4bab30ba1f19923d59f65f494cddb",
-      "source_file_count": 39,
-      "source_tree_sha256": "a1da277cb22bd1a390ec3888502a7c9c0fa9f85e76033f9fe5e99076b80c527f",
+      "source_state": "git_commit",
+      "source_commit_tree": "2c623e6b4a5a7d7483ef8aab2f90581476a6af74",
+      "source_git_tree": "265b2f90eff9e8640c5247f8a247e393c2364252",
+      "source_file_count": 46,
+      "source_tree_sha256": "9bc57a90729de8044f0f32d6b85e83dd6ba7074cc6449edddbecaf4253dde88c",
       "source_lineage": {
         "historical_origin": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
         "historical_origin_state": "non_git_authoring_workbench_not_current_authority",
@@ -352,12 +352,22 @@
           "SKILL.md terminal Free edition binding appended to the canonical MIND body",
           "references/edition/index.md Free capability ecology",
           "references/take-the-tour.md remove one surplus terminal LF"
-        ]
+        ],
+        "mission_runtime": {
+          "upstream_repository": "https://github.com/Stunspot/augment-of-mind",
+          "upstream_commit": "f6d55ac1627b94fe2ebeb2c4e719844f72665218",
+          "source_paths": [
+            "skills/augment-of-mind/assets/faculty-runtime",
+            "skills/augment-of-mind/references/faculty-runtime/runtime.md",
+            "skills/augment-of-mind/scripts/migrate_mission_capsule.py"
+          ],
+          "transformation": "Exact schemas, templates, and deterministic migrator retained; Faculty runtime doctrine path-adapted for the integrated Nova skill; Nova activation guidance added without changing persona bytes."
+        }
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
-        "file_count": 39,
-        "tree_sha256": "a1da277cb22bd1a390ec3888502a7c9c0fa9f85e76033f9fe5e99076b80c527f"
+        "file_count": 46,
+        "tree_sha256": "9bc57a90729de8044f0f32d6b85e83dd6ba7074cc6449edddbecaf4253dde88c"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -575,8 +585,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 820,
-    "tree_sha256": "aaa9f5203b633a399b508e2b67ee08a398652607431724f4b62e8560f3ea6abc"
+    "file_count": 827,
+    "tree_sha256": "8c822b35de0764e9d45b0bcdc87bf0a9070a3febc20044644664771a6a1783ee"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
