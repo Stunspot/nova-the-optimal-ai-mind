@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/faculty-runtime/mission-capsule.schema.json",
+  "title": "Faculty Runtime Mission Capsule",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "mission_id", "desired_state", "acceptance", "phase", "authority", "active_coalition", "unresolved_transformations", "closure"],
+  "properties": {
+    "schema": {"const": "collaborative-dynamics-mission-capsule/v1"},
+    "mission_id": {"type": "string", "minLength": 1},
+    "desired_state": {"type": "string", "minLength": 1},
+    "acceptance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterion", "evidence_required", "status"],
+        "properties": {
+          "criterion": {"type": "string", "minLength": 1},
+          "evidence_required": {"type": "string", "minLength": 1},
+          "status": {"enum": ["unmet", "partially_met", "met", "blocked"]}
+        }
+      }
+    },
+    "phase": {"enum": ["orient", "model", "regulate", "deliberate", "decide", "act", "measure", "verify", "reunify", "communicate", "recover", "closed"]},
+    "reasoning_horizon": {"type": "string"},
+    "stakes": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["granted", "reserved"],
+      "properties": {
+        "granted": {"type": "array", "items": {"type": "string"}},
+        "reserved": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "decisive_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "contradictions": {"type": "array", "items": {"type": "string"}},
+        "model_or_recommendation_changes": {"type": "array", "items": {"type": "string"}},
+        "action_or_verification_changes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "current": {"type": "string"},
+        "state": {"enum": ["proposed", "authorized", "attempted", "observed", "verified", "blocked", "none"]},
+        "stop_condition": {"type": "string"}
+      }
+    },
+    "active_coalition": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["faculty", "activation", "owned_transformation", "return_condition"],
+        "properties": {
+          "faculty": {"type": "string", "minLength": 1},
+          "activation": {"enum": ["consult", "own", "sustain"]},
+          "owned_transformation": {"type": "string", "minLength": 1},
+          "return_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "unresolved_transformations": {"type": "array", "items": {"type": "string"}},
+    "cross_cutting_conflicts": {"type": "array", "items": {"type": "string"}},
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "context": {"type": "string"},
+        "time": {"type": "string"},
+        "cost": {"type": "string"},
+        "tool_use": {"type": "string"}
+      }
+    },
+    "reassessment_trigger": {"type": "string"},
+    "closure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "reopening_condition"],
+      "properties": {
+        "status": {"enum": ["open", "awaiting_authority", "blocked", "complete", "cancelled"]},
+        "reopening_condition": {"type": "string"}
+      }
+    }
+  }
+}

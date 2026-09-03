@@ -1,0 +1,27 @@
+{
+  "schema": "collaborative-dynamics-faculty-return/v1",
+  "mission_id": "replace-with-parent-mission-id",
+  "faculty": "sensemaking",
+  "custody": "Name the bounded transformation owned by this return.",
+  "activation": "own",
+  "disposition": "partial",
+  "transformation_delta": "State what changed, not a restatement of the mission.",
+  "evidence_delta": [],
+  "uncertainty_delta": {
+    "resolved": [],
+    "introduced": [],
+    "remaining": []
+  },
+  "action_state_changes": [],
+  "conflicts": [],
+  "acceptance_effect": [],
+  "requested_route": null,
+  "broadcast": {
+    "decisive_evidence": [],
+    "contradiction": [],
+    "model_or_recommendation_change": [],
+    "action_or_verification_change": [],
+    "cross_cutting_conflict": []
+  },
+  "return_condition": "Name what is complete, blocked, or needed next."
+}

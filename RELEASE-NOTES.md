@@ -6,6 +6,8 @@ MIND advances to 0.3.1 with Model Agnosticism: explanatory and predictive models
 
 Agent Striving advances to the canonical 0.4.0 fourteen-file tree at commit 5bccd0867bf9905b7775741c7344a4570974c917. Goal objectives become compact performance seeds rather than disguised requirements records, while changing state remains with its proper project or continuity owner. Nova Free remains twenty-seven native skill roots with seventeen nested MIND Faculty Cores.
 
+Nova's integrated MIND runtime now carries the sparse mission-capsule v2 contract: open pursuits need no invented acceptance rubric, bounded tasks retain their real completion conditions, terminal state stays coherent, and published v1 capsules remain readable through deterministic migration rather than being silently reinterpreted.
+
 ## 3.1.1 — current pursuit and project custody
 
 Agent Striving advances to the complete canonical 0.3.3 tree. It now preserves authorized durable direction without hardening ordinary conversation into campaigns, keeps named-project state with Project Management, resumes from the live edge, adapts without evidence ceremony, and rests naturally.

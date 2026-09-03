@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/faculty-runtime/mission-capsule-v2.schema.json",
+  "title": "Faculty Runtime Mission Capsule v2",
+  "description": "A sparse cross-Faculty state capsule that preserves a user-authorized direction at its actual resolution. Acceptance is present only when supplied, ratified, inherent to a bounded task, or retained as explicitly unresolved v1 provenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "closure": {
+            "properties": {"status": {"const": "complete"}},
+            "required": ["status"]
+          }
+        },
+        "required": ["closure"]
+      },
+      "then": {
+        "properties": {
+          "phase": {"const": "closed"},
+          "acceptance": {
+            "items": {
+              "properties": {"status": {"const": "met"}},
+              "required": ["status"]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "closure": {
+            "properties": {"status": {"const": "cancelled"}},
+            "required": ["status"]
+          }
+        },
+        "required": ["closure"]
+      },
+      "then": {
+        "properties": {"phase": {"const": "closed"}}
+      }
+    },
+    {
+      "if": {
+        "properties": {"phase": {"const": "closed"}},
+        "required": ["phase"]
+      },
+      "then": {
+        "properties": {
+          "closure": {
+            "properties": {"status": {"enum": ["complete", "cancelled"]}},
+            "required": ["status"]
+          }
+        }
+      }
+    }
+  ],
+  "required": ["schema", "mission_id", "current_direction", "phase", "authority", "active_coalition", "unresolved_transformations", "closure"],
+  "properties": {
+    "schema": {"const": "collaborative-dynamics-mission-capsule/v2"},
+    "mission_id": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "current_direction": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "acceptance": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterion", "basis", "status"],
+        "properties": {
+          "criterion": {"type": "string", "minLength": 1, "pattern": "\\S"},
+          "basis": {
+            "enum": ["supplied", "ratified", "inherent_to_bounded_task", "legacy_v1"],
+            "description": "legacy_v1 preserves inherited provenance for review; it does not assert that the user supplied or ratified the criterion."
+          },
+          "evidence_required": {"type": "string", "minLength": 1, "pattern": "\\S"},
+          "status": {"enum": ["unmet", "partially_met", "met", "blocked"]}
+        }
+      }
+    },
+    "phase": {"enum": ["orient", "model", "regulate", "deliberate", "decide", "act", "measure", "verify", "reunify", "communicate", "recover", "closed"]},
+    "reasoning_horizon": {"type": "string"},
+    "stakes": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["granted", "reserved"],
+      "properties": {
+        "granted": {"type": "array", "items": {"type": "string"}},
+        "reserved": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "decisive_state": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {"type": "array", "items": {"type": "string"}},
+        "contradictions": {"type": "array", "items": {"type": "string"}},
+        "model_or_recommendation_changes": {"type": "array", "items": {"type": "string"}},
+        "action_or_verification_changes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "commitment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "current": {"type": "string"},
+        "state": {"enum": ["proposed", "authorized", "attempted", "observed", "verified", "blocked", "none"]},
+        "stop_condition": {"type": "string"}
+      }
+    },
+    "active_coalition": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["faculty", "activation", "owned_transformation", "return_condition"],
+        "properties": {
+          "faculty": {"type": "string", "minLength": 1},
+          "activation": {"enum": ["consult", "own", "sustain"]},
+          "owned_transformation": {"type": "string", "minLength": 1},
+          "return_condition": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "unresolved_transformations": {"type": "array", "items": {"type": "string"}},
+    "cross_cutting_conflicts": {"type": "array", "items": {"type": "string"}},
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "context": {"type": "string"},
+        "time": {"type": "string"},
+        "cost": {"type": "string"},
+        "tool_use": {"type": "string"}
+      }
+    },
+    "reassessment_trigger": {"type": "string"},
+    "closure": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": {"enum": ["open", "resting", "awaiting_authority", "blocked", "complete", "cancelled"]},
+        "reopening_condition": {"type": "string", "minLength": 1, "pattern": "\\S"}
+      }
+    }
+  }
+}

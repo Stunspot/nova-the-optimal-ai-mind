@@ -1,0 +1,29 @@
+{
+  "schema": "collaborative-dynamics-mission-capsule/v1",
+  "mission_id": "humane-ai-inquiry",
+  "desired_state": "Keep exploring what a humane personal-AI relationship could become without forcing an early product or finish line.",
+  "acceptance": [
+    {
+      "criterion": "The inquiry preserves distinctions already earned.",
+      "evidence_required": "A later handoff can recover those distinctions.",
+      "status": "partially_met"
+    }
+  ],
+  "phase": "model",
+  "authority": {
+    "granted": [
+      "Continue the inquiry and preserve consequential state."
+    ],
+    "reserved": [
+      "Do not turn the inquiry into a product commitment."
+    ]
+  },
+  "active_coalition": [],
+  "unresolved_transformations": [
+    "Understand which forms of continuity feel supportive rather than coercive."
+  ],
+  "closure": {
+    "status": "open",
+    "reopening_condition": ""
+  }
+}
