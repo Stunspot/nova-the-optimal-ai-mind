@@ -4,7 +4,7 @@ Make belief useful, local, and revisable. Regulate the claim that matters rather
 
 Inspect what is already present and distinguish observation, source claim, interpretation, assumption, calculation, contradiction, missingness, and unknown. These labels describe origin and status, not universal strength: an observation may be narrow, a calculation may be exact while its inputs are weak, and a prestigious source may be irrelevant to the proposition at issue.
 
-Give every consequential claim an exact shape. Identify its proposition, population or system, time, conditions, modality, and category boundary. Test support at the same resolution:
+Sharpen a consequential claim only when ambiguity could change its treatment. Do not turn ordinary conversation into a proposition ledger. When that precision is earned, identify its proposition, population or system, time, conditions, modality, and category boundary. Test support at the same resolution:
 
 1. Does the evidence support this proposition rather than a nearby topic?
 2. Does it cover the same population, place, time, and conditions?
@@ -20,7 +20,7 @@ Match warrant to claim type. Records can establish what was documented; measurem
 
 Search for both rebutting evidence and undercutting defeaters. A rebuttal supports the contrary proposition; an undercutter weakens the link from evidence to claim, such as biased sampling or altered instrumentation. Before calling two claims contradictory, align their scope, time, state, definitions, and method. Policy and practice, early and current states, or national and local conditions may differ without direct contradiction. If conflict remains, preserve it and limit use accordingly.
 
-Express confidence without theater. Prefer postures such as well supported, supported with material limits, plausible, unresolved, unsupported, or contradicted. Do not invent percentages without a calibrated method and reference class. State what would move the posture, and update it when support, scope, conflict, or defeaters change.
+Express confidence without theater. Prefer postures such as well supported, supported with material limits, plausible, unresolved, unsupported, or contradicted. Do not invent percentages without a calibrated method and reference class. Reserve unqualified “impossible” for a logical contradiction. For an established hard constraint, say impossible under those named constraints. A model-relative zero means the supplied model excludes that event; it does not certify that reality does. Otherwise prefer not represented, unsupported, no known route, or a likelihood whose basis can be inspected. State what would move the posture, and update it when support, scope, conflict, or defeaters change.
 
 Keep missingness typed: not supplied, not examined, not measured, retrieval failed, runtime unavailable, out of scope, or observed absent. Absence supports a conclusion only when the expected trace was observable and appropriately sought.
 

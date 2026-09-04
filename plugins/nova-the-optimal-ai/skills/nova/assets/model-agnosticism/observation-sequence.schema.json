@@ -1,32 +1,91 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/observation-sequence-v1.json",
-  "title": "Epistemic Model Agnosticism observation sequence",
+  "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/observation-sequence-v2.json",
+  "title": "Epistemic Model Agnosticism observation sequence v2",
   "type": "object",
   "additionalProperties": false,
-  "required": ["contract", "sequence_id", "revision", "prior_sequence", "case_ref", "model_set_id", "model_set_revision", "model_set_digest", "encoder", "analysis_as_of", "ordering_rule", "step_semantics", "items"],
+  "required": [
+    "contract",
+    "sequence_id",
+    "revision",
+    "prior_sequence",
+    "case_ref",
+    "model_set_id",
+    "model_set_revision",
+    "model_set_digest",
+    "encoder",
+    "analysis_as_of",
+    "ordering_rule",
+    "step_semantics",
+    "step_contract",
+    "items"
+  ],
   "properties": {
-    "contract": {"const": "cd-model-agnosticism-observation-sequence/v1"},
-    "sequence_id": {"$ref": "#/$defs/id"},
-    "revision": {"type": "integer", "minimum": 1},
-    "prior_sequence": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/priorSequence"}]},
-    "case_ref": {"$ref": "#/$defs/ref"},
-    "model_set_id": {"$ref": "#/$defs/id"},
-    "model_set_revision": {"type": "integer", "minimum": 1},
-    "model_set_digest": {"$ref": "#/$defs/digest"},
+    "contract": {
+      "const": "cd-model-agnosticism-observation-sequence/v2"
+    },
+    "sequence_id": {
+      "$ref": "#/$defs/id"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "prior_sequence": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/priorSequence"
+        }
+      ]
+    },
+    "case_ref": {
+      "$ref": "#/$defs/ref"
+    },
+    "model_set_id": {
+      "$ref": "#/$defs/id"
+    },
+    "model_set_revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "model_set_digest": {
+      "$ref": "#/$defs/digest"
+    },
     "encoder": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["encoder_id", "encoder_version", "encoder_digest"],
+      "required": [
+        "encoder_id",
+        "encoder_version",
+        "encoder_digest"
+      ],
       "properties": {
-        "encoder_id": {"$ref": "#/$defs/id"},
-        "encoder_version": {"$ref": "#/$defs/id"},
-        "encoder_digest": {"$ref": "#/$defs/digest"}
+        "encoder_id": {
+          "$ref": "#/$defs/id"
+        },
+        "encoder_version": {
+          "$ref": "#/$defs/id"
+        },
+        "encoder_digest": {
+          "$ref": "#/$defs/digest"
+        }
       }
     },
-    "analysis_as_of": {"$ref": "#/$defs/timestamp"},
-    "ordering_rule": {"const": "event_time_ascending_then_observation_id/v1"},
-    "step_semantics": {"$ref": "#/$defs/text"},
+    "analysis_as_of": {
+      "$ref": "#/$defs/timestamp"
+    },
+    "ordering_rule": {
+      "const": "event_time_strictly_ascending/v2"
+    },
+    "step_semantics": {
+      "$ref": "#/$defs/text"
+    },
+    "step_contract": {
+      "$ref": "#/$defs/stepContract"
+    },
     "items": {
       "type": "array",
       "minItems": 1,
@@ -34,56 +93,278 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["observation_id", "sequence_index", "symbol_id", "event_time", "known_at", "source_refs", "coding_basis", "coding_status", "dependence_refs", "supersedes"],
+        "required": [
+          "observation_id",
+          "sequence_index",
+          "symbol_id",
+          "event_time",
+          "known_at",
+          "source_refs",
+          "coding_basis",
+          "coding_status",
+          "dependence_refs",
+          "supersedes"
+        ],
         "properties": {
-          "observation_id": {"$ref": "#/$defs/id"},
-          "sequence_index": {"type": "integer", "minimum": 0},
-          "symbol_id": {"$ref": "#/$defs/id"},
-          "event_time": {"$ref": "#/$defs/timestamp"},
-          "known_at": {"$ref": "#/$defs/timestamp"},
-          "source_refs": {"$ref": "#/$defs/refs"},
-          "coding_basis": {"$ref": "#/$defs/text"},
-          "coding_status": {"enum": ["observed", "corrected"]},
-          "dependence_refs": {"type": "array", "maxItems": 128, "uniqueItems": true, "items": {"$ref": "#/$defs/ref"}, "description": "Disclosure of known observation dependence. Engine 1.0.1 refuses inference when this array is non-empty because it has no dependence-adjustment contract; removing disclosure is not remediation. Historical engine 1.0.0 accepted the disclosure as warning-only, so its probabilistic output is unsupported unless the exact digest-matched input can be recovered and every dependence_refs array is empty."},
-          "supersedes": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/supersedes"}]}
+          "observation_id": {
+            "$ref": "#/$defs/id"
+          },
+          "sequence_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "symbol_id": {
+            "$ref": "#/$defs/id"
+          },
+          "event_time": {
+            "$ref": "#/$defs/timestamp"
+          },
+          "known_at": {
+            "$ref": "#/$defs/timestamp"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/refs"
+          },
+          "coding_basis": {
+            "$ref": "#/$defs/text"
+          },
+          "coding_status": {
+            "enum": [
+              "observed",
+              "corrected"
+            ]
+          },
+          "dependence_refs": {
+            "type": "array",
+            "maxItems": 128,
+            "uniqueItems": true,
+            "items": {
+              "$ref": "#/$defs/ref"
+            },
+            "description": "Engine 1.1.0 refuses inference when dependence is declared. Empty means no dependence was declared, not that independence was validated."
+          },
+          "supersedes": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/supersedes"
+              }
+            ]
+          }
         },
         "allOf": [
-          {"if": {"properties": {"coding_status": {"const": "observed"}}}, "then": {"properties": {"supersedes": {"type": "null"}}}},
-          {"if": {"properties": {"coding_status": {"const": "corrected"}}}, "then": {"properties": {"supersedes": {"$ref": "#/$defs/supersedes"}}}}
+          {
+            "if": {
+              "properties": {
+                "coding_status": {
+                  "const": "observed"
+                }
+              },
+              "required": [
+                "coding_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "supersedes": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "coding_status": {
+                  "const": "corrected"
+                }
+              },
+              "required": [
+                "coding_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "supersedes": {
+                  "$ref": "#/$defs/supersedes"
+                }
+              }
+            }
+          }
         ]
       }
     }
   },
   "allOf": [
-    {"if": {"properties": {"revision": {"const": 1}}}, "then": {"properties": {"prior_sequence": {"type": "null"}}}},
-    {"if": {"properties": {"revision": {"minimum": 2}}}, "then": {"properties": {"prior_sequence": {"$ref": "#/$defs/priorSequence"}}}}
+    {
+      "if": {
+        "properties": {
+          "revision": {
+            "const": 1
+          }
+        },
+        "required": [
+          "revision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "prior_sequence": {
+            "type": "null"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "revision": {
+            "minimum": 2
+          }
+        },
+        "required": [
+          "revision"
+        ]
+      },
+      "then": {
+        "properties": {
+          "prior_sequence": {
+            "$ref": "#/$defs/priorSequence"
+          }
+        }
+      }
+    }
   ],
   "$defs": {
-    "id": {"type": "string", "minLength": 1, "maxLength": 256, "pattern": "^(?=.*\\S)[^\\u0000-\\u001F]+$"},
-    "text": {"type": "string", "minLength": 1, "maxLength": 16384, "pattern": "\\S"},
-    "ref": {"type": "string", "minLength": 1, "maxLength": 2048, "pattern": "\\S"},
-    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "timestamp": {"type": "string", "format": "date-time", "maxLength": 64, "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"},
-    "refs": {"type": "array", "minItems": 1, "maxItems": 128, "uniqueItems": true, "items": {"$ref": "#/$defs/ref"}},
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16384,
+      "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048,
+      "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "maxLength": 64,
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d{1,6})?(?:Z|[+-]\\d{2}:\\d{2})$",
+      "description": "RFC 3339 timestamp normalized to UTC by the runtime; fractional seconds, when present, are limited to one through six digits (microsecond precision)."
+    },
+    "refs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 128,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/ref"
+      }
+    },
+    "stepContract": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "interval_seconds",
+            "description"
+          ],
+          "properties": {
+            "kind": {
+              "const": "event_step"
+            },
+            "interval_seconds": {
+              "type": "null"
+            },
+            "description": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "interval_seconds",
+            "description"
+          ],
+          "properties": {
+            "kind": {
+              "const": "fixed_interval"
+            },
+            "interval_seconds": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "description": {
+              "$ref": "#/$defs/text"
+            }
+          }
+        }
+      ]
+    },
     "priorSequence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sequence_id", "revision", "digest"],
+      "required": [
+        "sequence_id",
+        "revision",
+        "digest"
+      ],
       "properties": {
-        "sequence_id": {"$ref": "#/$defs/id"},
-        "revision": {"type": "integer", "minimum": 1},
-        "digest": {"$ref": "#/$defs/digest"}
+        "sequence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
       }
     },
     "supersedes": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sequence_id", "sequence_revision", "sequence_digest", "observation_id"],
+      "required": [
+        "sequence_id",
+        "sequence_revision",
+        "sequence_digest",
+        "observation_id"
+      ],
       "properties": {
-        "sequence_id": {"$ref": "#/$defs/id"},
-        "sequence_revision": {"type": "integer", "minimum": 1},
-        "sequence_digest": {"$ref": "#/$defs/digest"},
-        "observation_id": {"$ref": "#/$defs/id"}
+        "sequence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "sequence_revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sequence_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "observation_id": {
+          "$ref": "#/$defs/id"
+        }
       }
     }
   }

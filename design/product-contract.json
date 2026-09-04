@@ -16,7 +16,40 @@
     "product_status": "not_a_separate_product",
     "edition_variability": "capabilities_services_and_distribution_not_basic_mind",
     "faculty_core_count": 17,
-    "faculty_cores_are_nested_references": true
+    "faculty_cores_are_nested_references": true,
+    "model_agnosticism": {
+      "ambient_mode": "qualitative_proportionate",
+      "formal_instrument": "optional_stateless_trellis",
+      "trellis_binding": {
+        "engine_id": "cd-model-agnosticism-trellis",
+        "engine_version": "1.1.0",
+        "path_base": "plugin_root",
+        "entrypoint": "skills/nova/scripts/model_agnosticism_trellis.py",
+        "contracts": {
+          "model_set": "cd-model-agnosticism-model-set/v2",
+          "observation_sequence": "cd-model-agnosticism-observation-sequence/v2",
+          "analysis_receipt": "cd-model-agnosticism-inference-run/v2",
+          "validation_receipt": "cd-model-agnosticism-validation/v2",
+          "error_receipt": "cd-model-agnosticism-error/v2",
+          "receipt_envelope": "cd-model-agnosticism-receipt-envelope/v2"
+        },
+        "required_asset_count": 5,
+        "required_assets": [
+          "skills/nova/assets/model-agnosticism/model-set.schema.json",
+          "skills/nova/assets/model-agnosticism/observation-sequence.schema.json",
+          "skills/nova/assets/model-agnosticism/inference-run.schema.json",
+          "skills/nova/assets/model-agnosticism/example-model-set.json",
+          "skills/nova/assets/model-agnosticism/example-observation-sequence.json"
+        ]
+      },
+      "automatic_numerical_invocation": false,
+      "formal_lanes": [
+        "evidence_update",
+        "assumption_stress_test"
+      ],
+      "invocation_owner": "any_capability_meeting_the_formal_gate",
+      "authority_effect": "none"
+    }
   },
   "loadout": {
     "visible_skill_roots": 27,

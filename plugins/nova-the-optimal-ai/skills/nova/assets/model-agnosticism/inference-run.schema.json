@@ -1,73 +1,405 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/receipt-envelope-v1.json",
+  "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/receipt-envelope-v2.json",
   "title": "Epistemic Model Agnosticism receipt envelope",
-  "description": "Structural envelope for engine 1.0.0 and 1.0.1 receipts. Schema validity does not upgrade historical epistemic support: engine 1.0.0 dependency-bearing or input-unrecoverable probability, fit, and weight fields are unsupported and require reframing.",
+  "description": "Strict current engine 1.1.0 receipts plus structural acceptance of immutable historical v1 receipts. Historical acceptance does not upgrade the epistemic support of legacy calculations.",
   "oneOf": [
-    {"$ref": "#/$defs/analyzeReceipt"},
-    {"$ref": "#/$defs/validationReceipt"},
-    {"$ref": "#/$defs/errorReceipt"}
+    {
+      "$ref": "#/$defs/analyzeReceiptV2"
+    },
+    {
+      "$ref": "#/$defs/validationReceiptV2"
+    },
+    {
+      "$ref": "#/$defs/errorReceiptV2"
+    },
+    {
+      "$ref": "#/$defs/historicalReceiptV1"
+    }
   ],
   "$defs": {
-    "id": {"type": "string", "minLength": 1, "maxLength": 256},
-    "text": {"type": "string", "minLength": 1, "maxLength": 16384},
-    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
-    "shaId": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
-    "stringArray": {"type": "array", "maxItems": 128, "uniqueItems": true, "items": {"type": "string", "minLength": 1, "maxLength": 2048}},
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256,
+      "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16384,
+      "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "shaId": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "stringArray": {
+      "type": "array",
+      "maxItems": 128,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 4096,
+        "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+      }
+    },
+    "epistemicLane": {
+      "enum": [
+        "evidence_update",
+        "assumption_stress_test"
+      ]
+    },
+    "stepContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "interval_seconds",
+        "description"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "event_step",
+            "fixed_interval"
+          ]
+        },
+        "interval_seconds": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "description": {
+          "$ref": "#/$defs/text"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "event_step"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "interval_seconds": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "fixed_interval"
+              }
+            },
+            "required": [
+              "kind"
+            ]
+          },
+          "then": {
+            "properties": {
+              "interval_seconds": {
+                "type": "integer",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "candidateSelection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "basis",
+        "source_refs"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "fixed_before_sequence",
+            "data_dependent",
+            "scenario_only"
+          ]
+        },
+        "basis": {
+          "$ref": "#/$defs/text"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "stoppingContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "basis",
+        "maximum_observations"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "fixed_before_sequence",
+            "data_dependent",
+            "scenario_only"
+          ]
+        },
+        "basis": {
+          "$ref": "#/$defs/text"
+        },
+        "maximum_observations": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "maximum": 10000
+        }
+      }
+    },
+    "parameterProvenance": {
+      "$ref": "#/$defs/inputProvenance"
+    },
+    "matrixLayout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transition",
+        "emission"
+      ],
+      "properties": {
+        "transition": {
+          "const": "source_state_rows_target_state_columns/v1"
+        },
+        "emission": {
+          "const": "state_rows_symbol_columns/v1"
+        }
+      }
+    },
+    "normalizationStats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy",
+        "absolute_tolerance",
+        "vectors_checked",
+        "vectors_adjusted",
+        "negative_zero_values_canonicalized",
+        "max_absolute_sum_error",
+        "max_absolute_value_adjustment"
+      ],
+      "properties": {
+        "policy": {
+          "const": "l1_within_absolute_tolerance_canonical_positive_zero/v1"
+        },
+        "absolute_tolerance": {
+          "const": 1E-09
+        },
+        "vectors_checked": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "vectors_adjusted": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "negative_zero_values_canonicalized": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_absolute_sum_error": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1E-09
+        },
+        "max_absolute_value_adjustment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1E-09
+        }
+      }
+    },
     "calibrationRef": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["calibration_id", "revision", "digest", "metric", "log_base", "unit", "encoder_digest", "step_semantics"],
+      "required": [
+        "calibration_id",
+        "revision",
+        "digest",
+        "calibration_target_digest",
+        "minimum_observations",
+        "maximum_observations",
+        "provenance"
+      ],
       "properties": {
-        "calibration_id": {"$ref": "#/$defs/id"},
-        "revision": {"type": "integer", "minimum": 1},
-        "digest": {"$ref": "#/$defs/digest"},
-        "metric": {"const": "mean_predictive_surprisal"},
-        "log_base": {"const": "e"},
-        "unit": {"const": "nats_per_observation"},
-        "encoder_digest": {"$ref": "#/$defs/digest"},
-        "step_semantics": {"$ref": "#/$defs/text"}
+        "calibration_id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "calibration_target_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "minimum_observations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "maximum_observations": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10000
+        },
+        "provenance": {
+          "$ref": "#/$defs/inputProvenance"
+        }
       }
     },
     "priorSequence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sequence_id", "revision", "digest"],
+      "required": [
+        "sequence_id",
+        "revision",
+        "digest"
+      ],
       "properties": {
-        "sequence_id": {"$ref": "#/$defs/id"},
-        "revision": {"type": "integer", "minimum": 1},
-        "digest": {"$ref": "#/$defs/digest"}
+        "sequence_id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "digest": {
+          "$ref": "#/$defs/digest"
+        }
       }
     },
-    "engine": {
+    "numericRuntime": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["engine_id", "engine_version", "artifact_sha256", "numeric_kernel", "numeric_runtime", "schema_versions"],
+      "required": [
+        "implementation",
+        "python_version",
+        "float_radix",
+        "float_mant_dig",
+        "float_max_exp"
+      ],
       "properties": {
-        "engine_id": {"const": "cd-model-agnosticism-trellis"},
-        "engine_version": {"enum": ["1.0.0", "1.0.1"], "description": "Engine 1.0.1 refuses declared observation dependence before inference and uses a single exact-zero trigger plus null unevaluated tail. Engine 1.0.0 is accepted as immutable historical structure; it used warning-only dependence handling and may pad the unevaluated tail with 0.0."},
-        "artifact_sha256": {"$ref": "#/$defs/digest"},
-        "numeric_kernel": {"const": "logsumexp-forward_logsumexp-backward_log-viterbi"},
+        "implementation": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "python_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "float_radix": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "float_mant_dig": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "float_max_exp": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "engineV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "engine_id",
+        "engine_version",
+        "artifact_sha256",
+        "numeric_kernel",
+        "numeric_runtime",
+        "matrix_layout",
+        "normalization",
+        "schema_versions"
+      ],
+      "properties": {
+        "engine_id": {
+          "const": "cd-model-agnosticism-trellis"
+        },
+        "engine_version": {
+          "const": "1.1.0"
+        },
+        "artifact_sha256": {
+          "$ref": "#/$defs/digest"
+        },
+        "numeric_kernel": {
+          "const": "logsumexp-forward_logsumexp-backward_log-viterbi"
+        },
         "numeric_runtime": {
+          "$ref": "#/$defs/numericRuntime"
+        },
+        "matrix_layout": {
+          "$ref": "#/$defs/matrixLayout"
+        },
+        "normalization": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["implementation", "python_version", "float_radix", "float_mant_dig", "float_max_exp"],
+          "required": [
+            "policy",
+            "absolute_tolerance"
+          ],
           "properties": {
-            "implementation": {"type": "string", "minLength": 1, "maxLength": 64},
-            "python_version": {"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$"},
-            "float_radix": {"type": "integer", "minimum": 2},
-            "float_mant_dig": {"type": "integer", "minimum": 1},
-            "float_max_exp": {"type": "integer", "minimum": 1}
+            "policy": {
+              "const": "l1_within_absolute_tolerance_canonical_positive_zero/v1"
+            },
+            "absolute_tolerance": {
+              "const": 1E-09
+            }
           }
         },
         "schema_versions": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["model_set", "observation_sequence", "receipt_envelope"],
+          "required": [
+            "model_set",
+            "observation_sequence",
+            "receipt_envelope"
+          ],
           "properties": {
-            "model_set": {"const": "cd-model-agnosticism-model-set/v1"},
-            "observation_sequence": {"const": "cd-model-agnosticism-observation-sequence/v1"},
-            "receipt_envelope": {"const": "cd-model-agnosticism-receipt-envelope/v1"}
+            "model_set": {
+              "const": "cd-model-agnosticism-model-set/v2"
+            },
+            "observation_sequence": {
+              "const": "cd-model-agnosticism-observation-sequence/v2"
+            },
+            "receipt_envelope": {
+              "const": "cd-model-agnosticism-receipt-envelope/v2"
+            }
           }
         }
       }
@@ -75,244 +407,1643 @@
     "resourceEstimate": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["work_units", "posterior_cells", "estimated_output_bytes", "limits"],
+      "required": [
+        "work_units",
+        "posterior_cells",
+        "estimated_output_bytes",
+        "limits"
+      ],
       "properties": {
-        "work_units": {"type": "integer", "minimum": 0, "maximum": 10000000},
-        "posterior_cells": {"type": "integer", "minimum": 0, "maximum": 500000},
-        "estimated_output_bytes": {"type": "integer", "minimum": 0, "maximum": 33554432},
+        "work_units": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10000000
+        },
+        "posterior_cells": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 500000
+        },
+        "estimated_output_bytes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 33554432
+        },
         "limits": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["max_work_units", "max_posterior_cells", "max_output_bytes"],
+          "required": [
+            "max_work_units",
+            "max_posterior_cells",
+            "max_output_bytes"
+          ],
           "properties": {
-            "max_work_units": {"const": 10000000},
-            "max_posterior_cells": {"const": 500000},
-            "max_output_bytes": {"const": 33554432}
+            "max_work_units": {
+              "const": 10000000
+            },
+            "max_posterior_cells": {
+              "const": 500000
+            },
+            "max_output_bytes": {
+              "const": 33554432
+            }
           }
         }
       }
     },
-    "posteriorVector": {"type": "array", "minItems": 1, "maxItems": 64, "items": {"type": "number", "minimum": 0, "maximum": 1}},
+    "posteriorVector": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
     "filteredRow": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sequence_index", "log_predictive_probability", "predictive_probability", "predictive_probability_underflow", "posterior"],
+      "required": [
+        "sequence_index",
+        "log_predictive_probability",
+        "predictive_probability",
+        "predictive_probability_underflow",
+        "posterior",
+        "posterior_log_probabilities",
+        "posterior_finite_log_underflow_state_indices",
+        "posterior_structural_zero_state_indices"
+      ],
       "properties": {
-        "sequence_index": {"type": "integer", "minimum": 0},
-        "log_predictive_probability": {"type": ["number", "null"], "description": "Natural-log predictive probability when evaluated and finite. Null at an exact model-support boundary and on later aligned rows that were not evaluated; engine 1.0.0 compatibility does not make any dependency-bearing value epistemically supported."},
-        "predictive_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Evaluated predictive probability. In engine 1.0.1 exact 0.0 occurs only at the named model-support boundary and later unevaluated rows are null. Historical engine 1.0.0 may pad those later rows with 0.0. Null otherwise means finite binary64 underflow or not evaluated, distinguished by predictive_probability_underflow and zero_likelihood_at_sequence_index."},
-        "predictive_probability_underflow": {"type": "boolean", "description": "True only when an evaluated finite log probability cannot be represented as positive binary64; false for exact model-relative zero and for unevaluated rows after the support boundary in both supported 1.0.1 and historical 1.0.0 representations."},
-        "posterior": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/posteriorVector"}], "description": "Filtered state posterior for an evaluated positive-support step; null at and after a model-support boundary. For engine 1.0.0, structural presence does not support dependency-bearing inference."}
+        "sequence_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "log_predictive_probability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 0
+        },
+        "predictive_probability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "predictive_probability_underflow": {
+          "type": "boolean"
+        },
+        "posterior": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/posteriorVector"
+            }
+          ]
+        },
+        "posterior_log_probabilities": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/posteriorLogVector"
+            }
+          ]
+        },
+        "posterior_finite_log_underflow_state_indices": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/stateIndexArray"
+            }
+          ]
+        },
+        "posterior_structural_zero_state_indices": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/stateIndexArray"
+            }
+          ]
+        }
       }
     },
     "smoothedRow": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["sequence_index", "posterior", "uses_later_observations"],
+      "required": [
+        "sequence_index",
+        "posterior",
+        "posterior_log_probabilities",
+        "posterior_finite_log_underflow_state_indices",
+        "posterior_structural_zero_state_indices",
+        "uses_later_observations"
+      ],
       "properties": {
-        "sequence_index": {"type": "integer", "minimum": 0},
-        "posterior": {"$ref": "#/$defs/posteriorVector"},
-        "uses_later_observations": {"type": "boolean"}
+        "sequence_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "posterior": {
+          "$ref": "#/$defs/posteriorVector"
+        },
+        "posterior_log_probabilities": {
+          "$ref": "#/$defs/posteriorLogVector"
+        },
+        "posterior_finite_log_underflow_state_indices": {
+          "$ref": "#/$defs/stateIndexArray"
+        },
+        "posterior_structural_zero_state_indices": {
+          "$ref": "#/$defs/stateIndexArray"
+        },
+        "uses_later_observations": {
+          "type": "boolean"
+        }
       }
     },
     "absoluteFit": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status", "reason", "metric", "log_base", "unit", "threshold", "calibration_ref"],
+      "required": [
+        "status",
+        "reason",
+        "assessment_basis",
+        "calibration_truth_validated",
+        "metric",
+        "log_base",
+        "unit",
+        "threshold",
+        "calibration_ref"
+      ],
       "properties": {
-        "status": {"enum": ["pass", "fail", "unassessed"]},
-        "reason": {"$ref": "#/$defs/stringArray"},
-        "metric": {"const": "mean_predictive_surprisal"},
-        "log_base": {"const": "e"},
-        "unit": {"const": "nats_per_observation"},
-        "threshold": {"type": ["number", "null"], "minimum": 0},
-        "calibration_ref": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/calibrationRef"}]}
+        "status": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessed"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "metric": {
+          "const": "mean_predictive_surprisal"
+        },
+        "log_base": {
+          "const": "e"
+        },
+        "unit": {
+          "const": "nats_per_observation"
+        },
+        "threshold": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "calibration_ref": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/calibrationRef"
+            }
+          ]
+        },
+        "assessment_basis": {
+          "const": "declared_threshold_arithmetic"
+        },
+        "calibration_truth_validated": {
+          "const": false
+        }
       }
     },
     "viterbi": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["state_indices", "log_joint_probability", "joint_probability", "joint_probability_underflow", "tie_breaking"],
+      "required": [
+        "state_indices",
+        "log_joint_probability",
+        "joint_probability",
+        "joint_probability_underflow",
+        "tie_breaking"
+      ],
       "properties": {
-        "state_indices": {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"type": "integer", "minimum": 0, "maximum": 63}},
-        "log_joint_probability": {"type": "number"},
-        "joint_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
-        "joint_probability_underflow": {"type": "boolean"},
-        "tie_breaking": {"const": "lowest_predecessor_and_terminal_index_in_declared_state_order"}
+        "state_indices": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 63
+          }
+        },
+        "log_joint_probability": {
+          "type": "number"
+        },
+        "joint_probability": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "joint_probability_underflow": {
+          "type": "boolean"
+        },
+        "tie_breaking": {
+          "const": "lowest_predecessor_and_terminal_index_in_declared_state_order"
+        }
       }
     },
-    "modelResult": {
+    "fitSummary": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["model_id", "model_version", "model_artifact_digest", "effective_model_digest", "observation_contract_digest", "state_order", "inference_status", "log_sequence_likelihood", "sequence_likelihood", "sequence_likelihood_underflow", "mean_predictive_surprisal", "surprisal_log_base", "surprisal_unit", "absolute_fit", "filtered_state_posteriors"],
+      "required": [
+        "status",
+        "passing_model_ids",
+        "failing_model_ids",
+        "unassessed_model_ids"
+      ],
       "properties": {
-        "model_id": {"$ref": "#/$defs/id"},
-        "model_version": {"$ref": "#/$defs/id"},
-        "model_artifact_digest": {"$ref": "#/$defs/digest"},
-        "effective_model_digest": {"$ref": "#/$defs/digest"},
-        "observation_contract_digest": {"$ref": "#/$defs/digest"},
-        "state_order": {"type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
-        "inference_status": {"enum": ["completed", "zero_likelihood"], "description": "zero_likelihood means an observed prefix left this supplied model's support; it is not a claim about what can occur in the world."},
-        "log_sequence_likelihood": {"type": ["number", "null"]},
-        "sequence_likelihood": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
-        "sequence_likelihood_underflow": {"type": "boolean"},
-        "mean_predictive_surprisal": {"type": ["number", "null"], "minimum": 0},
-        "surprisal_log_base": {"const": "e"},
-        "surprisal_unit": {"const": "nats_per_observation"},
-        "absolute_fit": {"$ref": "#/$defs/absoluteFit"},
-        "filtered_state_posteriors": {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/filteredRow"}},
-        "zero_likelihood_at_sequence_index": {"type": "integer", "minimum": 0, "description": "First evaluated observation outside this supplied model's support. Engine 1.0.1 represents later unevaluated aligned rows with null probability fields; historical engine 1.0.0 may pad them with 0.0."},
-        "smoothed_state_posteriors": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/smoothedRow"}}]},
-        "viterbi": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/viterbi"}]}
-      },
-      "allOf": [
-        {
-          "if": {"properties": {"inference_status": {"const": "zero_likelihood"}}, "required": ["inference_status"]},
-          "then": {"required": ["zero_likelihood_at_sequence_index"]}
+        "status": {
+          "enum": [
+            "all_pass",
+            "mixed",
+            "all_fail",
+            "unassessed"
+          ]
         },
-        {
-          "if": {"properties": {"inference_status": {"const": "completed"}}, "required": ["inference_status"]},
-          "then": {"not": {"required": ["zero_likelihood_at_sequence_index"]}}
+        "passing_model_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "failing_model_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "unassessed_model_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         }
-      ]
+      }
+    },
+    "priorNormalization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "policy",
+        "absolute_tolerance",
+        "sum_before",
+        "adjusted"
+      ],
+      "properties": {
+        "policy": {
+          "const": "l1_within_absolute_tolerance_canonical_positive_zero/v1"
+        },
+        "absolute_tolerance": {
+          "const": 1E-09
+        },
+        "sum_before": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "exclusiveMinimum": 0
+        },
+        "adjusted": {
+          "type": "boolean"
+        }
+      }
+    },
+    "pairwiseRow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "numerator_model_id",
+        "denominator_model_id",
+        "status",
+        "log_likelihood_ratio"
+      ],
+      "properties": {
+        "numerator_model_id": {
+          "$ref": "#/$defs/id"
+        },
+        "denominator_model_id": {
+          "$ref": "#/$defs/id"
+        },
+        "status": {
+          "enum": [
+            "finite",
+            "positive_infinity",
+            "negative_infinity",
+            "undefined_both_zero"
+          ]
+        },
+        "log_likelihood_ratio": {
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      }
+    },
+    "pairwiseReport": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reason",
+        "log_base",
+        "orientation",
+        "interpretation",
+        "rows"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "computed",
+            "unsupported"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "log_base": {
+          "const": "e"
+        },
+        "orientation": {
+          "const": "numerator_model_over_denominator_model"
+        },
+        "interpretation": {
+          "enum": [
+            "conditional_evidence",
+            "diagnostic_only",
+            "scenario_only",
+            "none"
+          ]
+        },
+        "rows": {
+          "type": "array",
+          "maxItems": 496,
+          "items": {
+            "$ref": "#/$defs/pairwiseRow"
+          }
+        }
+      }
     },
     "comparison": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["weights_status", "reason", "conditional_on_model_set", "relative_model_weights"],
+      "required": [
+        "weights_status",
+        "reason",
+        "conditional_on_model_set",
+        "effective_interpretation",
+        "evidence_gate",
+        "weight_interpretation",
+        "linear_weights_complete",
+        "fit_summary",
+        "prior_normalization",
+        "duplicate_screen",
+        "relative_model_weights",
+        "pairwise_log_likelihood_ratios"
+      ],
       "properties": {
-        "weights_status": {"enum": ["computed", "unsupported"]},
-        "reason": {"$ref": "#/$defs/stringArray"},
-        "conditional_on_model_set": {"const": true},
+        "weights_status": {
+          "enum": [
+            "computed",
+            "unsupported"
+          ]
+        },
+        "reason": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "conditional_on_model_set": {
+          "const": true
+        },
+        "effective_interpretation": {
+          "enum": [
+            "conditional_evidence_update",
+            "diagnostic_only",
+            "scenario_only"
+          ]
+        },
+        "evidence_gate": {
+          "$ref": "#/$defs/evidenceGate"
+        },
+        "weight_interpretation": {
+          "enum": [
+            "conditional_evidence_update",
+            "diagnostic_only",
+            "scenario_only",
+            "none"
+          ]
+        },
+        "linear_weights_complete": {
+          "type": "boolean"
+        },
+        "fit_summary": {
+          "$ref": "#/$defs/fitSummary"
+        },
+        "prior_normalization": {
+          "$ref": "#/$defs/priorNormalization"
+        },
+        "duplicate_screen": {
+          "$ref": "#/$defs/duplicateScreen"
+        },
         "relative_model_weights": {
           "type": "array",
           "maxItems": 32,
           "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["model_id", "weight"],
-            "properties": {"model_id": {"$ref": "#/$defs/id"}, "weight": {"type": "number", "minimum": 0, "maximum": 1}}
+            "$ref": "#/$defs/modelWeight"
           }
+        },
+        "pairwise_log_likelihood_ratios": {
+          "$ref": "#/$defs/pairwiseReport"
         }
       }
     },
     "reframe": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status", "reasons"],
-      "properties": {"status": {"enum": ["required", "not_required", "unassessed"]}, "reasons": {"$ref": "#/$defs/stringArray"}}
-    },
-    "semanticBoundary": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["epistemic_model_agnosticism", "model_relative", "claim_confidence", "truth_certification", "source_confidence_modified", "authority_effect", "decision_authority", "persistence_performed", "filtered_temporal_mode", "filtered_is_as_known_then", "smoothed_is_retrospective"],
+      "required": [
+        "status",
+        "reasons"
+      ],
       "properties": {
-        "epistemic_model_agnosticism": {"const": true},
-        "model_relative": {"const": true},
-        "claim_confidence": {"const": false},
-        "truth_certification": {"const": false},
-        "source_confidence_modified": {"const": false},
-        "authority_effect": {"const": "none"},
-        "decision_authority": {"const": false},
-        "persistence_performed": {"const": false},
-        "filtered_temporal_mode": {"enum": ["historical_prefix", "retrospective_event_order"]},
-        "filtered_is_as_known_then": {"type": "boolean"},
-        "smoothed_is_retrospective": {"type": "boolean"}
+        "status": {
+          "enum": [
+            "required",
+            "not_required",
+            "unassessed"
+          ]
+        },
+        "reasons": {
+          "$ref": "#/$defs/stringArray"
+        }
       }
     },
-    "analyzeReceipt": {
+    "modelResultV2": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["contract", "run_id", "engine", "inputs", "options", "resource_estimate", "run_status", "per_model", "comparison", "reframe", "diagnostics", "semantic_boundary"],
+      "required": [
+        "model_id",
+        "comparison_unit_id",
+        "model_version",
+        "model_document_digest",
+        "inference_model_digest",
+        "predictive_kernel_digest",
+        "observation_contract_digest",
+        "state_order",
+        "symbol_order",
+        "matrix_layout",
+        "normalization",
+        "parameter_provenance",
+        "prior_provenance",
+        "inference_status",
+        "log_sequence_likelihood",
+        "sequence_likelihood",
+        "sequence_likelihood_underflow",
+        "mean_predictive_surprisal",
+        "surprisal_log_base",
+        "surprisal_unit",
+        "absolute_fit",
+        "filtered_state_posteriors"
+      ],
       "properties": {
-        "contract": {"const": "cd-model-agnosticism-inference-run/v1"},
-        "run_id": {"$ref": "#/$defs/shaId"},
-        "engine": {"$ref": "#/$defs/engine"},
+        "model_id": {
+          "$ref": "#/$defs/id"
+        },
+        "model_version": {
+          "$ref": "#/$defs/id"
+        },
+        "model_document_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "inference_model_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "predictive_kernel_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "observation_contract_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "state_order": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "symbol_order": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 512,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "matrix_layout": {
+          "$ref": "#/$defs/matrixLayout"
+        },
+        "normalization": {
+          "$ref": "#/$defs/normalizationStats"
+        },
+        "parameter_provenance": {
+          "$ref": "#/$defs/inputProvenance"
+        },
+        "inference_status": {
+          "enum": [
+            "completed",
+            "zero_likelihood"
+          ]
+        },
+        "log_sequence_likelihood": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "sequence_likelihood": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "sequence_likelihood_underflow": {
+          "type": "boolean"
+        },
+        "mean_predictive_surprisal": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "surprisal_log_base": {
+          "const": "e"
+        },
+        "surprisal_unit": {
+          "const": "nats_per_observation"
+        },
+        "absolute_fit": {
+          "$ref": "#/$defs/absoluteFit"
+        },
+        "filtered_state_posteriors": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10000,
+          "items": {
+            "$ref": "#/$defs/filteredRow"
+          }
+        },
+        "zero_likelihood_at_sequence_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "smoothed_state_posteriors": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 10000,
+              "items": {
+                "$ref": "#/$defs/smoothedRow"
+              }
+            }
+          ]
+        },
+        "viterbi": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/viterbi"
+            }
+          ]
+        },
+        "comparison_unit_id": {
+          "$ref": "#/$defs/id"
+        },
+        "prior_provenance": {
+          "$ref": "#/$defs/inputProvenance"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "inference_status": {
+                "const": "zero_likelihood"
+              }
+            },
+            "required": [
+              "inference_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "zero_likelihood_at_sequence_index"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "inference_status": {
+                "const": "completed"
+              }
+            },
+            "required": [
+              "inference_status"
+            ]
+          },
+          "then": {
+            "not": {
+              "required": [
+                "zero_likelihood_at_sequence_index"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "semanticBoundaryV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "epistemic_model_agnosticism",
+        "epistemic_lane",
+        "model_relative",
+        "probabilities_are_conditional",
+        "probabilistic_output_interpretation",
+        "all_probabilistic_outputs_scenario_conditioned",
+        "claim_confidence",
+        "truth_certification",
+        "source_confidence_modified",
+        "parameter_uncertainty_integrated",
+        "parameter_provenance_truth_validated",
+        "candidate_selection_truth_validated",
+        "stopping_rule_truth_validated",
+        "observation_independence_validated",
+        "declared_dependence_count",
+        "dependence_adjustment",
+        "authority_effect",
+        "decision_authority",
+        "persistence_performed",
+        "filtered_temporal_mode",
+        "filtered_is_as_known_then",
+        "smoothed_is_retrospective",
+        "calibration_truth_validated",
+        "observational_equivalence_validated"
+      ],
+      "properties": {
+        "epistemic_model_agnosticism": {
+          "const": true
+        },
+        "epistemic_lane": {
+          "$ref": "#/$defs/epistemicLane"
+        },
+        "model_relative": {
+          "const": true
+        },
+        "probabilities_are_conditional": {
+          "const": true
+        },
+        "probabilistic_output_interpretation": {
+          "enum": [
+            "conditional_evidence_update",
+            "diagnostic_only",
+            "scenario_only"
+          ]
+        },
+        "all_probabilistic_outputs_scenario_conditioned": {
+          "type": "boolean"
+        },
+        "claim_confidence": {
+          "const": false
+        },
+        "truth_certification": {
+          "const": false
+        },
+        "source_confidence_modified": {
+          "const": false
+        },
+        "parameter_uncertainty_integrated": {
+          "const": false
+        },
+        "parameter_provenance_truth_validated": {
+          "const": false
+        },
+        "candidate_selection_truth_validated": {
+          "const": false
+        },
+        "stopping_rule_truth_validated": {
+          "const": false
+        },
+        "observation_independence_validated": {
+          "const": false
+        },
+        "declared_dependence_count": {
+          "const": 0
+        },
+        "dependence_adjustment": {
+          "const": "none"
+        },
+        "authority_effect": {
+          "const": "none"
+        },
+        "decision_authority": {
+          "const": false
+        },
+        "persistence_performed": {
+          "const": false
+        },
+        "filtered_temporal_mode": {
+          "enum": [
+            "historical_prefix",
+            "retrospective_event_order"
+          ]
+        },
+        "filtered_is_as_known_then": {
+          "type": "boolean"
+        },
+        "smoothed_is_retrospective": {
+          "type": "boolean"
+        },
+        "calibration_truth_validated": {
+          "const": false
+        },
+        "observational_equivalence_validated": {
+          "const": false
+        }
+      }
+    },
+    "analyzeReceiptV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "run_id",
+        "engine",
+        "inputs",
+        "options",
+        "resource_estimate",
+        "run_status",
+        "per_model",
+        "comparison",
+        "reframe",
+        "diagnostics",
+        "semantic_boundary"
+      ],
+      "properties": {
+        "contract": {
+          "const": "cd-model-agnosticism-inference-run/v2"
+        },
+        "run_id": {
+          "$ref": "#/$defs/shaId"
+        },
+        "engine": {
+          "$ref": "#/$defs/engineV2"
+        },
         "inputs": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["model_set_id", "model_set_revision", "model_set_digest", "sequence_id", "sequence_revision", "sequence_digest", "prior_sequence", "observation_ids", "temporal_mode"],
+          "required": [
+            "model_set_id",
+            "model_set_revision",
+            "model_set_digest",
+            "sequence_id",
+            "sequence_revision",
+            "sequence_digest",
+            "prior_sequence",
+            "observation_ids",
+            "observation_contract_digest",
+            "epistemic_lane",
+            "candidate_selection",
+            "stopping_contract",
+            "step_contract",
+            "temporal_mode",
+            "stopping_contract_digest",
+            "calibration_target_digest",
+            "mapping_provenance"
+          ],
           "properties": {
-            "model_set_id": {"$ref": "#/$defs/id"},
-            "model_set_revision": {"type": "integer", "minimum": 1},
-            "model_set_digest": {"$ref": "#/$defs/digest"},
-            "sequence_id": {"$ref": "#/$defs/id"},
-            "sequence_revision": {"type": "integer", "minimum": 1},
-            "sequence_digest": {"$ref": "#/$defs/digest"},
-            "prior_sequence": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/priorSequence"}]},
-            "observation_ids": {"type": "array", "minItems": 1, "maxItems": 10000, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
-            "temporal_mode": {"enum": ["historical_prefix", "retrospective_event_order"]}
+            "model_set_id": {
+              "$ref": "#/$defs/id"
+            },
+            "model_set_revision": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "model_set_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "sequence_id": {
+              "$ref": "#/$defs/id"
+            },
+            "sequence_revision": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sequence_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "prior_sequence": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/priorSequence"
+                }
+              ]
+            },
+            "observation_ids": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 10000,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "observation_contract_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "epistemic_lane": {
+              "$ref": "#/$defs/epistemicLane"
+            },
+            "candidate_selection": {
+              "$ref": "#/$defs/candidateSelection"
+            },
+            "stopping_contract": {
+              "$ref": "#/$defs/stoppingContract"
+            },
+            "step_contract": {
+              "$ref": "#/$defs/stepContract"
+            },
+            "temporal_mode": {
+              "enum": [
+                "historical_prefix",
+                "retrospective_event_order"
+              ]
+            },
+            "stopping_contract_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "calibration_target_digest": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/digest"
+                }
+              ]
+            },
+            "mapping_provenance": {
+              "$ref": "#/$defs/inputProvenance"
+            }
           }
         },
         "options": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["filter", "decode", "smooth"],
-          "properties": {"filter": {"const": true}, "decode": {"type": "boolean"}, "smooth": {"type": "boolean"}}
+          "required": [
+            "filter",
+            "decode",
+            "smooth"
+          ],
+          "properties": {
+            "filter": {
+              "const": true
+            },
+            "decode": {
+              "type": "boolean"
+            },
+            "smooth": {
+              "type": "boolean"
+            }
+          }
         },
-        "resource_estimate": {"$ref": "#/$defs/resourceEstimate"},
-        "run_status": {"enum": ["completed", "reframe_required"]},
-        "per_model": {"type": "array", "minItems": 1, "maxItems": 32, "items": {"$ref": "#/$defs/modelResult"}},
-        "comparison": {"$ref": "#/$defs/comparison"},
-        "reframe": {"$ref": "#/$defs/reframe"},
-        "diagnostics": {"$ref": "#/$defs/stringArray"},
-        "semantic_boundary": {"$ref": "#/$defs/semanticBoundary"}
+        "resource_estimate": {
+          "$ref": "#/$defs/resourceEstimate"
+        },
+        "run_status": {
+          "enum": [
+            "completed",
+            "reframe_required"
+          ]
+        },
+        "per_model": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "items": {
+            "$ref": "#/$defs/modelResultV2"
+          }
+        },
+        "comparison": {
+          "$ref": "#/$defs/comparison"
+        },
+        "reframe": {
+          "$ref": "#/$defs/reframe"
+        },
+        "diagnostics": {
+          "$ref": "#/$defs/stringArray"
+        },
+        "semantic_boundary": {
+          "$ref": "#/$defs/semanticBoundaryV2"
+        }
       }
     },
-    "validationReceipt": {
+    "modelContractV2": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["contract", "validation_id", "status", "engine", "inputs", "resource_estimate", "comparison_declared", "temporal_semantics", "semantic_boundary"],
+      "required": [
+        "model_id",
+        "comparison_unit_id",
+        "model_document_digest",
+        "inference_model_digest",
+        "predictive_kernel_digest",
+        "normalization",
+        "parameter_provenance",
+        "prior_provenance"
+      ],
       "properties": {
-        "contract": {"const": "cd-model-agnosticism-validation/v1"},
-        "validation_id": {"$ref": "#/$defs/shaId"},
-        "status": {"const": "valid"},
-        "engine": {"$ref": "#/$defs/engine"},
+        "model_id": {
+          "$ref": "#/$defs/id"
+        },
+        "model_document_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "inference_model_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "predictive_kernel_digest": {
+          "$ref": "#/$defs/digest"
+        },
+        "normalization": {
+          "$ref": "#/$defs/normalizationStats"
+        },
+        "parameter_provenance": {
+          "$ref": "#/$defs/inputProvenance"
+        },
+        "comparison_unit_id": {
+          "$ref": "#/$defs/id"
+        },
+        "prior_provenance": {
+          "$ref": "#/$defs/inputProvenance"
+        }
+      }
+    },
+    "validationReceiptV2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract",
+        "validation_id",
+        "status",
+        "engine",
+        "inputs",
+        "resource_estimate",
+        "comparison_declared",
+        "candidate_selection",
+        "stopping_contract",
+        "model_contracts",
+        "temporal_semantics",
+        "semantic_boundary"
+      ],
+      "properties": {
+        "contract": {
+          "const": "cd-model-agnosticism-validation/v2"
+        },
+        "validation_id": {
+          "$ref": "#/$defs/shaId"
+        },
+        "status": {
+          "const": "valid"
+        },
+        "engine": {
+          "$ref": "#/$defs/engineV2"
+        },
         "inputs": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["model_set_digest", "sequence_digest", "model_count", "observation_count"],
+          "required": [
+            "model_set_digest",
+            "sequence_digest",
+            "observation_contract_digest",
+            "epistemic_lane",
+            "model_count",
+            "observation_count",
+            "stopping_contract_digest",
+            "calibration_target_digest",
+            "mapping_provenance"
+          ],
           "properties": {
-            "model_set_digest": {"$ref": "#/$defs/digest"},
-            "sequence_digest": {"$ref": "#/$defs/digest"},
-            "model_count": {"type": "integer", "minimum": 1, "maximum": 32},
-            "observation_count": {"type": "integer", "minimum": 1, "maximum": 10000}
+            "model_set_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "sequence_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "observation_contract_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "epistemic_lane": {
+              "$ref": "#/$defs/epistemicLane"
+            },
+            "model_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 32
+            },
+            "observation_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 10000
+            },
+            "stopping_contract_digest": {
+              "$ref": "#/$defs/digest"
+            },
+            "calibration_target_digest": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "$ref": "#/$defs/digest"
+                }
+              ]
+            },
+            "mapping_provenance": {
+              "$ref": "#/$defs/inputProvenance"
+            }
           }
         },
-        "resource_estimate": {"$ref": "#/$defs/resourceEstimate"},
-        "comparison_declared": {"enum": ["eligible", "ineligible"]},
+        "resource_estimate": {
+          "$ref": "#/$defs/resourceEstimate"
+        },
+        "comparison_declared": {
+          "enum": [
+            "eligible",
+            "ineligible"
+          ]
+        },
+        "candidate_selection": {
+          "$ref": "#/$defs/candidateSelection"
+        },
+        "stopping_contract": {
+          "$ref": "#/$defs/stoppingContract"
+        },
+        "model_contracts": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 32,
+          "items": {
+            "$ref": "#/$defs/modelContractV2"
+          }
+        },
         "temporal_semantics": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["mode", "filtered_is_as_known_then"],
-          "properties": {"mode": {"enum": ["historical_prefix", "retrospective_event_order"]}, "filtered_is_as_known_then": {"type": "boolean"}}
+          "required": [
+            "mode",
+            "filtered_is_as_known_then",
+            "step_contract"
+          ],
+          "properties": {
+            "mode": {
+              "enum": [
+                "historical_prefix",
+                "retrospective_event_order"
+              ]
+            },
+            "filtered_is_as_known_then": {
+              "type": "boolean"
+            },
+            "step_contract": {
+              "$ref": "#/$defs/stepContract"
+            }
+          }
         },
         "semantic_boundary": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["structural_and_stochastic_only", "ontology_validated", "calibration_truth_validated", "semantic_truth_certified", "authority_effect"],
+          "required": [
+            "structural_and_stochastic_only",
+            "ontology_validated",
+            "calibration_truth_validated",
+            "parameter_provenance_truth_validated",
+            "candidate_selection_truth_validated",
+            "stopping_rule_truth_validated",
+            "observation_independence_validated",
+            "declared_dependence_count",
+            "dependence_adjustment",
+            "semantic_truth_certified",
+            "authority_effect",
+            "observational_equivalence_validated"
+          ],
           "properties": {
-            "structural_and_stochastic_only": {"const": true},
-            "ontology_validated": {"const": false},
-            "calibration_truth_validated": {"const": false},
-            "semantic_truth_certified": {"const": false},
-            "authority_effect": {"const": "none"}
+            "structural_and_stochastic_only": {
+              "const": true
+            },
+            "ontology_validated": {
+              "const": false
+            },
+            "calibration_truth_validated": {
+              "const": false
+            },
+            "parameter_provenance_truth_validated": {
+              "const": false
+            },
+            "candidate_selection_truth_validated": {
+              "const": false
+            },
+            "stopping_rule_truth_validated": {
+              "const": false
+            },
+            "observation_independence_validated": {
+              "const": false
+            },
+            "declared_dependence_count": {
+              "const": 0
+            },
+            "dependence_adjustment": {
+              "const": "none"
+            },
+            "semantic_truth_certified": {
+              "const": false
+            },
+            "authority_effect": {
+              "const": "none"
+            },
+            "observational_equivalence_validated": {
+              "const": false
+            }
           }
         }
       }
     },
-    "errorReceipt": {
+    "errorReceiptV2": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["contract", "error_id", "status", "engine", "code", "message"],
+      "required": [
+        "contract",
+        "error_id",
+        "status",
+        "engine",
+        "code",
+        "message"
+      ],
       "properties": {
-        "contract": {"const": "cd-model-agnosticism-error/v1"},
-        "error_id": {"$ref": "#/$defs/shaId"},
-        "status": {"const": "error"},
-        "engine": {"$ref": "#/$defs/engine"},
-        "code": {"type": "string", "pattern": "^[A-Z][A-Z0-9_]*$", "maxLength": 128},
-        "message": {"$ref": "#/$defs/text"}
+        "contract": {
+          "const": "cd-model-agnosticism-error/v2"
+        },
+        "error_id": {
+          "$ref": "#/$defs/shaId"
+        },
+        "status": {
+          "const": "error"
+        },
+        "engine": {
+          "$ref": "#/$defs/engineV2"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "maxLength": 128
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096,
+          "pattern": "^(?=.*\\S)[^\\u0000-\\u001f\\u007f]+$"
+        }
       }
+    },
+    "historicalReceiptV1": {
+      "type": "object",
+      "required": [
+        "contract",
+        "engine"
+      ],
+      "properties": {
+        "contract": {
+          "enum": [
+            "cd-model-agnosticism-inference-run/v1",
+            "cd-model-agnosticism-validation/v1",
+            "cd-model-agnosticism-error/v1"
+          ]
+        },
+        "engine": {
+          "type": "object",
+          "required": [
+            "engine_id",
+            "engine_version",
+            "artifact_sha256"
+          ],
+          "properties": {
+            "engine_id": {
+              "const": "cd-model-agnosticism-trellis"
+            },
+            "engine_version": {
+              "enum": [
+                "1.0.0",
+                "1.0.1"
+              ]
+            },
+            "artifact_sha256": {
+              "$ref": "#/$defs/digest"
+            }
+          }
+        },
+        "status": {
+          "type": "string"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "contract": {
+                "const": "cd-model-agnosticism-inference-run/v1"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          },
+          "then": {
+            "required": [
+              "run_id",
+              "run_status",
+              "inputs",
+              "per_model",
+              "comparison",
+              "semantic_boundary"
+            ],
+            "properties": {
+              "run_id": {
+                "$ref": "#/$defs/shaId"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "contract": {
+                "const": "cd-model-agnosticism-validation/v1"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          },
+          "then": {
+            "required": [
+              "validation_id",
+              "inputs",
+              "semantic_boundary"
+            ],
+            "properties": {
+              "validation_id": {
+                "$ref": "#/$defs/shaId"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "contract": {
+                "const": "cd-model-agnosticism-error/v1"
+              }
+            },
+            "required": [
+              "contract"
+            ]
+          },
+          "then": {
+            "required": [
+              "error_id",
+              "code",
+              "message"
+            ],
+            "properties": {
+              "error_id": {
+                "$ref": "#/$defs/shaId"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "inputProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "fixed_before_sequence",
+        "basis",
+        "source_refs"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "estimated_independent_data",
+            "expert_elicited",
+            "stipulated_scenario"
+          ]
+        },
+        "fixed_before_sequence": {
+          "type": "boolean"
+        },
+        "basis": {
+          "$ref": "#/$defs/text"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "posteriorLogVector": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "maximum": 0
+      }
+    },
+    "stateIndexArray": {
+      "type": "array",
+      "maxItems": 64,
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 63
+      }
+    },
+    "evidenceGate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reasons"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "passed",
+            "failed",
+            "not_applicable"
+          ]
+        },
+        "reasons": {
+          "$ref": "#/$defs/stringArray"
+        }
+      }
+    },
+    "duplicateScreen": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "basis",
+        "repeated_comparison_unit_groups",
+        "identical_ordered_kernel_groups",
+        "general_observational_equivalence_validated"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "clear",
+            "blocked"
+          ]
+        },
+        "basis": {
+          "const": "declared_comparison_unit_identity_and_identical_ordered_predictive_kernel"
+        },
+        "repeated_comparison_unit_groups": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "comparison_unit_id",
+              "model_ids"
+            ],
+            "properties": {
+              "comparison_unit_id": {
+                "$ref": "#/$defs/id"
+              },
+              "model_ids": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 32,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        },
+        "identical_ordered_kernel_groups": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "predictive_kernel_digest",
+              "model_ids"
+            ],
+            "properties": {
+              "predictive_kernel_digest": {
+                "$ref": "#/$defs/digest"
+              },
+              "model_ids": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 32,
+                "uniqueItems": true,
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        },
+        "general_observational_equivalence_validated": {
+          "const": false
+        }
+      }
+    },
+    "modelWeight": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_id",
+        "comparison_unit_id",
+        "log_weight",
+        "weight",
+        "weight_status",
+        "absolute_fit_status"
+      ],
+      "properties": {
+        "model_id": {
+          "$ref": "#/$defs/id"
+        },
+        "comparison_unit_id": {
+          "$ref": "#/$defs/id"
+        },
+        "log_weight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "maximum": 0
+        },
+        "weight": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "weight_status": {
+          "enum": [
+            "finite",
+            "underflow",
+            "exact_zero"
+          ]
+        },
+        "absolute_fit_status": {
+          "enum": [
+            "pass",
+            "fail",
+            "unassessed"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "weight_status": {
+                "const": "finite"
+              }
+            },
+            "required": [
+              "weight_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "log_weight": {
+                "type": "number",
+                "maximum": 0
+              },
+              "weight": {
+                "type": "number",
+                "maximum": 1,
+                "exclusiveMinimum": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "weight_status": {
+                "const": "underflow"
+              }
+            },
+            "required": [
+              "weight_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "log_weight": {
+                "type": "number",
+                "maximum": 0
+              },
+              "weight": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "weight_status": {
+                "const": "exact_zero"
+              }
+            },
+            "required": [
+              "weight_status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "log_weight": {
+                "type": "null"
+              },
+              "weight": {
+                "const": 0
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,25 @@
+{
+  "code": "UNMODELED_OBSERVATION_DEPENDENCE",
+  "contract": "cd-model-agnosticism-error/v1",
+  "engine": {
+    "artifact_sha256": "ef217d3115a6d6b09490e1cd8eabf8d8a9e9bf9bdb7bc34db2066ba48bed7d61",
+    "engine_id": "cd-model-agnosticism-trellis",
+    "engine_version": "1.0.1",
+    "numeric_kernel": "logsumexp-forward_logsumexp-backward_log-viterbi",
+    "numeric_runtime": {
+      "float_mant_dig": 53,
+      "float_max_exp": 1024,
+      "float_radix": 2,
+      "implementation": "cpython",
+      "python_version": "3.12.2"
+    },
+    "schema_versions": {
+      "model_set": "cd-model-agnosticism-model-set/v1",
+      "observation_sequence": "cd-model-agnosticism-observation-sequence/v1",
+      "receipt_envelope": "cd-model-agnosticism-receipt-envelope/v1"
+    }
+  },
+  "error_id": "sha256:e644d0e17f8004a6c9ef3358966d6f73961ff662207264e0ec2ad9cb1e912407",
+  "message": "items[0] (day-1) declares dependence_refs, but Trellis engine 1.0.1 cannot adjust dependent evidence; revise the observation encoding or model before inference",
+  "status": "error"
+}

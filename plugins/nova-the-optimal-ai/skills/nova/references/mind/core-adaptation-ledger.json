@@ -56,6 +56,7 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
         "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
       }
     },
@@ -105,7 +106,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -157,6 +159,7 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
         "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
       }
     },
@@ -219,6 +222,7 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
         "evidence_boundary": "Historical MIND fixture only; no model execution has qualified the Agent Striving 0.4.0 ambient Core adaptation."
       }
     },
@@ -268,7 +272,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -315,7 +320,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -369,6 +375,7 @@
         "state": "not_executed",
         "fixture": "tests/strategic-intelligence-cases.json",
         "fixture_sha256": "75245B42A223F8DDF75AE1F14A2B70B58157B68607769F7734DC33484EB4EF21",
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
         "evidence_boundary": "The prior MIND 0.3.0 authoring-harness run is historical: it does not bind the changed MIND 0.3.1 compiled Nova prompt. Strategic Intelligence behavioral requalification is required before restoring a current execution claim."
       }
     },
@@ -380,22 +387,24 @@
         "sha256": "C84926ECE0790BE6B2092FDD8F9ABB3321E499E35C45DDC5319E41E2D39F58F6"
       },
       "core": {
-        "component_version": "0.2.0-alpha.1",
+        "component_version": "0.2.0-alpha.2",
         "path": "source/faculty-cores/epistemic-regulation.core.md",
-        "sha256": "3307940FD54B4F812BC2784EFF3F4AFA1E5B9AB66BD32425F62585F3BC13DFAF",
-        "bytes": 4068
+        "sha256": "A23EB7CBAFE23EFFF5DACC6FE26ACA3C36EF5634E5BA731DEEE631186DB16C20",
+        "bytes": 4555
       },
       "intentional_adaptations": [
         "Integrated source doctrine into claim-local guidance.",
         "Converted neighboring-skill custody into intrinsic evidence and authority distinctions.",
-        "Removed organizational handoffs while preserving permissible-use boundaries."
+        "Removed organizational handoffs while preserving permissible-use boundaries.",
+        "Made consequential-claim shaping demand-driven so ordinary conversation does not become a proposition ledger.",
+        "Bound unqualified impossibility to logical contradiction, hard-constraint claims to named constraints, and model-relative zero to supplied model support."
       ],
       "retained_doctrine": [
         "Separate observation, source claim, interpretation, assumption, calculation, contradiction, missingness, and unknown.",
-        "Test support at the same proposition, scope, modality, category, and competence resolution.",
+        "Test support at the same proposition, scope, modality, category, and competence resolution when precision can change treatment.",
         "Preserve applicability, exceptions, and supersession.",
         "Search for rebutting and undercutting defeaters.",
-        "Use typed missingness, qualitative confidence, permissible use, and revision conditions."
+        "Use typed missingness, warranted qualitative confidence, permissible use, and revision conditions."
       ],
       "removed_standalone_shell": true,
       "removed_dependencies": [
@@ -403,20 +412,22 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_critique"
+        "actor": "Nova",
+        "user_direction": "Make Model Agnosticism ambient and proportionate, reserve formal probability calculation for warranted callable use, and keep real-world possibility open beyond bounded models."
       },
       "independent_prompt_review": {
         "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "evidence": "references/mind/evidence/model-agnosticism-prompt-review-20260904.md",
+        "reviewer": "independent mind_qualifier agent",
+        "observed_at": "2026-09-04T10:52:49.8217106Z",
+        "boundary": "Independent static prompt and engine-to-doctrine review of the exact repaired Model Agnosticism bytes; empirical performance, spontaneous model behavior, and live host behavior remain unqualified."
       },
       "behavioral_qualification": {
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -465,7 +476,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -513,7 +525,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -561,7 +574,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -610,7 +624,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -660,7 +675,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -709,7 +725,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -758,7 +775,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -807,7 +825,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     },
     {
@@ -858,7 +877,8 @@
         "state": "not_executed",
         "fixture": "tests/behavioral-dry-run-cases.json",
         "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "evidence_boundary": "AUTHORING_HARNESS_PROMPT_DRY_RUN_ONLY; cases exist but have not run."
+        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
       }
     }
   ]

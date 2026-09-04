@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -26,6 +27,21 @@ RIGHTS_DOCS = (
     "LICENSE.md", "ATTRIBUTION.md", "NOTICE.md", "TRADEMARKS.md",
     "PROVENANCE.md", "THIRD-PARTY-NOTICES.md",
 )
+TRELLIS_CONTRACTS = {
+    "model_set": "cd-model-agnosticism-model-set/v2",
+    "observation_sequence": "cd-model-agnosticism-observation-sequence/v2",
+    "analysis_receipt": "cd-model-agnosticism-inference-run/v2",
+    "validation_receipt": "cd-model-agnosticism-validation/v2",
+    "error_receipt": "cd-model-agnosticism-error/v2",
+    "receipt_envelope": "cd-model-agnosticism-receipt-envelope/v2",
+}
+TRELLIS_ASSETS = [
+    "skills/nova/assets/model-agnosticism/model-set.schema.json",
+    "skills/nova/assets/model-agnosticism/observation-sequence.schema.json",
+    "skills/nova/assets/model-agnosticism/inference-run.schema.json",
+    "skills/nova/assets/model-agnosticism/example-model-set.json",
+    "skills/nova/assets/model-agnosticism/example-observation-sequence.json",
+]
 
 
 class ProductContractTests(unittest.TestCase):
@@ -54,6 +70,175 @@ class ProductContractTests(unittest.TestCase):
         nova = (self.plugin / "skills" / "nova" / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("MIND is Nova's edition-invariant cognitive architecture", nova)
         self.assertIn("not a separate product, persona, or optional sibling", nova)
+        agnosticism = contract["mind"]["model_agnosticism"]
+        self.assertEqual(agnosticism["ambient_mode"], "qualitative_proportionate")
+        self.assertEqual(agnosticism["formal_instrument"], "optional_stateless_trellis")
+        self.assertFalse(agnosticism["automatic_numerical_invocation"])
+        self.assertEqual(
+            agnosticism["formal_lanes"],
+            ["evidence_update", "assumption_stress_test"],
+        )
+        self.assertEqual(agnosticism["invocation_owner"], "any_capability_meeting_the_formal_gate")
+        self.assertEqual(agnosticism["authority_effect"], "none")
+        self.assertIn("do not manufacture proposition ledgers", nova)
+        self.assertIn("any invoking capability may assemble explicit inputs backstage", nova)
+
+    def test_model_agnosticism_trellis_binding_is_exact_and_packaged(self) -> None:
+        product = json.loads((REPO / "design" / "product-contract.json").read_text(encoding="utf-8"))
+        product_agnosticism = product["mind"]["model_agnosticism"]
+        loadout_agnosticism = self.loadout["topology"]["model_agnosticism"]
+        self.assertEqual(loadout_agnosticism, product_agnosticism)
+
+        binding = product_agnosticism["trellis_binding"]
+        self.assertEqual(binding["engine_id"], "cd-model-agnosticism-trellis")
+        self.assertEqual(binding["engine_version"], "1.1.0")
+        self.assertEqual(binding["path_base"], "plugin_root")
+        self.assertEqual(binding["entrypoint"], "skills/nova/scripts/model_agnosticism_trellis.py")
+        self.assertEqual(binding["contracts"], TRELLIS_CONTRACTS)
+        self.assertEqual(binding["required_asset_count"], 5)
+        self.assertEqual(binding["required_assets"], TRELLIS_ASSETS)
+        self.assertEqual(len(set(binding["required_assets"])), binding["required_asset_count"])
+
+        entrypoint = self.plugin / binding["entrypoint"]
+        self.assertTrue(entrypoint.is_file())
+        engine_text = entrypoint.read_text(encoding="utf-8")
+        expected_constants = {
+            "ENGINE_ID": binding["engine_id"],
+            "ENGINE_VERSION": binding["engine_version"],
+            "MODEL_SET_CONTRACT": TRELLIS_CONTRACTS["model_set"],
+            "SEQUENCE_CONTRACT": TRELLIS_CONTRACTS["observation_sequence"],
+            "RUN_CONTRACT": TRELLIS_CONTRACTS["analysis_receipt"],
+            "VALIDATION_CONTRACT": TRELLIS_CONTRACTS["validation_receipt"],
+            "ERROR_CONTRACT": TRELLIS_CONTRACTS["error_receipt"],
+            "RECEIPT_ENVELOPE": TRELLIS_CONTRACTS["receipt_envelope"],
+        }
+        for name, expected in expected_constants.items():
+            match = re.search(rf'(?m)^{name} = "([^"]+)"$', engine_text)
+            self.assertIsNotNone(match, name)
+            self.assertEqual(match.group(1), expected, name)
+
+        for relative in TRELLIS_ASSETS:
+            self.assertTrue((self.plugin / relative).is_file(), relative)
+        model_schema = json.loads((self.plugin / TRELLIS_ASSETS[0]).read_text(encoding="utf-8"))
+        sequence_schema = json.loads((self.plugin / TRELLIS_ASSETS[1]).read_text(encoding="utf-8"))
+        receipt_schema = json.loads((self.plugin / TRELLIS_ASSETS[2]).read_text(encoding="utf-8"))
+        model_example = json.loads((self.plugin / TRELLIS_ASSETS[3]).read_text(encoding="utf-8"))
+        sequence_example = json.loads((self.plugin / TRELLIS_ASSETS[4]).read_text(encoding="utf-8"))
+        self.assertEqual(model_schema["properties"]["contract"]["const"], TRELLIS_CONTRACTS["model_set"])
+        self.assertEqual(sequence_schema["properties"]["contract"]["const"], TRELLIS_CONTRACTS["observation_sequence"])
+        self.assertEqual(model_example["contract"], TRELLIS_CONTRACTS["model_set"])
+        self.assertEqual(sequence_example["contract"], TRELLIS_CONTRACTS["observation_sequence"])
+        receipt_text = json.dumps(receipt_schema, ensure_ascii=False)
+        for key in ("analysis_receipt", "validation_receipt", "error_receipt", "receipt_envelope"):
+            self.assertIn(TRELLIS_CONTRACTS[key], receipt_text, key)
+
+    def test_trellis_route_and_v2_only_upgrade_boundary_are_explicit(self) -> None:
+        nova = self.plugin / "skills" / "nova"
+        skill = (nova / "SKILL.md").read_text(encoding="utf-8")
+        doctrine = (nova / "references" / "mind" / "model-agnosticism.md").read_text(encoding="utf-8")
+        validate_command = "python scripts/model_agnosticism_trellis.py validate MODEL_SET.json OBSERVATION_SEQUENCE.json"
+        analyze_command = "python scripts/model_agnosticism_trellis.py analyze MODEL_SET.json OBSERVATION_SEQUENCE.json [--decode] [--smooth]"
+        for text in (skill, doctrine):
+            self.assertIn(validate_command, text)
+            self.assertIn(analyze_command, text)
+            self.assertIn("Exit 2", text)
+            self.assertIn("Exit 3", text)
+            self.assertIn("qualitative Model Agnosticism", text)
+        self.assertIn(TRELLIS_CONTRACTS["validation_receipt"], doctrine)
+        self.assertIn(TRELLIS_CONTRACTS["analysis_receipt"], doctrine)
+        self.assertIn("engine version `1.1.0`", doctrine)
+
+        for relative in ("docs/UPGRADE.md", "docs/upgrade.html"):
+            text = (REPO / relative).read_text(encoding="utf-8").casefold()
+            self.assertIn("trellis 1.1.0", text, relative)
+            self.assertIn("no automatic v1-to-v2 trellis migration", text, relative)
+            self.assertIn(TRELLIS_CONTRACTS["model_set"], text, relative)
+            self.assertIn(TRELLIS_CONTRACTS["observation_sequence"], text, relative)
+            self.assertIn("historical receipt", text, relative)
+
+    def test_trellis_v2_interpretation_disclosures_are_explicit(self) -> None:
+        nova = self.plugin / "skills" / "nova"
+        doctrine = (nova / "references" / "mind" / "model-agnosticism.md").read_text(encoding="utf-8")
+        decision = (REPO / "design" / "DEC-MODEL-AGNOSTICISM-CALLABLE.md").read_text(encoding="utf-8")
+        release = (REPO / "RELEASE-NOTES.md").read_text(encoding="utf-8")
+        skill = (nova / "SKILL.md").read_text(encoding="utf-8")
+
+        doctrine_tokens = (
+            "`known_at` is strictly increasing",
+            "Equal knowledge timestamps",
+            "one through six digits",
+            "microsecond precision",
+            "posterior_log_probabilities",
+            "posterior_finite_log_underflow_state_indices",
+            "posterior_structural_zero_state_indices",
+            "weight_status: underflow",
+            "linear_weights_complete",
+            "evidence_gate",
+            "conditional_evidence_update",
+            "diagnostic_only",
+            "scenario_only",
+            "{kind, fixed_before_sequence, basis, source_refs}",
+            "calibration_target_digest",
+            "declared_threshold_arithmetic",
+            "DUPLICATE_COMPARISON_UNIT",
+            "DUPLICATE_PREDICTIVE_KERNEL",
+            "general_observational_equivalence_validated",
+            "parameter_provenance_truth_validated",
+            "candidate_selection_truth_validated",
+            "stopping_rule_truth_validated",
+            "observation_independence_validated",
+            "semantic_truth_certified",
+        )
+        for token in doctrine_tokens:
+            self.assertIn(token, doctrine, token)
+
+        shared_tokens = (
+            "`known_at`",
+            "underflow",
+            "structural zero",
+            "evidence_gate",
+            "diagnostic_only",
+            "scenario_only",
+            "calibration_target_digest",
+            "comparison_unit_id",
+            "observational equivalence",
+            "false",
+        )
+        for label, text in (("decision", decision), ("release", release)):
+            for token in shared_tokens:
+                self.assertIn(token, text, f"{label}: {token}")
+
+        for token in (
+            "comparison.effective_interpretation",
+            "finite log probabilities",
+            "structural zero",
+            "equal batch timestamps are retrospective",
+            "semantic false flag",
+        ):
+            self.assertIn(token, skill, token)
+
+
+    def test_absent_behavioral_fixtures_are_not_claimed_as_current_evidence(self) -> None:
+        ledger = json.loads(
+            (self.plugin / "skills" / "nova" / "references" / "mind" / "core-adaptation-ledger.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        epistemic = next(row for row in ledger["cores"] if row["id"] == "epistemic-regulation")
+        self.assertEqual(epistemic["author_review"]["actor"], "Nova")
+        self.assertIn("user_direction", epistemic["author_review"])
+        self.assertIn("callable", epistemic["author_review"]["user_direction"])
+
+        for row in ledger["cores"]:
+            qualification = row["behavioral_qualification"]
+            fixture = qualification.get("fixture")
+            if fixture and not (REPO / fixture).is_file():
+                self.assertEqual(
+                    qualification.get("fixture_reference_state"),
+                    "recorded_reference_only_file_absent_from_current_source_tree",
+                    row["id"],
+                )
+            self.assertNotIn("cases exist but have not run", qualification["evidence_boundary"], row["id"])
 
     def test_skill_frontmatter_names_match_directories(self) -> None:
         for skill_id in sorted(EXPECTED):
@@ -69,6 +254,49 @@ class ProductContractTests(unittest.TestCase):
         persona = self.plugin / "skills" / "nova" / "references" / "nova-persona.md"
         self.assertEqual(sha256_file(persona), self.lock["persona_sha256"])
 
+    def test_mind_core_registry_and_custody_ledger_are_relationally_consistent(self) -> None:
+        nova = self.plugin / "skills" / "nova"
+        mind = nova / "references" / "mind"
+        registry = json.loads((mind / "core-registry.json").read_text(encoding="utf-8"))
+        ledger_path = mind / "core-adaptation-ledger.json"
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        product = json.loads((REPO / "design" / "product-contract.json").read_text(encoding="utf-8"))
+
+        self.assertEqual(registry["component_version"], product["mind"]["version"])
+        self.assertEqual(ledger["component_version"], product["mind"]["version"])
+        registry_rows = {row["id"]: row for row in registry["cores"]}
+        ledger_rows = {row["id"]: row for row in ledger["cores"]}
+        actual = {path.stem.removesuffix(".core") for path in (mind / "faculty-cores").glob("*.core.md")}
+        self.assertEqual(len(registry_rows), registry["core_count"])
+        self.assertEqual(len(ledger_rows), ledger["core_count"])
+        self.assertEqual(set(registry_rows), set(ledger_rows))
+        self.assertEqual(set(registry_rows), actual)
+
+        ledger_digest = hashlib.sha256(ledger_path.read_bytes()).hexdigest().upper()
+        for core_id in sorted(actual):
+            registered = registry_rows[core_id]
+            recorded = ledger_rows[core_id]
+            expected_path = f"references/mind/faculty-cores/{core_id}.core.md"
+            self.assertEqual(registered["core_path"], expected_path)
+            core_bytes = (nova / expected_path).read_bytes()
+            core_digest = hashlib.sha256(core_bytes).hexdigest().upper()
+            self.assertEqual(registered["core_sha256"], core_digest)
+            self.assertEqual(registered["core_bytes"], len(core_bytes))
+            self.assertEqual(recorded["core"]["sha256"], core_digest)
+            self.assertEqual(recorded["core"]["bytes"], len(core_bytes))
+            self.assertEqual(registered["upstream_coordinate"], recorded["upstream"]["coordinate"])
+            self.assertEqual(registered["upstream_sha256"], recorded["upstream"]["sha256"])
+            self.assertEqual(registered["author_review_state"], recorded["author_review"]["state"])
+            self.assertEqual(
+                registered["independent_prompt_review_state"],
+                recorded["independent_prompt_review"]["state"],
+            )
+            self.assertEqual(
+                registered["behavioral_qualification_state"],
+                recorded["behavioral_qualification"]["state"],
+            )
+            self.assertEqual(registered["custody_ledger_path"], "references/mind/core-adaptation-ledger.json")
+            self.assertEqual(registered["custody_ledger_sha256"], ledger_digest)
     def test_source_lock_matches_imported_bytes(self) -> None:
         self.assertEqual(len(self.lock["records"]), 27)
         for record in self.lock["records"]:

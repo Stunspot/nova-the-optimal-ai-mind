@@ -1,0 +1,44 @@
+{
+  "schema": "cd-model-agnosticism-historical-fixture/v1",
+  "engine_version": "1.0.1",
+  "source_commit": "c9380d20add89de9bcb9bd23bf5afe4807ee9b00",
+  "source_script_git_path": "plugins/nova-the-optimal-ai/skills/nova/scripts/model_agnosticism_trellis.py",
+  "python_runtime": "CPython 3.12 Windows x86_64",
+  "purpose": "Immutable engine-1.0.1 receipts preserving both dependency-free inference and the first typed pre-inference dependence refusal.",
+  "interpretation": "The successful receipt is structurally historical. The dependence-bearing sequence produces only a typed error receipt; no probability, fit, or weight result was computed.",
+  "commands": [
+    "py -3.12 -B -X utf8 model_agnosticism_trellis-1.0.1.py validate model-set.json sequence-independent.json",
+    "py -3.12 -B -X utf8 model_agnosticism_trellis-1.0.1.py analyze model-set.json sequence-independent.json --decode --smooth",
+    "py -3.12 -B -X utf8 model_agnosticism_trellis-1.0.1.py validate model-set.json sequence-dependent.json"
+  ],
+  "files": {
+    "error-dependent.json": {
+      "sha256": "92e14e140ddbc5300be2ba9f391c5480faf3c67344cc9b8b8fbdf701ccf7dadc",
+      "bytes": 1061
+    },
+    "model_agnosticism_trellis-1.0.1.py": {
+      "sha256": "ef217d3115a6d6b09490e1cd8eabf8d8a9e9bf9bdb7bc34db2066ba48bed7d61",
+      "bytes": 55918
+    },
+    "model-set.json": {
+      "sha256": "88eee6aaeb1cfc4d0f636464ddc890961d8b369d37d7234d9a635e8661a65e3c",
+      "bytes": 4975
+    },
+    "run-independent.json": {
+      "sha256": "74e0def371b7725bc10087d253366fa79f9ad49972fe2414a2f1a71b88a58cb5",
+      "bytes": 9374
+    },
+    "sequence-dependent.json": {
+      "sha256": "a9284e828d6cc92c8b05ec39156ed593572b564f235887efbbbab4450223dfe8",
+      "bytes": 1723
+    },
+    "sequence-independent.json": {
+      "sha256": "50d75511d9f8e0bc93ee7cd16f4e4970e08bf57cb8e549def4152762b63ed838",
+      "bytes": 1636
+    },
+    "validation-independent.json": {
+      "sha256": "d7e9e07704af150804224ae4e0f42dd46d067b9de88ba0c7e64f2758b93b2525",
+      "bytes": 1702
+    }
+  }
+}

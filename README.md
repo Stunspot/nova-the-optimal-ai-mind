@@ -14,6 +14,8 @@ Nova holds the purpose, relationship, authorization boundaries, cross-skill cohe
 
 Continuity is optional and customer-controlled. Cognitive Continuity owns governed task state and the read-only Worldline view. Dennis owns governed project records. Commonplace owns deliberate notes and rebuildable Concordance navigation. Corkboard owns loose pins. Dunbar owns people context. Agent Striving owns explicitly durable objectives. Conversation context is not a save receipt, however confidently anyone raises an eyebrow.
 
+Model Agnosticism is part of Nova's ordinary way of thinking: models stay bounded, alternatives stay revisable, and “impossible” does not escape its logical or explicitly named constraints. This incurs no ambient proposition ledger and no decorative probabilities. When explicit sequential models and observations can change a consequential decision, any capability may call the optional local Trellis 1.1.0 calculator for either an evidence update or a clearly labeled assumption stress test.
+
 The exact twenty-seven roots and their boundaries are recorded in `LOADOUT-MANIFEST.json` inside each host plugin (`codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai`) and explained in the [capability guide](docs/CAPABILITY-GUIDE.md). The source repository keeps the canonical plugin at `plugins/nova-the-optimal-ai`.
 
 ## Install
