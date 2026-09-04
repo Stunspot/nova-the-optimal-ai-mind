@@ -2,7 +2,7 @@
 
 Free 3.1.2 is one product, one plugin, and one Nova front door.
 
-The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and resident MIND 0.3.1. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
+The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and MIND 0.3.1 as her edition-invariant cognitive architecture. MIND is not a separately selectable product layer. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
 
 The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Coding and release verification remain distinct. Agentic Coding owns normal repository implementation; Software Verification and Verification Reviewer form the paired TestForge release gate. Officecraft and its reviewer provide generalist office craft, with native host artifact skills retaining execution and visual-verification ownership.
 

@@ -12,6 +12,9 @@
   "mind": {
     "version": "0.3.1",
     "resident": true,
+    "identity": "nova_edition_invariant_cognitive_architecture",
+    "product_status": "not_a_separate_product",
+    "edition_variability": "capabilities_services_and_distribution_not_basic_mind",
     "faculty_core_count": 17,
     "faculty_cores_are_nested_references": true
   },

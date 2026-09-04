@@ -44,7 +44,7 @@
       "required": ["engine_id", "engine_version", "artifact_sha256", "numeric_kernel", "numeric_runtime", "schema_versions"],
       "properties": {
         "engine_id": {"const": "cd-model-agnosticism-trellis"},
-        "engine_version": {"const": "1.0.0"},
+        "engine_version": {"enum": ["1.0.0", "1.0.1"]},
         "artifact_sha256": {"$ref": "#/$defs/digest"},
         "numeric_kernel": {"const": "logsumexp-forward_logsumexp-backward_log-viterbi"},
         "numeric_runtime": {
@@ -98,10 +98,10 @@
       "required": ["sequence_index", "log_predictive_probability", "predictive_probability", "predictive_probability_underflow", "posterior"],
       "properties": {
         "sequence_index": {"type": "integer", "minimum": 0},
-        "log_predictive_probability": {"type": ["number", "null"]},
-        "predictive_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
-        "predictive_probability_underflow": {"type": "boolean"},
-        "posterior": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/posteriorVector"}]}
+        "log_predictive_probability": {"type": ["number", "null"], "description": "Natural-log predictive probability when evaluated and finite. Null at an exact model-support boundary and on later aligned rows that were not evaluated."},
+        "predictive_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Evaluated predictive probability. Exact 0.0 occurs only at the named model-support boundary; null means finite binary64 underflow or not evaluated, distinguished by predictive_probability_underflow and zero_likelihood_at_sequence_index."},
+        "predictive_probability_underflow": {"type": "boolean", "description": "True only when an evaluated finite log probability cannot be represented as positive binary64; false for exact model-relative zero and for rows not evaluated after the support boundary."},
+        "posterior": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/posteriorVector"}], "description": "Filtered state posterior for an evaluated positive-support step; null at and after a model-support boundary."}
       }
     },
     "smoothedRow": {
@@ -151,7 +151,7 @@
         "effective_model_digest": {"$ref": "#/$defs/digest"},
         "observation_contract_digest": {"$ref": "#/$defs/digest"},
         "state_order": {"type": "array", "minItems": 1, "maxItems": 64, "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
-        "inference_status": {"enum": ["completed", "zero_likelihood"]},
+        "inference_status": {"enum": ["completed", "zero_likelihood"], "description": "zero_likelihood means an observed prefix left this supplied model's support; it is not a claim about what can occur in the world."},
         "log_sequence_likelihood": {"type": ["number", "null"]},
         "sequence_likelihood": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
         "sequence_likelihood_underflow": {"type": "boolean"},
@@ -160,10 +160,20 @@
         "surprisal_unit": {"const": "nats_per_observation"},
         "absolute_fit": {"$ref": "#/$defs/absoluteFit"},
         "filtered_state_posteriors": {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/filteredRow"}},
-        "zero_likelihood_at_sequence_index": {"type": "integer", "minimum": 0},
+        "zero_likelihood_at_sequence_index": {"type": "integer", "minimum": 0, "description": "First evaluated observation outside this supplied model's support. Later aligned filter rows are null because they were not evaluated."},
         "smoothed_state_posteriors": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/smoothedRow"}}]},
         "viterbi": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/viterbi"}]}
-      }
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"inference_status": {"const": "zero_likelihood"}}, "required": ["inference_status"]},
+          "then": {"required": ["zero_likelihood_at_sequence_index"]}
+        },
+        {
+          "if": {"properties": {"inference_status": {"const": "completed"}}, "required": ["inference_status"]},
+          "then": {"not": {"required": ["zero_likelihood_at_sequence_index"]}}
+        }
+      ]
     },
     "comparison": {
       "type": "object",

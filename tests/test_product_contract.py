@@ -42,6 +42,18 @@ class ProductContractTests(unittest.TestCase):
         self.assertEqual(set(self.loadout["roots"]), EXPECTED)
         self.assertEqual(self.loadout["topology"]["visible_skill_roots"], 27)
 
+    def test_mind_is_novas_edition_invariant_architecture(self) -> None:
+        contract = json.loads((REPO / "design" / "product-contract.json").read_text(encoding="utf-8"))
+        self.assertEqual(contract["mind"]["identity"], "nova_edition_invariant_cognitive_architecture")
+        self.assertEqual(contract["mind"]["product_status"], "not_a_separate_product")
+        self.assertEqual(
+            contract["mind"]["edition_variability"],
+            "capabilities_services_and_distribution_not_basic_mind",
+        )
+        nova = (self.plugin / "skills" / "nova" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("MIND is Nova's edition-invariant cognitive architecture", nova)
+        self.assertIn("not a separate product, persona, or optional sibling", nova)
+
     def test_skill_frontmatter_names_match_directories(self) -> None:
         for skill_id in sorted(EXPECTED):
             text = (self.plugin / "skills" / skill_id / "SKILL.md").read_text(encoding="utf-8")

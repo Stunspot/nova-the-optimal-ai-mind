@@ -56,7 +56,7 @@ def load(name: str) -> dict:
     return json.loads((SOURCE / name).read_text(encoding="utf-8"))
 
 
-def bind(model_document: dict, sequence_document: dict) -> tuple[dict, dict]:
+def bound_documents(model_document: dict, sequence_document: dict) -> tuple[dict, dict]:
     model_document = copy.deepcopy(model_document)
     sequence_document = copy.deepcopy(sequence_document)
     sequence_document["case_ref"] = model_document["case_ref"]
@@ -67,6 +67,11 @@ def bind(model_document: dict, sequence_document: dict) -> tuple[dict, dict]:
     sequence_document["encoder"] = {key: encoder[key] for key in ("encoder_id", "encoder_version", "encoder_digest")}
     sequence_document["ordering_rule"] = encoder["ordering_rule"]
     sequence_document["step_semantics"] = encoder["step_semantics"]
+    return model_document, sequence_document
+
+
+def bind(model_document: dict, sequence_document: dict) -> tuple[dict, dict]:
+    model_document, sequence_document = bound_documents(model_document, sequence_document)
     model_set = TRELLIS.validate_model_set(model_document)
     return model_set, TRELLIS.validate_sequence(sequence_document, model_set)
 
@@ -158,7 +163,7 @@ class TrellisTests(unittest.TestCase):
         self.assertEqual(result["comparison"]["weights_status"], "unsupported")
         self.assertIn("single_model_closed_world", result["comparison"]["reason"])
 
-    def test_zero_model_prior_is_rejected_while_structural_zeros_remain_valid(self) -> None:
+    def test_zero_model_prior_is_rejected_while_support_exclusions_remain_valid(self) -> None:
         for zero in (0, 0.0, -0.0):
             with self.subTest(zero=repr(zero)):
                 model = copy.deepcopy(self.model)
@@ -170,7 +175,7 @@ class TrellisTests(unittest.TestCase):
         candidate["initial"] = [1.0, 0.0]
         candidate["transition"] = [[1.0, 0.0], [0.0, 1.0]]
         candidate["emission"] = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]]
-        candidate["parameter_basis"] = "Fixture-declared structural impossibilities for zero-probability acceptance coverage."
+        candidate["parameter_basis"] = "Fixture-declared support exclusions for zero-probability acceptance coverage."
         validated = TRELLIS.validate_model_set(structural)
         self.assertEqual(validated["models"][0]["initial"], [1.0, 0.0])
         self.assertEqual(validated["models"][0]["transition"], [[1.0, 0.0], [0.0, 1.0]])
@@ -209,10 +214,10 @@ class TrellisTests(unittest.TestCase):
         }
         return sequence
 
-    def test_all_zero_likelihood_requires_reframe_without_nan(self) -> None:
+    def test_all_zero_likelihood_requires_reframe_without_world_impossibility_claim(self) -> None:
         model = copy.deepcopy(self.model)
         for candidate in model["models"]:
-            candidate["parameter_basis"] = "Fixture-declared structural impossibility: symbol 3 cannot be emitted under this model."
+            candidate["parameter_basis"] = "Fixture-declared support exclusion: symbol 3 is outside this model's support."
             for row in candidate["emission"]:
                 row[:] = [0.5, 0.5, 0.0]
         sequence = copy.deepcopy(self.sequence)
@@ -224,12 +229,54 @@ class TrellisTests(unittest.TestCase):
         self.assertEqual(result["reframe"]["reasons"], ["all_models_zero_likelihood"])
         self.assertEqual(result["comparison"]["weights_status"], "unsupported")
         self.assertIn("all_models_zero_likelihood", result["comparison"]["reason"])
+        self.assertTrue(any("outside supplied model support" in item for item in result["diagnostics"]))
+        self.assertTrue(any("not a claim about what can occur in the world" in item for item in result["diagnostics"]))
         for candidate in result["per_model"]:
             self.assertEqual(candidate["inference_status"], "zero_likelihood")
+            self.assertEqual(candidate["zero_likelihood_at_sequence_index"], 0)
             self.assertEqual(candidate["sequence_likelihood"], 0.0)
+            trigger, *unevaluated = candidate["filtered_state_posteriors"]
+            self.assertIsNone(trigger["log_predictive_probability"])
+            self.assertEqual(trigger["predictive_probability"], 0.0)
+            self.assertFalse(trigger["predictive_probability_underflow"])
+            self.assertIsNone(trigger["posterior"])
+            for row in unevaluated:
+                self.assertIsNone(row["log_predictive_probability"])
+                self.assertIsNone(row["predictive_probability"])
+                self.assertFalse(row["predictive_probability_underflow"])
+                self.assertIsNone(row["posterior"])
             self.assertIsNone(candidate["smoothed_state_posteriors"])
             self.assertIsNone(candidate["viterbi"])
         json.dumps(result, allow_nan=False)
+
+    def test_mid_sequence_support_boundary_distinguishes_trigger_from_unevaluated_tail(self) -> None:
+        model = copy.deepcopy(self.model)
+        for candidate in model["models"]:
+            candidate["parameter_basis"] = "Fixture-declared support exclusion for symbol 1."
+            candidate["emission"] = [[0.0, 0.5, 0.5] for _ in candidate["emission"]]
+        sequence = copy.deepcopy(self.sequence)
+        for item, symbol in zip(sequence["items"], ("3", "1", "3"), strict=True):
+            item["symbol_id"] = symbol
+        result = analyze_documents(model, sequence)
+        for candidate in result["per_model"]:
+            self.assertEqual(candidate["zero_likelihood_at_sequence_index"], 1)
+            evaluated, trigger, tail = candidate["filtered_state_posteriors"]
+            self.assertIsNotNone(evaluated["log_predictive_probability"])
+            self.assertIsNotNone(evaluated["predictive_probability"])
+            self.assertIsNotNone(evaluated["posterior"])
+            self.assertIsNone(trigger["log_predictive_probability"])
+            self.assertEqual(trigger["predictive_probability"], 0.0)
+            self.assertFalse(trigger["predictive_probability_underflow"])
+            self.assertIsNone(trigger["posterior"])
+            self.assertIsNone(tail["log_predictive_probability"])
+            self.assertIsNone(tail["predictive_probability"])
+            self.assertFalse(tail["predictive_probability_underflow"])
+            self.assertIsNone(tail["posterior"])
+
+    def test_declared_observation_dependence_refuses_inference(self) -> None:
+        sequence = copy.deepcopy(self.sequence)
+        sequence["items"][1]["dependence_refs"] = ["observation://day-1"]
+        self.assert_trellis_error("UNMODELED_OBSERVATION_DEPENDENCE", lambda: bind(self.model, sequence))
 
     def test_all_calibrated_absolute_fit_fail_requires_reframe(self) -> None:
         model = copy.deepcopy(self.model)
@@ -556,8 +603,12 @@ class TrellisTests(unittest.TestCase):
         schema = load("inference-run.schema.json")
         validator = jsonschema.Draft202012Validator(schema)
         model_set, sequence = bind(self.model, self.sequence)
+        current_run = TRELLIS.analyze(model_set, sequence, decode=True, smoothing=True)
+        historical_run = copy.deepcopy(current_run)
+        historical_run["engine"]["engine_version"] = "1.0.0"
         receipts = (
-            TRELLIS.analyze(model_set, sequence, decode=True, smoothing=True),
+            current_run,
+            historical_run,
             TRELLIS.validation_receipt(model_set, sequence),
             TRELLIS.error_receipt(TRELLIS.TrellisError("TEST_ERROR", "deliberate")),
         )
@@ -572,6 +623,39 @@ class TrellisTests(unittest.TestCase):
         receipt["undeclared"] = True
         with self.assertRaises(jsonschema.ValidationError):
             jsonschema.Draft202012Validator(schema).validate(receipt)
+
+    def test_cli_dependence_refusal_is_typed_deterministic_and_pre_inference(self) -> None:
+        model, sequence = bound_documents(self.model, self.sequence)
+        sequence["items"][1]["dependence_refs"] = ["observation://day-1"]
+        with tempfile.TemporaryDirectory() as directory:
+            cwd = Path(directory)
+            model_path = cwd / "model.json"
+            sequence_path = cwd / "sequence.json"
+            model_path.write_text(json.dumps(model), encoding="utf-8")
+            sequence_path.write_text(json.dumps(sequence), encoding="utf-8")
+            receipts = []
+            for command in ("validate", "analyze", "analyze"):
+                completed = subprocess.run(
+                    [sys.executable, str(SCRIPT), command, str(model_path), str(sequence_path)],
+                    cwd=cwd,
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                )
+                self.assertEqual(completed.returncode, 2, completed.stderr)
+                self.assertNotIn("Traceback", completed.stdout + completed.stderr)
+                receipt = json.loads(completed.stdout)
+                self.assertEqual(receipt["contract"], TRELLIS.ERROR_CONTRACT)
+                self.assertEqual(receipt["code"], "UNMODELED_OBSERVATION_DEPENDENCE")
+                self.assertNotIn("observation://day-1", receipt["message"])
+                for forbidden in ("resource_estimate", "per_model", "comparison", "reframe", "diagnostics"):
+                    self.assertNotIn(forbidden, receipt)
+                receipts.append(receipt)
+            self.assertEqual(receipts[1]["error_id"], receipts[2]["error_id"])
+            if jsonschema is not None:
+                validator = jsonschema.Draft202012Validator(load("inference-run.schema.json"))
+                for receipt in receipts:
+                    validator.validate(receipt)
 
     def test_cli_error_is_typed_json_without_traceback(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

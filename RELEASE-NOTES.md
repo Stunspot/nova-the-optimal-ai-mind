@@ -2,6 +2,8 @@
 
 ## 3.1.2 — rival models without doctrinal capture
 
+The 2026-09-04 same-version source repair makes the architecture explicit: MIND is Nova's edition-invariant cognitive substrate, not a separate product or persona. Trellis engine 1.0.1 treats exact zero as a model-support boundary rather than a real-world impossibility claim, marks later aligned rows as unevaluated, and refuses declared observation dependence before computing inference or weights. Historical 1.0.0 receipts remain immutable and receive an explicit interpretation rule.
+
 MIND advances to 0.3.1 with Model Agnosticism: explanatory and predictive models remain bounded instruments, evidence can redistribute weight among viable rivals, and poor fit reopens the model set instead of forcing a winner. The optional deterministic Trellis performs explicit versioned Hidden Markov Model inference without retrieval, networking, persistence, background execution, training, or authority mutation.
 
 Agent Striving advances to the canonical 0.4.0 fourteen-file tree at commit 5bccd0867bf9905b7775741c7344a4570974c917. Goal objectives become compact performance seeds rather than disguised requirements records, while changing state remains with its proper project or continuity owner. Nova Free remains twenty-seven native skill roots with seventeen nested MIND Faculty Cores.

@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Any
 
 ENGINE_ID = "cd-model-agnosticism-trellis"
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "1.0.1"
 MODEL_SET_CONTRACT = "cd-model-agnosticism-model-set/v1"
 SEQUENCE_CONTRACT = "cd-model-agnosticism-observation-sequence/v1"
 RUN_CONTRACT = "cd-model-agnosticism-inference-run/v1"
@@ -545,7 +545,6 @@ def validate_sequence(document: dict[str, Any], model_set: dict[str, Any]) -> di
     observation_ids: list[str] = []
     symbol_indices: list[int] = []
     parsed_items: list[dict[str, Any]] = []
-    declared_dependencies = False
     for index, raw_item in enumerate(items):
         prefix = f"items[{index}]"
         item = _exact_object(
@@ -574,7 +573,11 @@ def validate_sequence(document: dict[str, Any], model_set: dict[str, Any]) -> di
         if item["coding_status"] not in {"observed", "corrected"}:
             raise TrellisError("INVALID_FIELD", f"{prefix}.coding_status must be observed or corrected")
         dependencies = _string_list(item["dependence_refs"], f"{prefix}.dependence_refs", unique=True)
-        declared_dependencies = declared_dependencies or bool(dependencies)
+        if dependencies:
+            raise TrellisError(
+                "UNMODELED_OBSERVATION_DEPENDENCE",
+                f"{prefix} ({observation_id}) declares dependence_refs, but Trellis v1 cannot adjust dependent evidence; revise the observation encoding or model before inference",
+            )
         if item["coding_status"] == "observed":
             if item["supersedes"] is not None:
                 raise TrellisError("INVALID_SUPERSESSION", f"{prefix}.observed item must have supersedes null")
@@ -623,7 +626,6 @@ def validate_sequence(document: dict[str, Any], model_set: dict[str, Any]) -> di
         "digest": digest(document),
         "observation_ids": observation_ids,
         "symbol_indices": symbol_indices,
-        "declared_dependencies": declared_dependencies,
         "filtered_is_as_known_then": filtered_is_as_known_then,
         "temporal_mode": temporal_mode,
         "correction_count": len(superseded_ids),
@@ -719,7 +721,7 @@ def forward(model: dict[str, Any], symbols: list[int]) -> dict[str, Any]:
     log_emission = model["log_emission"]
     state_count = len(model["state_order"])
     log_filtered_vectors: list[list[float] | None] = []
-    step_log_probabilities: list[float] = []
+    step_log_probabilities: list[float | None] = []
     log_likelihood = 0.0
     previous: list[float] | None = None
     zero_at: int | None = None
@@ -740,7 +742,7 @@ def forward(model: dict[str, Any], symbols: list[int]) -> dict[str, Any]:
             log_filtered_vectors.append(None)
             for _ in range(step + 1, len(symbols)):
                 log_filtered_vectors.append(None)
-                step_log_probabilities.append(-math.inf)
+                step_log_probabilities.append(None)
             log_likelihood = -math.inf
             break
         current = [value - log_scale for value in log_unscaled]
@@ -762,6 +764,17 @@ def filtered_rows(result: dict[str, Any]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for index, log_vector in enumerate(result["log_filtered_vectors"]):
         log_predictive = result["step_log_probabilities"][index]
+        if log_predictive is None:
+            rows.append(
+                {
+                    "sequence_index": index,
+                    "log_predictive_probability": None,
+                    "predictive_probability": None,
+                    "predictive_probability_underflow": False,
+                    "posterior": None,
+                }
+            )
+            continue
         predictive, underflow = _finite_exp(log_predictive)
         rows.append(
             {
@@ -1027,8 +1040,10 @@ def analyze(
         per_model.append(item)
     options = {"filter": True, "decode": decode, "smooth": smoothing}
     diagnostics: list[str] = []
-    if sequence["declared_dependencies"]:
-        diagnostics.append("observation_dependence_declared; HMM likelihood does not correct it automatically")
+    if any(result["zero_at"] is not None for result in results):
+        diagnostics.append(
+            "zero_likelihood marks an observation outside supplied model support, not a claim about what can occur in the world; later aligned rows were not evaluated"
+        )
     if not sequence["filtered_is_as_known_then"]:
         diagnostics.append("filter is retrospective event-order inference, not a historical as-known-then estimate")
     if sequence["correction_count"]:

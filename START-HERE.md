@@ -1,6 +1,6 @@
 # Install Nova the Optimal AI Free
 
-Nova the Optimal AI Free 3.1.2 is one product and one plugin. Its twenty-seven native skills include the Nova front door, ambient MIND with seventeen nested Faculty Cores including Strategic Intelligence, optional governed continuity, Dennis project governance, Commonplace personal knowledge, Agentic Coding, paired TestForge verification, Officecraft and its reviewer, research and retrieval, IT, privacy, language, career workflows, reminders, people context, and durable goals.
+Nova the Optimal AI Free 3.1.2 is one product and one plugin. MIND is the edition-invariant cognitive architecture of Nova itself, not another product to install beside her. Its twenty-seven native skills include the Nova front door with seventeen nested Faculty Cores including Strategic Intelligence, optional governed continuity, Dennis project governance, Commonplace personal knowledge, Agentic Coding, paired TestForge verification, Officecraft and its reviewer, research and retrieval, IT, privacy, language, career workflows, reminders, people context, and durable goals.
 
 Ordinary use needs no local model, embedding service, vector database, prompt hook, daemon, or persistent estate.
 

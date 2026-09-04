@@ -143,7 +143,7 @@
     "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
     "refs": {"type": "array", "minItems": 1, "maxItems": 128, "uniqueItems": true, "items": {"$ref": "#/$defs/ref"}},
     "probabilityVector": {
-      "description": "HMM initial, transition, or emission probabilities. Exact zero is permitted only for a structural impossibility justified by the model parameter_basis; it means impossible only within the bounded supplied model, and an all-model zero-likelihood mismatch requires reframe.",
+      "description": "HMM initial, transition, or emission probabilities. Exact zero is permitted only for a deliberate support exclusion justified by the model parameter_basis; it means the supplied model does not represent that possibility, never that the event cannot occur in the world. Use a small positive value for an event the model considers extraordinarily unlikely. An all-model zero-likelihood mismatch requires reframe.",
       "type": "array",
       "minItems": 1,
       "maxItems": 512,
