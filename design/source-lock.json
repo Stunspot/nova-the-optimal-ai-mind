@@ -1,8 +1,8 @@
 {
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.2",
-  "source_map_sha256": "6ae734badc0c5d43052b0d870df60a393af9a30f3ad9ab368b88f2cffe909604",
+  "product_version": "3.1.3",
+  "source_map_sha256": "023ab1f15e0374c35f4a92baff26cb7755150697fabaf2582a67bb16086410cc",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -91,7 +91,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
-        "tree_sha256": "cc30338bcc25b6d8b688c2bf0030559b02df4dc8b147e4c3394da496de2d14a9"
+        "tree_sha256": "496473897a95503cac0d9bf9640c495a95d342cedef8270c3aaecb3a67b6a3e5"
       },
       "overlay_state": "edition_overlay"
     },
@@ -201,7 +201,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "4e0148db2acf855ef8dd6debb4906241ea857e6f51308fdd693a9a04612b48a2"
+        "tree_sha256": "f2589922b8c25180aab8ff2b98d61dc881a3a1b020856555b40009914cabbf91"
       },
       "overlay_state": "edition_overlay"
     },
@@ -333,18 +333,18 @@
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "c610df5939eb5c038d8724f2fb959347353f7e8a",
+      "source_commit": "0d910d1917db8bfa38294f062ae7b3660793db33",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_version": "MIND 0.3.1 / Nova Free 3.1.2",
+      "source_version": "MIND 0.3.1 / Nova Free 3.1.3",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "8372321f255148addd5ef292b43abba7f2f2bd80",
-      "source_git_tree": "276dedf9f422612cf219328eddd4cf38d2791fc1",
+      "source_commit_tree": "e0fe888de8ae46af2c3c1ba7fd2ad9b3717ff0bc",
+      "source_git_tree": "d08b5eb5189ccc14091f29cd4c50eb544b4a06c0",
       "source_file_count": 47,
-      "source_tree_sha256": "054e5358fda7022b21880fb357f3f4892cb3a09cd568845e5cced5d30c574095",
+      "source_tree_sha256": "f57eb92eec47b74ee543de0537e8e3ecb335fbc709e5816b976df7b4b71ea862",
       "source_lineage": {
         "historical_origin": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
         "historical_origin_state": "non_git_authoring_workbench_not_current_authority",
@@ -367,7 +367,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 47,
-        "tree_sha256": "054e5358fda7022b21880fb357f3f4892cb3a09cd568845e5cced5d30c574095"
+        "tree_sha256": "f57eb92eec47b74ee543de0537e8e3ecb335fbc709e5816b976df7b4b71ea862"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -376,7 +376,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.2 edition binding",
+      "source_version": "1.0.4 with Free 3.1.3 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -431,7 +431,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
         "file_count": 63,
-        "tree_sha256": "1d7f137a0e0aa72a4a771a29f24ee16530a7464237177bbef30ac5e547a585cf"
+        "tree_sha256": "e386664a4669dc178f5618b83863ea58b42639903511c134f1d5c043b7a5560b"
       },
       "overlay_state": "edition_overlay"
     },
@@ -586,7 +586,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 828,
-    "tree_sha256": "55b2aa0da86210417b2f44f74b01ee2e74ed173019baf419659027dcf3303586"
+    "tree_sha256": "666e9748d87520b7f50e9969a5cc3ef2f8d08ca3e9916f22a7c5cccbb4c4995e"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -596,11 +596,11 @@
     },
     "interview-trainer": {
       "file_count": 2,
-      "tree_sha256": "5af5f0fa975deeec6516e88dcc920b483bf93c62e4296fb4c95e4f4d00c178b0"
+      "tree_sha256": "801d399286e32fc501162edcebdce20a35c62dcc320743b6e36c76daed7fe9f3"
     },
     "job-application-builder": {
       "file_count": 2,
-      "tree_sha256": "28fbd95317b34a3b51333a78d33b3c3c2f58ae7d672b2b15b5f889f7dcec5ae2"
+      "tree_sha256": "795b7bb2326866223222d9ce3535ef64cb632495a36d0aa266758c7bfe88fede"
     },
     "testforge": {
       "file_count": 6,
@@ -609,12 +609,12 @@
   },
   "rights_bundle": {
     "files": {
-      "LICENSE.md": "9810da035fc7e47f46b9c688fc9211a0bf99a5d7b7739eb180f6f7a0aa7ff8ce",
+      "LICENSE.md": "4b1a1c971b2b407d100da845c7babb2eef44ec2634f99c6e879e8ff058beb6e0",
       "ATTRIBUTION.md": "fc80f3ed8d86ddbf01169cf9f740e6cbbf773fa56e3dd6d52774f723ef67a2d5",
-      "NOTICE.md": "f96849f861fefd551428ed361f525c2784ade2f3f01f7e3388ca0ad5c4925ec1",
+      "NOTICE.md": "19fb805bada7a13ddb5903ae0402f829782d7ed348a0610438d846b1bab1722d",
       "TRADEMARKS.md": "7b473341be0279ad1f118d80d5f14769aac1d9a5fb37e4f27f304e1beec580fd",
-      "PROVENANCE.md": "e3a7e7a703611975fd619037a6712f11dd79e6dbe327c6ba704474a3a4c11e92",
-      "THIRD-PARTY-NOTICES.md": "c115af94dc4c4838e4261b0bbce819bbf9ea575ad4ae0b8d0e4c2beef806adec"
+      "PROVENANCE.md": "297f121c5a41dd1fad55ea236f5f1c3617a79c767eb66bce835dd8a785433610",
+      "THIRD-PARTY-NOTICES.md": "bd65928f2be318deebcfcdf2f02aec4dcb462f2612e1a92bca665e063e4c323a"
     },
     "state": "public_split_license_applied",
     "redistribution_state": "permitted_under_included_licenses",
