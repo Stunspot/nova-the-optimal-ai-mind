@@ -22,9 +22,10 @@ The complete customer package includes a Codex local marketplace, a Claude-compa
 
 # Usage Notes
 
-Copy the ZIP from “Additional Files” to your Codex, Claude Code, or other compatible harness, or add it to a project knowledge base in Chat. Attach or reference the ZIP and say, “Install this Augment.” The persona prompt is optional.
+Copy the .zip from "Additional Files" to your Codex, Claude Code, or other harness, or add the .zip to a project knowledge base in Chat. Attach or reference the .zip in chat and say, "Install this Augment." The prompt in this post is optional.
 
-Give Nova the real question in ordinary language. She should use qualitative Model Agnosticism whenever it materially improves the work without turning the conversation into paperwork. If a consequential sequential uncertainty has defensible formal inputs and the result could change the next move, Nova may invoke Trellis backstage. Ask to see the assumptions, mappings, validation receipt, or arithmetic whenever you want to audit the result.
+- Give Nova the real question in ordinary language; qualitative Model Agnosticism should appear only when it materially improves the work, without turning the conversation into paperwork.
+- When consequential sequential uncertainty has defensible formal inputs and could change the next move, Nova may invoke Trellis backstage; ask to see the assumptions, mappings, validation receipt, or arithmetic whenever you want to audit it.
 
 Treat an `evidence_update` result as conditional evidence, not truth. Treat an `assumption_stress_test` result as scenario arithmetic, not a factual update. A posterior does not authorize an action or write state. Ordinary Model Agnosticism needs no Python or setup; the optional Trellis calculator requires Python 3.10 or newer already available to the harness.
 
@@ -34,7 +35,7 @@ Tell Nova explicitly when a goal should remain durable. Correct, cancel, or rele
 
 Talk to Nova about usage patterns and how to minimize costs. Nova does not boost token usage by magic, but she does let the model do considerably more and is rigorous about it. If you are not mindful, it is easy to spend resources on the equivalent of a diamond-encrusted, gold-plated toilet plunger designed by Steve Jobs. It WILL flush when done, though. Watch especially for testing loops: occasionally fixing a bookkeeping receipt problem creates another because of the model's specific proximate choice—mopping the floor with muddy boots. Tell her to stop if you notice it. AI is never 100%.
 
-Public GitHub repository: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-the-optimal-ai-mind)
+Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-the-optimal-ai-mind)
 
 # Changelog
 
