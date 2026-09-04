@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -75,6 +76,28 @@ class ProductContractTests(unittest.TestCase):
             self.assertEqual(tree_digest(imported), record["imported_tree"], record["id"])
         self.assertEqual(tree_digest(self.plugin / "skills"), self.lock["plugin_skill_tree"])
 
+    def test_nova_source_pin_resolves_to_the_exact_current_skill_tree(self) -> None:
+        source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
+        source = next(record for record in source_map["records"] if record["id"] == "nova")
+        locked = next(record for record in self.lock["records"] if record["id"] == "nova")
+
+        def git_object(specification: str) -> str:
+            return subprocess.check_output(
+                ["git", "rev-parse", specification],
+                cwd=REPO,
+                text=True,
+                encoding="utf-8",
+            ).strip()
+
+        self.assertEqual(source["source_state"], "git_commit")
+        self.assertEqual(source["edition_overlays"], [])
+        self.assertEqual(locked["overlay_state"], "exact_selected_source")
+        self.assertEqual(git_object(source["source_commit"] + "^{tree}"), source["source_commit_tree"])
+        pinned_skill_tree = git_object(source["source_commit"] + ":" + source["source_path"])
+        self.assertEqual(pinned_skill_tree, source["source_git_tree"])
+        self.assertEqual(pinned_skill_tree, git_object("HEAD:" + source["source_path"]))
+        self.assertEqual(source["source_file_count"], locked["imported_tree"]["file_count"])
+        self.assertEqual(source["source_tree_sha256"], locked["imported_tree"]["tree_sha256"])
     def test_public_split_license_and_rights_bundle_are_bound(self) -> None:
         self.assertEqual(self.loadout["license"], "LICENSE.md")
         self.assertIn("MIT", self.loadout["rights_status"])

@@ -6,7 +6,7 @@
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "d967ee0bd7745f39de16532a70e607c67bd09eda",
+      "source_commit": "c21ecfb262dd1898781756ce152c8716fef346fa",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
       "source_version": "MIND 0.3.1 / Nova Free 3.1.2",
       "selection": [
@@ -14,10 +14,10 @@
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "2c623e6b4a5a7d7483ef8aab2f90581476a6af74",
-      "source_git_tree": "265b2f90eff9e8640c5247f8a247e393c2364252",
+      "source_commit_tree": "e3d575b6551c275f53ccddf66c05160d2c53c4a9",
+      "source_git_tree": "893de2f3f7317f04e5148f4e164ea7006728e94f",
       "source_file_count": 46,
-      "source_tree_sha256": "9bc57a90729de8044f0f32d6b85e83dd6ba7074cc6449edddbecaf4253dde88c",
+      "source_tree_sha256": "731fb6db3a4f791c1efdf429161a2bbf1665a58d7c2967dab52054aef6b94c2a",
       "source_lineage": {
         "historical_origin": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
         "historical_origin_state": "non_git_authoring_workbench_not_current_authority",
