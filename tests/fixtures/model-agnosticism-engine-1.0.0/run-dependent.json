@@ -1,0 +1,300 @@
+{
+  "comparison": {
+    "conditional_on_model_set": true,
+    "reason": [],
+    "relative_model_weights": [
+      {
+        "model_id": "textbook-weather",
+        "weight": 0.5662906199813628
+      },
+      {
+        "model_id": "memoryless-contrast",
+        "weight": 0.4337093800186371
+      }
+    ],
+    "weights_status": "computed"
+  },
+  "contract": "cd-model-agnosticism-inference-run/v1",
+  "diagnostics": [
+    "observation_dependence_declared; HMM likelihood does not correct it automatically"
+  ],
+  "engine": {
+    "artifact_sha256": "7c321394b0ca333585ae396bc8652c15f7cfec29cc4171ee5695fe2bd3df406c",
+    "engine_id": "cd-model-agnosticism-trellis",
+    "engine_version": "1.0.0",
+    "numeric_kernel": "logsumexp-forward_logsumexp-backward_log-viterbi",
+    "numeric_runtime": {
+      "float_mant_dig": 53,
+      "float_max_exp": 1024,
+      "float_radix": 2,
+      "implementation": "cpython",
+      "python_version": "3.12.2"
+    },
+    "schema_versions": {
+      "model_set": "cd-model-agnosticism-model-set/v1",
+      "observation_sequence": "cd-model-agnosticism-observation-sequence/v1",
+      "receipt_envelope": "cd-model-agnosticism-receipt-envelope/v1"
+    }
+  },
+  "inputs": {
+    "model_set_digest": "ed4a21a5feaffa75c6ffc57a60a679e7da4b2ecc23eed59d47c5c2f7da97b77e",
+    "model_set_id": "stanford-ice-cream-demonstration",
+    "model_set_revision": 1,
+    "observation_ids": [
+      "day-1",
+      "day-2",
+      "day-3"
+    ],
+    "prior_sequence": null,
+    "sequence_digest": "85c0ee93b4f6137f2e94564f7f8ee307e74afb87071e0ba2358190c842a4d674",
+    "sequence_id": "ice-cream-3-1-3",
+    "sequence_revision": 1,
+    "temporal_mode": "historical_prefix"
+  },
+  "options": {
+    "decode": true,
+    "filter": true,
+    "smooth": true
+  },
+  "per_model": [
+    {
+      "absolute_fit": {
+        "calibration_ref": {
+          "calibration_id": "synthetic-fixture-calibration",
+          "digest": "d011e51c49b0a484da19a04cf5e66be90c4300335311bc69f28887bce57771d7",
+          "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26",
+          "log_base": "e",
+          "metric": "mean_predictive_surprisal",
+          "revision": 1,
+          "step_semantics": "one day per observation",
+          "unit": "nats_per_observation"
+        },
+        "log_base": "e",
+        "metric": "mean_predictive_surprisal",
+        "reason": [],
+        "status": "pass",
+        "threshold": 10.0,
+        "unit": "nats_per_observation"
+      },
+      "effective_model_digest": "ede774b8ddf6dc9c0ac25e7721d34441635ae7acc64f22029182cfeceb718761",
+      "filtered_state_posteriors": [
+        {
+          "log_predictive_probability": -1.07880966137193,
+          "posterior": [
+            0.9411764705882353,
+            0.058823529411764754
+          ],
+          "predictive_probability": 0.33999999999999997,
+          "predictive_probability_underflow": false,
+          "sequence_index": 0
+        },
+        {
+          "log_predictive_probability": -1.1339347276223262,
+          "posterior": [
+            0.3692870201096893,
+            0.6307129798903108
+          ],
+          "predictive_probability": 0.32176470588235295,
+          "predictive_probability_underflow": false,
+          "sequence_index": 1
+        },
+        {
+          "log_predictive_probability": -1.3429337269571393,
+          "posterior": [
+            0.8226314683845669,
+            0.17736853161543314
+          ],
+          "predictive_probability": 0.2610786106032907,
+          "predictive_probability_underflow": false,
+          "sequence_index": 2
+        }
+      ],
+      "inference_status": "completed",
+      "log_sequence_likelihood": -3.5556781159513955,
+      "mean_predictive_surprisal": 1.1852260386504652,
+      "model_artifact_digest": "cb1ef215fed85b26be127951911d9c4d94ccf6d6d4ead18e6d7130db52be5351",
+      "model_id": "textbook-weather",
+      "model_version": "1.0.0",
+      "observation_contract_digest": "38513963518314ffbbf0a36453ca1992cdf5ee04199daf636846a8148c865411",
+      "sequence_likelihood": 0.028562000000000004,
+      "sequence_likelihood_underflow": false,
+      "smoothed_state_posteriors": [
+        {
+          "posterior": [
+            0.9366290875989076,
+            0.06337091240109242
+          ],
+          "sequence_index": 0,
+          "uses_later_observations": true
+        },
+        {
+          "posterior": [
+            0.39605069672992094,
+            0.6039493032700791
+          ],
+          "sequence_index": 1,
+          "uses_later_observations": true
+        },
+        {
+          "posterior": [
+            0.8226314683845669,
+            0.17736853161543314
+          ],
+          "sequence_index": 2,
+          "uses_later_observations": false
+        }
+      ],
+      "state_order": [
+        "H",
+        "C"
+      ],
+      "surprisal_log_base": "e",
+      "surprisal_unit": "nats_per_observation",
+      "viterbi": {
+        "joint_probability": 0.012799999999999997,
+        "joint_probability_underflow": false,
+        "log_joint_probability": -4.358310108056566,
+        "state_indices": [
+          0,
+          1,
+          0
+        ],
+        "tie_breaking": "lowest_predecessor_and_terminal_index_in_declared_state_order"
+      }
+    },
+    {
+      "absolute_fit": {
+        "calibration_ref": {
+          "calibration_id": "synthetic-fixture-calibration",
+          "digest": "d011e51c49b0a484da19a04cf5e66be90c4300335311bc69f28887bce57771d7",
+          "encoder_digest": "9a954997f1985a7cfbae66bb96c23e6ff32958b93b2d3b067781ff2f77d5fc26",
+          "log_base": "e",
+          "metric": "mean_predictive_surprisal",
+          "revision": 1,
+          "step_semantics": "one day per observation",
+          "unit": "nats_per_observation"
+        },
+        "log_base": "e",
+        "metric": "mean_predictive_surprisal",
+        "reason": [],
+        "status": "pass",
+        "threshold": 10.0,
+        "unit": "nats_per_observation"
+      },
+      "effective_model_digest": "52356c5636b38687df05eb45c852889bb99b7beddb332c36dbd864f6d836c848",
+      "filtered_state_posteriors": [
+        {
+          "log_predictive_probability": -1.3862943611198906,
+          "posterior": [
+            0.8,
+            0.2
+          ],
+          "predictive_probability": 0.25,
+          "predictive_probability_underflow": false,
+          "sequence_index": 0
+        },
+        {
+          "log_predictive_probability": -1.0498221244986774,
+          "posterior": [
+            0.2857142857142857,
+            0.7142857142857143
+          ],
+          "predictive_probability": 0.3500000000000001,
+          "predictive_probability_underflow": false,
+          "sequence_index": 1
+        },
+        {
+          "log_predictive_probability": -1.3862943611198908,
+          "posterior": [
+            0.8,
+            0.20000000000000007
+          ],
+          "predictive_probability": 0.24999999999999994,
+          "predictive_probability_underflow": false,
+          "sequence_index": 2
+        }
+      ],
+      "inference_status": "completed",
+      "log_sequence_likelihood": -3.8224108467384585,
+      "mean_predictive_surprisal": 1.2741369489128196,
+      "model_artifact_digest": "fe7a49c11428a16b9caa7a62e8efb227940879b7be64dd1787596b8ad7cc06cb",
+      "model_id": "memoryless-contrast",
+      "model_version": "1.0.0",
+      "observation_contract_digest": "38513963518314ffbbf0a36453ca1992cdf5ee04199daf636846a8148c865411",
+      "sequence_likelihood": 0.02187500000000001,
+      "sequence_likelihood_underflow": false,
+      "smoothed_state_posteriors": [
+        {
+          "posterior": [
+            0.8,
+            0.2
+          ],
+          "sequence_index": 0,
+          "uses_later_observations": true
+        },
+        {
+          "posterior": [
+            0.2857142857142857,
+            0.7142857142857143
+          ],
+          "sequence_index": 1,
+          "uses_later_observations": true
+        },
+        {
+          "posterior": [
+            0.8,
+            0.20000000000000007
+          ],
+          "sequence_index": 2,
+          "uses_later_observations": false
+        }
+      ],
+      "state_order": [
+        "H",
+        "C"
+      ],
+      "surprisal_log_base": "e",
+      "surprisal_unit": "nats_per_observation",
+      "viterbi": {
+        "joint_probability": 0.010000000000000004,
+        "joint_probability_underflow": false,
+        "log_joint_probability": -4.605170185988091,
+        "state_indices": [
+          0,
+          1,
+          0
+        ],
+        "tie_breaking": "lowest_predecessor_and_terminal_index_in_declared_state_order"
+      }
+    }
+  ],
+  "reframe": {
+    "reasons": [],
+    "status": "not_required"
+  },
+  "resource_estimate": {
+    "estimated_output_bytes": 14931,
+    "limits": {
+      "max_output_bytes": 33554432,
+      "max_posterior_cells": 500000,
+      "max_work_units": 10000000
+    },
+    "posterior_cells": 24,
+    "work_units": 56
+  },
+  "run_id": "sha256:17543b633f132d71c79b072279cad5e763110d9eaf0d397254d38cbe1f58e7e7",
+  "run_status": "completed",
+  "semantic_boundary": {
+    "authority_effect": "none",
+    "claim_confidence": false,
+    "decision_authority": false,
+    "epistemic_model_agnosticism": true,
+    "filtered_is_as_known_then": true,
+    "filtered_temporal_mode": "historical_prefix",
+    "model_relative": true,
+    "persistence_performed": false,
+    "smoothed_is_retrospective": true,
+    "source_confidence_modified": false,
+    "truth_certification": false
+  }
+}

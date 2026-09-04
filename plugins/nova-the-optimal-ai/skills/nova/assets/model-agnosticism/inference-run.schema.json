@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://collaborative-dynamics.com/schemas/model-agnosticism/receipt-envelope-v1.json",
   "title": "Epistemic Model Agnosticism receipt envelope",
+  "description": "Structural envelope for engine 1.0.0 and 1.0.1 receipts. Schema validity does not upgrade historical epistemic support: engine 1.0.0 dependency-bearing or input-unrecoverable probability, fit, and weight fields are unsupported and require reframing.",
   "oneOf": [
     {"$ref": "#/$defs/analyzeReceipt"},
     {"$ref": "#/$defs/validationReceipt"},
@@ -44,7 +45,7 @@
       "required": ["engine_id", "engine_version", "artifact_sha256", "numeric_kernel", "numeric_runtime", "schema_versions"],
       "properties": {
         "engine_id": {"const": "cd-model-agnosticism-trellis"},
-        "engine_version": {"enum": ["1.0.0", "1.0.1"]},
+        "engine_version": {"enum": ["1.0.0", "1.0.1"], "description": "Engine 1.0.1 refuses declared observation dependence before inference and uses a single exact-zero trigger plus null unevaluated tail. Engine 1.0.0 is accepted as immutable historical structure; it used warning-only dependence handling and may pad the unevaluated tail with 0.0."},
         "artifact_sha256": {"$ref": "#/$defs/digest"},
         "numeric_kernel": {"const": "logsumexp-forward_logsumexp-backward_log-viterbi"},
         "numeric_runtime": {
@@ -98,10 +99,10 @@
       "required": ["sequence_index", "log_predictive_probability", "predictive_probability", "predictive_probability_underflow", "posterior"],
       "properties": {
         "sequence_index": {"type": "integer", "minimum": 0},
-        "log_predictive_probability": {"type": ["number", "null"], "description": "Natural-log predictive probability when evaluated and finite. Null at an exact model-support boundary and on later aligned rows that were not evaluated."},
-        "predictive_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Evaluated predictive probability. Exact 0.0 occurs only at the named model-support boundary; null means finite binary64 underflow or not evaluated, distinguished by predictive_probability_underflow and zero_likelihood_at_sequence_index."},
-        "predictive_probability_underflow": {"type": "boolean", "description": "True only when an evaluated finite log probability cannot be represented as positive binary64; false for exact model-relative zero and for rows not evaluated after the support boundary."},
-        "posterior": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/posteriorVector"}], "description": "Filtered state posterior for an evaluated positive-support step; null at and after a model-support boundary."}
+        "log_predictive_probability": {"type": ["number", "null"], "description": "Natural-log predictive probability when evaluated and finite. Null at an exact model-support boundary and on later aligned rows that were not evaluated; engine 1.0.0 compatibility does not make any dependency-bearing value epistemically supported."},
+        "predictive_probability": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Evaluated predictive probability. In engine 1.0.1 exact 0.0 occurs only at the named model-support boundary and later unevaluated rows are null. Historical engine 1.0.0 may pad those later rows with 0.0. Null otherwise means finite binary64 underflow or not evaluated, distinguished by predictive_probability_underflow and zero_likelihood_at_sequence_index."},
+        "predictive_probability_underflow": {"type": "boolean", "description": "True only when an evaluated finite log probability cannot be represented as positive binary64; false for exact model-relative zero and for unevaluated rows after the support boundary in both supported 1.0.1 and historical 1.0.0 representations."},
+        "posterior": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/posteriorVector"}], "description": "Filtered state posterior for an evaluated positive-support step; null at and after a model-support boundary. For engine 1.0.0, structural presence does not support dependency-bearing inference."}
       }
     },
     "smoothedRow": {
@@ -160,7 +161,7 @@
         "surprisal_unit": {"const": "nats_per_observation"},
         "absolute_fit": {"$ref": "#/$defs/absoluteFit"},
         "filtered_state_posteriors": {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/filteredRow"}},
-        "zero_likelihood_at_sequence_index": {"type": "integer", "minimum": 0, "description": "First evaluated observation outside this supplied model's support. Later aligned filter rows are null because they were not evaluated."},
+        "zero_likelihood_at_sequence_index": {"type": "integer", "minimum": 0, "description": "First evaluated observation outside this supplied model's support. Engine 1.0.1 represents later unevaluated aligned rows with null probability fields; historical engine 1.0.0 may pad them with 0.0."},
         "smoothed_state_posteriors": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 1, "maxItems": 10000, "items": {"$ref": "#/$defs/smoothedRow"}}]},
         "viterbi": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/viterbi"}]}
       },

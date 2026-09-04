@@ -1,0 +1,51 @@
+{
+  "comparison_declared": "eligible",
+  "contract": "cd-model-agnosticism-validation/v1",
+  "engine": {
+    "artifact_sha256": "7c321394b0ca333585ae396bc8652c15f7cfec29cc4171ee5695fe2bd3df406c",
+    "engine_id": "cd-model-agnosticism-trellis",
+    "engine_version": "1.0.0",
+    "numeric_kernel": "logsumexp-forward_logsumexp-backward_log-viterbi",
+    "numeric_runtime": {
+      "float_mant_dig": 53,
+      "float_max_exp": 1024,
+      "float_radix": 2,
+      "implementation": "cpython",
+      "python_version": "3.12.2"
+    },
+    "schema_versions": {
+      "model_set": "cd-model-agnosticism-model-set/v1",
+      "observation_sequence": "cd-model-agnosticism-observation-sequence/v1",
+      "receipt_envelope": "cd-model-agnosticism-receipt-envelope/v1"
+    }
+  },
+  "inputs": {
+    "model_count": 2,
+    "model_set_digest": "ed4a21a5feaffa75c6ffc57a60a679e7da4b2ecc23eed59d47c5c2f7da97b77e",
+    "observation_count": 3,
+    "sequence_digest": "85c0ee93b4f6137f2e94564f7f8ee307e74afb87071e0ba2358190c842a4d674"
+  },
+  "resource_estimate": {
+    "estimated_output_bytes": 13851,
+    "limits": {
+      "max_output_bytes": 33554432,
+      "max_posterior_cells": 500000,
+      "max_work_units": 10000000
+    },
+    "posterior_cells": 12,
+    "work_units": 20
+  },
+  "semantic_boundary": {
+    "authority_effect": "none",
+    "calibration_truth_validated": false,
+    "ontology_validated": false,
+    "semantic_truth_certified": false,
+    "structural_and_stochastic_only": true
+  },
+  "status": "valid",
+  "temporal_semantics": {
+    "filtered_is_as_known_then": true,
+    "mode": "historical_prefix"
+  },
+  "validation_id": "sha256:131204f9bd207e943753915dad3932957676af77e43d30561ef512436eab7443"
+}

@@ -44,7 +44,7 @@
           "source_refs": {"$ref": "#/$defs/refs"},
           "coding_basis": {"$ref": "#/$defs/text"},
           "coding_status": {"enum": ["observed", "corrected"]},
-          "dependence_refs": {"type": "array", "maxItems": 128, "uniqueItems": true, "items": {"$ref": "#/$defs/ref"}, "description": "Disclosure of known observation dependence. Engine 1.0.x refuses inference when this array is non-empty because it has no dependence-adjustment contract; removing disclosure is not remediation."},
+          "dependence_refs": {"type": "array", "maxItems": 128, "uniqueItems": true, "items": {"$ref": "#/$defs/ref"}, "description": "Disclosure of known observation dependence. Engine 1.0.1 refuses inference when this array is non-empty because it has no dependence-adjustment contract; removing disclosure is not remediation. Historical engine 1.0.0 accepted the disclosure as warning-only, so its probabilistic output is unsupported unless the exact digest-matched input can be recovered and every dependence_refs array is empty."},
           "supersedes": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/supersedes"}]}
         },
         "allOf": [

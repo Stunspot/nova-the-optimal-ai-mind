@@ -1,0 +1,47 @@
+{
+  "schema": "cd-model-agnosticism-historical-fixture/v1",
+  "engine_version": "1.0.0",
+  "source_commit": "0c88c3c9ab373b5b291321ede036a5ab74483298",
+  "source_script_git_path": "plugins/nova-the-optimal-ai/skills/nova/scripts/model_agnosticism_trellis.py",
+  "python_runtime": "CPython 3.12.2 Windows x86_64",
+  "purpose": "Genuine engine-1.0.0 receipts proving both dependency-free behavior and the historical warning-only dependence path.",
+  "interpretation": "A 1.0.0 receipt with nonempty or unrecoverable dependence_refs has unsupported likelihood, fit, and relative-weight claims. Preserve its bytes and identifiers; do not rewrite it.",
+  "commands": [
+    "py -3.12 -B -X utf8 model_agnosticism_trellis-1.0.0.py validate model-set.json sequence-<case>.json",
+    "py -3.12 -B -X utf8 model_agnosticism_trellis-1.0.0.py analyze model-set.json sequence-<case>.json --decode --smooth"
+  ],
+  "files": {
+    "model_agnosticism_trellis-1.0.0.py": {
+      "sha256": "7c321394b0ca333585ae396bc8652c15f7cfec29cc4171ee5695fe2bd3df406c",
+      "bytes": 55264
+    },
+    "model-set.json": {
+      "sha256": "88eee6aaeb1cfc4d0f636464ddc890961d8b369d37d7234d9a635e8661a65e3c",
+      "bytes": 4975
+    },
+    "run-dependent.json": {
+      "sha256": "4655b8d2d14d45f2e89b721c363668106684e3b903fc9407872f7fa12c058b9c",
+      "bytes": 9465
+    },
+    "run-independent.json": {
+      "sha256": "f2d20830bc6f6250bb4b2f6399b4d425ae03efbd9b2fd0eac07330664a75d785",
+      "bytes": 9374
+    },
+    "sequence-dependent.json": {
+      "sha256": "e975fc3936261873d64058467d7b872cdfc49dee81573652d122f3e15fc9b2aa",
+      "bytes": 1999
+    },
+    "sequence-independent.json": {
+      "sha256": "50d75511d9f8e0bc93ee7cd16f4e4970e08bf57cb8e549def4152762b63ed838",
+      "bytes": 1636
+    },
+    "validation-dependent.json": {
+      "sha256": "711b4e281f4aac2c2b3ab1f668f70c198f89243ab7bdac56a870bf9070a8a739",
+      "bytes": 1702
+    },
+    "validation-independent.json": {
+      "sha256": "d4cea239bb22c186c1d99c5b46c50e0c87dfd9d90c5321f5cd638325ce20d338",
+      "bytes": 1702
+    }
+  }
+}

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import hashlib
 import importlib.util
 import itertools
 import json
@@ -17,6 +18,7 @@ except ImportError:  # Optional verification dependency; calculator runtime rema
     jsonschema = None
 
 ROOT = Path(__file__).resolve().parents[1]
+HISTORICAL_FIXTURES = ROOT / "tests" / "fixtures" / "model-agnosticism-engine-1.0.0"
 
 
 def resolve_runtime_layout() -> tuple[Path, Path]:
@@ -599,23 +601,71 @@ class TrellisTests(unittest.TestCase):
         jsonschema.Draft202012Validator(schemas["observation-sequence.schema.json"]).validate(self.sequence)
 
     @unittest.skipIf(jsonschema is None, "jsonschema is an optional verification dependency")
-    def test_receipt_envelope_accepts_analyze_validation_and_error_receipts(self) -> None:
+    def test_receipt_envelope_accepts_current_and_genuine_historical_receipts(self) -> None:
         schema = load("inference-run.schema.json")
         validator = jsonschema.Draft202012Validator(schema)
         model_set, sequence = bind(self.model, self.sequence)
-        current_run = TRELLIS.analyze(model_set, sequence, decode=True, smoothing=True)
-        historical_run = copy.deepcopy(current_run)
-        historical_run["engine"]["engine_version"] = "1.0.0"
+        historical_names = (
+            "run-independent.json",
+            "run-dependent.json",
+            "validation-independent.json",
+            "validation-dependent.json",
+        )
         receipts = (
-            current_run,
-            historical_run,
+            TRELLIS.analyze(model_set, sequence, decode=True, smoothing=True),
             TRELLIS.validation_receipt(model_set, sequence),
             TRELLIS.error_receipt(TRELLIS.TrellisError("TEST_ERROR", "deliberate")),
+            *(json.loads((HISTORICAL_FIXTURES / name).read_text(encoding="utf-8")) for name in historical_names),
         )
         for receipt in receipts:
-            with self.subTest(contract=receipt["contract"]):
+            with self.subTest(contract=receipt["contract"], engine=receipt["engine"]["engine_version"]):
                 validator.validate(receipt)
 
+        manifest = json.loads((HISTORICAL_FIXTURES / "fixture-manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["source_commit"], "0c88c3c9ab373b5b291321ede036a5ab74483298")
+        for name, record in manifest["files"].items():
+            payload = (HISTORICAL_FIXTURES / name).read_bytes()
+            self.assertEqual(len(payload), record["bytes"])
+            self.assertEqual(hashlib.sha256(payload).hexdigest(), record["sha256"])
+
+        expected_artifact = hashlib.sha256(
+            (HISTORICAL_FIXTURES / "model_agnosticism_trellis-1.0.0.py").read_bytes()
+        ).hexdigest()
+        for name in historical_names:
+            receipt = json.loads((HISTORICAL_FIXTURES / name).read_text(encoding="utf-8"))
+            self.assertEqual(receipt["engine"]["engine_version"], "1.0.0")
+            self.assertEqual(receipt["engine"]["artifact_sha256"], expected_artifact)
+            id_field = "run_id" if receipt["contract"] == TRELLIS.RUN_CONTRACT else "validation_id"
+            body = copy.deepcopy(receipt)
+            identifier = body.pop(id_field)
+            self.assertEqual(identifier, "sha256:" + TRELLIS.digest(body))
+
+    def test_engine_100_dependent_receipt_is_historical_not_supported_evidence(self) -> None:
+        dependent_sequence = json.loads(
+            (HISTORICAL_FIXTURES / "sequence-dependent.json").read_text(encoding="utf-8")
+        )
+        dependent_run = json.loads(
+            (HISTORICAL_FIXTURES / "run-dependent.json").read_text(encoding="utf-8")
+        )
+        independent_sequence = json.loads(
+            (HISTORICAL_FIXTURES / "sequence-independent.json").read_text(encoding="utf-8")
+        )
+        self.assertTrue(any(item["dependence_refs"] for item in dependent_sequence["items"]))
+        self.assertTrue(all(not item["dependence_refs"] for item in independent_sequence["items"]))
+        self.assertEqual(dependent_run["inputs"]["sequence_digest"], TRELLIS.digest(dependent_sequence))
+        self.assertEqual(dependent_run["comparison"]["weights_status"], "computed")
+        self.assertTrue(dependent_run["comparison"]["relative_model_weights"])
+        self.assertIn(
+            "observation_dependence_declared; HMM likelihood does not correct it automatically",
+            dependent_run["diagnostics"],
+        )
+        doctrine = (ROOT / "plugins" / "nova-the-optimal-ai" / "skills" / "nova" / "references" / "mind" / "model-agnosticism.md").read_text(encoding="utf-8")
+        self.assertIn("Engine 1.0.0 did not enforce that boundary", doctrine)
+        self.assertIn("mark the probabilistic result `unsupported/reframe`", doctrine)
+        observation_schema = load("observation-sequence.schema.json")
+        dependence_description = observation_schema["properties"]["items"]["items"]["properties"]["dependence_refs"]["description"]
+        self.assertIn("Engine 1.0.1 refuses inference", dependence_description)
+        self.assertIn("Historical engine 1.0.0 accepted the disclosure as warning-only", dependence_description)
     @unittest.skipIf(jsonschema is None, "jsonschema is an optional verification dependency")
     def test_receipt_envelope_is_strict(self) -> None:
         schema = load("inference-run.schema.json")
