@@ -1,7 +1,7 @@
 # Decision: Model Agnosticism is ambient discipline plus an earned callable instrument
 
-Status: accepted  
-Date: 2026-09-04  
+Status: accepted
+Date: 2026-09-04
 Scope: Nova and MIND in every edition
 
 ## Decision

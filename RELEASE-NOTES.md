@@ -1,5 +1,13 @@
 # Nova the Optimal AI Free release notes
 
+## 3.1.3 — pragmatic skepticism without the probability cosplay
+
+This is the first versioned release of the completed Model Agnosticism architecture. MIND 0.3.1 remains Nova's edition-invariant cognitive substrate: ordinary work uses qualitative, proportionate skepticism, preserves plausible alternatives, distinguishes observation from interpretation, and reframes when the available models stop fitting. It creates no ambient proposition ledger, mandatory rival list, or decorative numerical overhead.
+
+The optional stateless Trellis 1.1.0 calculator remains capability-mediated and gated to consequential sequential problems with defensible formal inputs. Its v2 evidence-update and assumption-stress lanes keep evidence, scenarios, structural zeros, underflow, provenance, fit, model weights, and authority boundaries explicit. Agent Striving remains 0.4.0, and Mission Capsule v2 continues to support sparse open pursuits without fabricated acceptance criteria while preserving real bounded completion conditions.
+
+The new product identity brings source, packages, customer guidance, shelf sidecars, and release assets onto one forward version. It changes no Nova estate schema, performs no automatic migration, and adds no local-model, network, persistence, hook, daemon, or ordinary Python requirement.
+
 ## 3.1.2 — rival models without doctrinal capture
 
 The 2026-09-04 same-version completion repair makes the architecture explicit: MIND is Nova's edition-invariant cognitive substrate, not a separate product or persona, and Model Agnosticism is ambient qualitative discipline across every edition. Ordinary work does not acquire a proposition ledger or counterfeit precision. Unqualified impossibility is reserved for logical contradiction; constraint-bound impossibility names its constraints.

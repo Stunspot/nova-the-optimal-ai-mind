@@ -1,6 +1,6 @@
-# Free Nova 3.1.2 package map
+# Free Nova 3.1.3 package map
 
-Free 3.1.2 is one product, one plugin, and one Nova front door.
+Free 3.1.3 is one product, one plugin, and one Nova front door.
 
 The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and MIND 0.3.1 as her edition-invariant cognitive architecture. MIND is not a separately selectable product layer. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
 

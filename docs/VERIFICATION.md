@@ -1,6 +1,6 @@
 # Verification and evidence
 
-Nova Free 3.1.2 separates source qualification from final archive construction.
+Nova Free 3.1.3 separates source qualification from final archive construction.
 
 ## Source qualification
 
@@ -21,7 +21,7 @@ A frozen source candidate then receives a full Hesperos documentation cycle and 
 After qualification evidence is accepted and committed, confirm that Git reports no tracked or untracked source drift, then run:
 
     python -B -X utf8 tools/build_release.py --repo . --require-clean
-    python -B -X utf8 tools/verify_package.py dist/nova-the-optimal-ai-free-3.1.2
+    python -B -X utf8 tools/verify_package.py dist/nova-the-optimal-ai-free-3.1.3
 
 The builder creates the complete customer, Codex, and Claude-compatible archives plus twenty-seven standalone Claude folders and ZIPs. It raw-validates local and central filename bytes as strict UTF-8, requires the UTF-8 flag for non-ASCII names, compares exact staged inventory, and reads every member before accepting any archive. Each standalone artifact carries a nova-free-rights envelope; relevant TestForge, Agent Swarm, or career component notices travel inside it.
 

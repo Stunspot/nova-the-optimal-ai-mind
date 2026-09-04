@@ -1,6 +1,6 @@
 # Description
 
-Nova the Optimal AI Free 3.1.2 makes a capable personal AI agent simple, fast, and free. Install one package and get one highly competent generalist ready to handle real work: untangle a repository, research a difficult question, repair an office document, plan a project, prepare for a meeting, compare a decision, preserve long-running direction, or coordinate several agents when the work genuinely benefits from it. Users do not need to understand model architecture, browse a faculty catalog, or assemble a tiny bureaucracy before asking for help.
+Nova the Optimal AI Free 3.1.3 makes a capable personal AI agent simple, fast, and free. Install one package and get one highly competent generalist ready to handle real work: untangle a repository, research a difficult question, repair an office document, plan a project, prepare for a meeting, compare a decision, preserve long-running direction, or coordinate several agents when the work genuinely benefits from it. Users do not need to understand model architecture, browse a faculty catalog, or assemble a tiny bureaucracy before asking for help.
 
 *(The prompt is JUST the always-charming persona, Nova. The ZIP is the Agent Augment for harness installation.)*
 
@@ -38,6 +38,8 @@ Talk to Nova about usage patterns and how to minimize costs. Nova does not boost
 Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-the-optimal-ai-mind)
 
 # Changelog
+
+v3.1.3 - Released the completed Model Agnosticism architecture under a forward product version; retained ambient qualitative skepticism without proposition bookkeeping; retained gated Trellis 1.1.0 evidence-update and assumption-stress arithmetic with explicit provenance, fit, zero, underflow, and authority boundaries; retained Agent Striving 0.4.0 and Mission Capsule v2; and synchronized source, packages, sidecars, shelves, and release identity without changing estate schemas or ordinary runtime requirements.
 
 v3.1.2 - Made MIND 0.3.1 Nova's edition-invariant cognitive architecture; implemented ambient qualitative Model Agnosticism without a proposition ledger or routine numerical overhead; added gated, capability-mediated Trellis 1.1.0 with distinct evidence-update and assumption-stress lanes, v2-only execution, deterministic HMM calculations, scoped zeros, typed reframing, bounded resources, and no truth or action authority; advanced Agent Striving to exact 0.4.0 and Mission Capsule v2; preserved the twenty-seven-root topology, governing persona, ordinary no-Python operation, and existing data and authority boundaries.
 

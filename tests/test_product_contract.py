@@ -349,8 +349,8 @@ class ProductContractTests(unittest.TestCase):
         answer = json.loads((self.plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
         current = json.loads((self.plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
         for manifest in (answer, current):
-            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.1.2")
-            self.assertIn("Nova Free 3.1.2 public split license", manifest["license"])
+            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.1.3")
+            self.assertIn("Nova Free 3.1.3 public split license", manifest["license"])
         source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
         records = {record["id"]: record for record in source_map["records"]}
         self.assertEqual(

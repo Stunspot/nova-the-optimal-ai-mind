@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-loadout/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.2",
+  "product_version": "3.1.3",
   "plugin_id": "nova-the-optimal-ai",
   "license": "LICENSE.md",
   "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
