@@ -659,7 +659,7 @@ class TrellisTests(unittest.TestCase):
             "observation_dependence_declared; HMM likelihood does not correct it automatically",
             dependent_run["diagnostics"],
         )
-        doctrine = (ROOT / "plugins" / "nova-the-optimal-ai" / "skills" / "nova" / "references" / "mind" / "model-agnosticism.md").read_text(encoding="utf-8")
+        doctrine = (SOURCE.parents[1] / "references" / "mind" / "model-agnosticism.md").read_text(encoding="utf-8")
         self.assertIn("Engine 1.0.0 did not enforce that boundary", doctrine)
         self.assertIn("mark the probabilistic result `unsupported/reframe`", doctrine)
         observation_schema = load("observation-sequence.schema.json")
