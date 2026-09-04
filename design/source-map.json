@@ -1,14 +1,14 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.3",
+  "product_version": "3.1.4",
   "records": [
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
       "source_commit": "0d910d1917db8bfa38294f062ae7b3660793db33",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_version": "MIND 0.3.1 / Nova Free 3.1.3",
+      "source_version": "MIND 0.3.1 / Nova Free 3.1.4",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
@@ -357,7 +357,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.3 edition binding",
+      "source_version": "1.0.4 with Free 3.1.4 edition binding",
       "selection": [
         "complete authored base tree"
       ],

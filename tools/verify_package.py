@@ -260,9 +260,9 @@ def verify(package: Path) -> dict[str, object]:
 
     codex_manifest = json.loads((codex_plugin / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
     claude_manifest = json.loads((claude_plugin / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8"))
-    if codex_manifest.get("name") != "nova-the-optimal-ai" or codex_manifest.get("version") != "3.1.3":
+    if codex_manifest.get("name") != "nova-the-optimal-ai" or codex_manifest.get("version") != "3.1.4":
         findings.append("Codex plugin identity/version mismatch")
-    if claude_manifest.get("name") != "nova-the-optimal-ai" or claude_manifest.get("version") != "3.1.3":
+    if claude_manifest.get("name") != "nova-the-optimal-ai" or claude_manifest.get("version") != "3.1.4":
         findings.append("Claude plugin identity/version mismatch")
     if "LICENSE.md" not in str(codex_manifest.get("license", "")) or "LICENSE.md" not in str(claude_manifest.get("license", "")):
         findings.append("host plugin metadata does not point to the product license")
@@ -290,9 +290,9 @@ def verify(package: Path) -> dict[str, object]:
     answer_manifest = json.loads((codex_plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
     current_manifest = json.loads((codex_plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
     for label, manifest in (("AnswerLayer", answer_manifest), ("Current Intelligence", current_manifest)):
-        if manifest.get("rights_status") != "public-inclusion-authorized-for-nova-free-3.1.3":
+        if manifest.get("rights_status") != "public-inclusion-authorized-for-nova-free-3.1.4":
             findings.append(f"{label} rights metadata is not reconciled for Nova Free")
-        if "Nova Free 3.1.3 public split license" not in str(manifest.get("license", "")):
+        if "Nova Free 3.1.4 public split license" not in str(manifest.get("license", "")):
             findings.append(f"{label} license metadata is not reconciled for Nova Free")
     for relative in (
         "notices/job-application-builder/LICENSE-STATUS.md",
@@ -472,7 +472,7 @@ def verify(package: Path) -> dict[str, object]:
     if set(record_by_id) != EXPECTED_ROOTS:
         findings.append("release manifest skill record inventory differs from the packaged roots")
     for skill_id in sorted(EXPECTED_ROOTS):
-        zip_path = zips_root / f"{skill_id}-3.1.3.zip"
+        zip_path = zips_root / f"{skill_id}-3.1.4.zip"
         if not zip_path.is_file():
             findings.append(f"missing Claude skill ZIP: {skill_id}")
             continue
@@ -495,7 +495,7 @@ def verify(package: Path) -> dict[str, object]:
         actual_payload_tree = tree_digest(codex_plugin / "skills" / skill_id)
         if record.get("payload_tree") != actual_payload_tree:
             findings.append(f"release manifest skill payload-tree mismatch: {skill_id}")
-        if record.get("claude_zip") != f"claude/zips/{skill_id}-3.1.3.zip":
+        if record.get("claude_zip") != f"claude/zips/{skill_id}-3.1.4.zip":
             findings.append(f"Claude skill ZIP path record mismatch: {skill_id}")
         if record.get("claude_zip_sha256") != sha256_file(zip_path):
             findings.append(f"Claude skill ZIP hash record mismatch: {skill_id}")

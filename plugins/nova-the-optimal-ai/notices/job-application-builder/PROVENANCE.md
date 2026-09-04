@@ -1,6 +1,6 @@
 # Provenance
 
-Job Application Builder was independently authored for a private Nova Emergent source edition. Its exact inclusion in Nova Free 3.1.3 is authorized by INCLUSION-NOTICE.md and the containing product license.
+Job Application Builder was independently authored for a private Nova Emergent source edition. Its exact inclusion in Nova Free 3.1.4 is authorized by INCLUSION-NOTICE.md and the containing product license.
 
 ## Product authority
 

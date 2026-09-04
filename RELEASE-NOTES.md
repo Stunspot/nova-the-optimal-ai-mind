@@ -1,5 +1,9 @@
 # Nova the Optimal AI Free release notes
 
+## 3.1.4 — version-only reissue
+
+Reissues the current 3.1.3 contents under a new version so the distribution update can be applied again. Only release identity, version references, packaging metadata, and their checksums change. Agent behavior, persona, capabilities, component versions, and runtime code remain unchanged.
+
 ## 3.1.3 — pragmatic skepticism without the probability cosplay
 
 This is the first versioned release of the completed Model Agnosticism architecture. MIND 0.3.1 remains Nova's edition-invariant cognitive substrate: ordinary work uses qualitative, proportionate skepticism, preserves plausible alternatives, distinguishes observation from interpretation, and reframes when the available models stop fitting. It creates no ambient proposition ledger, mandatory rival list, or decorative numerical overhead.

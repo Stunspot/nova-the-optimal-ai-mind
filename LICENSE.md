@@ -24,7 +24,7 @@ This grant permits an authentic, unmodified Nova the Optimal AI Free release—o
 
 ## Included components and existing grants
 
-This product-level grant covers Collaborative Dynamics and Sam Walker materials included in the authentic Nova the Optimal AI Free 3.1.3 distribution where they own the relevant rights. It supplies the public-edition authorization for those included bytes; it does not make a separate private construction source or standalone customer package public.
+This product-level grant covers Collaborative Dynamics and Sam Walker materials included in the authentic Nova the Optimal AI Free 3.1.4 distribution where they own the relevant rights. It supplies the public-edition authorization for those included bytes; it does not make a separate private construction source or standalone customer package public.
 
 Some components also carry preserved MIT, CC BY 4.0, or split MIT and CC BY-ND 4.0 grants. Those existing permissions continue to apply and are not narrowed by this license. `THIRD-PARTY-NOTICES.md` identifies the material exceptions and the component notice files that must remain with the distribution.
 

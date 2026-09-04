@@ -25,7 +25,7 @@ This is the primary integrated route.
 6. Start a new task so Codex can discover the installed skills.
 7. Verify Omnara using [Verify discovery](#verify-discovery) and [Verify invocation](#verify-invocation).
 
-Nova the Optimal AI Free 3.1.3 adds no Python, local-model, hook, or MIND-database requirement for ordinary work. OMNARA's live research campaigns still depend on whatever browsing, file, and citation tools the active host exposes.
+Nova the Optimal AI Free 3.1.4 adds no Python, local-model, hook, or MIND-database requirement for ordinary work. OMNARA's live research campaigns still depend on whatever browsing, file, and citation tools the active host exposes.
 
 ## Claude-compatible skill host
 
