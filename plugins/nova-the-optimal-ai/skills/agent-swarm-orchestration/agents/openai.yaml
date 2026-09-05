@@ -1,6 +1,6 @@
 interface:
   display_name: "Agent Swarm Orchestration"
-  short_description: "🐝 Design and adapt accountable agent organizations."
+  short_description: "🐝 Coordinate agents, shared work, and synthesis."
   default_prompt: "Use $agent-swarm-orchestration to shape the temporary organization this work needs, compile its next phase into a safe execution regime, and adapt it from evidence."
 
 policy:

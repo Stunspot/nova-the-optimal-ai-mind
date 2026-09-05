@@ -1,4 +1,4 @@
 interface:
   display_name: "Cognitive Continuity"
-  short_description: "🧵 Cognitive continuity across tasks."
+  short_description: "🧵 Governed memory, Worldline, and failure recall."
   default_prompt: "Use $cognitive-continuity to inspect the available state, compile what this task needs, and continue without inventing continuity."

@@ -115,7 +115,7 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
             "package": {
                 "relative_root": "cognitive-continuity",
                 "file_count": 73,
-                "tree_sha256": "c632d0656c1b04ac493f40cceceafc46fb4df3b150626c54ef00679a21cef5be",
+                "tree_sha256": "123de6702abcf37a4400fbefb32e18fa8a84b123cc0536ab967fcee0dd27b27f",
             },
         },
     },

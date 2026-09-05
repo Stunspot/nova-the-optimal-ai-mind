@@ -1,6 +1,6 @@
 ---
 name: agent-swarm-orchestration
-description: "🐝 Design, coordinate, and adapt temporary agent organizations: contributions, relations, information flow, authority, execution, synthesis, and change."
+description: "🐝 Coordinate agents, shared work, and synthesis."
 ---
 
 # Design the organization the work needs

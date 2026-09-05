@@ -2,9 +2,13 @@
 
 Use this doctrine before hosted CI, device or browser farms, paid cloud tests, and any verification route constrained by an allowance, credit balance, spending limit, or finite reservation.
 
+Use provider-hosted execution only when the provider boundary is itself under test or an already-authorized acceptance contract requires it. Otherwise prefer the smallest credible local, clean-host, self-hosted, or batched substitute and state the exact guarantee it does not establish. Retain duplicate triggers only when each supplies decision-relevant evidence.
+
+Complete the [required response template](../../assets/templates/metered-verification-response.md) from the observed case. It is the response contract, not an optional example. State the capacity classification and dispatch decision before any command.
+
 ## Capacity record
 
-Capture a fresh, attributable snapshot before proposing execution:
+Capture a current, attributable snapshot from an authoritative provider API, provider UI, or identified operator observation before proposing execution:
 
 - provider and account or organization boundary;
 - observation time, evidence source, and a validity deadline no more than 60 minutes later;
@@ -31,6 +35,8 @@ Represent each expanded job in the input to `scripts/assess_metered_verification
 
 ## Decision
 
+Run `scripts/assess_metered_verification.py` against the recorded snapshot and complete plan. A hold blocks automatic invocation; the assessor never grants spend authority.
+
 - `PROCEED`: observed included capacity covers the estimate and reserve.
 - `HOLD_RESERVE`: the run fits only by consuming the retained reserve.
 - `HOLD_INSUFFICIENT`: observed capacity cannot cover the run.
@@ -42,7 +48,7 @@ Only `PROCEED` permits automatic invocation. The assessor is advisory and cannot
 
 Do not fabricate a `paid_overage_authorization` field, set an override flag, or offer a dispatch command after `AUTHORITY_REQUIRED_PAID`. The assessor rejects caller-supplied authority fields. Its output is an input to a later human decision, never the decision itself. A request to the principal must bound the decision to the exact run, maximum paid minutes, maximum monetary spend when price data is available, billing scope, and expiry; “authorize paid overage” by itself is a blank cheque, not a bounded request.
 
-Report the preflight under five headings: `Capacity`, `Expansion`, `Decision`, `Substitute`, and `Authority`. Under `Expansion`, write `triggers × matrix jobs × attempts × ceiling minutes × provider multiplier = estimated billed minutes`. Report the multiplier as an observed value or explicitly as `unknown`; when it is unknown, state the raw runner-minute total through the ceiling term and do not call the preceding job-attempt count minutes. On any hold, `Substitute` is not optional: name a credible lower-cost or unmetered route, then write `This substitute does not prove:` and name the provider runner/image, trigger/matrix, permission/secret, artifact, and status-integration guarantees absent from the acceptance claim. If the current host cannot execute the substitute, describe a local, clean-host, self-hosted, or batched route generically as `PREPARED — NOT EXECUTED` and name the missing capability; absence is an evidence boundary, not permission to omit the route. Do not invent a local command or path that repository evidence has not established. Keep the response concise and state only the final calculation rather than exposing internal deliberation.
+Report the preflight under these five headings exactly once: `Capacity`, `Expansion`, `Decision`, `Substitute`, and `Authority`. Under `Expansion`, write `triggers × matrix jobs × attempts × ceiling minutes × provider multiplier = estimated billed minutes`. Report the multiplier as an observed value or explicitly as `unknown`; when it is unknown, state the raw runner-minute total through the ceiling term and do not call the preceding job-attempt count minutes. On any hold, `Substitute` is not optional: name a credible lower-cost or unmetered route, then write `This substitute does not prove:` and name the provider runner/image, trigger/matrix, permission/secret, artifact, and status-integration guarantees absent from the acceptance claim. If the current host cannot execute the substitute, describe a local, clean-host, self-hosted, or batched route generically as `PREPARED — NOT EXECUTED` and name the missing capability; absence is an evidence boundary, not permission to omit the route. Do not invent a local command or path that repository evidence has not established. Keep the response concise and state only the final calculation rather than exposing internal deliberation.
 
 Copy supplied snapshot facts exactly. Never turn “valid for another 25 minutes” into a guessed observation timestamp or a different deadline. Always calculate and state:
 

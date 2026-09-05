@@ -1,6 +1,6 @@
 ---
 name: cognitive-continuity
-description: "🧵 Preserve governed state across tasks. Use for Worldline resume/status/checkpoint/inspect and Faultline Error Neighborhood evidence, correction, forgetting, transfer, or audit."
+description: "🧵 Governed memory, Worldline, and failure recall."
 ---
 
 # Cognitive Continuity

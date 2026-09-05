@@ -21,7 +21,7 @@ Status reports Cognitive Continuity read support and mutation support separately
 
 Persistent Nova-owned state is optional for ordinary work and required before Nova writes durable continuity, project, people, reminder, or deliberate general-note and capture records. Run `plan` with the intended absolute root and show its proposed root, selectors, directories, and existing-state result. Default to the operating system's per-user application-data location outside `.codex`; accept another customer-controlled absolute path.
 
-Obtain explicit confirmation immediately before `init`. Initialization is transactional: it publishes the estate only after Cognitive Continuity, an empty generation-zero Commonplace, a bound empty Concordance, and every registry artifact are complete, and it removes staging residue if any service initialization fails. It never overwrites an existing root, selector registry, or Continuity workspace.
+Bind `init` to the user-authorized root and setup scope. When that exact setup is already authorized and the plan fits it, proceed; otherwise show the consequential choice and obtain its authorization before initialization. Initialization is transactional: it publishes the estate only after Cognitive Continuity, an empty generation-zero Commonplace, a bound empty Concordance, and every registry artifact are complete, and it removes staging residue if any service initialization fails. It never overwrites an existing root, selector registry, or Continuity workspace.
 
 One exception repairs the known Nova Free v1.0.0 macOS failure footprint automatically. If the root contains only the exact empty Corkboard, Dunbar, and Project Management directories left before Continuity rejected initialization—and no registry, manifest, Continuity manifest, or unknown file—status reports legacy_1_0_0_partial and a retry replaces that revalidated empty residue with the completed estate. Any unknown content stops repair and remains untouched.
 
@@ -54,7 +54,7 @@ Before persistence setup, confirm that Python 3.10 or newer is already available
 
 ## Upgrade an existing estate
 
-A status of `upgrade_required` means the registry lacks a required selector. Run `plan` against the same root, show the proposed change, obtain explicit confirmation, then run:
+A status of `upgrade_required` means the registry lacks a required selector. Run `plan` against the same root and show the proposed change. Proceed when the existing authorization covers this exact additive upgrade; ask only for a new or unresolved scope, data-custody, or destructive change before running:
 
 ```text
 python -B -X utf8 scripts/nova_estate.py upgrade --root "<existing absolute root>"
@@ -74,6 +74,6 @@ It uses the same registry-backed launcher. Worldline never writes; a checkpoint 
 
 ## Update, roll back, or remove
 
-Use the package's `SUPPORT.md`, `START-HERE.md`, and `CHANGELOG.md`. Record the active product version, marketplace source, plugin state, and Nova data root before changing them. Preserve user data and other capabilities by default. Replacing plugin bytes, changing the current-estate pointer, applying Windows environment convenience, upgrading stores, deleting stores, and removing external exports are separate actions requiring separate authority.
+Use the package's `SUPPORT.md`, `START-HERE.md`, and `CHANGELOG.md`. Record the active product version, marketplace source, plugin state, and Nova data root before changing them. Preserve user data and other capabilities by default. Track the authority for replacing plugin bytes, changing the current-estate pointer, applying Windows environment convenience, upgrading stores, deleting stores, and removing external exports against the actual request. Carry already-authorized actions through completion; obtain new authority only for materially new scope, data custody, or destructive effects.
 
 Finish with the product result, observed evidence boundary, and smallest next move. Keep internal diagnostics backstage unless they help the user recover.

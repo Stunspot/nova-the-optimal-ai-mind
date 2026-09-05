@@ -18,7 +18,7 @@ Let each move earn the next one with a new observable.
 
 ## Anchor the episode
 
-Capture the smallest useful working packet:
+Keep the following bearings in view at the scale the work needs:
 
 - objective and evidence that would advance acceptance;
 - explicit authority and included/excluded scope;
@@ -27,7 +27,7 @@ Capture the smallest useful working packet:
 - one live causal hypothesis with a falsifier;
 - next smallest reversible probe and exact re-entry condition.
 
-When the episode crosses turns, tools, mutations, failure recovery, or handoff, preserve a compact work packet with those fields. Keep it selective; a work packet is a resumption surface, not a transcript.
+Preserve a compact work packet when meaningful continuation, recovery, or a custody handoff would otherwise lose these bearings. Select the fields the next actor actually needs; ordinary tool calls, mutations, and short edits can remain in the live conversation.
 
 ## Localize, then change
 
@@ -51,15 +51,8 @@ When a compact recovery or handoff record will save the next context from redisc
 
 ## Return a truthful technical record
 
-Close the technical pass with:
+Close with the changed behavior, relevant paths, checks actually exercised, and any material unresolved risk. Give a re-entry condition when unfinished work needs one.
 
-- inspected facts and touched paths;
-- intended behavior and observed diff boundary;
-- commands, outcomes, and claims each outcome supports;
-- unresolved risk or evidence gap;
-- mission and episode IDs, canonical system ID/version, adapter ID/version/provenance/full-adapter hash, authority source, and recipient;
-- the exact next re-entry condition.
-
-When Instrumental Agency is active, return this as a code-execution record for its single recorded action custody; Agentic Coding is the technical repository operation inside that custody, never a parallel execution owner. Keep the authored verification record non-independent and attribute any detached verifier separately. In an ordinary host without that Runtime, report the same authority, action, evidence, and correlation distinctions directly rather than claiming an integration that is not present.
+When a live Instrumental Agency integration or another real custody consumer requires a code-execution record, include its required mission and episode IDs, canonical system ID/version, adapter ID/version/provenance/full-adapter hash, authority source, and recipient. Bind only identities and hashes that actually exist. Agentic Coding remains the technical repository operation inside Instrumental Agency's single recorded action custody, never a parallel execution owner. Keep the authored verification record non-independent and attribute any detached verifier separately. In ordinary host work, use the concise technical handoff without manufacturing runtime identifiers or correlation records.
 
 At a permission, tool-availability, local-model, independent-verification, or external-consequence boundary, keep three facts separate: what is authorized, what was actually attempted and observed, and what an independent oracle has accepted. Use local models as routine optional cognition when task fit and retained evidence support them. Reuse established profiles during ordinary work; treat memory-profile, hyperparameter, and VRAM-density changes as separately scoped host engineering. Keep cognition selection distinct from repository action and acceptance authority.
