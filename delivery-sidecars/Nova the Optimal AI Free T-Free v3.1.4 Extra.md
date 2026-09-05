@@ -39,6 +39,8 @@ Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-
 
 # Changelog
 
+v3.1.4 maintenance - Reduced routine paperwork, honored existing authorization, and refreshed skill routing.
+
 v3.1.4 - Version-only reissue of the current 3.1.3 contents so the distribution update can be applied again; no changes to agent behavior, persona, capabilities, component versions, or runtime code.
 
 v3.1.3 - Released the completed Model Agnosticism architecture under a forward product version; retained ambient qualitative skepticism without proposition bookkeeping; retained gated Trellis 1.1.0 evidence-update and assumption-stress arithmetic with explicit provenance, fit, zero, underflow, and authority boundaries; retained Agent Striving 0.4.0 and Mission Capsule v2; and synchronized source, packages, sidecars, shelves, and release identity without changing estate schemas or ordinary runtime requirements.
