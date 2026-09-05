@@ -36,7 +36,7 @@ Every detachable folder and ZIP carries a nova-free-rights directory with the pr
 
 ## Optional persistent state
 
-Talk to Nova immediately without setup. Configure the Nova estate only when durable Continuity, project records, Commonplace notes, people context, or reminders are actually wanted. Nova Operations first plans the exact customer-controlled root, then asks for confirmation before initialization. It never stores Nova-owned state under .codex.
+Talk to Nova immediately without setup. Configure the Nova estate only when durable Continuity, project records, Commonplace notes, people context, or reminders are actually wanted. Nova Operations first plans the exact customer-controlled root, then initializes when the existing authorization covers that exact setup; it asks only when the root or setup scope still needs authorization. It never stores Nova-owned state under .codex.
 
 Python 3.10 or newer must already be available for deterministic persistent services. The package does not silently install or replace Python.
 
