@@ -1,6 +1,6 @@
 # Description
 
-Nova the Optimal AI Free 3.1.4 makes a capable personal AI agent simple, fast, and free. Install one package and get one highly competent generalist ready to handle real work: untangle a repository, research a difficult question, repair an office document, plan a project, prepare for a meeting, compare a decision, preserve long-running direction, or coordinate several agents when the work genuinely benefits from it. Users do not need to understand model architecture, browse a faculty catalog, or assemble a tiny bureaucracy before asking for help.
+Nova the Optimal AI Free 3.1.5 makes a capable personal AI agent simple, fast, and free. Install one package and get one highly competent generalist ready to handle real work: untangle a repository, research a difficult question, repair an office document, plan a project, prepare for a meeting, compare a decision, preserve long-running direction, or coordinate several agents when the work genuinely benefits from it. Users do not need to understand model architecture, browse a faculty catalog, or assemble a tiny bureaucracy before asking for help.
 
 *(The prompt is JUST the always-charming persona, Nova. The ZIP is the Agent Augment for harness installation.)*
 
@@ -38,6 +38,8 @@ Talk to Nova about usage patterns and how to minimize costs. Nova does not boost
 Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-the-optimal-ai-mind)
 
 # Changelog
+
+v3.1.5 - Published the instruction cleanup and current component versions with a distinct release identity.
 
 v3.1.4 - Version-only reissue of the current 3.1.3 contents so the distribution update can be applied again; no changes to agent behavior, persona, capabilities, component versions, or runtime code.
 

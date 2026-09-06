@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 2.0.0 - 2026-09-05
+
+- Mark removal of the shipped assessor JSON `plan_sha256` field as a compatibility break; callers must stop requiring it.
+- Move mandatory metered-verification detail behind the existing conditional reference without weakening capacity or spend safeguards.
+- Give the accepted source and both independently packaged skills a new 2.0.0 release identity; restore original 1.1.7 assets and preserve its tag.
 
 - Defer verification-manifest assembly until the evidence reaches a stable cutoff.
 - Prohibit custody checksums, release archives, and package or release receipts until verdict and independent review are complete.

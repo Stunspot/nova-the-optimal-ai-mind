@@ -2,7 +2,7 @@
   "format": "cd-agentic-coding-adapter/v1",
   "name": "agentic-coding",
   "adapter_id": "cd.adapter.agentic-coding",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "canonical_system": {
     "id": "cd.agentic-coding-system",
     "name": "agentic-coding-system",

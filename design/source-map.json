@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.4",
+  "product_version": "3.1.5",
   "records": [
     {
       "id": "nova",
@@ -170,19 +170,14 @@
     {
       "id": "software-verification",
       "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "ce19f5f91bec96cedb497311757e0656ffaef718",
+      "source_commit": "972e71965a3c2eb23bf6e2153280fd76fd29b246",
       "source_path": "testforge/skills/software-verification",
-      "source_version": "1.1.7 metadata branch",
+      "source_version": "2.0.0",
       "selection": [
         "complete maintained skill root"
       ],
-      "edition_overlays": [
-        "SKILL.md: narrow metered-preflight relocation and concise metadata; prior Free doctrine retained",
-        "references/core/metered-verification.md: exact relocated guidance from TestForge commit 73f650e"
-      ],
-      "source_state": "checked_out_unmerged_metadata_branch",
-      "maintenance_source_commit": "73f650e441fa73b543cfc5140997a784ab41d174",
-      "maintenance_scope": "Same-version metered disclosure and/or routing metadata only; preserve previously integrated capability body."
+      "edition_overlays": [],
+      "source_state": "git_commit"
     },
     {
       "id": "it-work-reviewer",
@@ -285,9 +280,9 @@
     {
       "id": "agentic-coding",
       "source_repository": "https://github.com/Stunspot/agentic-coding",
-      "source_commit": "52b94add9e0a9eabe29068029f573114770338ac",
+      "source_commit": "806961d312fbd2b96f2f0f2517c107b2d4d6f827",
       "source_path": ".",
-      "source_version": "",
+      "source_version": "adapter 0.1.1 / canonical system 0.1.0",
       "selection": [
         "SKILL.md",
         "adapter-manifest.json",
@@ -299,22 +294,22 @@
     {
       "id": "agent-swarm-orchestration",
       "source_repository": "https://github.com/Stunspot/agent-swarm-orchestration",
-      "source_commit": "ba615ace3baed6b809cc15930b8375794ee72f87",
+      "source_commit": "ebca102c56a6db8b24fdfcb82f99e92f02f62d60",
       "source_path": "canonical/skills/agent-swarm-orchestration",
-      "source_version": "0.3.0",
+      "source_version": "0.3.1",
       "selection": [
         "complete canonical skill tree"
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "dd5c2b535a5d3068a23bba04a84d187c8a550b13",
+      "source_commit_tree": "b3c7644bcea67cf3bc3a31f1eb4b035cfaf2cf39",
       "source_git_tree": "36048b435c65311fcc8602ecd86e7db7cfe374fb",
       "source_file_count": 26,
       "source_tree_sha256": "62875296959f3ac6bcfbfc8f7222b10b6293446d33b8de3d097709471cb04732",
-      "source_archive": "release-assets/v0.3.0/Skill-agent-swarm-orchestration-v0.3.0.zip",
+      "source_archive": "release-assets/v0.3.1/Skill-agent-swarm-orchestration-v0.3.1.zip",
       "source_archive_sha256": "95a8e2ee3abc28d7a028bc0240bcd00b6bc401103a4e3ebe92362a34126c8316",
       "notice_file_count": 6,
-      "notice_tree_sha256": "a1a3bdbfde3c97af9aa8de7722aa48bfd49f51f7aa2275654d47a3d497257c52"
+      "notice_tree_sha256": "3728d29f3cf5fc278460214fe4946cb128b232ac7083c925a448751a82561102"
     },
     {
       "id": "agent-striving",
@@ -335,9 +330,9 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "543e2ad4bb32ffdfca8fb2d232b7aaa207dc3117",
+      "source_commit": "416f150ed9aab9c8decbc0a7e73aa5c16ab52ce7",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
-      "source_version": "0.2.4",
+      "source_version": "0.2.5",
       "selection": [
         "SKILL.md",
         "adapters/",
@@ -362,7 +357,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.4 edition binding",
+      "source_version": "1.0.4 with Free 3.1.5 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -418,16 +413,14 @@
     {
       "id": "verification-reviewer",
       "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "ce19f5f91bec96cedb497311757e0656ffaef718",
+      "source_commit": "972e71965a3c2eb23bf6e2153280fd76fd29b246",
       "source_path": "testforge/skills/verification-reviewer",
-      "source_version": "1.1.7 metadata branch",
+      "source_version": "2.0.0",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "checked_out_unmerged_metadata_branch",
-      "maintenance_source_commit": "73f650e441fa73b543cfc5140997a784ab41d174",
-      "maintenance_scope": "Same-version metered disclosure and/or routing metadata only; preserve previously integrated capability body."
+      "source_state": "git_commit"
     }
   ],
   "notices": [

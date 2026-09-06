@@ -1,16 +1,16 @@
 # Component and third-party notices
 
-Nova the Optimal AI Free 3.1.4 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
+Nova the Optimal AI Free 3.1.5 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
 
 ## TestForge
 
-Software Verification and Verification Reviewer are copied byte-for-byte from the maintained TestForge snapshot at https://github.com/Stunspot/testforge commit `ce19f5f91bec96cedb497311757e0656ffaef718`. That snapshot describes itself as TestForge 1.1.7 plus three post-tag commits; it is not the v1.1.7 tag byte-for-byte.
+Software Verification and Verification Reviewer are copied byte-for-byte from TestForge 2.0.0 at https://github.com/Stunspot/testforge commit `972e71965a3c2eb23bf6e2153280fd76fd29b246`. Version 2.0.0 gives the current CLI output contract its own major release identity; the assessor no longer emits the old `plan_sha256` field.
 
 TestForge uses a split license: deterministic software and machine-readable schemas are MIT; other authored Augment material is CC BY-ND 4.0. Its exact license, notice, attribution, trademark, provenance, and changelog files ship in the complete plugin under `notices/testforge` and beside a detached skill under `nova-free-rights/component-notices/testforge`. Nova Free does not modify either TestForge skill root.
 
 ## Agent Swarm Orchestration
 
-Agent Swarm Orchestration is copied byte-for-byte from https://github.com/Stunspot/agent-swarm-orchestration commit `31ab913afb4981daf7b2aa1d70687e90118183fc`, canonical Git tree `09427273782c4ae24ef46d7367fca386df4a7c7a`, and accepted 0.3.0 runtime fingerprint `ec4fd5afdee16512cb1561639521844d07a11300975633447766e419bc8886ca`.
+Agent Swarm Orchestration is copied byte-for-byte from https://github.com/Stunspot/agent-swarm-orchestration commit `ebca102c56a6db8b24fdfcb82f99e92f02f62d60`, canonical Git tree `36048b435c65311fcc8602ecd86e7db7cfe374fb`, and version 0.3.1 runtime fingerprint `62875296959f3ac6bcfbfc8f7222b10b6293446d33b8de3d097709471cb04732`.
 
 Its deterministic software and schemas are MIT; other authored Augment material is CC BY-ND 4.0. Its exact license, terms, data and privacy terms, attribution, provenance, and trademark files ship in the complete plugin under `notices/agent-swarm-orchestration` and beside the detached skill under `nova-free-rights/component-notices/agent-swarm-orchestration`. Nova Free does not modify this skill root.
 
@@ -22,9 +22,9 @@ Agent Striving has prior Free MIT distribution. The Beryl operator and reviewer 
 
 ## Same-owner public-edition authorization
 
-Collaborative Dynamics authorizes the exact Nova Free 3.1.4 inclusion of Nova with MIND 0.3.1, Nova Operations, AnswerLayer 0.1.2, Current Intelligence Observatory 0.1.1, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
+Collaborative Dynamics authorizes the exact Nova Free 3.1.5 inclusion of Nova with MIND 0.3.1, Nova Operations, AnswerLayer 0.1.2, Current Intelligence Observatory 0.1.1, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
 
-This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.1.4 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
+This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.1.5 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
 
 AnswerLayer and Current Intelligence Observatory carry explicit Nova Free license metadata overlays recorded in `design/source-map.json`. The career pair's source lineage and edition-specific authorization are recorded in the complete plugin under `notices/job-application-builder` and `notices/interview-trainer`, and beside detached skills under the matching `nova-free-rights/component-notices` directories.
 
@@ -38,4 +38,4 @@ Other included Collaborative Dynamics components retain their source-repository 
 
 ## Distribution and publication boundary
 
-The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.1.4 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.
+The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.1.5 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.

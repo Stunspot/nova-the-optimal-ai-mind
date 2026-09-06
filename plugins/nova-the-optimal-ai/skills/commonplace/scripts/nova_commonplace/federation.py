@@ -109,13 +109,13 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
                 {
                     "module": "workspace_runtime",
                     "relative_path": "cognitive-continuity/scripts/workspace_runtime.py",
-                    "sha256": "79d99c8a5acf8430e4a41ad50fc3d1fcedb14e6691c4b2f2e95137423b1c67ea",
+                    "sha256": "50679c37e893235ff066017772c7d39696d07c5328d71334d88c0001a416f895",
                 },
             ],
             "package": {
                 "relative_root": "cognitive-continuity",
                 "file_count": 73,
-                "tree_sha256": "123de6702abcf37a4400fbefb32e18fa8a84b123cc0536ab967fcee0dd27b27f",
+                "tree_sha256": "28d178f6b902a1a58f77347d852c85c523cdba8a1ef6ee32b849b97767edfc8d",
             },
         },
     },
