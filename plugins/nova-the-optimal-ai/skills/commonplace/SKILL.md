@@ -46,6 +46,8 @@ Giles owns file inventory, authority, provenance, and disposition. Dex owns gove
 
 ## Inspect time honestly
 
+Read a returned statement together with its declared valid time, recording time, revision, supersession and relevant context. A current saved record can describe a historical fact; saving a statement recently does not make its claim current. When the answer depends on a change, retrieve the source-linked sequence and preserve the distinction between the user's wording and your interpretation.
+
 Use `history` to inspect authenticated revisions and `as-of` for one generation or timestamp. A forget boundary intentionally makes older content unavailable; never treat that as a missing index to repair. Declared valid time is evidence attached to a record, not proof that the world was actually so.
 
 ## Propose; never smuggle a write

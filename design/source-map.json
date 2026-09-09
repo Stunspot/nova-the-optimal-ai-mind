@@ -41,17 +41,19 @@
     {
       "id": "rupert-giles-knowledge-steward",
       "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
-      "source_commit": "71ce7f81977d6ccf77c6fa5aeeb67fd101cd0681",
+      "source_commit": "3315ed5de53506d16017661d6bb876f5edb57a3e",
       "source_path": ".",
       "source_version": "",
       "selection": [
         "SKILL.md",
         "agents/openai.yaml",
-        "assets/knowledge-estate-ledger.template.md",
-        "references/stewardship-doctrine.md"
+        "references/stewardship-doctrine.md",
+        "references/retrieval-and-compilation.md",
+        "assets/knowledge-estate-ledger.template.md"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit"
+      "source_state": "git_commit",
+      "source_commit_tree": "79ffa7a733427f2dd55b14983f9b52b3ef58d49f"
     },
     {
       "id": "retrieval-reviewer",
@@ -330,7 +332,7 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "416f150ed9aab9c8decbc0a7e73aa5c16ab52ce7",
+      "source_commit": "2ad8d8808af2bdada7bbb8a57eafdd062818033a",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
       "source_version": "0.2.5",
       "selection": [
@@ -350,7 +352,8 @@
         "adapters/claude-code.md",
         "examples/dream-incubation.md"
       ],
-      "source_state": "git_commit"
+      "source_state": "git_commit",
+      "source_commit_tree": "e2fb2e063b1f5804618d3841d803a7b2738c7949"
     },
     {
       "id": "nova-operations",
@@ -373,16 +376,21 @@
     {
       "id": "commonplace",
       "source_repository": "https://github.com/Stunspot/nova-commonplace",
-      "source_commit": "f5651627252c23cf55913999485524ac02836dbb",
+      "source_commit": "7c45e4f161294826dd55486c540b91f57acf2d20",
       "source_path": "selected runtime: SKILL.md, agents/, references/, scripts/",
       "source_version": "0.2.0",
       "selection": [
-        "complete accepted Nova Emergent 1.0.4 runtime skill tree"
+        "SKILL.md",
+        "agents/",
+        "references/",
+        "scripts/"
       ],
       "edition_overlays": [
-        "scripts/nova_commonplace/federation.py: bind current embedded Continuity metadata and existing Free overlays"
+        "SKILL.md: preserve Nova Operations launcher guidance",
+        "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters"
       ],
-      "source_state": "git_commit"
+      "source_state": "git_commit",
+      "source_commit_tree": "566c2c9dc6714bef7ac56296a046227f101b8a01"
     },
     {
       "id": "dennis-stratton-project-management",

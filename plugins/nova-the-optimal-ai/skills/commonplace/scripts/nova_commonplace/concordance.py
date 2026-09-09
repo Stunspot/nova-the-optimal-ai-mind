@@ -2825,6 +2825,7 @@ def build_context_packet(
             )
             continue
 
+        canonical_record = json.loads(row["canonical_json"])
         original_text = f"{row['title']}\n{row['body']}"
         text, character_truncated = _truncate_chars(original_text, remaining)
         citations, citation_omission = _compact_citations(hit["citations"])
@@ -2833,6 +2834,12 @@ def build_context_packet(
             "revision": row["revision"],
             "text": text,
             "state": hit["state"],
+            "time": canonical_record.get("time", {}),
+            "recorded_at": canonical_record.get("created_at"),
+            "updated_at": canonical_record.get("updated_at"),
+            "supersedes": canonical_record.get("supersedes", []),
+            "superseded_by": canonical_record.get("superseded_by", []),
+            "interpretation": "Declared time and revision history qualify this saved statement; current lifecycle alone does not establish present truth.",
             "citations": citations,
             "canonical": False,
         }

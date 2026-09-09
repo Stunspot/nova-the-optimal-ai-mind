@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.1.5",
-  "source_map_sha256": "5747d95d2e81158e47b7f94916e72b84adf105b2911f27bfecc9df31f6d5cdb7",
+  "source_map_sha256": "ec6403809907cbc700706a42aa9109e28fa69c7c9b018682782e1903c049e069",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -116,7 +116,7 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "416f150ed9aab9c8decbc0a7e73aa5c16ab52ce7",
+      "source_commit": "2ad8d8808af2bdada7bbb8a57eafdd062818033a",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
       "source_version": "0.2.5",
       "selection": [
@@ -137,30 +137,36 @@
         "examples/dream-incubation.md"
       ],
       "source_state": "git_commit",
+      "source_commit_tree": "e2fb2e063b1f5804618d3841d803a7b2738c7949",
       "imported_path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity",
       "imported_tree": {
-        "file_count": 73,
-        "tree_sha256": "28d178f6b902a1a58f77347d852c85c523cdba8a1ef6ee32b849b97767edfc8d"
+        "file_count": 74,
+        "tree_sha256": "0312193535b8b25f5d666b07a763751601a83a40fbfde4d57569d3a053e5fbde"
       },
       "overlay_state": "edition_overlay"
     },
     {
       "id": "commonplace",
       "source_repository": "https://github.com/Stunspot/nova-commonplace",
-      "source_commit": "f5651627252c23cf55913999485524ac02836dbb",
+      "source_commit": "7c45e4f161294826dd55486c540b91f57acf2d20",
       "source_path": "selected runtime: SKILL.md, agents/, references/, scripts/",
       "source_version": "0.2.0",
       "selection": [
-        "complete accepted Nova Emergent 1.0.4 runtime skill tree"
+        "SKILL.md",
+        "agents/",
+        "references/",
+        "scripts/"
       ],
       "edition_overlays": [
-        "scripts/nova_commonplace/federation.py: bind current embedded Continuity metadata and existing Free overlays"
+        "SKILL.md: preserve Nova Operations launcher guidance",
+        "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters"
       ],
       "source_state": "git_commit",
+      "source_commit_tree": "566c2c9dc6714bef7ac56296a046227f101b8a01",
       "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
         "file_count": 16,
-        "tree_sha256": "6cd045b7c59700d9d2b6681058d32d9ef26a560e9d38476015c52026bf8e9737"
+        "tree_sha256": "a56b90d2deb2fb063cee7dc32a64173aeeb27407d50c68fe9fa5d0570b73a6c4"
       },
       "overlay_state": "edition_overlay"
     },
@@ -532,21 +538,23 @@
     {
       "id": "rupert-giles-knowledge-steward",
       "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
-      "source_commit": "71ce7f81977d6ccf77c6fa5aeeb67fd101cd0681",
+      "source_commit": "3315ed5de53506d16017661d6bb876f5edb57a3e",
       "source_path": ".",
       "source_version": "",
       "selection": [
         "SKILL.md",
         "agents/openai.yaml",
-        "assets/knowledge-estate-ledger.template.md",
-        "references/stewardship-doctrine.md"
+        "references/stewardship-doctrine.md",
+        "references/retrieval-and-compilation.md",
+        "assets/knowledge-estate-ledger.template.md"
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
+      "source_commit_tree": "79ffa7a733427f2dd55b14983f9b52b3ef58d49f",
       "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
       "imported_tree": {
-        "file_count": 4,
-        "tree_sha256": "c605f2c61f4e1677af26df1b4d870d7b18076fa6b62acc4e7d04e5094c15d656"
+        "file_count": 5,
+        "tree_sha256": "e4d157d24cd0a32de71a54d3c4ea7d5c25c5000eb557b1c7fd392baf9e633aab"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -588,8 +596,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 828,
-    "tree_sha256": "c37aee49c60ff7a603a0eef6c2645e532f6245b40a44c78078b0661c7c708f4f"
+    "file_count": 830,
+    "tree_sha256": "945931fd967791e5be0ada9dd5fdab2dd1e75f1d7206cb0cb8a7d483f8d6c0a4"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

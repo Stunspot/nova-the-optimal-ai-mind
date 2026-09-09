@@ -70,13 +70,20 @@ def score(record: dict[str, Any], task_words: set[str], ranked: dict[str, int]) 
 
 def render_record(record: dict[str, Any]) -> str:
     sources = ", ".join(record.get("source_ids", [])) or "none"
-    flags = []
-    if record.get("conflicts_with"):
-        flags.append("conflict: " + ", ".join(record["conflicts_with"]))
-    if record.get("valid_to"):
-        flags.append("valid to " + record["valid_to"])
-    suffix = f"; {'; '.join(flags)}" if flags else ""
-    return f"- **{record['id']}** {record['content']}  \n  Source: {sources}; authority: {record.get('authority')}; entitlement: {record.get('confidence')}{suffix}"
+    context = record.get("scope") or {}
+    scope_text = "; ".join(f"{key}={value}" for key, value in context.items() if value is not None)
+    flags = [f"status: {record.get('status', 'current')}",
+             f"effective from: {record.get('valid_from') or 'unspecified'}",
+             f"recorded: {record.get('recorded_at') or 'unspecified'}"]
+    for field, label in (("valid_to", "effective until"), ("expires_at", "expires")):
+        if record.get(field):
+            flags.append(label + ": " + str(record[field]))
+    for field, label in (("supersedes", "supersedes"), ("conflicts_with", "unresolved with"), ("derived_from", "derived from")):
+        if record.get(field):
+            flags.append(label + ": " + ", ".join(record[field]))
+    return (f"- **{record['id']}** {record['content']}  \n"
+            f"  Source: {sources}; authority: {record.get('authority')}; entitlement: {record.get('confidence')}  \n"
+            f"  Scope: {scope_text or 'unspecified'}; {'; '.join(flags)}")
 
 
 def compile_packet(root: Path, task: str, budget: int, ceiling: str, recent_count: int,
@@ -118,6 +125,7 @@ def compile_packet(root: Path, task: str, budget: int, ceiling: str, recent_coun
     eligible_episode_ids = {str(row["id"]) for row in eligible_episodes}
     candidates: list[dict[str, Any]] = []
     conflicted: list[str] = []
+    conflict_records: list[dict[str, Any]] = []
     for row in records:
         schema_valid = not catalog.validate(row, state_schema)
         allowed, reason, sanitized = evaluate_policy(
@@ -137,6 +145,7 @@ def compile_packet(root: Path, task: str, budget: int, ceiling: str, recent_coun
             )
             if conflict_allowed and conflict_sanitized is not None:
                 conflicted.append(str(conflict_sanitized["id"]))
+                conflict_records.append(conflict_sanitized)
             else:
                 omitted("conflicted_" + conflict_reason)
     by_id = {row["id"]: row for row in candidates}
@@ -171,19 +180,48 @@ def compile_packet(root: Path, task: str, budget: int, ceiling: str, recent_coun
     for label in dict.fromkeys(KIND_LABELS[kind] for kind in KIND_ORDER):
         if label in sections:
             lines.extend([f"## {label}", "", *sections[label], ""])
-    recent = eligible_episodes[-recent_count:] if recent_count else []
+    # Preserve the causal/source neighborhood of selected state before unrelated
+    # recent history. This is evidence for interpretation, never operative state.
+    selected_ids = {record["id"] for record in selected}
+    linked_conflict_ids = {ident for record in selected for ident in record.get("conflicts_with", [])}
+    relevant_conflicts = [record for record in conflict_records
+                          if record["id"] in linked_conflict_ids or selected_ids.intersection(record.get("conflicts_with", []))]
+    conflict_details = []
+    if relevant_conflicts:
+        lines.extend(["## Related unresolved evidence", "", "These claims remain conflicted. Neither statement is selected as operative authority.", ""])
+        for record in relevant_conflicts:
+            rendered = render_record(record)
+            if len("\n".join(lines)) + len(rendered) + 1 <= budget:
+                lines.append(rendered)
+                conflict_details.append(record["id"])
+            else:
+                budget_omitted.append(record["id"])
+    supporting_ids = {source_id for record in selected for source_id in record.get("source_ids", [])}
+    supporting = [episode for episode in eligible_episodes if episode["id"] in supporting_ids]
+    supporting.sort(key=lambda row: (str(row.get("recorded_at") or ""), str(row["id"])))
+    included_support = []
+    if supporting:
+        lines.extend(["## Evidence behind selected state", "", "Chronology and original context explain the selected statements; they do not reinstate superseded state or permission.", ""])
+        for episode in supporting:
+            rendered = f"- **{episode['id']}** [{episode.get('recorded_at')}; {episode['type']}; authority={(episode.get('source') or {}).get('authority')}] {episode['content']}"
+            if len("\n".join(lines)) + len(rendered) + 1 <= budget:
+                lines.append(rendered)
+                included_support.append(episode["id"])
+            else:
+                budget_omitted.append(episode["id"])
+    recent = [episode for episode in eligible_episodes if episode["id"] not in included_support][-recent_count:] if recent_count else []
     if recent:
         lines.extend(["## Recent episodes", "", "Source chronology only. These episodes do not override typed current state, permissions, or revocations.", ""])
         rendered_recent: list[dict[str, Any]] = []
         for episode in recent:
-            rendered = f"- **{episode['id']}** [{episode['type']}] {episode['content']}"
+            rendered = f"- **{episode['id']}** [{episode.get('recorded_at')}; {episode['type']}; authority={(episode.get('source') or {}).get('authority')}] {episode['content']}"
             if len("\n".join(lines)) + len(rendered) + 1 <= budget:
                 lines.append(rendered); rendered_recent.append(episode)
             else:
                 budget_omitted.append(episode["id"])
         recent = rendered_recent
         lines.append("")
-    lines.extend(["## Unresolved or omitted", "", f"- Eligible conflicted records: {', '.join(conflicted) if conflicted else 'none'}", f"- Eligible records omitted under budget: {', '.join(budget_omitted) if budget_omitted else 'none'}", "", "This packet is derived. Recompile when task, authority, environment, source reachability, or current state changes."])
+    lines.extend(["## Unresolved or omitted", "", f"- Eligible conflicted records: {', '.join(conflicted) if conflicted else 'none'}", f"- Eligible records omitted under budget: {', '.join(budget_omitted) if budget_omitted else 'none'}", "", "This packet is derived. Interpret effective time, recorded time, scope and relationships together; timestamps alone do not resolve conflict. Retrieve omitted supporting evidence when it could change the next action. Recompile when task, authority, environment, source reachability, or current state changes."])
     markdown = "\n".join(lines).rstrip() + "\n"
     metadata = {
         "format": "cd-compiled-context/v1", "created_at": utc_now(), "task": task, "scope": scope,
@@ -191,7 +229,8 @@ def compile_packet(root: Path, task: str, budget: int, ceiling: str, recent_coun
         "character_budget": budget, "characters_used": len(markdown),
         "compiler_mode": "semantic-ranked" if ranked_ids else "deterministic-degraded",
         "selected_ids": [row["id"] for row in selected], "recent_episode_ids": [row["id"] for row in recent],
-        "budget_omitted_ids": budget_omitted, "conflicted_ids": conflicted,
+        "budget_omitted_ids": list(dict.fromkeys(budget_omitted)), "conflicted_ids": conflicted,
+        "supporting_episode_ids": included_support, "conflict_detail_ids": conflict_details,
         "eligibility_policy": POLICY_ID, "eligibility_omission_counts": omission_counts,
     }
     if contains_secret_data(markdown) or contains_secret_data(metadata):

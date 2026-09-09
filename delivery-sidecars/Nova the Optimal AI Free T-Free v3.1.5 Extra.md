@@ -39,6 +39,8 @@ Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-
 
 # Changelog
 
+2026-09-09 local maintenance, v3.1.5 — Giles now preserves temporal, contextual, and relational meaning through knowledge compilation, with bounded maintenance and outcome-aware procedural reuse. Continuity compilation and Worldline retain relevant context and validity metadata; Commonplace returns declared time and supersession alongside statements. Existing owner stores and persistence formats remain in place.
+
 v3.1.5 - Published the instruction cleanup and current component versions with a distinct release identity.
 
 v3.1.4 - Version-only reissue of the current 3.1.3 contents so the distribution update can be applied again; no changes to agent behavior, persona, capabilities, component versions, or runtime code.

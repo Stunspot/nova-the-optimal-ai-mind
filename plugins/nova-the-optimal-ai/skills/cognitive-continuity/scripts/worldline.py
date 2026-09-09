@@ -132,6 +132,8 @@ def _item(row: dict[str, Any], episodes: dict[str, dict[str, Any]]) -> dict[str,
     return {
         "id": str(row["id"]), "kind": str(row.get("kind") or "state"),
         "statement": str(row.get("content") or ""), "recorded_at": row.get("recorded_at"),
+        "valid_from": row.get("valid_from"), "valid_to": row.get("valid_to"),
+        "expires_at": row.get("expires_at"), "scope": dict(row.get("scope") or {}),
         "authority": row.get("authority"), "confidence": row.get("confidence"),
         "source_ids": sources, "supersedes": sorted(row.get("supersedes") or []),
         "conflicts_with": sorted(row.get("conflicts_with") or []),

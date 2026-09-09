@@ -197,6 +197,16 @@ class WorldlineV2Tests(unittest.TestCase):
         }
 
 
+    def test_item_keeps_effective_time_and_scope_separate_from_record_time(self) -> None:
+        row = record("ST-time", "decision", "A scoped decision", ["EP-source"])
+        row["valid_from"] = "2026-08-01T00:00:00Z"
+        row["expires_at"] = "2026-09-01T00:00:00Z"
+        item = worldline._item(row, {})
+        self.assertEqual(item["valid_from"], "2026-08-01T00:00:00Z")
+        self.assertEqual(item["recorded_at"], AT)
+        self.assertEqual(item["expires_at"], row["expires_at"])
+        self.assertEqual(item["scope"], BASE_SCOPE)
+
     def test_100_plus_distractors_and_project_thread_isolation(self) -> None:
         target_scope = {**BASE_SCOPE, "project": "atlas", "thread": "thread-a"}
         episodes = [

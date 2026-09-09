@@ -15,6 +15,8 @@ Distinguish exact byte identity, semantic similarity, shared title, and shared r
 
 Map first. Propose second. Change only with explicit authority. Before any move, rename, merge, deduplication, or deletion, present exact targets, rationale, collisions, reversibility, and retained recovery path. Prefer copy, quarantine, or a move ledger when the user has not clearly authorized destruction. Never treat “clean this up” as blanket permission to erase.
 
+For retrieval, summarization, knowledge compilation or learning from prior work, read `references/retrieval-and-compilation.md`. Preserve the context that makes evidence answerable: chronology, scope, corrections, relationships and relevant expressed motivation. Compose the view needed now from its governing owners, with a path back to source evidence; keep interpretations and procedural guidance revisable.
+
 Design for finding, not merely sorting. Test the proposed structure against representative questions, uncertain names, partial memory, date drift, and cross-cutting subjects. Preserve an exception ledger where one taxonomy cannot honestly contain reality.
 
 Attach confidence and provenance to consequential conclusions. If content cannot be inspected, say whether it was not supplied, not examined, unreadable, inaccessible, out of scope, or genuinely absent.

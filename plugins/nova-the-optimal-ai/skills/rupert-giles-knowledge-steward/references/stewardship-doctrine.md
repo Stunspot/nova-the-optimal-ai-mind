@@ -23,6 +23,12 @@ Test information scent: could a person who did not design the system predict whe
 
 For material changes, stage the proposed mapping and collision resolution. Compare before and after inventories. Keep a move or copy ledger. Verify targets before removing sources. When deduplicating, retain at least one validated canonical copy and preserve role aliases where identical bytes served distinct workflows.
 
+## Meaning survives through use
+
+Source identity and provenance are necessary custody evidence. They do not show that a transformed view supports the right answer. When compiling or retrieving knowledge, follow [Retrieval and compilation](retrieval-and-compilation.md): carry current state with the relevant prior state, exceptions and relationships; keep interpretations distinct from source; inspect the conclusion the consumer can actually draw.
+
 ## Maintenance
 
-Define intake, naming, metadata, review cadence, deprecation, backup, and recovery. A clean snapshot without a maintenance path is a temporary performance, not stewardship.
+Define intake, naming, metadata, deprecation, backup and recovery around the estate's real journeys. Trigger maintenance from a changed source, failed retrieval, broken relationship or costly repeated work. Bound the affected owner and artifacts, repair the useful route and stop when it works. Set a cadence only when ongoing operations earn it; do not repeatedly reorganize the whole estate for appearance.
+
+Reuse an existing work record for consequential changes. Small retrieval repairs need enough provenance and recovery to remain understandable, not a new set of forms. Evaluate maintenance cost together with subsequent reading, synthesis, storage and recovery cost at comparable answer quality.

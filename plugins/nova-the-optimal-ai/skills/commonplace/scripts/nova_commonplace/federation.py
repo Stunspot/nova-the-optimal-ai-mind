@@ -94,7 +94,7 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
         },
         "Continuity": {
             "relative_path": _MODULE_PATHS["Continuity"],
-            "sha256": "9daf3a120220459d3151d39d55a412f62e3ef78b1915b180110132e4f4581266",
+            "sha256": "9c658e40f8a2eb1dfde50a30ccaa7aa58039bae1931b9c731d1f9231f6daa3e2",
             "dependencies": [
                 {
                     "module": "eligibility_policy",
@@ -114,8 +114,8 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
             ],
             "package": {
                 "relative_root": "cognitive-continuity",
-                "file_count": 73,
-                "tree_sha256": "28d178f6b902a1a58f77347d852c85c523cdba8a1ef6ee32b849b97767edfc8d",
+                "file_count": 74,
+                "tree_sha256": "0312193535b8b25f5d666b07a763751601a83a40fbfde4d57569d3a053e5fbde",
             },
         },
     },
