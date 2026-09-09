@@ -22,18 +22,18 @@ The complete customer package includes a Codex local marketplace, a Claude-compa
 
 # Usage Notes
 
-Copy the .zip from "Additional Files" to your Codex, Claude Code, or other harness, or add the .zip to a project knowledge base in Chat. Attach or reference the .zip in chat and say, "Install this Augment." The prompt in this post is optional.
+The prompt works like any other persona prompt.
 
-- Give Nova the real question in ordinary language; qualitative Model Agnosticism should appear only when it materially improves the work, without turning the conversation into paperwork.
-- When consequential sequential uncertainty has defensible formal inputs and could change the next move, Nova may invoke Trellis backstage; ask to see the assumptions, mappings, validation receipt, or arithmetic whenever you want to audit it.
+For the Agent, copy the .zip from "Additional Files" to your Codex, Claude Code, or other harness, or add the .zip to a project knowledge base in Chat. Attach or reference the .zip in chat and say, "Install this SKILL."
 
 Treat an `evidence_update` result as conditional evidence, not truth. Treat an `assumption_stress_test` result as scenario arithmetic, not a factual update. A posterior does not authorize an action or write state. Ordinary Model Agnosticism needs no Python or setup; the optional Trellis calculator requires Python 3.10 or newer already available to the harness.
 
-Persistent continuity, project records, Commonplace notes, people context, and reminders are optional and customer-controlled. Nova Operations plans the estate before writing, keeps Nova-owned state outside `.codex`, and requires Python 3.10 or newer only for those optional deterministic services. Neither persistence nor Trellis is activated merely by installation.
+Persistent continuity, project records, Commonplace notes, people context, and reminders are optional and customer-controlled. Nova Operations plans the estate before writing, keeps Nova-owned state outside `.codex`, and requires Python 3.10 or newer only for those optional deterministic services. Neither persistence nor Trellis is activated merely by installation. Tell Nova explicitly when a goal should remain durable. Correct, cancel, or release it normally; Agent Striving should not turn every passing intention into a pursuit. To save something, ask directly: “Remember this,” “Save this in my notebook,” or “Put this in my wiki.” To correct or forget something, identify the exact record and say what should change.
 
-Tell Nova explicitly when a goal should remain durable. Correct, cancel, or release it normally; Agent Striving should not turn every passing intention into a pursuit. To save something, ask directly: “Remember this,” “Save this in my notebook,” or “Put this in my wiki.” To correct or forget something, identify the exact record and say what should change.
+It is suggested that one starts by setting up c:\Nova\ (or other suitable directory) to act as Nova's unified storage estate. This helps avoid permissions issues with user profiles and Codex/Claude. "How?" Tell her to. "Nova, set up the c:\Nova\ directory to act as your unified storage estate."
 
-Talk to Nova about usage patterns and how to minimize costs. Nova does not boost token usage by magic, but she does let the model do considerably more and is rigorous about it. If you are not mindful, it is easy to spend resources on the equivalent of a diamond-encrusted, gold-plated toilet plunger designed by Steve Jobs. It WILL flush when done, though. Watch especially for testing loops: occasionally fixing a bookkeeping receipt problem creates another because of the model's specific proximate choice—mopping the floor with muddy boots. Tell her to stop if you notice it. AI is never 100%.
+Talk to Nova about usage patterns, what your accounts are like, and how to best minimize costs. Nova doesn't boost token usage per se, but she does let the model do a LOT more and is very rigorous. If you aren't being mindful, it's easy to spend your resources on the equivalent of a diamond-encrusted gold-plated toilet plunger designed by Steve Jobs in order to deal with a clog. (It WILL flush when done, though!) Nova has an entire skill for Cognitive Cost Optimization and will tell you what's what. TestForge policies in particular should be considered if there are issues. And watch for testing loops. The current models can occaisionally get in a situation where fixing a bookkeeping receipt problem causes a different one because of it's specific proximate choice. "Mopping the floor with muddy boots." is how I think of it. Just tell her to stop if you notice it. There's good mechanisms to avoid all this, but AI is never 100%.
+Public GitHub Repo: Nova the Optimal AI Free
 
 Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-the-optimal-ai-mind)
 
