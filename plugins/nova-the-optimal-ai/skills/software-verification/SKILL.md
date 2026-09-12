@@ -58,6 +58,7 @@ Load doctrine at the judgment moment:
 - `references/reliability/` selectively for retries, timeouts, asynchronous work, concurrency, recovery, observability, or dependency degradation.
 - `references/security/` selectively for authorization, sensitive data, parsing, secrets, or active security scope.
 - `references/specialized/` only for parsers/DSLs, properties, schemas, migrations, or multi-system contracts.
+- `references/specialized/agent-research-workflows.md` for submitted agent/research harnesses: stale attempts, producer identity, leases, review results and truthful closure.
 - `references/stacks/typescript-vitest-jest.md`, `python-pytest.md`, or `generic-adapter.md` after stack detection.
 
 ## Build risk-ranked evidence

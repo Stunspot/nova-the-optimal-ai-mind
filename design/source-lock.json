@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.1.5",
-  "source_map_sha256": "ec6403809907cbc700706a42aa9109e28fa69c7c9b018682782e1903c049e069",
+  "source_map_sha256": "50e7987585de21a90d2efd0e3949eb5eacf32a6357aed1e720c44dd9ebb408c7",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -424,7 +424,7 @@
     {
       "id": "omnara-deep-research",
       "source_repository": "https://github.com/Stunspot/omnara-deep-research",
-      "source_commit": "fa2c51aaa86410c8afed241f144e94f2f76028a3",
+      "source_commit": "ceb533fd768f56701866e120b2ce7a28c8b7b548",
       "source_path": ".",
       "source_version": "1.0.1",
       "selection": [
@@ -437,10 +437,11 @@
         "docs/install.html"
       ],
       "source_state": "local_commit_ahead_of_origin",
+      "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained.",
       "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
-        "file_count": 63,
-        "tree_sha256": "8f6617880af99c3d8b8d97473e5702bc6dce49e658ed61d2f055424852451fe9"
+        "file_count": 66,
+        "tree_sha256": "f29f5bfc5cc3691e9c0656bdce3809e3f751f509422bf5774676f424a60a9c02"
       },
       "overlay_state": "edition_overlay"
     },
@@ -561,43 +562,45 @@
     {
       "id": "software-verification",
       "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "972e71965a3c2eb23bf6e2153280fd76fd29b246",
+      "source_commit": "62e092922b76900e12cb27ed882a863e3b176b73",
       "source_path": "testforge/skills/software-verification",
       "source_version": "2.0.0",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit",
+      "source_state": "local_commit_ahead_of_origin",
+      "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained.",
       "imported_path": "plugins/nova-the-optimal-ai/skills/software-verification",
       "imported_tree": {
-        "file_count": 96,
-        "tree_sha256": "af708bed7e924fdcf6ee1649aeeb7580746ab4adca1bf0cb90e34559212d8d66"
+        "file_count": 97,
+        "tree_sha256": "e966b43a620f1523ca5ef4c5355485d4c64bedee51dc5ca31d74abb37651f96a"
       },
       "overlay_state": "exact_selected_source"
     },
     {
       "id": "verification-reviewer",
       "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "972e71965a3c2eb23bf6e2153280fd76fd29b246",
+      "source_commit": "62e092922b76900e12cb27ed882a863e3b176b73",
       "source_path": "testforge/skills/verification-reviewer",
       "source_version": "2.0.0",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit",
+      "source_state": "local_commit_ahead_of_origin",
+      "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained.",
       "imported_path": "plugins/nova-the-optimal-ai/skills/verification-reviewer",
       "imported_tree": {
-        "file_count": 9,
-        "tree_sha256": "4c16f4f4741bfddc2a27963efef5c4391e5945e7b1cceb5035135a67f1514e5e"
+        "file_count": 10,
+        "tree_sha256": "dc2a923e33ce33d20e6eeca0cd9428ba62495f30eef3f3d891372b5ff943c416"
       },
       "overlay_state": "exact_selected_source"
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 830,
-    "tree_sha256": "945931fd967791e5be0ada9dd5fdab2dd1e75f1d7206cb0cb8a7d483f8d6c0a4"
+    "file_count": 835,
+    "tree_sha256": "b7d2961d0f2de4e22bcdde7c334d5ce11e7e8d2fba919de63ccb2f61942c5f81"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

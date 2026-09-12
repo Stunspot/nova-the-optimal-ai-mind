@@ -119,7 +119,7 @@
     {
       "id": "omnara-deep-research",
       "source_repository": "https://github.com/Stunspot/omnara-deep-research",
-      "source_commit": "fa2c51aaa86410c8afed241f144e94f2f76028a3",
+      "source_commit": "ceb533fd768f56701866e120b2ce7a28c8b7b548",
       "source_path": ".",
       "source_version": "1.0.1",
       "selection": [
@@ -131,7 +131,8 @@
         "docs/LIFECYCLE.md",
         "docs/install.html"
       ],
-      "source_state": "local_commit_ahead_of_origin"
+      "source_state": "local_commit_ahead_of_origin",
+      "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained."
     },
     {
       "id": "officecraft-reviewer",
@@ -172,14 +173,15 @@
     {
       "id": "software-verification",
       "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "972e71965a3c2eb23bf6e2153280fd76fd29b246",
+      "source_commit": "62e092922b76900e12cb27ed882a863e3b176b73",
       "source_path": "testforge/skills/software-verification",
       "source_version": "2.0.0",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit"
+      "source_state": "local_commit_ahead_of_origin",
+      "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained."
     },
     {
       "id": "it-work-reviewer",
@@ -421,14 +423,15 @@
     {
       "id": "verification-reviewer",
       "source_repository": "https://github.com/Stunspot/testforge",
-      "source_commit": "972e71965a3c2eb23bf6e2153280fd76fd29b246",
+      "source_commit": "62e092922b76900e12cb27ed882a863e3b176b73",
       "source_path": "testforge/skills/verification-reviewer",
       "source_version": "2.0.0",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit"
+      "source_state": "local_commit_ahead_of_origin",
+      "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained."
     }
   ],
   "notices": [

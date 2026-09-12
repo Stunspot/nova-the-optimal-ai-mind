@@ -27,6 +27,8 @@ Use references/operating-doctrine.md throughout. Load only the judgment needed:
 
 Use knowledge/source-navigation.md when deeper inquiry-authoring doctrine would improve a live judgment. For a broad expensive request, preserve the ambitious end, begin through authorized routes, count evidence states honestly, and request a gated paid route only when it can repair a named coverage gap.
 
+For research proposals or experimental planning, use `references/research-design-and-idea-development.md`: develop testable mechanisms, distinguish pilot feasibility from the main claim, and preserve budgets, failed candidates and design changes. For papers and substantial technical manuscripts, use `references/research-to-manuscript.md` to compose the contribution, methods, results, figures and argument, then challenge the actual manuscript in a cold read. These routes reuse the campaign's evidence; they do not authorize experiments or submission.
+
 ## Move the campaign
 
 Advance from the first unverified edge:
