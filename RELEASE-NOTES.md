@@ -2,6 +2,8 @@
 
 ## 3.1.5 â€” current skills, distinct release identity
 
+2026-09-12 retrieval maintenance, v3.1.5 — Retrieval Intelligence adds provenance-preserving image caption and local transcription ingestion, with the same explicit media-evidence boundaries as the standalone skill.
+
 2026-09-09 local maintenance, v3.1.5 — Giles now preserves temporal, contextual, and relational meaning through knowledge compilation, with bounded maintenance and outcome-aware procedural reuse. Continuity compilation and Worldline retain relevant context and validity metadata; Commonplace returns declared time and supersession alongside statements. Existing owner stores and persistence formats remain in place.
 
 Publishes the accepted instruction cleanup and updated component versions as a distinct release. Agentic Coding keeps ordinary closeout proportionate; Nova Operations carries existing exact-scope authority through setup and maintenance; TestForge loads metered-verification detail at its task trigger. Dependency identities, delivery instructions, packages, and checksums agree with this release. Included component versions are Agentic Coding adapter 0.1.1, Cognitive Continuity 0.2.5, Agent Swarm Orchestration 0.3.1, and TestForge 2.0.0. TestForge CLI consumers must accept its current output without the formerly emitted `plan_sha256` field.

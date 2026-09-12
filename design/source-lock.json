@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.1.5",
-  "source_map_sha256": "50e7987585de21a90d2efd0e3949eb5eacf32a6357aed1e720c44dd9ebb408c7",
+  "source_map_sha256": "72e0a492ff4fdf0b7cce538a31e26e9c15cced2fc786540b0511f77b5934138b",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -503,18 +503,18 @@
     {
       "id": "retrieval-intelligence",
       "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
-      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_commit": "e7fc8587dee6e0975854e5f399cc83a13304d46d",
       "source_path": "skills/retrieval-intelligence",
       "source_version": "",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit",
+      "source_state": "local_commit_current_remote_pending_required_check",
       "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
       "imported_tree": {
-        "file_count": 9,
-        "tree_sha256": "360891df188b4aee9a7baa4e5a4c869ab09484a7bd8f8a54bc49e18fd2ce6021"
+        "file_count": 13,
+        "tree_sha256": "98e277e29ba2d2cb2b791cdc37fa85abdf0979d4be3e3114145b0f20cbd0d25a"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -599,8 +599,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 835,
-    "tree_sha256": "b7d2961d0f2de4e22bcdde7c334d5ce11e7e8d2fba919de63ccb2f61942c5f81"
+    "file_count": 839,
+    "tree_sha256": "c647085f089bb4d53459155a300c3eddff1f61c984d6a3fb47e0ece4b76514a7"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

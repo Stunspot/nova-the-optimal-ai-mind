@@ -39,6 +39,8 @@ Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-
 
 # Changelog
 
+2026-09-12 retrieval maintenance, v3.1.5 — Retrieval Intelligence adds provenance-preserving image caption and local transcription ingestion while retaining explicit media-evidence boundaries.
+
 2026-09-12 local praxis maintenance, v3.1.5 — Maintained Omnara now develops research ideas and evidence-backed manuscripts. TestForge adds cold-read review and agent-workflow evidence checks. These changes preserve the governing persona, current edition architecture and existing scope/authority boundaries.
 
 2026-09-09 local maintenance, v3.1.5 — Giles now preserves temporal, contextual, and relational meaning through knowledge compilation, with bounded maintenance and outcome-aware procedural reuse. Continuity compilation and Worldline retain relevant context and validity metadata; Commonplace returns declared time and supersession alongside statements. Existing owner stores and persistence formats remain in place.

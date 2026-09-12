@@ -70,14 +70,14 @@
     {
       "id": "retrieval-intelligence",
       "source_repository": "https://github.com/Stunspot/retrieval-intelligence",
-      "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
+      "source_commit": "e7fc8587dee6e0975854e5f399cc83a13304d46d",
       "source_path": "skills/retrieval-intelligence",
       "source_version": "",
       "selection": [
         "complete maintained skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit"
+      "source_state": "local_commit_current_remote_pending_required_check"
     },
     {
       "id": "promptcraft",
