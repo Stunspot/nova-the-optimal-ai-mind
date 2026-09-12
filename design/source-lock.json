@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.1.5",
-  "source_map_sha256": "72e0a492ff4fdf0b7cce538a31e26e9c15cced2fc786540b0511f77b5934138b",
+  "source_map_sha256": "0ad5bf8a5206d5b53401ef06eed138d7804ceb3dfde331bb590bc15457cb6c3b",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -109,7 +109,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
       "imported_tree": {
         "file_count": 49,
-        "tree_sha256": "c9a3a6cfd1fde38fa762d278e676c4f72ac9b2e1ce44efa4763dd4a22c373424"
+        "tree_sha256": "01ba10e6b675bccb88d91b90c720a914041392f459b3a5f95dc90f994fc99944"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -141,7 +141,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity",
       "imported_tree": {
         "file_count": 74,
-        "tree_sha256": "0312193535b8b25f5d666b07a763751601a83a40fbfde4d57569d3a053e5fbde"
+        "tree_sha256": "524eabf5069d7b78eef452bf8603a318921b0a39f7d378a0b8a7a61a88238d48"
       },
       "overlay_state": "edition_overlay"
     },
@@ -189,7 +189,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
       "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "2bd92e672b6250c48fbfa2dddba0b27c74262f7fe6714d43b18abe958f37818d"
+        "tree_sha256": "17466e37e4fa9ed6a13958f53553993cfb1511e7910ee90fc687b63fe19dad9a"
       },
       "overlay_state": "edition_overlay"
     },
@@ -209,7 +209,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "2b96b8c2dac2690a68a66299c9a6278a7ed72fc0e99f546e66795869d7b3d84d"
+        "tree_sha256": "451c45e388c8d79db7bf0d8afa1f460ae319603ee3e9380635fcee8270ba94b0"
       },
       "overlay_state": "edition_overlay"
     },
@@ -229,7 +229,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/dennis-stratton-project-management",
       "imported_tree": {
         "file_count": 48,
-        "tree_sha256": "4844e65919e75c617fe644880e46e6029dd79d52aa902908cfa147f71881efb5"
+        "tree_sha256": "b64ad9e793a9be4fdf364fe9bf3bf5e700480c37b025ebfcfc5065baf82a13ab"
       },
       "overlay_state": "edition_overlay"
     },
@@ -262,7 +262,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
       "imported_tree": {
         "file_count": 12,
-        "tree_sha256": "c44a827981f4b0d696f027eb7e4aa01550aff7f0630673166c61563667d2b41d"
+        "tree_sha256": "3f05ccbef11dfeb8eac1e375429beeb771e4fae125e740a91fe13aeb2e159b9b"
       },
       "overlay_state": "edition_overlay"
     },
@@ -280,7 +280,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/interview-trainer",
       "imported_tree": {
         "file_count": 30,
-        "tree_sha256": "5600bb318126167273950e1ee834208b74e702553dd0d4b92e66053b0fafb700"
+        "tree_sha256": "b0307beb421c742f62acb11b57952005dbfdf8f553ba94a413d6b7f4519963bf"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -298,7 +298,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
       "imported_tree": {
         "file_count": 49,
-        "tree_sha256": "a4dbaf05ae331d6affabe86914956f170318db30e717641cab470fd42fbeee3d"
+        "tree_sha256": "eae29072e29a28e76d5b3815ca90dfb756ab33fc3b36373cd406e8ad83ba2e09"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -316,7 +316,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/job-application-builder",
       "imported_tree": {
         "file_count": 27,
-        "tree_sha256": "1502d8898c911d4c484669060456c5298c1a3560c907c3017cef46a1190db674"
+        "tree_sha256": "33f05fc0f4a375b4aca141af9077f65cdba20278517a4fd415b00377a738a332"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -477,7 +477,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
         "file_count": 41,
-        "tree_sha256": "1972ea3881ccdb4b1310b4f6f4d8051c8febbe0d7fe34f9139def01f98076520"
+        "tree_sha256": "3fcff5cbf2b71e1afdd8d30ed1ef05ab4ca9c3aeb9565df63453437fed98c3be"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -600,7 +600,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 839,
-    "tree_sha256": "c647085f089bb4d53459155a300c3eddff1f61c984d6a3fb47e0ece4b76514a7"
+    "tree_sha256": "dae5d3a08ff3d50c77ac9c9f5be4151bb610ce61eaf51f4ce1454e6dafede61c"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -610,7 +610,7 @@
     },
     "interview-trainer": {
       "file_count": 2,
-      "tree_sha256": "22a39475bae803e07e883bf50073d91800a1a5182807e4e43ecd7c7393cce536"
+      "tree_sha256": "52f24b6c093aa3772b041ae46428ebdd45f8182179bc2a68984363bc3c85744a"
     },
     "job-application-builder": {
       "file_count": 2,
@@ -624,9 +624,9 @@
   "rights_bundle": {
     "files": {
       "LICENSE.md": "4d55ab60310bad6cb3e9c223b2872c325f83e8c6c2afaa8b879a8d82da1d1f11",
-      "ATTRIBUTION.md": "fc80f3ed8d86ddbf01169cf9f740e6cbbf773fa56e3dd6d52774f723ef67a2d5",
+      "ATTRIBUTION.md": "22fbf0a5a7958f42a2fc85a571de4af1aeed63993aeabcc59bff9262d626f1bf",
       "NOTICE.md": "9216cc3f702e4cd051580d536eb8aa471900d7d2d5ee73af5dda3ad876bb7742",
-      "TRADEMARKS.md": "7b473341be0279ad1f118d80d5f14769aac1d9a5fb37e4f27f304e1beec580fd",
+      "TRADEMARKS.md": "a1250ee28c5f9f41288118df443170a3a5b7c8841723e6fc37138829f8d115b7",
       "PROVENANCE.md": "6f47b3b74b386ce9086b80112ef80b356b89de326ee4930c71a2516c13fb9e01",
       "THIRD-PARTY-NOTICES.md": "b384ebf06439119bc3ba6d84659ad8a3054c2eba7870762ae634f3be3c26e59a"
     },
