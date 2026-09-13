@@ -1,4 +1,9 @@
-# Worldline Is Project Continuity, Not Another Memory Store
+# Legacy Worldline v1: Project Continuity
+
+This reference governs the retained `worldline.py` project interface and its
+`cd-worldline-request/v1` / `cd-worldline-view/v1` contracts. For the ordinary
+autobiographical timeline, use [Worldline timeline](worldline-timeline.md).
+A project is required by this compatibility interface, not by Worldline recall.
 
 ## Contents
 
@@ -12,25 +17,20 @@
 - [Runtime acceptance boundary](#runtime-acceptance-boundary)
 ## Architectural place
 
-Worldline is Nova's named project-continuity service. It belongs to Nova's base
-architecture, and every Nova edition preserves the same contract whether it can
-read durable Cognitive Continuity state or must declare a degraded mode.
+The v1 project interface is a bounded current-work view within Worldline. It
+remains available in every applicable Nova edition for resumption, status and
+handoff. Cognitive Continuity owns the episode ledger, typed state, validation,
+correction, forgetting, transfer and receipts. Its existing Faculty supplies the
+cognitive stance; no additional Faculty or parallel store is introduced.
 
-Worldline is not a Faculty, task Augment, attached Augment, capability handle,
-routing authority, store, or persistence engine. Cognitive Continuity remains
-the capability owner for episodes, typed state, context compilation,
-consolidation, correction, forgetting, transfer, validation, and receipts.
-Worldline names a bounded user-facing service and read-only view over that
-capability.
-
-The Worldline wrapper never performs a canonical write. It cannot turn a view,
-including a checkpoint view, into saved state or a persistence receipt. Send any
-durable capture through a separate Cognitive Continuity transaction with its own
-source, authority, concurrency guard, and receipt.
+This wrapper is read-only. A checkpoint is a derived handoff, never a saved
+occurrence or persistence receipt. Worldline's separate timeline capture command
+delegates to a governed Cognitive Continuity transaction. The v1 project rules
+below apply to this compatibility view only.
 
 ## Promise and negative space
 
-For one user and project scope, Worldline makes it possible to inspect:
+For one user and project scope, this legacy view makes it possible to inspect:
 
 - what consequentially happened and changed;
 - what was proposed, decided, and superseded;
@@ -39,10 +39,11 @@ For one user and project scope, Worldline makes it possible to inspect:
 - which artifacts matter and where their canonical copies live;
 - what a competent future task needs in order to resume.
 
-Worldline is not a transcript archive, generic event log, omniscient life
-manager, autonomous project manager, task router, or authority source. Capture
-only state whose future absence could change responsible action. A polished
-Worldline is a derivative view, never a second source of truth. Base-service
+This project view does not manage the project or confer authority. Select
+current-task state whose absence could change responsible action. Ordinary
+conversations and explorations also belong in the wider timeline even when
+they have no present project consequence. This view is a derivative, never a
+second source of truth. Base-service
 presence does not mean invoke it on every turn or claim durable state in an
 ephemeral task.
 

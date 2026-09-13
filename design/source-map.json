@@ -1,14 +1,14 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.5",
+  "product_version": "3.2.0",
   "records": [
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
       "source_commit": "7f959829176349d2602679eb14841dd6bc1ca643",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_version": "MIND 0.3.1 / Nova Free 3.1.5",
+      "source_version": "MIND 0.4.0 / Nova Free 3.2.0",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
@@ -334,9 +334,9 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "2ad8d8808af2bdada7bbb8a57eafdd062818033a",
+      "source_commit": "3ac5fb94471d83fde1efb72d7807ad7034719da7",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
-      "source_version": "0.2.5",
+      "source_version": "0.3.0",
       "selection": [
         "SKILL.md",
         "adapters/",
@@ -355,14 +355,16 @@
         "examples/dream-incubation.md"
       ],
       "source_state": "git_commit",
-      "source_commit_tree": "e2fb2e063b1f5804618d3841d803a7b2738c7949"
+      "source_commit_tree": "8776ae8ec435d7312d701140c8793390c1af59c7",
+      "source_file_count": 86,
+      "source_tree_sha256": "6b8bba22f24f64803313d6185d0020cb42bab2215428baf3c055521b63b01a96"
     },
     {
       "id": "nova-operations",
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.5 edition binding",
+      "source_version": "1.0.4 with Free 3.2.0 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -371,7 +373,8 @@
         "agents/openai.yaml",
         "references/estate-contract.md",
         "scripts/nova_estate.py product identity strings",
-        "SKILL.md: honor exact setup and additive-upgrade authorization already granted"
+        "SKILL.md: honor exact setup and additive-upgrade authorization already granted",
+        "Worldline 2 timeline launcher and explicit project-compatibility route with exact registry snapshot"
       ],
       "source_state": "accepted_emergent_1.0.4_source_with_free_edition_overlay"
     },
@@ -389,7 +392,8 @@
       ],
       "edition_overlays": [
         "SKILL.md: preserve Nova Operations launcher guidance",
-        "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters"
+        "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters",
+        "references/owner-routing.md: explain exact edition package binding and retained project compatibility reader"
       ],
       "source_state": "git_commit",
       "source_commit_tree": "566c2c9dc6714bef7ac56296a046227f101b8a01"

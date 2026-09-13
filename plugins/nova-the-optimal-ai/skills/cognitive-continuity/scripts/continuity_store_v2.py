@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import hmac
 import json
@@ -16,6 +17,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Iterable
 
+from worldline_domain import family_ids, sever_associations, sanitize_export_row
 from schema_validation import SchemaCatalog, SchemaError
 from eligibility_policy import contains_secret_data, evaluate as evaluate_policy, parse_time_strict, sanitize_object, POLICY_ID
 from workspace_runtime import (
@@ -231,6 +233,186 @@ def _open(args: argparse.Namespace, *, writable: bool) -> tuple[Path, str]:
 def reject_secret_input(value: Any) -> None:
     if contains_secret_data(value):
         raise ContinuityError("Input was rejected by recursive redaction policy", "redaction_rejected")
+
+
+
+
+def _worldline_open(request: dict[str, Any], registry_path: Path | None) -> tuple[Path, Any, dict[str, Any]]:
+    choice = request.get("workspace") or {"selection_mode": "nova_ambient", "path": None}
+    root, selector = open_workspace(
+        choice.get("path"), writable=True, mode=choice["selection_mode"],
+        registry_path=registry_path, grant_id=choice.get("grant_id"),
+    )
+    manifest, _ = open_snapshot(root)
+    return root, selector, manifest
+
+
+def _worldline_scope(requested: dict[str, Any], bound: dict[str, Any], *, policy: bool = False) -> dict[str, Any]:
+    if any(requested.get(key) in (None, "", "*") for key in ("user", "agent")):
+        raise ContinuityError("Worldline capture requires exact user and agent", "scope_denied")
+    scope = {
+        "user": requested["user"], "agent": requested["agent"],
+        "project": requested.get("project") or bound.get("project"),
+        "thread": requested.get("thread"),
+    }
+    if policy:
+        if requested.get("project") not in (None, bound.get("project")):
+            raise ContinuityError("Capture policy belongs to the workspace boundary", "scope_denied")
+        scope["project"] = bound["project"]
+        scope["thread"] = bound.get("thread")
+    elif bound.get("thread") not in (None, "*") and scope["thread"] is None:
+        scope["thread"] = bound["thread"]
+    if not scope_within_manifest(scope, bound):
+        raise ContinuityError("Worldline capture exceeds workspace scope", "scope_denied")
+    return scope
+
+
+def _worldline_rows(root: Path, manifest: dict[str, Any]) -> list[dict[str, Any]]:
+    return read_jsonl(generation_path(root, manifest) / "episodes.jsonl")
+
+
+def _worldline_target(
+    rows: list[dict[str, Any]], event: dict[str, Any], scope: dict[str, Any], now: datetime
+) -> dict[str, Any] | None:
+    if not event["supersedes"]:
+        return None
+    target_id = event["supersedes"][0]
+    target = next((row for row in rows if row.get("id") == target_id), None)
+    if target is None or not target.get("worldline_event") or "forgotten" in target.get("tags", []):
+        raise ContinuityError("Correction target is absent or forgotten", "source_unreachable")
+    if target.get("scope") != scope:
+        raise ContinuityError("Correction must retain exact target scope", "scope_denied")
+    if any(target_id in (row.get("worldline_event") or {}).get("supersedes", []) for row in rows):
+        raise ContinuityError("Correction target is no longer the current leaf", "correction_conflict")
+    expiry, valid = parse_time_strict(target.get("expires_at"), nullable=True)
+    if not valid or (expiry is not None and expiry <= now):
+        raise ContinuityError("Correction target is retention-ineligible", "retention_expired")
+    return target
+
+
+def capture_worldline(request: dict[str, Any], registry_path: Path | None = None) -> dict[str, Any]:
+    """Append one recognition occurrence through the governed existing transaction."""
+    from worldline_domain import effective_policy, validate_event, validate_episode_graph
+    _schema(request, "worldline-capture-v2.schema.json")
+    reject_secret_input(request)
+    if request["retention_guard"]:
+        raise ContinuityError("Current no-retention instruction suppresses capture", "capture_suppressed")
+    event = json.loads(json.dumps(request["event"]))
+    validate_event(event)
+    authority = require_authority(request["authority"])
+    if request["capture_mode"] == "explicit" or event["supersedes"]:
+        require_human_authority(authority)
+    if event["supersedes"] and request["capture_mode"] != "explicit":
+        raise ContinuityError("Correction requires explicit current authority", "authority_denied")
+    root, selector, manifest = _worldline_open(request, registry_path)
+    scope = _worldline_scope(request["scope"], manifest["scope"])
+    # Digest caller intent, not mutable generation or inferred control defaults.
+    payload = {key: value for key, value in request.items()
+               if key not in {"request_id", "expected_generation", "workspace", "idempotency_key"}}
+    payload["scope"] = scope
+    digest = request_digest("worldline.capture", payload)
+    duplicate = find_idempotent_receipt(root, request["idempotency_key"], digest, "worldline.capture")
+    if duplicate:
+        return duplicate
+    rows = _worldline_rows(root, manifest)
+    now = datetime.now(timezone.utc)
+    target = _worldline_target(rows, event, scope, now)
+    if request["capture_mode"] == "routine":
+        if effective_policy(rows, scope, now)["mode"] != "ordinary":
+            raise ContinuityError("Ordinary capture is not enabled", "capture_suppressed")
+        if request.get("sensitivity", "ordinary") != "ordinary":
+            raise ContinuityError("Routine capture is ordinary-only", "capture_suppressed")
+    event_time, _ = parse_time_strict(event["occurred_at"], nullable=False)
+    event_end, _ = parse_time_strict(event["ended_at"], nullable=True)
+    if event_time > now or (event_end is not None and event_end > now):
+        raise ContinuityError("A future event has not yet occurred", "event_time_invalid")
+    sensitivity = request.get("sensitivity", "ordinary" if request["capture_mode"] == "routine" else manifest.get("policies", {}).get("default_sensitivity", "ordinary"))
+    retention = request.get("retention", manifest.get("policies", {}).get("default_retention", "until-user-forgets"))
+    expiry = request.get("expires_at")
+    if target and not request.get("privacy_change_authorized", False):
+        sensitivity, retention, expiry = target["sensitivity"], target["retention"], target.get("expires_at")
+    root_event_id = None
+    ancestor = target
+    by_id = {item["id"]: item for item in rows}
+    while ancestor is not None:
+        root_event_id = ancestor["id"]
+        parents = ancestor["worldline_event"]["supersedes"]
+        ancestor = by_id.get(parents[0]) if parents else None
+    recorded_at = utc_now()
+    row = {
+        "id": new_id("EP"),
+        "type": "correction" if event["supersedes"] else {
+            "decision": "decision", "outcome": "outcome", "action": "tool_action"
+        }.get(event["kind"], "message"),
+        "recorded_at": recorded_at, "valid_from": event["occurred_at"], "valid_to": None,
+        "expires_at": expiry, "scope": scope,
+        "source": {"kind": request.get("source_kind", "agent"),
+                   "locator": event["sources"][0]["locator"], "authority": authority},
+        "content": event["title"], "sensitivity": sensitivity, "retention": retention,
+        "tags": ["worldline-event"], "worldline_event": event,
+    }
+    _schema(row, "episode-v2.schema.json")
+    validate_episode_graph([*rows, row])
+    try:
+        with transaction(
+            root, "worldline.capture", expected_generation=request["expected_generation"], selector=selector,
+            authority=authority, idempotency_key=request["idempotency_key"], request_payload=payload,
+            source_ids=event["supersedes"],
+        ) as tx:
+            rows = _worldline_rows(root, tx.manifest_before)
+            now = datetime.now(timezone.utc)
+            _worldline_target(rows, event, scope, now)
+            if request["capture_mode"] == "routine" and effective_policy(rows, scope, now)["mode"] != "ordinary":
+                raise ContinuityError("Ordinary capture was disabled before commit", "capture_suppressed")
+            validate_episode_graph([*rows, row])
+            tx.write_member("episodes.jsonl", [*rows, row])
+            return tx.finish("worldline-event-appended", {
+                "episode_id": row["id"], "event_id": root_event_id or row["id"], "revision_id": row["id"],
+                "correction_of": event["supersedes"][0] if event["supersedes"] else None,
+                "capture_mode": request["capture_mode"],
+            })
+    except IdempotentReplay as replay:
+        return replay.receipt
+
+
+def set_worldline_policy(request: dict[str, Any], registry_path: Path | None = None) -> dict[str, Any]:
+    """Commit a user's ordinary/off instruction in episode-ledger order."""
+    from worldline_domain import validate_policy
+    _schema(request, "worldline-policy-request-v1.schema.json")
+    reject_secret_input(request)
+    validate_policy(request["policy"])
+    authority = require_human_authority(request["authority"])
+    root, selector, manifest = _worldline_open(request, registry_path)
+    scope = _worldline_scope(request["scope"], manifest["scope"], policy=True)
+    payload = {key: value for key, value in request.items()
+               if key not in {"request_id", "expected_generation", "workspace", "idempotency_key"}}
+    payload["scope"] = scope
+    digest = request_digest("worldline.policy", payload)
+    duplicate = find_idempotent_receipt(root, request["idempotency_key"], digest, "worldline.policy")
+    if duplicate:
+        return duplicate
+    now = utc_now()
+    row = {
+        "id": new_id("EP"), "type": "permission", "recorded_at": now, "valid_from": now,
+        "valid_to": None, "expires_at": None, "scope": scope,
+        "source": {"kind": "user", "locator": request["policy"]["authority_source"], "authority": authority},
+        "content": "Worldline ordinary capture " + request["policy"]["mode"],
+        "sensitivity": "ordinary", "retention": "until-user-changes",
+        "tags": ["worldline-policy"], "worldline_policy": request["policy"],
+    }
+    _schema(row, "episode-v2.schema.json")
+    try:
+        with transaction(
+            root, "worldline.policy", expected_generation=request["expected_generation"], selector=selector,
+            authority=authority, idempotency_key=request["idempotency_key"], request_payload=payload,
+        ) as tx:
+            rows = _worldline_rows(root, tx.manifest_before)
+            tx.write_member("episodes.jsonl", [*rows, row])
+            return tx.finish("worldline-policy-set", {
+                "episode_id": row["id"], "policy_id": row["id"], "mode": request["policy"]["mode"],
+            })
+    except IdempotentReplay as replay:
+        return replay.receipt
 
 
 def cmd_episode(args: argparse.Namespace) -> dict[str, Any]:
@@ -485,6 +667,77 @@ def _derivative_references(path: Path, ids: set[str]) -> bool:
         raise ContinuityError(f"Derivative cannot be safely traversed: {path}: {exc}", "derivative_custody_unresolved") from exc
 
 
+def _worldline_projection_node(root: Path, path: Path) -> dict[str, Any] | None:
+    """Recognize only an unedited, direct, current-format local Worldline view."""
+    try:
+        relative = path.relative_to(root)
+        if not relative.parts or relative.parts[0] != "projections" or path.suffix.lower() != ".html":
+            return None
+        if _has_reparse_component(path, root):
+            raise ContinuityError("Worldline projection crosses indirect custody", "custody_reparse_escape")
+        value, _ = _read_direct_file_bytes(path, boundary=root)
+        if len(value) > 8_000_000:
+            return None
+        from worldline_timeline import _HTML
+        prefix, suffix = _HTML.split("__WORLDLINE_DATA__")
+        text = value.decode("utf-8")
+        if not text.startswith(prefix) or not text.endswith(suffix):
+            return None
+        data = _loads(text[len(prefix):len(text)-len(suffix)])
+        if not isinstance(data, dict) or data.get("format") != "cd-worldline-render-data/v2":
+            return None
+        entries, source_ids = data.get("entries"), data.get("source_ids")
+        if not isinstance(entries, list) or not 1 <= len(entries) <= 2000 or not isinstance(source_ids, list):
+            return None
+        if [entry.get("id") for entry in entries if isinstance(entry, dict)] != source_ids:
+            return None
+        identities = set(source_ids)
+        identities.update(entry.get("revision_id") for entry in entries)
+        if not all(isinstance(value, str) and value.startswith("EP-") for value in identities):
+            return None
+        return {"class": "active_worldline_projection", "path": relative.as_posix(),
+                "owner": "continuity", "disposition": "removed",
+                "proof": "current-render-template-and-source-identities",
+                "artifact_sha256": hashlib.sha256(value).hexdigest(),
+                "artifact_identity_sha256": _lifecycle_artifact_identity_sha256(path),
+                "source_ids": sorted(identities)}
+    except (ValueError, KeyError, TypeError, UnicodeError):
+        return None
+
+
+def _unsupported_derivatives(plan: dict[str, Any]) -> list[str]:
+    supported = {node["path"] for node in plan.get("target_graph", [])
+                 if node.get("class") == "active_worldline_projection"}
+    return sorted(set(plan.get("derivative_paths", [])) - supported)
+
+
+def _delete_worldline_projections(root: Path, plan: dict[str, Any], backup_output: Path,
+                                  backup: dict[str, Any], authority: str) -> list[str]:
+    """Delete plan-bound derived views through the existing recoverable adapter."""
+    results: list[str] = []
+    for node in plan["target_graph"]:
+        if node.get("class") != "active_worldline_projection":
+            continue
+        target = root / node["path"]
+        if _worldline_projection_node(root, target) != node:
+            raise ContinuityError("Worldline projection changed after planning", "plan_stale")
+        identity = hashlib.sha256(node["path"].encode()).hexdigest()[:20]
+        receipt_path = _outside_source(root,
+            str(backup_output.with_name(backup_output.name + "." + identity + ".projection-receipt.json")),
+            "Worldline projection deletion receipt", must_be_absent=True)
+        receipt = _lifecycle_receipt_base(operation="delete-named-custody", authority=authority,
+            workspace_id=plan["workspace_id"], plan_id=plan["id"], plan_digest=plan["plan_digest"],
+            target_class="active_worldline_projection", target=target,
+            target_digest=node["artifact_sha256"], receipt_output=receipt_path,
+            destruction_owner=authority, backup_id=backup["id"],
+            backup_authentication_key_id=backup["authentication"]["key_id"])
+        _execute_lifecycle_delete(target, receipt_path, receipt)
+        if os.path.lexists(target):
+            raise ContinuityError("Deleted Worldline projection reappeared", "recovery_required")
+        results.append(str(receipt_path))
+    return results
+
+
 def _active_canonical_rows(root: Path) -> dict[str, list[dict[str, Any]]]:
     manifest = read_json(root / "manifest.json")
     rows = {name: values for name, (_, values) in _collections(root).items()}
@@ -577,13 +830,15 @@ def build_forget_plan(
     canonical = _active_canonical_rows(root)
     identifiable_rows = [row for name, rows in canonical.items() if name != "idempotency" for row in rows]
     all_ids = {str(row.get("id")) for row in identifiable_rows if row.get("id")} | _historical_canonical_ids(root)
-    affected = set(requested_ids)
+    affected = family_ids(canonical["episodes"], set(requested_ids))
     missing = sorted(affected - all_ids)
     if missing:
         raise ContinuityError(f"Unknown IDs: {', '.join(missing)}", "source_unreachable")
     changed = True
     while changed:
-        changed = False
+        expanded = family_ids(canonical["episodes"], affected)
+        changed = expanded != affected
+        affected = expanded
         for row in identifiable_rows:
             identifier = row.get("id")
             if identifier and identifier not in affected and _references_any(row, affected):
@@ -612,13 +867,28 @@ def build_forget_plan(
         for row in rows:
             if row.get("id") in affected:
                 nodes.append({"class": f"active_{name}", "identity": row.get("id"), "owner": "continuity", "disposition": "removed", "proof": "identity-or-reference-traversal"})
-    nodes.extend({"class": "active_derivative", "path": path, "owner": "continuity", "disposition": "removed", "proof": "content-traversal"} for path in derivatives)
+    severed = 0
+    for row in canonical["episodes"]:
+        if row.get("id") in affected:
+            continue
+        related = set((row.get("worldline_event") or {}).get("related_ids", [])) & affected
+        if related:
+            severed += len(related)
+            nodes.append({"class": "associative_edge", "identity": row["id"],
+                          "target_ids": sorted(related), "owner": "continuity",
+                          "disposition": "severed", "proof": "nondependent-association-traversal"})
+    for path in derivatives:
+        nodes.append(_worldline_projection_node(root, root / path) or
+            {"class": "active_derivative", "path": path, "owner": "continuity",
+             "disposition": "removed", "proof": "content-traversal"})
     nodes.extend(_artifact_nodes(root, affected, known_backups or [], known_export_receipts or []))
     for boundary in ("raw_source_evidence", "repository_history", "host_provider_logs", "os_snapshots", "protected_mind", "unknown_recipient_copies"):
         nodes.append({"class": boundary, "owner": "other-custody", "disposition": "unreachable", "proof": "boundary-declaration"})
     counts = {name: sum(1 for row in rows if row.get("id") in affected) for name, rows in canonical.items() if name != "idempotency"}
     counts["idempotency"] = len(idempotency_identities)
     counts["derived_files"] = len(derivatives)
+    counts["worldline_projection_files"] = sum(node["class"] == "active_worldline_projection" for node in nodes)
+    counts["associative_edges_severed"] = severed
     graph_digest = hashlib.sha256(dump_canonical(nodes).encode("utf-8")).hexdigest()
     return {
         "requested_ids": sorted(requested_ids), "removed_ids": sorted(affected),
@@ -669,20 +939,22 @@ def cmd_forget_plan(args: argparse.Namespace) -> dict[str, Any]:
         "corrected": False,
         "logically_forgotten": True,
         "removed_from_active_canon": args.mode == "active-remove",
-        "deleted_from_named_continuity_custody": False,
+        "deleted_from_named_continuity_custody": bool(planned["counts"].get("worldline_projection_files")),
         "physical_erasure_not_established": True,
     }
+    projected_ids = {identity for node in planned["target_graph"]
+                     if node["class"] == "active_worldline_projection" for identity in node["source_ids"]}
     target_sensitivity_classes = sorted({
         str(row.get("sensitivity", "restricted"))
         for _, rows in _collections(root).values()
-        for row in rows if row.get("id") in set(planned["removed_ids"])
+        for row in rows if row.get("id") in set(planned["removed_ids"]) | projected_ids
     })
     blocking_reasons: list[str] = []
     if observed_format != FORMAT:
         blocking_reasons.append("copy_migrate_to_v2")
     if planned.get("ambiguity"):
         blocking_reasons.append("resolve_target_graph_ambiguity")
-    if planned.get("derivative_paths"):
+    if _unsupported_derivatives(planned):
         blocking_reasons.append("delete_named_derivatives_with_governed_adapter")
     if {"sensitive", "restricted"}.intersection(target_sensitivity_classes) or args.encryption_disposition != "not-required":
         blocking_reasons.append("install_verified_backup_encryption_adapter")
@@ -877,6 +1149,20 @@ def _create_external_backup(root: Path, plan: dict[str, Any], output: Path, auth
                 "sha256": sha256_file(destination),
                 "bytes": len(source_bytes),
             })
+        for node in plan["target_graph"]:
+            if node.get("class") != "active_worldline_projection":
+                continue
+            source = root / node["path"]
+            if _worldline_projection_node(root, source) != node:
+                raise ContinuityError("Worldline projection changed before backup", "plan_stale")
+            source_bytes, _ = _read_direct_file_bytes(source, boundary=root)
+            if hashlib.sha256(source_bytes).hexdigest() != node["artifact_sha256"]:
+                raise ContinuityError("Worldline projection changed during backup", "plan_stale")
+            destination = snapshot / node["path"]
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            atomic_new_bytes(destination, source_bytes)
+            files.append({"path": destination.relative_to(construction).as_posix(),
+                          "sha256": hashlib.sha256(source_bytes).hexdigest(), "bytes": len(source_bytes)})
         with tempfile.TemporaryDirectory(prefix="continuity-restore-check-") as temporary:
             check = Path(temporary).resolve() / "workspace"
             shutil.copytree(snapshot, check)
@@ -964,6 +1250,11 @@ def _tombstone(row: dict[str, Any], at: str) -> dict[str, Any]:
     value = json.loads(json.dumps(row))
     value.pop("legacy_content_provenance", None)
     value["content"] = "[forgotten]"
+    if value.get("worldline_event") is not None or value.get("worldline_policy") is not None:
+        value.pop("worldline_event", None)
+        value.pop("worldline_policy", None)
+        value["source"]["locator"] = None
+        value["tags"] = []
     value["tags"] = list(dict.fromkeys(list(value.get("tags") or []) + ["forgotten"]))
     if value.get("type") == "failure_occurrence":
         old = value.get("occurrence") or {}
@@ -1065,7 +1356,7 @@ def cmd_forget(args: argparse.Namespace) -> dict[str, Any]:
         raise ContinuityError("Ambiguous target graph cannot be applied", "plan_ambiguous")
     if plan.get("mode") == "physical-erase":
         raise ContinuityError("Physical erasure is outside the qualified v2 lifecycle adapter", "physical_erasure_unsupported")
-    if plan.get("derivative_paths"):
+    if _unsupported_derivatives(plan):
         raise ContinuityError("Named derivative references require a transactional custody adapter", "derivative_custody_unresolved")
     recomputed = build_forget_plan(
         root, list(plan.get("requested_ids") or []),
@@ -1107,13 +1398,16 @@ def cmd_forget(args: argparse.Namespace) -> dict[str, Any]:
                     result_rows = [row for row in rows if row.get("id") not in removed]
                 else:
                     result_rows = [_tombstone(row, now) if row.get("id") in removed else row for row in rows]
+                if name == "episodes":
+                    result_rows = [sever_associations(row, set(removed)) for row in result_rows]
                 tx.write_member({"episodes": "episodes.jsonl", "state": "state.jsonl", "proposals": "proposals.jsonl"}[name], result_rows)
             tx.write_member("receipts.jsonl", [row for row in canonical["receipts"] if row.get("id") not in removed])
             tx.write_member("idempotency.jsonl", [row for row in canonical["idempotency"] if f"{row.get('operation_family')}:{row.get('idempotency_key')}" not in idempotency_removed])
+            projection_receipts = _delete_worldline_projections(root, plan, backup_output, backup, authority)
             outcomes = {
                 "corrected": False, "logically_forgotten": True,
                 "removed_from_active_canon": plan["mode"] == "active-remove",
-                "deleted_from_named_continuity_custody": False,
+                "deleted_from_named_continuity_custody": bool(projection_receipts),
                 "physical_erasure_not_established": True,
             }
             result = tx.finish("forgotten", {
@@ -1127,7 +1421,8 @@ def cmd_forget(args: argparse.Namespace) -> dict[str, Any]:
                 "backup_restore_verified": True, "mode": plan["mode"], "affected_id_count": len(removed),
                 "counts": plan["counts"], "lifecycle_outcomes": outcomes,
                 "prior_generations_retained": True, "recovery_backup_retained": True,
-                "named_custody_deletion": "separate_governed_command_required",
+                "named_custody_deletion": "active_worldline_projections_deleted" if projection_receipts else "separate_governed_command_required",
+                "worldline_projection_deletion_receipts": projection_receipts,
                 "physical_erasure": "not_established", "external_boundaries": plan["external_boundaries"],
             })
         return result
@@ -1145,7 +1440,7 @@ def cmd_forget(args: argparse.Namespace) -> dict[str, Any]:
             return committed
         if backup is not None and backup_output.exists():
             raise ContinuityError(
-                f"Forget did not prove commit; recovery backup retained for disposition: {backup_output}",
+                f"Forget did not prove commit; recovery backup retained for disposition: {backup_output}; inspect projection-receipt phase files beside that backup and any retained .cd-lifecycle stage before retrying",
                 "recovery_required",
             ) from exc
         raise
@@ -1368,7 +1663,7 @@ def _export_filter(
         if allowed and end and recorded >= end:
             allowed, reason = False, "time_after_range"
         if allowed and not contains_secret_data(row):
-            selected.append(sanitize_object(row))
+            selected.append(sanitize_export_row(row))
         else:
             if allowed:
                 reason = "redaction_rejected"
@@ -1401,8 +1696,113 @@ def _stable_export_source(root: Path) -> tuple[dict[str, Any], dict[str, list[di
     raise ContinuityError("Workspace changed during both export snapshot attempts", "snapshot_changed")
 
 
+
+def _exportable_worldline_families(
+    families: dict[str, list[dict[str, Any]]], ceiling: str, now: datetime,
+) -> tuple[dict[str, list[dict[str, Any]]], int]:
+    """A portable revision graph may not leak an ancestor or drop its required parent."""
+    from worldline_timeline import _privacy
+    allowed = {identity: family for identity, family in families.items()
+               if all(_privacy(row, ceiling, now) for row in family)}
+    return allowed, len(families) - len(allowed)
+
+
+def _worldline_export_snapshot(
+    manifest: dict[str, Any], rows: dict[str, list[dict[str, Any]]], manifest_digest: str,
+    args: argparse.Namespace,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Export exactly the historical episode selection, using the query owner's predicate."""
+    from worldline_timeline import select_worldline_rows
+    if args.exclude_episodes:
+        raise ContinuityError("Timeline export requires episodes", "schema_invalid")
+    bound = manifest["scope"]
+    owner = {"user": getattr(args, "user", None) or bound.get("user"),
+             "agent": getattr(args, "agent", None) or bound.get("agent"),
+             "project": args.project, "thread": args.thread}
+    now = datetime.now(timezone.utc)
+    request = {
+        "mode": "browse", "scope": owner, "as_of": utc_now(),
+        "sensitivity_ceiling": args.sensitivity, "from_time": args.from_time,
+        "to_time": args.to_time, "include_legacy": True,
+        "unreachable_source_ids": parse_csv(args.unreachable_source_ids),
+    }
+    entries, families, coverage = select_worldline_rows(manifest, rows["episodes"], request, now)
+    families, ancestry_omissions = _exportable_worldline_families(families, args.sensitivity, now)
+    entries = [entry for entry in entries if entry["id"] in families]
+    if ancestry_omissions:
+        coverage = copy.deepcopy(coverage)
+        coverage.setdefault("omissions", {})["revision_ancestry_privacy"] = ancestry_omissions
+        coverage["eligible_events"] = len(entries)
+        coverage["native_events"] = sum(entry["origin"] == "native" for entry in entries)
+        coverage["legacy_events"] = sum(entry["origin"] == "legacy_episode" for entry in entries)
+        coverage["source_link_missing"] = sum(not entry["sources"] for entry in entries)
+    selected_raw = [row for family in families.values() for row in family]
+    selected_ids = {row["id"] for row in selected_raw}
+    selected = [
+        sanitize_export_row(sever_associations(
+            row, set((row.get("worldline_event") or {}).get("related_ids", [])) - selected_ids
+        )) for row in selected_raw
+    ]
+    # Historical transfer preserves permitted source locators even for legacy rows.
+    for value, original in zip(selected, selected_raw):
+        locator = (original.get("source") or {}).get("locator")
+        if locator:
+            from worldline_domain import safe_locator
+            try:
+                value["source"]["locator"] = safe_locator(locator)
+            except ContinuityError:
+                value["source"]["locator"] = None
+    if manifest.get("format") == LEGACY_FORMAT:
+        from workspace_runtime import normalize_legacy_temporal_rows
+        normalized, _ = normalize_legacy_temporal_rows({"episodes.jsonl": selected, "state.jsonl": []})
+        selected = normalized["episodes.jsonl"]
+    effective_project = args.project or bound.get("project") or "*"
+    effective_thread = args.thread or bound.get("thread")
+    effective = {"user": owner["user"], "agent": owner["agent"],
+                 "project": effective_project, "thread": effective_thread}
+    def owned(row: dict[str, Any]) -> bool:
+        scope = row.get("scope") or {}
+        return (all(scope.get(key) == owner[key] for key in ("user", "agent"))
+                and (effective_project == "*" or scope.get("project") == effective_project)
+                and (effective_thread in (None, "*") or scope.get("thread") == effective_thread)
+                and "worldline_policy" not in row)
+    owned_ids = {row["id"] for row in rows["episodes"] if owned(row)}
+    excluded_ids = sorted(owned_ids - selected_ids)
+    included_ids = sorted(selected_ids)
+    descriptor = {
+        "format": "cd-worldline-selection/v2", "scope": owner, "from_time": args.from_time,
+        "to_time": args.to_time, "as_of": request["as_of"], "sensitivity_ceiling": args.sensitivity,
+        "coverage": coverage, "recognition_event_count": len(entries), "policy_included": False,
+        "association_boundary": "Associations outside the selected export are severed; source pointers retained.",
+    }
+    bundle = {
+        "format": EXPORT_FORMAT, "implementation_version": IMPLEMENTATION_VERSION,
+        "exported_at": utc_now(), "source_workspace_id": manifest.get("workspace_id"),
+        "source_format": manifest["format"],
+        "compatibility_mode": "v1_read_only" if manifest["format"] == LEGACY_FORMAT else "v2_native",
+        "observed_generation": int(manifest.get("generation", 0)),
+        "source_manifest_sha256": manifest_digest,
+        "source_active_generation_manifest_sha256": manifest.get("active_generation_manifest_sha256"),
+        "scope": effective, "selection": descriptor, "worldline_selection": descriptor,
+        "episodes": selected, "state": [], "proposals": [],
+        "included": {"counts": {"episodes": len(selected), "state": 0, "proposals": 0},
+                     "ids_sha256": hashlib.sha256("\n".join(included_ids).encode()).hexdigest()},
+        "excluded": {"counts": {"episodes": len(excluded_ids), "state": 0, "proposals": 0},
+                     "ids_sha256": hashlib.sha256("\n".join(excluded_ids).encode()).hexdigest()},
+        "capability_boundary": "Owner-scoped historical episodes and permitted revision ancestry; no capture policy, source bodies fetched, foreign counts, or automatic canonical import.",
+        "checksum": None,
+    }
+    reject_secret_input(bundle)
+    bundle["checksum"] = hashlib.sha256(dump_canonical(bundle).encode("utf-8")).hexdigest()
+    _schema(bundle, "export-v2.schema.json")
+    return bundle, {"manifest": manifest, "manifest_digest": manifest_digest,
+                    "included_ids": included_ids, "excluded_ids": excluded_ids}
+
+
 def _export_snapshot(root: Path, args: argparse.Namespace) -> tuple[dict[str, Any], dict[str, Any]]:
     manifest, rows, manifest_digest = _stable_export_source(root)
+    if getattr(args, "worldline_timeline", False):
+        return _worldline_export_snapshot(manifest, rows, manifest_digest, args)
     scope = resolve_scope(root, args.project, args.thread)
     start = parse_time(args.from_time, "from")
     end = parse_time(args.to_time, "to")
@@ -1420,6 +1820,28 @@ def _export_snapshot(root: Path, args: argparse.Namespace) -> tuple[dict[str, An
         episode_ids=raw_episode_ids, unreachable_source_ids=unreachable,
         episode_sensitivity={}, omission_counts=omission_counts,
     )
+    if any(row.get("worldline_event") for row in rows["episodes"]):
+        from worldline_timeline import select_worldline_rows
+        native_rows = [row for row in rows["episodes"] if scope_matches_query(row.get("scope"), scope)]
+        if scope.get("user") != "*" and scope.get("agent") != "*":
+            _, families, _ = select_worldline_rows(
+                {"format": manifest["format"], "scope": {"user": scope["user"], "agent": scope["agent"], "project": "*", "thread": None}},
+                native_rows, {"scope": {"user": scope["user"], "agent": scope["agent"]},
+                "sensitivity_ceiling": args.sensitivity, "include_legacy": False}, now)
+            families, ancestry_omissions = _exportable_worldline_families(families, args.sensitivity, now)
+            if ancestry_omissions:
+                omission_counts["revision_ancestry_privacy"] = ancestry_omissions
+            allowed_native = {row["id"] for family in families.values() for row in family}
+            eligible_episodes = [row for row in eligible_episodes if not row.get("worldline_event") or row["id"] in allowed_native]
+            selected_native = {row["id"] for row in eligible_episodes if row.get("worldline_event")}
+            for family in families.values():
+                if selected_native & {row["id"] for row in family}:
+                    for row in family:
+                        if row["id"] not in {item["id"] for item in eligible_episodes}:
+                            eligible_episodes.append(sanitize_export_row(row))
+    export_ids = {row["id"] for row in eligible_episodes}
+    eligible_episodes = [sever_associations(row, set((row.get("worldline_event") or {}).get("related_ids", [])) - export_ids)
+                         for row in eligible_episodes]
     eligible_episode_ids = {str(row["id"]) for row in eligible_episodes}
     episode_sensitivity = {str(row["id"]): str(row.get("sensitivity", "restricted")) for row in eligible_episodes}
     selected = {
@@ -2283,7 +2705,8 @@ def cmd_open(args: argparse.Namespace) -> dict[str, Any]:
     if observed == LEGACY_FORMAT:
         capabilities = {
             "open_read": "supported", "validate": "supported_with_known_limits", "context_compile": "supported_d07_policy",
-            "worldline_read_views": "supported_typed_degradation", "error_neighborhood": "operation_unsupported_v1",
+            "worldline_read_views": "supported_typed_degradation", "worldline_timeline": "supported_legacy_read_only",
+            "worldline_capture": "migration_required_for_mutation", "worldline_policy": "migration_required_for_mutation", "error_neighborhood": "operation_unsupported_v1",
             "capture": "migration_required_for_mutation", "correct": "migration_required_for_mutation",
             "fault_capture": "operation_unsupported_v1", "failure_pattern_governance": "operation_unsupported_v1",
             "export": "supported_source_read_only", "forget_plan": "supported_inspection_only",
@@ -2292,7 +2715,7 @@ def cmd_open(args: argparse.Namespace) -> dict[str, Any]:
         mode = "v1_read_only"
     else:
         capabilities = {name: "supported" for name in (
-            "open_read", "validate", "context_compile", "worldline_read_views", "error_neighborhood", "forget_plan",
+            "open_read", "validate", "context_compile", "worldline_read_views", "worldline_timeline", "error_neighborhood", "forget_plan",
         )}
         mutation_status = access_support["mutation"]["status"]
         if mutation_status == "qualified":
@@ -2302,7 +2725,7 @@ def cmd_open(args: argparse.Namespace) -> dict[str, Any]:
         else:
             mutation_value = access_support["mutation"]["reason_code"]
         capabilities.update({name: mutation_value for name in (
-            "capture", "correct", "fault_capture", "failure_pattern_governance", "forget_apply", "recover",
+            "capture", "correct", "worldline_capture", "worldline_policy", "fault_capture", "failure_pattern_governance", "forget_apply", "recover",
         )})
         capabilities["export"] = "supported_with_qualified_destination"
         capabilities["migrate_copy_from_v1"] = "supported_with_qualified_destination"
@@ -2525,6 +2948,9 @@ def parser() -> argparse.ArgumentParser:
     add_workspace_argument(export)
     export.add_argument("--output", required=True)
     export.add_argument("--authority", required=True)
+    export.add_argument("--worldline-timeline", action="store_true", help="Export historical owner-wide occurrences, excluding control policy")
+    export.add_argument("--user")
+    export.add_argument("--agent")
     export.add_argument("--project")
     export.add_argument("--thread")
     export.add_argument("--from", dest="from_time")

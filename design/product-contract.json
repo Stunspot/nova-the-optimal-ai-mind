@@ -2,7 +2,7 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "3.1.5",
+  "product_version": "3.2.0",
   "state": "source_ready_for_qualification",
   "plugin": {
     "count": 1,
@@ -10,7 +10,7 @@
     "front_door": "nova"
   },
   "mind": {
-    "version": "0.3.1",
+    "version": "0.4.0",
     "resident": true,
     "identity": "nova_edition_invariant_cognitive_architecture",
     "product_status": "not_a_separate_product",
@@ -125,5 +125,22 @@
     "state": "not_performed_by_build",
     "authority": "separate_user_authorization_required"
   },
-  "evidence_boundary": "Local source composition, rights custody, built bytes, and exercised verification only."
+  "evidence_boundary": "Local source composition, rights custody, built bytes, and exercised verification only.",
+  "worldline": {
+    "owner": "cognitive-continuity",
+    "runtime_minimum": "0.3.0",
+    "contract": "cd-worldline-request/v2",
+    "operations": [
+      "browse",
+      "overview",
+      "inspect",
+      "capture",
+      "policy",
+      "render"
+    ],
+    "project_required": false,
+    "ordinary_capture": "standing_owner_authority",
+    "legacy_project_api": "explicit_compatibility",
+    "new_faculty": false
+  }
 }

@@ -35,7 +35,85 @@ When `WORKSPACE` is omitted, the v2 tools resolve the governed
 read request. Use v1 tools for a v1 operation they actually support; Faultline is
 typed unsupported on v1.
 
-## Worldline read views
+## Worldline timeline
+
+Read `../references/worldline-timeline.md` for the cognitive and custody contract.
+The library entrypoint is `query_worldline(request, registry_path=...)`, with
+`cd-worldline-request/v2` and `cd-worldline-view/v2` schemas. The command fills
+exact user and agent from the selected manifest when possible; supply `--user`
+and `--agent` only when the manifest does not establish them. Omit project and
+thread filters to survey all permitted history for that owner. `[WORKSPACE]`
+below is an optional explicit path; omit it to use the governed selector.
+
+```text
+python -B -X utf8 worldline_timeline.py overview [WORKSPACE] --from 2026-09-01T00:00:00Z --to 2026-10-01T00:00:00Z --bucket month
+python -B -X utf8 worldline_timeline.py browse [WORKSPACE] --search memory --page-size 30
+python -B -X utf8 worldline_timeline.py inspect [WORKSPACE] --event-id EP-EVENT_ID
+python -B -X utf8 worldline_timeline.py render [WORKSPACE] --from 2026-09-01T00:00:00Z --output EXPLICIT_ABSENT_PATH.html
+python -B -X utf8 worldline_timeline.py --request REQUEST.json
+```
+
+`browse`, `overview` and `inspect` are read-only. `render` writes only its
+explicitly named, bounded HTML derivative and never captures an occurrence.
+An internal projection filename must end in `.html`.
+Prefer the selected workspace's `projections` directory when that derivative
+should participate in its forget lifecycle. Current unedited renderer output is
+backed up and deleted as part of governed forgetting; edited or unfamiliar files
+retain the separate named-custody route. Time filters are half-open intervals;
+`--display-offset-minutes` chooses grouping offset without changing stored time.
+Use the returned cursor for another page, restarting if the generation changed.
+Coverage describes retained evidence and limits, not everything Nova ever did.
+Existing episodes are visible as legacy entries with recorded-time placement.
+
+Read the persistent policy, or retain a human-authorized choice:
+
+```text
+python -B -X utf8 worldline_timeline.py policy [WORKSPACE]
+python -B -X utf8 worldline_timeline.py policy [WORKSPACE] --mode ordinary --authority user-explicit --authority-source task:OWNER_DIRECTIVE --event-key ordinary-choice-1
+python -B -X utf8 worldline_timeline.py policy [WORKSPACE] --mode off --authority user-explicit --authority-source task:OWNER_DIRECTIVE --event-key off-choice-1
+```
+
+Once standing ordinary capture has been authorized, record a coherent current
+episode with one short command. Use an actual source reference and stable key:
+
+```text
+python -B -X utf8 worldline_timeline.py capture [WORKSPACE] --title "Explored the shape of memory" --source task:SOURCE_TASK --event-key memory-exploration-1 --current
+python -B -X utf8 worldline_timeline.py capture [WORKSPACE] --capture-mode explicit --authority user-explicit --title "Returned to an earlier idea" --source task:SOURCE_TASK --event-key idea-return-1 --occurred-at 2026-09-12T14:00:00Z --time-basis source_reported
+python -B -X utf8 worldline_timeline.py capture [WORKSPACE] --input COMPACT_EVENT.json
+```
+
+The default capture mode is routine, authorized by the stored ordinary policy.
+Without it, routine capture is suppressed. Explicit mode requires the actual
+current user's direction. `--no-retention` suppresses capture even with standing
+permission. The convenience command reads generation and derives idempotency
+from the source and event key; lost-response retries reuse the recorded current
+instant and unchanged payload. A changed occurrence requires a new event key or
+an explicitly authorized correction, not accidental duplication.
+
+Defaults are kind `conversation`, source kind `agent`, label `Original source`,
+source owner `unspecified`, ordinary sensitivity and workspace retention.
+Corrections via `--supersedes EP-CURRENT_REVISION` inherit time, links and privacy;
+provide the changed fields and human authority. `--retract` records a retraction.
+A later genuine change of mind is a new event with optional `--related-id`.
+Precise requests may use `cd-worldline-capture/v2` or
+`cd-worldline-policy-request/v1` through `--request`; a privacy reclassification
+requires explicit `privacy_change_authorized: true` in full or compact JSON.
+Both write APIs delegate to `continuity_store_v2.py` and return its governed receipt.
+
+For an owner-scoped historical transfer, choose the explicit export mode:
+
+```text
+python -B -X utf8 continuity_store_v2.py export [WORKSPACE] --worldline-timeline --output EXPLICIT_ABSENT_EXPORT.json --authority user-explicit --sensitivity ordinary
+```
+
+This preserves permitted event metadata, source links and required revision
+ancestry, and excludes capture policy. A family whose required ancestor cannot
+be disclosed is omitted with a `revision_ancestry_privacy` count. Generic export
+scope defaults remain unchanged. Import remains quarantine-only. Native event
+metadata requires Continuity 0.3.0 or newer; use a capable reader for an evolved
+store, or an explicitly preserved pre-event copy for old-runtime rollback.
+
+## Legacy Worldline project views
 
 Read `../references/worldline-contract.md` first. The stable API is
 `compile_worldline(request, registry_path=...)`; its request is

@@ -1,6 +1,6 @@
 # Install Nova the Optimal AI Free
 
-Nova the Optimal AI Free 3.1.5 is one product and one plugin. MIND is the edition-invariant cognitive architecture of Nova itself, not another product to install beside her. Its twenty-seven native skills include the Nova front door with seventeen nested Faculty Cores including Strategic Intelligence, optional governed continuity, Dennis project governance, Commonplace personal knowledge, Agentic Coding, paired TestForge verification, Officecraft and its reviewer, research and retrieval, IT, privacy, language, career workflows, reminders, people context, and durable goals.
+Nova the Optimal AI Free 3.2.0 is one product and one plugin. MIND is the edition-invariant cognitive architecture of Nova itself, not another product to install beside her. Its twenty-seven native skills include the Nova front door with seventeen nested Faculty Cores including Strategic Intelligence, optional governed continuity, Dennis project governance, Commonplace personal knowledge, Agentic Coding, paired TestForge verification, Officecraft and its reviewer, research and retrieval, IT, privacy, language, career workflows, reminders, people context, and durable goals.
 
 Ordinary use needs no local model, embedding service, vector database, prompt hook, daemon, or persistent estate.
 
@@ -42,6 +42,10 @@ Python 3.10 or newer must already be available for deterministic persistent serv
 
 ## Upgrade from Free 2.x
 
-Free 2.x used two plugins, a prompt hook, an Ollama embedding model, a vector database, and forty-one visible handles. The old and new Nova front doors share the `nova-the-optimal-ai` plugin ID: extracting 3.1.5 beside 2.x is safe staging, but installing it replaces that plugin binding rather than creating a side-by-side active Nova. Preserve the old package and configuration for rollback before approving replacement. Free 3.1.5 does not mutate the old database or uninstall Ollama. Ask before disabling another Nova or MIND source. Preserve any Continuity data and decide separately whether obsolete hook, database, model, or plugin artifacts should be removed.
+Free 2.x used two plugins, a prompt hook, an Ollama embedding model, a vector database, and forty-one visible handles. The old and new Nova front doors share the `nova-the-optimal-ai` plugin ID: extracting 3.2.0 beside 2.x is safe staging, but installing it replaces that plugin binding rather than creating a side-by-side active Nova. Preserve the old package and configuration for rollback before approving replacement. Free 3.2.0 does not mutate the old database or uninstall Ollama. Ask before disabling another Nova or MIND source. Preserve any Continuity data and decide separately whether obsolete hook, database, model, or plugin artifacts should be removed.
 
 Continue with the [upgrade guide](docs/UPGRADE.md) and [troubleshooting guide](docs/TROUBLESHOOTING.md).
+
+## Your persistent past
+
+Ask Nova to set up Worldline when you want a source-linked timeline of ordinary conversations and work. Choose ordinary capture or off once; an existing explicit standing choice already applies. Ask “What have we been doing this month?” to survey it. See [Worldline](docs/WORLDLINE.md) for capture, privacy, coverage and rollback.

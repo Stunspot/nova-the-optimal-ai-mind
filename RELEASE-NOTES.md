@@ -1,6 +1,14 @@
-# Nova the Optimal AI Free release notes
+# Nova Free 3.2.0 — a navigable past
 
-## 3.1.5 â€” current skills, distinct release identity
+Worldline 2 rebuilds continuity around recognizable occurrences and source links. Survey months, topics, projects and projectless work; inspect revisions; capture coherent ordinary episodes under standing authority; control ordinary/off; and request a bounded scrollable HTML timeline. Cognitive Continuity 0.3.0 owns the existing episode store, policy, correction and forgetting. Embedded MIND 0.4.0 revises the existing Cognitive Continuity Faculty; the 17-Core topology and governing persona remain unchanged. Legacy project views remain explicitly available.
+
+Current retention and privacy govern historical views. Existing episodes are partial legacy coverage, not a transcript import. Evolved stores require runtime 0.3.0 or newer; turn capture off while retaining a compatible runtime for behavior rollback. Source, package checks, installation and observed host behavior remain separate evidence.
+
+## Preserved earlier release notes
+
+## Nova the Optimal AI Free release notes
+
+### 3.1.5 â€” current skills, distinct release identity
 
 2026-09-12 retrieval maintenance, v3.1.5 — Retrieval Intelligence adds provenance-preserving image caption and local transcription ingestion, with the same explicit media-evidence boundaries as the standalone skill.
 
@@ -10,11 +18,11 @@ Publishes the accepted instruction cleanup and updated component versions as a d
 
 Nova retains her governing persona, MIND 0.3.1, seventeen Faculty cores, and twenty-seven skill roots. No new persistence schema, automatic migration, service, or ordinary runtime requirement is introduced.
 
-## 3.1.4 â€” version-only reissue
+### 3.1.4 â€” version-only reissue
 
 Reissues the current 3.1.3 contents under a new version so the distribution update can be applied again. Only release identity, version references, packaging metadata, and their checksums change. Agent behavior, persona, capabilities, component versions, and runtime code remain unchanged.
 
-## 3.1.3 â€” pragmatic skepticism without the probability cosplay
+### 3.1.3 â€” pragmatic skepticism without the probability cosplay
 
 This is the first versioned release of the completed Model Agnosticism architecture. MIND 0.3.1 remains Nova's edition-invariant cognitive substrate: ordinary work uses qualitative, proportionate skepticism, preserves plausible alternatives, distinguishes observation from interpretation, and reframes when the available models stop fitting. It creates no ambient proposition ledger, mandatory rival list, or decorative numerical overhead.
 
@@ -22,7 +30,7 @@ The optional stateless Trellis 1.1.0 calculator remains capability-mediated and 
 
 The new product identity brings source, packages, customer guidance, shelf sidecars, and release assets onto one forward version. It changes no Nova estate schema, performs no automatic migration, and adds no local-model, network, persistence, hook, daemon, or ordinary Python requirement.
 
-## 3.1.2 â€” rival models without doctrinal capture
+### 3.1.2 â€” rival models without doctrinal capture
 
 The 2026-09-04 same-version completion repair makes the architecture explicit: MIND is Nova's edition-invariant cognitive substrate, not a separate product or persona, and Model Agnosticism is ambient qualitative discipline across every edition. Ordinary work does not acquire a proposition ledger or counterfeit precision. Unqualified impossibility is reserved for logical contradiction; constraint-bound impossibility names its constraints.
 
@@ -38,7 +46,7 @@ Agent Striving advances to the canonical 0.4.0 fourteen-file tree at commit 5bcc
 
 Nova's integrated MIND runtime now carries the sparse mission-capsule v2 contract: open pursuits need no invented acceptance rubric, bounded tasks retain their real completion conditions, terminal state stays coherent, and published v1 capsules remain readable through deterministic migration rather than being silently reinterpreted.
 
-## 3.1.1 â€” current pursuit and project custody
+### 3.1.1 â€” current pursuit and project custody
 
 Agent Striving advances to the complete canonical 0.3.3 tree. It now preserves authorized durable direction without hardening ordinary conversation into campaigns, keeps named-project state with Project Management, resumes from the live edge, adapts without evidence ceremony, and rests naturally.
 
@@ -48,7 +56,7 @@ Agent Swarm Orchestration advances to the exact canonical 0.3.0 tree: twenty-six
 
 Release construction now raw-validates every local and central ZIP filename as strict UTF-8, requires the ZIP UTF-8 flag for non-ASCII names, checks exact staged inventory, and reads every member before accepting an archive. Nova Free's current filenames remain ASCII; this is preventive hardening against the invalid-filename defect observed in the larger edition.
 
-## 3.1.0 â€” current foundation alignment
+### 3.1.0 â€” current foundation alignment
 
 Free Nova now shares Nova Emergent 1.0.4's current foundational layer while retaining the Free edition's smaller practical capability ecology. MIND advances to 0.3.0 and adds Strategic Intelligence as its seventeenth nested Faculty Core.
 
@@ -57,7 +65,7 @@ Commonplace 0.2.0 and Dennis Stratton Project Management 0.3.0 become native Fre
 The edition exposes twenty-seven native skill roots. Every committed canonical source pin remains current. Agent Striving receives the maintained 2.2.2 discovery metadata. Agent Swarm Orchestration remains at released 0.2.3; uncommitted vNext work in its source repository is deliberately not represented as a released version.
 
 This source and any locally built archives remain a qualification candidate until the current bytes complete their own verification and any separately authorized publication occurs. The accepted 3.0.0 release and its receipts remain immutable historical evidence.
-## 3.0.0 â€” local release candidate
+### 3.0.0 â€” local release candidate
 
 Free Nova has been rebuilt around the current Nova and MIND architecture.
 
@@ -69,6 +77,6 @@ Persistent state is optional. Free Nova requires only NOVA_DATA_ROOT, NOVA_CONTI
 
 Free 3.0.0 applies the standard public-Augment split license, reconciles the earlier same-owner component labels, and attaches rights custody to every complete and standalone distribution shape. The included licenses permit redistribution of the authentic, unmodified product under their terms. Local construction and verification do not claim fresh-host discovery, model behavior, publication, a tag, a push, a GitHub release, a GitHub Actions run on a GitHub-hosted runner, or a customer outcome.
 
-## Prior release line
+### Prior release line
 
 The last published Free 2.x release was 2.1.3. Its two-plugin, forty-one-handle, prompt-hook and local-embedding architecture is preserved in Git history and is not the Free 3.0.0 runtime.

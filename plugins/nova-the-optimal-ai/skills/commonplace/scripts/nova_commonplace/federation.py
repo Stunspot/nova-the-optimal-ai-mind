@@ -72,7 +72,7 @@ _PACKAGE_ROOTS = {
 }
 _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
     "schema": ADAPTER_MANIFEST_SCHEMA,
-    "approval_id": "nova-emergent-owner-reads-1.0.4",
+    "approval_id": "nova-free-owner-reads-3.2.0",
     "adapters": {
         "Dunbar": {
             "relative_path": _MODULE_PATHS["Dunbar"],
@@ -109,13 +109,13 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
                 {
                     "module": "workspace_runtime",
                     "relative_path": "cognitive-continuity/scripts/workspace_runtime.py",
-                    "sha256": "50679c37e893235ff066017772c7d39696d07c5328d71334d88c0001a416f895",
+                    "sha256": "8d871ac53d1fadaf7921b9750a47739cadc9466df050c906f6149d84f51befb4",
                 },
             ],
             "package": {
                 "relative_root": "cognitive-continuity",
-                "file_count": 74,
-                "tree_sha256": "0312193535b8b25f5d666b07a763751601a83a40fbfde4d57569d3a053e5fbde",
+                "file_count": 86,
+                "tree_sha256": "27a409ba982fe9351cdb9b0c15e1433272d2b3956dfa06d6b96737ca85b32396",
             },
         },
     },

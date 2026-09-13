@@ -1,4 +1,4 @@
 interface:
   display_name: "Cognitive Continuity"
-  short_description: "🧵 Governed memory, Worldline, and failure recall."
-  default_prompt: "Use $cognitive-continuity to inspect the available state, compile what this task needs, and continue without inventing continuity."
+  short_description: "🧵 Worldline timeline, memory, and failure recall."
+  default_prompt: "Use $cognitive-continuity to find temporal bearings in the retained Worldline, follow the useful sources, and carry the present work forward with honest scope and coverage."

@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/worldline-request-v2.json",
+  "type": "object",
+  "required": [
+    "format",
+    "mode",
+    "request_id",
+    "workspace",
+    "scope",
+    "authority",
+    "as_of",
+    "sensitivity_ceiling",
+    "from_time",
+    "to_time",
+    "search",
+    "topics",
+    "kinds",
+    "include_legacy",
+    "order",
+    "page_size",
+    "cursor",
+    "event_id",
+    "bucket",
+    "display_offset_minutes",
+    "budget",
+    "deadline_ms",
+    "unreachable_source_ids"
+  ],
+  "properties": {
+    "format": {
+      "const": "cd-worldline-request/v2"
+    },
+    "mode": {
+      "enum": [
+        "browse",
+        "overview",
+        "inspect"
+      ]
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "workspace": {
+      "type": "object",
+      "required": [
+        "selection_mode",
+        "path",
+        "grant_id"
+      ],
+      "properties": {
+        "selection_mode": {
+          "enum": [
+            "generic_explicit",
+            "nova_ambient",
+            "nova_explicit_authorized"
+          ]
+        },
+        "path": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 2000
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "grant_id": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "user",
+        "agent",
+        "project",
+        "thread"
+      ],
+      "properties": {
+        "user": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "project": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "thread": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authority": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sensitivity_ceiling": {
+      "enum": [
+        "ordinary",
+        "limited",
+        "sensitive",
+        "restricted"
+      ]
+    },
+    "from_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "to_time": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "search": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "maxItems": 12
+    },
+    "kinds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 64
+      },
+      "maxItems": 32
+    },
+    "include_legacy": {
+      "type": "boolean"
+    },
+    "order": {
+      "enum": [
+        "asc",
+        "desc"
+      ]
+    },
+    "page_size": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100
+    },
+    "cursor": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "event_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "bucket": {
+      "enum": [
+        "day",
+        "week",
+        "month"
+      ]
+    },
+    "display_offset_minutes": {
+      "type": "integer",
+      "minimum": -840,
+      "maximum": 840
+    },
+    "budget": {
+      "type": "integer",
+      "minimum": 2000,
+      "maximum": 100000
+    },
+    "deadline_ms": {
+      "type": "integer",
+      "minimum": 100,
+      "maximum": 30000
+    },
+    "unreachable_source_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^EP-[A-Za-z0-9-]+$"
+      },
+      "maxItems": 100
+    }
+  },
+  "additionalProperties": false
+}

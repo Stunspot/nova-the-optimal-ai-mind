@@ -13,7 +13,7 @@ MAINTAINED = (
     "THIRD-PARTY-NOTICES.md", "RELEASE-NOTES.md", "docs/CAPABILITY-GUIDE.md",
     "docs/HOST-MATRIX.md", "docs/INSTALL-CLAUDE.md", "docs/INSTALL-CODEX.md",
     "docs/MAINTAINER-GUIDE.md", "docs/PRIVACY-AND-TRUST.md",
-    "docs/TROUBLESHOOTING.md", "docs/UPGRADE.md", "docs/VERIFICATION.md",
+    "docs/TROUBLESHOOTING.md", "docs/UPGRADE.md", "docs/VERIFICATION.md", "docs/WORLDLINE.md",
 )
 LINK = re.compile(r"(!?)\[([^\]]*)\]\(([^)]+)\)")
 HEADING = re.compile(r"^(#{1,6})\s+\S")

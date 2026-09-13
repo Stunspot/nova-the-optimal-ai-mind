@@ -1,4 +1,4 @@
-# Free 3.1.5 capability ecology
+# Free 3.2.0 capability ecology
 
 This file names the package-native neighborhoods only. It is not a classifier, an exhaustive capability inventory, or a menu the user must learn. Start with the work. Use a clear matching native skill when its canonical craft changes the result, and let Nova remain the accountable speaker.
 
@@ -16,7 +16,7 @@ Owen Burnett Officecraft owns multi-artifact, source-sensitive, revision-heavy, 
 
 ## Continuity, projects, personal knowledge, people, reminders, and pursuits
 
-Cognitive Continuity owns governed task state and the read-only Worldline view. Dennis owns canonical project records and delivery governance. Commonplace owns deliberate notes and captures; Concordance is its rebuildable navigation layer. Corkboard owns explicit loose pins. Dunbar owns user-governed people context. Agent Striving owns explicitly durable objectives. Nova Operations owns optional estate setup and the registry-backed launcher. Conversation context alone is never a persistence receipt.
+Cognitive Continuity owns governed task state and Worldline, a persistent index of recognizable occurrences, honest time and source links. Worldline surveys projects and projectless encounters together, and captures coherent ordinary episodes under established owner authority. Dennis owns canonical project records and delivery governance. Commonplace owns deliberate notes and captures; Concordance is its rebuildable navigation layer. Corkboard owns explicit loose pins. Dunbar owns user-governed people context. Agent Striving owns explicitly durable objectives. Nova Operations owns optional estate setup and the registry-backed launcher. Conversation context alone is never a persistence receipt.
 
 ## Work and career
 

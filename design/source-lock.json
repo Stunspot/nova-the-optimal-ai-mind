@@ -1,8 +1,8 @@
 {
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.5",
-  "source_map_sha256": "0ad5bf8a5206d5b53401ef06eed138d7804ceb3dfde331bb590bc15457cb6c3b",
+  "product_version": "3.2.0",
+  "source_map_sha256": "b6ba10c185f2a02431ddd45b3e0a3d10920486ddf1c739c319f3bc67ba5781e9",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -91,7 +91,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
-        "tree_sha256": "a53626226b3b5e9ebe9d635468bbc67c5e5b9b9a9ffb051ec5b58957ae37d671"
+        "tree_sha256": "510f12a326a8d60335e5c87cae6b61352cff8d557c41561c2f331fcd4157d8b1"
       },
       "overlay_state": "edition_overlay"
     },
@@ -116,9 +116,9 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "2ad8d8808af2bdada7bbb8a57eafdd062818033a",
+      "source_commit": "3ac5fb94471d83fde1efb72d7807ad7034719da7",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
-      "source_version": "0.2.5",
+      "source_version": "0.3.0",
       "selection": [
         "SKILL.md",
         "adapters/",
@@ -137,11 +137,13 @@
         "examples/dream-incubation.md"
       ],
       "source_state": "git_commit",
-      "source_commit_tree": "e2fb2e063b1f5804618d3841d803a7b2738c7949",
+      "source_commit_tree": "8776ae8ec435d7312d701140c8793390c1af59c7",
+      "source_file_count": 86,
+      "source_tree_sha256": "6b8bba22f24f64803313d6185d0020cb42bab2215428baf3c055521b63b01a96",
       "imported_path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity",
       "imported_tree": {
-        "file_count": 74,
-        "tree_sha256": "524eabf5069d7b78eef452bf8603a318921b0a39f7d378a0b8a7a61a88238d48"
+        "file_count": 86,
+        "tree_sha256": "27a409ba982fe9351cdb9b0c15e1433272d2b3956dfa06d6b96737ca85b32396"
       },
       "overlay_state": "edition_overlay"
     },
@@ -159,14 +161,15 @@
       ],
       "edition_overlays": [
         "SKILL.md: preserve Nova Operations launcher guidance",
-        "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters"
+        "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters",
+        "references/owner-routing.md: explain exact edition package binding and retained project compatibility reader"
       ],
       "source_state": "git_commit",
       "source_commit_tree": "566c2c9dc6714bef7ac56296a046227f101b8a01",
       "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
         "file_count": 16,
-        "tree_sha256": "a56b90d2deb2fb063cee7dc32a64173aeeb27407d50c68fe9fa5d0570b73a6c4"
+        "tree_sha256": "aa7bb3e26109dff17b37a589f8c4e396a02caf3e3bcaab034462f866d3cefb77"
       },
       "overlay_state": "edition_overlay"
     },
@@ -209,7 +212,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "451c45e388c8d79db7bf0d8afa1f460ae319603ee3e9380635fcee8270ba94b0"
+        "tree_sha256": "d135df623e77cc986a01e58b44b37f0e3c7548ef79b065ff359e5c72c61cfd9b"
       },
       "overlay_state": "edition_overlay"
     },
@@ -343,7 +346,7 @@
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
       "source_commit": "7f959829176349d2602679eb14841dd6bc1ca643",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_version": "MIND 0.3.1 / Nova Free 3.1.5",
+      "source_version": "MIND 0.4.0 / Nova Free 3.2.0",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
@@ -375,7 +378,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 47,
-        "tree_sha256": "de655d6640a96292119705f10d6ad4f52f304de141e3bcd16eeae942b85d0e40"
+        "tree_sha256": "e847536d21eeeb98d07323949bdc752e400117416fe12388144144237b723f2d"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -384,7 +387,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.1.5 edition binding",
+      "source_version": "1.0.4 with Free 3.2.0 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -393,13 +396,14 @@
         "agents/openai.yaml",
         "references/estate-contract.md",
         "scripts/nova_estate.py product identity strings",
-        "SKILL.md: honor exact setup and additive-upgrade authorization already granted"
+        "SKILL.md: honor exact setup and additive-upgrade authorization already granted",
+        "Worldline 2 timeline launcher and explicit project-compatibility route with exact registry snapshot"
       ],
       "source_state": "accepted_emergent_1.0.4_source_with_free_edition_overlay",
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
       "imported_tree": {
         "file_count": 5,
-        "tree_sha256": "a091863adcaef33666b5b92fd6fe62787d96b9c2bcd56bd17a681507e9988e96"
+        "tree_sha256": "2c8a9f5af0b07756f3117b5c889cd17c57068cc57b1d1e517f7979fb967fbc26"
       },
       "overlay_state": "edition_overlay"
     },
@@ -599,8 +603,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 839,
-    "tree_sha256": "dae5d3a08ff3d50c77ac9c9f5be4151bb610ce61eaf51f4ce1454e6dafede61c"
+    "file_count": 851,
+    "tree_sha256": "203e94259fcf0d1791fc19c81671d94a99b94fb8171add50a11cc2e0cd4d26dd"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -623,12 +627,12 @@
   },
   "rights_bundle": {
     "files": {
-      "LICENSE.md": "4d55ab60310bad6cb3e9c223b2872c325f83e8c6c2afaa8b879a8d82da1d1f11",
+      "LICENSE.md": "882985beaf0b9fdc957f18f815b36de96c0bd319b259d06d1d59749ca6f7ea8b",
       "ATTRIBUTION.md": "22fbf0a5a7958f42a2fc85a571de4af1aeed63993aeabcc59bff9262d626f1bf",
-      "NOTICE.md": "9216cc3f702e4cd051580d536eb8aa471900d7d2d5ee73af5dda3ad876bb7742",
+      "NOTICE.md": "35edc4e8b39a90f1710647ca5414d1a8f5e6fbc7539dfe77ab5501d3b5262f14",
       "TRADEMARKS.md": "a1250ee28c5f9f41288118df443170a3a5b7c8841723e6fc37138829f8d115b7",
-      "PROVENANCE.md": "6f47b3b74b386ce9086b80112ef80b356b89de326ee4930c71a2516c13fb9e01",
-      "THIRD-PARTY-NOTICES.md": "b384ebf06439119bc3ba6d84659ad8a3054c2eba7870762ae634f3be3c26e59a"
+      "PROVENANCE.md": "ca8dd6e2997a64c05f557fcc41d531a397080020bab9c3de1346b4805663e2c1",
+      "THIRD-PARTY-NOTICES.md": "3d09560fcb0df17cda12fe79d8ed0b3e9549cc099e1519733620aa3ebcd346e5"
     },
     "state": "public_split_license_applied",
     "redistribution_state": "permitted_under_included_licenses",

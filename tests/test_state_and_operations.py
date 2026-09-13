@@ -71,6 +71,7 @@ class NovaOperationsFreeTests(unittest.TestCase):
         scripts = {
             self.skills / "cognitive-continuity" / "scripts" / "continuity_store_v2.py": SERVICE,
             self.skills / "cognitive-continuity" / "scripts" / "worldline.py": SERVICE,
+            self.skills / "cognitive-continuity" / "scripts" / "worldline_timeline.py": SERVICE,
             self.skills / "cognitive-continuity" / "scripts" / "validate_continuity_v2.py": VALIDATOR,
             self.skills / "cognitive-continuity" / "scripts" / "workspace_runtime.py": RUNTIME,
             self.skills / "dunbar" / "scripts" / "dunbar.py": SERVICE,

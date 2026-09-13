@@ -1,6 +1,6 @@
-# Free Nova 3.1.5 package map
+# Free Nova 3.2.0 package map
 
-Free 3.1.5 is one product, one plugin, and one Nova front door.
+Free 3.2.0 is one product, one plugin, and one Nova front door.
 
 The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and MIND 0.3.1 as her edition-invariant cognitive architecture. MIND is not a separately selectable product layer. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
 
@@ -8,7 +8,7 @@ Model Agnosticism is ambient qualitative discipline across that architecture, no
 
 The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Coding and release verification remain distinct. Agentic Coding owns normal repository implementation; Software Verification and Verification Reviewer form the paired TestForge release gate. Officecraft and its reviewer provide generalist office craft, with native host artifact skills retaining execution and visual-verification ownership.
 
-The optional estate now uses the shared Nova 1.0.4 foundation: Cognitive Continuity owns Worldline, Dennis owns project records, Commonplace owns deliberate notes and captures, Concordance is rebuildable navigation, Dunbar owns people context, and Corkboard owns reminders. Nova Operations plans, initializes, diagnoses, and upgrades those selectors without storing Nova-owned state under .codex. Ordinary work still requires no persistent estate, local model, embedding service, vector database, hook, or daemon.
+The optional estate now uses the Nova base-service foundation with Worldline 2: Cognitive Continuity owns Worldline, Dennis owns project records, Commonplace owns deliberate notes and captures, Concordance is rebuildable navigation, Dunbar owns people context, and Corkboard owns reminders. Nova Operations plans, initializes, diagnoses, and upgrades those selectors without storing Nova-owned state under .codex. Ordinary work still requires no persistent estate, local model, embedding service, vector database, hook, or daemon.
 
 Agent Striving is the exact canonical 0.4.0 fourteen-file tree. Agent Swarm Orchestration is the exact canonical 0.3.0 tree and refreshed six-file notice packet, bound to the accepted handoff fingerprints.
 

@@ -1,6 +1,6 @@
 {
   "schema": "nova-emergent-mind-core-adaptation-ledger/v1",
-  "component_version": "0.3.1",
+  "component_version": "0.4.0",
   "authority": "DEC-MIND-CONSTRUCT",
   "persona_invariant": "The canonical Nova persona prompt remains byte-inviolate and governing; Core adaptations compose beneath it.",
   "common_transformation": {
@@ -113,30 +113,29 @@
     {
       "id": "cognitive-continuity",
       "upstream": {
-        "component_version": "2.2.2",
-        "coordinate": "augment-of-mind@2.2.2/skills/cognitive-continuity/SKILL.md",
-        "sha256": "BF867C006A999AAFE7D8023E2325369E5CCF378216C3A4CAF4F64309CB2443A5"
+        "component_version": "0.3.0",
+        "coordinate": "cognitive-continuity@3ac5fb94471d83fde1efb72d7807ad7034719da7/SKILL.md",
+        "sha256": "662D875D73411E589458C69FA6A926CA00BB427E2E0173A3D0E0199BFD648EBA"
       },
       "core": {
-        "component_version": "0.2.0",
+        "component_version": "0.3.0",
         "path": "source/faculty-cores/cognitive-continuity.core.md",
-        "sha256": "C0DAA64D047076BAAAA3E7F3E1443664487C32A5081C2ACF2EA2A0D77EF095C8",
-        "bytes": 6323
+        "sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
+        "bytes": 6783
       },
       "intentional_adaptations": [
-        "Inlined the cognitive-ecology stance instead of loading a separate persona.",
-        "Preserved continuity judgment while removing package-specific store mechanics.",
-        "Kept Worldline and failure memory as bounded semantics rather than owned runtimes.",
-        "Made task compilation mission-first so voluminous method history cannot displace the user goal, corrections, authority, and observed progress."
+        "Preserved governed task context while adding recognition-first autobiographical orientation.",
+        "Removed the universal project gate and anti-biography instruction; projects are optional timeline facets.",
+        "Recruit governed coherent-occurrence capture under established authority with source pointers, honest time and idempotency.",
+        "Keep current privacy, correction, forgetting and capability ownership binding across historical views."
       ],
       "retained_doctrine": [
-        "Continuity is an ecology of evidence, salience, obligation, permission, correction, and forgetting.",
-        "Episodes, governed typed state, and task-shaped derivatives remain distinct.",
-        "Source, valid time, authority, entitlement, supersession, and conflict govern use.",
-        "Context is compiled for the task under finite attention.",
-        "Worldline remains a conditional read-only view.",
-        "Privacy, correction, and forgetting are ordinary operations.",
-        "Continuity preserves purpose ahead of recency and makes superseded routes easy to abandon."
+        "Source, owner scope, authority, honest time and privacy govern recalled material.",
+        "Current typed state, historical occurrence and derived views remain distinct.",
+        "Current task continuity remains purpose-first; autobiographical orientation surveys eligible experience before selective detail.",
+        "Ordinary episodes need no project, decision or deliverable.",
+        "Capture requires an observed governed receipt; off and current no-retention suppress routine capture.",
+        "Correction, forgetting and bounded failure recall remain owned Continuity operations."
       ],
       "removed_standalone_shell": true,
       "removed_dependencies": [
@@ -146,21 +145,29 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_unification"
+        "actor": "worldline_2_edition_integration"
       },
       "independent_prompt_review": {
         "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/mind-alpha.2-review.md",
-        "reviewer": "independent mind_repair_review agent",
-        "observed_at": "2026-08-21T14:01:09.6664788Z",
-        "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+        "reviewer": "independent Worldline 2 Promptcraft reviewer",
+        "evidence": "cognitive-continuity/design/worldline-2/REVIEW.md",
+        "reviewed_core_sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
+        "boundary": "Static semantic review of Faculty, front-door and Operations prompts under sparse, conflicting, unavailable, no-retention and apparent-completion cases; no live-host or spontaneous invocation claim."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
+        "evidence_boundary": "Runtime and launcher tests do not prove spontaneous future model invocation."
+      },
+      "design_authority": {
+        "case": "ARC-WORLDLINE-2",
+        "revision": 1,
+        "source": "stunspot explicit Worldline rebuild, 2026-09-13",
+        "boundary": "Changes the existing Cognitive Continuity Faculty; no additional Faculty or persona."
+      },
+      "predecessor_upstream": {
+        "component_version": "2.2.2",
+        "coordinate": "augment-of-mind@2.2.2/skills/cognitive-continuity/SKILL.md",
+        "sha256": "BF867C006A999AAFE7D8023E2325369E5CCF378216C3A4CAF4F64309CB2443A5"
       }
     },
     {

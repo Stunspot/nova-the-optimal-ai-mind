@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
-PRODUCT_VERSION = "1.0.4"
+PRODUCT_VERSION = "3.2.0"
 REGISTRY_FORMAT = "nova-path-selectors/v1"
 MANIFEST_FORMAT = "nova-estate-manifest/v1"
 LEGACY_MANIFEST_FORMAT = "nova-data-estate/v1"
@@ -42,7 +42,8 @@ LEGACY_MIND_SELECTOR_KEYS = ("MIND_CORE_DATABASE", "MIND_HOOK_RECEIPT_DIRECTORY"
 MANAGED_ENVIRONMENT_KEYS = SELECTOR_KEYS + LEGACY_MIND_SELECTOR_KEYS
 SERVICE_ENTRYPOINTS = {
     "continuity": ("cognitive-continuity", "scripts", "continuity_store_v2.py"),
-    "worldline": ("cognitive-continuity", "scripts", "worldline.py"),
+    "worldline": ("cognitive-continuity", "scripts", "worldline_timeline.py"),
+    "worldline-legacy": ("cognitive-continuity", "scripts", "worldline.py"),
     "dunbar": ("dunbar", "scripts", "dunbar.py"),
     "corkboard": ("corkboard", "scripts", "corkboard.py"),
     "project-management": (
@@ -264,7 +265,8 @@ def continuity_paths() -> dict[str, Path]:
     return {
         "root": root,
         "store": root / "scripts" / "continuity_store_v2.py",
-        "worldline": root / "scripts" / "worldline.py",
+        "worldline": root / "scripts" / "worldline_timeline.py",
+        "worldline_legacy": root / "scripts" / "worldline.py",
         "validate": root / "scripts" / "validate_continuity_v2.py",
         "runtime": root / "scripts" / "workspace_runtime.py",
         "mutation_probe": Path(__file__).resolve().parent / "probe_continuity_mutation.py",
@@ -1533,6 +1535,12 @@ def command_doctor(args: argparse.Namespace) -> int:
 
 
 def command_worldline(args: argparse.Namespace) -> int:
+    """Pass the timeline interface to its canonical owner with exact selectors."""
+    args.service = "worldline"
+    return command_run(args)
+
+
+def command_worldline_legacy(args: argparse.Namespace) -> int:
     _, values, _ = load_configured_root(args.root)
     command_args = [
         args.mode,
@@ -1545,7 +1553,7 @@ def command_worldline(args: argparse.Namespace) -> int:
         "--agent",
         "Nova",
     ]
-    completed = run_service_process("worldline", command_args, values, capture=True)
+    completed = run_service_process("worldline-legacy", command_args, values, capture=True)
     if completed.returncode == 0:
         sys.stdout.write(completed.stdout)
         if completed.stdout and not completed.stdout.endswith("\n"):
@@ -1588,13 +1596,18 @@ def parser() -> argparse.ArgumentParser:
     run.add_argument("service_args", nargs=argparse.REMAINDER)
     run.set_defaults(function=command_run)
 
-    worldline = commands.add_parser("worldline", help="Compatibility facade over the registry-backed worldline service")
+    worldline = commands.add_parser("worldline", help="Browse, capture or render the registry-backed autobiographical timeline")
     worldline.add_argument("--root")
-    worldline.add_argument("--mode", choices=("resume", "status", "checkpoint", "inspect"), required=True)
-    worldline.add_argument("--project", required=True)
-    worldline.add_argument("--task", required=True)
-    worldline.add_argument("--user", default="local-user")
+    worldline.add_argument("service_args", nargs=argparse.REMAINDER)
     worldline.set_defaults(function=command_worldline)
+
+    legacy = commands.add_parser("worldline-legacy", help="Explicit compatibility view for legacy project continuity")
+    legacy.add_argument("--root")
+    legacy.add_argument("--mode", choices=("resume", "status", "checkpoint", "inspect"), required=True)
+    legacy.add_argument("--project", required=True)
+    legacy.add_argument("--task", required=True)
+    legacy.add_argument("--user", default="local-user")
+    legacy.set_defaults(function=command_worldline_legacy)
     return root
 
 

@@ -251,6 +251,11 @@ def _validate_legacy_content_history(
 
 def _validate_references(collections: dict[str, list[dict[str, Any]]], errors: list[str]) -> None:
     episodes, records, proposals = collections["episodes"], collections["state"], collections["proposals"]
+    from worldline_domain import validate_episode_graph
+    try:
+        validate_episode_graph(episodes)
+    except ContinuityError as exc:
+        errors.append(str(exc))
     episode_ids = {row.get("id") for row in episodes}
     occurrence_ids = {row.get("id") for row in episodes if row.get("type") == "failure_occurrence"}
     record_ids = {row.get("id") for row in records}

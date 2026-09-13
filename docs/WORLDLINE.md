@@ -1,0 +1,13 @@
+# Think with Worldline
+
+Worldline helps Nova find her bearings in the work and conversations you have shared. It records that something recognizable happened, when or how its time is known, and where to find the substance. Conversations and artifacts stay where they belong. An exploration can count even when it produced no project or finished deliverable.
+
+Ask “What have we been doing this month?”, “When did we explore that idea?” or “Show me our timeline.” Nova first surveys compact occurrences, then follows the source links that matter. Existing retained episodes appear as a partial earlier past. Missing source content does not erase the fact of an encounter, and an empty month means no eligible entries were found.
+
+Ask Nova to set up optional Worldline storage. During setup, choose once whether Nova should remember ordinary recognizable occurrences. You can later say “Turn ordinary Worldline capture off.” A standing choice carries subsequent ordinary episodes without repeated permission questions. “Do not retain this” suppresses capture for the current work. You can also explicitly ask to save or correct one occurrence. The record is a short recognition label and pointers, not a transcript or personality profile. A save counts only when the local operation succeeds.
+
+The timeline can include different projects, projectless work and different conversations within your selected user and Nova identity. Filtering by a project is available when useful. Correcting an entry keeps its revision history; a genuine later change of mind is its own occurrence. Forgetting removes the selected event family and generated Worldline timelines in governed projections custody without erasing independent neighboring events.
+
+“Show me the timeline” can produce a standalone scrollable HTML file at an explicit destination. It shows its date span, loaded events and coverage limits. Its filters work on the loaded set; request another window for more history. Keeping generated timelines in the configured Continuity projections directory lets governed forgetting find them. Copies you export elsewhere retain their own copy boundary.
+
+Optional persistence requires Python 3.10 or newer and a configured customer-owned Nova estate. Ordinary work remains available without it. Worldline 2 requires Cognitive Continuity 0.3.0 or newer for its evolved store. To roll back routine behavior, turn capture off and keep a compatible runtime; restoring an older history snapshot is a separate choice. No background watcher, transcript harvesting, local model or network service is added. Actual capture depends on the host invoking the available tools.

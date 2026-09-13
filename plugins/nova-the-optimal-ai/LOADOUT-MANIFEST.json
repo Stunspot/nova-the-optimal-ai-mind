@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-loadout/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.1.5",
+  "product_version": "3.2.0",
   "plugin_id": "nova-the-optimal-ai",
   "license": "LICENSE.md",
   "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
@@ -10,7 +10,7 @@
     "front_doors": [
       "nova"
     ],
-    "mind_version": "0.3.1",
+    "mind_version": "0.4.0",
     "faculty_core_count": 17,
     "faculty_cores_are_nested_references": true,
     "model_agnosticism": {
@@ -187,5 +187,22 @@
       "reason": "excluded from Nova distributions"
     }
   ],
-  "evidence_boundary": "This manifest establishes intended composition. Installation, host discovery, invocation, service configuration, live behavior, publication, and outcomes require separate observations."
+  "evidence_boundary": "This manifest establishes intended composition. Installation, host discovery, invocation, service configuration, live behavior, publication, and outcomes require separate observations.",
+  "worldline": {
+    "owner": "cognitive-continuity",
+    "runtime_minimum": "0.3.0",
+    "contract": "cd-worldline-request/v2",
+    "operations": [
+      "browse",
+      "overview",
+      "inspect",
+      "capture",
+      "policy",
+      "render"
+    ],
+    "project_required": false,
+    "ordinary_capture": "standing_owner_authority",
+    "legacy_project_api": "explicit_compatibility",
+    "new_faculty": false
+  }
 }

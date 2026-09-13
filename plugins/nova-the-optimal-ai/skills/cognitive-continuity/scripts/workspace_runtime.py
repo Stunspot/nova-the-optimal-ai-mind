@@ -26,7 +26,7 @@ from eligibility_policy import contains_secret_data
 LEGACY_FORMAT = "cd-cognitive-continuity/v1"
 FORMAT = "cd-cognitive-continuity/v2"
 EXPORT_FORMAT = "cd-cognitive-continuity-export/v2"
-IMPLEMENTATION_VERSION = "0.2.5"
+IMPLEMENTATION_VERSION = "0.3.0"
 SELECTOR = "NOVA_CONTINUITY_HOME"
 ROOT_SELECTOR = "NOVA_DATA_ROOT"
 
@@ -2578,6 +2578,9 @@ def _validate_bundle_rows(rows: dict[str, list[dict[str, Any]]]) -> None:
         )
         if len(identities) != len(set(dump_canonical(item) for item in identities)):
             raise ContinuityError(f"Duplicate row identity in {member}", "workspace_invalid")
+    if any(row.get("worldline_event") is not None or row.get("worldline_policy") is not None for row in rows["episodes.jsonl"]):
+        from worldline_domain import validate_episode_graph
+        validate_episode_graph(rows["episodes.jsonl"])
     receipts = {row.get("id"): row for row in rows["receipts.jsonl"]}
     for entry in rows["idempotency.jsonl"]:
         receipt_id = entry.get("receipt_id")
