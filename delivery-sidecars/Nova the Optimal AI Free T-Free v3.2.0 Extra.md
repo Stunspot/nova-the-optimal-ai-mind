@@ -44,7 +44,7 @@ Ask “What have we been doing this month?” or “Show me our timeline.” Dur
 
 # Changelog
 
-2026-09-13, v3.2.0 — Rebuilt Worldline as an autobiographical occurrence index, added temporal survey and governed capture/control/rendering, preserved projectless and legacy history, and revised the existing Cognitive Continuity Faculty in embedded MIND 0.4.0. Cognitive Continuity 0.3.0 owns state and lifecycle; the persona and seventeen-Core topology remain unchanged.
+v3.2.0 - 2026-09-13. Rebuilt Worldline as an autobiographical occurrence index, added temporal survey and governed capture/control/rendering, preserved projectless and legacy history, and revised the existing Cognitive Continuity Faculty in embedded MIND 0.4.0. Cognitive Continuity 0.3.0 owns state and lifecycle; the persona and seventeen-Core topology remain unchanged.
 
 
 2026-09-12 retrieval maintenance, v3.1.5 — Retrieval Intelligence adds provenance-preserving image caption and local transcription ingestion while retaining explicit media-evidence boundaries.
