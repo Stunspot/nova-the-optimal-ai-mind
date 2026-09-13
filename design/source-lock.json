@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.2.0",
-  "source_map_sha256": "e686430df7dff3d1cf133eb32d98c7259954e4a58d0f7a502cb6ab726eed316d",
+  "source_map_sha256": "dc27d2518e816cc7104ec8c52cfb47bf377819429e14779898297d854aec50f0",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -344,7 +344,7 @@
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "f0839e01e0c001b5781bcab32bfadca097855d90",
+      "source_commit": "56f708e166e03f1bc80e27813e88c06b9898bb2e",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
       "source_version": "MIND 0.4.0 / Nova Free 3.2.0",
       "selection": [
@@ -352,10 +352,10 @@
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "c630511b8713dd4a0a34ed9a32acfa27dd7a4538",
-      "source_git_tree": "3c7bfeb74de7885b422297b02d35cecc24072629",
+      "source_commit_tree": "3366409b5c8f7c1ef860e8609a24175a6986d333",
+      "source_git_tree": "32dbc743d205962d50370f41f211195beebddc46",
       "source_file_count": 47,
-      "source_tree_sha256": "e847536d21eeeb98d07323949bdc752e400117416fe12388144144237b723f2d",
+      "source_tree_sha256": "31b1bbfe81ac3c504a27793e12b122fcac1bfd6c0d320bf6d048edc19fa6bdcf",
       "source_lineage": {
         "historical_origin": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
         "historical_origin_state": "non_git_authoring_workbench_not_current_authority",
