@@ -25,7 +25,7 @@ def inventory(root):
 class WorldlineMutationTests(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory(dir="E:/" if os.name == "nt" and Path("E:/").exists() else None)
-        self.base = Path(self.tmp.name)
+        self.base = Path(self.tmp.name).resolve()
         self.root = self.base / "workspace"
         runtime.initialize_workspace(str(self.root), user="user", project="*", agent="nova", thread=None,
                                      sensitivity="ordinary", retention="until-user-forgets")

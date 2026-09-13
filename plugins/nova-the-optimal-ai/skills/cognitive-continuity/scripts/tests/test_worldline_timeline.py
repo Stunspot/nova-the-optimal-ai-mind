@@ -139,7 +139,7 @@ class SelectionTests(unittest.TestCase):
 class RuntimeTests(unittest.TestCase):
     def test_real_capture_cli_replay_query_paging_render_and_mutation_boundary(self):
         with tempfile.TemporaryDirectory(dir='E:/' if os.name=='nt' and Path('E:/').exists() else None) as name:
-            base=Path(name);root=base/'store'
+            base=Path(name).resolve();root=base/'store'
             runtime.initialize_workspace(str(root),user='owner',agent='nova',project='*',thread=None,
                                          sensitivity='ordinary',retention='until-user-forgets')
             argv=['capture',str(root),'--current','--title','Discussed the shape of memory','--source',LINK,

@@ -114,7 +114,7 @@
       "id": "cognitive-continuity",
       "upstream": {
         "component_version": "0.3.0",
-        "coordinate": "cognitive-continuity@3ac5fb94471d83fde1efb72d7807ad7034719da7/SKILL.md",
+        "coordinate": "cognitive-continuity@0ac71bc4a9730398ea31ef0e65203363c424f44f/SKILL.md",
         "sha256": "662D875D73411E589458C69FA6A926CA00BB427E2E0173A3D0E0199BFD648EBA"
       },
       "core": {

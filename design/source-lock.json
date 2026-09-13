@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.2.0",
-  "source_map_sha256": "95d61d90e49f9067c29cfeab7137350c01ff6528e5951c415b8e5003a6cc18bb",
+  "source_map_sha256": "e686430df7dff3d1cf133eb32d98c7259954e4a58d0f7a502cb6ab726eed316d",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -116,7 +116,7 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "3ac5fb94471d83fde1efb72d7807ad7034719da7",
+      "source_commit": "0ac71bc4a9730398ea31ef0e65203363c424f44f",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
       "source_version": "0.3.0",
       "selection": [
@@ -137,13 +137,13 @@
         "examples/dream-incubation.md"
       ],
       "source_state": "git_commit",
-      "source_commit_tree": "8776ae8ec435d7312d701140c8793390c1af59c7",
+      "source_commit_tree": "9ddaa80db0f0e23df43dbb2d413e0afe08f666f2",
       "source_file_count": 86,
-      "source_tree_sha256": "6b8bba22f24f64803313d6185d0020cb42bab2215428baf3c055521b63b01a96",
+      "source_tree_sha256": "828a8adf63c8c95efa71af2d58be7b8e7c2d1768ff691f64273a8bd8a92fbc0f",
       "imported_path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity",
       "imported_tree": {
         "file_count": 86,
-        "tree_sha256": "27a409ba982fe9351cdb9b0c15e1433272d2b3956dfa06d6b96737ca85b32396"
+        "tree_sha256": "3342705429cfa6ef0f004a70ccd705b2e2e367b79255899c626370d6dec24206"
       },
       "overlay_state": "edition_overlay"
     },
@@ -169,7 +169,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
         "file_count": 16,
-        "tree_sha256": "aa7bb3e26109dff17b37a589f8c4e396a02caf3e3bcaab034462f866d3cefb77"
+        "tree_sha256": "08804dd3357768358696753afba42c785e7f03b198dbcd38e4a20523ff050135"
       },
       "overlay_state": "edition_overlay"
     },
@@ -378,7 +378,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 47,
-        "tree_sha256": "e847536d21eeeb98d07323949bdc752e400117416fe12388144144237b723f2d"
+        "tree_sha256": "31b1bbfe81ac3c504a27793e12b122fcac1bfd6c0d320bf6d048edc19fa6bdcf"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -604,7 +604,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 851,
-    "tree_sha256": "203e94259fcf0d1791fc19c81671d94a99b94fb8171add50a11cc2e0cd4d26dd"
+    "tree_sha256": "97b729f6d852f09f3a268ee05763910536a7fad076f11fb772ebcbe287771b21"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

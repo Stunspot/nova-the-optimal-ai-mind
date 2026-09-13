@@ -334,7 +334,7 @@
     {
       "id": "cognitive-continuity",
       "source_repository": "https://github.com/Stunspot/cognitive-continuity",
-      "source_commit": "3ac5fb94471d83fde1efb72d7807ad7034719da7",
+      "source_commit": "0ac71bc4a9730398ea31ef0e65203363c424f44f",
       "source_path": "release-manifest.json#lineage_synchronized_paths",
       "source_version": "0.3.0",
       "selection": [
@@ -355,9 +355,9 @@
         "examples/dream-incubation.md"
       ],
       "source_state": "git_commit",
-      "source_commit_tree": "8776ae8ec435d7312d701140c8793390c1af59c7",
+      "source_commit_tree": "9ddaa80db0f0e23df43dbb2d413e0afe08f666f2",
       "source_file_count": 86,
-      "source_tree_sha256": "6b8bba22f24f64803313d6185d0020cb42bab2215428baf3c055521b63b01a96"
+      "source_tree_sha256": "828a8adf63c8c95efa71af2d58be7b8e7c2d1768ff691f64273a8bd8a92fbc0f"
     },
     {
       "id": "nova-operations",
