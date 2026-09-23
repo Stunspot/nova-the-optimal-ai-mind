@@ -34,6 +34,7 @@ REQUIRED_DOCS = {
     "RELEASE-NOTES.md", "RELEASE-MANIFEST.json", "SHA256SUMS.txt",
 }
 REQUIRED_PACKAGE_PATHS = {
+    "design/DEC-VALUE-OF-INQUIRY.md",
     "docs/CAPABILITY-GUIDE.md", "docs/HOST-MATRIX.md", "docs/INSTALL-CLAUDE.md",
     "docs/INSTALL-CODEX.md", "docs/MAINTAINER-GUIDE.md", "docs/PRIVACY-AND-TRUST.md",
     "docs/TROUBLESHOOTING.md", "docs/UPGRADE.md", "docs/VERIFICATION.md",

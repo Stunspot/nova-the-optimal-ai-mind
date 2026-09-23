@@ -36,6 +36,7 @@ REQUIRED_DOCS = (
     "RELEASE-NOTES.md",
 )
 CURATED_DESIGN = (
+    "DEC-VALUE-OF-INQUIRY.md",
     "FREE-NOVA-PACKAGE-MAP.md",
     "product-contract.json",
     "source-lock.json",
