@@ -1,8 +1,8 @@
 {
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.2.0",
-  "source_map_sha256": "2009c5cf5ae9290ab2aac1291e9ceb0aed7e0419d79b30f77847c73e9c685566",
+  "product_version": "3.3.0",
+  "source_map_sha256": "ed185f63facbc9a071c1a044dcb236c134c24df5461a4c37bbc1b0712e277503",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -91,7 +91,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 44,
-        "tree_sha256": "510f12a326a8d60335e5c87cae6b61352cff8d557c41561c2f331fcd4157d8b1"
+        "tree_sha256": "7b5d689e0c0db07340d494c1bf81f4c490eb543288ea7c6d91ec6113004632e9"
       },
       "overlay_state": "edition_overlay"
     },
@@ -212,7 +212,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 72,
-        "tree_sha256": "d135df623e77cc986a01e58b44b37f0e3c7548ef79b065ff359e5c72c61cfd9b"
+        "tree_sha256": "c78e93b63b56ce1ebf89d8bfda45fa7a4979e1b753514b209debcb8f971235a3"
       },
       "overlay_state": "edition_overlay"
     },
@@ -346,7 +346,7 @@
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
       "source_commit": "3018babc1e45fa98d7833b19843185115e998211",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_version": "MIND 0.4.0 / Nova Free 3.2.0",
+      "source_version": "MIND 0.4.0 / Nova Free 3.3.0",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
@@ -378,7 +378,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 50,
-        "tree_sha256": "9845e6ba0739c60f36af3d60d209d8a98eda3aca97487985a8c5e0944ac26981"
+        "tree_sha256": "874f84b7e4b34cd5b72c2e785c26098307f6b603943c3afab34616f8458119c8"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -387,7 +387,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.2.0 edition binding",
+      "source_version": "1.0.4 with Free 3.3.0 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -403,7 +403,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
       "imported_tree": {
         "file_count": 5,
-        "tree_sha256": "2c8a9f5af0b07756f3117b5c889cd17c57068cc57b1d1e517f7979fb967fbc26"
+        "tree_sha256": "b1c96fd2f04df4433ed4637646791e94a6ff93ae26383415a552c3c951f5f6b4"
       },
       "overlay_state": "edition_overlay"
     },
@@ -604,7 +604,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 854,
-    "tree_sha256": "de517b3651deba83c1c81e385cad628ec322f2d667f3c2c341f63693e9f27a89"
+    "tree_sha256": "cb511a477e71c7fbd6e0e8146291d70082e86c265e615d7b20743bd49bef496b"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -627,12 +627,12 @@
   },
   "rights_bundle": {
     "files": {
-      "LICENSE.md": "882985beaf0b9fdc957f18f815b36de96c0bd319b259d06d1d59749ca6f7ea8b",
+      "LICENSE.md": "bcba2402b6bdfce7330246aab2c86438ee3373b5716034705390300c33e71eae",
       "ATTRIBUTION.md": "22fbf0a5a7958f42a2fc85a571de4af1aeed63993aeabcc59bff9262d626f1bf",
-      "NOTICE.md": "35edc4e8b39a90f1710647ca5414d1a8f5e6fbc7539dfe77ab5501d3b5262f14",
+      "NOTICE.md": "5d3990993f6ce2f12fb5cb9eb56d48fb580b11619e09ca1dc645c60ba48b25e0",
       "TRADEMARKS.md": "a1250ee28c5f9f41288118df443170a3a5b7c8841723e6fc37138829f8d115b7",
-      "PROVENANCE.md": "ca8dd6e2997a64c05f557fcc41d531a397080020bab9c3de1346b4805663e2c1",
-      "THIRD-PARTY-NOTICES.md": "3d09560fcb0df17cda12fe79d8ed0b3e9549cc099e1519733620aa3ebcd346e5"
+      "PROVENANCE.md": "9b00f71ac4b478e9aa58e40b3f7f3b17d0d29e83c200b1eb8dca908a487395a6",
+      "THIRD-PARTY-NOTICES.md": "3d79af793dfe4a6d47847fe26f0ec4b291096a02748c50e8c053e7019b9b69b6"
     },
     "state": "public_split_license_applied",
     "redistribution_state": "permitted_under_included_licenses",
