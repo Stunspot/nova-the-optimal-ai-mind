@@ -2,7 +2,7 @@
 
 ## Supported candidate
 
-Security review currently covers the Nova the Optimal AI Free 3.2.0 source candidate, its single plugin, MIND 0.3.1, Cognitive Continuity 0.2.5, and the exact source-locked capability roots.
+Security review currently covers the Nova the Optimal AI Free 3.3.0 source candidate, its single plugin, MIND 0.3.1, Cognitive Continuity 0.2.5, and the exact source-locked capability roots.
 
 ## Boundary
 

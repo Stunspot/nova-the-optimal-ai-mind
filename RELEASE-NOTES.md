@@ -1,12 +1,12 @@
-# Nova Free 3.2.0 — a navigable past
+# Nova Free 3.3.0 — worthwhile inquiry
+
+Model Agnosticism now assesses the worth of further inquiry while preserving qualitative values, tacit recognition and useful ambiguity. The resident cue and deeper examples support choosing evidence, a draft or experiment, a changed frame, or proceeding at the resolution the purpose earns. A separate optional standard-library finite value-of-information calculator compares one inquiry followed by one action under declared probabilities, utilities and costs. Trellis 1.1.0, the governing persona, the seventeen-Core topology and state ownership remain unchanged. This is the Free 3.3.0 capability update; existing estate data and interfaces remain compatible.
+
+## Previous release: Free 3.2.0
 
 Worldline 2 rebuilds continuity around recognizable occurrences and source links. Survey months, topics, projects and projectless work; inspect revisions; capture coherent ordinary episodes under standing authority; control ordinary/off; and request a bounded scrollable HTML timeline. Cognitive Continuity 0.3.0 owns the existing episode store, policy, correction and forgetting. Embedded MIND 0.4.0 revises the existing Cognitive Continuity Faculty; the 17-Core topology and governing persona remain unchanged. Legacy project views remain explicitly available.
 
 Current retention and privacy govern historical views. Existing episodes are partial legacy coverage, not a transcript import. Evolved stores require runtime 0.3.0 or newer; turn capture off while retaining a compatible runtime for behavior rollback. Source, package checks, installation and observed host behavior remain separate evidence.
-
-## 2026-09-23 incorporated capability update
-
-Model Agnosticism now assesses the worth of further inquiry while preserving qualitative values, tacit recognition and useful ambiguity. The resident cue and deeper examples support choosing evidence, a draft or experiment, a changed frame, or proceeding at the resolution the purpose earns. A separate optional standard-library finite value-of-information calculator compares one inquiry followed by one action under declared probabilities, utilities and costs. Trellis 1.1.0, the governing persona, the seventeen-Core topology and state ownership remain unchanged. This is a current-surface update within Free 3.2.0.
 
 ## Preserved earlier release notes
 
