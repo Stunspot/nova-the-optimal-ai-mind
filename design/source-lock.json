@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.2.0",
-  "source_map_sha256": "dc27d2518e816cc7104ec8c52cfb47bf377819429e14779898297d854aec50f0",
+  "source_map_sha256": "2009c5cf5ae9290ab2aac1291e9ceb0aed7e0419d79b30f77847c73e9c685566",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -344,7 +344,7 @@
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "56f708e166e03f1bc80e27813e88c06b9898bb2e",
+      "source_commit": "3018babc1e45fa98d7833b19843185115e998211",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
       "source_version": "MIND 0.4.0 / Nova Free 3.2.0",
       "selection": [
@@ -352,10 +352,10 @@
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "3366409b5c8f7c1ef860e8609a24175a6986d333",
-      "source_git_tree": "32dbc743d205962d50370f41f211195beebddc46",
-      "source_file_count": 47,
-      "source_tree_sha256": "31b1bbfe81ac3c504a27793e12b122fcac1bfd6c0d320bf6d048edc19fa6bdcf",
+      "source_commit_tree": "9b83412f5238a68fcc5832225e1dfd0534612f8a",
+      "source_git_tree": "d7848ae5c70bd0308de5225bd153ba0d95a90abb",
+      "source_file_count": 50,
+      "source_tree_sha256": "9845e6ba0739c60f36af3d60d209d8a98eda3aca97487985a8c5e0944ac26981",
       "source_lineage": {
         "historical_origin": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
         "historical_origin_state": "non_git_authoring_workbench_not_current_authority",
@@ -377,8 +377,8 @@
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
-        "file_count": 47,
-        "tree_sha256": "31b1bbfe81ac3c504a27793e12b122fcac1bfd6c0d320bf6d048edc19fa6bdcf"
+        "file_count": 50,
+        "tree_sha256": "9845e6ba0739c60f36af3d60d209d8a98eda3aca97487985a8c5e0944ac26981"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -603,8 +603,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 851,
-    "tree_sha256": "97b729f6d852f09f3a268ee05763910536a7fad076f11fb772ebcbe287771b21"
+    "file_count": 854,
+    "tree_sha256": "de517b3651deba83c1c81e385cad628ec322f2d667f3c2c341f63693e9f27a89"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

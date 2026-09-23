@@ -42,7 +42,11 @@ Public GitHub Repo: [Nova the Optimal AI Free](https://github.com/Stunspot/nova-
 
 Ask “What have we been doing this month?” or “Show me our timeline.” During optional setup choose ordinary occurrence capture or off once; an existing explicit standing instruction already settles the choice. Current no-retention suppresses capture, and explicit event capture keeps its own authority. Ordinary episodes are coalesced at natural transitions rather than logged message by message. Worldline 2 requires Continuity 0.3.0 or newer; to roll back behavior, turn ordinary capture off and retain a compatible runtime for the evolved history.
 
+Ask "Which unknown is worth investigating next?" or "Would a draft teach us more?" Examples, comparisons and reactions are enough to guide work when a precise definition would not help. Optional numerical comparison needs explicit assumptions; ordinary use needs no numbers or Python.
+
 # Changelog
+
+v3.2.0 - 2026-09-23 incorporated capability update. Model Agnosticism now helps choose worthwhile inquiry, preserves tacit values and useful ambiguity, and offers optional finite value-of-information arithmetic when the supplied inputs support it.
 
 v3.2.0 - 2026-09-13. Rebuilt Worldline as an autobiographical occurrence index, added temporal survey and governed capture/control/rendering, preserved projectless and legacy history, and revised the existing Cognitive Continuity Faculty in embedded MIND 0.4.0. Cognitive Continuity 0.3.0 owns state and lifecycle; the persona and seventeen-Core topology remain unchanged.
 
