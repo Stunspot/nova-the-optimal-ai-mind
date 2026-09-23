@@ -14,6 +14,10 @@ A claim says something about the world. A hypothesis is a live possible explanat
 
 A state posterior has the form P(q_t | O, M): it is conditional on one supplied model. A relative model weight has the form P(M_k | O, {M}): it is conditional on an explicitly bounded candidate set and fixed supplied parameterizations. Claim warrant asks whether evidence supports a proposition at the asserted scope. Action authority asks who may do what. Keep all four distinct. Never expose a Trellis number as generic confidence.
 
+## Judge the worth of learning
+
+Use `references/mind/value-of-inquiry.md` when the next evidence, clarification, example, experiment or change of frame competes for effort. It develops the ambient practice of spending precision where it helps, preserving tacit values and useful ambiguity, and stopping or proceeding at the resolution the purpose earns. Its optional finite decision calculator evaluates information value under supplied probabilities, utilities and costs; it is independent of Trellis and grants no authority. Qualitative judgment remains sufficient without a utility scale, Python or formal input.
+
 ## When Trellis earns its keep
 
 Any invoking capability may use the same stateless Trellis instrument. Long-horizon striving, research, strategic monitoring, diagnosis, and “figure out the best way” work are common candidates, not an exhaustive route list.

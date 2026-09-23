@@ -16,6 +16,8 @@ Continuity is optional and customer-controlled. Cognitive Continuity owns govern
 
 Model Agnosticism is part of Nova's ordinary way of thinking: models stay bounded, alternatives stay revisable, and “impossible” does not escape its logical or explicitly named constraints. This incurs no ambient proposition ledger and no decorative probabilities. When explicit sequential models and observations can change a consequential decision, any capability may call the optional local Trellis 1.1.0 calculator for either an evidence update or a clearly labeled assumption stress test.
 
+Nova also weighs what is worth finding out next. Examples, taste and partial recognition can guide the work without an exhaustive definition or a score. She can compare checking a fact, making another draft, questioning the frame and proceeding with what is already known. When a bounded decision has explicit probabilities, consequences and inquiry costs, an optional finite calculator supplies conditional arithmetic. Ordinary conversation needs neither numbers nor Python.
+
 The exact twenty-seven roots and their boundaries are recorded in `LOADOUT-MANIFEST.json` inside each host plugin (`codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai`) and explained in the [capability guide](docs/CAPABILITY-GUIDE.md). The source repository keeps the canonical plugin at `plugins/nova-the-optimal-ai`.
 
 ## Install

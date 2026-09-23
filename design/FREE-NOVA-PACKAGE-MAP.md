@@ -17,3 +17,7 @@ Retired from the default runtime are the augment-of-mind sibling plugin, prompt-
 Signal Loom, Ludis Continuum, CanopyOps, and Praxis Mine remain free standalone or opt-in products rather than default weight. Yammerknit requires repair and reseal. OmniView remains an independent provenance decision. Impactful Tom remains excluded from Nova distributions.
 
 The package emits a Codex local marketplace, a complete Claude-compatible bundle, twenty-seven standalone Claude folders and ZIPs, deterministic host archives, and one complete customer archive. Static parity is not fresh-host evidence.
+
+## Value of inquiry amendment — 2026-09-23
+
+[The accepted architecture case](DEC-VALUE-OF-INQUIRY.md) adds purpose-sensitive inquiry judgment inside existing Model Agnosticism. The resident seed in Prime/Field and Nova's entrypoint reaches `references/mind/value-of-inquiry.md`; it preserves qualitative and tacit values as complete forms of usable judgment. A separate optional `scripts/value_of_information.py` performs bounded finite decision arithmetic under explicit caller-supplied inputs. The runtime example is under `assets/value-of-inquiry`. This adds no Faculty, skill root, store, hook or background process and changes no Trellis contract.

@@ -1,0 +1,32 @@
+{
+  "schema": "nova-value-of-information/v1",
+  "purpose": "Compare proceeding with an optional one-step signal in an author-stipulated toy decision.",
+  "utility_unit": "toy utility units; higher is preferred",
+  "basis": {
+    "mode": "stipulated_scenario",
+    "assumptions": [
+      "The two states are exhaustive only within this illustrative model.",
+      "The signal changes knowledge but does not change the state, utilities or available actions.",
+      "All utilities and the inquiry cost share this stipulated cardinal utility scale."
+    ],
+    "source_refs": ["author-stipulated toy fixture; no empirical calibration claimed"]
+  },
+  "states": [
+    {"id": "favorable", "probability": 0.5},
+    {"id": "adverse", "probability": 0.5}
+  ],
+  "actions": [
+    {"id": "proceed", "utilities": {"favorable": 100, "adverse": -60}},
+    {"id": "decline", "utilities": {"favorable": 0, "adverse": 0}}
+  ],
+  "inquiries": [
+    {
+      "id": "probe",
+      "cost": 5,
+      "outcomes": [
+        {"id": "positive", "likelihoods": {"favorable": 0.8, "adverse": 0.2}},
+        {"id": "negative", "likelihoods": {"favorable": 0.2, "adverse": 0.8}}
+      ]
+    }
+  ]
+}

@@ -44,7 +44,24 @@
         "assumption_stress_test"
       ],
       "invocation_owner": "any_capability_meeting_the_formal_gate",
-      "authority_effect": "none"
+      "authority_effect": "none",
+      "value_of_inquiry": {
+        "practice": "purpose_sensitive_qualitative_or_formal",
+        "qualitative_judgment": "complete_without_scalarization",
+        "reference": "skills/nova/references/mind/value-of-inquiry.md",
+        "optional_instrument": {
+          "engine_id": "nova-value-of-information",
+          "engine_version": "1.0.0",
+          "entrypoint": "skills/nova/scripts/value_of_information.py",
+          "input_schema": "nova-value-of-information/v1",
+          "example": "skills/nova/assets/value-of-inquiry/decision-example.json",
+          "scope": "finite_static_one_inquiry_then_one_action",
+          "basis_is_caller_declared": true,
+          "requires_trellis": false,
+          "automatic_invocation": false,
+          "authority_effect": "none"
+        }
+      }
     },
     "required_external_runtime": false
   },

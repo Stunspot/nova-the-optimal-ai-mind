@@ -37,3 +37,7 @@ There is no daemon, hook, learned extractor, automatic numerical invocation, sha
 The deterministic engine validates explicit versioned artifacts, exposes its numerical assumptions and normalization, refuses declared evidence dependence it cannot model, distinguishes evidence from scenarios, and requires reframing when the bounded model parliament cannot responsibly answer. Its output remains a derived receipt under the invoking capability's custody.
 
 This decision supersedes any reading of the earlier Faculty examples as an exhaustive routing list or of a supplied-model zero as a claim that reality itself forbids an event.
+
+## Subsequent value-of-inquiry amendment — 2026-09-23
+
+[DEC-VALUE-OF-INQUIRY.md](DEC-VALUE-OF-INQUIRY.md) extends the ambient practice to assess what is worth learning or refining, with first-class tacit values and useful imprecision. It adds a separate optional finite value-of-information instrument. The Trellis decision, its HMM scope, v2 contracts and semantic boundaries above remain in force.
