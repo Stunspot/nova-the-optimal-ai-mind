@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.3.0",
-  "source_map_sha256": "73b92d521b2261575fbc97f0b40e79b02379301a82ea1250fc66d596de5e2af9",
+  "source_map_sha256": "43aeade2bcf2b86745f6130147eb6c2b8aa072ee0fa60c3ca8e4512853100b9e",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
