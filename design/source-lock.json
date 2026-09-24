@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.3.0",
-  "source_map_sha256": "cd5b397d08f9877384a966690d6d8d5f9efcf83e4e97063178a59385bf853c02",
+  "source_map_sha256": "73b92d521b2261575fbc97f0b40e79b02379301a82ea1250fc66d596de5e2af9",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -488,7 +488,7 @@
     {
       "id": "promptcraft",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "f4387548e08130fcf094d52226651fb39753dc9c",
+      "source_commit": "c2c524aa31f4f19c9b418af7dad9cf253fff08eb",
       "source_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "source_version": "",
       "selection": [

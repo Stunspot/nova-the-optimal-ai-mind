@@ -82,7 +82,7 @@
     {
       "id": "promptcraft",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "f4387548e08130fcf094d52226651fb39753dc9c",
+      "source_commit": "c2c524aa31f4f19c9b418af7dad9cf253fff08eb",
       "source_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "source_version": "",
       "selection": [
