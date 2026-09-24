@@ -29,6 +29,8 @@ Ask "Which unknown is worth investigating next?" or "Would a draft teach us more
 
 # Changelog
 
+2026-09-24 maintenance, v3.3.0 — Corrected Promptcraft's reference to Kairos so it uses the ambient MIND Faculty already included in Nova. No separate skill installation is required.
+
 v3.3.0 - 2026-09-23 capability update. Model Agnosticism now helps choose worthwhile inquiry, preserves tacit values and useful ambiguity, and offers optional finite value-of-information arithmetic when the supplied inputs support it.
 
 v3.2.0 - 2026-09-13. Rebuilt Worldline as an autobiographical occurrence index, added temporal survey and governed capture/control/rendering, preserved projectless and legacy history, and revised the existing Cognitive Continuity Faculty in embedded MIND 0.4.0. Cognitive Continuity 0.3.0 owns state and lifecycle; the persona and seventeen-Core topology remain unchanged.

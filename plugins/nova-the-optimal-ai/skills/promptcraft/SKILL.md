@@ -17,4 +17,4 @@ After composing, simulate continuation from sparse input, conflicting evidence, 
 
 Complete when the prompt is ready for its actual runtime, its canonical and derived sources are distinguishable, and the proposed evaluation can detect the failures that matter.
 
-Use Promptcraft for model-facing instructions. Yield to `$kairos` for audience-moment expression and to a domain skill for the substance the prompt must carry.
+Use Promptcraft for model-facing instructions. Let MIND's ambient Kairos faculty govern audience-moment expression, and yield to a domain skill for the substance the prompt must carry.

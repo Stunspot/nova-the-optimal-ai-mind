@@ -500,7 +500,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "imported_tree": {
         "file_count": 2,
-        "tree_sha256": "5a5ef1cac08dfe93a3d0e3f4d1b04ff83cde2f1eee84a6a3e4ff9838fa4ebff1"
+        "tree_sha256": "548e4b00f5e2f027ed4255a15a2a771d8216a636912a9a0a73ccfacccd1f77c5"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -604,7 +604,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 854,
-    "tree_sha256": "cb511a477e71c7fbd6e0e8146291d70082e86c265e615d7b20743bd49bef496b"
+    "tree_sha256": "ea04dfbe6e74ad3eaf0001054be74ddabd9556e0cfeb3db203e323feeb7d730c"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

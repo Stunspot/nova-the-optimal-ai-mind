@@ -1,0 +1,177 @@
+{
+  "schema": "nova-repository-history-custody/v1",
+  "archived_on": "2026-09-24",
+  "purpose": "Current checkout retains maintained product, active inputs and current verification. Superseded bytes are hash-verified in external custody; Git history is preserved.",
+  "receipt": "E:\\Indranet\\Augment-Custody\\Active Shelf Control\\reconciliation-work\\2026-09-24\\nova-archive-receipt.json",
+  "receipt_sha256": "10A80B0E02FE1ABC49404381A50CD22F69D080EEEB4E9F9CEA5CAA8834F0BBFB",
+  "entries": [
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.1.5-claude.zip",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.1.5-claude.zip",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.1.5-claude.zip.sha256",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.1.5-claude.zip.sha256",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.1.5-codex.zip",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.1.5-codex.zip",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.1.5-codex.zip.sha256",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.1.5-codex.zip.sha256",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.1.5.zip",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.1.5.zip",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.1.5.zip.sha256",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.1.5.zip.sha256",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.2.0-claude.zip",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.2.0-claude.zip",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.2.0-claude.zip.sha256",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.2.0-claude.zip.sha256",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.2.0-codex.zip",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.2.0-codex.zip",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.2.0-codex.zip.sha256",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.2.0-codex.zip.sha256",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.2.0.zip",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.2.0.zip",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "release/nova-the-optimal-ai-free-3.2.0.zip.sha256",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\release\\nova-the-optimal-ai-free-3.2.0.zip.sha256",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.1.5 Extra.md",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free T-Free v3.1.5 Extra.md",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.1.5.md",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free T-Free v3.1.5.md",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.2.0 Extra.md",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free T-Free v3.2.0 Extra.md",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.2.0.md",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free T-Free v3.2.0.md",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "dist/nova-the-optimal-ai-free-3.1.5",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\dist\\nova-the-optimal-ai-free-3.1.5",
+      "file_count": 2849,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "dist/qualification",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\dist\\qualification",
+      "file_count": 2525,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "dist/qualification-artifacts",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\dist\\qualification-artifacts",
+      "file_count": 6,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "working",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\working",
+      "file_count": 2,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/hesperos-free-v3",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\hesperos-free-v3",
+      "file_count": 29,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/testforge-free-v3",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\testforge-free-v3",
+      "file_count": 51,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/decision-free-v3.json",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\decision-free-v3.json",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/decision-free-v3.md",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\decision-free-v3.md",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/license-audit-free-v3.md",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\license-audit-free-v3.md",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/package-verification-free-v3.json",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\package-verification-free-v3.json",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/release-artifacts-free-v3.json",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\release-artifacts-free-v3.json",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    },
+    {
+      "relative_path": "verification/skill-plugin-validation-free-v3.json",
+      "archive_path": "E:\\Indranet\\Augment-Custody\\Repository History 2026-09-24\\nova-the-optimal-ai-mind\\verification\\skill-plugin-validation-free-v3.json",
+      "file_count": 1,
+      "state": "archived_verified_original_removed"
+    }
+  ]
+}
