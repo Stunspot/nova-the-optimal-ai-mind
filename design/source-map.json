@@ -48,7 +48,7 @@
     {
       "id": "rupert-giles-knowledge-steward",
       "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
-      "source_commit": "71f63e8883eb856146fd4dd9b95bd0198f99e31d",
+      "source_commit": "56e431ffe6767b7cca97c2461d44d5d60fbaf17f",
       "source_path": ".",
       "source_version": "1.1.0",
       "selection": [
@@ -80,9 +80,9 @@
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "fad2688d06cf475bc491a6e1769e724835161045",
+      "source_commit_tree": "c58fe56e3de04dc1d7e168b183c6d1fc98cd5386",
       "source_file_count": 25,
-      "source_tree_sha256": "7b03dea2bce69eb823e052bb88675ab578b49709f3edf4650787890100528cc7",
+      "source_tree_sha256": "97f5c9487a1b2205e5edad63f9cf59301e94e6482395d2295506b328c6885222",
       "historical_source_coordinates": {
         "source_commit": "3315ed5de53506d16017661d6bb876f5edb57a3e",
         "source_path": ".",
@@ -93,7 +93,26 @@
         "delta": "Giles Knowledge Atlas optional local catalog/explorer and CLI",
         "selection": "Complete runtime and referenced customer docs; curated verification/RESULTS.md only. Tests, browser fixtures and private catalogs omitted.",
         "transformation": "Exact selected bytes from committed canonical Giles 1.1.0; no edition overlay.",
-        "catalog_custody": "external owner data, never distributed"
+        "catalog_custody": "external owner data, never distributed",
+        "presentation_repair": {
+          "date": "2026-10-03",
+          "treatment": "same-version edit",
+          "delta": "Walnut, brass and archival cream presentation; narrow heading word spacing corrected. Atlas identity, component 1.1.0 workflow and runtime code retained.",
+          "changed_selection": [
+            "CHANGELOG.md",
+            "verification/RESULTS.md",
+            "workspace/DESIGN.md",
+            "workspace/THEME.md",
+            "workspace/index.html",
+            "workspace/style.css"
+          ]
+        }
+      },
+      "presentation_repair_baseline": {
+        "source_commit": "71f63e8883eb856146fd4dd9b95bd0198f99e31d",
+        "source_commit_tree": "fad2688d06cf475bc491a6e1769e724835161045",
+        "source_file_count": 25,
+        "source_tree_sha256": "7b03dea2bce69eb823e052bb88675ab578b49709f3edf4650787890100528cc7"
       }
     },
     {

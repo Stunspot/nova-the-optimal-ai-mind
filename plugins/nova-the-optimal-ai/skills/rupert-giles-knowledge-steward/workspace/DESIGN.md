@@ -16,16 +16,16 @@ Identity: recognition emerges from the quiet weight of an archive; a remembered 
 
 ```text
 Theme Name: AFTERIMAGE ATLAS
-Palette: Archive ink #251E29; wine depth #382738; vellum #F1E2C4; brass #E9C179; cinnabar #D66F51; quiet ink #BCAEAD.
+Palette: Walnut ink #211B15; cabinet depth #392B1E; archival cream #F2E5C9; brass #D7B46C; burnt umber #B65B38; quiet brass ink #C4B595.
 Mood: Patient, inhabited discovery; the relief of finding the thing already kept.
 Emotional Intention: Recognize before researching. The archive is a companion with legible limits.
 Typography: Georgia display and collection names; system sans for controls; system monospace for exact routes.
-Visual Motif: Numbered book spines become open folios; a brass rule connects the shelf to the selected source.
-Vibe Tags: archival, warm nocturne, scholarly, tactile, navigable
+Visual Motif: Walnut catalog drawers with inset brass index plates lead to an open paper folio.
+Vibe Tags: archival, walnut, brass, scholarly, tactile, navigable
 Motion: Brief folio arrival; selection stays stable; reduced motion removes transitions.
 Useful Contexts: Knowledge estates, reference collections, source-led discovery.
 ```
 
-Composition: masthead in dark archive ink, large serif recognition question, narrow subject index, vertically stacked book-spine shelf and contrasting warm folio. Folio dominates source inspection and handoff; search stays within reach. Depth comes from inset spine edges, layered paper and quiet radial light, not decorative illustrations. Narrow view stacks shelf and folio with direct return navigation. Errors and keyboard focus have explicit words and independent outlines.
+Composition: masthead in dark walnut, large serif recognition question, narrow subject index, vertically stacked cabinet drawers and contrasting warm folio. Folio dominates source inspection and handoff; search stays within reach. Depth comes from inset index plates and beveled drawer edges, layered paper and quiet radial light, not decorative illustrations. Narrow view stacks shelf and folio with direct return navigation. Errors and keyboard focus have explicit words and independent outlines.
 
 The theme is authored under the user's implementation grant, not separately owner-approved. Runtime screenshots and engineering results establish implementation.
