@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "3.6.0",
-  "source_map_sha256": "0ddacafb4955f507581a891cc0bb6276ca0527306b944b5a862ce2745e52346b",
+  "source_map_sha256": "ec3cdb779e4f800a8f8f3f3b7dab9cd4d26a71baf7a341e17270399ef2f8443d",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -461,16 +461,16 @@
     {
       "id": "nova",
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
-      "source_commit": "aba83364fadcbd0581ec00dfe3411e7351470e60",
+      "source_commit": "26b9e18e44e5fdd93cb7f42eedd81abcea3eed70",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
       "source_version": "MIND 0.4.0 / Nova Free 3.6.0",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
       "edition_overlays": [],
-      "source_state": "owner_authorized_working_tree_cutoff",
-      "source_commit_tree": "b3e830c322a1e780b5c174608a33da14f5f981a8",
-      "source_git_tree": "b0cc1b27983ecbda49d740cda16fcd563beac453",
+      "source_state": "git_commit",
+      "source_commit_tree": "325afbfe9330a079346f46705038aa04e19f1680",
+      "source_git_tree": "b34e7869129d60adb31725a6988a0de97ad8575e",
       "source_file_count": 50,
       "source_tree_sha256": "286a04a442574634d11d834e95d9e8c3d7bb1789ee61e4b0bf55eb2ea7849bc9",
       "source_lineage": {
@@ -491,7 +491,13 @@
           ],
           "transformation": "Exact schemas, templates, and deterministic migrator retained; Faculty runtime doctrine path-adapted for the integrated Nova skill; Nova activation guidance added without changing persona bytes."
         },
-        "current_update": "2026-10-03 Free 3.6.0 edition identity and Giles recognition entry in capability ecology; governing MIND, persona and Faculty bytes retained."
+        "current_update": "2026-10-03 Free 3.6.0 edition identity and Giles recognition entry in capability ecology; governing MIND, persona and Faculty bytes retained. Exact current closure frozen in canonical Git custody before release metadata binding."
+      },
+      "historical_source_coordinates": {
+        "source_commit": "aba83364fadcbd0581ec00dfe3411e7351470e60",
+        "source_commit_tree": "b3e830c322a1e780b5c174608a33da14f5f981a8",
+        "source_git_tree": "b0cc1b27983ecbda49d740cda16fcd563beac453",
+        "source_state": "owner_authorized_working_tree_cutoff"
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
