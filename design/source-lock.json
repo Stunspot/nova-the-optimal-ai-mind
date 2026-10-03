@@ -1,8 +1,8 @@
 {
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.3.0",
-  "source_map_sha256": "43aeade2bcf2b86745f6130147eb6c2b8aa072ee0fa60c3ca8e4512853100b9e",
+  "product_version": "3.6.0",
+  "source_map_sha256": "0ddacafb4955f507581a891cc0bb6276ca0527306b944b5a862ce2745e52346b",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -76,40 +76,81 @@
     {
       "id": "answerlayer",
       "source_repository": "https://github.com/Stunspot/answerlayer",
-      "source_commit": "4d1a494038b8a010542946b1bf51ad5dd70f9d4e",
-      "source_path": "release-v0.1.2/codex/answerlayer",
-      "source_version": "0.1.2",
+      "source_commit": "working-tree-cutoff-see-current_visual_refresh",
+      "source_path": "E:/Github/answerlayer/source/working/answerlayer-v0.2.0/skills/answerlayer",
+      "source_version": "0.2.0",
       "selection": [
-        "complete release skill tree"
+        "complete accepted native skill root; edition overlays retained below"
       ],
       "edition_overlays": [
         "README.md",
         "knowledge/canonical-source-boundaries.md",
         "manifest.json"
       ],
-      "source_state": "git_commit",
+      "source_state": "owner_authorized_working_tree_cutoff",
+      "source_file_count": 53,
+      "source_tree_sha256": "fb03e88d9de19b9010551fcfb5e82a0b615f11dc3541a6ebdcbfadff7c1fc1d0",
+      "current_visual_refresh": {
+        "id": "answerlayer",
+        "group": "visual",
+        "source": "E:/Github/answerlayer/source/working/answerlayer-v0.2.0/skills/answerlayer",
+        "zip": "E:/Github/answerlayer/repair-candidates/answerlayer-v0.2.0-20260927T095409Z.zip",
+        "sha256": "17e610f667aabe0e51ebbb69376daddbd3c1b4e1d3a691ba1b173fdf82892bcc",
+        "version": "0.2.0",
+        "source_tree": {
+          "file_count": 53,
+          "tree_sha256": "fb03e88d9de19b9010551fcfb5e82a0b615f11dc3541a6ebdcbfadff7c1fc1d0"
+        }
+      },
+      "historical_source_coordinates": {
+        "source_commit": "4d1a494038b8a010542946b1bf51ad5dd70f9d4e",
+        "source_path": "release-v0.1.2/codex/answerlayer",
+        "source_commit_tree": null,
+        "source_git_tree": null
+      },
+      "current_edition_identity": "Free 3.6.0 public inclusion metadata; retained native versions and historical visual cutoff.",
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
-        "file_count": 44,
-        "tree_sha256": "7b5d689e0c0db07340d494c1bf81f4c490eb543288ea7c6d91ec6113004632e9"
+        "file_count": 53,
+        "tree_sha256": "c115b8dbf17a1a22fb49db7f48638ac99424eb1af237768017936b30ef902d42"
       },
       "overlay_state": "edition_overlay"
     },
     {
       "id": "beryl-it-tech",
       "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
-      "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
-      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/beryl-it-tech",
-      "source_version": "0.1.3",
+      "source_commit": "working-tree-cutoff-see-current_visual_refresh",
+      "source_path": "E:/Github/beryl-it-benchcraft/source/working/beryl-it-benchcraft-v0.2.0/skills/beryl-it-tech",
+      "source_version": "0.2.0",
       "selection": [
-        "complete release skill tree"
+        "complete accepted native skill root; edition overlays retained below"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit",
+      "source_state": "owner_authorized_working_tree_cutoff",
+      "source_file_count": 58,
+      "source_tree_sha256": "02ad164f0b138a4e828a60f9f206011d6324eba681a7d568ad6993cde6f55d7e",
+      "current_visual_refresh": {
+        "id": "beryl-it-tech",
+        "group": "visual",
+        "source": "E:/Github/beryl-it-benchcraft/source/working/beryl-it-benchcraft-v0.2.0/skills/beryl-it-tech",
+        "zip": "E:/Github/beryl-it-benchcraft/repair-candidates/beryl-it-benchcraft-v0.2.0-20260927T095332Z.zip",
+        "sha256": "f4815dc29eaad1bcaef751c896bb1b47def39b7047574f438ccdbfc311f4cf40",
+        "version": "0.2.0",
+        "source_tree": {
+          "file_count": 58,
+          "tree_sha256": "02ad164f0b138a4e828a60f9f206011d6324eba681a7d568ad6993cde6f55d7e"
+        }
+      },
+      "historical_source_coordinates": {
+        "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
+        "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/beryl-it-tech",
+        "source_commit_tree": null,
+        "source_git_tree": null
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
       "imported_tree": {
-        "file_count": 49,
-        "tree_sha256": "01ba10e6b675bccb88d91b90c720a914041392f459b3a5f95dc90f994fc99944"
+        "file_count": 58,
+        "tree_sha256": "02ad164f0b138a4e828a60f9f206011d6324eba681a7d568ad6993cde6f55d7e"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -162,14 +203,28 @@
       "edition_overlays": [
         "SKILL.md: preserve Nova Operations launcher guidance",
         "scripts/nova_commonplace/federation.py: bind the embedded Continuity package and existing Free owner adapters",
-        "references/owner-routing.md: explain exact edition package binding and retained project compatibility reader"
+        "references/owner-routing.md: explain exact edition package binding and retained project compatibility reader",
+        "2026-09-26 existing read-only Dennis adapter rebound to exact 0.4.0 Nova owner bytes; no new selector or owner writes",
+        "Knowledge Desk 0.3.0 workspace only; existing Free 0.2.0 core/federation preserved byte-exact"
       ],
       "source_state": "git_commit",
       "source_commit_tree": "566c2c9dc6714bef7ac56296a046227f101b8a01",
+      "visual_workspace_source": {
+        "id": "commonplace",
+        "group": "visual",
+        "source": "E:/Github/nova-commonplace/skills/commonplace",
+        "zip": "E:/Github/nova-commonplace/repair-candidates/Knowledge-Desk-v0.3.0-20260927T094233Z.zip",
+        "sha256": "8c20fab05459ee7552993aea7176df622a36080831be58503eba4f2e5b76f1c9",
+        "version": "0.3.0",
+        "source_tree": {
+          "file_count": 8,
+          "tree_sha256": "2e55f06df18230f52f9b33d1562030ab434bb0e9ce1f28ad894c31ae47aaaeef"
+        }
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
-        "file_count": 16,
-        "tree_sha256": "08804dd3357768358696753afba42c785e7f03b198dbcd38e4a20523ff050135"
+        "file_count": 24,
+        "tree_sha256": "d88e8c1f74225d281231235e93e7c92f0da18272b8bfddf28fed70e1af46c46c"
       },
       "overlay_state": "edition_overlay"
     },
@@ -199,40 +254,82 @@
     {
       "id": "current-intelligence-observatory",
       "source_repository": "https://github.com/Stunspot/current-intelligence-observatory",
-      "source_commit": "18ad94d4400abff919f8cd5feacb15274af2dc95",
-      "source_path": "release-v0.1.1/codex/current-intelligence-observatory",
-      "source_version": "0.1.1",
+      "source_commit": "working-tree-cutoff-see-current_visual_refresh",
+      "source_path": "E:/Github/current-intelligence-observatory/source/current-intelligence-observatory",
+      "source_version": "0.2.0",
       "selection": [
-        "complete release skill tree"
+        "complete accepted native skill root; edition overlays retained below"
       ],
       "edition_overlays": [
         "manifest.json"
       ],
-      "source_state": "git_commit",
+      "source_state": "owner_authorized_working_tree_cutoff",
+      "source_file_count": 79,
+      "source_tree_sha256": "5c1244dc2983c793cf20da461cf7af24592e30351ce0127369fdf1f76d3f00ba",
+      "current_visual_refresh": {
+        "id": "current-intelligence-observatory",
+        "group": "visual",
+        "source": "E:/Github/current-intelligence-observatory/source/current-intelligence-observatory",
+        "zip": "E:/Github/current-intelligence-observatory/repair-candidates/current-intelligence-observatory-v0.2.0-20260927T101114Z.zip",
+        "sha256": "4ab4982acf53a13a271c4d6a5b08907efa82894b71d2f4478e9fac305306a289",
+        "version": "0.2.0",
+        "source_tree": {
+          "file_count": 79,
+          "tree_sha256": "5c1244dc2983c793cf20da461cf7af24592e30351ce0127369fdf1f76d3f00ba"
+        }
+      },
+      "historical_source_coordinates": {
+        "source_commit": "18ad94d4400abff919f8cd5feacb15274af2dc95",
+        "source_path": "release-v0.1.1/codex/current-intelligence-observatory",
+        "source_commit_tree": null,
+        "source_git_tree": null
+      },
+      "current_edition_identity": "Free 3.6.0 public inclusion metadata; retained native versions and historical visual cutoff.",
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
-        "file_count": 72,
-        "tree_sha256": "c78e93b63b56ce1ebf89d8bfda45fa7a4979e1b753514b209debcb8f971235a3"
+        "file_count": 79,
+        "tree_sha256": "d13f839aab9d004e6512ccacb9bea2ad42fb723869d94456f893801a8011057f"
       },
       "overlay_state": "edition_overlay"
     },
     {
       "id": "dennis-stratton-project-management",
       "source_repository": "https://github.com/Stunspot/dennis-stratton-project-management",
-      "source_commit": "09008b5beaffb900732edbd23ab6bf9ddac9f8d3",
-      "source_path": "complete v0.3.0 skill tree with the accepted Nova estate and customer-support overlay",
-      "source_version": "0.3.0",
+      "source_commit": "working-tree-cutoff-see-current_visual_refresh",
+      "source_path": "E:/Github/dennis-stratton-project-management/plugins/dennis-stratton-project-management/skills/dennis-stratton-project-management",
+      "source_version": "0.4.0",
       "selection": [
-        "complete accepted Nova-bound skill tree"
+        "complete accepted native skill root; edition overlays retained below"
       ],
       "edition_overlays": [
-        "Nova estate selector and customer-support overlay shared with Nova Emergent 1.0.5"
+        "registry-backed bridge wrappers; no standalone project fallback; preserved Nova custody guidance",
+        "Windows ZIP path repair: preserve canonical Dennis source bytes under packaged alias references/canonical/Project-Management-Judgment-Engine.md"
       ],
-      "source_state": "git_commit_plus_nova_edition_overlay",
+      "source_state": "owner_authorized_working_tree_cutoff",
+      "source_file_count": 59,
+      "source_tree_sha256": "e6fd8d4df7e9138b94b5a6aa81dce0ccb252f619cab4dbbc64727ec0ee9b81db",
+      "current_visual_refresh": {
+        "id": "dennis-stratton-project-management",
+        "group": "component",
+        "source": "E:/Github/dennis-stratton-project-management/plugins/dennis-stratton-project-management/skills/dennis-stratton-project-management",
+        "zip": "E:\\Github\\dennis-stratton-project-management\\dist\\dennis-stratton-project-management-v0.4.0-complete.zip",
+        "sha256": "3ad29630b0330d928caa951755a8ac44fd314a15beafef1fe0590a7f935a738d",
+        "version": "0.4.0",
+        "source_tree": {
+          "file_count": 59,
+          "tree_sha256": "e6fd8d4df7e9138b94b5a6aa81dce0ccb252f619cab4dbbc64727ec0ee9b81db"
+        }
+      },
+      "historical_source_coordinates": {
+        "source_commit": "dddf4fbc130970ae6060a3187e5ae2e979131cfe",
+        "source_path": "plugins/dennis-stratton-project-management/skills/dennis-stratton-project-management",
+        "source_commit_tree": null,
+        "source_git_tree": null
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/dennis-stratton-project-management",
       "imported_tree": {
-        "file_count": 48,
-        "tree_sha256": "b64ad9e793a9be4fdf364fe9bf3bf5e700480c37b025ebfcfc5065baf82a13ab"
+        "file_count": 59,
+        "tree_sha256": "d82031f7bd71162985bf31ca909c6102f617a9ec73df9f6837eca121f6025326"
       },
       "overlay_state": "edition_overlay"
     },
@@ -290,18 +387,38 @@
     {
       "id": "it-work-reviewer",
       "source_repository": "https://github.com/Stunspot/beryl-it-benchcraft",
-      "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
-      "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/it-work-reviewer",
-      "source_version": "0.1.3",
+      "source_commit": "working-tree-cutoff-see-current_visual_refresh",
+      "source_path": "E:/Github/beryl-it-benchcraft/source/working/beryl-it-benchcraft-v0.2.0/skills/it-work-reviewer",
+      "source_version": "0.2.0",
       "selection": [
-        "complete release skill tree"
+        "complete accepted native skill root; edition overlays retained below"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit",
+      "source_state": "owner_authorized_working_tree_cutoff",
+      "source_file_count": 49,
+      "source_tree_sha256": "10b9593e5e44069cc91ad361d0529ab1a6706672eb2d7b2eb2d3e25bde08b7f4",
+      "current_visual_refresh": {
+        "id": "it-work-reviewer",
+        "group": "visual",
+        "source": "E:/Github/beryl-it-benchcraft/source/working/beryl-it-benchcraft-v0.2.0/skills/it-work-reviewer",
+        "zip": "E:/Github/beryl-it-benchcraft/repair-candidates/beryl-it-benchcraft-v0.2.0-20260927T095332Z.zip",
+        "sha256": "f4815dc29eaad1bcaef751c896bb1b47def39b7047574f438ccdbfc311f4cf40",
+        "version": "0.2.0",
+        "source_tree": {
+          "file_count": 49,
+          "tree_sha256": "10b9593e5e44069cc91ad361d0529ab1a6706672eb2d7b2eb2d3e25bde08b7f4"
+        }
+      },
+      "historical_source_coordinates": {
+        "source_commit": "93eb6e26a2dd399edfe38b37cf7968dbad55122a",
+        "source_path": "release-v0.1.3/codex/beryl-it-benchcraft/skills/it-work-reviewer",
+        "source_commit_tree": null,
+        "source_git_tree": null
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
       "imported_tree": {
         "file_count": 49,
-        "tree_sha256": "eae29072e29a28e76d5b3815ca90dfb756ab33fc3b36373cd406e8ad83ba2e09"
+        "tree_sha256": "10b9593e5e44069cc91ad361d0529ab1a6706672eb2d7b2eb2d3e25bde08b7f4"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -346,16 +463,16 @@
       "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
       "source_commit": "aba83364fadcbd0581ec00dfe3411e7351470e60",
       "source_path": "plugins/nova-the-optimal-ai/skills/nova",
-      "source_version": "MIND 0.4.0 / Nova Free 3.3.0",
+      "source_version": "MIND 0.4.0 / Nova Free 3.6.0",
       "selection": [
         "complete Git-custodied Nova Free skill root"
       ],
       "edition_overlays": [],
-      "source_state": "git_commit",
+      "source_state": "owner_authorized_working_tree_cutoff",
       "source_commit_tree": "b3e830c322a1e780b5c174608a33da14f5f981a8",
       "source_git_tree": "b0cc1b27983ecbda49d740cda16fcd563beac453",
       "source_file_count": 50,
-      "source_tree_sha256": "874f84b7e4b34cd5b72c2e785c26098307f6b603943c3afab34616f8458119c8",
+      "source_tree_sha256": "286a04a442574634d11d834e95d9e8c3d7bb1789ee61e4b0bf55eb2ea7849bc9",
       "source_lineage": {
         "historical_origin": "nova-emergent/working/mind-emergent/build/codex/nova-emergent-mind/skills/nova",
         "historical_origin_state": "non_git_authoring_workbench_not_current_authority",
@@ -373,12 +490,13 @@
             "skills/augment-of-mind/scripts/migrate_mission_capsule.py"
           ],
           "transformation": "Exact schemas, templates, and deterministic migrator retained; Faculty runtime doctrine path-adapted for the integrated Nova skill; Nova activation guidance added without changing persona bytes."
-        }
+        },
+        "current_update": "2026-10-03 Free 3.6.0 edition identity and Giles recognition entry in capability ecology; governing MIND, persona and Faculty bytes retained."
       },
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 50,
-        "tree_sha256": "874f84b7e4b34cd5b72c2e785c26098307f6b603943c3afab34616f8458119c8"
+        "tree_sha256": "286a04a442574634d11d834e95d9e8c3d7bb1789ee61e4b0bf55eb2ea7849bc9"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -387,7 +505,7 @@
       "source_repository": "",
       "source_commit": "",
       "source_path": "nova-emergent/working/product-integration-1.0.4-final-build/source/base-skills/nova-operations",
-      "source_version": "1.0.4 with Free 3.3.0 edition binding",
+      "source_version": "1.0.4 with Free 3.4.0 edition binding",
       "selection": [
         "complete authored base tree"
       ],
@@ -399,11 +517,16 @@
         "SKILL.md: honor exact setup and additive-upgrade authorization already granted",
         "Worldline 2 timeline launcher and explicit project-compatibility route with exact registry snapshot"
       ],
-      "source_state": "accepted_emergent_1.0.4_source_with_free_edition_overlay",
+      "source_state": "owner_authorized_working_tree_cutoff",
+      "source_file_count": 5,
+      "source_tree_sha256": "528a4b95a28568c61bdd4e50acad75d3ffb2ca76dd414d88dd01cf7ea3cdfe54",
+      "source_lineage": {
+        "current_update": "2026-09-27 Free 3.5.0 edition identity only; historical Git coordinates retained as cognitive/component lineage, not current working-tree parity."
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
       "imported_tree": {
         "file_count": 5,
-        "tree_sha256": "b1c96fd2f04df4433ed4637646791e94a6ff93ae26383415a552c3c951f5f6b4"
+        "tree_sha256": "528a4b95a28568c61bdd4e50acad75d3ffb2ca76dd414d88dd01cf7ea3cdfe54"
       },
       "overlay_state": "edition_overlay"
     },
@@ -428,26 +551,60 @@
     {
       "id": "omnara-deep-research",
       "source_repository": "https://github.com/Stunspot/omnara-deep-research",
-      "source_commit": "ceb533fd768f56701866e120b2ce7a28c8b7b548",
-      "source_path": ".",
-      "source_version": "1.0.1",
+      "source_commit": "working-tree-cutoff-see-current_visual_refresh",
+      "source_path": "E:/Github/omnara-deep-research/.",
+      "source_version": "1.1.0",
       "selection": [
-        "tracked files except .github/ verification/ CONTRIBUTING.md docs/MAINTAINERS.md"
-      ],
-      "edition_overlays": [
+        "SKILL.md",
+        "VERSION",
+        "Open.cmd",
+        "Open.command",
+        "LICENSE.md",
         "README.md",
-        "docs/INSTALLATION.md",
-        "docs/LIFECYCLE.md",
-        "docs/install.html"
+        "START-HERE.md",
+        "SECURITY.md",
+        "SUPPORT.md",
+        "RELEASE-NOTES.md",
+        "agents",
+        "assets",
+        "fallbacks",
+        "knowledge",
+        "personas",
+        "references",
+        "schemas",
+        "workspace",
+        "scripts",
+        "docs"
       ],
-      "source_state": "local_commit_ahead_of_origin",
+      "edition_overlays": [],
+      "source_state": "owner_authorized_working_tree_cutoff",
       "maintenance": "2026-09-12 AutoResearch praxis adaptation; independently authored changes; original canon retained.",
+      "source_file_count": 74,
+      "source_tree_sha256": "29089593a9182aff1a425517251808aa6ecc8ebce15dd4d8fafec7a399fc435d",
+      "current_visual_refresh": {
+        "id": "omnara-deep-research",
+        "group": "component",
+        "source": "E:/Github/omnara-deep-research/.",
+        "zip": "E:\\Github\\omnara-deep-research\\release-candidates\\OMNARA Deep Research v1.1.0.zip",
+        "sha256": "98855cad5ae23d3c78b79f5ce5c6da76cd7b51bbf6019dcf62d5d3fc3288cb92",
+        "version": "1.1.0",
+        "source_tree": {
+          "file_count": 74,
+          "tree_sha256": "29089593a9182aff1a425517251808aa6ecc8ebce15dd4d8fafec7a399fc435d"
+        }
+      },
+      "historical_source_coordinates": {
+        "source_commit": "48b7b231ea91851bcd48a494240436044bc9c202",
+        "source_path": ".",
+        "source_commit_tree": null,
+        "source_git_tree": null
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
-        "file_count": 66,
-        "tree_sha256": "f29f5bfc5cc3691e9c0656bdce3809e3f751f509422bf5774676f424a60a9c02"
+        "file_count": 74,
+        "tree_sha256": "29089593a9182aff1a425517251808aa6ecc8ebce15dd4d8fafec7a399fc435d"
       },
-      "overlay_state": "edition_overlay"
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "owen-burnett-officecraft",
@@ -543,23 +700,57 @@
     {
       "id": "rupert-giles-knowledge-steward",
       "source_repository": "https://github.com/Stunspot/rupert-giles-knowledge-steward",
-      "source_commit": "3315ed5de53506d16017661d6bb876f5edb57a3e",
+      "source_commit": "71f63e8883eb856146fd4dd9b95bd0198f99e31d",
       "source_path": ".",
-      "source_version": "",
+      "source_version": "1.1.0",
       "selection": [
+        "CHANGELOG.md",
+        "LICENSE.md",
+        "Open Giles.cmd",
+        "Open Giles.command",
+        "README.md",
         "SKILL.md",
+        "VERSION",
         "agents/openai.yaml",
-        "references/stewardship-doctrine.md",
+        "assets/knowledge-estate-ledger.template.md",
+        "docs/.nojekyll",
+        "docs/SITE-SOURCE.md",
+        "docs/assets/rupert-giles-hero.png",
+        "docs/index.html",
+        "docs/style.css",
+        "references/knowledge-atlas.md",
         "references/retrieval-and-compilation.md",
-        "assets/knowledge-estate-ledger.template.md"
+        "references/stewardship-doctrine.md",
+        "scripts/giles.py",
+        "verification/RESULTS.md",
+        "workspace/DESIGN.md",
+        "workspace/README.md",
+        "workspace/THEME.md",
+        "workspace/app.js",
+        "workspace/index.html",
+        "workspace/style.css"
       ],
       "edition_overlays": [],
       "source_state": "git_commit",
-      "source_commit_tree": "79ffa7a733427f2dd55b14983f9b52b3ef58d49f",
+      "source_commit_tree": "fad2688d06cf475bc491a6e1769e724835161045",
+      "source_file_count": 25,
+      "source_tree_sha256": "7b03dea2bce69eb823e052bb88675ab578b49709f3edf4650787890100528cc7",
+      "historical_source_coordinates": {
+        "source_commit": "3315ed5de53506d16017661d6bb876f5edb57a3e",
+        "source_path": ".",
+        "source_commit_tree": "79ffa7a733427f2dd55b14983f9b52b3ef58d49f"
+      },
+      "current_update": {
+        "date": "2026-10-03",
+        "delta": "Giles Knowledge Atlas optional local catalog/explorer and CLI",
+        "selection": "Complete runtime and referenced customer docs; curated verification/RESULTS.md only. Tests, browser fixtures and private catalogs omitted.",
+        "transformation": "Exact selected bytes from committed canonical Giles 1.1.0; no edition overlay.",
+        "catalog_custody": "external owner data, never distributed"
+      },
       "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
       "imported_tree": {
-        "file_count": 5,
-        "tree_sha256": "e4d157d24cd0a32de71a54d3c4ea7d5c25c5000eb557b1c7fd392baf9e633aab"
+        "file_count": 25,
+        "tree_sha256": "7b03dea2bce69eb823e052bb88675ab578b49709f3edf4650787890100528cc7"
       },
       "overlay_state": "exact_selected_source"
     },
@@ -603,8 +794,8 @@
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 854,
-    "tree_sha256": "ea04dfbe6e74ad3eaf0001054be74ddabd9556e0cfeb3db203e323feeb7d730c"
+    "file_count": 926,
+    "tree_sha256": "56c22d7ad17c8a297c0ce052d4fd01882bc66c9be9ba52a3d9c3425a70dfcc06"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -627,12 +818,12 @@
   },
   "rights_bundle": {
     "files": {
-      "LICENSE.md": "bcba2402b6bdfce7330246aab2c86438ee3373b5716034705390300c33e71eae",
+      "LICENSE.md": "bcb05b8778394752956fc01d8fa89668cd52928c68353b8aa3c8f6719df3f151",
       "ATTRIBUTION.md": "22fbf0a5a7958f42a2fc85a571de4af1aeed63993aeabcc59bff9262d626f1bf",
-      "NOTICE.md": "5d3990993f6ce2f12fb5cb9eb56d48fb580b11619e09ca1dc645c60ba48b25e0",
+      "NOTICE.md": "5c97103a109459b22c6694f364adc478b90fc9f033df0fc7f8d470b4af5d51b7",
       "TRADEMARKS.md": "a1250ee28c5f9f41288118df443170a3a5b7c8841723e6fc37138829f8d115b7",
-      "PROVENANCE.md": "9b00f71ac4b478e9aa58e40b3f7f3b17d0d29e83c200b1eb8dca908a487395a6",
-      "THIRD-PARTY-NOTICES.md": "3d79af793dfe4a6d47847fe26f0ec4b291096a02748c50e8c053e7019b9b69b6"
+      "PROVENANCE.md": "8fbb1dc0345248303fe5f2ea6147c5c586e8d7adabf94228df7e998064731d8c",
+      "THIRD-PARTY-NOTICES.md": "588db8671907a4126dc718711bc99dcff0297d27e668df09dbd1a05d9761ef6d"
     },
     "state": "public_split_license_applied",
     "redistribution_state": "permitted_under_included_licenses",

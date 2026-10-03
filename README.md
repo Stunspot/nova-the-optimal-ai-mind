@@ -1,10 +1,10 @@
-# Nova the Optimal AI — Free 3.3.0
+# Nova the Optimal AI — Free 3.6.0
 
 ![Illustration of Nova at a neon command desk surrounded by systems and skill panels.](docs/assets/nova-mind-readme-hero.png)
 
 Bring me the repository that is on fire, the research question that refuses to sit still, the office file breeding revisions in the dark, or the decision everyone is politely avoiding. Nova is one sharp, playful generalist: useful before the tour, accountable through the finish, and considerably less interested in making you admire her filing system than older agents were.
 
-Free 3.3.0 is the current foundation-and-agent release. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-six sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
+Free 3.6.0 is the current foundation-and-agent release. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-six sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
 
 Ordinary work requires no Ollama service, embedding model, vector database, prompt hook, daemon, onboarding interview, or persistent data setup. That entire Rube Goldberg annex has been thanked for its service and shown the door.
 
@@ -19,6 +19,14 @@ Model Agnosticism is part of Nova's ordinary way of thinking: models stay bounde
 Nova also weighs what is worth finding out next. Examples, taste and partial recognition can guide the work without an exhaustive definition or a score. She can compare checking a fact, making another draft, questioning the frame and proceeding with what is already known. When a bounded decision has explicit probabilities, consequences and inquiry costs, an optional finite calculator supplies conditional arithmetic. Ordinary conversation needs neither numbers nor Python.
 
 The exact twenty-seven roots and their boundaries are recorded in `LOADOUT-MANIFEST.json` inside each host plugin (`codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai`) and explained in the [capability guide](docs/CAPABILITY-GUIDE.md). The source repository keeps the canonical plugin at `plugins/nova-the-optimal-ai`.
+
+## Find what you already know, then work on the source
+
+“Where did we put that research?” is now a useful starting request. Giles Knowledge Atlas shows the knowledge stores you registered, the situations they help with and the named sections that save another broad search. Choose a collection, inspect a bounded source sample and give Nova a retrieval brief with the exact route. Registration is a pointer; reading the source earns the answer.
+
+The optional local atlas begins empty on a new customer installation. Its saved catalog stays outside the plugin, so updating Nova does not move your archives or package private descriptions. Start with the [Giles store-to-source journey](docs/VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route) to register one real collection, verify its save and recover safely from a conflict. Ordinary conversation remains available without Python or opening the atlas.
+
+Six other optional native workspaces keep their owners' working objects in view: Dennis project outcomes and dependencies; OMNARA campaigns and evidence; AnswerLayer baseline and exact proposed wording; Beryl hypotheses, tests and custody; Observatory dated claims and supplied-case differences; and Knowledge Desk deliberate reading from existing knowledge, pin and people owners. Save, download and read boundaries differ. Use [Open the native workspaces](docs/VISUAL-WORKSPACES.md) for the correct launcher and procedure.
 
 ## Install
 
@@ -40,6 +48,6 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 3.3.0 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
+This repository contains the Free 3.6.0 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠

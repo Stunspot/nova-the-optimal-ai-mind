@@ -1,0 +1,23 @@
+--- before/delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md
++++ delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md
+@@ -5,15 +5,17 @@
+ The ZIP installs Nova’s Free Agent Augment: one front door with a broad practical bench for coding, verification, research, writing, editable office work, device and privacy help, language and career work, project coordination, and personal knowledge. The separate prompt is Nova’s persona only, for when you want her voice and working style without installing the full Augment.
+ 
+ Nova is a collaborator, not a black box with a cape and a smoke machine. Give her the context you have, name the outcome you want, and challenge a conclusion when it matters. She can help shape the work, explain the trade-offs, and keep the next move clear while you retain the final call.
+-Free includes seven native workspaces: Giles Knowledge Atlas, Project Bridge, OMNARA campaign room, AnswerLayer Baseline Inspector, Beryl IT Case Bench, Observatory Case and Knowledge Desk. Each keeps the real artifact in view while retaining its owner's boundaries. Project Bridge reuses the Nova project estate; Knowledge Desk deliberately reads existing knowledge, pin and people owners.
++Giles Knowledge Atlas helps answer “Where did we put that research?” Register collections you own with recognizable names, useful situations and named sections, then find the right route before another broad search. It previews bounded source text and prepares a retrieval brief while leaving archives unchanged. Catalog metadata stays outside installation; a new customer catalog is empty. Six other optional workspaces retain project, research, answer, IT, dated-case and deliberate knowledge-owner boundaries.
+ 
+ # Usage Notes
+ 
+ Copy the .zip from "Additional Files" to your Codex, Claude Code, or other harness, or add the .zip to a project knowledge base in Chat. Attach or reference the .zip in chat and say, "Install this Augment." The prompt in this post is optional.
+ 
+-Ask "What knowledge collections do we already have?" or "Find the archive for this topic." Giles can show registered stores and their exact routes before reading the needed sources. Open `skills/rupert-giles-knowledge-steward/Open Giles.cmd` in the plugin, or use its `.command` counterpart. The catalog starts empty on a new customer installation; add the stores you own or import your exported catalog. No private archive or source content is shipped.
++Ask “What knowledge collections do we already have?” or name a half-remembered subject. For the optional visual route, extract the complete edition and open `skills/rupert-giles-knowledge-steward/Open Giles.cmd` inside the chosen host plugin. Python 3.10+ must already be available; the neighboring `.command` is the supplied macOS/Linux route. Follow the Giles journey in `docs/VISUAL-WORKSPACES.md` to register one store, verify its save, select an entry point and copy the retrieval brief into Nova. Keep the same external catalog path when upgrading.
+ 
+-Use the included VISUAL-WORKSPACES.md to select the matching launcher and artifact. Project Bridge and OMNARA use their native save/export paths. AnswerLayer and Beryl prepare in-memory working JSON: download before closing or reloading, then reopen the saved file. Observatory is read-only; Knowledge Desk reads only when you choose Read owner and never writes records. Labeled examples are teaching data, not your devices, research or people.
++Use `Export catalog` to back up descriptions and locators, and back up source archives separately. Import merges store IDs and stops on differing existing records until you explicitly choose replacement. A stale save needs `Reload` and inspection before retry. `Remove catalog record` leaves the source untouched. A description does not prove reading and a location check does not certify freshness.
++
++Use the workspace guide for the other owners' save and read boundaries. Project Bridge and OMNARA save native records. AnswerLayer and Beryl keep working JSON in memory: download before closing or reloading, then reopen it. Observatory is read-only; Knowledge Desk reads only when you choose `Read owner`. Labeled examples are teaching data.
+ 
+ The separate persona prompt can also be used as a standalone prompt.
+ 

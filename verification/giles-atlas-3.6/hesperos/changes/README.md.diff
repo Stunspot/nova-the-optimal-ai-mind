@@ -1,0 +1,18 @@
+--- before/README.md
++++ README.md
+@@ -20,9 +20,13 @@
+ 
+ The exact twenty-seven roots and their boundaries are recorded in `LOADOUT-MANIFEST.json` inside each host plugin (`codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai`) and explained in the [capability guide](docs/CAPABILITY-GUIDE.md). The source repository keeps the canonical plugin at `plugins/nova-the-optimal-ai`.
+ 
+-## Work on the actual artifact
++## Find what you already know, then work on the source
+ 
+-Seven optional native workspaces keep the working object in view: Giles Knowledge Atlas reveals registered knowledge stores, subject cues and exact subsection routes; Dennis project outcomes and dependencies; OMNARA campaigns and evidence; AnswerLayer baseline and exact proposed wording; Beryl hypotheses, tests and custody; Observatory dated claims, timelines and supplied-case differences; and Knowledge Desk deliberate reading from existing knowledge, pin and people owners. Giles persists catalog metadata outside installation, previews local text without editing source archives, and prepares precise retrieval briefs. A new customer catalog begins empty; private stores are never bundled. These workspaces are not autonomous operators. Their save, download and read boundaries differ; start with [Open the native workspaces](docs/VISUAL-WORKSPACES.md).
++“Where did we put that research?” is now a useful starting request. Giles Knowledge Atlas shows the knowledge stores you registered, the situations they help with and the named sections that save another broad search. Choose a collection, inspect a bounded source sample and give Nova a retrieval brief with the exact route. Registration is a pointer; reading the source earns the answer.
++
++The optional local atlas begins empty on a new customer installation. Its saved catalog stays outside the plugin, so updating Nova does not move your archives or package private descriptions. Start with the [Giles store-to-source journey](docs/VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route) to register one real collection, verify its save and recover safely from a conflict. Ordinary conversation remains available without Python or opening the atlas.
++
++Six other optional native workspaces keep their owners' working objects in view: Dennis project outcomes and dependencies; OMNARA campaigns and evidence; AnswerLayer baseline and exact proposed wording; Beryl hypotheses, tests and custody; Observatory dated claims and supplied-case differences; and Knowledge Desk deliberate reading from existing knowledge, pin and people owners. Save, download and read boundaries differ. Use [Open the native workspaces](docs/VISUAL-WORKSPACES.md) for the correct launcher and procedure.
+ 
+ ## Install
+ 

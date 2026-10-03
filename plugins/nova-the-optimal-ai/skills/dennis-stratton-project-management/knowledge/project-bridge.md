@@ -1,0 +1,3 @@
+# Project Bridge
+
+Read [the current workspace guide](../workspace/WORKSPACE-GUIDE.md) for exact controls, route inspection, native edit/save/export and reconciliation. Ember bridge, Survey folio and Redline share one record estate. The default view foregrounds posture, next move, decision, active route and exact proof; the full route remains available on demand. Launch `scripts/project_bridge.py --store <resolved-estate>` with Python 3.10+; `--no-browser` prints the local URL. The own-location wrappers and Nova registry route preserve existing custody. Structural validity is not delivery or owner acceptance.

@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 FORMAT = "answerlayer/reality-ledger/v1"
-VERSION = "0.1.2"
+VERSION = "0.2.0"
 STATUSES = {"candidate", "accepted_delta", "rejected_noise", "fuzz_unresolved", "patched", "superseded", "retired"}
 AUTHORITIES = {"model_generated", "machine_validated", "human_reviewed", "human_approved", "executed", "verified"}
 LISTS = ("sources", "candidates", "deltas", "rejections", "fuzz", "patches", "probes", "traps", "watch", "approvals")
@@ -38,8 +38,8 @@ def validate(data: dict) -> list[str]:
     errors: list[str] = []
     if data.get("format") != FORMAT:
         errors.append("format: unsupported ledger format")
-    if data.get("product_version") != VERSION:
-        errors.append("product_version: expected 0.1.2")
+    if data.get("product_version") not in {"0.1.2", VERSION}:
+        errors.append("product_version: expected 0.1.2 or 0.2.0")
     for key in ("ledger_id", "title", "owner", "scope", "decision_use", "created_at", "updated_at", "baseline", "publication") + LISTS:
         if key not in data:
             errors.append(f"missing: {key}")

@@ -1,0 +1,9 @@
+Materially revised the8 declared Free3.6.0 customer journeys as Scribe Hesperos Clearpath in-process. The work now leads with archive recognition, supplies exact first-store-to-section-to-brief steps and observable saves, distinguishes metadata from evidence, explains the existing3.5 upgrade path and gives recovery that preserves catalog/source custody. Retained before bytes and diffs establish material revision; evidence and task execution support the bounded product facts. Independent review remains separate.
+
+AUTHORING_RUN_ID: free-3.6-giles-hesperos-20261003
+AUTHORING_CAPABILITY: hesperos-documentation
+AUTHORSHIP_SCOPE: materially-revised
+AUTHORED_FILES_COUNT: 8
+AUTHORED_FILES: README.md|START-HERE.md|RELEASE-NOTES.md|docs/VISUAL-WORKSPACES.md|docs/CAPABILITY-GUIDE.md|docs/UPGRADE.md|docs/workflows.html|delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md
+DOCUMENTATION_FINGERPRINT: 0b391575972d0e8cbdc2c80619f1cd1631e4f4e880f393160ebbfaf1c85c81c7
+HESPEROS_AUTHORING_COMPLETE

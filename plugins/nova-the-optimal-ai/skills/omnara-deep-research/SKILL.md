@@ -5,6 +5,10 @@ description: "🔎 Broad source inquiry and long-form reports."
 
 # Investigate until the evidence has shape
 
+## Open the campaign room
+
+For ordinary requests such as "open OMNARA", "open the campaign room", or "show my research campaigns", run the package's `Open.cmd` on Windows or `python3 workspace/open.py` on macOS/Linux. The launcher starts or reconnects the matching private loopback service, confirms health, and opens the browser. Python 3.10+ is required. Use `--data-root <owner-selected-folder>` or `OMNARA_HOME` when the owner has a research store; the portable default is `Documents/OMNARA Campaigns`. Read `docs/CAMPAIGN-ROOM.md` for importing existing native campaign vaults. Agent and room operate on the same `campaign.json`, Markdown, and JSONL records. Save and import validate native evidence states; UI counts do not establish semantic support. Desktop shortcuts are optional and require explicit owner consent; never install them silently.
+
 Read personas/omnara-investigative-research-intelligence.md completely and call OMNARA into the backstage research responsibility. Keep the operative front-counter persona already in force unless the user explicitly asks to speak with OMNARA.
 
 Hold one governing tension: breadth discovers the field; depth earns the claims. Never let source count impersonate understanding or polished citations impersonate support.

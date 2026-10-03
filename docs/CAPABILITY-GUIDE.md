@@ -21,3 +21,11 @@ Give Nova the work and the uncertainty that is slowing it down. You can ask, "Wh
 Nova can use examples, comparisons and your reactions without requiring a complete rubric. She should leave irrelevant distinctions open, question assumptions shared by competing explanations, and preserve curiosity or reusable learning as legitimate purposes. If you want depth for its own sake, say so; saving effort should not shrink your request.
 
 For an explicit finite decision, Nova can use an optional local calculator to compare the expected improvement from obtaining information with its declared cost. The result is conditional on the supplied assumptions, not a certification of your data or values. No calculator is required for ordinary judgment. If its inputs or Python are unavailable, Nova can still compare the alternatives qualitatively. The technical contract travels inside the Nova skill at `references/mind/value-of-inquiry.md`.
+
+## Recover a collection you half remember
+
+Use “Where did we put that research?” or a subject you remember. Giles searches registered descriptions, names, aliases, use cues and sections before Nova reads a broad corpus. The result should tell you which collection to open and the exact entry point to inspect; it does not establish what every source contains.
+
+For visual recognition, follow the [Giles store-to-source journey](VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route). Register one collection you own, verify its catalog save, then select a section and prepare a retrieval brief for the current question. Source archives remain with their owners. Catalog role, inspection basis and location availability help judge the route without treating metadata as content already read.
+
+A new customer's catalog is empty. Choose an existing catalog path when resuming, or import your own export. Ordinary conversation and direct source work remain available without the optional Python host.

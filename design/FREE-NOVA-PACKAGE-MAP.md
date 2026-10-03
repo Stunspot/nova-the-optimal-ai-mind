@@ -1,8 +1,8 @@
-# Free Nova 3.3.0 package map
+# Free Nova 3.6.0 package map
 
-Free 3.3.0 is one product, one plugin, and one Nova front door.
+Free 3.6.0 is one product, one plugin, and one Nova front door.
 
-The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and MIND 0.3.1 as her edition-invariant cognitive architecture. MIND is not a separately selectable product layer. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
+The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and MIND 0.4.0 as her edition-invariant cognitive architecture. MIND is not a separately selectable product layer. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
 
 Model Agnosticism is ambient qualitative discipline across that architecture, not a classifier or a numerical tax on ordinary conversation. Any capability may call the optional stateless Trellis 1.1.0 instrument when an explicit sequential model can change a consequential next move. Its evidence-update and assumption-stress-test lanes keep empirical updates distinct from what-if arithmetic; neither creates truth, confidence, persistence, or authority.
 
@@ -10,14 +10,20 @@ The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Co
 
 The optional estate now uses the Nova base-service foundation with Worldline 2: Cognitive Continuity owns Worldline, Dennis owns project records, Commonplace owns deliberate notes and captures, Concordance is rebuildable navigation, Dunbar owns people context, and Corkboard owns reminders. Nova Operations plans, initializes, diagnoses, and upgrades those selectors without storing Nova-owned state under .codex. Ordinary work still requires no persistent estate, local model, embedding service, vector database, hook, or daemon.
 
-Agent Striving is the exact canonical 0.4.0 fourteen-file tree. Agent Swarm Orchestration is the exact canonical 0.3.0 tree and refreshed six-file notice packet, bound to the accepted handoff fingerprints.
+Agent Striving is the exact canonical 0.4.0 fourteen-file tree. Agent Swarm Orchestration is the exact canonical 0.3.1 tree and refreshed six-file notice packet, bound to the accepted handoff fingerprints.
 
 Retired from the default runtime are the augment-of-mind sibling plugin, prompt-submit hook, MIND Core daemon, Ollama requirement, embedding model, vector database, reminder bundle, Faculty handles, Capability Promotion handle, and old two-plugin installer.
 
-Signal Loom, Ludis Continuum, CanopyOps, and Praxis Mine remain free standalone or opt-in products rather than default weight. Yammerknit requires repair and reseal. OmniView remains an independent provenance decision. Impactful Tom remains excluded from Nova distributions.
+Signal Loom Infographics, Ludis Continuum, CanopyOps, and Praxis Mine remain free standalone or opt-in products rather than default weight. Yammerknit requires repair and reseal. OmniView remains an independent provenance decision. Impactful Tom remains excluded from Nova distributions.
 
 The package emits a Codex local marketplace, a complete Claude-compatible bundle, twenty-seven standalone Claude folders and ZIPs, deterministic host archives, and one complete customer archive. Static parity is not fresh-host evidence.
 
 ## Value of inquiry amendment — 2026-09-23
 
 [The accepted architecture case](DEC-VALUE-OF-INQUIRY.md) adds purpose-sensitive inquiry judgment inside existing Model Agnosticism. The resident seed in Prime/Field and Nova's entrypoint reaches `references/mind/value-of-inquiry.md`; it preserves qualitative and tacit values as complete forms of usable judgment. A separate optional `scripts/value_of_information.py` performs bounded finite decision arithmetic under explicit caller-supplied inputs. The runtime example is under `assets/value-of-inquiry`. This adds no Faculty, skill root, store, hook or background process and changes no Trellis contract.
+
+## Knowledge Atlas amendment — 2026-10-03
+
+Free 3.6.0 incorporates Giles Knowledge Atlas 1.1.0 into the existing Rupert Giles owner. Its optional local interface and matching CLI provide a recognizable catalog of stores, use cues and exact sections, narrow source previews, location checks, retrieval briefs and portable catalog import/export. The model first discovers a cheap route, then uses the appropriate source owner to read the evidence needed for the current question. Catalog registration does not equal reading, location availability does not equal freshness, and source text does not carry execution authority.
+
+The catalog lives outside installation and stores navigation metadata; canonical archives and databases keep their native owners and contents. No private store record or corpus is packaged. Ordinary conversation still requires no runtime or persistence, while the optional Atlas needs Python 3.10+. This adds no skill root, Faculty, mandatory selector, background indexer or corpus embedding. MIND 0.4.0, Worldline 2 / Continuity 0.3.0, twenty-seven roots and parked Arm's Reach remain intact.

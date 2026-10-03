@@ -1,4 +1,34 @@
-# Nova Free 3.3.0 — worthwhile inquiry
+# Nova Free 3.6.0 — Giles Knowledge Atlas
+
+2026-10-03. Giles Knowledge Atlas 1.1.0 adds a practical answer to “Where did we put that research?” Register a collection once with useful situations, aliases and named entry points; recognize it later, inspect a bounded source sample and hand Nova the exact section route for the current question. The matching CLI supports the same cheap discovery before selective source reading.
+
+This changes catalog navigation, not source ownership. Saved metadata lives outside installation. The explorer supports catalog edits, stale-revision rejection, location checks, portable export/import and explicit replacement of conflicting catalog records. Source archives remain read-only; a location check is not a freshness certification and a descriptive match is not a source-backed answer.
+
+New customer installations begin empty and ship no private collection inventory. Optional local launch requires Python 3.10+; ordinary Nova work requires no explorer or persistent setup. Existing 3.5 users can keep their catalog path and archive locations. Follow [Upgrade from Free 3.5.0](docs/UPGRADE.md#upgrade-from-free-350) and the [Giles first-store journey](docs/VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route).
+
+Free remains one plugin, twenty-seven native roots, seventeen nested Faculty Cores, MIND 0.4.0 and Worldline 2 / Cognitive Continuity 0.3.0. Arm's Reach remains parked and standalone MIND deprecated. This is a capability update from 3.5.0; fresh-host discovery and macOS/Linux launch remain separate observations.
+
+## Previous release: Free 3.5.0
+
+### Free 3.5.0 — native evidence and knowledge workspaces
+
+2026-09-27. Adds AnswerLayer Baseline Inspector 0.2.0, Beryl IT Case Bench and its reviewer 0.2.0, Observatory Case 0.2.0, and Knowledge Desk 0.3.0 to their existing capability owners. AnswerLayer and Beryl prepare native working JSON in memory; they do not adopt answers, change accounts or repair devices. Observatory reads dated case snapshots and compares supplied baselines without collecting, monitoring or publishing. Knowledge Desk deliberately reads existing Commonplace, Corkboard and Dunbar owners without creating a second store or writing records.
+
+OMNARA 1.1.0 now puts campaigns, research questions and evidence in a coherent campaign room. Dennis 0.4.0 presents the real portfolio, outcome, next action, milestone/dependency route and evidence trail. Their native custody and save/export contracts remain intact; Project Bridge retains the registry-only Nova project estate binding.
+
+Free remains one plugin, twenty-seven native skill roots, seventeen nested Faculty Cores, MIND 0.4.0 and Worldline 2 / Cognitive Continuity 0.3.0. No estate schema, automatic migration, required ordinary runtime, autonomous private reading or external action is added. Arm's Reach remains parked and the standalone MIND distribution remains deprecated. Optional Python hosts require Python 3.10+ already available; Observatory can open directly in a browser. macOS launch, fresh-host discovery and narrow-viewport rendering require their own observations.
+
+## Previous release: Free 3.4.0
+
+## 3.4.0 — native project and research workspaces, 2026-09-26
+
+Incorporates Dennis Project Bridge 0.4.0 and OMNARA campaign room 1.1.0 into their existing capability owners. These optional local interfaces create, import, edit and export native records, preserve examples as labeled scaffolds, and provide materially distinct skins. Project Bridge opens the same registry-discovered Nova project estate; it never silently creates an unbound fallback. The existing read-only Commonplace adapter binds that exact owner output. See [Visual workspaces](docs/VISUAL-WORKSPACES.md).
+
+MIND remains 0.4.0, with the unchanged governing persona, Worldline 2, seventeen Cores and twenty-seven native roots. The update adds no selector, required daemon, local model or automatic external action. Windows component tests and source/package checks are bounded evidence; macOS launch and fresh-host discovery remain separate.
+
+## Prior release: Free 3.3.0
+
+## Nova Free 3.3.0 — worthwhile inquiry
 
 Model Agnosticism now assesses the worth of further inquiry while preserving qualitative values, tacit recognition and useful ambiguity. The resident cue and deeper examples support choosing evidence, a draft or experiment, a changed frame, or proceeding at the resolution the purpose earns. A separate optional standard-library finite value-of-information calculator compares one inquiry followed by one action under declared probabilities, utilities and costs. Trellis 1.1.0, the governing persona, the seventeen-Core topology and state ownership remain unchanged. This is the Free 3.3.0 capability update; existing estate data and interfaces remain compatible.
 

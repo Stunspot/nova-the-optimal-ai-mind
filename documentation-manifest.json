@@ -1,0 +1,18 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "nova-the-optimal-ai-free",
+  "version": "3.6.0",
+  "scope": "Current Giles Knowledge Atlas reader journeys materially revised in this in-process Hesperos run; unchanged native Giles guides retain exact upstream custody.",
+  "customer_docs": [
+    "README.md",
+    "START-HERE.md",
+    "RELEASE-NOTES.md",
+    "docs/VISUAL-WORKSPACES.md",
+    "docs/CAPABILITY-GUIDE.md",
+    "docs/UPGRADE.md",
+    "docs/workflows.html",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md"
+  ],
+  "baseline_authorship": "E:/Github/dennis-stratton-project-management/verification/workspace/free-3.5-proposal/documentation-authorship.json",
+  "unchanged_material": "Existing owners, canonical Giles runtime/customer guides and historical release notes retain their source provenance."
+}

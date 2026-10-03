@@ -9,7 +9,7 @@ Run `store-path`. The resolution order is:
 1. `--store <path>` for an owner-approved operation-specific estate;
 2. `DENNIS_PROJECT_HOME` from the governed Nova estate.
 
-Nova Emergent disables the standalone `~/.dennis-stratton/project-records` fallback. Use the sibling `$nova-operations` registry-backed `run project-management -- ...` command for product-owned project records; it injects the exact selector without depending on inherited environment.
+Nova disables the standalone fallback. Use the sibling `$nova-operations` registry-backed launcher to discover the current estate and inject its exact selector.
 
 `store-path` and `locate` do not create the directory. Do not substitute a repository-local `project-control.json`, package directory, installation root, cache, temporary path, upload sandbox, or chat transcript merely because it is nearby.
 

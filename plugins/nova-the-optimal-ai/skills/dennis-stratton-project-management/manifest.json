@@ -1,7 +1,7 @@
 {
   "format": "cd-project-management-runtime/v1",
   "name": "dennis-stratton-project-management",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "entrypoint": "SKILL.md",
   "canonical_state": "cd-project-control/v2",
   "artifacts": {

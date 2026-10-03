@@ -79,3 +79,8 @@ Public availability is not automatic permission to aggregate, identify, profile,
 Humans own lawful collection, privacy and harm choices, identity resolution, high-risk allegations, publication, external action, and decisions. Confidence is a supported judgment label, not probability, proof, consensus, or permission to act.
 
 End each useful cycle with what changed, what remains disputed, artifact and checks completed, human decision needed, next collection priority, and exact resume point. If the host cannot preserve files or run scripts, use `fallbacks/universal-copy-paste-workflow.md` and state the lost guarantee.
+
+
+## Optional read-only case instrument
+
+Open `workspace/index.html` via Open.cmd/Open.command to inspect selected native cases. See workspace/README.md. Typed native case objects remain authoritative; structural comparisons do not replace semantic watch interpretation. The instrument never mutates, collects, monitors or publishes.

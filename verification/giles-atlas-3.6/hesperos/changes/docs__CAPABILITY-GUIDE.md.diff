@@ -1,0 +1,12 @@
+--- before/docs/CAPABILITY-GUIDE.md
++++ docs/CAPABILITY-GUIDE.md
+@@ -24,4 +24,8 @@
+ 
+ ## Recover a collection you half remember
+ 
+-Ask "What knowledge stores do we already have?", "Where did we put that research?" or "Go to this archive's named section." Giles Knowledge Atlas gives both you and Nova recognizable store descriptions and exact routes before paying for another broad search. Its optional local shelf shows aliases, use cues, sections, custody, inspection basis and location availability. It reads supported source samples without editing archives and prepares a brief for the appropriate retrieval owner. Descriptive matches remain hypotheses until the needed source is read. Start with [Open the native workspaces](VISUAL-WORKSPACES.md); a new customer's catalog begins empty and no private collection is shipped.
++Use “Where did we put that research?” or a subject you remember. Giles searches registered descriptions, names, aliases, use cues and sections before Nova reads a broad corpus. The result should tell you which collection to open and the exact entry point to inspect; it does not establish what every source contains.
++
++For visual recognition, follow the [Giles store-to-source journey](VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route). Register one collection you own, verify its catalog save, then select a section and prepare a retrieval brief for the current question. Source archives remain with their owners. Catalog role, inspection basis and location availability help judge the route without treating metadata as content already read.
++
++A new customer's catalog is empty. Choose an existing catalog path when resuming, or import your own export. Ordinary conversation and direct source work remain available without the optional Python host.

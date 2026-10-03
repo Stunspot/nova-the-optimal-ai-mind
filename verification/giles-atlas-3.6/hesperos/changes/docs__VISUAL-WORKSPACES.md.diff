@@ -1,0 +1,65 @@
+--- before/docs/VISUAL-WORKSPACES.md
++++ docs/VISUAL-WORKSPACES.md
+@@ -19,23 +19,55 @@
+ ## Open safely and recognize the correct instance
+ 
+ 1. Choose the owner and preserve your original artifact. Use a supplied labeled example to explore without treating it as your data.
+-2. Open the matching launcher. Existing Python workspace hosts start or reconnect only their exact matching private loopback instance; Giles starts its own local loopback server and reports an occupied port instead of accepting an unrelated service; an unrelated service is not accepted as the workspace. Reopen the launcher after reboot.
++2. Open the matching launcher. The existing workspace hosts reconnect only their exact matching private loopback instance. Giles starts its own server and reports an occupied port; use its recovery procedure if that happens. Reopen the launcher after reboot.
+ 3. Check the workspace name and the selected native artifact before editing or reading. A successful page load is not proof of an installation's agent discovery or real external behavior.
+ 4. Follow the guide for that owner. Before closing, distinguish a native save receipt, a downloaded working file and a read-only view.
+ 
+ No desktop shortcut is created automatically. Do not publish private loopback session URLs. If launch fails, inspect the terminal error or invoke that workspace's supported `--no-browser` route; do not kill an unrelated service or reset owner data.
+ 
+-## Giles: find the knowledge before reading it
++## Giles: recover a store and give Nova the right route
+ 
+-Ask what collections already exist, search a half-remembered name or subject, or select a topic on the shelf. Giles searches the descriptions, aliases, use cues and named sections you registered. A catalog match tells you where to look; it does not establish that the archive was read, its contents are true or its evidence is current. The folio shows source role, lifecycle, owner, provenance and inspection basis separately.
++Use this journey when you remember making an archive but cannot recall its name or location. Giles searches your registered names, descriptions, aliases, topics, use cues and named sections. The catalog points to evidence; a match does not establish that the source was read, is accurate or is current.
+ 
+-Use `Register a store` to register a local folder, text file, database or HTTPS site you own. Add section paths when they save a future search. `Check location` records present reachability, not content freshness; website checks do not fetch the remote site. `Browse source` lists the selected local route, and `Read entry point` previews bounded text without changing the source. A database remains a source pointer to its native retrieval owner. Select a section and enter the current question before `Prepare & copy retrieval brief`; copy or download the exact route and inspection limits for the model's next bounded read.
++### Open the correct catalog
+ 
+-Favorites, subject facets and nearby records help recognize collections. `Edit record` saves catalog metadata; `Remove catalog record` removes that pointer while preserving the source archive. `Export catalog` creates a portable file. Import merges stable store IDs and refuses conflicting records unless you explicitly choose replacement. Catalog revisions reject stale saves; reload before repeating an edit after another window changes the catalog.
++Extract or install the complete edition and have Python 3.10+ available. In the Codex package, open `codex/plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/Open Giles.cmd`. In the Claude package, open `claude/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward/Open Giles.cmd`. The neighboring `.command` launcher is the supplied macOS/Linux route.
+ 
+-The catalog is outside installation: an explicit `GILES_CATALOG_HOME`, a supported Nova root registry, or the platform application-data default. The supplied skill's `workspace/README.md` describes standalone custody and CLI options. The customer package begins with no private catalog. Export intended metadata for backup; an archive backup is a separate job. Ordinary Nova help and source reading need no visual explorer.
++The browser should show **Knowledge Atlas**. A new customer catalog is empty until you register stores or import an export. Existing metadata stays in its external data directory when the plugin is updated. `GILES_CATALOG_HOME` selects a catalog directory; a corroborated Nova root registry selects its `knowledge/giles/catalog.json`; otherwise the platform application-data default applies. To open a specific file, run the following from the plugin root, replacing the data path:
+ 
+-The equivalent agent path is `python skills/rupert-giles-knowledge-steward/scripts/giles.py list`, `find "topic or remembered name"`, then `brief STORE_ID --section SECTION_ID --question "current question"`, invoked from the plugin root. These commands read catalog metadata; use the source owner's normal retrieval tool for database contents or a full corpus search. Source text is evidence, never an instruction to run embedded commands.
++    python skills/rupert-giles-knowledge-steward/scripts/giles.py --catalog "<your data>/catalog.json" serve
++
++If port 8808 is occupied, stop only your own prior Giles instance or use `serve --port 0` for an available port. Reopen the launcher after reboot. An empty view after an upgrade is a reason to check the selected catalog path before registering everything again.
++
++### Register one store you can recognize later
++
++1. Choose **Register a store**. Enter a **Recognizable name** and its absolute local path or HTTPS address in **Location — absolute local path or HTTPS address**. Name the collection as you would refer to it in conversation.
++2. Describe **What is here?** and add one useful situation per line under **Use this when…**. Add alternate names and topics if they help imperfect recall.
++3. Choose the actual format, custodial role and disposition. Under **How far has it been inspected?**, keep **Location / metadata only** when only the locator is known. Use the stronger states only when that inspection happened, and name its basis under **What supports this description?**
++4. For a useful section, choose **Add an entry point**, give it a recognizable **Section name** and a **Relative source path**. For example, an archive you own might have a named study folder and its own `README.md`. A path may point to a folder or supported text file; it must remain inside the store.
++5. Choose **Save record**. The new name should appear in **Your knowledge stores**. Use **Reload** to confirm the saved record still appears. Saving changes the descriptive catalog, not the archive.
++
++### Find the source and prepare the handoff
++
++1. Enter a subject, alternate name or remembered fragment in the search field, or choose a topic. Select the store whose description and use cues fit the question. Use **Clear filters** if a disposition or **My marked stores** filter hides the expected result.
++2. Select **Store overview** or a named entry point. Use **Read entry point** for a supported text sample, or **Browse source** to follow folders. Text previews are limited to 32 KB and folder listings to 200 visible immediate entries. A database or unsupported file stays a route for its native owner; registered websites are not fetched by Giles.
++3. Read the source's role, disposition, inspection basis and description provenance before treating it as authority. **Check location** records reachability at the displayed time; it does not certify freshness. **Mark for return** creates a bookmark, and **Nearby on the shelf** connects only explicitly recorded topics.
++4. Enter the current question under **What should we investigate here?**, then choose **Prepare & copy retrieval brief**. Inspect the displayed store, section, source route, question and inspection limits. Paste that brief into Nova, or use **Download brief** if clipboard access is unavailable.
++5. Ask Nova to inspect that route through the appropriate source owner. The task is complete when you can identify the collection and exact section needed for the question; catalog metadata alone is not a source-backed answer.
++
++The matching agent commands run from the plugin root. Each uses the same explicitly selected catalog; substitute actual store and section IDs returned by discovery.
++
++    python skills/rupert-giles-knowledge-steward/scripts/giles.py --catalog "<your data>/catalog.json" list
++    python skills/rupert-giles-knowledge-steward/scripts/giles.py --catalog "<your data>/catalog.json" find "remembered fragment" --limit 8
++    python skills/rupert-giles-knowledge-steward/scripts/giles.py --catalog "<your data>/catalog.json" brief STORE_ID --section SECTION_ID --question "current question"
++
++### Keep the route and recover safely
++
++Use **Edit record** to correct descriptions and routes. **Remove catalog record** removes the pointer and leaves the source untouched. **Export catalog** downloads locators and descriptive notes; back up the actual archive separately.
++
++Use **Import**, select an exported file, then **Import catalog** to merge stable store IDs. Different existing records stop the import. Inspect the conflict before selecting **Replace conflicting catalog records**; replacement changes the conflicting catalog records, not their source stores. Invalid imports leave the saved catalog unchanged.
++
++If another window saved first, Giles rejects the stale save. Choose **Reload**, inspect the current record and reapply only the intended correction. If a catalog cannot be read, preserve that file and restore a known valid export to the intended data path; do not reset an archive to repair a locator. Read the supplied skill's `workspace/README.md` for catalog limits and standalone reference. Keep private exports in their intended custody.
+ 
+ ## Dennis: follow an outcome to its next action
+ 

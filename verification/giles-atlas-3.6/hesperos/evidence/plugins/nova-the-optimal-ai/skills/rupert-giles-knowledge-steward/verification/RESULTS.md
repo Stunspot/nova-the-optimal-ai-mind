@@ -1,0 +1,11 @@
+# Giles Knowledge Atlas 1.1.0 verification
+
+The implemented local explorer is accepted on the observed Windows/Python 3.14 and Chromium runtime. Thirty Python unit/API tests, forty-one semantic browser assertions and thirteen independently authored browser workflows pass. JS syntax and Python compilation pass. Actual wide and 390-pixel application screenshots were viewed.
+
+The checks prove catalog create/edit/favorite/remove persistence, revision-safe concurrent writes, atomic import/explicit conflict replacement and export round trips, spelling/alias recall, full inventory beyond 50 stores, filters and related records, source location observations, bounded directory/text inspection, exact section/question retrieval briefs, real clipboard and downloads, Unicode CLI output, source confinement, aggregate-size rejection, corrupt-catalog recovery, cross-window snapshot reconciliation, asynchronous source/brief guards, safe literal rendering, keyboard dismissal and narrow layout. Expected invalid-import and stale-save HTTP400/409 responses are tested rejection outcomes, not ignored failures. All exercised browser requests stay on loopback; source bytes remain unchanged.
+
+Review reproduced and repaired eight defects: search cutoff, stale deleted section, filename-based entry-kind guessing, late brief race, stale search/catalog snapshot, aggregate import creating uneditable state, corrupt-catalog asset failure, and Windows non-UTF8 CLI output. Neighboring revision/source races also have regressions.
+
+The portable launchers and standard-library code are supplied for Python3.10+; fresh-host plugin discovery, macOS/Linux live execution and screen-reader conformance were not observed in this run. The live catalog contains eight described existing collections with individual inspection/provenance labels; those records are private owner data and are excluded from installable packages.
+
+Run `python -B -X utf8 -m unittest discover -s tests`, `node --check workspace/app.js`, and `node tests/browser_regressions.cjs` with Playwright and Chromium available. The extended host-specific `tests/browser.cjs` uses isolated port8809 and real-catalog port8808 and retains runtime/network evidence. No lint or static type framework exists in this stdlib/vanilla-JS repository.

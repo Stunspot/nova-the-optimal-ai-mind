@@ -1,0 +1,18 @@
+--- before/RELEASE-NOTES.md
++++ RELEASE-NOTES.md
+@@ -1,10 +1,12 @@
+ # Nova Free 3.6.0 — Giles Knowledge Atlas
+ 
+-2026-10-03. Adds Giles Knowledge Atlas 1.1.0 to the existing Knowledge Steward: a searchable shelf of knowledge stores and named sections, purpose cues, source roles, provenance and honest inspection basis. Select the route, preview bounded local source text, and copy or download a retrieval brief for the current question. Source archives remain read-only. Catalog metadata supports native saves, stale-revision rejection, portable export/import and explicit conflict replacement; location checks report reachability separately from freshness.
++2026-10-03. Giles Knowledge Atlas 1.1.0 adds a practical answer to “Where did we put that research?” Register a collection once with useful situations, aliases and named entry points; recognize it later, inspect a bounded source sample and hand Nova the exact section route for the current question. The matching CLI supports the same cheap discovery before selective source reading.
+ 
+-The matching standard-library CLI gives the model a cheap catalog lookup before a selective source read. New customer installations begin with an empty catalog; no private archive, collection inventory or corpus is shipped. The optional explorer needs Python 3.10+ and keeps its catalog outside installation. Ordinary Nova work requires neither the explorer nor persistent storage.
++This changes catalog navigation, not source ownership. Saved metadata lives outside installation. The explorer supports catalog edits, stale-revision rejection, location checks, portable export/import and explicit replacement of conflicting catalog records. Source archives remain read-only; a location check is not a freshness certification and a descriptive match is not a source-backed answer.
+ 
+-Free remains one plugin, twenty-seven native roots, seventeen nested Faculty Cores, MIND 0.4.0 and Worldline 2 / Cognitive Continuity 0.3.0. Existing owner data and selectors remain intact, Arm's Reach stays parked and standalone MIND stays deprecated. The new supported knowledge discovery workflow makes this a capability update from accepted Free 3.5.0. Package verification and owner runtime checks retain their actual evidence boundaries; fresh-host discovery and macOS launch require separate observation.
++New customer installations begin empty and ship no private collection inventory. Optional local launch requires Python 3.10+; ordinary Nova work requires no explorer or persistent setup. Existing 3.5 users can keep their catalog path and archive locations. Follow [Upgrade from Free 3.5.0](docs/UPGRADE.md#upgrade-from-free-350) and the [Giles first-store journey](docs/VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route).
++
++Free remains one plugin, twenty-seven native roots, seventeen nested Faculty Cores, MIND 0.4.0 and Worldline 2 / Cognitive Continuity 0.3.0. Arm's Reach remains parked and standalone MIND deprecated. This is a capability update from 3.5.0; fresh-host discovery and macOS/Linux launch remain separate observations.
+ 
+ ## Previous release: Free 3.5.0
+ 
