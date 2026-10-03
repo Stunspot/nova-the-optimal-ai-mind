@@ -6,7 +6,7 @@ The packaged runtime declares no network, credential, telemetry, account-integra
 
 ## Record-estate custody
 
-Within Nova Emergent, Dennis resolves the estate from an owner-approved explicit `--store` or the exact `DENNIS_PROJECT_HOME` value injected by the sibling `$nova-operations` registry-backed launcher. The standalone home-directory fallback is disabled. The estate contains one canonical control record and a linked-record directory per project.
+Within Nova, Dennis resolves the estate from an owner-approved explicit `--store` or the exact `DENNIS_PROJECT_HOME` injected by the registry-backed Nova Operations launcher. The standalone fallback is disabled. The estate contains one canonical control record and a linked-record directory per project.
 
 Treat the estate as potentially sensitive. Choose a location with appropriate operating-system permissions, backup, retention, and deletion controls. The package does not encrypt the estate, authenticate users, manage access control, synchronize copies, or securely erase data.
 

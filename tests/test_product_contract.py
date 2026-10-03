@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import re
 import sys
 import subprocess
+import tarfile
 import unittest
 from pathlib import Path
 
@@ -323,7 +325,22 @@ class ProductContractTests(unittest.TestCase):
         self.assertEqual(git_object(source["source_commit"] + "^{tree}"), source["source_commit_tree"])
         pinned_skill_tree = git_object(source["source_commit"] + ":" + source["source_path"])
         self.assertEqual(pinned_skill_tree, source["source_git_tree"])
-        self.assertEqual(pinned_skill_tree, git_object("HEAD:" + source["source_path"]))
+        # Compare the actual pinned raw Git blobs with the current closure. The
+        # canonical worktree can legitimately carry an accepted release ahead of
+        # its checkout HEAD; that unrelated ref is not the source-byte oracle.
+        archive = subprocess.check_output(
+            ["git", "archive", "--format=tar", source["source_commit"] + ":" + source["source_path"]],
+            cwd=REPO,
+        )
+        with tarfile.open(fileobj=io.BytesIO(archive), mode="r:") as selected:
+            files = [member for member in selected.getmembers() if member.isfile()]
+            self.assertEqual(len(files), source["source_file_count"])
+            for member in files:
+                pinned = selected.extractfile(member)
+                self.assertIsNotNone(pinned)
+                self.assertEqual(
+                    pinned.read(), (REPO / source["source_path"] / member.name).read_bytes(), member.name,
+                )
         self.assertEqual(source["source_file_count"], locked["imported_tree"]["file_count"])
         self.assertEqual(source["source_tree_sha256"], locked["imported_tree"]["tree_sha256"])
     def test_public_split_license_and_rights_bundle_are_bound(self) -> None:
@@ -349,8 +366,8 @@ class ProductContractTests(unittest.TestCase):
         answer = json.loads((self.plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
         current = json.loads((self.plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
         for manifest in (answer, current):
-            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.3.0")
-            self.assertIn("Nova Free 3.3.0 public split license", manifest["license"])
+            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.6.0")
+            self.assertIn("Nova Free 3.6.0 public split license", manifest["license"])
         source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
         records = {record["id"]: record for record in source_map["records"]}
         self.assertEqual(
@@ -358,6 +375,53 @@ class ProductContractTests(unittest.TestCase):
             ["README.md", "knowledge/canonical-source-boundaries.md", "manifest.json"],
         )
         self.assertEqual(records["current-intelligence-observatory"]["edition_overlays"], ["manifest.json"])
+
+    def test_native_workspace_closures_and_versions(self) -> None:
+        required = {
+            "dennis-stratton-project-management": "scripts/project_bridge.py",
+            "omnara-deep-research": "workspace/runtime.py",
+            "answerlayer": "workspace/host.py",
+            "beryl-it-tech": "workspace/host.py",
+            "current-intelligence-observatory": "workspace/index.html",
+            "commonplace": "workspace/host.py",
+            "rupert-giles-knowledge-steward": "scripts/giles.py",
+        }
+        for skill_id, relative in required.items():
+            self.assertTrue((self.plugin / "skills" / skill_id / relative).is_file(), skill_id)
+        dennis = self.plugin / "skills/dennis-stratton-project-management"
+        for relative in ("Open Project Bridge.cmd", "Open Project Bridge.command",
+                         "scripts/workspace_host.py", "workspace/index.html"):
+            self.assertTrue((dennis / relative).is_file(), relative)
+        wrapper = (dennis / "Open Project Bridge.cmd").read_text(encoding="utf-8")
+        self.assertIn("nova_estate.py", wrapper)
+        self.assertIn("run project-bridge --", wrapper)
+        ops = (self.plugin / "skills/nova-operations/scripts/nova_estate.py").read_text(encoding="utf-8")
+        self.assertIn('"project-bridge": ("dennis-stratton-project-management", "scripts", "project_bridge.py")', ops)
+        bridge = (dennis / "scripts/project_bridge.py").read_text(encoding="utf-8")
+        self.assertIn("from workspace_host import atomic_json, run_workspace", bridge)
+        for skill_id in ("answerlayer", "current-intelligence-observatory"):
+            manifest = json.loads((self.plugin / "skills" / skill_id / "manifest.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["version"], "0.2.0", skill_id)
+        desk = (self.plugin / "skills/commonplace/workspace/host.py").read_text(encoding="utf-8")
+        self.assertIn("0.3.0", desk)
+        self.assertEqual(self.loadout["worldline"]["runtime_minimum"], "0.3.0")
+        self.assertEqual(self.loadout["topology"]["mind_version"], "0.4.0")
+
+    def test_giles_atlas_runtime_is_complete_without_private_catalog(self) -> None:
+        giles = self.plugin / "skills/rupert-giles-knowledge-steward"
+        self.assertEqual((giles / "VERSION").read_text(encoding="utf-8").strip(), "1.1.0")
+        for relative in ("Open Giles.cmd", "Open Giles.command", "workspace/index.html",
+                         "workspace/style.css", "workspace/app.js", "workspace/README.md",
+                         "references/knowledge-atlas.md", "scripts/giles.py"):
+            self.assertTrue((giles / relative).is_file(), relative)
+        self.assertFalse((giles / "catalog.json").exists())
+        self.assertEqual({p.relative_to(giles / "verification").as_posix() for p in (giles / "verification").rglob("*") if p.is_file()}, {"RESULTS.md"})
+        self.assertFalse((giles / "workspace/catalog.json").exists())
+        self.assertIn("knowledge-atlas.md", (giles / "SKILL.md").read_text(encoding="utf-8"))
+        ecology = (self.plugin / "skills/nova/references/edition/index.md").read_text(encoding="utf-8")
+        self.assertIn("Giles's compact catalog", ecology)
+        workflow = (REPO / ".github/workflows/verify-package.yml").read_text(encoding="utf-8")
+        self.assertIn("dist/nova-the-optimal-ai-free-3.6.0", workflow)
 
     def test_required_old_runtime_is_absent(self) -> None:
         forbidden = ("augment-of-mind", "mind_prompt_submit.py", "mind_core", "bundle/reminder")

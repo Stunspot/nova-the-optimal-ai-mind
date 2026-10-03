@@ -19,3 +19,7 @@ Return:
 4. **Residual boundary:** what this review could not establish.
 
 Separate implementation defects, specification ambiguity, missing evidence, owner decisions, and non-blocking improvements. A clean pass is legitimate. Review is advisory evidence unless an accountable human explicitly assigns it gate authority; it never authorizes physical work, access, spending, release, or destructive change.
+
+## View a supplied review
+
+Use the companion Beryl workspace/host.py Review view for a supplied advisory review. It is a transient display bound to the case the operator selected; a imported review does not authorize work, mutate the case, or prove repair.

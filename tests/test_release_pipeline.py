@@ -72,7 +72,7 @@ class ReleasePipelineTests(unittest.TestCase):
             package_root = Path(second_result["package_root"])
             with zipfile.ZipFile(second_result["customer_zip"]) as archive:
                 names = archive.namelist()
-            prefix = "nova-the-optimal-ai-free-3.3.0/"
+            prefix = "nova-the-optimal-ai-free-3.6.0/"
             self.assertTrue(all(name.startswith(prefix) for name in names))
             self.assertIn(prefix + "codex/.agents/plugins/marketplace.json", names)
             self.assertIn(prefix + "claude/nova-the-optimal-ai/.claude-plugin/plugin.json", names)
@@ -100,6 +100,25 @@ class ReleasePipelineTests(unittest.TestCase):
                 self.assertRegex(manifest["source_lock_sha256"], r"^[0-9a-f]{64}$")
                 self.assertRegex(manifest["source_map_sha256"], r"^[0-9a-f]{64}$")
                 self.assertNotIn("sealed_candidate", manifest)
+
+    def test_windows_shell_member_path_limit_preserves_prior_archive(self) -> None:
+        with tempfile.TemporaryDirectory(prefix="nova-free-zip-length-") as directory:
+            base = Path(directory)
+            source = base / "source"
+            source.mkdir()
+            (source / "s.txt").write_text("fixture", encoding="utf-8")
+            archive_path = base / "candidate.zip"
+            deterministic_zip(source, archive_path, prefix="a" * 253)
+            prior_bytes = archive_path.read_bytes()
+            self.assertEqual([], zip_filename_findings(archive_path))
+            with self.assertRaisesRegex(ValueError, "Windows Compressed Folders"):
+                deterministic_zip(source, archive_path, prefix="a" * 254)
+            self.assertEqual(prior_bytes, archive_path.read_bytes())
+            with zipfile.ZipFile(base / "too-long.zip", "w") as archive:
+                archive.writestr("a" * 254 + "/s.txt", "fixture")
+            self.assertTrue(
+                any("Windows Compressed Folders" in finding for finding in zip_filename_findings(base / "too-long.zip"))
+            )
 
     def test_unicode_archive_names_use_strict_utf8_headers(self) -> None:
         with tempfile.TemporaryDirectory(prefix="nova-free-unicode-zip-") as directory:

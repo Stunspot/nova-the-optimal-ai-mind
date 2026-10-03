@@ -1,0 +1,120 @@
+{
+  "case_id": "IT-EXAMPLE-DOCK-001",
+  "updated_at": "2026-09-26T15:00:00Z",
+  "status": "test-planned",
+  "device": {
+    "owner_or_authority": "Synthetic home-office owner; observation only",
+    "type": "Laptop and USB-C Ethernet dock",
+    "manufacturer_model": "Example laptop / example dock; exact identifiers not supplied",
+    "serial_asset_id": "not-recorded",
+    "os_firmware": "Windows build unknown; dock firmware unknown",
+    "environment": "home"
+  },
+  "complaint": {
+    "desired_outcome": "Determine why a call drops after the laptop sleeps.",
+    "observable_symptom": "Owner reports Ethernet is unavailable after wake through the dock; Wi-Fi works.",
+    "onset_and_frequency": "Two reported occurrences this week",
+    "triggering_conditions": "Wake after at least 20 minutes asleep, dock connected",
+    "affected_and_working": [
+      "Dock Ethernet affected",
+      "Wi-Fi reported working",
+      "USB keyboard reported working"
+    ],
+    "recent_changes": [
+      "No reliable change history supplied"
+    ],
+    "stakes": [
+      "Avoid disrupting a scheduled call"
+    ]
+  },
+  "custody": {
+    "hazards": [
+      "No heat, swelling or physical damage reported; absence not independently inspected"
+    ],
+    "data_value": "Work documents remain on laptop",
+    "backup_state": "Reported cloud copy; recovery not tested",
+    "encryption_recovery_state": "Unknown; no firmware/reset work authorized",
+    "privacy_or_policy": [],
+    "authorized_scope": [
+      "Observe and compare connectivity only"
+    ],
+    "stop_or_referral": [
+      "Stop if symptoms indicate device damage or required organizational authority"
+    ]
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "kind": "reported",
+      "claim": "Dock Ethernet fails after wake",
+      "source": "Synthetic owner statement",
+      "time": "2026-09-26",
+      "limits": "No log or current measurement"
+    },
+    {
+      "id": "E2",
+      "kind": "reported",
+      "claim": "Wi-Fi works during the same symptom",
+      "source": "Synthetic owner statement",
+      "limits": "Same-moment test not observed"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "status": "hypothesis",
+      "mechanism": "Dock Ethernet adapter fails to resume",
+      "prediction": "Adapter/link state differs after sleep but upstream router remains reachable over Wi-Fi",
+      "evidence_ids": [
+        "E1",
+        "E2"
+      ]
+    },
+    {
+      "id": "H2",
+      "status": "hypothesis",
+      "mechanism": "Lease or interface configuration is lost after wake",
+      "prediction": "Adapter remains present while addressing or gateway reachability changes",
+      "evidence_ids": [
+        "E1"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "T1",
+      "status": "test-planned",
+      "hypothesis_ids": [
+        "H1",
+        "H2"
+      ],
+      "action": "Ask owner for exact adapter presence/link/address observations before and after one safe sleep/wake",
+      "expected_discriminator": "Absent adapter/link favors resume branch; present link with missing addressing favors configuration branch",
+      "performed": false,
+      "result": "Not run; no logs fabricated",
+      "stop_condition": "No disruptive reset or firmware work"
+    }
+  ],
+  "changes": [],
+  "sources": [
+    {
+      "id": "SRC1",
+      "label": "Synthetic teaching fixture",
+      "authority": "Example only; no vendor applicability",
+      "locator": "No external source claimed"
+    }
+  ],
+  "verification": {
+    "original_envelope_retested": false,
+    "results": [],
+    "adjacent_checks": [],
+    "disposition": "awaiting-observation",
+    "reopen_condition": "Record exact device/OS identifiers and before/after adapter/link/address state; original envelope has not been retested."
+  },
+  "next_move": {
+    "action": "Capture the smallest same-moment before/after network observations",
+    "owner": "User or authorized technician",
+    "authority_required": "Observation only",
+    "evidence_to_advance": "Adapter presence, link and address state during the reported trigger"
+  }
+}

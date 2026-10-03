@@ -1,6 +1,6 @@
 # Support
 
-For private Dennis Stratton Project Management v0.3.0 support, contact [contact@collaborative-dynamics.com](mailto:contact@collaborative-dynamics.com).
+For private Dennis Stratton Project Management v0.3.0 support, contact [stunspot@collaborative-dynamics.com](mailto:stunspot@collaborative-dynamics.com).
 
 Include:
 

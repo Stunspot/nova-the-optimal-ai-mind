@@ -1,0 +1,55 @@
+{
+  "documents": [
+    {
+      "path": "README.md",
+      "change": "materially-revised",
+      "before_bytes": 6850,
+      "after_bytes": 7414
+    },
+    {
+      "path": "START-HERE.md",
+      "change": "materially-revised",
+      "before_bytes": 5441,
+      "after_bytes": 5994
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "change": "materially-revised",
+      "before_bytes": 17456,
+      "after_bytes": 17561
+    },
+    {
+      "path": "docs/VISUAL-WORKSPACES.md",
+      "change": "materially-revised",
+      "before_bytes": 12000,
+      "after_bytes": 15491
+    },
+    {
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "change": "materially-revised",
+      "before_bytes": 3779,
+      "after_bytes": 4057
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "change": "materially-revised",
+      "before_bytes": 2637,
+      "after_bytes": 3662
+    },
+    {
+      "path": "docs/workflows.html",
+      "change": "materially-revised",
+      "before_bytes": 5661,
+      "after_bytes": 5966
+    },
+    {
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md",
+      "change": "materially-revised",
+      "before_bytes": 11910,
+      "after_bytes": 12439
+    }
+  ],
+  "task_execution_exit_code": 0,
+  "authorship_mode": "in-process",
+  "authorship_scope": "materially-revised"
+}

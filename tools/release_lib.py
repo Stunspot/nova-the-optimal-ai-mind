@@ -92,6 +92,25 @@ ZIP_UTF8_FLAG = 0x0800
 ZIP_LOCAL_SIGNATURE = b"PK\x03\x04"
 ZIP_CENTRAL_SIGNATURE = b"PK\x01\x02"
 ZIP_EOCD_SIGNATURE = b"PK\x05\x06"
+WINDOWS_COMPRESSED_FOLDER_MAX_MEMBER_UNITS = 259
+MAC_FILE_COMPONENT_MAX_UTF8_BYTES = 255
+
+
+def zip_member_length_findings(name: str) -> list[str]:
+    findings: list[str] = []
+    units = len(name.encode("utf-16-le")) // 2
+    if units > WINDOWS_COMPRESSED_FOLDER_MAX_MEMBER_UNITS:
+        findings.append(
+            f"Windows Compressed Folders cannot open ZIP member path "
+            f"({units} UTF-16 units, maximum 259): {name}"
+        )
+    for component in name.split("/"):
+        size = len(component.encode("utf-8"))
+        if size > MAC_FILE_COMPONENT_MAX_UTF8_BYTES:
+            findings.append(
+                f"ZIP path component exceeds 255 UTF-8 bytes ({size}): {name}"
+            )
+    return findings
 
 
 def zip_filename_findings(path: Path, expected_names: Iterable[str] | None = None) -> list[str]:
@@ -147,6 +166,7 @@ def zip_filename_findings(path: Path, expected_names: Iterable[str] | None = Non
             names.append(name)
             if any(byte >= 0x80 for byte in raw_name) and not flags & ZIP_UTF8_FLAG:
                 findings.append(f"non-ASCII central filename lacks the UTF-8 flag: {name}")
+            findings.extend(zip_member_length_findings(name))
             if (
                 not name
                 or "\\" in name
@@ -207,10 +227,19 @@ def zip_filename_findings(path: Path, expected_names: Iterable[str] | None = Non
 
 
 def deterministic_zip(source: Path, destination: Path, *, prefix: str) -> str:
+    entries: list[tuple[Path, str]] = []
+    for path in files(source):
+        relative = path.relative_to(source).as_posix()
+        name = f"{prefix}/{relative}" if prefix else relative
+        name.encode("utf-8", errors="strict")
+        length_findings = zip_member_length_findings(name)
+        if length_findings:
+            raise ValueError("; ".join(length_findings))
+        entries.append((path, name))
     destination.parent.mkdir(parents=True, exist_ok=True)
     if destination.exists():
         destination.unlink()
-    expected_names: list[str] = []
+    expected_names = [name for _, name in entries]
     with zipfile.ZipFile(
         destination,
         "w",
@@ -218,11 +247,7 @@ def deterministic_zip(source: Path, destination: Path, *, prefix: str) -> str:
         compresslevel=9,
         strict_timestamps=True,
     ) as archive:
-        for path in files(source):
-            relative = path.relative_to(source).as_posix()
-            name = f"{prefix}/{relative}" if prefix else relative
-            name.encode("utf-8", errors="strict")
-            expected_names.append(name)
+        for path, name in entries:
             info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.create_system = 3

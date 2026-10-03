@@ -1012,7 +1012,7 @@ def resolve_store(
         source = "environment"
     else:
         raise ValueError(
-            "DENNIS_PROJECT_HOME is required in Nova Emergent; use Nova Operations to configure the governed Nova estate"
+            "DENNIS_PROJECT_HOME is required in Nova; use Nova Operations to configure the governed Nova estate"
         )
     return raw.expanduser().resolve(strict=False), source
 

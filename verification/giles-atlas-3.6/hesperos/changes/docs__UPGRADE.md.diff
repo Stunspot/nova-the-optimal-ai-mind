@@ -1,0 +1,18 @@
+--- before/docs/UPGRADE.md
++++ docs/UPGRADE.md
+@@ -1,4 +1,15 @@
+ # Upgrade and removal
++
++## Upgrade from Free 3.5.0
++
++Free 3.6.0 adds the optional Giles Knowledge Atlas inside the existing Knowledge Steward. The one-plugin topology, twenty-seven roots, MIND 0.4.0, Worldline/Continuity 0.3.0 and existing owner stores stay intact. This update requires no source-archive move or catalog migration.
++
++Preserve your 3.5.0 package and host binding for rollback, then install the complete 3.6.0 edition through the same supported host route. Start a fresh task and verify a real Nova invocation. If you use Giles, open the same external catalog path and confirm a known store and section still resolve. A new catalog is empty; an empty default path after an upgrade is not evidence that an archive disappeared.
++
++Export your catalog before editing its metadata. Use the [Giles recovery procedure](VISUAL-WORKSPACES.md#keep-the-route-and-recover-safely) for stale saves, import conflicts or unreadable metadata. Rolling back the plugin does not require deleting the catalog or any source store.
++
++## Upgrade from Free 2.x
++
+ 
+ Free 3.6.0 is a major topology change from Free 2.x. Inspect the live host before changing it. Record installed marketplaces and plugins, locate any old MIND hook, database, Ollama model, and Continuity workspace, and preserve the exact current state.
+ 

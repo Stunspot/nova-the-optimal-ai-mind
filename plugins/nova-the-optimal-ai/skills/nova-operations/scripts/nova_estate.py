@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
-PRODUCT_VERSION = "3.3.0"
+PRODUCT_VERSION = "3.5.0"
 REGISTRY_FORMAT = "nova-path-selectors/v1"
 MANIFEST_FORMAT = "nova-estate-manifest/v1"
 LEGACY_MANIFEST_FORMAT = "nova-data-estate/v1"
@@ -46,6 +46,7 @@ SERVICE_ENTRYPOINTS = {
     "worldline-legacy": ("cognitive-continuity", "scripts", "worldline.py"),
     "dunbar": ("dunbar", "scripts", "dunbar.py"),
     "corkboard": ("corkboard", "scripts", "corkboard.py"),
+    "project-bridge": ("dennis-stratton-project-management", "scripts", "project_bridge.py"),
     "project-management": (
         "dennis-stratton-project-management",
         "scripts",

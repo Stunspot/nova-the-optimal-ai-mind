@@ -1,0 +1,29 @@
+{
+  "schema": "nova-free-package-verification/v3",
+  "package": "E:\\Github\\nova-the-optimal-ai-mind\\working\\giles-atlas-3.6-package\\nova-the-optimal-ai-free-3.6.0",
+  "verdict": "PASS",
+  "findings": [],
+  "observed": {
+    "visible_skill_roots": 27,
+    "faculty_cores": 17,
+    "customer_references_checked": 150,
+    "codex_plugin_tree": {
+      "file_count": 950,
+      "tree_sha256": "9531277d03b234c952ccfedfa4e3bd01d67039d3f0568990ce0812cd9e24da17"
+    },
+    "claude_plugin_tree": {
+      "file_count": 950,
+      "tree_sha256": "021a87a5079713e578256c8a45ffb9679d7aa59d752ebff4f5610c5eebdd017e"
+    },
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": [],
+    "standalone_rights_envelopes": 27,
+    "checksum_entries": 3112,
+    "candidate_states": {
+      "codex": "built_from_frozen_source",
+      "claude-compatible": "built_from_frozen_source"
+    },
+    "publication_state": "not_published"
+  },
+  "evidence_boundary": "Static package and rights-custody verification only. Fresh-host installation, discovery, enabled state, invocation, behavior, publication, and outcomes are not established."
+}

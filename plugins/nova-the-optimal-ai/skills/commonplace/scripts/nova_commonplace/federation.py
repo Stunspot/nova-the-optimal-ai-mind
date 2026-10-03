@@ -88,7 +88,7 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
         },
         "Dennis": {
             "relative_path": _MODULE_PATHS["Dennis"],
-            "sha256": "1d6e2deb933c3444c40678ff1453c2d39eafe83e4319fd921cd11339ee2d53d8",
+            "sha256": "a824787e442eae811537e4b97ab40e10d08874c4d5388bb80d1dbdba2be957b0",
             "dependencies": [],
             "package": None,
         },

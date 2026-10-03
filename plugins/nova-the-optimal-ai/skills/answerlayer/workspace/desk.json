@@ -1,0 +1,7 @@
+{
+  "id": "answerlayer-inspector",
+  "title": "AnswerLayer Baseline Inspector",
+  "version": "0.2.0",
+  "port": 8872,
+  "validator": "validate_reality_ledger.py"
+}

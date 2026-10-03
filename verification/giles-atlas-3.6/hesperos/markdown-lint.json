@@ -1,0 +1,49 @@
+{
+  "documents": [
+    {
+      "path": "README.md",
+      "tool_exit_code": 0,
+      "tool_result": "PASS",
+      "disposition": "PASS"
+    },
+    {
+      "path": "START-HERE.md",
+      "tool_exit_code": 0,
+      "tool_result": "PASS",
+      "disposition": "PASS"
+    },
+    {
+      "path": "RELEASE-NOTES.md",
+      "tool_exit_code": 1,
+      "tool_result": "89: directional reference may not survive reflow",
+      "disposition": "MANUALLY_RESOLVED_HISTORICAL_FALSE_POSITIVE"
+    },
+    {
+      "path": "docs/VISUAL-WORKSPACES.md",
+      "tool_exit_code": 0,
+      "tool_result": "PASS",
+      "disposition": "PASS"
+    },
+    {
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "tool_exit_code": 0,
+      "tool_result": "PASS",
+      "disposition": "PASS"
+    },
+    {
+      "path": "docs/UPGRADE.md",
+      "tool_exit_code": 0,
+      "tool_result": "PASS",
+      "disposition": "PASS"
+    },
+    {
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md",
+      "tool_exit_code": 0,
+      "tool_result": "PASS",
+      "disposition": "PASS"
+    }
+  ],
+  "verdict": "PASS_AT_AVAILABLE_DEPTH",
+  "retained_note": "Historical above denotes architecture layering, not page position; historical bytes retained. New spatial wording repaired.",
+  "scope": "Selected structure plus author semantic review; no conformance claim."
+}

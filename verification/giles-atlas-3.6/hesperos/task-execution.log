@@ -1,0 +1,6 @@
+test_cli_recognizes_section_and_round_trips_without_source_mutation (test_giles_integration.GilesEditionIntegrationTests.test_cli_recognizes_section_and_round_trips_without_source_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.049s
+
+OK

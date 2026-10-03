@@ -1,0 +1,96 @@
+{
+  "authored_files": [
+    {
+      "bytes": 7414,
+      "path": "README.md",
+      "sha256": "7227ef6ca9c8b45d8b1fba1115713524fafa78765cd4e9588f89078fce9db96a"
+    },
+    {
+      "bytes": 5994,
+      "path": "START-HERE.md",
+      "sha256": "8603c0fccd8a031eccd7077c32e32930f4e8b199ae45f6c6b8021a410244f185"
+    },
+    {
+      "bytes": 17561,
+      "path": "RELEASE-NOTES.md",
+      "sha256": "89f4c0561e3628a7869004651df78cf05961506387d1162cfd40d9248ce5e89a"
+    },
+    {
+      "bytes": 15491,
+      "path": "docs/VISUAL-WORKSPACES.md",
+      "sha256": "002be9b6829137f6eaf0e3be6cd5f40a84e292bee1589fc3bd4374a08fb70833"
+    },
+    {
+      "bytes": 4057,
+      "path": "docs/CAPABILITY-GUIDE.md",
+      "sha256": "75c78a8bd75f622abacc343e9a6b8495682d2fabc4e266e9e489e9759371977e"
+    },
+    {
+      "bytes": 3662,
+      "path": "docs/UPGRADE.md",
+      "sha256": "40c6752b28ff227bfa7399399590bef59672fd769365080657a4cfae5cad50bf"
+    },
+    {
+      "bytes": 5966,
+      "path": "docs/workflows.html",
+      "sha256": "d0acc2988769f7a5f5dac159a8d12591c45b35bec1acfa6c6b9d6bfac8260f7a"
+    },
+    {
+      "bytes": 12439,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.6.0 Extra.md",
+      "sha256": "0b554c2a4381a47055f1c560377fd23522706d2dd1b72bd52845b2e43d626815"
+    }
+  ],
+  "authoring": {
+    "authorship_scope": "materially-revised",
+    "capability": "hesperos-documentation",
+    "capability_entrypoint_sha256": "c6622d90a907edc95e93b868e2481f835bf3ddb3f21b801a3699042a0e524cde",
+    "mode": "in-process",
+    "run_id": "free-3.6-giles-hesperos-20261003"
+  },
+  "authoring_response": {
+    "bytes": 1005,
+    "path": "verification/giles-atlas-3.6/hesperos/authoring-response.txt",
+    "sha256": "c7f6d7143fcee6d0a2cd6c37378af1bf13553a03b42d83541a2ced63a054c74d"
+  },
+  "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
+  "created_at": "2026-10-03T20:48:28+00:00",
+  "documentation_fingerprint": "0b391575972d0e8cbdc2c80619f1cd1631e4f4e880f393160ebbfaf1c85c81c7",
+  "documentation_manifest": {
+    "bytes": 847,
+    "path": "documentation-manifest.json",
+    "sha256": "ba030e3eaac3386ec2edf5fe2bb6f123ca67fe871e445d274e2d6a1c72681058"
+  },
+  "evidence_packet": {
+    "bytes": 2169,
+    "path": "verification/giles-atlas-3.6/hesperos/hesperos-evidence-packet.md",
+    "sha256": "c8db2615a7dfeccbf998e1a99c19678b4300e4bbfdc2bde294174f17b34058d5"
+  },
+  "execution_evidence": [
+    {
+      "bytes": 294,
+      "path": "verification/giles-atlas-3.6/hesperos/task-execution.log",
+      "sha256": "504c41f5742ff0786b35d7320f6517a981e6f295cad5a3e961e422812451583c"
+    },
+    {
+      "bytes": 2831,
+      "path": "verification/giles-atlas-3.6/hesperos/task-walkthrough.md",
+      "sha256": "4be8a1656fb7681d23cc16f784d42f56bbdd3c5347809d483160207bcb46c61f"
+    },
+    {
+      "bytes": 1312,
+      "path": "verification/giles-atlas-3.6/hesperos/material-revision-record.json",
+      "sha256": "871de4be08847d0407f5f1b0a33fb598f595a8141d38ba6d08ad656a04d0379f"
+    },
+    {
+      "bytes": 1005,
+      "path": "verification/giles-atlas-3.6/hesperos/authoring-response.txt",
+      "sha256": "c7f6d7143fcee6d0a2cd6c37378af1bf13553a03b42d83541a2ced63a054c74d"
+    }
+  ],
+  "format": "cd-hesperos-documentation-authorship/v1",
+  "product": {
+    "slug": "nova-the-optimal-ai-free",
+    "version": "3.6.0"
+  }
+}

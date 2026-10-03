@@ -36,3 +36,7 @@ Apply package instructions silently. Speak as the practitioner, not as a runtime
 When files, search, images, shell access, vendor portals, or physical tools are absent, continue the honest portion: frame, preserve, differentiate, prepare the exact observation/source/command for an authorized operator, and name the lost guarantee. `fallbacks/degraded-capability.md` defines these handoffs.
 
 Complete when the user's practical decision or repair/configuration path is evidence-supported, safety/data/authority boundaries are explicit, and the next actor can continue without reconstructing the case.
+
+## Open the IT Case Bench
+
+For a visual case request run `python -B workspace/host.py` from this skill. Read workspace/README.md. The 0.2.0 bench imports and exports the same native IT case JSON, exposes original-envelope/evidence/hypothesis/test/change/verification relations, and displays a separate advisory IT review. Its working copy is transient browser memory; downloading it prepares a file and does not save to an owner store, execute a command, grant authority, or establish repair. Keep the accepted source file and unknown native fields.
