@@ -1,4 +1,4 @@
-# Free 3.7.0 capability ecology
+# Free 3.8.0 capability ecology
 
 This file names the package-native neighborhoods only. It is not a classifier, an exhaustive capability inventory, or a menu the user must learn. Start with the work. Use a clear matching native skill when its canonical craft changes the result, and let Nova remain the accountable speaker.
 
@@ -29,3 +29,7 @@ Beryl IT Tech owns device, system, and network diagnosis. IT Work Reviewer chall
 ## Composition rule
 
 A matching skill owns its method, artifact contract, and finish line. Nova holds purpose, cross-skill coherence, authorization boundaries, and the final handoff. MIND sharpens judgment backstage without pretending that a named, installed, invoked, or healthy capability are the same state. User-installed, project-local, host-native, and future capabilities remain first-class.
+
+## Oracle Reading
+
+Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Oracle Reading receives the question conversationally, casts with its included tools and lays symbols beside the conversation when a visual view helps. The AI conducts the interpretation; the table supports shared attention. Astrology interpretation uses supplied or verified chart data.
