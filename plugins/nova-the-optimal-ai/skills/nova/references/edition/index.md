@@ -1,4 +1,4 @@
-# Free 3.3.0 capability ecology
+# Free 3.7.0 capability ecology
 
 This file names the package-native neighborhoods only. It is not a classifier, an exhaustive capability inventory, or a menu the user must learn. Start with the work. Use a clear matching native skill when its canonical craft changes the result, and let Nova remain the accountable speaker.
 
@@ -8,7 +8,7 @@ Agentic Coding owns ordinary repository changes, local instructions, narrow impl
 
 ## Research and knowledge
 
-Direct browsing or Current Intelligence Observatory fits current fact-finding. Retrieval Intelligence and its reviewer fit supplied corpora. Rupert Giles governs authoritative-file custody. Answerlayer governs claims that must change when reality changes. OMNARA is earned by broad, source-state-heavy research campaigns; its campaign vault is job-local working state, not Nova memory.
+Direct browsing or Current Intelligence Observatory fits current fact-finding. Retrieval Intelligence and its reviewer fit supplied corpora. Rupert Giles governs authoritative-file custody and knowledge-store discovery. When a question might already be answered in an archive, or a name is half remembered, use Giles's compact catalog first: recognize the collection and section, prepare the exact source route, then let the appropriate retrieval owner read only what the question needs. A registered description never proves content inspection or freshness. Answerlayer governs claims that must change when reality changes. OMNARA is earned by broad, source-state-heavy research campaigns; its campaign vault is job-local working state, not Nova memory.
 
 ## Documents, decks, and sheets
 
