@@ -59,7 +59,9 @@ def mutation_filesystem_support(root, *, lexical_root=None):
 class NovaOperationsFreeTests(unittest.TestCase):
     def setUp(self) -> None:
         self.temp = tempfile.TemporaryDirectory(prefix="nova-operations-free-")
-        self.base = Path(self.temp.name)
+        # macOS exposes its temporary directory through /var -> /private/var.
+        # The fixture uses the canonical root; production still rejects symlink traversal.
+        self.base = Path(self.temp.name).resolve()
         self.skills = self.base / "package" / "skills"
         ops = self.skills / "nova-operations" / "scripts"
         ops.mkdir(parents=True)
