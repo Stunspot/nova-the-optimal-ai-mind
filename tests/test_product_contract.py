@@ -371,8 +371,8 @@ class ProductContractTests(unittest.TestCase):
         answer = json.loads((self.plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
         current = json.loads((self.plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
         for manifest in (answer, current):
-            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.8.0")
-            self.assertIn("Nova Free 3.8.0 public split license", manifest["license"])
+            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.8.1")
+            self.assertIn("Nova Free 3.8.1 public split license", manifest["license"])
         source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
         records = {record["id"]: record for record in source_map["records"]}
         self.assertEqual(
@@ -404,9 +404,9 @@ class ProductContractTests(unittest.TestCase):
         self.assertIn('"project-bridge": ("dennis-stratton-project-management", "scripts", "project_bridge.py")', ops)
         bridge = (dennis / "scripts/project_bridge.py").read_text(encoding="utf-8")
         self.assertIn("from workspace_host import atomic_json, run_workspace", bridge)
-        for skill_id in ("answerlayer", "current-intelligence-observatory"):
+        for skill_id, version in {"answerlayer": "0.2.0", "current-intelligence-observatory": "0.3.0"}.items():
             manifest = json.loads((self.plugin / "skills" / skill_id / "manifest.json").read_text(encoding="utf-8"))
-            self.assertEqual(manifest["version"], "0.2.0", skill_id)
+            self.assertEqual(manifest["version"], version, skill_id)
         desk = (self.plugin / "skills/commonplace/workspace/host.py").read_text(encoding="utf-8")
         self.assertIn("0.3.0", desk)
         self.assertEqual(self.loadout["worldline"]["runtime_minimum"], "0.3.0")
@@ -426,7 +426,7 @@ class ProductContractTests(unittest.TestCase):
         ecology = (self.plugin / "skills/nova/references/edition/index.md").read_text(encoding="utf-8")
         self.assertIn("Giles's compact catalog", ecology)
         workflow = (REPO / ".github/workflows/verify-package.yml").read_text(encoding="utf-8")
-        self.assertIn("dist/nova-the-optimal-ai-free-3.8.0", workflow)
+        self.assertIn("dist/nova-the-optimal-ai-free-3.8.1", workflow)
 
     def test_required_old_runtime_is_absent(self) -> None:
         forbidden = ("augment-of-mind", "mind_prompt_submit.py", "mind_core", "bundle/reminder")
