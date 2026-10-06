@@ -1,12 +1,10 @@
 from __future__ import annotations
 
 import hashlib
-import io
 import json
 import re
 import sys
 import subprocess
-import tarfile
 import unittest
 from pathlib import Path
 
@@ -328,19 +326,26 @@ class ProductContractTests(unittest.TestCase):
         # Compare the actual pinned raw Git blobs with the current closure. The
         # canonical worktree can legitimately carry an accepted release ahead of
         # its checkout HEAD; that unrelated ref is not the source-byte oracle.
-        archive = subprocess.check_output(
-            ["git", "archive", "--format=tar", source["source_commit"] + ":" + source["source_path"]],
+        # git archive applies the host's line-ending conversion when archiving
+        # a subtree without its enclosing attributes. Read the stored blobs
+        # directly so Windows defaults cannot change the source-byte oracle.
+        selected = subprocess.check_output(
+            ["git", "ls-tree", "-r", "-z", source["source_commit"] + ":" + source["source_path"]],
             cwd=REPO,
         )
-        with tarfile.open(fileobj=io.BytesIO(archive), mode="r:") as selected:
-            files = [member for member in selected.getmembers() if member.isfile()]
-            self.assertEqual(len(files), source["source_file_count"])
-            for member in files:
-                pinned = selected.extractfile(member)
-                self.assertIsNotNone(pinned)
-                self.assertEqual(
-                    pinned.read(), (REPO / source["source_path"] / member.name).read_bytes(), member.name,
-                )
+        files = [entry for entry in selected.split(b"\0") if entry]
+        self.assertEqual(len(files), source["source_file_count"])
+        for entry in files:
+            metadata, raw_name = entry.split(b"\t", 1)
+            mode, kind, object_id = metadata.split()
+            self.assertEqual(kind, b"blob")
+            name = raw_name.decode("utf-8")
+            pinned = subprocess.check_output(
+                ["git", "cat-file", "blob", object_id.decode("ascii")], cwd=REPO,
+            )
+            self.assertEqual(
+                pinned, (REPO / source["source_path"] / name).read_bytes(), name,
+            )
         self.assertEqual(source["source_file_count"], locked["imported_tree"]["file_count"])
         self.assertEqual(source["source_tree_sha256"], locked["imported_tree"]["tree_sha256"])
     def test_public_split_license_and_rights_bundle_are_bound(self) -> None:
