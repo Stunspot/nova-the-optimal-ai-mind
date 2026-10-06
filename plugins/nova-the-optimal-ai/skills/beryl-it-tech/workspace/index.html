@@ -1,0 +1,546 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Beryl · IT Studio</title><link rel="icon" href="data:,"><style>
+
+
+/* Beryl authored environments: Mossglass, Night Probe, Cinder Relay. */
+*{box-sizing:border-box}:root{font:15px/1.55 "Segoe UI",system-ui,sans-serif;color-scheme:dark}
+body{--bg:#111c19;--surface:#21362ef2;--raised:#30483d;--recess:#12251e;--ink:#eff3e9;--muted:#d0decf;--line:#647c6988;--accent:#d4bc8c;--accent-ink:#17251e;--tint:#415646;--error:#ffb5a6;--shadow:#020a0799;--edge:#d5e9cb44;--radius:25px;margin:0;color:var(--ink);background:radial-gradient(ellipse at 15% 0,#4a675450,transparent 55%),radial-gradient(ellipse at 90% 70%,#315d4533,transparent 65%),var(--bg);min-height:100vh}
+[hidden]{display:none!important}button,input,select,textarea{font:inherit;color:inherit}button,select{cursor:pointer}
+button{min-height:42px;border:1px solid var(--line);border-radius:12px;padding:10px 15px;background:linear-gradient(160deg,var(--raised),var(--surface));box-shadow:inset 0 1px var(--edge),0 3px 5px #0002;text-align:inherit}
+button:hover{border-color:var(--accent);background:var(--tint)}button.primary{color:var(--accent-ink);background:linear-gradient(140deg,#e2d5ad,var(--accent));border-color:var(--accent);font-weight:650;box-shadow:inset 0 1px #fff5,0 4px 0 #111c1955,0 8px 14px #0002}
+button.quiet{background:transparent;box-shadow:none}button:disabled{opacity:.5;cursor:wait}button[aria-pressed=true]{border-color:var(--accent);background:var(--tint)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:4px}input,select,textarea{background:var(--recess);border:1px solid var(--line);border-radius:10px;padding:10px 12px;min-height:42px}
+input::placeholder{color:var(--muted);opacity:1}h1,h2,h3,p{margin:0}h1{font-size:clamp(27px,2.9vw,43px);line-height:1.15;letter-spacing:-.035em;font-weight:600}
+h2{font-size:23px;line-height:1.3;letter-spacing:-.02em;font-weight:600}h3{font-size:17px;line-height:1.4;font-weight:600}p+p{margin-top:10px}small,.muted{color:var(--muted)}small{font-size:12px}button,section,article,div,aside{min-width:0}a{color:var(--accent)}
+.mono,.eyebrow,.id,.stage-num,.num{font-family:Consolas,"Courier New",monospace}.eyebrow{font-size:10px;line-height:1.5;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.skip{position:fixed;top:-100px;left:15px;z-index:100;background:var(--accent);color:var(--accent-ink);padding:14px}.skip:focus{top:12px}
+.topbar{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 30px;border-bottom:1px solid var(--edge);background:linear-gradient(170deg,#344b3ed9,#17271fe8);box-shadow:0 10px 40px #0002}
+.brand{display:flex;gap:14px;align-items:center}.mark{width:44px;height:46px;display:grid;place-items:center;border:1px solid #acbd9e88;border-radius:16px 7px;font-size:28px;font-weight:600;background:linear-gradient(135deg,#5c7b61,#243d2f);color:#e2e9d1;box-shadow:inset 0 1px 1px #f4ffdf66,0 4px 9px #0005}
+.brand strong{display:block;font-size:15px;letter-spacing:.23em;font-weight:600}.brand small{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.top-actions,.skin-label{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.skin-label{font-size:11px;color:var(--muted);margin-right:7px}.skin-label select{max-width:185px;border-radius:18px;color:var(--ink);font-size:13px}
+.app{max-width:1900px;margin:auto;display:grid;grid-template-columns:180px minmax(0,1fr);min-height:calc(100vh - 140px)}
+.rail{padding:35px 17px;display:flex;flex-direction:column;gap:24px;border-right:1px solid #a6c0a715;background:linear-gradient(90deg,#0c171580,transparent)}
+.rail-label{color:var(--muted);font-size:9px;letter-spacing:.15em;text-transform:uppercase;padding:0 9px}.nav{display:grid;gap:10px}
+.nav button{display:flex;align-items:center;gap:11px;font-size:13px;background:transparent;border-color:transparent;box-shadow:none;padding:12px 9px;min-height:52px}.nav .num{color:var(--muted);font-size:11px}
+.nav button[aria-current=page]{background:linear-gradient(135deg,#435f48aa,#263e31);border-color:#99b28b55;box-shadow:inset 0 1px #d5e9cb44,0 5px 12px #0003;color:#f3eedb}
+.nav button[aria-current=page] .num{color:var(--accent)}.rail-note{margin-top:auto;font-size:11px;color:var(--muted);padding:20px 9px 0;line-height:1.7}.rail-note strong{display:block;color:var(--ink);margin-bottom:7px;font-weight:500}.rail-note details{margin-top:15px}
+.main{padding:28px 35px 40px;min-width:0}.document-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:28px}
+.source{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.source strong{color:var(--accent);font-weight:500}.doc-actions{display:flex;gap:7px;flex-wrap:wrap}.doc-actions button{font-size:11px;padding:7px 11px;min-height:36px}
+.case-anchor{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.37fr);gap:30px;align-items:center;margin-bottom:20px}.case-hero{padding:5px 0}
+.hero-top{display:flex;justify-content:space-between;gap:15px;align-items:flex-start;margin-bottom:10px}.hero-state{font:10px/1.5 Consolas,monospace;color:var(--muted);text-align:right}
+.case-hero h1{max-width:1000px}.case-intent{font-size:12px;color:var(--muted);margin-top:12px}.case-intent b{font:10px Consolas,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.case-envelope{border-left:1px solid var(--line);padding:8px 0 8px 22px}.case-envelope p{font-size:13px;margin:6px 0}.case-envelope small,.case-envelope .source{display:block}.case-envelope button{margin-top:9px;min-height:32px;font-size:11px;padding:4px 8px}
+.case-actionline{display:grid;grid-template-columns:1.4fr 1fr;gap:15px;margin:0 0 24px}.case-quickmove,.case-gate{display:block;padding:16px 20px;border-radius:15px;text-align:left}
+.case-quickmove{background:linear-gradient(155deg,#3b5342,#273d31);border-color:#9daf8377}.case-quickmove strong,.case-gate strong{display:block;font-size:14px;line-height:1.4;margin:5px 0}.case-quickmove small,.case-gate small{display:block;font-size:11px}.case-gate{background:#13251d77;box-shadow:inset 0 2px 5px #0003}
+.work-layout{display:block}.investigation{position:relative}.test-lens{position:relative;isolation:isolate;overflow:hidden;border-radius:var(--radius);border:1px solid #c6d8b755;background:linear-gradient(145deg,#354e40e8,#1c3028ef 65%);box-shadow:inset 0 1px 1px #e4efd766,inset 0 -1px #0008,0 18px 38px var(--shadow),0 3px 5px #0006;margin:0 0 28px;backdrop-filter:blur(18px)}
+.test-lens::before{content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse at 15% -15%,#b4dba42e,transparent 58%),linear-gradient(120deg,transparent 55%,#adc2a00a 55%,transparent 75%)}
+.lens-topline{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 24px;border-bottom:1px solid var(--edge);background:#13251e55}.lens-state{font:10px/1.5 Consolas,monospace;color:var(--muted);text-align:right}
+.lens-head{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:23px 25px 20px}.lens-head>div{position:relative;padding-left:40px}.lens-symbol{position:absolute;left:0;top:-7px;font-size:43px;line-height:1;color:var(--accent);font-weight:200}
+.lens-head h2{font-size:18px;color:var(--muted);margin:0 0 8px;font-weight:400}.lens-head p{font-size:clamp(17px,1.6vw,23px);line-height:1.35;max-width:800px}.lens-head button{flex-shrink:0;font-size:12px;max-width:190px}
+.lens-test-nav{display:flex;gap:8px;flex-wrap:wrap;padding:0 25px 18px}.lens-test-nav button{font:12px Consolas,monospace;min-width:95px;border-radius:10px}.lens-test-nav button span{display:block;max-width:240px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:10px/1.5 "Segoe UI",sans-serif;color:var(--muted);margin-top:4px}
+.lens-branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:0 25px 25px}.lens-branch{display:flex;flex-direction:column;position:relative;padding:20px 22px;border:1px solid #a8c09c55;border-radius:19px;background:linear-gradient(150deg,#56705699,#2c493866);box-shadow:inset 0 1px #d9e6c74d,0 7px 15px #08150e55;min-height:195px}
+.branch-title{display:flex;gap:9px;align-items:center;font:11px Consolas,monospace;color:var(--accent)}.branch-index{font-size:21px;color:var(--muted);font-weight:400}.branch-status{margin-left:auto;font-size:9px;text-transform:uppercase;color:var(--muted)}.lens-branch h3{font-size:18px;line-height:1.3;margin:10px 0 16px;font-weight:600}
+.branch-predict{padding-top:11px;border-top:1px solid var(--line)}.branch-predict p{font-size:13px;line-height:1.55;margin-top:6px}
+.lens-receipts{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:17px}.lens-receipts .eyebrow{width:100%;font-size:9px}
+.receipt{min-height:32px;padding:5px 9px;font:11px Consolas,monospace;border-radius:8px;background:#11281e66}.receipt small{font-size:9px;margin-left:3px}.missing-ref{font-size:11px;color:var(--error)}
+.lens-branch[data-focus=true]{outline:2px solid var(--accent);outline-offset:3px;box-shadow:0 0 20px #d4bc8c1a}.lens-branch[data-focus=false]{background:var(--surface)}.focus-flag{font-size:9px;color:var(--accent)}
+.lens-divider{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#0c201899;border-top:1px solid var(--edge);box-shadow:inset 0 4px 10px #0003}.lens-divider>div{padding:21px 26px}.lens-divider>div+div{border-left:1px solid var(--line)}.lens-divider p{font-size:14px;line-height:1.5;margin-top:8px}.lens-divider small{display:block;margin-top:9px}.observation[data-performed=true]{background:#6b805122}
+.lens-caution{font-size:10px;line-height:1.5;color:var(--muted);padding:12px 25px;border-top:1px solid var(--line)}
+.evidence-inspector{position:relative;margin:0 24px 24px;padding:22px;border:1px solid #d3e3c477;border-radius:20px;background:linear-gradient(140deg,#425940f5,#2c4634f5);backdrop-filter:blur(25px);box-shadow:0 16px 28px #0007,inset 0 1px #fff5;z-index:4}.inspector-head{display:flex;align-items:center;justify-content:space-between;gap:15px}.inspector-head button{min-height:32px;padding:6px 12px;font-size:11px}
+.inspector-claim{font-size:18px;line-height:1.4;margin:12px 0 18px}.inspector-facts{display:grid;grid-template-columns:1fr .7fr 1.4fr;gap:18px}.inspector-facts span{display:block;color:var(--muted);font:10px Consolas,monospace;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}.inspector-facts strong{font-size:12px;font-weight:400;overflow-wrap:anywhere}
+summary{cursor:pointer;color:var(--accent);font-size:12px}details[open]>summary{margin-bottom:16px}
+.branch-drawer,.evidence-shelf,.action-drawer{margin:18px 0;padding:0;border:1px solid var(--line);border-radius:14px;background:#13231b60}
+.branch-drawer>summary,.evidence-shelf>summary,.action-drawer>summary{padding:14px 20px;color:var(--muted);font-size:12px}summary small{font-size:10px;margin-left:12px}
+.section-head,.subhead{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 20px 15px}.section-head h2,.subhead h2{font-size:18px}.section-head p,.subhead p{color:var(--muted);font-size:12px;margin-top:5px}.section-head button{font-size:11px}
+.flow-labels{display:flex;justify-content:space-between;padding:0 20px;color:var(--muted);font:9px Consolas,monospace;text-transform:uppercase;letter-spacing:.1em}.flow{display:grid;grid-template-columns:1fr 30px 1fr;padding:16px 20px;align-items:start}.causes,.test-column{display:grid;gap:12px}.cause{display:block;width:100%;padding:15px;text-align:left}
+.cause-top,.test-top{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:10px;color:var(--muted);margin-bottom:10px}.cause strong{display:block;font-size:14px}.cause .prediction,.evidence-count{display:block;color:var(--muted);font-size:11px;margin-top:10px}.prediction b{color:var(--accent);display:block;font-size:10px}
+.connector{display:grid;place-items:center;align-self:center;color:var(--accent)}.test{padding:15px;background:var(--recess);border:1px solid var(--line);border-radius:12px}.test h3{font-size:14px}.test details{font-size:12px;margin-top:12px}.test-links{font:11px Consolas,monospace;color:var(--muted);margin:10px 0}.test-inspect{width:100%;margin-top:10px;font-size:11px}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:4px 7px;font:9px Consolas,monospace}.prediction-note,.map-foot{padding:12px 20px;font-size:11px;color:var(--muted);border-top:1px solid var(--line)}
+.action-column{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;padding:0 22px 22px}.next{padding:24px;background:var(--raised);border-radius:20px;border:1px solid var(--line);box-shadow:0 10px 20px #0003,inset 0 1px var(--edge)}.next h2{font-size:23px;margin-top:10px}.next .arrow{display:none}
+.next-detail{display:grid;grid-template-columns:1fr 2fr;gap:10px 16px;padding-top:18px;border-top:1px solid var(--line);margin:18px 0 0}dt{color:var(--muted);font-size:11px}dd{margin:0;font-size:13px;overflow-wrap:anywhere}
+.boundary{padding:15px;font-size:12px}.boundary h3{margin-bottom:10px}.boundary .eyebrow{display:block;margin-top:15px}.boundary button{font-size:11px;margin-top:15px}
+.next-reassess,.notice{font-size:12px;padding:12px 16px;border:1px solid var(--accent);border-radius:10px;margin:12px 0;background:var(--recess)}
+.state-line{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:25px 0}.state-line>div{padding:12px 0;border-top:1px solid var(--line)}.state-line strong{display:block;font-size:12px;font-weight:500}.stage-num{color:var(--accent);margin-right:9px}.state-line small{display:block;font-size:11px;margin-top:6px}
+.all-native{margin-top:20px}.raw{font:12px/1.6 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:var(--recess);border:1px solid var(--line);padding:18px;border-radius:12px;max-height:65vh;overflow:auto;color:var(--ink)}
+.native-list{padding-left:19px}.native-list li{margin:5px 0;overflow-wrap:anywhere}.field{padding:12px 0;border-bottom:1px solid var(--line)}.field dt{margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em;font-size:10px}
+.heading{margin:12px 0 28px}.heading h1{margin:8px 0 14px}.view-intro{font-size:14px;color:var(--muted);max-width:800px}
+.evidence-spectrum{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:24px 0}.evidence-spectrum>div{padding:18px;border-radius:17px;background:linear-gradient(145deg,var(--raised),var(--surface));box-shadow:inset 0 1px var(--edge),0 8px 14px #0003;border:1px solid var(--line)}.evidence-spectrum strong{font:32px/1.1 Consolas,monospace;color:var(--accent);display:block}.evidence-spectrum span{display:block;font-size:11px;color:var(--muted);margin-top:7px}
+.filter-bar{display:flex;align-items:center;gap:12px;margin:22px 0}.search{flex:1;min-width:0}.filter-bar label{font-size:12px}
+.evidence-layout{display:grid;grid-template-columns:1.8fr 1fr;gap:32px}.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;padding:0 20px 20px}.search-status{font-size:11px;color:var(--muted);margin-bottom:14px}.evidence-list{display:grid;gap:13px}
+.evidence{display:grid;grid-template-columns:35px 1fr 15px;gap:13px;align-items:start;text-align:left;width:100%;padding:19px;border-radius:17px}.evidence .id{font-size:12px;color:var(--accent)}.evidence .kind{display:block;font:9px Consolas,monospace;color:var(--muted);text-transform:uppercase;margin-bottom:6px}.evidence strong{display:block;font-size:14px;font-weight:500}.evidence small{display:block;font-size:11px;margin-top:8px}.go{color:var(--accent)}
+.source-margin{border-left:1px solid var(--line);padding-left:25px}.source-margin h2{font-size:21px;margin:9px 0 20px}.source-note{padding:18px 0;border-top:1px solid var(--line)}.source-note h3{margin:8px 0;font-size:16px}.source-note p{font-size:12px}.source-note .eyebrow{font-size:10px}.source-locator{overflow-wrap:anywhere;color:var(--muted)}
+.proof-route{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:0;margin:28px 0;border:1px solid var(--line);border-radius:25px;overflow:hidden;background:var(--surface);box-shadow:0 14px 28px #0003}.proof-stop{padding:24px}.proof-stop+div{border-left:1px solid var(--line)}.proof-stop p{font-size:14px;margin-top:10px}.proof-stop strong{display:block;font-size:23px;line-height:1.3;margin:10px 0;overflow-wrap:anywhere}.proof-stop small{display:block}.proof-retest{background:var(--raised)}.proof-end{background:var(--recess)}
+.proof-work{display:grid;grid-template-columns:1fr 1.5fr;gap:30px}.proof-work h2{margin:9px 0 20px}
+.card,.proof-sheet,.review-sheet{padding:23px;border-radius:20px;background:var(--surface);border:1px solid var(--line);box-shadow:0 9px 20px #0002}.card h3{margin-bottom:15px}.trail{display:grid;gap:15px}.proof-field{padding:16px 0;border-top:1px solid var(--line);font-size:13px}.proof-field h3{font-size:15px;margin-bottom:10px}
+.handoff{margin-top:25px;padding:22px;background:var(--recess);border-radius:15px}.handoff h3{margin:10px 0}.handoff p{font-size:13px}.review-sheet{margin-top:25px}.review-sheet .card{background:var(--recess);box-shadow:none}.binding{font:12px Consolas,monospace;color:var(--muted)}
+.muted-block{padding:22px;color:var(--muted);border:1px dashed var(--line);border-radius:15px}.muted-block h3{font-size:15px;color:var(--ink)}.muted-block p{font-size:12px}
+.welcome{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;min-height:490px;padding:35px 0}.welcome h1{font-size:clamp(44px,5vw,76px);letter-spacing:-.05em;margin:18px 0 25px}.welcome-copy>p:not(.eyebrow){font-size:17px;line-height:1.65;color:var(--muted);max-width:540px}.welcome-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 18px}
+.welcome-map{padding:32px;border:1px solid #b0c09f66;border-radius:35px;background:linear-gradient(150deg,#435d45bd,#1c3428ee);box-shadow:inset 0 1px #e2f2d566,0 25px 50px #0006;transform:perspective(1300px) rotateY(-5deg)}
+.demo-fault{font-size:27px;line-height:1.3;margin:23px 0}.demo-causes{display:grid;grid-template-columns:1fr 1fr;gap:15px}.demo-node{font-size:13px;padding:17px;border:1px solid var(--line);border-radius:15px;background:var(--surface)}.demo-node small,.demo-test small{display:block;font-size:10px;color:var(--accent);margin-bottom:7px}.demo-link{text-align:center;font-size:25px;color:var(--accent);margin:10px}.demo-test{padding:20px;border-radius:17px;background:var(--recess);border:1px solid var(--line);font-size:16px}
+.welcome-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:35px;border-top:1px solid var(--line);padding:25px 0}.welcome-bottom h3{font-size:16px;margin:10px 0}.welcome-bottom p{font-size:13px;color:var(--muted)}
+.status{padding:14px 30px;background:#0a1712;border-top:1px solid var(--line);color:var(--muted);font-size:12px}.error,.status.error{color:var(--error)}
+dialog{color:var(--ink);width:min(800px,calc(100vw - 36px));max-height:90vh;overflow:auto;border:1px solid var(--edge);border-radius:25px;padding:28px;background:linear-gradient(145deg,#40583fed,#1c3328fa);box-shadow:inset 0 1px #effadb55,0 35px 100px #000a;backdrop-filter:blur(25px)}dialog::backdrop{background:#05100dcc;backdrop-filter:blur(7px)}
+.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px}.dialog-head h2{font-size:25px}.dialog-head button{font-size:12px}.dialog-copy{font-size:13px;color:var(--muted);margin:15px 0}dialog label{font-size:13px;display:block;margin:12px 0 7px}dialog textarea,dialog input[type=text],dialog select{width:100%}
+#nativejson{height:45vh;font:12px/1.6 Consolas,monospace;resize:vertical}#test-result-input{height:125px;resize:vertical}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:24px}
+.recorder-context{padding:15px;border:1px solid var(--line);border-radius:12px;background:var(--recess);font-size:14px}.recorder-context p{font-size:12px;color:var(--muted)}.check-line{display:flex;gap:12px;align-items:center}.check-line input{width:19px;height:19px;min-height:0;accent-color:var(--accent)}.recorder-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* Primary dimensions are implemented as three different spatial and material bodies. */
+body{background-attachment:fixed;background-size:cover;background-position:center;color:var(--ink)}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1}
+button,select,input,textarea{transition:box-shadow .18s,transform .18s,background .18s}
+button:hover{transform:translateY(-2px)}button:active{transform:translateY(2px)}
+button.quiet{background:var(--surface);border-color:var(--line)}
+button:focus-visible{outline:3px solid var(--accent);outline-offset:5px}
+.topbar,.app{max-width:1720px;margin-left:auto;margin-right:auto}.app{min-height:calc(100vh - 175px)}
+.case-anchor,.case-actionline,.work-layout,.work-layout>div,.investigation{display:contents}
+#content:has(>.case-anchor){display:grid;gap:24px;align-items:start}
+#content>.state-line,#content>.all-native,.branch-drawer,.evidence-shelf,.action-drawer{grid-column:1/-1}
+.case-hero,.case-envelope,.case-quickmove,.case-gate{margin:0;border:0}
+.test-lens{margin:0;isolation:auto;overflow:visible;backdrop-filter:none}.test-lens::before{display:none}
+.branch-drawer,.evidence-shelf,.action-drawer{margin:0}.branch-drawer>summary,.evidence-shelf>summary,.action-drawer>summary{min-height:48px}
+.lens-symbol{display:none}.lens-head>div{padding-left:0}.lens-caution{border:0}
+.lens-branch{min-height:0}.state-line{margin:0}.case-hero h1{overflow-wrap:break-word}
+.status{margin-top:28px;background:var(--recess);box-shadow:inset 0 1px var(--edge)}
+.skip:not(:focus){clip-path:inset(50%);width:1px;height:1px;overflow:hidden;padding:0}
+/* MOS SGLASS: an open optical field, independent plates and floating evidence. */
+body[data-skin=moss]{--surface:#19372edb;--raised:#39594bd9;--recess:#102921ed;--ink:#f7f7ea;--muted:#e0e8d7;--line:#bddcc373;--accent:#e4cea0;--accent-ink:#19372d;--edge:#f2ffde99;--error:#ffbcac;background-image:linear-gradient(90deg,#122c24a3,#11281f66 50%,#162e279e),url('/assets/moss-surface.png');font-family:"Segoe UI",sans-serif}
+body[data-skin=moss] .topbar{margin:24px 30px 0;padding:17px 26px;border:1px solid #edf7dd80;border-radius:90px;background:linear-gradient(170deg,#e6f2d539,#60856b3b 40%,#11291cbd);backdrop-filter:blur(22px);box-shadow:inset 0 2px 2px #fff9,inset 0 -3px 4px #031b1299,0 6px 0 #071d175c,0 14px 24px #020d1380}
+body[data-skin=moss] .brand{gap:14px}body[data-skin=moss] .brand strong{font:24px/1.1 Georgia,serif;letter-spacing:.12em}body[data-skin=moss] .brand small{letter-spacing:.22em;font-size:9px}
+body[data-skin=moss] .mark{border-radius:50%;width:51px;height:51px;background:radial-gradient(circle at 32% 20%,#c8e2b6,#75937a 8%,#304f3d 42%,#0d3028 75%);border:2px solid #b4c6a9;box-shadow:inset 0 2px 3px #fff9,inset 0 -3px 6px #0009,0 5px 9px #0009;color:#f4eccb;font:italic 31px Georgia}
+body[data-skin=moss] .app{grid-template-columns:120px minmax(0,1fr);padding:26px 32px 10px 25px;gap:28px}
+body[data-skin=moss] .rail{padding:6px 0;border:0;background:none;align-self:start;position:sticky;top:22px;gap:20px}
+body[data-skin=moss] .rail-label{font-size:9px;text-align:center;padding:0;letter-spacing:.08em}
+body[data-skin=moss] .nav{gap:20px}.nav button{white-space:normal}
+body[data-skin=moss] .nav button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border:1px solid #dbe8ce65;border-radius:38px 14px 36px 16px;min-height:91px;padding:12px 8px;background:linear-gradient(140deg,#72977a40,#1d3d30c9);backdrop-filter:blur(14px);box-shadow:inset 1px 2px 2px #eaffcf66,inset 0 -3px 3px #051e18b3,0 6px 0 #071f1766,0 12px 20px #07170f6b;font-size:11px}
+body[data-skin=moss] .nav .num{font:25px Georgia,serif;color:#d9eac7}
+body[data-skin=moss] .nav button[aria-current=page]{background:linear-gradient(145deg,#b4c69a99,#345d40d9);border-color:#ecf2b0;box-shadow:inset 1px 2px 3px #ffffcfcc,inset 0 -4px 5px #143322,0 7px 0 #0b231bb3,0 10px 28px #05160ab3,0 0 27px #e3f29a24}
+body[data-skin=moss] .rail-note{font-size:10px;padding:8px;text-align:center;margin:0;text-shadow:0 2px 2px #000}
+body[data-skin=moss] .main{padding:0}body[data-skin=moss] .document-bar{margin:0 0 24px;min-height:42px}
+body[data-skin=moss] #content:has(>.case-anchor){grid-template-columns:repeat(12,minmax(0,1fr));gap:26px}
+body[data-skin=moss] .case-hero{grid-column:1/9;grid-row:1;padding:12px 0 20px;text-shadow:0 3px 10px #000d}
+body[data-skin=moss] .case-hero h1{font:400 clamp(30px,3.05vw,51px)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.035em;max-width:900px}
+body[data-skin=moss] .hero-top{display:block}.hero-state{display:block;margin-top:5px}
+body[data-skin=moss] .hero-state{text-align:left;color:#e3e5d3}body[data-skin=moss] .case-intent{font-size:12px;max-width:600px;line-height:1.7}
+body[data-skin=moss] .case-envelope{grid-column:9/-1;grid-row:1;align-self:center;padding:19px 24px;border-radius:32px 8px 30px 12px;background:linear-gradient(135deg,#71856b44,#153128c7);backdrop-filter:blur(16px);border:1px solid #d4e6c766;box-shadow:inset 1px 2px 1px #e7f6d344,0 14px 26px #05171180}
+body[data-skin=moss] .case-envelope p{font-size:13px}.case-envelope small{font-size:11px}
+body[data-skin=moss] .case-quickmove{grid-column:1/5;grid-row:2;border-radius:45px 14px 34px 18px;padding:26px;background:linear-gradient(130deg,#b4c99663,#244e36d6 65%);backdrop-filter:blur(20px);border:1px solid #d3e6be99;box-shadow:inset 2px 3px 3px #fff9,inset 0 -5px 6px #122b1ba8,0 8px 0 #102c2080,0 20px 30px #071d1599}
+body[data-skin=moss] .case-quickmove strong{font:21px/1.4 Georgia,serif;margin:12px 0}
+body[data-skin=moss] .case-gate{grid-column:1/5;grid-row:3;padding:23px;border:1px solid #abc8ac55;border-radius:13px 28px 17px 35px;background:linear-gradient(155deg,#264a3aa6,#0d2d2499);backdrop-filter:blur(10px);box-shadow:inset 0 2px 3px #071c1899,0 14px 25px #001b1377}
+body[data-skin=moss] .case-gate strong{font-size:13px;font-weight:500;line-height:1.65}
+body[data-skin=moss] .test-lens{grid-column:5/-1;grid-row:2/5;background:transparent;border:0;border-radius:0;box-shadow:none;display:flex;flex-direction:column;gap:22px}
+body[data-skin=moss] .lens-topline{background:none;border:0;padding:0 7px;gap:14px;order:0}.lens-state{font-size:10px}
+body[data-skin=moss] .lens-head{padding:25px 28px;gap:20px;border:1px solid #deefd091;border-radius:40px 14px 35px 14px;background:linear-gradient(160deg,#f1ffe226,#b8df9744 30%,#163e2cca 82%);backdrop-filter:blur(24px);box-shadow:inset 1px 3px 3px #fff9,inset -2px -3px 5px #052b1caa,0 7px 0 #173c2966,0 18px 32px #051d1399;order:1;display:block}
+body[data-skin=moss] .lens-head h2{font:italic 16px Georgia,serif;color:#dfdfb8}body[data-skin=moss] .lens-head p{font:22px/1.35 Georgia,serif}body[data-skin=moss] .lens-head button{display:block;margin:19px 0 0 auto;max-width:none}
+body[data-skin=moss] .lens-test-nav{order:2;padding:0}.lens-test-nav button{max-width:100%}
+body[data-skin=moss] .lens-branches{order:3;padding:0;gap:25px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+body[data-skin=moss] .lens-branch{border-radius:16px 38px 14px 38px;padding:23px 24px 26px;border:1px solid #d7ead48c;background:linear-gradient(150deg,#e4f6e045,#a4cba028 28%,#1b3f31c7 78%);backdrop-filter:blur(22px);box-shadow:inset 2px 3px 3px #ffffe399,inset -3px -4px 4px #143423b3,0 7px 0 #0b2d2580,0 18px 23px #091e1680}
+body[data-skin=moss] .lens-branch:nth-child(2){border-radius:38px 14px 38px 14px;background:linear-gradient(155deg,#f4f9d74d,#83a99133 30%,#173b32cc 80%)}
+body[data-skin=moss] .branch-index{font:32px Georgia;color:#e8ebca}.branch-title{gap:8px}
+body[data-skin=moss] .lens-branch h3{font:20px/1.35 Georgia,serif;margin:13px 0 18px}body[data-skin=moss] .branch-predict p{font-size:13px;line-height:1.65}
+body[data-skin=moss] .branch-predict{border-color:#d8e5c44d}.lens-receipts{gap:8px}
+body[data-skin=moss] .lens-divider{order:5;border:1px solid #839c835f;border-radius:18px 18px 32px 32px;background:linear-gradient(145deg,#153d2eeb,#0b261feb);box-shadow:inset 2px 5px 12px #0009,inset 0 -2px #d9e9c766,0 8px 15px #051a1480}
+body[data-skin=moss] .lens-divider>div{padding:23px}.lens-divider p{font-size:13px}
+body[data-skin=moss] .lens-caution{order:6;padding:0 8px;text-shadow:0 2px 3px #000}
+body[data-skin=moss] .evidence-inspector{order:4;margin:0;padding:25px;border-radius:35px 12px;background:linear-gradient(135deg,#526d4df5,#143b2ff5);box-shadow:inset 2px 3px 3px #ffffcdcc,0 12px 0 #122f26aa,0 24px 46px #001c10cc;border:2px solid #d9e6ae}
+body[data-skin=moss] button,body[data-skin=moss] select{border-radius:18px;background:linear-gradient(145deg,#59795a8c,#183c2dcf);box-shadow:inset 0 2px 2px #eaf1c66b,inset 0 -2px 2px #031f1699,0 4px 0 #041f1880,0 8px 10px #061f154d}
+body[data-skin=moss] button.primary{background:linear-gradient(155deg,#f5edca,#c4c294 60%,#9caa78);border-color:#eff2ca;box-shadow:inset 0 3px 3px #fff,0 5px 0 #556545,0 10px 13px #021b14a8;color:#173829}
+body[data-skin=moss] .branch-drawer,body[data-skin=moss] .evidence-shelf,body[data-skin=moss] .action-drawer{background:#153529e8;backdrop-filter:blur(15px);border-radius:23px;border-color:#d1e2c266;box-shadow:inset 0 2px #ffffcf33,0 10px 20px #051a1280}
+body[data-skin=moss] .heading h1{font-family:Georgia,serif;font-weight:400;text-shadow:0 3px 10px #000}
+body[data-skin=moss] .card,body[data-skin=moss] .proof-sheet,body[data-skin=moss] .review-sheet,body[data-skin=moss] .evidence,body[data-skin=moss] .evidence-spectrum>div{background:linear-gradient(140deg,#668368b3,#173b2de8);border-radius:26px 10px;backdrop-filter:blur(20px);box-shadow:inset 1px 3px 3px #ffffd777,inset 0 -4px 4px #14332099,0 7px 0 #102a2077,0 15px 20px #001b1480}
+body[data-skin=moss] .source-margin,body[data-skin=moss] .proof-route,body[data-skin=moss] .welcome-bottom{background:#143629d9;padding:24px;border-radius:28px;backdrop-filter:blur(14px)}
+body[data-skin=moss] .welcome-map{border-radius:55px 14px 45px 15px;background:linear-gradient(150deg,#9fbd8855,#113c2fe8);box-shadow:inset 2px 4px 4px #ffffcf99,inset -3px -6px 9px #0d372aaa,0 12px 0 #143629,0 30px 45px #061a14a6}
+body[data-skin=moss] .welcome h1{font-family:Georgia,serif;font-weight:400}body[data-skin=moss] dialog{background:linear-gradient(135deg,#5b7950fa,#173c2efa);border:2px solid #b7cc9c;border-radius:38px 12px;box-shadow:inset 2px 4px 3px #f9ffd299,0 9px 0 #0b251b,0 35px 95px #000c}
+/* NIGHT PROBE: a compact bench instrument, thick housing, rubber keys and optical wells. */
+body[data-skin=night]{--surface:#25292b;--raised:#42474a;--recess:#0b1112;--ink:#eeeede;--muted:#c5c4c5;--line:#727172;--accent:#f2c38b;--accent-ink:#25190e;--edge:#bdbcbd5c;--error:#ffb4a0;background-image:linear-gradient(#0003,#0007),url('/assets/night-surface.png');font:14px/1.5 "Segoe UI",sans-serif;padding:22px}
+body[data-skin=night] .topbar{position:relative;padding:20px 30px;border:2px solid #6f6e6f;border-radius:25px 25px 5px 5px;background:linear-gradient(175deg,#656465,#383e3c 12%,#1b2423 85%);box-shadow:inset 0 3px 2px #cbcacb,inset 0 -6px 3px #080d0c,0 6px 0 #050908,0 18px 27px #0009}
+body[data-skin=night] .brand strong{font:700 20px Consolas,monospace;letter-spacing:.26em;text-shadow:0 2px 1px #000}.brand small{font-size:10px}
+body[data-skin=night] .mark{border-radius:50%;width:47px;height:47px;border:4px solid #22292a;background:radial-gradient(circle at 35% 25%,#858485,#3a393a 50%,#141314);box-shadow:0 0 0 1px #acabac,inset 1px 3px 5px #cfcecf80,0 6px 7px #000c;color:#eed3a5;font:bold 26px Consolas}
+body[data-skin=night] .topbar::before,body[data-skin=night] .topbar::after{content:"";position:absolute;top:13px;left:10px;width:8px;height:8px;border-radius:50%;background:linear-gradient(45deg,#141c1a 44%,#9f9e9f 45%,#9f9e9f 53%,#121a18 54%);box-shadow:0 1px 0 #b1b0b1,0 -1px 1px #000}
+body[data-skin=night] .topbar::after{left:auto;right:10px}
+body[data-skin=night] .app{grid-template-columns:104px minmax(0,1fr);gap:0;border:2px solid #616061;border-top:0;border-radius:0 0 25px 25px;background:linear-gradient(90deg,#252425dd,#151d1bb3 30%,#181718cc),url('/assets/night-surface.png') center/cover;box-shadow:inset 0 0 0 5px #1e1d1e,inset 0 0 0 7px #6b6a6b66,0 9px 0 #070d0b,0 25px 38px #000c;padding:7px}
+body[data-skin=night] .rail{padding:25px 12px;background:repeating-linear-gradient(0deg,#0c1412 0 3px,#212021 4px 5px);border-right:5px solid #0c0b0c;border-radius:4px 0 0 14px;box-shadow:inset -1px 0 #555455;gap:20px}
+body[data-skin=night] .rail-label{padding:0;text-align:center;font:8px/1.5 Consolas;letter-spacing:.1em;color:#b9b8b9}
+body[data-skin=night] .rail-note{display:none}body[data-skin=night] .nav{gap:19px}
+body[data-skin=night] .nav button{display:flex;flex-direction:column;align-items:center;gap:7px;text-align:center;min-height:100px;border:1px solid #777677;border-radius:11px;padding:12px 3px;background:linear-gradient(160deg,#484748,#212021 85%);box-shadow:inset 0 3px 2px #8d8c8d77,inset 0 -4px 3px #0b0a0b,0 6px 0 #070607,0 9px 5px #000c;font:10px/1.3 Consolas}
+body[data-skin=night] .nav .num{display:grid;place-items:center;border-radius:50%;width:34px;height:34px;font:15px Consolas;color:#a9a8a9;background:linear-gradient(155deg,#161516,#343334);box-shadow:inset 1px 3px 6px #000,0 1px 1px #9f9e9f66;border:1px solid #191819}
+body[data-skin=night] .nav button[aria-current=page]{background:linear-gradient(150deg,#313031,#1e1d1e);border-color:#b9b8b9;box-shadow:inset 0 4px 8px #000b,0 2px 0 #515051,0 4px 4px #000;transform:translateY(3px)}
+body[data-skin=night] .nav button[aria-current=page] .num{background:radial-gradient(ellipse at 45% 20%,#f6e5a466,#555455 45%,#2b2a2b);color:#ffefb6;text-shadow:0 0 9px #eddd8c;box-shadow:inset 0 2px 3px #bdbcbd66,0 0 13px #c2c1c233}
+body[data-skin=night] .main{padding:23px 26px 30px}.document-bar{gap:12px}
+body[data-skin=night] .document-bar{background:#0f0e0fb3;border-radius:7px;padding:10px 12px;margin:0 0 25px;border:1px solid #636263;box-shadow:inset 1px 2px 5px #000,0 1px #7978796b}
+body[data-skin=night] #content:has(>.case-anchor){grid-template-columns:minmax(200px,.75fr) minmax(0,2.5fr);gap:20px}
+body[data-skin=night] .case-hero{grid-column:1;grid-row:1;padding:20px 20px 25px;background:linear-gradient(130deg,#3b3a3b,#1c1b1c);border:4px solid #111011;border-radius:12px;box-shadow:inset 1px 3px 8px #000c,0 0 0 1px #7b7a7b,0 4px 0 #080708}
+body[data-skin=night] .hero-top{display:block}.hero-state{text-align:left}
+body[data-skin=night] .hero-state{font-size:9px;margin:10px 0 16px}body[data-skin=night] .case-hero h1{font:500 27px/1.15 "Arial Narrow","Segoe UI",sans-serif;letter-spacing:-.04em;color:#e7e6e7;text-shadow:0 0 8px #cbcacb26}
+body[data-skin=night] .case-intent{font-size:11px;margin-top:17px;color:#bfbebf;line-height:1.6}.case-intent b{display:block;margin-bottom:5px}
+body[data-skin=night] .case-envelope{grid-column:1;grid-row:2;border:1px solid #696869;padding:17px;border-radius:7px;background:linear-gradient(160deg,#313031,#212021);box-shadow:inset 0 2px 3px #0008,0 2px 0 #090809}
+body[data-skin=night] .case-envelope p{font-size:12px}body[data-skin=night] .case-envelope small{font-size:10px}
+body[data-skin=night] .case-quickmove{grid-column:1;grid-row:3;padding:20px;border:1px solid #a29c70;border-radius:8px;background:linear-gradient(145deg,#4f4e4f,#2e2d2e);box-shadow:inset 0 2px #d4d0a880,inset 0 -4px 4px #151415,0 5px 0 #0a090a,0 9px 12px #0009}
+body[data-skin=night] .case-quickmove strong{font-size:13px;line-height:1.5;font-weight:600;margin:10px 0}
+body[data-skin=night] .case-gate{grid-column:1;grid-row:4;padding:17px;border:2px solid #0f0e0f;border-radius:8px;background:#1c1b1cea;box-shadow:inset 0 3px 7px #0009,0 1px #79787955}
+body[data-skin=night] .case-gate strong{font-size:12px;font-weight:400;line-height:1.5}
+body[data-skin=night] .test-lens{grid-column:2;grid-row:1/5;padding:21px;background:linear-gradient(160deg,#525152,#323132 18%,#2b2a2b 80%,#191819);border:3px solid #151415;border-radius:20px;box-shadow:inset 1px 4px 3px #d1d0d199,inset -2px -6px 4px #0d0c0d,0 0 0 1px #7d7c7d,0 8px 0 #0b0a0b,0 22px 24px #0008;display:grid;grid-template-columns:1fr;gap:20px}
+body[data-skin=night] .test-lens::before{display:block;content:"";position:absolute;left:7px;top:8px;width:9px;height:9px;border-radius:50%;background:linear-gradient(45deg,#141314 45%,#a2a1a2 46% 55%,#141314 56%);box-shadow:0 1px 2px #d7d6d799;z-index:1;inset:auto auto auto 7px}
+body[data-skin=night] .lens-topline{padding:13px 15px;border:2px solid #0d0c0d;border-radius:8px;background:linear-gradient(160deg,#222122,#0c0b0c);box-shadow:inset 0 2px 5px #000,0 1px #86858680}
+body[data-skin=night] .lens-topline .eyebrow{color:#e6d598;font-size:10px}.lens-state{font-size:9px}
+body[data-skin=night] .lens-head{display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:20px 13px;background:linear-gradient(115deg,#151415,#272627 40%,#161516);border:4px solid #0b0a0b;border-radius:45% 45% 14px 14px / 14px 14px 14px 14px;box-shadow:inset 0 5px 12px #000,inset 0 -1px #adacad55,0 0 0 1px #818081;position:relative}
+body[data-skin=night] .lens-head::before{content:"";display:block;width:50px;height:7px;border-radius:50px;background:#999899;box-shadow:0 0 12px #9d9c9d80,inset 0 1px #f9f3bc;flex:none;margin:0 auto 3px}
+body[data-skin=night] .lens-head h2{font:9px/1.5 Consolas,monospace;text-transform:uppercase;letter-spacing:.09em;text-align:center;color:#b2b1b2}
+body[data-skin=night] .lens-head p{font:14px/1.65 Consolas,monospace;color:#e6e6bb;text-align:center;text-shadow:0 0 9px #b9b8b933}
+body[data-skin=night] .lens-head button{width:100%;max-width:none;min-height:58px;border-radius:9px;font:11px/1.45 Consolas,monospace;padding:10px}
+body[data-skin=night] .lens-branches{padding:0;gap:18px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+body[data-skin=night] .lens-branch{padding:20px 15px;background:linear-gradient(145deg,#686768,#414041 10%,#232223 52%,#181718);border:5px solid #171617;border-radius:18px 18px 28px 28px;box-shadow:inset 1px 6px 10px #000d,inset 0 -1px 1px #afaeaf99,0 0 0 1px #a1a0a1,0 4px 0 #0a090a;overflow:hidden}
+body[data-skin=night] .branch-title{align-items:flex-start}.branch-status{font-size:8px;overflow-wrap:anywhere}
+body[data-skin=night] .branch-index{font:32px/1 Consolas;color:#dfddac;text-shadow:0 0 10px #e5dd6940}
+body[data-skin=night] .lens-branch h3{font:600 16px/1.35 "Segoe UI",sans-serif;color:#f3f0d8;margin:16px 0 21px}
+body[data-skin=night] .branch-predict{padding-top:14px;border-color:#b1b0b166}body[data-skin=night] .branch-predict p{font-size:12px;line-height:1.65;color:#deddde}
+body[data-skin=night] .lens-receipts{gap:8px;padding-top:25px}body[data-skin=night] .receipt{font-size:10px;min-height:35px;border-radius:5px}
+body[data-skin=night] .lens-divider{border:4px solid #121112;border-radius:12px;background:linear-gradient(155deg,#201f20,#100f10);box-shadow:inset 0 5px 10px #000,0 1px 0 #838283;gap:0}
+body[data-skin=night] .lens-divider>div{padding:21px 19px}body[data-skin=night] .lens-divider p{font:12px/1.7 Consolas,monospace;color:#e8e5c7}
+body[data-skin=night] .lens-divider small{font-size:10px}body[data-skin=night] .lens-caution{font:9px/1.6 Consolas;padding:2px 7px;text-align:center}
+body[data-skin=night] .evidence-inspector{position:fixed;top:32px;right:32px;bottom:32px;width:min(480px,calc(100vw - 64px));overflow:auto;z-index:15;margin:0;padding:28px;border:8px ridge #616061;border-radius:20px;background:linear-gradient(155deg,#363536,#181718 60%);box-shadow:inset 0 3px 12px #000,0 0 0 2px #131213,-20px 0 70px #000e}
+body[data-skin=night] .inspector-facts{grid-template-columns:1fr}.inspector-claim{font-size:18px}
+body[data-skin=night] button,body[data-skin=night] select{border:1px solid #706f70;border-radius:7px;background:linear-gradient(165deg,#4b4a4b,#242324 80%);box-shadow:inset 0 2px 1px #c6c5c666,inset 0 -3px 3px #0c0b0c,0 4px 0 #080708,0 8px 8px #0009}
+body[data-skin=night] button.primary{background:linear-gradient(160deg,#e8d7a5,#b5a879 55%,#817649);border:1px solid #f4e8b9;color:#201f20;box-shadow:inset 0 3px 2px #fff7,0 5px 0 #363536,0 9px 10px #000b}
+body[data-skin=night] input,body[data-skin=night] textarea{background:#131213;border:3px solid #151415;box-shadow:inset 0 3px 6px #000,0 1px #8d8c8d5e;border-radius:5px}
+body[data-skin=night] .branch-drawer,body[data-skin=night] .evidence-shelf,body[data-skin=night] .action-drawer{background:#1f1e1fe8;border:2px solid #575657;border-radius:8px;box-shadow:inset 0 2px 4px #0009,0 4px 0 #0a090a}
+body[data-skin=night] .card,body[data-skin=night] .proof-sheet,body[data-skin=night] .review-sheet,body[data-skin=night] .evidence,body[data-skin=night] .proof-route,body[data-skin=night] .evidence-spectrum>div{border:5px solid #1c1b1c;border-radius:12px;background:linear-gradient(150deg,#444344,#201f20 65%);box-shadow:inset 1px 4px 8px #000a,0 0 0 1px #787778,0 5px 0 #0d0c0d}
+body[data-skin=night] .heading h1{font-family:Consolas,monospace;font-size:32px}body[data-skin=night] .status{background:#0f0e0fe8;border:1px solid #555455;border-radius:7px;font:11px Consolas}
+body[data-skin=night] .welcome-map{background:linear-gradient(155deg,#4d4c4d,#1f1e1f);border:9px ridge #6b6a6b;border-radius:25px;box-shadow:inset 0 4px 10px #000,0 12px 0 #0d0c0d,0 25px 30px #000b;transform:none}
+body[data-skin=night] .welcome h1{font-family:Consolas,monospace;font-size:55px}body[data-skin=night] dialog{background:linear-gradient(155deg,#484748,#1f1e1f);border:9px ridge #6e6d6e;border-radius:19px;box-shadow:inset 0 4px 10px #000a,0 12px 0 #0b0a0b,0 35px 100px #000e}
+@media(min-width:1251px){
+body[data-skin=night] .test-lens[data-branches="2"]{grid-template-columns:1fr .86fr 1fr;gap:18px 14px}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-topline{grid-column:1/-1;grid-row:1}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-head{grid-column:2;grid-row:2}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-branches{display:contents}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-branch:first-child{grid-column:1;grid-row:2}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-branch:nth-child(2){grid-column:3;grid-row:2}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-test-nav{grid-column:1/-1;grid-row:3;padding:0}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-divider{grid-column:1/-1;grid-row:4}
+body[data-skin=night] .test-lens[data-branches="2"] .lens-caution{grid-column:1/-1;grid-row:5}
+}
+/* PORCELAIN RELAY: molded daylight laboratory, horizontal detents and sample wells. */
+body[data-skin=porcelain]{--surface:#2f241d;--raised:#30251d;--recess:#2e231c;--ink:#d2b5a3;--muted:#d2b5a3;--line:#987259;--accent:#d2b5a3;--accent-ink:#211812;--edge:#9b745b;--error:#d2b5a3;background-image:linear-gradient(#30251d44,#2d231c5c),url('/assets/porcelain-surface.png');color-scheme:dark;font:15px/1.6 "Trebuchet MS","Segoe UI",sans-serif;padding:28px 36px}
+body[data-skin=porcelain] .topbar{padding:14px 20px 25px;background:none;border:0;box-shadow:none;align-items:center}
+body[data-skin=porcelain] .brand strong{font:700 28px/1.1 "Trebuchet MS",sans-serif;letter-spacing:-.04em;color:#d2b5a3;text-shadow:0 2px #21181288}body[data-skin=porcelain] .brand small{font-size:10px;color:#d2b5a3;letter-spacing:.18em}
+body[data-skin=porcelain] .mark{width:58px;height:58px;border:0;border-radius:22px;background:linear-gradient(140deg,#31261e,#2f241d 70%);box-shadow:inset 2px 3px 3px #211812,inset -3px -5px 5px #21181299,0 6px 0 #211812,0 13px 17px #21181266,0 0 0 1px #211812;color:#d2b5a3;font:700 34px "Trebuchet MS"}
+body[data-skin=porcelain] .app{display:block;background:transparent;min-height:0}
+body[data-skin=porcelain] .rail{display:block;padding:12px;background:linear-gradient(145deg,#2d221c,#2e231c);border:2px solid #987259;border-radius:29px;box-shadow:inset 2px 5px 9px #21181280,inset -2px -2px 4px #21181299,0 2px 0 #21181288;margin:0 auto 38px;max-width:900px}
+body[data-skin=porcelain] .rail-label,body[data-skin=porcelain] .rail-note{display:none}
+body[data-skin=porcelain] .nav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+body[data-skin=porcelain] .nav button{display:flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:10px 13px;text-align:center;font-size:13px;color:#d2b5a3;border:0;border-radius:19px;background:linear-gradient(135deg,#31251e,#2f241d 50%,#2e231c);box-shadow:inset 1px 2px 2px #211812,inset -1px -4px 3px #21181280,0 5px 0 #211812,0 9px 8px #21181266}
+body[data-skin=porcelain] .nav .num{display:grid;place-items:center;font:15px "Trebuchet MS";width:29px;height:29px;flex:none;border-radius:50%;background:#2e231c;box-shadow:inset 1px 2px 4px #21181280,0 1px #211812;color:#d2b5a3}
+body[data-skin=porcelain] .nav button[aria-current=page]{transform:translateY(4px);background:linear-gradient(150deg,#2e231c,#2d231c);box-shadow:inset 1px 4px 7px #21181299,inset 0 -1px #211812,0 1px 0 #211812;color:#d2b5a3}
+body[data-skin=porcelain] .nav button[aria-current=page] .num{background:#2b211a;color:#d2b5a3;box-shadow:inset 0 2px 4px #21181299,0 1px #21181280}
+body[data-skin=porcelain] .main{padding:0 18px 30px;max-width:1410px;margin:auto}
+body[data-skin=porcelain] .document-bar{padding:0 8px;margin-bottom:27px}.doc-actions button{font-size:11px}
+body[data-skin=porcelain] #content:has(>.case-anchor){grid-template-columns:minmax(0,1.4fr) minmax(250px,1fr);gap:30px}
+body[data-skin=porcelain] .case-hero{grid-column:1;grid-row:1;padding:4px 10px 10px;text-shadow:0 2px #21181299}
+body[data-skin=porcelain] .case-hero h1{font:700 clamp(30px,3.05vw,48px)/1.12 "Trebuchet MS",sans-serif;letter-spacing:-.05em;color:#d2b5a3}
+body[data-skin=porcelain] .hero-top{display:block}.hero-state{text-align:left}
+body[data-skin=porcelain] .hero-state{font-size:10px;margin:4px 0 13px;color:#d2b5a3}body[data-skin=porcelain] .case-intent{font-size:12px}
+body[data-skin=porcelain] .case-envelope{grid-column:2;grid-row:1;align-self:start;padding:24px 28px;border:1px solid #9a745b;border-radius:24px;background:linear-gradient(145deg,#30251d,#2f241d);box-shadow:inset 2px 3px 3px #211812,inset -3px -5px 5px #21181266,0 6px 0 #211812,0 16px 25px #21181266}
+body[data-skin=porcelain] .case-envelope p{font-size:14px}body[data-skin=porcelain] .case-envelope .eyebrow{color:#d2b5a3}
+body[data-skin=porcelain] .case-quickmove{grid-column:1;grid-row:3;padding:25px 30px;border-radius:30px;background:linear-gradient(140deg,#30251e,#2e241c);border:1px solid #9a745b;box-shadow:inset 2px 3px 3px #211812,inset -2px -5px 4px #21181288,0 7px 0 #211812,0 17px 24px #21181259}
+body[data-skin=porcelain] .case-quickmove strong{font-size:19px;line-height:1.5;margin:10px 0;color:#d2b5a3}
+body[data-skin=porcelain] .case-gate{grid-column:2;grid-row:3;padding:25px 28px;border:3px solid #987359;border-radius:25px;background:linear-gradient(140deg,#2e231c,#2f241d);box-shadow:inset 3px 5px 9px #2118128c,0 2px 1px #211812}
+body[data-skin=porcelain] .case-gate strong{font-size:13px;line-height:1.6;color:#d2b5a3}
+body[data-skin=porcelain] .test-lens{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.6fr);gap:26px 35px;padding:30px;border-radius:47px;border:1px solid #9b755b;background:linear-gradient(130deg,#30251e,#2f241d 45%,#2e241c);box-shadow:inset 3px 5px 3px #211812,inset -4px -9px 8px #2118128c,0 11px 0 #211812,0 13px 0 #211812,0 23px 25px #21181270,0 35px 55px #2118124d}
+body[data-skin=porcelain] .lens-topline{grid-column:1/-1;grid-row:1;padding:3px 8px 19px;background:none;border-bottom:1px solid #987359;box-shadow:0 1px #211812;gap:20px}
+body[data-skin=porcelain] .lens-topline .eyebrow{font-size:11px;color:#d2b5a3}body[data-skin=porcelain] .lens-state{font-size:10px;color:#d2b5a3}
+body[data-skin=porcelain] .lens-head{grid-column:1;grid-row:2;display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:25px;padding:30px 25px;background:linear-gradient(140deg,#31251e,#2f241d);border:1px solid #9b745b;border-radius:29px;box-shadow:inset 2px 4px 2px #211812,inset -3px -5px 3px #21181288,0 7px 0 #211812,0 15px 20px #21181270}
+body[data-skin=porcelain] .lens-head::before{content:"";width:42px;height:42px;flex:none;display:block;border-radius:50%;margin-bottom:2px;background:radial-gradient(circle at 38% 27%,#30251e 0 7%,#2e231c 22%,#2b211a 65%,#281f19 90%);box-shadow:0 0 0 5px #211812,0 0 0 6px #211812,inset 0 3px 5px #21181288,0 8px 8px #21181266}
+body[data-skin=porcelain] .lens-head h2{font-size:14px;font-weight:600;color:#d2b5a3;margin:0 0 15px}
+body[data-skin=porcelain] .lens-head p{font-size:25px;line-height:1.38;font-weight:500;color:#d2b5a3}
+body[data-skin=porcelain] .lens-head button{max-width:none;width:100%;min-height:56px;font-size:13px;border-radius:15px}
+body[data-skin=porcelain] .lens-branches{grid-column:2;grid-row:2;display:grid;grid-template-columns:1fr;gap:22px;padding:0}
+body[data-skin=porcelain] .lens-branch{padding:24px 27px 25px 93px;border:3px solid #987359;border-radius:30px;background:linear-gradient(130deg,#2e231c,#2f241d 52%,#30251d);box-shadow:inset 3px 6px 10px #21181299,inset -2px -3px 4px #21181299,0 2px 1px #211812}
+body[data-skin=porcelain] .branch-index{position:absolute;left:22px;top:26px;display:grid;place-items:center;width:49px;height:49px;border-radius:50%;font:22px "Trebuchet MS";background:linear-gradient(140deg,#30251e,#2e231c);border:1px solid #9b745b;color:#d2b5a3;box-shadow:inset 1px 2px 2px #211812,inset -1px -3px 2px #21181288,0 5px 0 #211812,0 9px 9px #21181277}
+body[data-skin=porcelain] .branch-title{font-size:10px;color:#d2b5a3;gap:9px}body[data-skin=porcelain] .branch-status{font-size:9px;color:#d2b5a3}
+body[data-skin=porcelain] .lens-branch h3{font-size:20px;line-height:1.3;color:#d2b5a3;margin:10px 0 14px;font-weight:600}
+body[data-skin=porcelain] .branch-predict{border-top:1px solid #987259;padding-top:11px;box-shadow:0 -1px #211812}.branch-predict .eyebrow{font-size:9px}
+body[data-skin=porcelain] .branch-predict p{font-size:13px;color:#d2b5a3;margin-top:5px}
+body[data-skin=porcelain] .lens-receipts{padding-top:15px}.lens-receipts .eyebrow{font-size:9px}
+body[data-skin=porcelain] .lens-receipts .eyebrow{width:auto;margin-right:7px;color:#d2b5a3}
+body[data-skin=porcelain] .receipt{border-radius:10px;font-size:11px;padding:6px 12px;min-height:32px}
+body[data-skin=porcelain] .lens-divider{grid-column:1/-1;grid-row:4;padding:7px;border:3px solid #987359;border-radius:27px;background:linear-gradient(155deg,#2d231c,#2e241c);box-shadow:inset 3px 5px 7px #2118128c,inset 0 -2px #2118129c,0 2px 0 #211812}
+body[data-skin=porcelain] .lens-divider>div{padding:18px 23px}.lens-divider>div+div{border-left:1px solid var(--line)}
+body[data-skin=porcelain] .lens-divider p{font-size:14px;color:#d2b5a3}.lens-divider small{font-size:11px}
+body[data-skin=porcelain] .lens-divider .eyebrow{color:#d2b5a3}body[data-skin=porcelain] .lens-caution{grid-column:1/-1;grid-row:5;padding:0 7px;text-align:center;color:#d2b5a3;font-size:10px}
+body[data-skin=porcelain] .lens-test-nav{grid-column:1/-1;grid-row:3;padding:0}
+body[data-skin=porcelain] .evidence-inspector{grid-column:1/-1;grid-row:3;margin:0;padding:27px;border:3px solid #977259;border-radius:22px;background:linear-gradient(145deg,#30251d,#2e231c);box-shadow:inset 2px 4px 6px #21181299,0 2px #211812}
+body[data-skin=porcelain] .test-lens:has(.evidence-inspector:not([hidden])) .lens-test-nav{grid-row:6}
+body[data-skin=porcelain] button,body[data-skin=porcelain] select{background:linear-gradient(145deg,#31251e,#2f241d);border:1px solid #9a745b;border-radius:13px;color:#d2b5a3;box-shadow:inset 1px 2px 2px #211812,inset -1px -3px 3px #21181299,0 4px 0 #211812,0 8px 10px #2118124d}
+body[data-skin=porcelain] button.primary{background:linear-gradient(140deg,#2a201a,#281f19);border:1px solid #977259;color:#d2b5a3;box-shadow:inset 1px 2px 2px #21181288,inset -1px -3px 3px #211812d9,0 5px 0 #211812,0 11px 12px #21181270}
+body[data-skin=porcelain] input,body[data-skin=porcelain] textarea{background:#2f241d;border:2px solid #987259;box-shadow:inset 2px 4px 7px #21181273,0 2px #211812;border-radius:12px;color:#d2b5a3}
+body[data-skin=porcelain] .branch-drawer,body[data-skin=porcelain] .evidence-shelf,body[data-skin=porcelain] .action-drawer{background:linear-gradient(140deg,#30251d,#2e241c);border:1px solid #9a745b;border-radius:20px;box-shadow:inset 1px 2px #211812,inset 0 -3px #21181299,0 5px 0 #211812,0 10px 15px #2118124d}
+body[data-skin=porcelain] .card,body[data-skin=porcelain] .proof-sheet,body[data-skin=porcelain] .review-sheet,body[data-skin=porcelain] .evidence,body[data-skin=porcelain] .evidence-spectrum>div{border:1px solid #9b745b;border-radius:24px;background:linear-gradient(140deg,#30251d,#2e241c);box-shadow:inset 2px 3px 2px #211812,inset -2px -5px 4px #21181288,0 6px 0 #211812,0 15px 20px #21181255}
+body[data-skin=porcelain] .proof-route{border:4px solid #987259;border-radius:29px;box-shadow:inset 2px 5px 9px #21181280,0 3px #211812;background:#2f241d}
+body[data-skin=porcelain] .welcome-map{border-radius:40px;padding:35px;background:linear-gradient(145deg,#30251e,#2e241c);border:1px solid #9b745b;box-shadow:inset 3px 4px 2px #211812,inset -4px -7px 6px #21181299,0 10px 0 #211812,0 26px 35px #21181270;transform:rotate(-1deg)}
+body[data-skin=porcelain] .demo-node,body[data-skin=porcelain] .demo-test{border:2px solid #987359;background:#2f241d;box-shadow:inset 1px 4px 7px #21181266,0 2px #211812}
+body[data-skin=porcelain] .status{border:1px solid #99735a;border-radius:16px;background:#2f241d;padding:16px 22px;box-shadow:inset 1px 3px 4px #21181266,0 1px #211812;color:#d2b5a3}
+body[data-skin=porcelain] dialog{border:2px solid #9b745b;border-radius:35px;padding:32px;background:linear-gradient(135deg,#30251e,#2e231c);box-shadow:inset 2px 4px 3px #211812,inset -4px -8px 6px #211812b3,0 11px 0 #211812,0 35px 80px #211812b3}
+body[data-skin=porcelain] dialog::backdrop{background:#281f1966;backdrop-filter:blur(9px)}
+/* Adapt the bodies to smaller instruments; do not merely shrink desktop type. */
+@media(max-width:1250px){
+body[data-skin=moss] .app{grid-template-columns:98px minmax(0,1fr);gap:20px;padding:25px 22px}
+body[data-skin=moss] .test-lens{grid-column:1/-1;grid-row:3}body[data-skin=moss] .case-quickmove{grid-column:1/7;grid-row:2}body[data-skin=moss] .case-gate{grid-column:7/-1;grid-row:2}
+body[data-skin=night] #content:has(>.case-anchor){grid-template-columns:1fr 1fr}body[data-skin=night] .case-hero{grid-column:1;grid-row:1}body[data-skin=night] .case-envelope{grid-column:2;grid-row:1;height:100%}
+body[data-skin=night] .test-lens{grid-column:1/-1;grid-row:2}body[data-skin=night] .lens-head{border-radius:18px;display:flex;flex-direction:row;align-items:center;gap:25px;padding:24px}body[data-skin=night] .lens-head::before{display:none}
+body[data-skin=night] .lens-head h2,body[data-skin=night] .lens-head p{text-align:left}body[data-skin=night] .lens-head button{width:185px;flex:none}body[data-skin=night] .case-quickmove{grid-column:1;grid-row:3}body[data-skin=night] .case-gate{grid-column:2;grid-row:3}
+body[data-skin=porcelain]{padding:22px}.case-hero h1{font-size:34px}body[data-skin=porcelain] .lens-branch{padding-left:25px}body[data-skin=porcelain] .branch-index{position:static;width:33px;height:33px;font-size:17px;flex:none}
+body[data-skin=porcelain] .lens-head p{font-size:21px}body[data-skin=porcelain] .test-lens{padding:25px;gap:25px}
+}
+@media(max-width:850px){
+body[data-skin]{padding:0}.topbar,body[data-skin=moss] .topbar,body[data-skin=night] .topbar,body[data-skin=porcelain] .topbar{margin:15px 16px;padding:17px 20px;gap:18px;flex-wrap:wrap;border-radius:24px}
+.top-actions{gap:10px;flex:1;justify-content:flex-end}.skin-label span{display:none}.skin-label{margin:0}.top-actions button{font-size:11px;min-height:38px;padding:8px 10px}.skin-label select{font-size:12px;max-width:155px}
+body[data-skin] .app{display:block;margin:0 14px;padding:0;border:0;background:none;box-shadow:none}
+body[data-skin] .rail{display:block;position:static;background:none;box-shadow:none;border:0;padding:10px 0 22px;margin:0;max-width:none}
+body[data-skin] .rail-label,body[data-skin] .rail-note{display:none}body[data-skin] .nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+body[data-skin] .nav button{display:flex;flex-direction:row;justify-content:center;min-height:53px;padding:10px 6px;gap:6px;font-size:11px;border-radius:13px}
+body[data-skin] .nav .num{font-size:12px;width:24px;height:24px;flex:none}body[data-skin] .main{padding:12px 7px 30px}
+.document-bar{flex-wrap:wrap;gap:16px;align-items:flex-start}.doc-actions{gap:9px}.doc-actions button{font-size:10px}.source{font-size:10px}
+body[data-skin] #content:has(>.case-anchor){grid-template-columns:1fr 1fr;gap:22px}
+body[data-skin] .case-hero{grid-column:1/-1;grid-row:1}body[data-skin] .case-envelope{grid-column:1/-1;grid-row:2}
+body[data-skin] .test-lens{grid-column:1/-1;grid-row:3}body[data-skin] .case-quickmove{grid-column:1;grid-row:4}body[data-skin] .case-gate{grid-column:2;grid-row:4}
+body[data-skin=porcelain] .test-lens{grid-template-columns:1fr}body[data-skin=porcelain] .lens-head{grid-column:1;grid-row:2;flex-direction:row;align-items:center;padding:23px;gap:20px}
+body[data-skin=porcelain] .lens-head::before{display:none}body[data-skin=porcelain] .lens-head button{width:180px;flex:none}body[data-skin=porcelain] .lens-head p{font-size:20px}
+body[data-skin=porcelain] .lens-branches{grid-column:1;grid-row:3;grid-template-columns:1fr 1fr}body[data-skin=porcelain] .lens-divider{grid-row:5}body[data-skin=porcelain] .lens-caution{grid-row:6}
+body[data-skin=porcelain] .evidence-inspector{grid-row:4}body[data-skin=porcelain] .lens-test-nav{grid-row:7}
+.lens-topline{flex-wrap:wrap}.lens-state{text-align:left}.inspector-facts{grid-template-columns:1fr}.proof-work,.evidence-layout{grid-template-columns:1fr}
+.source-margin{border-left:0;padding:23px 0 0;border-top:1px solid var(--line)}.welcome{grid-template-columns:1fr;gap:35px;padding:15px 5px}.welcome h1{font-size:55px}.welcome-map{max-width:none;transform:none}.welcome-bottom{gap:20px}
+.state-line{gap:13px}.state-line strong{font-size:11px}.status{font-size:11px;padding:18px}.action-column{grid-template-columns:1fr}.evidence-spectrum{gap:10px}.evidence-spectrum>div{padding:14px}
+}
+@media(max-width:520px){
+body[data-skin] .topbar{margin:12px 12px 7px;padding:16px;border-radius:22px;gap:20px}.brand{width:100%}.top-actions{width:100%;justify-content:space-between;gap:7px}.skin-label select{max-width:135px;font-size:11px}.top-actions button{font-size:10px;padding:8px}.skin-label{gap:0}
+body[data-skin] .app{margin:0 12px}body[data-skin] .main{padding:10px 1px 25px}body[data-skin] .nav{gap:7px}body[data-skin] .nav button{flex-direction:column;gap:7px;font-size:10px;min-height:76px;padding:10px 4px}
+body[data-skin=moss] .nav button{border-radius:25px 10px}.doc-actions{width:100%;display:flex;justify-content:space-between;gap:5px}.doc-actions button{font-size:10px;padding:8px;min-height:40px}.document-bar{margin-bottom:22px}
+body[data-skin] #content:has(>.case-anchor){grid-template-columns:1fr;gap:22px}body[data-skin] .case-hero{grid-column:1;grid-row:1;padding:7px 8px 10px}body[data-skin] .case-hero h1{font-size:32px;line-height:1.15}
+body[data-skin] .case-envelope{grid-column:1;grid-row:2;padding:21px;height:auto}body[data-skin] .case-quickmove{grid-column:1;grid-row:4;padding:23px}body[data-skin] .case-gate{grid-column:1;grid-row:5;padding:22px}
+body[data-skin] .test-lens{grid-column:1;grid-row:3;min-width:0;gap:21px}body[data-skin=moss] .test-lens{padding:0}body[data-skin=night] .test-lens{padding:17px 13px}body[data-skin=porcelain] .test-lens{padding:23px 16px;border-radius:31px}
+body[data-skin] .lens-topline{flex-direction:column;align-items:flex-start;padding:12px;gap:9px}.lens-state{font-size:9px;line-height:1.5}
+body[data-skin] .lens-head{display:flex;flex-direction:column;align-items:stretch;padding:23px 20px;gap:18px;grid-column:1;grid-row:2}
+body[data-skin] .lens-head h2{font-size:14px}body[data-skin] .lens-head p{font-size:19px;line-height:1.5}body[data-skin=night] .lens-head p{font-size:16px}
+body[data-skin] .lens-head button{width:100%;min-height:49px;max-width:none;margin:4px 0 0;font-size:12px}
+body[data-skin] .lens-branches{grid-template-columns:1fr;padding:0;gap:23px}body[data-skin] .lens-branch{padding:22px}body[data-skin] .lens-branch h3{font-size:20px}body[data-skin=night] .lens-branch h3{font-size:18px}
+body[data-skin] .branch-predict p{font-size:14px}body[data-skin] .lens-divider{grid-template-columns:1fr;border-radius:20px}body[data-skin] .lens-divider>div{padding:20px}
+.lens-divider>div+div{border-left:0;border-top:1px solid var(--line)}body[data-skin] .lens-caution{font-size:10px;line-height:1.7;padding:0 6px}
+body[data-skin] .evidence-inspector{padding:22px}body[data-skin=night] .evidence-inspector{top:16px;bottom:16px;right:14px;width:calc(100vw - 28px)}
+.inspector-head{flex-wrap:wrap;gap:10px}.inspector-claim{font-size:17px}.inspector-facts{gap:17px}.flow{grid-template-columns:1fr;padding:18px}.connector{transform:rotate(90deg);padding:15px}.flow-labels{display:none}.section-head,.subhead{flex-wrap:wrap}
+.state-line{grid-template-columns:1fr}.state-line>div{padding:13px}.state-line strong{font-size:13px}.all-native{margin-top:10px}
+.filter-bar{flex-wrap:wrap}.search{flex-basis:100%}.filter-bar select{flex:1}.evidence-spectrum{grid-template-columns:repeat(3,1fr);gap:13px}.evidence-spectrum>div{padding:16px}.evidence-spectrum strong{font-size:28px}
+.evidence{grid-template-columns:25px 1fr 12px;gap:10px;padding:18px}.evidence-grid{grid-template-columns:1fr;padding:0 14px 22px;gap:18px}
+.proof-route{grid-template-columns:1fr}.proof-stop+div{border-left:0;border-top:1px solid var(--line)}.proof-sheet,.review-sheet,.card{padding:21px}.next-detail{display:block}.next-detail dd{margin:5px 0 15px}
+.welcome h1,body[data-skin=night] .welcome h1{font-size:45px}.welcome-copy>p:not(.eyebrow){font-size:16px}.welcome-map,body[data-skin] .welcome-map{padding:23px;transform:none}.demo-causes,.welcome-bottom{grid-template-columns:1fr}.welcome-actions{gap:15px}.welcome-actions button{width:100%}
+body[data-skin] dialog{padding:24px;width:calc(100vw - 26px);border-radius:22px}.dialog-head{align-items:flex-start;gap:15px}.dialog-head h2{font-size:22px}.dialog-head button{font-size:11px;flex:none}.recorder-grid{grid-template-columns:1fr;gap:0}.dialog-actions{gap:13px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media print{body{background:white!important;color:black!important;padding:0!important}.top-actions,.rail,.doc-actions,.status,button{display:none!important}.app,body[data-skin] #content{display:block!important}.main{padding:0!important}.test-lens,.lens-branch,.proof-sheet,.card,.evidence{background:white!important;color:black!important;box-shadow:none!important;border:1px solid #777!important;break-inside:avoid}}
+/* Optical refinement: transmitted scene, wider specular sweep, and correct page substrates. */
+body[data-skin=moss]{--bg:#11281f;background-color:var(--bg)}
+body[data-skin=night]{--bg:#141415;background-color:var(--bg)}
+body[data-skin=porcelain]{--bg:#2f241d;background-color:var(--bg)}
+body[data-skin=moss] .lens-branch{background:linear-gradient(125deg,#efffde40,#cde4b814 35%,#1437289c 80%);backdrop-filter:blur(9px) saturate(.55)}
+body[data-skin=moss] .lens-branch:nth-child(2){background:linear-gradient(145deg,#ffffd84d,#c4dfbe0d 35%,#14382ba6 85%)}
+body[data-skin=moss] .lens-branch::after{content:"";position:absolute;inset:1px;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent 20%,#fcffe20d 21%,transparent 38%,transparent 61%,#f8ffcf1c 62%,transparent 77%)}
+body[data-skin=moss] .lens-head{background:linear-gradient(160deg,#f3ffe62e,#bdd9942e 30%,#173e2cb5 82%);backdrop-filter:blur(12px)}
+
+
+/* Native popup menus cannot paint the select's gradient: pair opaque surfaces with readable ink. */
+body[data-skin=moss]{--menu-bg:#102921}
+body[data-skin=night]{--menu-bg:#0b1112}
+body[data-skin=porcelain]{--menu-bg:#2e231c}
+body[data-skin] select{background-color:var(--menu-bg)}
+body[data-skin] select option,body[data-skin] select optgroup{background-color:var(--menu-bg);color:var(--ink)}
+
+
+/* Cinder Relay: fired clay housings, copper contacts, horizontal command rack. */
+body[data-skin=porcelain]{--surface:#2a201a;--raised:#2d221b;--recess:#261d17;--bg:#251c17;--ink:#d2b5a3;--muted:#d2b5a3;--line:#977259;--accent:#d2b5a3;--accent-ink:#211812;--error:#d2b5a3;--menu-bg:#2a201a;background-image:radial-gradient(ellipse at 75% 0,#382b2230,transparent 60%),repeating-linear-gradient(115deg,#44342907 0 1px,transparent 1px 5px);background-color:var(--bg)}
+body[data-skin=porcelain] button.primary{background:linear-gradient(140deg,#47362b,#3e3026);color:#ebded6}
+body[data-skin=porcelain] .nav button[aria-current=page]{color:#d2b5a3}
+
+/* Cinder Relay: fired clay housings, copper contacts, horizontal command rack. */
+body[data-skin=porcelain]{--surface:#39261f;--raised:#493027;--recess:#221712;--bg:#1d1410;--ink:#f3dfc8;--muted:#dac0a7;--line:#92715b;--accent:#f2b47a;--accent-ink:#27180e;--error:#ffaf94;--menu-bg:#39261f;background-image:radial-gradient(ellipse at 75% 0,#a75a2630,transparent 60%),repeating-linear-gradient(115deg,#df895307 0 1px,transparent 1px 5px);background-color:var(--bg)}
+body[data-skin=porcelain] button.primary{background:linear-gradient(140deg,#dbad72,#b87c4c);color:#21180f}
+body[data-skin=porcelain] .nav button[aria-current=page]{color:#ffdec0}
+</style>
+</head><body data-skin="moss"><a class="skip" href="#main">Skip to case</a>
+<header class="topbar"><div class="brand"><div class="mark" aria-hidden="true">B</div><div><strong>BERYL</strong><small>IT Studio</small></div></div><div class="top-actions"><label class="skin-label"><span>Environment</span><select id="skin" aria-label="Workspace theme"><option value="moss">Mossglass</option><option value="night">Night Probe</option><option value="porcelain">Cinder Relay</option></select></label><button id="sample" class="quiet">Explore example</button><button id="open" class="primary">Open case ↗</button></div></header>
+<div class="app"><aside class="rail"><span class="rail-label">Follow the fault</span><nav class="nav" id="nav" aria-label="Case views"></nav><div class="rail-note"><strong>Keep the proof in view.</strong>Reported, measured, and verified are different kinds of knowing.<details><summary>About this bench</summary>A private working copy of your case. Download to keep changes; closing or reloading clears the document. No device commands run here.</details></div></aside><main class="main" id="main" tabindex="-1"><div class="document-bar"><div class="source" id="source"></div><div class="doc-actions" id="doc-actions" hidden><button id="edit" class="quiet">Edit case JSON</button><button id="validate" class="quiet">Check structure</button><button id="download">Download copy ↓</button></div></div><div id="content"></div></main></div>
+<footer id="status" class="status" role="status" aria-live="polite">Open an existing case, or explore the clearly labeled teaching example.</footer><input id="file" type="file" accept=".json,application/json" hidden><input id="reviewfile" type="file" accept=".json,.md,.txt" hidden>
+<dialog id="test-recorder" aria-labelledby="test-recorder-title"><div class="dialog-head"><h2 id="test-recorder-title">Record a test result</h2><button data-close>Close</button></div><p class="dialog-copy">Record only what an authorized person actually observed. This studio never runs the test or establishes a diagnosis.</p><div id="test-recorder-context" class="recorder-context"></div><label class="check-line"><input type="checkbox" id="test-performed"> I have evidence this test was performed</label><label for="test-result-input">What happened under the test conditions?</label><textarea id="test-result-input" rows="5"></textarea><div class="recorder-grid"><div><label for="test-basis">Evidence kind</label><select id="test-basis"><option value="reported">Reported by a person</option><option value="observed">Observed directly</option><option value="measured">Measured by an instrument</option><option value="retrieved">Retrieved from a record</option></select></div><div><label for="test-source">Person, instrument or record</label><input id="test-source" type="text" placeholder="Name the source"></div></div><p id="test-record-error" class="error" role="alert"></p><div class="dialog-actions"><button data-close>Cancel</button><button id="save-test-result" class="primary">Use working copy</button></div></dialog>
+<dialog id="editor" aria-labelledby="editor-title"><div class="dialog-head"><h2 id="editor-title">Edit the working case</h2><button data-close>Close</button></div><p class="dialog-copy">All native fields stay intact. Applying edits changes this tab only; download a copy to keep them.</p><label for="nativejson">Complete case JSON</label><textarea id="nativejson" spellcheck="false"></textarea><p id="editorerror" class="error" role="alert"></p><div class="dialog-actions"><button data-close>Cancel</button><button id="apply" class="primary">Use working copy</button></div></dialog>
+<dialog id="validation" aria-labelledby="validation-title"><div class="dialog-head"><h2 id="validation-title">Case structure</h2><button data-close>Close</button></div><pre id="validationbody" class="raw"></pre></dialog>
+<dialog id="detail" aria-labelledby="detail-title"><div class="dialog-head"><h2 id="detail-title"></h2><button data-close>Close</button></div><div id="detailbody"></div></dialog>
+<script>
+'use strict';
+const $=s=>document.querySelector(s),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const arr=v=>Array.isArray(v)?v:[],obj=v=>v&&typeof v==='object'&&!Array.isArray(v)?v:{},label=s=>String(s).replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());
+const shown=v=>v===undefined||v===null||v===''?'Not recorded':typeof v==='object'?JSON.stringify(v):String(v);
+let record=null,source='',mode='case',review=null,selectedCause=0,selectedTestIndex=0,compare=true,branchDrawerOpen=false,dirty=false,evidenceQuery='',evidenceKind='all';
+let caseRevision=0,loadRequest=0,reviewRequest=0,recordingTarget=null;
+const tabs=[['case','Investigation'],['evidence','Evidence'],['recovery','Recovery & proof'],['review','IT review']];
+const token=new URLSearchParams(location.hash.slice(1)).get('session');history.replaceState(null,'',location.pathname);
+function human(v){if(v===null||v===undefined||v==='')return '<span class="muted">Not recorded</span>';if(Array.isArray(v)){if(!v.length)return '<span class="muted">None recorded</span>';return '<ul class="native-list">'+v.map(x=>'<li>'+human(x)+'</li>').join('')+'</ul>'}if(typeof v==='object')return '<details class="native-detail"><summary>Inspect structured fields</summary><pre class="raw">'+esc(JSON.stringify(v,null,2))+'</pre></details>';return esc(typeof v==='boolean'?(v?'Yes':'No'):v)}
+function fields(v){return '<dl>'+Object.entries(obj(v)).map(([k,v])=>'<div class="field"><dt>'+esc(label(k))+'</dt><dd>'+human(v)+'</dd></div>').join('')+'</dl>'}
+function card(title,v){return '<article class="card"><h3>'+esc(title)+'</h3>'+fields(typeof v==='object'?v:{value:v})+'</article>'}
+function empty(title,body){return '<div class="muted-block"><h3>'+esc(title)+'</h3><p style="margin-top:8px">'+esc(body)+'</p></div>'}
+function nativeDetails(v,title='All native fields'){return '<details class="all-native"><summary>'+esc(title)+'</summary><pre class="raw">'+esc(JSON.stringify(v,null,2))+'</pre></details>'}
+function status(t,error=false){$('#status').textContent=t;$('#status').className='status'+(error?' error':'')}
+async function api(path,body){const response=await fetch(path,{method:body?'POST':'GET',headers:{...(token?{'X-Desk-Token':token}:{}),'Content-Type':'application/json'},body:body?JSON.stringify(body):undefined,cache:'no-store'});const data=await response.json();if(!response.ok||data.error)throw Error(data.error||'Request failed');return data}
+function showDetail(title,body){$('#detail-title').textContent=title;$('#detailbody').innerHTML=body;$('#detail').showModal()}
+function nav(){$('#nav').innerHTML=tabs.map(([id,name],i)=>'<button data-view="'+id+'" aria-current="'+(mode===id?'page':'false')+'"><span class="num">0'+(i+1)+'</span>'+name+'</button>').join('');$('#nav').querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.view;render();window.scrollTo({top:0});$('#nav [data-view="'+mode+'"]').focus()})}
+function render(){nav();$('#source').innerHTML=source?'<strong>'+esc(record.case_id)+'</strong> &nbsp; / &nbsp; '+esc(source)+(dirty?' · edited in memory':''):'No case open · ready when you are';$('#doc-actions').hidden=!record;const out=$('#content');if(!record){welcome(out);return}if(mode==='case')caseBench(out);if(mode==='evidence')evidenceView(out);if(mode==='recovery')recoveryView(out);if(mode==='review')reviewView(out);bindDetails(out)}
+function welcome(out){out.innerHTML='<section class="welcome"><div class="welcome-copy"><p class="eyebrow">A place to think through the fault</p><h1>Less guesswork.<br>More proof.</h1><p>Keep the symptom, competing explanations and next useful test in the same field of view. Find what separates the causes—and what would count as fixed.</p><div class="welcome-actions"><button id="empty-open" class="primary">Open your case ↗</button><button id="empty-sample">Explore the teaching case</button></div><small>Native Beryl case JSON · private, temporary working copy.<br>Download before closing to keep any edits.</small></div><div class="welcome-map"><p class="eyebrow">Inside the example · synthetic, not a live device</p><div class="demo-fault">Ethernet disappears<br>after the laptop wakes.</div><div class="demo-causes"><div class="demo-node"><small>Explanation 01</small>Did the dock adapter fail to resume?</div><div class="demo-node"><small>Explanation 02</small>Or did its network configuration change?</div></div><div class="demo-link" aria-hidden="true">↘ &nbsp; ↙</div><div class="demo-test"><small>One test can separate them</small>Compare adapter, link and address state before and after sleep.</div><p class="muted" style="font-size:12px;margin-top:18px">Two hypotheses. One planned test. No result invented.</p></div></section><section class="welcome-bottom"><div><span class="eyebrow">01 / Orient</span><h3>Hold onto the original failure.</h3><p>The trigger, working functions and authorized scope stay available while you investigate.</p></div><div><span class="eyebrow">02 / Differentiate</span><h3>Compare predictions, follow evidence.</h3><p>See which observations support each explanation and which tests could distinguish them.</p></div><div><span class="eyebrow">03 / Verify</span><h3>Keep a change separate from a fix.</h3><p>Revisit the original conditions and adjacent functions before claiming resolution.</p></div></section>';$('#empty-open').onclick=()=>$('#file').click();$('#empty-sample').onclick=loadTeachingCase}
+function heading(kicker,title,desc=''){return '<div class="heading"><p class="eyebrow">'+esc(kicker)+'</p><h1>'+esc(title)+'</h1>'+(desc?'<p class="view-intro">'+esc(desc)+'</p>':'')+'</div>'}
+function evidenceButton(e,i){e=obj(e);return '<button class="evidence" data-evidence="'+i+'"><span class="id">'+esc(e.id||'—')+'</span><span><span class="kind">'+esc(e.kind||'Kind not recorded')+'</span><strong>'+esc(shown(e.claim))+'</strong><small>'+esc(e.limits||'No limitation recorded')+'</small></span><span class="go" aria-hidden="true">↗</span></button>'}
+function caseBench(out){
+ const c=obj(record.complaint),v=obj(record.verification),n=obj(record.next_move),cust=obj(record.custody),causes=arr(record.hypotheses);
+ selectedCause=Math.min(selectedCause,Math.max(0,causes.length-1));const h=obj(causes[selectedCause]),ev=arr(record.evidence),allTests=arr(record.tests);
+ const selected=compare?causes:causes.length?[h]:[],tests=compare?allTests:allTests.filter(t=>selected.some(c=>obj(c).id&&arr(obj(t).hypothesis_ids).includes(c.id)));
+ if(!tests.some(t=>allTests.indexOf(t)===selectedTestIndex))selectedTestIndex=tests.length?allTests.indexOf(tests[0]):-1;
+ const focusTest=selectedTestIndex>=0?obj(allTests[selectedTestIndex]):null;
+ const linkedIds=new Set(selected.flatMap(c=>arr(obj(c).evidence_ids))),linked=ev.map((e,i)=>({e:obj(e),i})).filter(({e})=>e.id&&linkedIds.has(e.id)),missing=[...linkedIds].filter(id=>!ev.some(e=>obj(e).id===id));
+ out.innerHTML='<div class="case-anchor"><header class="case-hero"><div class="hero-top"><span class="eyebrow">The original fault · reported</span><span class="hero-state">'+esc(record.status||'State unknown')+' / '+esc(v.disposition||'Disposition unknown')+'</span></div><h1>'+esc(shown(c.observable_symptom))+'</h1><p class="case-intent"><b>Wanted outcome</b> '+esc(shown(c.desired_outcome))+'</p></header>'+
+ '<aside class="case-envelope"><span class="eyebrow">Original condition</span><p>'+esc(shown(c.triggering_conditions))+'</p><small>'+esc(shown(c.onset_and_frequency))+'</small><span class="source">'+esc(obj(record.device).type||'Device not identified')+' · '+esc(obj(record.device).environment||'Environment unknown')+'</span><button data-detail="envelope" class="quiet">Full device & condition ↗</button></aside></div>'+
+ '<div class="case-actionline"><button class="case-quickmove" type="button"><span class="eyebrow">'+(allTests.some(t=>obj(t).performed===true)?'Reassess recorded move':'Next recorded move')+'</span><strong>'+esc(shown(n.action))+'</strong><small>'+esc(shown(n.authority_required))+' · Details ↗</small></button><button class="case-gate" type="button" data-detail="custody"><span class="eyebrow">Before touching · recorded scope</span><strong>'+esc(arr(cust.authorized_scope).length?arr(cust.authorized_scope).map(shown).join(' · '):'Authority not recorded')+'</strong><small>Stop or refer: '+esc(arr(cust.stop_or_referral).length?shown(arr(cust.stop_or_referral)[0]):'Condition not recorded')+'</small></button></div>'+
+ '<div class="work-layout"><div><section class="investigation" aria-label="Hypothesis and test relationships">'+
+ testLens(focusTest,selectedTestIndex,causes,allTests)+
+ '<details class="branch-drawer"'+((branchDrawerOpen||!focusTest)?' open':'')+'><summary><span>Trace other recorded branches</span><small>'+causes.length+' explanation'+(causes.length===1?'':'s')+' · '+allTests.length+' test'+(allTests.length===1?'':'s')+'</small></summary><div class="section-head"><div><h2>Navigate the recorded branches</h2><p>Focus one explanation or choose another test. The field above follows their recorded IDs.</p></div><button id="compare" aria-pressed="'+compare+'">'+(compare?'Focus one branch':'Compare predictions')+'</button></div>'+
+ '<div class="flow-labels"><span>'+causes.length+' recorded explanation'+(causes.length===1?'':'s')+'</span><span>Linked discriminating tests</span></div>'+
+ '<div class="flow"><div class="causes">'+(causes.length?causes.map((value,i)=>{const x=obj(value),testCount=allTests.filter(t=>x.id&&arr(obj(t).hypothesis_ids).includes(x.id)).length;return '<button class="cause" data-cause="'+i+'" aria-pressed="'+(compare||selectedCause===i)+'"><span class="cause-top"><span class="id">'+esc(x.id||'No ID')+'</span><span>'+esc(x.status||'State unknown')+'</span></span><strong>'+esc(shown(x.mechanism))+'</strong>' +(!focusTest?'<span class="prediction"><b>Would predict</b>'+esc(shown(x.prediction))+'</span>':'')+'<span class="evidence-count">'+arr(x.evidence_ids).length+' evidence reference'+(arr(x.evidence_ids).length===1?'':'s')+' · '+testCount+' linked test'+(testCount===1?'':'s')+'</span></button>'}).join(''):empty('No explanation recorded','The bench does not infer a cause from the symptom.'))+'</div><div class="connector" aria-hidden="true"><span>→</span></div><div class="test-column">'+(tests.length?tests.map(t=>testCard(obj(t),allTests.indexOf(t),tests.length>1)).join(''):empty('No linked test','No recorded test names the selected hypothesis. Open the full case records below to inspect unlinked tests.'))+'</div></div>'+
+ (!focusTest&&!compare&&causes.length?'<p class="prediction-note"><span class="eyebrow">'+esc(h.id||'Selected explanation')+' predicts</span><br><b>'+esc(shown(h.prediction))+'</b></p>':'')+
+ '<div class="map-foot"><span class="dot"></span>Connections follow recorded IDs. Shared evidence is not proof of either cause.</div></details></section>'+
+ '<details class="evidence-shelf"><summary><span>Evidence index</span> <small>'+linked.length+' linked records</small></summary><div class="subhead"><h2>'+(compare?'Evidence across the comparison':'Evidence linked to '+esc(h.id||'this explanation'))+'</h2><p>Open an observation to inspect its source.</p></div><div class="evidence-grid">'+(linked.length?linked.map(({e,i})=>evidenceButton(e,i)).join(''):empty('No linked evidence','No matching evidence record is supplied for this selection.'))+'</div>'+(missing.length?'<p class="notice">Missing evidence records: '+missing.map(esc).join(', ')+'. These references cannot be inspected.</p>':'')+'</details></div>'+
+ '<details class="action-drawer"><summary>Full next move, hazards and authority</summary><div class="action-column"><section class="next"><p class="eyebrow">The next useful move · recorded</p>'+
+ (allTests.some(t=>obj(t).performed===true)?'<p class="next-reassess">A test result is recorded. Recheck this move against it before acting.</p>':'')+
+ '<span class="arrow" aria-hidden="true">↗</span><h2>'+esc(shown(n.action))+'</h2><dl class="next-detail"><dt>What would advance the case</dt><dd>'+esc(shown(n.evidence_to_advance))+'</dd><dt>Who takes it forward</dt><dd>'+esc(shown(n.owner))+'</dd><dt>Authority required</dt><dd>'+esc(shown(n.authority_required))+'</dd></dl></section><section class="boundary"><h3>Before touching the device</h3><p>'+esc(arr(cust.authorized_scope).length?arr(cust.authorized_scope).map(shown).join(' · '):'Authorized scope not recorded.')+'</p><div class="boundary-facts"><span class="eyebrow">Recorded hazards</span>'+human(cust.hazards)+'<span class="eyebrow">Stop or refer</span>'+human(cust.stop_or_referral)+'</div><button data-detail="custody">Data, backup & full authority ↗</button></section></div></details></div>'+
+ '<section class="state-line" aria-label="Case progress, as recorded"><div><strong><span class="stage-num">01</span>'+ev.length+' evidence record'+(ev.length===1?'':'s')+'</strong><small>'+ev.filter(e=>obj(e).kind==='reported').length+' reported · '+ev.filter(e=>obj(e).kind==='measured').length+' measured</small></div><div><strong><span class="stage-num">02</span>'+allTests.filter(t=>obj(t).performed===true).length+' of '+allTests.length+' tests recorded performed</strong><small>Planned work stays separate from results.</small></div><div><strong><span class="stage-num">03</span>'+(v.original_envelope_retested===true?'Original condition retested':v.original_envelope_retested===false?'Original condition not retested':'Retest state unknown')+'</strong><small>'+esc(v.disposition||'No disposition recorded')+'</small></div></section>'+
+ '<details class="all-native"><summary>All case records, including unlinked hypotheses and tests</summary>'+fields({hypotheses:record.hypotheses,tests:record.tests,evidence:record.evidence})+nativeDetails(record,'Complete original document')+'</details>';
+ out.querySelector('.branch-drawer')?.addEventListener('toggle',e=>{branchDrawerOpen=e.currentTarget.open});
+ $('#compare').onclick=()=>{branchDrawerOpen=true;compare=!compare;caseBench(out);bindDetails(out);$('#compare').focus({preventScroll:true});status(compare?'Comparing all recorded predictions and their linked tests.':'Showing the selected explanation and its linked records.')};
+ out.querySelectorAll('[data-test]').forEach(b=>b.onclick=()=>{selectedTestIndex=Number(b.dataset.test);compare=true;caseBench(out);bindDetails(out);out.querySelector('#test-lens')?.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});out.querySelector('[data-record-test]')?.focus({preventScroll:true});status('Comparing this test with the recorded rival predictions. No inference is made from the result.')});
+ out.querySelector('[data-record-test]')?.addEventListener('click',openTestRecorder);
+ out.querySelector('.case-quickmove')?.addEventListener('click',()=>{const drawer=out.querySelector('.action-drawer');if(drawer){drawer.open=true;drawer.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}});
+ out.querySelectorAll('[data-cause]').forEach(b=>b.onclick=()=>{branchDrawerOpen=true;selectedCause=Number(b.dataset.cause);compare=false;caseBench(out);bindDetails(out);out.querySelector('[data-cause="'+selectedCause+'"]').focus({preventScroll:true});status('Tracing '+shown(obj(causes[selectedCause]).id)+' through recorded test and evidence IDs.')});
+}
+function testLens(t,index,causes,allTests){
+ if(!t)return '<section class="test-lens"><p class="eyebrow">Diagnostic field</p>'+empty('No discriminating test recorded','Add a test to the native case that names the explanations it can separate. No result is inferred here.')+'</section>';
+ const ids=arr(t.hypothesis_ids),matched=ids.map(id=>({id,h:causes.find(c=>obj(c).id===id)})),allEvidence=arr(record.evidence);
+ const branch=({id,h},i)=>{
+  const x=obj(h),refs=arr(x.evidence_ids);
+  const receipt=refs.map(ref=>{const n=allEvidence.findIndex(e=>obj(e).id===ref),e=obj(allEvidence[n]);return n<0?'<span class="missing-ref">'+esc(ref)+' · missing record</span>':'<button class="receipt" data-evidence="'+n+'" title="'+esc(shown(e.source))+'">'+esc(ref)+' <small>'+esc(e.kind||'kind unknown')+'</small></button>'}).join('');
+  return '<article class="lens-branch" data-focus="'+(compare?'compare':id===obj(causes[selectedCause]).id?'true':'false')+'"><div class="branch-title">'+(!compare&&id===obj(causes[selectedCause]).id?'<span class="focus-flag">In focus</span>':'')+'<span class="branch-index">0'+(i+1)+'</span><span class="id">'+esc(id)+'</span><span class="branch-status">'+esc(x.status||'state unknown')+'</span></div><h3>'+esc(h?shown(x.mechanism):'Missing hypothesis record')+'</h3><div class="branch-predict"><span class="eyebrow">Would predict</span><p>'+esc(h?shown(x.prediction):'This test refers to an ID with no matching explanation.')+'</p></div><div class="lens-receipts"><span class="eyebrow">Linked evidence</span>'+(receipt||'<span class="missing-ref">No evidence linked</span>')+'</div></article>'
+ };
+ return '<section class="test-lens" id="test-lens" data-branches="'+matched.length+'" aria-label="Selected test compared with hypotheses"><div class="lens-topline"><span class="eyebrow">Diagnostic field / '+esc(t.id||'unnamed test')+'</span><span class="lens-state">'+(t.performed===true?'RESULT RECORDED · '+esc(shown(t.result_basis)):t.performed===false?'PLANNED · NO OBSERVATION':'PERFORMANCE UNKNOWN')+'</span></div>'+
+ '<div class="lens-head"><div><span class="lens-symbol" aria-hidden="true">◇</span><h2>What separates these explanations?</h2><p>'+esc(shown(t.action))+'</p></div><button data-record-test="'+index+'" class="primary">'+(t.performed===true?'Revise recorded result ↗':'Record observed result ↗')+'</button></div>'+
+ (allTests.length>1?'<div class="lens-test-nav" aria-label="Choose a test">'+allTests.map((x,i)=>'<button data-test="'+i+'" aria-pressed="'+(index===i)+'">'+esc(obj(x).id||'Test '+(i+1))+' <span>'+esc(shown(obj(x).action))+'</span></button>').join('')+'</div>':'')+
+ '<div class="lens-branches">'+(matched.length?matched.map(branch).join(''):empty('No explanations linked','The native test has no hypothesis IDs; it cannot form a recorded comparison.'))+'</div>'+
+ '<aside id="evidence-inspector" class="evidence-inspector" hidden tabindex="-1"></aside><div class="lens-divider"><div class="discriminator"><span class="eyebrow">The difference to observe</span><p>'+esc(shown(t.expected_discriminator))+'</p></div><div class="observation" data-performed="'+(t.performed===true)+'"><span class="eyebrow">'+(t.performed===true?'What was recorded':t.performed===false?'Observation awaited':'Execution unconfirmed')+'</span><p>'+esc(t.performed===true?shown(t.result):t.performed===false?'No result yet. A plan is not a finding.':'The case does not state whether this test was performed.')+'</p>'+(t.performed===true?'<small>'+esc(shown(t.result_basis))+' · '+esc(shown(t.result_source))+'</small>':'<small>Record a result only after the test was actually performed.</small>')+'</div></div>'+
+ '<p class="lens-caution">Predictions and source claims remain attributed to the case. The bench does not choose a cause for you.</p></section>'
+}
+function testCard(t,index,showFocus){return '<article class="test"><div class="test-top"><span class="id">'+esc(t.id||'Test without ID')+'</span><span class="badge">'+(t.performed===true?'PERFORMED · recorded':t.performed===false?'NOT PERFORMED':'PERFORMANCE UNKNOWN')+'</span></div><h3>'+esc(shown(t.action))+'</h3><p class="test-links">Tests '+arr(t.hypothesis_ids).map(esc).join(' · ')+'</p>'+(showFocus?'<button class="test-inspect" data-test="'+index+'" aria-pressed="'+(selectedTestIndex===index)+'">Focus this test →</button>':'')+'<details><summary>Stop condition & full test</summary>'+fields(t)+'</details></article>'}
+
+function evidenceInspector(e){e=obj(e);return '<div class="inspector-head"><span class="eyebrow">Evidence / '+esc(e.id||'ID unknown')+' · '+esc(e.kind||'kind unknown')+'</span><button type="button" data-close-evidence>Close</button></div><p class="inspector-claim">'+esc(shown(e.claim))+'</p><div class="inspector-facts"><div><span>Source</span><strong>'+esc(shown(e.source))+'</strong></div><div><span>Time</span><strong>'+esc(shown(e.time))+'</strong></div><div><span>Limits</span><strong>'+esc(shown(e.limits))+'</strong></div></div>'+nativeDetails(e,'Complete evidence record')}
+function bindDetails(out){out.querySelectorAll('[data-evidence]').forEach(b=>b.onclick=()=>{const e=obj(arr(record.evidence)[Number(b.dataset.evidence)]),panel=out.querySelector('#evidence-inspector');if(panel){panel.innerHTML=evidenceInspector(e);panel.hidden=false;panel.querySelector('[data-close-evidence]').onclick=()=>{panel.hidden=true;b.focus()};panel.focus({preventScroll:true});panel.scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})}else showDetail(shown(e.id)+' · '+shown(e.kind),fields(e))});out.querySelectorAll('[data-detail]').forEach(b=>b.onclick=()=>{if(b.dataset.detail==='envelope')showDetail('The original failure envelope','<h3 style="margin-bottom:20px">Device & environment</h3>'+fields(record.device)+'<h3 style="margin:25px 0 20px">Original complaint</h3>'+fields(record.complaint));else showDetail('Safety, data & authority',fields(record.custody))})}
+function sourceNote(value){
+ const x=obj(value);
+ return '<article class="source-note"><p class="eyebrow">Source / '+esc(x.id||'ID not recorded')+'</p><h3>'+esc(shown(x.label))+'</h3><p class="source-authority">'+esc(shown(x.authority))+'</p><p class="source-locator">'+esc(shown(x.locator))+'</p>'+nativeDetails(x,'All source fields')+'</article>'
+}
+function evidenceView(out){
+ const records=arr(record.evidence),kinds=['reported','observed','measured','retrieved','assumed'];
+ out.innerHTML=heading('Follow the provenance','What do we actually know?','Read the observation, then its origin and limits. A report can guide the next test without becoming a measurement.')+
+ '<div class="evidence-spectrum" aria-label="Evidence by recorded kind">'+kinds.map(kind=>'<div><strong>'+records.filter(e=>obj(e).kind===kind).length+'</strong><span>'+kind+'</span></div>').join('')+'</div>'+
+ '<div class="filter-bar"><input id="evidence-search" class="search" aria-label="Search evidence" placeholder="Find an observation, source or limitation" value="'+esc(evidenceQuery)+'"><label for="evidence-kind" class="muted">Kind</label><select id="evidence-kind"><option value="all">All kinds</option>'+[...new Set(records.map(e=>shown(obj(e).kind)))].map(k=>'<option value="'+esc(k)+'" '+(evidenceKind===k?'selected':'')+'>'+esc(k)+'</option>').join('')+'</select></div>'+
+ '<div class="evidence-layout"><section><p id="evidence-count" class="search-status" role="status"></p><div id="evidence-results" class="evidence-list"></div></section><aside class="source-margin"><p class="eyebrow">Authority & applicability</p><h2>Where did this come from?</h2>'+(arr(record.sources).length?arr(record.sources).map(sourceNote).join(''):empty('No sources supplied','Authority and applicability have not been recorded.'))+'</aside></div>';
+ $('#evidence-search').oninput=e=>{evidenceQuery=e.target.value;evidenceResults()};
+ $('#evidence-kind').onchange=e=>{evidenceKind=e.target.value;evidenceResults()};
+ evidenceResults()
+}
+function evidenceResults(){const records=arr(record.evidence),matches=records.map((e,i)=>({e:obj(e),i})).filter(({e})=>(evidenceKind==='all'||shown(e.kind)===evidenceKind)&&JSON.stringify(e).toLowerCase().includes(evidenceQuery.toLowerCase()));$('#evidence-count').textContent=matches.length+' of '+records.length+' retained evidence records';$('#evidence-results').innerHTML=matches.length?matches.map(({e,i})=>evidenceButton(e,i)).join(''):empty(records.length?'No matching observations':'No evidence retained',records.length?'Change the search or kind filter to see the other records.':'This empty collection does not prove that no observation occurred.');bindDetails($('#evidence-results'))}
+function recoveryView(out){
+ const v=obj(record.verification),changes=arr(record.changes),n=obj(record.next_move),c=obj(record.complaint);
+ const retest=v.original_envelope_retested===true?'Retested':v.original_envelope_retested===false?'Not yet retested':'Retest state unknown';
+ out.innerHTML=heading('From intervention to proof','Did the original problem go away?','A change is a case event. Resolution requires the original trigger and adjacent functions to be checked.')+
+ '<section class="proof-route" aria-label="Original condition to disposition"><div class="proof-stop"><span class="eyebrow">01 / Original condition</span><p>'+esc(shown(c.triggering_conditions))+'</p></div><div class="proof-stop proof-retest"><span class="eyebrow">02 / Retest</span><strong>'+retest+'</strong><small>'+arr(v.results).length+' recorded result'+(arr(v.results).length===1?'':'s')+'</small></div><div class="proof-stop proof-end"><span class="eyebrow">03 / Disposition</span><strong>'+esc(shown(v.disposition))+'</strong><small>Case state: '+esc(shown(record.status))+'</small></div></section>'+
+ '<div class="proof-work"><section class="change-lane"><p class="eyebrow">Interventions / recorded only</p><h2>What changed?</h2><div class="trail">'+(changes.length?changes.map((x,i)=>card(obj(x).id||'Change '+(i+1),x)).join(''):empty('No intervention recorded','No device action is inferred from the planned test or this case file.'))+'</div></section>'+
+ '<section class="proof-sheet"><p class="eyebrow">Acceptance evidence</p><h2>What would count as fixed?</h2><div class="proof-field"><h3>Original-envelope results</h3>'+human(v.results)+'</div><div class="proof-field"><h3>Adjacent function checks</h3>'+human(v.adjacent_checks)+'</div><div class="proof-field"><h3>Reopen if</h3>'+human(v.reopen_condition)+'</div>'+nativeDetails(v,'Complete verification record')+
+ '<div class="handoff"><p class="eyebrow">The next custodian · recorded</p><h3>'+esc(shown(n.action))+'</h3><p>'+esc(shown(n.owner))+' · '+esc(shown(n.authority_required))+'</p><small>Advance with: '+esc(shown(n.evidence_to_advance))+'</small>'+nativeDetails(n,'Complete next-move record')+'</div></section></div>'
+}
+function reviewView(out){out.innerHTML=heading('A second look','Independent review, kept separate.','Read a supplied reviewer artifact alongside the case. Importing an opinion does not change the diagnosis, authorize work or establish a repair.')+'<button id="review-open" class="primary">Open supplied review ↗</button><div class="review-sheet">'+(review?'<p class="binding">'+esc(review.name)+' · imported for '+esc(review.caseId)+'</p><p class="notice">Operator-selected case binding; not authenticated or independently verified.'+(review.stale?' The working case was edited after import. This review may refer to an earlier revision.':'')+'</p><article class="card"><pre class="raw">'+esc(review.body)+'</pre></article>':'<div style="margin-top:30px">'+empty('No review supplied','Open a JSON, Markdown or text review. Its wording and provenance stay separate from the native case; no verdict is invented.')+'</div>')+'</div>';$('#review-open').onclick=()=>$('#reviewfile').click()}
+function accept(data){if(!data||typeof data!=='object'||Array.isArray(data))throw Error('Expected a JSON object. The current case has been kept.');if(typeof data.case_id!=='string'||!data.case_id.trim())throw Error('An IT case needs a non-empty case_id. The current case has been kept.');for(const key of ['evidence','hypotheses','tests','changes','sources'])if(data[key]!==undefined&&!Array.isArray(data[key]))throw Error(key+' must be an array. Correct it before using this case.');for(const key of ['device','complaint','custody','verification','next_move'])if(data[key]!==undefined&&(!data[key]||typeof data[key]!=='object'||Array.isArray(data[key])))throw Error(key+' must be an object. Correct it before using this case.');for(const key of ['evidence','hypotheses','tests','changes','sources'])for(const [i,item] of arr(data[key]).entries())if(!item||typeof item!=='object'||Array.isArray(item))throw Error(key+'['+i+'] must be an object. The current case has been kept.');return data}
+function adoptCase(data,newSource){
+ record=data;caseRevision++;source=newSource;review=null;selectedCause=0;selectedTestIndex=0;compare=true;branchDrawerOpen=false;dirty=false;mode='case';evidenceQuery='';evidenceKind='all';render();
+}
+async function loadTeachingCase(){
+ if(dirty&&!confirm('Replace the edited working case with the teaching example? Download first if you want to keep your edits.'))return;
+ const request=++loadRequest,revision=caseRevision;$('#sample').disabled=true;status('Loading the synthetic teaching case…');
+ try{
+  const data=accept(await api('/api/sample'));
+  if(request!==loadRequest)return;
+  if(revision!==caseRevision){status('The case changed while the example was loading. Your current work has been kept.');return}
+  adoptCase(data,'SYNTHETIC EXAMPLE · no live device');
+  status('Teaching case loaded. Two explanations, one planned test; no live device or measured result.');
+ }catch(e){if(request===loadRequest)status(e.message+' Your current case is unchanged.',true)}
+ finally{$('#sample').disabled=false}
+}
+
+function openTestRecorder(){
+ const t=arr(record.tests)[selectedTestIndex];if(!t)return;recordingTarget={revision:caseRevision,index:selectedTestIndex};
+ $('#test-recorder-title').textContent='Record result · '+shown(t.id);
+ $('#test-recorder-context').innerHTML='<strong>'+esc(shown(t.action))+'</strong><p>Stop condition: '+esc(shown(t.stop_condition))+'</p>';
+ $('#test-performed').checked=t.performed===true;
+ $('#test-result-input').value=t.performed===true?String(t.result??''):'';
+ $('#test-basis').value=['reported','observed','measured','retrieved'].includes(t.result_basis)?t.result_basis:'reported';
+ $('#test-source').value=t.result_source||'';
+ $('#test-record-error').textContent='';
+ $('#test-recorder').showModal();
+}
+$('#save-test-result').onclick=()=>{
+ const result=$('#test-result-input').value.trim(),from=$('#test-source').value.trim(),performed=$('#test-performed').checked;
+ if(!performed){$('#test-record-error').textContent='Confirm that this test was performed. Planned work belongs in the case plan.';return}
+ if(!result||/^(not run|not performed|unknown)$/i.test(result)){$('#test-record-error').textContent='Record the actual observation; do not mark an unrun test as performed.';return}
+ if(!from){$('#test-record-error').textContent='Name the person, instrument or record behind this result.';return}
+ if(!recordingTarget||recordingTarget.revision!==caseRevision){$('#test-record-error').textContent='The case changed while this recorder was open. Close it and reopen the intended test.';return}
+ const next=JSON.parse(JSON.stringify(record)),t=next.tests[recordingTarget.index];
+ t.performed=true;t.result=result;t.result_basis=$('#test-basis').value;t.result_source=from;t.result_recorded_at=new Date().toISOString();
+ if(t.status==='test-planned')t.status='test-run';
+ if(next.status==='test-planned')next.status='test-run';
+ next.updated_at=new Date().toISOString();
+ record=next;caseRevision++;dirty=true;if(review)review.stale=true;
+ $('#test-recorder').close();render();$('#content [data-record-test]')?.focus({preventScroll:true});
+ status('Test result recorded in this tab only. Reassess the recorded next move, then download a copy to keep it.');
+};
+
+$('#sample').onclick=loadTeachingCase;$('#open').onclick=()=>$('#file').click();
+$('#file').onchange=async e=>{
+ const f=e.target.files[0];if(!f)return;const request=++loadRequest,revision=caseRevision;
+ try{
+  if(f.size>2000000)throw Error('Case exceeds the 2 MB limit. Choose a smaller native case file.');
+  const data=accept(JSON.parse(await f.text()));
+  if(request!==loadRequest)return;
+  if(revision!==caseRevision){status('The case changed while the file was opening. Your current work has been kept.');return}
+  if(dirty&&!confirm('Replace the edited working case? Download first if you want to keep your edits.'))return;
+  adoptCase(data,f.name+' · working copy');
+  status('Case opened. Original file unchanged; inspect its evidence and check structure before adoption.');
+ }catch(err){if(request===loadRequest)status('Could not open case: '+err.message,true)}
+ finally{e.target.value=''}
+};
+$('#reviewfile').onchange=async e=>{
+ const f=e.target.files[0];if(!f||!record)return;const revision=caseRevision,request=++reviewRequest,caseId=record.case_id;
+ try{
+  if(f.size>2000000)throw Error('Review exceeds the 2 MB limit.');
+  const body=await f.text();
+  if(request!==reviewRequest)return;
+  if(revision!==caseRevision){status('The case changed while the review was opening. Import it again for the intended case.',true);return}
+  review={name:f.name,body,caseId,stale:false};render();status('Supplied review displayed. Case state unchanged.');
+ }catch(err){status(err.message,true)}
+ finally{e.target.value=''}
+};
+$('#skin').onchange=e=>{document.body.dataset.skin=e.target.value;const inspector=$('#evidence-inspector');if(inspector&&!inspector.hidden)inspector.scrollIntoView({block:'nearest'});status('Workspace changed to '+e.target.selectedOptions[0].text+'. Case data and selection are unchanged.')};
+$('#edit').onclick=()=>{$('#nativejson').value=JSON.stringify(record,null,2);$('#editorerror').textContent='';$('#editor').showModal()};
+$('#apply').onclick=()=>{try{const data=accept(JSON.parse($('#nativejson').value)),changed=JSON.stringify(data)!==JSON.stringify(record);record=data;if(changed){caseRevision++;dirty=true;if(review)review.stale=true}$('#editor').close();render();status(changed?'Working case updated in memory. Download a copy to keep it; source file unchanged.':'No case fields changed.')}catch(e){$('#editorerror').textContent=e.message}};
+$('#validate').onclick=async()=>{const button=$('#validate'),revision=caseRevision;button.disabled=true;status('Checking the native case structure…');try{const v=await api('/api/validate',record);if(revision!==caseRevision){status('The case changed during validation. Check the current case again.');return}$('#validationbody').textContent=(v.valid?'PASS — the native structure is accepted.':'FAIL — '+arr(v.errors).join('\n'))+'\n\n'+v.scope;$('#validation').showModal();status(v.valid?'Structure accepted. This is not diagnostic verification.':'Structure needs correction. Edit the working case and check again.',!v.valid)}catch(e){status(e.message,true)}finally{button.disabled=false}};
+$('#download').onclick=()=>{const blob=new Blob([JSON.stringify(record,null,2)+'\n'],{type:'application/json'}),link=document.createElement('a');link.href=URL.createObjectURL(blob);link.download=record.case_id.replace(/[^\w.-]/g,'_')+'-working.json';link.click();setTimeout(()=>URL.revokeObjectURL(link.href),1000);status('Working-copy download requested. Confirm it reached your files before closing this tab.')};
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>b.closest('dialog').close());
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+render();fetch('/api/session',{method:token?'POST':'GET',headers:token?{'X-Desk-Token':token}:{},cache:'no-store'}).then(r=>{if(!r.ok)status('Local session missing. Reopen Beryl with its launcher; an existing working copy can still be downloaded.',true)}).catch(e=>status('Local session unavailable: '+e.message,true));
+</script></body></html>

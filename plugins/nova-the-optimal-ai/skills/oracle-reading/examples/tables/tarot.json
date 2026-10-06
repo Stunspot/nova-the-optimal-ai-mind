@@ -1,0 +1,31 @@
+{
+  "schema": "oracle-reading/table-v1",
+  "id": "threshold-example",
+  "revision": 1,
+  "tradition": "tarot",
+  "phase": "active",
+  "question": "What is falling away, what remains alive, and where can I place my next step?",
+  "basis": "digital-random",
+  "results": [
+    {
+      "id": "swords-9",
+      "position": "What is falling away",
+      "reversed": false
+    },
+    {
+      "id": "wands-1",
+      "position": "What remains alive beneath it",
+      "reversed": false
+    },
+    {
+      "id": "major-8",
+      "position": "Where to place the next step",
+      "reversed": false
+    }
+  ],
+  "revealed": [
+    "swords-9"
+  ],
+  "focus": "swords-9",
+  "thread": ""
+}

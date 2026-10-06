@@ -27,14 +27,14 @@ def _nonempty(value: Any) -> bool:
 
 
 def _valid_datetime(value: Any) -> bool:
-    if not _nonempty(value):
+    if not _nonempty(value) or "T" not in value.upper():
         return False
     normalized = value[:-1] + "+00:00" if value.endswith("Z") else value
     try:
-        datetime.fromisoformat(normalized)
+        parsed = datetime.fromisoformat(normalized)
     except ValueError:
         return False
-    return True
+    return parsed.tzinfo is not None and parsed.utcoffset() is not None
 
 
 def validate_profile(data: Any) -> list[str]:
@@ -83,7 +83,7 @@ def validate_profile(data: Any) -> list[str]:
             for key in ("situation", "success_evidence"):
                 if not _nonempty(goal.get(key)):
                     errors.append(f"goals[{index}].{key} must be a non-empty string")
-            if goal.get("status") not in GOAL_STATES:
+            if not isinstance(goal.get("status"), str) or goal["status"] not in GOAL_STATES:
                 errors.append(
                     f"goals[{index}].status must be one of {sorted(GOAL_STATES)}"
                 )
@@ -93,7 +93,7 @@ def validate_profile(data: Any) -> list[str]:
         errors.append("preferences must be an object")
     else:
         for key, allowed in PREFERENCE_VALUES.items():
-            if preferences.get(key) not in allowed:
+            if not isinstance(preferences.get(key), str) or preferences[key] not in allowed:
                 errors.append(f"preferences.{key} must be one of {sorted(allowed)}")
 
     evidence = data.get("evidence")
@@ -119,7 +119,7 @@ def validate_profile(data: Any) -> list[str]:
                     errors.append(
                         f"evidence[{index}].{key} must be a non-empty string"
                     )
-            if item.get("state") not in EVIDENCE_STATES:
+            if not isinstance(item.get("state"), str) or item["state"] not in EVIDENCE_STATES:
                 errors.append(
                     f"evidence[{index}].state must be one of {sorted(EVIDENCE_STATES)}"
                 )

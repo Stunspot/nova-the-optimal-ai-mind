@@ -52,5 +52,22 @@ class LearnerProfileValidationTests(unittest.TestCase):
         self.assertEqual(validate_profile(profile), [])
 
 
+    def test_malformed_enum_objects_are_errors_not_crashes(self):
+        for section,field in [("preferences","explanation_depth"),("evidence","state"),("goals","status")]:
+            profile=copy.deepcopy(self.valid)
+            target=profile[section] if section=="preferences" else profile[section][0]
+            target[field]={}
+            with self.subTest(section=section):self.assertTrue(validate_profile(profile))
+
+    def test_date_only_and_unzoned_timestamp_are_rejected(self):
+        for stamp in ["2026-10-05","2026-10-05T00:00:00","2026-99-99T00:00:00Z"]:
+            profile=copy.deepcopy(self.valid);profile["updated_at"]=stamp
+            with self.subTest(stamp=stamp):self.assertTrue(validate_profile(profile))
+
+    def test_explicit_offset_timestamp_is_accepted(self):
+        profile=copy.deepcopy(self.valid);profile["updated_at"]="2026-10-05T00:00:00-05:00"
+        self.assertEqual(validate_profile(profile),[])
+
+
 if __name__ == "__main__":
     unittest.main()

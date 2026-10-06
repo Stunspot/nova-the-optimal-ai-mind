@@ -1,5 +1,11 @@
 # Beryl IT Benchcraft release notes
 
+## Same-version 0.3.0 repair — October 2026
+
+Beryl IT Studio now offers Mossglass, Night Probe and Porcelain Relay. The material correction replaces the rejected flat rendering with suspended optical panes in Mossglass, a recessed instrument housing in Night Probe and molded ceramic controls and wells in Porcelain Relay. The three distinct compositions carry through supporting pages, phone layouts and dialogs. Generated material assets are bundled and served locally.
+
+Repairs keep unlinked tests selectable, distinguish unknown execution from planned work, reject malformed record members, retain newer work during delayed loads and bind validation to the checked revision. Native structural validation now enforces the shipped nested requirements and types. Reconnect identity includes the actual interface and validator bytes. Windows launchers bind exclusively and fall back to a free private port when an older instance occupies the preferred port. The existing native file format, unknown fields and transient case custody remain intact.
+
 ## v0.1.3 — reconciled immutable successor
 
 - Promotes the maintained Aug. 10 presentation, documentation, archive, and runtime-custody repair without rewriting the Jul. 21 v0.1.2 tag.
@@ -50,3 +56,5 @@ The customer documentation includes first-use guidance, installation and discove
 - Documentation accessibility was structurally and manually reviewed but not tested with representative users or assistive technology.
 
 Read [Limitations and claim boundaries](LIMITATIONS.md) before consequential use.
+
+The October 2 dropdown correction pairs opaque native menu backgrounds with theme ink across the environment selector, evidence filter and result-recorder evidence kind. Theme geometry and case semantics remain unchanged.

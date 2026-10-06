@@ -165,6 +165,8 @@ def transcribe(audio,output,model,model_dir,download_model=False,device="cpu",la
     return ingest(raw,output/"evidence","local_asr",str(Path(audio).resolve()),language,identity,parent_audio=audio)
 
 def main(argv=None):
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     parser=argparse.ArgumentParser(description=__doc__)
     sub=parser.add_subparsers(dest="command",required=True)
     ingest_parser=sub.add_parser("ingest")

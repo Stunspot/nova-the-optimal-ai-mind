@@ -1,12 +1,12 @@
 {
   "schema": "nova-free-loadout/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.3.0",
+  "product_version": "3.8.0",
   "plugin_id": "nova-the-optimal-ai",
   "license": "LICENSE.md",
   "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
   "topology": {
-    "visible_skill_roots": 27,
+    "visible_skill_roots": 28,
     "front_doors": [
       "nova"
     ],
@@ -134,6 +134,13 @@
         "job-application-builder",
         "interview-trainer"
       ]
+    },
+    {
+      "id": "symbolic-readings",
+      "title": "Symbolic readings",
+      "skills": [
+        "oracle-reading"
+      ]
     }
   ],
   "roots": [
@@ -163,7 +170,8 @@
     "privacy-redline",
     "lex-foster-language-companion",
     "job-application-builder",
-    "interview-trainer"
+    "interview-trainer",
+    "oracle-reading"
   ],
   "required_absences": [
     "augment-of-mind sibling plugin",

@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
-PRODUCT_VERSION = "3.3.0"
+PRODUCT_VERSION = "3.8.0"
 REGISTRY_FORMAT = "nova-path-selectors/v1"
 MANIFEST_FORMAT = "nova-estate-manifest/v1"
 LEGACY_MANIFEST_FORMAT = "nova-data-estate/v1"
@@ -46,12 +46,14 @@ SERVICE_ENTRYPOINTS = {
     "worldline-legacy": ("cognitive-continuity", "scripts", "worldline.py"),
     "dunbar": ("dunbar", "scripts", "dunbar.py"),
     "corkboard": ("corkboard", "scripts", "corkboard.py"),
+    "project-bridge": ("dennis-stratton-project-management", "scripts", "project_bridge.py"),
     "project-management": (
         "dennis-stratton-project-management",
         "scripts",
         "project_control.py",
     ),
     "commonplace": ("commonplace", "scripts", "commonplace.py"),
+    "knowledge-desk": ("commonplace", "workspace", "host.py"),
 }
 SERVICE_LOCATIONS = {
     "continuity": "memory/continuity-v2",
@@ -585,8 +587,9 @@ def launcher_payload() -> dict[str, Any]:
     for service, relative in SERVICE_ENTRYPOINTS.items():
         path = skill_root().joinpath(*relative)
         present = path.is_file()
-        entries[service] = {"path": str(path), "present": present}
-        ready = ready and present
+        optional = service == "knowledge-desk"
+        entries[service] = {"path": str(path), "present": present, "optional": optional}
+        ready = ready and (present or optional)
     return {
         "ready": ready,
         "shell_used": False,
@@ -662,6 +665,20 @@ def continuity_support(values: dict[str, str], *, validate: bool) -> dict[str, A
     return result
 
 
+def continuity_operating_mode(support: dict[str, Any]) -> str:
+    """Report readiness without granting or inferring transaction qualification."""
+    if not support["read"].get("supported"):
+        return "unavailable"
+    mutation = support["mutation"]
+    if mutation.get("supported") is not True:
+        return "read_only"
+    if mutation.get("qualified") is True:
+        return "full"
+    if mutation.get("status") == "preflight_supported" and mutation.get("transaction_probe_required") is True:
+        return "transaction_guarded"
+    return "read_only"
+
+
 def load_configured_root(root_value: str | None) -> tuple[Path, dict[str, str], dict[str, Path]]:
     root = normalize_root(root_value)
     paths = layout(root)
@@ -723,14 +740,7 @@ def status_payload(root: Path, *, root_source: str = "explicit") -> dict[str, An
         concordance_state = (
             concordance.get("status", "unavailable") if isinstance(concordance, dict) else "unavailable"
         )
-        read_supported = bool(support["read"].get("supported"))
-        mutation_supported = bool(support["mutation"].get("supported"))
-        if read_supported and mutation_supported:
-            operating_mode = "full"
-        elif read_supported:
-            operating_mode = "read_only"
-        else:
-            operating_mode = "unavailable"
+        operating_mode = continuity_operating_mode(support)
         payload.update(
             selectors=values,
             environment_convenience={
@@ -1466,6 +1476,10 @@ def command_run(args: argparse.Namespace) -> int:
                 "Commonplace estate root is supplied by Nova Operations and must not be overridden"
             )
         forwarded = ["--estate-root", str(root), *forwarded]
+    if args.service == "knowledge-desk":
+        if any(value == flag or value.startswith(flag + "=") for value in forwarded for flag in ("--estate-root", "--nova-operations")):
+            raise NovaEstateError("Knowledge Desk owner binding is supplied by Nova Operations and must not be overridden")
+        forwarded = ["--estate-root", str(root), "--nova-operations", str(Path(__file__).resolve()), *forwarded]
     completed = run_service_process(args.service, forwarded, values)
     return int(completed.returncode)
 
@@ -1484,7 +1498,7 @@ def command_doctor(args: argparse.Namespace) -> int:
         "concordance": Path(values["NOVA_CONCORDANCE_HOME"]).is_dir(),
     }
     read_supported = bool(support["read"].get("supported"))
-    mutation_supported = bool(support["mutation"].get("supported"))
+    operating_mode = continuity_operating_mode(support)
     validation_supported = bool(support["validation"].get("supported"))
     canonical_commonplace = commonplace.get("canonical")
     commonplace_valid = bool(
@@ -1496,14 +1510,13 @@ def command_doctor(args: argparse.Namespace) -> int:
     concordance_state = concordance.get("status", "unavailable") if isinstance(concordance, dict) else "unavailable"
     healthy = (
         read_supported
-        and mutation_supported
+        and operating_mode in {"full", "transaction_guarded"}
         and validation_supported
         and commonplace_valid
         and concordance_state in {"current", "unavailable"}
         and launcher["ready"]
         and all(locations.values())
     )
-    operating_mode = "full" if read_supported and mutation_supported else ("read_only" if read_supported else "unavailable")
     emit(
         {
             "format": "nova-emergent-estate-doctor/v2",

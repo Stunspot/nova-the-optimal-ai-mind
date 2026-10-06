@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const code=fs.readFileSync(require('node:path').join(__dirname,'../workspace/app.js'),'utf8').split("$('#createform').onsubmit")[0];
+const ctx=vm.createContext({URL,URLSearchParams,location:{hash:'',pathname:'/'},history:{replaceState(){}},sessionStorage:{getItem(){return null},setItem(){}},localStorage:{getItem(){return null},setItem(){}}});
+vm.runInContext(code,ctx);
+const run=s=>vm.runInContext(s,ctx);
+assert.equal(run(String.raw`disposition({semantic_audit:'supported',support:'legacy'})`),'supported');
+assert.equal(run(String.raw`judgmentField({evidence_status:'partial'})`),'evidence_status');
+assert.equal(run(String.raw`tone({evidence_status:'supported'})`),'good');
+assert.equal(run(String.raw`safeUrl('javascript:alert(1)')`),null);
+const markup=run(String.raw`manuscript('<img src=x onerror=alert(1)> [S005] [trap](javascript:alert(1))')`);
+assert.ok(!markup.includes('<img'));assert.ok(!markup.includes('href="javascript:'));assert.ok(markup.includes('data-read="S005"'));
+run(String.raw`vault={files:{'claim-ledger.jsonl':[JSON.stringify({id:'C001',claim:'new',support:'unreviewed'}),JSON.stringify({id:'C002',claim:'audited',semantic_audit:'supported'}),JSON.stringify({id:'C003',claim:'no judgment'})].join('\n')}};claimFilter='unreviewed'`);
+assert.equal(run(String.raw`matchingClaims().map(c=>c.id).join(',')`),'C001,C003');
+const cov=run(String.raw`coverage('| Question | Confidence |\n|---|---|\n| Mechanism | unresolved despite many sources |')`);
+assert.equal(cov.tables[0].headings[1],'Confidence');assert.equal(cov.tables[0].entries[0][1],'unresolved despite many sources');
+console.log('PASS: native judgment variants, explicit unreviewed filtering, safe text/citations, native coverage headings.');

@@ -1,6 +1,6 @@
 # Security
 
-Report a suspected Dennis Stratton Project Management security issue privately to [contact@collaborative-dynamics.com](mailto:contact@collaborative-dynamics.com).
+Report a suspected Dennis Stratton Project Management security issue privately to [stunspot@collaborative-dynamics.com](mailto:stunspot@collaborative-dynamics.com).
 
 Include:
 

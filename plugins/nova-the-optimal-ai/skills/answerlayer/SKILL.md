@@ -58,3 +58,7 @@ Always read `knowledge/operating-doctrine.md`, `knowledge/evidence-currentness.m
 ## Completion
 
 Report the baseline and cutoff, candidates considered, accepted deltas and justified exclusions, unresolved fuzz, proposed or approved patches, probes, traps, watch thresholds, current approval state, checks actually run, and the next event that reopens the ledger. Do not claim currentness, completeness, truth, legal compliance, decision correctness, execution, verification, or publication without the evidence and authority that earn each claim.
+
+## Open the Answer Change Desk
+
+Run `python -B workspace/host.py` for a visual ledger request and read workspace/README.md. The 0.2.0 desk keeps the exact current answer, proposed wording, evidence and recheck conditions together. It preserves native reality-ledger.json, exact baseline and before/after patches, evidence and authority, rejected noise, fuzz, probes, traps and watch thresholds. Imported historical 0.1.2 ledgers retain their product_version and original fields. The transient working copy and downloaded file are prepared artifacts, not adopted patches, saved canon, monitoring or publication.

@@ -157,6 +157,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    rag.configure_stdio()
     args = build_parser().parse_args(argv)
     try:
         report, passed = evaluate(args.db, args.cases)

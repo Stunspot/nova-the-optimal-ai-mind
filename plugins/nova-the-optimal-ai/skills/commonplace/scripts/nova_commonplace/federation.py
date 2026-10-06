@@ -72,7 +72,7 @@ _PACKAGE_ROOTS = {
 }
 _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
     "schema": ADAPTER_MANIFEST_SCHEMA,
-    "approval_id": "nova-free-owner-reads-3.2.0",
+    "approval_id": "nova-emergent-owner-reads-1.0.4",
     "adapters": {
         "Dunbar": {
             "relative_path": _MODULE_PATHS["Dunbar"],
@@ -94,7 +94,7 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
         },
         "Continuity": {
             "relative_path": _MODULE_PATHS["Continuity"],
-            "sha256": "9c658e40f8a2eb1dfde50a30ccaa7aa58039bae1931b9c731d1f9231f6daa3e2",
+            "sha256": "9daf3a120220459d3151d39d55a412f62e3ef78b1915b180110132e4f4581266",
             "dependencies": [
                 {
                     "module": "eligibility_policy",
@@ -109,13 +109,13 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {
                 {
                     "module": "workspace_runtime",
                     "relative_path": "cognitive-continuity/scripts/workspace_runtime.py",
-                    "sha256": "8d871ac53d1fadaf7921b9750a47739cadc9466df050c906f6149d84f51befb4",
+                    "sha256": "79d99c8a5acf8430e4a41ad50fc3d1fcedb14e6691c4b2f2e95137423b1c67ea",
                 },
             ],
             "package": {
                 "relative_root": "cognitive-continuity",
-                "file_count": 86,
-                "tree_sha256": "3342705429cfa6ef0f004a70ccd705b2e2e367b79255899c626370d6dec24206",
+                "file_count": 73,
+                "tree_sha256": "c632d0656c1b04ac493f40cceceafc46fb4df3b150626c54ef00679a21cef5be",
             },
         },
     },

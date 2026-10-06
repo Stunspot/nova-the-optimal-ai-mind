@@ -2,7 +2,7 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "3.3.0",
+  "product_version": "3.8.0",
   "state": "source_ready_for_qualification",
   "plugin": {
     "count": 1,
@@ -69,7 +69,7 @@
     }
   },
   "loadout": {
-    "visible_skill_roots": 27,
+    "visible_skill_roots": 28,
     "manifest": "plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json"
   },
   "rights": {

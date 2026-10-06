@@ -1,0 +1,2 @@
+[console_scripts]
+nova-commonplace = nova_commonplace.cli:main

@@ -14,12 +14,13 @@ MAINTAINED = (
     "docs/HOST-MATRIX.md", "docs/INSTALL-CLAUDE.md", "docs/INSTALL-CODEX.md",
     "docs/MAINTAINER-GUIDE.md", "docs/PRIVACY-AND-TRUST.md",
     "docs/TROUBLESHOOTING.md", "docs/UPGRADE.md", "docs/VERIFICATION.md", "docs/WORLDLINE.md",
+    "docs/VISUAL-WORKSPACES.md",
 )
 LINK = re.compile(r"(!?)\[([^\]]*)\]\(([^)]+)\)")
 HEADING = re.compile(r"^(#{1,6})\s+\S")
 CONTROL_CHARACTER = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 REQUIRED_FACTS = {
-    "README.md": ("one plugin", "twenty-seven", "seventeen", "CC BY-ND 4.0", "nova-free-rights"),
+    "README.md": ("one plugin", "twenty-eight", "seventeen", "CC BY-ND 4.0", "nova-free-rights"),
     "START-HERE.md": ("one product and one plugin", "real invocation", "optional persistent state", "nova-free-rights"),
     "LICENSE.md": ("standard Collaborative Dynamics public-Augment split license", "MIT", "CC-BY-ND-4.0", "authentic, unmodified"),
     "ATTRIBUTION.md": ("Created by Sam Walker", "CC-BY-ND-4.0", "MIT"),

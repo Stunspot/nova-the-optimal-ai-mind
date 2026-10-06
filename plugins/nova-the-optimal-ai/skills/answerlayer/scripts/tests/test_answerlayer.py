@@ -15,6 +15,19 @@ class AnswerLayerTests(unittest.TestCase):
   d=load(self.example);d["patches"][0]["source_ids"]=["NOPE"];self.assertTrue(any("unknown source_id" in x for x in validate(d)))
  def test_patched_baseline_requires_human_approval(self):
   d=load(self.example);d["baseline"]["status"]="patched";self.assertTrue(any("human_approved" in x for x in validate(d)))
+ def test_malformed_native_collections_report_errors_without_crashing(self):
+  d=load(self.example);d["patches"]={"P1":{}};d["sources"]=None;d["baseline"]=None;d["publication"]="published"
+  errors=validate(d)
+  self.assertTrue(any("patches: expected array" in x for x in errors))
+  self.assertTrue(any("sources: expected array" in x for x in errors))
+  self.assertTrue(any("baseline: expected object" in x for x in errors))
+  self.assertTrue(any("publication: expected object" in x for x in errors))
+  self.assertEqual(validate([]),["Native document must be a JSON object."])
+ def test_malformed_nested_ids_report_errors_without_crashing(self):
+  d=load(self.example);d["patches"][0]["id"]=["P1"];d["patches"][0]["source_ids"]=[{"id":"S1"}]
+  errors=validate(d)
+  self.assertTrue(any("expected nonempty string id" in x for x in errors))
+  self.assertTrue(any("unknown source_id" in x for x in errors))
  def test_candidate_qualification_fails_without_answer_change(self):
   c=load(self.example)["candidates"][1];self.assertTrue(any("answer_change" in x for x in qualify(c)))
  def test_recheck(self):self.assertEqual(next_recheck(date(2026,7,20),30).isoformat(),"2026-08-19")

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Observatory Case · Current Intelligence Observatory</title>
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="refinement.css"></head>
+<body data-skin="night">
+  <a class="skip" href="#main">Skip to investigation</a>
+  <div class="app-shell">
+    <header class="masthead">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div><p class="brand-kicker">Nova / Current Intelligence Observatory</p><p class="brand-name">Observatory<span> · Evidence Atlas</span></p></div>
+      </div>
+      <div class="header-controls">
+        <label class="theme-control" for="skin"><span>Environment</span><select id="skin"><option value="night">Signal room</option><option value="paper">Evidence folio</option></select></label>
+        <details class="case-controls" id="case-controls">
+          <summary>Investigation files <span aria-hidden="true">↗</span></summary>
+          <div class="case-menu">
+            <label for="case">Open your investigation <input id="case" type="file" accept=".json,application/json"></label>
+            <label for="baseline">Open comparison baseline <input id="baseline" type="file" accept=".json,application/json"></label>
+            <button id="sample" type="button">Explore synthetic Harbor Lantern</button>
+            <button id="clear" type="button">Clear this investigation</button>
+            <p>Local, read-only files. Nothing is uploaded or saved by this instrument.</p>
+          </div>
+        </details>
+      </div>
+    </header>
+    <div id="status" class="status-line" role="status" aria-live="polite">Open a native case or explore the synthetic example. This instrument does not collect, monitor, publish or approve.</div>
+    <nav id="nav" class="lens-nav" aria-label="Case lenses"></nav>
+    <main id="main" tabindex="-1"></main>
+    <aside id="inspector" class="inspector" aria-label="Exact case record" hidden></aside>
+    <footer class="app-footer"><span>OBS / READ ONLY</span><p>Native records keep their status, confidence, uncertainty and provenance. A structural difference is not evidence of material change.</p></footer>
+  </div>
+  <script src="sample.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

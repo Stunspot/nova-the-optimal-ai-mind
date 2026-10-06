@@ -35,7 +35,7 @@ def inventory(root: Path) -> dict[str, dict[str, object]]:
     result = {}
     for path in sorted(p for p in root.rglob("*") if p.is_file()):
         rel = path.relative_to(root).as_posix()
-        if rel == MANIFEST:
+        if rel == MANIFEST or "__pycache__" in path.relative_to(root).parts or path.suffix in {".pyc", ".pyo"}:
             continue
         result[rel] = {"sha256": digest(path), "bytes": path.stat().st_size}
     return result
@@ -82,7 +82,7 @@ def main() -> int:
     files = inventory(root)
     errors = validate_paths(root, files)
     if args.write_manifest and not errors:
-        payload = {"package": "beryl-it-benchcraft", "version": "0.1.3", "files": files}
+        payload = {"package": "beryl-it-benchcraft", "version": "0.3.0", "files": files}
         (root / MANIFEST).write_bytes((json.dumps(payload, indent=2) + "\n").encode("utf-8"))
     manifest_path = root / MANIFEST
     if manifest_path.exists() and not args.write_manifest:

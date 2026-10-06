@@ -49,12 +49,27 @@ def main() -> int:
             result = module.mutation_filesystem_support(workspace, lexical_root=workspace)
         finally:
             sys.modules.pop(spec.name, None)
-        supported = result.get("status") == "qualified"
+        status = result.get("status")
+        qualified = status == "qualified"
+        transaction_probe_required = result.get("transaction_probe_required") is True
+        supported = qualified or (status == "preflight_supported" and transaction_probe_required)
+        if supported:
+            code = None
+        elif status == "preflight_supported":
+            code = "mutation_support_status_invalid"
+        else:
+            code = result.get(
+                "reason_code",
+                "filesystem_semantics_unsupported" if status == "unsupported" else "mutation_support_status_unrecognized",
+            )
         emit({
             "format": FORMAT,
             "supported": supported,
             "probe_completed": True,
-            "code": None if supported else result.get("reason_code", "filesystem_semantics_unsupported"),
+            "code": code,
+            "status": status,
+            "qualified": qualified,
+            "transaction_probe_required": transaction_probe_required,
             "adapter": result.get("adapter"),
             "detail": result,
             "source_mutated": False,

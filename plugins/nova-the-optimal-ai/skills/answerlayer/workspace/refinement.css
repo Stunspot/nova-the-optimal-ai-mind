@@ -1,0 +1,19 @@
+body[data-skin=switchyard]{color-scheme:dark;background:repeating-linear-gradient(90deg,#0d2029,#0d2029 90px,#1c374244 91px)}
+body[data-skin=switchyard] header{background:linear-gradient(130deg,#1e3c46,#10232e);border-bottom:4px solid #ccb275;box-shadow:inset 0 1px #d8ffff33}
+body[data-skin=switchyard] .patch-sheet{background:linear-gradient(125deg,#243e45,#132c36);box-shadow:inset 0 2px #cefff02b,0 20px 45px #0006}
+body[data-skin=switchyard] .lane{border-radius:0;box-shadow:inset 0 0 0 4px #122a30}
+body[data-skin=switchyard] .native-baseline{border-left:5px solid #dfb572}
+body[data-skin=strata] .native-baseline{box-shadow:inset 0 1px #dbead529,0 16px 35px #0005}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+body[data-skin=switchyard]{color-scheme:dark}
+body[data-skin=switchyard] :is(.toolbar button,header select){background:#284650;color:#f0e8cd;border-color:#90a69b;box-shadow:3px 3px #061821}
+body[data-skin=switchyard] .ledger-context{color:#bed0c6;border-color:#618785}
+body[data-skin=switchyard] :is(.patch-index,.patch-proof,.evidence-margin .card,.route-lane,.route-lane .card,.route-lane .empty,.empty,.answer-page>.banner){background:#1e3540;color:#f0e8cd;border-color:#688d8e;box-shadow:5px 5px #05171e}
+body[data-skin=switchyard] .patch-index nav button{background:#263f48;color:#f0e8cd}
+body[data-skin=switchyard] .patch-index nav button[aria-current=page]{background:#3d4e42;color:#fff0c4;border-top-color:#eeb77d}
+body[data-skin=switchyard] .before{background:#45372e;color:#f3e6c7;border-color:#ce9b72}
+body[data-skin=switchyard] .after{background:#264438;color:#e8f1d4}
+body[data-skin=switchyard] .toolbar button:first-child{background:#e4b37b;color:#142529}
+
+body[data-skin=strata] .baseline-proof:before{content:"CURRENT ANSWER / T0"}

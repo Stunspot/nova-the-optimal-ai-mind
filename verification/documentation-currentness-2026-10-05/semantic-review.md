@@ -1,0 +1,3 @@
+# In-process documentation review
+
+REVIEW_PASS for the bounded current-guidance repair. Reviewed current edition identities and counts, exact manual install selectors, preserved data paths, optional app launch routes, ordinary-use prerequisites, PDF dependencies and server lifetime, import/export custody, historical changelog separation and scope of verification claims. Install, PDF failure and rollback journeys have an entry point, observable result and recovery route. No independent security audit, fresh-machine behavior or accessibility conformance is implied. Package validation and installation readback remain required before handoff.

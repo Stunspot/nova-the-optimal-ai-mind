@@ -9,6 +9,7 @@ import re
 import sys
 from pathlib import Path
 from typing import Any
+from datetime import date
 
 
 ALLOWED_STATES = {
@@ -24,6 +25,16 @@ BANNED_KEY_FRAGMENTS = {
     "auth_token", "access_token", "secret_key", "full_ssn", "card_number",
 }
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def valid_date(value: Any) -> bool:
+    if not isinstance(value, str) or not DATE_RE.fullmatch(value):
+        return False
+    try:
+        date.fromisoformat(value)
+        return True
+    except ValueError:
+        return False
 
 
 def require(condition: bool, message: str, errors: list[str]) -> None:
@@ -56,10 +67,10 @@ def validate_case(data: Any) -> list[str]:
         errors.append(f"missing required field: {key}")
 
     require(data.get("format") == "privacy-redline/case-v1", "format must be privacy-redline/case-v1", errors)
-    require(data.get("status") in ALLOWED_STATES, "status is not an allowed lifecycle state", errors)
+    require(isinstance(data.get("status"), str) and data["status"] in ALLOWED_STATES, "status is not an allowed lifecycle state", errors)
     require(isinstance(data.get("case_id"), str) and len(data.get("case_id", "")) >= 3, "case_id must be a non-empty identifier", errors)
     require(isinstance(data.get("title"), str) and bool(data.get("title", "").strip()), "title must be non-empty", errors)
-    require(isinstance(data.get("updated_at"), str) and DATE_RE.match(data.get("updated_at", "")) is not None, "updated_at must be YYYY-MM-DD", errors)
+    require(valid_date(data.get("updated_at")), "updated_at must be YYYY-MM-DD", errors)
 
     for key in ("map", "ledger", "pressure"):
         require(isinstance(data.get(key), dict), f"{key} must be an object", errors)
@@ -72,13 +83,17 @@ def validate_case(data: Any) -> list[str]:
             errors.append(f"sensitive field is forbidden in ordinary case records: {path}")
 
     ledger = data.get("ledger") if isinstance(data.get("ledger"), dict) else {}
-    for index, assumption in enumerate(ledger.get("assumptions", [])):
+    assumptions = ledger.get("assumptions", [])
+    require(isinstance(assumptions, list), "ledger.assumptions must be an array", errors)
+    for index, assumption in enumerate(assumptions if isinstance(assumptions, list) else []):
         if not isinstance(assumption, dict):
             errors.append(f"ledger.assumptions[{index}] must be an object")
             continue
-        require(assumption.get("evidence_state") in EVIDENCE_STATES, f"ledger.assumptions[{index}].evidence_state is invalid", errors)
+        require(isinstance(assumption.get("evidence_state"), str) and assumption["evidence_state"] in EVIDENCE_STATES, f"ledger.assumptions[{index}].evidence_state is invalid", errors)
 
-    for index, redline in enumerate(ledger.get("redlines", [])):
+    redlines = ledger.get("redlines", [])
+    require(isinstance(redlines, list), "ledger.redlines must be an array", errors)
+    for index, redline in enumerate(redlines if isinstance(redlines, list) else []):
         if not isinstance(redline, dict):
             errors.append(f"ledger.redlines[{index}] must be an object")
             continue
@@ -99,7 +114,7 @@ def validate_case(data: Any) -> list[str]:
             continue
         for field in ("control_id", "claim", "owner", "observed_at", "environment", "evidence_type", "result", "residual_exposure", "rollback", "next_review"):
             require(field in receipt and receipt.get(field) not in (None, ""), f"receipts[{index}].{field} is required", errors)
-        require(receipt.get("result") in RECEIPT_RESULTS, f"receipts[{index}].result is invalid", errors)
+        require(isinstance(receipt.get("result"), str) and receipt["result"] in RECEIPT_RESULTS, f"receipts[{index}].result is invalid", errors)
 
     return errors
 

@@ -6,7 +6,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 FORMAT = "answerlayer/reality-ledger/v1"
-VERSION = "0.1.2"
+VERSION = "0.2.0"
 STATUSES = {"candidate", "accepted_delta", "rejected_noise", "fuzz_unresolved", "patched", "superseded", "retired"}
 AUTHORITIES = {"model_generated", "machine_validated", "human_reviewed", "human_approved", "executed", "verified"}
 LISTS = ("sources", "candidates", "deltas", "rejections", "fuzz", "patches", "probes", "traps", "watch", "approvals")
@@ -36,16 +36,28 @@ def parse_date(value: str, field: str, errors: list[str]) -> date | None:
 
 def validate(data: dict) -> list[str]:
     errors: list[str] = []
+    if not isinstance(data, dict):
+        return ["Native document must be a JSON object."]
     if data.get("format") != FORMAT:
         errors.append("format: unsupported ledger format")
-    if data.get("product_version") != VERSION:
-        errors.append("product_version: expected 0.1.2")
+    if data.get("product_version") not in ("0.1.2", VERSION):
+        errors.append("product_version: expected 0.1.2 or 0.2.0")
     for key in ("ledger_id", "title", "owner", "scope", "decision_use", "created_at", "updated_at", "baseline", "publication") + LISTS:
         if key not in data:
             errors.append(f"missing: {key}")
+    for key in ("ledger_id", "title", "owner", "scope", "decision_use"):
+        if key in data and (not isinstance(data[key], str) or not data[key]):
+            errors.append(f"{key}: expected nonempty string")
+    for key in ("created_at", "updated_at"):
+        if key in data and not isinstance(data[key], str):
+            errors.append(f"{key}: expected string")
+    collections: dict[str, list] = {}
     for key in LISTS:
-        if key in data and not isinstance(data[key], list):
+        value = data.get(key, [])
+        if not isinstance(value, list):
             errors.append(f"{key}: expected array")
+            value = []
+        collections[key] = value
     baseline = data.get("baseline", {})
     if not isinstance(baseline, dict):
         errors.append("baseline: expected object")
@@ -53,9 +65,18 @@ def validate(data: dict) -> list[str]:
         for key in ("version", "status", "as_of", "text", "authority", "approved_by", "approved_at", "supersedes"):
             if key not in baseline:
                 errors.append(f"baseline: missing {key}")
-        if baseline.get("status") not in {"candidate", "patched", "superseded", "retired"}:
+        if not isinstance(baseline.get("version"), int) or isinstance(baseline.get("version"), bool) or baseline.get("version", 0) < 1:
+            errors.append("baseline.version: expected positive integer")
+        if not isinstance(baseline.get("text"), str):
+            errors.append("baseline.text: expected string")
+        for key in ("approved_by", "approved_at"):
+            if key in baseline and baseline[key] is not None and not isinstance(baseline[key], str):
+                errors.append(f"baseline.{key}: expected string or null")
+        if "supersedes" in baseline and baseline["supersedes"] is not None and (not isinstance(baseline["supersedes"], int) or isinstance(baseline["supersedes"], bool)):
+            errors.append("baseline.supersedes: expected integer or null")
+        if baseline.get("status") not in ("candidate", "patched", "superseded", "retired"):
             errors.append("baseline.status: invalid")
-        if baseline.get("authority") not in AUTHORITIES:
+        if not isinstance(baseline.get("authority"), str) or baseline.get("authority") not in AUTHORITIES:
             errors.append("baseline.authority: invalid")
         parse_date(baseline.get("as_of"), "baseline.as_of", errors)
         if baseline.get("status") == "patched" and baseline.get("authority") != "human_approved":
@@ -63,37 +84,62 @@ def validate(data: dict) -> list[str]:
         if baseline.get("authority") == "human_approved" and not (baseline.get("approved_by") and baseline.get("approved_at")):
             errors.append("baseline: human approval requires approver and date")
     seen: dict[str, str] = {}
-    for collection in LISTS:
-        for index, item in enumerate(data.get(collection, [])):
+    for collection, rows in collections.items():
+        for index, item in enumerate(rows):
             loc = f"{collection}[{index}]"
             if not isinstance(item, dict):
                 errors.append(f"{loc}: expected object")
                 continue
             ident = item.get("id")
-            if not ident:
-                errors.append(f"{loc}: missing id")
+            if not isinstance(ident, str) or not ident:
+                errors.append(f"{loc}: expected nonempty string id")
             elif ident in seen:
                 errors.append(f"{loc}: duplicate id also used by {seen[ident]}")
             else:
                 seen[ident] = loc
-            status = item.get("status")
-            if status not in STATUSES:
+            if not isinstance(item.get("status"), str) or item.get("status") not in STATUSES:
                 errors.append(f"{loc}: invalid status")
-    source_ids = {x.get("id") for x in data.get("sources", []) if isinstance(x, dict)}
+            required = {
+                "candidates": ("claim", "source_ids", "answer_change", "mechanism", "event_date", "publication_date", "effective_date", "threshold_date", "classification", "confidence_basis", "counterfactual", "recheck"),
+                "patches": ("before", "after", "mechanism", "source_ids", "counterfactual", "authority", "approved_by", "approved_at"),
+                "watch": ("condition", "operator", "threshold", "observed", "triggered", "next_review"),
+            }.get(collection, ())
+            for key in required:
+                if key not in item:
+                    errors.append(f"{loc}: missing {key}")
+            if collection == "patches" and "authority" in item and (not isinstance(item["authority"], str) or item["authority"] not in AUTHORITIES):
+                errors.append(f"{loc}.authority: invalid")
+    source_ids = {x.get("id") for x in collections["sources"] if isinstance(x, dict) and isinstance(x.get("id"), str)}
     for collection in ("candidates", "deltas", "patches"):
-        for index, item in enumerate(data.get(collection, [])):
+        for index, item in enumerate(collections[collection]):
             if not isinstance(item, dict):
                 continue
-            for source_id in item.get("source_ids", []):
-                if source_id not in source_ids:
+            references = item.get("source_ids", [])
+            if not isinstance(references, list):
+                errors.append(f"{collection}[{index}].source_ids: expected array")
+                continue
+            for source_id in references:
+                if not isinstance(source_id, str) or source_id not in source_ids:
                     errors.append(f"{collection}[{index}]: unknown source_id {source_id}")
-    patch_ids = {x.get("id") for x in data.get("patches", []) if isinstance(x, dict)}
-    for index, item in enumerate(data.get("approvals", [])):
-        if isinstance(item, dict) and item.get("object_id") and item["object_id"] not in patch_ids:
-            errors.append(f"approvals[{index}]: unknown patch {item['object_id']}")
+    patch_ids = {x.get("id") for x in collections["patches"] if isinstance(x, dict) and isinstance(x.get("id"), str)}
+    for index, item in enumerate(collections["approvals"]):
+        if isinstance(item, dict) and item.get("object_id"):
+            object_id = item["object_id"]
+            if not isinstance(object_id, str) or object_id not in patch_ids:
+                errors.append(f"approvals[{index}]: unknown patch {object_id}")
     publication = data.get("publication", {})
-    if isinstance(publication, dict) and publication.get("status") in {"approved", "published"}:
-        if not (publication.get("approved_by") and publication.get("approved_at") and publication.get("scope")):
+    if not isinstance(publication, dict):
+        errors.append("publication: expected object")
+    else:
+        for key in ("status", "approved_by", "approved_at", "scope"):
+            if key not in publication:
+                errors.append(f"publication: missing {key}")
+        if publication.get("status") not in ("not_authorized", "approved", "published", "retired"):
+            errors.append("publication.status: invalid")
+        for key in ("approved_by", "approved_at", "scope"):
+            if key in publication and publication[key] is not None and not isinstance(publication[key], str):
+                errors.append(f"publication.{key}: expected string or null")
+        if publication.get("status") in ("approved", "published") and not (publication.get("approved_by") and publication.get("approved_at") and publication.get("scope")):
             errors.append("publication: approval requires approver, date, and scope")
     return errors
 

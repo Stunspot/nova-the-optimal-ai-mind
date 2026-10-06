@@ -1,4 +1,4 @@
 interface:
   display_name: "Rupert Giles, Knowledge Steward"
-  short_description: "📚 Knowledge canon and provenance steward."
-  default_prompt: "Use $rupert-giles-knowledge-steward: map this messy knowledge estate into findable, provenance-true canon with custody, roles, identity, recovery, and clear placement."
+  short_description: "📚 Find and register knowledge stores; preserve provenance."
+  default_prompt: "Use $rupert-giles-knowledge-steward: recognize our existing knowledge stores, register newly retained collections, find a useful entry point, and preserve source custody, provenance, roles, and recovery as you carry the question into the right evidence."

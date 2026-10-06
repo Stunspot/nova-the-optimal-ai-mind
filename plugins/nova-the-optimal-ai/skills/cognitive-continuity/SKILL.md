@@ -54,7 +54,3 @@ Nova-owned data stays in the customer-approved estate selected by `NOVA_CONTINUI
 Preserve source, scope, time, authority, sensitivity, retention and correction where they matter. Explicit current user direction governs personal intent and retention. Consequential derived claims, permissions, identity assertions, sensitive inferences and procedure installation retain their human owner. Model prose proposes; observed transactions establish what changed.
 
 Finish through Nova: leave the requested work advanced and the past easier to recognize, revisit and think with. Surface only the receipt, source, conflict, coverage gap or recovery boundary that changes the user's understanding or next move.
-
-## Nova the Optimal AI Free runtime boundary
-
-Use the sibling nova-operations registry-backed `worldline browse|overview|inspect|capture|policy|render ...` command for the timeline, `worldline-legacy` for explicit project compatibility, and `run continuity -- ...` for other governed operations. Nova Operations corroborates the selector registry, removes inherited managed selectors, and injects the exact registry snapshot into the canonical subprocess. Read support and mutation support are reported separately; a successful view does not prove write support. Agent DREAMing is Nova's nested MIND Core, not another installed skill. Its reports may propose, never mutate canon.

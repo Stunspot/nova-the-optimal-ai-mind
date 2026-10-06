@@ -1,0 +1,20 @@
+{
+  "schema": "oracle-reading/table-v1",
+  "id": "rune-example",
+  "revision": 1,
+  "tradition": "runes",
+  "phase": "active",
+  "question": "What quality can I carry into this threshold?",
+  "basis": "illustrative",
+  "results": [
+    {
+      "id": "rune-18",
+      "position": "A quality to carry",
+      "reversed": false
+    }
+  ],
+  "revealed": [
+    "rune-18"
+  ],
+  "focus": null
+}

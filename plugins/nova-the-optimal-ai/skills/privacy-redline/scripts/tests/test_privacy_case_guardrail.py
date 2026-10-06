@@ -47,6 +47,20 @@ class PrivacyCaseGuardrailTests(unittest.TestCase):
         self.assertIn("ledger.assumptions[0].evidence_state is invalid", errors)
 
 
+    def test_malformed_arrays_are_errors_not_crashes(self):
+        for name in ["assumptions","redlines"]:
+            case=self.load_example();case["ledger"][name]=None
+            with self.subTest(name=name):self.assertIn("ledger."+name+" must be an array",validate_case(case))
+
+    def test_malformed_enum_objects_are_errors_not_crashes(self):
+        case=self.load_example();case["status"]={};case["receipts"][0]["result"]=[];case["ledger"]["assumptions"][0]["evidence_state"]={}
+        self.assertGreaterEqual(len(validate_case(case)),3)
+
+    def test_impossible_calendar_date_is_rejected(self):
+        case=self.load_example();case["updated_at"]="2026-99-99"
+        self.assertIn("updated_at must be YYYY-MM-DD",validate_case(case))
+
+
 if __name__ == "__main__":
     unittest.main()
 

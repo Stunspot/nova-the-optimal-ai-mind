@@ -1,68 +1,48 @@
-#!/usr/bin/env python3
-"""Validate the required structure and controlled states of a Beryl IT case."""
-
-from __future__ import annotations
-
-import json
-import sys
+"""Enforce the shipped IT-case schema without adding a runtime dependency."""
 from pathlib import Path
+import json, sys
 
-REQUIRED = {
-    "case_id", "updated_at", "status", "device", "complaint", "custody",
-    "evidence", "hypotheses", "tests", "changes", "sources", "verification", "next_move",
-}
-STATUSES = {
-    "reported", "observed", "measured", "retrieved", "assumed", "hypothesis",
-    "test-planned", "test-run", "supported", "falsified", "confirmed",
-    "change-authorized", "change-applied", "rollback-ready", "verification-passed",
-    "verification-failed", "deferred", "referred",
-}
-DISPOSITIONS = {
-    "verified-resolved", "improved-unresolved", "workaround-only", "awaiting-observation",
-    "awaiting-authority", "referred", "unsafe/incomplete",
-}
+SCHEMA = Path(__file__).resolve().parents[1] / "schemas/it-case.schema.json"
 
+def check(value, spec, location="$"):
+    kind = spec.get("type")
+    matches = {"object": isinstance(value, dict), "array": isinstance(value, list),
+               "string": isinstance(value, str), "boolean": isinstance(value, bool)}
+    if kind and not matches.get(kind, False):
+        raise ValueError(f"{location} must be {kind}")
+    if "enum" in spec and value not in spec["enum"]:
+        raise ValueError(f"{location} has invalid value {value!r}")
+    if isinstance(value, str) and "minLength" in spec and len(value.strip()) < spec["minLength"]:
+        raise ValueError(f"{location} must be a non-empty string")
+    if isinstance(value, dict):
+        missing = [key for key in spec.get("required", []) if key not in value]
+        if missing:
+            raise ValueError(f"{location} missing required keys: {', '.join(missing)}")
+        for key, child in spec.get("properties", {}).items():
+            if key in value:
+                check(value[key], child, f"{location}.{key}")
+    if isinstance(value, list) and "items" in spec:
+        for index, item in enumerate(value):
+            check(item, spec["items"], f"{location}[{index}]")
 
-def fail(message: str) -> None:
-    raise ValueError(message)
+def validate(path):
+    data = json.loads(Path(path).read_text(encoding="utf-8-sig"))
+    check(data, json.loads(SCHEMA.read_text(encoding="utf-8-sig")))
+    if not data["next_move"]["action"]:
+        raise ValueError("$.next_move.action must be populated")
 
-
-def validate(path: Path) -> None:
-    data = json.loads(path.read_text(encoding="utf-8-sig"))
-    if not isinstance(data, dict):
-        fail("top level must be an object")
-    missing = sorted(REQUIRED - data.keys())
-    if missing:
-        fail(f"missing required keys: {', '.join(missing)}")
-    if data["status"] not in STATUSES:
-        fail(f"invalid status: {data['status']}")
-    for key in ("evidence", "hypotheses", "tests", "changes", "sources"):
-        if not isinstance(data[key], list):
-            fail(f"{key} must be an array")
-    verification = data["verification"]
-    if not isinstance(verification, dict):
-        fail("verification must be an object")
-    if verification.get("disposition") not in DISPOSITIONS:
-        fail(f"invalid verification disposition: {verification.get('disposition')}")
-    if not isinstance(verification.get("original_envelope_retested"), bool):
-        fail("verification.original_envelope_retested must be boolean")
-    if not isinstance(data["next_move"], dict) or not data["next_move"].get("action"):
-        fail("next_move.action must be populated")
-
-
-def main() -> int:
+def main():
     if len(sys.argv) != 2:
         print("usage: validate_case_file.py <case.json>", file=sys.stderr)
         return 2
     path = Path(sys.argv[1])
     try:
         validate(path)
-    except (OSError, json.JSONDecodeError, ValueError) as exc:
+    except (OSError, ValueError) as exc:
         print(f"FAIL {path}: {exc}", file=sys.stderr)
         return 1
     print(f"PASS {path}")
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

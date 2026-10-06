@@ -1,6 +1,6 @@
 {
   "package": "beryl-it-benchcraft",
-  "version": "0.1.3",
+  "version": "0.3.0",
   "files": {
     "agents/openai.yaml": {
       "sha256": "19f1692a8f94725ef8d2b29c5517c980b2dabb586acec01fb081d5eff4000208",
@@ -59,8 +59,8 @@
       "bytes": 3468
     },
     "docs/RELEASE-NOTES.md": {
-      "sha256": "467179f9967be8c0e677b18b684378c96c6bee621cbebf04d5c0e2c643f6d96d",
-      "bytes": 3018
+      "sha256": "527db0aa882fc1a18a994b0e7244392f5a2e5a2b250dc04c6efafffa5a9984cf",
+      "bytes": 4352
     },
     "docs/SAFETY-AND-DATA.md": {
       "sha256": "6befa6fcb2e4e238f398fc6bc83342a82ddc17f24198db6f8c636f0e723deb60",
@@ -119,16 +119,16 @@
       "bytes": 2315
     },
     "knowledge/network-architecture.md": {
-      "sha256": "6e25234bfd0af301bc5ab89020bd5e0cd58c2ee25f5169197daca0193301eb94",
-      "bytes": 39916
+      "sha256": "fa0425137994dd8e6808dd6766c7e27e2da395abcaa0ef743179ab140aadd71b",
+      "bytes": 39606
     },
     "knowledge/source-navigation.md": {
       "sha256": "254dc48872608ff7df67f2ee36ab396a8bf92f3f38ee6c6b5b116c453645aea0",
       "bytes": 936
     },
     "knowledge/windows-systems-engineering.md": {
-      "sha256": "747a52d193fd85110616d0848d06fad6be07ab85522e9bc229a49810192fd57f",
-      "bytes": 48810
+      "sha256": "439e36341bb23c1f5f854a153d86732a5a5a661fb64481191e8509ddcae9fa19",
+      "bytes": 48456
     },
     "personas/beryl-it-benchcraft-practitioner.md": {
       "sha256": "14c1a54c32ef41c2c14f4b5cd4da294df387a6e03d6ab25b017b723a74900c9b",
@@ -179,20 +179,24 @@
       "bytes": 1452
     },
     "schemas/it-case.schema.json": {
-      "sha256": "5ffa30ed4ae436387e70acc6b9ab7f57eb5897a83d3e0f4a000030fa2e3f342b",
-      "bytes": 2027
+      "sha256": "178c9982e597c02679f29ab00c042fb65537fc711e028fd156849455ee8f7d28",
+      "bytes": 3062
+    },
+    "scripts/tests/test_release_inventory.py": {
+      "sha256": "15d7a79e23d899bbfb3ab7d69fd0f2ab10f14609c544622e4772717d9edcbb23",
+      "bytes": 1071
     },
     "scripts/validate_case_file.py": {
-      "sha256": "d9188985f6d7a69be0d4dd30f2ab89d415961ab17130e294c14ecdd08c23bd66",
-      "bytes": 2441
+      "sha256": "317959efbfc5ca77008d7928516707a3e8f4c829cf7cda2f26afc3d62a8d1316",
+      "bytes": 2015
     },
     "scripts/validate_release.py": {
-      "sha256": "307903938589ff116121d056d07a8ee27ca1e1789d35bd0d0fd6e1ae77f8d9d4",
-      "bytes": 4111
+      "sha256": "b14a9f080b2f67d73cefae9ac8307f9ba87f9a2452de9d1f8ee0725a0b2df854",
+      "bytes": 4299
     },
     "SKILL.md": {
-      "sha256": "32ffdc802bcde1e7fef0253bbf08526681cf373a926b6854b775560897e149cf",
-      "bytes": 1914
+      "sha256": "0ee9ad98463688ef361964849ef931abf9e543bc8d21d5870fe122d0c1a3d2e3",
+      "bytes": 2627
     }
   }
 }

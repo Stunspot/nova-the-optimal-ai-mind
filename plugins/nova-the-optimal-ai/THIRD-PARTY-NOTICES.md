@@ -1,6 +1,6 @@
 # Component and third-party notices
 
-Nova the Optimal AI Free 3.3.0 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
+Nova the Optimal AI Free 3.8.0 is assembled by Collaborative Dynamics from Collaborative Dynamics and Stunspot capability repositories and maintained construction sources. The product-level split license in `LICENSE.md` covers original Nova Free material and supplies the rights-holder authorization for Collaborative Dynamics-authored components included in this authentic edition. Preserved component licenses continue to apply where they grant separate or broader rights.
 
 ## TestForge
 
@@ -22,9 +22,9 @@ Agent Striving has prior Free MIT distribution. The Beryl operator and reviewer 
 
 ## Same-owner public-edition authorization
 
-Collaborative Dynamics authorizes the exact Nova Free 3.3.0 inclusion of Nova with MIND 0.3.1, Nova Operations, AnswerLayer 0.1.2, Current Intelligence Observatory 0.1.1, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
+Collaborative Dynamics authorizes the exact Nova Free 3.8.0 inclusion of Nova with MIND 0.4.0, Nova Operations, AnswerLayer 0.2.0, Current Intelligence Observatory 0.2.0, Job Application Builder 0.1.2, and Interview Trainer 0.1.2 under `LICENSE.md`.
 
-This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.3.0 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
+This edition-level authorization supersedes narrower distribution labels inherited from those components' earlier construction, subscription, or private-customer contexts only for the bytes included in the authentic Nova Free 3.8.0 distribution. It does not publish their separate source packages, private construction sources, customer materials, or excluded product features.
 
 AnswerLayer and Current Intelligence Observatory carry explicit Nova Free license metadata overlays recorded in `design/source-map.json`. The career pair's source lineage and edition-specific authorization are recorded in the complete plugin under `notices/job-application-builder` and `notices/interview-trainer`, and beside detached skills under the matching `nova-free-rights/component-notices` directories.
 
@@ -38,4 +38,8 @@ Other included Collaborative Dynamics components retain their source-repository 
 
 ## Distribution and publication boundary
 
-The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.3.0 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.
+The included licenses permit public redistribution of the authentic, unmodified Nova Free 3.8.0 product and its supplied standalone skill artifacts when the required rights and provenance files remain attached. License permission does not claim that this repository has been tagged, pushed, released, listed, deployed, announced, or otherwise published.
+
+## Oracle Reading 0.2.0
+
+Oracle Reading is included as its complete maintained skill under its own MIT license, which covers this component and takes precedence over the parent edition material classification. Its license remains at `skills/oracle-reading/LICENSE` in each host binding, with an additional notice copy at `notices/oracle-reading/LICENSE.md`. Source: https://github.com/Stunspot/oracle-reading. Copyright (c) 2026 stunspot / Collaborative Dynamics. The original Selene Astra source persona and astrology source knowledge base are not part of this component.

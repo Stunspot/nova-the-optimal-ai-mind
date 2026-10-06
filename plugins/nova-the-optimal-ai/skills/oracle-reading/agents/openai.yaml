@@ -1,0 +1,4 @@
+interface:
+  display_name: "Oracle Reading"
+  short_description: "🔮 Tarot, astrology, runes, and I Ching readings."
+  default_prompt: "Use $oracle-reading to explore my question through tarot, astrology, runes or the I Ching."

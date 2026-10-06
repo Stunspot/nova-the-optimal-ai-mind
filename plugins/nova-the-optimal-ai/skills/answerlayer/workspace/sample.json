@@ -1,0 +1,116 @@
+{
+  "format": "answerlayer/reality-ledger/v1",
+  "product_version": "0.2.0",
+  "ledger_id": "RL-EXAMPLE-ACCESS",
+  "title": "Synthetic archive-access answer",
+  "owner": "Example research lead",
+  "scope": "Access to one fictional archive export",
+  "decision_use": "Decide whether manual preparation is needed",
+  "created_at": "2026-09-26",
+  "updated_at": "2026-09-26",
+  "baseline": {
+    "version": 1,
+    "status": "candidate",
+    "as_of": "2026-09-20",
+    "text": "The fictional archive export requires a manual request.",
+    "authority": "human_reviewed",
+    "approved_by": null,
+    "approved_at": null,
+    "supersedes": null
+  },
+  "sources": [
+    {
+      "id": "S1",
+      "status": "candidate",
+      "title": "Fictional archive notice",
+      "claim": "A self-service export is proposed for October",
+      "event_date": "2026-09-25",
+      "publication_date": "2026-09-25",
+      "effective_date": "2026-10-01",
+      "authority": "Synthetic supplied notice",
+      "locator": "Example only; no current world claim",
+      "access": "Supplied fixture"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "C1",
+      "status": "candidate",
+      "claim": "A future self-service export may change preparation",
+      "source_ids": [
+        "S1"
+      ],
+      "classification": "watch",
+      "answer_change": "Manual request remains required today; prepare to verify access on effective date",
+      "mechanism": "Access path may change when implemented",
+      "counterfactual": "If access does not launch, manual request remains necessary",
+      "event_date": "2026-09-25",
+      "publication_date": "2026-09-25",
+      "effective_date": "2026-10-01",
+      "threshold_date": "2026-10-01",
+      "confidence_basis": "Synthetic proposed notice; no observed access",
+      "recheck": "2026-10-01"
+    }
+  ],
+  "deltas": [],
+  "rejections": [],
+  "fuzz": [
+    {
+      "id": "F1",
+      "status": "fuzz_unresolved",
+      "claims": [
+        "Notice says October 1",
+        "No observed successful export exists"
+      ],
+      "abstention": "Availability remains unverified",
+      "needed_evidence": "Observed access on/after effective date"
+    }
+  ],
+  "patches": [
+    {
+      "id": "P1",
+      "status": "candidate",
+      "source_ids": [
+        "S1"
+      ],
+      "before": "The fictional archive export requires a manual request.",
+      "after": "The fictional archive export requires a manual request today; verify the proposed self-service option on or after October 1.",
+      "mechanism": "Future effective access change warrants a dated watch caveat, not a present-access claim",
+      "scope": "One access sentence",
+      "authority": "model_generated",
+      "counterfactual": "If the proposed service is delayed, the manual request instruction remains valid",
+      "downstream_decisions": [
+        "Keep manual preparation for the present request"
+      ],
+      "recheck": "2026-10-01",
+      "regression_traps": [
+        "Do not state the future option is already available"
+      ],
+      "approved_by": null,
+      "approved_at": null
+    }
+  ],
+  "probes": [],
+  "traps": [],
+  "watch": [
+    {
+      "id": "W1",
+      "status": "candidate",
+      "threshold": "Observed successful export on or after October 1",
+      "recheck": "2026-10-01",
+      "action": "Revisit P1 with fresh source and operator observation",
+      "condition": "Successful self-service export observed on or after the effective date",
+      "operator": "observed",
+      "observed": "unknown",
+      "triggered": false,
+      "next_review": "2026-10-01"
+    }
+  ],
+  "approvals": [],
+  "publication": {
+    "status": "not_authorized",
+    "approved_by": null,
+    "approved_at": null,
+    "scope": null
+  }
+}

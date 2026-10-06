@@ -653,7 +653,8 @@ def allowed_sensitivity(value: str, include_restricted: bool) -> bool:
 
 
 def search_items(connection: sqlite3.Connection, query: str, person_id: str | None,
-                 include_history: bool, include_restricted: bool, limit: int) -> list[dict[str, Any]]:
+                 include_history: bool, include_restricted: bool, limit: int,
+                 restrict_to_query: bool = True) -> list[dict[str, Any]]:
     if limit < 1 or limit > 200:
         raise DunbarError("limit must be between 1 and 200")
     compiled, _terms = compile_query(query)
@@ -680,7 +681,8 @@ def search_items(connection: sqlite3.Connection, query: str, person_id: str | No
     if not include_restricted:
         filters.append("sensitivity != 'restricted'")
         filters.append("person_id NOT IN (SELECT person_id FROM people WHERE sensitivity = 'restricted')")
-    if candidate_ids:
+    filter_candidates = bool(candidate_ids) and restrict_to_query
+    if filter_candidates:
         placeholders = ",".join("?" for _ in candidate_ids)
         filters.append(f"item_id IN ({placeholders})")
         params2.extend(candidate_ids)
@@ -690,7 +692,7 @@ def search_items(connection: sqlite3.Connection, query: str, person_id: str | No
     ).fetchall()
     if not rows and compiled:
         fallback_filters = [item for item in filters if not item.startswith("item_id IN")]
-        fallback_params = params2[: len(params2) - len(candidate_ids)]
+        fallback_params = params2[: len(params2) - len(candidate_ids)] if filter_candidates else params2
         fallback_where = " WHERE " + " AND ".join(fallback_filters) if fallback_filters else ""
         rows = connection.execute(
             f"SELECT item_id, importance, recorded_at, status FROM items{fallback_where} ORDER BY importance DESC, recorded_at DESC LIMIT ?",
@@ -726,7 +728,8 @@ def recall(connection: sqlite3.Connection, name: str, context: str, level: str,
     person_packet = person_projection(person_row(connection, person_id), restricted)
     context_redacted = person_packet["context_redacted"]
     history = level == "dossier"
-    items = [] if context_redacted else search_items(connection, context, person_id, history, restricted, limits[level])
+    items = [] if context_redacted else search_items(connection, context, person_id, history, restricted, limits[level],
+                                                        restrict_to_query=level != "dossier")
     if level == "cue":
         categories: set[str] = set()
         diverse: list[dict[str, Any]] = []

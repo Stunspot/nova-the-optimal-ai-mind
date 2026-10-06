@@ -263,6 +263,8 @@ def sync_index(
     chunk_chars: int,
     overlap_chars: int,
 ) -> dict[str, object]:
+    # Validate even an empty corpus before creating or modifying the index.
+    chunk_text("", chunk_chars, overlap_chars)
     corpus = corpus.resolve(strict=True)
     db_path.parent.mkdir(parents=True, exist_ok=True)
     sources, skipped = discover_sources(corpus, extensions, max_file_bytes)
@@ -272,6 +274,8 @@ def sync_index(
         prior_root = metadata.get("corpus_root")
         if prior_root and Path(prior_root) != corpus:
             raise ValueError(f"Index belongs to a different corpus: {prior_root}")
+        rechunk = (metadata.get("chunk_chars") != str(chunk_chars)
+                   or metadata.get("overlap_chars") != str(overlap_chars))
         set_metadata(connection, "corpus_root", str(corpus))
         set_metadata(connection, "extensions", json.dumps(sorted(extensions)))
         set_metadata(connection, "max_file_bytes", str(max_file_bytes))
@@ -285,7 +289,7 @@ def sync_index(
         for source in sources:
             seen.add(source.relative_path)
             previous = existing.get(source.relative_path)
-            if previous and previous["sha256"] == source.sha256:
+            if previous and previous["sha256"] == source.sha256 and not rechunk:
                 unchanged += 1
                 continue
             if previous:
@@ -621,7 +625,14 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def configure_stdio() -> None:
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
+
+
 def main(argv: list[str] | None = None) -> int:
+    configure_stdio()
     args = build_parser().parse_args(argv)
     try:
         if args.command == "index":

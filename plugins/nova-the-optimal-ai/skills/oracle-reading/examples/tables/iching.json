@@ -1,0 +1,20 @@
+{
+  "schema": "oracle-reading/table-v1",
+  "id": "responsibility-example",
+  "revision": 1,
+  "tradition": "iching",
+  "phase": "active",
+  "question": "How can I meet more responsibility at work?",
+  "basis": "user-supplied",
+  "lines": [
+    6,
+    7,
+    8,
+    9,
+    7,
+    8
+  ],
+  "showChanges": false,
+  "showRelated": false,
+  "focus": "primary"
+}
