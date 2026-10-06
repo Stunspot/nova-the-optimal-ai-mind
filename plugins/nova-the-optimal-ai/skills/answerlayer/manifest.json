@@ -13,7 +13,7 @@
     "dependencies": []
   },
   "publication": "manual_only",
-  "license": "Nova Free 3.8.0 public split license; see the containing product LICENSE.md",
+  "license": "Nova Free 3.8.1 public split license; see the containing product LICENSE.md",
   "visual_workspace": "workspace/host.py",
-  "rights_status": "public-inclusion-authorized-for-nova-free-3.8.0"
+  "rights_status": "public-inclusion-authorized-for-nova-free-3.8.1"
 }

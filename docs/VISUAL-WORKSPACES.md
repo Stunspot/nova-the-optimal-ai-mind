@@ -1,6 +1,6 @@
 # Open the native workspaces
 
-Nova Free 3.8.0 includes seven optional workspaces attached to existing capability owners. They show real supplied artifacts, not live connected systems. Ordinary Nova conversation requires no workspace or persistent estate. Extract or install the complete edition before using a launcher; keep native folders together. Launcher paths are relative to the plugin root: `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
+Nova Free 3.8.1 includes seven optional workspaces attached to existing capability owners. They show real supplied artifacts, not live connected systems. Ordinary Nova conversation requires no workspace or persistent estate. Extract or install the complete edition before using a launcher; keep native folders together. Launcher paths are relative to the plugin root: `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
 
 ## Choose the owner and starting artifact
 

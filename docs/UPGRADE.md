@@ -1,4 +1,8 @@
-# Upgrade and removal
+# Upgrade to Free 3.8.1
+
+Install the complete 3.8.1 edition using your existing host route. The Observatory gains optional OSINT setup and report attachment; [follow the setup guide](OSINT.md) to enable external tools. Existing owner records keep their formats. Preserve your prior package for rollback and check a fresh Nova invocation.
+
+## Earlier upgrade paths
 
 ## Upgrade from Free 3.7.0
 

@@ -1,64 +1,49 @@
 {
   "authored_files": [
     {
-      "bytes": 7926,
+      "bytes": 7981,
       "path": "README.md",
-      "sha256": "cf6d54486756a704ad5337fd15494ca0e4c80dd7230068941eafd394781e7ff3"
+      "sha256": "9a42f198183dbed5b0d5b8cf92226f0d52ed13a73f0be8abb3aed39640227507"
     },
     {
-      "bytes": 6494,
+      "bytes": 6859,
       "path": "START-HERE.md",
-      "sha256": "d210ccd854f60c018476fa8cce5ebc61e516446987894e2d08ff99988900f65e"
+      "sha256": "ce6e27cda3668404f7e1a9dd9770d4a3e2509d56bdb81f592e2c1e81848d1441"
     },
     {
-      "bytes": 19412,
+      "bytes": 19742,
       "path": "RELEASE-NOTES.md",
-      "sha256": "3bd5ac2da40e9b9e0783dd7042be1f123404bc90f313fce4b26abcd336b9db6a"
+      "sha256": "f80165e5041a15c96ea5fd95a8242c5e92002cebd37b668535277e1d6f898751"
     },
     {
-      "bytes": 2033,
-      "path": "NOTICE.md",
-      "sha256": "40b8299b053d1463d8fd9554dc2dcb6d3d896f98d9fef768420646364daebbe2"
-    },
-    {
-      "bytes": 2107,
-      "path": "SECURITY.md",
-      "sha256": "fc05183088ef102983f470ee264e06620ce14cb52441c0ffd0f28cdb89a8306a"
-    },
-    {
-      "bytes": 1592,
-      "path": "SUPPORT.md",
-      "sha256": "d2eb1f66f6b8a5de9b59e2df41c0b46f339bde97af621a0bd8b6f78810a4fcc4"
-    },
-    {
-      "bytes": 4444,
+      "bytes": 4776,
       "path": "docs/CAPABILITY-GUIDE.md",
-      "sha256": "c5e837acfed96b4bf4fcc504d7d18e470a78d11a0721737c20d7a41de6a2f17e"
+      "sha256": "a27f018676aaf4571e2cdaf1ef38677e8f111444fc9f714388de21ba1812f3b8"
     },
     {
-      "bytes": 1071,
-      "path": "docs/HOST-MATRIX.md",
-      "sha256": "8bc484cbcfb30eb6088e87f17eebad64b34e0f132dfd86ead036abb9eadf9a9b"
-    },
-    {
-      "bytes": 4073,
+      "bytes": 4451,
       "path": "docs/UPGRADE.md",
-      "sha256": "5efd6aa02654fbdb95181ca6262aebd43342e58ac00e6c1fffd300870cee60ef"
+      "sha256": "632111dcf8f2a50eb0214e3569284e0edcf562198c7daf10bb88b758554d0f4e"
     },
     {
-      "bytes": 2421,
+      "bytes": 2451,
       "path": "docs/VERIFICATION.md",
-      "sha256": "020875e36028ec9501b658d8acec7072243ed3b4663c9d07e24234f789aafa94"
+      "sha256": "0e1206bc92ce93213e217d27c6708ef7df347d41fff8815d36260cb545a61e69"
     },
     {
-      "bytes": 2552,
-      "path": "docs/MAINTAINER-GUIDE.md",
-      "sha256": "c748e6d270a0ada3f61ccde252e73c4b27d480f0bc29dc11a2d07cfe9dd2253c"
+      "bytes": 14049,
+      "path": "docs/VISUAL-WORKSPACES.md",
+      "sha256": "d95313d200d04dc5c791b748fb31b75bcb279045787caf411f6ec61b5894417a"
     },
     {
-      "bytes": 13106,
-      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.0 Extra.md",
-      "sha256": "d0f8c834857b7bf86e95c5e005df58bdc05a2070ba85eba03679d9309fa92128"
+      "bytes": 3747,
+      "path": "docs/OSINT.md",
+      "sha256": "6c5d75bf34e8595e1d13f537d62415892c8ae4cd00d4a5abf5825c8a5cbbfb3d"
+    },
+    {
+      "bytes": 13590,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.1 Extra.md",
+      "sha256": "f9638b541b92eaf8444a3013a81433ad9c2bea7a47b5abcd151341668a987037"
     }
   ],
   "authoring": {
@@ -66,41 +51,36 @@
     "capability": "hesperos-documentation",
     "capability_entrypoint_sha256": "c6622d90a907edc95e93b868e2481f835bf3ddb3f21b801a3699042a0e524cde",
     "mode": "in-process",
-    "run_id": "nova-current-docs-20261005-free"
+    "run_id": "nova-osint-3.8.1-20261006"
   },
   "authoring_response": {
-    "bytes": 540,
-    "path": "verification/documentation-currentness-2026-10-05/authoring-response.txt",
-    "sha256": "844d3c33041c166809f8bf2b9ca82fb1490fafbac0c6ca8eac122187fe1de414"
+    "bytes": 816,
+    "path": "verification/osint-release-20261006/authoring-response.md",
+    "sha256": "3d3ce343205f78fc44b0e0348927d7406a85cafcdf09cc681257c536a550a4e6"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-06T01:36:16+00:00",
-  "documentation_fingerprint": "2c2ab398a3f366ea5ce0180a8060c391a4111d143be67dab918caedacce8c8d2",
+  "created_at": "2026-10-06T16:53:52+00:00",
+  "documentation_fingerprint": "2ae9f69f579f56edb78ebe5a6f8488c363c4333462037d9be7ba611a2e31ba0e",
   "documentation_manifest": {
-    "bytes": 633,
+    "bytes": 598,
     "path": "documentation-manifest.json",
-    "sha256": "9c9acd2d49c1ca55d6c236a180418d8e1bbbb6055f1d48a99e6d1d304bd868f7"
+    "sha256": "e6738496f995f81dac97c544f8592fb8eec515c7e2ba6707300d8cceed77db80"
   },
   "evidence_packet": {
-    "bytes": 1566,
-    "path": "verification/documentation-currentness-2026-10-05/evidence-packet.md",
-    "sha256": "d12bf9098e502bb4a7204cc42e5ba3d229c951890d7e5cdb90049013b51e22fe"
+    "bytes": 848,
+    "path": "verification/osint-release-20261006/evidence-packet.json",
+    "sha256": "b1488c3ebdbb754e0dca17a193650b1cafecfc7c23cfdb51e801c4104bbe31b2"
   },
   "execution_evidence": [
     {
-      "bytes": 647,
-      "path": "verification/documentation-currentness-2026-10-05/semantic-review.md",
-      "sha256": "db326e23018b7117dbd0ca470b6601f6d3df8920d0db286afcf3f0d9e8cce0e0"
-    },
-    {
-      "bytes": 540,
-      "path": "verification/documentation-currentness-2026-10-05/authoring-response.txt",
-      "sha256": "844d3c33041c166809f8bf2b9ca82fb1490fafbac0c6ca8eac122187fe1de414"
+      "bytes": 816,
+      "path": "verification/osint-release-20261006/authoring-response.md",
+      "sha256": "3d3ce343205f78fc44b0e0348927d7406a85cafcdf09cc681257c536a550a4e6"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",
   "product": {
     "slug": "nova-the-optimal-ai-mind",
-    "version": "3.8.0"
+    "version": "3.8.1"
   }
 }

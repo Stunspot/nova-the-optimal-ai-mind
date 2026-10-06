@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-source-map/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "3.8.0",
+  "product_version": "3.8.1",
   "records": [
     {
       "id": "nova",
@@ -685,7 +685,7 @@
       "source_repository": "https://github.com/Stunspot/current-intelligence-observatory",
       "source_commit": "working-tree-cutoff-see-current_visual_refresh",
       "source_path": "E:/Github/current-intelligence-observatory/source/current-intelligence-observatory",
-      "source_version": "0.2.0",
+      "source_version": "0.3.0",
       "selection": [
         "README.md",
         "SKILL.md",
@@ -729,6 +729,8 @@
         "examples/harbor-lantern/recovery-checkpoint.md",
         "fallbacks/degraded-capability.md",
         "fallbacks/universal-copy-paste-workflow.md",
+        "knowledge/osint-setup.md",
+        "knowledge/osint-tools.md",
         "knowledge/pattern-quarry.md",
         "knowledge/routing-and-state.md",
         "knowledge/source-navigation.md",
@@ -757,8 +759,28 @@
         "references/omnara/tooling-cost-and-security.md",
         "schemas/observatory-case.schema.json",
         "scripts/observatory_guardrail.py",
+        "scripts/osint-runtime/THIRD-PARTY-NOTICES.md",
+        "scripts/osint-runtime/config/theharvester/api-keys.yaml",
+        "scripts/osint-runtime/config/theharvester/proxies.yaml",
+        "scripts/osint-runtime/data/harvester-sources.json",
+        "scripts/osint-runtime/data/maigret-requirements.lock",
+        "scripts/osint-runtime/data/maigret-sites.json",
+        "scripts/osint-runtime/data/shodan-requirements.lock",
+        "scripts/osint-runtime/data/spiderfoot-report-template.html",
+        "scripts/osint-runtime/data/spiderfoot-requirements.lock",
+        "scripts/osint-runtime/drivers/harvester.py",
+        "scripts/osint-runtime/drivers/shodan_query.py",
+        "scripts/osint-runtime/drivers/spiderfoot.py",
+        "scripts/osint-runtime/licenses/maigret/LICENSE",
+        "scripts/osint-runtime/licenses/theharvester/LICENSE",
+        "scripts/osint-runtime/osint.py",
+        "scripts/osint-runtime/registry.json",
+        "scripts/osint-sources.json",
+        "scripts/osint_bridge.py",
         "scripts/self_check.py",
+        "scripts/setup_osint.py",
         "scripts/tests/test_observatory_guardrail.py",
+        "scripts/tests/test_osint_bridge.py",
         "workspace/DESIGN.md",
         "workspace/Open.cmd",
         "workspace/Open.command",
@@ -773,8 +795,8 @@
         "manifest.json"
       ],
       "source_state": "owner_authorized_working_tree_cutoff",
-      "source_file_count": 81,
-      "source_tree_sha256": "e422baf429825661d9fb89b8cdde888bcedbf571572b37f3289a2258b4106f45",
+      "source_file_count": 103,
+      "source_tree_sha256": "41db67664890b614d21018b952b406647d62d971be754dea0b61d64e367bfe4f",
       "current_visual_refresh": {
         "id": "current-intelligence-observatory",
         "group": "visual",
@@ -792,8 +814,11 @@
         "source_state": "owner_authorized_working_tree_cutoff",
         "source_tree_sha256": "81efcfe191d177213a95e3584f125b39965a47ec4076e45f6b28fb183956c9d8"
       },
-      "current_edition_identity": "Free 3.7.0 public inclusion metadata; current maintained owner closure with manifest-only rights overlay; historical coordinates retained.",
-      "current_update": "2026-10-05 verified maintained owner closure; source/state/persistence checks and rendered evidence retained in coordinated repair batch"
+      "current_edition_identity": "Free 3.8.1 public inclusion metadata; Observatory 0.3.0 complete owner closure with manifest-only rights overlay",
+      "current_update": "2026-10-06 optional OSINT installer and case bridge",
+      "source_lineage": {
+        "current_update": "2026-10-06 complete Observatory 0.3.0 OSINT setup and case bridge from canonical maintained source; Free public rights overlay retained."
+      }
     },
     {
       "id": "corkboard",

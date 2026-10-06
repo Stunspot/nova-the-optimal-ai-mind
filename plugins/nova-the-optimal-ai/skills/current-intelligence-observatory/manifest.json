@@ -1,7 +1,7 @@
 {
   "name": "current-intelligence-observatory",
   "product_name": "Current Intelligence Observatory",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "category": "Evidence-Preserving Current Intelligence Workbench",
   "format": "cd-augment-skill/v1",
   "entrypoint": "SKILL.md",
@@ -10,12 +10,15 @@
     "codex",
     "claude"
   ],
-  "runtime_reference_files": 21,
+  "runtime_reference_files": 23,
   "third_party_runtime_dependencies": [],
   "license_status": "not-supplied-for-product",
   "live_host_verification": false,
   "workspace_entrypoint": "workspace/index.html",
   "workspace_mode": "portable_read_only_native_case",
-  "license": "Nova Free 3.8.0 public split license; see the containing product LICENSE.md",
-  "rights_status": "public-inclusion-authorized-for-nova-free-3.8.0"
+  "optional_osint_bridge": "scripts/osint_bridge.py",
+  "optional_osint_setup": "scripts/setup_osint.py",
+  "optional_osint_setup_guide": "knowledge/osint-setup.md",
+  "license": "Nova Free 3.8.1 public split license; see the containing product LICENSE.md",
+  "rights_status": "public-inclusion-authorized-for-nova-free-3.8.1"
 }

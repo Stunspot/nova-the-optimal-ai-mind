@@ -1,4 +1,7 @@
-# Nova Free release notes
+# Nova the Optimal AI Free 3.8.1
+
+Adds Current Intelligence Observatory 0.3.0 with optional OSINT setup, bounded queries and evidence-preserving report attachment. Tools install separately; Shodan requires your own key.
+
 
 ## Free 3.8.0 — Oracle Reading
 

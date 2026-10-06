@@ -1,0 +1,17 @@
+{
+  "reader": "Nova customer with terminal-capable host or local computer",
+  "goal": "Discover, install and check the optional OSINT tools; retain unverified reports with the native case",
+  "authority": "User release instruction: Free 3.8.1; Emergent 1.11.0 retained before Patreon update",
+  "source_truth": [
+    "canonical Observatory 0.3.0 setup script and bridge",
+    "fresh isolated four-tool setup",
+    "offline SpiderFoot native fixture reports",
+    "existing edition host structure"
+  ],
+  "limits": [
+    "No live provider investigation",
+    "Shodan credentials not supplied",
+    "macOS/Linux structure portable but live runtime untested"
+  ],
+  "tested_journey": "Prerequisites to dry-run, install, discover, synthetic report and recovery receipt; preserving independently managed homes and API configuration."
+}

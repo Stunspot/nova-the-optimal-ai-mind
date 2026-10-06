@@ -1,20 +1,17 @@
 {
   "format": "cd-customer-documentation/v1",
   "product": "nova-the-optimal-ai-mind",
-  "version": "3.8.0",
-  "scope": "Materially revised current install, upgrade, capability navigation, optional app prerequisites and recovery journeys; historical release facts retained.",
+  "version": "3.8.1",
+  "scope": "Materially revised optional OSINT installation, first run, report preservation and recovery; prior unchanged documentation retains baseline authorship custody.",
   "customer_docs": [
     "README.md",
     "START-HERE.md",
     "RELEASE-NOTES.md",
-    "NOTICE.md",
-    "SECURITY.md",
-    "SUPPORT.md",
     "docs/CAPABILITY-GUIDE.md",
-    "docs/HOST-MATRIX.md",
     "docs/UPGRADE.md",
     "docs/VERIFICATION.md",
-    "docs/MAINTAINER-GUIDE.md",
-    "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.0 Extra.md"
+    "docs/VISUAL-WORKSPACES.md",
+    "docs/OSINT.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.1 Extra.md"
   ]
 }

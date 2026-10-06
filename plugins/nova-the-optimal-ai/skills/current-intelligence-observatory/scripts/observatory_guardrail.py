@@ -70,8 +70,12 @@ def parse_time(value: Any, field: str, errors: list[str], item_id: str) -> datet
 
 def canonical_url(url: str) -> str:
     parts = urlsplit(url.strip())
+    if parts.scheme.lower() == "file":
+        if parts.netloc.lower() not in {"", "localhost"} or not parts.path.startswith("/") or parts.query:
+            raise ValueError("Local file capture requires an absolute file URI without query or remote host")
+        return urlunsplit(("file", "", parts.path, "", ""))
     if parts.scheme.lower() not in {"http", "https"} or not parts.netloc:
-        raise ValueError("URL must use http or https and include a host")
+        raise ValueError("Capture URL must use http, https, or an absolute local file URI")
     host = parts.hostname.lower() if parts.hostname else ""
     port = parts.port
     default_port = (parts.scheme.lower() == "http" and port == 80) or (parts.scheme.lower() == "https" and port == 443)

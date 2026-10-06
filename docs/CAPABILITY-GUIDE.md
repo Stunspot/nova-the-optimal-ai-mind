@@ -33,3 +33,7 @@ A new customer's catalog is empty. Choose an existing catalog path when resuming
 ## Oracle Reading
 
 Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Oracle Reading receives the question conversationally, casts with its included tools and lays symbols beside the conversation when a visual view helps. The AI conducts the interpretation; the table supports shared attention. Astrology interpretation uses supplied or verified chart data.
+
+## Optional OSINT collection
+
+The Observatory includes a portable installer and case bridge for Maigret, theHarvester, Shodan and the bounded SpiderFoot domain profile. Ask Nova to set up the optional OSINT tools. See [OSINT setup](OSINT.md) for prerequisites, first-run checks and recovery.
