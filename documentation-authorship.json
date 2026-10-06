@@ -56,9 +56,14 @@
       "sha256": "c748e6d270a0ada3f61ccde252e73c4b27d480f0bc29dc11a2d07cfe9dd2253c"
     },
     {
-      "bytes": 13106,
+      "bytes": 14295,
       "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.0 Extra.md",
-      "sha256": "d0f8c834857b7bf86e95c5e005df58bdc05a2070ba85eba03679d9309fa92128"
+      "sha256": "033fec8b253d0ddadf2f27a434bca57baf52b3e98e4b1799106d170540b5e975"
+    },
+    {
+      "bytes": 2127,
+      "path": "delivery-sidecars/Nova Free v3.8.0 Split Download.md",
+      "sha256": "131bb159d62aa4dbe8b3e57d5f0e5d27433f7e83458926dd346a0100e933f83f"
     }
   ],
   "authoring": {
@@ -69,33 +74,33 @@
     "run_id": "nova-current-docs-20261005-free"
   },
   "authoring_response": {
-    "bytes": 540,
+    "bytes": 593,
     "path": "verification/documentation-currentness-2026-10-05/authoring-response.txt",
-    "sha256": "844d3c33041c166809f8bf2b9ca82fb1490fafbac0c6ca8eac122187fe1de414"
+    "sha256": "4386b444df03c1d41ee7667d9e000fe91ae8de086a8091736fb1d70a6460b62b"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-06T01:36:16+00:00",
-  "documentation_fingerprint": "2c2ab398a3f366ea5ce0180a8060c391a4111d143be67dab918caedacce8c8d2",
+  "created_at": "2026-10-06T03:34:00+00:00",
+  "documentation_fingerprint": "ebcb7c48be51aae5e844a70e5042a9ccfde224145d94c06764b27b045b58f440",
   "documentation_manifest": {
-    "bytes": 633,
+    "bytes": 681,
     "path": "documentation-manifest.json",
-    "sha256": "9c9acd2d49c1ca55d6c236a180418d8e1bbbb6055f1d48a99e6d1d304bd868f7"
+    "sha256": "0be4428c2140e81b6a7a6376adad9f4da6f800b3c6ed6cf748c173199341ac0f"
   },
   "evidence_packet": {
-    "bytes": 1566,
+    "bytes": 2462,
     "path": "verification/documentation-currentness-2026-10-05/evidence-packet.md",
-    "sha256": "d12bf9098e502bb4a7204cc42e5ba3d229c951890d7e5cdb90049013b51e22fe"
+    "sha256": "ca489adeba636e221bcd912bb872cac5eb6c10ffb648c3a17ff1f67afd723627"
   },
   "execution_evidence": [
     {
-      "bytes": 647,
+      "bytes": 1235,
       "path": "verification/documentation-currentness-2026-10-05/semantic-review.md",
-      "sha256": "db326e23018b7117dbd0ca470b6601f6d3df8920d0db286afcf3f0d9e8cce0e0"
+      "sha256": "6f713b4e948d0274b48ec6f6a5c7cdae6b8813f577c7ededae7356a1d6037231"
     },
     {
-      "bytes": 540,
+      "bytes": 593,
       "path": "verification/documentation-currentness-2026-10-05/authoring-response.txt",
-      "sha256": "844d3c33041c166809f8bf2b9ca82fb1490fafbac0c6ca8eac122187fe1de414"
+      "sha256": "4386b444df03c1d41ee7667d9e000fe91ae8de086a8091736fb1d70a6460b62b"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",

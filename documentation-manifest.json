@@ -2,7 +2,7 @@
   "format": "cd-customer-documentation/v1",
   "product": "nova-the-optimal-ai-mind",
   "version": "3.8.0",
-  "scope": "Materially revised current install, upgrade, capability navigation, optional app prerequisites and recovery journeys; historical release facts retained.",
+  "scope": "Current edition guidance plus the verified split-download and reassembly journey; other accepted documentation and product payload retained.",
   "customer_docs": [
     "README.md",
     "START-HERE.md",
@@ -15,6 +15,7 @@
     "docs/UPGRADE.md",
     "docs/VERIFICATION.md",
     "docs/MAINTAINER-GUIDE.md",
-    "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.0 Extra.md"
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.0 Extra.md",
+    "delivery-sidecars/Nova Free v3.8.0 Split Download.md"
   ]
 }
