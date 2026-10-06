@@ -1,49 +1,49 @@
 {
   "authored_files": [
     {
-      "bytes": 7981,
+      "bytes": 7926,
       "path": "README.md",
-      "sha256": "9a42f198183dbed5b0d5b8cf92226f0d52ed13a73f0be8abb3aed39640227507"
+      "sha256": "4e97cc82e1ddb28092f8708c826a57a302a6a8ea39ad7efe4af06f0619aa69c7"
     },
     {
-      "bytes": 6859,
+      "bytes": 6792,
       "path": "START-HERE.md",
-      "sha256": "ce6e27cda3668404f7e1a9dd9770d4a3e2509d56bdb81f592e2c1e81848d1441"
+      "sha256": "d1d26a68cd720fbda9bad4babaaaf85dd7f44410681cd87687bf990158b5fa3d"
     },
     {
-      "bytes": 19742,
+      "bytes": 19607,
       "path": "RELEASE-NOTES.md",
-      "sha256": "f80165e5041a15c96ea5fd95a8242c5e92002cebd37b668535277e1d6f898751"
+      "sha256": "65f75de1d48e832c167bbbb3dfb4ea6e6334edb10162b8a61f586ea3146c03b0"
     },
     {
-      "bytes": 4776,
+      "bytes": 4737,
       "path": "docs/CAPABILITY-GUIDE.md",
-      "sha256": "a27f018676aaf4571e2cdaf1ef38677e8f111444fc9f714388de21ba1812f3b8"
+      "sha256": "efb90515d298d61b0dd182bd4fd340f1902fb72ac290c6970b6dc7affb702739"
     },
     {
-      "bytes": 4451,
+      "bytes": 4415,
       "path": "docs/UPGRADE.md",
-      "sha256": "632111dcf8f2a50eb0214e3569284e0edcf562198c7daf10bb88b758554d0f4e"
+      "sha256": "fdf3876c56ae80373b055ddce777b70b2fb3a463f987d60efff7e50caef047c2"
     },
     {
-      "bytes": 2451,
+      "bytes": 2421,
       "path": "docs/VERIFICATION.md",
-      "sha256": "0e1206bc92ce93213e217d27c6708ef7df347d41fff8815d36260cb545a61e69"
+      "sha256": "3793972569fc69d16757ffbf09742943e752fd3ed31076863538604dd79ff5eb"
     },
     {
-      "bytes": 14049,
+      "bytes": 13942,
       "path": "docs/VISUAL-WORKSPACES.md",
-      "sha256": "d95313d200d04dc5c791b748fb31b75bcb279045787caf411f6ec61b5894417a"
+      "sha256": "2894b7cabba142a1f66d036d269d9a2905bcb3a8913887aaa991671359c1c908"
     },
     {
-      "bytes": 3747,
+      "bytes": 3704,
       "path": "docs/OSINT.md",
-      "sha256": "6c5d75bf34e8595e1d13f537d62415892c8ae4cd00d4a5abf5825c8a5cbbfb3d"
+      "sha256": "b3a33d35eba9e47e753d1a36337b5dcbff171cf9bfe86abdde5933d7117ab8e0"
     },
     {
-      "bytes": 13590,
+      "bytes": 13501,
       "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.1 Extra.md",
-      "sha256": "f9638b541b92eaf8444a3013a81433ad9c2bea7a47b5abcd151341668a987037"
+      "sha256": "55f13e89d5b35af5ead7b1e1b0dc8ed1cad5731ebd09ea54b169b5311383d0ec"
     }
   ],
   "authoring": {
@@ -54,17 +54,17 @@
     "run_id": "nova-osint-3.8.1-20261006"
   },
   "authoring_response": {
-    "bytes": 816,
+    "bytes": 807,
     "path": "verification/osint-release-20261006/authoring-response.md",
-    "sha256": "3d3ce343205f78fc44b0e0348927d7406a85cafcdf09cc681257c536a550a4e6"
+    "sha256": "8cd418adbbfc143bc76912312c43038ad135ffbe43e47c7752d485ad3e71c448"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-06T16:53:52+00:00",
-  "documentation_fingerprint": "2ae9f69f579f56edb78ebe5a6f8488c363c4333462037d9be7ba611a2e31ba0e",
+  "created_at": "2026-10-06T17:06:29+00:00",
+  "documentation_fingerprint": "b9970c82b9c556540bbf00a72905986210a90c24950e929650a2e74f01268e21",
   "documentation_manifest": {
-    "bytes": 598,
+    "bytes": 581,
     "path": "documentation-manifest.json",
-    "sha256": "e6738496f995f81dac97c544f8592fb8eec515c7e2ba6707300d8cceed77db80"
+    "sha256": "33a011f0dfba4142930abee08406f1eb291d84eb4ed30720c747717bd08c2e3a"
   },
   "evidence_packet": {
     "bytes": 848,
@@ -73,9 +73,9 @@
   },
   "execution_evidence": [
     {
-      "bytes": 816,
+      "bytes": 807,
       "path": "verification/osint-release-20261006/authoring-response.md",
-      "sha256": "3d3ce343205f78fc44b0e0348927d7406a85cafcdf09cc681257c536a550a4e6"
+      "sha256": "8cd418adbbfc143bc76912312c43038ad135ffbe43e47c7752d485ad3e71c448"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",
