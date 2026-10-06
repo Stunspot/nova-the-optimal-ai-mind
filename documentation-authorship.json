@@ -61,9 +61,9 @@
       "sha256": "033fec8b253d0ddadf2f27a434bca57baf52b3e98e4b1799106d170540b5e975"
     },
     {
-      "bytes": 2127,
+      "bytes": 2090,
       "path": "delivery-sidecars/Nova Free v3.8.0 Split Download.md",
-      "sha256": "131bb159d62aa4dbe8b3e57d5f0e5d27433f7e83458926dd346a0100e933f83f"
+      "sha256": "bc512b0521636e39367360aaef757749763fec2f0524274271c854a7acd5a8d5"
     }
   ],
   "authoring": {
@@ -76,11 +76,11 @@
   "authoring_response": {
     "bytes": 593,
     "path": "verification/documentation-currentness-2026-10-05/authoring-response.txt",
-    "sha256": "4386b444df03c1d41ee7667d9e000fe91ae8de086a8091736fb1d70a6460b62b"
+    "sha256": "a7bf37b65f5eeaca875a4f6e4af9bd3f022ea27c982519d496aab6ef6b515c3c"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-06T03:34:00+00:00",
-  "documentation_fingerprint": "ebcb7c48be51aae5e844a70e5042a9ccfde224145d94c06764b27b045b58f440",
+  "created_at": "2026-10-06T03:36:29+00:00",
+  "documentation_fingerprint": "6a7a2a6477f422046ffc79e70148ac270dd0c91272b525459b7346a8d48f4608",
   "documentation_manifest": {
     "bytes": 681,
     "path": "documentation-manifest.json",
@@ -100,7 +100,7 @@
     {
       "bytes": 593,
       "path": "verification/documentation-currentness-2026-10-05/authoring-response.txt",
-      "sha256": "4386b444df03c1d41ee7667d9e000fe91ae8de086a8091736fb1d70a6460b62b"
+      "sha256": "a7bf37b65f5eeaca875a4f6e4af9bd3f022ea27c982519d496aab6ef6b515c3c"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",
