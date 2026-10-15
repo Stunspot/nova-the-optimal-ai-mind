@@ -7,6 +7,7 @@
   "primary_index_sha256": "a608ea3056c89545a4178a18e8295ec259d0c0b13321a070f37e830b28de8f49",
   "branch": "codex/purpose-release-v4.1.0-20261015",
   "scopes": [
+    ".gitattributes",
     ".github/",
     "CURRENT-RELEASE.json",
     "LICENSE.md",
@@ -73,6 +74,11 @@
     "verification/purpose-free-4.1.0/verification-manifest.json"
   ],
   "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 759,
+      "sha256": "965df25bcff49641556732af08bd08c7bb8ae14af43a16dba4c2579000236f16"
+    },
     {
       "path": ".github/workflows/deploy-pages.yml",
       "bytes": 795,
@@ -8184,6 +8190,7 @@
       "sha256": "a9c057e75688e75077e9d37272ddaad2fea5fb209ddef4d8dd6beee5e1641435"
     }
   ],
-  "bytes": 97449540,
-  "count": 1622
+  "bytes": 97450299,
+  "count": 1623,
+  "source_correction": "Includes accepted line-ending attributes required by native build/clone custody."
 }

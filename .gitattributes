@@ -26,3 +26,6 @@ plugins/nova-the-optimal-ai/skills/** -text
 
 # Retained Hesperos evidence is hash-bound, including native execution logs.
 verification/giles-atlas-3.6/hesperos/evidence/** -text
+
+# Current complete native plugin bytes remain source-locked on checkout.
+/plugins/nova-the-optimal-ai/** -text
