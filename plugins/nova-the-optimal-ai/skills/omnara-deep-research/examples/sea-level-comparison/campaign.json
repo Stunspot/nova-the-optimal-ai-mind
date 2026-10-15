@@ -1,0 +1,39 @@
+{
+  "format": "omnara-research-campaign/v1",
+  "title": "Local versus global sea level",
+  "canonical_inquiry": "Does a falling local tide-gauge trend contradict rising global mean sea level, and what must be checked before comparing them?",
+  "tier": "focused",
+  "phase": "complete",
+  "status": "complete",
+  "created_at": "2026-10-07T04:39:27.466680+00:00",
+  "updated_at": "2026-10-07T04:39:27.466680+00:00",
+  "budgets": {
+    "max_inspected_sources": 350,
+    "max_deeply_read_sources": 120,
+    "max_queries": 120,
+    "max_tool_calls": 500,
+    "max_paid_usd": null
+  },
+  "counters": {
+    "queries": 2,
+    "discovered": 3,
+    "inspected": 3,
+    "opened": 3,
+    "deeply_read": 3,
+    "excluded": 1,
+    "duplicate": 0,
+    "inaccessible": 0,
+    "cited": 2
+  },
+  "active_loci": [],
+  "blockers": [],
+  "routes": [
+    {
+      "route": "web search/open primary pages",
+      "review": "author in-process semantic review; no model trial"
+    }
+  ],
+  "last_verified_artifact": null,
+  "resume_point": "Reopen with actual station/global datasets and matching metadata, or a new future-use decision.",
+  "evidence_cutoff": "2026-10-06"
+}

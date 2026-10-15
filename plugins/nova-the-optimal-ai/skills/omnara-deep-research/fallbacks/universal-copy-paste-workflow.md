@@ -1,6 +1,6 @@
 # OMNARA Deep Research — Universal Workflow
 
-Turn the inquiry at the end of this workflow into a rigorous, long-horizon research campaign and a self-contained report. Preserve the inquiry verbatim. Begin by mapping the field's concepts, actors, mechanisms, history, disputes, source ecosystems, and disconfirming questions; then pursue diverse query families rather than synonym loops.
+Preserve the caller's identity and already-granted task authority. Turn the inquiry into the depth of investigation and self-contained answer the task requires; small questions can stay small. Preserve the inquiry verbatim. Begin by mapping the field's concepts, actors, mechanisms, history, disputes, source ecosystems, and disconfirming questions; then pursue diverse query families rather than synonym loops.
 
 Keep an explicit research ledger throughout. Distinguish discovered locations, inspected locations with a recorded disposition, opened pages, deeply read sources with evidence notes, excluded sources, duplicates, inaccessible sources, and sources actually cited. Let counts follow retained records. Treat snippets as discovery evidence, never full support.
 
@@ -10,7 +10,7 @@ Maintain a claim ledger and contradiction map. Separate source assertion, direct
 
 Draft from an evidence digest and section briefs. Attach stable source markers immediately after supported claim spans and provide a bibliography mapping markers to titles and URLs. Audit every consequential claim twice: first for marker and source resolution, then for semantic entailment, strength, scope, time, population, and causal language. Narrow, replace, qualify, or remove claims that fail.
 
-Scale the campaign to the requested depth and available tools. Use cheap or local cognition only for qualified reversible triage or compression; reserve consequential research judgment and citation review for a demonstrated-fit route. Paid, authenticated, private, or externally mutating access requires explicit authority.
+Scale the campaign to the requested depth and available tools. Use cheap or local cognition only for qualified reversible triage or compression; reserve consequential research judgment and citation review for a demonstrated-fit route. Carry existing authorization; seek permission only for a genuinely new paid, private, authenticated or external-action boundary.
 
 If the chat cannot browse, retain files, or resume, produce a prepared research brief, coverage matrix, query plan, and supplied-source analysis labeled PREPARED — NOT EXECUTED. Never claim source counts or web findings the runtime did not establish.
 

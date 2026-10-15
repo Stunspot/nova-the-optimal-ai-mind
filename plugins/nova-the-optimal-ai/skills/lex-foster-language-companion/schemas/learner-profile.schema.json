@@ -35,11 +35,24 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["language", "variety", "script"],
+        "required": [
+          "language",
+          "variety",
+          "script"
+        ],
         "properties": {
-          "language": {"type": "string", "minLength": 1},
-          "variety": {"type": "string", "minLength": 1},
-          "script": {"type": "string", "minLength": 1}
+          "language": {
+            "type": "string",
+            "minLength": 1
+          },
+          "variety": {
+            "type": "string",
+            "minLength": 1
+          },
+          "script": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "additionalProperties": false
       }
@@ -48,13 +61,32 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "situation", "success_evidence", "status"],
+        "required": [
+          "id",
+          "situation",
+          "success_evidence",
+          "status"
+        ],
         "properties": {
-          "id": {"type": "string", "minLength": 1},
-          "situation": {"type": "string", "minLength": 1},
-          "success_evidence": {"type": "string", "minLength": 1},
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "situation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "success_evidence": {
+            "type": "string",
+            "minLength": 1
+          },
           "status": {
-            "enum": ["active", "paused", "completed", "retired"]
+            "enum": [
+              "active",
+              "paused",
+              "completed",
+              "retired"
+            ]
           }
         },
         "additionalProperties": false
@@ -71,19 +103,39 @@
       ],
       "properties": {
         "interruption": {
-          "enum": ["immediate", "natural-pauses", "end-of-turn"]
+          "enum": [
+            "immediate",
+            "natural-pauses",
+            "end-of-turn"
+          ]
         },
         "correction_focus": {
-          "enum": ["communication-first", "balanced", "fine-grained"]
+          "enum": [
+            "communication-first",
+            "balanced",
+            "fine-grained"
+          ]
         },
         "explanation_depth": {
-          "enum": ["compact", "contrastive", "deep"]
+          "enum": [
+            "compact",
+            "contrastive",
+            "deep"
+          ]
         },
         "challenge": {
-          "enum": ["supported", "stretch", "immersive"]
+          "enum": [
+            "supported",
+            "stretch",
+            "immersive"
+          ]
         },
         "working_language_use": {
-          "enum": ["welcome", "minimal", "on-request"]
+          "enum": [
+            "welcome",
+            "minimal",
+            "on-request"
+          ]
         }
       },
       "additionalProperties": false
@@ -102,16 +154,103 @@
           "support"
         ],
         "properties": {
-          "id": {"type": "string", "minLength": 1},
-          "observed_at": {"type": "string", "format": "date-time"},
-          "target_language": {"type": "string", "minLength": 1},
-          "item": {"type": "string", "minLength": 1},
-          "state": {
-            "enum": ["new", "supported", "independent", "transferred"]
+          "id": {
+            "type": "string",
+            "minLength": 1
           },
-          "task": {"type": "string", "minLength": 1},
-          "support": {"type": "string", "minLength": 1},
-          "notes": {"type": "string"}
+          "observed_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "target_language": {
+            "type": "string",
+            "minLength": 1
+          },
+          "item": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "new",
+              "supported",
+              "independent",
+              "transferred"
+            ]
+          },
+          "task": {
+            "type": "string",
+            "minLength": 1
+          },
+          "support": {
+            "type": "string",
+            "minLength": 1
+          },
+          "notes": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "object",
+            "required": [
+              "goal_id",
+              "modality",
+              "prompt",
+              "response",
+              "criterion",
+              "result",
+              "support_kind"
+            ],
+            "properties": {
+              "goal_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "modality": {
+                "enum": [
+                  "written-production",
+                  "spoken-production",
+                  "reading-recognition",
+                  "listening-recognition"
+                ]
+              },
+              "prompt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "response": {
+                "type": "string",
+                "minLength": 1
+              },
+              "criterion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "result": {
+                "enum": [
+                  "met",
+                  "partial",
+                  "not-met"
+                ]
+              },
+              "support_kind": {
+                "enum": [
+                  "none",
+                  "cue",
+                  "model",
+                  "copied-model"
+                ]
+              },
+              "prior_evidence_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "changed_condition": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
         },
         "additionalProperties": false
       }
@@ -120,11 +259,24 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["evidence_id", "when", "variation"],
+        "required": [
+          "evidence_id",
+          "when",
+          "variation"
+        ],
         "properties": {
-          "evidence_id": {"type": "string", "minLength": 1},
-          "when": {"type": "string", "minLength": 1},
-          "variation": {"type": "string", "minLength": 1}
+          "evidence_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "when": {
+            "type": "string",
+            "minLength": 1
+          },
+          "variation": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "additionalProperties": false
       }

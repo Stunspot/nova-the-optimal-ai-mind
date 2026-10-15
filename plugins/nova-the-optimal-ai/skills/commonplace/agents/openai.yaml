@@ -1,6 +1,6 @@
 interface:
   display_name: "Nova Commonplace"
-  short_description: "💠 Governed capture and personal knowledge recall."
+  short_description: "💠 Saved thoughts, excerpts, recall, and personal knowledge."
   default_prompt: "Use $commonplace to capture this with exact provenance, sensitivity, and intended use."
 
 policy:

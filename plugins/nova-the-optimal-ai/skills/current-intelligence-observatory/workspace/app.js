@@ -1,8 +1,9 @@
 'use strict';
 const $ = id => document.getElementById(id);
 const GROUPS = ['sources','captures','observations','claims','events','entities','relations','inferences','hypotheses','contradictions','assessments','recommendations','decisions','outcomes','artifacts','checks','blockers','history'];
-const LENSES = ['Situation','Sequence','Evidence chains','Challenge','Sources','Compare'];
-let current = null, baseline = null, active = 'Situation', sourceMode = '', selectedId = null, returnFocus = null;
+const LENSES = ['Situation','Sequence','Evidence chains','Challenge','Sources','Records','Compare'];
+let importSequence=0;
+let current = null, baseline = null, active = 'Situation', sourceMode = '', selectedId = null, returnFocus = null, returnRecordId = null, returnRegion = null;
 
 function el(tag, content, attrs = {}) {
   const node = document.createElement(tag);
@@ -19,7 +20,8 @@ function btn(label, action, className = '') {
 }
 function title(object) { return object.title || object.statement || object.summary || object.name || object.description || object.id; }
 function value(v) { return v === undefined || v === null || v === '' ? 'Not recorded' : typeof v === 'object' ? JSON.stringify(v) : String(v); }
-function refs(object) { return [...new Set(Object.entries(object).filter(([key, val]) => key.endsWith('_ids') && Array.isArray(val)).flatMap(([, val]) => val))]; }
+function refs(object) { return [...new Set([...Object.entries(object).filter(([key,val])=>key.endsWith('_ids')&&Array.isArray(val)).flatMap(([,val])=>val),...(object.support||[]).map(row=>row.capture_id)].filter(Boolean))]; }
+function upstreamCaptures(object,visited=new Set()) { if(visited.has(object.id))return [];visited.add(object.id);const found=[];for(const id of refs(object)){const record=findRecord(id);if(!record)continue;if(record.kind==='captures')found.push(id);else if(visited.size<5000)found.push(...upstreamCaptures(record.object,visited));}return [...new Set(found)];}
 function findRecord(id, caseData = current) {
   if (!caseData) return null;
   for (const kind of GROUPS) {
@@ -29,33 +31,45 @@ function findRecord(id, caseData = current) {
   return null;
 }
 function validate(caseData) {
-  if (!caseData || caseData.format !== 'cd-observatory-case/v1' || !caseData.case_id || !caseData.question) throw Error('Expected a named cd-observatory-case/v1 with question.');
-  const ids = new Set();
-  for (const kind of GROUPS) {
-    if (!Array.isArray(caseData[kind])) throw Error('Missing typed object array: ' + kind + '.');
-    for (const object of caseData[kind]) {
-      if (!object || typeof object !== 'object' || typeof object.id !== 'string' || !object.id.trim()) throw Error('Object without ID in ' + kind + '.');
-      if (ids.has(object.id)) throw Error('Duplicate object ID: ' + object.id + '.');
-      ids.add(object.id);
+  if (!caseData || typeof caseData!=='object' || Array.isArray(caseData) || caseData.format!=='cd-observatory-case/v1')throw Error('Expected cd-observatory-case/v1 object.');
+  for(const key of ['case_id','title','question','scope','audience_or_decision','time_horizon','phase','posture','collection_authority','harm_model','evidence_burden','stop_condition'])if(typeof caseData[key]!=='string'||!caseData[key].trim())throw Error('Missing text field: '+key);
+  const ids=new Map();
+  for(const kind of GROUPS){if(!Array.isArray(caseData[kind]))throw Error('Missing typed object array: '+kind);for(const object of caseData[kind]){if(!object||typeof object!=='object'||Array.isArray(object)||typeof object.id!=='string'||!object.id.trim())throw Error('Object without ID in '+kind);if(ids.has(object.id))throw Error('Duplicate object ID: '+object.id);ids.set(object.id,kind);}}
+  const targets=Object.fromEntries(GROUPS.map(k=>[k.slice(0,-1)+'_ids',k]));targets.entity_ids='entities';targets.hypothesis_ids='hypotheses';
+  for(const kind of GROUPS)for(const object of caseData[kind]){
+    for(const [key,val] of Object.entries(object)){
+      if(key.endsWith('_ids')){if(!Array.isArray(val)||val.some(id=>typeof id!=='string'||!ids.has(id)))throw Error(object.id+': invalid reference list '+key);if(targets[key]&&val.some(id=>ids.get(id)!==targets[key]))throw Error(object.id+': wrong reference type '+key);}
+      if(['status','confidence','uncertainty','kind','title','summary','statement','name'].includes(key)&&(typeof val!=='string'||!val.trim()))throw Error(object.id+': invalid text '+key);
+      if(['published_at','updated_at','retrieved_at','observed_at','event_start','event_end','first_seen_at','last_seen_at','reviewed_at'].includes(key)&&val!==null&&val!==''&&knownInstant(val)===null)throw Error(object.id+': invalid or unknown-offset clock '+key);
     }
+    if(kind==='relations'&&(!ids.has(object.from_id)||!ids.has(object.to_id)||typeof object.relation_type!=='string'))throw Error(object.id+': invalid relation endpoints/type');
+    if(object.support!==undefined){if(!Array.isArray(object.support)||object.support.some(row=>!row||typeof row!=='object'||ids.get(row.capture_id)!=='captures'||!['supports','refutes','context','reports'].includes(row.relation)||['locator','excerpt','rationale'].some(k=>typeof row[k]!=='string'||!row[k].trim())))throw Error(object.id+': invalid support records');}
   }
+  if(caseData.evidence_as_of!==undefined&&knownInstant(caseData.evidence_as_of)===null)throw Error('Invalid evidence_as_of clock');
+  if(!caseData.next_action||['action','owner','advance_when'].some(k=>typeof caseData.next_action[k]!=='string'||!caseData.next_action[k].trim()))throw Error('Missing exact next action');
   return caseData;
 }
 async function load(file, isBaseline = false) {
-  if (!file) return;
+  if (!file) { importSequence++;return; }
+  const sequence=++importSequence;
   const status = $('status');
   status.textContent = 'Reading ' + (isBaseline ? 'baseline' : 'current case') + ' locally…';
   try {
     if (file.size > 5e6) throw Error('Case exceeds the 5 MB limit.');
-    const next = validate(JSON.parse((await file.text()).replace(/^\uFEFF/,'')));
+    const bytes = await file.arrayBuffer();
+    let contents;
+    try { contents = new TextDecoder('utf-8', {fatal: true}).decode(bytes); }
+    catch { throw new Error('This file is not valid UTF-8. Export a UTF-8 copy from its source application and choose it again; the original file is unchanged.'); }
+    const next = validate(parseCaseJSON(contents));
+    if(sequence!==importSequence)return;
     if (isBaseline) baseline = next;
-    else { current = next; sourceMode = 'native file'; active = 'Situation'; }
+    else { if(baseline&&(baseline.inquiry_id||baseline.case_id)!==(next.inquiry_id||next.case_id))baseline=null; current = next; sourceMode = 'native file'; active = 'Situation'; }
     closeInspector(false);
     render();
     status.textContent = (isBaseline ? 'Baseline' : 'Current case') + ' loaded as dated, read-only case data. No background monitoring.';
     $('case-controls').open = false;
   } catch (error) {
-    status.textContent = 'Case rejected; previous selection retained. ' + error.message;
+    if(sequence===importSequence)status.textContent = 'Case rejected; previous selection retained. ' + error.message;
   }
 }
 function stamp(raw) {
@@ -74,8 +88,9 @@ function badge(status, className = '') { return el('span', value(status), {class
 function label(text) { return el('p', text, {class:'micro-label'}); }
 function region(heading, className = '') { return add(el('section', null, {class:className}), el('h2', heading)); }
 function recordButton(kind, object, className = '') {
-  const singular = {hypotheses:'hypothesis',records:'record'}[kind] || kind.slice(0,-1);
+  const singular = {hypotheses:'hypothesis',records:'record',entities:'entity'}[kind] || kind.slice(0,-1);
   const node = btn('', () => openInspector(object.id), 'record-button ' + className);
+  node.dataset.recordId = object.id;
   add(node, el('span', singular + ' / ' + object.id, {class:'micro-label'}), el('strong', title(object)), badge(object.status));
   return node;
 }
@@ -91,9 +106,10 @@ function exactRecord(kind, object, linked = true) {
   article.append(tags);
   if (object.uncertainty !== undefined) add(article, label('Recorded uncertainty'), el('p',value(object.uncertainty),{class:'uncertainty-text'}));
   const fields = el('dl',null,{class:'record-fields'});
-  const displayed = ['description','summary','statement','body','reason','event_start','event_end','observed_at','published_at','retrieved_at','first_seen_at','last_seen_at','relation_type','from_id','to_id','location','original_url','canonical_url','preservation_status'];
+  const displayed = ['description','summary','statement','body','reason','event_start','event_end','event_time_text','event_timezone','observed_at','published_at','retrieved_at','first_seen_at','last_seen_at','relation_type','from_id','to_id','location','original_url','canonical_url','preservation_status'];
   for (const key of displayed) if (object[key] !== undefined && value(object[key]) !== title(object)) field(fields,key,object[key]);
   if (fields.children.length) article.append(fields);
+  for(const support of object.support||[]) { const section=el('section',null,{class:'support-record'});add(section,label(support.relation+' / '+support.capture_id),el('p',support.locator),el('blockquote',support.excerpt),el('p',support.rationale));article.append(section); }
   if (linked) {
     const links = el('div',null,{class:'record-links'});
     const ids = refs(object);
@@ -110,7 +126,11 @@ function exactRecord(kind, object, linked = true) {
 function openInspector(id) {
   if (!current) return;
   const found = findRecord(id), pane = $('inspector');
-  if (pane.hidden) returnFocus = document.activeElement;
+  if (pane.hidden) {
+    returnFocus = document.activeElement;
+    returnRecordId = returnFocus?.dataset.recordId || id;
+    returnRegion = returnFocus?.closest('#main section') || $('main');
+  }
   selectedId = id;
   pane.replaceChildren();
   const head = el('div',null,{class:'inspector-head'});
@@ -126,8 +146,15 @@ function closeInspector(restore = true) {
   $('inspector').hidden = true;
   $('inspector').replaceChildren();
   selectedId = null;
-  if (restore && returnFocus && returnFocus.isConnected) returnFocus.focus();
-  returnFocus = null;
+  if (restore) {
+    const visible = node => node?.isConnected && !node.disabled && node.getClientRects().length > 0;
+    const region = returnRegion?.isConnected ? returnRegion : $('main');
+    const equivalent = returnRecordId ? region.querySelector('[data-record-id="' + CSS.escape(returnRecordId) + '"]') : null;
+    const search = region.querySelector('input[type="search"]');
+    const target = visible(returnFocus) ? returnFocus : visible(equivalent) ? equivalent : visible(search) ? search : $('main');
+    target.focus({preventScroll:true});
+  }
+  returnFocus = null;returnRecordId = null;returnRegion = null;
 }
 function caseHeader() {
   const hero = el('section',null,{class:'case-hero'});
@@ -135,8 +162,9 @@ function caseHeader() {
   add(top,label(sourceMode === 'synthetic' ? 'SYNTHETIC FIXTURE · DATED SNAPSHOT' : 'YOUR INVESTIGATION · DATED SNAPSHOT'),el('span',current.case_id,{class:'case-id'}));
   add(hero,top,el('h1',current.title),el('p',current.question,{class:'case-question'}));
   const meta = el('div',null,{class:'case-meta'});
-  add(meta,add(el('div'),label('Posture'),el('strong',value(current.posture))),add(el('div'),label('Horizon'),el('strong',value(current.time_horizon))),add(el('div'),label('Audience / decision'),el('strong',value(current.audience_or_decision))));
+  add(meta,add(el('div'),label('Declared posture · not verified by this viewer'),el('strong',value(current.posture))),add(el('div'),label('Horizon'),el('strong',value(current.time_horizon))),add(el('div'),label('Audience / decision'),el('strong',value(current.audience_or_decision))));
   hero.append(meta);
+  add(hero,el('p','Evidence as of: '+(current.evidence_as_of?stamp(current.evidence_as_of):'not recorded; currentness unverified')+'. Opening a case does not refresh its sources.',{class:'section-intro'}));
   return hero;
 }
 function renderEmpty(main) {
@@ -144,8 +172,10 @@ function renderEmpty(main) {
   add(start,label('01 / An investigation in view'),el('h1','A story changes. Keep the evidence in view.'),el('p','Trace what was claimed, what a source actually recorded, what changed over time, and what remains unresolved. Open a native case to see its evidence as a connected situation.'),btn('Explore the synthetic case ↗',loadSample,'primary-action'));
   const open = el('label',null,{class:'open-file'});
   add(open,el('span','Open your investigation file'),el('input',null,{type:'file',accept:'.json,application/json','aria-label':'Open your investigation file'}));
-  open.querySelector('input').addEventListener('change', event => load(event.target.files[0]));
+  const input=open.querySelector('input');input.addEventListener('change',async()=>{try{await load(input.files[0]);}finally{input.value='';}});input.addEventListener('cancel',()=>{importSequence++;input.value='';});
   start.append(open);
+  if(current)start.append(btn('Return to loaded investigation',()=>switchLens('Situation'),'primary-action'));
+  add(start,el('a','Start your first inquiry: question → source → bounded answer',{href:'guide.html#first-inquiry'}));
   const guide = el('div',null,{class:'welcome-guide'});
   add(guide,add(el('div'),label('See together'),el('p','Assessment, competing accounts, timeline and provenance stay connected.')),add(el('div'),label('Follow a thread'),el('p','Select a claim or event to inspect the exact native record and its references.')),add(el('div'),label('Know the boundary'),el('p','Local read-only projection. No collection, monitoring, publication or approval.')));
   start.append(guide);
@@ -156,10 +186,10 @@ function renderSituation(main) {
   const blocker = current.blockers.find(item => String(item.status).toLowerCase() === 'open');
   const briefing = el('section',null,{class:'briefing'});
   const lead = el('div',null,{class:'briefing-lead'});
-  add(lead,label('Current assessment · ' + (assessment ? assessment.id : 'none recorded')),el('h2',assessment ? title(assessment) : 'No assessment recorded yet.'));
+  add(lead,label('Last recorded assessment · ' + (assessment ? assessment.id : 'none recorded')),el('h2',assessment ? title(assessment) : 'No assessment recorded yet.'));
   if (assessment) add(lead,badge(assessment.status),el('p','Uncertainty: ' + value(assessment.uncertainty),{class:'briefing-uncertainty'}),btn('Inspect assessment ↗',() => openInspector(assessment.id),'text-action'));
   const decision = el('div',null,{class:'decision-cue'});
-  add(decision,label('Next human move'),el('h2',value(current.next_action?.action)),el('p','Next step for: ' + value(current.next_action?.owner)));
+  add(decision,label('Next recorded move'),el('h2',value(current.next_action?.action)),el('p','Next step for: ' + value(current.next_action?.owner)));
   if (blocker) add(decision,label('Open boundary'),btn(title(blocker) + ' ↗',() => openInspector(blocker.id),'blocker-action'));
   add(briefing,lead,decision);
   main.append(briefing);
@@ -223,12 +253,12 @@ function renderSequence(main) {
 }
 function renderEvidenceChains(main) {
   const section = region('Evidence chains','chains-page');
-  add(section,el('p','Follow native source → capture → claim references. These paths show custody and dependence; several captures can still be one evidence lineage.',{class:'section-intro'}));
+  add(section,el('p','Follow recorded source → capture → observation/claim references. These paths show custody and dependence; several captures can still be one evidence lineage.',{class:'section-intro'}));
   const chains = el('div',null,{class:'chains'});
   for (const source of current.sources) {
     const chain = el('article',null,{class:'chain'});
     const captures = current.captures.filter(item => (item.source_ids || []).includes(source.id));
-    const claims = current.claims.filter(item => (item.capture_ids || []).some(id => captures.some(capture => capture.id === id)));
+    const claims = current.claims.filter(item => upstreamCaptures(item).some(id => captures.some(capture => capture.id === id)));
     add(chain,recordButton('sources',source,'chain-source'));
     const capturesColumn = el('div',null,{class:'chain-column'});
     add(capturesColumn,label('Recorded captures'));
@@ -260,7 +290,7 @@ function renderChallenge(main) {
   const grid = el('div',null,{class:'hypothesis-grid'});
   for (const object of current.hypotheses) {
     const card = el('article',null,{class:'hypothesis'});
-    add(card,label(object.id),el('h3',title(object)),badge(object.status),el('p',value(object.uncertainty),{class:'uncertainty-text'}),el('p',refs(object).length + ' exact native reference' + (refs(object).length === 1 ? '' : 's'),{class:'micro-label'}),btn('Inspect hypothesis ↗',() => openInspector(object.id),'text-action'));
+    add(card,label(object.id),el('h3',title(object)),badge(object.status),el('p',value(object.uncertainty),{class:'uncertainty-text'}),el('p',refs(object).length + ' navigation reference' + (refs(object).length === 1 ? '' : 's')+'; quantity is not support strength',{class:'micro-label'}),btn('Inspect hypothesis ↗',() => openInspector(object.id),'text-action'));
     grid.append(card);
   }
   if (!grid.children.length) grid.append(el('p','No hypotheses recorded.',{class:'empty-note'}));
@@ -293,6 +323,13 @@ function renderSources(main) {
   update();
   main.append(section);
 }
+function renderRecords(main){
+  const section=region('Browse every native record','sources-page');add(section,el('p','Select a record type or scan everything. Evidence, interpretation, decision and tool state remain distinct.',{class:'section-intro'}));
+  const select=el('select',null,{'aria-label':'Record type'});add(select,el('option','All record types',{value:''}));for(const kind of GROUPS)add(select,el('option',kind,{value:kind}));
+  const search=el('input',null,{type:'search','aria-label':'Find a record',placeholder:'Optional text or ID'}),results=el('div',null,{class:'source-results'});
+  const update=()=>{results.replaceChildren();for(const kind of GROUPS){if(select.value&&select.value!==kind)continue;for(const object of current[kind])if(JSON.stringify(object).toLowerCase().includes(search.value.toLowerCase()))results.append(recordButton(kind,object));}if(!results.children.length)results.append(el('p','No matching records.'));};
+  select.addEventListener('change',update);search.addEventListener('input',update);add(section,select,search,results);update();main.append(section);
+}
 function stableJSON(value){if(Array.isArray(value))return '['+value.map(stableJSON).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+stableJSON(value[k])).join(',')+'}';return JSON.stringify(value);}
 function changes() {
   if (!current || !baseline) return [];
@@ -317,7 +354,7 @@ function renderCompare(main) {
     section.append(note);main.append(section);return;
   }
   add(section,el('p','Baseline: ' + baseline.case_id + '  /  Current: ' + current.case_id,{class:'comparison-ids'}));
-  if (baseline.case_id !== current.case_id) add(section,el('p','Different case IDs are shown explicitly; no identity merge is inferred.',{class:'caution'}));
+  if ((baseline.inquiry_id||baseline.case_id)!==(current.inquiry_id||current.case_id)){add(section,el('p','Different inquiries: select a baseline with the same inquiry_id. No change analysis is inferred.',{class:'caution'}));main.append(section);return;}
   const rows = changes();
   const summary = el('div',null,{class:'delta-summary'});
   for (const state of ['NEW','CHANGED','NO LONGER REPRESENTED']) add(summary,add(el('div'),el('strong',rows.filter(row => row.state === state).length),label(state)));
@@ -337,6 +374,7 @@ function renderCompare(main) {
 }
 function switchLens(name) {
   if (!current) return;
+  importSequence++;
   active = name;
   closeInspector(false);
   render();
@@ -359,16 +397,18 @@ function render() {
   renderNav();
   const main = $('main');
   main.replaceChildren();
-  if (!current) { renderEmpty(main); return; }
+  if (!current || active==='Home') { renderEmpty(main); return; }
   main.append(caseHeader());
   if (active === 'Situation') renderSituation(main);
   if (active === 'Sequence') renderSequence(main);
   if (active === 'Evidence chains') renderEvidenceChains(main);
   if (active === 'Challenge') renderChallenge(main);
   if (active === 'Sources') renderSources(main);
+  if (active === 'Records') renderRecords(main);
   if (active === 'Compare') renderCompare(main);
 }
 function loadSample() {
+  importSequence++;
   current = validate(structuredClone(OBS_SAMPLE.current));
   baseline = validate(structuredClone(OBS_SAMPLE.baseline));
   sourceMode = 'synthetic';active = 'Situation';
@@ -377,18 +417,16 @@ function loadSample() {
   $('status').textContent = 'SYNTHETIC Harbor Lantern · dated fixture only. No live verification or background feed.';
   $('case-controls').open = false;
 }
-$('case').addEventListener('change',event => load(event.target.files[0]));
-$('baseline').addEventListener('change',event => load(event.target.files[0],true));
+for(const [id,isBaseline] of [['case',false],['baseline',true]]){const input=$(id);input.addEventListener('change',async()=>{try{await load(input.files[0],isBaseline);}finally{input.value='';}});input.addEventListener('cancel',()=>{importSequence++;input.value='';$('status').textContent='Import cancelled; current investigation retained.';});}
 $('sample').addEventListener('click',loadSample);
 $('clear').addEventListener('click',() => {
+  importSequence++;
   current = null;baseline = null;sourceMode = '';active = 'Situation';
   $('case').value = '';$('baseline').value = '';
   closeInspector(false);render();$('status').textContent = 'Private case data cleared from memory.';
   $('case-controls').open = false;
 });
+$('home').addEventListener('click',()=>{importSequence++;active='Home';closeInspector(false);render();$('main').focus();window.scrollTo({top:0});});
 $('skin').addEventListener('change',event => document.body.dataset.skin = event.target.value);
 document.addEventListener('keydown',event => { if (event.key === 'Escape' && !$('inspector').hidden) closeInspector(true); });
 render();
-
-
-

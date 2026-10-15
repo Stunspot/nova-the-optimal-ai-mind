@@ -1,0 +1,8 @@
+{
+  "checks": [
+    "Native .command/.sh/.app launchers retain0755; documents0644",
+    "Legitimate portable ZIP passes native verification",
+    "Matched archive with stripped .command mode is rejected"
+  ],
+  "findings": []
+}

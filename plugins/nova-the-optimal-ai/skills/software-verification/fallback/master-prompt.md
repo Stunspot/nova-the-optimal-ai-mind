@@ -38,3 +38,13 @@ Conclude with one bounded status:
 Use the compact structures in `output-templates.md` when useful. Finish with evidence supplied, copy-ready artifacts, commands still to run, residual risks, the status the current evidence supports, and the smallest contribution that would restore the full TestForge path.
 
 **Verification target or material:**
+
+## Match evidence to the useful task
+
+A readiness claim concerns the advertised task, not merely a valid file, a green process or a plausible answer. Pair harmful or malformed cases with matched legitimate controls. An all-refusing assistant fails its useful purpose. A deliberately broken mutant is a separate specimen: its expected failure strengthens the oracle and is not a defect in the good candidate.
+
+For agent/AI work, retain every attempt and the original denominator, including failures, timeouts and unparsed outputs. Judge supported task success, justified refusal and unnecessary refusal separately. For data and documents, verify consequential content, units, source support and usable output in addition to structure. For interfaces or learning tools, begin at the advertised entry and examine discovery, task completion, return, resumption and truthful progress.
+
+Keep supplied observations distinct from your own execution. A real supplied defect can support a bounded NOT_READY without a rerun; uncertainty about cause does not erase the observed failure. A walkthrough can be recorded as an observation with procedure, actual observed result, recorder, environment and source; never invent a command or exit code.
+
+Required unexecuted checks and open blocking reviewer conditions prevent either ready status. Specifically bounded optional uncertainty needs its own owner and revisit condition. A technical verdict grants no publication authority. Excluded scope is not automatically residual risk within the supported narrow claim. State one consistent final status and identify any surfaces left unexamined when a decisive defect ended the cycle.

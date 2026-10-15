@@ -1,0 +1,169 @@
+{
+  "app": "answerlayer",
+  "projects": [
+    {
+      "id": "1f1dc6e2-43b0-4517-ba3f-188425ae7fb8",
+      "title": "Release guidance",
+      "purpose": "Team deciding when to switch service",
+      "baseline": {
+        "text": "Use the old endpoint until December.",
+        "confidence": "Provisional: verify notice before deploying",
+        "action": "Prepare a rollback rehearsal next week.",
+        "asof": "2026-10-01"
+      },
+      "developments": [
+        {
+          "id": "5b5653b1-da7c-4c18-abdf-6c0365024a60",
+          "kind": "New fact",
+          "detail": "Provider moved the deadline to December.",
+          "source": "Provider notice",
+          "passage": "The old endpoint remains available until December 1.",
+          "location": "",
+          "observed": "2026-10-15",
+          "effective": "2027-12-01",
+          "effect": "",
+          "examined": true
+        }
+      ],
+      "proposal": {
+        "text": "",
+        "mechanism": "",
+        "scope": "",
+        "confidence": "",
+        "action": "",
+        "counterfactual": "",
+        "recheck": "",
+        "asof": ""
+      },
+      "history": [
+        {
+          "id": "6ce4453d-b799-4196-978e-3aed4e6df290",
+          "at": "2026-10-15T06:05:46.872Z",
+          "before": {
+            "text": "Use the old endpoint until November.",
+            "confidence": "Based on the current notice",
+            "asof": "2026-09-20",
+            "action": "Keep the original rehearsal date"
+          },
+          "after": {
+            "text": "Use the old endpoint until December.",
+            "confidence": "Provisional: verify notice before deploying",
+            "action": "Move the migration rehearsal to November.",
+            "asof": "2026-09-20"
+          },
+          "basis": "The provider extended availability.",
+          "proposal": {
+            "text": "Use the old endpoint until December.",
+            "mechanism": "The provider extended availability.",
+            "scope": "",
+            "confidence": "Provisional: verify notice before deploying",
+            "action": "Move the migration rehearsal to November.",
+            "counterfactual": "",
+            "recheck": "",
+            "asof": ""
+          },
+          "developments": [
+            {
+              "id": "5b5653b1-da7c-4c18-abdf-6c0365024a60",
+              "kind": "New fact",
+              "detail": "Provider moved the deadline to December.",
+              "source": "Provider notice",
+              "passage": "The old endpoint remains available until December 1.",
+              "location": "",
+              "observed": "2026-10-15",
+              "effective": "2027-12-01",
+              "effect": "",
+              "examined": true
+            }
+          ]
+        },
+        {
+          "id": "0818869c-1075-4d80-bfb6-baad3826c80e",
+          "at": "2026-10-15T06:05:46.952Z",
+          "before": {
+            "text": "Use the old endpoint until December.",
+            "confidence": "Provisional: verify notice before deploying",
+            "action": "Move the migration rehearsal to November.",
+            "asof": "2026-09-20"
+          },
+          "after": {
+            "text": "Use the old endpoint until December.",
+            "confidence": "Provisional: verify notice before deploying",
+            "action": "Prepare a rollback rehearsal next week.",
+            "asof": "2026-09-20"
+          },
+          "basis": "A rehearsal is useful before the published deadline, with no wording change.",
+          "proposal": {
+            "text": "",
+            "mechanism": "A rehearsal is useful before the published deadline, with no wording change.",
+            "scope": "",
+            "confidence": "",
+            "action": "Prepare a rollback rehearsal next week.",
+            "counterfactual": "",
+            "recheck": "",
+            "asof": ""
+          },
+          "developments": [
+            {
+              "id": "5b5653b1-da7c-4c18-abdf-6c0365024a60",
+              "kind": "New fact",
+              "detail": "Provider moved the deadline to December.",
+              "source": "Provider notice",
+              "passage": "The old endpoint remains available until December 1.",
+              "location": "",
+              "observed": "2026-10-15",
+              "effective": "2027-12-01",
+              "effect": "",
+              "examined": true
+            }
+          ]
+        },
+        {
+          "id": "257189b1-cf6e-4af3-b266-6e371d4894e0",
+          "at": "2026-10-15T06:05:47.035Z",
+          "before": {
+            "text": "Use the old endpoint until December.",
+            "confidence": "Provisional: verify notice before deploying",
+            "action": "Prepare a rollback rehearsal next week.",
+            "asof": "2026-09-20"
+          },
+          "after": {
+            "text": "Use the old endpoint until December.",
+            "confidence": "Provisional: verify notice before deploying",
+            "action": "Prepare a rollback rehearsal next week.",
+            "asof": "2026-10-01"
+          },
+          "basis": "Reviewed the same source through October 1.",
+          "proposal": {
+            "text": "",
+            "mechanism": "Reviewed the same source through October 1.",
+            "scope": "",
+            "confidence": "",
+            "action": "",
+            "counterfactual": "",
+            "recheck": "",
+            "asof": "2026-10-01"
+          },
+          "developments": [
+            {
+              "id": "5b5653b1-da7c-4c18-abdf-6c0365024a60",
+              "kind": "New fact",
+              "detail": "Provider moved the deadline to December.",
+              "source": "Provider notice",
+              "passage": "The old endpoint remains available until December 1.",
+              "location": "",
+              "observed": "2026-10-15",
+              "effective": "2027-12-01",
+              "effect": "",
+              "examined": true
+            }
+          ]
+        }
+      ],
+      "notes": "Ask provider to confirm regional scope.",
+      "nextCheck": "2026-11-01",
+      "updated": "2026-10-15T06:06:29.301Z"
+    }
+  ],
+  "active": "1f1dc6e2-43b0-4517-ba3f-188425ae7fb8"
+}

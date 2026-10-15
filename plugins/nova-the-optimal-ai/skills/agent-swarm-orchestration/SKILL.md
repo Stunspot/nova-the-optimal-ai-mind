@@ -1,6 +1,6 @@
 ---
 name: agent-swarm-orchestration
-description: "🐝 Coordinate agents, shared work, and synthesis."
+description: "🐝 Shared agent work, delegation, and result synthesis."
 ---
 
 # Design the organization the work needs
@@ -11,7 +11,7 @@ Treat organizational form as a working hypothesis for the current reasoning hori
 
 Start from the work already present. Recover the outcome, acceptance, current evidence, constraints, user corrections, authority, budgets, and live host affordances. Ask only when an unknown changes the goal, risk, architecture, authority, or next consequential move.
 
-Preserve the difference between a stated premise and an absent dependency. If the task states that artifacts, inputs, workers, or returns exist, reason from that premise even when their bytes are not pasted into the prompt; do not reclassify them as missing. If a required source is actually unavailable, stop the dependent slice before designing it. Return only the missing source, the exact method that would identify or read it, the name and objective of the downstream slice held pending that source, and any independent authority conclusion. Do not fill the hold with generic tests, schemas, paths, endpoints, acceptance criteria, sample data, or implementation ideas.
+Preserve the difference between a supplied hypothetical premise and observed live input. For a design, explanation, or fictional scenario, reason conditionally from the stated artifacts without demanding their real bytes. For actual dispatch or mutation, locate and inspect the required source, accepted return, and current authority before treating it as a usable input; a statement that it exists is a lead, not readback. Do not invent absence merely because the prompt did not paste the bytes. If a required source is actually unavailable, stop the dependent slice before designing it. For that held slice, report the missing source, the exact method that would identify or read it, the name and objective of the downstream slice, and any relevant authority conclusion. Continue independent authorized work whose inputs are available. Do not fill the hold with generic tests, schemas, paths, endpoints, acceptance criteria, sample data, or implementation ideas.
 
 Continue every safe, authorized part of the mission without asking for permission already granted. When one proposed action crosses an authority edge, refuse or reserve that action while completing and reporting the in-bounds analysis, preparation, or comparison. When the user expressly prohibits an action, close that branch; do not draft it, preserve it as a future option, or propose later reauthorization unless the user reopens it. Do not turn a narrow authority limit into a full-task stop.
 
@@ -68,7 +68,7 @@ For consequential, multi-turn, or recovery-prone work, build `assets/swarm-plan.
 
 `python <skill-root>/scripts/validate_swarm_plan.py <swarm-plan.json>`
 
-The v1 plan validates literal regime shape, accepted dependency readiness, authority as a subset of the root grant, non-empty evidence burdens, dependency references and cycles, safely sequenced versus simultaneous write ownership, and terminal consistency. It does not validate synergy, competence, factual correctness, or organizational value. Never present a `cd-agent-swarm-plan/v1` object unless the packaged validator passes. When validation cannot run, use compact prose instead of unchecked structured JSON.
+The v1 plan validates literal regime shape, declared accepted dependency readiness, disjoint allowed/reserved permission strings, worker authority as a subset of the root grant, the dispatched/working worker cap, concrete evidence burdens, dependency references and cycles, directory-inclusive write ownership, and terminal consistency. Optional output and write-readback records preserve accepted results after worker disposal; an optional outcome records acceptance checks separately from control closure. Missing historical outcome remains unverified. Read `references/plan-state-and-validation.md` before changing these state records. It does not validate synergy, competence, factual correctness, or organizational value. Never present a `cd-agent-swarm-plan/v1` object unless the packaged validator passes. When validation cannot run, use compact prose instead of unchecked structured JSON.
 
 ## Give each member a causal contribution
 

@@ -1,14 +1,14 @@
-# Nova the Optimal AI — Free 3.8.1
+# Nova the Optimal AI — Free 4.1.0
 
 ![Illustration of Nova at a neon command desk surrounded by systems and skill panels.](docs/assets/nova-mind-readme-hero.png)
 
 Bring me the repository that is on fire, the research question that refuses to sit still, the office file breeding revisions in the dark, or the decision everyone is politely avoiding. Nova is one sharp, playful generalist: useful before the tour, accountable through the finish, and considerably less interested in making you admire her filing system than older agents were.
 
-Free 3.8.1 is the current foundation-and-agent release. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-seven sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
+Free 4.1.0 is the foundation-and-agent edition. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-seven sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
 
 Ordinary work requires no Ollama service, embedding model, vector database, prompt hook, daemon, onboarding interview, or persistent data setup. That entire Rube Goldberg annex has been thanked for its service and shown the door.
 
-Open an optional desk when the material is easier to understand together: a project and its next step, research questions and evidence, device observations, dated intelligence, or retained collections and useful quotations. Start by browsing what is already there. Giles carries selected sources into a working tray and knowledge packet; Knowledge Desk preserves open reading through catalog updates. A developed dark environment opens first, with other material interpretations for a different working mood.
+Free 4.1.0 gives its research and troubleshooting apps a useful first move. Start with a question in OMNARA or the Observatory, track guidance that needs to change in AnswerLayer, or describe a device fault in Beryl. Work with ordinary text, relevant documents and observations; compare what matters, keep your work, and export a readable result. Each app serves its own task. Giles and Knowledge Desk continue to help you find and use retained sources.
 
 ## The useful shape
 
@@ -28,7 +28,13 @@ The exact twenty-eight roots and their boundaries are recorded in `LOADOUT-MANIF
 
 The optional local atlas begins empty on a new customer installation. Its saved catalog stays outside the plugin, so updating Nova does not move your archives or package private descriptions. Start with the [Giles store-to-source journey](docs/VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route) to register one real collection, verify its save and recover safely from a conflict. Ordinary conversation remains available without Python or opening the atlas.
 
-Six other optional native workspaces keep their owners' working objects in view: Dennis project outcomes and dependencies; OMNARA campaigns and evidence; AnswerLayer baseline and exact proposed wording; Beryl hypotheses, tests and custody; Observatory dated claims and supplied-case differences; and Knowledge Desk deliberate reading from existing knowledge, pin and people owners. Save, download and read boundaries differ. Use [Open the native workspaces](docs/VISUAL-WORKSPACES.md) for the correct launcher and procedure.
+Six other optional workspaces support Dennis project outcomes and dependencies; OMNARA research and sourced answers; AnswerLayer current guidance and revisions; Beryl device diagnosis and retesting; Observatory current inquiry and briefs; and Knowledge Desk reading across existing owners. The four revised apps keep working state outside installation. Use [Open the native workspaces](docs/VISUAL-WORKSPACES.md) to choose the app, find its launcher and complete a first useful task.
+
+## Keep the work and return
+
+Save useful outputs where you control them. In the same conversation, correct Nova directly and continue from the established work. In a new conversation, give her the artifact or project location, explain what changed and ask for the next useful step. Optional owner records can preserve that return point; conversation context alone is not a durable save.
+
+When a project already has canonical records, resume them rather than starting a competing ledger. Keep each capability's data outside the installation and back it up independently. Updating Nova does not make a new empty store the owner of your existing work.
 
 ## Install
 
@@ -50,6 +56,6 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 3.8.1 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
+This repository contains the Free 4.1.0 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠

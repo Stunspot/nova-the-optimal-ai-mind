@@ -35,9 +35,9 @@ Recorded-state counts are clickable filters, never a completion score. Discovere
 
 Use **Edit note** to change the exact native Markdown, then **Read note** to inspect it. Source details reveal title, locator and earned-state editing. **Vault actions** provides inquiry and scope, native files, reload, export and unsaved-draft download. Forms are available when you need to record or correct something; they are not the room's home screen.
 
-**Save vault** or Ctrl/Cmd+S commits edits through OMNARA's native validator. It recomputes source counts and refuses unknown states, broken links, unearned reading states, missing substantive evidence and unsupported complete-campaign declarations. Rejected edits remain in the page. Edits made while a save is pending remain unsaved after the earlier snapshot finishes.
+**Save vault** or Ctrl/Cmd+S commits edits through OMNARA's native validator. It recomputes source counts and refuses unknown states, broken links, unearned reading states, missing evidence notes and unsupported complete-campaign declarations. A complete declaration additionally requires matching phase/status and actual content-bound semantic review. Rejected edits remain in the page. Edits made while a save is pending remain unsaved after the earlier snapshot finishes.
 
-If an agent or another window changed the vault, Save refuses to overwrite it. Download your unsaved draft from **Vault actions** before reloading, then reconcile only the changes still needed. The draft download is a recovery JSON containing native file text; it is not an automatic import/merge. Prior native files are retained under the data home's `.workspace/history`. This is recoverable local editing, not a distributed transaction with an actively writing agent.
+If an agent or another window changed the vault, Save refuses to overwrite it. Download your unsaved draft from **Vault actions** before reloading, then reconcile only the changes still needed. The draft download is a recovery JSON containing native file text; it is not an automatic import/merge. Prior native files are retained under the data home's `.workspace/history`. Ordinary write failure restores prior native bytes; an incomplete rollback names the exact recovery snapshot. This is recoverable local editing, not a distributed transaction with an actively writing agent.
 
 The editable boundary is the campaign's root Markdown, campaign JSON, source/claim/query ledgers, structural citation audit, and immediate Markdown in `notes` and `draft`. Nested investigations, binary media, collected corpora and unrelated JSON snapshots remain in their original custody. They are neither loaded into the editor nor rewritten on save.
 
@@ -51,3 +51,11 @@ The service binds only to `127.0.0.1`, has no cloud dependency and makes no outb
 
 A failed load shows a retry and keeps its error explicit. Malformed native JSON can be inspected and corrected through Native files. If startup fails, run `python workspace/open.py --serve --data-root "your folder"` in a terminal to see the error. An empty installation contains no invented research or demonstration records. Desktop shortcuts are optional and are not installed automatically.
 
+
+## Review identity and damaged campaigns
+
+The current-review line describes a declared review bound to the saved inquiry, native evidence and report. Recorded support labels remain historical; the room cannot certify entailment. Unsaved edits remove the appearance of a current review immediately. See [review contract](../references/review-contract.md). A damaged campaign remains in the library with its error and can be opened into Native files for text repair. [Troubleshooting](TROUBLESHOOTING.md) covers rejected imports and unusable directories.
+
+The atlas uses the claim treatment from the current bound semantic review. An older `supported` label is displayed as historical/unbound when no current review covers it. A current qualified or unused treatment does not acquire a green supported badge from an older ledger label. The editor preserves the original ledger field for historical context; editing that field changes the review subject.
+
+For an optional Windows shortcut or Mac application entry with the approved Omnara globe icon, use [Add an Omnara entry](APP-ENTRY.md). The explicit command preserves an existing entry and never changes research data. On launch the entry uses OMNARA_HOME or the normal Documents/OMNARA Campaigns default; it does not retain a prior CLI --data-root choice.

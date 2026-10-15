@@ -1,6 +1,6 @@
 ---
 name: retrieval-intelligence
-description: "📚 Corpus retrieval, citations, and evidence."
+description: "📚 Corpus indexing, search, cited context, and relevance."
 ---
 
 # Retrieval Intelligence

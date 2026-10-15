@@ -1,29 +1,27 @@
-# Mock interview session
+# Three authored fictional attempts
 
-- Date: 2026-08-14
-- Mode: coached
-- Medium: text
-- Target: Q-001 evidence and concision
-- Session state: COMPLETE
+No user response was observed. All three attempts are teaching demonstrations retained in [practice-record.json](practice-record.json). The session is ended as an example, not certified complete preparation. Medium is text; no timing, audio or video performance was measured.
 
-## Turn 1
+## ATT-001: before coaching
 
-- Question ID: Q-001
-- Question asked: Tell me about a time a schedule changed at the last minute.
-- User response or accurate summary: Jordan described two absent instructors, then listed several phone calls but did not explain the prioritization decision or result.
-- Follow-up: What did you decide first, and how did you know the handoff worked?
-- Observable strengths: specific situation and personal ownership.
-- Material weakness: decision rule and result were missing.
-- Evidence consistency: consistent with EVD-001.
-- Status: needs-drill.
-- Next drill: lead with the prioritization decision and finish with the confirmed result.
+Question: Tell me about a time a schedule changed at the last minute.
 
-## Turn 2
+Fictional response: “Two instructors were out. I called people, moved rooms and updated a sheet.”
 
-- Question ID: Q-001
-- Question asked: Give the same answer in ninety seconds, centered on your decision.
-- User response or accurate summary: Jordan prioritized programs with registered families, reassigned rooms, used one written change log, confirmed each owner, and stated that all programs ran with one consistent family update.
-- Observable strengths: clear decision, method, ownership, and supported result.
-- Material weakness: opening context could be shorter.
-- Evidence consistency: consistent with EVD-001.
-- Status: workable.
+The gap is closed-loop confirmation: activity is visible, but agreement about the changed room and owner is missing. The evidence record says the manager set priority; feedback must not invent autonomous priority ownership.
+
+## ATT-002: coached rerun
+
+Cue: Make your personal confirmation step explicit. What did you check, and what did the team achieve?
+
+Fictional response: “My manager prioritized the registered groups. I kept one change log and asked each owner to confirm the revised room. I checked the three sessions ran; the manager and instructors also did the work.”
+
+The targeted mechanism is now visible with the cue. This is coached improvement within a fictional demonstration, not independent user transfer.
+
+## ATT-003: neutral variant
+
+Question: The room owner says the change was never agreed, but your sheet says it was. What would you do next?
+
+Fictional response: “I would compare the last confirmed message with the sheet and ask the room owner to verify the current constraint. Before promising the room, I would record the agreed owner and time and send the corrected plan for confirmation.”
+
+The proposed method addresses the same confirmation gap on a new problem. It is still authored fiction, not an observed candidate performance or a historical event. A real user must supply their own answer before coverage changes.

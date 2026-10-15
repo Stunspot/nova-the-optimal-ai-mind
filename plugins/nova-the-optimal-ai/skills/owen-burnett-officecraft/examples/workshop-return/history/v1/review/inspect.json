@@ -1,0 +1,158 @@
+{
+  "format": "officecraft-artifact-inspection/v1",
+  "officefile": "E:\\Github\\owen-burnett-officecraft\\codex\\owen-burnett-officecraft\\examples\\workshop-return",
+  "inspected_at": "2026-10-08T18:19:55.538781Z",
+  "executed_embedded_code": false,
+  "opened_in_native_application": false,
+  "artifacts": [
+    {
+      "path": "HANDOFF.md",
+      "size_bytes": 661,
+      "sha256": "a8329d55946f577537262aea1ec30c18b0d7a1ce1a724b115848e004d4ba74d4",
+      "extension": ".md",
+      "inspection": {
+        "kind": "MD",
+        "utf8_valid": true,
+        "nonempty": true,
+        "structurally_plausible": true
+      }
+    },
+    {
+      "path": "working/style-brief.md",
+      "size_bytes": 461,
+      "sha256": "e59cf1fd6d30b4e0c4a87f5544ada37270820ae26de8cfbf3c95ec1a42b3de56",
+      "extension": ".md",
+      "inspection": {
+        "kind": "MD",
+        "utf8_valid": true,
+        "nonempty": true,
+        "structurally_plausible": true
+      }
+    },
+    {
+      "path": "state/artifact-register.json",
+      "size_bytes": 687,
+      "sha256": "003475db1ce23755b9ff45596b2c1c68ceb181a9baea49ac80ff2fdf54e03293",
+      "extension": ".json",
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "state/brief.json",
+      "size_bytes": 731,
+      "sha256": "bee0d45bd1c9c6d3471a51dee2678e49abf9e2c9b4a65fa1efa42310cdc88065",
+      "extension": ".json",
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "state/content-ledger.json",
+      "size_bytes": 424,
+      "sha256": "f78f35b75432caa110de4b45b001ea45f1e9fe10875efb75d070793402a92616",
+      "extension": ".json",
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "state/decisions.jsonl",
+      "size_bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "extension": ".jsonl",
+      "empty": true,
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "sources/manifest.json",
+      "size_bytes": 260,
+      "sha256": "23e89f3b8e80695ece9e13aa751ce1df622e0d2e89c84d4e350215bbdf06ba1c",
+      "extension": ".json",
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "sources/original.json",
+      "size_bytes": 289,
+      "sha256": "b727d7a3fea38da5365453ef77dfd6e9fc1db671592a4bb42dd8236a5402edfd",
+      "extension": ".json",
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "review/officecraft-review.json",
+      "size_bytes": 441,
+      "sha256": "7cf6e71539d33bd70973dd508920c7af04824541580d913b287ba7593b2da007",
+      "extension": ".json",
+      "inspection": {
+        "kind": "other",
+        "note": "No format-specific inspection performed."
+      }
+    },
+    {
+      "path": "output/brief.docx",
+      "size_bytes": 37022,
+      "sha256": "2b0a0978d330a10a9c58c6f0aed020dc5e508c4963cd904ba3f57bf8d6ebd977",
+      "extension": ".docx",
+      "inspection": {
+        "kind": "DOCX",
+        "container": "OOXML",
+        "zip_valid": true,
+        "key_parts": [
+          "[Content_Types].xml",
+          "_rels/.rels",
+          "word/document.xml"
+        ],
+        "macro_parts": [],
+        "external_relationship_parts": [],
+        "entry_count": 17,
+        "uncompressed_bytes": 827187,
+        "zip_error_member": null,
+        "relationship_scan_truncated": false,
+        "content_types_xml_valid": true,
+        "required_part": "word/document.xml",
+        "required_part_xml_valid": true,
+        "required_root_kind": "document",
+        "required_root_expected": "document",
+        "required_root_valid": true,
+        "structurally_plausible": true
+      }
+    },
+    {
+      "path": "output/brief.pdf",
+      "size_bytes": 81089,
+      "sha256": "a4bc033fdcfbe5dfbaf19b024c0061d84e17c066ec3d9eaa52bced13c667bdf5",
+      "extension": ".pdf",
+      "inspection": {
+        "kind": "PDF",
+        "header_valid": true,
+        "version_hint": "1.7",
+        "eof_marker_present": true,
+        "page_hint": 1,
+        "page_hint_scan_truncated": false,
+        "catalog_present": true,
+        "indirect_object_present": true,
+        "root_reference_present": true,
+        "startxref": 80910,
+        "startxref_target_valid": true,
+        "structurally_plausible": true,
+        "note": "This is a bounded structural plausibility check, not full PDF parsing, rendering, accessibility, or semantic validation."
+      }
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "This inspection does not render files, verify visual quality, calculate spreadsheet formulas, decrypt content, or validate accessibility semantics."
+  ]
+}

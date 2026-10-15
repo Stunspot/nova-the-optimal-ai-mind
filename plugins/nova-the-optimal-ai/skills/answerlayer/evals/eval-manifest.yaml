@@ -1,9 +1,17 @@
 {
   "format": "cd-augment-eval/v1",
-  "package_version": "0.1.2",
+  "package_version": "0.3.0",
   "episode_mode": "isolated",
-  "files": ["core-transfer-cases.yaml"],
-  "indispensable_dimensions": ["answer_change_gate", "authority_boundary", "conflict_custody"],
-  "synthesis": "Failure of the answer-change gate, authority boundary, or conflict custody defeats the release claim. Other weaknesses require targeted repair and rerun.",
-  "result_authority": "Behavioral evidence for build and regression decisions under the recorded runtime; not proof of factual truth, strategic correctness, currentness, or commercial approval."
+  "files": [
+    "core-transfer-cases.yaml",
+    "decision-scenarios.md"
+  ],
+  "indispensable_dimensions": [
+    "answer_change",
+    "evidence_support",
+    "authority_scope",
+    "history_preservation",
+    "proportionality"
+  ],
+  "result_authority": "Test specifications and authored expert continuations only until an actual model/runtime output and judgment are retained. Deterministic helper and browser checks are separate evidence."
 }

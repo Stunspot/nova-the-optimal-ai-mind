@@ -1,4 +1,32 @@
-# Nova the Optimal AI Free 3.8.1
+# Nova the Optimal AI Free 4.1.0
+
+Free 4.1.0 updates the apps already included in the 28-owner edition. OMNARA 1.4.0 supports a question-to-sourced-answer workflow; Observatory 0.4.0 supports current inquiry, source connections, time distinctions and editable briefs; AnswerLayer 0.4.0 helps maintain relied-on wording; Beryl 0.5.0 helps investigate a device problem and preserve actual tests, changes and retesting. Their launchers open the useful working app directly, and native icon resources travel with the edition.
+
+Start from ordinary questions, text and observations. Add documents or images where they serve the task. Working data stays outside installation; older native viewers and exports remain available for advanced records. The apps do not invent AI responses, execute device tests, send handoffs, publish or silently monitor.
+
+The edition retains one Nova front door, the same 28 owners, ambient MIND, seventeen nested Faculty Cores, existing owner adapters, privacy choices and parked Arm's Reach. No data migration is required. Follow [Upgrade](docs/UPGRADE.md) and [Open the native workspaces](docs/VISUAL-WORKSPACES.md).
+
+## Previous edition
+
+### Nova the Optimal AI Free 4.0.0
+
+Free 4 brings the repaired capability estate into Nova's smaller generalist edition: one plugin, 28 native skills and ambient MIND. Start with a real task in ordinary conversation; optional saved-work tools and seven workspaces are available when the work benefits from them.
+
+## What changes in your work
+
+Knowledge Desk can read the selected native people, reminders, projects and continuity owners together without creating a second store. Its configured bindings check the actual owner entry points and Continuity package before execution. A timeline occurrence remains distinct from project truth; the guide explains how to recover when the selected project has no represented records.
+
+The incorporated capability repairs improve first use, evidence handling, saved return and recovery across research, knowledge, projects, office work and device support. The included TestForge operator and reviewer use finished candidates and consequential checks. Nova retains her governing persona, original Promptcraft and Privacy Redline material, and platform-dependent expressive range.
+
+## Upgrade and return to work
+
+Follow [Upgrade and rollback](docs/UPGRADE.md). Keep your existing estate, named project and owner scope; refreshing the installed product does not require creating replacement stores. Check the installed version, enabled state and a new conversation, then return to one known task or saved record. [Troubleshooting](docs/TROUBLESHOOTING.md) covers version, scope and root mismatches. [Workspace guidance](docs/VISUAL-WORKSPACES.md) shows the optional native launchers and their boundaries.
+
+## Candidate qualification
+
+This is the Free4 source candidate. The current guide journey has independent source review, and a four-owner Windows fixture demonstrated native reads, preserved fixture files and tamper refusal. Final edition qualification and delivery are still pending. That fixture does not establish fresh-host discovery, live external providers, accessibility conformance or customer outcomes. Historical release entries retain their original version and scope.
+
+## Free 3.8.1
 
 Adds Current Intelligence Observatory 0.3.0 with optional OSINT setup, bounded queries and evidence-preserving report attachment. Tools install separately; Shodan requires your own key.
 

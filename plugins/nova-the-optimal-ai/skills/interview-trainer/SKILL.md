@@ -3,89 +3,50 @@ name: interview-trainer
 description: "🎤 Role questions backed by work evidence."
 ---
 
-# Train for the interview that is actually scheduled
+# Help the candidate answer the question in front of them
 
-Prepare and rehearse one specific interview. Do not broaden into application writing, career campaigning, offer comparison, background-check advice, or employer contact.
+Prepare for one interview and improve the user's own answers. Start beside the live need: a role, an upcoming stage, a difficult question, a supplied attempt, or an interrupted rehearsal. Preserve the caller's identity; the interviewer role is a practice mode, not a new personality or access to an employer's mind.
 
-## Establish the interview
+## Get to a useful first attempt
 
-Gather or locate:
+Use supplied material before asking again. Establish the role and available practice time; ask one missing fact only if it changes the next exercise. If the user says “ten minutes, operations coordinator,” select one consequential coordination question and begin. Unknown employer, schedule or format stays unknown. A full packet is a saved-work option, never admission paperwork for a short rehearsal.
 
-- the vacancy posting and employer identity;
-- interview date, time zone, format, expected length, stage, and known participants;
-- the user's application materials and work-history evidence;
-- recruiter messages, interview instructions, and named topics;
-- accessibility, language, technology, privacy, and practice-style preferences.
+Choose coached, realistic, or rapid-drill mode from the request. Default to a brief coached turn when preferences are absent, then adapt. Ask one question and wait. A model answer is a demonstration, not something the user has said. End or change the exercise when the user chooses; fatigue and diminishing returns are reasons to switch strategy, not to repeat until a magical score appears.
 
-Proceed usefully when some details are missing. Separate employer-supplied facts, current retrieved facts, user evidence, likely questions, and speculation.
+## Build a role-specific preparation map
 
-Read [references/role-and-question-mapping.md](references/role-and-question-mapping.md) before predicting questions. Read [references/evidence-backed-answer-practice.md](references/evidence-backed-answer-practice.md) before building answers. Read [references/mock-interview-and-coaching.md](references/mock-interview-and-coaching.md) before conducting or critiquing a mock. Read [references/boundaries-accommodations-and-fairness.md](references/boundaries-accommodations-and-fairness.md) for sensitive, prohibited, accommodation, fraud, or disclosure issues. Read [references/artifact-contract.md](references/artifact-contract.md) before final handoff.
+Read [Role and question mapping](references/role-and-question-mapping.md) when selecting priorities or predicting questions. Distinguish a confirmed topic from exact employer-supplied wording. Infer questions from the role and known stage, with their basis visible. An interview about troubleshooting needs a diagnosis task; a portfolio interview needs an explanation of a real design decision; neither becomes competent merely by filling STAR slots.
 
-## Build the preparation packet
+Use decisive criteria and material gaps to choose the next practice question. Include counterevidence and unknowns. Research current employer facts only with available sources; keep provided facts, user self-report, retrieved information and inference distinct. Missing web access need not stop useful role preparation.
 
-Create:
+## Keep the answer true and usable
 
-- `employer-role-brief.md`
-- `question-map.csv`
-- `answer-bank.md`
-- `mock-session-record.md`
-- `critique-and-drills.md`
-- `questions-to-ask.md`
-- `final-interview-brief.md`
-- `source-register.md`
+Read [Evidence-backed answers](references/evidence-backed-answer-practice.md) before constructing or revising answers. Elicit what the user personally did, why, what changed and how they know. A source that mentions the project does not establish a claimed metric or responsibility. Preserve conflicting versions until resolved; use a bounded qualitative result or explicit uncertainty where needed.
 
-### Map likely questions without pretending certainty
+Help with retrieval cues and a natural opening, not a polished script to memorize. Separate past accomplishment, adjacent experience and proposed method. User confirmation is accountable self-report, not independent authentication. Keep confidential names and details private; use generalized descriptions that preserve the decision and evidence without inventing replacements.
 
-Derive question families from the vacancy, interview stage, known format, employer facts, and common role demands. Label each as confirmed topic, strongly indicated, plausible, or speculative. Cover motivation and fit, role competence, behavior, methods, trade-offs, errors and recovery, collaboration, constraints, and candidate questions where relevant.
+## Coach the precise missing performance
 
-Do not claim knowledge of a secret interview script.
+Read [Mock interview and coaching](references/mock-interview-and-coaching.md) before assessing or drilling. Quote a short piece of the actual answer, describe its effect, and give one actionable next attempt. “You listed the calls, but I still cannot tell how you chose whom to prioritize” is useful feedback; “be more confident” is not an observation.
 
-### Build answers from evidence
+Match the rerun to that exact diagnosed behavior. Preserve the original answer, the intervention, the changed answer and what remains weak. A coached repeat can demonstrate improvement under a cue. Test adaptable performance with an uncued question variation requiring the same decision, not a different topic carrying the same competency label. Keep “observed once,” “improved with help” and “demonstrated on this variant” separate. [Worked contrasts](references/worked-coaching-contrasts.md) shows success and failure.
 
-Register each factual example in `evidence-register.csv`, join it to one or more accountable `SRC-*` records in `source-register.md`, and map answer prompts to stable `EVD-*` IDs. Then map every factual example to supplied evidence or user confirmation. Use STAR, SOAR, or another structure only when it makes the answer clearer. Preserve the user's natural language and real decision process. Include what the user did, why, trade-offs, errors, learning, and results when supported.
+Assess only what the medium exposes. Text can show ordering, specificity and reasoning; it cannot reveal elapsed speaking time, gaze, vocal quality or deception. Agree on accessible alternatives without requiring medical details. Use calibrated descriptive feedback, not a hiring probability or personality diagnosis.
 
-Never invent metrics, clients, tools, responsibilities, titles, or outcomes. Keep unsupported gaps visible. When the user lacks a direct example, build an honest adjacent answer or a learning response.
+## Leave a useful stopping point
 
-### Conduct a real mock loop
+For a short session, give the strongest current cue, one unresolved weakness and the next question or action. When a saved preparation packet is requested, follow [Artifact contract](references/artifact-contract.md) and [Saved practice format](references/saved-practice-contract.md). Keep original responses separate from edited demonstrations. Record what changed and where to resume. Re-entry compares role instructions and evidence before inheriting prior coverage.
 
-Agree on mode:
+The native checker is optional for conversation and useful for a maintained packet:
 
-- coached: pause after each answer;
-- realistic: hold feedback until a section or the end;
-- rapid drill: repeat one weak behavior under variations.
+```text
+python scripts/check_interview_packet.py <packet-directory> --json
+```
 
-Ask one question at a time. Let the user answer before coaching. Record the question, answer summary, evidence used, observed strengths, material weakness, and next drill. Do not write the user's answer and then congratulate the user for saying it.
+It reports exact source/response relationships and current review consistency. It cannot authenticate the user, infer semantic truth, decide general readiness or predict hiring. `--draft` preserves incomplete/legacy work without qualifying it. Fix the substantive defect before renewing a content review; changing a hash is not reviewing.
 
-Critique behavior, not personality. Evaluate relevance, evidence, structure, specificity, ownership, judgment, clarity, concision, and delivery cues that are actually observable in the medium. Do not infer eye contact, facial affect, protected traits, accent quality, or deception from text or unsupported signals.
+## Keep authority proportional
 
-### Create targeted drills
+Read [Boundaries and accommodations](references/boundaries-accommodations-and-fairness.md) for disclosure, suspicious recruiting, recording or live-assistance questions. Pause only the risky branch and continue safe preparation. External contact, recording and disclosure require their actual authority and tools. Transparent employer-permitted support is different from covert substitution; never impersonate the candidate or invent experience. Sensitive personal decisions remain the user's.
 
-Turn each material weakness into a short practice task with a success cue. Prefer one or two high-leverage drills over an encyclopedic curriculum. Repeat until the user can produce an improved answer or until the remaining limitation is explicit.
-
-### Prepare questions to ask
-
-Draft questions that help the user understand the work, success measures, team, manager, priorities, constraints, process, and next steps. Avoid questions already answered by reliable material unless clarification is useful. Preserve compensation and accommodation timing as user choices.
-
-## Reconcile before done
-
-Run the structural checker when Python and files are available. It validates the `question -> evidence -> source` joins and rejects a claimed practiced state without a recorded user response:
-
-    python scripts/check_interview_packet.py <packet-directory>
-
-Then inspect the content:
-
-- role and employer facts are source-linked and date-sensitive facts are labeled;
-- likely questions are probabilities, not claimed leaks;
-- factual answers trace to evidence or user confirmation;
-- the mock record contains the user's actual responses;
-- critique names concrete behavior and the next drill;
-- questions to ask are role-specific;
-- the final brief fits on one scannable page or equivalent compact view.
-
-The checker cannot judge truth, delivery, confidence, employer intent, or interview outcome.
-
-## Stop responsibly
-
-Do not impersonate the user, join an interview, record anyone, contact the employer, disclose sensitive data, or provide covert real-time answers without explicit authority and a lawful exposed tool. Stop and preserve a handoff when the interview process appears fraudulent, a question requires legal advice, or a protected or medical disclosure decision belongs with the user.
-
-Done means the user has a complete preparation packet, at least one recorded practice cycle when they choose to practice, visible weak spots, targeted drills, and a final interview brief.
+Finish with preparation the user can act on, their actual practice evidence when they chose to practice, and a compact honest next step. A complete file set, an ended session and a successful interview are different outcomes.

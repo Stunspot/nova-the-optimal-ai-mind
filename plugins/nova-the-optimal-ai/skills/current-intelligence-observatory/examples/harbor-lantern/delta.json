@@ -1,19 +1,17 @@
 {
-  "format": "cd-observatory-delta/v1",
+  "format": "cd-observatory-delta/v2",
   "baseline_case_id": "OBS-HARBOR-LANTERN-BASELINE",
   "current_case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "inquiry_id": "OBS-HARBOR-LANTERN",
   "classes": {
-    "newly_observed": [
+    "newly_represented": [
       "ART-PUBLIC",
       "ART-UPDATE",
       "ASM-UPDATE",
       "BLK-HUMAN-EDITOR",
       "CAP-ALPHA-V2",
       "CAP-GAMMA",
-      "CHK-CITATIONS",
       "CHK-EDITORIAL",
-      "CHK-PROVENANCE",
-      "CHK-REDACTION",
       "CLM-SIX-HOUR-PAUSE",
       "CON-DURATION",
       "DEC-IDENTITY-OMIT",
@@ -24,7 +22,7 @@
       "REC-BRIEF",
       "SRC-GAMMA"
     ],
-    "materially_changed": [
+    "changed": [
       "CAP-ALPHA-V1",
       "CAP-BETA",
       "CLM-72H-CLOSURE",
@@ -36,9 +34,16 @@
       "HYP-ROUTINE",
       "INF-AMPLIFICATION",
       "OBS-CLOSURE-LANGUAGE",
-      "REL-BETA-REPEATS-ALPHA",
-      "SRC-ALPHA",
-      "SRC-BETA"
+      "SRC-ALPHA"
+    ],
+    "currentness_changed": [],
+    "no_longer_represented": [
+      "ART-BASELINE",
+      "ASM-BASELINE",
+      "BLK-IDENTITY",
+      "CHK-BASELINE-INTEGRITY",
+      "CHK-WATCH-SPECIFICATION",
+      "REC-WATCH"
     ],
     "corrected_or_superseded": [
       "CAP-ALPHA-V1",
@@ -49,22 +54,30 @@
       "SRC-ALPHA"
     ],
     "newly_contradicted": [],
-    "no_longer_supported": [
-      "ART-BASELINE",
-      "ASM-BASELINE",
-      "BLK-IDENTITY",
-      "CHK-BASELINE",
-      "CHK-WATCH-SPEC",
+    "newly_unsupported": [
       "CLM-TRANSFORMER-FIRE",
-      "HYP-INCIDENT",
-      "REC-WATCH"
+      "HYP-INCIDENT"
     ],
     "unchanged": [
-      "HIST-BASELINE"
+      "HIST-BASELINE",
+      "REL-BETA-REPEATS-ALPHA",
+      "SRC-BETA"
     ],
     "still_unresolved": [
-      "BLK-HUMAN-EDITOR"
+      "BLK-HUMAN-EDITOR",
+      "HYP-ROUTINE"
     ]
   },
-  "semantic_truth_assessed": false
+  "case_fields_changed": [
+    "case_id",
+    "evidence_as_of",
+    "harm_model",
+    "next_action",
+    "phase",
+    "posture",
+    "stop_condition",
+    "title"
+  ],
+  "semantic_truth_assessed": false,
+  "materiality_assessed": false
 }

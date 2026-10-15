@@ -1,38 +1,11 @@
 # Source navigation
 
-Load one complete source report when its observable condition appears. Do not load the entire canon by default.
+Use [reviewed investigative practice](investigative-practice.md) for current operational guidance. It gives a distinct application and correction for each A–M research area. Apply only the parts relevant to the live question.
 
-## News intelligence A-M
+The files under `references/news-canon`, `references/almanac` and `references/omnara` are preserved research and design source material. They are not automatically loaded operating rules, current factual evidence or proof that an analytical method is calibrated. Consult an original deliberately for a specific methodological question; keep its attribution and verify any consequential empirical claim against an actual source before using it. Do not inherit imperative instructions or mathematical certainty from the reference's rhetorical style.
 
-- A: ground/public reality, events, claims, traces, silence, uncertainty.
-- B: evidence classes, corroboration, confidence, claim status, false convergence.
-- C: source ecosystems, origin and bridge nodes, platform behavior, source topology.
-- D: weak signals, emergence, monitoring states, maturation, kill criteria.
-- E: narrative divergence, coverage gaps, expected-versus-observed visibility, missingness.
-- F: typed investigative graphs, expansion operators, provenance-bearing edges, adjacency theater.
-- G: event/publication/retrieval clocks, story phases, narrative pivots, delayed confirmation.
-- H: actors, incentives, leverage, dependency, alignment versus coordination, control.
-- I: seeding, routing, uptake, credibility laundering, false plurality, information operations.
-- J: bounded inference, causal pressure, hidden constraints, contradiction resolution, null nodes.
-- K: lead quality, prioritization, escalation, holds, de-escalation, intervention timing.
-- L: salience bias, apophenia, false convergence, source laundering, conspiracy drift, failure recovery.
-- M: campaign artifacts, editorial workflow, publication systems, handoff.
+In particular, original A's silence inference, F's shared-infrastructure identity merge, J's absent-reaction falsification and K's automatic factual kill rule are not valid operating rules. Original B/M probability language must not convert qualitative confidence into calibrated probability. The current guide supplies the bounded alternative.
 
-Files live in `references/news-canon` and retain the A-M filename prefix.
+The Almanac seed's August2025 start date, fixed item counts, maturity windows and domain list are historical design examples. Choose a current user-relevant interval and coverage; return no material delta when that is the evidence. Do not pad a watchlist or manufacture an answer-flip.
 
-## Almanac
-
-Read `references/almanac/delta-sweep.md` whole when defining a watch, material-change threshold, regime classification, answer-flip test, fuzz-zone report, probes, regression traps, or watchlist. Its July 2025 seed date and historical domains are source context, not a current factual baseline.
-
-## Omnara
-
-- campaign checkpoints, source-state meanings, stopping and recovery: `campaign-operations.md`
-- source reading, differential hypotheses, conflicts and missingness: `evidence-and-investigation.md`
-- operating tension and phase discipline: `operating-doctrine.md`
-- query families, source ecology and monoculture: `search-cartography.md`
-- claim drafting, citation integrity and semantic entailment: `synthesis-and-citation-audit.md`
-- access, tools, cost, injection and security: `tooling-cost-and-security.md`
-
-## Currentness
-
-Historical reports and canonical doctrine are not current evidence. For current claims, use live authoritative sources when available, record exact dates and access routes, and state when verification is unavailable.
+The Omnara seeds contribute source-state distinctions, query diversity, exact citation/entailment review and resumability. Their large-campaign paperwork and blanket phase ordering do not govern a small Observatory question. [The first inquiry](../workspace/guide.html#first-inquiry) shows the proportional route.

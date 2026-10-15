@@ -1,4 +1,4 @@
 interface:
   display_name: "TestForge Verification Reviewer"
-  short_description: "🔍 Audit release verdicts and test proof."
+  short_description: "🔍 Release claims, test oracles, and evidence sufficiency."
   default_prompt: "Use $verification-reviewer to challenge this verification package before its release assessment is trusted."

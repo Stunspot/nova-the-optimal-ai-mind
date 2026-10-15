@@ -1,5 +1,7 @@
 """Checks native validation and actual private-loopback/reconnect boundaries."""
 import json,subprocess,sys,unittest,urllib.request,urllib.error,socket
+from unittest.mock import patch
+from launch_runtime import PrivateLoopbackServer
 from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
 ROOT=Path(__file__).resolve().parent
@@ -69,7 +71,7 @@ class DeskTest(unittest.TestCase):
    def log_message(self,*args):pass
    def do_GET(self):
     self.send_response(200);self.end_headers();self.wfile.write(b'{}')
-  occupied=ThreadingHTTPServer(('127.0.0.1',0),Occupied)
+  occupied=PrivateLoopbackServer(('127.0.0.1',0),Occupied)
   worker=threading.Thread(target=occupied.serve_forever,daemon=True);worker.start()
   command=self.command[:-1]+[str(occupied.server_port)]
   child=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8')
@@ -96,4 +98,13 @@ class DeskTest(unittest.TestCase):
   for path in ('/assets/host.py','/assets/../host.py','/assets/missing.png'):
    with self.assertRaises(urllib.error.HTTPError) as error:self.request(path)
    self.assertEqual(error.exception.code,404);error.exception.close()
+class LoopbackBindingTest(unittest.TestCase):
+ def test_explicit_loopback_bind_never_requests_reverse_dns(self):
+  from http.server import BaseHTTPRequestHandler
+  with patch('socket.getfqdn',side_effect=AssertionError('Loopback must not depend on reverse DNS')):
+   server=PrivateLoopbackServer(('127.0.0.1',0),BaseHTTPRequestHandler)
+   try:
+    self.assertEqual(server.server_name,'127.0.0.1')
+    self.assertGreater(server.server_port,0)
+   finally:server.server_close()
 if __name__=='__main__':unittest.main()

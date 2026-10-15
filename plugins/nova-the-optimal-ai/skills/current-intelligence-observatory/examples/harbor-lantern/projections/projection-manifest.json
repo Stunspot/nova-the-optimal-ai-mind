@@ -1,23 +1,24 @@
 {
   "format": "cd-observatory-projection-manifest/v1",
   "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "subject_sha256": "f6aa4dc2b14b22013d3093c62eb084db4850966835880136cae81b060e768968",
   "invariant_errors": [],
   "files": [
     {
       "path": "ledger.json",
-      "sha256": "0105C2AB69AED798FB397B3643F037736600CCCF03C72BAD3408BDBEA25715DC"
+      "sha256": "0fcc3e2d4b8839044f9a5de2bbeb4204f1ce32550069fe5a424deb3264086744"
     },
     {
       "path": "graph.json",
-      "sha256": "44E3429D1ADB383EF36F92342F5F59B6F808EB1D03485FDE94E6292134969E80"
+      "sha256": "d54a9310e3eda44d149af03fb398b0c66c205a95925e52d30810dc82c5ac803a"
     },
     {
       "path": "timeline.json",
-      "sha256": "D6290C198D4E15FDC4B8411BFC580D4731B2D04991872B352FAA3B3EAEF6C651"
+      "sha256": "6aa5db95f4a6e17a2df285fec173b52be771e2c12b5367aa1c09c843708bd584"
     },
     {
       "path": "map.json",
-      "sha256": "DF1EA0A830743B01F4B301D17219A5748EF6DEB02B9677129DE1D0B38E030A09"
+      "sha256": "860c1418575db16c4a8eff1bbc1cea2ce9d39edc4af1caa18a2dd677aaaaaeaf"
     }
   ],
   "semantic_truth_assessed": false

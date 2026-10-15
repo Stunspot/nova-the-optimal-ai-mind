@@ -1,6 +1,6 @@
 ---
 name: nova-operations
-description: "💠 Nova setup, continuity, status, update, and recovery."
+description: "💠 Estate setup, service status, updates, and recovery."
 ---
 
 # Keep Nova operational without making the user become IT
@@ -15,7 +15,7 @@ Run the read-only status path first:
 python -B -X utf8 scripts/nova_estate.py status
 ```
 
-Status reports Cognitive Continuity read support and mutation support separately, then reports canonical Commonplace verification independently from derived Concordance freshness or availability. Use `doctor` when a symptom suggests broken selectors, an unavailable Continuity workspace, a missing service directory, or package damage. Preserve the exact symptom and distinguish package presence, host discovery, estate configuration, service support, and model behavior. Never reset the harness, delete unrelated plugins, or erase state as a diagnostic shortcut.
+Status reports Cognitive Continuity read support and mutation support separately, then reports canonical Commonplace verification independently from derived Concordance freshness or availability. Use `doctor` when a symptom suggests broken selectors, an unavailable Continuity workspace, a missing service directory, or package damage. Preserve the exact symptom and distinguish package presence, host discovery, estate configuration, service support, and model behavior. Never reset the harness, delete unrelated plugins, or erase state as a diagnostic shortcut. A valid registry with missing or unsafe bundled service files is a package-recovery problem: restore the affected product files, preserve the estate, and rerun status or doctor. A malformed present selector is corruption, not an additive upgrade; do not normalize it into a fresh empty store.
 
 ## Set up the optional Nova estate
 
@@ -32,7 +32,7 @@ python -B -X utf8 scripts/nova_estate.py init --root "<absolute root>" --user "<
 
 A nondefault root also receives one small platform-configuration pointer so a later GUI-launched agent can discover the current estate without a shell profile. The pointer contains no user records and has no selector authority; the estate registry must corroborate it. The platform-default root needs no duplicate pointer.
 
-On Windows only, the user may separately request the optional convenience flag `--apply-user-environment`. It copies the registry selectors into the current user's environment and requires a fresh desktop-app process before those ambient values appear. Never pass that Windows-only flag on macOS or Linux. Nova's own launcher does not require global environment variables or a restart.
+On Windows only, the user may separately request the optional convenience flag `--apply-user-environment`. It copies the registry selectors into the current user's environment and requires a fresh desktop-app process before those ambient values appear. Never pass that Windows-only flag on macOS or Linux. Nova's own launcher does not require global environment variables or a restart. If the optional environment copy fails, an `initialized` or `upgraded` estate remains in place and the receipt reports `environment_state: failed_may_be_partial` with a nonzero exit. Preserve that estate and retry the same `init` or `upgrade` command with `--apply-user-environment` when the Windows environment write can succeed; already-configured init honors this explicit retry without reinitializing data.
 
 ## Run stateful Nova services
 
@@ -46,7 +46,7 @@ python -B -X utf8 scripts/nova_estate.py run project-management -- <project argu
 python -B -X utf8 scripts/nova_estate.py run commonplace -- <commonplace arguments>
 ```
 
-Add `--root "<absolute root>"` before the service name only when deliberately addressing an explicit estate rather than the current discovered estate. Do not invoke the bundled service scripts directly for Nova-owned state: doing so would make inherited process environment part of correctness again.
+Add `--root "<absolute root>"` before the service name only when deliberately addressing an explicit estate rather than the current discovered estate. Do not invoke the bundled service scripts directly for Nova-owned state: doing so would make inherited process environment part of correctness again. Launcher-owned `--estate-root` and Knowledge Desk `--nova-operations` options cannot be passed through in split, equals or abbreviated forms. Use the launcher's explicit `--root` to choose an authorized estate. The optional `nova.env` helper is POSIX shell source with literal-quoted paths; PowerShell users should use the registry-backed launcher or the explicit Windows environment option.
 
 Commonplace 0.3.0 exposes 25 commands. Estate initialization and ordinary `rebuild` remain lexical and require no model. Semantic or hybrid retrieval is an explicit post-initialization choice using the customer's loopback Ollama embedding service; no model is bundled or activated automatically. `federated-search` has fixed read-only adapters for Dunbar, Corkboard, Dennis, and Continuity. `history` and `as-of` read authenticated retained state. Promotion commands create and export non-executable proposals only; they never write a target owner. Installation, estate setup, and retrieval grant none of these commands mutation authority.
 

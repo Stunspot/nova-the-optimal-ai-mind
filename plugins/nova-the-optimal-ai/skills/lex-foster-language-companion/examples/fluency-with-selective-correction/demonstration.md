@@ -1,17 +1,23 @@
-# Protect fluency, then repair what matters
+# A Japanese conversation with selective correction
 
-Behavior taught: honor a learner’s correction preference while still repairing a recurring form after the communicative turn.
+This is an authored fictional teaching example, not a recorded learner or model trial. The learner knows the polite forms 行きます, 見ます and 聞きます, but repeatedly uses present/future forms for completed events. The purpose is written past-time narration, not an oral fluency rating.
 
-## Situation
+**Learner:** I want to chat about yesterday in Japanese. Let me finish before corrections.
 
-An intermediate learner asks to rehearse a Japanese self-introduction for a hobby club. They request no interruption until they finish.
+**Lex:** 昨日は何をしましたか。 (What did you do yesterday?)
 
-## Lex’s treatment
+**Learner:** 昨日、公園に行きます。それから、友達と映画を見ます。映画はとてもよかったです。
 
-Lex plays the club member and keeps the exchange moving. Minor particle and politeness errors are held. After the learner completes the introduction, Lex names one concrete success and groups the two errors that repeatedly made the timeline unclear.
+**Lex:** You made the sequence clear, and よかったです already puts your opinion in the past. The two actions need the same time frame: 行きます → 行きました; 見ます → 見ました. Yesterday’s actions are finished. Try your first two sentences again.
 
-Lex gives a short contrast, asks the learner to repair one sentence, then changes the cue from “when I started” to “how long I have continued.” The learner must reuse the temporal form under a new condition.
+**Learner:** 昨日、公園に行きました。それから、友達と映画を見ました。
 
-## Evidence boundary
+**Lex:** Both actions now match 昨日. That was a successful repair with the model beside you. One new scene: yesterday you stayed home and listened to music. Tell me what you did.
 
-The completed role-play supports an observation about prepared chat production in this topic. It does not establish spontaneous listening, pronunciation, or a global proficiency level.
+**Learner:** 昨日、家で音楽を聞きました。
+
+**Lex:** You applied the same polite past ending to 聞きます. This is a supported changed-cue success in writing; the rule was just supplied. Next time, we can start with a fresh yesterday story before looking at today’s model.
+
+## Why this checks the actual gap
+
+The diagnosis is tense selection in polite written narration. Both retries require that choice, including a different known verb; asking for a new park noun would not. The tutor waits for each answer, limits feedback to one recurring pattern and does not pretend this proves listening, pronunciation or durable independent production. If the learner asks to stop after receiving the correction, the session ends there.

@@ -1,54 +1,21 @@
-# Update, remove, and clean up Omnara
+# Update, return and remove
 
-Treat the installed skill, helper-created campaign data, downloaded archives, and Nova + MIND state as separate things. Removing one does not silently remove the others.
+Keep the application, installed skill and owner-selected research home separate. Updates should replace a complete known product, preserve the previous version for rollback and leave research data in place.
 
-## Update an individual Omnara skill
+## Update
 
-1. Finish or checkpoint any active campaign.
-2. Back up campaign directories that matter.
-3. Record the current Omnara release or source commit.
-4. Download and inspect the replacement release.
-5. Use the host's replace or update function for the exact omnara-deep-research skill.
-6. Start a fresh task or conversation.
-7. Repeat the discovery and bounded invocation probes in [Installation](INSTALLATION.md).
-8. Validate an existing campaign before resuming it.
+Checkpoint active campaigns and preserve a complete-folder backup when needed. Record the current package. Inspect the replacement, use the host's supported recoverable update path, and start a fresh session for discovery/invocation checks in [Installation](INSTALLATION.md). For Nova Free/Emergent use the current edition's own instructions. Standalone MIND is deprecated; it does not need reinstalling.
 
-Do not merge old and new skill directories file by file. A partial replacement can leave stale references behind.
+Stop an old campaign-room process before replacing its application files. Closing its browser tab does not stop the local service. A launched process records its PID and matching application/data-root identity under the research home's `.workspace/instance-*.json`. Verify the exact matching process before terminating it; do not kill unrelated Python processes. Reopen through the new package launcher and confirm the expected research home.
 
-## Update through Nova + MIND
+Old campaigns remain native files. Legacy labels do not become new review evidence. Preserve the prior completed copy and move a working copy to review/active when actual content or verification needs repair. The [review contract](../references/review-contract.md) names what changes invalidate review. Admin-only status transitions retain a current subject.
 
-Follow the [Nova + MIND upgrade guide](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/UPGRADE.md). That upgrade can affect plugins, hooks, and the MIND database in addition to Omnara. Do not delete or replace those components solely to update one skill unless the integrated guide explicitly directs it.
+## Recovery and rollback
 
-## Remove the individual skill
+Reinstall the preserved complete application/skill, reopen with the same data root and repeat the bounded discovery/invocation check. If a new review extension is not understood by an old helper, keep the newer evidence files in backup; do not discard them to obtain an old pass. [Troubleshooting](TROUBLESHOOTING.md) covers write failure and conflict recovery.
 
-1. Confirm the exact installed skill identity and location in the host.
-2. Disable omnara-deep-research if the host separates disablement from removal.
-3. Remove only that skill through the host's skill manager.
-4. Start a fresh task and verify that the selector is no longer discoverable.
+Room history is a recoverable set of prior native files, not a full research backup. Native export omits external originals, media, nested corpora and histories. Back up the complete research folder when those matter, and separately preserve external source custody identified by your notes.
 
-Removing Omnara does not remove campaigns, downloaded ZIPs, generated reports, source caches, browser history, model-provider logs, or Nova + MIND state.
+## Remove
 
-## Campaign data cleanup
-
-Campaign vaults are ordinary files in the location you selected. Review before deletion:
-
-- campaign.json and research brief;
-- query, source, and claim ledgers;
-- source notes and retrieved excerpts;
-- credentials or private URLs accidentally recorded;
-- drafts, assembled reports, metrics, and audits;
-- backups, exports, and copies shared elsewhere.
-
-Delete only the exact campaign directory you intend to remove. Use your platform's recoverable trash mechanism when practical. Emptying trash, wiping backups, clearing cloud synchronization history, and asking model or search providers to delete logs are separate actions governed by those services.
-
-## Local helper residue
-
-Python may create __pycache__ directories or .pyc files. Disposable smoke campaigns may remain wherever you initialized them. These are not required for continued use and may be removed after you verify their exact paths.
-
-## Roll back
-
-Reinstall the previously recorded release, start a fresh session, repeat discovery and invocation, and validate the campaign before resuming it. A restored directory is not a completed rollback until the host discovers and invokes the intended version.
-
-## Data retention boundary
-
-Omnara itself has no telemetry client, account system, background service, or automatic network uploader. The agent host, model provider, browser, search service, repository, synchronization service, or research source may retain data under its own policy. See [Security and privacy](SECURITY-AND-PRIVACY.md).
+Disable/remove only omnara-deep-research through the host, verify discovery in a fresh session, and stop the exact matching local room service if running. Removing the application does not delete campaigns, exports, histories or provider logs. Review those paths individually and use recoverable trash when practical. Omnara provides no cloud account, telemetry uploader, encryption, automatic expiry or deletion service. Its loopback server is local; the model host, browser, search provider and synchronization tools retain their own policies. See [Privacy](SECURITY-AND-PRIVACY.md).

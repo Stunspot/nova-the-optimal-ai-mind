@@ -37,3 +37,9 @@ Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Ora
 ## Optional OSINT collection
 
 The Observatory includes a portable installer and case bridge for Maigret, theHarvester, Shodan and the bounded SpiderFoot domain profile. Ask Nova to set up the optional OSINT tools. See [OSINT setup](OSINT.md) for prerequisites, first-run checks and recovery.
+
+## Work in the optional apps
+
+OMNARA starts from a question and helps you build a sourced answer. Observatory relates changing events, claims, uncertainty and competing explanations to a useful brief. AnswerLayer compares a relied-on answer with a new development and preserves the reason for a revision. Beryl compares explanations and test observations, then keeps interventions and retesting distinct. Each begins from ordinary input and saves outside installation; none generates a pretend diagnosis or model answer.
+
+Use [Open the native workspaces](VISUAL-WORKSPACES.md) for the packaged launcher and one complete first task. Native structured records remain advanced interoperability routes.

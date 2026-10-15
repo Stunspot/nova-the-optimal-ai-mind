@@ -54,3 +54,8 @@ At organizational transitions, distinguish retained task truth, progress control
 Independent review earns its cost when the merge is consequential, uncertainty remains, or a plausible failure could survive ordinary checks. Give the reviewer the target, claim, sources, observed evidence, and authority boundary. Withhold the builder's intended verdict and hidden evaluation guidance.
 
 Reviewer agreement supports only the reviewed scope and evidence cutoff. It cannot grant authority, certify defect freedom, establish stakeholder consent, or prove unexercised host behavior.
+
+
+## Preserve declared lifecycle and outcome
+
+Use [Plan state and validation](plan-state-and-validation.md) when recording dispatch, cancellation, accepted output, write readback, capacity or closure. Worker disposal does not erase accepted evidence or establish mission success; uncertain stopped writes remain reserved until observed readback.

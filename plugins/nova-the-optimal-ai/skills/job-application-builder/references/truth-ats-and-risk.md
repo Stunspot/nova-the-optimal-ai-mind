@@ -1,36 +1,13 @@
-# Truth, screening, privacy, and risk boundaries
+# Truth, privacy and screening limits
 
-## Evidence levels
+Documented support means the supplied record supports the claim; it is not a truth certificate. User-confirmed support names an accountable user statement. Reasonable paraphrase stays inside the source’s actual scope. Unsupported, conflicted or confirmation-needed claims stay out of final applicant prose. Ordinary self-report can be useful without pretending it was independently audited.
 
-Use four levels:
+Never invent employers, titles, dates, degrees, licenses, clearances, proficiency, metrics, budgets, responsibilities or candidate outcomes. Distinguish assistant-written text from evidence about the person. A fictional example remains practice even when every internal relation is consistent. Another person’s source cannot support this candidate merely because it fits the vacancy.
 
-- documented: directly supported by a supplied record or artifact;
-- user-confirmed: stated or confirmed by the user but not independently documented;
-- reasonable-paraphrase: faithful wording that does not enlarge the underlying fact;
-- unsupported: absent, contradictory, or materially stronger than available evidence.
+Do not infer immigration, authorization, disability, criminal history, family, demographic or financial answers from names, schools, dates, photos or location. Ask for only the answer needed at the current legitimate stage. Accommodation and sensitive disclosure decisions belong to the user; preserve a question or requested wording rather than pretending to decide applicable law. The dated [primary-source register](../knowledge/current-practice-register.md) has United States scope, not universal legal coverage.
 
-Unsupported and confirmation-needed claims do not enter final prose. User-confirmed claims may enter when ordinary self-report is appropriate, but their status remains visible in the matrix and their `EVD-*` record joins to an accountable `SRC-*` source-register record.
+Use only approved contact details. Keep account credentials, government identifiers, bank information, medical details and confidential employer/client data out of working examples and exports. Native tools run locally and make no network calls; the model host’s handling of files is a separate configuration. Do not upload a whole private case where only a résumé is needed.
 
-Never fabricate or inflate employers, titles, dates, degrees, licenses, clearances, awards, clients, metrics, budgets, team size, responsibility scope, proficiency, work authorization, location, availability, compensation, or legal attestations.
+Requests for payment to obtain a job, fake-check transfers or banking credentials are material fraud cues. Preserve the evidence and verify through independently obtained official employer contacts before sensitive action. A plausible domain or a lack of complaints is not proof of legitimacy. Do not stop ordinary drafting merely because the posting is incomplete; stop the unsafe disclosure or deceptive claim.
 
-## ATS posture
-
-Optimize legibility, not mythology. Automated systems differ and their behavior is rarely observable. Do not promise a score, ranking, bypass, or guaranteed parsing.
-
-Use vacancy terminology when it truthfully names the user's experience. Include long-form and acronym where both are useful. Standard headings and simple layout reduce avoidable parsing risk. Repetition, invisible text, copied job descriptions, white-font keywords, deceptive metadata, and mass keyword insertion are prohibited.
-
-## Protected and sensitive information
-
-Minimize personal data in working copies and examples. Do not request or infer protected characteristics. Accommodation requests and disability disclosure are user decisions. Help draft neutral questions or requests when asked, but do not diagnose, make legal claims, or advise concealment.
-
-Never infer demographic, health, family, immigration, criminal-history, or authorization answers from names, dates, locations, schools, associations, photographs, or language.
-
-## Confidentiality and work samples
-
-Do not place confidential employer, client, student, patient, customer, financial, security, or personal data into application artifacts. Sanitize or replace it with fictional or public data. Never claim permission that has not been established.
-
-Keep a provenance note: what the user supplied, what the agent drafted, what the user verified, and what the user will attest.
-
-## Suspicious postings
-
-Pause when the process asks for payment, banking credentials, identity documents before a legitimate stage, credential sharing, equipment-purchase transfers, encrypted-chat-only contact, reshipping, illegal work, or suspicious off-platform action. Recommend verification through the employer's official domain or known contact before sensitive data is submitted.
+ATS systems differ. No score, ranking, parsing, bypass or hiring guarantee is established here. Use truthful terminology and plain structure; never hidden text, keyword flooding, deceptive metadata or copied job requirements presented as personal experience. Inspect actual uploaded document previews where available.

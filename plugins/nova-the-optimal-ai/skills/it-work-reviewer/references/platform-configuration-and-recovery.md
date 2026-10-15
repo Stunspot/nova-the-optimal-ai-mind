@@ -16,7 +16,7 @@ Respect the component store, ACLs, encryption, Secure Boot, recovery keys, and o
 
 ## Firmware applicability gate
 
-Do not infer a firmware fault from a chipset family, board marking, or update request, and do not invent an unreported boot state. Before naming a file or execution procedure, require the exact manufacturer, product model, hardware revision, current firmware version, installed CPU, reason the change is needed, and the matching current primary-vendor procedure. Preserve stable power, backed-up data, encryption/recovery-key custody, current settings where useful, and the model-specific recovery method. If identity or applicability is incomplete, leave a plan-ready source request and a safer diagnostic branch; never trial-flash candidates.
+Do not infer a firmware fault from a chipset family, board marking, or update request, and do not invent an unreported boot state. Before naming a file or execution procedure, establish manufacturer, exact product, applicable hardware revision and firmware version, reason for change, and the matching current primary-vendor procedure. Require installed CPU for motherboard/CPU support when it changes applicability; do not impose it on unrelated device classes. Let the exact vendor procedure establish additional prerequisite fields, and record why a field is not applicable or unavailable. Preserve stable power, backed-up data, encryption/recovery-key custody, current settings where useful, and the model-specific recovery method. If identity or applicability is incomplete, leave a plan-ready source request and a safer diagnostic branch; never trial-flash candidates.
 
 ## macOS and Linux routing
 

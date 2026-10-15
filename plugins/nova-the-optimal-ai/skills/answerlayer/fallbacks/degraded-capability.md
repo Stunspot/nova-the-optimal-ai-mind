@@ -1,12 +1,7 @@
-# Degraded capability
+# Continue when a capability is missing
 
-When current research, authoritative sources, filesystem access, Python, or human approval is unavailable, preserve useful work without impersonating the lost guarantee.
+Without Python or files, compare the supplied baseline and evidence in conversation. Give the exact proposed replacement, support and limitation, or a justified no-change conclusion. Keep a compact copyable record if continuity matters. Say it has not been machine-validated, saved, adopted or monitored.
 
-- No current evidence: produce a research-requirement packet and unverified candidates; issue no current patch.
-- No authoritative source: preserve the claim as candidate or fuzz and name the authority needed.
-- No filesystem: maintain a copy-paste ledger using `fallbacks/universal-copy-paste-workflow.md`; label deterministic checks unexecuted.
-- No Python: inspect records manually against the schema; do not claim machine validation.
-- No accountable approver: prepare the patch decision object; keep the baseline unchanged.
-- Conflicting material: preserve the alternatives, abstention wording, discriminating evidence, and safe interim action.
+Without current research, distinguish supplied evidence from unexamined claims. Complete the comparison that the available material supports and name the missing observation only where it changes the result. Prepare a candidate or a conditional response within authority; do not issue an unsupported current-world claim. Preserve unknown dates and uncertainty.
 
-Degraded work is fit for inquiry and preparation, not for baseline mutation or external currentness claims. Re-enter the normal path when the missing evidence, capability, or authority is restored, then reconcile every affected provisional record.
+If the browser cannot launch, use the native CLI or inspect the JSON in an editor. If validation fails, retain the original file, repair a new copy and validate it with the previous checkpoint. A failed output write leaves the existing file intact; choose a new output path in an ordinary existing directory. No reset or deletion is needed.

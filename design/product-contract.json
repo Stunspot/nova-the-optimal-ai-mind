@@ -2,8 +2,8 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "3.8.1",
-  "state": "source_ready_for_qualification",
+  "product_version": "4.1.0",
+  "state": "candidate_preparation_pending_qualification",
   "plugin": {
     "count": 1,
     "id": "nova-the-optimal-ai",

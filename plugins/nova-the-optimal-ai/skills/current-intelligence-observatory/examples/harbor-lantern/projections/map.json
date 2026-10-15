@@ -12,7 +12,7 @@
         "kind": "event",
         "status": "scheduled",
         "confidence": "medium",
-        "uncertainty": "no live observation",
+        "uncertainty": "Scheduled in a fictional notice; timezone and actual execution are unverified.",
         "provenance_ids": [
           "CAP-GAMMA",
           "CAP-ALPHA-V2"

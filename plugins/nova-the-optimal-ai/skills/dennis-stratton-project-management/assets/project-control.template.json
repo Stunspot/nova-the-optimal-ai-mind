@@ -227,11 +227,11 @@
   },
   "forecast": {
     "as_of": "2026-08-15T00:00:00Z",
-    "unit": "days from authorization",
-    "lower": 1,
-    "upper": 5,
-    "confidence": "low",
-    "basis": "Provisional range pending decomposition, dependency, and capacity evidence.",
+    "unit": "unspecified",
+    "lower": null,
+    "upper": null,
+    "confidence": "unknown",
+    "basis": "No estimate has been made. Establish scope, dependencies and capacity before forecasting.",
     "baseline": "No approved baseline yet.",
     "variance": "Not applicable until a baseline is approved.",
     "next_update": "After the first work-package and capacity review."

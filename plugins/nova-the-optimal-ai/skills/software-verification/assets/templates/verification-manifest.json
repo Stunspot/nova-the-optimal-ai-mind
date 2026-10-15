@@ -1,8 +1,26 @@
 {
   "manifest_version": "1.0",
-  "target": {"name": "REPLACE", "revision": "REPLACE", "target_class": "change"},
-  "scope": {"included": ["REPLACE"], "excluded": [], "constraints": [], "safety_boundary": ["local non-production verification only"]},
-  "claim_custody": {"observed": [], "inferred": [], "assumed": [], "unresolved": []},
+  "target": {
+    "name": "REPLACE",
+    "revision": "REPLACE",
+    "target_class": "change"
+  },
+  "scope": {
+    "included": [
+      "REPLACE"
+    ],
+    "excluded": [],
+    "constraints": [],
+    "safety_boundary": [
+      "local non-production verification only"
+    ]
+  },
+  "claim_custody": {
+    "observed": [],
+    "inferred": [],
+    "assumed": [],
+    "unresolved": []
+  },
   "impact_map": [],
   "invariants": [],
   "risks": [],
@@ -11,6 +29,22 @@
   "executions": [],
   "findings": [],
   "residual_risks": [],
-  "review": {"status": "NOT_RUN", "findings": []},
-  "decision": {"status": "INSUFFICIENT_EVIDENCE", "basis": ["manifest not yet populated"], "authority_required": []}
+  "review": {
+    "status": "NOT_RUN",
+    "findings": [],
+    "reviewer": "",
+    "raw_evidence": "",
+    "target_revision": "",
+    "evidence_cutoff": "",
+    "conditions": [],
+    "finding_dispositions": {}
+  },
+  "decision": {
+    "status": "INSUFFICIENT_EVIDENCE",
+    "basis": [
+      "manifest not yet populated"
+    ],
+    "authority_required": [],
+    "claims_release_authorization": false
+  }
 }

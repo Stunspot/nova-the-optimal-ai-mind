@@ -1,40 +1,19 @@
-# Application intake
+# Optional application intake notes
 
-## Vacancy
+Read supplied material before asking. Fill only what changes the requested document or next decision; an unknown fact can remain unknown while supported drafting continues. This private note is not an applicant-facing export.
 
-- Employer:
-- Role title:
-- Posting source and retrieval date:
-- Location and work arrangement:
-- Employment type:
-- Deadline and time zone:
-- Application route:
-- Required files:
-- Application questions and limits:
-- Compensation information stated:
-- Other explicit instructions:
+## Current task and vacancy
 
-## Candidate evidence supplied
+Requested result: one résumé, one letter, specified answers or a complete packet. Retain the employer/role, posting source and retrieval date. Mark coverage complete, partial or unknown. Preserve actual required files, names, formats, questions/limits and deadline wording. Resolve an ambiguous cut-off or zone rather than inventing one.
 
-- Existing resume or work history:
-- Portfolio or work samples:
-- Credentials:
-- User-confirmed facts:
-- Known gaps or contradictions:
-- Contact details approved for final files:
+## Evidence already available
 
-## Material constraints
+Identify supplied history, existing drafts, shareable work samples, credentials and accountable user statements. Preserve disagreements about dates, role, scope or achievements and ask the smallest question needed to resolve each material conflict. Use only contact details the user has authorized for these documents.
 
-- Work authorization answer: USER ATTESTATION REQUIRED
-- Location, commute, or schedule:
-- Accessibility or accommodation preferences:
-- Privacy or confidentiality restrictions:
-- File-format constraints:
-- Other deal-breakers:
+## Material constraints, when applicable
 
-## Desired handoff
+Record actual location/schedule requirements and user constraints. Ask for a work-authorization or other sensitive answer only when the actual application requires it at this stage; do not infer it or require a blanket attestation for ordinary drafting. Accommodation/disclosure choices remain the user's. Establish confidentiality and permission before recommending a sample.
 
-- Final formats:
-- Tone or voice:
-- Items the user will complete:
-- Items that must remain unresolved:
+## Next useful action
+
+State what can be drafted now, the fact or format still needed, and who can resolve it. Recover an existing case before restarting intake. Keep uncertainty visible without manufacturing a universal approval gate.

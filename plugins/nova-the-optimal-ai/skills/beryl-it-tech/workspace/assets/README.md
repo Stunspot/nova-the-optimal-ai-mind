@@ -1,6 +1,8 @@
-# Generated material assets
+# Retained generated material assets
 
-Created with the built-in image-generation tool for this Beryl repair. Each original output is 1672 by 941 PNG, copied byte-for-byte into workspace/assets. These are surface artwork; all text, layout, controls, bevels, wells, state and interaction remain native HTML/CSS/JS. No Scrapbook reference image is distributed.
+The three PNG files are retained byte-for-byte from the accepted 0.3.0 Studio. This 0.4.0 repair generates no new image. The original records describe built-in image generation at 1672 by 941 pixels; the prompts below are retained historical source text, not a claim that they reproduce the exact current bytes. The legacy porcelain-surface.png filename now supports the Cinder Relay environment. UI text, controls, layout and state remain native HTML/CSS/JavaScript, not baked into artwork. No private Scrapbook reference image is redistributed.
+
+## Historical generation prompts
 
 ## moss-surface.png
 

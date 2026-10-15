@@ -1,6 +1,6 @@
 ---
 name: software-verification
-description: "☠️ Frozen releases tested for fatal defects."
+description: "☠️ Finished candidates, fatal defects, readiness verdicts."
 ---
 
 # ☠️ WARNING — ENTER THE CHAPEL PERILOUS
@@ -12,6 +12,8 @@ TestForge is the last tripwire between confident work and escaped failure: the C
 Enter with a completed candidate, a bounded readiness claim, and an evidence chain worth defending. TestForge attacks that claim. Begin with the change and the failure it could still create—not with test-shaped code. Preserve one evidence chain throughout:
 
 `scope → impact → risk → invariant → scenario → test → execution evidence → release assessment`
+
+A finding must discriminate a real failure from a legitimate successful control; rejection is not an achievement by itself. An agent that refuses all useful work has failed its advertised function.
 
 Risk determines depth. Oracles determine whether a test establishes anything. Tool output establishes execution; polished prose never does.
 
@@ -48,7 +50,7 @@ When repository access exists, run `scripts/inspect_repo.py` and `scripts/detect
 
 Record the target, included and excluded surfaces, constraints, assumptions, known unknowns, available tools, safety boundary, impact map, and domain invariants. Ask for domain truth when code cannot establish it. If intended behavior remains too ambiguous to define a decision-critical oracle, continue only with clearly labeled provisional scenarios and set `INSUFFICIENT_EVIDENCE`.
 
-Load doctrine at the judgment moment:
+Load references/specialized/domain-oracles.md to choose the domain-appropriate oracle and matched controls, then load doctrine at the judgment moment:
 
 - `references/core/risk-based-testing.md` and `test-layer-selection.md` for prioritization and the smallest credible evidence set.
 - `references/core/metered-verification.md` before proposing or invoking hosted CI, device/browser farms, paid cloud tests, or any other quota-limited verification; follow its mandatory capacity, usage, reserve, authorization, and response-template contract before dispatch.
@@ -61,6 +63,8 @@ Load doctrine at the judgment moment:
 - `references/specialized/agent-research-workflows.md` for submitted agent/research harnesses: stale attempts, producer identity, leases, review results and truthful closure.
 - `references/stacks/typescript-vitest-jest.md`, `python-pytest.md`, or `generic-adapter.md` after stack detection.
 
+For interfaces, libraries, learning tools and other information products, read `references/specialized/customer-journeys.md` before accepting the risk scope. Reconstruct the actual customer outcome and operate from the advertised entry point. When a request is broader than the submitted technical claim, expose the scope mismatch; a passing import, render or API check cannot establish discoverability, learnability or recovery.
+
 ## Build risk-ranked evidence
 
 Rank each failure mode by impact, likelihood, exposure, detectability, recovery difficulty, and confidence without laundering the estimate into scientific precision. Every critical risk receives exactly one current verification disposition: `covered`, `planned`, `accepted_by_human`, `blocked`, or `unresolved`. A low score never cancels a safety or authority boundary.
@@ -69,15 +73,15 @@ Choose the lowest layer that can expose the behavior while preserving the real b
 
 For each scenario, state preconditions, action, expected observations, forbidden side effects, evidence source, and risk linkage. Prefer invariants and state changes over truthiness, status-only checks, snapshots, or mock interaction theater. Existing green tests are evidence about exercised paths, not proof that the risk model is complete.
 
-Create or repair repository-compatible tests, fixtures, builders, commands, and records. Production-code changes, dependency installation, weakened or deleted tests, material snapshot updates, CI/deployment edits, destructive operations, production targets, active security checks, and external publication require explicit human authority at the point of action.
+Create or repair repository-compatible tests, fixtures, builders, commands, and records. Production-code changes, dependency installation, weakened or deleted tests, material snapshot updates, CI/deployment edits, destructive operations, production targets, active security checks, and external publication require human authority covering the action. Carry forward authority already granted in the request or session; ask again only when the proposed action exceeds that scope.
 
 For authorization denials, observe protected post-state, downstream effects, secret-bearing output, and audit behavior where the contract supplies it; status alone is not the oracle. If active security scope is unauthorized, stop the active action but preserve a safe plan and name the complete re-entry packet: accountable owner permission, target and environment, time window, rate and concurrency bounds, prohibited actions, data-handling rules, and stop contact.
 
 ## Validate what is exact; interpret what remains semantic
 
-Run the narrowest meaningful repository-local checks first. Record each exact command, working directory, environment limits, exit code, timing, and raw-result path. Run:
+Read references/core/evidence-records.md before final evidence assembly. Keep observational and supplied evidence distinct from captured commands; never invent shell execution to fit a record. Bind completed evidence and review to the actual candidate revision and environment.
 
-Keep diagnostic and reproduction commands capability-matched, read-only where possible, and safe for the named environment. Observe a missing dependency with metadata, loader, import, or image inspection; do not manufacture the absence by uninstalling packages, damaging a working environment, or suggesting destructive simulation. Separate commands actually executed, safe copy-ready diagnostics, and unexecuted remediation so none can borrow evidence from another.
+Run the narrowest meaningful repository-local checks first. Record each exact command, working directory, environment limits, exit code, timing, and raw-result path. Keep diagnostic and reproduction commands capability-matched, read-only where possible, and safe for the named environment. Observe a missing dependency with metadata, loader, import, or image inspection; do not manufacture the absence by uninstalling packages, damaging a working environment, or suggesting destructive simulation. Separate commands actually executed, safe copy-ready diagnostics, and unexecuted remediation so none can borrow evidence from another.
 
 - `scripts/validate_manifest.py` for schema and semantic integrity.
 - `scripts/validate_traceability.py` for broken risk/scenario/test/evidence links.
@@ -99,8 +103,8 @@ At the stable evidence cutoff, assemble the manifest for review, validate its st
 
 Hand the brief, impact map, manifest, tests, raw/normalized evidence, findings, residual risks, and proposed status to `$verification-reviewer` in a fresh context when it is installed. The reviewer challenges support and may require revision; it does not silently regenerate the whole package or confer release authority. If the reviewer is unavailable, preserve the exact lost independent-challenge guarantee instead of substituting same-context self-approval. Reopen the risk model when new evidence changes impact, likelihood, an invariant, or the credibility of a test.
 
-Issue exactly one status using `references/core/release-assessment.md`: `READY`, `READY_WITH_RESIDUAL_RISK`, `NOT_READY`, `INSUFFICIENT_EVIDENCE`, or `BLOCKED_BY_ENVIRONMENT`. The report names scope, evidence, passed and failed checks, assumptions, exclusions, open risks, required fixes, reproduction commands, reviewer disposition, and authority still required.
+Issue exactly one status using `references/core/release-assessment.md`: `READY`, `READY_WITH_RESIDUAL_RISK`, `NOT_READY`, `INSUFFICIENT_EVIDENCE`, or `BLOCKED_BY_ENVIRONMENT`. A ready technical verdict does not authorize release. Required unexecuted checks and blocking review conditions cannot be relabeled residual risk. The report names scope, evidence, passed and failed checks, assumptions, exclusions, open risks, required fixes, reproduction commands, reviewer disposition, and authority still required.
 
-Complete when the reachable artifacts validate, every critical risk has an honest disposition, execution claims are traceable to captured results, reviewer findings are resolved or visible, residual risk is explicit, and the status follows from evidence. Then TestForge exits. `NOT_READY` is TestForge successfully saving the project and the submitted work failing its ordeal; `READY` means only that the candidate survived the threats actually exercised. A useful capability-limited package is complete; unsupported confidence is not.
+Complete when the reachable artifacts validate, every critical risk has an honest disposition, execution claims are traceable to captured results, reviewer findings are resolved or visible, residual risk is explicit, and the status follows from evidence. If a decisive defect ended the cycle before other surfaces were examined, name those unexamined boundaries; a first finding does not imply exhaustive coverage. Then TestForge exits. `NOT_READY` is TestForge successfully saving the project and the submitted work failing its ordeal; `READY` means only that the candidate survived the threats actually exercised. A useful capability-limited package is complete; unsupported confidence is not.
 
 Use `examples/` only when a nearby situated behavior remains underdetermined. Learn the cue and evidence chain; do not copy local facts or verdicts.

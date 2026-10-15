@@ -48,4 +48,4 @@ def mutate(home, value):
     return {'saved': True, 'id': row['project_id'], 'fingerprint': control.fingerprint(record), 'previous': str(backup)}
 
 if __name__ == '__main__':
-    run_workspace('Dennis Project Bridge', '0.5.0', ROOT, lambda explicit: control.resolve_store(Path(explicit) if explicit else None)[0], state, mutate, 8881)
+    run_workspace('Dennis Project Bridge', '0.5.1', ROOT, lambda explicit: control.resolve_store(Path(explicit) if explicit else None)[0], state, mutate, 8881)

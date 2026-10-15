@@ -1,15 +1,7 @@
-# Seeing what changed, what supports it and what remains disputed
+# A dated situation with an inspectable source trail
 
-A live situation has multiple clocks, evidence lineages and rival explanations. The atlas keeps these relationships browsable and preserves the situation while the reader opens a typed record. Comparison identifies structural changes as a starting point for interpretation rather than manufacturing a conclusion.
+The Atlas starts with a useful fictional inquiry and a route to the user's own question. Its home, help, typed browsing and three reading environments expose the same native case. Source excerpts and their support/refutation roles remain inspectable; original records are always available.
 
-## Environments
+The viewer makes no ready qualification. It displays a declared posture, evidence cutoff, recorded uncertainty and next action. Multiple clock roles stay distinct; unknown local clock text is retained rather than placed at an invented instant. Multi-hop provenance and structural comparison help inspection without attributing truth, identity or materiality.
 
-Signal Room: deep navy instrument field, scanning hierarchy, grid bearings and connected evidence. Evidence Folio: dark olive editorial sheets, copper margin rules, large reading hierarchy and slower progressive disclosure.
-
-## Information and behavior
-
-Times sort by actual instants, including UTC offsets; invalid clock text remains visible. Object-key order cannot create a structural change, while array order remains meaningful. IDs must be nonempty strings; BOM input is accepted. Bad imports retain the prior investigation. No collection, monitoring or publication occurs.
-
-## Observed acceptance
-
-The overnight repair was rendered and inspected in Windows Chromium at 1440 × 1000 and 390 × 844. Each environment, the empty state and representative opened records were reviewed. Native checks and isolated browser fixtures establish the tested state and data behavior; no claim is made for participant usability, screen-reader acceptance or other platforms.
+Import validation precedes state replacement. An invalid, duplicate-key, nonfinite, stale asynchronous or cancelled import must not discard the current investigation or prevent corrected same-file retry. Root acceptance remains bounded to actual retained browser controls; design intention and static tests are not participant evidence.

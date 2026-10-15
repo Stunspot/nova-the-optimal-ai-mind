@@ -1,4 +1,6 @@
-# Interview intake
+# Optional intake for saved preparation
+
+Start a short rehearsal from the role and available time. Fill this only when it helps saved work; retain unknowns instead of inventing details.
 
 ## Interview
 

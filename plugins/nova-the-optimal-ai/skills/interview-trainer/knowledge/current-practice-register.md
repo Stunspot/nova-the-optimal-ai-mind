@@ -1,29 +1,11 @@
-# Current practice and safety register
+# Dated primary references
 
-Reviewed: 2026-08-14
+Reviewed 2026-10-07. These sources inform narrow coaching and safety distinctions; none predicts an employer's interview or authorizes a legal conclusion. Refresh when a current policy or jurisdiction-specific decision matters.
 
-This register supplies dated safety boundaries, not interview predictions or legal advice.
+[US Office of Personnel Management: structured interviews](https://www.opm.gov/policy-data-oversight/assessment-and-selection/structured-interviews/) describes job-related competencies and consistent assessment. Here it supports tying an exercise and its feedback to the actual performance being evaluated. It does not establish that every employer uses a structured process.
 
-## Fraud and channel verification
+[FTC: job scams](https://consumer.ftc.gov/articles/job-scams) describes warning signs including requests for money and sensitive information. Pause suspicious disclosure and verify through independently obtained official contact details. Indicators justify checking; this packet does not authenticate a recruiter.
 
-The US Federal Trade Commission warns that job scams may use unexpected text or chat contact, fake checks, requests to buy equipment, requests for payment, and early demands for financial or identity information. Verify a recruiter through contact information independently obtained from the employer's official site.
+[EEOC: Job Applicants and the ADA](https://www.eeoc.gov/laws/guidance/job-applicants-and-ada) discusses US disability-related application questions and accommodations. Use the actual jurisdiction and circumstances before giving consequential guidance. Help the candidate express a functional need without demanding a diagnosis; the user's disclosure decision remains theirs.
 
-- https://consumer.ftc.gov/consumer-alerts/2023/12/how-spot-latest-job-scams
-- https://consumer.ftc.gov/consumer-alerts/2025/07/job-scammers-are-looking-hire-you
-- https://consumer.ftc.gov/consumer-alerts/2026/04/job-offer-text-probably-scam
-
-## Selection and disability boundaries
-
-The US Equal Employment Opportunity Commission describes employment tests and selection procedures as subject to federal anti-discrimination law. It also explains disability-related limits and reasonable-accommodation duties in employment decisions. ADA.gov notes that algorithmic hiring tools can screen out qualified people with disabilities and may require accessible procedures or adjustments.
-
-- https://www.eeoc.gov/laws/guidance/employment-tests-and-selection-procedures
-- https://www.eeoc.gov/disability-discrimination-and-employment-decisions
-- https://www.ada.gov/resources/ai-guidance/
-
-## Runtime consequences
-
-- Do not infer protected traits, disability, deception, personality, or legal eligibility.
-- Do not promise that an answer, resume phrase, or behavior will satisfy an opaque hiring system.
-- Accommodations, disclosures, legal responses, and use of AI in a live process remain user-owned.
-- Stop sensitive disclosure when fraud indicators appear and verify through an independently known official channel.
-- Refresh this register before making current legal, fraud, platform, or policy claims.
+No personality, protected-trait, deception or opaque hiring-system scoring is supported.

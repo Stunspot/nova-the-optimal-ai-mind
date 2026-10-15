@@ -218,12 +218,23 @@ def zip_filename_findings(path: Path, expected_names: Iterable[str] | None = Non
             with zipfile.ZipFile(path) as archive:
                 if archive.namelist() != names:
                     findings.append("ZIP library decoding differs from raw UTF-8 member names")
+                for member in archive.infolist():
+                    if executable_member(member.filename) and (member.external_attr >> 16) & 0o111 != 0o111:
+                        findings.append(f"Supplied shell/app launcher lacks executable mode: {member.filename}")
                 damaged = archive.testzip()
                 if damaged is not None:
                     findings.append(f"ZIP member fails decompression or CRC: {damaged}")
         except (OSError, RuntimeError, UnicodeError, zipfile.BadZipFile) as exc:
             findings.append(f"ZIP cannot be read portably: {exc}")
     return findings
+
+
+def executable_member(name: str) -> bool:
+    parts = name.replace("\\", "/").split("/")
+    return name.endswith((".command", ".sh")) or any(
+        part.endswith(".app") and parts[index + 1:index + 3] == ["Contents", "MacOS"]
+        for index, part in enumerate(parts)
+    )
 
 
 def deterministic_zip(source: Path, destination: Path, *, prefix: str) -> str:
@@ -251,7 +262,7 @@ def deterministic_zip(source: Path, destination: Path, *, prefix: str) -> str:
             info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             info.create_system = 3
-            info.external_attr = (stat.S_IFREG | 0o644) << 16
+            info.external_attr = (stat.S_IFREG | (0o755 if executable_member(name) else 0o644)) << 16
             archive.writestr(info, path.read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
     findings = zip_filename_findings(destination, expected_names)
     if findings:
@@ -262,7 +273,7 @@ def deterministic_zip(source: Path, destination: Path, *, prefix: str) -> str:
 
 def git_value(repo: Path, *args: str) -> str | None:
     completed = subprocess.run(
-        ["git", "-C", str(repo), *args],
+        ["git", "-c", "core.fsmonitor=false", "-C", str(repo), *args],
         stdin=subprocess.DEVNULL,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,

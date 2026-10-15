@@ -1,7 +1,9 @@
 """Local OSINT entry point. Uses isolated environments and retains native reports."""
-import argparse, datetime, json, os, re, subprocess, sys, uuid
+import argparse, datetime, json, os, re, subprocess, sys, uuid, hashlib
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
+if not (ROOT/'safe_io.py').is_file():sys.path.insert(0,str(ROOT.parent))
+from safe_io import load, reject_links, bytes_json
 for stream in (sys.stdout, sys.stderr):
     if hasattr(stream, 'reconfigure'): stream.reconfigure(encoding='utf-8', errors='replace')
 CHILD_ENV = dict(os.environ, PYTHONIOENCODING='utf-8', PYTHONUTF8='1')
@@ -14,18 +16,23 @@ def run(command, target, dry_run=False, timeout=None):
         print(json.dumps({'command':command,'target':target,'executed':False},indent=2))
         return 0
     run_id = datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ') + '-' + uuid.uuid4().hex[:8]
-    destination = ROOT / 'runs' / run_id
+    destination = reject_links(ROOT / 'runs' / run_id)
+    destination.parent.mkdir(parents=True,exist_ok=True)
     destination.mkdir()
     command = [part.replace('{REPORTS}', str(destination)) for part in command]
     started = datetime.datetime.now(datetime.timezone.utc).isoformat()
     try:
         result = subprocess.run(command,cwd=destination,capture_output=True,text=True,encoding='utf-8',errors='replace',env=CHILD_ENV,timeout=timeout)
+    except OSError as exc:
+        result=subprocess.CompletedProcess(command,127,'','Tool unavailable: '+str(exc)+'\n')
     except subprocess.TimeoutExpired as exc:
         def decoded(value): return value.decode('utf-8','replace') if isinstance(value,bytes) else (value or '')
         result = subprocess.CompletedProcess(command,124,decoded(exc.stdout),decoded(exc.stderr)+'\nRun exceeded its time budget; process terminated. Retained artifacts may be incomplete.\n')
     (destination / 'stdout.txt').write_text(result.stdout,encoding='utf-8')
     (destination / 'stderr.txt').write_text(result.stderr,encoding='utf-8')
-    (destination / 'run.json').write_text(json.dumps({'target':target,'command':command,'started_at':started,'completed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exit_code':result.returncode,'evidence_note':'Native exit status is not a claim of completeness or identity attribution.'},indent=2),encoding='utf-8')
+    artifacts={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(destination.iterdir()) if p.is_file()}
+    native={'format':'cd-osint-run/v1','target':target,'command':command,'started_at':started,'completed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'exit_code':result.returncode,'synthetic':'--fixture' in command,'artifacts':artifacts,'evidence_note':'Native exit status is not completeness, evidence accuracy or identity attribution.'}
+    (destination/'run.json').write_bytes(bytes_json(native))
     print(result.stdout,end='')
     print(result.stderr,end='',file=sys.stderr)
     print(f'Artifacts: {destination}')
@@ -63,7 +70,10 @@ def main():
     demo.add_argument('--dry-run',action='store_true')
     args=parser.parse_args()
     if args.command=='list':
-        entries=json.loads((ROOT/'registry.json').read_text(encoding='utf-8'))
+        entries=load(ROOT/'registry.json')
+        for row in entries['tools']:
+            key={'shodan-python':'shodan','theHarvester':'theharvester'}.get(row['repo'],row['repo'])
+            row['runtime_executable_present']=Path(python(key)).is_file() if key in ('maigret','theharvester','shodan','spiderfoot') else False
         if args.json: print(json.dumps(entries,indent=2))
         else:
             for tool in entries['tools']: print(f"{tool['name']}: {tool['installation_state']} - {tool['capability_delta']}")
@@ -101,11 +111,19 @@ def main():
             parser.error('Supply an exact domain name without a URL, wildcard, or port.')
         if not 1<=args.limit<=1000: parser.error('--limit must be between 1 and 1000')
         sources=[s.strip().lower() for s in args.sources.split(',') if s.strip()]
-        specs=json.loads((ROOT/'data/harvester-sources.json').read_text(encoding='utf-8'))
+        specs=load(ROOT/'data/harvester-sources.json')
         if not sources or any(specs.get(s,{}).get('activity')!='P0' for s in sources):
             parser.error('--sources accepts named P0 providers only; see data/harvester-sources.json.')
         command=[python('theharvester'),str(ROOT/'drivers/harvester.py'),'-d',target,'-b',','.join(sources),'-l',str(args.limit),'-j','1','-f','{REPORTS}/domain']
         return run(command,target,args.dry_run)
+    if not 1<=args.limit<=100:parser.error('--limit must be between 1 and 100')
+    if args.kind=='host':
+        import ipaddress
+        try:ipaddress.ip_address(args.target)
+        except ValueError:parser.error('host expects an IP address')
+    if not args.target.strip():parser.error('Supply a nonempty query')
     return run([python('shodan'),str(ROOT/'drivers/shodan_query.py'),args.kind,args.target,'--limit',str(args.limit)],args.target,args.dry_run)
 if __name__=='__main__':
-    raise SystemExit(main())
+    try:raise SystemExit(main())
+    except (OSError,ValueError) as exc:
+        print(json.dumps({'state':'unavailable-or-invalid','error':str(exc),'provider_result_verified':False}),file=sys.stderr);raise SystemExit(2)

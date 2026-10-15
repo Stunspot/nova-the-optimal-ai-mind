@@ -1,0 +1,9 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "Nova the Optimal AI Free",
+  "version": "4.1.0",
+  "customer_docs": [
+    "START-HERE.md"
+  ],
+  "scope": "Material r2 correction of the actual first-use persistence, ordinary-input and recovery instructions after independent review."
+}

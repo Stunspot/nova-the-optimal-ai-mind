@@ -1,7 +1,7 @@
 {
   "name": "current-intelligence-observatory",
   "product_name": "Current Intelligence Observatory",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "category": "Evidence-Preserving Current Intelligence Workbench",
   "format": "cd-augment-skill/v1",
   "entrypoint": "SKILL.md",
@@ -11,14 +11,23 @@
     "claude"
   ],
   "runtime_reference_files": 23,
-  "third_party_runtime_dependencies": [],
+  "third_party_runtime_dependencies": [
+    "Bundled pypdf for local PDF text extraction; see workspace/vendor/pypdf-LICENSE"
+  ],
   "license_status": "not-supplied-for-product",
   "live_host_verification": false,
-  "workspace_entrypoint": "workspace/index.html",
-  "workspace_mode": "portable_read_only_native_case",
+  "workspace_entrypoint": "workspace/launch.py",
+  "workspace_mode": "persistent_inquiry_authoring",
   "optional_osint_bridge": "scripts/osint_bridge.py",
   "optional_osint_setup": "scripts/setup_osint.py",
   "optional_osint_setup_guide": "knowledge/osint-setup.md",
-  "license": "Nova Free 3.8.1 public split license; see the containing product LICENSE.md",
-  "rights_status": "public-inclusion-authorized-for-nova-free-3.8.1"
+  "optional_runtime_dependencies": [
+    "uv",
+    "separately installed Python environments and pinned OSINT tool dependencies"
+  ],
+  "delta_format": "cd-observatory-delta/v2",
+  "qualification": "Bounded native and Windows Edge fixture evidence; no live provider or model/participant qualification",
+  "legacy_workspace_entrypoint": "workspace/advanced.html",
+  "license": "Nova Free 4.1.0 public split license; see the containing product LICENSE.md",
+  "rights_status": "public-inclusion-authorized-for-nova-free-4.1.0"
 }

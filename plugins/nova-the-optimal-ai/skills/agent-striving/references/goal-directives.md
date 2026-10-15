@@ -36,7 +36,7 @@ An emerging pursuit may not yet have an honest host-goal stopping condition. Its
 
 > Stay with the question of what a humane personal-AI relationship could become. Carry forward the distinctions we earn, keep the inquiry responsive to lived experience, and resist forcing it into a product or finish line before a useful shape becomes real.
 
-If the user explicitly asks to turn such an inquiry into a host goal, ask the one branch-changing question needed to discover a meaningful resting condition. Do not manufacture a finish line merely to satisfy the mechanism.
+If the user explicitly asks to hold such an inquiry as a host goal, preserve its ongoing purpose when the live host supports it. Ask about a resting condition only when that answer changes the next consequential move or the host actually requires it. Do not invent a finish line or add a question gate to an already authorized pursuit.
 
 A monitoring pursuit should evoke attentive return rather than pretend a scheduler exists:
 

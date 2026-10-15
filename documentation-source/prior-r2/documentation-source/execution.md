@@ -1,0 +1,3 @@
+# Hesperos r2 authoring execution
+
+Mode in-process; run free-purpose-docs-20261015-r2. The actual Hesperos author materially rewrote the stale START-HERE first-use paragraph against current app source and actual ordinary-use persistence tests. Exact duplicate plugin copy was synchronized. The author inspected each obsolete-claim search hit; unrelated read-only owner/status boundaries remain accurate. The other14 materially revised r1 documents are unchanged and retain their original authorship, not reissued as new work. Current document-file and Markdown section-link checks are retained separately.

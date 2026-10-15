@@ -1,0 +1,10 @@
+{
+  "format": "interview-packet-review/v1",
+  "scope": "interview-preparation",
+  "result": "consistent-with-stated-limits",
+  "reviewer": "In-process author review of explicitly fictional scenario",
+  "reviewed_at": "2026-10-07T15:00:00-05:00",
+  "subject_sha256": "928e8c89762b1b054939bb6b0ee25d2a96e344329bb12cc36635b51f0298867c",
+  "report_path": "reviews/content-review.md",
+  "report_sha256": "77e5ba96483a40679384cfadcd79dfada9eb8e460244af77afabedc309da58f2"
+}

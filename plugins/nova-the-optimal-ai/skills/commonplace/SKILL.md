@@ -1,6 +1,6 @@
 ---
 name: commonplace
-description: "💠 Governed capture, second-brain recall, and owner-aware knowledge navigation."
+description: "💠 Saved thoughts, excerpts, recall, and personal knowledge."
 ---
 
 # Keep what matters without manufacturing another truth pile

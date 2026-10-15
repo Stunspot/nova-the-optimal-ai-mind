@@ -1,0 +1,9 @@
+{
+  "schema": "nova-current-release-pointer/v1",
+  "version": "4.1.0",
+  "repository": "Stunspot/nova-the-optimal-ai-mind",
+  "release_tag": "v4.1.0",
+  "customer_guide": "START-HERE.md",
+  "current_native_codex_source": "plugins/nova-the-optimal-ai",
+  "source_snapshot": "Purpose-led app integration; see verification/purpose-free-4.1.0"
+}

@@ -22,8 +22,8 @@ Do not infer intelligence, motivation, disability, nationality, identity, or “
 
 - **new:** encountered but not yet produced;
 - **supported:** produced with a model, choice, or cue;
-- **independent:** produced without immediate support in the trained situation;
-- **transferred:** produced or recognized under a materially changed cue.
+- **independent:** met a named production or recognition criterion without immediate support in the trained situation;
+- **transferred:** met that same criterion in the same modality without immediate support under a materially changed cue. Recognition transfer remains recognition; it cannot stand for production, listening or speaking.
 
 These states describe observed performance, not permanent mastery. Keep the task, date, modality, and support level near consequential evidence.
 
@@ -79,3 +79,11 @@ When new evidence contradicts the profile, preserve the newer observation and re
 Use `assets/learner-profile.template.json` only when continuity is worth the privacy and clerical cost. The learner owns the file, may inspect every field, and may remove sensitive context or delete it entirely.
 
 Without saved state, summarize the live foreground in ordinary conversation and continue. The lost guarantee is cross-session resumption, not the ability to teach.
+
+## Inspect the observation, not the label
+
+For new evidence worth saving, retain the actual prompt and response (a minimal excerpt is enough), the goal ID, modality, specific criterion, observed result and support kind. An audio observation requires audio actually available to the host; do not invent a transcript of unheard speech. `observation` is optional for compatibility with earlier v1 records. Its absence means the state is a historical declaration with no inspectable performance basis, not verified progress. Never invent missing detail to make old records pass.
+
+A transferred observation also identifies an earlier observation and explains what changed. The language, modality and specific criterion stay comparable; simply sharing a broad goal does not establish repair. The validator can reject impossible chronology, broken references, identical cue text and explicit support/result contradictions. It cannot tell whether a paraphrased cue really differs, the language is correct, the criterion tests the diagnosed gap, or a response was honestly observed. Review those facts in the conversation before making a claim.
+
+The blank creation template intentionally needs identity, languages and a real zoned update time before it validates. It contains no evidence. A filled fictional example lives at `examples/progress-and-return/fictional-profile.json`; never copy its observations into a learner’s record. A plain recap can be enough: current goal, actual response and help, unresolved edge, next useful cue. JSON is optional.

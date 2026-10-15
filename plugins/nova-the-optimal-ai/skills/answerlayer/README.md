@@ -1,7 +1,5 @@
-# AnswerLayer skill package
+# AnswerLayer 0.4.0
 
-AnswerLayer maintains decision integrity by deciding which verified developments actually change a dated answer, assumption, policy, or workflow.
+Start with an answer someone is relying on, then trace what changed to the exact wording, confidence, or action that should change. The [working-answer app](workspace/README.md) supports ordinary entry and persistent local return without requiring a ledger.
 
-Start with the customer release’s `START-HERE.md`. The canonical runtime entry is `SKILL.md`; `reality-ledger.json` is the operational source of truth. Python tools use only the standard library and are optional guardrails. Human approval remains mandatory for baseline mutation and external distribution.
-
-The bundled Almanac materials are proprietary canonical source material. Their 2025 claims are historical and must not be treated as current without fresh verification.
+For conversational work, invoke AnswerLayer with the current answer and development. The skill guides source interpretation and bounded judgment. For native Reality Ledger operations, use [the native reference](knowledge/native-ledger-reference.md). Canonical historical sources remain preserved as historical material, not current operating instructions.

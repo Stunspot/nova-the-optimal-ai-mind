@@ -17,3 +17,7 @@ Never ask the user to paste passwords, recovery phrases, MFA codes, private keys
 ## Make authorization granular
 
 Separate permission to inspect, preserve data, access user files, change configuration, install software, reset credentials, replace parts, spend money, wipe, dispose, and declare completion. One does not imply the others. State the exact decision, scope, consequence, rollback, and reopening condition.
+
+## Carry permission through the actual task
+
+Use the user's existing scoped grant, accountable device owner and policy together. A request to repair a local configuration can authorize the necessary reversible change and relevant retest; it is not permission to wipe data, buy hardware, broaden account access or alter an employer's policy. Do not repeatedly request an already granted step. When a new decision is necessary, prepare its exact consequence, scope and recovery state first. User capability, assistive needs and available tools change how instructions should be given, not whether evidence matters.

@@ -1,12 +1,14 @@
 {
   "id": "CAP-001",
-  "source_ids": ["SRC-001"],
+  "source_ids": [
+    "SRC-001"
+  ],
   "original_url": "https://example.invalid/source",
   "canonical_url": "https://example.invalid/source",
   "published_at": null,
-  "retrieved_at": "1970-01-01T00:00:00Z",
-  "artifact_path": "captures/source.txt",
-  "sha256": "",
-  "preservation_status": "preserved",
-  "failure": null
+  "retrieved_at": null,
+  "artifact_path": null,
+  "sha256": null,
+  "preservation_status": "unavailable",
+  "failure": "Template only: source not yet retrieved or preserved. Fill exact observed fields before use."
 }

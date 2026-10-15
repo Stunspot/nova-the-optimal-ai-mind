@@ -8,7 +8,7 @@
 
 Use evidence cues, not memorized scripts.
 
-## Two material gaps and honest responses
+## Remaining material gaps and honest responses
 
 ## Questions to ask
 
@@ -18,4 +18,4 @@ Use evidence cues, not memorized scripts.
 
 ## Readiness statement
 
-State what was practiced, what improved, and what remains unobserved.
+State actual response provenance, what improved with help, any bounded uncued transfer, what remains unobserved, and the next useful action. Preparation is not a hiring prediction.

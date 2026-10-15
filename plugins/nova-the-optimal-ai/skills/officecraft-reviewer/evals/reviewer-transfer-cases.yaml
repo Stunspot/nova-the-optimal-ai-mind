@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-eval/v1",
   "suite": "reviewer-transfer",
-  "package_version": "0.1.0",
+  "package_version": "0.2.1",
   "skills": ["SKILL.md"],
   "runtime": "Isolated episode with only this reviewer package and the material supplied in each case; no operator skill, renderer, native Office application, or cloud connector is available unless the case explicitly supplies its observation.",
   "claim": "The reviewer issues an evidence-bounded Officecraft readiness disposition without inventing file, visual, accessibility, approval, or delivery evidence.",

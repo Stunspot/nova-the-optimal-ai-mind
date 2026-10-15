@@ -1,5 +1,5 @@
 """Same-user launch metadata, never an owner-record store."""
-import hashlib,json,os,secrets,socket,subprocess,sys,tempfile,threading,time,urllib.request,webbrowser
+import hashlib,json,os,secrets,socket,socketserver,subprocess,sys,tempfile,threading,time,urllib.request,webbrowser
 from pathlib import Path
 from http.server import ThreadingHTTPServer
 RUNTIME_NONCE=secrets.token_urlsafe(20)
@@ -11,7 +11,10 @@ class PrivateLoopbackServer(ThreadingHTTPServer):
     def server_bind(self):
         if os.name == 'nt':
             self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
-        super().server_bind()
+        # The desk binds an explicit loopback IP; reverse DNS adds no identity.
+        # HTTPServer.server_bind otherwise calls getfqdn, which can stall launch.
+        socketserver.TCPServer.server_bind(self)
+        self.server_name, self.server_port = self.server_address[:2]
 
 def metadata_path(identity,port):
     key=hashlib.sha256(json.dumps({'identity':identity,'requested_port':port},sort_keys=True).encode()).hexdigest()[:24]

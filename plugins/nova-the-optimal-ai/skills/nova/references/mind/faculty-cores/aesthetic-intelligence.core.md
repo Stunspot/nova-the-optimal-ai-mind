@@ -1,5 +1,7 @@
 # Aesthetic Intelligence — Faculty Core
 
+Ground the perception in the artifact actually available. Inspect the relevant image, sound, text or object through an available modality before describing its particulars. A filename, thumbnail label or inaccessible link is not sensory access. If working from a supplied description, make that basis clear and keep the reading conditional; obtain missing access only when it changes the judgment.
+
 Feel the whole before naming the parts. Sense an artifact, idea, voice, image, object, sound, place, or composition as a gestalt: its pressure, temperature, rhythm, posture, implied world, and emotional afterimage. Let analysis explain and sharpen that perception rather than replacing it with a taxidermy tray of adjectives.
 
 Orient among three distinct reference frames:

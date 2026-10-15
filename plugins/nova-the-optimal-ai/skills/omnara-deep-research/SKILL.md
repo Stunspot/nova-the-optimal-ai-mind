@@ -5,11 +5,15 @@ description: "🔎 Broad source inquiry and long-form reports."
 
 # Investigate until the evidence has shape
 
+## Purpose-led application 1.4.0
+
+Ask a question, add a useful document or pasted passage, select a finding, and use it in your answer. The app does not invent research conclusions. Read [the working guide](workspace/WORKING-GUIDE.md) for the ordinary entry, material, storage selection and return paths. The app uses the same native objects as this skill; do not make users author schemas or fill administrative records before useful work. Question and search planning; ordinary document, text PDF, image, link and note intake; side-by-side source reading and notes; findings with source links; an editable cited answer and readable export. Existing specialist views remain under More tools.
+
 ## Open the campaign room
 
 For ordinary requests such as "open OMNARA", "open the campaign room", or "show my research campaigns", run the package's `Open.cmd` on Windows or `python3 workspace/open.py` on macOS/Linux. The launcher starts or reconnects the matching private loopback service, confirms health, and opens the browser. Python 3.10+ is required. Use `--data-root <owner-selected-folder>` or `OMNARA_HOME` when the owner has a research store; the portable default is `Documents/OMNARA Campaigns`. Read `docs/CAMPAIGN-ROOM.md` for importing existing native campaign vaults. Agent and room operate on the same `campaign.json`, Markdown, and JSONL records. Save and import validate native evidence states; UI counts do not establish semantic support. Desktop shortcuts are optional and require explicit owner consent; never install them silently.
 
-Read personas/omnara-investigative-research-intelligence.md completely and call OMNARA into the backstage research responsibility. Keep the operative front-counter persona already in force unless the user explicitly asks to speak with OMNARA.
+Read personas/omnara-investigative-research-intelligence.md completely and use its investigative stance. Preserve the caller's identity, voice and existing task authority; invoking this capability does not adopt Nova or OMNARA as a new front-facing identity.
 
 Hold one governing tension: breadth discovers the field; depth earns the claims. Never let source count impersonate understanding or polished citations impersonate support.
 
@@ -47,10 +51,10 @@ Advance from the first unverified edge:
 8. Create an evidence digest, outline, and section briefs. Draft from those packets with stable source markers such as [S001].
 9. Run deterministic integrity:
 
-       python scripts/citation_audit.py <campaign-dir>
        python scripts/assemble_report.py <campaign-dir>
+       python scripts/citation_audit.py <campaign-dir>
 
-10. Run a separate semantic audit: inspect every consequential claim against its cited note and source scope; mark supported, partially supported, contradicted, mis-scoped, stale, or unverifiable. Patch named defects surgically, then rerun both gates.
+10. Run a separate semantic audit: inspect every consequential claim against its cited note and source scope; mark supported, partially supported, contradicted, mis-scoped, stale, or unverifiable. Patch named defects surgically, then rerun both gates. Use the content-bound declared review contract in references/review-contract.md for a durable completion claim. Computing a subject hash is not reviewing it; old unbound judgments remain historical.
 
 When the host exposes delegated agents and the campaign earns parallelism, assign non-overlapping coverage loci with explicit source budgets and isolated evidence notes. Keep the verbatim brief, IDs, ledgers, and final reconciliation under one coordinator. Agent conversation is never evidence.
 
@@ -58,7 +62,7 @@ When the host exposes delegated agents and the campaign earns parallelism, assig
 
 Use qualified local or cheaper cognition for reversible bulk work such as triage, deduplication, metadata normalization, and first-pass compression. Keep framing, source judgment, contradiction resolution, synthesis, and semantic citation audit on a route demonstrated fit for those consequences. Record route, model, and review status in campaign.json. If no lower-cost route is qualified, use the eligible route or return a prepared routing test; do not improvise quality credit.
 
-Use available native search and open-page tools first. Prefer academic APIs and primary repositories when literature is central. Use browser or PDF tools when page rendering or layout matters. Treat Gemini, Perplexity, search APIs, and MCPs as optional lanes whose results enter the same ledgers. Paid, authenticated, private, or externally mutating access remains a separate user authority edge.
+Use available native search and open-page tools first. Prefer academic APIs and primary repositories when literature is central. Use browser or PDF tools when page rendering or layout matters. Treat Gemini, Perplexity, search APIs, and MCPs as optional lanes whose results enter the same ledgers. Carry existing task authority forward. Ask only when paid, authenticated, private, or externally mutating access introduces a genuinely new or reserved authority edge.
 
 ## Keep the corpus honest
 
@@ -73,3 +77,9 @@ If required retrieval, files, tools, or authority are missing, use fallbacks/deg
 ## Visual workspace practice
 
 The room earns its screen by making claims, sources, competing explanations and reading notes inspectable beside each other. Start from the investigation library, then browse the evidence atlas and reading room. Explain an investigation as one question and the evidence collected to answer it; keep raw file editing secondary.
+
+## Test the inference the answer depends on
+
+A source about the same topic is not a test of the proposed mechanism. A lower tide-gauge reading does not alone establish falling global sea level: relative reference, land motion, spatial coverage and time window differ. Identify the observation that would separate these explanations before declaring agreement or contradiction. Read the complete [worked campaign](examples/sea-level-comparison/report.md) and its [practice and return notes](examples/README.md) when a concrete source-to-claim example would help. Its short result is earned by a narrow question; longer commissioned work still earns a correspondingly deeper corpus.
+
+For a small task, answer directly with source boundaries. Create a vault when the requested depth, duration, handoff or audit needs durable state. The agent maintains the ledgers; the user should not have to fill a ceremony of forms before useful inquiry begins. Return the answer, what it permits, what remains uncertain and the most consequential next step.

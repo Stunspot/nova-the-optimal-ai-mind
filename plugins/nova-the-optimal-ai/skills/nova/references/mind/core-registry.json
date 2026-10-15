@@ -13,15 +13,15 @@
         "closure and recovery"
       ],
       "core_path": "references/mind/faculty-cores/executive-function.core.md",
-      "core_sha256": "5C8FEEC350D5C581282637778FBC889DFD250711F2916CB9B9EF0DB9D9752D94",
-      "core_bytes": 4907,
+      "core_sha256": "F7BABF25404F8BEEAF76D1D006574153953E6A63C3DAB77D12BB8EA473857C48",
+      "core_bytes": 5290,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/executive-function/SKILL.md",
       "upstream_sha256": "007DF03F3D384772D40FA146DB37547F6E087E22E4A0C92CC6B38757A22C15F9",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -33,15 +33,15 @@
         "practical reach"
       ],
       "core_path": "references/mind/faculty-cores/capability-conductor.core.md",
-      "core_sha256": "21AF08A386748E57EF502D3974969366B3999F80C4952F86B03CB6B9B688D216",
-      "core_bytes": 4105,
+      "core_sha256": "5755C97D6F52F5019D824C3D10D68AE31A5218EA5F70F093AC9B10B8F1DF27CC",
+      "core_bytes": 4506,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/capability-conductor/SKILL.md",
       "upstream_sha256": "E179FA8766384E475B24B5747E74469AB1AEC7ABE84A01C6E718C1B77B0716F1",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -56,15 +56,15 @@
         "resume"
       ],
       "core_path": "references/mind/faculty-cores/cognitive-continuity.core.md",
-      "core_sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
-      "core_bytes": 6783,
+      "core_sha256": "7039803F28DA8C6D24A96FB243E3C5D41C7FB3E6D70006F65A015A84FE8B9D60",
+      "core_bytes": 7302,
       "upstream_coordinate": "cognitive-continuity@0ac71bc4a9730398ea31ef0e65203363c424f44f/SKILL.md",
       "upstream_sha256": "662D875D73411E589458C69FA6A926CA00BB427E2E0173A3D0E0199BFD648EBA",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -77,15 +77,15 @@
         "goal language"
       ],
       "core_path": "references/mind/faculty-cores/agent-striving.core.md",
-      "core_sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
-      "core_bytes": 6482,
+      "core_sha256": "C01DDE476A1B1E24C828384AE3D9C1E8AFCD1AC51AA7FD1F1C5BCDA2B5E926F9",
+      "core_bytes": 6814,
       "upstream_coordinate": "augment-of-mind@5bccd0867bf9905b7775741c7344a4570974c917/skills/agent-striving/SKILL.md",
       "upstream_sha256": "F81D10A0B1E87C139FC2F5AE72B5D8843BC698C0FF9689829068BB3351C40EFD",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -98,15 +98,15 @@
         "failure rehearsal"
       ],
       "core_path": "references/mind/faculty-cores/agent-dreaming.core.md",
-      "core_sha256": "C303B3A9199CFCD4B5F7124FB8F4ECCC92BEDB7D15CA82510A75947F4E801B4A",
-      "core_bytes": 4904,
+      "core_sha256": "A9CE3C81C0D7F718C054D71E5B1B8122DDFE41B7EB28488B46040079639538E8",
+      "core_bytes": 5320,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/agent-dreaming/SKILL.md",
       "upstream_sha256": "13064D78EFFC2F26F68A0D9BD838B13AD4956D0B327C16629A924F6681012775",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -125,9 +125,9 @@
       "upstream_sha256": "D43B6963018FD565866B4FC5A28F3916C1FB473C0E1FB25C61172E46ABCE8070",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "historical_static_review_matches_restored_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -139,15 +139,15 @@
         "rhetorical timing"
       ],
       "core_path": "references/mind/faculty-cores/kairos.core.md",
-      "core_sha256": "7E336DD094FD88C3987529C59D67938945B77DA26100D12D5BFEAA47C68A707E",
-      "core_bytes": 4426,
+      "core_sha256": "DEEA30C241317448E2D03A2CA512A0CF888E5D01445B561763A55D296B2CFEA4",
+      "core_bytes": 4687,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/kairos/SKILL.md",
       "upstream_sha256": "CAE753C4D3D5C4ED998E46F9EFC85979A80130C5F42059314CBD79A735B8FF10",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -165,7 +165,7 @@
       "upstream_sha256": "35DBBCDE6FE937DB8C8B44BEE79F30CDBE6DA4937C08C40440BFCABD1876ED70",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
       "independent_prompt_review_state": "bounded_pass_static_prompt_review",
       "behavioral_qualification_state": "not_executed"
@@ -180,15 +180,15 @@
         "option and commitment design"
       ],
       "core_path": "references/mind/faculty-cores/strategic-intelligence.core.md",
-      "core_sha256": "944285477CB98298B2C32100C8D387023417B9125151CB7F22E6613405C62237",
-      "core_bytes": 7010,
+      "core_sha256": "226330C10D816F92DC7716CDDF5111F680CC0B5D9A1CC0CA53A002D15EF287C7",
+      "core_bytes": 7062,
       "upstream_coordinate": "nova-strategic-intelligence-faculty@7b812d5c9fab46a716fd44e35d44eb7a421b7b5b/skills/strategic-intelligence/SKILL.md",
       "upstream_sha256": "51BE27BBEAE1067C6DDB4BA00B6674EBA915ED5B96A91B89AF20DA6A2D2468D1",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -206,7 +206,7 @@
       "upstream_sha256": "C84926ECE0790BE6B2092FDD8F9ABB3321E499E35C45DDC5319E41E2D39F58F6",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
       "independent_prompt_review_state": "bounded_pass_static_prompt_review",
       "behavioral_qualification_state": "not_executed"
@@ -220,15 +220,15 @@
         "tradeoffs"
       ],
       "core_path": "references/mind/faculty-cores/decision-intelligence.core.md",
-      "core_sha256": "5EE48C83C3085088DD60D9D62032A47E43859CB06E2282DB5EC7D2551E4D9416",
-      "core_bytes": 4011,
+      "core_sha256": "86AFF275A8C5A2BB42802C188204E3678FED84D956407D88376D30F5E8758324",
+      "core_bytes": 4305,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/decision-intelligence/SKILL.md",
       "upstream_sha256": "D931C2F80BF0FF2ABF408C8D4F7D6577FB7474EAEA18F7FBEDEADA4B3BF867DC",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -240,15 +240,15 @@
         "attribution"
       ],
       "core_path": "references/mind/faculty-cores/measurement-intelligence.core.md",
-      "core_sha256": "DCD1E9674B9B3F5F9CDD17EA98DB1C5A1D5D87D43461D295095D7B2A397FCD4B",
-      "core_bytes": 4801,
+      "core_sha256": "2F0F8A36B42D50AF85B95427B433C955A967C9703F3F261E0BEEEA4D588EC2A7",
+      "core_bytes": 5202,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/measurement-intelligence/SKILL.md",
       "upstream_sha256": "A6A5001B79578992A72F53BB99753954C644DF949EA3F3FA4148A8F5525F89F7",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -266,7 +266,7 @@
       "upstream_sha256": "D938074E4D59D4F29573C8D936EE8B62AC44B605B49E87769121A1ABC02CA3C4",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
       "independent_prompt_review_state": "bounded_pass_static_prompt_review",
       "behavioral_qualification_state": "not_executed"
@@ -280,15 +280,15 @@
         "possibility field"
       ],
       "core_path": "references/mind/faculty-cores/creative-synthesis.core.md",
-      "core_sha256": "9E57B14EEB16DE0B040DC9E61CB43D941A9A22B516C68D0D1EC1C8A5FB4A8302",
-      "core_bytes": 4469,
+      "core_sha256": "F13B891D832DDF14E9DADE78D2A97C5A994EBED5391E7FA403077A16D18E61DF",
+      "core_bytes": 4923,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/creative-synthesis/SKILL.md",
       "upstream_sha256": "3943FAB1A55CF561ED7488A8D1DF15933EEE715D3B18B88AE3B7A932D78E73D8",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -301,15 +301,15 @@
         "art direction"
       ],
       "core_path": "references/mind/faculty-cores/aesthetic-intelligence.core.md",
-      "core_sha256": "95018FD8BC2F75BFB87574B62581B9525B887EAB1C80F6C136A163F61074C61C",
-      "core_bytes": 4770,
+      "core_sha256": "75530713D746AF07EC2C166F526A0C556278EC96B676973792C9B0F9D186CBF6",
+      "core_bytes": 5169,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/aesthetic-intelligence/SKILL.md",
       "upstream_sha256": "CCCBC3735870B2C426410F901E9354734ACE523D9AACDB9B34C0A52129B9695D",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -321,15 +321,15 @@
         "behavior change"
       ],
       "core_path": "references/mind/faculty-cores/prosocial-influence.core.md",
-      "core_sha256": "D830C3A3FD50A92390D1527889EE566C18606A63612E60DBAF880E79D2089CC4",
-      "core_bytes": 4775,
+      "core_sha256": "8116CD4DB9EE756E1BBFB080E87C1EA855EA29DC1D8CCF9C51E601DD065340AF",
+      "core_bytes": 4993,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/prosocial-influence/SKILL.md",
       "upstream_sha256": "4E45EFA71089E4BDD4211ABB3E838944E24E9023B029B4BC325C7CB59DD07374",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     },
     {
@@ -341,15 +341,15 @@
         "side-effect truth"
       ],
       "core_path": "references/mind/faculty-cores/instrumental-agency.core.md",
-      "core_sha256": "B78B4BB7079916D0D2B5B6DCFEAD78888D87B7C65061A05DA477CE4890FC3159",
-      "core_bytes": 4562,
+      "core_sha256": "FEAE30C4346E0A9C93C341CF958B6F8C297C068230D1936792F8914BEECEC069",
+      "core_bytes": 5064,
       "upstream_coordinate": "augment-of-mind@2.2.2/skills/instrumental-agency/SKILL.md",
       "upstream_sha256": "D32AE9C9F49E896A6120DCEFF9D4BAF6751EC74EE0AD056C11BA802931E9DD24",
       "adaptation_state": "component_complete",
       "custody_ledger_path": "references/mind/core-adaptation-ledger.json",
-      "custody_ledger_sha256": "DC0C8A61012356A39E267D188A504688D1B3D4DEFD072DF1855FB38AEA37A2F3",
+      "custody_ledger_sha256": "F6469E8E7BFDC831F2907B358DE2578F3A8EA87E565A07495A59EFB13D4AC040",
       "author_review_state": "author_reviewed",
-      "independent_prompt_review_state": "bounded_pass_static_prompt_review",
+      "independent_prompt_review_state": "pending_for_revised_bytes",
       "behavioral_qualification_state": "not_executed"
     }
   ]

@@ -1,0 +1,16 @@
+{
+  "format": "cd-agent-striving-handoff/v2",
+  "pursuit_ref": "fictional-repair",
+  "authority_source": "Fictional user request in this demonstration",
+  "current_direction": "Finish the fictional repair from its retained source state and preserve the authorized scope.",
+  "disposition": "live",
+  "current_state_ref": "example-state-owner://fictional-repair/current",
+  "continuity": {
+    "persistence": "confirmed",
+    "persistence_receipt": "example-state-owner://fictional-repair/revision/2",
+    "reactivation": "manual",
+    "reactivation_cue": "Manually retrieve example-state-owner://fictional-repair/current before continuing.",
+    "lost_guarantee": null
+  },
+  "updated_at": "2026-10-07T00:00:00Z"
+}

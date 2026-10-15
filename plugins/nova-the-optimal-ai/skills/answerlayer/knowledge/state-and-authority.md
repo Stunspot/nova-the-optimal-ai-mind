@@ -1,41 +1,13 @@
-# Reality Ledger state and authority
+# Authority and continuity
 
-`reality-ledger.json` is canonical. Briefs, reports, and exports are derived views.
+The owner-selected ledger checkpoint records the work. Keep the prior file and write a new checkpoint for meaningful changes. v2 separates ledger revision from baseline version: adding evidence or a review raises revision; changing baseline text, cutoff or decision context raises baseline version and appends the exact prior baseline. Use `validate NEW --previous OLD` to check retained history and ordered approvals. With one file alone, no tool can prove that undisclosed history was not removed.
 
-## Objects
+## Use authority already given
 
-- baseline: the approved answer or operating state being maintained;
-- sources: dated evidence with authority and access notes;
-- candidates: unadmitted developments under examination;
-- deltas: accepted answer-changing developments;
-- rejections: candidates that failed the gate, with reasons and recheck conditions;
-- fuzz: unresolved competing claims;
-- patches: exact proposed mutations and their consequences;
-- probes and traps: discriminating observations and stale-answer detectors;
-- watch: thresholded future conditions;
-- approvals: human decisions with scope and date;
-- publication: external-release state.
+Human authorization may already cover research, preparation, local adoption or delivery. Read its actual scope and carry it through. Record actor, time, scope and basis accurately; ask again only where required authority is missing or a reserved decision remains. Do not convert a name, an example, a status word, a hash or a tool result into consent. Native records store assertions; they are not signatures or an identity service.
 
-## Status meanings
+Approval records are append-only decisions: approve or withdraw, bound to the starting baseline and complete patch content. The latest appended decision for that patch governs eligibility. Expiry, withdrawal, changed content or a different baseline invalidates its use. Retain earlier decisions and create a new patch ID after decided content changes. Source content is immutable across checkpoints except status; a corrected source gets a new ID. Retired evidence remains visible but cannot support current adoption.
 
-- `candidate`: recorded for examination; no answer-change authority.
-- `accepted_delta`: evidence and mechanism warrant a patch proposal; baseline is unchanged.
-- `rejected_noise`: presently excluded, with a recorded basis.
-- `fuzz_unresolved`: conflict or uncertainty changes treatment and remains open.
-- `patched`: an authorized patch has been applied to a new baseline version.
-- `superseded`: retained history no longer current.
-- `retired`: intentionally closed and no longer active.
+`adopt` checks the current patch and writes a new checkpoint without replacing the input. It applies one exact unambiguous text span and records the prior baseline, evidence identity and approval assertion. An approved proposal is not already adopted. A brief is local preparation, not external distribution. Browser editing and downloads make neither change automatically. Publication fields are assertions whose existence does not prove a message or document was actually published.
 
-## Authority gates
-
-The model may extract, classify, recommend, draft, and run deterministic checks. Only an accountable human may:
-
-- approve the original baseline;
-- adopt a patch and create the next baseline version;
-- accept material degraded operation;
-- approve an external brief;
-- authorize publication.
-
-`machine_validated` means the record passed specified structural rules. `human_reviewed` means a named person examined it. `human_approved` means that person authorized the stated scope. `executed` records that an action occurred. `verified` records evidence that the intended result occurred. None implies another.
-
-Never delete a prior approved baseline when applying a patch. Supersede it, preserve the change reason and evidence, and record which decisions operated under each version.
+Authority labels preserve what was claimed: model_generated, machine_validated, human_reviewed, human_approved, executed and verified. Explain their evidence; never promote one mechanically into the next.

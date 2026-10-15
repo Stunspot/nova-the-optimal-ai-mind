@@ -3,68 +3,355 @@
   "title": "Officecraft independent review record",
   "type": "object",
   "additionalProperties": false,
-  "required": ["record_version", "review_id", "reviewed_at", "reviewer_role", "review_scope", "evidence_basis", "disposition", "disposition_basis", "material_findings", "conditions", "non_blocking_improvements", "reopen_triggers", "authority_boundary"],
+  "required": [
+    "record_version",
+    "review_id",
+    "reviewed_at",
+    "reviewer_role",
+    "review_scope",
+    "evidence_basis",
+    "disposition_basis",
+    "material_findings",
+    "conditions",
+    "non_blocking_improvements",
+    "reopen_triggers",
+    "authority_boundary",
+    "status",
+    "officefile_state",
+    "intended_use",
+    "reviewed_artifacts"
+  ],
   "properties": {
-    "record_version": {"const": "officecraft-review/v1"},
-    "review_id": {"type": "string"},
-    "reviewed_at": {"type": "string", "format": "date-time"},
-    "reviewer_role": {"const": "officecraft-reviewer"},
+    "record_version": {
+      "const": "officecraft-review-entry/v2"
+    },
+    "review_id": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reviewer_role": {
+      "const": "officecraft-reviewer"
+    },
     "review_scope": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["claim", "state_id", "artifacts", "exclusions"],
+      "required": [
+        "claim",
+        "state_id",
+        "artifacts",
+        "exclusions"
+      ],
       "properties": {
-        "claim": {"type": "string"},
-        "state_id": {"type": "string"},
+        "claim": {
+          "type": "string"
+        },
+        "state_id": {
+          "type": "string"
+        },
         "artifacts": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["identifier", "relationship", "reviewed"],
+            "required": [
+              "identifier",
+              "relationship",
+              "reviewed"
+            ],
             "properties": {
-              "identifier": {"type": "string"},
-              "relationship": {"type": "string"},
-              "reviewed": {"type": "boolean"}
+              "identifier": {
+                "type": "string"
+              },
+              "relationship": {
+                "type": "string"
+              },
+              "reviewed": {
+                "type": "boolean"
+              }
             }
           }
         },
-        "exclusions": {"type": "array", "items": {"type": "string"}}
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
     "evidence_basis": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["observed", "reported", "unobserved"],
+      "required": [
+        "observed",
+        "reported",
+        "unobserved"
+      ],
       "properties": {
-        "observed": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["item", "method", "supports"], "properties": {"item": {"type": "string"}, "method": {"type": "string"}, "supports": {"type": "string"}}}},
-        "reported": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["item", "claim", "underlying_evidence_supplied"], "properties": {"item": {"type": "string"}, "claim": {"type": "string"}, "underlying_evidence_supplied": {"type": "boolean"}}}},
-        "unobserved": {"type": "array", "items": {"type": "string"}}
+        "observed": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "item",
+              "method",
+              "supports"
+            ],
+            "properties": {
+              "item": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "supports": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "reported": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "item",
+              "claim",
+              "underlying_evidence_supplied"
+            ],
+            "properties": {
+              "item": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              },
+              "underlying_evidence_supplied": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "unobserved": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       }
     },
-    "disposition": {"enum": ["PASS", "PASS_WITH_CONDITIONS", "REVISE", "BLOCKED"]},
-    "disposition_basis": {"type": "string"},
+    "disposition_basis": {
+      "type": "string"
+    },
     "material_findings": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "category", "status", "finding", "evidence", "consequence", "required_disposition", "closure_condition"],
+        "required": [
+          "id",
+          "category",
+          "status",
+          "finding",
+          "evidence",
+          "consequence",
+          "required_disposition",
+          "closure_condition"
+        ],
         "properties": {
-          "id": {"type": "string"},
-          "category": {"enum": ["implementation_defect", "design_ambiguity", "missing_criterion", "unavailable_evidence", "owner_decision", "improvement"]},
-          "status": {"enum": ["open", "closed", "not_applicable"]},
-          "finding": {"type": "string"},
-          "evidence": {"type": "array", "items": {"type": "string"}},
-          "consequence": {"type": "string"},
-          "required_disposition": {"enum": ["PASS_WITH_CONDITIONS", "REVISE", "BLOCKED"]},
-          "closure_condition": {"type": "string"}
+          "id": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "implementation_defect",
+              "design_ambiguity",
+              "missing_criterion",
+              "unavailable_evidence",
+              "owner_decision",
+              "improvement"
+            ]
+          },
+          "status": {
+            "enum": [
+              "open",
+              "closed",
+              "not_applicable"
+            ]
+          },
+          "finding": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "consequence": {
+            "type": "string"
+          },
+          "required_disposition": {
+            "enum": [
+              "PASS_WITH_CONDITIONS",
+              "REVISE",
+              "BLOCKED"
+            ]
+          },
+          "closure_condition": {
+            "type": "string"
+          },
+          "condition_id": {
+            "type": "string"
+          }
         }
       }
     },
-    "conditions": {"type": "array", "items": {"type": "string"}},
-    "non_blocking_improvements": {"type": "array", "items": {"type": "string"}},
-    "reopen_triggers": {"type": "array", "items": {"type": "string"}},
-    "authority_boundary": {"type": "string"}
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "artifact_ids",
+          "intended_use",
+          "status"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "intended_use": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "open",
+              "met",
+              "residual_accepted"
+            ]
+          },
+          "resolution_evidence": {
+            "type": "string"
+          },
+          "acceptance": {
+            "type": "object",
+            "required": [
+              "owner",
+              "authority_kind",
+              "approved_use",
+              "accepted_at",
+              "rationale"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "owner": {
+                "type": "string"
+              },
+              "authority_kind": {
+                "enum": [
+                  "user",
+                  "accountable_owner"
+                ]
+              },
+              "approved_use": {
+                "type": "string"
+              },
+              "accepted_at": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "rationale": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "non_blocking_improvements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "reopen_triggers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "authority_boundary": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS",
+        "PASS_WITH_CONDITIONS",
+        "REVISE",
+        "BLOCKED"
+      ]
+    },
+    "officefile_state": {
+      "enum": [
+        "intake",
+        "shaped",
+        "production",
+        "inspection",
+        "reviewable",
+        "handed_off"
+      ]
+    },
+    "intended_use": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewed_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "artifact_id",
+          "sha256",
+          "input_basis_sha256"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "input_basis_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        }
+      }
+    }
   }
 }

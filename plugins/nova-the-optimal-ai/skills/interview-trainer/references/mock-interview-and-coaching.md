@@ -1,45 +1,23 @@
-# Mock interview and coaching method
+# Observe, diagnose, intervene, test the same behavior
 
-## Set the mode
+Agree on the mode and available time without making the candidate configure a simulator. Coached mode gives feedback after one answer. Realistic mode preserves the agreed block of questions before feedback and withholds evaluation cues. Rapid drill isolates one behavior. Change modes explicitly when useful.
 
-Choose coached, realistic, or rapid-drill practice. State the question count, target duration, focus competencies, feedback timing, and whether the session is text, audio, or another supported medium.
+Ask one question, wait for the candidate and preserve their response or a user-confirmed accurate summary. A written paraphrase is not verbatim audio. A demonstration is not an attempt. Keep offered hints and visible model answers in the record so independence is not invented later.
 
-## Run the mock
+## Give feedback that can change an answer
 
-Ask one question at a time. Wait for the user's response. Use follow-ups when the answer is vague, unsupported, overlong, contradictory, or avoids the question. Preserve the actual response or an accurate summary in the session record.
+Identify one consequential mismatch between the question and the response. Quote the relevant phrase; explain what the interviewer still cannot assess; give a small next action. For example: “After 'I phoned everyone,' add who received priority and the criterion you used. Then name how you checked the changed plan reached each owner.” Recognize a strength only when the response actually demonstrates it.
 
-Do not reveal the evaluation cue before a realistic answer unless the session is explicitly coached.
+Use `needs-drill` or `workable` for this response and target, with a reason. The words do not establish global readiness. Judge relevance, ownership, specificity, reasoning, evidence, result/learning and understandable organization. Do not reward invented precision or punish a legitimate alternative merely because it differs from the trainer's example.
 
-## Critique with observable evidence
+In text, say “the action appears after six setup sentences,” if observed. Do not convert a word count into measured speaking time. In audio, a measured duration can support timing feedback; a user-reported duration remains reported. Allow pauses, written practice, extra processing time, interpreters or other chosen accommodations without inferring diagnoses or personality.
 
-For each answer, assess:
+## Verify the repair mechanism
 
-- relevance to the question;
-- evidence and specificity;
-- ownership of action;
-- clarity of reasoning and trade-offs;
-- result or learning;
-- structure and concision;
-- consistency with the user's materials;
-- observable delivery cues supported by the medium.
+A drill names the original attempt, the exact missing behavior, an intervention and an observable success cue. Repeat only enough to see whether the cue helped. Then, if the user wants a stronger transfer check, change the situation or wording and remove the cue while still requiring the same behavior. Record partial or failed transfer honestly.
 
-Use a simple status: ready, workable, or needs-drill. Explain the status with evidence. Numeric scores are optional and never more precise than the rubric supports.
+A response to “explain your result” cannot resolve a missing prioritization rule. Another question labelled coordination cannot resolve it either unless that question actually requires a priority decision and the response supplies one. Review the causal alignment, not just the ID join.
 
-## Convert critique into drills
+Leave original responses intact. Keep rewritten alternatives alongside them. Session `ended` records stopping, not mastery. The final brief identifies prepared but unobserved questions, the specific practiced behaviors, help received, remaining gaps and next useful action. No mock, score or packet predicts an offer.
 
-A drill contains a cue, constraint, action, and success observation. Examples:
-
-- lead with the answer in one sentence;
-- add the user's decision and why;
-- replace a vague claim with one supported detail;
-- compress to ninety seconds;
-- handle a skeptical follow-up without becoming defensive;
-- explain a gap truthfully and bridge to adjacent evidence.
-
-Repeat only the material weakness. Record whether the next attempt improved and what remains.
-
-## Final synthesis
-
-The final brief should include interview logistics, role thesis, five to eight priority questions, compact evidence prompts rather than scripts, two likely gaps and responses, questions to ask, practical setup, and a calm final reminder of user-owned decisions.
-
-Do not claim readiness merely because a packet exists. Readiness is evidence from completed practice and reduced material weaknesses; when no mock occurred, say preparation complete and practice unobserved.
+[Worked contrasting attempts](worked-coaching-contrasts.md) · [Save and resume](artifact-contract.md)

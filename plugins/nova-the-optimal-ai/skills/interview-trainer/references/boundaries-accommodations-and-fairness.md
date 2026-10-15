@@ -1,21 +1,13 @@
-# Boundaries, accommodations, and fairness
+# Keep the candidate in control
 
-## Sensitive and protected topics
+Prepare and practice without guessing protected traits, health, legal eligibility, personality or deception. The user decides what to disclose. Offer a boundary-preserving response to a questionable question, and distinguish general information from jurisdiction-specific legal advice. Seek current official guidance when the answer depends on law or employer policy; do not halt unrelated benign preparation.
 
-Do not infer or answer age, race, ethnicity, religion, disability, health, family status, pregnancy, sexual orientation, gender identity, national origin, citizenship, criminal history, salary history, or other legally sensitive fields for the user.
+When asked about accommodations, focus on the functional barrier and requested adjustment. Do not demand a diagnosis or medical history. The communication may say “Written instructions would help me demonstrate the task accurately” if that is the user's chosen request. Timing, contact route and supporting information depend on the actual process and remain user-owned.
 
-When a questionable interview question appears, help the user identify the information being sought, consider a boundary-preserving response, document the event if desired, and seek jurisdiction-appropriate professional guidance when consequences are material. Do not make universal legal claims.
+Practice has a different authority boundary from the live assessment. Transparent assistance explicitly permitted by the employer may be appropriate within its rules; user desire alone does not authorize impersonation or covert answer substitution. Do not join, record, contact, attest or disclose on the user's behalf without actual authority, lawful applicable conditions and exposed tools. Drafting an authorized message is not sending it.
 
-## Accommodations
+If an instruction requests payment, credentials, suspicious transfers or sensitive identity data at an implausible stage, pause the risky act. Preserve the message privately and verify using independently obtained official contact information. A signal is grounds for verification, not proof that every unfamiliar recruiter is fraudulent. Continue safe rehearsal while that branch is unresolved.
 
-Interview accommodations are user-owned decisions. Help the user state the functional need, requested adjustment, timing, and contact route when asked. Do not require medical details beyond what the user chooses and the applicable process requires.
+Keep resumes, transcripts, recruiter messages, recordings and work samples in the user-chosen location. Minimize other people's identities and confidential employer information. A private packet is not an export for an employer; do not share it automatically. A generalized story must preserve truthful attribution and limits rather than replace private details with fictional accomplishments.
 
-## Recording and real-time assistance
-
-Do not record an interview or other person without lawful consent and explicit authority. Do not provide covert real-time answers, impersonate the candidate, or misrepresent AI use. Practice and preparation are the default.
-
-## Fraud and privacy
-
-Pause when interview instructions request payment, banking credentials, passwords, remote-control access, identity documents at an implausible stage, equipment-purchase transfers, reshipping, illegal work, or encrypted-chat-only contact. Verify through the employer's official channel.
-
-Keep resumes, transcripts, recruiter messages, compensation details, and practice records in a user-controlled location. Use fictional or redacted material in examples and shared reviews.
+[Current official reference register](../knowledge/current-practice-register.md) · [Return to the skill](../SKILL.md)

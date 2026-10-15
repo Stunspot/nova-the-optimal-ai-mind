@@ -1,23 +1,25 @@
 # Maintainer guide
 
-This is a source-repository maintainer reference. The extracted customer package carries it for transparency but does not include a buildable source checkout.
+This reference describes the Free4.1.0 source repository. The extracted customer package carries it for transparency and does not contain a buildable source checkout.
 
-## Canonical product sources
+## Keep source ownership explicit
 
-The distributable plugin source is plugins/nova-the-optimal-ai. Its LOADOUT-MANIFEST.json must name exactly twenty-eight native roots (Nova and twenty-seven sibling capabilities). MIND's seventeen Faculty Cores remain nested beneath skills/nova/references/mind/faculty-cores.
+The canonical distributable plugin is `plugins/nova-the-optimal-ai`. Its loadout names28 roots: Nova and27 sibling capabilities. MIND's17 Faculty Cores remain nested under `skills/nova/references/mind/faculty-cores`.
 
-Import maintained capabilities through explicit source selection. Record repository commits and selected-tree digests in design/source-map.json, name every edition overlay, and regenerate design/source-lock.json. Generated Nova Emergent package trees are comparison evidence, not canonical inputs.
+Select maintained owner files explicitly. Record current imported paths and tree identities in `design/source-map.json`, name edition adaptations and bind the actual bytes with `design/source-lock.json`. Retain full construction custody and prior coordinates as history. A historical source commit does not claim that a later repaired tree reached that commit. A composed development tree can carry accepted owner bytes only when its selection and provenance are verified; an opaque generated parent package is not a replacement for owner custody.
 
-The root and plugin copies of LICENSE.md, ATTRIBUTION.md, NOTICE.md, TRADEMARKS.md, PROVENANCE.md, and THIRD-PARTY-NOTICES.md must remain byte-identical. The source lock hashes that rights bundle. Every detachable Claude skill receives a generated nova-free-rights envelope; do not modify protected TestForge or Agent Swarm payload trees to carry product paperwork.
+Keep the rights bundle together. Root and plugin copies of LICENSE, ATTRIBUTION, NOTICE, TRADEMARKS, PROVENANCE and THIRD-PARTY-NOTICES remain byte-identical. Every detached Claude skill gets its product-rights envelope and applicable component notices. Preserve original component grants, user records, personas and protected payloads.
 
-## Qualification order
+## Finish before readiness
 
-Before release sealing, regenerate the source lock, run the focused repository suite, run documentation and site checks, and complete fresh Hesperos and TestForge operator/reviewer cycles against a frozen source candidate. A product defect returns the candidate to builder custody and starts a new verification cutoff after repair.
+Reconcile the complete current-facing guide inventory with the runtime and delivery contract. Correct a current wrong path, version, selector or completion claim; preserve explicitly historical release and upgrade sections. Retain valid earlier Hesperos authorship and evidence rather than recreating unchanged material. New or materially revised customer topics need their own exact authoring custody and independent review at the claimed scope.
 
-Commit the accepted source and evidence checkpoint, confirm a completely clean repository including untracked files, then build once with tools/build_release.py --require-clean and verify the extracted package with tools/verify_package.py. Package checksums and archive hashes belong to this final construction step.
+Complete coherent source candidates before TestForge. Use the smallest consequential checks and carry evidence whose basis remains sound. Distinguish source identity, actual native use, situated model observations and final package acceptance. Follow [Verification and evidence](VERIFICATION.md) for the source, readiness, final-build and archive sequence.
 
-Static source and package evidence does not become fresh-host, model-behavior, publication, or customer-outcome evidence. A GitHub Actions run on a GitHub-hosted runner is evidence only when that exact run was authorized and observed; it is not required product machinery.
+A failed product acceptance criterion returns the work to builder custody. Repair the defect, declare a successor and preserve the failed evidence. Do not patch and rerun inside the same ended readiness cycle. Existing user work and historical accepted deliveries remain intact.
 
-## Publication boundary
+## Carry authorized delivery through
 
-Never publish an intermediate candidate. Confirm rights custody, clean source, exact source lock, documentation review, TestForge review, deterministic archives, and package verification before proposing publication. Tagging, pushing, creating a GitHub release, deploying the site, submitting to a directory, or announcing the product requires separate user authority even though the included licenses permit redistribution.
+After acceptance, commit the intended source in a clean release checkout, including untracked files that belong to the product, and build once, then verify fresh extraction. Carry accepted bytes through applicable existing repositories, installations, complete ZIPs, sidecars, shelves, catalogs and task records within the owner's authorization. Do not describe staging as delivery or private construction as public publication.
+
+Preserve each established publication hold. Obtain separate user authority when an action introduces a new public announcement or channel, paid or destructive effect, visibility change or reserved scope. Existing authorization for the named delivery surfaces remains valid; included license permission alone is not an instruction to publish.

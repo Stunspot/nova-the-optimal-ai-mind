@@ -1,13 +1,7 @@
-# Universal copy-paste workflow
+# Use AnswerLayer in conversation
 
-If files or Python are unavailable, maintain one Markdown record with these sections:
+Paste the current answer and any known cutoff/scope, then the new evidence and what you need to decide. For example: “Our current guidance says standard orders close at17:00. This new carrier notice says16:00 in Zone A. Does the answer change, and what stays true?”
 
-1. Baseline: owner, use, scope, version, and `as_of` date.
-2. Candidates: source, event/publication/effective/threshold dates, claimed change, and status.
-3. Qualification: exact answer-change test, mechanism, affected actors, exclusions, and confidence basis.
-4. Fuzz: competing claims, consequence, abstention wording, and distinguishing evidence.
-5. Patch proposals: before, after, evidence, counterfactual, consequences, probes, traps, and recheck.
-6. Watch: observable threshold, current state, owner, and next review.
-7. Authority: model-generated, checks unexecuted, human review, approval decision, distribution, and publication.
+AnswerLayer should identify the affected scope, inspect the supplied support, explain the change or no-change decision and give exact wording. State unknown dates rather than inventing them. Existing authorization governs what can be completed. A text proposal is not an applied native checkpoint or a sent announcement.
 
-Never overwrite the baseline section. Create a new numbered version only after explicit human approval, and retain the previous version as superseded.
+For later resumption, retain the baseline, evidence locators, exact proposal, uncertainty and next trigger in your own file. Use the [native operations reference](../knowledge/native-ledger-reference.md) if Python becomes available.

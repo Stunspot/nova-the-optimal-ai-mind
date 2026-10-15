@@ -1,29 +1,31 @@
 # Open the native workspaces
 
-Nova Free 3.8.1 includes seven optional workspaces attached to existing capability owners. They show real supplied artifacts, not live connected systems. Ordinary Nova conversation requires no workspace or persistent estate. Extract or install the complete edition before using a launcher; keep native folders together. Launcher paths are relative to the plugin root: `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
+Nova Free 4.1.0 includes seven optional apps under its existing capability owners. Choose by the work you want to do. Ordinary Nova conversation needs no app or persistent estate. Extract the complete edition first. The paths below start at `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
 
-## Choose the owner and starting artifact
+## Choose a useful starting point
 
-| Workspace | Windows launcher | Starting artifact and change boundary |
+| Your task | App and Windows launcher | First useful outcome |
 | --- | --- | --- |
-| Giles Knowledge Atlas | `skills/rupert-giles-knowledge-steward/Open Giles.cmd` | Registered knowledge stores and exact subsection routes; persistent catalog metadata, read-only source previews and portable import/export. |
-| Dennis Project Bridge | `skills/dennis-stratton-project-management/Open Project Bridge.cmd` | Registry-discovered Nova project records; native edit/save/export. |
-| OMNARA campaign room | `skills/omnara-deep-research/Open.cmd` | Native campaign vaults; native import/edit/save/export under the research owner. |
-| AnswerLayer Baseline Inspector | `skills/answerlayer/workspace/Open.cmd` | Supplied Reality Ledger JSON; memory-only working copy and download, no adoption. |
-| Beryl IT Case Bench | `skills/beryl-it-tech/workspace/Open.cmd` | Supplied IT case JSON and optional reviewer artifact; memory-only working copy and download, no device action. |
-| Observatory Case | `skills/current-intelligence-observatory/workspace/Open.cmd` | Supplied dated case JSON and optional baseline; read-only comparison. |
-| Knowledge Desk | `skills/commonplace/workspace/Open.cmd` | Explicit reads from the existing Commonplace, Corkboard and Dunbar owners; no record writes. |
+| Find and use something in your collections | Giles: `skills/rupert-giles-knowledge-steward/Open Giles.cmd` | Find a source, collect passages and make a readable knowledge packet. |
+| Move a project forward | Dennis: `skills/dennis-stratton-project-management/Open Project Bridge.cmd` | Resume an existing project, inspect dependencies and update its next action. |
+| Investigate a broad question | OMNARA: `skills/omnara-deep-research/Open.cmd` | Read material, connect findings and write an answer with sources. |
+| Update guidance you rely on | AnswerLayer: `skills/answerlayer/workspace/Open.cmd` | Compare new developments with current wording and retain a reasoned revision. |
+| Diagnose a device problem | Beryl: `skills/beryl-it-tech/workspace/Open.cmd` | Compare explanations, plan a discriminating test and retain what actually happened. |
+| Understand a changing situation | Observatory: `skills/current-intelligence-observatory/workspace/Open.cmd` | Connect sources and event times to claims, uncertainty and a useful brief. |
+| Read across retained knowledge and context | Knowledge Desk: `skills/commonplace/workspace/Open.cmd` | Collect useful source material into a temporary working set and download a reading packet. |
 
-Each launcher has a neighboring `.command` route for macOS/Linux. Observatory can also open `workspace/index.html` directly without Python or a server. The other local hosts need Python 3.10+ already installed; they require no pip dependencies. macOS wrappers are supplied, not live-tested by this qualification.
+These local apps require Python 3.10+ and a modern browser; Python packages needed for their ordinary shipped flows are included. Each Windows launcher has a neighboring macOS `.command` route. macOS wrappers are supplied but were not executed on this Windows qualification host. Open the launcher rather than directly opening an HTML file for an app that needs its local save service.
 
-## Open safely and recognize the correct instance
+The four revised apps begin from ordinary input. Legacy native-format viewers remain advanced routes for existing specialized records. Research, interpretation and diagnosis come from you and an actual Nova conversation; the local apps do not fabricate model replies, fetch sources merely because a URL was entered, operate a device or publish your work.
 
-1. Choose the owner and preserve your original artifact. Use a supplied labeled example to explore without treating it as your data.
-2. Open the matching launcher. The existing workspace hosts reconnect only their exact matching private loopback instance. Giles starts its own server and reports an occupied port; use its recovery procedure if that happens. Reopen the launcher after reboot.
-3. Check the workspace name and the selected native artifact before editing or reading. A successful page load is not proof of an installation's agent discovery or real external behavior.
-4. Follow the guide for that owner. Before closing, distinguish a native save receipt, a downloaded working file and a read-only view.
+## Open, save and return
 
-No desktop shortcut is created automatically. Do not publish private loopback session URLs. If launch fails, inspect the terminal error or invoke that workspace's supported `--no-browser` route; do not kill an unrelated service or reset owner data.
+1. Open the matching launcher. Check the app title and displayed work location. Its private loopback address belongs to this local session; keep it private.
+2. Create the question, answer or case you actually need. Attach or paste source material only where it helps that task. Known source paths and originals remain distinguishable from retained working copies.
+3. Use the app's save control and read its status. Reopen or reload to confirm that the intended work returns before relying on it.
+4. Back up the displayed data folder and use the app's backup/export routes. A readable brief is a useful handoff, but it is not necessarily a complete backup of original attachments.
+
+The package includes each app's own native icon resources. Installation does not automatically create desktop shortcuts. Existing shortcuts should point to the current packaged launcher and that app's included icon. See the skill's guide for any supplied shortcut helper.
 
 ## Giles: recover a store and give Nova the right route
 
@@ -61,29 +63,41 @@ Project Bridge reuses the exact `DENNIS_PROJECT_HOME` discovered through Nova Op
 
 Select the actual project and read its outcome, next action, milestone/dependency route and evidence before changing the native record. Missing dates or unfinished acceptance remain missing or unfinished. Use the native save/export flow, then reload the record to confirm the intended field persisted. Ember bridge, Survey folio and Redline present the same records through distinct working surfaces; the focused route exposes live work first and Show all stations reveals declared-complete work. A skin never changes completion.
 
-## OMNARA: work from campaign evidence
+## OMNARA: turn a question into a sourced answer
 
-Open or import a native campaign vault, then follow its research question, evidence and claim-support gaps. Supply dated sources; a source count never proves reading or support. Use the campaign room's native save/export path and reopen the saved campaign when resuming. The default or selected campaign home stays outside installation and adds no Nova selector. Back up that owner data, not merely the installed files.
+Open **OMNARA** through its launcher. Start with your question and why its answer matters. Plan explicit searches, or go directly to material you already have. Search links open a browser; they do not pretend a search was completed.
 
-## AnswerLayer: compare wording and prepare a working file
+Add ordinary text, a document or image, or paste a useful passage. Read it, retain its source and limits, and connect selected text to a finding. Write your current answer in your own words with source references. Export the readable answer when it is ready to carry into a conversation or document. Source counts do not establish that a claim is supported.
 
-Choose **Open an answer record** for an existing ledger or **Example** for the synthetic teaching ledger. **Current answer** and **Proposed wording** keep the baseline, cutoff, exact before/after text and referenced evidence together. Select a proposed change to inspect its recorded status, scope and authority; missing source IDs remain missing. **Changes & exclusions**, **Evidence** and **Recheck triggers** reveal the retained states and conditions without running a monitor.
+The studio uses OMNARA's existing campaign vault. **Work folder** lets you browse relevant local files and choose a work folder. Keep the vault and retained material outside the installed skill, and reopen the same location to resume. The advanced campaign tools remain available when their deeper native fields are useful. The skill's `workspace/WORKING-GUIDE.md` describes the current controls and file limits.
 
-**Edit working file** opens the complete native JSON. **Apply to working copy** changes only page memory; **Validate** checks structure, not truth, approval or freshness. **Save working file** downloads your copy without changing the original or adopting a proposal. Save before closing/reloading, then reopen that file to resume. **Cancel** preserves the prior working document. Strata and Switchyard are distinct dark environments for the same ledger.
+## AnswerLayer: keep relied-on guidance current
 
-## Beryl: compare predictions against recorded tests
+Choose **Track an answer**, give it a useful name, paste the wording you rely on and describe who uses it. **Save working answer** retains the reference. Use **Add a development** for a new fact, correction, upcoming change or question. Keep its passage and source location; mark it examined only after actually examining it. An optional supporting file is retained privately, not interpreted automatically.
 
-Choose **Open case** or **Explore example**. The diagnostic field keeps the reported fault and original conditions beside rival predictions, a selected test and its actual recorded result. **Compare predictions** restores equal emphasis; open an evidence receipt to inspect its source and limits while preserving orientation. A planned test remains distinct from a performed test; an unknown result remains unknown.
+Write the proposed wording and the reason it should change. **Compare wording** exposes additions and removals. **Adopt as my local answer** retains the before/after history and evidence snapshot. It changes only your local working answer. A sound conclusion may also be no change. **Download answer brief** produces readable Markdown with the current answer, developments and next check.
 
-**Recovery & proof** shows interventions and retesting. **IT review** opens a separate advisory artifact whose selected binding is not authenticated. Recording a test result requires a performed confirmation, actual result, evidence kind and source; it changes the tab's working copy and marks an existing review stale. It does not perform a physical test or repair.
+The footer shows the saved data location. Use **Back up workspace** and **Restore backup** for portable copies; restore adds copies instead of replacing your existing answers. To select another location, launch `Open.cmd --data-home "<your answer folder>"`. **Advanced native records** preserves the older governed record viewer; changes there still require its download route. Read `workspace/README.md` inside the skill for exact limits and stale-save recovery.
 
-**Edit case JSON**, **Use working copy**, **Check structure** and **Download copy** preserve the original file and the in-memory/download boundaries. Save before replacing edited work or closing. Mossglass, Night Probe and Cinder Relay change the comparison environment while preserving the case and selection.
+## Beryl: diagnose the problem you actually have
 
-## Observatory: follow an evidence snapshot
+Choose **Start a case** and describe the device, symptom and desired result. In **Device & problem**, preserve the exact error, triggers, working functions and recent changes. **Scope & data care** keeps actual authority, hazards and backup conditions nearby. The app does not inspect or alter a device.
 
-Use **Investigation files** to open a native `cd-observatory-case/v1` JSON and, if useful, a supplied comparison baseline. The synthetic Harbor Lantern example is dated teaching material. **Situation** keeps the latest recorded assessment beside the next human move; **Sequence** separates event, observation, publication and retrieval clocks. **Evidence chains**, **Challenge** and **Sources** follow recorded claims, references and rival explanations. Selecting an item reveals its exact record without losing the broader view.
+Use **Explanations** to compare possible mechanisms and their predictions. **Plan a test** records what observation would separate them, along with prerequisites and stop conditions. After you actually perform a test, choose **Record observed result** and preserve its source and limits. **Observations & files** can retain a relevant log, document or photo; supported small text files and common images preview locally.
 
-**Compare** shows structural differences by typed ID as **NEW**, **CHANGED** or **NO LONGER REPRESENTED**. Those labels are not reviewed material-change judgments. Invalid formats, duplicate IDs and files over5 MB leave the prior case selected. **Clear private case data**, close or reload discards memory. The atlas does not collect, monitor, edit, save or publish. Signal room and Evidence folio are dark views of the same supplied snapshot.
+**Record a change** distinguishes a proposed intervention from an applied one. **Retest & outcome** records what happened under the original conditions and what would reopen the case. A recorded resolved state is not independent certification. **Download handoff** provides a readable brief for Nova or a technician, without sending it.
+
+Select saved cases at the top, and read each save result. **Back up all cases** includes attachments; **Download copy** is the compatible native case export. **Restore backup** adds copies. Launch `Open.cmd --data-home "<your case folder>"` to select a different writable location. Read the skill's `workspace/README.md` before recovery or claiming a verified repair.
+
+## Observatory: investigate a changing situation
+
+Choose **Start with a question**, state the decision or understanding it should support, and record an evidence cutoff with the timezone if known. Search links open explicit browser searches. **Read material I have** accepts ordinary files or pasted text; nothing is fetched just because a source URL is recorded.
+
+Read a source and select the exact passage that bears on a claim. **Connect evidence to a claim** retains its locator, relationship and limits. Several sources can support, challenge or contextualize one claim. In **What happened when**, preserve event and observation times as supplied; a missing timezone stays unknown. Publication and retrieval are different clocks.
+
+Use **Test explanations** when competing mechanisms matter. Record what favors or challenges each and an obtainable observation that could distinguish them. In **Brief & return**, write your current answer and prepare an editable brief from the notes. Read and revise it before downloading. The next question, baseline and return date guide your next visit; they do not start background monitoring.
+
+Your inquiry persists in the displayed work folder. **Work folder** lets you select sources and change that location. Back up the folder, including retained originals. **More tools → Evidence Atlas** opens the previous Evidence Atlas for an existing specialized case. It does not convert a working inquiry into a formally reviewed native case. See the skill's `workspace/README.md` for recovery and extraction limits.
 
 ## Knowledge Desk: browse the retained material
 
@@ -97,10 +111,11 @@ Personal context comes through the existing read-only owner adapters. Their avai
 
 ## Recovery and evidence limits
 
-For a memory-only desk, download intended work before reload; the original file remains unchanged. For a persistent native owner, use its save/export receipt and confirm by reopening. For a missing private session, reopen the existing launcher rather than changing a database. Do not confuse a saved revision with validated truth, permission or real-world completion.
+If an app looks empty after upgrading, check its displayed work location before creating a replacement store. Open the known existing folder with its chooser or supported `--data-home` option. An inaccessible or unreadable folder is an error to inspect, not proof that your work is gone. Preserve the original folder before recovery.
 
-Windows review exercised native data and persistence workflows and inspected actual wide and narrow screenshots across the supplied themes. Package checks establish the exercised byte, path and contract properties. Fresh-host discovery, macOS live launch and assistive-technology conformance remain separate observations. Consult the included owner's workspace guide when its labels, schema or launcher changes.
+When another window has saved newer work, a stale-save refusal protects that newer revision. Before reloading, copy any unsaved text and notes to a separate local file. A server backup protects the last saved version; rely on an app export for unsaved edits only when that specific export says it includes them. Once the unsaved work is preserved, reload and reconcile deliberately. Do not overwrite the newer data to clear the message. Knowledge Desk's working set remains temporary: download its reading packet before closing. Giles and Dennis retain their existing owner-specific save and recovery behavior.
 
+Windows checks exercise the packaged launch and ordinary work paths. macOS live launch, fresh-host model discovery and assistive-technology conformance remain separate observations. Follow the included skill guide when a schema, label or launcher changes.
 
 ## Oracle Reading
 

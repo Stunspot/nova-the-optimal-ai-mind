@@ -14,6 +14,8 @@ from typing import Any
 
 from inspect_office_artifacts import inspect_csv, inspect_markdown, inspect_ooxml, inspect_pdf
 from officefile_safety import member_path, safe_relative, walk_officefile_files
+from officefile_relationships import validate_relationships, basis_digest
+from officefile_review import validate_review_bindings, use_supported, review_supported
 
 
 STATES = {"intake", "shaped", "production", "inspection", "reviewable", "handed_off"}
@@ -33,8 +35,8 @@ REQUIRED = {
     "sources/manifest.json": "officecraft-source-manifest/v1",
     "state/brief.json": "officecraft-brief/v1",
     "state/content-ledger.json": "officecraft-content-ledger/v1",
-    "state/artifact-register.json": "officecraft-artifact-register/v1",
-    "review/officecraft-review.json": "officecraft-review/v1",
+    "state/artifact-register.json": "officecraft-artifact-register/v2",
+    "review/officecraft-review.json": "officecraft-review/v2",
 }
 
 
@@ -148,17 +150,8 @@ def credible_structural_evidence(root: Path, artifact_relative: str, artifact_pa
     return False
 
 
-def review_supports_artifact(review: dict[str, Any], officefile_state: object, artifact_id: str, artifact_digest: str) -> bool:
-    if not isinstance(officefile_state, str):
-        return False
-    for field in ("operator_review", "independent_review"):
-        entry = review.get(field)
-        if not isinstance(entry, dict) or not in_enum(entry.get("status"), {"PASS", "PASS_WITH_CONDITIONS"}) or entry.get("officefile_state") != officefile_state:
-            continue
-        reviewed = entry.get("reviewed_artifacts")
-        if isinstance(reviewed, list) and any(isinstance(item, dict) and item.get("artifact_id") == artifact_id and item.get("sha256") == artifact_digest for item in reviewed):
-            return True
-    return False
+def review_supports_artifact(review: dict[str, Any], officefile_state: object, artifact_id: str, artifact_digest: str, artifact: dict) -> bool:
+    return isinstance(officefile_state, str) and review_supported(review, officefile_state, artifact_id, artifact_digest, artifact)
 
 
 def valid_timestamp(value: object) -> bool:
@@ -171,7 +164,7 @@ def valid_timestamp(value: object) -> bool:
     return parsed.tzinfo is not None and parsed.astimezone(timezone.utc) <= datetime.now(timezone.utc) + timedelta(minutes=5)
 
 
-def approval_supports_artifact(review: dict[str, Any], approval_owner: object, artifact_id: str, artifact_digest: str) -> bool:
+def approval_supports_artifact(review: dict[str, Any], approval_owner: object, artifact_id: str, artifact_digest: str, artifact: dict, state: object) -> bool:
     if not isinstance(approval_owner, str) or not approval_owner:
         return False
     records = review.get("approval_records")
@@ -181,6 +174,8 @@ def approval_supports_artifact(review: dict[str, Any], approval_owner: object, a
         isinstance(record, dict)
         and record.get("artifact_id") == artifact_id
         and record.get("sha256") == artifact_digest
+        and record.get("input_basis_sha256") == basis_digest(artifact)
+        and use_supported(review, state, artifact_id, artifact_digest, artifact, record.get("approved_use"), approval_owner)
         and record.get("approval_owner") == approval_owner
         and in_enum(record.get("authority_kind"), {"user", "accountable_owner"})
         and nonempty_string(record.get("approved_use"))
@@ -206,7 +201,7 @@ def validate_officefile(root_value: str | Path) -> dict[str, Any]:
             continue
         documents[relative] = value
         if value.get("format") != expected_format:
-            errors.append(f"{relative}: expected format {expected_format}")
+            errors.append(f"{relative}: expected format {expected_format}; older records remain readable but require copy-first migration before current readiness claims")
 
     decisions = file_relatives.get("state/decisions.jsonl")
     if decisions is None:
@@ -360,17 +355,16 @@ def validate_officefile(root_value: str | Path) -> dict[str, Any]:
                         errors.append(f"{label}: {status} artifact needs check evidence")
                     elif artifact_path is not None and artifact_path.is_file() and isinstance(artifact_format, str) and not credible_structural_evidence(root, path_value, artifact_path, artifact_format, evidence, label, errors):
                         errors.append(f"{label}: {status} artifact lacks credible structural inspection evidence")
-                if in_enum(status, {"reviewed", "approved"}) and (artifact_digest is None or not review_supports_artifact(review, brief.get("state"), artifact_id, artifact_digest)):
+                if in_enum(status, {"reviewed", "approved"}) and (artifact_digest is None or not review_supports_artifact(review, brief.get("state"), artifact_id, artifact_digest, artifact)):
                     errors.append(f"{label}: {status} artifact lacks a current digest-bound PASS or PASS_WITH_CONDITIONS review")
-                if status == "approved" and (artifact_digest is None or not approval_supports_artifact(review, brief.get("approval_owner"), artifact_id, artifact_digest)):
+                if status == "approved" and (artifact_digest is None or not approval_supports_artifact(review, brief.get("approval_owner"), artifact_id, artifact_digest, artifact, brief.get("state"))):
                     errors.append(f"{label}: approved artifact lacks matching accountable-owner approval scope and timestamp")
                 if status == "planned" and artifact_path is not None and artifact_path.exists():
                     warnings.append(f"{label}: planned artifact already exists; update status only after observed production")
 
-    for artifact_id, artifact in artifacts.items():
-        source_id = artifact.get("canonical_source_id")
-        if source_id is not None and (not isinstance(source_id, str) or source_id not in artifacts):
-            errors.append(f"artifact {artifact_id}: canonical_source_id references unknown artifact")
+    ledger_by_id = {item['item_id']: item for item in ledger.get('items', []) if isinstance(item, dict) and isinstance(item.get('item_id'), str)} if isinstance(ledger.get('items'), list) else {}
+    validate_relationships(root, artifacts, sources_by_id, ledger_by_id, errors, warnings)
+    validate_review_bindings(review, artifacts, errors)
 
     if review:
         for field in ("operator_review", "independent_review"):

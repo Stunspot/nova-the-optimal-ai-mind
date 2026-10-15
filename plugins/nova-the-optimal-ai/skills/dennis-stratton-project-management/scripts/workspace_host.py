@@ -60,6 +60,55 @@ def validate_data_home(home, root):
         raise ValueError('Choose a persistent data folder outside this source or installation. No folder was created.')
     return home
 
+def create_native_shortcut(product, root, home, launcher, desktop=None):
+    """Bind the existing launcher and explicit project-record home to a native product icon."""
+    root, home, launcher = Path(root), Path(home), Path(launcher)
+    desktop = Path(desktop) if desktop is not None else Path(os.environ.get('USERPROFILE', str(Path.home()))) / 'Desktop'
+    if not desktop.is_dir():
+        raise ValueError(f'Desktop folder is unavailable: {desktop}')
+    if os.name == 'nt':
+        target = desktop / (product + '.lnk')
+        if target.exists():
+            raise ValueError(f'Shortcut already exists; not overwritten: {target}')
+        icon = root / 'workspace' / 'assets' / 'dennis.ico'
+        if not icon.is_file():
+            raise ValueError('Product icon is unavailable.')
+        executable = Path(sys.executable)
+        windowless = executable.with_name('pythonw.exe')
+        if executable.name.lower() == 'python.exe' and windowless.is_file():
+            executable = windowless
+        environment = dict(os.environ, DENNIS_NATIVE_LINK=str(target), DENNIS_NATIVE_TARGET=str(executable),
+            DENNIS_NATIVE_ARGS=subprocess.list2cmdline([str(launcher), '--home', str(home)]),
+            DENNIS_NATIVE_WORKDIR=str(root), DENNIS_NATIVE_ICON=str(icon))
+        powershell = Path(os.environ.get('SystemRoot', r'C:\Windows')) / 'System32' / 'WindowsPowerShell' / 'v1.0' / 'powershell.exe'
+        command = "$ErrorActionPreference='Stop';$s=(New-Object -ComObject WScript.Shell).CreateShortcut($env:DENNIS_NATIVE_LINK);$s.TargetPath=$env:DENNIS_NATIVE_TARGET;$s.Arguments=$env:DENNIS_NATIVE_ARGS;$s.WorkingDirectory=$env:DENNIS_NATIVE_WORKDIR;$s.IconLocation=$env:DENNIS_NATIVE_ICON+',0';$s.Description='Open the Dennis project bridge';$s.Save()"
+        subprocess.run([str(powershell), '-NoLogo', '-NoProfile', '-NonInteractive', '-Command', command],
+            env=environment, check=True, capture_output=True, text=True, creationflags=subprocess.CREATE_NO_WINDOW)
+        return target
+    import shlex
+    if sys.platform == 'darwin':
+        import plistlib, shutil
+        target = desktop / (product + '.app')
+        if target.exists():
+            raise ValueError(f'Shortcut already exists; not overwritten: {target}')
+        temporary = desktop / ('.dennis-native-' + secrets.token_hex(6) + '.app')
+        try:
+            shutil.copytree(root / 'Dennis Project Bridge.app', temporary)
+            script = temporary / 'Contents' / 'MacOS' / 'launch.command'
+            script.write_text('#!/bin/sh\nexec ' + shlex.join([sys.executable, str(launcher), '--home', str(home)]) + '\n', encoding='utf-8', newline='\n')
+            script.chmod(0o755)
+            temporary.rename(target)
+        finally:
+            if temporary.exists():
+                shutil.rmtree(temporary)
+        return target
+    target = desktop / (product + '.command')
+    if target.exists():
+        raise ValueError(f'Shortcut already exists; not overwritten: {target}')
+    target.write_text('#!/bin/sh\nexec ' + shlex.join([sys.executable, str(launcher), '--home', str(home)]) + '\n', encoding='utf-8', newline='\n')
+    target.chmod(0o755)
+    return target
+
 def run_workspace(product, version, root, resolve_home, read_state, mutate, preferred_port):
     parser = argparse.ArgumentParser(description=f'Open {product}; data remains outside the installation.')
     parser.add_argument('--home', '--store', dest='home')
@@ -77,21 +126,11 @@ def run_workspace(product, version, root, resolve_home, read_state, mutate, pref
         if args.offer_shortcut:
             answer = input('Create a desktop launch shortcut for this workspace? [y/N] ').strip().lower()
             if answer in ('y', 'yes'):
-                if os.name == 'nt':
-                    # Create a .cmd launcher only after explicit consent, with paths as arguments.
-                    desktop = Path(os.environ.get('USERPROFILE', str(Path.home()))) / 'Desktop'
-                    target = desktop / (product + '.cmd')
-                    if target.exists():
-                        raise ValueError(f'Shortcut already exists; not overwritten: {target}')
-                    arguments = subprocess.list2cmdline([sys.executable, str(Path(sys.argv[0]).resolve()), '--home', str(home)])
-                    target.write_text('@echo off\r\n' + arguments + '\r\n', encoding='utf-8')
+                try:
+                    target = create_native_shortcut(product, root, home, Path(sys.argv[0]).resolve())
                     print(f'Created {target}')
-                else:
-                    import shlex
-                    target = Path.home() / 'Desktop' / (product + '.command')
-                    if target.exists(): raise ValueError(f'Shortcut already exists: {target}')
-                    target.write_text('#!/bin/sh\n' + shlex.join([sys.executable, str(Path(sys.argv[0]).resolve()), '--home', str(home)]) + '\n', encoding='utf-8')
-                    target.chmod(0o755)
+                except Exception as exc:
+                    print(f'Desktop icon was not created: {exc}. The workspace will still open.', file=sys.stderr)
         ports = []
         if cache.exists():
             try: ports.append(json.loads(cache.read_text(encoding='utf-8'))['port'])
@@ -145,6 +184,7 @@ def run_workspace(product, version, root, resolve_home, read_state, mutate, pref
                 if path == '/health': return self.send(identity)
                 if path == '/api/state': return self.send({'token': token, **read_state(home)})
                 files = {'/': ('index.html', 'text/html'), '/app.js': ('app.js', 'text/javascript'), '/route.js': ('route.js', 'text/javascript'), '/skin.css': ('skin.css', 'text/css'), '/route.css': ('route.css', 'text/css'), '/proofspan.css': ('proofspan.css', 'text/css')}
+                files.update({'/assets/dennis.png': ('assets/dennis.png', 'image/png'), '/favicon.ico': ('assets/dennis.ico', 'image/x-icon')})
                 if path not in files: return self.send({'error': 'Not found'}, 404)
                 name, mime = files[path]; self.send((root / 'workspace' / name).read_bytes(), content_type=mime)
             except Exception as exc: self.send({'error': str(exc)}, 500)

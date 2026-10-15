@@ -1,0 +1,21 @@
+{
+  "checks": [
+    "Actual Windows launcher opens a blank usable workspace",
+    "A real source passage and future date are kept visibly",
+    "Exact comparison distinguishes deleted and inserted words",
+    "Local adoption preserves the prior answer",
+    "Local adoption does not silently advance the information cutoff",
+    "An action-only revision is adopted and retained visibly",
+    "An explicitly supplied new information cutoff is retained",
+    "Readable brief contains chosen answer, history, and next move",
+    "Actual private work file exists",
+    "Malformed backup cannot replace current work",
+    "Stale writers cannot overwrite current work",
+    "Visible backup restore adds copies without replacing previous work",
+    "Phone viewport has no horizontal overflow",
+    "Saved purpose work survives full browser and process restart",
+    "No browser runtime errors"
+  ],
+  "errors": [],
+  "home": "C:\\Users\\user\\AppData\\Local\\Temp\\answerlayer-purpose-rFsiXz"
+}

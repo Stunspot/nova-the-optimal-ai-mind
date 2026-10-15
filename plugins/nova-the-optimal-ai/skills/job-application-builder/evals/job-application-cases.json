@@ -82,7 +82,7 @@
     {
       "id": "disconnected-source-ledger",
       "class": "provenance",
-      "prompt": "A polished resume claim has an EVD identifier, but its evidence_source names no SRC record in source-register.md.",
+      "prompt": "A polished resume claim has an EVD identifier, but its evidence_source names no SRC record in source-register.csv.",
       "expect": [
         "checker fails the packet",
         "missing source join is named",

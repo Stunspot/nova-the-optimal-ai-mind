@@ -1,7 +1,5 @@
-# Questions to ask
+# Questions that resolve useful unknowns
 
-1. Which scheduling or handoff problems would you want the new coordinator to improve first?
-2. How do program staff, facilities, and vendors currently share ownership and changes?
-3. What would strong performance look like after the first ninety days?
-4. Which systems are used for scheduling, facilities requests, and weekly reporting?
-5. What are the next steps in the interview process?
+Ask who owns priority decisions when bookings conflict and how staff currently confirm changes. Ask which dependency problems the new coordinator should improve first and what a reliable weekly report should show. The posting already says training is available for the facilities platform; ask what that onboarding looks like instead of asking whether any training exists. Confirm the appointment date, time zone, link and next stage through the known process.
+
+Choose the questions that matter within the time offered; compensation and accommodation timing remain the candidate's decisions.

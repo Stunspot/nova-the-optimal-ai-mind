@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import ast
 import json
 import sys
@@ -12,6 +13,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = (
     "SKILL.md",
+    "workspace/case-input.js",
+    "workspace/guide.html",
+    "scripts/safe_io.py",
     "agents/openai.yaml",
     "manifest.json",
     "schemas/observatory-case.schema.json",
@@ -24,6 +28,7 @@ REQUIRED = (
 
 
 def main() -> int:
+    argparse.ArgumentParser(description=__doc__).parse_args()
     errors: list[str] = []
     for relative in REQUIRED:
         if not (ROOT / relative).is_file():

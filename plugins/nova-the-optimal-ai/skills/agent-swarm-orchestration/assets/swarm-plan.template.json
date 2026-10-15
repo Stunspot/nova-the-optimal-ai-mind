@@ -56,5 +56,10 @@
     ]
   },
   "status": "planned",
-  "next_move": "Dispatch the ready frontier through the live host contract."
+  "next_move": "Dispatch the ready frontier through the live host contract.",
+  "outcome": {
+    "state": "unverified",
+    "checks": [],
+    "unresolved": []
+  }
 }

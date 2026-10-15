@@ -1,6 +1,26 @@
-# Upgrade to Free 3.8.1
+# Upgrade to Free 4.1.0
 
-Install the complete 3.8.1 edition using your existing host route. The Observatory gains optional OSINT setup and report attachment; [follow the setup guide](OSINT.md) to enable external tools. Existing owner records keep their formats. Preserve your prior package for rollback and check a fresh Nova invocation.
+Free 4.1.0 retains one Nova front door and 28 native skills. It updates the included OMNARA, Observatory, AnswerLayer and Beryl apps to support ordinary first use, saved work and useful task outcomes. Existing external owner stores remain with their owners; the edition does not create a second MIND product or reactivate parked hooks.
+
+## Keep existing app work
+
+Back up the work location shown by each app. OMNARA keeps its campaign vault; AnswerLayer, Beryl and Observatory save app work outside installation. Older native records remain usable through their retained advanced viewer or native import. No update scans unrelated folders or converts records automatically. If an app opens empty, choose your existing folder before creating a new store.
+
+## Apply the chosen complete edition
+
+Record the currently installed version, marketplace source, enabled state and configured estate root. Keep the previous complete package and configuration for rollback, and back up important owner records separately.
+
+Extract the new complete package to a stable staging location. Inspect the chosen host route, then have the installing agent apply it through the live host's supported plugin installation or refresh mechanism. For Codex, the local marketplace must point to this edition's `codex` folder; use the [installation route](../START-HERE.md#manual-codex-recovery). Marketplace `upgrade` refreshes Git snapshots, not a local ZIP. If an actual competing installation requires a choice, resolve it within existing authority or obtain that choice before replacement.
+
+Preserve the operation result. Restart the host, open a new conversation and verify the intended installed 4.1.0 version and enabled state. Ask Nova for one small real result and read-only status of the existing estate if configured. If the old version is still installed, return to the supported installation/refresh surface with that diagnostic. Do not delete a cache or service store to force the result.
+
+Confirm a known project, catalog route or retained item still resolves through its owner. An empty default path does not establish lost data. No update step should silently import, merge, move, migrate or delete records.
+
+## Roll back without erasing work
+
+Apply the preserved previous complete package through the same live host installation surface. Keep the same estate registry unless a separately authorized reversible migration is required. Restart, open a new conversation and verify the intended prior installed version, discovery and read-only status. Restoring downloaded files alone is not an observed rollback.
+
+Plugin removal and data removal remain separate decisions. Preserve records and prior packages until recovery is settled. The historical notes that follow describe earlier product changes and artifact compatibility, not additional current setup requirements.
 
 ## Earlier upgrade paths
 
@@ -14,7 +34,7 @@ Preserve your previous package and host binding for rollback, then install the c
 
 The intervening 3.6.0 and 3.7.0 releases added Giles Knowledge Atlas and repaired the native desks. Installing the complete 3.8.0 package includes those changes as well as Oracle Reading. No source-archive move or catalog migration is required.
 
-If you use Giles, open the same external catalog path and confirm a known collection still resolves. A new catalog is empty; an empty default path after an upgrade does not establish lost archives. Export your catalog before editing its metadata. Use the [Giles recovery procedure](VISUAL-WORKSPACES.md#keep-the-route-and-recover-safely) for stale saves, import conflicts or unreadable metadata. Rolling back the plugin does not require deleting the catalog or a source store.
+If you use Giles, open the same external catalog path and confirm a known collection still resolves. A new catalog is empty; an empty default path after an upgrade does not establish lost archives. Export your catalog before editing its metadata. Use the [Giles recovery procedure](VISUAL-WORKSPACES.md#keep-collections-findable) for stale saves, import conflicts or unreadable metadata. Rolling back the plugin does not require deleting the catalog or a source store.
 
 ## Upgrade from Free 2.x
 

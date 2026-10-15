@@ -39,3 +39,8 @@ Partition by directory or module only when those boundaries match the actual cha
 ## Re-score at meaningful events
 
 Reconsider the execution regime and organization after decisive evidence, accepted dependency, verifier failure, user correction, contribution completion, stall, authority change, budget change, contamination, newly exposed dependency, or supported acceptance. Do not churn the team continuously, and do not preserve a topology after its causal job disappears.
+
+
+## Preserve declared lifecycle and outcome
+
+Use [Plan state and validation](plan-state-and-validation.md) when recording dispatch, cancellation, accepted output, write readback, capacity or closure. Worker disposal does not erase accepted evidence or establish mission success; uncertain stopped writes remain reserved until observed readback.

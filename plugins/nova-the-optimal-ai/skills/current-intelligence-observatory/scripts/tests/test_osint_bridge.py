@@ -3,7 +3,7 @@ import copy,json,sys,tempfile,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from osint_bridge import attach,workbench,digest
-from observatory_guardrail import canonical_url,validate_case,project_case,verify_projection_invariants
+from observatory_guardrail import canonical_url,validate_case,project_case,verify_projection_invariants,subject_sha256
 SKILL=Path(__file__).resolve().parents[2]
 
 class OsintBridgeTests(unittest.TestCase):
@@ -30,8 +30,10 @@ class OsintBridgeTests(unittest.TestCase):
             self.assertTrue(capture['original_url'].startswith('file:///'))
         self.assertEqual([],verify_projection_invariants(case,project_case(case)))
     def test_new_evidence_reopens_ready_case_review(self):
-        self.case.update(posture='watch-ready',watch={'cadence':'manual fixture'})
+        self.case.update(posture='watch-ready',watch={'cadence':'manual fixture','baseline_case_id':self.case['case_id'],'owner':'fixture editor','change_threshold':'New independent evidence','resume_action':'Read the new report','triggers':['direct notice']})
         self.case['checks']=[{'id':'CHECK-SPEC','check_type':'watch-specification','status':'passed'},{'id':'CHECK-BASELINE','check_type':'baseline-integrity','status':'passed'}]
+        proof=Path(self.temp.name)/'review.txt';proof.write_text('Fictional test review of exact baseline and manual watch.')
+        for check in self.case['checks']:check.update(reviewer='Fictional test reviewer',method='Inspect manual watch and baseline',rationale='Explicit scope and no automatic scheduling',reviewed_at='2026-10-05T23:00:00Z',subject_sha256=subject_sha256(self.case),evidence_files=[{'path':'review.txt','sha256':digest(proof)}])
         self.original.write_text(json.dumps(self.case))
         attach(self.home,self.original,self.run,self.output)
         revised=json.loads(self.output.read_text())

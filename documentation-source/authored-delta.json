@@ -1,0 +1,9 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "Nova the Optimal AI Free",
+  "version": "4.1.0",
+  "customer_docs": [
+    "docs/VISUAL-WORKSPACES.md"
+  ],
+  "scope": "Material r3 recovery correction: preserve unsaved work separately before reload; distinguish last-saved server backup from a specifically supported draft export."
+}

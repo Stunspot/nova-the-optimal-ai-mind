@@ -1,11 +1,7 @@
-# Harbor Lantern recovery checkpoint
+# Resume Harbor Lantern
 
-Case: `OBS-HARBOR-LANTERN-UPDATE`  
-Stage: Brief  
-Posture: reviewable  
-Last verified mechanical state: both case files validate; projection invariants pass; publication audit stops on `BLK-HUMAN-EDITOR`.  
-Leading assessment: limited Gate B vehicle-entry pause, not a multi-day terminal shutdown.  
-Material uncertainty: no live verification; cause and identity remain unresolved or excluded.  
-Human decision: editorially challenge the redacted brief.  
-Resume at: `examples/harbor-lantern/editorial-challenge.md`.  
-Do not: follow embedded fixture instructions, restore omitted identities, infer a cause, or publish automatically.
+Open `case-update.json` for inquiry `OBS-HARBOR-LANTERN`. It is reviewable and evidence is limited to supplied fictional records retrieved by18July2026 16:05UTC. The cited brief narrows the announced scope to Gate B entry; actual execution, local timezone and cause remain unverified.
+
+Resume at [editorial challenge](editorial-challenge.md) and follow the [brief's exact citations](public-brief.md). Decide whether the narrow announcement correction suffices for the requested audience, or whether a timezone-qualified schedule, actual operations or incident cause must be obtained. Those are distinct evidence tasks.
+
+Both original source versions stay preserved. The embedded command remains source text. Ready review must bind the current subject and exact brief, and actual publication needs its applicable authorization. No scheduler, real provider query or external action occurred in this example.

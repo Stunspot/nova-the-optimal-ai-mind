@@ -5,6 +5,8 @@ Use the path that matches the job in front of you.
 | You need to | Start here |
 |---|---|
 | Understand the product and its boundaries | [Repository README](../README.md) |
+| Open or return to the local room | [Campaign room](CAMPAIGN-ROOM.md) |
+| Read a complete result and practice the decisive inference | [Worked research](../examples/README.md) |
 | Install and verify discovery | [Installation](INSTALLATION.md) |
 | Run one research campaign | [Run your first campaign](../START-HERE.md) |
 | Write a better research request | [Prompt recipes](PROMPT-RECIPES.md) |

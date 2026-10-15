@@ -7,7 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
-from datetime import datetime
+from datetime import date
 from pathlib import Path
 
 from jsonschema import Draft202012Validator, FormatChecker
@@ -27,9 +27,10 @@ FORMAT_CHECKER = FormatChecker()
 
 @FORMAT_CHECKER.checks("date-time", raises=(TypeError, ValueError))
 def is_rfc3339_datetime(value: object) -> bool:
-    if not isinstance(value, str) or not MODULE.TIMESTAMP_RE.fullmatch(value):
+    if not isinstance(value, str):
         return False
-    datetime.fromisoformat(value.replace("Z", "+00:00"))
+    # Schema owns syntax/ranges; this independently checks calendar existence.
+    date.fromisoformat(value[:10])
     return True
 
 
@@ -111,7 +112,7 @@ class PursuitStateValidationTests(unittest.TestCase):
         errors = MODULE.validate(template)
         self.assertIn("pursuit_ref must be a non-empty string", errors)
         self.assertIn("current_direction must be a non-empty string", errors)
-        self.assertIn("incomplete continuity requires a lost_guarantee", errors)
+        self.assertIn("incomplete continuity requires a concrete lost_guarantee", errors)
         self.assert_contract_result(template, False)
 
     def test_schema_and_validator_share_declared_contract(self) -> None:
@@ -226,7 +227,7 @@ class PursuitStateValidationTests(unittest.TestCase):
         missing_receipt = valid_handoff()
         missing_receipt["continuity"]["persistence_receipt"] = None
         self.assertIn(
-            "confirmed persistence requires a persistence_receipt",
+            "confirmed persistence requires a concrete persistence_receipt",
             MODULE.validate(missing_receipt),
         )
         self.assert_contract_result(missing_receipt, False)
@@ -234,7 +235,7 @@ class PursuitStateValidationTests(unittest.TestCase):
         missing_cue = valid_handoff()
         missing_cue["continuity"]["reactivation_cue"] = None
         self.assertIn(
-            "available reactivation requires a reactivation_cue",
+            "available reactivation requires a concrete reactivation_cue",
             MODULE.validate(missing_cue),
         )
         self.assert_contract_result(missing_cue, False)
@@ -250,7 +251,7 @@ class PursuitStateValidationTests(unittest.TestCase):
         )
         self.assert_contract_result(state, True)
         state["continuity"]["lost_guarantee"] = None
-        self.assertIn("incomplete continuity requires a lost_guarantee", MODULE.validate(state))
+        self.assertIn("incomplete continuity requires a concrete lost_guarantee", MODULE.validate(state))
         self.assert_contract_result(state, False)
 
     def test_released_pursuit_omits_likely_continuation(self) -> None:
@@ -260,6 +261,43 @@ class PursuitStateValidationTests(unittest.TestCase):
         self.assert_contract_result(state, False)
         state["foreground"].pop("likely_continuation")
         self.assert_contract_result(state, True)
+
+    def test_actual_custody_placeholders_and_timestamp_boundaries(self) -> None:
+        for field in ("persistence_receipt", "reactivation_cue"):
+            for value in ("none", " N/A ", "UNKNOWN", "tBd", "todo", "Not  Applicable"):
+                state = valid_handoff()
+                state["continuity"][field] = value
+                with self.subTest(field=field, value=value):
+                    self.assert_contract_result(state, False)
+        for stamp, expected in (("2026-10-07T00:00:00+00:99", False),
+                                ("2026-10-07T00:00:00+24:00", False),
+                                ("2026-10-07T25:00:00Z", False),
+                                ("2026-02-29T00:00:00Z", False),
+                                ("2028-02-29T23:59:59.12-05:30", True),
+                                ("2026-10-07T00:00:00+05:30", True)):
+            state = valid_handoff()
+            state["updated_at"] = stamp
+            with self.subTest(stamp=stamp):
+                self.assert_contract_result(state, expected)
+
+    def test_shipped_example_and_cli_boundary(self) -> None:
+        path = ASSETS.parent / "examples/manual-handoff.json"
+        state = json.loads(path.read_text(encoding="utf-8"))
+        self.assert_contract_result(state, True)
+        result = self.run_cli(path.read_bytes())
+        self.assertEqual(result.returncode, 0)
+        self.assertIn("not observed", json.loads(result.stdout)["boundary"])
+
+    def test_unavailable_continuity_requires_an_actual_loss_explanation(self) -> None:
+        state = valid_handoff()
+        state["continuity"].update(persistence="unavailable", persistence_receipt=None,
+                                  reactivation="unavailable", reactivation_cue=None)
+        for value in ("none", " N/A ", "UNKNOWN", "TBD", "Not Applicable"):
+            state["continuity"]["lost_guarantee"] = value
+            self.assert_contract_result(state, False)
+        state["continuity"]["lost_guarantee"] = "State owner unavailable; no stored checkpoint or reload route."
+        self.assert_contract_result(state, True)
+        self.assert_contract_result(valid_handoff(), True)
 
     def run_cli(self, raw: bytes) -> subprocess.CompletedProcess[str]:
         with tempfile.TemporaryDirectory() as tmp:

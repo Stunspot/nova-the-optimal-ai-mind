@@ -1,7 +1,4 @@
-question_id,question_family,question_text,role_criterion,probability,evidence_ids,practice_priority,practice_status,notes
-
-Q-001,behavior,Tell me about a time a schedule changed at the last minute.,coordination,strongly-indicated,EVD-001,high,practiced,Central responsibility
-
-Q-002,method,How do you keep vendors and staff aligned?,vendor coordination,strongly-indicated,EVD-002,high,planned,Method question
-
-Q-003,gap,What facilities ticketing systems have you used?,facilities tools,plausible,,medium,planned,Use honest adjacent response
+question_id,question_family,question_text,criterion_id,probability,evidence_ids,practice_priority,practice_status,notes,confirmation_source_ids
+Q-001,behavior,Tell me about a time a schedule changed at the last minute.,CRIT-001,confirmed-topic,EVD-001,high,demonstrated,Topic confirmed; exact wording is authored practice,SRC-003
+Q-002,method,How would you keep vendors and staff aligned when a dependency slips?,CRIT-002,strongly-indicated,EVD-002,high,planned,Proposed method supported by adjacent experience,
+Q-003,experience-gap,What facilities ticketing systems have you used?,CRIT-003,plausible,,medium,planned,Honest gap; do not claim platform use,

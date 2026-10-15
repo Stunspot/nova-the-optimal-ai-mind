@@ -15,5 +15,5 @@
 Verdicts:
 
 - `REVIEW_PASS`: the bounded status is supported.
-- `REVIEW_PASS_WITH_CONDITIONS`: no hidden blocker, but named evidence or human decision remains before the stated next action.
+- `REVIEW_PASS_WITH_CONDITIONS`: named conditions are explicit. Open blocking conditions prevent readiness; nonblocking conditions have a qualified residual status, owner and revisit condition.
 - `REVIEW_FAIL`: a material break makes the status unsafe; name the minimum repair.

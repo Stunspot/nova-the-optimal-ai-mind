@@ -181,6 +181,57 @@
           "return_condition": {
             "type": "string",
             "minLength": 1
+          },
+          "started": {
+            "type": "boolean",
+            "description": "Omit when unknown. False means no dispatch occurred, not that an interrupted write rolled back."
+          },
+          "output": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "evidence"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "pending",
+                  "accepted",
+                  "rejected"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "write_readback": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "state",
+              "evidence"
+            ],
+            "properties": {
+              "state": {
+                "enum": [
+                  "unknown",
+                  "reconciled"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
           }
         }
       }
@@ -243,6 +294,64 @@
     },
     "next_move": {
       "type": "string"
+    },
+    "outcome": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "checks",
+        "unresolved"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "unverified",
+            "partial",
+            "accepted",
+            "cancelled"
+          ]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "criterion",
+              "result",
+              "evidence"
+            ],
+            "properties": {
+              "criterion": {
+                "type": "string",
+                "minLength": 1
+              },
+              "result": {
+                "enum": [
+                  "passed",
+                  "failed",
+                  "not-run"
+                ]
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     }
   }
 }

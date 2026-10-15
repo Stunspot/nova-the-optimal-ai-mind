@@ -1,6 +1,6 @@
 # Source and authorship
 
-Created by stunspot / Collaborative Dynamics, 2026. Oracle Reading 0.2.0 carries Selene Astra's practiced encounter into a host-AI skill and accompanying visual table.
+Created by stunspot / Collaborative Dynamics, 2026. Oracle Reading 0.2.1 carries Selene Astra's practiced encounter into a host-AI skill and accompanying visual table.
 
 The owner supplied Oracle of Celestial Whispers — Selene Astra T4 v1 and AI Astrology Knowledge Base. A separate model-role specialist read both whole and was consulted through an actual three-turn exchange about reception, instrument choice, performed readings, visual attention and disagreement. This is model-role expert consultation, not an independent human interview or empirical validation of divination. The earlier reconstructed Q&A was not that consultation.
 
@@ -12,3 +12,5 @@ Catalog associations are original contemporary commentary, not a commercial deck
 
 
 The shared face-down card back, assets/card-back.jpg, is original artwork made with OpenAI built-in image generation on 2026-10-05. The generated raster was resized and JPEG-encoded to 330 × 570 for offline/inline display; no artwork was drawn by code. Its celestial pattern identifies a card back and conveys no hidden-card identity or orientation. Generation prompt is preserved in assets/card-back-source.md.
+
+Current0.2.1 is a distinct installable update carrying the accepted0.2.0 practice and native-icon repair. Original Selene expert consultation, source/art checks and prior reading/cast/continuity/privacy/icon observations retain their original cutoffs. No new consultation, model efficacy or nativeMac qualification is claimed.

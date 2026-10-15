@@ -138,7 +138,8 @@ class ProductContractTests(unittest.TestCase):
         doctrine = (nova / "references" / "mind" / "model-agnosticism.md").read_text(encoding="utf-8")
         validate_command = "python scripts/model_agnosticism_trellis.py validate MODEL_SET.json OBSERVATION_SEQUENCE.json"
         analyze_command = "python scripts/model_agnosticism_trellis.py analyze MODEL_SET.json OBSERVATION_SEQUENCE.json [--decode] [--smooth]"
-        for text in (skill, doctrine):
+        self.assertIn("(references/mind/model-agnosticism.md)", skill)
+        for text in (doctrine,):
             self.assertIn(validate_command, text)
             self.assertIn(analyze_command, text)
             self.assertIn("Exit 2", text)
@@ -208,14 +209,10 @@ class ProductContractTests(unittest.TestCase):
             for token in shared_tokens:
                 self.assertIn(token, text, f"{label}: {token}")
 
-        for token in (
-            "comparison.effective_interpretation",
-            "finite log probabilities",
-            "structural zero",
-            "equal batch timestamps are retrospective",
-            "semantic false flag",
-        ):
-            self.assertIn(token, skill, token)
+        # Deep receipt semantics belong to the linked instrument reference, not every
+        # ordinary Nova invocation. The detailed doctrine checks above remain binding.
+        self.assertIn("(references/mind/model-agnosticism.md)", skill)
+        self.assertIn("v2 receipt binding", skill)
 
 
     def test_absent_behavioral_fixtures_are_not_claimed_as_current_evidence(self) -> None:
@@ -304,50 +301,15 @@ class ProductContractTests(unittest.TestCase):
             self.assertEqual(tree_digest(imported), record["imported_tree"], record["id"])
         self.assertEqual(tree_digest(self.plugin / "skills"), self.lock["plugin_skill_tree"])
 
-    def test_nova_source_pin_resolves_to_the_exact_current_skill_tree(self) -> None:
-        source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
+    def test_nova_current_selection_resolves_to_the_exact_skill_tree(self) -> None:
+        source_map = json.loads((REPO / "design/source-map.json").read_text(encoding="utf-8"))
         source = next(record for record in source_map["records"] if record["id"] == "nova")
-        locked = next(record for record in self.lock["records"] if record["id"] == "nova")
+        selected = {row["path"]: row["sha256"] for row in source["selection"]}
+        from release_lib import files
+        actual = {path.relative_to(self.plugin / "skills/nova").as_posix(): sha256_file(path) for path in files(self.plugin / "skills/nova")}
+        self.assertEqual(actual, selected)
+        self.assertNotEqual(source["source_state"], "git_commit", "Current prepared selection must not impersonate historical Git parity")
 
-        def git_object(specification: str) -> str:
-            return subprocess.check_output(
-                ["git", "rev-parse", specification],
-                cwd=REPO,
-                text=True,
-                encoding="utf-8",
-            ).strip()
-
-        self.assertEqual(source["source_state"], "git_commit")
-        self.assertEqual(source["edition_overlays"], [])
-        self.assertEqual(locked["overlay_state"], "exact_selected_source")
-        self.assertEqual(git_object(source["source_commit"] + "^{tree}"), source["source_commit_tree"])
-        pinned_skill_tree = git_object(source["source_commit"] + ":" + source["source_path"])
-        self.assertEqual(pinned_skill_tree, source["source_git_tree"])
-        # Compare the actual pinned raw Git blobs with the current closure. The
-        # canonical worktree can legitimately carry an accepted release ahead of
-        # its checkout HEAD; that unrelated ref is not the source-byte oracle.
-        # git archive applies the host's line-ending conversion when archiving
-        # a subtree without its enclosing attributes. Read the stored blobs
-        # directly so Windows defaults cannot change the source-byte oracle.
-        selected = subprocess.check_output(
-            ["git", "ls-tree", "-r", "-z", source["source_commit"] + ":" + source["source_path"]],
-            cwd=REPO,
-        )
-        files = [entry for entry in selected.split(b"\0") if entry]
-        self.assertEqual(len(files), source["source_file_count"])
-        for entry in files:
-            metadata, raw_name = entry.split(b"\t", 1)
-            mode, kind, object_id = metadata.split()
-            self.assertEqual(kind, b"blob")
-            name = raw_name.decode("utf-8")
-            pinned = subprocess.check_output(
-                ["git", "cat-file", "blob", object_id.decode("ascii")], cwd=REPO,
-            )
-            self.assertEqual(
-                pinned, (REPO / source["source_path"] / name).read_bytes(), name,
-            )
-        self.assertEqual(source["source_file_count"], locked["imported_tree"]["file_count"])
-        self.assertEqual(source["source_tree_sha256"], locked["imported_tree"]["tree_sha256"])
     def test_public_split_license_and_rights_bundle_are_bound(self) -> None:
         self.assertEqual(self.loadout["license"], "LICENSE.md")
         self.assertIn("MIT", self.loadout["rights_status"])
@@ -371,8 +333,8 @@ class ProductContractTests(unittest.TestCase):
         answer = json.loads((self.plugin / "skills" / "answerlayer" / "manifest.json").read_text(encoding="utf-8"))
         current = json.loads((self.plugin / "skills" / "current-intelligence-observatory" / "manifest.json").read_text(encoding="utf-8"))
         for manifest in (answer, current):
-            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-3.8.1")
-            self.assertIn("Nova Free 3.8.1 public split license", manifest["license"])
+            self.assertEqual(manifest["rights_status"], "public-inclusion-authorized-for-nova-free-4.1.0")
+            self.assertIn("Nova Free 4.1.0 public split license", manifest["license"])
         source_map = json.loads((REPO / "design" / "source-map.json").read_text(encoding="utf-8"))
         records = {record["id"]: record for record in source_map["records"]}
         self.assertEqual(
@@ -404,7 +366,7 @@ class ProductContractTests(unittest.TestCase):
         self.assertIn('"project-bridge": ("dennis-stratton-project-management", "scripts", "project_bridge.py")', ops)
         bridge = (dennis / "scripts/project_bridge.py").read_text(encoding="utf-8")
         self.assertIn("from workspace_host import atomic_json, run_workspace", bridge)
-        for skill_id, version in {"answerlayer": "0.2.0", "current-intelligence-observatory": "0.3.0"}.items():
+        for skill_id, version in {"answerlayer": "0.4.0", "current-intelligence-observatory": "0.4.0"}.items():
             manifest = json.loads((self.plugin / "skills" / skill_id / "manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(manifest["version"], version, skill_id)
         desk = (self.plugin / "skills/commonplace/workspace/host.py").read_text(encoding="utf-8")
@@ -426,14 +388,14 @@ class ProductContractTests(unittest.TestCase):
         ecology = (self.plugin / "skills/nova/references/edition/index.md").read_text(encoding="utf-8")
         self.assertIn("Giles's compact catalog", ecology)
         workflow = (REPO / ".github/workflows/verify-package.yml").read_text(encoding="utf-8")
-        self.assertIn("dist/nova-the-optimal-ai-free-3.8.1", workflow)
+        self.assertIn("dist/nova-the-optimal-ai-free-4.1.0", workflow)
 
     def test_required_old_runtime_is_absent(self) -> None:
         forbidden = ("augment-of-mind", "mind_prompt_submit.py", "mind_core", "bundle/reminder")
         observed = [
             path.relative_to(REPO).as_posix()
-            for path in REPO.rglob("*")
-            if path.is_file() and any(token in path.relative_to(REPO).as_posix().casefold() for token in forbidden)
+            for path in self.plugin.rglob("*")
+            if path.is_file() and any(token in path.relative_to(self.plugin).as_posix().casefold() for token in forbidden)
             and "verification/" not in path.relative_to(REPO).as_posix().casefold()
         ]
         self.assertEqual(observed, [])

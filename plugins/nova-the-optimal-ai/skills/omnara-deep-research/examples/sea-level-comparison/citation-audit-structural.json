@@ -1,0 +1,13 @@
+{
+  "format": "omnara-citation-integrity/v1",
+  "result": "pass",
+  "report_markers": 7,
+  "unique_cited_sources": 2,
+  "errors": [],
+  "warnings": [],
+  "semantic_entailment": "not established by this deterministic audit",
+  "inputs_sha256": {
+    "review_subject": "19d0e43eb7c87c258cc7c8fc9f20981196d16d1c254a3c42ba0159313c74b6f6"
+  },
+  "projection_boundary": "Supported prose outside HTML comments and fenced code; not arbitrary HTML or renderer conformance."
+}

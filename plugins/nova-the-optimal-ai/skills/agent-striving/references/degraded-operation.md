@@ -4,7 +4,7 @@ Striving depends on a host for actual persistence, wakeups, tool execution, hard
 
 ## Name the lost guarantee precisely
 
-Without persistent state, current work can advance but later resumption is not guaranteed. Without a real reload route, stored state will not re-enter the work by itself. Without wakeups or background execution, a checkpoint can be prepared but time will not advance the pursuit. Without a required tool, data source, budget control, or authority, independent work may continue while that exact observation or mutation remains unperformed.
+Without persistent state, current work can advance but later resumption is not guaranteed. Without a real reload route, stored state will not re-enter the work by itself. Without wakeups or background execution, a checkpoint may still be confirmed as stored and manually retrievable; those facts do not establish automatic continuation. Elapsed time alone does not advance the pursuit. Without a required tool, data source, budget control, or authority, independent work may continue while that exact observation or mutation remains unperformed.
 
 Keep requested, attempted, prepared, persisted, reactivatable, and executed state distinct. Do not translate missing host capability into model prose claiming the capability occurred.
 
@@ -20,4 +20,6 @@ A valid portable handoff proves only that its custody claims are internally cohe
 
 Rest with a re-entry condition when restoration is plausible. Degrade to a narrower result only when it remains useful and the user's authority permits the reduced promise. Transfer to a human or capable harness when authority or infrastructure belongs there. Release the route when the minimum useful promise cannot survive the missing capability.
 
-When capability returns, retrieve the authoritative state and reconcile it with the checkpoint before continuing. Supersede provisional conclusions rather than letting the degraded version circulate beside the restored result. A stale wakeup never outranks a later correction or cancellation.
+When capability returns, retrieve the authoritative state and reconcile it with the checkpoint before continuing. Supersede provisional conclusions rather than letting the degraded version circulate beside the restored result. A stale wakeup never outranks a later pause, correction or cancellation.
+
+When the native goal cannot be edited, resumed or cancelled through the available tools, keep its displayed status distinct from the user-authorized pursuit. Use the existing canonical state owner for the corrected direction and a real retrieval cue. Do not mark unfinished work complete to free a goal slot or create a competing ledger. Follow the actual host rules for goal status and budgets. If a scheduler exists, update its authorized wake behavior when the user pauses or cancels; until that mutation is confirmed, any delayed wake must recover current authority before doing work. Continue independently authorized work after an explicit resumption even if the native goal display remains stale. The [worked host gap](../examples/host-goal-mutation-gap.md) shows the distinction.

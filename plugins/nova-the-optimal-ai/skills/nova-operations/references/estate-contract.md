@@ -17,3 +17,11 @@ An explicit upgrade permits only known additive selectors. A healthy 1.0.3 regis
 `--apply-user-environment` is optional Windows convenience only. Never pass it on macOS or Linux. When explicitly authorized on Windows it copies current registry values to the user's environment; a new process is needed to observe those ambient copies. The registry-backed launcher itself never requires that environment change or a restart.
 
 Status and doctor report Continuity read support and mutation support independently. They also report canonical Commonplace initialization and verification separately from Concordance states such as current, stale, unavailable, or incompatible; a derived-index failure is never reported as canonical data loss. Readable state on a filesystem the canonical Continuity runtime will not mutate is `read_only`, never healthy full operation. Exports, forget plans, and recovery backups remain external artifacts whose destinations must be user-chosen outside `.codex`, the active Continuity source, and every active Nova selector boundary.
+
+## Diagnostic and retry boundaries
+
+Every active selector is a nonempty absolute string. Only an absent or null known additive selector is a legacy addition; a malformed present value is rejected before mutation. Launcher-owned root/helper flags reject equivalent equals and abbreviated forms before dispatch. Bundled service and Continuity support paths must not cross symlink or reparse edges. Missing or unsafe package files leave a valid registry identifiable and report unavailable service support.
+
+A mutation probe qualifies support only with a successful exit and a coherent completed receipt. A contrary exit, malformed result or inconsistent status remains unsupported, retaining the reported payload for diagnosis. This preflight remains distinct from a transaction qualification.
+
+Optional Windows environment copying happens after estate publication. Its failure cannot erase a completed estate; the receipt retains the initialized/upgraded state, reports the environment copy as failed and potentially partial, supplies a same-root retry, and returns nonzero. An explicit retry on an already-configured root performs only the requested environment copy. The POSIX helper quotes paths literally, including dollar, backtick, quote, backslash and Unicode text.

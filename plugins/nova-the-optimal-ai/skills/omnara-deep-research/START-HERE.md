@@ -1,135 +1,39 @@
-# Run your first Omnara research campaign
+# Get an answer you can inspect
 
-The goal is one useful, inspectable research result before you learn every ledger and status. Omnara should make the research path clearer, not make you operate a tiny bureaucracy for sport.
+Begin with your actual question. “Use $omnara-deep-research. Does [claim] hold for [setting/time], and what evidence would change the answer?” Include the intended decision and supplied material. The agent should begin useful work, preserve your question and identify the consequential uncertainty. You do not need to operate every ledger yourself.
 
-## 1. Confirm how Omnara is available
+## Open or return to the room
 
-Use the path that matches your host.
+Extract the complete package. With Python 3.10+, double-click **Open.cmd** on Windows; on macOS/Linux run `python3 workspace/open.py`. [Installation](docs/INSTALLATION.md) gives the skill and fallback routes. The launcher opens the matching local service. Research lives separately, by default under `Documents/OMNARA Campaigns`; reopen through the launcher after reboot rather than bookmarking a temporary port.
 
-### Omnara is installed through Nova
+The OMNARA wordmark opens your investigation library. **New investigation** takes a title and the question exactly as asked. **Import a native vault** copies an existing valid campaign without changing the original. **Environment** selects Tracework, Survey Folio or Proof Cabinet. [Campaign room](docs/CAMPAIGN-ROOM.md) explains reading, comparison, editing and recovery.
 
-Begin a fresh task and explicitly invoke the skill:
+For an inspectable example, read [the local/global sea-level report](examples/sea-level-comparison/report.md). Copy `examples/sea-level-comparison` into a writable research location before importing or editing it. It contains actual bounded primary-source research, not invented station data.
 
-```text
-Use $omnara-deep-research.
-```
+## Advance the inquiry
 
-Nova remains the front-facing collaborator. Omnara performs the backstage research work unless you explicitly ask to speak with Omnara.
+Use **Next-pass handoff** to give the saved campaign path and next step to your research agent. The room itself does not search. The agent records sources, reads the important subset, tests competing explanations and writes the report. **Evidence atlas** follows claims to sources; **Reading room** opens notes and comparisons; **Open questions** keeps missing evidence visible; **Synthesis** reads the current answer and its bibliography.
 
-### You have this standalone source tree
+A connection is only a recorded citation. The current-review line tells you whether the saved native content has a matching declared semantic review. Legacy labels such as supported are retained as recorded history. Edits invalidate current review; they cannot inherit a verdict about different evidence.
 
-This checkout contains an individual skill, not a marketplace-ready plugin. Import or place the directory where your host discovers skills, using that host's current instructions. A successful import should expose the selector `omnara-deep-research` and the display name **OMNARA Deep Research**.
+## Save and finish
 
-If the host cannot load skills but can accept a long prompt, use [`fallbacks/universal-copy-paste-workflow.md`](fallbacks/universal-copy-paste-workflow.md).
+**Save vault** validates native records and retains prior files. If another writer changed the campaign, download the unsaved draft before reloading. A rejected edit remains in your browser. [Recovery](docs/TROUBLESHOOTING.md) explains damaged records, failed saves and historical completed campaigns.
 
-## 2. Give Omnara a decision-shaped inquiry
-
-Use this template and replace the bracketed text:
+The agent assembles before auditing:
 
 ```text
-Use $omnara-deep-research.
-
-Investigate: [the exact question].
-Audience and decision use: [who will use the result and what they must decide].
-Scope: [included topics, geography, population, product version, or jurisdiction].
-Time horizon and evidence cutoff: [dates or freshness requirement].
-Required evidence: [primary records, research, official documentation, field evidence, counterevidence].
-Exclusions: [what not to investigate].
-Deliverable: [brief, report, comparison, recommendation, length, citation style].
+python scripts/assemble_report.py <campaign-folder>
+python scripts/citation_audit.py <campaign-folder>
+python scripts/research_campaign.py review-subject <campaign-folder>
 ```
 
-A narrow current fact may need one accountable source. A contested policy, scientific, historical, or systems question may earn a full campaign. Do not request a theatrical source quota unless the decision genuinely requires it.
-
-## 3. Check the first response
-
-Before deep retrieval begins, the response should make these things legible:
-
-- the preserved inquiry;
-- the audience and decision use;
-- the scope, time horizon, and exclusions;
-- the major coverage areas and competing explanations;
-- the likely source ecosystems;
-- the evidence burden and important access boundaries;
-- the next useful research move.
-
-Omnara may ask one clarifying question when the answer would materially change scope, consequence, access authority, architecture, or acceptance. It should not make you repeat information already supplied.
-
-## 4. Create a durable campaign vault when needed
-
-For work that must be resumed, audited, or handed off, initialize a vault from the repository root:
-
-```shell
-python scripts/research_campaign.py init campaigns/passkeys \
-  --title "Passkey adoption decision" \
-  --query "Should small organizations adopt passkeys for customer accounts in 2026?" \
-  --tier focused
-```
-
-On Windows PowerShell, use the same command on one line or use the backtick as the line-continuation character. Substitute `python3` or `py -3` when that is your Python launcher.
-
-Expected result:
+Assembly refuses to replace a differing report until you inspect it and explicitly use `--replace`; that retains prior report bytes. The subject command does not issue a review. Follow [the review contract](references/review-contract.md), then set phase and status to complete together and validate:
 
 ```text
-INITIALIZED: campaigns/passkeys
+python scripts/research_campaign.py validate <campaign-folder>
 ```
 
-The command copies the campaign template, inserts the title and verbatim inquiry, records UTC timestamps, and creates the draft directory used by report assembly.
+Your result should answer the question, name important limits, expose readable sources and say what would reopen it. A useful no-evidence answer is possible; it must distinguish “not established here” from “does not exist.” Source quotas and page estimates are not completion criteria.
 
-## 5. Validate before adding evidence
-
-```shell
-python scripts/research_campaign.py validate campaigns/passkeys
-```
-
-Expected result:
-
-```text
-VALID: campaigns/passkeys
-```
-
-This proves that the initial campaign structure and counters are internally consistent. It does not prove that research has been performed.
-
-## 6. Work from the first unverified edge
-
-During research, update the vault when evidence changes the campaign:
-
-1. Record each search in `query-ledger.jsonl`.
-2. Record every retained candidate in `source-ledger.jsonl` before counting it as inspected.
-3. Write `notes/S###.md` before marking a source `deeply-read`.
-4. Link claims to source IDs in `claim-ledger.jsonl`.
-5. Update `coverage-matrix.md` and `contradictions.md` as the field changes.
-6. Keep `campaign.json` counters synchronized with the ledgers.
-7. Store ordered report sections in `draft/` with names such as `01-orientation.md` and `99-bibliography.md`.
-
-The [campaign-vault reference](docs/CAMPAIGN-VAULT.md) gives the minimum validated fields and recommended evidence fields.
-
-## 7. Assemble and audit the report
-
-When the draft sections are ready:
-
-```shell
-python scripts/assemble_report.py campaigns/passkeys
-python scripts/citation_audit.py campaigns/passkeys
-```
-
-The assembly command writes `report.md` and `report-metrics.json`. The citation command writes `citation-audit-structural.json`.
-
-A passing structural audit means citation markers resolve to eligible, deeply read source records with substantive notes and claim links. It does not establish that those sources entail the report's wording.
-
-## 8. Finish with an evidence boundary
-
-A usable handoff includes:
-
-- the report;
-- scope and evidence cutoff;
-- source-state counts;
-- coverage disposition;
-- important contradictions;
-- structural citation result;
-- semantic entailment disposition;
-- limitations and inaccessible evidence;
-- budget use;
-- refresh triggers;
-- the exact resume point when work is incomplete.
-
-When a dependency disappears or a budget stops the campaign, preserve the useful work and name the assurance that was lost. Continue with [Troubleshooting and recovery](docs/TROUBLESHOOTING.md) rather than pretending the gap is completion.
+Use **Export native text ZIP** for the saved native text and **Next-pass handoff** for continuation. Neither includes external corpora or media. [Lifecycle](docs/LIFECYCLE.md) explains complete-folder backup and updates. All commands run from the folder containing SKILL.md; use `python3` if that is your interpreter name.

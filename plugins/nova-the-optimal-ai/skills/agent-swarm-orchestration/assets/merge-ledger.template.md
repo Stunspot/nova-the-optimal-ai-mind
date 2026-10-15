@@ -4,13 +4,14 @@
 **Acceptance:** <observable finish>  
 **Root owner:** <agent id>  
 **Resolver:** <operation and authorized decision owner>
-**Current state:** `active | reconciling | awaiting-evidence | awaiting-authority | closed | cancelled`
+**Mission outcome:** <unverified / partial / accepted / cancelled; tie accepted to observed criterion checks>
+**Current control state:** `active | reconciling | awaiting-evidence | awaiting-authority | closed | cancelled`
 
 ## Contribution dispositions
 
-| Member | Contribution | Status | Returned claim | Evidence level | Unique effect | State touched | Integration effect |
-|---|---|---|---|---|---|---|---|
-| `<id>` | <causal job> | <status> | <claim> | <agent-reported / observed / reconciled / verified> | <evidence, transformation, check, redundancy, or none> | <paths or none> | <accepted / rejected / pending / released> |
+| Member | Contribution | Status | Returned claim | Evidence level | Unique effect | State touched | Output acceptance | Worker disposition |
+|---|---|---|---|---|---|---|---|---|
+| `<id>` | <causal job> | <status> | <claim> | <agent-reported / observed / reconciled / verified> | <evidence, transformation, check, redundancy, or none> | <paths or none> | <accepted / rejected / pending> | <active / released / held / cancelled> |
 
 ## Conflicts, dissent, and resolutions
 

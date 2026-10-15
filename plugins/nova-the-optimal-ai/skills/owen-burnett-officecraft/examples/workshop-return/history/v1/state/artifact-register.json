@@ -1,0 +1,102 @@
+{
+  "format": "officecraft-artifact-register/v2",
+  "artifacts": [
+    {
+      "artifact_id": "BRIEF",
+      "path": "output/brief.docx",
+      "format": "DOCX",
+      "role": "editable_source",
+      "status": "reviewed",
+      "editable": true,
+      "canonical_source_id": null,
+      "source_ids": [
+        "ORIGINAL"
+      ],
+      "ledger_item_ids": [
+        "TOTAL",
+        "HEADROOM"
+      ],
+      "check_evidence": [
+        {
+          "path": "review/inspect.json"
+        }
+      ],
+      "input_basis": {
+        "format": "officecraft-input-basis/v1",
+        "declared_inputs": {
+          "artifact_ids": [],
+          "source_ids": [
+            "ORIGINAL"
+          ],
+          "ledger_item_ids": [
+            "HEADROOM",
+            "TOTAL"
+          ]
+        },
+        "artifacts": {},
+        "sources": {
+          "ORIGINAL": {
+            "path": "sources/original.json",
+            "sha256": "b727d7a3fea38da5365453ef77dfd6e9fc1db671592a4bb42dd8236a5402edfd",
+            "custody_status": "illustrative",
+            "content_status": "illustrative"
+          }
+        },
+        "ledger": {
+          "TOTAL": "14816f7c6804b0790e51079dbc849e0286525894c024c0eb74593ca06be001fe",
+          "HEADROOM": "652a45b7177393ad676afe35e3849a561e903348ffd89ad8759aa27eb334fdac"
+        }
+      }
+    },
+    {
+      "artifact_id": "PDF",
+      "path": "output/brief.pdf",
+      "format": "PDF",
+      "role": "derivative",
+      "status": "reviewed",
+      "editable": false,
+      "canonical_source_id": "BRIEF",
+      "check_evidence": [
+        {
+          "path": "review/inspect.json"
+        }
+      ],
+      "input_basis": {
+        "format": "officecraft-input-basis/v1",
+        "declared_inputs": {
+          "artifact_ids": [
+            "BRIEF"
+          ],
+          "source_ids": [],
+          "ledger_item_ids": []
+        },
+        "artifacts": {
+          "BRIEF": {
+            "path": "output/brief.docx",
+            "sha256": "2b0a0978d330a10a9c58c6f0aed020dc5e508c4963cd904ba3f57bf8d6ebd977",
+            "artifact_ids": [],
+            "source_ids": [
+              "ORIGINAL"
+            ],
+            "ledger_item_ids": [
+              "HEADROOM",
+              "TOTAL"
+            ]
+          }
+        },
+        "sources": {
+          "ORIGINAL": {
+            "path": "sources/original.json",
+            "sha256": "b727d7a3fea38da5365453ef77dfd6e9fc1db671592a4bb42dd8236a5402edfd",
+            "custody_status": "illustrative",
+            "content_status": "illustrative"
+          }
+        },
+        "ledger": {
+          "TOTAL": "14816f7c6804b0790e51079dbc849e0286525894c024c0eb74593ca06be001fe",
+          "HEADROOM": "652a45b7177393ad676afe35e3849a561e903348ffd89ad8759aa27eb334fdac"
+        }
+      }
+    }
+  ]
+}

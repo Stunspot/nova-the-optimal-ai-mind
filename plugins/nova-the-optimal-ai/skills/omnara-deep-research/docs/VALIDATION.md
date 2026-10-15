@@ -1,103 +1,33 @@
-# Validation and evidence boundaries
+# Check what the result actually claims
 
-Omnara uses deterministic checks to prevent several common forms of evidence drift. Each check has a deliberately narrow claim.
+Run commands from the complete folder containing SKILL.md. Python 3.10+ and the standard library are sufficient. Use `python3` where appropriate.
 
-## Validate the customer runtime
+## Exact package and source
 
-Run this from the installed or extracted skill root: the directory that contains `SKILL.md` and `scripts/`. In the family kit, use `codex/omnara-deep-research/`.
+`python -B scripts/validate_release.py . --profile source` checks current cargo, required room and research files, the preserved canonical inquiry hash, JSON syntax and static local Markdown/HTML paths. An extracted candidate also checks every PACKAGE-CONTENTS.json byte hash. `--profile runtime` checks the current runtime dependency set; the complete package is the recommended portable route. It does not prove installation or host invocation.
 
-```powershell
-python -B scripts\validate_release.py . --profile runtime
-```
+Maintainers run `python -B -m unittest discover -s tests -v` in the repository. Tests are development evidence and need not be shipped as customer runtime. Do not report a zero-test run in an extracted package as a passing product test.
 
-A passing result confirms required runtime files are present, the retained canonical inquiry reference matches its recorded SHA-256, JSON and JSONL parse, local runtime links resolve, and no `__pycache__` directory is present. The output must say `PROFILE: runtime`.
+## Create and validate
 
-Maintainers validating the full public source repository may instead run `python -B scripts\validate_release.py . --profile source`. Source-only documentation and verification records are intentionally absent from the customer runtime.
-
-Neither profile confirms host discovery, a completed research campaign, source accuracy, semantic citation support, rendered accessibility, or publication approval.
-
-## Smoke-test campaign creation
-
-```powershell
-python -B scripts\research_campaign.py init C:\path\to\omnara-smoke --title "Omnara smoke test" --query "Can the campaign template initialize and validate?" --tier focused
-python -B scripts/research_campaign.py validate C:\path\to\omnara-smoke
-python -B scripts/research_campaign.py summary C:\path\to\omnara-smoke
-```
-
-Use a writable destination suitable for your operating system. Remove the smoke-test directory when finished.
-
-Expected validation result:
+Choose a new directory outside the package:
 
 ```text
-VALID: C:\path\to\omnara-smoke
+python scripts/research_campaign.py init <new-campaign> --title "A real question" --query "What evidence would change this answer?" --tier focused
+python scripts/research_campaign.py validate <new-campaign>
+python scripts/research_campaign.py summary <new-campaign>
 ```
 
-This confirms initialization and internal counter consistency. It does not claim that the campaign contains research evidence.
+A valid empty campaign establishes structure, not research. Validate checks types, joins, compatible source history, clocks/cutoff, counter consistency and completion declarations. A failed check names the affected record; [native files](CAMPAIGN-VAULT.md) explain the contract.
 
-## Validate a live campaign
+## Assemble, inspect and audit
 
-```powershell
-python -B scripts/research_campaign.py validate C:\path\to\campaign
-```
+`python scripts/assemble_report.py <campaign-folder>` joins immediate draft Markdown in lexical filename order. A separately changed report is preserved unless you deliberately use `--replace`; replacement saves its prior bytes under `.assembly-history`. Page counts are layout-dependent estimates, not rendered pages.
 
-The validator checks:
+`python scripts/citation_audit.py <campaign-folder>` checks visible body markers, source eligibility, note/claim links and a visible bibliography containing exact source titles and locators. HTML comments and fenced examples cannot supply required evidence. The projection is bounded Markdown handling, not arbitrary HTML renderer conformance. A no-source result receives an explicit warning and still needs real semantic review of the absence boundary.
 
-- campaign format, tier, phase, status, inquiry, and resume point;
-- source-state prerequisites and terminal-state conflicts;
-- substantive notes for deeply read sources;
-- source and claim ID uniqueness;
-- source links from claims and queries;
-- counters against the retained ledgers;
-- required artifacts;
-- additional completion evidence when phase is `complete`.
+`python scripts/research_campaign.py review-subject <campaign-folder>` prints the actual review subject without writing anything. Follow [the review contract](../references/review-contract.md) to inspect the report and sources and record a review. Then set both phase and status to complete and validate again. Recomputing a digest is not performing review. Reviewer fields and hashes cannot authenticate truth, identity or independence.
 
-## Assemble a report
+## Scope of evidence
 
-```powershell
-python -B scripts/assemble_report.py C:\path\to\campaign
-```
-
-The command concatenates `draft/*.md` in lexical filename order, writes `report.md`, and records word and page-estimate evidence in `report-metrics.json`.
-
-The page figures are estimates at 300 and 500 words per page. They are not rendered-page counts and do not account for figures, tables, layout, or citation density.
-
-## Check structural citation integrity
-
-```powershell
-python -B scripts/citation_audit.py C:\path\to\campaign
-```
-
-A passing result confirms that:
-
-- the report contains source markers;
-- every marker resolves to a source record;
-- cited records are not duplicate or inaccessible;
-- cited records are marked deeply read and cited;
-- substantive evidence notes exist;
-- cited source IDs appear in the claim ledger;
-- input hashes bind the audit to the current report and ledgers.
-
-## Run the semantic audit separately
-
-The deterministic script cannot determine whether a source entails a claim. Review every consequential claim for:
-
-- exact wording and strength;
-- scope, population, geography, version, and time;
-- correlation versus causation;
-- quantitative units, denominator, period, and method;
-- quote accuracy and location;
-- stale, transformed, derivative, or conflicted support.
-
-Record each claim as `supported`, `partially supported`, `contradicted`, `mis-scoped`, `stale`, or `unverifiable`. Repair the claim, evidence, or visible uncertainty, then rerun the structural audit if report markers or ledgers changed.
-
-## Documentation checks performed for this pass
-
-The documentation upgrade was checked with:
-
-- the package validator;
-- Hesperos' bounded Markdown structural linter;
-- a manual task walkthrough from README to first campaign, recovery, validation, and maintenance;
-- a local Markdown-link resolution pass through the package validator;
-- Python smoke tests for campaign initialization, validation, summary, report assembly, and the expected failure of an evidence-free citation audit.
-
-These checks do not establish formal WCAG conformance, screen-reader compatibility across rendered GitHub surfaces, universal comprehension, or host activation.
+The retained [worked inquiry](../examples/sea-level-comparison/report.md) is actual source-method research with author in-process review. Local tests challenge malformed input, stale claims/notes/scope, hidden bibliography, chronology, exclusion history, no-evidence outcomes, overwrite protection and room recovery. Current package evidence is described in [the documentation boundary](../verification/documentation-review.md). Independent model trials, participant studies, assistive-technology conformance, fresh-host activation and publication are separate claims.

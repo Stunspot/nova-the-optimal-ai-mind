@@ -1,11 +1,44 @@
 {
   "name": "nova-the-optimal-ai",
-  "version": "3.8.1",
+  "version": "4.1.0",
   "description": "Nova the Optimal AI Free: one vivid Nova front door, ambient MIND, governed continuity, projects, personal knowledge, and twenty-seven native practical capabilities.",
   "author": {
     "name": "Collaborative Dynamics",
     "url": "https://collaborative-dynamics.com"
   },
   "homepage": "https://collaborative-dynamics.com",
-  "license": "SEE LICENSE.md AND THIRD-PARTY-NOTICES.md"
+  "license": "SEE LICENSE.md AND THIRD-PARTY-NOTICES.md",
+  "keywords": [
+    "nova",
+    "generalist",
+    "mind",
+    "coding",
+    "verification",
+    "research",
+    "documents",
+    "continuity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Nova the Optimal AI",
+    "shortDescription": "💠 Adaptive generalist: problem-solving, wit, and craft.",
+    "longDescription": "Give Nova the real thing you need done. Free 4.1.0 combines the governing Nova persona, ambient MIND, optional governed continuity, coding and paired verification, research and retrieval, editable office work and review, IT diagnosis, privacy, language, career workflows, reminders, and people context without a required local model, hook, daemon, embeddings, or vector database.",
+    "developerName": "Collaborative Dynamics",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://collaborative-dynamics.com",
+    "brandColor": "#48CBE8",
+    "composerIcon": "./skills/nova/assets/nova-icon.png",
+    "logo": "./skills/nova/assets/nova-icon.png",
+    "logoDark": "./skills/nova/assets/nova-icon.png",
+    "defaultPrompt": [
+      "Use $nova to turn this mess into one clear, useful, checked result.",
+      "Use $nova to help me decide what actually matters here.",
+      "Use $nova to take me on the optional ninety-second tour."
+    ]
+  }
 }

@@ -20,6 +20,7 @@ from init_officefile import initialize
 from inspect_office_artifacts import inspect_officefile
 from package_officefile import package_officefile
 from validate_officefile import safe_relative, validate_officefile
+from officefile_relationships import empty_basis, value_digest
 
 
 EXAMPLE = SKILL_ROOT / "examples" / "monday-leadership-packet"
@@ -222,13 +223,13 @@ class OfficefileScriptTests(unittest.TestCase):
 
             review_path = officefile / "review" / "officecraft-review.json"
             review = json.loads(review_path.read_text(encoding="utf-8"))
-            review["operator_review"] = {"status": "PASS_WITH_CONDITIONS", "officefile_state": "reviewable", "reviewed_artifacts": [{"artifact_id": "ART-SAMPLE", "sha256": digest}], "findings": []}
+            review["operator_review"] = {"record_version": "officecraft-review-entry/v2", "reviewer_role": "test operator", "reviewed_at": "2026-07-21T13:00:00Z", "intended_use": "Monday leadership meeting", "conditions": [], "material_findings": [], "status": "PASS", "officefile_state": "reviewable", "reviewed_artifacts": [{"artifact_id": "ART-SAMPLE", "sha256": digest, "input_basis_sha256": value_digest(empty_basis())}], "findings": []}
             write_json(review_path, review)
             self.assertTrue(validate_officefile(officefile)["valid"])
 
             register_artifact(officefile, status="approved", evidence=[{"path": "review/inspection.json"}])
             self.assertFalse(validate_officefile(officefile)["valid"])
-            review["approval_records"] = [{"artifact_id": "ART-SAMPLE", "sha256": digest, "approval_owner": "Casey Owner", "authority_kind": "accountable_owner", "approved_use": "Monday leadership meeting", "approved_at": "2026-07-21T13:45:00Z"}]
+            review["approval_records"] = [{"artifact_id": "ART-SAMPLE", "sha256": digest, "input_basis_sha256": value_digest(empty_basis()), "approval_owner": "Casey Owner", "authority_kind": "accountable_owner", "approved_use": "Monday leadership meeting", "approved_at": "2026-07-21T13:45:00Z"}]
             write_json(review_path, review)
             self.assertTrue(validate_officefile(officefile)["valid"])
             review["approval_records"][0]["approved_at"] = "2999-01-01T00:00:00Z"
@@ -306,14 +307,14 @@ class OfficefileScriptTests(unittest.TestCase):
             digest = hashlib.sha256(sample.read_bytes()).hexdigest()
             review_path = officefile / "review" / "officecraft-review.json"
             review = json.loads(review_path.read_text(encoding="utf-8"))
-            review["operator_review"] = {"status": "PASS", "officefile_state": "shaped", "reviewed_artifacts": [{"artifact_id": "ART-SAMPLE", "sha256": digest}], "findings": []}
+            review["operator_review"] = {"record_version": "officecraft-review-entry/v2", "reviewer_role": "test operator", "reviewed_at": "2026-07-21T13:00:00Z", "intended_use": "Monday leadership meeting", "conditions": [], "material_findings": [], "status": "PASS", "officefile_state": "shaped", "reviewed_artifacts": [{"artifact_id": "ART-SAMPLE", "sha256": digest, "input_basis_sha256": value_digest(empty_basis())}], "findings": []}
             write_json(review_path, review)
             self.assertFalse(validate_officefile(officefile)["valid"])
             review["operator_review"]["officefile_state"] = "intake"
             review["operator_review"]["reviewed_artifacts"][0]["artifact_id"] = "ART-MISSING"
             write_json(review_path, review)
             self.assertFalse(validate_officefile(officefile)["valid"])
-            review["operator_review"]["reviewed_artifacts"][0] = {"artifact_id": "ART-SAMPLE", "sha256": digest}
+            review["operator_review"]["reviewed_artifacts"][0] = {"artifact_id": "ART-SAMPLE", "sha256": digest, "input_basis_sha256": value_digest(empty_basis())}
             write_json(review_path, review)
             self.assertTrue(validate_officefile(officefile)["valid"])
 

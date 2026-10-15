@@ -37,3 +37,7 @@ The Markdown source has received structural lint and manual documentation review
 ## No universal truth guarantee
 
 The method improves source custody, contradiction handling, and auditability. Conclusions remain bounded by the searched corpus, evidence quality, access, time, reviewer competence, and disclosed uncertainty.
+
+## Current review and local service
+
+The optional room is a local loopback service, not an autonomous researcher. Native text export is not a full original/media backup. Review bindings detect changed declared content; they cannot authenticate sources or reviewers, perform semantic judgment, certify arbitrary Markdown/HTML rendering, or provide a distributed transaction with an actively writing external agent. Local browser tests are not participant studies.

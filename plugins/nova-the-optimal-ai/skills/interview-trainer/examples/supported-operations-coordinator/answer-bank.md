@@ -1,26 +1,25 @@
-# Evidence-backed answer bank
+# Adaptable answer cues — fictional scenario
 
-## Q-001 - Last-minute schedule change
+## Q-001 — Scheduling change
 
 - Evidence IDs: EVD-001
 - Support state: supported
-- Situation: two instructors became unavailable before a weekend program.
-- Jordan's action: confirmed constraints, prioritized programs with registered families, reassigned rooms, called instructors, and issued one written change log.
-- Supported result: all scheduled programs ran; families received one consistent update.
-- Trade-off: a lower-priority setup task moved to Monday.
-- Compact answer prompt: constraints -> priority -> single change log -> confirmed handoff -> result.
+- Compact answer prompt: manager set priority; I maintained one change log; each owner confirmed the revised room; I checked the three sessions ran.
 
-## Q-002 - Vendor and staff alignment
+Keep the boundary: Jordan did not set the priorities or cause the entire team result alone. There is no supported percentage or financial saving. Retell naturally from the evidence; do not memorize a polished speech.
+
+## Q-002 — Vendor dependency
 
 - Evidence IDs: EVD-002
-- Support state: supported
-- Method: maintain owner, due date, dependency, last confirmation, and escalation point; send one concise written recap after changes.
-- Direct or adjacent: adjacent; Jordan used the method in a shared coordination log rather than a dedicated facilities system.
+- Support state: proposed-method
+- Compact answer prompt: confirm the changed dependency and owner; compare impact against agreed priorities; record decision and escalation; request confirmation and update affected people.
 
-## Q-003 - Facilities software gap
+This is a proposed application of a real method within the fictional record, not a claim that this exact vendor episode happened.
+
+## Q-003 — Facilities platform gap
 
 - Evidence IDs:
 - Support state: honest-gap
-- Jordan has not used a dedicated facilities-ticketing platform.
-- Answer directly, connect to verified shared-log and escalation experience, and explain how Jordan learns a new system.
-- Do not claim platform experience.
+- Compact answer prompt: I have not used a dedicated facilities platform; I would learn its statuses and escalation rules, try a low-risk example and have the workflow checked.
+
+If using the shared-log bridge, identify it as adjacent EVD-002 and update the answer/map together; do not imply prior platform use.

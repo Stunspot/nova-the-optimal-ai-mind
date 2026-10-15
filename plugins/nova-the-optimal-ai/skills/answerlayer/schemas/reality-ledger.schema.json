@@ -1,81 +1,905 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://collaborativedynamics.com/schemas/answerlayer/reality-ledger-v1.json",
-  "title": "AnswerLayer Reality Ledger v1",
+  "$id": "https://collaborativedynamics.com/schemas/answerlayer/reality-ledger-v2.json",
+  "title": "AnswerLayer Reality Ledger v2",
   "type": "object",
-  "required": ["format", "product_version", "ledger_id", "title", "owner", "scope", "decision_use", "created_at", "updated_at", "baseline", "sources", "candidates", "deltas", "rejections", "fuzz", "patches", "probes", "traps", "watch", "approvals", "publication"],
+  "required": [
+    "format",
+    "product_version",
+    "revision",
+    "ledger_id",
+    "title",
+    "owner",
+    "scope",
+    "decision_use",
+    "created_at",
+    "updated_at",
+    "baseline",
+    "baseline_history",
+    "sources",
+    "candidates",
+    "deltas",
+    "rejections",
+    "fuzz",
+    "patches",
+    "probes",
+    "traps",
+    "watch",
+    "approvals",
+    "publication"
+  ],
   "properties": {
-    "format": {"const": "answerlayer/reality-ledger/v1"},
-    "product_version": {"enum": ["0.1.2", "0.2.0"]},
-    "ledger_id": {"type": "string", "minLength": 1},
-    "title": {"type": "string", "minLength": 1},
-    "owner": {"type": "string", "minLength": 1},
-    "scope": {"type": "string", "minLength": 1},
-    "decision_use": {"type": "string", "minLength": 1},
-    "created_at": {"type": "string"},
-    "updated_at": {"type": "string"},
+    "format": {
+      "const": "answerlayer/reality-ledger/v2"
+    },
+    "product_version": {
+      "const": "0.3.0"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "ledger_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision_use": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "updated_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline": {
+      "$ref": "#/$defs/baseline"
+    },
+    "baseline_history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/baseline"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/candidate"
+      }
+    },
+    "deltas": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/delta"
+      }
+    },
+    "rejections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rejection"
+      }
+    },
+    "fuzz": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fuzz"
+      }
+    },
+    "patches": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/patch"
+      }
+    },
+    "probes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/probe"
+      }
+    },
+    "traps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/trap"
+      }
+    },
+    "watch": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/watch"
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/approval"
+      }
+    },
+    "publication": {
+      "type": "object",
+      "required": [
+        "status",
+        "approved_by",
+        "approved_at",
+        "scope"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_authorized",
+            "approved",
+            "published",
+            "retired"
+          ]
+        },
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
     "baseline": {
       "type": "object",
-      "required": ["version", "status", "as_of", "text", "authority", "approved_by", "approved_at", "supersedes"],
+      "required": [
+        "version",
+        "status",
+        "as_of",
+        "text",
+        "authority",
+        "approved_by",
+        "approved_at",
+        "supersedes",
+        "adopted_patch_ids",
+        "context"
+      ],
       "properties": {
-        "version": {"type": "integer", "minimum": 1},
-        "status": {"enum": ["candidate", "patched", "superseded", "retired"]},
-        "as_of": {"type": "string"},
-        "text": {"type": "string"},
-        "authority": {"enum": ["model_generated", "machine_validated", "human_reviewed", "human_approved", "executed", "verified"]},
-        "approved_by": {"type": ["string", "null"]},
-        "approved_at": {"type": ["string", "null"]},
-        "supersedes": {"type": ["integer", "null"]}
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "as_of": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        },
+        "text": {
+          "type": "string"
+        },
+        "authority": {
+          "enum": [
+            "model_generated",
+            "machine_validated",
+            "human_reviewed",
+            "human_approved",
+            "executed",
+            "verified"
+          ]
+        },
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supersedes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "adopted_patch_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "context": {
+          "type": "object",
+          "required": [
+            "scope",
+            "decision_use",
+            "owner"
+          ],
+          "properties": {
+            "scope": {
+              "type": "string",
+              "minLength": 1
+            },
+            "decision_use": {
+              "type": "string",
+              "minLength": 1
+            },
+            "owner": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
       },
       "additionalProperties": true
     },
-    "sources": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "candidates": {"type": "array", "items": {"$ref": "#/$defs/candidate"}},
-    "deltas": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "rejections": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "fuzz": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "patches": {"type": "array", "items": {"$ref": "#/$defs/patch"}},
-    "probes": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "traps": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "watch": {"type": "array", "items": {"$ref": "#/$defs/watch"}},
-    "approvals": {"type": "array", "items": {"$ref": "#/$defs/identified"}},
-    "publication": {
+    "source": {
       "type": "object",
-      "required": ["status", "approved_by", "approved_at", "scope"],
+      "required": [
+        "id",
+        "status",
+        "title",
+        "locator",
+        "publication_date",
+        "authority",
+        "access_status",
+        "accessed_at",
+        "origin_id",
+        "supports"
+      ],
       "properties": {
-        "status": {"enum": ["not_authorized", "approved", "published", "retired"]},
-        "approved_by": {"type": ["string", "null"]},
-        "approved_at": {"type": ["string", "null"]},
-        "scope": {"type": ["string", "null"]}
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string",
+          "minLength": 1
+        },
+        "publication_date": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        },
+        "authority": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accessed_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "access_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "claim",
+              "location",
+              "relation",
+              "scope"
+            ],
+            "properties": {
+              "claim": {
+                "type": "string",
+                "minLength": 1
+              },
+              "location": {
+                "type": "string",
+                "minLength": 1
+              },
+              "relation": {
+                "enum": [
+                  "supports",
+                  "contradicts",
+                  "context"
+                ]
+              },
+              "scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
       },
-      "additionalProperties": false
-    }
-  },
-  "$defs": {
-    "identified": {
-      "type": "object",
-      "required": ["id", "status"],
-      "properties": {"id": {"type": "string", "minLength": 1}, "status": {"enum": ["candidate", "accepted_delta", "rejected_noise", "fuzz_unresolved", "patched", "superseded", "retired"]}},
       "additionalProperties": true
     },
     "candidate": {
-      "allOf": [
-        {"$ref": "#/$defs/identified"},
-        {"type": "object", "required": ["claim", "source_ids", "answer_change", "mechanism", "event_date", "publication_date", "effective_date", "threshold_date", "classification", "confidence_basis", "counterfactual", "recheck"]}
-      ]
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "claim",
+        "source_ids",
+        "answer_change",
+        "mechanism",
+        "event_date",
+        "publication_date",
+        "effective_date",
+        "threshold_date",
+        "classification",
+        "confidence_basis",
+        "counterfactual",
+        "recheck"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "claim": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "answer_change": {
+          "type": "string"
+        },
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        },
+        "event_date": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        },
+        "publication_date": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        },
+        "effective_date": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        },
+        "threshold_date": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        },
+        "classification": {
+          "enum": [
+            "regime_shift",
+            "structural_event",
+            "strong_signal",
+            "rejected_noise",
+            "watch"
+          ]
+        },
+        "confidence_basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "counterfactual": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recheck": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "delta": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "candidate_id",
+        "source_ids",
+        "mechanism"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "rejection": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "candidate_id",
+        "reason"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "fuzz": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "candidate_id",
+        "competing_claims",
+        "abstention",
+        "resolution_indicator"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "candidate_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "competing_claims": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 2
+        },
+        "abstention": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution_indicator": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
     },
     "patch": {
-      "allOf": [
-        {"$ref": "#/$defs/identified"},
-        {"type": "object", "required": ["before", "after", "mechanism", "source_ids", "counterfactual", "authority", "approved_by", "approved_at"]}
-      ]
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "before",
+        "after",
+        "mechanism",
+        "source_ids",
+        "counterfactual",
+        "authority",
+        "approved_by",
+        "approved_at",
+        "base_version",
+        "base_sha256",
+        "scope",
+        "recheck",
+        "candidate_ids",
+        "source_hashes",
+        "result_as_of"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "before": {
+          "type": "string",
+          "minLength": 1
+        },
+        "after": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mechanism": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "counterfactual": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority": {
+          "enum": [
+            "model_generated",
+            "machine_validated",
+            "human_reviewed",
+            "human_approved",
+            "executed",
+            "verified"
+          ]
+        },
+        "approved_by": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "approved_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "base_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "base_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recheck": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidate_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "source_hashes": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "result_as_of": {
+          "type": "string",
+          "pattern": "^(?:[0-9]{4}-[0-9]{2}-[0-9]{2}|unknown|not_applicable)$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "probe": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "question"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "trap": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "condition"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "condition": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
     },
     "watch": {
-      "allOf": [
-        {"$ref": "#/$defs/identified"},
-        {"type": "object", "required": ["condition", "operator", "threshold", "observed", "triggered", "next_review"]}
-      ]
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "condition",
+        "operator",
+        "threshold",
+        "observed",
+        "triggered",
+        "next_review"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "candidate",
+            "accepted_delta",
+            "rejected_noise",
+            "fuzz_unresolved",
+            "patched",
+            "superseded",
+            "retired"
+          ]
+        },
+        "condition": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operator": {
+          "enum": [
+            "gte",
+            "gt",
+            "lte",
+            "lt",
+            "eq"
+          ]
+        },
+        "threshold": {
+          "type": [
+            "number",
+            "string"
+          ]
+        },
+        "observed": {
+          "type": [
+            "number",
+            "string",
+            "null"
+          ]
+        },
+        "triggered": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "next_review": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "id",
+        "object_id",
+        "action",
+        "actor",
+        "at",
+        "scope",
+        "authorization_basis",
+        "base_sha256",
+        "patch_sha256",
+        "expires_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "object_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "action": {
+          "enum": [
+            "approve",
+            "withdraw"
+          ]
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1
+        },
+        "at": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authorization_basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "base_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "patch_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "expires_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
     }
-  },
-  "additionalProperties": false
+  }
 }

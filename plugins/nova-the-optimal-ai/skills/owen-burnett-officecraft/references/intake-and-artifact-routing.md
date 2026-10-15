@@ -37,7 +37,7 @@ Prefer one canonical editable source for each meaning-bearing artifact. A PDF no
 
 ## Capability-aware routing
 
-Inspect what the host makes available in the current run. Route to a connected native surface when it preserves a supplied template or live semantics. Route to local artifact production when it can create and inspect the requested file. Route to a complete production packet when a real file path or renderer is unavailable. Record the actual route in the artifact register.
+Inspect what the host makes available in the current run. Route to a connected native surface when it preserves a supplied template or live semantics. Use local artifact production when it can create the requested editable file. If rendering alone is unavailable, deliver that file with the exact visual inspection gap and available structural/content checks. Use a complete production specification when file creation itself is unavailable. Record the actual route in the artifact register.
 
 Use an explicit decision only when the choice materially changes the result: for example, whether an existing template may be copied and adapted, whether a fixed PDF alone is acceptable, or whether a cloud destination may receive private source material.
 

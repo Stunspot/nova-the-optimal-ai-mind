@@ -19,6 +19,10 @@
 |---|---|---|---|
 | `<id>` | <working / returned / failed / interrupted / unknown> | <redirected / released / reconciled / held / cancelled> | <observation> |
 
+## Accepted output and write custody
+
+<Preserve each accepted return and its root-observed evidence independently of worker disposal. Identify stopped writers whose state is still unknown and keep those surfaces reserved until readback. Closing responsibilities does not establish that mission criteria passed.>
+
 ## State disposition
 
 | Plane | Disposition | Authoritative source / next owner |

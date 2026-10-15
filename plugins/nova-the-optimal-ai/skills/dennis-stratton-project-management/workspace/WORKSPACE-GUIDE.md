@@ -12,10 +12,12 @@ Current bridge first shows posture, next move, next decision, and the active rou
 
 Below the route, edit Next action and Purpose connection. Project status is an explicit record edit, not authority to start, pause or close work. Save project validates and persists the draft. Switching views captures these edits; choosing another project asks before discarding an unsaved draft.
 
-Delivery route retains milestone and work-package forms plus exact native status/next-action editing. Decisions & evidence retains attributed decision/evidence capture. Adding an entry changes only the draft until you save. Control record exposes the complete JSON, including extension fields; use it for full authority, forecast and dependency changes. Invalid JSON or native references are refused rather than repaired through guesswork.
+Delivery route retains milestone and work-package forms plus exact native status/next-action editing. Decisions & evidence retains attributed decision/evidence capture. Adding an entry changes only the draft until you save. Control record exposes the complete JSON, including all fields allowed by the native schema; use it for full authority, forecast and dependency changes. Invalid JSON or native references are refused rather than repaired through guesswork.
 
 ## Save, reconcile and hand off
 
 Save checks the fingerprint from your last read, validates native structure and retains previous content under the project's `records/bridge-history`. A stale or invalid save leaves your draft in the page. Export current draft before Refresh records, then compare the current record and reconcile deliberately. Export is a draft copy, not a completion certificate. Import retains supplied JSON under estate `imports` and refuses conflicting identities.
 
 New project requires name, owner, observable outcome and authority/source locator. The initial control is a proposal with template values, not an approved execution baseline. Replace template material from actual evidence. Structural validation is not verification, acceptance, operational health or benefit realization. Inspect confidential material before exporting. No external publication, remote synchronization, access-control service or equipment automation is provided.
+
+The bridge displays the current forecast with its basis and next update. Unestimated bounds are shown as unknown; they do not become zero or a guessed duration. Unrecognized JSON fields are refused. Put supporting documents under the project records directory and link them using the schema's locator fields.

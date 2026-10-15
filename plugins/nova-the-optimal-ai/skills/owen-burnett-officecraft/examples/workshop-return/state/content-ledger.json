@@ -1,0 +1,25 @@
+{
+  "format": "officecraft-content-ledger/v1",
+  "items": [
+    {
+      "item_id": "TOTAL",
+      "kind": "metric",
+      "value": "USD 1,050",
+      "source_ids": [
+        "ORIGINAL",
+        "CORRECTION"
+      ],
+      "source_status": "illustrative"
+    },
+    {
+      "item_id": "HEADROOM",
+      "kind": "metric",
+      "value": "USD 150",
+      "source_ids": [
+        "ORIGINAL",
+        "CORRECTION"
+      ],
+      "source_status": "illustrative"
+    }
+  ]
+}

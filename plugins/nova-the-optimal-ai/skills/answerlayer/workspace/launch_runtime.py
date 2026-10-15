@@ -1,11 +1,18 @@
 """Same-user launch metadata, never an owner-record store."""
-import hashlib,json,os,secrets,subprocess,sys,tempfile,threading,time,urllib.request,webbrowser
+import hashlib,json,os,secrets,stat,subprocess,sys,tempfile,threading,time,urllib.request,webbrowser
 from pathlib import Path
 from http.server import ThreadingHTTPServer
 RUNTIME_NONCE=secrets.token_urlsafe(20)
+def unlinked(path):
+    p=Path(path).absolute()
+    for node in [p,*p.parents]:
+        try:value=node.lstat()
+        except FileNotFoundError:continue
+        if stat.S_ISLNK(value.st_mode) or getattr(value,'st_file_attributes',0)&1024:raise ValueError('Linked launch metadata path refused')
+    return p
 def metadata_path(identity,port):
     key=hashlib.sha256(json.dumps({'identity':identity,'requested_port':port},sort_keys=True).encode()).hexdigest()[:24]
-    return Path(tempfile.gettempdir())/'cd-native-desks'/f'{key}.json'
+    return unlinked(Path(tempfile.gettempdir())/'cd-native-desks'/f'{key}.json')
 def existing(identity,port):
     path=metadata_path(identity,port)
     try:
@@ -40,10 +47,10 @@ def launch(handler,args,identity,token,script):
         server.shutdown();server.server_close();raise RuntimeError('Local desk identity mismatch; browser not opened')
     path=metadata_path(identity,args.port);path.parent.mkdir(exist_ok=True)
     meta={'identity':identity,'instance':RUNTIME_NONCE,'pid':os.getpid(),'port':server.server_port,'token':token}
-    temporary=path.with_suffix('.'+RUNTIME_NONCE+'.tmp')
+    temporary=unlinked(path.with_suffix('.'+RUNTIME_NONCE+'.tmp'))
     fd=os.open(temporary,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600)
     with os.fdopen(fd,'w',encoding='utf-8') as stream:json.dump(meta,stream)
-    os.replace(temporary,path)
+    unlinked(path);os.replace(temporary,path)
     if os.name!='nt':path.chmod(0o600)
     url=endpoint+'/#session='+token
     print(json.dumps({**identity,'url':url,'pid':os.getpid(),'runtime_metadata':str(path)}),flush=True)

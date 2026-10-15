@@ -28,4 +28,4 @@ The site does not claim that structural citation checks establish semantic entai
 
 ## Accessibility boundary
 
-Every page uses one H1, semantic landmarks, a skip link, persistent labeled navigation, visible focus, descriptive links, meaningful alternative text where images convey meaning, responsive layouts that retain navigation, and reduced-motion handling. The final accessibility receipt records the exact reviewed fingerprint. That review does not establish universal WCAG conformance, every assistive-technology combination, representative-user success, or legal compliance.
+Every page uses one H1, semantic landmarks, a skip link, persistent labeled navigation, visible focus, descriptive links, meaningful alternative text where images convey meaning, responsive layouts that retain navigation, and reduced-motion handling. Current in-process source and local browser evidence is described in verification/documentation-review.md; older accessibility receipts describe their historical bytes. These checks do not establish universal WCAG conformance, every assistive-technology combination, representative-user success, or legal compliance.

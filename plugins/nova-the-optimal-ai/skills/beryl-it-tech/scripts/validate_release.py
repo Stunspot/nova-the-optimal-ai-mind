@@ -10,6 +10,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from archive_paths import assert_unlinked, check_tree
+
 MANIFEST = "release-manifest.json"
 REQUIRED = {
     "README.md", "PROVENANCE.md", "SKILL.md",
@@ -78,16 +81,25 @@ def main() -> int:
     parser.add_argument("root", nargs="?", default=Path(__file__).resolve().parents[1])
     parser.add_argument("--write-manifest", action="store_true")
     args = parser.parse_args()
-    root = Path(args.root).resolve()
-    files = inventory(root)
+    try:
+        root = assert_unlinked(Path(args.root))
+        files = inventory(root)
+        check_tree(root, [root / rel for rel in files])
+    except (OSError, ValueError) as exc:
+        print(f"FAIL {exc}", file=sys.stderr)
+        return 1
     errors = validate_paths(root, files)
     if args.write_manifest and not errors:
-        payload = {"package": "beryl-it-benchcraft", "version": "0.3.0", "files": files}
+        payload = {"package": "beryl-it-benchcraft", "version": "0.5.0", "files": files}
         (root / MANIFEST).write_bytes((json.dumps(payload, indent=2) + "\n").encode("utf-8"))
     manifest_path = root / MANIFEST
+    if not manifest_path.exists() and not args.write_manifest:
+        errors.append("missing required release-manifest.json")
     if manifest_path.exists() and not args.write_manifest:
         try:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
+            if manifest.get("version") != "0.5.0" or manifest.get("package") != "beryl-it-benchcraft":
+                errors.append("release identity differs")
             if manifest.get("files") != files:
                 errors.append("release manifest does not match current file inventory")
         except (UnicodeError, json.JSONDecodeError) as exc:

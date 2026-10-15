@@ -1,142 +1,32 @@
-# Campaign-vault reference
+# Native campaign records
 
-The campaign vault is Omnara's durable research memory. Copy or initialize one vault per substantial inquiry; do not edit the template in place for live work.
+Campaign room and agent share ordinary files, not parallel evidence stores. [The room guide](CAMPAIGN-ROOM.md) explains actions; [the review contract](../references/review-contract.md) defines exact current-review identity.
 
-## Create a vault
-
-Run the command from the installed or extracted skill root: the directory that contains `SKILL.md` and `scripts/`. In the family kit, the directly executable copy is `codex/omnara-deep-research/`.
-
-```powershell
-python -B scripts\research_campaign.py init C:\path\to\campaigns\example --title "Example campaign" --query "The user's inquiry, preserved verbatim" --tier focused
-```
-
-Expected result: the command creates the vault and reports its path. The destination must be absent or empty. Supported tiers are `focused`, `deep`, and `exhaustive`; a tier is a planning posture, not proof that the promised depth was achieved.
-
-A Claude-compatible host may not expose Python or a writable filesystem. In that case, use the bundled copy-paste fallback, retain the same vault fields in a safe workspace, and label deterministic validation unexecuted.
-
-## File map
-
-| Path | Purpose |
+| File | Purpose |
 |---|---|
-| `campaign.json` | Phase, status, budgets, counters, routes, blockers, and resume point. |
-| `research-brief.md` | Inquiry, audience, scope, evidence burden, deliverable, authority, and budgets. |
-| `coverage-matrix.md` | Coverage loci, live accounts, evidence, counterevidence, status, and next discriminating move. |
-| `query-ledger.jsonl` | One retained record per executed query or retrieval action. |
-| `source-ledger.jsonl` | One canonical record per retained source or inaccessible location. |
-| `notes/S###.md` | Full-reading evidence note for a source. |
-| `claim-ledger.jsonl` | Claims and the source IDs that support or contest them. |
-| `contradictions.md` | Material tensions, their causes, consequences, and possible resolution. |
-| `evidence-digest.md` | Cross-source synthesis packet used before drafting. |
-| `outline.md` | Section purposes, questions, claim IDs, source IDs, and transitions. |
-| `draft/*.md` | Ordered report sections consumed by `assemble_report.py`. |
-| `report.md` | Assembled report. |
-| `report-metrics.json` | Section count, word count, and layout-dependent page estimates. |
-| `citation-audit.md` | Human-readable structural and semantic audit record. |
-| `citation-audit-structural.json` | Deterministic citation-audit result and input hashes. |
-| `campaign-summary.md` | Handoff, completion boundary, limits, refresh triggers, and resume point. |
+| campaign.json | Verbatim inquiry, title, phase/status, budgets, counters, routes, blockers and return point |
+| research-brief.md | Audience, scope, decision, evidence burden and cutoff meaning |
+| source-ledger.jsonl | Stable S001-style IDs, title, locator, recorded states and provenance |
+| claim-ledger.jsonl | C001-style assertion, source_ids and bounded interpretation |
+| query-ledger.jsonl | Unique ID, query, result_ids and actual retrieval context |
+| notes/S001.md | What the source establishes, location, reading scope and limits |
+| coverage-matrix.md / contradictions.md | Covered and missing questions; rival accounts |
+| draft/*.md / report.md | Ordered authored sections and present answer |
+| citation-audit.md | Substantive audit observations |
+| citation-audit-structural.json | Deterministic current integrity result |
+| semantic-review.json | Actual reviewer, claim treatment and content-bound subject |
+| campaign-summary.md | Achieved outcome, limitations, counts and next event |
 
-## `campaign.json`
+JSONL means one JSON object per nonblank line. Duplicate JSON keys are errors. Source IDs use S plus at least three digits; claims use C plus at least three digits. Titles and locators must be real text, not numbers masquerading as entries. Dates use YYYY-MM-DD or a full timestamp with valid timezone offset; unknown publication dates may be `unknown` or `undated`. Optional campaign `evidence_cutoff` is the knowledge cutoff for publication dates, not the retrieval or review date. Explain a different historical/currentness boundary in the brief rather than silently changing its meaning.
 
-Required fields:
+Source events accumulate: discovered → inspected → opened → deeply-read → cited. Opened means readable content was accessed. A note records the actual reading scope; its length cannot prove reading. Excluded, duplicate and inaccessible require a disposition reason. A later exclusion preserves previous reading events. A duplicate uses `duplicate_of` pointing to the canonical retained record. Excluded/duplicate/inaccessible records cannot remain cited.
 
-| Field | Meaning |
-|---|---|
-| `format` | Must be `omnara-research-campaign/v1`. |
-| `title` | Human-readable campaign name. |
-| `canonical_inquiry` | The user's preserved inquiry. |
-| `tier` | `focused`, `deep`, or `exhaustive`. |
-| `phase` | Current workflow phase. |
-| `status` | Current completion or blocking state. |
-| `budgets` | Search, source, tool, and paid-access ceilings. |
-| `counters` | Counts derived from the retained ledgers. |
-| `active_loci` | Coverage areas currently being investigated. |
-| `blockers` | Named capability, evidence, access, or authority blockers. |
-| `routes` | Tool and model routing decisions with review status. |
-| `resume_point` | Exact next useful action. |
+A source example: `{"id":"S001","title":"Accountable source","url":"https://example.org/source","states":["discovered"],"disposition":"Candidate awaiting reading"}`. A provisional claim may have empty source_ids; that is not a supported conclusion. [The complete example](../examples/sea-level-comparison/report.md) shows real interpretation and a source excluded after reading.
 
-Supported phases:
+Room saves synchronize counters from retained records. Direct agent edits must synchronize them too. Counts overlap by event; they are not mutually exclusive categories or a completion percentage.
 
-```text
-framing
-mapping
-breadth-sweep
-depth-reading
-reconciliation
-gap-fill
-synthesis
-citation-audit
-review
-complete
-halted
-```
+## Completion and return
 
-Supported statuses:
+Valid sparse active work needs its inquiry, typed records and return point, not a quota of words. Complete requires phase and status both complete; actual brief, coverage, contradiction, summary and report content; freshly recomputed citation integrity; and a matching declared semantic review covering every claim's treatment. Unused candidates can be not-used. Qualified claims must be visibly limited in the report. Unresolved review prevents completion. A no-source result can complete a narrow inquiry only with honestly reviewed search/absence limits; it cannot prove absence in the world.
 
-```text
-active
-complete
-awaiting-evidence
-awaiting-authority
-capability-limited
-budget-exhausted
-partial-success
-paused
-```
-
-A campaign may be `partial-success` without being `complete`. Use the status that matches the evidence and remaining scope.
-
-## JSONL ledgers
-
-Each nonblank line must contain one JSON object. Keep IDs stable after assignment.
-
-### Query record
-
-The validator requires `result_ids` to be an array whose source IDs exist. A practical record also preserves the query and retrieval context:
-
-```json
-{"id":"Q001","query":"official passkey account recovery guidance","tool":"web search","executed_at":"2026-07-22T18:00:00Z","locus_ids":["L001"],"result_ids":["S001","S002"],"notes":"Initial official-source sweep."}
-```
-
-### Source record
-
-The validator requires an ID beginning with `S`, a valid `states` array, and either `url` or `identifier`.
-
-```json
-{"id":"S001","title":"Source title","url":"https://example.org/source","states":["discovered","inspected","opened","deeply-read","cited"],"source_type":"official guidance","published_at":"2026-04-01","accessed_at":"2026-07-22","locus_ids":["L001"],"disposition":"Retained for current implementation guidance."}
-```
-
-State prerequisites:
-
-- `inspected` requires `discovered`;
-- `opened` requires `discovered` and `inspected`;
-- `deeply-read` requires `discovered`, `inspected`, and `opened` plus a substantive `notes/S###.md` file;
-- `cited` requires all four preceding states;
-- `excluded`, `duplicate`, and `inaccessible` cannot coexist with `opened`, `deeply-read`, or `cited`.
-
-### Claim record
-
-The validator requires an ID beginning with `C`, nonblank claim text, and source IDs that exist.
-
-```json
-{"id":"C001","claim":"Account recovery remains a material implementation risk.","importance":"major","source_ids":["S001","S004"],"disposition":"supported","scope":"Consumer web accounts; evidence cutoff 2026-07-22."}
-```
-
-A source being relevant is not enough. The semantic reviewer must test whether it supports the claim's exact strength and scope.
-
-## Counter synchronization
-
-`research_campaign.py validate` derives expected counts from the ledgers. Update `campaign.json` whenever records change.
-
-The counter key for the `deeply-read` state is `deeply_read`. All other state names use underscores in the counter object where needed.
-
-## Completion requirements
-
-When `phase` is `complete`, validation requires:
-
-- substantive brief, coverage matrix, evidence digest, outline, summary, citation record, and report;
-- no template instructions in those artifacts;
-- at least one report citation marker;
-- at least one cited source and source-linked claim;
-- a passing, current `citation-audit-structural.json` whose hashes match the report and ledgers.
-
-These are structural completion requirements. They do not replace semantic citation review, accountable approval, or representative-user testing.
+Legacy unbound judgments remain readable. Preserve an older completed copy, move the working copy to review/active and perform the affected review. The validator never manufactures new authorship or approval. [Troubleshooting](TROUBLESHOOTING.md) explains rejected saves and re-entry.

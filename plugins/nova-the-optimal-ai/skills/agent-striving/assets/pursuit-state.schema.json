@@ -15,21 +15,67 @@
     "updated_at"
   ],
   "properties": {
-    "format": {"const": "cd-agent-striving-handoff/v2"},
-    "pursuit_ref": {"type": "string", "minLength": 1, "pattern": "\\S"},
-    "authority_source": {"type": "string", "minLength": 1, "pattern": "\\S"},
-    "current_direction": {"type": "string", "minLength": 1, "pattern": "\\S"},
-    "disposition": {"enum": ["live", "resting", "released"]},
-    "current_state_ref": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "format": {
+      "const": "cd-agent-striving-handoff/v2"
+    },
+    "pursuit_ref": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "authority_source": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "current_direction": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "disposition": {
+      "enum": [
+        "live",
+        "resting",
+        "released"
+      ]
+    },
+    "current_state_ref": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
     "foreground": {
       "type": "object",
       "additionalProperties": false,
       "minProperties": 1,
       "properties": {
-        "settled": {"type": "array", "items": {"type": "string", "minLength": 1, "pattern": "\\S"}},
-        "actual_state": {"type": "string", "minLength": 1, "pattern": "\\S"},
-        "blockers": {"type": "array", "items": {"type": "string", "minLength": 1, "pattern": "\\S"}},
-        "likely_continuation": {"type": "string", "minLength": 1, "pattern": "\\S"}
+        "settled": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "actual_state": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "blockers": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "likely_continuation": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
       }
     },
     "continuity": {
@@ -43,42 +89,196 @@
         "lost_guarantee"
       ],
       "properties": {
-        "persistence": {"enum": ["confirmed", "prepared", "unavailable"]},
-        "persistence_receipt": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"},
-        "reactivation": {"enum": ["confirmed", "manual", "unavailable"]},
-        "reactivation_cue": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"},
-        "lost_guarantee": {"type": ["string", "null"], "minLength": 1, "pattern": "\\S"}
+        "persistence": {
+          "enum": [
+            "confirmed",
+            "prepared",
+            "unavailable"
+          ]
+        },
+        "persistence_receipt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "reactivation": {
+          "enum": [
+            "confirmed",
+            "manual",
+            "unavailable"
+          ]
+        },
+        "reactivation_cue": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "lost_guarantee": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "pattern": "\\S"
+        }
       },
       "allOf": [
         {
-          "if": {"properties": {"persistence": {"const": "confirmed"}}, "required": ["persistence"]},
-          "then": {"properties": {"persistence_receipt": {"type": "string", "minLength": 1, "pattern": "\\S"}}},
-          "else": {"properties": {"persistence_receipt": {"const": null}}}
+          "if": {
+            "properties": {
+              "persistence": {
+                "const": "confirmed"
+              }
+            },
+            "required": [
+              "persistence"
+            ]
+          },
+          "then": {
+            "properties": {
+              "persistence_receipt": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "not": {
+                  "pattern": "^\\s*(?:[Nn][Oo][Nn][Ee]|[Nn]/?[Aa]|[Uu][Nn][Kk][Nn][Oo][Ww][Nn]|[Tt][Bb][Dd]|[Tt][Oo][Dd][Oo]|[Nn][Oo][Tt]\\s+[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Bb][Ll][Ee])\\s*$"
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "persistence_receipt": {
+                "const": null
+              }
+            }
+          }
         },
         {
-          "if": {"properties": {"reactivation": {"enum": ["confirmed", "manual"]}}, "required": ["reactivation"]},
-          "then": {"properties": {"reactivation_cue": {"type": "string", "minLength": 1, "pattern": "\\S"}}},
-          "else": {"properties": {"reactivation_cue": {"const": null}}}
+          "if": {
+            "properties": {
+              "reactivation": {
+                "enum": [
+                  "confirmed",
+                  "manual"
+                ]
+              }
+            },
+            "required": [
+              "reactivation"
+            ]
+          },
+          "then": {
+            "properties": {
+              "reactivation_cue": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "not": {
+                  "pattern": "^\\s*(?:[Nn][Oo][Nn][Ee]|[Nn]/?[Aa]|[Uu][Nn][Kk][Nn][Oo][Ww][Nn]|[Tt][Bb][Dd]|[Tt][Oo][Dd][Oo]|[Nn][Oo][Tt]\\s+[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Bb][Ll][Ee])\\s*$"
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "reactivation_cue": {
+                "const": null
+              }
+            }
+          }
         },
         {
           "if": {
             "allOf": [
-              {"properties": {"persistence": {"const": "confirmed"}}, "required": ["persistence"]},
-              {"properties": {"reactivation": {"enum": ["confirmed", "manual"]}}, "required": ["reactivation"]}
+              {
+                "properties": {
+                  "persistence": {
+                    "const": "confirmed"
+                  }
+                },
+                "required": [
+                  "persistence"
+                ]
+              },
+              {
+                "properties": {
+                  "reactivation": {
+                    "enum": [
+                      "confirmed",
+                      "manual"
+                    ]
+                  }
+                },
+                "required": [
+                  "reactivation"
+                ]
+              }
             ]
           },
-          "then": {"properties": {"lost_guarantee": {"const": null}}},
-          "else": {"properties": {"lost_guarantee": {"type": "string", "minLength": 1, "pattern": "\\S"}}}
+          "then": {
+            "properties": {
+              "lost_guarantee": {
+                "const": null
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "lost_guarantee": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S",
+                "not": {
+                  "pattern": "^\\s*(?:[Nn][Oo][Nn][Ee]|[Nn]/?[Aa]|[Uu][Nn][Kk][Nn][Oo][Ww][Nn]|[Tt][Bb][Dd]|[Tt][Oo][Dd][Oo]|[Nn][Oo][Tt]\\s+[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Bb][Ll][Ee])\\s*$"
+                }
+              }
+            }
+          }
         }
       ]
     },
-    "supersedes": {"type": "string", "minLength": 1, "pattern": "\\S"},
-    "updated_at": {"type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:\\.\\d+)?(?:Z|[+-]\\d{2}:\\d{2})$"}
+    "supersedes": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?!0000)[0-9]{4}-[0-9]{2}-[0-9]{2}T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\\.[0-9]+)?(?:Z|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])$",
+      "description": "Supported RFC3339 profile: Gregorian year0001-9999, uppercase T/Z, second00-59 and bounded numeric offset components; real calendar validity checked by the Python validator. Leap seconds are not supported."
+    }
   },
   "allOf": [
     {
-      "if": {"properties": {"disposition": {"const": "released"}}, "required": ["disposition"]},
-      "then": {"properties": {"foreground": {"not": {"required": ["likely_continuation"]}}}}
+      "if": {
+        "properties": {
+          "disposition": {
+            "const": "released"
+          }
+        },
+        "required": [
+          "disposition"
+        ]
+      },
+      "then": {
+        "properties": {
+          "foreground": {
+            "not": {
+              "required": [
+                "likely_continuation"
+              ]
+            }
+          }
+        }
+      }
     }
   ]
 }

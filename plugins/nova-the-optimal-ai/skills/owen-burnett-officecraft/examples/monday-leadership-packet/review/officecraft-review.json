@@ -1,15 +1,21 @@
 {
-  "format": "officecraft-review/v1",
+  "format": "officecraft-review/v2",
   "operator_review": {
     "status": "not_run",
     "findings": [
-      {"kind": "boundary", "detail": "The packet is shaped only; artifact production and checks have not run."}
+      {
+        "kind": "boundary",
+        "detail": "The packet is shaped only; artifact production and checks have not run."
+      }
     ]
   },
   "independent_review": {
     "status": "not_run",
     "findings": [
-      {"kind": "boundary", "detail": "No independent review evidence exists for this synthetic specification packet."}
+      {
+        "kind": "boundary",
+        "detail": "No independent review evidence exists for this synthetic specification packet."
+      }
     ]
   },
   "approval_records": []

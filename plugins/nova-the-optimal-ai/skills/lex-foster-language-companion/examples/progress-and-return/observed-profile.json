@@ -1,0 +1,70 @@
+{
+  "format": "lex-foster-learner-profile/v1",
+  "profile_id": "FICTIONAL-observation-demonstration",
+  "updated_at": "2026-10-06T15:00:00Z",
+  "working_language": "English",
+  "target_languages": [
+    {
+      "language": "Spanish",
+      "variety": "unspecified",
+      "script": "Latin"
+    }
+  ],
+  "goals": [
+    {
+      "id": "goal-1",
+      "situation": "Describe near-future plans in writing",
+      "success_evidence": "Use ir a plus infinitive, preserving the linking a",
+      "status": "active"
+    }
+  ],
+  "preferences": {
+    "interruption": "natural-pauses",
+    "correction_focus": "balanced",
+    "explanation_depth": "compact",
+    "challenge": "supported",
+    "working_language_use": "welcome"
+  },
+  "evidence": [
+    {
+      "id": "evidence-1",
+      "observed_at": "2026-10-05T14:00:00Z",
+      "target_language": "Spanish",
+      "item": "Retain a between conjugated ir and an infinitive in a written plan",
+      "state": "supported",
+      "task": "Written plan",
+      "support": "Direct model",
+      "observation": {
+        "goal_id": "goal-1",
+        "modality": "written-production",
+        "prompt": "Repair Voy llegar using Voy a llegar",
+        "response": "Voy a llegar",
+        "criterion": "Retain a between conjugated ir and an infinitive in a written plan",
+        "result": "met",
+        "support_kind": "model"
+      }
+    },
+    {
+      "id": "evidence-2",
+      "observed_at": "2026-10-06T14:00:00Z",
+      "target_language": "Spanish",
+      "item": "Retain a between conjugated ir and an infinitive in a written plan",
+      "state": "transferred",
+      "task": "Written plan",
+      "support": "None",
+      "observation": {
+        "goal_id": "goal-1",
+        "modality": "written-production",
+        "prompt": "Without a model, write that Ana is going to call tomorrow",
+        "response": "Ana va a llamar mañana",
+        "criterion": "Retain a between conjugated ir and an infinitive in a written plan",
+        "result": "met",
+        "support_kind": "none",
+        "prior_evidence_id": "evidence-1",
+        "changed_condition": "Next day, different subject and action, no model; same linking-a criterion"
+      }
+    }
+  ],
+  "retrieval_queue": [],
+  "privacy_notes": "FICTIONAL completed example. Never import these observations as learner history."
+}

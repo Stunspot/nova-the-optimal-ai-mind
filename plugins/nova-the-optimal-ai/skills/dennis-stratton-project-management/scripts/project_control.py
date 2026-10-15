@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import re
 import sys
@@ -59,9 +60,13 @@ COLLECTIONS = [
     "benefits", "stakeholders", "commercial_alignment",
 ]
 
+def reject_nonfinite(value: str):
+    raise ValueError(f"Non-finite JSON number is not permitted: {value}")
+
+
 def load_record(path: Path) -> dict[str, Any]:
     with path.open("r", encoding="utf-8") as handle:
-        value = json.load(handle)
+        value = json.load(handle, parse_constant=reject_nonfinite)
     if not isinstance(value, dict):
         raise ValueError("record root must be a JSON object")
     return value
@@ -102,7 +107,7 @@ def _json_type_matches(value: Any, expected: str) -> bool:
         "array": isinstance(value, list),
         "string": isinstance(value, str),
         "integer": isinstance(value, int) and not isinstance(value, bool),
-        "number": isinstance(value, (int, float)) and not isinstance(value, bool),
+        "number": isinstance(value, (int, float)) and not isinstance(value, bool) and (not isinstance(value, float) or math.isfinite(value)),
         "boolean": isinstance(value, bool),
         "null": value is None,
     }.get(expected, False)
@@ -796,6 +801,8 @@ def validate_record(record: dict[str, Any]) -> tuple[list[dict[str, str]], list[
     forecast = record.get("forecast", {})
     if isinstance(forecast, dict) and isinstance(forecast.get("lower"), (int, float)) and isinstance(forecast.get("upper"), (int, float)) and forecast["lower"] > forecast["upper"]:
         error("FORECAST_RANGE", "forecast", "lower bound cannot exceed upper bound")
+    if isinstance(forecast, dict) and (forecast.get("lower") is None or forecast.get("upper") is None):
+        warn("UNKNOWN_FORECAST", "forecast", "forecast bounds are unestimated or incomplete; record the basis and next update without inventing values")
     capacity = record.get("capacity", {})
     if isinstance(capacity, dict) and isinstance(capacity.get("active_wip"), int) and isinstance(capacity.get("wip_limit"), int) and capacity["active_wip"] > capacity["wip_limit"]:
         warn("WIP_LIMIT_EXCEEDED", "capacity.active_wip", "active WIP exceeds the declared limit; record the exception decision")
@@ -841,6 +848,20 @@ def completion_posture(
             recorded_complete = work.get(unit_id, {}).get("status") == "complete"
         return ("YES" if recorded_complete else "NO"), states
     return "NO", states
+
+
+def forecast_summary(forecast: dict[str, Any]) -> str:
+    lower, upper = forecast.get("lower"), forecast.get("upper")
+    if lower is None and upper is None:
+        return "Not estimated; timing remains unknown."
+    unit = forecast.get("unit", "unspecified")
+    if lower is None:
+        bounds = f"upper bound {upper} {unit}; lower bound unknown"
+    elif upper is None:
+        bounds = f"lower bound {lower} {unit}; upper bound unknown"
+    else:
+        bounds = f"{lower} to {upper} {unit}"
+    return f"{bounds} at {forecast.get('confidence', 'unknown')} confidence"
 
 
 def render_status(record: dict[str, Any]) -> str:
@@ -906,7 +927,7 @@ def render_status(record: dict[str, Any]) -> str:
         "",
         "## Forecast and capacity",
         "",
-        f"- Forecast: {record.get('forecast', {}).get('lower', '?')} to {record.get('forecast', {}).get('upper', '?')} {record.get('forecast', {}).get('unit', '')} at `{record.get('forecast', {}).get('confidence', 'unknown')}` confidence",
+        f"- Forecast: {forecast_summary(record.get('forecast', {}))}",
         f"- Basis: {record.get('forecast', {}).get('basis', 'Not recorded.')}",
         f"- WIP: {record.get('capacity', {}).get('active_wip', '?')}/{record.get('capacity', {}).get('wip_limit', '?')} | Bottleneck: {record.get('capacity', {}).get('bottleneck', 'unknown')}",
         "",        "## Active commitment",
@@ -1271,6 +1292,8 @@ def bootstrap_record(project_name: str, owner: str, outcome: str, project_id: st
     })
     record["authority"]["project_owner"] = owner
     record["authority"]["grants"][0]["effective_at"] = now
+    record["forecast"]["as_of"] = now
+    record["justification"]["last_reviewed_at"] = now
     record["current"]["as_of"] = now
     record["checkpoints"][0]["timestamp"] = now
     return record
@@ -1287,7 +1310,7 @@ def migrate_v1(record: dict[str, Any]) -> dict[str, Any]:
     migrated["justification"] = {"status": "proposed", "reason": "Reconfirm why this project remains the best intervention.", "alternatives": ["Reassess the do-nothing and lower-cost alternatives."], "viability": "Not yet reassessed during migration.", "sponsor": owner, "benefit_owner": owner, "last_reviewed_at": stamp, "revisit_trigger": "Value, viability, cost, risk, or strategic fit changes."}
     migrated["benefits"] = []
     migrated["governance"] = {"sponsor": owner, "accountable_owner": owner, "cadence": "Reconfirm the governance cadence after migration.", "tolerances": ["Escalate material scope, forecast, benefit, risk, quality, or capacity exceptions."], "gates": [], "decision_latency_target": "Reconfirm after migration."}
-    migrated["forecast"] = {"as_of": stamp, "unit": "unspecified", "lower": 0, "upper": 0, "confidence": "low", "basis": "No v1 forecast migrated.", "baseline": "Reconfirm after migration.", "variance": "Unknown.", "next_update": "At the next project-control review."}
+    migrated["forecast"] = {"as_of": stamp, "unit": "unspecified", "lower": None, "upper": None, "confidence": "unknown", "basis": "No v1 forecast migrated; no estimate has been made.", "baseline": "Reconfirm after migration.", "variance": "Unknown.", "next_update": "At the next project-control review."}
     migrated["capacity"] = {"constraints": ["Capacity was not first-class in v1; reassess it."], "bottleneck": "Unknown after migration.", "wip_limit": 1, "active_wip": 0, "queue": [], "next_action": "Assess capacity, WIP, queue, and bottleneck."}
     migrated["stakeholders"] = []
     migrated["commercial_alignment"] = []
@@ -1323,7 +1346,7 @@ def write_json_document(path: Path, value: dict[str, Any], force: bool) -> None:
         raise FileExistsError(f"refusing to overwrite existing record: {path}")
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(path.name + ".tmp")
-    payload = json.dumps(value, ensure_ascii=False, indent=2) + "\n"
+    payload = json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n"
     temporary.write_text(payload, encoding="utf-8", newline="\n")
     temporary.replace(path)
 

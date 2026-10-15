@@ -1,13 +1,7 @@
-# Universal copy-paste workflow
+# Continue without local files
 
-Use this when the host cannot preserve a case directory.
+Answer the question first using supplied evidence, with source names/URLs or filenames, exact relevant passages and dates. Say when live currentness is unverified. For a disputed or continuing inquiry, return a compact packet containing the question, current bounded answer, consequential claim-to-source links, unresolved issue and exact next action. Preserve a serious alternative only where it changes the conclusion.
 
-1. Return the compact case card.
-2. Create a source-and-capture table with source ID, URL or supplied filename, publication time, retrieval time if known, preservation status, and limitation.
-3. Create a claim table with stable ID, exact claim, status, confidence, uncertainty, and source or capture IDs.
-4. List entity candidates separately; never merge ambiguous records.
-5. Compare the leading account with at least one serious rival and name the best discriminating observation.
-6. For a watch, state the baseline, material-change threshold, triggers, cadence requested, actual scheduling capability, and resume prompt.
-7. For a brief, include claims, corrections, unresolved disputes, omissions, and the human approval still required.
+Give stable IDs when they make later updates easier. Keep observation, source assertion and inference distinguishable. For a watch, state what change would matter and that no background execution is active unless an actual scheduler exists.
 
-Close with: “Copy this packet back to resume. This host did not preserve hashes, files, projection parity, or background execution.”
+End a continuing packet with: “Copy this packet back to resume. This host has not retained local captures, verified byte hashes or started background monitoring.” A one-off answered question needs no artificial packet or unfinished-task ritual.

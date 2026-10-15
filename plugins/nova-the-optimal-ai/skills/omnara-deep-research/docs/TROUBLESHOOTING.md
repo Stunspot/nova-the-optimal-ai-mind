@@ -1,128 +1,28 @@
-# Troubleshooting and recovery
+# Recover the next useful step
 
-Begin from the observable symptom. Preserve campaign files and error output before resetting anything.
+Preserve the campaign and exact error before resetting anything. [Validation](VALIDATION.md) explains what each command checks.
 
-## The host does not expose `$omnara-deep-research`
+| Symptom | Recovery |
+|---|---|
+| Skill is not discoverable | Confirm complete import and fresh session; use [Installation](INSTALLATION.md) or [copy/paste fallback](../fallbacks/universal-copy-paste-workflow.md). |
+| Open does not launch | Confirm Python3.10+; run `python workspace/open.py --serve --data-root "your folder"` from the package root to expose the error. |
+| Campaign says needs repair in library | Open it, use Vault actions → Native files and repair malformed text. If the native directory itself is linked/unreadable, preserve the original and repair a regular-directory copy. |
+| Save reports revision conflict | Download unsaved draft, reload saved vault, compare changes and reapply only what is still needed. Coordinate the other writer. |
+| Save fails during writing | Ordinary write failure restores prior native bytes. If rollback is incomplete, the error gives the history snapshot; preserve your draft and restore those exact native files before further editing. |
+| Complete campaign has stale review | Preserve the historical result. Set phase review and status active in a working copy. Review actual changed evidence/report; use [review contract](../references/review-contract.md). Do not bulk recompute verdicts. |
+| Counter mismatch | Correct the underlying record first, then synchronize counts. Room Save computes them from ledgers. |
+| Deeply-read note missing | Read the source and record its actual scope and limitations, or remove the unearned reading state. Padding a note proves nothing. |
+| Excluded or duplicate source is cited | Preserve reading history; remove the final citation or retain a usable canonical source. Explain disposition and duplicate_of as applicable. |
+| Visible bibliography entry missing | Include the cited ID, exact source title and locator under Sources, Bibliography or References. Hidden comments and fenced examples do not count. |
+| Assembly refuses differing report | Compare report.md with ordered draft sections. Reconcile them, or intentionally use --replace; prior report is retained under .assembly-history. |
+| Import refuses old completion | Preserve the original, set a working copy review/active and repair actual records; old labels are not current review. |
 
-**Likely conditions**
+## Access or budget ends
 
-- The standalone directory was not placed where the host discovers skills.
-- The host requires a plugin package rather than an individual skill directory.
-- The current task began before the skill was imported.
-- Omnara is available only through an installed Nova package.
+Unavailable search leaves live web findings unexecuted; unavailable full text leaves deeply-read and entailment unresolved. Continue useful supplied-source work and use [degraded-capability guidance](../fallbacks/degraded-capability.md). A hard budget stops execution without proving unsearched things absent. Preserve question, achieved findings, coverage gaps and exact return point.
 
-**Check**
+Existing permission carries forward. Ask for a genuinely new paid/private/authenticated route only when it can repair a named gap. A missing independent reviewer does not magically make author review independent; perform a useful in-process review when allowed, or deliver the draft with the exact unmet requirement.
 
-1. Confirm that the imported directory contains `SKILL.md` at its root.
-2. Confirm that the host lists `omnara-deep-research` or **OMNARA Deep Research**.
-3. Begin a fresh task after import.
-4. If the host requires plugin manifests, use the Nova distribution or follow the host's packaging instructions. This repository does not claim a standalone plugin manifest.
+## What a backup contains
 
-**Recovery**
-
-Use [`../fallbacks/universal-copy-paste-workflow.md`](../fallbacks/universal-copy-paste-workflow.md) when the host can accept a long prompt but cannot load the skill.
-
-## Campaign initialization says the destination is not empty
-
-**Cause**
-
-`research_campaign.py init` refuses to overwrite an existing nonempty directory.
-
-**Recovery**
-
-Choose a new directory or inspect and intentionally move the existing campaign. Do not delete it until you know whether it contains evidence that must be preserved.
-
-## Campaign validation reports counter mismatches
-
-**Cause**
-
-`campaign.json` counters no longer match the query and source ledgers.
-
-**Check**
-
-Review the reported counter and count the retained records with that state. Remember that one source can carry several compatible states.
-
-**Recovery**
-
-Correct the ledger state or the counter. Do not change the counter merely to silence validation when the source record is wrong.
-
-## A deeply read source requires a substantive note
-
-**Cause**
-
-The source is marked `deeply-read`, but `notes/S###.md` is missing, too short, or still contains template instructions.
-
-**Recovery**
-
-Write the evidence note using `notes/SOURCE-NOTE-TEMPLATE.md`, or remove the `deeply-read` state until the full reading exists. Preserve what the source does not establish.
-
-## A terminal state conflicts with an opened or cited state
-
-**Cause**
-
-A source is marked `excluded`, `duplicate`, or `inaccessible` while also being marked `opened`, `deeply-read`, or `cited`.
-
-**Recovery**
-
-Choose the state that reflects the canonical record. For a duplicate, keep the usable source under its canonical ID and point the duplicate record to it. For partial access, record the precise access boundary rather than calling the source both inaccessible and deeply read.
-
-## Report assembly says no Markdown section drafts were found
-
-**Cause**
-
-The campaign has no `draft/*.md` files.
-
-**Recovery**
-
-Create ordered section files such as:
-
-```text
-01-orientation.md
-02-evidence.md
-03-contradictions.md
-04-implications.md
-99-bibliography.md
-```
-
-Run assembly again. Files are concatenated in lexical filename order.
-
-## Structural citation audit reports no markers
-
-**Cause**
-
-The assembled report contains no markers such as `[S001]`.
-
-**Recovery**
-
-Add markers immediately after supported claim spans, ensure each source is eligible and linked from a claim record, reassemble the report, and rerun the audit.
-
-## Structural citation audit is stale after an edit
-
-**Cause**
-
-The report, source ledger, or claim ledger changed after the audit. Their SHA-256 values no longer match the audit record.
-
-**Recovery**
-
-Rerun `citation_audit.py`. Then recheck semantic entailment for every claim affected by the edit.
-
-## Search is unavailable
-
-**Preserve**
-
-- the verbatim inquiry;
-- research brief;
-- coverage map;
-- query families;
-- supplied-source analysis;
-- exact retrieval plan.
-
-Label unexecuted web work `PREPARED - NOT EXECUTED`. Do not claim source counts or negative findings from searches that did not run.
-
-## A paid, private, or authenticated source is needed
-
-Stop at the authority boundary. Name the source, the coverage gap it could repair, the intended access method, and whether a free or public substitute remains. Do not request or store credentials in the campaign vault.
-
-## The budget is exhausted
-
-Set an honest status such as `budget-exhausted` or `partial-success`. Record counts, covered and uncovered loci, important claims, contradictions, blockers, and the exact resume point. A budget stop is not a completed search.
+Native text export contains root Markdown, campaign/review JSON, ledgers and immediate notes/drafts. Unsaved draft download is recovery JSON, not automatic merge/import. Complete-folder backup must also include your originals, media, nested corpora and local history. [Lifecycle](LIFECYCLE.md) explains updates and removal; [Support](../SUPPORT.md) explains a useful defect report.

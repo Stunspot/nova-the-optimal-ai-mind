@@ -1,56 +1,317 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "officecraft/review/v1",
+  "$id": "officecraft/review/v2",
   "type": "object",
-  "required": ["format", "operator_review", "independent_review"],
+  "required": [
+    "format",
+    "operator_review",
+    "independent_review"
+  ],
   "properties": {
-    "format": {"const": "officecraft-review/v1"},
-    "operator_review": {"$ref": "#/$defs/review"},
-    "independent_review": {"$ref": "#/$defs/review"},
+    "format": {
+      "const": "officecraft-review/v2"
+    },
+    "operator_review": {
+      "$ref": "#/$defs/review"
+    },
+    "independent_review": {
+      "$ref": "#/$defs/review"
+    },
     "approval_records": {
       "type": "array",
-      "items": {"$ref": "#/$defs/approval"}
+      "items": {
+        "$ref": "#/$defs/approval"
+      }
     }
   },
   "$defs": {
     "review": {
       "type": "object",
-      "required": ["status", "findings"],
+      "required": [
+        "status"
+      ],
       "properties": {
-        "status": {"enum": ["not_run", "PASS", "PASS_WITH_CONDITIONS", "REVISE", "BLOCKED"]},
-        "findings": {"type": "array", "items": {"type": "object"}},
-        "officefile_state": {"enum": ["intake", "shaped", "production", "inspection", "reviewable", "handed_off"]},
+        "status": {
+          "enum": [
+            "not_run",
+            "PASS",
+            "PASS_WITH_CONDITIONS",
+            "REVISE",
+            "BLOCKED"
+          ]
+        },
+        "officefile_state": {
+          "enum": [
+            "intake",
+            "shaped",
+            "production",
+            "inspection",
+            "reviewable",
+            "handed_off"
+          ]
+        },
         "reviewed_artifacts": {
           "type": "array",
-          "minItems": 1,
-          "items": {"$ref": "#/$defs/artifactDigest"}
+          "items": {
+            "$ref": "#/$defs/artifactDigest"
+          }
+        },
+        "record_version": {
+          "const": "officecraft-review-entry/v2"
+        },
+        "intended_use": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer_role": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "statement",
+              "artifact_ids",
+              "intended_use",
+              "status"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "statement": {
+                "type": "string",
+                "minLength": 1
+              },
+              "artifact_ids": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "intended_use": {
+                "type": "string",
+                "minLength": 1
+              },
+              "status": {
+                "enum": [
+                  "open",
+                  "met",
+                  "residual_accepted"
+                ]
+              },
+              "resolution_evidence": {
+                "type": "string"
+              },
+              "acceptance": {
+                "type": "object",
+                "required": [
+                  "owner",
+                  "authority_kind",
+                  "approved_use",
+                  "accepted_at",
+                  "rationale"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "owner": {
+                    "type": "string"
+                  },
+                  "authority_kind": {
+                    "enum": [
+                      "user",
+                      "accountable_owner"
+                    ]
+                  },
+                  "approved_use": {
+                    "type": "string"
+                  },
+                  "accepted_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "rationale": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "material_findings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "category",
+              "status",
+              "finding",
+              "evidence",
+              "consequence",
+              "required_disposition",
+              "closure_condition"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "category": {
+                "enum": [
+                  "implementation_defect",
+                  "design_ambiguity",
+                  "missing_criterion",
+                  "unavailable_evidence",
+                  "owner_decision",
+                  "improvement"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "open",
+                  "closed",
+                  "not_applicable"
+                ]
+              },
+              "finding": {
+                "type": "string"
+              },
+              "evidence": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "consequence": {
+                "type": "string"
+              },
+              "required_disposition": {
+                "enum": [
+                  "PASS_WITH_CONDITIONS",
+                  "REVISE",
+                  "BLOCKED"
+                ]
+              },
+              "closure_condition": {
+                "type": "string"
+              },
+              "condition_id": {
+                "type": "string"
+              }
+            }
+          }
         }
       },
-      "allOf": [{
-        "if": {"properties": {"status": {"enum": ["PASS", "PASS_WITH_CONDITIONS"]}}},
-        "then": {"required": ["officefile_state", "reviewed_artifacts"]}
-      }],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "PASS",
+                  "PASS_WITH_CONDITIONS"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "record_version",
+              "officefile_state",
+              "reviewed_artifacts",
+              "intended_use",
+              "reviewer_role",
+              "reviewed_at",
+              "conditions",
+              "material_findings"
+            ],
+            "properties": {
+              "reviewed_artifacts": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
       "additionalProperties": true
     },
     "artifactDigest": {
       "type": "object",
-      "required": ["artifact_id", "sha256"],
+      "required": [
+        "artifact_id",
+        "sha256",
+        "input_basis_sha256"
+      ],
       "properties": {
-        "artifact_id": {"type": "string", "minLength": 1},
-        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "input_basis_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
       },
       "additionalProperties": true
     },
     "approval": {
       "type": "object",
-      "required": ["artifact_id", "sha256", "approval_owner", "authority_kind", "approved_use", "approved_at"],
+      "required": [
+        "artifact_id",
+        "sha256",
+        "approval_owner",
+        "authority_kind",
+        "approved_use",
+        "approved_at",
+        "input_basis_sha256"
+      ],
       "properties": {
-        "artifact_id": {"type": "string", "minLength": 1},
-        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-        "approval_owner": {"type": "string", "minLength": 1},
-        "authority_kind": {"enum": ["user", "accountable_owner"]},
-        "approved_use": {"type": "string", "minLength": 1},
-        "approved_at": {"type": "string", "format": "date-time"}
+        "artifact_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "approval_owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "authority_kind": {
+          "enum": [
+            "user",
+            "accountable_owner"
+          ]
+        },
+        "approved_use": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approved_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "input_basis_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
       },
       "additionalProperties": true
     }

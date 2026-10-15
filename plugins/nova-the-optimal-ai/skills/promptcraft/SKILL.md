@@ -1,6 +1,6 @@
 ---
 name: promptcraft
-description: "🧠 Use this when writing or improving prompts."
+description: "🧠 Model prompts, instructions, and performance seeds."
 ---
 
 # Promptcraft

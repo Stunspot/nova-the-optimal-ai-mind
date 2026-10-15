@@ -1,4 +1,6 @@
 interface:
+  icon_small: "./workspace/assets/dennis.png"
+  icon_large: "./workspace/assets/dennis.png"
   display_name: "Dennis Stratton Project Management"
   short_description: "📐 Project tracking, outcomes, dependencies, milestones, and delivery."
   default_prompt: "Use $dennis-stratton-project-management to justify, govern, forecast, steer, recover, or close this project with explicit authority and evidence."

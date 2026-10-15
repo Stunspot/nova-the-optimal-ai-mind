@@ -26,18 +26,18 @@ def parser() -> argparse.ArgumentParser:
 
 def main() -> int:
     args = parser().parse_args()
-    runtime = Path(args.runtime).expanduser().resolve(strict=True)
-    workspace = Path(args.workspace).expanduser().resolve(strict=False)
-    if not runtime.is_file():
-        emit({
-            "format": FORMAT,
-            "supported": False,
-            "probe_completed": False,
-            "code": "runtime_missing",
-            "source_mutated": False,
-        })
-        return 2
     try:
+        runtime = Path(args.runtime).expanduser().resolve(strict=False)
+        workspace = Path(args.workspace).expanduser().resolve(strict=False)
+        if not runtime.is_file():
+            emit({
+                "format": FORMAT,
+                "supported": False,
+                "probe_completed": False,
+                "code": "runtime_missing",
+                "source_mutated": False,
+            })
+            return 2
         sys.path.insert(0, str(runtime.parent))
         spec = importlib.util.spec_from_file_location("_nova_continuity_workspace_runtime", runtime)
         if spec is None or spec.loader is None:

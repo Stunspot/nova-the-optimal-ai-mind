@@ -1,93 +1,27 @@
-# Install Omnara
+# Install or open Omnara
 
-Omnara can run as an integrated Nova + MIND skill, as a portable individual skill in a compatible host, or as a degraded copy/paste workflow. Choose the route your host actually supports.
+The complete package has one `omnara-deep-research` folder containing SKILL.md, customer guides, references, scripts, examples and the campaign room. Keep it together. This is a portable individual skill, not a standalone universal Codex plugin manifest.
 
-## Before installing
+## Existing Nova Free or Emergent
 
-Confirm:
+Use the current edition package's own install/update instructions. Omnara is a maintained component in those editions. MIND is integrated architecture; the retired standalone MIND plugin is not an additional installation requirement. Do not replace unrelated edition files to repair one skill.
 
-- you can add or enable skills in the target host, or can use plain chat;
-- you have a fresh release downloaded from the [Omnara releases page](https://github.com/Stunspot/omnara-deep-research/releases);
-- you know whether campaign material may contain private or regulated information;
-- you have Python 3 only if you intend to use the optional local helpers.
+## Individual skill on a capable host
 
-Inspect the ZIP before installation. Its top-level skill directory must contain SKILL.md, personas, references, knowledge, fallbacks, assets, schemas, and scripts.
+Attach the complete ZIP and ask “Install this Augment.” The host should inspect this guide, find its supported skill root, inspect any existing Omnara installation and use a recoverable replacement when updating. Import the complete `omnara-deep-research` directory through the host's supported skill mechanism. A copy is not activation: start a fresh session and check that the host exposes `omnara-deep-research` before invoking it. Hosts requiring plugin manifests need a supported Nova edition or their own documented packaging route; do not invent a plugin manifest.
 
-## Codex: integrated Nova + MIND route
+Try: “Use $omnara-deep-research. Frame this question and identify the evidence that would change the answer. Do not browse yet.” Verify that the inquiry is preserved, scope is bounded and the no-browse limit is respected. That is one bounded invocation, not universal model qualification.
 
-This is the primary integrated route.
+## Campaign room
 
-1. Download the current Nova + MIND release.
-2. Attach the release ZIP to Codex.
-3. Ask: "Install Nova + MIND from this ZIP and turn both plugins on. Ask before replacing an existing Nova or MIND installation."
-4. Review and approve the exact local actions.
-5. Follow the [current manual Codex instructions](https://github.com/Stunspot/nova-the-optimal-ai-mind/blob/main/docs/INSTALL-CODEX.md) if attachment installation is unavailable.
-6. Start a new task so Codex can discover the installed skills.
-7. Verify Omnara using [Verify discovery](#verify-discovery) and [Verify invocation](#verify-invocation).
+Python 3.10+ is required. Extract to a stable writable application folder. On Windows run **Open.cmd**; on macOS/Linux use `python3 workspace/open.py`. **Open.command** invokes the same entry after `chmod +x Open.command`. Native macOS execution has not been exercised.
 
-The Nova package has its own Python, Ollama, hook, and MIND database requirements. Those are requirements of the integrated runtime, not of Omnara's research doctrine.
+Choose existing research with `python workspace/open.py --data-root "your research folder"` or `OMNARA_HOME`. Otherwise the default is `Documents/OMNARA Campaigns`. The launcher starts/reconnects a private loopback service and opens its matching data home. Keep that folder outside the application. Shortcuts are optional and require the owner's request.
 
-## Claude-compatible skill host
+## Plain chat
 
-1. Download the Omnara release ZIP or the Omnara per-skill ZIP included in Nova + MIND.
-2. Upload the ZIP through the host's skill-management interface.
-3. Enable the skill if enablement is a separate step.
-4. Start a new conversation so the host can refresh discovery.
-5. Run [Verify discovery](#verify-discovery) and [Verify invocation](#verify-invocation).
+Copy [the complete fallback](../fallbacks/universal-copy-paste-workflow.md), append your inquiry and supplied material, and use the tools actually available. Without browsing, live findings remain unexecuted; without file custody, durable resume remains unavailable. The doctrine still supports a bounded supplied-source answer.
 
-This route provides the individual skill contents. It does not establish Nova's shared MIND database, prompt hook, automatic capability reminders, or identical behavior across Claude-compatible hosts.
+## Check and continue
 
-## Other skill-capable hosts
-
-Import the complete skill directory using the host's current documentation. Do not copy only SKILL.md; Omnara references files throughout the source tree. Start a fresh session after import, then verify discovery and invocation.
-
-Because hosts differ, this repository does not claim a universal destination path, CLI command, or activation mechanism.
-
-## Plain-chat fallback
-
-Open [the universal copy/paste workflow](../fallbacks/universal-copy-paste-workflow.md), copy its complete contents into a new conversation, and append your research request. This preserves the core sequence and evidence distinctions. It does not prove automatic skill discovery, bundled-reference loading, helper execution, persistent campaign storage, or tool access.
-
-## Verify discovery
-
-In a fresh task or conversation:
-
-~~~text
-List the installed or available skill named omnara-deep-research, then tell me its display name without running a research campaign.
-~~~
-
-Expected result:
-
-- selector: **omnara-deep-research**;
-- display name: **OMNARA Deep Research**.
-
-A directory on disk is only placed or imported. This probe establishes discovery only.
-
-## Verify invocation
-
-~~~text
-Use $omnara-deep-research. Frame a research campaign for deciding whether our small product team should adopt passkeys in 2026. Do not browse yet. Return the preserved inquiry, audience and decision, scope, exclusions, coverage areas, evidence burden, and first unverified edge.
-~~~
-
-A healthy result preserves the inquiry, does not browse despite the explicit constraint, and distinguishes framing fields. This establishes a bounded invocation in that task; it does not prove every research route, tool, or campaign scale.
-
-## Verify local helpers
-
-From the extracted repository or source checkout:
-
-~~~shell
-python -B scripts/validate_release.py . --profile source
-python -B -m unittest discover -s tests -v
-~~~
-
-Initialize a disposable campaign outside any valuable directory:
-
-~~~shell
-python -B scripts/research_campaign.py init tmp/omnara-smoke --title "Smoke test" --query "What evidence would change this decision?" --tier focused
-python -B scripts/research_campaign.py validate tmp/omnara-smoke
-~~~
-
-Expected output includes INITIALIZED and VALID. Remove only that disposable directory after inspection.
-
-## Next
-
-Continue to [Run your first campaign](../START-HERE.md). If observed behavior differs from the expected state, preserve the exact error and use [Troubleshooting](TROUBLESHOOTING.md).
+From the complete extracted root, run `python -B scripts/validate_release.py . --profile source`. Its packaged manifest checks exact delivered bytes and local dependencies. [Validation](VALIDATION.md) explains research checks; [START-HERE](../START-HERE.md) gets to a useful result; [Troubleshooting](TROUBLESHOOTING.md) restores a failed path. A local package check does not establish host discovery or semantic research quality.

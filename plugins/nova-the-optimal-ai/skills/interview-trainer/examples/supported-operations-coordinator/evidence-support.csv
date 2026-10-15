@@ -1,0 +1,3 @@
+evidence_id,source_id,locator,excerpt,basis,rationale
+EVD-001,SRC-002,first quoted paragraph,"My manager decided to prioritize the registered groups. I checked the available instructors, kept one change log and asked each owner to confirm the revised room. I checked that all three scheduled sessions ran.",user-confirmation,"Teaching self-report supports personal communication work and bounded outcome, not sole priority ownership or a metric."
+EVD-002,SRC-002,second quoted paragraph,"In a shared coordination log I tracked owner, due date, dependency, last confirmation and escalation point.",user-confirmation,Supports the adjacent tracking method; does not establish named-platform competence.

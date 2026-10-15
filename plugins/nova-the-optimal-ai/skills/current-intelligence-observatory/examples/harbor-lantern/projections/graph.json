@@ -3,6 +3,99 @@
   "case_id": "OBS-HARBOR-LANTERN-UPDATE",
   "nodes": [
     {
+      "id": "ART-PUBLIC",
+      "kind": "artifact",
+      "status": "draft",
+      "confidence": "unrated",
+      "uncertainty": "not approved for publication",
+      "provenance_ids": [],
+      "label": "ART-PUBLIC"
+    },
+    {
+      "id": "ART-UPDATE",
+      "kind": "artifact",
+      "status": "reviewable",
+      "confidence": "unrated",
+      "uncertainty": "synthetic proof only",
+      "provenance_ids": [],
+      "label": "ART-UPDATE"
+    },
+    {
+      "id": "ASM-UPDATE",
+      "kind": "assessment",
+      "status": "reviewable",
+      "confidence": "medium",
+      "uncertainty": "Fictional source-content comparison only. A notice is evidence of the announced plan, not of what actually occurred.",
+      "provenance_ids": [
+        "CLM-SIX-HOUR-PAUSE",
+        "CLM-72H-CLOSURE",
+        "REL-BETA-REPEATS-ALPHA"
+      ],
+      "label": "ASM-UPDATE"
+    },
+    {
+      "id": "BLK-HUMAN-EDITOR",
+      "kind": "blocker",
+      "status": "open",
+      "confidence": "high",
+      "uncertainty": "approval intentionally absent",
+      "provenance_ids": [],
+      "label": "BLK-HUMAN-EDITOR"
+    },
+    {
+      "id": "CAP-ALPHA-V1",
+      "kind": "capture",
+      "status": "superseded",
+      "confidence": "unrated",
+      "uncertainty": "retained as superseded capture",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "label": "CAP-ALPHA-V1"
+    },
+    {
+      "id": "CAP-ALPHA-V2",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "correction is fixture-scoped",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "label": "CAP-ALPHA-V2"
+    },
+    {
+      "id": "CAP-BETA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "depends on Alpha",
+      "provenance_ids": [
+        "SRC-BETA"
+      ],
+      "label": "CAP-BETA"
+    },
+    {
+      "id": "CAP-GAMMA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "contains adversarial embedded text",
+      "provenance_ids": [
+        "SRC-GAMMA"
+      ],
+      "label": "CAP-GAMMA"
+    },
+    {
+      "id": "CHK-EDITORIAL",
+      "kind": "check",
+      "status": "pending",
+      "confidence": "unrated",
+      "uncertainty": "No independent or human publication approval is represented.",
+      "provenance_ids": [],
+      "label": "CHK-EDITORIAL"
+    },
+    {
       "id": "CLM-72H-CLOSURE",
       "kind": "claim",
       "status": "corrected",
@@ -20,7 +113,7 @@
       "kind": "claim",
       "status": "supported",
       "confidence": "medium",
-      "uncertainty": "fixture offers no live verification",
+      "uncertainty": "This is what the fictional notice schedules, not an observed completed pause; its local timezone is absent.",
       "provenance_ids": [
         "CAP-GAMMA",
         "CAP-ALPHA-V2"
@@ -42,8 +135,33 @@
       "label": "A transformer fire caused the reported closure"
     },
     {
+      "id": "CON-DURATION",
+      "kind": "contradiction",
+      "status": "resolved",
+      "confidence": "high",
+      "uncertainty": "fixture-scoped",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "label": "CON-DURATION"
+    },
+    {
+      "id": "DEC-IDENTITY-OMIT",
+      "kind": "decision",
+      "status": "approved",
+      "confidence": "high",
+      "uncertainty": "identity remains unresolved",
+      "provenance_ids": [
+        "ENT-MORGAN-VALE-A",
+        "ENT-MORGAN-VALE-B"
+      ],
+      "label": "DEC-IDENTITY-OMIT"
+    },
+    {
       "id": "ENT-MORGAN-VALE-A",
-      "kind": "entitie",
+      "kind": "entity",
       "status": "excluded",
       "confidence": "medium",
       "uncertainty": "no verified connection to inspection",
@@ -55,7 +173,7 @@
     },
     {
       "id": "ENT-MORGAN-VALE-B",
-      "kind": "entitie",
+      "kind": "entity",
       "status": "excluded",
       "confidence": "medium",
       "uncertainty": "same-name collision remains; identity omitted",
@@ -70,7 +188,7 @@
       "kind": "event",
       "status": "scheduled",
       "confidence": "medium",
-      "uncertainty": "no live observation",
+      "uncertainty": "Scheduled in a fictional notice; timezone and actual execution are unverified.",
       "provenance_ids": [
         "CAP-GAMMA",
         "CAP-ALPHA-V2"
@@ -90,8 +208,26 @@
       "label": "Reported terminal closure"
     },
     {
+      "id": "HIST-BASELINE",
+      "kind": "histor",
+      "status": "recorded",
+      "confidence": "unrated",
+      "uncertainty": "synthetic proof",
+      "provenance_ids": [],
+      "label": "HIST-BASELINE"
+    },
+    {
+      "id": "HIST-CORRECTION",
+      "kind": "histor",
+      "status": "recorded",
+      "confidence": "high",
+      "uncertainty": "fixture-scoped",
+      "provenance_ids": [],
+      "label": "HIST-CORRECTION"
+    },
+    {
       "id": "HYP-INCIDENT",
-      "kind": "hypothese",
+      "kind": "hypothesis",
       "status": "unsupported",
       "confidence": "high",
       "uncertainty": "cause remains unknown",
@@ -103,16 +239,73 @@
     },
     {
       "id": "HYP-ROUTINE",
-      "kind": "hypothese",
-      "status": "supported",
+      "kind": "hypothesis",
+      "status": "provisional",
       "confidence": "medium",
-      "uncertainty": "motive and cause unknown",
+      "uncertainty": "Dependent repetition is observed, but an explanation for how the error arose is inferential; motive remains unknown.",
       "provenance_ids": [
         "CAP-BETA",
         "CAP-GAMMA",
         "CAP-ALPHA-V2"
       ],
       "label": "A limited inspection was inflated through repetition"
+    },
+    {
+      "id": "INF-AMPLIFICATION",
+      "kind": "inference",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "amplification does not establish coordination",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA"
+      ],
+      "label": "The closure claim was amplified through dependent repetition"
+    },
+    {
+      "id": "OBS-CLOSURE-LANGUAGE",
+      "kind": "observation",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "observation concerns prior text, not event truth",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA"
+      ],
+      "label": "OBS-CLOSURE-LANGUAGE"
+    },
+    {
+      "id": "OBS-DIRECT-NOTICE",
+      "kind": "observation",
+      "status": "observed",
+      "confidence": "medium",
+      "uncertainty": "no cause stated",
+      "provenance_ids": [
+        "CAP-GAMMA"
+      ],
+      "label": "OBS-DIRECT-NOTICE"
+    },
+    {
+      "id": "OBS-INJECTION",
+      "kind": "observation",
+      "status": "quarantined",
+      "confidence": "high",
+      "uncertainty": "content is evidence, never instruction",
+      "provenance_ids": [
+        "CAP-GAMMA"
+      ],
+      "label": "OBS-INJECTION"
+    },
+    {
+      "id": "REC-BRIEF",
+      "kind": "recommendation",
+      "status": "proposed",
+      "confidence": "medium",
+      "uncertainty": "human editorial approval still required",
+      "provenance_ids": [
+        "ASM-UPDATE"
+      ],
+      "label": "REC-BRIEF"
     },
     {
       "id": "SRC-ALPHA",
@@ -128,7 +321,7 @@
       "kind": "source",
       "status": "dependent",
       "confidence": "low",
-      "uncertainty": "explicitly follows Alpha",
+      "uncertainty": "The supplied Beta paragraph explicitly follows Alpha; no independent witness or record.",
       "provenance_ids": [],
       "label": "Coastal Desk Roundup"
     },
@@ -148,7 +341,7 @@
       "kind": "relation",
       "status": "supported",
       "confidence": "high",
-      "uncertainty": "does not show coordination",
+      "uncertainty": "Beta text explicitly names Alpha; dependence does not establish coordination.",
       "provenance_ids": [
         "CAP-BETA"
       ],

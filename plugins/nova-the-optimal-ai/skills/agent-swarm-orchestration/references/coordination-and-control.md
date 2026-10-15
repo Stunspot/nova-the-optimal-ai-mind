@@ -43,3 +43,8 @@ Root-owned spawning is the default. Nested delegation is justified when the host
 ## Close with explicit dispositions
 
 Before final synthesis, account for every member as working, returned, reconciled, failed, interrupted, cancelled, released, or unavailable. Stop or release work that no longer owns responsibility. Preserve pending state only when a named re-entry condition exists. A temporary organization that survives its mission has mistaken itself for middle management.
+
+
+## Preserve declared lifecycle and outcome
+
+Use [Plan state and validation](plan-state-and-validation.md) when recording dispatch, cancellation, accepted output, write readback, capacity or closure. Worker disposal does not erase accepted evidence or establish mission success; uncertain stopped writes remain reserved until observed readback.

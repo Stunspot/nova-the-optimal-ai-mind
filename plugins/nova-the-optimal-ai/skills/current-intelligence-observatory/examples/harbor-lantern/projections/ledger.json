@@ -25,13 +25,13 @@
       "kind": "assessment",
       "status": "reviewable",
       "confidence": "medium",
-      "uncertainty": "no live verification",
+      "uncertainty": "Fictional source-content comparison only. A notice is evidence of the announced plan, not of what actually occurred.",
       "provenance_ids": [
         "CLM-SIX-HOUR-PAUSE",
         "CLM-72H-CLOSURE",
         "REL-BETA-REPEATS-ALPHA"
       ],
-      "summary": "Evidence supports a limited Gate B entry pause, not a multi-day terminal shutdown; cause and identities remain out of scope"
+      "summary": "The supplied notice schedules a limited Gate B vehicle-entry pause while vessel operations continue. Alpha corrects its longer closure claim; the event cause, timezone and execution remain unverified."
     },
     {
       "id": "BLK-HUMAN-EDITOR",
@@ -87,38 +87,11 @@
       "summary": ""
     },
     {
-      "id": "CHK-CITATIONS",
-      "kind": "check",
-      "status": "passed",
-      "confidence": "unrated",
-      "uncertainty": "fixture references only",
-      "provenance_ids": [],
-      "summary": ""
-    },
-    {
       "id": "CHK-EDITORIAL",
       "kind": "check",
       "status": "pending",
       "confidence": "unrated",
-      "uncertainty": "not an approval",
-      "provenance_ids": [],
-      "summary": ""
-    },
-    {
-      "id": "CHK-PROVENANCE",
-      "kind": "check",
-      "status": "passed",
-      "confidence": "unrated",
-      "uncertainty": "structural only",
-      "provenance_ids": [],
-      "summary": ""
-    },
-    {
-      "id": "CHK-REDACTION",
-      "kind": "check",
-      "status": "passed",
-      "confidence": "unrated",
-      "uncertainty": "human review still required",
+      "uncertainty": "No independent or human publication approval is represented.",
       "provenance_ids": [],
       "summary": ""
     },
@@ -140,7 +113,7 @@
       "kind": "claim",
       "status": "supported",
       "confidence": "medium",
-      "uncertainty": "fixture offers no live verification",
+      "uncertainty": "This is what the fictional notice schedules, not an observed completed pause; its local timezone is absent.",
       "provenance_ids": [
         "CAP-GAMMA",
         "CAP-ALPHA-V2"
@@ -188,7 +161,7 @@
     },
     {
       "id": "ENT-MORGAN-VALE-A",
-      "kind": "entitie",
+      "kind": "entity",
       "status": "excluded",
       "confidence": "medium",
       "uncertainty": "no verified connection to inspection",
@@ -200,7 +173,7 @@
     },
     {
       "id": "ENT-MORGAN-VALE-B",
-      "kind": "entitie",
+      "kind": "entity",
       "status": "excluded",
       "confidence": "medium",
       "uncertainty": "same-name collision remains; identity omitted",
@@ -215,7 +188,7 @@
       "kind": "event",
       "status": "scheduled",
       "confidence": "medium",
-      "uncertainty": "no live observation",
+      "uncertainty": "Scheduled in a fictional notice; timezone and actual execution are unverified.",
       "provenance_ids": [
         "CAP-GAMMA",
         "CAP-ALPHA-V2"
@@ -236,7 +209,7 @@
     },
     {
       "id": "HIST-BASELINE",
-      "kind": "history",
+      "kind": "histor",
       "status": "recorded",
       "confidence": "unrated",
       "uncertainty": "synthetic proof",
@@ -245,7 +218,7 @@
     },
     {
       "id": "HIST-CORRECTION",
-      "kind": "history",
+      "kind": "histor",
       "status": "recorded",
       "confidence": "high",
       "uncertainty": "fixture-scoped",
@@ -254,7 +227,7 @@
     },
     {
       "id": "HYP-INCIDENT",
-      "kind": "hypothese",
+      "kind": "hypothesis",
       "status": "unsupported",
       "confidence": "high",
       "uncertainty": "cause remains unknown",
@@ -266,10 +239,10 @@
     },
     {
       "id": "HYP-ROUTINE",
-      "kind": "hypothese",
-      "status": "supported",
+      "kind": "hypothesis",
+      "status": "provisional",
       "confidence": "medium",
-      "uncertainty": "motive and cause unknown",
+      "uncertainty": "Dependent repetition is observed, but an explanation for how the error arose is inferential; motive remains unknown.",
       "provenance_ids": [
         "CAP-BETA",
         "CAP-GAMMA",
@@ -339,7 +312,7 @@
       "kind": "relation",
       "status": "supported",
       "confidence": "high",
-      "uncertainty": "does not show coordination",
+      "uncertainty": "Beta text explicitly names Alpha; dependence does not establish coordination.",
       "provenance_ids": [
         "CAP-BETA"
       ],
@@ -359,7 +332,7 @@
       "kind": "source",
       "status": "dependent",
       "confidence": "low",
-      "uncertainty": "explicitly follows Alpha",
+      "uncertainty": "The supplied Beta paragraph explicitly follows Alpha; no independent witness or record.",
       "provenance_ids": [],
       "summary": "Coastal Desk Roundup"
     },

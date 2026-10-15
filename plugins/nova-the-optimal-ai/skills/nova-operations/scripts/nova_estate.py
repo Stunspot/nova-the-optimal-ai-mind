@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
-PRODUCT_VERSION = "3.8.1"
+PRODUCT_VERSION = "4.0.0"
 REGISTRY_FORMAT = "nova-path-selectors/v1"
 MANIFEST_FORMAT = "nova-estate-manifest/v1"
 LEGACY_MANIFEST_FORMAT = "nova-data-estate/v1"
@@ -257,6 +257,7 @@ def service_script(service: str) -> Path:
     except KeyError:
         raise NovaEstateError(f"Unknown Nova service: {service}") from None
     path = skill_root().joinpath(*relative)
+    _assert_no_link_or_reparse(path, "Bundled Nova service")
     if not path.is_file():
         raise NovaEstateError(f"Nova service entrypoint is missing: {path}")
     return path
@@ -277,6 +278,8 @@ def continuity_paths() -> dict[str, Path]:
 
 def require_continuity_package() -> dict[str, Path]:
     paths = continuity_paths()
+    for key, path in paths.items():
+        _assert_no_link_or_reparse(path, "Canonical Continuity package")
     missing = [str(path) for key, path in paths.items() if key != "root" and not path.is_file()]
     if missing:
         raise NovaEstateError("Canonical Cognitive Continuity package is incomplete: " + ", ".join(missing))
@@ -306,7 +309,10 @@ def read_json(path: Path) -> dict[str, Any]:
 def _normalized_selector(key: str, raw: Any, root: Path) -> str:
     if not isinstance(raw, str) or not raw.strip():
         raise NovaEstateError(f"Selector registry lacks {key}")
-    lexical = _lexical_absolute(Path(raw).expanduser())
+    candidate = Path(raw).expanduser()
+    if not candidate.is_absolute() or "\x00" in raw:
+        raise NovaEstateError(f"Selector {key} must be an absolute path")
+    lexical = _lexical_absolute(candidate)
     _assert_no_link_or_reparse(lexical, key)
     target = lexical.resolve(strict=False)
     expected = layout(root)[key].resolve(strict=False)
@@ -336,9 +342,11 @@ def registry_upgrade_analysis(
     missing: list[str] = []
     for key in KNOWN_ADDITIVE_SELECTOR_KEYS:
         raw = active.get(key)
-        if not isinstance(raw, str) or not raw.strip():
+        if raw is None:
             missing.append(key)
             continue
+        # Only absent/null legacy additions are migrations; present malformed
+        # values are corruption and must never be silently normalized.
         values[key] = _normalized_selector(key, raw, root)
     for key in LEGACY_MIND_SELECTOR_KEYS:
         legacy_value = active.get(key)
@@ -483,6 +491,27 @@ def apply_windows_user_environment(values: dict[str, str]) -> None:
         pass
 
 
+
+def optional_environment_copy(values: dict[str, str], requested: bool) -> dict[str, Any]:
+    result: dict[str, Any] = {
+        "environment_requested": requested,
+        "environment_applied": False,
+        "environment_state": "not_requested",
+        "environment_error": None,
+        "restart_required": False,
+    }
+    if not requested:
+        return result
+    try:
+        apply_windows_user_environment(values)
+    except OSError as exc:
+        result.update(environment_state="failed_may_be_partial",
+                      environment_error=f"{type(exc).__name__}: {exc}",
+                      environment_retry="Re-run init or upgrade for this same root with --apply-user-environment; preserve the configured estate.")
+        return result
+    result.update(environment_applied=True, environment_state="applied", restart_required=True)
+    return result
+
 def run_json(
     command: Sequence[str],
     *,
@@ -586,9 +615,17 @@ def launcher_payload() -> dict[str, Any]:
     ready = True
     for service, relative in SERVICE_ENTRYPOINTS.items():
         path = skill_root().joinpath(*relative)
-        present = path.is_file()
+        error = None
+        try:
+            service_script(service)
+            present = True
+        except NovaEstateError as exc:
+            present = False
+            error = str(exc)
         optional = service == "knowledge-desk"
         entries[service] = {"path": str(path), "present": present, "optional": optional}
+        if error:
+            entries[service]["error"] = error
         ready = ready and (present or optional)
     return {
         "ready": ready,
@@ -613,13 +650,37 @@ def probe_mutation_support(canonical: dict[str, Path], values: dict[str, str]) -
         ],
         env=process_environment(values),
     )
-    if not isinstance(result, dict):
+    valid_shape = (
+        isinstance(result, dict)
+        and result.get("format") == "nova-continuity-mutation-support/v1"
+        and isinstance(result.get("supported"), bool)
+        and result.get("probe_completed") is True
+        and result.get("source_mutated") is False
+    )
+    if valid_shape and result["supported"]:
+        valid_shape = (
+            (result.get("qualified") is True and result.get("status") == "qualified")
+            or (result.get("qualified") is False
+                and result.get("status") == "preflight_supported"
+                and result.get("transaction_probe_required") is True)
+        )
+    if not valid_shape:
         result = {
             "format": "nova-continuity-mutation-support/v1",
             "supported": False,
             "probe_completed": False,
             "code": "probe_output_invalid",
             "detail": result,
+            "source_mutated": False,
+        }
+    if code != 0:
+        result = {
+            "format": "nova-continuity-mutation-support/v1",
+            "supported": False,
+            "qualified": False,
+            "probe_completed": False,
+            "code": "probe_process_failed",
+            "reported_result": result,
             "source_mutated": False,
         }
     result["exit_code"] = code
@@ -629,39 +690,44 @@ def probe_mutation_support(canonical: dict[str, Path], values: dict[str, str]) -
 
 
 def continuity_support(values: dict[str, str], *, validate: bool) -> dict[str, Any]:
-    canonical = require_continuity_package()
+    canonical = continuity_paths()
     env = process_environment(values)
-    open_code, opened, open_stderr = run_json(
-        [sys.executable, "-B", "-X", "utf8", str(canonical["store"]), "open"],
-        env=env,
-    )
-    result: dict[str, Any] = {
-        "read": {
-            "supported": open_code == 0,
-            "exit_code": open_code,
-            "result": opened,
-            "stderr": open_stderr or None,
-        },
-        "mutation": probe_mutation_support(canonical, values),
-    }
-    if validate:
-        code, validated, stderr = run_json(
-            [
-                sys.executable,
-                "-B",
-                "-X",
-                "utf8",
-                str(canonical["validate"]),
-                values["NOVA_CONTINUITY_HOME"],
-            ],
-            env=env,
+
+    def unavailable(*keys: str) -> dict[str, Any] | None:
+        try:
+            for key in keys:
+                path = canonical[key]
+                _assert_no_link_or_reparse(path, "Canonical Continuity package")
+                if not path.is_file():
+                    raise NovaEstateError(f"Canonical Continuity {key} entrypoint is missing: {path}")
+        except NovaEstateError as exc:
+            return {"supported": False, "exit_code": None,
+                    "code": "package_unavailable", "error": str(exc)}
+        return None
+
+    read = unavailable("store")
+    if read is None:
+        code, opened, stderr = run_json(
+            [sys.executable, "-B", "-X", "utf8", str(canonical["store"]), "open"], env=env,
         )
-        result["validation"] = {
-            "supported": code == 0,
-            "exit_code": code,
-            "result": validated,
-            "stderr": stderr or None,
-        }
+        read = {"supported": code == 0, "exit_code": code,
+                "result": opened, "stderr": stderr or None}
+    mutation = unavailable("runtime", "mutation_probe")
+    if mutation is None:
+        mutation = probe_mutation_support(canonical, values)
+    else:
+        mutation.update(qualified=False, probe_completed=False, source_mutated=False)
+    result: dict[str, Any] = {"read": read, "mutation": mutation}
+    if validate:
+        validation = unavailable("validate")
+        if validation is None:
+            code, validated, stderr = run_json(
+                [sys.executable, "-B", "-X", "utf8", str(canonical["validate"]),
+                 values["NOVA_CONTINUITY_HOME"]], env=env,
+            )
+            validation = {"supported": code == 0, "exit_code": code,
+                          "result": validated, "stderr": stderr or None}
+        result["validation"] = validation
     return result
 
 
@@ -670,7 +736,9 @@ def continuity_operating_mode(support: dict[str, Any]) -> str:
     if not support["read"].get("supported"):
         return "unavailable"
     mutation = support["mutation"]
-    if mutation.get("supported") is not True:
+    if (mutation.get("supported") is not True
+            or mutation.get("exit_code") != 0
+            or mutation.get("probe_completed") is not True):
         return "read_only"
     if mutation.get("qualified") is True:
         return "full"
@@ -925,7 +993,12 @@ def _env_text(
             value = active_values.get(key)
             if isinstance(value, str) and value.strip():
                 exported[key] = value
-    return "\n".join(f"export {key}={json.dumps(value)}" for key, value in exported.items()) + "\n"
+    def shell_literal(value: str) -> str:
+        # This is POSIX shell source, not JSON: keep all path bytes literal.
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+        escaped = escaped.replace("$", "\\$").replace("`", "\\`")
+        return '"' + escaped + '"'
+    return "\n".join(f"export {key}={shell_literal(value)}" for key, value in exported.items()) + "\n"
 
 
 def command_init(args: argparse.Namespace) -> int:
@@ -937,15 +1010,17 @@ def command_init(args: argparse.Namespace) -> int:
     if root.exists():
         current = status_payload(root, root_source="explicit_cli")
         if current.get("configured"):
+            environment = optional_environment_copy(current["selectors"], args.apply_user_environment)
             emit(
                 {
                     "format": "nova-emergent-estate-init/v2",
                     "state": "already_configured",
                     "status": current,
                     "source_mutated": False,
+                    **environment,
                 }
             )
-            return 0
+            return 2 if environment["environment_error"] else 0
         if current.get("state") == "legacy_1_0_0_partial":
             legacy_partial = True
         else:
@@ -1096,10 +1171,7 @@ def command_init(args: argparse.Namespace) -> int:
         _cleanup_empty_parents(created_parents)
         raise
 
-    environment_applied = False
-    if args.apply_user_environment:
-        apply_windows_user_environment(selector_values)
-        environment_applied = True
+    environment = optional_environment_copy(selector_values, args.apply_user_environment)
     emit(
         {
             "format": "nova-emergent-estate-init/v2",
@@ -1117,14 +1189,13 @@ def command_init(args: argparse.Namespace) -> int:
                 for key in ("workspace_id", "generation", "canonical_snapshot_digest", "status")
                 if isinstance(concordance_receipt, dict) and key in concordance_receipt
             },
-            "environment_applied": environment_applied,
+            **environment,
             "global_environment_required": False,
-            "restart_required": environment_applied,
             "source_mutated": True,
             "recovered_legacy_1_0_0_partial": legacy_partial,
         }
     )
-    return 0
+    return 2 if environment["environment_error"] else 0
 
 
 def _optional_file_bytes(path: Path) -> bytes | None:
@@ -1416,10 +1487,7 @@ def command_upgrade(args: argparse.Namespace) -> int:
         if staging is not None and staging.exists():
             shutil.rmtree(staging, ignore_errors=True)
 
-    environment_applied = False
-    if args.apply_user_environment:
-        apply_windows_user_environment(desired_values)
-        environment_applied = True
+    environment = optional_environment_copy(desired_values, args.apply_user_environment)
     emit(
         {
             "format": "nova-emergent-estate-upgrade/v2",
@@ -1457,13 +1525,22 @@ def command_upgrade(args: argparse.Namespace) -> int:
             "preserved_legacy_mind_selectors": [
                 key for key in LEGACY_MIND_SELECTOR_KEYS if desired_active.get(key) is not None
             ],
-            "environment_applied": environment_applied,
+            **environment,
             "global_environment_required": False,
-            "restart_required": environment_applied,
             "source_mutated": content_change,
         }
     )
-    return 0
+    return 2 if environment["environment_error"] else 0
+
+
+def _has_owned_option(arguments: Sequence[str], flags: Sequence[str]) -> bool:
+    # argparse accepts unique long-option prefixes and --name=value too.
+    for value in arguments:
+        name = value.split("=", 1)[0]
+        if name.startswith("--") and len(name) > 2 and any(flag.startswith(name) for flag in flags):
+            return True
+    return False
+
 
 def command_run(args: argparse.Namespace) -> int:
     root, values, _ = load_configured_root(args.root)
@@ -1471,13 +1548,13 @@ def command_run(args: argparse.Namespace) -> int:
     if forwarded and forwarded[0] == "--":
         forwarded = forwarded[1:]
     if args.service == "commonplace":
-        if "--estate-root" in forwarded:
+        if _has_owned_option(forwarded, ("--estate-root",)):
             raise NovaEstateError(
                 "Commonplace estate root is supplied by Nova Operations and must not be overridden"
             )
         forwarded = ["--estate-root", str(root), *forwarded]
     if args.service == "knowledge-desk":
-        if any(value == flag or value.startswith(flag + "=") for value in forwarded for flag in ("--estate-root", "--nova-operations")):
+        if _has_owned_option(forwarded, ("--estate-root", "--nova-operations")):
             raise NovaEstateError("Knowledge Desk owner binding is supplied by Nova Operations and must not be overridden")
         forwarded = ["--estate-root", str(root), "--nova-operations", str(Path(__file__).resolve()), *forwarded]
     completed = run_service_process(args.service, forwarded, values)

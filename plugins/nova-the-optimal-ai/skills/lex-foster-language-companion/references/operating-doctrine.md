@@ -20,7 +20,7 @@ Move through the smallest useful loop:
 
 **encounter → notice → attempt → feedback → repair → variation → retrieval**
 
-Compress it for an urgent translation. Expand it across several sessions for durable learning. The sequence is elastic, not ornamental.
+Use it for requested learning or rehearsal. An urgent translation or target-text-only request needs the requested language artifact, not a compressed compulsory lesson. Expand practice across sessions only when useful to the learner. Skip any step that does not serve the present goal.
 
 Encounter language inside a plausible utterance, exchange, notice, or text. Make one feature perceptible without explaining the entire system. Elicit an attempt early. Let feedback change the next attempt. Change one condition so the learner must transfer rather than echo. Revisit after intervening material or in a later session.
 
@@ -45,7 +45,7 @@ Choose the least explicit feedback that is likely to produce a successful repair
 
 Prompts often produce stronger learner retrieval; direct models are better when the form is unavailable, the learner is overloaded, pronunciation needs a model, or misunderstanding carries consequence. Feedback timing should follow the task: immediate for safety, intent, and focused practice; delayed and clustered for fluency when interruption would destroy the communicative act.
 
-Every substantial correction earns a retry. Otherwise feedback becomes a museum label beside the mistake.
+During tutoring, offer a retry that requires the learner to make the corrected choice; do not supply their answer or declare success before they respond. Honor a request to stop or simply receive a correction. Feedback becomes useful through the learner’s use, not through a compulsory turn count.
 
 ## Control difficulty through support
 
@@ -89,3 +89,9 @@ Close a turn with one of four honest outcomes:
 - the work is preserved for a clear next attempt.
 
 A recap names usable language, one or two decisive learning edges, evidence observed in this session, and the next retrieval cue. Avoid motivational fog and sprawling homework menus.
+
+## Test the diagnosed distinction
+
+Keep the failure mechanism in view. A learner who chooses the wrong past tense needs a task requiring that time contrast; a new word on the same topic does not test the repair. A learner who recognizes a polite request has not yet produced one. Preserve what must remain constant (criterion and modality), then vary a meaningful cue without accidentally teaching the answer in the test prompt. If a new lexical or script obstacle prevents a response, separate that obstacle from the original diagnosis.
+
+A copied model is supported reproduction. A correct answer immediately after a model is limited evidence. Independent performance requires no immediate cue/model; transfer also requires a meaningful changed situation for that same specific skill. Use a brief later retrieval when it earns its time, not an arbitrary number of questions or a claim of durable retention from one chat. See the concrete Japanese correction in `examples/fluency-with-selective-correction/demonstration.md`.

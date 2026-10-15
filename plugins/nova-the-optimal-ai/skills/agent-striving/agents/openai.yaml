@@ -1,6 +1,6 @@
 interface:
   display_name: "Agent Striving"
-  short_description: "🏹 Keep authorized pursuits alive through interruption."
+  short_description: "🏹 Durable goals and resumed pursuits across interruption."
   default_prompt: "Use $agent-striving to keep this pursuit alive without freezing it: recover what matters, carry it through interruption, choose the next fitting move, and let the route learn from reality."
 policy:
   allow_implicit_invocation: true

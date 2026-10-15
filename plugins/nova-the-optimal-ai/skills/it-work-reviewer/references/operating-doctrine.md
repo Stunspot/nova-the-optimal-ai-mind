@@ -18,3 +18,9 @@ Preserve evidence before intervention. Prefer observations that split the live e
 ## Completion is an earned state
 
 Recreate the triggering envelope. Compare before and after. Check adjacent functions touched by the work. If the symptom is intermittent, name the observation window or workload still required. Close only as far as the evidence reaches.
+
+## Scale the work to the requested outcome
+
+An advice request can end at a decision. An authorized repair with working tools continues through the smallest relevant retest; preparing commands does not finish that job. Urgent service restoration may justify a reversible workaround before root-cause isolation when the user accepts its scope and remaining uncertainty. Compare downtime, data value, cost, recurrence and supportability without inventing prices. Do not require an elaborate record for a trivial reversible setting, or repeat the same failed diagnostic because a checklist still has empty boxes.
+
+A failed command is evidence of that attempt, not proof the suspected component failed. Distinguish wrong method, unavailable host capability and a device fault. Choose one credible substitute when useful, then name the remaining evidence gap while finishing independent work.

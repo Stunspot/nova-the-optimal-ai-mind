@@ -1,0 +1,5 @@
+# Recovery guidance source evidence
+
+The independent reviewer found an unqualified statement promising that an app backup/export preserves unsaved work before reload. Backup/export semantics differ by app and surface. The current AnswerLayer primary handler calls capture() and downloads the current work including drafts; the reviewer's initial attribution of that app to a server-only backup API was incorrect and explicitly withdrawn. That does not justify a generic promise across all included apps. A server snapshot only preserves the server's last saved state.
+
+The corrected shared guidance requires copying unsaved text and notes to a separate local file before reload. A specifically documented export can preserve pending edits, but it must be checked as such. The paragraph then advises reloading and deliberate reconciliation without overwriting newer work. This is a recovery instruction, not a new universal file feature. Current actual app workflows and source files are unchanged; the parent's independent AnswerLayer7 semantic checks remain applicable.

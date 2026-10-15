@@ -118,10 +118,10 @@ def main():
     (output/'spiderfoot-graph.json').write_text(json.dumps(graph,indent=2),encoding='utf-8')
     gexf=SpiderFootHelpers.buildGraphGexf(target,'SpiderFoot '+target,rows) if rows else b''
     (output/'spiderfoot-graph.gexf').write_bytes(gexf)
-    template=(ROOT/'data/spiderfoot-report-template.html').read_text(encoding='utf-8')
-    payload=json.dumps({'target':target,'fixture':a.fixture,'graph':graph,'events':events},ensure_ascii=False).replace('<',chr(92)+'u003c')
-    (output/'spiderfoot-report.html').write_text(template.replace('__SPIDERFOOT_DATA__',payload),encoding='utf-8')
     partial=bool(failures or transport['blocked'] or any(not response['has_content'] or str(response['code']) not in ['200','201'] for response in transport['responses']))
+    template=(ROOT/'data/spiderfoot-report-template.html').read_text(encoding='utf-8')
+    payload=json.dumps({'target':target,'fixture':a.fixture,'graph':graph,'events':events,'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'evidence_state':'partial tool report' if partial else 'completed selected profile; not verified source truth'},ensure_ascii=False).replace('<',chr(92)+'u003c')
+    (output/'spiderfoot-report.html').write_text(template.replace('__SPIDERFOOT_DATA__',payload),encoding='utf-8')
     summary={'target':target,'scan_id':scan_id,'native_status':scanner.status,'evidence_state':'partial' if partial else 'completed-selected-profile','fixture':a.fixture,'modules':selected,'rules_loaded':len(config['__correlationrules__']),'correlations':correlations,'events':len(events),'graph_nodes':len(graph['nodes']),'graph_edges':len(graph['edges']),'transport':transport,'errors':failures,'tls_verified':ssl._create_default_https_context is ssl.create_default_context,'evidence_boundary':'Synthetic fixtures only.' if a.fixture else 'Selected public provider queries; no claim of comprehensive coverage or identity attribution.'}
     (output/'spiderfoot-summary.json').write_text(json.dumps(summary,indent=2),encoding='utf-8')
     print(json.dumps(summary,indent=2))

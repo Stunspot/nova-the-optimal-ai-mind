@@ -22,6 +22,49 @@ spec.loader.exec_module(project_control)
 
 
 class ProjectControlTests(unittest.TestCase):
+    def test_unknown_forecast_is_valid_without_invented_duration(self):
+        record = project_control.bootstrap_record("Unestimated work", "Owner", "Deliver outcome")
+        self.assertIsNone(record['forecast']['lower'])
+        self.assertIsNone(record['forecast']['upper'])
+        self.assertEqual(record['forecast']['confidence'], 'unknown')
+        self.assertEqual(record['forecast']['as_of'], record['project']['updated_at'])
+        errors, warnings = project_control.validate_record(record)
+        self.assertEqual(errors, [])
+        self.assertIn('UNKNOWN_FORECAST', {x['code'] for x in warnings})
+        status = project_control.render_status(record)
+        self.assertIn('Not estimated; timing remains unknown.', status)
+        self.assertNotIn('None to None', status)
+
+    def test_nonfinite_stored_record_is_diagnostic_and_cannot_break_portfolio(self):
+        with tempfile.TemporaryDirectory() as folder:
+            store = Path(folder); target=store/'projects/bad/project-control.json';target.parent.mkdir(parents=True)
+            target.write_text('{"project":{"id":"bad"},"forecast":{"lower":NaN}}',encoding='utf-8')
+            rows, diagnostics = project_control.scan_store(store)
+            self.assertEqual(rows, [])
+            self.assertEqual(len(diagnostics), 1)
+            self.assertIn('Non-finite JSON number', diagnostics[0]['message'])
+
+    def test_partial_and_known_forecasts_remain_distinguishable(self):
+        record = self.record()
+        record['forecast'].update(lower=3, upper=None, unit='days', confidence='low')
+        self.assertEqual(self.codes(record), set())
+        self.assertIn('lower bound 3 days; upper bound unknown', project_control.render_status(record))
+        record['forecast'].update(lower=3, upper=7)
+        self.assertEqual(self.codes(record), set())
+        self.assertIn('3 to 7 days', project_control.render_status(record))
+        record['forecast'].update(lower=8, upper=7)
+        self.assertIn('FORECAST_RANGE', self.codes(record))
+
+    def test_nonfinite_forecasts_are_rejected_and_cannot_be_saved(self):
+        for bad in (float('nan'), float('inf'), -float('inf')):
+            record = self.record();record['forecast']['lower'] = bad
+            self.assertTrue(self.codes(record))
+            with tempfile.TemporaryDirectory() as folder:
+                output = Path(folder)/'record.json'
+                with self.assertRaises(ValueError):
+                    project_control.write_record(output, record, False)
+                self.assertFalse(output.exists())
+
     def record(self):
         return json.loads(TEMPLATE.read_text(encoding="utf-8"))
 
@@ -61,7 +104,7 @@ class ProjectControlTests(unittest.TestCase):
         record = self.record()
         errors, warnings = project_control.validate_record(record)
         self.assertEqual(errors, [])
-        self.assertEqual(warnings, [])
+        self.assertEqual({x["code"] for x in warnings}, {"UNKNOWN_FORECAST"})
         self.assertEqual(record["project"]["status"], "proposed")
         self.assertEqual(record["current"]["posture"], "provisional")
         self.assertEqual(record["work_packages"][0]["status"], "planned")

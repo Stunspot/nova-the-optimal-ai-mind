@@ -1,12 +1,18 @@
 {
-  "format": "officecraft-review/v1",
+  "format": "officecraft-review/v2",
   "operator_review": {
+    "record_version": "officecraft-review-entry/v2",
     "status": "not_run",
-    "findings": []
+    "reviewed_artifacts": [],
+    "material_findings": [],
+    "conditions": []
   },
   "independent_review": {
+    "record_version": "officecraft-review-entry/v2",
     "status": "not_run",
-    "findings": []
+    "reviewed_artifacts": [],
+    "material_findings": [],
+    "conditions": []
   },
   "approval_records": []
 }

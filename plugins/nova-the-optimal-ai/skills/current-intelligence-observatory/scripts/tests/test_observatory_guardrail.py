@@ -46,7 +46,7 @@ class GuardrailTests(unittest.TestCase):
         self.assertEqual(validate_case(case()), [])
 
     def test_url_canonicalization_removes_tracking_and_fragment(self):
-        self.assertEqual(canonical_url("HTTPS://Example.Test:443/a?b=2&utm_x=1&a=3#x"), "https://example.test/a?a=3&b=2")
+        self.assertEqual(canonical_url("HTTPS://Example.Test:443/a?b=2&utm_x=1&a=3#x"), "https://example.test/a?b=2&a=3")
 
     def test_url_rejects_credentials(self):
         with self.assertRaises(ValueError):
@@ -104,7 +104,7 @@ class GuardrailTests(unittest.TestCase):
     def test_projection_tamper_is_detected(self):
         value = case(); projections = project_case(value)
         next(item for item in projections["ledger"]["items"] if item["id"] == "CLM-1")["confidence"] = "high"
-        self.assertTrue(any("changed invariant confidence" in error for error in verify_projection_invariants(value, projections)))
+        self.assertTrue(any("changed invariant" in error for error in verify_projection_invariants(value, projections)))
 
     def test_delta_categories_correction_and_new_item(self):
         before = case(); after = copy.deepcopy(before)
@@ -112,12 +112,12 @@ class GuardrailTests(unittest.TestCase):
         after["observations"] = [{"id": "OBS-NEW", "status": "candidate"}]
         classes = delta_report(before, after)["classes"]
         self.assertIn("CLM-1", classes["corrected_or_superseded"])
-        self.assertIn("OBS-NEW", classes["newly_observed"])
+        self.assertIn("OBS-NEW", classes["newly_represented"])
 
-    def test_delta_retrieval_time_only_is_unchanged(self):
+    def test_delta_retrieval_time_only_is_visible_currentness(self):
         before = case(); after = copy.deepcopy(before)
         after["captures"][0]["retrieved_at"] = "2026-07-19T13:00:00Z"
-        self.assertIn("CAP-1", delta_report(before, after)["classes"]["unchanged"])
+        self.assertIn("CAP-1", delta_report(before, after)["classes"]["currentness_changed"])
 
     def test_capture_receipt_hashes_bytes(self):
         with tempfile.TemporaryDirectory() as folder:

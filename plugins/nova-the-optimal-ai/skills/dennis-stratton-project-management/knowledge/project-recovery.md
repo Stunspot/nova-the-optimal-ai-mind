@@ -16,7 +16,7 @@ Enter recovery or reconciliation when any of these occur:
 
 ## Immediate rule: stop deepening ambiguity
 
-Pause mutations whose correctness depends on the disputed state. Do not keep coding, committing, scheduling, or messaging while reconstructing the map. Preserve work already earned.
+Pause mutations whose correctness depends on the disputed state. Continue independent authorized work whose correctness does not depend on the disputed fact. Preserve earned work and limit the pause to affected actions; recovery does not revoke existing authority.
 
 State the recovery question plainly: what must be reconciled before safe progress resumes?
 

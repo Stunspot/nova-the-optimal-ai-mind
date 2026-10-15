@@ -17,6 +17,8 @@ A usable forecast states:
 - assumptions, dependencies, and uncertainty drivers;
 - the next update event.
 
+When no estimate exists, use `null` for both bounds and `unknown` confidence. A one-sided estimate may retain its known bound while the other remains `null`; state that limitation in the basis. Keep the reason and next update concrete. Zero is a real estimate, never a placeholder for missing evidence. Unknown forecasts warn without blocking otherwise authorized work.
+
 A target date is not a forecast. A forecast is not a promise. A baseline is not immutable truth. When confidence is low, narrow uncertainty by resolving integration, dependency, capacity, or acceptance risk—not by deleting the range.
 
 ## Capacity and flow

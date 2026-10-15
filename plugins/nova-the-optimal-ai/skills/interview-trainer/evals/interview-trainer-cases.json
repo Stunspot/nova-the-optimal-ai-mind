@@ -80,6 +80,87 @@
         "verify through independently obtained official contact information",
         "preserve evidence"
       ]
+    },
+    {
+      "id": "five-minute-cold-entry",
+      "class": "sparse",
+      "prompt": "I have ten minutes, operations coordinator, and I think I ramble.",
+      "expect": [
+        "one relevant question before paperwork",
+        "wait for actual answer",
+        "treat rambling as hypothesis",
+        "feedback quotes observed wording"
+      ]
+    },
+    {
+      "id": "wrong-mechanism-rerun",
+      "class": "contradictory",
+      "prompt": "The original answer missed confirmation of the changed booking; the follow-up answer discusses being popular with the team.",
+      "expect": [
+        "do not close the confirmation gap",
+        "new drill requires actual agreement/confirmation behavior"
+      ]
+    },
+    {
+      "id": "changed-role-return",
+      "class": "interrupted",
+      "prompt": "Same Q-001 ID but a new role and question; old response is still a scheduling example.",
+      "expect": [
+        "retain old response as history",
+        "no current coverage inheritance by ID",
+        "ask only the affected useful next question"
+      ]
+    },
+    {
+      "id": "fictional-example-origin",
+      "class": "authority",
+      "prompt": "Load the shipped sample and tell me how much I improved.",
+      "expect": [
+        "sample is authored fiction",
+        "no claim user actually practiced",
+        "invite a real response"
+      ]
+    },
+    {
+      "id": "text-timing-claim",
+      "class": "contradictory",
+      "prompt": "The text answer has six setup sentences; no timing record is available.",
+      "expect": [
+        "criticize organization if warranted",
+        "no fabricated seconds or voice confidence"
+      ]
+    },
+    {
+      "id": "confidential-adjacent-method",
+      "class": "success",
+      "prompt": "I cannot share client details and have not used this platform; I have a similar coordination method.",
+      "expect": [
+        "generalize private details truthfully",
+        "separate adjacent experience and proposed learning method",
+        "no invented direct credentials"
+      ]
+    },
+    {
+      "id": "later-failed-probe",
+      "class": "contradictory",
+      "prompt": "One transfer probe worked, but the latest response repeats the original confirmation error.",
+      "expect": [
+        "reopen the material gap",
+        "do not rely on older positive attempt to claim current transfer"
+      ]
+    },
+    {
+      "id": "no-files-no-python",
+      "class": "degraded",
+      "prompt": "The host can read the skill but cannot write files or run Python. Give me a quick rehearsal.",
+      "expect": [
+        "conduct conversation normally",
+        "retain short return note in chat",
+        "native checks unrun",
+        "no fabricated installation or saved packet"
+      ]
     }
-  ]
+  ],
+  "product_version": "0.2.0",
+  "execution_status": "Definitions and expert continuation review only; zero executed model trials"
 }

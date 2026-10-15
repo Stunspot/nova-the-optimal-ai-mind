@@ -10,33 +10,59 @@ from common.filesystem import load_data, write_json
 
 
 def validate(data: dict) -> dict:
-    errors: list[str] = []
-    warnings: list[str] = []
-    risks = {x.get("id"): x for x in data.get("risks", []) if isinstance(x, dict) and x.get("id")}
-    scenarios = {x.get("id"): x for x in data.get("scenarios", []) if isinstance(x, dict) and x.get("id")}
-    tests = {x.get("id"): x for x in data.get("tests", []) if isinstance(x, dict) and x.get("id")}
-    executions = {x.get("id"): x for x in data.get("executions", []) if isinstance(x, dict) and x.get("id")}
-
-    for risk_id, risk in risks.items():
-        linked_scenarios = [sid for sid, s in scenarios.items() if risk_id in s.get("risk_ids", [])]
-        linked_tests = [tid for tid, t in tests.items() if set(t.get("scenario_ids", [])) & set(linked_scenarios)]
-        linked_evidence = [t.get("execution_id") for t in tests.values() if t.get("id") in linked_tests and t.get("execution_id") in executions and executions[t.get("execution_id")].get("status") in {"passed", "failed"}]
+    errors, warnings = [], []
+    if not isinstance(data, dict):
+        return {"valid": False, "errors": ["manifest root must be an object"], "warnings": []}
+    maps = {}
+    for field in ("risks", "scenarios", "tests", "executions"):
+        rows = data.get(field, [])
+        if not isinstance(rows, list):
+            errors.append(f"{field} must be a list")
+            rows = []
+        maps[field] = {}
+        for row in rows:
+            if not isinstance(row, dict) or not isinstance(row.get("id"), str) or not row["id"]:
+                errors.append(f"{field}: each row requires a nonempty string id")
+                continue
+            if row["id"] in maps[field]:
+                errors.append(f"duplicate {field} id: {row['id']}")
+            maps[field][row["id"]] = row
+    risks, scenarios, tests, executions = (maps[k] for k in ("risks", "scenarios", "tests", "executions"))
+    def links(row, field, available):
+        values = row.get(field, [])
+        if not isinstance(values, list) or any(not isinstance(v, str) for v in values):
+            errors.append(f"{row['id']}: {field} must be a string list")
+            return []
+        for value in values:
+            if value not in available:
+                errors.append(f"{row['id']}: unknown {field} link {value}")
+        return values
+    for sid, scenario in scenarios.items():
+        if not links(scenario, "risk_ids", risks): errors.append(f"{sid}: no risk link")
+        if not scenario.get("expected"): errors.append(f"{sid}: no oracle")
+    for tid, test in tests.items():
+        if not links(test, "scenario_ids", scenarios): errors.append(f"{tid}: no scenario link")
+        eid = test.get("execution_id")
+        execution = executions.get(eid) if isinstance(eid, str) else None
+        if eid and not execution: errors.append(f"{tid}: unknown execution")
+        if test.get("status") in ("passed", "failed"):
+            if not execution or execution.get("status") not in ("passed", "failed"):
+                errors.append(f"{tid}: completed test has no completed execution")
+            elif test.get("status") == "failed" and execution.get("status") == "passed":
+                errors.append(f"{tid}: failed test contradicts passing execution")
+            elif test.get("status") == "passed" and execution.get("status") == "failed" and not test.get("case_evidence"):
+                errors.append(f"{tid}: passing case in failed run requires case_evidence")
+    for rid, risk in risks.items():
+        links(risk, "verification", set(scenarios) | set(tests) | set(executions))
+        linked_scenarios = [sid for sid, row in scenarios.items() if isinstance(row.get("risk_ids"), list) and rid in row["risk_ids"]]
+        linked_tests = [t for t in tests.values() if isinstance(t.get("scenario_ids"), list) and any(isinstance(sid, str) and sid in linked_scenarios for sid in t["scenario_ids"])]
+        evidence = [t for t in linked_tests if t.get("status") in ("passed", "failed") and isinstance(t.get("execution_id"), str) and executions.get(t["execution_id"], {}).get("status") in ("passed", "failed")]
         if risk.get("severity") == "critical" and risk.get("disposition") != "accepted_by_human" and not linked_scenarios:
-            errors.append(f"{risk_id}: critical risk has no scenario")
+            errors.append(f"{rid}: critical risk has no scenario")
         if risk.get("disposition") == "covered":
-            if not linked_tests: errors.append(f"{risk_id}: covered risk has no test")
-            if not linked_evidence: errors.append(f"{risk_id}: covered risk has no execution evidence")
-        elif linked_evidence and risk.get("disposition") in {"planned", "blocked", "unresolved"}:
-            warnings.append(f"{risk_id}: execution exists but disposition remains {risk.get('disposition')}")
-
-    for scenario_id, scenario in scenarios.items():
-        if not scenario.get("risk_ids"): errors.append(f"{scenario_id}: no risk link")
-        if not scenario.get("expected"): errors.append(f"{scenario_id}: no oracle")
-    for test_id, test in tests.items():
-        if not test.get("scenario_ids"): errors.append(f"{test_id}: no scenario link")
-        if test.get("status") in {"passed", "failed"} and test.get("execution_id") not in executions:
-            errors.append(f"{test_id}: completed test has no valid execution")
-    return {"valid": not errors, "errors": errors, "warnings": warnings, "counts": {"risks": len(risks), "scenarios": len(scenarios), "tests": len(tests), "executions": len(executions)}}
+            if not linked_tests: errors.append(f"{rid}: covered risk has no test")
+            if not evidence: errors.append(f"{rid}: covered risk has no execution evidence")
+    return {"valid": not errors, "errors": errors, "warnings": warnings, "counts": {k: len(v) for k, v in maps.items()}}
 
 
 def main() -> int:

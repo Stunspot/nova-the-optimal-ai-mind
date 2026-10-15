@@ -65,6 +65,6 @@ Research does not authorize publication, messaging, account changes, purchases, 
 
 ## Storage, network, and retention boundary
 
-Omnara itself has no telemetry client, account, background service, or automatic uploader. The local helpers use the filesystem only and make no network requests. Research performed by an agent may still use the host, model provider, browser, search services, repositories, APIs, or authenticated sessions that the user authorizes. Those systems may log prompts, queries, URLs, retrieved content, and outputs under their own policies.
+Omnara has no telemetry client, cloud account or automatic uploader. The local campaign helpers use the filesystem. The optional room starts a background loopback HTTP service on 127.0.0.1; it performs no outbound research. The launcher probes local health and opens a token-bearing browser URL. Do not share that launch URL. Closing a tab does not stop the service. Native history and exports persist separately from the application. Research performed by an agent may still use the host, model provider, browser, search services, repositories, APIs, or authenticated sessions that the user authorizes. Those systems may log prompts, queries, URLs, retrieved content, and outputs under their own policies.
 
 Campaign files remain wherever the user or host creates them. Omnara does not encrypt, synchronize, back up, expire, or erase them. Removal and cleanup are separate operations described in [Lifecycle](LIFECYCLE.md).

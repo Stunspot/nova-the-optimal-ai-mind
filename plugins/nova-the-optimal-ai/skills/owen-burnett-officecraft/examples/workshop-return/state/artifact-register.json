@@ -1,0 +1,117 @@
+{
+  "format": "officecraft-artifact-register/v2",
+  "artifacts": [
+    {
+      "artifact_id": "BRIEF",
+      "path": "output/brief.docx",
+      "format": "DOCX",
+      "role": "editable_source",
+      "status": "reviewed",
+      "editable": true,
+      "canonical_source_id": null,
+      "source_ids": [
+        "ORIGINAL",
+        "CORRECTION"
+      ],
+      "ledger_item_ids": [
+        "TOTAL",
+        "HEADROOM"
+      ],
+      "check_evidence": [
+        {
+          "path": "review/inspect.json"
+        }
+      ],
+      "input_basis": {
+        "format": "officecraft-input-basis/v1",
+        "declared_inputs": {
+          "artifact_ids": [],
+          "source_ids": [
+            "CORRECTION",
+            "ORIGINAL"
+          ],
+          "ledger_item_ids": [
+            "HEADROOM",
+            "TOTAL"
+          ]
+        },
+        "artifacts": {},
+        "sources": {
+          "ORIGINAL": {
+            "path": "sources/original.json",
+            "sha256": "b727d7a3fea38da5365453ef77dfd6e9fc1db671592a4bb42dd8236a5402edfd",
+            "custody_status": "illustrative",
+            "content_status": "illustrative"
+          },
+          "CORRECTION": {
+            "path": "sources/correction.json",
+            "sha256": "080c1ae4612be4f18cffe874ceedec4b4b3bae262d878f5282a2134fdac9bbeb",
+            "custody_status": "illustrative",
+            "content_status": "illustrative"
+          }
+        },
+        "ledger": {
+          "TOTAL": "076cb124331669bdb89ae8d7ba16ce3b90276ebf8df7b3269b2259b8ecee9cd2",
+          "HEADROOM": "63ef85575a18540d1ebf395731388d49978a83ed288ac5c7066fa565a8923a9d"
+        }
+      }
+    },
+    {
+      "artifact_id": "PDF",
+      "path": "output/brief.pdf",
+      "format": "PDF",
+      "role": "derivative",
+      "status": "reviewed",
+      "editable": false,
+      "canonical_source_id": "BRIEF",
+      "check_evidence": [
+        {
+          "path": "review/inspect.json"
+        }
+      ],
+      "input_basis": {
+        "format": "officecraft-input-basis/v1",
+        "declared_inputs": {
+          "artifact_ids": [
+            "BRIEF"
+          ],
+          "source_ids": [],
+          "ledger_item_ids": []
+        },
+        "artifacts": {
+          "BRIEF": {
+            "path": "output/brief.docx",
+            "sha256": "1ce71bda7ad0cf925738adfe08e85b50559c8ed09e99e55b768dc9b0cee288e5",
+            "artifact_ids": [],
+            "source_ids": [
+              "CORRECTION",
+              "ORIGINAL"
+            ],
+            "ledger_item_ids": [
+              "HEADROOM",
+              "TOTAL"
+            ]
+          }
+        },
+        "sources": {
+          "ORIGINAL": {
+            "path": "sources/original.json",
+            "sha256": "b727d7a3fea38da5365453ef77dfd6e9fc1db671592a4bb42dd8236a5402edfd",
+            "custody_status": "illustrative",
+            "content_status": "illustrative"
+          },
+          "CORRECTION": {
+            "path": "sources/correction.json",
+            "sha256": "080c1ae4612be4f18cffe874ceedec4b4b3bae262d878f5282a2134fdac9bbeb",
+            "custody_status": "illustrative",
+            "content_status": "illustrative"
+          }
+        },
+        "ledger": {
+          "TOTAL": "076cb124331669bdb89ae8d7ba16ce3b90276ebf8df7b3269b2259b8ecee9cd2",
+          "HEADROOM": "63ef85575a18540d1ebf395731388d49978a83ed288ac5c7066fa565a8923a9d"
+        }
+      }
+    }
+  ]
+}

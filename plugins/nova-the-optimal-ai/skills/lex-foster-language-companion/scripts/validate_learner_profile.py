@@ -1,175 +1,128 @@
 #!/usr/bin/env python3
-"""Validate a Lex Foster learner profile without external dependencies."""
-
+"""Validate declared profile structure/consistency; never certify language learning."""
 from __future__ import annotations
-
+import argparse
 import json
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
-from typing import Any
-
 
 FORMAT = "lex-foster-learner-profile/v1"
 EVIDENCE_STATES = {"new", "supported", "independent", "transferred"}
 GOAL_STATES = {"active", "paused", "completed", "retired"}
-PREFERENCE_VALUES = {
-    "interruption": {"immediate", "natural-pauses", "end-of-turn"},
-    "correction_focus": {"communication-first", "balanced", "fine-grained"},
-    "explanation_depth": {"compact", "contrastive", "deep"},
-    "challenge": {"supported", "stretch", "immersive"},
-    "working_language_use": {"welcome", "minimal", "on-request"},
-}
+SCHEMA = Path(__file__).resolve().parents[1] / "schemas/learner-profile.schema.json"
+CLOCK = re.compile(r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-](?:[01]\d|2[0-3]):[0-5]\d)\Z")
 
-
-def _nonempty(value: Any) -> bool:
-    return isinstance(value, str) and bool(value.strip())
-
-
-def _valid_datetime(value: Any) -> bool:
-    if not _nonempty(value) or "T" not in value.upper():
-        return False
-    normalized = value[:-1] + "+00:00" if value.endswith("Z") else value
+def clock(value):
+    if not isinstance(value, str) or not CLOCK.fullmatch(value):
+        return None
     try:
-        parsed = datetime.fromisoformat(normalized)
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
     except ValueError:
-        return False
-    return parsed.tzinfo is not None and parsed.utcoffset() is not None
+        return None
 
+def _valid_datetime(value):
+    return clock(value) is not None
 
-def validate_profile(data: Any) -> list[str]:
-    errors: list[str] = []
-    if not isinstance(data, dict):
-        return ["profile must be a JSON object"]
+def unique_object(pairs):
+    result = {}
+    for key, value in pairs:
+        if key in result:
+            raise ValueError(f"duplicate JSON key: {key}")
+        result[key] = value
+    return result
 
-    if data.get("format") != FORMAT:
-        errors.append(f"format must be {FORMAT!r}")
-    for key in ("profile_id", "working_language"):
-        if not _nonempty(data.get(key)):
-            errors.append(f"{key} must be a non-empty string")
-    if not _valid_datetime(data.get("updated_at")):
-        errors.append("updated_at must be an ISO 8601 date-time")
+def load_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"), object_pairs_hook=unique_object)
 
-    targets = data.get("target_languages")
-    if not isinstance(targets, list) or not targets:
-        errors.append("target_languages must contain at least one entry")
-    else:
-        for index, target in enumerate(targets):
-            if not isinstance(target, dict):
-                errors.append(f"target_languages[{index}] must be an object")
-                continue
-            for key in ("language", "variety", "script"):
-                if not _nonempty(target.get(key)):
-                    errors.append(
-                        f"target_languages[{index}].{key} must be a non-empty string"
-                    )
+def shape(value, spec, path, errors):
+    kind = spec.get("type")
+    types = {"object": dict, "array": list, "string": str}
+    if kind and not isinstance(value, types[kind]):
+        errors.append(f"{path} must be {kind}"); return
+    if "const" in spec and value != spec["const"]:
+        errors.append(f"{path} must be {spec['const']!r}")
+    if "enum" in spec and value not in spec["enum"]:
+        errors.append(f"{path} must be one of {spec['enum']}")
+    if kind == "string":
+        if spec.get("minLength") and not value.strip():
+            errors.append(f"{path} must be a non-empty string")
+        if spec.get("format") == "date-time" and clock(value) is None:
+            errors.append(f"{path} must be a real zoned timestamp: YYYY-MM-DDTHH:MM:SS+HH:MM or Z")
+    elif kind == "array":
+        if len(value) < spec.get("minItems", 0): errors.append(f"{path} requires an entry")
+        for i, entry in enumerate(value): shape(entry, spec["items"], f"{path}[{i}]", errors)
+    elif kind == "object":
+        props = spec.get("properties", {})
+        for key in spec.get("required", []):
+            if key not in value: errors.append(f"{path}.{key} is required")
+        for key, entry in value.items():
+            if key in props: shape(entry, props[key], f"{path}.{key}", errors)
+            elif spec.get("additionalProperties") is False: errors.append(f"{path}.{key} is not allowed")
 
-    goals = data.get("goals")
-    goal_ids: set[str] = set()
-    if not isinstance(goals, list):
-        errors.append("goals must be an array")
-    else:
-        for index, goal in enumerate(goals):
-            if not isinstance(goal, dict):
-                errors.append(f"goals[{index}] must be an object")
-                continue
-            goal_id = goal.get("id")
-            if not _nonempty(goal_id):
-                errors.append(f"goals[{index}].id must be a non-empty string")
-            elif goal_id in goal_ids:
-                errors.append(f"duplicate goal id: {goal_id}")
-            else:
-                goal_ids.add(goal_id)
-            for key in ("situation", "success_evidence"):
-                if not _nonempty(goal.get(key)):
-                    errors.append(f"goals[{index}].{key} must be a non-empty string")
-            if not isinstance(goal.get("status"), str) or goal["status"] not in GOAL_STATES:
-                errors.append(
-                    f"goals[{index}].status must be one of {sorted(GOAL_STATES)}"
-                )
-
-    preferences = data.get("preferences")
-    if not isinstance(preferences, dict):
-        errors.append("preferences must be an object")
-    else:
-        for key, allowed in PREFERENCE_VALUES.items():
-            if not isinstance(preferences.get(key), str) or preferences[key] not in allowed:
-                errors.append(f"preferences.{key} must be one of {sorted(allowed)}")
-
-    evidence = data.get("evidence")
-    evidence_ids: set[str] = set()
-    if not isinstance(evidence, list):
-        errors.append("evidence must be an array")
-    else:
-        for index, item in enumerate(evidence):
-            if not isinstance(item, dict):
-                errors.append(f"evidence[{index}] must be an object")
-                continue
-            evidence_id = item.get("id")
-            if not _nonempty(evidence_id):
-                errors.append(f"evidence[{index}].id must be a non-empty string")
-            elif evidence_id in evidence_ids:
-                errors.append(f"duplicate evidence id: {evidence_id}")
-            else:
-                evidence_ids.add(evidence_id)
-            if not _valid_datetime(item.get("observed_at")):
-                errors.append(f"evidence[{index}].observed_at must be an ISO date-time")
-            for key in ("target_language", "item", "task", "support"):
-                if not _nonempty(item.get(key)):
-                    errors.append(
-                        f"evidence[{index}].{key} must be a non-empty string"
-                    )
-            if not isinstance(item.get("state"), str) or item["state"] not in EVIDENCE_STATES:
-                errors.append(
-                    f"evidence[{index}].state must be one of {sorted(EVIDENCE_STATES)}"
-                )
-
-    queue = data.get("retrieval_queue")
-    if not isinstance(queue, list):
-        errors.append("retrieval_queue must be an array")
-    else:
-        for index, item in enumerate(queue):
-            if not isinstance(item, dict):
-                errors.append(f"retrieval_queue[{index}] must be an object")
-                continue
-            for key in ("evidence_id", "when", "variation"):
-                if not _nonempty(item.get(key)):
-                    errors.append(
-                        f"retrieval_queue[{index}].{key} must be a non-empty string"
-                    )
-            if _nonempty(item.get("evidence_id")) and item["evidence_id"] not in evidence_ids:
-                errors.append(
-                    f"retrieval_queue[{index}].evidence_id references unknown evidence"
-                )
-
+def validate_profile(data):
+    errors = []
+    try: schema = load_json(SCHEMA)
+    except (OSError, ValueError, UnicodeError) as exc: return [f"bundled schema unavailable: {exc}"]
+    shape(data, schema, "profile", errors)
+    if errors: return errors
+    targets = {x["language"].strip().casefold() for x in data["target_languages"]}
+    indexes = {}
+    for name in ("goals", "evidence"):
+        indexes[name] = {}
+        for item in data[name]:
+            if item["id"] in indexes[name]: errors.append(f"duplicate {name.rstrip('s')} id: {item['id']}")
+            indexes[name][item["id"]] = item
+    for i, item in enumerate(data["evidence"]):
+        label = f"evidence[{i}]"
+        if item["target_language"].strip().casefold() not in targets: errors.append(f"{label}.target_language is undeclared")
+        if clock(item["observed_at"]) > clock(data["updated_at"]): errors.append(f"{label}.observed_at is after updated_at")
+        obs = item.get("observation")
+        if obs is None: continue  # readable historical declaration; reported separately, never evidence-qualified
+        if obs["goal_id"] not in indexes["goals"]: errors.append(f"{label}.observation.goal_id is unknown")
+        if item["state"] in {"independent", "transferred"}:
+            if obs["result"] != "met" or obs["support_kind"] != "none":
+                errors.append(f"{label}: {item['state']} requires declared criterion met without support")
+        if item["state"] == "transferred":
+            prior = indexes["evidence"].get(obs.get("prior_evidence_id"))
+            if not prior or prior["id"] == item["id"]: errors.append(f"{label}: transfer requires a distinct prior evidence record"); continue
+            po = prior.get("observation")
+            if not po: errors.append(f"{label}: prior transfer basis has no observation"); continue
+            if clock(prior["observed_at"]) >= clock(item["observed_at"]): errors.append(f"{label}: prior observation must be earlier")
+            if prior['target_language'].strip().casefold() != item['target_language'].strip().casefold(): errors.append(f"{label}: transfer language differs")
+            for key in ("goal_id", "criterion", "modality"):
+                if po[key].strip().casefold() != obs[key].strip().casefold(): errors.append(f"{label}: transfer {key} differs from prior basis; record separately")
+            if not obs.get("changed_condition", "").strip() or obs['prompt'].strip() == po['prompt'].strip():
+                errors.append(f"{label}: transfer requires a declared changed condition and distinct cue")
+    for i, item in enumerate(data["retrieval_queue"]):
+        if item["evidence_id"] not in indexes["evidence"]: errors.append(f"retrieval_queue[{i}] references unknown evidence")
     return errors
 
+def evidence_notes(data):
+    notes = []
+    if not isinstance(data, dict) or not isinstance(data.get('evidence'), list): return notes
+    for item in data['evidence']:
+        if not isinstance(item, dict): continue
+        if 'observation' not in item:
+            notes.append(f"{item.get('id', '?')}: legacy declaration only; performance basis not recorded, state is unverified")
+        else:
+            notes.append(f"{item.get('id', '?')}: declared observation; language correctness, meaningful cue change and criterion alignment need human/model review")
+    return notes
 
-def main(argv: list[str]) -> int:
-    if len(argv) != 2:
-        print("usage: validate_learner_profile.py <profile.json>", file=sys.stderr)
-        return 2
-
-    path = Path(argv[1])
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        print(f"FAIL {path}: {exc}", file=sys.stderr)
-        return 1
-
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('profile', type=Path)
+    args = parser.parse_args(argv)
+    try: data = load_json(args.profile)
+    except (OSError, ValueError, UnicodeError) as exc:
+        print(f"FAIL profile input: {exc}", file=sys.stderr); return 1
     errors = validate_profile(data)
-    if errors:
-        for error in errors:
-            print(f"ERROR {error}", file=sys.stderr)
-        print(f"FAIL {path}: {len(errors)} error(s)", file=sys.stderr)
-        return 1
-
-    print(
-        f"PASS {path}: {len(data['target_languages'])} target language(s), "
-        f"{len(data['evidence'])} evidence item(s)"
-    )
+    for message in errors: print('ERROR ' + message, file=sys.stderr)
+    if errors: return 1
+    print('PASS declared structure and consistency only; no learner ability or mastery has been verified.')
+    for note in evidence_notes(data): print('NOTE ' + note)
     return 0
 
-
-if __name__ == "__main__":
-    raise SystemExit(main(sys.argv))
+if __name__ == '__main__':
+    raise SystemExit(main())

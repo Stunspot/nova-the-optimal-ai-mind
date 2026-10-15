@@ -1,0 +1,57 @@
+{
+  "authored_files": [
+    {
+      "bytes": 7881,
+      "path": "START-HERE.md",
+      "sha256": "66978647ef88c9daa80a9a3dab703017920dd942ffca4495e1674039b306eadd"
+    }
+  ],
+  "authoring": {
+    "authorship_scope": "materially-revised",
+    "capability": "hesperos-documentation",
+    "capability_entrypoint_sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_revision": "sha256:21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_snapshot": {
+      "bytes": 7306,
+      "path": "verification/hesperos-capabilities/21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f/SKILL.md",
+      "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
+    },
+    "mode": "in-process",
+    "run_id": "free-purpose-docs-20261015-r2"
+  },
+  "authoring_response": {
+    "bytes": 304,
+    "path": "documentation-source/authoring-response.md",
+    "sha256": "1a88cfc9fae7d44e3647e2145c3e1dcfad26b94950d2d8d8b437d6c9943e2c15"
+  },
+  "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
+  "created_at": "2026-10-15T05:47:38+00:00",
+  "documentation_fingerprint": "7576197e977354939a6805667614a01a8da1f47c705a4ed05aad9b37a2fc216d",
+  "documentation_manifest": {
+    "bytes": 306,
+    "path": "documentation-source/authored-delta.json",
+    "sha256": "7ac8d94d92de0d9251ace888af8e765725b0650ac6b875208d2842834525ae76"
+  },
+  "evidence_packet": {
+    "bytes": 1007,
+    "path": "documentation-source/evidence.md",
+    "sha256": "743028d732f8faef6ee9214c011c1a32f1c9a3237fd7f14a6754a9376cfd33bb"
+  },
+  "execution_evidence": [
+    {
+      "bytes": 609,
+      "path": "documentation-source/execution.md",
+      "sha256": "24e42c44a53ff3dbe6c756a6337e3f7919d47203197540a0b6474dd1376ddbd8"
+    },
+    {
+      "bytes": 304,
+      "path": "documentation-source/authoring-response.md",
+      "sha256": "1a88cfc9fae7d44e3647e2145c3e1dcfad26b94950d2d8d8b437d6c9943e2c15"
+    }
+  ],
+  "format": "cd-hesperos-documentation-authorship/v1",
+  "product": {
+    "slug": "Nova the Optimal AI Free",
+    "version": "4.1.0"
+  }
+}

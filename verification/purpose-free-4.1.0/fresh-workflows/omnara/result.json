@@ -1,0 +1,14 @@
+{
+  "pass": true,
+  "checks": [
+    "actual packaged Open.cmd",
+    "plain question",
+    "ordinary text source",
+    "source-linked finding",
+    "cited answer",
+    "save and reload"
+  ],
+  "homes": [
+    "C:\\Users\\user\\AppData\\Local\\Temp\\purpose-omnara-u35PeD"
+  ]
+}

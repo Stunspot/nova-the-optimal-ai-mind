@@ -1,16 +1,3 @@
-# Critique and drills
+# Feedback and next attempt
 
-## Preparation state
-
-PRACTICE NOT OBSERVED until a real user response is recorded.
-
-## Strengths demonstrated
-
-## Weak spots visible
-
-| Weak spot | Evidence from response | Drill | Success cue | Rerun result |
-| --- | --- | --- | --- | --- |
-
-## Remaining limitations
-
-Distinguish unpracticed areas from practiced weaknesses.
+Practice unobserved. After a response, quote the relevant wording, name the exact behavior, choose one drill and retain what happened on the rerun.

@@ -1,9 +1,7 @@
-# Current Intelligence Observatory
+# Current Intelligence Observatory 0.4.0
 
-Follow what changed. Keep what it means honest.
+Bring a question and the sources you have. Open `workspace/Open.cmd`, `workspace/Open.command`, or run `python workspace/launch.py` for the persistent inquiry app. The [workspace guide](workspace/README.md) takes you from ordinary material through exact claim support to a useful answer and next observation. No prepared case is required.
 
-This skill turns developing public-source questions into resumable evidence cases. It preserves captures, separates observations from claims and inferences, challenges rival explanations, compares a frozen baseline with later state, and projects the same case into a ledger, graph, timeline, map, dossier, or brief without upgrading certainty.
+Use [the skill](SKILL.md) for contextual assistance. The separate [Evidence Atlas](workspace/advanced.html) retains native graphs and clocks; [native case operations](knowledge/native-case-guide.md) describe their detailed contract. [Reviewed investigative practice](knowledge/investigative-practice.md) preserves source dependence, uncertainty and competing explanations without inventing certainty.
 
-Start with `SKILL.md`. The complete synthetic proof is in `examples/harbor-lantern/`. Run `python -X utf8 scripts/self_check.py` for bounded static integrity and `python -X utf8 -m unittest discover -s scripts/tests -v` for deterministic guardrail tests.
-
-The scripts do not establish truth, identity, source credibility, causation, legality, safety, accessibility conformance, or publication approval. The product does not crawl, archive, schedule, monitor, contact, or publish unless the host has that capability and the user separately authorizes it.
+Optional tools in [OSINT guidance](knowledge/osint-tools.md) matter only when they advance the inquiry. A missing provider does not prevent local reading and writing. `python scripts/self_check.py` and native fixture tests check their bounded structures, not truth, autonomous research or public publication.

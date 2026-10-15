@@ -1,10 +1,10 @@
 {
   "package": "beryl-it-benchcraft",
-  "version": "0.3.0",
+  "version": "0.5.0",
   "files": {
     "agents/openai.yaml": {
-      "sha256": "19f1692a8f94725ef8d2b29c5517c980b2dabb586acec01fb081d5eff4000208",
-      "bytes": 203
+      "sha256": "eede855bc831bdf8ba7b5fe32f608f4bb12c7413fc10e71e3903f9031adc0ddb",
+      "bytes": 215
     },
     "assets/build-and-migration-checklist.md": {
       "sha256": "fa4358f28eb28157c35a62b913c6764abb27ae47e3201f3b8c2ba44c4fd587d1",
@@ -31,80 +31,84 @@
       "bytes": 861
     },
     "docs/ACCESSIBILITY.md": {
-      "sha256": "023d1776518b6e2233cec421942a4dd23507cbdf5de3f084be1eaeeb6f31eb42",
-      "bytes": 2250
+      "sha256": "b6f7dbffa032890f1f4ec0ceefc4f438a074f85f80a05035aa7e50bf67b1543e",
+      "bytes": 418
     },
     "docs/CAPABILITY-MATRIX.md": {
-      "sha256": "fcc206babdf8c5784965055897c87a346ba24c2cfa24c1636ac44091dc4afdb4",
-      "bytes": 5206
+      "sha256": "f8577493ef3995121a9176d6820b00aeddcafd21838b362c3a048241598a7c81",
+      "bytes": 575
     },
     "docs/CASE-FILES.md": {
-      "sha256": "20ce00b0eecb9bd5ff8ea494c3790fd45ca434479f3af648a1253ba697a54b4a",
-      "bytes": 4616
+      "sha256": "a6e3f7441a7ef69af7660809cb9c6a6ae3051cc99d4196c5ae7da8e4a7314fb7",
+      "bytes": 647
     },
     "docs/DOCUMENTATION-MAINTENANCE.md": {
-      "sha256": "9489a40aa7222bd9b271e38c3635ab6bbfc97d397b6d97bb14bc4e8771218d13",
-      "bytes": 2570
+      "sha256": "4ebd05a2b39a01ebfa818423180c4bddf6aef6ef562d36b0ec36a5d21e9d2373",
+      "bytes": 763
     },
     "docs/INSTALLATION.md": {
-      "sha256": "500ecbc76b2fb96133af605aaf561c907f0b17ed607d0e892de99509f1abd734",
-      "bytes": 3521
+      "sha256": "e9e0915376c590cfd46d1ee55bfb1d793d6ad4f54cf3d5d89316b161ca070f6e",
+      "bytes": 573
     },
     "docs/LIMITATIONS.md": {
-      "sha256": "ee95a68cab1654bd4708c2907a66feead8f7bca91abf1091ff2ffe036f9a8617",
-      "bytes": 3855
+      "sha256": "a9295d558f3cf60348f16e3a6c427d62830df4401b99850f2841c0c34f7bbac7",
+      "bytes": 1126
     },
     "docs/QUICK-START.md": {
-      "sha256": "b93afb98fb5eaa0ee270e651d9fe64b509e9830f5622c7d3ba82336d398ab4d4",
-      "bytes": 3468
+      "sha256": "5662ad863ea603a36447add618f2a019e3283a1c9393f14412426b8fa125f4cd",
+      "bytes": 1073
     },
     "docs/RELEASE-NOTES.md": {
-      "sha256": "527db0aa882fc1a18a994b0e7244392f5a2e5a2b250dc04c6efafffa5a9984cf",
-      "bytes": 4352
+      "sha256": "810c358d0f1f31794e3a8ff92930c78a320a0632a153acff1c5653cb7e326dbf",
+      "bytes": 477
     },
     "docs/SAFETY-AND-DATA.md": {
-      "sha256": "6befa6fcb2e4e238f398fc6bc83342a82ddc17f24198db6f8c636f0e723deb60",
-      "bytes": 4788
+      "sha256": "7b37e73cabc85d6e963fdecc8042ead2d6aa7aa6cbc600d89ae7ba4bf09194e1",
+      "bytes": 1491
     },
     "docs/TROUBLESHOOTING.md": {
-      "sha256": "471cee79ed72100e74cfa290c2e492af0ca865612d584b87ccebbdc941e139a4",
-      "bytes": 5031
+      "sha256": "ee9ff3368bbc842382e0174a4ecefa64d29e6ce1425aefffc9d5b6a254867eca",
+      "bytes": 527
     },
     "docs/USER-GUIDE.md": {
-      "sha256": "ebbd082ba7ac8e982f5c2c2f12cf96e813bcdaea1e050329b50bd3b179585ba4",
-      "bytes": 6359
+      "sha256": "855f41c227f24e6d0a2ffc4a77cab97f0f08f547b9a5fb6de8d36ef1774c1dfc",
+      "bytes": 1151
     },
     "docs/VALIDATION-AND-EVALUATION.md": {
-      "sha256": "0419598f1391872973a7bd4e72a46d41b2318846dc07c516cd0c0a2308033b2b",
-      "bytes": 4981
+      "sha256": "c75af41e7737e3ab93590638c34d12fe56a4af9c733bae33bd5474428a17c0e2",
+      "bytes": 1622
     },
     "evals/core-transfer-cases.yaml": {
-      "sha256": "48f7c56cd79affccd5a4962a4f30895f1c951140ee859d59a1fd2b31b05b3308",
-      "bytes": 13301
+      "sha256": "58c577937285da7627e72564818e5342d72d39ac94a40f923101ef391f89cc08",
+      "bytes": 14208
+    },
+    "evals/current-service-contrasts.json": {
+      "sha256": "e0513b858b14cd48dc6684f56a4dff538ddb07bf782765840f2b5b1a760339b8",
+      "bytes": 4717
     },
     "evals/eval-manifest.yaml": {
-      "sha256": "91c5753c56813c967d09818f54b0de56f595e854a39e73ca8140ca3dfb68c38f",
-      "bytes": 657
+      "sha256": "3349f3d3bfeb32cb1d31de6f329d70802af8dc5dbb0c27412e6b0f1356c379e0",
+      "bytes": 813
     },
     "examples/intermittent-wifi/case.json": {
-      "sha256": "0d6d56bb25fe7fd26bbaa3f808a4f263a1e37ac2c75b339c4dadc6afc06a3cd0",
-      "bytes": 2417
+      "sha256": "6285c942b3dacc93144158fc7269196912c1fd031dfeb27f2266073bb44c2682",
+      "bytes": 3327
     },
     "examples/intermittent-wifi/demonstration.md": {
       "sha256": "62a4017e3c3c2d5e1014137d82f4723a0c8bdc951c057c0196f0838d774db673",
       "bytes": 711
     },
     "examples/no-power-laptop/case.json": {
-      "sha256": "c9c3f0336c03bfd2e8d03eb04d89e204b7c7fafc09905711bc2398b90a32692a",
-      "bytes": 2293
+      "sha256": "38d78e6e9254028952f1da0b1183d7ef96ea68e347acdf8bc511bd6783074f53",
+      "bytes": 2942
     },
     "examples/no-power-laptop/demonstration.md": {
       "sha256": "5093528bbfcd2e68c0dda8ce63b8a860153bff2eedcaa441e6c4c2d9dc3f7049",
       "bytes": 937
     },
     "examples/suspected-compromise/case.json": {
-      "sha256": "772d2108ff70f1db29016e716d43b3a39307b55a453ab3a663a15bbd82d21bde",
-      "bytes": 2264
+      "sha256": "23aa82ad290ac61bc38310d9714eca6c5426fb1fa1c37210f60b2d717ac0fbe7",
+      "bytes": 3001
     },
     "examples/suspected-compromise/demonstration.md": {
       "sha256": "b18363376a19e84066b1438ad975cb9b78ac0964e04d838d21f82fce22b1552e",
@@ -118,57 +122,61 @@
       "sha256": "6c9749a03ea9d536bae24aeef53736177837689d290c6839060bd2b532dd2811",
       "bytes": 2315
     },
+    "knowledge/APPLICABILITY-NOTES.md": {
+      "sha256": "f9841e7e319d7ed0b64a48a9315cf59d7e5f3d851a6c6cdd2b8788708ede860d",
+      "bytes": 2480
+    },
     "knowledge/network-architecture.md": {
       "sha256": "fa0425137994dd8e6808dd6766c7e27e2da395abcaa0ef743179ab140aadd71b",
       "bytes": 39606
     },
     "knowledge/source-navigation.md": {
-      "sha256": "254dc48872608ff7df67f2ee36ab396a8bf92f3f38ee6c6b5b116c453645aea0",
-      "bytes": 936
+      "sha256": "2913bfab59fcd0bbbfd1fe87a92546c3ce8566763d8e3b147fb030e5b323ff58",
+      "bytes": 1117
     },
     "knowledge/windows-systems-engineering.md": {
       "sha256": "439e36341bb23c1f5f854a153d86732a5a5a661fb64481191e8509ddcae9fa19",
       "bytes": 48456
     },
     "personas/beryl-it-benchcraft-practitioner.md": {
-      "sha256": "14c1a54c32ef41c2c14f4b5cd4da294df387a6e03d6ab25b017b723a74900c9b",
-      "bytes": 5796
+      "sha256": "d2afd1cbf3643396dd6e98d5914626af51a900a3324c4930382a6c883026222c",
+      "bytes": 5905
     },
     "PROVENANCE.md": {
       "sha256": "dd553cc60c484d56fe22d0cb04ff578dd37dd057a90bace19e078f74cfd5955c",
       "bytes": 2335
     },
     "README.md": {
-      "sha256": "c34ca7ed5f1f7fbbfae975090239748097c61a2cb320858f0fa2de8f5f676dbc",
-      "bytes": 4462
+      "sha256": "fa182b34b831c0bfcb46c7be5c6d2692cdfbd72785faa82109c25659887e2958",
+      "bytes": 333
     },
     "references/diagnostic-method.md": {
       "sha256": "e7944600679f68f87d54c70239d62402db63a1d91d1b10991e41bdd7c44ef2be",
       "bytes": 2971
     },
     "references/evidence-source-and-uncertainty.md": {
-      "sha256": "92ad23dc804a3d3ceee4014aba4eb661e275df831fbdb2965bbbd2fc1933a5eb",
-      "bytes": 1320
+      "sha256": "44fcf9ff0665dbaace3baabf688999a65a40355698e559040a2bb297373dca6f",
+      "bytes": 2035
     },
     "references/network-troubleshooting.md": {
       "sha256": "596c2a2671b55316a93cf4a8b4ada5bf4476a7d850ed19bfa68164a4eef914e0",
       "bytes": 2048
     },
     "references/operating-doctrine.md": {
-      "sha256": "18194021d9e8f48bcbcad3ccaa7949f519e94951f95f51c76e914fbc6eff2039",
-      "bytes": 1909
+      "sha256": "dde2866b38f5fc7345af252c4bc7e8fb14680d1e2729c822e2aeda1573b35981",
+      "bytes": 2797
     },
     "references/platform-configuration-and-recovery.md": {
-      "sha256": "cbcf7885281799f261edb5f68fc5baa275f738d2b2728a265e435bf97e34436e",
-      "bytes": 3210
+      "sha256": "cc7f14253b6974c440b98d736802e346f881ea8a72011ae84f7eec6c12c951fc",
+      "bytes": 3440
     },
     "references/review-rubric.md": {
       "sha256": "f43e9a2c6cde91e41a742eb3f4d41fe2ac6bf0616dcd674282872332b09b4764",
       "bytes": 1433
     },
     "references/safety-data-and-authority.md": {
-      "sha256": "342f1337c40c274067bc3865e9f4f97d8fe4d759b1244dc40acd8ef802dcf3a0",
-      "bytes": 2644
+      "sha256": "201570f5db3379079c3649021a75f4f22d15eb51652708dd6c7567d2899e54f5",
+      "bytes": 3258
     },
     "references/security-and-privacy.md": {
       "sha256": "4a1f06efffbf4fc6bc8c05969ee1ca563620d7eae41554284f07021cd3fa43f3",
@@ -179,24 +187,32 @@
       "bytes": 1452
     },
     "schemas/it-case.schema.json": {
-      "sha256": "178c9982e597c02679f29ab00c042fb65537fc711e028fd156849455ee8f7d28",
-      "bytes": 3062
+      "sha256": "844210ba5be9111da3e2cd426f3ffc776df136d8f27c0df67cbb5e6ff1e61fc9",
+      "bytes": 17982
+    },
+    "scripts/archive_paths.py": {
+      "sha256": "b81d732e57f54e3a7e8b3597a0f9ec1c0d76b33177e737ce29657ce71b68ea99",
+      "bytes": 3518
+    },
+    "scripts/tests/test_evidence_consistency.py": {
+      "sha256": "07a9df941875b5d53c2ec7c592e642ef831cd66468ddce5aa8fd5a7ad5bce33a",
+      "bytes": 5442
     },
     "scripts/tests/test_release_inventory.py": {
-      "sha256": "15d7a79e23d899bbfb3ab7d69fd0f2ab10f14609c544622e4772717d9edcbb23",
-      "bytes": 1071
+      "sha256": "4c973667336b32b2fc92993867f7725e7851f8ec2e8c83cea5ec31250ff9f3d2",
+      "bytes": 1050
     },
     "scripts/validate_case_file.py": {
-      "sha256": "317959efbfc5ca77008d7928516707a3e8f4c829cf7cda2f26afc3d62a8d1316",
-      "bytes": 2015
+      "sha256": "c3d70ccf1518ce9e244165eb501ed7886aaf910f67418a93b668aa8f0637e632",
+      "bytes": 9140
     },
     "scripts/validate_release.py": {
-      "sha256": "b14a9f080b2f67d73cefae9ac8307f9ba87f9a2452de9d1f8ee0725a0b2df854",
-      "bytes": 4299
+      "sha256": "9375322f5b5099d4c1a77d3963d469d160e9dfeeac3da5633c3718d0726a5bf7",
+      "bytes": 4779
     },
     "SKILL.md": {
-      "sha256": "0ee9ad98463688ef361964849ef931abf9e543bc8d21d5870fe122d0c1a3d2e3",
-      "bytes": 2627
+      "sha256": "011cecc89b378b5d0c29881c5e63f19a9e43c47bf9d5dc825c7ede6005c8238f",
+      "bytes": 4060
     }
   }
 }

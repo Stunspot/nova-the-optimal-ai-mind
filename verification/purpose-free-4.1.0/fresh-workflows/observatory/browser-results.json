@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "checks": [
+    "actual Open.cmd launches persistent workspace",
+    "search is an external explicit browser link",
+    "two actual passages attach to one bounded claim",
+    "brief carries answer, exact support and source identity",
+    "unknown local timezone is preserved",
+    "return plan does not claim background monitoring",
+    "saved inquiry and edited brief survive reload",
+    "mobile viewport stays within width",
+    "no page errors"
+  ],
+  "home": "C:\\Users\\user\\AppData\\Local\\Temp\\observatory-purpose-IGelB8",
+  "session": {
+    "url": "http://127.0.0.1:58466/",
+    "product": "current-intelligence-observatory",
+    "data_home": "C:\\Users\\user\\AppData\\Local\\Temp\\observatory-purpose-IGelB8",
+    "pid": 20892
+  }
+}

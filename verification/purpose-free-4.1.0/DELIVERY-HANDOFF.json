@@ -1,0 +1,64 @@
+{
+  "product": "Nova the Optimal AI Free",
+  "version": "4.1.0",
+  "candidate_revision": "free-4.1.0-purpose-r3",
+  "source_root": "E:\\Github\\nova-the-optimal-ai-mind\\plugins\\nova-the-optimal-ai",
+  "repository": "E:\\Github\\nova-the-optimal-ai-mind",
+  "source_base_commit": "2e312108a4485818d2d51fe3406d2ddf0a400617",
+  "source_clean": false,
+  "artifacts": [
+    {
+      "path": "E:\\Github\\nova-the-optimal-ai-mind\\release-candidates\\purpose-v4.1.0\\release\\nova-the-optimal-ai-free-4.1.0.zip",
+      "sha256": "9cbdeb2c1c0a3d2bf1c42483f559f3e99479b8f225f1e7917cb8c36b952f2fd2",
+      "bytes": 304955174
+    },
+    {
+      "path": "E:\\Github\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free T-Free v4.1.0.md",
+      "sha256": "0e5af24e2724dfc758034a7c90179848e6aee19b23140fc3ff0168f27a1597e1",
+      "bytes": 3849
+    },
+    {
+      "path": "E:\\Github\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free T-Free v4.1.0 Extra.md",
+      "sha256": "b50ac2092ed4c3ecd48d79b028773abea7a78eca87cd6a155db766cbaae0b511",
+      "bytes": 2326
+    },
+    {
+      "path": "E:\\Github\\nova-the-optimal-ai-mind\\delivery-sidecars\\Nova the Optimal AI Free.png",
+      "sha256": "6aad27477e129a54408f0448681eb624adb764228829be1de52037fe03ba1c95",
+      "bytes": 2534819
+    }
+  ],
+  "independent_review": "verification/purpose-free-4.1.0/independent-review.json",
+  "source_assessment": "verification/purpose-free-4.1.0/release-assessment.md",
+  "fresh_native_acceptance": "verification/purpose-free-4.1.0/fresh-package.json",
+  "repository_custody": "No reset, commit, push, tag or publication performed by this worker. Root retains preexisting5007 dirty-path baseline and owns final current release checkpoint. Stage reviewed current product surfaces deliberately; do not stage historical baseline copies or all release-candidates indiscriminately.",
+  "source_surfaces": [
+    "plugins/nova-the-optimal-ai",
+    "docs",
+    "documentation-source",
+    "documentation-manifest.json",
+    "documentation-authorship.json",
+    "CURRENT-RELEASE.json",
+    "README.md",
+    "START-HERE.md",
+    "RELEASE-NOTES.md",
+    "LICENSE.md",
+    "NOTICE.md",
+    "PROVENANCE.md",
+    "THIRD-PARTY-NOTICES.md",
+    "design/product-contract.json",
+    "design/source-map.json",
+    "design/source-lock.json",
+    "design/FREE-NOVA-PACKAGE-MAP.md",
+    "design/release-decision-v4.1.0.json",
+    "tools/build_release.py",
+    "tools/verify_package.py",
+    "tools/release_lib.py",
+    "tests/test_product_contract.py",
+    "tests/test_release_pipeline.py",
+    ".github/workflows/verify-package.yml",
+    "delivery-sidecars current4.1 files",
+    "selected verification evidence excluding baseline/f41/runtime test homes"
+  ],
+  "parent_actions": "Root handles governed shelf, catalogs, installation and repository release custody; standalone tier remains28 owners."
+}

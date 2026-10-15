@@ -1,24 +1,21 @@
-# Harbor Lantern internal dossier
+# Harbor Lantern: decision brief
 
-## Assessment
+The useful decision is to narrow the announcement, then seek direct operational evidence only if the editor needs to report what actually happened. The supplied packet is a fictional source comparison. It is not a live verification.
 
-The supplied fixtures support a scheduled six-hour Gate B vehicle-entry pause while vessel operations continue. They do not support a three-day terminal closure or a transformer-fire cause. Confidence is medium because the proof has a direct notice and a correction but no live verification.
+Read the [cited correction brief](public-brief.md) for the customer-facing account. Every consequential factual span links to a retained source paragraph; the native claims record whether each passage reports, supports, refutes or merely contextualizes the claim.
 
-## What changed
+## What changed and why
 
-- Alpha corrected its original duration and cause.
-- Beta disclosed that it followed Alpha, collapsing apparent corroboration into one evidence lineage.
-- Gamma supplied a limited operational notice and contained adversarial embedded text, which was treated as evidence rather than instruction.
-- The original captures remain preserved; they were not overwritten by the correction.
+At the baseline cutoff, Alpha made an unnamed-source assertion; Beta explicitly followed it. Two articles were one lineage from the start, not independent corroboration that suddenly became dependent. A later direct notice narrows the planned scope to Gate B vehicle entry; Alpha's correction withdraws its duration and cause attribution. The original files are preserved unchanged.
 
-## Rival accounts
+The notice gives local clock times without a timezone. The former native case wrongly labeled those times UTC. The repaired event keeps the source's local wording and does not invent a sortable event instant. Publication, retrieval and source observation clocks remain separately visible.
 
-The material-incident account is unsupported in the fixture. The limited-inspection-amplified-by-repetition account is better supported, but motive and cause remain unknown. Amplification alone does not establish coordination.
+## Challenge and uncertainty
 
-## Identity and location
+A routine inspection amplified through repetition is a plausible explanation for the reports, not proven motive or causation. A consequential incident is not established; absence of a cause in the notice does not disprove one. The best discriminating observation depends on the question: a timezone-qualified schedule for exact timing, direct terminal operations for actual closure, or an accountable incident record for cause. An additional derivative roundup settles none of these.
 
-Two same-name Morgan Vale candidates remain unresolved and are excluded from the public brief. The location remains a named facility area, not an invented point coordinate.
+The retained embedded instruction is quoted source content. It grants no authority to publish identities or assert sabotage. Both Morgan Vale candidates stay excluded from the brief.
 
-## Decision boundary
+## Return
 
-The draft can be challenged by a human editor. It is not publication-ready, and no real-world action is authorized.
+Resume at [editorial challenge](editorial-challenge.md), with [case-update.json](case-update.json) as the native record. The pending decision is whether the cited, narrow draft is fit for the requested audience; publication still belongs to the authorized editor. A changed source, draft or case needs a new review of the affected subject.

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import posixpath
 import re
@@ -28,6 +29,7 @@ REQUIRED_TOP = {
     "status",
     "next_move",
 }
+OPTIONAL_TOP = {"outcome"}
 REGIMES = {"direct", "enlist", "assemble", "chain", "recover"}
 PLAN_STATUSES = {
     "planned",
@@ -51,7 +53,8 @@ WORKER_STATUSES = {
 }
 TERMINAL_WORKER_STATUSES = {"reconciled", "failed", "interrupted", "cancelled", "closed"}
 ACCEPTED_DEPENDENCY_STATUSES = {"reconciled"}
-STARTED_WORKER_STATUSES = WORKER_STATUSES - {"planned"}
+STARTED_WORKER_STATUSES = {"dispatched", "working", "returned", "reconciled"}
+RUNNING_WORKER_STATUSES = {"dispatched", "working"}
 OPEN_WRITE_STATUSES = WORKER_STATUSES - {"reconciled", "closed"}
 TERMINAL_CLOSURE_NEXT_MOVES = {"none", "no further action", "closed", "cancelled"}
 EVIDENCE_PLACEHOLDER_IDENTITIES = {"none", "n a", "not required", "no evidence required", "not applicable"}
@@ -95,13 +98,94 @@ def _authority_identity(value: str) -> str:
     return " ".join(value.strip().casefold().split())
 
 
+def _concrete_evidence(value: Any) -> bool:
+    return _string_list(value, nonempty=True) and all(
+        _evidence_identity(item) not in EVIDENCE_PLACEHOLDER_IDENTITIES for item in value
+    )
+
+
+def _surfaces_overlap(left: str, right: str) -> bool:
+    if left == right:
+        return True
+    # Dot reserves this workspace; absolute roots and opaque external-object names
+    # still require a consistent owner-assigned namespace.
+    if left == "." or right == ".":
+        return True
+    return left.startswith(right.rstrip("/") + "/") or right.startswith(left.rstrip("/") + "/")
+
+
+def _holds_write(worker: dict[str, Any]) -> bool:
+    if worker["status"] == "reconciled":
+        return False
+    if worker["status"] in TERMINAL_WORKER_STATUSES:
+        if worker["started"] is False:
+            return False
+        if worker["readback_state"] == "reconciled":
+            return False
+    return True
+
+
+def _validate_outcome(plan: dict[str, Any], workers: dict[str, Any], errors: list[str]) -> None:
+    outcome = plan["outcome"]
+    if not isinstance(outcome, dict) or set(outcome) != {"state", "checks", "unresolved"}:
+        errors.append("outcome must contain only state, checks, and unresolved")
+        return
+    state = outcome["state"] if isinstance(outcome["state"], str) else None
+    if state not in {"unverified", "partial", "accepted", "cancelled"}:
+        errors.append("outcome.state is invalid")
+    if not _string_list(outcome["unresolved"]):
+        errors.append("outcome.unresolved must be an array of non-empty strings")
+    if not isinstance(outcome["checks"], list):
+        errors.append("outcome.checks must be an array")
+        return
+    criteria = plan["acceptance"] if _string_list(plan["acceptance"]) else []
+    seen = []
+    passing = []
+    for index, check in enumerate(outcome["checks"]):
+        label = f"outcome.checks[{index}]"
+        if not isinstance(check, dict) or set(check) != {"criterion", "result", "evidence"}:
+            errors.append(f"{label} must contain only criterion, result, and evidence")
+            continue
+        criterion = check["criterion"]
+        result = check["result"] if isinstance(check["result"], str) else None
+        if not _nonempty_string(criterion) or criterion not in criteria:
+            errors.append(f"{label}.criterion must match a plan acceptance criterion exactly")
+        elif criterion in seen:
+            errors.append(f"{label}.criterion duplicates an earlier check")
+        else:
+            seen.append(criterion)
+        if result not in {"passed", "failed", "not-run"}:
+            errors.append(f"{label}.result must be passed, failed, or not-run")
+        if not _string_list(check["evidence"]):
+            errors.append(f"{label}.evidence must be an array of non-empty strings")
+        elif result in {"passed", "failed"} and not _concrete_evidence(check["evidence"]):
+            errors.append(f"{label} observed result requires concrete evidence references")
+        if result == "passed":
+            passing.append(criterion)
+    if state == "accepted":
+        if plan["status"] != "closed":
+            errors.append("accepted outcome requires closed control state")
+        if outcome["unresolved"]:
+            errors.append("accepted outcome cannot have unresolved issues")
+        if len(passing) != len(criteria) or any(c not in passing for c in criteria):
+            errors.append("accepted outcome requires one passing check for every acceptance criterion")
+        for worker_id, worker in workers.items():
+            if worker["write_surfaces"] and _holds_write(worker):
+                errors.append(f"accepted outcome has unknown or unresolved writes: {worker_id}")
+
+
+def declared_outcome(plan: dict[str, Any]) -> str:
+    outcome = plan.get("outcome")
+    return outcome.get("state", "unverified") if isinstance(outcome, dict) else "unverified"
+
+
 def validate(plan: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(plan, dict):
         return ["root must be a JSON object"]
 
     missing = sorted(REQUIRED_TOP - set(plan))
-    extra = sorted(set(plan) - REQUIRED_TOP)
+    extra = sorted(set(plan) - REQUIRED_TOP - OPTIONAL_TOP)
     if missing:
         errors.append("missing top-level fields: " + ", ".join(missing))
     if extra:
@@ -131,6 +215,9 @@ def validate(plan: Any) -> list[str]:
         errors.append("authority fields have invalid types")
     else:
         allowed_authority = {_authority_identity(item) for item in authority["allowed"]}
+        overlap = allowed_authority & {_authority_identity(item) for item in authority["reserved"]}
+        if overlap:
+            errors.append("authority.allowed conflicts with authority.reserved: " + ", ".join(sorted(overlap)))
 
     root = plan["root"]
     if not isinstance(root, dict) or set(root) != {"owner", "work"} or not all(_nonempty_string(root.get(k)) for k in ("owner", "work")):
@@ -178,7 +265,7 @@ def validate(plan: Any) -> list[str]:
             errors.append(f"{label} must be an object")
             continue
         missing_worker = sorted(required_worker - set(worker))
-        extra_worker = sorted(set(worker) - required_worker)
+        extra_worker = sorted(set(worker) - required_worker - {"started", "output", "write_readback"})
         if missing_worker:
             errors.append(f"{label} missing fields: {', '.join(missing_worker)}")
         if extra_worker:
@@ -209,6 +296,37 @@ def validate(plan: Any) -> list[str]:
         worker_status = worker["status"] if isinstance(worker["status"], str) else None
         if worker_status not in WORKER_STATUSES:
             errors.append(f"{label}.status is invalid")
+        if "started" in worker:
+            if not isinstance(worker["started"], bool):
+                errors.append(f"{label}.started must be a boolean when known; omit when unknown")
+            elif worker_status in STARTED_WORKER_STATUSES and not worker["started"]:
+                errors.append(f"{label}.started contradicts status {worker_status}")
+            elif worker_status == "planned" and worker["started"]:
+                errors.append(f"{label}.started contradicts planned status")
+        for field, states in (("output", {"pending", "accepted", "rejected"}), ("write_readback", {"unknown", "reconciled"})):
+            if field not in worker:
+                continue
+            record = worker[field]
+            if not isinstance(record, dict) or set(record) != {"state", "evidence"}:
+                errors.append(f"{label}.{field} must contain only state and evidence")
+                continue
+            state = record["state"] if isinstance(record["state"], str) else None
+            if state not in states or not _string_list(record["evidence"]):
+                errors.append(f"{label}.{field} has invalid state or evidence")
+            elif state in {"accepted", "rejected", "reconciled"} and not _concrete_evidence(record["evidence"]):
+                errors.append(f"{label}.{field} decision requires concrete observed evidence references")
+        output = worker.get("output")
+        output_state = output.get("state") if isinstance(output, dict) and isinstance(output.get("state"), str) else None
+        readback = worker.get("write_readback")
+        readback_state = readback.get("state") if isinstance(readback, dict) and isinstance(readback.get("state"), str) else None
+        if worker_status == "reconciled" and output is not None and output_state != "accepted":
+            errors.append(f"{label}.output contradicts reconciled accepted-output status")
+        if worker_status == "reconciled" and worker["write_surfaces"] and readback is not None and readback_state != "reconciled":
+            errors.append(f"{label}.write_readback contradicts reconciled write state")
+        if output_state == "accepted" and worker_status in {"planned", "dispatched", "working"}:
+            errors.append(f"{label}.output accepted before worker returned")
+        if worker.get("started") is False and output_state in {"accepted", "rejected"}:
+            errors.append(f"{label}.output decision contradicts never-started worker")
         worker_id = worker["id"]
         if _nonempty_string(worker_id):
             ids.append(worker_id)
@@ -216,7 +334,15 @@ def validate(plan: Any) -> list[str]:
                 "depends_on": worker["depends_on"] if _string_list(worker["depends_on"]) else [],
                 "write_surfaces": worker["write_surfaces"] if _string_list(worker["write_surfaces"]) else [],
                 "status": worker_status,
+                "started": worker.get("started"),
+                "output_state": output_state,
+                "readback_state": readback_state,
             }
+
+    limit = budgets.get("concurrency_limit") if isinstance(budgets, dict) else None
+    running = [worker_id for worker_id, worker in worker_by_id.items() if worker["status"] in RUNNING_WORKER_STATUSES]
+    if isinstance(limit, int) and not isinstance(limit, bool) and len(running) > limit:
+        errors.append(f"active worker count {len(running)} exceeds budgets.concurrency_limit {limit}")
 
     duplicates = sorted({worker_id for worker_id in ids if ids.count(worker_id) > 1})
     if duplicates:
@@ -267,11 +393,17 @@ def validate(plan: Any) -> list[str]:
             errors.append("chain regime must form one linear dependency path across all workers")
 
     for worker_id, worker in worker_by_id.items():
-        if worker["status"] not in STARTED_WORKER_STATUSES:
+        if worker["status"] not in STARTED_WORKER_STATUSES and worker["started"] is not True:
             continue
         for dependency in worker["depends_on"]:
-            dependency_status = worker_by_id.get(dependency, {}).get("status")
-            if dependency_status not in ACCEPTED_DEPENDENCY_STATUSES:
+            prerequisite = worker_by_id.get(dependency, {})
+            dependency_status = prerequisite.get("status")
+            accepted = dependency_status == "reconciled" or (
+                dependency_status in TERMINAL_WORKER_STATUSES
+                and prerequisite.get("output_state") == "accepted"
+                and (not prerequisite.get("write_surfaces") or prerequisite.get("readback_state") == "reconciled")
+            )
+            if not accepted:
                 errors.append(
                     f"worker {worker_id} status {worker['status']} requires accepted dependency {dependency}; found {dependency_status or 'unknown'}"
                 )
@@ -288,27 +420,31 @@ def validate(plan: Any) -> list[str]:
                 return True
         return False
 
-    surface_owners: dict[str, list[str]] = {}
-    for worker_id, worker in worker_by_id.items():
-        if worker["status"] not in OPEN_WRITE_STATUSES:
+    # A reserved directory owns its descendants too. Unknown stopped writes remain
+    # held until observed readback, rather than treating interruption as rollback.
+    for left, right in combinations(sorted(worker_by_id), 2):
+        a, b = worker_by_id[left], worker_by_id[right]
+        if not _holds_write(a) or not _holds_write(b):
             continue
-        for surface in worker["write_surfaces"]:
-            identity = _surface_identity(surface)
-            surface_owners.setdefault(identity, []).append(worker_id)
-    for surface, owners in sorted(surface_owners.items()):
-        conflicting: set[str] = set()
-        for left, right in combinations(sorted(set(owners)), 2):
-            if depends_transitively(left, right):
-                downstream, upstream = left, right
-            elif depends_transitively(right, left):
-                downstream, upstream = right, left
-            else:
-                downstream = upstream = ""
-            safely_sequenced = bool(downstream) and worker_by_id[downstream]["status"] == "planned"
-            if not safely_sequenced:
-                conflicting.update((left, right))
-        if conflicting:
-            errors.append(f"active workers share write surface {surface}: {', '.join(sorted(conflicting))}")
+        if depends_transitively(left, right):
+            downstream = left
+        elif depends_transitively(right, left):
+            downstream = right
+        else:
+            downstream = ""
+        if downstream and worker_by_id[downstream]["status"] == "planned":
+            continue
+        overlaps = set()
+        for left_path in a["write_surfaces"]:
+            for right_path in b["write_surfaces"]:
+                x, y = _surface_identity(left_path), _surface_identity(right_path)
+                if _surfaces_overlap(x, y):
+                    overlaps.add(x if x == y else f"{x} / {y}")
+        for surface in sorted(overlaps):
+            errors.append(f"active workers share write surface {surface}: {left}, {right}")
+
+    if "outcome" in plan:
+        _validate_outcome(plan, worker_by_id, errors)
 
     if plan_status in {"closed", "cancelled"}:
         unfinished = sorted(
@@ -325,12 +461,11 @@ def validate(plan: Any) -> list[str]:
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) != 2:
-        print("usage: validate_swarm_plan.py <swarm-plan.json>", file=sys.stderr)
-        return 2
-    path = Path(argv[1])
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("plan", type=Path, help="UTF-8 JSON plan; validates declarations, not evidence authenticity")
+    args = parser.parse_args(argv[1:])
     try:
-        plan = json.loads(path.read_text(encoding="utf-8"))
+        plan = json.loads(args.plan.read_text(encoding="utf-8-sig"))
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         print(f"INVALID: {exc}")
         return 1
@@ -340,7 +475,8 @@ def main(argv: list[str]) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("VALID cd-agent-swarm-plan/v1")
+    print("VALID cd-agent-swarm-plan/v1 — declared structure only")
+    print(f"Control: {plan['status']}; mission outcome: {declared_outcome(plan)} (declared, not independently authenticated)")
     return 0
 
 

@@ -1,6 +1,6 @@
 ---
 name: agent-striving
-description: "🏹 Keep authorized pursuits alive through interruption."
+description: "🏹 Durable goals and resumed pursuits across interruption."
 ---
 
 # Keep the future pulling on the present
@@ -31,7 +31,7 @@ Goal language preserves direction; it does not by itself preserve changing state
 
 Inspect an existing host goal before creating another; do not collide with a still-live goal or counterfeit its completion merely to replace it. A task-scoped host goal preserves direction only inside that task unless the host establishes a wider guarantee. After asking a state owner to preserve or revise the pursuit, inspect what the host actually returned. A persistence receipt establishes that state was stored. A usable reactivation cue establishes how a later task can recover it. Claim cross-task durability only when both exist. A drafted checkpoint without a receipt is prepared, not persisted; persisted state without a real reload route is stored, not self-resuming. Wakeups or unattended continuation additionally require an explicitly authorized host mechanism. Never promote prose about persistence into evidence that persistence occurred.
 
-Use `assets/pursuit-state.template.json` only for a genuine custody or host boundary that no governed store can carry. It is a sparse handoff envelope, not the shape of thought, conversation, a host goal, or ordinary project state. Fill it from current reality and validate it with `python scripts/validate_pursuit_state.py <handoff.json>`.
+Use `assets/pursuit-state.template.json` only for a genuine custody or host boundary that no governed store can carry. It is a sparse handoff envelope, not the shape of thought, conversation, a host goal, or ordinary project state. Fill it from current reality and validate it with `python scripts/validate_pursuit_state.py <handoff.json>`. The [manual handoff example](examples/manual-handoff.md) shows the complete invocation and its limited guarantee. Concrete receipt/cue references exclude placeholders such as none or N/A; validation cannot authenticate them.
 
 ## Move in the form the work needs
 

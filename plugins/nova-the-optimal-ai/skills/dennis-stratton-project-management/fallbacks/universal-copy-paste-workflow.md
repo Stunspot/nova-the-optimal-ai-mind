@@ -1,6 +1,6 @@
 # Universal copy-paste project control
 
-Use this only when durable files or Python are unavailable. Keep one canonical block; replace it deliberately rather than forking competing copies.
+Use this only when durable files or Python are unavailable. Keep one canonical block; replace it deliberately rather than forking competing copies. Select only completion states required by the actual contract; checkpoint and remote synchronization are examples, not mandatory gates.
 
 ```text
 PROJECT: <name>
@@ -60,6 +60,6 @@ Next controlled move: <action and owner>
 
 For status, answer in this order: done yes/no/unknown; exact location; evidence-bearing outcome; smallest remaining gap; actual constraint; next move and owner.
 
-At contradiction or confusion, stop mutation. Rank sources, reconcile hierarchy and terminology, distinguish owner policy from model-authored safeguards, restate the completion contract, compare claims with evidence, and resume only after the shared map is coherent.
+At contradiction or confusion, stop only mutations whose correctness depends on disputed facts; continue independent authorized work. Rank sources, reconcile hierarchy and terminology, distinguish owner policy from model-authored safeguards, restate the completion contract, compare claims with evidence, and resume only after the shared map is coherent.
 
 This text has no schema validation, reference checks, canonical fingerprint, or atomic-write protection. State those lost guarantees when using it.

@@ -1361,16 +1361,31 @@
           "$ref": "#/$defs/nonempty"
         },
         "lower": {
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "upper": {
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
         },
         "confidence": {
           "enum": [
             "low",
             "medium",
-            "high"
+            "high",
+            "unknown"
           ]
         },
         "basis": {

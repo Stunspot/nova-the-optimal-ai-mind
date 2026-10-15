@@ -18,15 +18,16 @@
       },
       "core": {
         "component_version": "0.2.0",
-        "path": "source/faculty-cores/executive-function.core.md",
-        "sha256": "5C8FEEC350D5C581282637778FBC889DFD250711F2916CB9B9EF0DB9D9752D94",
-        "bytes": 4907
+        "path": "references/mind/faculty-cores/executive-function.core.md",
+        "sha256": "F7BABF25404F8BEEAF76D1D006574153953E6A63C3DAB77D12BB8EA473857C48",
+        "bytes": 5290
       },
       "intentional_adaptations": [
         "Converted phase custody into quiet mission governance inside one Nova context.",
         "Made gates and commitments proportional control moves rather than mandatory ceremony.",
         "Integrated closure and recovery into ongoing judgment.",
-        "Separated the desired change from mutable routes and subordinate support activity, with mission pulses as executive interrupts against goal substitution."
+        "Separated the desired change from mutable routes and subordinate support activity, with mission pulses as executive interrupts against goal substitution.",
+        "Tie blocking to a failed required acceptance or actual boundary, keep cost considerations as route choices, and permit partial closure only when the remaining required work cannot presently advance."
       ],
       "retained_doctrine": [
         "Provisional mission model grounded in desired state, acceptance, stakes, constraints, current state, and authority.",
@@ -43,22 +44,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_unification"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/mind-alpha.2-review.md",
-        "reviewer": "independent mind_repair_review agent",
-        "observed_at": "2026-08-21T14:01:09.6664788Z",
-        "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "5C8FEEC350D5C581282637778FBC889DFD250711F2916CB9B9EF0DB9D9752D94",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_unification"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/mind-alpha.2-review.md",
+            "reviewer": "independent mind_repair_review agent",
+            "observed_at": "2026-08-21T14:01:09.6664788Z",
+            "boundary": "Independent static review of the alpha.2 mission-recentering repair only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "Historical alpha.1 authoring fixture only; the alpha.2 mission-recentering repair is not qualified by that fixture."
+          }
+        }
+      ]
     },
     {
       "id": "capability-conductor",
@@ -69,14 +90,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/capability-conductor.core.md",
-        "sha256": "21AF08A386748E57EF502D3974969366B3999F80C4952F86B03CB6B9B688D216",
-        "bytes": 4105
+        "path": "references/mind/faculty-cores/capability-conductor.core.md",
+        "sha256": "5755C97D6F52F5019D824C3D10D68AE31A5218EA5F70F093AC9B10B8F1DF27CC",
+        "bytes": 4506
       },
       "intentional_adaptations": [
         "Changed exclusive route custody into permeable advice for widening practical reach.",
         "Made host, project, package, and user praxis equally eligible.",
-        "Replaced Faculty-team choreography with inline composition inside one Nova result."
+        "Replaced Faculty-team choreography with inline composition inside one Nova result.",
+        "Read the selected current entrypoint when required/relevant, follow its scoped workflow, verify actual callable affordances and retain the distinction between a core lens and a real worker."
       ],
       "retained_doctrine": [
         "Capability need follows the transformation the work requires.",
@@ -93,22 +115,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_unification"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "21AF08A386748E57EF502D3974969366B3999F80C4952F86B03CB6B9B688D216",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_unification"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "cognitive-continuity",
@@ -119,15 +161,16 @@
       },
       "core": {
         "component_version": "0.3.0",
-        "path": "source/faculty-cores/cognitive-continuity.core.md",
-        "sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
-        "bytes": 6783
+        "path": "references/mind/faculty-cores/cognitive-continuity.core.md",
+        "sha256": "7039803F28DA8C6D24A96FB243E3C5D41C7FB3E6D70006F65A015A84FE8B9D60",
+        "bytes": 7302
       },
       "intentional_adaptations": [
         "Preserved governed task context while adding recognition-first autobiographical orientation.",
         "Removed the universal project gate and anti-biography instruction; projects are optional timeline facets.",
         "Recruit governed coherent-occurrence capture under established authority with source pointers, honest time and idempotency.",
-        "Keep current privacy, correction, forgetting and capability ownership binding across historical views."
+        "Keep current privacy, correction, forgetting and capability ownership binding across historical views.",
+        "Resolve capture/retrieval through the current Cognitive Continuity entrypoint, reconcile unknown writes by the source-event identity, and continue the substantive task when optional capture fails."
       ],
       "retained_doctrine": [
         "Source, owner scope, authority, honest time and privacy govern recalled material.",
@@ -145,18 +188,18 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "worldline_2_edition_integration"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "reviewer": "independent Worldline 2 Promptcraft reviewer",
-        "evidence": "cognitive-continuity/design/worldline-2/REVIEW.md",
-        "reviewed_core_sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
-        "boundary": "Static semantic review of Faculty, front-door and Operations prompts under sparse, conflicting, unavailable, no-retention and apparent-completion cases; no live-host or spontaneous invocation claim."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "evidence_boundary": "Runtime and launcher tests do not prove spontaneous future model invocation."
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
       },
       "design_authority": {
         "case": "ARC-WORLDLINE-2",
@@ -168,7 +211,27 @@
         "component_version": "2.2.2",
         "coordinate": "augment-of-mind@2.2.2/skills/cognitive-continuity/SKILL.md",
         "sha256": "BF867C006A999AAFE7D8023E2325369E5CCF378216C3A4CAF4F64309CB2443A5"
-      }
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "worldline_2_edition_integration"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "reviewer": "independent Worldline 2 Promptcraft reviewer",
+            "evidence": "cognitive-continuity/design/worldline-2/REVIEW.md",
+            "reviewed_core_sha256": "FC6EF5D758D961FE9EE131DDEC05CA005E8C1D86E857914DE69AD584B7FC355D",
+            "boundary": "Static semantic review of Faculty, front-door and Operations prompts under sparse, conflicting, unavailable, no-retention and apparent-completion cases; no live-host or spontaneous invocation claim."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "evidence_boundary": "Runtime and launcher tests do not prove spontaneous future model invocation."
+          }
+        }
+      ]
     },
     {
       "id": "agent-striving",
@@ -183,15 +246,16 @@
       },
       "core": {
         "component_version": "0.3.1",
-        "path": "source/faculty-cores/agent-striving.core.md",
-        "sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
-        "bytes": 6482
+        "path": "references/mind/faculty-cores/agent-striving.core.md",
+        "sha256": "C01DDE476A1B1E24C828384AE3D9C1E8AFCD1AC51AA7FD1F1C5BCDA2B5E926F9",
+        "bytes": 6814
       },
       "intentional_adaptations": [
         "Translated Agent Striving 0.4.0 into an ambient conative performance seed rather than embedding its standalone skill shell.",
         "Made host-goal composition itself PromptCraft: continuous prose preserves semantic momentum and route plasticity instead of serializing a miniature PRD.",
         "Kept stable direction separate from changing project and continuity state, and bounded cross-task claims to observed storage plus usable reactivation.",
-        "Made current correction, cancellation, and natural rest outrank stale persisted wording or mechanical continuation."
+        "Made current correction, cancellation, and natural rest outrank stale persisted wording or mechanical continuation.",
+        "Bind rest to actual completion or a real interruption/boundary; preserve exact carrier schema and instructions while keeping human-readable objective prose useful."
       ],
       "retained_doctrine": [
         "Conation remains user-authorized and does not simulate self-generated desire.",
@@ -211,27 +275,47 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "striving_mind_core_isolated"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/agent-striving-0.4.0-core-static-review.md",
-        "reviewer": "/root/goal_promptcraft",
-        "observed_at": "2026-09-02T22:02:07.4718868Z",
-        "boundary": "Independent static review of the staged Agent Striving 0.4.0 ambient Core adaptation only; no behavioral, host-loading, or edition-integration claim.",
-        "evidence_sha256": "102BEEE30A3964F82A0AB294DE5843790F927AC2070944EA03C61F5A113688B4",
-        "evidence_bytes": 1168,
-        "candidate_sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
-        "upstream_coordinate": "augment-of-mind@5bccd0867bf9905b7775741c7344a4570974c917/skills/agent-striving/SKILL.md",
-        "verdict": "PASS"
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "Historical MIND fixture only; no model execution has qualified the Agent Striving 0.4.0 ambient Core adaptation."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "striving_mind_core_isolated"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/agent-striving-0.4.0-core-static-review.md",
+            "reviewer": "/root/goal_promptcraft",
+            "observed_at": "2026-09-02T22:02:07.4718868Z",
+            "boundary": "Independent static review of the staged Agent Striving 0.4.0 ambient Core adaptation only; no behavioral, host-loading, or edition-integration claim.",
+            "evidence_sha256": "102BEEE30A3964F82A0AB294DE5843790F927AC2070944EA03C61F5A113688B4",
+            "evidence_bytes": 1168,
+            "candidate_sha256": "F701FDCDDA6BA5D578CEFA01E53A65251D906B33401842FAB7C99C1591DF88F7",
+            "upstream_coordinate": "augment-of-mind@5bccd0867bf9905b7775741c7344a4570974c917/skills/agent-striving/SKILL.md",
+            "verdict": "PASS"
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "Historical MIND fixture only; no model execution has qualified the Agent Striving 0.4.0 ambient Core adaptation."
+          }
+        }
+      ]
     },
     {
       "id": "instrumental-agency",
@@ -242,14 +326,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/instrumental-agency.core.md",
-        "sha256": "B78B4BB7079916D0D2B5B6DCFEAD78888D87B7C65061A05DA477CE4890FC3159",
-        "bytes": 4562
+        "path": "references/mind/faculty-cores/instrumental-agency.core.md",
+        "sha256": "FEAE30C4346E0A9C93C341CF958B6F8C297C068230D1936792F8914BEECEC069",
+        "bytes": 5064
       },
       "intentional_adaptations": [
         "Converted the standalone operating sequence into inline controlled-action judgment.",
         "Preserved independent-verification boundaries without routing completion elsewhere.",
-        "Expressed action disposition in ordinary language instead of requiring a ledger artifact."
+        "Expressed action disposition in ordinary language instead of requiring a ledger artifact.",
+        "Carry established authority through its actual scope; inspect concrete payloads and ask only for a materially new/reserved action. Use internal checks for reversible work and check actual acceptance before declaring a gate."
       ],
       "retained_doctrine": [
         "Authority envelope and payload-level approval remain explicit.",
@@ -266,22 +351,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_unification"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "B78B4BB7079916D0D2B5B6DCFEAD78888D87B7C65061A05DA477CE4890FC3159",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_unification"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "sensemaking",
@@ -292,7 +397,7 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/sensemaking.core.md",
+        "path": "references/mind/faculty-cores/sensemaking.core.md",
         "sha256": "79A91D849C9805A183411562E547814247268A411F6BAAB520C3947716287622",
         "bytes": 3585
       },
@@ -340,15 +445,16 @@
       },
       "core": {
         "component_version": "0.3.0",
-        "path": "source/faculty-cores/strategic-intelligence.core.md",
-        "sha256": "944285477CB98298B2C32100C8D387023417B9125151CB7F22E6613405C62237",
-        "bytes": 7010
+        "path": "references/mind/faculty-cores/strategic-intelligence.core.md",
+        "sha256": "226330C10D816F92DC7716CDDF5111F680CC0B5D9A1CC0CA53A002D15EF287C7",
+        "bytes": 7062
       },
       "intentional_adaptations": [
         "Integrated the Faculty as a same-Nova ambient Core rather than a standalone specialist.",
         "Generalized strategic craft beyond warfare while preserving its useful planning mechanics.",
         "Kept the three full knowledge canons upstream and retrieval-bound instead of injecting or copying them into MIND.",
-        "Preserved Wiki Brain 2 custody by creating no index, graph, corpus copy, embedding store, fact store, or promotion path."
+        "Preserved Wiki Brain 2 custody by creating no index, graph, corpus copy, embedding store, fact store, or promotion path.",
+        "Rephrase the relation as same-Nova contributions and distinguish real actor delegation from conceptual lenses; keep upstream strategic source and knowledge canons unchanged."
       ],
       "retained_doctrine": [
         "Activation depends on reciprocal actor response, commitment-shaped option sets, or consequential regime change rather than the word strategy.",
@@ -369,22 +475,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "Nova / upstream Faculty source review"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/strategic-intelligence-prompt-review.md",
-        "reviewer": "independent core_review agent",
-        "observed_at": "2026-08-30T23:21:57.6507889Z",
-        "boundary": "Independent static review of the exact Strategic Intelligence Core and Faculty Field after four bounded repairs."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/strategic-intelligence-cases.json",
-        "fixture_sha256": "75245B42A223F8DDF75AE1F14A2B70B58157B68607769F7734DC33484EB4EF21",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "The prior MIND 0.3.0 authoring-harness run is historical: it does not bind the changed MIND 0.3.1 compiled Nova prompt. Strategic Intelligence behavioral requalification is required before restoring a current execution claim."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "944285477CB98298B2C32100C8D387023417B9125151CB7F22E6613405C62237",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "Nova / upstream Faculty source review"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/strategic-intelligence-prompt-review.md",
+            "reviewer": "independent core_review agent",
+            "observed_at": "2026-08-30T23:21:57.6507889Z",
+            "boundary": "Independent static review of the exact Strategic Intelligence Core and Faculty Field after four bounded repairs."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/strategic-intelligence-cases.json",
+            "fixture_sha256": "75245B42A223F8DDF75AE1F14A2B70B58157B68607769F7734DC33484EB4EF21",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "The prior MIND 0.3.0 authoring-harness run is historical: it does not bind the changed MIND 0.3.1 compiled Nova prompt. Strategic Intelligence behavioral requalification is required before restoring a current execution claim."
+          }
+        }
+      ]
     },
     {
       "id": "epistemic-regulation",
@@ -395,7 +521,7 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.2",
-        "path": "source/faculty-cores/epistemic-regulation.core.md",
+        "path": "references/mind/faculty-cores/epistemic-regulation.core.md",
         "sha256": "A23EB7CBAFE23EFFF5DACC6FE26ACA3C36EF5634E5BA731DEEE631186DB16C20",
         "bytes": 4555
       },
@@ -446,14 +572,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/measurement-intelligence.core.md",
-        "sha256": "DCD1E9674B9B3F5F9CDD17EA98DB1C5A1D5D87D43461D295095D7B2A397FCD4B",
-        "bytes": 4801
+        "path": "references/mind/faculty-cores/measurement-intelligence.core.md",
+        "sha256": "2F0F8A36B42D50AF85B95427B433C955A967C9703F3F261E0BEEEA4D588EC2A7",
+        "bytes": 5202
       },
       "intentional_adaptations": [
         "Removed standalone activation and deferral gates.",
         "Integrated measurement doctrine into one performance seed.",
-        "Preserved data, verification, recommendation, and causal boundaries without provider custody."
+        "Preserved data, verification, recommendation, and causal boundaries without provider custody.",
+        "Distinguish measured zero from no observations, undefined ratios and failed collection; carry coverage beside the outcome and require denominator/context before applying a threshold."
       ],
       "retained_doctrine": [
         "Begin with the construct and decision a signal must change.",
@@ -470,22 +597,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_critique"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "DCD1E9674B9B3F5F9CDD17EA98DB1C5A1D5D87D43461D295095D7B2A397FCD4B",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_critique"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "decision-intelligence",
@@ -496,14 +643,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/decision-intelligence.core.md",
-        "sha256": "5EE48C83C3085088DD60D9D62032A47E43859CB06E2282DB5EC7D2551E4D9416",
-        "bytes": 4011
+        "path": "references/mind/faculty-cores/decision-intelligence.core.md",
+        "sha256": "86AFF275A8C5A2BB42802C188204E3678FED84D956407D88376D30F5E8758324",
+        "bytes": 4305
       },
       "intentional_adaptations": [
         "Integrated the decision doctrine into one cognitive program.",
         "Converted Faculty choreography into permeable relations.",
-        "Preserved human authority and the difference between recommendation and commitment."
+        "Preserved human authority and the difference between recommendation and commitment.",
+        "Close only the comparison contribution, then continue already-authorized action through the real execution affordance; do not infer authority from the recommendation itself."
       ],
       "retained_doctrine": [
         "Separate framing, evidence, values, recommendation, approval, execution, and consequence roles.",
@@ -519,22 +667,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_critique"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "5EE48C83C3085088DD60D9D62032A47E43859CB06E2282DB5EC7D2551E4D9416",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_critique"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "deliberative-intelligence",
@@ -545,7 +713,7 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/deliberative-intelligence.core.md",
+        "path": "references/mind/faculty-cores/deliberative-intelligence.core.md",
         "sha256": "B022B1A6CA4781C3CCEDCD3569F2C54F7CE3A1F171C5CD9B8F7FE880BCBACC51",
         "bytes": 4721
       },
@@ -594,14 +762,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/creative-synthesis.core.md",
-        "sha256": "9E57B14EEB16DE0B040DC9E61CB43D941A9A22B516C68D0D1EC1C8A5FB4A8302",
-        "bytes": 4469
+        "path": "references/mind/faculty-cores/creative-synthesis.core.md",
+        "sha256": "F13B891D832DDF14E9DADE78D2A97C5A994EBED5391E7FA403077A16D18E61DF",
+        "bytes": 4923
       },
       "intentional_adaptations": [
         "Converted specialist handoffs into permeable same-context judgment.",
         "Integrated the doctrine into one model-facing performance seed.",
-        "Reframed completion around a differentiated, evaluable possibility field."
+        "Reframed completion around a differentiated, evaluable possibility field.",
+        "Judge meaningful difference at the requested level, preserve useful stylistic variation, and finish the selected artifact when authorized."
       ],
       "retained_doctrine": [
         "Purpose-tethered novelty.",
@@ -618,22 +787,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_surface"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "9E57B14EEB16DE0B040DC9E61CB43D941A9A22B516C68D0D1EC1C8A5FB4A8302",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_surface"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "aesthetic-intelligence",
@@ -644,14 +833,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/aesthetic-intelligence.core.md",
-        "sha256": "95018FD8BC2F75BFB87574B62581B9525B887EAB1C80F6C136A163F61074C61C",
-        "bytes": 4770
+        "path": "references/mind/faculty-cores/aesthetic-intelligence.core.md",
+        "sha256": "75530713D746AF07EC2C166F526A0C556278EC96B676973792C9B0F9D186CBF6",
+        "bytes": 5169
       },
       "intentional_adaptations": [
         "Integrated Tastefield bearings into fluid aesthetic judgment.",
         "Converted neighboring-Faculty routes into permeable relations.",
-        "Kept durable taste outside the Core while preserving provisional calibration."
+        "Kept durable taste outside the Core while preserving provisional calibration.",
+        "Establish which artifact/modality was inspected; separate supplied description from perception and seek the minimum missing access when it changes the judgment."
       ],
       "retained_doctrine": [
         "Gestalt-first perception.",
@@ -669,22 +859,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_surface"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "95018FD8BC2F75BFB87574B62581B9525B887EAB1C80F6C136A163F61074C61C",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_surface"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "kairos",
@@ -695,14 +905,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/kairos.core.md",
-        "sha256": "7E336DD094FD88C3987529C59D67938945B77DA26100D12D5BFEAA47C68A707E",
-        "bytes": 4426
+        "path": "references/mind/faculty-cores/kairos.core.md",
+        "sha256": "DEEA30C241317448E2D03A2CA512A0CF888E5D01445B561763A55D296B2CFEA4",
+        "bytes": 4687
       },
       "intentional_adaptations": [
         "Converted upstream and downstream handoffs into same-context relations.",
         "Integrated audience, timing, channel, expression, and repair.",
-        "Preserved truthful expression without importing influence custody."
+        "Preserved truthful expression without importing influence custody.",
+        "Follow the latest correction, replace the failed communicative frame and continue the authorized task; reserve stopping contact for an actual stop or consent boundary."
       ],
       "retained_doctrine": [
         "Model audiences as people rather than targets.",
@@ -719,22 +930,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_surface"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "7E336DD094FD88C3987529C59D67938945B77DA26100D12D5BFEAA47C68A707E",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_surface"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "prosocial-influence",
@@ -745,14 +976,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/prosocial-influence.core.md",
-        "sha256": "D830C3A3FD50A92390D1527889EE566C18606A63612E60DBAF880E79D2089CC4",
-        "bytes": 4775
+        "path": "references/mind/faculty-cores/prosocial-influence.core.md",
+        "sha256": "8116CD4DB9EE756E1BBFB080E87C1EA855EA29DC1D8CCF9C51E601DD065340AF",
+        "bytes": 4993
       },
       "intentional_adaptations": [
         "Converted the operating sequence into fluid change-architecture judgment.",
         "Recast expression and deliberation handoffs as permeable relations.",
-        "Embedded the consequential output contract as completion sense."
+        "Embedded the consequential output contract as completion sense.",
+        "Make the architecture available at the scale of consequence, deliver the requested artifact first and retain material burdens/refusal facts without mandatory report furniture."
       ],
       "retained_doctrine": [
         "Transparent advocacy and sponsorship.",
@@ -769,22 +1001,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_surface"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "D830C3A3FD50A92390D1527889EE566C18606A63612E60DBAF880E79D2089CC4",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_surface"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "agent-dreaming",
@@ -795,14 +1047,15 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/agent-dreaming.core.md",
-        "sha256": "C303B3A9199CFCD4B5F7124FB8F4ECCC92BEDB7D15CA82510A75947F4E801B4A",
-        "bytes": 4904
+        "path": "references/mind/faculty-cores/agent-dreaming.core.md",
+        "sha256": "A9CE3C81C0D7F718C054D71E5B1B8122DDFE41B7EB28488B46040079639538E8",
+        "bytes": 5320
       },
       "intentional_adaptations": [
         "Preserved explicit authorization as an intrinsic chamber gate.",
         "Integrated waking review into the cognitive program.",
-        "Converted continuity promotion into ordinary post-waking evidence and authority discipline."
+        "Converted continuity promotion into ordinary post-waking evidence and authority discipline.",
+        "Permit reasoning over supplied material while labelling hypothetical analogies; require new source intake to occur outside the closed run and keep proposed external tests subject to existing authority."
       ],
       "retained_doctrine": [
         "Packet-closed perturbation under quarantine.",
@@ -819,22 +1072,42 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_surface"
+        "actor": "estate_documentation_tools",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Source-grounded expert contrasts; no isolated-model trials."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "pending_for_revised_bytes",
+        "evidence": null,
+        "boundary": "Historical review retained separately and does not qualify revised bytes."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "C303B3A9199CFCD4B5F7124FB8F4ECCC92BEDB7D15CA82510A75947F4E801B4A",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_surface"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        }
+      ]
     },
     {
       "id": "agentic-eros",
@@ -845,7 +1118,7 @@
       },
       "core": {
         "component_version": "0.2.0-alpha.1",
-        "path": "source/faculty-cores/agentic-eros.core.md",
+        "path": "references/mind/faculty-cores/agentic-eros.core.md",
         "sha256": "70248F8EBFB1C50424F752E68D3EF0500734AFB3E49D93B96E8D0514B2F3A3B6",
         "bytes": 10858
       },
@@ -871,22 +1144,62 @@
       ],
       "author_review": {
         "state": "author_reviewed",
-        "actor": "mind_surface"
+        "actor": "owner_design_restoration",
+        "evidence": "references/mind/core-quality-review.json",
+        "boundary": "Exact restoration of preserved Eros Core; no new behavioral qualification."
       },
       "independent_prompt_review": {
-        "state": "bounded_pass_static_prompt_review",
-        "evidence": "evidence/prompt-review.md",
-        "reviewer": "independent prompt_review agent",
-        "observed_at": "2026-08-21T03:24:19.9981298Z",
-        "boundary": "Static source and package integrity plus prompt-level review only."
+        "state": "historical_static_review_matches_restored_bytes",
+        "evidence": null,
+        "boundary": "The historical review recorded below identifies exactly the restored Core bytes. Its original static scope carries; no new model, host or cross-platform behavior observation is claimed."
       },
       "behavioral_qualification": {
         "state": "not_executed",
-        "fixture": "tests/behavioral-dry-run-cases.json",
-        "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
-        "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
-        "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
-      }
+        "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial was performed for this restoration. Historical unexecuted fixture references remain historical."
+      },
+      "historical_reviews": [
+        {
+          "core_sha256": "70248F8EBFB1C50424F752E68D3EF0500734AFB3E49D93B96E8D0514B2F3A3B6",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "mind_surface"
+          },
+          "independent_prompt_review": {
+            "state": "bounded_pass_static_prompt_review",
+            "evidence": "evidence/prompt-review.md",
+            "reviewer": "independent prompt_review agent",
+            "observed_at": "2026-08-21T03:24:19.9981298Z",
+            "boundary": "Static source and package integrity plus prompt-level review only."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "fixture": "tests/behavioral-dry-run-cases.json",
+            "fixture_sha256": "9567923655BEF8CC55004B6C73673457E3374A469ABDA39E858FF0D40CC3B06A",
+            "fixture_reference_state": "recorded_reference_only_file_absent_from_current_source_tree",
+            "evidence_boundary": "NOT_EXECUTED; the recorded fixture path is absent from this source tree and no behavioral execution receipt is bound."
+          }
+        },
+        {
+          "core_sha256": "80603DA040115EA0B78515E5FBF8A1DAC5B26CC5CA979C04FB8AEF0E1FC40B8A",
+          "author_review": {
+            "state": "author_reviewed",
+            "actor": "estate_documentation_tools",
+            "evidence": "references/mind/core-quality-review.json",
+            "boundary": "Source-grounded expert contrasts; no isolated-model trials."
+          },
+          "independent_prompt_review": {
+            "state": "pending_for_revised_bytes",
+            "evidence": null,
+            "boundary": "Historical review retained separately and does not qualify revised bytes."
+          },
+          "behavioral_qualification": {
+            "state": "not_executed",
+            "evidence_boundary": "No isolated model, spontaneous invocation or live behavioral trial performed for these revised bytes."
+          },
+          "disposition": "withdrawn_owner_design_misunderstanding",
+          "reason": "The imposed universal non-graphic ceiling changed the product purpose without owner authority. The owner rejected it and required restoration of the platform-adaptive full range."
+        }
+      ]
     }
   ]
 }

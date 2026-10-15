@@ -1,86 +1,57 @@
 {
   "authored_files": [
     {
-      "bytes": 7926,
-      "path": "README.md",
-      "sha256": "4e97cc82e1ddb28092f8708c826a57a302a6a8ea39ad7efe4af06f0619aa69c7"
-    },
-    {
-      "bytes": 6792,
-      "path": "START-HERE.md",
-      "sha256": "d1d26a68cd720fbda9bad4babaaaf85dd7f44410681cd87687bf990158b5fa3d"
-    },
-    {
-      "bytes": 19607,
-      "path": "RELEASE-NOTES.md",
-      "sha256": "65f75de1d48e832c167bbbb3dfb4ea6e6334edb10162b8a61f586ea3146c03b0"
-    },
-    {
-      "bytes": 4737,
-      "path": "docs/CAPABILITY-GUIDE.md",
-      "sha256": "efb90515d298d61b0dd182bd4fd340f1902fb72ac290c6970b6dc7affb702739"
-    },
-    {
-      "bytes": 4415,
-      "path": "docs/UPGRADE.md",
-      "sha256": "fdf3876c56ae80373b055ddce777b70b2fb3a463f987d60efff7e50caef047c2"
-    },
-    {
-      "bytes": 2421,
-      "path": "docs/VERIFICATION.md",
-      "sha256": "3793972569fc69d16757ffbf09742943e752fd3ed31076863538604dd79ff5eb"
-    },
-    {
-      "bytes": 13942,
+      "bytes": 16437,
       "path": "docs/VISUAL-WORKSPACES.md",
-      "sha256": "2894b7cabba142a1f66d036d269d9a2905bcb3a8913887aaa991671359c1c908"
-    },
-    {
-      "bytes": 3704,
-      "path": "docs/OSINT.md",
-      "sha256": "b3a33d35eba9e47e753d1a36337b5dcbff171cf9bfe86abdde5933d7117ab8e0"
-    },
-    {
-      "bytes": 13501,
-      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v3.8.1 Extra.md",
-      "sha256": "55f13e89d5b35af5ead7b1e1b0dc8ed1cad5731ebd09ea54b169b5311383d0ec"
+      "sha256": "a08bf7740b795fa1694a2e05d6a937a3e66e9b2009e7980ddc2f11e7e1745b6d"
     }
   ],
   "authoring": {
     "authorship_scope": "materially-revised",
     "capability": "hesperos-documentation",
-    "capability_entrypoint_sha256": "c6622d90a907edc95e93b868e2481f835bf3ddb3f21b801a3699042a0e524cde",
+    "capability_entrypoint_sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_revision": "sha256:21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_snapshot": {
+      "bytes": 7306,
+      "path": "verification/hesperos-capabilities/21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f/SKILL.md",
+      "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
+    },
     "mode": "in-process",
-    "run_id": "nova-osint-3.8.1-20261006"
+    "run_id": "free-purpose-docs-20261015-r3"
   },
   "authoring_response": {
-    "bytes": 807,
-    "path": "verification/osint-release-20261006/authoring-response.md",
-    "sha256": "8cd418adbbfc143bc76912312c43038ad135ffbe43e47c7752d485ad3e71c448"
+    "bytes": 316,
+    "path": "documentation-source/authoring-response.md",
+    "sha256": "5f21e17fe158dd80ed00919a1a7b7bc8d89c4b5c2636d32a1be2e11246414700"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-06T17:06:29+00:00",
-  "documentation_fingerprint": "b9970c82b9c556540bbf00a72905986210a90c24950e929650a2e74f01268e21",
+  "created_at": "2026-10-15T05:54:05+00:00",
+  "documentation_fingerprint": "765c2896abe73d6c2c0d3d6ddf8fe9d78bd3b3c7d9ad19338575d84167ee09f9",
   "documentation_manifest": {
-    "bytes": 581,
-    "path": "documentation-manifest.json",
-    "sha256": "33a011f0dfba4142930abee08406f1eb291d84eb4ed30720c747717bd08c2e3a"
+    "bytes": 353,
+    "path": "documentation-source/authored-delta.json",
+    "sha256": "de75fe67040c6617fe6c22bfb0aab0ec667b2b9645dca9d69d158c7f5314aec8"
   },
   "evidence_packet": {
-    "bytes": 848,
-    "path": "verification/osint-release-20261006/evidence-packet.json",
-    "sha256": "b1488c3ebdbb754e0dca17a193650b1cafecfc7c23cfdb51e801c4104bbe31b2"
+    "bytes": 1076,
+    "path": "documentation-source/evidence.md",
+    "sha256": "0366d4cabe6e37ec69b47cde6dc09821ad6a8fa0a3f77cdfe8812c508d85637d"
   },
   "execution_evidence": [
     {
-      "bytes": 807,
-      "path": "verification/osint-release-20261006/authoring-response.md",
-      "sha256": "8cd418adbbfc143bc76912312c43038ad135ffbe43e47c7752d485ad3e71c448"
+      "bytes": 510,
+      "path": "documentation-source/execution.md",
+      "sha256": "d6abda6978cfddc2a407317fb8cda3cc40a3f2240eb8f13279d0fd91995d3c7a"
+    },
+    {
+      "bytes": 316,
+      "path": "documentation-source/authoring-response.md",
+      "sha256": "5f21e17fe158dd80ed00919a1a7b7bc8d89c4b5c2636d32a1be2e11246414700"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",
   "product": {
-    "slug": "nova-the-optimal-ai-mind",
-    "version": "3.8.1"
+    "slug": "Nova the Optimal AI Free",
+    "version": "4.1.0"
   }
 }

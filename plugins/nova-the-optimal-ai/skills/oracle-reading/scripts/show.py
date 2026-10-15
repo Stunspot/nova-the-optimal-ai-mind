@@ -134,6 +134,15 @@ def receipt(r,path=None,content=None):
  else:result['visible']=[]
  if path is not None:result.update(output=str(path.resolve()),sha256=hashlib.sha256(content.encode()).hexdigest())
  return result
+def icon_head():
+ # Presentation assets remain optional; the saved reading is self-contained.
+ tags=[]
+ for name,relation,kind in (('oracle.ico','icon','image/x-icon'),('oracle-icon.png','apple-touch-icon','image/png')):
+  try:data=base64.b64encode((ROOT/'assets'/name).read_bytes()).decode()
+  except OSError:continue
+  tags.append('<link rel="'+relation+'" href="data:'+kind+';base64,'+data+'">')
+ return ''.join(tags)
+
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('record',type=Path);p.add_argument('--output',type=Path)
  p.add_argument('--inline',action='store_true');p.add_argument('--previous',type=Path);p.add_argument('--url',action='store_true')
@@ -146,7 +155,7 @@ def main():
   require(a.output is not None,'--output is required unless --url is used')
   content=fragment(r,a.inline)
   if not a.inline:
-   content='<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oracle Reading</title><style>'+STANDALONE_STYLE+'</style></head><body><main><h1>Oracle Reading</h1>'+content+'</main></body></html>\n'
+   content='<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Oracle Reading</title>'+icon_head()+'<style>'+STANDALONE_STYLE+'</style></head><body><main><h1>Oracle Reading</h1>'+content+'</main></body></html>\n'
   a.output.parent.mkdir(parents=True,exist_ok=True)
   temp=a.output.with_name(a.output.name+'.tmp');temp.write_text(content,encoding='utf-8');temp.replace(a.output)
   print(json.dumps(receipt(r,a.output,content),ensure_ascii=False))

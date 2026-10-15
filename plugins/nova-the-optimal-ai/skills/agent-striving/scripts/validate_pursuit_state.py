@@ -35,12 +35,20 @@ CONTINUITY_FIELDS = {
     "lost_guarantee",
 }
 TIMESTAMP_RE = re.compile(
-    r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$"
+    r"^(?!0000)[0-9]{4}-[0-9]{2}-[0-9]{2}T(?:[01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](?:\.[0-9]+)?(?:Z|[+-](?:[01][0-9]|2[0-3]):[0-5][0-9])$"
 )
 
 
 def _nonempty(value: Any) -> bool:
     return isinstance(value, str) and bool(value.strip())
+
+
+PLACEHOLDERS = {"none", "n/a", "na", "unknown", "tbd", "todo", "not applicable"}
+BOUNDARY = "Declared structure and consistency only; storage, retrieval, scheduling, current authority and execution are not observed."
+
+
+def _concrete_reference(value: Any) -> bool:
+    return _nonempty(value) and " ".join(value.split()).casefold() not in PLACEHOLDERS
 
 
 def _nullable_nonempty(value: Any) -> bool:
@@ -156,24 +164,24 @@ def validate(state: Any) -> list[str]:
 
             persistence_confirmed = persistence == "confirmed"
             reactivation_available = reactivation in ("confirmed", "manual")
-            if persistence_confirmed and not _nonempty(receipt):
-                errors.append("confirmed persistence requires a persistence_receipt")
+            if persistence_confirmed and not _concrete_reference(receipt):
+                errors.append("confirmed persistence requires a concrete persistence_receipt")
             if not persistence_confirmed and receipt is not None:
                 errors.append("unconfirmed persistence cannot claim a persistence_receipt")
-            if reactivation_available and not _nonempty(cue):
-                errors.append("available reactivation requires a reactivation_cue")
+            if reactivation_available and not _concrete_reference(cue):
+                errors.append("available reactivation requires a concrete reactivation_cue")
             if not reactivation_available and cue is not None:
                 errors.append("unavailable reactivation cannot claim a reactivation_cue")
             if persistence_confirmed and reactivation_available:
                 if lost is not None:
                     errors.append("durable continuity must not claim a lost guarantee")
-            elif not _nonempty(lost):
-                errors.append("incomplete continuity requires a lost_guarantee")
+            elif not _concrete_reference(lost):
+                errors.append("incomplete continuity requires a concrete lost_guarantee")
 
     if "updated_at" in state:
         updated_at = state["updated_at"]
         if not _nonempty(updated_at) or not TIMESTAMP_RE.fullmatch(updated_at):
-            errors.append("updated_at must be an RFC 3339 date-time with a timezone")
+            errors.append("updated_at must use the supported RFC 3339 profile: uppercase T/Z, seconds 00-59, valid numeric offset components and a timezone")
         else:
             try:
                 datetime.fromisoformat(updated_at.replace("Z", "+00:00"))
@@ -194,10 +202,11 @@ def main() -> int:
     else:
         errors = validate(payload)
         result = {"valid": not errors, "errors": errors, "path": str(args.state)}
+    result["boundary"] = BOUNDARY
     if args.as_json:
         print(json.dumps(result, indent=2))
     elif result["valid"]:
-        print(f"VALID: {args.state}")
+        print(f"VALID: {args.state} — {BOUNDARY}")
     else:
         for error in result["errors"]:
             print(f"ERROR: {error}", file=sys.stderr)

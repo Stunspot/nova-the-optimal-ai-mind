@@ -27,7 +27,7 @@ A single low-risk file needs no paperwork pageant. For substantial, multi-artifa
 
 Shape one content spine before multiplying formats. Preserve consequential titles, names, dates, units, definitions, metrics, claims, decisions, and calls to action in state/content-ledger.json. Allocate depth by medium: a slide is not a memo pasted sideways, a spreadsheet is not a decorative table, and a PDF is not automatically the canonical source.
 
-Choose the editable source and derivative route deliberately. Preserve existing native templates when their semantics matter. Work on copies unless the user explicitly authorizes an overwrite. If a source changes, repair it first and regenerate affected derivatives; do not hand-patch the family into disagreement.
+Choose the editable source and derivative route deliberately. Preserve existing native templates when their semantics matter. Work on copies unless the user explicitly authorizes an overwrite. If a source changes, repair it first and regenerate affected derivatives; do not hand-patch the family into disagreement. For Officefiles, follow references/revisions-and-review-bindings.md: record the sources, controlled ledger items and upstream artifacts actually used, retain their production basis, and bind review to those revisions. On return, preserve superseded files and review evidence. Older v1 registers require a separate migrated copy before current readiness claims.
 
 ## Produce, then prove
 
@@ -49,7 +49,7 @@ Apply an operator self-review before handoff. When officecraft-reviewer is indep
 
 The user owns subject truth, template and brand rights, approval, external delivery, publication, and consequential account actions. Do not execute macros, bypass protection, connect accounts, install dependencies, upload, email, share, publish, or mutate a live external artifact without the authority and capability required for that exact action.
 
-If the preferred file or inspection path is unavailable, use fallbacks/degraded-capability.md. Preserve the minimum viable result as a content-and-layout production packet, mark unexecuted creation or inspection plainly, and name the event that restores the normal path. Do not let a fallback inherit the preferred route's success claim.
+If the preferred file or inspection path is unavailable, use fallbacks/degraded-capability.md. Preserve the minimum viable result as a content-and-layout production packet, create the editable file when creation is available and mark only the unavailable inspection; use a specification when creation itself is unavailable, and name the event that restores the normal path. Do not let a fallback inherit the preferred route's success claim.
 
 ## Hand off the right reality
 

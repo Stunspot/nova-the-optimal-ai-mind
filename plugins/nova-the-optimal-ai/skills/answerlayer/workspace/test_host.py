@@ -29,7 +29,7 @@ class DeskTest(unittest.TestCase):
   with self.request('/api/sample') as response:sample=json.load(response)
   sample['patches']={'P1':{}}
   with self.request('/api/validate',sample) as response:result=json.load(response)
-  self.assertFalse(result['valid']);self.assertIn('patches: expected array',' '.join(result['errors']))
+  self.assertFalse(result['valid']);self.assertTrue(any('patches' in e and 'expected array' in e for e in result['errors']))
   self.assertNotIn('Traceback',' '.join(result['errors']))
  def test_private_sample_and_cross_origin(self):
   with self.assertRaises(urllib.error.HTTPError) as error:self.request('/api/sample',token=False)
@@ -75,4 +75,21 @@ class DeskTest(unittest.TestCase):
   self.assertNotIn('token',health);self.assertEqual(health['workspace'],str(ROOT))
   second=subprocess.run(self.command,capture_output=True,text=True,encoding='utf-8',timeout=5)
   reconnect=json.loads(second.stdout);self.assertTrue(reconnect['reconnected']);self.assertEqual(reconnect['url'],self.receipt['url'])
+ def test_exact_raw_digest_and_duplicate_rejection(self):
+  import hashlib
+  for body in [b'{"format":"answerlayer/reality-ledger/v2","x":1,"x":2}',b'{"format":"answerlayer/reality-ledger/v2","x":NaN}']:
+   req=urllib.request.Request(self.base+'/api/validate',data=body,headers={'X-Desk-Token':self.token,'Content-Type':'application/json'})
+   with urllib.request.urlopen(req,timeout=3) as response:result=json.load(response)
+   self.assertFalse(result['valid']);self.assertEqual(result['sha256'],hashlib.sha256(body).hexdigest())
+ def test_bound_limit(self):
+  # Exercise the declared-length boundary before transmitting a rejected body.
+  # Sending the whole oversized body can legitimately race HTTP/1.0 close on Windows.
+  import http.client
+  connection=http.client.HTTPConnection(urlsplit(self.base).netloc,timeout=3)
+  try:
+   connection.putrequest('POST','/api/validate');connection.putheader('X-Desk-Token',self.token);connection.putheader('Content-Length','2000001');connection.endheaders()
+   response=connection.getresponse();self.assertEqual(response.status,413);self.assertIn('2 MB',json.loads(response.read())['error'])
+  finally:connection.close()
+ def test_external_script_served(self):
+  with urllib.request.urlopen(self.base+'/app.js',timeout=3) as response:self.assertIn('javascript',response.headers['Content-Type']);self.assertIn(b'parseNative',response.read())
 if __name__=='__main__':unittest.main()

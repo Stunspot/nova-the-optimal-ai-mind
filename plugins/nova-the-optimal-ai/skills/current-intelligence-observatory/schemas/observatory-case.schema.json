@@ -1,13 +1,285 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://collaborativedynamics.example/schemas/cd-observatory-case-v1.json",
-  "title": "Current Intelligence Observatory case v1",
+  "title": "Current Intelligence Observatory native case",
+  "description": "Structural shape only. observatory_guardrail.py is authoritative for typed references, clocks, review subjects and optional local file integrity.",
   "type": "object",
-  "required": ["format", "case_id", "title", "phase", "posture", "question", "audience_or_decision", "time_horizon", "scope", "collection_authority", "harm_model", "evidence_burden", "stop_condition", "sources", "captures", "observations", "claims", "events", "entities", "relations", "inferences", "hypotheses", "contradictions", "assessments", "recommendations", "decisions", "outcomes", "artifacts", "checks", "blockers", "history", "next_action"],
+  "required": [
+    "format",
+    "case_id",
+    "title",
+    "phase",
+    "posture",
+    "question",
+    "audience_or_decision",
+    "time_horizon",
+    "scope",
+    "collection_authority",
+    "harm_model",
+    "evidence_burden",
+    "stop_condition",
+    "sources",
+    "captures",
+    "observations",
+    "claims",
+    "events",
+    "entities",
+    "relations",
+    "inferences",
+    "hypotheses",
+    "contradictions",
+    "assessments",
+    "recommendations",
+    "decisions",
+    "outcomes",
+    "artifacts",
+    "checks",
+    "blockers",
+    "history",
+    "next_action"
+  ],
   "properties": {
-    "format": {"const": "cd-observatory-case/v1"},
-    "phase": {"enum": ["orient", "scoped", "collecting", "preserved", "normalized", "related", "challenged", "watching", "presenting", "review", "handoff"]},
-    "posture": {"enum": ["provisional", "blocked", "reviewable", "watch-ready", "publication-ready"]}
+    "format": {
+      "const": "cd-observatory-case/v1"
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inquiry_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience_or_decision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time_horizon": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "collection_authority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "harm_model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_burden": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stop_condition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_as_of": {
+      "type": "string",
+      "minLength": 1
+    },
+    "phase": {
+      "enum": [
+        "orient",
+        "scoped",
+        "collecting",
+        "preserved",
+        "normalized",
+        "related",
+        "challenged",
+        "watching",
+        "presenting",
+        "review",
+        "handoff"
+      ]
+    },
+    "posture": {
+      "enum": [
+        "provisional",
+        "blocked",
+        "reviewable",
+        "watch-ready",
+        "publication-ready"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "captures": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "inferences": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "hypotheses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "contradictions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "assessments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "next_action": {
+      "type": "object",
+      "required": [
+        "action",
+        "owner",
+        "advance_when"
+      ],
+      "properties": {
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "advance_when": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confidence": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uncertainty": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "patternProperties": {
+        ".*_ids$": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": true
+    }
   },
   "additionalProperties": true
 }

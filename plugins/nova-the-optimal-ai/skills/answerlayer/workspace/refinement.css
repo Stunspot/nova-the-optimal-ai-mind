@@ -17,3 +17,10 @@ body[data-skin=switchyard] .after{background:#264438;color:#e8f1d4}
 body[data-skin=switchyard] .toolbar button:first-child{background:#e4b37b;color:#142529}
 
 body[data-skin=strata] .baseline-proof:before{content:"CURRENT ANSWER / T0"}
+
+/* Keep every route discoverable without an undisclosed sideways scroll. */
+@media(max-width:650px){
+ body[data-skin] #nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;overflow:visible;flex-wrap:wrap;min-width:0}
+ body[data-skin] #nav button{min-width:0;white-space:normal;min-height:44px;overflow-wrap:anywhere}
+ body[data-skin] #nav button:last-child{grid-column:1/-1}
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Action-only revision is usable without rewriting advice",
+    "Wording and confidence remain intact",
+    "Adoption does not invent a new information cutoff",
+    "Readable current answer includes the practical action and actual cutoff",
+    "Confidence-only revision preserves the current action",
+    "Return preserves adopted action, wording, cutoff and both revisions",
+    "No browser exceptions"
+  ],
+  "errors": [],
+  "home": "C:\\Users\\user\\AppData\\Local\\Temp\\answerlayer-independent-OfTPdT"
+}

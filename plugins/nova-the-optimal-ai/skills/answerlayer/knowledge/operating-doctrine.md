@@ -1,62 +1,17 @@
-# Operating doctrine
+# Decision maintenance in proportion
 
-## The answer-change gate
+Begin with the decision and the cost of getting it wrong. A complete evidence sweep is warranted for a broad scheduled review, not for every narrow question. State the actual coverage; an unexamined domain is not a negative finding. The preserved Almanac's numerical quotas are historical prompt design, never a reason to invent deltas or pad a report.
 
-A development belongs in the ledger only when it changes a consequential answer surface. Test for at least one of these mechanisms:
+## Decide what changed
 
-- actor behavior has changed;
-- a prior canon or governing assumption no longer holds;
-- a workflow, toolchain, access path, or operating constraint has changed;
-- a legal, regulatory, policy, or compliance duty has changed;
-- costs, incentives, bargaining power, or feasibility have realigned;
-- the information environment has changed what can be known or trusted.
+Separate the state of the world, confidence in a claim, and a recommended action. A factual correction can leave the best action unchanged. Unchanged wording with lower confidence can warrant a targeted check. Several weak but independent observations can jointly cross an action threshold; ten syndicated copies cannot. Explain the mechanism and any assumptions that must hold. Avoid numerical confidence unless there is a defensible interpretation and basis.
 
-Ask for the exact before-and-after answer. If the only answer is “this is interesting” or “people should know,” reject it or watch it.
+Compare errors in both directions. Premature adoption can break a working policy; delayed adoption can miss a deadline, keep a harmful assumption or foreclose a reversible option. When uncertainty remains, consider the cost, time and expected decision value of the next observation. Choose a reversible interim response where appropriate. Unknown probabilities do not require fabricated expected-value arithmetic: state the cases under which the choice changes.
 
-## Signal classes
+## Apply dates and scope
 
-- **Regime shift:** the governing rules, institutions, constraints, or durable equilibrium have changed.
-- **Structural event:** a consequential event creates a persistent change in capability, duty, access, incentives, or exposure.
-- **Strong signal:** verified evidence indicates a likely transition but the durable state is not yet fully established.
-- **Rejected noise:** the candidate does not change the answer, lacks support, repeats an already incorporated development, or has not crossed its operative threshold.
+Distinguish event, publication, effective and threshold dates. A rule announced today for next month may justify preparations today while the current-rule wording stays intact. A different population or product may explain apparent disagreement. Resolve those differences before labeling a contradiction. A true unresolved contradiction belongs in fuzz with both claims, abstention about the disputed proposition, a discriminating observation and the practical cost of waiting.
 
-The classes are judgments, not numeric scores. Confidence records why the judgment is supportable; it is not a decorative percentage.
+## End in something usable
 
-## Temporal anatomy
-
-Separate:
-
-- event date—when the underlying event occurred;
-- publication date—when a source reported or issued it;
-- effective date—when a rule or condition applies;
-- threshold date—when a watched condition actually changes the answer;
-- baseline cutoff—the latest date the existing answer claims to cover.
-
-A future effective rule may require preparation now without supporting a claim that the rule is already in force.
-
-## Mechanism record
-
-For each serious candidate record the prior answer, new evidence, causal or institutional mechanism, affected actors, decision consequence, scope, trajectory, urgency, half-life, counterfactual, and what would falsify or reverse the patch. Link every derived claim to its sources.
-
-## Conflict and fuzz
-
-Before declaring conflict, check whether sources differ by time, geography, population, authority, operating condition, definition, or stage. Genuine conflict stays visible. A fuzz record contains competing claims, source authority, practical consequence, safe abstention wording, distinguishing evidence, and a resolution indicator.
-
-Do not average conflict into consensus. Do not mistake several repetitions of one originating report for independent corroboration.
-
-## Patch discipline
-
-Patch the smallest surface that changes. Preserve the before state and create a new version. Explain why adjacent claims do or do not change. Include the counterfactual to prevent a compelling story from becoming an unbounded rewrite.
-
-Every patch gets probes, traps, and recheck logic:
-
-- a **probe** is an obtainable observation that changes support among live interpretations;
-- a **regression trap** catches return to a superseded assumption or wording;
-- a **watch threshold** is an observable condition that changes what action is warranted;
-- a **recheck** is triggered by time, source decay, threshold crossing, contradiction, or downstream consequence.
-
-## Useful closure
-
-Close a sweep when each candidate is accepted, rejected, unresolved as fuzz, or held on a thresholded watch thread; every patch has an approval state; and every live uncertainty has a next distinguishing move. Continue only while obtainable evidence is reasonably likely to change the decision.
-
-“No meaningful deltas” is not an empty result. State the baseline, cutoff, scope, sources examined, exclusions, unresolved items, and next recheck condition.
+The full sequence is a diagnostic map. Skip resolved needs and omit empty report sections. A patch changes the smallest unambiguous span and preserves unaffected guidance. A no-change result states why the examined signal does not alter the answer, whether confidence changed and what trigger would reopen it. Watching means a stated condition until an actual authorized monitor is configured; the threshold helper merely compares supplied values.

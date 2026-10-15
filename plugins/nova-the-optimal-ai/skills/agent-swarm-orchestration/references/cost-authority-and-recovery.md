@@ -54,3 +54,8 @@ Preserve useful work, decisive logs, authoritative current state, and the failur
 - `CANCELLED`: the user revoked the objective and the organization is being dispositioned.
 
 Do not call interrupted work rolled back, unchanged, or safely cancelled without post-state evidence.
+
+
+## Preserve declared lifecycle and outcome
+
+Use [Plan state and validation](plan-state-and-validation.md) when recording dispatch, cancellation, accepted output, write readback, capacity or closure. Worker disposal does not erase accepted evidence or establish mission success; uncertain stopped writes remain reserved until observed readback.

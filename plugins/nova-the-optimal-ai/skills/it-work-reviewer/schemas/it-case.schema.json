@@ -57,7 +57,24 @@
         "manufacturer_model",
         "os_firmware",
         "environment"
-      ]
+      ],
+      "properties": {
+        "owner_or_authority": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "manufacturer_model": {
+          "type": "string"
+        },
+        "os_firmware": {
+          "type": "string"
+        },
+        "environment": {
+          "type": "string"
+        }
+      }
     },
     "complaint": {
       "type": "object",
@@ -68,7 +85,39 @@
         "affected_and_working",
         "recent_changes",
         "stakes"
-      ]
+      ],
+      "properties": {
+        "desired_outcome": {
+          "type": "string"
+        },
+        "observable_symptom": {
+          "type": "string"
+        },
+        "triggering_conditions": {
+          "type": "string"
+        },
+        "affected_and_working": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "recent_changes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "stakes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     },
     "custody": {
       "type": "object",
@@ -80,36 +129,620 @@
         "privacy_or_policy",
         "authorized_scope",
         "stop_or_referral"
-      ]
+      ],
+      "properties": {
+        "hazards": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "data_value": {
+          "type": "string"
+        },
+        "backup_state": {
+          "type": "string"
+        },
+        "encryption_recovery_state": {
+          "type": "string"
+        },
+        "privacy_or_policy": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "authorized_scope": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "stop_or_referral": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
     },
     "evidence": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "limits": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "prediction": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          },
+          "expected_discriminator": {
+            "type": "string"
+          },
+          "stop_condition": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "result_basis": {
+            "type": "string"
+          },
+          "result_source": {
+            "type": "string"
+          },
+          "result_recorded_at": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authority": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "hypothesis_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "performed": {
+            "type": "boolean"
+          },
+          "result_history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       }
     },
     "hypotheses": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "limits": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "prediction": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          },
+          "expected_discriminator": {
+            "type": "string"
+          },
+          "stop_condition": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "result_basis": {
+            "type": "string"
+          },
+          "result_source": {
+            "type": "string"
+          },
+          "result_recorded_at": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authority": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "hypothesis_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "performed": {
+            "type": "boolean"
+          },
+          "result_history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       }
     },
     "tests": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "limits": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "prediction": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          },
+          "expected_discriminator": {
+            "type": "string"
+          },
+          "stop_condition": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "result_basis": {
+            "type": "string"
+          },
+          "result_source": {
+            "type": "string"
+          },
+          "result_recorded_at": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authority": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "hypothesis_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "performed": {
+            "type": "boolean"
+          },
+          "result_history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       }
     },
     "changes": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "limits": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "prediction": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          },
+          "expected_discriminator": {
+            "type": "string"
+          },
+          "stop_condition": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "result_basis": {
+            "type": "string"
+          },
+          "result_source": {
+            "type": "string"
+          },
+          "result_recorded_at": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authority": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "hypothesis_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "performed": {
+            "type": "boolean"
+          },
+          "result_history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       }
     },
     "sources": {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "claim": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "time": {
+            "type": "string"
+          },
+          "limits": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "prediction": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "test": {
+            "type": "string"
+          },
+          "expected_discriminator": {
+            "type": "string"
+          },
+          "stop_condition": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          },
+          "result_basis": {
+            "type": "string"
+          },
+          "result_source": {
+            "type": "string"
+          },
+          "result_recorded_at": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "authority": {
+            "type": "string"
+          },
+          "locator": {
+            "type": "string"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "hypothesis_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "test_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "performed": {
+            "type": "boolean"
+          },
+          "result_history": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
       }
     },
     "verification": {
@@ -135,6 +768,24 @@
             "referred",
             "unsafe/incomplete"
           ]
+        },
+        "results": {
+          "type": "array"
+        },
+        "adjacent_checks": {
+          "type": "array"
+        },
+        "adjacent_not_applicable": {
+          "type": "string"
+        },
+        "reopen_condition": {
+          "type": "string"
+        },
+        "stale": {
+          "type": "boolean"
+        },
+        "stale_reason": {
+          "type": "string"
         }
       }
     },
@@ -145,7 +796,28 @@
         "owner",
         "authority_required",
         "evidence_to_advance"
-      ]
+      ],
+      "properties": {
+        "action": {
+          "type": "string",
+          "minLength": 1
+        },
+        "owner": {
+          "type": "string"
+        },
+        "authority_required": {
+          "type": "string"
+        },
+        "evidence_to_advance": {
+          "type": "string"
+        }
+      }
+    },
+    "record_history": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
     }
   },
   "additionalProperties": true

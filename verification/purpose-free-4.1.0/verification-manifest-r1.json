@@ -1,0 +1,503 @@
+{
+  "manifest_version": "1.0",
+  "target": {
+    "name": "Nova the Optimal AI Free4.1.0 source candidate",
+    "revision": "free-4.1.0-purpose-r1",
+    "target_class": "change"
+  },
+  "scope": {
+    "included": [
+      "Current28-owner Free source integration",
+      "Four changed primary app journeys",
+      "Native icon and edition identity preservation",
+      "Customer guidance and source package preparation"
+    ],
+    "excluded": [
+      "Final archive integrity: separate post-review seal",
+      "macOS actual launch",
+      "Fresh host model/connector behavior",
+      "Public publication, shelf and installation"
+    ],
+    "constraints": [
+      "Windows local host; Python and Edge available",
+      "Preexisting dirty source checkout retained"
+    ],
+    "safety_boundary": [
+      "Local synthetic work/data homes only",
+      "No user data mutation",
+      "No external messages or services"
+    ]
+  },
+  "claim_custody": {
+    "observed": [
+      {
+        "statement": "Four actual entry journeys pass on current included runtime",
+        "basis": "Named captured JSON and source test scripts"
+      },
+      {
+        "statement": "28 accepted owners and current adapters preserved",
+        "basis": "Direct byte comparison and native operations regression"
+      }
+    ],
+    "inferred": [
+      {
+        "statement": "Candidate is suitable for final package sealing after independent challenge",
+        "basis": "Current source journeys and integration checks; artifacts not yet built"
+      }
+    ],
+    "assumed": [],
+    "unresolved": [
+      {
+        "statement": "macOS launcher execution and fresh host behavior not observed here",
+        "basis": "Current host is Windows; these are explicit excluded claims"
+      }
+    ]
+  },
+  "impact_map": [
+    {
+      "surface": "Owner runtime, primary launchers, docs, host manifests, complete-kit assembly",
+      "impact": "Useful entry and persistence plus correct included-source selection"
+    }
+  ],
+  "invariants": [
+    {
+      "id": "I-composition",
+      "statement": "Exactly28 unchanged owner IDs; Other runtime owners byte-identical except declared edition identity/icons; Canonical updated sources match byte-for-byte except manifest license/rights fields"
+    },
+    {
+      "id": "I-omnara",
+      "statement": "Question and ordinary TXT source produce a selected finding and cited answer; Saved inquiry reloads"
+    },
+    {
+      "id": "I-observatory",
+      "statement": "Ordinary inquiry/material, claim and unknown-zone event persist; Alternative explanation and next observation feed editable brief; Manual return and mobile layout remain usable"
+    },
+    {
+      "id": "I-answerlayer",
+      "statement": "Default adoption preserves information cutoff; Action-only update persists visibly; Explicit revised cutoff adopted; Malformed backup and stale write preserve current work; Backup adds copies and full process restart retains work"
+    },
+    {
+      "id": "I-beryl",
+      "statement": "Ordinary symptom and hypothesis/test workflow accepts real log/photo; No verified resolution without retest; actual matching retest permits it; Changed original symptom invalidates old closure; Restore preserves label and survives full process restart"
+    },
+    {
+      "id": "I-docs",
+      "statement": "Seven-app task table routes to current launchers; Four revised workflows describe ordinary first use and persistence; Unsupported online/AI/repair claims absent; Bounded structural warnings have inspected dispositions"
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-composition",
+      "statement": "An unintended owner/source replacement breaks Free scope or current owner adapters.",
+      "severity": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-composition",
+        "T-composition",
+        "E-composition"
+      ],
+      "rationale": "Primary user task or edition ownership, exposed on normal use; bounded evidence directly covers the consequence."
+    },
+    {
+      "id": "R-omnara",
+      "statement": "Primary entry still requires a prepared packet or loses inquiry work.",
+      "severity": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-omnara",
+        "T-omnara",
+        "E-omnara"
+      ],
+      "rationale": "Primary user task or edition ownership, exposed on normal use; bounded evidence directly covers the consequence."
+    },
+    {
+      "id": "R-observatory",
+      "statement": "Inquiry cannot produce a source-grounded brief with retained uncertainty.",
+      "severity": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-observatory",
+        "T-observatory",
+        "E-observatory"
+      ],
+      "rationale": "Primary user task or edition ownership, exposed on normal use; bounded evidence directly covers the consequence."
+    },
+    {
+      "id": "R-answerlayer",
+      "statement": "Adoption fabricates currency or rejects a legitimate action revision.",
+      "severity": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-answerlayer",
+        "T-answerlayer",
+        "E-answerlayer"
+      ],
+      "rationale": "Primary user task or edition ownership, exposed on normal use; bounded evidence directly covers the consequence."
+    },
+    {
+      "id": "R-beryl",
+      "statement": "An IT repair can be declared resolved without actual retest or restored work changes itself.",
+      "severity": "high",
+      "disposition": "covered",
+      "verification": [
+        "S-beryl",
+        "T-beryl",
+        "E-beryl"
+      ],
+      "rationale": "Primary user task or edition ownership, exposed on normal use; bounded evidence directly covers the consequence."
+    },
+    {
+      "id": "R-docs",
+      "statement": "The customer cannot find the appropriate entry or follows misleading recovery instructions.",
+      "severity": "medium",
+      "disposition": "covered",
+      "verification": [
+        "S-docs",
+        "T-docs",
+        "E-docs"
+      ],
+      "rationale": "Primary user task or edition ownership, exposed on normal use; bounded evidence directly covers the consequence."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "S-composition",
+      "risk_ids": [
+        "R-composition"
+      ],
+      "preconditions": [
+        "Current included Free source; isolated local work folder"
+      ],
+      "action": "18 byte/parity/identity/icon/path checks; 16 actual operations regression tests.",
+      "expected": [
+        "Exactly28 unchanged owner IDs",
+        "Other runtime owners byte-identical except declared edition identity/icons",
+        "Canonical updated sources match byte-for-byte except manifest license/rights fields"
+      ],
+      "forbidden_side_effects": [
+        "No modification of existing user work or external actions"
+      ]
+    },
+    {
+      "id": "S-omnara",
+      "risk_ids": [
+        "R-omnara"
+      ],
+      "preconditions": [
+        "Current included Free source; isolated local work folder"
+      ],
+      "action": "Actual Open.cmd ordinary inquiry journey.",
+      "expected": [
+        "Question and ordinary TXT source produce a selected finding and cited answer",
+        "Saved inquiry reloads"
+      ],
+      "forbidden_side_effects": [
+        "No modification of existing user work or external actions"
+      ]
+    },
+    {
+      "id": "S-observatory",
+      "risk_ids": [
+        "R-observatory"
+      ],
+      "preconditions": [
+        "Current included Free source; isolated local work folder"
+      ],
+      "action": "Actual Open.cmd nine-step ordinary inquiry journey.",
+      "expected": [
+        "Ordinary inquiry/material, claim and unknown-zone event persist",
+        "Alternative explanation and next observation feed editable brief",
+        "Manual return and mobile layout remain usable"
+      ],
+      "forbidden_side_effects": [
+        "No modification of existing user work or external actions"
+      ]
+    },
+    {
+      "id": "S-answerlayer",
+      "risk_ids": [
+        "R-answerlayer"
+      ],
+      "preconditions": [
+        "Current included Free source; isolated local work folder"
+      ],
+      "action": "Actual Open.cmd fifteen checks on final canonical correction.",
+      "expected": [
+        "Default adoption preserves information cutoff",
+        "Action-only update persists visibly",
+        "Explicit revised cutoff adopted",
+        "Malformed backup and stale write preserve current work",
+        "Backup adds copies and full process restart retains work"
+      ],
+      "forbidden_side_effects": [
+        "No modification of existing user work or external actions"
+      ]
+    },
+    {
+      "id": "S-beryl",
+      "risk_ids": [
+        "R-beryl"
+      ],
+      "preconditions": [
+        "Current included Free source; isolated local work folder"
+      ],
+      "action": "Actual Open.cmd nineteen checks on canonical restore fix.",
+      "expected": [
+        "Ordinary symptom and hypothesis/test workflow accepts real log/photo",
+        "No verified resolution without retest; actual matching retest permits it",
+        "Changed original symptom invalidates old closure",
+        "Restore preserves label and survives full process restart"
+      ],
+      "forbidden_side_effects": [
+        "No modification of existing user work or external actions"
+      ]
+    },
+    {
+      "id": "S-docs",
+      "risk_ids": [
+        "R-docs"
+      ],
+      "preconditions": [
+        "Current included Free source; isolated local work folder"
+      ],
+      "action": "Task-first manual reading, native local-link/site checks, structural lint and current authored custody.",
+      "expected": [
+        "Seven-app task table routes to current launchers",
+        "Four revised workflows describe ordinary first use and persistence",
+        "Unsupported online/AI/repair claims absent",
+        "Bounded structural warnings have inspected dispositions"
+      ],
+      "forbidden_side_effects": [
+        "No modification of existing user work or external actions"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "T-composition",
+      "scenario_ids": [
+        "S-composition"
+      ],
+      "path": "verification/purpose-free-4.1.0/check_integration.py",
+      "status": "passed",
+      "execution_id": "E-composition",
+      "decision_critical": true
+    },
+    {
+      "id": "T-omnara",
+      "scenario_ids": [
+        "S-omnara"
+      ],
+      "path": "verification/purpose-free-4.1.0/omnara.cjs",
+      "status": "passed",
+      "execution_id": "E-omnara",
+      "decision_critical": true
+    },
+    {
+      "id": "T-observatory",
+      "scenario_ids": [
+        "S-observatory"
+      ],
+      "path": "verification/purpose-free-4.1.0/observatory.cjs",
+      "status": "passed",
+      "execution_id": "E-observatory",
+      "decision_critical": true
+    },
+    {
+      "id": "T-answerlayer",
+      "scenario_ids": [
+        "S-answerlayer"
+      ],
+      "path": "verification/purpose-free-4.1.0/answer_beryl.cjs",
+      "status": "passed",
+      "execution_id": "E-answerlayer",
+      "decision_critical": true
+    },
+    {
+      "id": "T-beryl",
+      "scenario_ids": [
+        "S-beryl"
+      ],
+      "path": "verification/purpose-free-4.1.0/answer_beryl.cjs",
+      "status": "passed",
+      "execution_id": "E-beryl",
+      "decision_critical": true
+    },
+    {
+      "id": "T-docs",
+      "scenario_ids": [
+        "S-docs"
+      ],
+      "path": "verification/purpose-free-4.1.0/author_docs.py",
+      "status": "passed",
+      "execution_id": "E-docs",
+      "decision_critical": true
+    }
+  ],
+  "executions": [
+    {
+      "id": "E-composition",
+      "kind": "observation",
+      "procedure": [
+        "18 byte/parity/identity/icon/path checks; 16 actual operations regression tests."
+      ],
+      "observed": [
+        "Exactly28 unchanged owner IDs",
+        "Other runtime owners byte-identical except declared edition identity/icons",
+        "Canonical updated sources match byte-for-byte except manifest license/rights fields"
+      ],
+      "source": "observed",
+      "recorder": "creator_research_apps",
+      "environment": "Windows local Python3.14/Node/Edge",
+      "target_revision": "free-4.1.0-purpose-r1",
+      "status": "passed",
+      "raw_evidence": "verification/purpose-free-4.1.0/integration-results.json",
+      "test_ids": [
+        "T-composition"
+      ]
+    },
+    {
+      "id": "E-omnara",
+      "kind": "observation",
+      "procedure": [
+        "Actual Open.cmd ordinary inquiry journey."
+      ],
+      "observed": [
+        "Question and ordinary TXT source produce a selected finding and cited answer",
+        "Saved inquiry reloads"
+      ],
+      "source": "observed",
+      "recorder": "creator_research_apps",
+      "environment": "Windows local Python3.14/Node/Edge",
+      "target_revision": "free-4.1.0-purpose-r1",
+      "status": "passed",
+      "raw_evidence": "verification/purpose-free-4.1.0/omnara/result.json",
+      "test_ids": [
+        "T-omnara"
+      ]
+    },
+    {
+      "id": "E-observatory",
+      "kind": "observation",
+      "procedure": [
+        "Actual Open.cmd nine-step ordinary inquiry journey."
+      ],
+      "observed": [
+        "Ordinary inquiry/material, claim and unknown-zone event persist",
+        "Alternative explanation and next observation feed editable brief",
+        "Manual return and mobile layout remain usable"
+      ],
+      "source": "observed",
+      "recorder": "creator_research_apps",
+      "environment": "Windows local Python3.14/Node/Edge",
+      "target_revision": "free-4.1.0-purpose-r1",
+      "status": "passed",
+      "raw_evidence": "verification/purpose-free-4.1.0/observatory/browser-results.json",
+      "test_ids": [
+        "T-observatory"
+      ]
+    },
+    {
+      "id": "E-answerlayer",
+      "kind": "observation",
+      "procedure": [
+        "Actual Open.cmd fifteen checks on final canonical correction."
+      ],
+      "observed": [
+        "Default adoption preserves information cutoff",
+        "Action-only update persists visibly",
+        "Explicit revised cutoff adopted",
+        "Malformed backup and stale write preserve current work",
+        "Backup adds copies and full process restart retains work"
+      ],
+      "source": "observed",
+      "recorder": "creator_research_apps",
+      "environment": "Windows local Python3.14/Node/Edge",
+      "target_revision": "free-4.1.0-purpose-r1",
+      "status": "passed",
+      "raw_evidence": "verification/purpose-free-4.1.0/answerlayer-final/result.json",
+      "test_ids": [
+        "T-answerlayer"
+      ]
+    },
+    {
+      "id": "E-beryl",
+      "kind": "observation",
+      "procedure": [
+        "Actual Open.cmd nineteen checks on canonical restore fix."
+      ],
+      "observed": [
+        "Ordinary symptom and hypothesis/test workflow accepts real log/photo",
+        "No verified resolution without retest; actual matching retest permits it",
+        "Changed original symptom invalidates old closure",
+        "Restore preserves label and survives full process restart"
+      ],
+      "source": "observed",
+      "recorder": "creator_research_apps",
+      "environment": "Windows local Python3.14/Node/Edge",
+      "target_revision": "free-4.1.0-purpose-r1",
+      "status": "passed",
+      "raw_evidence": "verification/purpose-free-4.1.0/beryl/result.json",
+      "test_ids": [
+        "T-beryl"
+      ]
+    },
+    {
+      "id": "E-docs",
+      "kind": "observation",
+      "procedure": [
+        "Task-first manual reading, native local-link/site checks, structural lint and current authored custody."
+      ],
+      "observed": [
+        "Seven-app task table routes to current launchers",
+        "Four revised workflows describe ordinary first use and persistence",
+        "Unsupported online/AI/repair claims absent",
+        "Bounded structural warnings have inspected dispositions"
+      ],
+      "source": "observed",
+      "recorder": "creator_research_apps",
+      "environment": "Windows local Python3.14/Node/Edge",
+      "target_revision": "free-4.1.0-purpose-r1",
+      "status": "passed",
+      "raw_evidence": "verification/purpose-free-4.1.0/observations.md",
+      "test_ids": [
+        "T-docs"
+      ]
+    }
+  ],
+  "findings": [],
+  "residual_risks": [
+    {
+      "id": "RR-HOST",
+      "statement": "Actual macOS launcher and assistive-technology behavior remain unobserved.",
+      "treatment": "Make no such qualification claim; preserve existing compatible launchers and browser controls.",
+      "owner": "Product maintainer",
+      "revisit_condition": "Next native macOS or assistive-technology session"
+    }
+  ],
+  "review": {
+    "status": "REVIEW_FAIL",
+    "findings": [
+      "Stale first-use persistence and read-only statements in START-HERE"
+    ],
+    "reviewer": "root",
+    "raw_evidence": "verification/purpose-free-4.1.0/r1-review.md",
+    "target_revision": "free-4.1.0-purpose-r1",
+    "evidence_cutoff": "Current source after final AnswerLayer/Beryl corrections",
+    "conditions": [],
+    "finding_dispositions": {
+      "Stale first-use persistence and read-only statements in START-HERE": {
+        "status": "unresolved",
+        "reason": "Returned to builder for correction."
+      }
+    }
+  },
+  "decision": {
+    "status": "NOT_READY",
+    "basis": [
+      "Independent review found misleading primary first-use guidance."
+    ],
+    "authority_required": [],
+    "claims_release_authorization": false
+  }
+}

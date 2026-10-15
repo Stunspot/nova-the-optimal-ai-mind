@@ -1,0 +1,1 @@
+Root independent review: REVIEW_FAIL for free-4.1.0-purpose-r1. START-HERE falsely said AnswerLayer/Beryl used only browser memory and Observatory was read-only. This contradicts4.1 primary behavior. Review ended at this decisive finding; remaining HTML/docs not comprehensively inspected. Returned to builder custody.

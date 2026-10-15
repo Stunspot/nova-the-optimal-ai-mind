@@ -17,18 +17,86 @@
     "resume_point"
   ],
   "properties": {
-    "format": {"const": "omnara-research-campaign/v1"},
-    "title": {"type": "string", "minLength": 1},
-    "canonical_inquiry": {"type": "string", "minLength": 1},
-    "tier": {"enum": ["focused", "deep", "exhaustive"]},
-    "phase": {"enum": ["framing", "mapping", "breadth-sweep", "depth-reading", "reconciliation", "gap-fill", "synthesis", "citation-audit", "review", "complete", "halted"]},
-    "status": {"enum": ["active", "complete", "awaiting-evidence", "awaiting-authority", "capability-limited", "budget-exhausted", "partial-success", "paused"]},
-    "budgets": {"type": "object"},
-    "counters": {"type": "object"},
-    "active_loci": {"type": "array"},
-    "blockers": {"type": "array"},
-    "routes": {"type": "array"},
-    "resume_point": {"type": "string", "minLength": 1}
+    "format": {
+      "const": "omnara-research-campaign/v1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_inquiry": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tier": {
+      "enum": [
+        "focused",
+        "deep",
+        "exhaustive"
+      ]
+    },
+    "phase": {
+      "enum": [
+        "framing",
+        "mapping",
+        "breadth-sweep",
+        "depth-reading",
+        "reconciliation",
+        "gap-fill",
+        "synthesis",
+        "citation-audit",
+        "review",
+        "complete",
+        "halted"
+      ]
+    },
+    "status": {
+      "enum": [
+        "active",
+        "complete",
+        "awaiting-evidence",
+        "awaiting-authority",
+        "capability-limited",
+        "budget-exhausted",
+        "partial-success",
+        "paused"
+      ]
+    },
+    "budgets": {
+      "type": "object"
+    },
+    "counters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "active_loci": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "routes": {
+      "type": "array"
+    },
+    "resume_point": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_cutoff": {
+      "type": "string",
+      "description": "Optional publication knowledge cutoff date or zoned timestamp; later retrieval/review is permitted."
+    }
   },
   "additionalProperties": true
 }

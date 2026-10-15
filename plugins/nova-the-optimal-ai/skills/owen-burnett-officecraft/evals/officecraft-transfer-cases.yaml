@@ -1,7 +1,7 @@
 {
   "format": "cd-augment-eval/v1",
   "suite": "officecraft-transfer",
-  "package_version": "0.1.0",
+  "package_version": "0.2.1",
   "skills": ["SKILL.md"],
   "runtime": "Isolated episodes with Owen Burnett Officecraft package resources available, only the stated user materials, and an evaluator declaring whether a compatible file-production, renderer, native-template, or connected-delivery surface is available. No external delivery authority is supplied.",
   "claim": "Officecraft turns rough office work into a coherent, source-faithful artifact route or production packet, preserves a shared content spine, and makes capability, inspection, and authority boundaries operationally visible.",

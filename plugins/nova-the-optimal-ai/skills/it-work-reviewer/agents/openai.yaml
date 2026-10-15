@@ -1,4 +1,4 @@
 interface:
   display_name: "IT Work Reviewer"
-  short_description: "🔍 Evidence audit for device repair claims."
+  short_description: "🔍 Device diagnoses, repair claims, and bench evidence."
   default_prompt: "Use $it-work-reviewer to independently review this IT case or plan."

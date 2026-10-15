@@ -1,29 +1,29 @@
-# Free Nova 3.8.0 package map
+# Free Nova 4.1.0 package map
 
-Free 3.8.0 is one product, one plugin, and one Nova front door.
+Free4 is one product, one plugin and one Nova front door. The `nova-the-optimal-ai` plugin contains 28 native skill roots: Nova and 27 sibling capabilities. Seventeen Faculty Cores remain nested references inside Nova and MIND0.4.0; they are not sibling skills, subagents or a separate MIND product.
 
-The nova-the-optimal-ai plugin contains exactly twenty-seven sibling skill roots. Nova carries the governing persona and MIND 0.4.0 as her edition-invariant cognitive architecture. MIND is not a separately selectable product layer. Seventeen Faculty Cores, including Strategic Intelligence, live beneath Nova as references and never become sibling handles, subagents, or a second plugin.
+## The selected product
 
-Model Agnosticism is ambient qualitative discipline across that architecture, not a classifier or a numerical tax on ordinary conversation. Any capability may call the optional stateless Trellis 1.1.0 instrument when an explicit sequential model can change a consequential next move. Its evidence-update and assumption-stress-test lanes keep empirical updates distinct from what-if arithmetic; neither creates truth, confidence, persistence, or authority.
+The exact roots are recorded in `LOADOUT-MANIFEST.json` inside each host plugin. Source maintainers use `design/source-map.json` and `design/source-lock.json` to distinguish the current imported bytes, edition adaptations and historical source coordinates. The full construction record remains with the publisher; workstation paths are not customer runtime dependencies.
 
-The loadout is governed by plugins/nova-the-optimal-ai/LOADOUT-MANIFEST.json. Coding and release verification remain distinct. Agentic Coding owns normal repository implementation; Software Verification and Verification Reviewer form the paired TestForge release gate. Officecraft and its reviewer provide generalist office craft, with native host artifact skills retaining execution and visual-verification ownership.
+Nova's shared body and tour are the same as the paired Emergent2 candidate. The Free capability ecology, terminal binding and public rights remain edition-specific. Agent Striving is the accepted17-file current selection. Agent Swarm Orchestration is the accepted28-file current selection with its six-file component notice packet. TestForge's operator and reviewer are included in Free; they own explicit finished-candidate readiness and independent challenge, while Agentic Coding owns ordinary implementation work.
 
-The optional estate now uses the Nova base-service foundation with Worldline 2: Cognitive Continuity owns Worldline, Dennis owns project records, Commonplace owns deliberate notes and captures, Concordance is rebuildable navigation, Dunbar owns people context, and Corkboard owns reminders. Nova Operations plans, initializes, diagnoses, and upgrades those selectors without storing Nova-owned state under .codex. Ordinary work still requires no persistent estate, local model, embedding service, vector database, hook, or daemon.
+A matching capability owns its method, artifacts, recovery and finish line. Officecraft coordinates source-sensitive office work; native host document, presentation, spreadsheet and PDF tools execute actual formats. Installed, project-local, host and future capabilities remain eligible. The package map does not close Nova's available world.
 
-Agent Striving is the exact canonical 0.4.0 fourteen-file tree. Agent Swarm Orchestration is the exact canonical 0.3.1 tree and refreshed six-file notice packet, bound to the accepted handoff fingerprints.
+## Optional saved work
 
-Retired from the default runtime are the augment-of-mind sibling plugin, prompt-submit hook, MIND Core daemon, Ollama requirement, embedding model, vector database, reminder bundle, Faculty handles, Capability Promotion handle, and old two-plugin installer.
+Cognitive Continuity owns Worldline, Dennis owns projects, Commonplace owns deliberate notes, Concordance is its rebuildable navigation, Dunbar owns people context and Corkboard owns reminders. Nova Operations governs the registry and launcher. The current seven-selector contract is described in [Privacy and trust](../docs/PRIVACY-AND-TRUST.md).
 
-Signal Loom Infographics, Ludis Continuum, CanopyOps, and Praxis Mine remain free standalone or opt-in products rather than default weight. Yammerknit requires repair and reseal. OmniView remains an independent provenance decision. Impactful Tom remains excluded from Nova distributions.
+Ordinary work requires no persistent estate, local model, embeddings, vector database, hook or daemon. Commonplace semantic retrieval is a separate explicit option using a customer-provided loopback embedding service. Arm's Reach remains parked, and the standalone MIND distribution remains retired.
 
-The package emits a Codex local marketplace, a complete Claude-compatible bundle, twenty-seven standalone Claude folders and ZIPs, deterministic host archives, and one complete customer archive. Static parity is not fresh-host evidence.
+## Inquiry and knowledge
 
-## Value of inquiry amendment — 2026-09-23
+Model Agnosticism is ambient qualitative judgment, not a numerical requirement. Purpose-sensitive inquiry can use comparison, examples, drafts, reframing and tacit values. Its optional finite inquiry calculator and gated Trellis instrument add no authority, state store or background process. See [the value-of-inquiry architecture](DEC-VALUE-OF-INQUIRY.md).
 
-[The accepted architecture case](DEC-VALUE-OF-INQUIRY.md) adds purpose-sensitive inquiry judgment inside existing Model Agnosticism. The resident seed in Prime/Field and Nova's entrypoint reaches `references/mind/value-of-inquiry.md`; it preserves qualitative and tacit values as complete forms of usable judgment. A separate optional `scripts/value_of_information.py` performs bounded finite decision arithmetic under explicit caller-supplied inputs. The runtime example is under `assets/value-of-inquiry`. This adds no Faculty, skill root, store, hook or background process and changes no Trellis contract.
+Giles Knowledge Atlas makes retained stores recognizable and supplies exact source routes, bounded previews and reusable working trays. Catalog registration does not prove reading or freshness; archives retain their original owners. Oracle Reading supplies its complete conversational casting and visual table workflow without changing Nova's default storage requirements.
 
-## Knowledge Atlas amendment — 2026-10-03
+## Distribution and qualification
 
-Free 3.8.0 incorporates Giles Knowledge Atlas 1.1.0 into the existing Rupert Giles owner. Its optional local interface and matching CLI provide a recognizable catalog of stores, use cues and exact sections, narrow source previews, location checks, retrieval briefs and portable catalog import/export. The model first discovers a cheap route, then uses the appropriate source owner to read the evidence needed for the current question. Catalog registration does not equal reading, location availability does not equal freshness, and source text does not carry execution authority.
+The final distribution contract is one complete customer ZIP, Codex local marketplace and host archive, a complete Claude-compatible bundle and host archive, and28 detached Claude skill folders and ZIPs. Every detached skill carries `nova-free-rights` and its applicable component notices. Product paperwork never changes a protected component payload.
 
-The catalog lives outside installation and stores navigation metadata; canonical archives and databases keep their native owners and contents. No private store record or corpus is packaged. Ordinary conversation still requires no runtime or persistence, while the optional Atlas needs Python 3.10+. This adds no skill root, Faculty, mandatory selector, background indexer or corpus embedding. MIND 0.4.0, Worldline 2 / Continuity 0.3.0, twenty-seven roots and parked Arm's Reach remain intact.
+The frozen current source passed TestForge and fresh independent/affected-guide review. This packaging envelope adds the required customer map; actual archive extraction and delivery remain pending. Static byte identity, native fixture observations, installed discovery, model behavior and publication are separate claims. Follow [Verification and evidence](../docs/VERIFICATION.md) for their sequence. Other estate products retain their own ownership and delivery contracts; exclusion from this loadout is not a claim that their repair is unfinished.

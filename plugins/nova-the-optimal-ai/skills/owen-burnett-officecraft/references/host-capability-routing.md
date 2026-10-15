@@ -26,9 +26,9 @@ Do not promote an earlier state into a later claim.
 
 Choose a substitute for preserved properties, not name resemblance. A generic file export may create an artifact yet lose native controls, template behavior, or editability; record that tradeoff before treating it as equivalent.
 
-## Current Codex capability evidence
+## Obtain current host evidence
 
-This host currently exposes dedicated document, presentation, spreadsheet, PDF, live workbook-control, connected Google Workspace, and branded-presentation capability packages. Their availability is routing evidence only. The active job still requires a matching artifact route, its route-specific prerequisites, and observed output/inspection before Officecraft claims success. Connected services and open desktop sessions are separate current-run conditions.
+Inspect this run's tools, connected sessions and maintained capability entrypoints. Dedicated document, presentation, spreadsheet, PDF or native-control methods may be available; this distributed guide does not assert any installation or connection. Record only the route actually observed for this job. A missing renderer limits inspection, not an otherwise available editable-file build.
 
 ## Keep volatile facts at the adapter layer
 

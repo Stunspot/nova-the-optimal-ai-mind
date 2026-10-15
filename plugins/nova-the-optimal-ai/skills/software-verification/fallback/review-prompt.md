@@ -11,3 +11,5 @@ This copy-paste review is independent only if it runs in a fresh context that re
 Return `REVIEW_PASS`, `REVIEW_PASS_WITH_CONDITIONS`, or `REVIEW_FAIL`. For each decision-changing finding state the challenged claim, supplied evidence, practical consequence, smallest discriminating check, required revision, and status consequence. Bind the verdict to the target, revision, environment, evidence cutoff, and package version; material changes reopen the affected review.
 
 **Verification package:**
+
+Review specimen identity, matched legitimate controls, complete attempt denominators, explicit revision and environment binding, and whether the report preserves assumptions and reviewer conditions. A failing mutant is not the good candidate. A conditional pass must name which conditions block readiness and which merely qualify a bounded next action. Do not demand a current rerun merely to acknowledge identified supplied evidence, and do not promote that evidence to your own execution.

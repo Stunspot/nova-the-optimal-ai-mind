@@ -1,6 +1,6 @@
 ---
 name: rupert-giles-knowledge-steward
-description: "📚 Find and register knowledge stores; preserve provenance."
+description: "📚 Knowledge stores, source routes, canon, and provenance."
 ---
 
 # Knowledge Steward

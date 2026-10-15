@@ -1,0 +1,30 @@
+{
+  "format": "omnara-semantic-review/v1",
+  "subject_sha256": "19d0e43eb7c87c258cc7c8fc9f20981196d16d1c254a3c42ba0159313c74b6f6",
+  "reviewer": "Codex documentation agent, author in-process review during estate repair",
+  "reviewed_at": "2026-10-06",
+  "result": "pass",
+  "rationale": "The report answers the conceptual question with source-specific definitions, marks the comparison procedure as inference and preserves no-data/future-design limits. Actual accessed page text was inspected; no independent reviewer or source authenticity claim.",
+  "claims": [
+    {
+      "claim_id": "C001",
+      "treatment": "qualified",
+      "rationale": "Different reference and aggregation, not evidence that either data series is wrong."
+    },
+    {
+      "claim_id": "C002",
+      "treatment": "supported",
+      "rationale": "Matches NASA product description; no new numerical result inferred."
+    },
+    {
+      "claim_id": "C003",
+      "treatment": "qualified",
+      "rationale": "A proposed comparability procedure, not a completed empirical comparison or station diagnosis."
+    },
+    {
+      "claim_id": "C004",
+      "treatment": "qualified",
+      "rationale": "No site data, design criterion or future scenario was analyzed."
+    }
+  ]
+}

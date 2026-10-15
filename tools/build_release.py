@@ -70,6 +70,7 @@ def marketplace() -> dict[str, object]:
 
 
 def attach_standalone_rights(repo: Path, plugin_source: Path, folder: Path, skill_id: str) -> str | None:
+    version = str(json.loads((plugin_source / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))["version"])
     rights_root = folder / STANDALONE_RIGHTS_DIR
     for name in RIGHTS_DOCS:
         source = repo / name
@@ -81,7 +82,7 @@ def attach_standalone_rights(repo: Path, plugin_source: Path, folder: Path, skil
         copy_tree(plugin_source / "notices" / component_notice, rights_root / "component-notices" / component_notice)
     notice_text = (
         f"# Rights envelope for {skill_id}\n\n"
-        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free 3.8.1. "
+        f"This directory travels with the {skill_id} skill artifact supplied by Nova the Optimal AI Free {version}. "
         "Preserve it when copying or redistributing the authentic, unmodified artifact.\n\n"
         "LICENSE.md defines the product-level public split license. ATTRIBUTION.md, NOTICE.md, "
         "TRADEMARKS.md, PROVENANCE.md, and THIRD-PARTY-NOTICES.md preserve identity, limits, and source custody."
@@ -156,8 +157,20 @@ def validate_source_lock(repo: Path, plugin_source: Path, source_lock: dict[str,
     return roots
 
 
-def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean: bool) -> dict[str, object]:
-    plugin_source = repo / "plugins" / PLUGIN_ID
+def resolve_claude_source(repo: Path, plugin_source: Path, version: str) -> Path:
+    # Legacy sources combine both host envelopes. Prepared editions keep them separate.
+    source = plugin_source if (plugin_source / ".claude-plugin/plugin.json").is_file() else repo / "claude" / PLUGIN_ID
+    manifest_path = source / ".claude-plugin/plugin.json"
+    if not manifest_path.is_file():
+        raise RuntimeError("Claude source plugin manifest missing; refusing host-incomplete build")
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("name") != PLUGIN_ID or manifest.get("version") != version:
+        raise RuntimeError("Claude source plugin identity differs from qualified edition")
+    return source
+
+
+def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean: bool, plugin_source: Path | None = None) -> dict[str, object]:
+    plugin_source = plugin_source or repo / "plugins" / PLUGIN_ID
     plugin_manifest_path = plugin_source / ".codex-plugin" / "plugin.json"
     loadout_path = plugin_source / "LOADOUT-MANIFEST.json"
     if not plugin_manifest_path.is_file() or not loadout_path.is_file():
@@ -166,7 +179,8 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     loadout = json.loads(loadout_path.read_text(encoding="utf-8"))
     source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
     version = str(plugin_manifest["version"])
-    if version != "3.8.1" or loadout.get("product_version") != version:
+    contract = json.loads((repo / "design/product-contract.json").read_text(encoding="utf-8"))
+    if version not in {"3.8.1", "4.0.0", "4.1.0"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
     if loadout.get("license") != "LICENSE.md":
         raise RuntimeError("Loadout does not identify the Nova Free product license")
@@ -176,6 +190,8 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     if rights_bundle.get("external_rights_blockers") != []:
         raise RuntimeError("Source lock still contains external rights blockers")
     roots = validate_source_lock(repo, plugin_source, source_lock)
+    claude_source = resolve_claude_source(repo, plugin_source, version)
+    validate_source_lock(repo, claude_source, source_lock)
     expected = sorted(loadout["roots"])
     if roots != expected or len(roots) != 28:
         raise RuntimeError(f"Loadout mismatch: source={len(roots)} manifest={len(expected)}")
@@ -200,6 +216,20 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         target = package_root / name
         target.write_bytes(source.read_bytes())
 
+    if version == "4.1.0":
+        for name in ("documentation-manifest.json", "documentation-authorship.json"):
+            (package_root / name).write_bytes((repo / name).read_bytes())
+        copy_tree(repo / "documentation-source", package_root / "documentation-source")
+        receipt = json.loads((repo / "documentation-authorship.json").read_text(encoding="utf-8"))
+        snapshot = receipt["authoring"]["capability_snapshot"]["path"]
+        target = package_root / snapshot
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((repo / snapshot).read_bytes())
+        for name in (f"Nova the Optimal AI Free T-Free v{version}.md", f"Nova the Optimal AI Free T-Free v{version} Extra.md", "Nova the Optimal AI Free.png"):
+            target = package_root / "delivery-sidecars" / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((repo / "delivery-sidecars" / name).read_bytes())
+
     docs_source = repo / "docs"
     if not docs_source.is_dir():
         raise RuntimeError("Curated customer documentation directory missing: docs")
@@ -219,7 +249,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
 
     claude_root = package_root / "claude"
     claude_plugin = claude_root / PLUGIN_ID
-    copy_tree(plugin_source, claude_plugin, exclude_top={".codex-plugin"})
+    copy_tree(claude_source, claude_plugin, exclude_top={".codex-plugin"})
     folders_root = claude_root / "folders"
     zips_root = claude_root / "zips"
     skill_records: list[dict[str, object]] = []
@@ -355,6 +385,7 @@ def parser() -> argparse.ArgumentParser:
     result.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     result.add_argument("--output-parent", type=Path)
     result.add_argument("--artifact-parent", type=Path)
+    result.add_argument("--plugin-source", type=Path, help="Explicit prepared plugin source; its exact source lock and rights remain required.")
     result.add_argument("--require-clean", action="store_true")
     return result
 
@@ -365,7 +396,7 @@ def main() -> int:
     output_parent = (args.output_parent or repo / "dist").resolve()
     artifact_parent = (args.artifact_parent or repo / "release").resolve()
     try:
-        value = build(repo, output_parent, artifact_parent, args.require_clean)
+        value = build(repo, output_parent, artifact_parent, args.require_clean, args.plugin_source.resolve() if args.plugin_source else None)
     except (OSError, ValueError, RuntimeError, KeyError, json.JSONDecodeError) as exc:
         print(json.dumps({"schema": "nova-free-build-error/v3", "error": str(exc)}, indent=2), file=sys.stderr)
         return 2

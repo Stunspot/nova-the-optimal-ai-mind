@@ -1,137 +1,26 @@
-const fs = require('node:fs');
-const vm = require('node:vm');
-const assert = require('node:assert/strict');
-const path = require('node:path');
-const root = __dirname;
-const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
-const sample = JSON.parse(fs.readFileSync(path.join(root, 'sample.json'), 'utf8'));
-const nodes = new Map();
-const requests = [];
-let exportedBlob, exportedName;
-function element(selector) {
-  if (!nodes.has(selector)) {
-    const obj = {
-      innerHTML: '', textContent: '', value: '', className: '', disabled: false, open: false,
-      dataset: {}, clicks: 0, click() { this.clicks++; },
-      showModal() { this.open = true; }, close() { this.open = false; },
-      querySelectorAll(query) {
-        if (query !== 'button') return [];
-        const attribute = selector === '#nav' ? 'view' : 'patch';
-        if (this._childHTML !== this.innerHTML) {
-          this._childHTML = this.innerHTML;
-          this._children = [...this.innerHTML.matchAll(new RegExp('data-' + attribute + '="([^"]+)"', 'g'))]
-            .map(match => ({dataset: {[attribute]: match[1]}}));
-        }
-        return this._children;
-      }
-    };
-    nodes.set(selector, obj);
-  }
-  return nodes.get(selector);
-}
-const ctx = {
-  window:{confirm(){return true},addEventListener(){}},
-  document: {
-    body: {dataset: {skin: 'strata'}}, querySelector: element, querySelectorAll: () => [],
-    createElement: () => ({click() { exportedName = this.download; }})
-  },
-  location: {hash: '', pathname: '/'}, history: {replaceState() {}}, URLSearchParams,
-  URL: {createObjectURL(blob) { exportedBlob = blob; return 'blob:working'; }, revokeObjectURL() {}},
-  Blob, setTimeout(fn) { fn(); },
-  fetch: async (url, options) => {
-    requests.push({url, options});
-    return {ok: true, json: async () => url === '/api/sample' ? sample :
-      url === '/api/validate' ? {valid: true, errors: [], scope: 'native structure'} : {authenticated: true}};
-  }
-};
-vm.createContext(ctx);
-vm.runInContext(script, ctx);
-const state = expression => vm.runInContext(expression, ctx);
-async function main() {
-  assert.match(element('#content').innerHTML, /Explore labeled example/);
-  element('#open').onclick();
-  assert.equal(element('#file').clicks, 1);
-  await element('#sample').onclick();
-  assert.match(element('#content').innerHTML, /The fictional archive export requires a manual request/);
-  assert.match(element('#status').textContent, /Synthetic/);
-  assert.ok(state('rawDocument').includes('"ledger_id"'));
-
-  const native = JSON.stringify(sample, null, 2).replace(/}\s*$/, ',\n  "owner_extra": {"counter": 9007199254740993, "ticket": "CUSTODY"}\n}');
-  const fileInput = {files: [{name: 'native.json', size: Buffer.byteLength(native), text: async () => native}], value: 'chosen'};
-  await element('#file').onchange({target: fileInput});
-  assert.equal(fileInput.value, '');
-  assert.equal(state('rawDocument'), native);
-  assert.match(element('#source').textContent, /native.json/);
-  element('#edit').onclick();
-  assert.equal(element('#nativejson').value, native);
-  assert.equal(element('#editor').open, true);
-  const edited = native.replace('Synthetic archive-access answer', 'Edited archive-access answer');
-  element('#nativejson').value = edited;
-  element('#apply').onclick();
-  assert.equal(element('#editor').open, false);
-  assert.equal(state('rawDocument'), edited);
-  assert.match(element('#content').innerHTML, /Edited archive-access answer/);
-  assert.equal(state('workingDirty'), true);
-  ctx.window.confirm = () => false;
-  await element('#sample').onclick();
-  assert.equal(state('rawDocument'), edited, 'Canceled example replacement preserves unsaved text');
-  await element('#file').onchange({target: {files: [{name:'replacement.json',size:native.length,text:async()=>native}],value:''}});
-  assert.equal(state('rawDocument'), edited, 'Canceled import preserves unsaved text');
-  ctx.window.confirm = () => true;
-
-  await element('#validate').onclick();
-  const validationRequest = requests.findLast(r => r.url === '/api/validate');
-  assert.equal(validationRequest.options.body, edited);
-  assert.equal(element('#validation').open, true);
-  assert.match(element('#validationbody').textContent, /^PASS/);
-  element('#download').onclick();
-  assert.equal(await exportedBlob.text(), edited);
-  assert.equal(state('workingDirty'), false, 'An explicit download clears the edited flag');
-  assert.equal(exportedName, sample.ledger_id + '-working.json');
-  assert.match(await exportedBlob.text(), /9007199254740993/);
-
-  const before = state('rawDocument');
-  element('#edit').onclick();
-  element('#nativejson').value = '{broken';
-  element('#apply').onclick();
-  assert.equal(element('#editor').open, true);
-  assert.equal(state('rawDocument'), before);
-  assert.match(element('#editorerror').textContent, /JSON/);
-  element('#nativejson').value = '{"format":"wrong"}';
-  element('#apply').onclick();
-  assert.equal(state('rawDocument'), before);
-  assert.match(element('#editorerror').textContent, /Unsupported/);
-  element('#editor').close();
-
-  const malformed = edited.replace('"patches": [', '"patches": {"wrong": [').replace(/]\s*,\s*"probes":/,' ]}, "probes":');
-  assert.doesNotThrow(() => JSON.parse(malformed));
-  await element('#file').onchange({target: {files: [{name: 'bad.json', size: malformed.length, text: async () => malformed}], value: ''}});
-  assert.match(element('#content').innerHTML, /Native structure needs repair/);
-  assert.match(element('#content').innerHTML, /patches must be an array/);
-  assert.equal(state('rawDocument'), malformed);
-  await element('#validate').onclick();
-  assert.equal(requests.findLast(r => r.url === '/api/validate').options.body, malformed);
-
-  const two = structuredClone(sample);
-  two.patches.push({...two.patches[0], id: 'P2', scope: 'Second mechanism'});
-  const twoText = JSON.stringify(two);
-  await element('#file').onchange({target: {files: [{name: 'two.json', size: twoText.length, text: async () => twoText}], value: ''}});
-  element('#patch-find').value = 'P2';
-  element('#patch-find').oninput();
-  assert.match(element('#patch-list').innerHTML, /P2/);
-  assert.doesNotMatch(element('#patch-list').innerHTML, /data-patch="0"/);
-  element('#patch-list').querySelectorAll('button')[0].onclick();
-  assert.equal(element('#patch-find').value, 'P2');
-  assert.match(element('#content').innerHTML, /P2 · exact proposed change/);
-  element('#skin').onchange({target: {value: 'switchyard'}});
-  assert.equal(ctx.document.body.dataset.skin, 'switchyard');
-  element('#nav').querySelectorAll('button').find(b => b.dataset.view === 'signals').onclick();
-  assert.match(element('#content').innerHTML, /Possible changes/);
-  element('#nav').querySelectorAll('button').find(b => b.dataset.view === 'sources').onclick();
-  assert.match(element('#content').innerHTML, /Fictional archive notice/);
-  element('#nav').querySelectorAll('button').find(b => b.dataset.view === 'watch').onclick();
-  assert.match(element('#content').innerHTML, /When to recheck/);
-  console.log('PASS: import/edit/validation/export exact JSON, malformed structure, patch search/selection, navigation, theme, and no mutation on rejected edits.');
-}
-main().catch(error => {console.error(error); process.exitCode = 1;});
+/* Actual Chromium workflow checks. npm playwright and a Chromium executable are external test dependencies. */
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),cp=require('node:child_process'),assert=require('node:assert/strict');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const root=path.resolve(process.argv[2]||path.join(__dirname,'..'));const output=path.resolve(process.argv[3]||fs.mkdtempSync(path.join(os.tmpdir(),'answerlayer-browser-')));fs.mkdirSync(output,{recursive:true});
+(async()=>{const host=cp.spawn(process.env.PYTHON||'python',['-B','-X','utf8',path.join(root,'workspace/host.py'),'--no-browser','--port','0'],{windowsHide:true});let browser;let stderr='';host.stderr.on('data',x=>stderr+=x);const checks=[];const check=(name,value)=>{assert.ok(value,name);checks.push({name,pass:true});};
+try{const receipt=await new Promise((resolve,reject)=>{let text='';const timeout=setTimeout(()=>reject(Error('Host startup timed out '+stderr)),10000);host.stdout.on('data',x=>{text+=x;if(text.includes('\n')){clearTimeout(timeout);try{resolve(JSON.parse(text.split('\n')[0]));}catch(e){reject(e);}}});host.on('exit',code=>reject(Error('Host exited '+code+' '+stderr)));});
+browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{})});
+const context=await browser.newContext({acceptDownloads:true,viewport:{width:1400,height:1000}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(String(e)));page.on('dialog',d=>d.accept());await page.goto(receipt.url.replace('/#','/prepared-review.html#'));await page.getByRole('button',{name:'Example',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#source').textContent.includes('SYNTHETIC'));
+check('synthetic example enters usable answer view',(await page.locator('#content').innerText()).includes('until 17:00'));
+const guard=()=>page.evaluate(()=>{const e=new Event('beforeunload',{cancelable:true});window.dispatchEvent(e);return e.defaultPrevented;});
+await page.getByRole('button',{name:'Edit working file',exact:true}).click();const raw=await page.locator('#nativejson').inputValue();const edited=raw.replace('Synthetic delivery cutoff decision','EDITED SYNTHETIC DECISION');await page.locator('#nativejson').fill(edited);check('unapplied draft is protected',await guard());await page.getByRole('button',{name:'Use working copy',exact:true}).click();check('applied edit is protected',await guard());
+const downloadEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download working file',exact:true}).click();const download=await downloadEvent;const downloaded=path.join(output,'downloaded.json');await download.saveAs(downloaded);check('actual saved download matches exact working bytes',fs.readFileSync(downloaded,'utf8')===edited);check('download request does not claim confirmed custody',await guard());
+await page.route('**/api/sample',route=>route.abort());await page.getByRole('button',{name:'Example',exact:true}).click();await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Previous working copy retained'));check('failed example retains protected prior edits',await guard()&&(await page.locator('#content').innerText()).includes('EDITED SYNTHETIC DECISION'));await page.unroute('**/api/sample');
+await page.locator('#file').setInputFiles({name:'bad.json',mimeType:'application/json',buffer:Buffer.from('{"format":"answerlayer/reality-ledger/v2","x":1,"x":2}')});await page.waitForFunction(()=>document.querySelector('#status').textContent.includes('Duplicate JSON key'));check('invalid import retains prior work',await guard()&&(await page.locator('#content').innerText()).includes('EDITED SYNTHETIC DECISION'));
+await page.getByRole('button',{name:'Edit working file',exact:true}).click();await page.locator('#nativejson').fill('{MALFORMED');await page.getByRole('button',{name:'Use working copy',exact:true}).click();check('malformed editor stays open and protected',await page.locator('#editor').isVisible()&&await guard());await page.getByRole('button',{name:'Cancel',exact:true}).click();check('explicit draft discard preserves previous applied edits',(await page.locator('#content').innerText()).includes('EDITED SYNTHETIC DECISION'));
+let data=JSON.parse(raw);data.patches[0].exact_test='NUMBER';const exact=JSON.stringify(data).replace('"NUMBER"','9007199254740993.12345');await page.locator('#file').setInputFiles({name:'exact.json',mimeType:'application/json',buffer:Buffer.from(exact)});await page.getByText('All exact patch fields',{exact:true}).click();check('projection preserves large decimal exactly',(await page.locator('#content').innerText()).includes('9007199254740993.12345'));const event2=page.waitForEvent('download');await page.getByRole('button',{name:'Download working file',exact:true}).click();const download2=await event2;await download2.saveAs(path.join(output,'exact-roundtrip.json'));check('import export preserves exact unknown numeric field',fs.readFileSync(path.join(output,'exact-roundtrip.json'),'utf8')===exact);
+let release;const held=new Promise(resolve=>release=resolve);let intercepted;const interceptedPromise=new Promise(resolve=>intercepted=resolve);await page.route('**/api/validate',async route=>{intercepted();await held;await route.continue();});await page.getByRole('button',{name:'Validate',exact:true}).click();await interceptedPromise;await page.getByRole('button',{name:'Edit working file',exact:true}).click();await page.locator('#nativejson').fill(exact.replace('Synthetic delivery cutoff decision','CHANGED AFTER REQUEST'));await page.getByRole('button',{name:'Use working copy',exact:true}).click();release();await page.locator('#validation').waitFor({state:'visible'});check('delayed validation is visibly stale',(await page.locator('#validationbody').innerText()).startsWith('STALE'));await page.getByRole('button',{name:'Close',exact:true}).click();await page.unroute('**/api/validate');
+for(const name of ['Evidence','Changes & exclusions','Recheck triggers','Current answer']){await page.getByRole('button',{name,exact:true}).click();check('navigation '+name,(await page.locator('#title').innerText())===name);}
+await page.locator('#skin').selectOption('switchyard');check('theme change applies',await page.locator('body').getAttribute('data-skin')==='switchyard');await page.locator('#skin').selectOption('strata');
+const withBom='\ufeff'+raw;await page.locator('#file').setInputFiles({name:'bom.json',mimeType:'application/json',buffer:Buffer.from(withBom)});const bomEvent=page.waitForEvent('download');await page.getByRole('button',{name:'Download working file',exact:true}).click();const bomDownload=await bomEvent;await bomDownload.saveAs(path.join(output,'bom-roundtrip.json'));check('UTF-8 BOM is preserved exactly',fs.readFileSync(path.join(output,'bom-roundtrip.json')).equals(Buffer.from(withBom)));
+await page.getByRole('button',{name:'Edit working file',exact:true}).focus();await page.keyboard.press('Enter');check('keyboard opens labeled native editor',await page.locator('#editor').isVisible());await page.keyboard.press('Escape');check('keyboard exits unchanged draft',!(await page.locator('#editor').isVisible()));
+await page.setViewportSize({width:390,height:844});const routesVisible=()=>page.locator('#nav button').evaluateAll(nodes=>nodes.length===5&&nodes.every(n=>{const r=n.getBoundingClientRect();return r.left>=0&&r.right<=window.innerWidth&&r.width>=80&&r.height>=40&&n.scrollWidth<=n.clientWidth;}));check('all five narrow Strata routes are visible',await routesVisible());check('narrow viewport has no page overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));await page.screenshot({path:path.join(output,'desk-narrow.png'),fullPage:true});await page.locator('#skin').selectOption('switchyard');check('all five narrow Switchyard routes are visible',await routesVisible());await page.getByRole('button',{name:'Evidence',exact:true}).click();check('narrow Evidence route opens by its visible label',(await page.locator('#title').innerText())==='Evidence');await page.getByRole('button',{name:'Current answer',exact:true}).click();const contrast=await page.locator('#nav button[aria-current=page]').evaluate(n=>{const c=getComputedStyle(n);const lum=s=>{const rgb=s.match(/[\d.]+/g).slice(0,3).map(Number).map(x=>x/255).map(x=>x<=0.04045?x/12.92:((x+0.055)/1.055)**2.4);return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2];};const a=lum(c.color),b=lum(c.backgroundColor);return {color:c.color,background:c.backgroundColor,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)};});check('selected route text contrast at least4.5 '+JSON.stringify(contrast),contrast.ratio>=4.5);check('narrow alternate theme has no page overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));await page.screenshot({path:path.join(output,'desk-switchyard.png'),fullPage:true});await page.setViewportSize({width:1400,height:1000});await page.locator('#skin').selectOption('strata');
+check('no hidden browser persistence',await page.evaluate(()=>localStorage.length===0&&sessionStorage.length===0));await page.screenshot({path:path.join(output,'desk-strata.png'),fullPage:true});
+const canceled=await browser.newContext({acceptDownloads:false});const p2=await canceled.newPage();await p2.goto(receipt.url.replace('/#','/prepared-review.html#'));await p2.getByRole('button',{name:'Example',exact:true}).click();await p2.getByRole('button',{name:'Edit working file',exact:true}).click();await p2.locator('#nativejson').fill(edited);await p2.getByRole('button',{name:'Use working copy',exact:true}).click();const ev=p2.waitForEvent('download');await p2.getByRole('button',{name:'Download working file',exact:true}).click();const canceledDownload=await ev;check('canceled download is actually canceled',Boolean(await canceledDownload.failure()));check('canceled download leaves guard active',await p2.evaluate(()=>{const e=new Event('beforeunload',{cancelable:true});window.dispatchEvent(e);return e.defaultPrevented;}));
+check('no browser exceptions',errors.length===0);const result={status:'pass',checks,engine:'Actual headless Chromium',boundary:'Synthetic local records; exact browser interactions and downloads checked. No model efficacy, human consent or field proof claimed.'};fs.writeFileSync(path.join(output,'browser-results.json'),JSON.stringify(result,null,2));console.log(JSON.stringify(result));
+}finally{if(browser)await browser.close();host.kill();}})().catch(e=>{console.error(e);process.exitCode=1;});

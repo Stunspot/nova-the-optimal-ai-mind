@@ -63,8 +63,8 @@ Record a source before counting it. The campaign distinguishes these states:
 |---|---|
 | `discovered` | Appeared in a result, reference list, or citation trail. |
 | `inspected` | Received a recorded relevance and access disposition. |
-| `opened` | Full content was attempted or accessed. |
-| `deeply-read` | A substantive evidence note exists. |
+| `opened` | Readable content was accessed; failed attempts are recorded separately. |
+| `deeply-read` | Declared reading scope was actually read and recorded; a note alone cannot prove reading. |
 | `excluded` | Retained with a reason for exclusion. |
 | `duplicate` | Linked to the canonical source record. |
 | `inaccessible` | Access failed or exceeded authority. |
@@ -147,3 +147,5 @@ A separate semantic audit asks whether the cited source supports the exact wordi
 ## 10. Hand off a resumable result
 
 A complete or bounded result includes the report and a campaign summary. When work is incomplete, preserve the exact first unverified edge, blocker, authority requirement, or refresh condition so another competent researcher can continue without reconstructing the campaign from chat history.
+
+Current completion follows [the exact review contract](../references/review-contract.md), including full reader-facing prose and claim treatment. Preserve exclusion history after reading. For a concrete task and its next discriminating evidence, use [the worked campaign](../examples/README.md).

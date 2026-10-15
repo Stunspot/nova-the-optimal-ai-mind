@@ -1,17 +1,9 @@
-# Critique and drills
+# Specific feedback and next drill
 
-## Strengths demonstrated
+This is a fictional worked demonstration. There is no observed user practice and no measured speaking speed. The JSON record retains the exact target, original answer, intervention and comparison.
 
-Jordan retrieves a specific example, owns the coordination work, and explains the handoff mechanism.
+ATT-001 says “updated a sheet.” The phrase shows a record was changed but not that the affected person agreed. DRILL-001 targets confirming the revised owner and room. The cue asks for that personal action; ATT-002 supplies “asked each owner to confirm the revised room.” The coached improvement is specific to that mechanism. It does not establish autonomous prioritization, confidence or a globally ready candidate.
 
-## Weak spots visible
+ATT-003 is a neutral situation requiring the same confirmation behavior. The authored response proposes reconciling the record, checking the actual constraint and confirming the revised plan. A reply such as “update the sheet faster” would fail the same target despite sharing the coordination topic. No real transfer claim is made from either fictional response.
 
-| Weak spot | Evidence from response | Drill | Success cue | Rerun result |
-| --- | --- | --- | --- | --- |
-| Decision rule omitted | First response listed calls without explaining priority | Lead with what was prioritized and why | Decision appears in first half of answer | Improved |
-| Result omitted | First response stopped after activity | End with observable handoff result | Result is explicit and supported | Improved |
-| Slow opening | Second response retained extra setup | Compress context to two sentences | Action begins within twenty seconds | Not rerun |
-
-## Remaining limitations
-
-Q-002 and Q-003 are prepared but not practiced.
+Next, ask the actual candidate the neutral conflict question without the cue or model answer. Keep the gap open if they still treat editing the sheet as agreement. Q-002 and Q-003 have prepared cues but no attempts.

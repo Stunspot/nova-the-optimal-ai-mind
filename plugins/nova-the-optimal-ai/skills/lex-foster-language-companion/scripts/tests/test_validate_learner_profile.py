@@ -15,7 +15,7 @@ class LearnerProfileValidationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.valid = json.loads(
-            (SKILL_ROOT / "assets" / "learner-profile.template.json").read_text(
+            (SKILL_ROOT / "examples" / "progress-and-return" / "fictional-profile.json").read_text(
                 encoding="utf-8"
             )
         )

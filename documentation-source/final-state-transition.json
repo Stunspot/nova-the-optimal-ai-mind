@@ -1,0 +1,15 @@
+{
+  "scope": "Exact post-independent-READY qualification metadata only; no public-availability claim. Apply once before final build, then native documentation/site checking.",
+  "changes": [
+    {
+      "path": "docs/index.html",
+      "old": "Free 4.1.0 qualification and delivery are pending; the latest public release may be an earlier edition.",
+      "new": "Free 4.1.0 source workflows were qualified locally for this delivery. Check the release channel separately for public availability."
+    },
+    {
+      "path": "docs/security.html",
+      "old": "This reporting policy accompanies the Free 4.1.0 source candidate and its exact source-locked roots. Final qualification and delivery remain pending; this page does not claim a completed independent security audit.",
+      "new": "This reporting policy accompanies the locally qualified Free 4.1.0 delivery and its exact source-locked roots. Local workflow qualification does not constitute an independent security audit or establish public availability."
+    }
+  ]
+}

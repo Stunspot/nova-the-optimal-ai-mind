@@ -1,0 +1,3 @@
+# Citation and semantic audit
+
+Author in-process review on 2026-10-06. C001 keeps the inference conditional; C002 repeats only the inspected product description; C003 is visibly a proposed comparison, not completed analysis; C004 limits use to the actual task. Executive answer and conclusion match these limits. No numerical latest rate, station cause, independent corroboration, engineered threshold or exhaustive research claim is made. Structural integrity is separately recomputed by citation_audit.py. The semantic-review.json digest binds this review to these native records, not to unchanged future remote pages.

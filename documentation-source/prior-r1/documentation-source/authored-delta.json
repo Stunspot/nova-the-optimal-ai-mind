@@ -1,0 +1,23 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "Nova the Optimal AI Free",
+  "version": "4.1.0",
+  "customer_docs": [
+    "README.md",
+    "START-HERE.md",
+    "RELEASE-NOTES.md",
+    "docs/CAPABILITY-GUIDE.md",
+    "docs/UPGRADE.md",
+    "docs/TROUBLESHOOTING.md",
+    "docs/VISUAL-WORKSPACES.md",
+    "docs/MAINTAINER-GUIDE.md",
+    "docs/VERIFICATION.md",
+    "docs/index.html",
+    "docs/workflows.html",
+    "docs/capabilities.html",
+    "PROVENANCE.md",
+    "THIRD-PARTY-NOTICES.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.1.0 Extra.md"
+  ],
+  "scope": "Actual material revision of task-first customer journeys, recovery, release communication, included-app limits and dependency notices."
+}

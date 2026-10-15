@@ -1,5 +1,7 @@
 # Language mission
 
+Use this only for requested learning or rehearsal. A direct translation does not require a mission form.
+
 ## Use moment
 
 - Language and variety:
@@ -23,7 +25,10 @@ Name the one meaning, form, pronunciation, script, or protocol distinction that 
 
 - Repair cue:
 - Changed situation for transfer:
-- Evidence observed: new | supported | independent | transferred
+- Actual learner response, or still awaiting a response:
+- Criterion tested and modality observed:
+- Support supplied and result:
+- Evidence observed: new | supported | independent | transferred (scoped to the criterion; labels alone do not qualify it)
 
 ## Next retrieval
 
