@@ -1,0 +1,19 @@
+{
+  "format_version": "1.0",
+  "command": [
+    "python",
+    "-m",
+    "unittest",
+    "expected.test_fixed_date_filter",
+    "-v"
+  ],
+  "working_directory": ".",
+  "started_at": "2026-07-16T10:49:14.244353+00:00",
+  "finished_at": "2026-07-16T10:49:14.430574+00:00",
+  "duration_seconds": 0.186219,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "test_includes_both_boundaries_and_excludes_neighbors (expected.test_fixed_date_filter.VerifiedMinimalFix.test_includes_both_boundaries_and_excludes_neighbors) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+  "status": "passed"
+}

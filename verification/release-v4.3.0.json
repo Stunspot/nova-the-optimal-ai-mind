@@ -1,0 +1,52 @@
+{
+  "schema": "nova-github-release-verification/v1",
+  "version": "4.3.0",
+  "build_id": "nova-free-4.3.0-companions-20261017-r1",
+  "qualification_date": "2026-10-17",
+  "package_verifier": {
+    "verdict": "PASS",
+    "visible_skill_roots": 28,
+    "faculty_cores": 17,
+    "customer_references_checked": 168,
+    "rights": "permitted_under_included_licenses",
+    "external_rights_blockers": []
+  },
+  "host_trees": {
+    "codex_plugin_tree": {
+      "file_count": 1490,
+      "tree_sha256": "579f9503723b6838a3cf492accfad666de2d8e9651de54df080d5a1f62fb6991"
+    },
+    "claude_plugin_tree": {
+      "file_count": 1490,
+      "tree_sha256": "0baaaa27a53d3b28aa5b35ea903576f68354e429b4425888f403ecdbd0b3ff4e"
+    }
+  },
+  "archives": [
+    {
+      "name": "nova-the-optimal-ai-free-4.3.0.zip",
+      "size": 296322393,
+      "sha256": "9d81674ac0ef4737fe0cd51d3ea6e84e54c6c938949ac45e8e48ae07dfb8fb95"
+    },
+    {
+      "name": "nova-the-optimal-ai-free-4.3.0-codex.zip",
+      "size": 74319825,
+      "sha256": "f4f44389210f6f82442e8b2ad79eeb8847bcace6394496fc04b33b60d7f9e16f"
+    },
+    {
+      "name": "nova-the-optimal-ai-free-4.3.0-claude.zip",
+      "size": 214929792,
+      "sha256": "8e865c863a5fff4fa95c24f45f53d413658a08a5c8c4f73d72be9f13f295e633"
+    }
+  ],
+  "accepted_prior_checks": [
+    "All members of final archives passed CRC and identity checks",
+    "Native Windows extraction matched final Codex and Claude archive bytes",
+    "Independent source identity review passed; its archive/extraction condition is satisfied by final checks"
+  ],
+  "publication_check": "Repository host plugin trees are byte-for-byte identical to these qualified archive trees. Source, documentation, and release metadata are published alongside the unchanged ZIPs.",
+  "limits": [
+    "Native macOS and Linux execution not established",
+    "Fresh-host installation and behavior not established"
+  ],
+  "publication_authority": "Owner request: bring it current"
+}

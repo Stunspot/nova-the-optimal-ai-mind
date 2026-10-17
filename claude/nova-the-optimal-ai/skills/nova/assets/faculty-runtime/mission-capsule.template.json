@@ -1,0 +1,15 @@
+{
+  "schema": "collaborative-dynamics-mission-capsule/v2",
+  "mission_id": "replace-with-stable-mission-id",
+  "current_direction": "Replace this sentence with the user's current direction in purposeful natural language.",
+  "phase": "orient",
+  "authority": {
+    "granted": [],
+    "reserved": []
+  },
+  "active_coalition": [],
+  "unresolved_transformations": [],
+  "closure": {
+    "status": "open"
+  }
+}

@@ -1,4 +1,4 @@
-# Free Nova 4.0.0 package map
+# Free Nova 4.1.0 package map
 
 Free4 is one product, one plugin and one Nova front door. The `nova-the-optimal-ai` plugin contains 28 native skill roots: Nova and 27 sibling capabilities. Seventeen Faculty Cores remain nested references inside Nova and MIND0.4.0; they are not sibling skills, subagents or a separate MIND product.
 

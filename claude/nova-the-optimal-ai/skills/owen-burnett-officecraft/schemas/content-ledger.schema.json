@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "officecraft/content-ledger/v1",
+  "type": "object",
+  "required": ["format", "items"],
+  "properties": {
+    "format": {"const": "officecraft-content-ledger/v1"},
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["item_id", "kind", "value", "source_ids", "source_status"],
+        "properties": {
+          "item_id": {"type": "string", "minLength": 1},
+          "kind": {"enum": ["fact", "name", "date", "metric", "unit", "claim", "decision", "risk", "action", "term"]},
+          "value": {"type": "string", "minLength": 1},
+          "source_ids": {"type": "array", "items": {"type": "string"}},
+          "source_status": {"enum": ["sourced", "inferred", "illustrative", "unresolved", "conflicted"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

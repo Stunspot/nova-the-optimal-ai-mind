@@ -1,0 +1,9 @@
+criterion_id,criterion_text,criterion_type,importance,evidence_id,evidence_source,evidence_strength,proposed_claim,support_status,destinations,confirmation_status,risk_note
+
+REQ-001,Coordinate recurring program schedules,required,high,EVD-001,SRC-002,direct,Coordinated weekly schedules for 12 recurring community programs,documented,resume;cover-letter,confirmed,
+
+REQ-002,Coordinate vendors,required,high,EVD-002,SRC-002,direct,Maintained vendor contacts and confirmed delivery windows,documented,resume;cover-letter,confirmed,
+
+REQ-003,Prepare spreadsheet reports,preferred,medium,EVD-003,SRC-002,direct,Consolidated attendance and supply data into a weekly spreadsheet,documented,resume;cover-letter,confirmed,
+
+REQ-004,Use facilities ticketing software,preferred,low,,,none,,unsupported,,unresolved,No evidence supplied

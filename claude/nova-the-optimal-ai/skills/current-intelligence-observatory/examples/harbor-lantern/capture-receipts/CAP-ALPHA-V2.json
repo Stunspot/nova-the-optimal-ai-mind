@@ -1,0 +1,14 @@
+{
+  "id": "CAP-ALPHA-V2",
+  "source_ids": [
+    "SRC-ALPHA"
+  ],
+  "original_url": "https://fixtures.invalid/harbor/alpha?version=2",
+  "canonical_url": "https://fixtures.invalid/harbor/alpha?version=2",
+  "published_at": "2026-07-18T15:30:00Z",
+  "retrieved_at": "2026-07-18T16:05:00Z",
+  "artifact_path": "source-alpha-v2.txt",
+  "sha256": "FCC6B0DB70392196C804A4912856510DDA389E250E920D2C628759850C26E12D",
+  "preservation_status": "preserved",
+  "failure": null
+}

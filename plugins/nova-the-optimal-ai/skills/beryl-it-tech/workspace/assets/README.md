@@ -1,8 +1,10 @@
-# Retained generated material assets
+# Companion artwork and retained environments
 
-The three PNG files are retained byte-for-byte from the accepted 0.3.0 Studio. This 0.4.0 repair generates no new image. The original records describe built-in image generation at 1672 by 941 pixels; the prompts below are retained historical source text, not a claim that they reproduce the exact current bytes. The legacy porcelain-surface.png filename now supports the Cinder Relay environment. UI text, controls, layout and state remain native HTML/CSS/JavaScript, not baked into artwork. No private Scrapbook reference image is redistributed.
+Mossglass, Night Probe and Cinder Relay retain the three accepted background PNGs byte-for-byte. Controls and text remain HTML/CSS rather than baked into artwork. The0.6 native icon is a newly generated copper-and-beryl lens emblem; its source prompt, generation provenance and conversion are recorded in [ICON-PROVENANCE.json](ICON-PROVENANCE.json). The product's shelf avatar remains unchanged.
 
-## Historical generation prompts
+The material-generation prompts in this document are historical source text. They explain the retained environment assets and are not a claim that rerunning a prompt reproduces exact bytes. The legacy porcelain-surface.png filename supports Cinder Relay. No private Scrapbook reference image is redistributed.
+
+
 
 ## moss-surface.png
 

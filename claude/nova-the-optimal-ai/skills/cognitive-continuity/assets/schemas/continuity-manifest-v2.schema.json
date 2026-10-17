@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://collaborative-dynamics.com/schemas/cognitive-continuity/manifest-v2.json","title":"Cognitive Continuity Immutable Workspace Manifest v2","type":"object",
+  "required":["format","implementation_version","workspace_schema_version","workspace_id","created_at","updated_at","generation","scope","policies","capabilities","transaction_protocol","active_generation_path","active_generation_manifest_sha256","committing_transaction_id","previous_generation","previous_generation_manifest_sha256"],
+  "properties":{
+    "format":{"const":"cd-cognitive-continuity/v2"},"implementation_version":{"type":"string","minLength":1},"workspace_schema_version":{"const":2},"workspace_id":{"type":"string","minLength":1},"created_at":{"type":"string","format":"date-time"},"updated_at":{"type":"string","format":"date-time"},"generation":{"type":"integer","minimum":0},
+    "scope":{"$ref":"common-v2.schema.json#/$defs/scope"},"policies":{"type":"object"},"capabilities":{"type":"object"},"last_consolidated_episode":{"type":["string","null"]},"migrated_from":{"type":"object"},
+    "transaction_protocol":{"const":"cd-continuity-file-transaction/v1"},"active_generation_path":{"type":"string","pattern":"^generations/g-[0-9]{20}$"},"active_generation_manifest_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"committing_transaction_id":{"type":"string","minLength":1},"previous_generation":{"type":["integer","null"],"minimum":0},"previous_generation_manifest_sha256":{"type":["string","null"]}
+  },"additionalProperties":false
+}

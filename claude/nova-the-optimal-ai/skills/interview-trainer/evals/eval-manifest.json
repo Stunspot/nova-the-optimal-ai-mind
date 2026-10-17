@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.1",
+  "skill": "interview-trainer",
+  "case_file": "interview-trainer-cases.json",
+  "required_classes": [
+    "success",
+    "sparse",
+    "contradictory",
+    "degraded",
+    "authority",
+    "interrupted",
+    "responsible-stop"
+  ],
+  "claim": "Cases challenge source-bound preparation, actual-response practice, critique, authority, and bounded readiness; they do not establish live model behavior or interview outcomes."
+}

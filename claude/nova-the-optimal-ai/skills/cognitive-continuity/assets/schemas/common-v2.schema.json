@@ -1,0 +1,10 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://collaborative-dynamics.com/schemas/cognitive-continuity/common-v2.json",
+  "$defs":{
+    "scope":{"type":"object","required":["user","project","agent"],"properties":{"user":{"type":"string","minLength":1},"project":{"type":"string","minLength":1},"agent":{"type":"string","minLength":1},"thread":{"type":["string","null"]}},"additionalProperties":false},
+    "sensitivity":{"enum":["ordinary","limited","sensitive","restricted"]},
+    "claim_state":{"enum":["unknown","hypothesis","verified"]},
+    "resolution_state":{"enum":["unresolved","mitigated","resolved","regressed"]}
+  }
+}

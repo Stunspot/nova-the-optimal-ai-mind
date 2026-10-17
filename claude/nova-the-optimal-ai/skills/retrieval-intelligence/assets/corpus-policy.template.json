@@ -1,0 +1,15 @@
+{
+  "schema": "retrieval-corpus-policy-v1",
+  "corpus_name": "",
+  "authorized_root": "",
+  "purpose": "",
+  "included_extensions": [".md", ".txt", ".rst", ".csv", ".json", ".yaml", ".yml"],
+  "excluded_paths": [],
+  "sensitivity": "private",
+  "maximum_file_bytes": 5000000,
+  "canonical_source_rules": [],
+  "refresh_triggers": [],
+  "retention_and_deletion": "Index is derived and may be rebuilt from the authorized corpus.",
+  "external_embedding_authorized": false,
+  "owner": ""
+}

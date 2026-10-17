@@ -1,14 +1,14 @@
-# Nova the Optimal AI — Free 4.0.0
+# Nova the Optimal AI — Free 4.3.0
 
 ![Illustration of Nova at a neon command desk surrounded by systems and skill panels.](docs/assets/nova-mind-readme-hero.png)
 
 Bring me the repository that is on fire, the research question that refuses to sit still, the office file breeding revisions in the dark, or the decision everyone is politely avoiding. Nova is one sharp, playful generalist: useful before the tour, accountable through the finish, and considerably less interested in making you admire her filing system than older agents were.
 
-Free 4.0.0 is the foundation-and-agent edition. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-seven sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
+Free 4.3.0 is the foundation-and-agent edition. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-seven sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
 
 Ordinary work requires no Ollama service, embedding model, vector database, prompt hook, daemon, onboarding interview, or persistent data setup. That entire Rube Goldberg annex has been thanked for its service and shown the door.
 
-Open an optional desk when the material is easier to understand together: a project and its next step, research questions and evidence, device observations, dated intelligence, or retained collections and useful quotations. Start by browsing what is already there. Giles carries selected sources into a working tray and knowledge packet; Knowledge Desk preserves open reading through catalog updates. A developed dark environment opens first, with other material interpretations for a different working mood.
+Free 4.3.0 keeps Project Bridge and OMNARA Reading Room for source-bound project and research review, with Beryl and Knowledge Desk for device evidence and retained reading. Open Project Bridge to see what can move your projects forward and what depends on it. Follow an OMNARA report from its conclusions into the passages behind them. Compare computer observations with their original logs in Beryl, or find and read retained material in Knowledge Desk. Ask Nova in conversation to prepare or change the work, then refresh the relevant companion.
 
 ## The useful shape
 
@@ -24,11 +24,9 @@ The exact twenty-eight roots and their boundaries are recorded in `LOADOUT-MANIF
 
 ## Find what you already know, then work on the source
 
-“Where did we put that research?” is now a useful starting request. Giles Knowledge Atlas shows the knowledge stores you registered, the situations they help with and the named sections that save another broad search. Choose a collection, inspect a bounded source sample and give Nova a retrieval brief with the exact route. Registration is a pointer; reading the source earns the answer.
+“Where did we put that research?” remains a useful conversational request. The Giles knowledge steward can help locate and route material in conversation; its standalone app is unlinked from this edition.
 
-The optional local atlas begins empty on a new customer installation. Its saved catalog stays outside the plugin, so updating Nova does not move your archives or package private descriptions. Start with the [Giles store-to-source journey](docs/VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route) to register one real collection, verify its save and recover safely from a conflict. Ordinary conversation remains available without Python or opening the atlas.
 
-Six other optional native workspaces keep their owners' working objects in view: Dennis project outcomes and dependencies; OMNARA campaigns and evidence; AnswerLayer baseline and exact proposed wording; Beryl hypotheses, tests and custody; Observatory dated claims and supplied-case differences; and Knowledge Desk deliberate reading from existing knowledge, pin and people owners. Save, download and read boundaries differ. Use [Open the native workspaces](docs/VISUAL-WORKSPACES.md) for the correct launcher and procedure.
 
 ## Keep the work and return
 
@@ -56,6 +54,6 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 4.0.0 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
+This repository contains the Free 4.3.0 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠

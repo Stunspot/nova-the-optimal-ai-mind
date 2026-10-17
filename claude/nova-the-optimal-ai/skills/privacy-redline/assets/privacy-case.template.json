@@ -1,0 +1,38 @@
+{
+  "format": "privacy-redline/case-v1",
+  "case_id": "PR-YYYYMMDD-001",
+  "title": "Redacted case title",
+  "status": "intake",
+  "purpose": "",
+  "jurisdiction": {
+    "value": "not-collected",
+    "evidence_state": "unknown",
+    "needed_for": []
+  },
+  "pressure": {
+    "state": "preventive",
+    "immediate_danger_screened": false,
+    "safe_channel_confirmed": false
+  },
+  "map": {
+    "assets": [],
+    "adversaries": [],
+    "surfaces": [],
+    "identity_links": [],
+    "failure_paths": []
+  },
+  "ledger": {
+    "assumptions": [],
+    "redlines": [],
+    "risks": [],
+    "decisions": [],
+    "residual_exposure": []
+  },
+  "queue": [],
+  "receipts": [],
+  "logbook": [],
+  "triggers": [],
+  "last_safe_checkpoint": "",
+  "updated_at": "YYYY-MM-DD"
+}
+

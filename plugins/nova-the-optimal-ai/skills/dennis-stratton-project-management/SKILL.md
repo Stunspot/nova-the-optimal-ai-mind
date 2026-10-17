@@ -38,7 +38,7 @@ python scripts/project_control.py store-path
 python scripts/project_control.py locate --project-id <id>
 ```
 
-In Nova, invoke project record operations through the sibling `$nova-operations` registry-backed `run project-management -- ...` command. An operation-specific explicit `--store` may still override when the owner authorizes it; otherwise the launcher injects the exact `DENNIS_PROJECT_HOME` registry value. The standalone home-directory fallback remains disabled. Never default project state into a skill, plugin, package, repository, cache, temporary directory, upload sandbox, `.codex`, or a private product path.
+Resolve custody in this order: explicit `--store`, the local environment's `DENNIS_PROJECT_HOME`, then `~/.dennis-stratton/project-records`. Never default project state into a skill, plugin, package, repository, cache, temporary directory, upload sandbox, `.codex`, or a private product path.
 
 Locate with the strongest available stable identifiers: project ID first, then exact project name and authoritative source locator. Load and validate a unique match, reconcile it with current sources, and treat its `project-control.json` as canonical. Status Markdown and dashboards remain derived views. Stop mutation when selectors identify competing records.
 
@@ -129,10 +129,11 @@ This skill complements product requirements, architecture, SOP, verification, do
 
 If files or Python are unavailable, use `fallbacks/universal-copy-paste-workflow.md` and state the lost persistence or integrity guarantee.
 
+## Read-only Project Bridge
+
+Use Open Project Bridge.cmd (Windows) or Open Project Bridge.command (macOS/Linux) to open the local, read-only portfolio reader. It traces purpose through the declared project hierarchy and commitments, follows only recorded dependency IDs, and opens evidence from the project record's authorized source locations. Browsing, comparison, theme, and reading-position preferences are stored outside the skill folder; native project-control records are never rewritten by the companion. Use the native project_control.py commands for authorized project-state changes. The fictional community exhibition walkthrough is clearly labeled and does not create a real project record.
+
 ## Visual workspace practice
 
 The bridge earns its screen by keeping the intended outcome, connected delivery steps, live constraints and missing proof visible together. Start from the project portfolio and a selected delivery step; explain a project as an outcome with work and evidence attached. Keep record editing secondary.
 
-## Open the Nova-bound Project Bridge
-
-Use the included Open Project Bridge launcher or `$nova-operations` registry-backed `run project-bridge -- ...`. Both discover the current Nova estate and inject its existing `DENNIS_PROJECT_HOME`; an unconfigured estate stops with setup guidance. The bridge edits the same native project records, not a separate workspace store. Optional desktop shortcuts remain an explicit user choice.

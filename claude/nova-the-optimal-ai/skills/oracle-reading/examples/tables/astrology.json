@@ -1,0 +1,29 @@
+{
+  "schema": "oracle-reading/table-v1",
+  "id": "comfort-example",
+  "revision": 1,
+  "tradition": "astrology",
+  "phase": "active",
+  "question": "Why does accepting comfort feel so hard?",
+  "basis": "user-supplied",
+  "placements": [
+    {
+      "planet": "Moon",
+      "sign": "Cancer"
+    },
+    {
+      "planet": "Saturn",
+      "sign": "Aries"
+    }
+  ],
+  "aspects": [
+    {
+      "from": "Moon",
+      "kind": "square",
+      "to": "Saturn"
+    }
+  ],
+  "source": "Supplied chart notes; birth time, houses and degrees unknown",
+  "system": "Western symbolic astrology",
+  "focus": "relations"
+}

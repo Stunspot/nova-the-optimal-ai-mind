@@ -1,0 +1,82 @@
+{
+  "format": "interview-practice/v1",
+  "interview_id": "fictional-northwind-coordinator",
+  "as_of": "2026-10-07T18:00:00-05:00",
+  "session_state": "ended",
+  "attempts": [
+    {
+      "attempt_id": "ATT-001",
+      "question_id": "Q-001",
+      "question_asked": "Tell me about a time a schedule changed at the last minute.",
+      "response": "Two instructors were out. I called people, moved rooms and updated a sheet.",
+      "origin": "fictional",
+      "mode": "coached",
+      "medium": "text",
+      "assistance": "none",
+      "recorded_at": "2026-10-07T14:00:00-05:00",
+      "scope_sha256": "889296db6f93d4cb2a27e2e99e55aa30c68ac66949844fb6b2236f9539173e27",
+      "assessment": {
+        "target": "confirm revised owner and room",
+        "observation": "updated a sheet",
+        "result": "needs-drill",
+        "rationale": "Activity does not establish agreement about the revised owner and room."
+      }
+    },
+    {
+      "attempt_id": "ATT-002",
+      "question_id": "Q-001",
+      "question_asked": "Make your personal confirmation step explicit. What did you check, and what did the team achieve?",
+      "response": "My manager prioritized the registered groups. I kept one change log and asked each owner to confirm the revised room. I checked the three sessions ran; the manager and instructors also did the work.",
+      "origin": "fictional",
+      "mode": "coached",
+      "medium": "text",
+      "assistance": "cue-given",
+      "recorded_at": "2026-10-07T14:05:00-05:00",
+      "scope_sha256": "889296db6f93d4cb2a27e2e99e55aa30c68ac66949844fb6b2236f9539173e27",
+      "assessment": {
+        "target": "confirm revised owner and room",
+        "observation": "asked each owner to confirm the revised room",
+        "result": "workable",
+        "rationale": "The confirmation step is explicit under a cue and ownership is bounded."
+      }
+    },
+    {
+      "attempt_id": "ATT-003",
+      "question_id": "Q-001",
+      "question_asked": "The room owner says the change was never agreed, but your sheet says it was. What would you do next?",
+      "response": "I would compare the last confirmed message with the sheet and ask the room owner to verify the current constraint. Before promising the room, I would record the agreed owner and time and send the corrected plan for confirmation.",
+      "origin": "fictional",
+      "mode": "realistic",
+      "medium": "text",
+      "assistance": "none",
+      "recorded_at": "2026-10-07T14:10:00-05:00",
+      "scope_sha256": "889296db6f93d4cb2a27e2e99e55aa30c68ac66949844fb6b2236f9539173e27",
+      "assessment": {
+        "target": "confirm revised owner and room",
+        "observation": "send the corrected plan for confirmation",
+        "result": "workable",
+        "rationale": "The proposed method tests the same confirmation behavior in a new fictional situation."
+      }
+    }
+  ],
+  "drills": [
+    {
+      "drill_id": "DRILL-001",
+      "target": "confirm revised owner and room",
+      "before_attempt": "ATT-001",
+      "after_attempt": "ATT-002",
+      "intervention": "Ask which agreement the candidate personally confirmed, not just which messages they sent.",
+      "success_cue": "Response explicitly states the affected owner confirmed the revised room.",
+      "state": "coached-improvement",
+      "comparison": "ATT-001 edits a sheet; ATT-002 asks each owner to confirm. This is a fictional coached contrast; ATT-003 remains a separate illustrative variant."
+    }
+  ],
+  "readiness": {
+    "claim": "fictional-demonstration",
+    "question_ids": [
+      "Q-001"
+    ],
+    "remaining_gaps": "No actual user practice; Q-002/Q-003 unpracticed; appointment logistics unknown.",
+    "next_action": "Ask the actual candidate the neutral booking-conflict question without the cue or model answer."
+  }
+}

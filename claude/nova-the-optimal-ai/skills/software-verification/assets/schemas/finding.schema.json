@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestForge Finding",
+  "type": "object",
+  "required": ["id", "classification", "severity", "statement", "evidence", "confidence", "next_action", "status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^F-[0-9]{3,}$"},
+    "classification": {"enum": ["PRODUCT_DEFECT", "TEST_DEFECT", "ENVIRONMENT_FAILURE", "FLAKY_OR_NONDETERMINISTIC", "EXPECTED_CONTRACT_CHANGE", "TOOLING_FAILURE", "INSUFFICIENT_EVIDENCE"]},
+    "severity": {"enum": ["critical", "high", "medium", "low", "informational"]},
+    "statement": {"type": "string", "minLength": 1},
+    "evidence": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "next_action": {"type": "string", "minLength": 1},
+    "status": {"enum": ["open", "resolved", "accepted", "blocked", "disputed"]}
+  },
+  "additionalProperties": true
+}

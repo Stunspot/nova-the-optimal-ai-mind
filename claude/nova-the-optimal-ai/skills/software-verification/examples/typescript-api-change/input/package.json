@@ -1,0 +1,7 @@
+{
+  "name": "testforge-subscription-example",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "vitest run"},
+  "devDependencies": {"typescript": "^5.6.0", "vitest": "^2.1.0"}
+}

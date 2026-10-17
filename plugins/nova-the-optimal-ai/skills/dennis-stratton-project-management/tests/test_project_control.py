@@ -430,8 +430,8 @@ class ProjectControlTests(unittest.TestCase):
             self.assertEqual((resolved, source), (explicit.resolve(), "explicit"))
             resolved, source = project_control.resolve_store(None, {project_control.STORE_ENV_VAR: str(environment)}, home)
             self.assertEqual((resolved, source), (environment.resolve(), "environment"))
-            with self.assertRaisesRegex(ValueError, "DENNIS_PROJECT_HOME is required in Nova"):
-                project_control.resolve_store(None, {}, home)
+            resolved, source = project_control.resolve_store(None, {}, home)
+            self.assertEqual((resolved, source), (home.joinpath(*project_control.DEFAULT_STORE_PARTS).resolve(), "default"))
             self.assertFalse(explicit.exists())
             self.assertFalse(environment.exists())
 

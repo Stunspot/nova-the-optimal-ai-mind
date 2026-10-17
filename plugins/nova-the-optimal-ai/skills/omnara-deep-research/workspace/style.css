@@ -194,3 +194,6 @@ body[data-skin=proofcabinet] .coverage-card dt{margin-top:12px}
 .source-reach-list button:hover{color:var(--accent)}
 body[data-skin=surveyfolio] .source-reach-list button{font:1rem/1.35 Georgia,serif}
 body[data-skin=proofcabinet] .source-reach-list{margin:8px 0}
+.root-indicator{max-width:min(42vw,520px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.72rem}
+#location-dialog{max-width:760px;width:min(92vw,760px)}#location-dialog label{display:block;margin:1rem 0}#location-dialog input{display:block;width:100%;padding:.75rem;margin-top:.35rem}#location-items.folder-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.45rem;margin:1rem 0;max-height:42vh;overflow:auto}.folder-entry{width:100%;padding:.65rem;text-align:left;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}.folder-entry:hover{border-color:var(--accent)}
+@media(max-width:720px){.root-indicator{max-width:100%;flex-basis:100%;order:10}}

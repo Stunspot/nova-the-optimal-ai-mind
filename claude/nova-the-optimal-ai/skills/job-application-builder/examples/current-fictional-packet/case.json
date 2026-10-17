@@ -1,0 +1,102 @@
+{
+  "format": "job-application-packet/v2",
+  "case_id": "northwind-example",
+  "candidate_id": "jane-example",
+  "purpose": "practice",
+  "revision": 1,
+  "vacancy": {
+    "employer": "Northwind Community Center (fictional)",
+    "title": "Operations Coordinator",
+    "coverage": "complete",
+    "source_ids": [
+      "SRC-001"
+    ],
+    "deadline": {
+      "status": "not-stated",
+      "wording": "No deadline stated in retained fictional posting.",
+      "instant": null
+    }
+  },
+  "artifacts": [
+    {
+      "id": "resume",
+      "path": "resume.md",
+      "allowed": true,
+      "required_format": "text",
+      "max_words": null,
+      "max_characters": null
+    },
+    {
+      "id": "cover-letter",
+      "path": "cover-letter.md",
+      "allowed": true,
+      "required_format": "text",
+      "max_words": null,
+      "max_characters": null
+    },
+    {
+      "id": "application-answers",
+      "path": "application-answers.md",
+      "allowed": true,
+      "required_format": "text",
+      "max_words": null,
+      "max_characters": null
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-001",
+      "text": "Describe one scheduling system you maintained",
+      "source_id": "SRC-001",
+      "answer": "I maintained shared calendars and written handoff checklists for 12 recurring community programs.",
+      "max_words": 50,
+      "max_characters": null,
+      "requires_user_confirmation": false,
+      "confirmation_source": null
+    }
+  ],
+  "checks": [
+    {
+      "id": "ELIG-001",
+      "kind": "eligibility",
+      "requirement": "Stated Tuesday–Saturday schedule",
+      "state": "met",
+      "blocking": true,
+      "basis": "Fictional history states this availability.",
+      "next_action": ""
+    },
+    {
+      "id": "ELIG-002",
+      "kind": "eligibility",
+      "requirement": "Work authorization answer if the actual portal requests it",
+      "state": "unknown",
+      "blocking": false,
+      "basis": "Not requested as an answer in this fictional posting.",
+      "next_action": "Obtain a direct user answer if requested; do not infer it."
+    },
+    {
+      "id": "INST-001",
+      "kind": "instructions",
+      "requirement": "Posting document choices and plain text requirement",
+      "state": "met",
+      "blocking": true,
+      "basis": "Retained posting permits these three documents in plain text.",
+      "next_action": ""
+    },
+    {
+      "id": "PRIV-001",
+      "kind": "privacy",
+      "requirement": "Selected files contain no confidential source data",
+      "state": "met",
+      "blocking": true,
+      "basis": "All names and records are explicitly fictional; no sensitive identifiers.",
+      "next_action": ""
+    }
+  ],
+  "submission": {
+    "state": "not-submitted",
+    "authority_reference": null,
+    "receipt_reference": null,
+    "observed_at": null
+  }
+}

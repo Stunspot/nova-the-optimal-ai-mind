@@ -1,0 +1,129 @@
+{
+  "schema": "nova-companion-presentation/v1",
+  "preserve_skill_installation": true,
+  "disabled_companions": [
+    {
+      "skill": "purchase-decision",
+      "app": "Purchase Comparison Desk",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "offer-comparator",
+      "app": "Offer Crossroads",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "contractor-bid-comparison",
+      "app": "Compare Contractor Bids",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "bill-and-charge-dispute",
+      "app": "Charge Clarity",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "insurance-claim-builder",
+      "app": "Insurance Letter Companion",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "contract-decoder",
+      "app": "Contract Reading Desk",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "tax-organizer",
+      "app": "Tax Gathering Room",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "event-planner",
+      "app": "Event Rehearsal",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "trip-planner",
+      "app": "Route Room",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "moving-planner",
+      "app": "Move Day",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "current-intelligence-observatory",
+      "app": "Intelligence Observatory",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "gearnoccio-garagecraft",
+      "app": "Gearnoccio Garage Bench",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "praxis-mine",
+      "app": "Praxis Mine",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "home-inventory-builder",
+      "app": "Home Finder",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    },
+    {
+      "skill": "oracle-reading",
+      "app": "Oracle Reading",
+      "reason": "User-directed companion withdrawal; retain the skill."
+    }
+  ],
+  "retired_companions": [
+    {
+      "skill": "answerlayer",
+      "app": "AnswerLayer Patch Inspector",
+      "reason": "App companion retired; skill remains installed."
+    }
+  ],
+  "unlinked_companions": [
+    {
+      "skill": "rupert-giles-knowledge-steward",
+      "app": "Giles Knowledge Atlas",
+      "reason": "User-directed unlink; skill remains installed."
+    }
+  ],
+  "standalone_exclusions": [
+    {
+      "skill": "landfall",
+      "app": "Landfall Field Atlas",
+      "reason": "Standalone product; excluded from Nova edition app catalogs."
+    },
+    {
+      "skill": "supernova",
+      "app": "SuperNova Work Pad",
+      "reason": "Standalone product; excluded from Nova edition app catalogs."
+    }
+  ],
+  "display_name_overrides": [
+    {
+      "skill": "household-budget-builder",
+      "from": "Household Cash Window",
+      "to": "Household Budget Helper"
+    }
+  ],
+  "application": {
+    "mode": "catalog_filter",
+    "selected_skills": 28,
+    "app_presentation_suppressed": [
+      "answerlayer",
+      "current-intelligence-observatory",
+      "oracle-reading",
+      "rupert-giles-knowledge-steward"
+    ],
+    "standalone_excluded": [
+      "landfall",
+      "supernova"
+    ],
+    "filtered_catalogs": []
+  }
+}

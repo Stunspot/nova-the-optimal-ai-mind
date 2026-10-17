@@ -1,9 +1,17 @@
 {
   "schema": "nova-current-release-pointer/v1",
-  "version": "4.0.0",
+  "version": "4.3.0",
   "repository": "Stunspot/nova-the-optimal-ai-mind",
-  "release_tag": "v4.0.0",
+  "release_tag": "v4.3.0",
   "customer_guide": "START-HERE.md",
   "current_native_codex_source": "plugins/nova-the-optimal-ai",
-  "source_snapshot": "See current qualification"
+  "source_snapshot": "Qualified Nova Free 4.3.0; 28 skills, ambient MIND 0.4.0, current companion presentation, exact final Codex and Claude plugin bytes.",
+  "build_id": "nova-free-4.3.0-companions-20261017-r1",
+  "customer_zip": "nova-the-optimal-ai-free-4.3.0.zip",
+  "customer_zip_sha256": "9d81674ac0ef4737fe0cd51d3ea6e84e54c6c938949ac45e8e48ae07dfb8fb95",
+  "codex_zip": "nova-the-optimal-ai-free-4.3.0-codex.zip",
+  "codex_zip_sha256": "f4f44389210f6f82442e8b2ad79eeb8847bcace6394496fc04b33b60d7f9e16f",
+  "claude_zip": "nova-the-optimal-ai-free-4.3.0-claude.zip",
+  "claude_zip_sha256": "8e865c863a5fff4fa95c24f45f53d413658a08a5c8c4f73d72be9f13f295e633",
+  "release_url": "https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/tag/v4.3.0"
 }

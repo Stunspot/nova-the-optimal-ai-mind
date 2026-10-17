@@ -1,0 +1,30 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://collaborative-dynamics.com/schemas/cognitive-continuity/failure-occurrence-v1.json",
+  "title":"Redacted Failure Occurrence",
+  "type":"object",
+  "required":["format","operation_id","source_event_id","producer","operation_family","error_class","message_template","environment","observed_at","source_pointer","fingerprint","fingerprint_version","redaction_policy_version","identity_uncertain"],
+  "properties":{
+    "format":{"const":"cd-fault-occurrence/v1"},
+    "operation_id":{"type":["string","null"]},
+    "source_event_id":{"type":"string","minLength":1},
+    "producer":{"type":"string","minLength":1},
+    "tool":{"type":["string","null"]},
+    "provider":{"type":["string","null"]},
+    "operation_family":{"type":"string","minLength":1},
+    "error_code":{"type":["string","null"]},
+    "error_class":{"type":"string","minLength":1},
+    "message_template":{"type":"string","minLength":1,"maxLength":500},
+    "environment":{"type":"object","properties":{"name":{"type":["string","null"]},"version":{"type":["string","null"]},"os":{"type":["string","null"]},"runtime":{"type":["string","null"]}},"additionalProperties":false},
+    "observed_at":{"type":"string","format":"date-time"},
+    "source_pointer":{"type":"string","minLength":1,"maxLength":300},
+    "correction_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "outcome_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "retry_of":{"type":["string","null"]},
+    "fingerprint":{"type":"string","pattern":"^[0-9a-f]{64}$"},
+    "fingerprint_version":{"const":"cd-fault-fingerprint/v1"},
+    "redaction_policy_version":{"const":"cd-fault-redaction/v1"},
+    "identity_uncertain":{"type":"boolean"}
+  },
+  "additionalProperties":false
+}

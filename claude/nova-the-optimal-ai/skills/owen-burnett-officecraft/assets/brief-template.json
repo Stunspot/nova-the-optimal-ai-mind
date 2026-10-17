@@ -1,0 +1,21 @@
+{
+  "format": "officecraft-brief/v1",
+  "project_id": "replace-with-safe-project-id",
+  "state": "intake",
+  "title": "Untitled Officefile",
+  "audience": "",
+  "purpose": "",
+  "requested_outcomes": [],
+  "constraints": {
+    "deadline": null,
+    "formats": [],
+    "editability_required": true,
+    "accessibility_needs": [],
+    "template_authority": null,
+    "privacy_boundary": null
+  },
+  "approval_owner": null,
+  "external_delivery_authorized": false,
+  "created_at": null,
+  "updated_at": null
+}

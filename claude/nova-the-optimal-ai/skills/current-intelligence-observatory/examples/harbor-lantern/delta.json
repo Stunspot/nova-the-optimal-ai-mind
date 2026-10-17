@@ -1,0 +1,83 @@
+{
+  "format": "cd-observatory-delta/v2",
+  "baseline_case_id": "OBS-HARBOR-LANTERN-BASELINE",
+  "current_case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "inquiry_id": "OBS-HARBOR-LANTERN",
+  "classes": {
+    "newly_represented": [
+      "ART-PUBLIC",
+      "ART-UPDATE",
+      "ASM-UPDATE",
+      "BLK-HUMAN-EDITOR",
+      "CAP-ALPHA-V2",
+      "CAP-GAMMA",
+      "CHK-EDITORIAL",
+      "CLM-SIX-HOUR-PAUSE",
+      "CON-DURATION",
+      "DEC-IDENTITY-OMIT",
+      "EV-GATE-B-PAUSE",
+      "HIST-CORRECTION",
+      "OBS-DIRECT-NOTICE",
+      "OBS-INJECTION",
+      "REC-BRIEF",
+      "SRC-GAMMA"
+    ],
+    "changed": [
+      "CAP-ALPHA-V1",
+      "CAP-BETA",
+      "CLM-72H-CLOSURE",
+      "CLM-TRANSFORMER-FIRE",
+      "ENT-MORGAN-VALE-A",
+      "ENT-MORGAN-VALE-B",
+      "EV-REPORTED-CLOSURE",
+      "HYP-INCIDENT",
+      "HYP-ROUTINE",
+      "INF-AMPLIFICATION",
+      "OBS-CLOSURE-LANGUAGE",
+      "SRC-ALPHA"
+    ],
+    "currentness_changed": [],
+    "no_longer_represented": [
+      "ART-BASELINE",
+      "ASM-BASELINE",
+      "BLK-IDENTITY",
+      "CHK-BASELINE-INTEGRITY",
+      "CHK-WATCH-SPECIFICATION",
+      "REC-WATCH"
+    ],
+    "corrected_or_superseded": [
+      "CAP-ALPHA-V1",
+      "CAP-ALPHA-V2",
+      "CLM-72H-CLOSURE",
+      "EV-REPORTED-CLOSURE",
+      "OBS-CLOSURE-LANGUAGE",
+      "SRC-ALPHA"
+    ],
+    "newly_contradicted": [],
+    "newly_unsupported": [
+      "CLM-TRANSFORMER-FIRE",
+      "HYP-INCIDENT"
+    ],
+    "unchanged": [
+      "HIST-BASELINE",
+      "REL-BETA-REPEATS-ALPHA",
+      "SRC-BETA"
+    ],
+    "still_unresolved": [
+      "BLK-HUMAN-EDITOR",
+      "HYP-ROUTINE"
+    ]
+  },
+  "case_fields_changed": [
+    "case_id",
+    "evidence_as_of",
+    "harm_model",
+    "next_action",
+    "phase",
+    "posture",
+    "stop_condition",
+    "title"
+  ],
+  "semantic_truth_assessed": false,
+  "materiality_assessed": false
+}

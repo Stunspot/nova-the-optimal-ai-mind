@@ -250,18 +250,15 @@ class NovaMissionCapsuleTests(unittest.TestCase):
     def test_model_facing_guidance_matches_the_sparse_contract(self) -> None:
         skill = MIND_SKILL.read_text(encoding="utf-8")
         runtime = RUNTIME.read_text(encoding="utf-8")
-        self.assertIn("may omit acceptance entirely", skill)
+        self.assertIn("(references/mind/faculty-runtime.md)", skill)
+        self.assertTrue(RUNTIME.is_file())
         self.assertIn("Omit `acceptance` for an emerging", runtime)
-        self.assertIn("Let an open pursuit rest", skill)
         self.assertIn("Let an intentionally ongoing pursuit rest", runtime)
-        self.assertIn("absence is not waiver", skill)
         self.assertIn("omission is not waiver", runtime)
-        self.assertIn("without manufacturing acceptance", skill)
         self.assertIn("without manufactured acceptance", runtime)
-        self.assertIn("every recorded criterion is `met`", skill)
         self.assertIn("every recorded criterion to be `met`", runtime)
-        self.assertIn("legacy_v1", skill)
         self.assertIn("legacy_v1", runtime)
+
 
 
 

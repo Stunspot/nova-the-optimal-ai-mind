@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/testforge/metered-verification-plan.schema.json",
+  "title": "TestForge metered verification plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "provider",
+    "execution_id",
+    "capacity_billing_scope",
+    "execution_billing_scope",
+    "observed_at",
+    "valid_until",
+    "evidence_source",
+    "refresh_at",
+    "capacity_status",
+    "remaining_minutes",
+    "reserve_minutes",
+    "paid_overage_available",
+    "planned_runs"
+  ],
+  "properties": {
+    "format": {"const": "testforge-metered-verification/v1"},
+    "provider": {"type": "string", "minLength": 1},
+    "execution_id": {"type": "string", "minLength": 1},
+    "capacity_billing_scope": {"type": "string", "minLength": 1},
+    "execution_billing_scope": {"type": "string", "minLength": 1},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "valid_until": {"type": "string", "format": "date-time"},
+    "evidence_source": {"type": "string", "minLength": 1},
+    "refresh_at": {"type": "string", "format": "date-time"},
+    "capacity_status": {"enum": ["observed", "unavailable", "unknown"]},
+    "remaining_minutes": {"type": ["number", "null"], "minimum": 0},
+    "reserve_minutes": {"type": "number", "minimum": 0},
+    "paid_overage_available": {"type": ["boolean", "null"]},
+    "planned_runs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "jobs"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "jobs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["ceiling_minutes"],
+              "properties": {
+                "ceiling_minutes": {"type": "number", "exclusiveMinimum": 0},
+                "count": {"type": "integer", "minimum": 1},
+                "attempts": {"type": "integer", "minimum": 1},
+                "billing_multiplier": {"type": "number", "exclusiveMinimum": 0}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

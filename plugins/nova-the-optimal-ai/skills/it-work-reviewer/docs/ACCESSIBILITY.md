@@ -1,7 +1,7 @@
-# Reviewer: accessibility
+# Read and discuss a review
 
-This is the reviewer skill, which inspects supplied evidence. The optional Studio belongs to beryl-it-tech; it is not bundled in this folder.
+Use your host's text interface to request a plain-language finding with the exact field, source or observation it concerns. Ask for one decision and its closure condition at a time when that makes the evidence easier to inspect.
 
-Use the host's accessible text interface. Ask for a plain-language finding and exact field/observation when needed. No assistive-technology conformance is claimed.
+This reviewer has no local app. The separate Beryl Repair Companion displays supplied review beside an exact case revision, with source-dialog and keyboard behavior described in the operator guides. It does not make the reviewer independent by displaying its text. No screen-reader or assistive-technology conformance is claimed here.
 
-See [the reviewer quick start](QUICK-START.md) and [review method](USER-GUIDE.md).
+Begin with [one review decision](QUICK-START.md), then use [the review method](USER-GUIDE.md).

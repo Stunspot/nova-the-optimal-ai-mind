@@ -1,7 +1,9 @@
-# Install the right skill folders
+# Install and open the operator skill
 
-The complete bundle contains a Codex plugin under `codex/beryl-it-benchcraft/` and separate Claude one-root skill archives under `claude/`. Use your host's supported local plugin or skill installation route. Preserve an existing installation before replacement. This skill folder contains SKILL.md; a nested outer product ZIP is not itself a single Claude skill.
+Use your host's supported local plugin or skill installation route. The complete product has a two-skill Codex plugin and separate Claude one-root archives. This folder is the practitioner root: it contains SKILL.md. Preserve an existing install and the separately saved material before replacement.
 
-Install both `beryl-it-tech` and `it-work-reviewer` when you want the practitioner and companion review. Open a fresh host task and invoke the intended skill by name. A package integrity pass is not proof your host discovered it; confirm the first response uses the supplied case and declares the actual next observation.
+In a fresh host task, invoke `$beryl-it-tech` with one real problem and confirm it responds to your actual symptom. Install `it-work-reviewer` separately when you want its advisory review. A successful package check does not prove host discovery.
 
-The optional operator Studio requires Python 3.10+ and a browser; it has no third-party Python dependencies. Run `python -B workspace/host.py` from the operator skill folder, or its platform launcher. Reviewer-only installations do not contain a Studio. Consult the complete bundle's installation guide for exact outer paths.
+The optional Repair Companion needs Python 3.10 or newer and a modern browser. From this skill folder, run `python -B workspace/launch.py` or the workspace's platform launcher. No third-party Python packages are needed. On Windows, `python -B workspace/install_shortcut.py` creates the verified **Beryl Repair Companion** shortcut. A reviewer-only install does not contain the app.
+
+An explicit `--data-home` must name an existing writable folder outside the installed skill. The default preserves the known Beryl home. [First use](FIRST-USE.md) explains the actual controls; [recovery](RETURN-AND-RECOVERY.md) explains reconnecting and preserving a whole saved folder.

@@ -1,0 +1,24 @@
+{
+  "format": "lex-foster-learner-profile/v1",
+  "profile_id": "",
+  "updated_at": "",
+  "working_language": "",
+  "target_languages": [
+    {
+      "language": "",
+      "variety": "",
+      "script": ""
+    }
+  ],
+  "goals": [],
+  "preferences": {
+    "interruption": "natural-pauses",
+    "correction_focus": "balanced",
+    "explanation_depth": "compact",
+    "challenge": "supported",
+    "working_language_use": "welcome"
+  },
+  "evidence": [],
+  "retrieval_queue": [],
+  "privacy_notes": "Fill your chosen ID, current zoned update time, working language and target language. Evidence starts empty."
+}

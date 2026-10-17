@@ -1,7 +1,11 @@
-# Current Intelligence Observatory
+# Current Intelligence Observatory 0.4.0
 
-Bring one question and the sources you have. Start with [the skill](SKILL.md), or open [Evidence Atlas](workspace/index.html) and explore [the fictional inquiry](examples/harbor-lantern/demonstration.md). The useful result is a bounded answer with exact support, uncertainty and a clear return point when work remains.
+Bring a question and the sources you have. Open `workspace/Open.cmd`, `workspace/Open.command`, or run `python workspace/launch.py` for the persistent inquiry app. The [workspace guide](workspace/README.md) takes you from ordinary material through exact claim support to a useful answer and next observation. No prepared case is required.
 
-[Native case operations](knowledge/native-case-guide.md) explain capture, file integrity, typed evidence, honest deltas and review bindings. [Reviewed investigative practice](knowledge/investigative-practice.md) adapts the preserved research without importing its overclaims. [Optional OSINT](knowledge/osint-tools.md) is needed only when a bounded tool query advances the question.
+Use [the skill](SKILL.md) for contextual assistance. The separate [Evidence Atlas](workspace/advanced.html) retains native graphs and clocks; [native case operations](knowledge/native-case-guide.md) describe their detailed contract. [Reviewed investigative practice](knowledge/investigative-practice.md) preserves source dependence, uncertainty and competing explanations without inventing certainty.
 
-Run `python scripts/self_check.py` for static package integrity, or `python -m unittest discover -s scripts/tests -v` for bounded native fixture checks. These are not model trials, participant studies, provider accuracy tests, source credibility judgments or publication authority.
+Optional tools in [OSINT guidance](knowledge/osint-tools.md) matter only when they advance the inquiry. A missing provider does not prevent local reading and writing. `python scripts/self_check.py` and native fixture tests check their bounded structures, not truth, autonomous research or public publication.
+
+## Companion app presentation
+
+This package retains its native in-chat skill. Do not install, register, or recommend the standalone companion app.

@@ -1,7 +1,7 @@
-# Reviewer: release notes
+# Reviewer integration in 0.6
 
-This is the reviewer skill, which inspects supplied evidence. The optional Studio belongs to beryl-it-tech; it is not bundled in this folder.
+The authored IT Work Reviewer method remains intact. The separate Repair Companion now displays exact native-record review binding, stated independent/self-check/imported attribution and preserved earlier revisions. No old review is carried automatically into a changed record.
 
-Version 0.4.0 clarifies exact decision/revision binding, true independence, missing-evidence treatment and stale review. It adds shared declared-consistency helpers without turning them into a diagnosis or permission gate.
+This is display and custody support. The reviewer remains an advisory practice in the host, with no local app, automatic execution, authentication of independence or authority grant. Shared case-shape and declared-consistency tools retain their bounded meaning.
 
-See [the reviewer quick start](QUICK-START.md) and [review method](USER-GUIDE.md).
+[Review one decision](QUICK-START.md) or read [the preserved review method](USER-GUIDE.md).

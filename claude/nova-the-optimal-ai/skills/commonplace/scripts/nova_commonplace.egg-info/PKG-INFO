@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: nova-commonplace
+Version: 0.1.0
+Summary: Governed personal knowledge custody and rebuildable cognitive navigation for Nova.
+Requires-Python: >=3.10

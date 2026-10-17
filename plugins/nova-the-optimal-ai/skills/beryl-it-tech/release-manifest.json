@@ -1,6 +1,6 @@
 {
   "package": "beryl-it-benchcraft",
-  "version": "0.4.1",
+  "version": "0.6.0",
   "files": {
     "agents/openai.yaml": {
       "sha256": "17e2a502b99e1f844823c46274d7d223ef741dcfc9758a80efe1835395981638",
@@ -31,52 +31,68 @@
       "bytes": 861
     },
     "docs/ACCESSIBILITY.md": {
-      "sha256": "d6c00d99400170891ac286def37c971e3050f00ad2cbff5ac4bccd152ff3c447",
-      "bytes": 1069
+      "sha256": "f3fe9cb8304eb1ff98581ef4446bdb9890f933d7c4677d10639cd098f4850c83",
+      "bytes": 1099
     },
     "docs/CAPABILITY-MATRIX.md": {
-      "sha256": "0c0d8dba470347fe1fd38602d1e8fc19c80bf0c6cd63abf94e6d60638ff6ef59",
-      "bytes": 1077
+      "sha256": "8df47645712d2228797f07be99088d275ae0b421319ad86e1b943c4da4484d78",
+      "bytes": 1347
     },
     "docs/CASE-FILES.md": {
-      "sha256": "40d3c6696de8166e77a46a4924a1c242b890e154c1dd568ac0d29dff0fc96f68",
-      "bytes": 2480
+      "sha256": "f568bb2926ff3fe31272609586d9175f359fe46e613621f3bddca9ed8f38fc24",
+      "bytes": 2838
     },
     "docs/DOCUMENTATION-MAINTENANCE.md": {
-      "sha256": "4ebd05a2b39a01ebfa818423180c4bddf6aef6ef562d36b0ec36a5d21e9d2373",
-      "bytes": 763
+      "sha256": "ecffbee4c655d332c638b430b256ddca8d14e8e83f5139d6243769c50f0ba0c3",
+      "bytes": 948
+    },
+    "docs/FIRST-USE.md": {
+      "sha256": "7927b45f4f478a7aa99e78ec3e061d0a9e13bc06ef2e4c94dede1a3b9cedb146",
+      "bytes": 4143
     },
     "docs/INSTALLATION.md": {
-      "sha256": "f87991e35e2535e1b5f7796a5fba98a6d7dc3e1181930afe580b391ed955c7d1",
-      "bytes": 1048
+      "sha256": "9b829bc7f470bed0291b54ddd2bb562f82d6618d3587faf7db026483254a30db",
+      "bytes": 1267
     },
     "docs/LIMITATIONS.md": {
-      "sha256": "a9295d558f3cf60348f16e3a6c427d62830df4401b99850f2841c0c34f7bbac7",
-      "bytes": 1126
+      "sha256": "7084851c43fcf944509a15aa46d235817ef302f5bf0ef23b94833960ed65b43f",
+      "bytes": 1340
+    },
+    "docs/OBSERVATION-LIMITS.md": {
+      "sha256": "206c9d28c965c26099c901f611b363be94feeb48bfbf1cb0cbc1c8d9fd8dffb5",
+      "bytes": 3267
     },
     "docs/QUICK-START.md": {
-      "sha256": "22c2af237fe421464aa39c7d09fd1d86936df81198263cc47d547797040a5c52",
-      "bytes": 1343
+      "sha256": "2a1b751170c3e03245cf90bd91308961dcc80e09e8f2beaeced9576a84e3f759",
+      "bytes": 1271
+    },
+    "docs/READ-AN-INVESTIGATION.md": {
+      "sha256": "da08c2779239849e97e25f414b915ec8c7b4c47ff8df235684b1ef53700986d5",
+      "bytes": 3592
     },
     "docs/RELEASE-NOTES.md": {
-      "sha256": "c44de00a1982591015eebb38bd8b0e4a6c941192f021d86e56e9884a721e170a",
-      "bytes": 716
+      "sha256": "5d37da3ea4321c63960b8f0c825e0432136f4880d08b5732c8712580ae4b21df",
+      "bytes": 1029
+    },
+    "docs/RETURN-AND-RECOVERY.md": {
+      "sha256": "bbaa3cf7a870fbdbff3f0d8267b98a0e62d811915c4c3a0364f0f4285e6f18eb",
+      "bytes": 3321
     },
     "docs/SAFETY-AND-DATA.md": {
-      "sha256": "7b37e73cabc85d6e963fdecc8042ead2d6aa7aa6cbc600d89ae7ba4bf09194e1",
-      "bytes": 1491
+      "sha256": "d748bf70a899946cbd22c03267c82ee28712aa934cef92941f0ea20a73175b94",
+      "bytes": 1510
     },
     "docs/TROUBLESHOOTING.md": {
-      "sha256": "c42f021e63e836941034a44d3947d7ee369e39fb63cf7b8c0ce09af4dfa91b1c",
-      "bytes": 1329
+      "sha256": "b438fe767e5e1ab171d07b6b2556ad62e73079182cc7aa1d452be93e5262e2ee",
+      "bytes": 1279
     },
     "docs/USER-GUIDE.md": {
-      "sha256": "b5452c9910216e53bf79f52d2e403bb39aa2255072caa314bccdaf4b36812ca4",
-      "bytes": 2109
+      "sha256": "7eed3c0c3b04063ef637dbf6177a0fc1ccd77381e55e37d9a9711c633a19c60b",
+      "bytes": 1546
     },
     "docs/VALIDATION-AND-EVALUATION.md": {
-      "sha256": "808a8458d3c43ece4cef86139a33b2161d3a755ef40f2c9f8247fc1b6cd2c763",
-      "bytes": 1596
+      "sha256": "0603267092d98f3bcc17506785e1d4d418087e61ec547adf78430550887ad702",
+      "bytes": 1363
     },
     "evals/core-transfer-cases.yaml": {
       "sha256": "58c577937285da7627e72564818e5342d72d39ac94a40f923101ef391f89cc08",
@@ -147,8 +163,8 @@
       "bytes": 2335
     },
     "README.md": {
-      "sha256": "cc3ede1d20e29ce06780269e1480143b92bcec3834098533fa314034498fb9f4",
-      "bytes": 494
+      "sha256": "c0069c6b30d66453cb999cf5f016e7392b67dcb1d80c87de4639ab1026f56270",
+      "bytes": 941
     },
     "references/diagnostic-method.md": {
       "sha256": "e7944600679f68f87d54c70239d62402db63a1d91d1b10991e41bdd7c44ef2be",
@@ -207,24 +223,32 @@
       "bytes": 9140
     },
     "scripts/validate_release.py": {
-      "sha256": "f22a01fd9f2683b8ab33a58d63bb6978013c71c94af0a7c15c01ae67aa1cab0e",
-      "bytes": 4779
+      "sha256": "bf230214319d5d189f066ec9212f0081bc0ef5252590e8c09a5b5dfe861ba821",
+      "bytes": 4895
     },
     "SKILL.md": {
-      "sha256": "50c3b373bd89bba1ccf37873b56acf394ca7af649ed1281f30a5f208957f26e5",
-      "bytes": 10223
+      "sha256": "57c703c472abe013d97d412a4b10edfd106187a19b85870b0a2d5d96daccbfc8",
+      "bytes": 10343
+    },
+    "workspace/assets/beryl-icon-original.png": {
+      "sha256": "b6a81df755d70d6e39cc4555e8909c1c1de8a8c71b503326adc86aab7104d125",
+      "bytes": 1892570
     },
     "workspace/assets/beryl-icon.png": {
-      "sha256": "f5b97307466fd1c9b6545d1ff741d7c95f19096aba9b455971b2e913364d561f",
-      "bytes": 918225
+      "sha256": "870f6cd586afa9cbda05967c17a8afcc9cef9a8e3d5878286454407792bd556b",
+      "bytes": 325847
     },
     "workspace/assets/beryl.icns": {
-      "sha256": "6f56ababbbc6eb3d0eacc20dc6fc99f82429f1e7f57c4a32492e66c01fff86d2",
-      "bytes": 1572537
+      "sha256": "dda3c0993f51e8c98259f684f2fd37b4e71bc7d2901233087d2602dc256fde87",
+      "bytes": 2105504
     },
     "workspace/assets/beryl.ico": {
-      "sha256": "63016c1c79b6da7fcfb0e7ede7573ab99450b7f79526a5c853bf11c6bfed497f",
-      "bytes": 102642
+      "sha256": "0cb6ec2cb5d14c46751a129069268d7041d6855debbe3a2b59633552af42eac9",
+      "bytes": 134022
+    },
+    "workspace/assets/ICON-PROVENANCE.json": {
+      "sha256": "bdebac3812d2135685b1ff73bd375b56bfa0b3a831f7a849104abf27a30289c2",
+      "bytes": 943
     },
     "workspace/assets/moss-surface.png": {
       "sha256": "06a4acf691c941b30396fed36dce5b27d5d5e792481b08607ba6c547827e2e5c",
@@ -239,56 +263,88 @@
       "bytes": 3070724
     },
     "workspace/assets/README.md": {
-      "sha256": "5bca3e54367d78f8400bcf58fe4716433ddecdb7c5cf7bfa3e8cb3dde4d1d559",
-      "bytes": 3303
+      "sha256": "825550cd822d15b9f1a30cdd77f44b4d4443af6fcd603a84717dc546ff4e935c",
+      "bytes": 3461
     },
-    "workspace/create_entry.py": {
-      "sha256": "02c97b3a43e06d4bd269ea796c6972c171b69cdfa99f95b2bcc7c9fdabdba4ec",
-      "bytes": 5220
+    "workspace/bench.css": {
+      "sha256": "72e273c17f2d39538d43865adbe919fdffc88f39adf8ea05214eceecbe16fcdc",
+      "bytes": 7072
     },
-    "workspace/DESIGN.md": {
-      "sha256": "8e6c79c5b6d4b201a32115f258fe2737f5057a2e126ed9039085205c3d954046",
-      "bytes": 1861
+    "workspace/bench.js": {
+      "sha256": "7cf0a2fc46c3c3272275aca3237a02102c6ffc09fae75916813ff4b187945187",
+      "bytes": 31656
     },
-    "workspace/desk.json": {
-      "sha256": "a124800d35c66bb37cf0c3609bead1adb915009d8637bf7d04c7cc507c773ed8",
-      "bytes": 137
+    "workspace/bench_server.py": {
+      "sha256": "e03ac49a5288ed0499f5e92e15d603fc3787955759c6e04b2217a6e1efe9ca8b",
+      "bytes": 10686
+    },
+    "workspace/bench_store.py": {
+      "sha256": "a37e133f72a734519f46a87567c1e112bea8ed72d182260cde54628727b1da44",
+      "bytes": 12707
+    },
+    "workspace/Create desktop shortcut.ps1": {
+      "sha256": "7a56d8e7c0d30ca5338abc9926d6d3e4914229b922902add4c2b1c04b04bd5ca",
+      "bytes": 1089
+    },
+    "workspace/HOST-PATHS.md": {
+      "sha256": "3ab681333e6318abbe098c370fc21d12effe87538d61d3f8417970cecfe07be7",
+      "bytes": 6206
     },
     "workspace/host.py": {
-      "sha256": "b9fa469e4073e4a4df35f0e7b9f393c7f74a003239cd7cc4be9667ce881fbbce",
-      "bytes": 6364
+      "sha256": "698e96263efe528bedee6afca782f258750c00b3c906c53e20d2355ca35e467b",
+      "bytes": 56
     },
     "workspace/index.html": {
-      "sha256": "ae439a9d4bec512788b7b2f8beca334bc8edf83d7a8d1036f899c8b295f933c2",
-      "bytes": 115772
+      "sha256": "f14ec78be6a564c8719fc6be4f609082182b5332bbe5877ad29b3257fbafaa21",
+      "bytes": 1763
     },
-    "workspace/launch_runtime.py": {
-      "sha256": "e6b6dd0fff01c49d692f90f5f81788a04dc4a79901402801826f25d53a9cf64b",
-      "bytes": 4425
+    "workspace/Install shortcut.cmd": {
+      "sha256": "c03c9069e3b741a4bdccf613246730c2fff9e14c7855c8579a57cc3ee8d1a3db",
+      "bytes": 259
+    },
+    "workspace/install_shortcut.py": {
+      "sha256": "dfe8a8f7131bdb83644fe28f206fb3003022ca11f035efc28af888e824b0040b",
+      "bytes": 5801
+    },
+    "workspace/launch.py": {
+      "sha256": "fdc499ddc74412768aa9c97429777979dd6a0a53050343823f43d2432fc21663",
+      "bytes": 4623
+    },
+    "workspace/launch_gui.py": {
+      "sha256": "757b96c89780733fccaf9292a2385422b4cf46364274dd9b100121b087cbe7e1",
+      "bytes": 1114
+    },
+    "workspace/observe_windows.py": {
+      "sha256": "126e1f2f2b977d512430b55f07c1c387513aeb6d80b9ded2d35587451e3e212b",
+      "bytes": 5468
     },
     "workspace/Open.cmd": {
-      "sha256": "cd34b1d6ac9e43a714369110f880782ab0300459b0b6d50fdb7df651572fe4ed",
-      "bytes": 165
+      "sha256": "36750bca0436d9dddcc2d3f631b9dc7d786eb8d8bd78c473f63754df127a2009",
+      "bytes": 308
     },
     "workspace/Open.command": {
-      "sha256": "83b476d78af593708f8fe8380604580c7a7f422263bd479b8d880c57b0258e76",
-      "bytes": 65
+      "sha256": "3946e079442c31ad66594875fea3a4c9ae579a55b8bff27ee44265811a1ba60c",
+      "bytes": 193
+    },
+    "workspace/Open.sh": {
+      "sha256": "3946e079442c31ad66594875fea3a4c9ae579a55b8bff27ee44265811a1ba60c",
+      "bytes": 193
+    },
+    "workspace/owned_process.py": {
+      "sha256": "144d14269ca9d8b2e28cc6fc44e07f79f491fc8b2641ffd9ee5b1edcbb4cd6d0",
+      "bytes": 3491
     },
     "workspace/README.md": {
-      "sha256": "fc63439deb365cca076bc8f4870eee9839ebec4e46a30d1930d0a285a2c96534",
-      "bytes": 3787
+      "sha256": "c01ecb20a230d93498e50d048dc525aa32a083d3b6159e7af98c5dc7f0c83bf6",
+      "bytes": 1676
     },
-    "workspace/sample.json": {
-      "sha256": "e049e9da0bc9723fcdefa1ae5589691abb088d3bdbd48f956c13935f2d676e18",
-      "bytes": 4060
+    "workspace/storage_io.py": {
+      "sha256": "0daf27b7ff8433477e4b77577068295149f20ff2e56839d33a90864d8cbe74a3",
+      "bytes": 1538
     },
-    "workspace/test_case_semantics.py": {
-      "sha256": "75fbb895cab6debd4014634423be6953ca0612e293fb057ede38ed7446af5cc9",
-      "bytes": 4111
-    },
-    "workspace/test_host.py": {
-      "sha256": "24b9e5e61ac99b4b4f7e8c8b9f1ce2f9c27f8a1d4954ca7f7dd2d03796ca95e5",
-      "bytes": 8033
+    "workspace/WINDOWS-OBSERVATION-AUTHORITY.md": {
+      "sha256": "08a1824ab4e32c40ad599d3bfce77dc7bcaa5c69ec366dfbe7e1a05eaaedb9e1",
+      "bytes": 3473
     }
   }
 }

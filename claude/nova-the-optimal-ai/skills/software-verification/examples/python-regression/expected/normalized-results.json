@@ -1,0 +1,26 @@
+{
+  "format_version": "1.0",
+  "source": {
+    "format": "command_record",
+    "path": "examples/python-regression/expected/execution-record.json",
+    "command": [
+      "python",
+      "-m",
+      "unittest",
+      "expected.test_date_filter",
+      "-v"
+    ]
+  },
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0,
+    "status": "failed"
+  },
+  "cases": [],
+  "parse_warnings": [
+    "command record contains no per-test case counts"
+  ]
+}

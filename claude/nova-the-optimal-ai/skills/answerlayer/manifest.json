@@ -1,0 +1,19 @@
+{
+  "name": "answerlayer",
+  "product_name": "AnswerLayer — Operational Reality Patching for Decision Systems",
+  "version": "0.5.0",
+  "description": "Trace new evidence to warranted changes in relied-on guidance, confidence and practical action.",
+  "entrypoint": "SKILL.md",
+  "hosts": [
+    "codex",
+    "claude"
+  ],
+  "runtime": {
+    "python": ">=3.10",
+    "dependencies": []
+  },
+  "publication": "manual_only",
+  "license": "Nova Free 4.3.0 public split license; see the containing product LICENSE.md",
+  "native_format": "answerlayer/reality-ledger/v2",
+  "rights_status": "public-inclusion-authorized-for-nova-free-4.3.0"
+}

@@ -1,0 +1,122 @@
+{
+  "format": "privacy-redline/case-v1",
+  "case_id": "PR-SYNTH-001",
+  "title": "Public-facing founder after an impersonation scare",
+  "status": "active",
+  "purpose": "Reduce cheap identity pivots while preserving account access and normal work.",
+  "jurisdiction": {
+    "value": "US state withheld in synthetic example",
+    "evidence_state": "reported",
+    "needed_for": ["data broker rights", "institutional process"]
+  },
+  "pressure": {
+    "state": "recent",
+    "immediate_danger_screened": true,
+    "safe_channel_confirmed": true
+  },
+  "map": {
+    "assets": ["primary email access", "professional reputation", "home-location privacy"],
+    "adversaries": [{"label": "opportunistic impersonator", "evidence_state": "assumed"}],
+    "surfaces": ["reused public handle", "old people-search listing", "single recovery email"],
+    "identity_links": ["same handle across personal and professional accounts"],
+    "failure_paths": ["public handle → recovery-email discovery → convincing support pretext"]
+  },
+  "ledger": {
+    "assumptions": [
+      {
+        "id": "A-001",
+        "claim": "The old broker listing still exposes a prior address.",
+        "evidence_state": "reported",
+        "why_it_matters": "It lowers correlation cost.",
+        "verification_target": "Check the exact listing from a safe session without submitting identity documents.",
+        "owner": "user"
+      }
+    ],
+    "redlines": [
+      {
+        "id": "R-001",
+        "outcome": "Loss of the primary email and all recovery paths at once.",
+        "owner": "user",
+        "survival_control": "Independent offline recovery record and two tested hardware-backed access paths.",
+        "evidence_required": "Redacted recovery drill receipt."
+      }
+    ],
+    "risks": [
+      {
+        "id": "K-001",
+        "failure_path": "Support pretext reaches a weak recovery path.",
+        "likelihood_range": "low-to-moderate",
+        "impact_range": "high",
+        "confidence": "low",
+        "current_control": "passkey reported; recovery path not tested",
+        "residual_exposure": "unknown until recovery inventory and drill"
+      }
+    ],
+    "decisions": [],
+    "residual_exposure": ["No current-source verification of provider recovery behavior."]
+  },
+  "queue": [
+    {
+      "id": "Q-001",
+      "action": "Inventory recovery methods without recording secret values.",
+      "broken_failure_path": "Unknown shared recovery dependency.",
+      "horizon": "today",
+      "reversible": true,
+      "confirmation_gate": "none for local inventory; confirm before changing any method",
+      "dependency": "safe device and authenticated provider session",
+      "verification": "Count independent methods and record provider/version context.",
+      "status": "complete"
+    },
+    {
+      "id": "Q-002",
+      "action": "Request suppression of the verified broker listing through the current official route.",
+      "broken_failure_path": "Prior address remains a cheap public pivot.",
+      "horizon": "this-week",
+      "reversible": false,
+      "confirmation_gate": "user confirms the exact listing, route, and minimum identity evidence before submission",
+      "dependency": "current official broker procedure",
+      "verification": "Recheck listing after the stated processing period.",
+      "status": "blocked-current-source"
+    }
+  ],
+  "receipts": [
+    {
+      "control_id": "Q-001",
+      "claim": "Recovery methods were inventoried without secret values.",
+      "owner": "user",
+      "observed_at": "2026-07-19T17:00:00-05:00",
+      "environment": "synthetic example; provider and version withheld",
+      "evidence_type": "operator-attested redacted inventory",
+      "evidence": "Two distinct methods recorded; independence not yet tested.",
+      "result": "partial",
+      "residual_exposure": "Both methods may share one device.",
+      "rollback": "No system change was made.",
+      "next_review": "After an isolated recovery drill."
+    }
+  ],
+  "logbook": [
+    {
+      "date": "2026-07-19",
+      "type": "near-miss",
+      "condition": "Urgent message claimed account compromise.",
+      "action": "Used a known bookmark instead of the supplied link.",
+      "evidence_state": "known",
+      "outcome": "No account alert was present.",
+      "learning": "Urgency was the decisive manipulation cue.",
+      "follow_up": "Install a no-link callback ritual."
+    }
+  ],
+  "triggers": [
+    {
+      "id": "T-001",
+      "condition": "A recovery method or primary device changes.",
+      "risks_reopened": ["K-001"],
+      "immediate_safe_action": "Pause deletion or rotation and inventory dependencies.",
+      "owner": "user",
+      "review_by": "before the old method is removed"
+    }
+  ],
+  "last_safe_checkpoint": "Recovery inventory preserved; no credentials changed.",
+  "updated_at": "2026-07-19"
+}
+

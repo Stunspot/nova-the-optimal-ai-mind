@@ -1,15 +1,16 @@
 {
-  "schema": "nova-free-source-lock/v4",
+  "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "4.0.0",
-  "source_map_sha256": "2e12c7a2376b9e3cae661f3b122a121f77c5dd96518587c0cac2293307cb9097",
+  "product_version": "4.3.0",
+  "source_map_sha256": "9e1e35f3dca2897812c30a58b490dfe752443cda842697521dbfd1ebc068e597",
+  "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
       "id": "agent-striving",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/agent-striving",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agent-striving",
       "imported_tree": {
         "file_count": 17,
         "tree_sha256": "863d024ed5b5b51273d8c07c758f3604331393c69811b03e1823c61a6dc7a7c4"
@@ -93,14 +94,15 @@
         "source_repository": "https://github.com/Stunspot/nova-the-optimal-ai-mind",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "agent-swarm-orchestration",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agent-swarm-orchestration",
       "imported_tree": {
         "file_count": 28,
         "tree_sha256": "5f046a7d08df59b6c069b4c51d57d339ab0c304c6dae9f15fa6cd783151fd0c7"
@@ -230,20 +232,21 @@
         "source_commit": "ebca102c56a6db8b24fdfcb82f99e92f02f62d60",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "agent-swarm-orchestration",
         "version": "0.3.2",
         "source_skill_sha256": "4836bb89961cd3ef182a6f670b2ac59d0461f0b8c0d5d20c89289d5e87bd0964",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "agentic-coding",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/agentic-coding",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/agentic-coding",
       "imported_tree": {
         "file_count": 6,
         "tree_sha256": "c3888d95147f6532cc8fd65c52dd134b5f3d68773fbe9f8ff67ae4a2f345ec0e"
@@ -284,28 +287,29 @@
         "source_commit": "6129834d8870a7dbb48085f6a56cb1c2b9a68464",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "answerlayer",
-      "source_state": "prepared_current_estate_owner_selection",
-      "composition_origin": "accepted-shared-owner-with-Free-rights",
+      "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
+      "composition_origin": "prior-accepted-owner",
       "edition_overlays": [
-        "retain-Free-public-rights-and-advance-edition-identity"
+        "accepted-component-archive-sha256:46f982225bf45554a7e6c899e9490a9942cb0095e1858254001c9a1232367e50"
       ],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/answerlayer",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
-        "file_count": 75,
-        "tree_sha256": "1adbd0d51ceb2f283ef2a626deb841a455785bca67d12da64f7bf5e536c6611d"
+        "file_count": 54,
+        "tree_sha256": "1b8a5f58abf9cc8b2fe410e8681e190fedd7ce03416f345546f06c8f8008b9ca"
       },
       "selection": [
         {
           "path": "README.md",
-          "sha256": "31186c7f5e16a9af02fa387668ab3ceb0e5514e03ba710595a3c687da7ead306"
+          "sha256": "ab273fb4396690b9e75a87664e8bffaf60a758927469f12caa088fa297edc5af"
         },
         {
           "path": "SKILL.md",
-          "sha256": "9af5f3a50292c8266451bc00754a025a3cdf2f5c7596acd88bff034e7e98e179"
+          "sha256": "79b97f028438c153d30fb2bb013c89692fe97e703c9df1c5e15775afac7929a9"
         },
         {
           "path": "agents/openai.yaml",
@@ -329,11 +333,11 @@
         },
         {
           "path": "examples/boundary-cases/README.md",
-          "sha256": "0a4852edbf43bf85e23d440b713f8c85e0c2be9043d6f76e4627b09d2ca38193"
+          "sha256": "ff4739dab24f7aec9e93d0fd810a3c195750a1a2bc56b2b1c3e4f54b66b73bd7"
         },
         {
           "path": "examples/first-value/README.md",
-          "sha256": "61b72d11e4c5b2151b4dc028d3186bcfcc3a48b670ef177815a8fde4f2cae9b2"
+          "sha256": "942815c851aa5b345b20cab7dca62a148be7f96427ad47b543b07cb6b9af0289"
         },
         {
           "path": "examples/first-value/reality-ledger.json",
@@ -433,7 +437,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "50595bec463cccf5142634d1ce37f4e9344b9691e0783d7a637c2bada79fe1d4"
+          "sha256": "ae76f24ae10afa6d05dc44f28c43820cc2a105b5bf3dac2b3fb7b399cb135b04"
         },
         {
           "path": "schemas/reality-ledger-v1.schema.json",
@@ -445,7 +449,7 @@
         },
         {
           "path": "scripts/answerlayer.py",
-          "sha256": "c6a4b7cee7d98487dccad2627d896d1d84a370cb611dd7f9db4cd687229124b2"
+          "sha256": "d0455b02ee07169bf147eae7b906023f091c751d3545f0c5d4bfc3f214967e1b"
         },
         {
           "path": "scripts/build_citation_manifest.py",
@@ -514,90 +518,6 @@
         {
           "path": "scripts/validate_reality_ledger.py",
           "sha256": "f78a4671dc0e41e99042475986733bd81b2e48ea2e2e593d918d091c2bd52932"
-        },
-        {
-          "path": "workspace/DESIGN.md",
-          "sha256": "805c40432fc40f0444bd7b2e3f938a8c581468e44daea6e4647946c0bbbcebfa"
-        },
-        {
-          "path": "workspace/Open.cmd",
-          "sha256": "cd34b1d6ac9e43a714369110f880782ab0300459b0b6d50fdb7df651572fe4ed"
-        },
-        {
-          "path": "workspace/Open.command",
-          "sha256": "83b476d78af593708f8fe8380604580c7a7f422263bd479b8d880c57b0258e76"
-        },
-        {
-          "path": "workspace/README.md",
-          "sha256": "06705cab8766f8c3b3d8d06461a81b4e44fe20e613d70e5e68699c28758b8540"
-        },
-        {
-          "path": "workspace/app.js",
-          "sha256": "7d5066fd4fc74f6e690c02c4b8b180aa31dc3cb748f44249c3bc125a4f6d8c99"
-        },
-        {
-          "path": "workspace/assets/answerlayer-icon.png",
-          "sha256": "d6dfaa9dac19ccb40f27074b449b24e22ec57cbfbd4e0bc05d7f2016bfaa3aa8"
-        },
-        {
-          "path": "workspace/assets/answerlayer.icns",
-          "sha256": "1bbd575ee84bb2479b12169eb16012624511eeab24b9ad7036d692fc922c8a26"
-        },
-        {
-          "path": "workspace/assets/answerlayer.ico",
-          "sha256": "a770c369d3febb3d24f54a61aa2468727e03386d9605392be797b4f1090bad4b"
-        },
-        {
-          "path": "workspace/assets/strata-atmosphere.png",
-          "sha256": "3025d205c5e858c5ed2b4889b4d4da0e66dd8ef510e5b9f12f9392a0f79c1869"
-        },
-        {
-          "path": "workspace/create_entry.py",
-          "sha256": "2a1aa42956e85c811852f37ff6d92e165dd9a3791e31581880b52a21be10c8b4"
-        },
-        {
-          "path": "workspace/desk.json",
-          "sha256": "decf583570901be75c53953d9055de632511f30a54e8a9c43ce81d132f3f9175"
-        },
-        {
-          "path": "workspace/host.py",
-          "sha256": "b9a69ed656929cbddc11b8825f86edfa7103787ee0f64ae8984b1d125a582f53"
-        },
-        {
-          "path": "workspace/index.html",
-          "sha256": "f4fb1a3421ce8e54f69a002cb70893be922be10bf73ba73a93b34c6c2e727676"
-        },
-        {
-          "path": "workspace/launch_runtime.py",
-          "sha256": "a9167329dcdb2e506963fe4d44bc7e5a50fe78a3cd070ae74a0657f5354b1d10"
-        },
-        {
-          "path": "workspace/refinement.css",
-          "sha256": "dfebbed8bc9cdc051f40ff58c4481b972e72fb610e1132fcbf349ae588f8069b"
-        },
-        {
-          "path": "workspace/sample.json",
-          "sha256": "12c8492f0e3468702623b7698e8a6aa0ef74f9f7f4e73c8990064f72f484dc6e"
-        },
-        {
-          "path": "workspace/test_host.py",
-          "sha256": "d1a49a07b93f89f7dca2a8673403e69f4eb8ae2387fed2bcfa71b8af6cb2ef6f"
-        },
-        {
-          "path": "workspace/test_workbench.cjs",
-          "sha256": "d0dfb60e66d49292df2df3175eec5ef0ccb1b0019a2b3d32889b0a0f9067b6c2"
-        },
-        {
-          "path": "workspace/theme.css",
-          "sha256": "f297e5951f044a9918c4ff844b77261fa629a58ae5b7c44b5dbf734d9167ec98"
-        },
-        {
-          "path": "workspace/themes/STRATA.md",
-          "sha256": "6a3def96ed8d7e53fcbb0d63249df4746bcbd52b1d6c50d3b5a33d168891687c"
-        },
-        {
-          "path": "workspace/themes/SWITCHYARD.md",
-          "sha256": "b7e209b1fcf7459f31e641a0608ee4dca6f7e0343256c633a27071b0a14a094a"
         }
       ],
       "baseline_source_coordinates": {
@@ -610,23 +530,32 @@
         "source_commit": "a9ec893f256ff265886f2af42bf8f0b07fe5e4d0",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
-      "current_standalone_release": {
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "baseline_standalone_release": {
         "id": "answerlayer",
         "version": "0.3.1",
         "source_skill_sha256": "9af5f3a50292c8266451bc00754a025a3cdf2f5c7596acd88bff034e7e98e179",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "current_standalone_release": {
+        "id": "answerlayer",
+        "version": "0.4.0",
+        "canonical_runtime_root": "E:/Github/answerlayer/source/working/answerlayer-v0.4.0/skills/answerlayer",
+        "source_skill_sha256": "77dc147d03619b02670c6dcb2c9513a8a9943a7e3438d7523309e78d46cadb62",
+        "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
+      },
+      "retirement_disposition": "retired companion app; capability-only skill retained",
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "beryl-it-tech",
-      "source_state": "prepared_current_estate_owner_selection",
-      "composition_origin": "exact-accepted-shared-owner",
+      "source_state": "accepted_prior_owner_receipt",
+      "composition_origin": "prior-accepted-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/beryl-it-tech",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/beryl-it-tech",
       "imported_tree": {
-        "file_count": 73,
-        "tree_sha256": "58d8f4c620a4a71b3e3c7214fc57de82f5dcd5ace8d11ca3e063ba1f246a867e"
+        "file_count": 87,
+        "tree_sha256": "28f89f5a8c6d534945cc6a500700f2ca06eb25536b933643130fd2083153ff30"
       },
       "selection": [
         {
@@ -635,11 +564,11 @@
         },
         {
           "path": "README.md",
-          "sha256": "cc3ede1d20e29ce06780269e1480143b92bcec3834098533fa314034498fb9f4"
+          "sha256": "c0069c6b30d66453cb999cf5f016e7392b67dcb1d80c87de4639ab1026f56270"
         },
         {
           "path": "SKILL.md",
-          "sha256": "50c3b373bd89bba1ccf37873b56acf394ca7af649ed1281f30a5f208957f26e5"
+          "sha256": "57c703c472abe013d97d412a4b10edfd106187a19b85870b0a2d5d96daccbfc8"
         },
         {
           "path": "agents/openai.yaml",
@@ -671,51 +600,67 @@
         },
         {
           "path": "docs/ACCESSIBILITY.md",
-          "sha256": "d6c00d99400170891ac286def37c971e3050f00ad2cbff5ac4bccd152ff3c447"
+          "sha256": "f3fe9cb8304eb1ff98581ef4446bdb9890f933d7c4677d10639cd098f4850c83"
         },
         {
           "path": "docs/CAPABILITY-MATRIX.md",
-          "sha256": "0c0d8dba470347fe1fd38602d1e8fc19c80bf0c6cd63abf94e6d60638ff6ef59"
+          "sha256": "8df47645712d2228797f07be99088d275ae0b421319ad86e1b943c4da4484d78"
         },
         {
           "path": "docs/CASE-FILES.md",
-          "sha256": "40d3c6696de8166e77a46a4924a1c242b890e154c1dd568ac0d29dff0fc96f68"
+          "sha256": "f568bb2926ff3fe31272609586d9175f359fe46e613621f3bddca9ed8f38fc24"
         },
         {
           "path": "docs/DOCUMENTATION-MAINTENANCE.md",
-          "sha256": "4ebd05a2b39a01ebfa818423180c4bddf6aef6ef562d36b0ec36a5d21e9d2373"
+          "sha256": "ecffbee4c655d332c638b430b256ddca8d14e8e83f5139d6243769c50f0ba0c3"
+        },
+        {
+          "path": "docs/FIRST-USE.md",
+          "sha256": "7927b45f4f478a7aa99e78ec3e061d0a9e13bc06ef2e4c94dede1a3b9cedb146"
         },
         {
           "path": "docs/INSTALLATION.md",
-          "sha256": "f87991e35e2535e1b5f7796a5fba98a6d7dc3e1181930afe580b391ed955c7d1"
+          "sha256": "9b829bc7f470bed0291b54ddd2bb562f82d6618d3587faf7db026483254a30db"
         },
         {
           "path": "docs/LIMITATIONS.md",
-          "sha256": "a9295d558f3cf60348f16e3a6c427d62830df4401b99850f2841c0c34f7bbac7"
+          "sha256": "7084851c43fcf944509a15aa46d235817ef302f5bf0ef23b94833960ed65b43f"
+        },
+        {
+          "path": "docs/OBSERVATION-LIMITS.md",
+          "sha256": "206c9d28c965c26099c901f611b363be94feeb48bfbf1cb0cbc1c8d9fd8dffb5"
         },
         {
           "path": "docs/QUICK-START.md",
-          "sha256": "22c2af237fe421464aa39c7d09fd1d86936df81198263cc47d547797040a5c52"
+          "sha256": "2a1b751170c3e03245cf90bd91308961dcc80e09e8f2beaeced9576a84e3f759"
+        },
+        {
+          "path": "docs/READ-AN-INVESTIGATION.md",
+          "sha256": "da08c2779239849e97e25f414b915ec8c7b4c47ff8df235684b1ef53700986d5"
         },
         {
           "path": "docs/RELEASE-NOTES.md",
-          "sha256": "c44de00a1982591015eebb38bd8b0e4a6c941192f021d86e56e9884a721e170a"
+          "sha256": "5d37da3ea4321c63960b8f0c825e0432136f4880d08b5732c8712580ae4b21df"
+        },
+        {
+          "path": "docs/RETURN-AND-RECOVERY.md",
+          "sha256": "bbaa3cf7a870fbdbff3f0d8267b98a0e62d811915c4c3a0364f0f4285e6f18eb"
         },
         {
           "path": "docs/SAFETY-AND-DATA.md",
-          "sha256": "7b37e73cabc85d6e963fdecc8042ead2d6aa7aa6cbc600d89ae7ba4bf09194e1"
+          "sha256": "d748bf70a899946cbd22c03267c82ee28712aa934cef92941f0ea20a73175b94"
         },
         {
           "path": "docs/TROUBLESHOOTING.md",
-          "sha256": "c42f021e63e836941034a44d3947d7ee369e39fb63cf7b8c0ce09af4dfa91b1c"
+          "sha256": "b438fe767e5e1ab171d07b6b2556ad62e73079182cc7aa1d452be93e5262e2ee"
         },
         {
           "path": "docs/USER-GUIDE.md",
-          "sha256": "b5452c9910216e53bf79f52d2e403bb39aa2255072caa314bccdaf4b36812ca4"
+          "sha256": "7eed3c0c3b04063ef637dbf6177a0fc1ccd77381e55e37d9a9711c633a19c60b"
         },
         {
           "path": "docs/VALIDATION-AND-EVALUATION.md",
-          "sha256": "808a8458d3c43ece4cef86139a33b2161d3a755ef40f2c9f8247fc1b6cd2c763"
+          "sha256": "0603267092d98f3bcc17506785e1d4d418087e61ec547adf78430550887ad702"
         },
         {
           "path": "evals/core-transfer-cases.yaml",
@@ -819,7 +764,7 @@
         },
         {
           "path": "release-manifest.json",
-          "sha256": "bbad5bb222dfeedc595bcd24d780d023e4bdd690f228d11190689f1ec7d023ea"
+          "sha256": "9b4ddf44de7baca0c54ceff65d90f120ce1f631769a7f2c8ea1ecd4d768146a7"
         },
         {
           "path": "schemas/it-case.schema.json",
@@ -843,39 +788,63 @@
         },
         {
           "path": "scripts/validate_release.py",
-          "sha256": "f22a01fd9f2683b8ab33a58d63bb6978013c71c94af0a7c15c01ae67aa1cab0e"
+          "sha256": "bf230214319d5d189f066ec9212f0081bc0ef5252590e8c09a5b5dfe861ba821"
         },
         {
-          "path": "workspace/DESIGN.md",
-          "sha256": "8e6c79c5b6d4b201a32115f258fe2737f5057a2e126ed9039085205c3d954046"
+          "path": "workspace/Create desktop shortcut.ps1",
+          "sha256": "7a56d8e7c0d30ca5338abc9926d6d3e4914229b922902add4c2b1c04b04bd5ca"
+        },
+        {
+          "path": "workspace/HOST-PATHS.md",
+          "sha256": "3ab681333e6318abbe098c370fc21d12effe87538d61d3f8417970cecfe07be7"
+        },
+        {
+          "path": "workspace/Install shortcut.cmd",
+          "sha256": "c03c9069e3b741a4bdccf613246730c2fff9e14c7855c8579a57cc3ee8d1a3db"
         },
         {
           "path": "workspace/Open.cmd",
-          "sha256": "cd34b1d6ac9e43a714369110f880782ab0300459b0b6d50fdb7df651572fe4ed"
+          "sha256": "36750bca0436d9dddcc2d3f631b9dc7d786eb8d8bd78c473f63754df127a2009"
         },
         {
           "path": "workspace/Open.command",
-          "sha256": "83b476d78af593708f8fe8380604580c7a7f422263bd479b8d880c57b0258e76"
+          "sha256": "3946e079442c31ad66594875fea3a4c9ae579a55b8bff27ee44265811a1ba60c"
+        },
+        {
+          "path": "workspace/Open.sh",
+          "sha256": "3946e079442c31ad66594875fea3a4c9ae579a55b8bff27ee44265811a1ba60c"
         },
         {
           "path": "workspace/README.md",
-          "sha256": "fc63439deb365cca076bc8f4870eee9839ebec4e46a30d1930d0a285a2c96534"
+          "sha256": "c01ecb20a230d93498e50d048dc525aa32a083d3b6159e7af98c5dc7f0c83bf6"
+        },
+        {
+          "path": "workspace/WINDOWS-OBSERVATION-AUTHORITY.md",
+          "sha256": "08a1824ab4e32c40ad599d3bfce77dc7bcaa5c69ec366dfbe7e1a05eaaedb9e1"
+        },
+        {
+          "path": "workspace/assets/ICON-PROVENANCE.json",
+          "sha256": "bdebac3812d2135685b1ff73bd375b56bfa0b3a831f7a849104abf27a30289c2"
         },
         {
           "path": "workspace/assets/README.md",
-          "sha256": "5bca3e54367d78f8400bcf58fe4716433ddecdb7c5cf7bfa3e8cb3dde4d1d559"
+          "sha256": "825550cd822d15b9f1a30cdd77f44b4d4443af6fcd603a84717dc546ff4e935c"
+        },
+        {
+          "path": "workspace/assets/beryl-icon-original.png",
+          "sha256": "b6a81df755d70d6e39cc4555e8909c1c1de8a8c71b503326adc86aab7104d125"
         },
         {
           "path": "workspace/assets/beryl-icon.png",
-          "sha256": "f5b97307466fd1c9b6545d1ff741d7c95f19096aba9b455971b2e913364d561f"
+          "sha256": "870f6cd586afa9cbda05967c17a8afcc9cef9a8e3d5878286454407792bd556b"
         },
         {
           "path": "workspace/assets/beryl.icns",
-          "sha256": "6f56ababbbc6eb3d0eacc20dc6fc99f82429f1e7f57c4a32492e66c01fff86d2"
+          "sha256": "dda3c0993f51e8c98259f684f2fd37b4e71bc7d2901233087d2602dc256fde87"
         },
         {
           "path": "workspace/assets/beryl.ico",
-          "sha256": "63016c1c79b6da7fcfb0e7ede7573ab99450b7f79526a5c853bf11c6bfed497f"
+          "sha256": "0cb6ec2cb5d14c46751a129069268d7041d6855debbe3a2b59633552af42eac9"
         },
         {
           "path": "workspace/assets/moss-surface.png",
@@ -890,36 +859,52 @@
           "sha256": "82f52cb7c3491ac4f1688f8dc6d9a418a72bf6377871dc1c0d781222c55ec6c6"
         },
         {
-          "path": "workspace/create_entry.py",
-          "sha256": "02c97b3a43e06d4bd269ea796c6972c171b69cdfa99f95b2bcc7c9fdabdba4ec"
+          "path": "workspace/bench.css",
+          "sha256": "72e273c17f2d39538d43865adbe919fdffc88f39adf8ea05214eceecbe16fcdc"
         },
         {
-          "path": "workspace/desk.json",
-          "sha256": "a124800d35c66bb37cf0c3609bead1adb915009d8637bf7d04c7cc507c773ed8"
+          "path": "workspace/bench.js",
+          "sha256": "7cf0a2fc46c3c3272275aca3237a02102c6ffc09fae75916813ff4b187945187"
+        },
+        {
+          "path": "workspace/bench_server.py",
+          "sha256": "e03ac49a5288ed0499f5e92e15d603fc3787955759c6e04b2217a6e1efe9ca8b"
+        },
+        {
+          "path": "workspace/bench_store.py",
+          "sha256": "a37e133f72a734519f46a87567c1e112bea8ed72d182260cde54628727b1da44"
         },
         {
           "path": "workspace/host.py",
-          "sha256": "b9fa469e4073e4a4df35f0e7b9f393c7f74a003239cd7cc4be9667ce881fbbce"
+          "sha256": "698e96263efe528bedee6afca782f258750c00b3c906c53e20d2355ca35e467b"
         },
         {
           "path": "workspace/index.html",
-          "sha256": "ae439a9d4bec512788b7b2f8beca334bc8edf83d7a8d1036f899c8b295f933c2"
+          "sha256": "f14ec78be6a564c8719fc6be4f609082182b5332bbe5877ad29b3257fbafaa21"
         },
         {
-          "path": "workspace/launch_runtime.py",
-          "sha256": "e6b6dd0fff01c49d692f90f5f81788a04dc4a79901402801826f25d53a9cf64b"
+          "path": "workspace/install_shortcut.py",
+          "sha256": "dfe8a8f7131bdb83644fe28f206fb3003022ca11f035efc28af888e824b0040b"
         },
         {
-          "path": "workspace/sample.json",
-          "sha256": "e049e9da0bc9723fcdefa1ae5589691abb088d3bdbd48f956c13935f2d676e18"
+          "path": "workspace/launch.py",
+          "sha256": "fdc499ddc74412768aa9c97429777979dd6a0a53050343823f43d2432fc21663"
         },
         {
-          "path": "workspace/test_case_semantics.py",
-          "sha256": "75fbb895cab6debd4014634423be6953ca0612e293fb057ede38ed7446af5cc9"
+          "path": "workspace/launch_gui.py",
+          "sha256": "757b96c89780733fccaf9292a2385422b4cf46364274dd9b100121b087cbe7e1"
         },
         {
-          "path": "workspace/test_host.py",
-          "sha256": "24b9e5e61ac99b4b4f7e8c8b9f1ce2f9c27f8a1d4954ca7f7dd2d03796ca95e5"
+          "path": "workspace/observe_windows.py",
+          "sha256": "126e1f2f2b977d512430b55f07c1c387513aeb6d80b9ded2d35587451e3e212b"
+        },
+        {
+          "path": "workspace/owned_process.py",
+          "sha256": "144d14269ca9d8b2e28cc6fc44e07f79f491fc8b2641ffd9ee5b1edcbb4cd6d0"
+        },
+        {
+          "path": "workspace/storage_io.py",
+          "sha256": "0daf27b7ff8433477e4b77577068295149f20ff2e56839d33a90864d8cbe74a3"
         }
       ],
       "baseline_source_coordinates": {
@@ -932,20 +917,28 @@
         "source_commit": "9bc943c48fcd1448827d301c9440d2808663adbf",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
-      "current_standalone_release": {
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "baseline_standalone_release": {
         "id": "beryl-it-benchcraft",
         "version": "0.4.1",
         "source_skill_sha256": "50c3b373bd89bba1ccf37873b56acf394ca7af649ed1281f30a5f208957f26e5",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "current_standalone_release": {
+        "id": "beryl-it-benchcraft",
+        "version": "0.5.0",
+        "canonical_runtime_root": "E:/Github/beryl-it-benchcraft/source/working/beryl-it-benchcraft-v0.5.0/skills/beryl-it-tech",
+        "source_skill_sha256": "c9682dc47ed8794895b058f52e3ae9e4e7b306fd06dfbba16361dbfc33aa5a53",
+        "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "cognitive-continuity",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/cognitive-continuity",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/cognitive-continuity",
       "imported_tree": {
         "file_count": 86,
         "tree_sha256": "828a8adf63c8c95efa71af2d58be7b8e7c2d1768ff691f64273a8bd8a92fbc0f"
@@ -1306,7 +1299,8 @@
         "source_commit": "0ac71bc4a9730398ea31ef0e65203363c424f44f",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "commonplace",
@@ -1315,10 +1309,10 @@
       "edition_overlays": [
         "selected-four-owner-pins-with-Free-approval-identity"
       ],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/commonplace",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
-        "file_count": 35,
-        "tree_sha256": "eb4913817f18e58457d873bf6eb2e867ba2e33b4ddf98ed0b89bef505eb0e8fd"
+        "file_count": 37,
+        "tree_sha256": "753c5fc3b0e2452bccd1423d65ac397045a9d7ef432c70360fa22674b84e8d88"
       },
       "selection": [
         {
@@ -1426,6 +1420,14 @@
           "sha256": "4f1df2c091e233a840d7f72dc0ca3252cd6e2dab2130578352fd5e15ed51bc6f"
         },
         {
+          "path": "workspace/assets/knowledge-desk.ico",
+          "sha256": "951f70d3d0f03b50ba2a1b71afa9ab0ec6d81ae8d2e155d7e3a273581aa4d974"
+        },
+        {
+          "path": "workspace/assets/knowledge-desk.png",
+          "sha256": "fb2cf0ed78f9b9a411345743304666ba7e6d6a9cdac9c469d2f25d8e9afb5de8"
+        },
+        {
           "path": "workspace/check_service.py",
           "sha256": "82b1df390801961a08c662793412ef6c20d59db6dfbeddbf31323276059ec7d1"
         },
@@ -1472,14 +1474,16 @@
         "source_commit": "7c45e4f161294826dd55486c540b91f57acf2d20",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "edition_asset_delta": "Native owner ICO and PNG copied from current canonical owner; all other owner bytes preserved.",
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "corkboard",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/corkboard",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
       "imported_tree": {
         "file_count": 3,
         "tree_sha256": "90007250ec76ae85b2ab042e14c5ccebbea8812fd1091f36b4a69afd7fe1b78f"
@@ -1508,28 +1512,33 @@
         "source_commit": "460ac80d622a1893085818baee8336c825f0ec82",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "current-intelligence-observatory",
-      "source_state": "prepared_current_estate_owner_selection",
-      "composition_origin": "accepted-shared-owner-with-Free-rights",
+      "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
+      "composition_origin": "current-purpose-led-owner-with-Free-rights",
       "edition_overlays": [
-        "retain-Free-public-rights-and-advance-edition-identity"
+        "accepted-component-archive-sha256:6824a8d2ca3636e8a8a99b4e318c2b784765b296837ffc78787084bf9fdac79d"
       ],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
-        "file_count": 115,
-        "tree_sha256": "0f055e1341c4f7c6ac814e1c7efd42eea30863e37991561936ee5b9373bd46ed"
+        "file_count": 184,
+        "tree_sha256": "7308a07c8a331e7ff88414427afe404b1938feaa482f2d47058669d9deec7bb6"
       },
       "selection": [
         {
           "path": "README.md",
-          "sha256": "093d8b2c7e6f7d48a4a1bb06071f26f28a5a7d9bfe3fb527af74477d8b90325e"
+          "sha256": "aee3a6c1a41bf913498ac7b7f73339a74bf4439feae8c06ef6325db3985abfd1"
         },
         {
           "path": "SKILL.md",
-          "sha256": "5d4fdaa66e5c82d0578c756d28f43f8a5e113232450b961db72e7de7b4850382"
+          "sha256": "516d7eb1d1cdf456a2fa335a80faf16341ddec191ca07f1336ef8b9e0a84664f"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "40b8eb4000a913a7791090535f291d3d369874162a89ef3c9e3d4e887a1b9e79"
         },
         {
           "path": "agents/openai.yaml",
@@ -1729,7 +1738,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "a5ace747a13ad7de241b5e564d89bd0df3e184bff3a327f7a12294174464c5d7"
+          "sha256": "0f14bf5f2b303b3abd54943bb2708f8eac137308e197ad279dde0b79eedde1ce"
         },
         {
           "path": "references/almanac/delta-sweep.md",
@@ -1929,15 +1938,23 @@
         },
         {
           "path": "workspace/Open.cmd",
-          "sha256": "01682bf49143f08c91b104b04c62d1e1acec30d45098ea1d13044f81bb9b11cd"
+          "sha256": "b41d3ba3b69b5b763fd3e8247595967d9d83a1a3b49120e841765b806143f4e0"
         },
         {
           "path": "workspace/Open.command",
-          "sha256": "d454f7d2761f93481688752263f5cab1b583099a1705acc5380ab4f45968f642"
+          "sha256": "dc352c8eda317a9463e4eca2b13e09472e62a8d4db2bfa1b73031488d6be2e28"
+        },
+        {
+          "path": "workspace/Open.sh",
+          "sha256": "dc352c8eda317a9463e4eca2b13e09472e62a8d4db2bfa1b73031488d6be2e28"
         },
         {
           "path": "workspace/README.md",
-          "sha256": "bff64932afa87a2ca63860072b1313f4e6657bb1bce514ec755e247ccd5d776f"
+          "sha256": "f0f5d09fa26044984ab702393b1562c7da81741375df5788664bff936ffb31e5"
+        },
+        {
+          "path": "workspace/advanced.html",
+          "sha256": "82b2d59b00d57ae70b7854599502affbb7f748ebf108b67d627c89eeb54ba05f"
         },
         {
           "path": "workspace/app.js",
@@ -1948,16 +1965,24 @@
           "sha256": "78e1e6eea45a55c9a2600079375e5660f47ba44bd72b0d35aa2a06972a40f35b"
         },
         {
+          "path": "workspace/common.js",
+          "sha256": "b9cd2901aa360988e51943f24e8cb2ff71def8ca6fa8a3e443b68b03b788ea23"
+        },
+        {
           "path": "workspace/create_entry.py",
-          "sha256": "3a9986f8746284badfb394fa0515a3ae6354bd1383aa15ba1250731805a9e5d4"
+          "sha256": "f5faa985ca594f5a93fd174a1b9157a3b392aa00021473a81dbfe6b77cf7966b"
         },
         {
           "path": "workspace/guide.html",
-          "sha256": "48bf8a9e398b9028e66257051b3f38edcac0157f0828f7ff30e728a30814646e"
+          "sha256": "ae3139e489e13b1199c51f48ef618a7993622f20ccbc1098a43a577b2152643d"
         },
         {
           "path": "workspace/index.html",
-          "sha256": "82b2d59b00d57ae70b7854599502affbb7f748ebf108b67d627c89eeb54ba05f"
+          "sha256": "7038b2c8f2d9e06f8015450347c90480d9ba641f5704747f150e6592ac43d2fa"
+        },
+        {
+          "path": "workspace/launch.py",
+          "sha256": "51709e698780afbea5ae30fac95555ed6ce8fa5376ce0b08fa2e766c49c57ab7"
         },
         {
           "path": "workspace/observatory-icon.png",
@@ -1982,6 +2007,250 @@
         {
           "path": "workspace/style.css",
           "sha256": "eda81b81a7400d4016748772c6be7ee666e5b03f072cf25c3173fc3e886d45d3"
+        },
+        {
+          "path": "workspace/vendor/pypdf-LICENSE",
+          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
+        },
+        {
+          "path": "workspace/vendor/pypdf/__init__.py",
+          "sha256": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_cmap.py",
+          "sha256": "0b8eea205808d522a7e4bad3e222b39c6964752b58a3a3b7259904292ee09241"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/__init__.py",
+          "sha256": "035d44440b70b56ae91953b34d296b0b56b74fd1c29562c1591c067b7fcf7eed"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/_codecs.py",
+          "sha256": "e3aa11649c92c06c42269d648c87abee3b3f4d84a38f81acda2d9471edeff9e1"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/adobe_glyphs.py",
+          "sha256": "b7770314f0eac08cf5c3d07481d5738dd73c7842bd02e4639397fb95a130fdf6"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/core_font_metrics.py",
+          "sha256": "14b3d66d3678871790597820d63a397b8a972821642846397bce54d9b2c533a9"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/pdfdoc.py",
+          "sha256": "c5f4af30562cbf1b9a490d14bbdbd90ca681d16bbce61d6e0a20758bdac07145"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/std.py",
+          "sha256": "0f240cb84a40184a52f6ecb58d67f87278fe92a4a13ce0228f9b08ed0d580fc1"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/symbol.py",
+          "sha256": "9c86864089615822623cc1ebc149661871fefdf397c842af82e466b8a5dc1809"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/zapfding.py",
+          "sha256": "3d0c63c510bad7a778d711777b15713f55bc9cce10ad97e33b7966b4bc6913fb"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/__init__.py",
+          "sha256": "2b767a02e5e15d579780b7adf93ba4ab682df47eba3a076ea6cbf1212d429a42"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_base.py",
+          "sha256": "fdfe77323eaf8af84464c438bcdc4de46d083a0158fa7e7f95e91ed1cfea88d5"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_cryptography.py",
+          "sha256": "f733a4933312b17e1a974454934a8cd1d29f7dc1e47b8c1f9845caf64c28450f"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_fallback.py",
+          "sha256": "bec628a30475602015feaf87add21986451cac26fa1ef44134c626d3742d094f"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_pycryptodome.py",
+          "sha256": "bb8bed2e8ecdbfa02a6513671f5a0d3425af4d86a8c1f4957febe5916def4fab"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_doc_common.py",
+          "sha256": "54a5f4cd06ba5f658a9ed175b9c6224134b3dcf9f98ab11fc4da1f36e02a262e"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_encryption.py",
+          "sha256": "319f3e012455b473ceb9c51df87f4a45f94eab902f88f14f8e5769901540a1ce"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_font.py",
+          "sha256": "50ad53071d7979e53daa4661bf38a0e1823eb6365382007eca20b414b73767bb"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_page.py",
+          "sha256": "f93c459a77c433dbd2541e94d1fdfa599e486ca5fe3e3efe9348eaf94552639c"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_page_labels.py",
+          "sha256": "bfa0a9bba3495c2f5143f05e19d866d39695f19eb3c623d1367eaa129d41b951"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_protocols.py",
+          "sha256": "eeacfdd8b55d3eb6244a97543e9029f54e065b98f13414df55ca545b052110ea"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_reader.py",
+          "sha256": "9aaa6780e62c061509f0d3b658dbdac185404fecadac01f7f9d35ac009ce2024"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/__init__.py",
+          "sha256": "6b7677deb4154e230a1adc2deff6df5e53e8b1b493f2bcc42e8367b74e77fd0c"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/__init__.py",
+          "sha256": "454408c22530ce778db5c9639d533a8e445a7a6ea980fee6383dbe3019ada6fc"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_fixed_width_page.py",
+          "sha256": "789bde0dbc8ca281bdef4a893a13394706fd668cb2243ca7cd6a55f5aec84b6d"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_manager.py",
+          "sha256": "5d5ac88de4dde6349d31ec41431b34b4be48e5150e8ad4663759842ce70a626e"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_params.py",
+          "sha256": "872c3aa670bcba9064a055542772c7f21048207acdc22a9aa9c632cc8232afa6"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_text_extractor.py",
+          "sha256": "b54a9bbc2ebd305706406501b7f63caeab1535ffbcb0c171003c8a9da8b4a232"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_utils.py",
+          "sha256": "2df8188c0ad153b97d19201bb681b3bbdbd507e7243e2d657b4eb543a7072656"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_version.py",
+          "sha256": "2416f2ebd53fb332339ad719e9569c95eedc0157bb9e1573ee0205d0d07716aa"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_writer.py",
+          "sha256": "1819e02d0b0bcd9c1fa483dc5c22e2a7849be22c93474c33c235dd6dd076a4e3"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/__init__.py",
+          "sha256": "7f693ffa3027dfd082076ecac50fdef771a29e7ce40076d49e749e1899758f21"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/_base.py",
+          "sha256": "79ea1cf6fdb0d798c05212978f8f25d5b07ae98801815fb6bf92085091febf0b"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/_markup_annotations.py",
+          "sha256": "b162a1181086ed7f688c0bc4691304a093fe7d8e8572b94574e9ad79f219066d"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/_non_markup_annotations.py",
+          "sha256": "676214bdc08e713729261497adec7ff6b8983360fae17c4543fbda735d013515"
+        },
+        {
+          "path": "workspace/vendor/pypdf/constants.py",
+          "sha256": "9f672ef873a6a16e7feb14165442a8e36ad2249d0ff7484bd6cf33fa9174a1cb"
+        },
+        {
+          "path": "workspace/vendor/pypdf/errors.py",
+          "sha256": "070d56f61c4eb03830ab053a628436974f89894c93aba979423542afe5b81850"
+        },
+        {
+          "path": "workspace/vendor/pypdf/filters.py",
+          "sha256": "237c2d528bdaeccdd68233730b2a74ac634854a9899a34bcebc8d8af5c0b347f"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/__init__.py",
+          "sha256": "56ba9d61fb5010278f0d4dab5d532012a45a60547ccce57f7ef260a35f71feec"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_appearance_stream.py",
+          "sha256": "31c0cbd2070a34df4d5cd53a64fc60b7b398a25dbe168356615980c20030e0f3"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_base.py",
+          "sha256": "f488de45b70b1eb73f94b1947d564c8ee83ca3eb7af17ece35295f9c32a73e64"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_data_structures.py",
+          "sha256": "35f76eb49aa9f253fb1cd3e5eb9e3875b80f9bbc2616c755e376bde054e7b782"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_files.py",
+          "sha256": "36d4a4468e890608ac8b840ecab56778ef3dd5ba15b2e636e614708a3e97f510"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_fit.py",
+          "sha256": "5ff8800c98f5618e0f512b52eeb1560b6c51d8b5154af2ad500932d001402033"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_image_inline.py",
+          "sha256": "2a5000fd91a2446ce368f1b74af6eda8619e36a6d065517e515536302f2efd28"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_image_xobject.py",
+          "sha256": "7f560334bae2f927a5faaa72ca75c0ee7c7e662493a8061433ce9338414883af"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_link.py",
+          "sha256": "b4da99d86616c6a80566c948d032d97a85e59ed6b182c1c2f1791615f496c781"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_outline.py",
+          "sha256": "a8a6cc5f8d8e59faa7a2922213a054cba12f7532c67b766d8da89637ce49a5a6"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_rectangle.py",
+          "sha256": "94ea927c58af43180137d2d4f5aa87a313c7f1a08f4c350d81166c34451de9f7"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_utils.py",
+          "sha256": "bd30c07ac7c6f9c24d0ca8a5cff91b805a1d0084f37797a3a695871a3bc2a279"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_viewerpref.py",
+          "sha256": "b6a5445a6bddfc359316848ca51393b25d528a338d9ef71267e8d74e8fdc8cea"
+        },
+        {
+          "path": "workspace/vendor/pypdf/pagerange.py",
+          "sha256": "d9bb76d634199bef5aab66d57f74d7b87f3fc06571edbf53e94acc1570842614"
+        },
+        {
+          "path": "workspace/vendor/pypdf/papersizes.py",
+          "sha256": "e93cf9b1f34dff724e51aa58f3753e95a928867a57600d2148440d98e54b14bf"
+        },
+        {
+          "path": "workspace/vendor/pypdf/py.typed",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "workspace/vendor/pypdf/types.py",
+          "sha256": "b09ef01f393b111fc227b90ffacf2ef5ac459e40979c5a6bf27cdc8f50314dab"
+        },
+        {
+          "path": "workspace/vendor/pypdf/xmp.py",
+          "sha256": "00289e95b3fb680b03cb67e67b8a3d61de32ec7e0a7c46d4337494c4c97c8c8e"
+        },
+        {
+          "path": "workspace/work-host.py",
+          "sha256": "3cf0f5fbaea3a4a87115a29ef6df58af5248fced24d515455bd1736620da3a55"
+        },
+        {
+          "path": "workspace/work.css",
+          "sha256": "e99dae32ef7df44659e2f51e5a2c84b6a4c57c00b35cf8fc4030780d6e0e3afd"
+        },
+        {
+          "path": "workspace/work.js",
+          "sha256": "329f7e13b6bb3751fe27e2feadaeacbc5ecd50ddaf22245ed16b6ced663a9e27"
+        },
+        {
+          "path": "workspace/work_io.py",
+          "sha256": "40b265624e0ec85d04b1680b5e433e06fd3b14ab0b2e0d7f59509d2a77a62411"
         }
       ],
       "baseline_source_coordinates": {
@@ -1994,28 +2263,46 @@
         "source_commit": "865570099fa845d373545d302382a736add35dd0",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
-      "current_standalone_release": {
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "baseline_standalone_release": {
         "id": "current-intelligence-observatory",
         "version": "0.3.1",
         "source_skill_sha256": "5d4fdaa66e5c82d0578c756d28f43f8a5e113232450b961db72e7de7b4850382",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "current_standalone_release": {
+        "id": "current-intelligence-observatory",
+        "version": "0.4.0",
+        "canonical_runtime_root": "E:/Github/current-intelligence-observatory/source/current-intelligence-observatory",
+        "source_skill_sha256": "de965a5833ae30a61833bc9ba32afce6a64e420d01414469cafc8da89ba75f0d",
+        "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
+      },
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "dennis-stratton-project-management",
-      "source_state": "prepared_current_estate_owner_selection",
-      "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/dennis-stratton-project-management",
+      "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
+      "composition_origin": "exact-accepted-current-owner",
+      "edition_overlays": [
+        "accepted-component-archive-sha256:686a8d1777e8e1c003864440d1d9b3e8a07ceb8a250ac4a5a6250cd557e09078"
+      ],
+      "imported_path": "plugins/nova-the-optimal-ai/skills/dennis-stratton-project-management",
       "imported_tree": {
-        "file_count": 65,
-        "tree_sha256": "51f3f9e7dbf577d0c446efd721576e29e0dec4de4589b092e1a5feb3722da809"
+        "file_count": 83,
+        "tree_sha256": "bb29f8d2774f42a981aa96b04167488e9ff1e57528316763bb61a9c7f99afa34"
       },
       "selection": [
         {
+          "path": "CHANGELOG-0.6.0.md",
+          "sha256": "9892c6a415bd519cf0ef9bc0bc2f29cf4e2834324b16377aac76a9271513bc6e"
+        },
+        {
+          "path": "Create Project Bridge Shortcut.vbs",
+          "sha256": "2a60528be9f031f2f6cb4f02cbe20740c39b627991c9493740c0f611307d32f4"
+        },
+        {
           "path": "DATA-AND-PRIVACY.md",
-          "sha256": "fb382092e2e538632bfd1a3ee327e82fcad5ec6f29ae95ba22b6a1c26875569c"
+          "sha256": "4e2f5a577168b0bfdb860567e5f2dc4c1aaab91d5fc21a3a69a3d89c324b47ac"
         },
         {
           "path": "Dennis Project Bridge.app/Contents/Info.plist",
@@ -2039,11 +2326,15 @@
         },
         {
           "path": "Open Project Bridge.cmd",
-          "sha256": "14d71c234ade4e5e333a3cba36d1416c07c2e47cfd110fd00e0d54798da56262"
+          "sha256": "2a6ba597446b576aecfd13ca417eaa0c60a8a5acb748f36da8b4b06380520cae"
         },
         {
           "path": "Open Project Bridge.command",
-          "sha256": "d573e19b27d54e23b24c8b885dcf79184d38bd37d72ed6fd62d0f17e0e1a8db7"
+          "sha256": "4900fa501123e4a307d9f47ff9e0b383eaab2c263eec4b6a609b864a21e2563c"
+        },
+        {
+          "path": "PACKAGE-MANIFEST.json",
+          "sha256": "15c6d973a0cf37c1c5cae5311fb7bbe5998a1811e76557988d4d3dbf027c61f8"
         },
         {
           "path": "SECURITY.md",
@@ -2051,7 +2342,11 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "a9f1f703d4e61e03d7e0a14eaf1db5bc39b9b1e67f26661dac05e271703cf58c"
+          "sha256": "c0823f635ae6e90bd68b9bf489e6c445ca7850149dd1b97a5bd95173f0e9e856"
+        },
+        {
+          "path": "START-HERE.md",
+          "sha256": "7985247064a80d64025aaae5c7b1797812eb046d71a99dd2ecf1433524aa729a"
         },
         {
           "path": "SUPPORT.md",
@@ -2064,6 +2359,10 @@
         {
           "path": "THIRD-PARTY-NOTICES.md",
           "sha256": "84b427421183344473fe3f2c453e8dafe46e515ea614929ea8c803bb662f594b"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "97a5d6e540a6120d09c39ddb667e0e8e2bac7fcc2ffef813b82e08fd60365bce"
         },
         {
           "path": "agents/openai.yaml",
@@ -2126,6 +2425,10 @@
           "sha256": "5a7080454a3e732ccbe922b5f260fd01a20f7be7abaa15a5d453493f469abf3a"
         },
         {
+          "path": "bridge_runtime.py",
+          "sha256": "e36f5d270da84aa0f62c848b24b544c5060712f40126c6abadc959350f4cb29b"
+        },
+        {
           "path": "evals/dennis-core-behavior-cases.yaml",
           "sha256": "131d7f708bc33c6662fda55bb53f0e5ad50b8d32f88171a82e5c2f539e0f0135"
         },
@@ -2140,6 +2443,22 @@
         {
           "path": "examples/authorization-and-steering/project-control.json",
           "sha256": "5faa2f139a8c7bb7575672b8749be0809cd3cc2050c9e12e1c52d59e8e295afe"
+        },
+        {
+          "path": "examples/community-exhibition/build_fixture.py",
+          "sha256": "9369779c1bbf09ad67fbc9b6a35532593479def7a700fc415a09cf970bee63f6"
+        },
+        {
+          "path": "examples/community-exhibition/project-control.json",
+          "sha256": "f0eaccd9ce451e86b9b7322a2a8a6e1298c481e3b216b833eeee2de54b2c0e9e"
+        },
+        {
+          "path": "examples/community-exhibition/supplier-reply.md",
+          "sha256": "a8b07efcdfe1c514930b34b140aee062023ece66bf11c9e911f7e781cdf92f67"
+        },
+        {
+          "path": "examples/community-exhibition/venue-confirmation.md",
+          "sha256": "05b1a695cda98d8170ad1616eaf5f6a8d0cfe185c73e44ac32ceb7dd54de03ac"
         },
         {
           "path": "examples/phase-milestone-recovery/demonstration.md",
@@ -2187,7 +2506,7 @@
         },
         {
           "path": "knowledge/project-record-estate.md",
-          "sha256": "67517f5a59e0552e38c7e88e98a02a2c40694fcf7349038fa9da840a118001bb"
+          "sha256": "b1f2a494e52faae2cc98eeeb1c44592ab3b07d325e2e90afa63cdf648605ffb2"
         },
         {
           "path": "knowledge/project-recovery.md",
@@ -2203,7 +2522,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "306e339011162d43b871eac2c0c5f2d19a421a38d2469e2a74324e4815c9ecd6"
+          "sha256": "b8dabb9755ffa95b24b0f21103f9f569e0e4c9b0b92a12fd847f836235108ec3"
         },
         {
           "path": "references/canonical/Project Management Virtuoso - Dennis Stratton T3 v1.1.txt",
@@ -2223,11 +2542,11 @@
         },
         {
           "path": "scripts/project_bridge.py",
-          "sha256": "658a672e3b5993293ea870cbe31347d4bd93aee24be87dbf664ae6602118ce4b"
+          "sha256": "d7acfdaa40c27a7406a706e8a08aeada5c825ca4da31e76ed0c57b61d7db0406"
         },
         {
           "path": "scripts/project_control.py",
-          "sha256": "8aecb9a09e20801c41eba0cab1138465fe90372f462bebb2f53b8c4ae1c398e7"
+          "sha256": "361dd279ab0e7233ffae63e0120ba2344e068ef81beffa0a6af5de29b2816501"
         },
         {
           "path": "scripts/workspace_host.py",
@@ -2235,11 +2554,11 @@
         },
         {
           "path": "tests/test_project_control.py",
-          "sha256": "07b93806b75b0e47524db10d9880ab5c618f707e48a99b3c5b3c92add19fb33b"
+          "sha256": "c60c16ea4540af36e852c25d1e63c94437f4e037b2b24434d4a19e993ee34cd7"
         },
         {
           "path": "workspace/WORKSPACE-GUIDE.md",
-          "sha256": "94d8561c37d4a95c9fb30e0b0927ebc56753c5d3d6d6e9ec2ec9ab8a9fba51db"
+          "sha256": "76436977f55de43c96712d0792876f8cd1594d5a83e5cb72c14e257a8e55d091"
         },
         {
           "path": "workspace/app.js",
@@ -2254,8 +2573,36 @@
           "sha256": "50ce9024934ba7db1695e3f1d8e301cbde4cdf8ca0cffc191fa40a7d1982f0e4"
         },
         {
+          "path": "workspace/bridge-themes.css",
+          "sha256": "44015f87c346e9a43e328f7701d6e7ecdbb20321243ad712bfc411f3a1ecdf18"
+        },
+        {
+          "path": "workspace/bridge.css",
+          "sha256": "a9ee87099203a3f20b8d861066a370f9dc3eb8b0d02b26df5757bcac08f74000"
+        },
+        {
+          "path": "workspace/bridge.js",
+          "sha256": "90995e8922217706339384f02d7f7c629bbb25120eaae8cd08daa91ee271def0"
+        },
+        {
+          "path": "workspace/bridge_runtime.py",
+          "sha256": "d7b5cf1a737172698e1f44320f999fa4fce19d79de8c9204dfaab1d4d6396588"
+        },
+        {
+          "path": "workspace/bridge_server.py",
+          "sha256": "c335718e58d7b2ffddf7d34980ae9cacc318d2e51c1037419a8efc5fb6ee3dbe"
+        },
+        {
           "path": "workspace/index.html",
-          "sha256": "813873f6061ac13ce923a44dc8cfbec1919311c1856199da03ee2985f890188e"
+          "sha256": "56e2c40051342ddcd6a8d45bcf4e59f2b633f8b4d6da074e289e2e3b009f3b1f"
+        },
+        {
+          "path": "workspace/launch.py",
+          "sha256": "32e5007bac6a35b0235de80317504dd167cbde8154d8bd38297d7d3dc4333e99"
+        },
+        {
+          "path": "workspace/pick_folder.py",
+          "sha256": "03a27bf2b577947b71b164dd16426584403f3cb8921b3b3f54514b4830ee3543"
         },
         {
           "path": "workspace/proofspan.css",
@@ -2272,6 +2619,10 @@
         {
           "path": "workspace/skin.css",
           "sha256": "42a252d952ff790e734fed03492b604ecc7b0fbc2ed291fdfe3775acf2ba9a9a"
+        },
+        {
+          "path": "workspace/storage_io.py",
+          "sha256": "0daf27b7ff8433477e4b77577068295149f20ff2e56839d33a90864d8cbe74a3"
         }
       ],
       "baseline_source_coordinates": {
@@ -2284,20 +2635,21 @@
         "source_repository": "https://github.com/Stunspot/dennis-stratton-project-management",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "dennis-stratton-project-management",
-        "version": "0.5.1",
-        "source_skill_sha256": "8cc9700063852b2371bb7461e58189efeeef0ae2e68e2a7618c05ab17e3b41d0",
+        "version": "0.6.0",
+        "source_skill_sha256": "c0823f635ae6e90bd68b9bf489e6c445ca7850149dd1b97a5bd95173f0e9e856",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "dunbar",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/dunbar",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
       "imported_tree": {
         "file_count": 13,
         "tree_sha256": "ae65dc7ecde698e72a9b0602f7b2f830d9807c9f636c4a27d4dede0b175cd62a"
@@ -2366,14 +2718,15 @@
         "source_commit": "54598f18388f7938880371dfc0cf1c53f598188e",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "interview-trainer",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/interview-trainer",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/interview-trainer",
       "imported_tree": {
         "file_count": 48,
         "tree_sha256": "a431ad167729bac135810b0d2803e21a4039ca0f280f1b2b2b6fcbb3c0076cb9"
@@ -2582,23 +2935,24 @@
         "source_commit": "9f7bbb87d0d44c00a9ae1c978ad9184b25ec6425",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "nova-emergent-interview-trainer",
         "version": "0.2.0",
         "source_skill_sha256": "5a94b114fc0abcb466ca57c312c967d932f8a8d8e13afdda326e0e6257347d36",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "it-work-reviewer",
-      "source_state": "prepared_current_estate_owner_selection",
-      "composition_origin": "exact-accepted-shared-owner",
+      "source_state": "accepted_prior_owner_receipt",
+      "composition_origin": "prior-accepted-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/it-work-reviewer",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/it-work-reviewer",
       "imported_tree": {
         "file_count": 54,
-        "tree_sha256": "950abf45be66b3865b22c2e4816ba489f3e3efe74318dd973b075025fc8e03c7"
+        "tree_sha256": "4512f6d5a93beed77650e6e6239a38614aa363f0ced030a18139e2f977077305"
       },
       "selection": [
         {
@@ -2607,11 +2961,11 @@
         },
         {
           "path": "README.md",
-          "sha256": "fa182b34b831c0bfcb46c7be5c6d2692cdfbd72785faa82109c25659887e2958"
+          "sha256": "dfb7686a09a60cc0b92f73c1dc22db410b472f26eccf0f63076f914312b76c5a"
         },
         {
           "path": "SKILL.md",
-          "sha256": "011cecc89b378b5d0c29881c5e63f19a9e43c47bf9d5dc825c7ede6005c8238f"
+          "sha256": "396d1bbc5d9a53bf1923493c56484a439bf86fc03651258787213263449e0d90"
         },
         {
           "path": "agents/openai.yaml",
@@ -2643,43 +2997,43 @@
         },
         {
           "path": "docs/ACCESSIBILITY.md",
-          "sha256": "b6f7dbffa032890f1f4ec0ceefc4f438a074f85f80a05035aa7e50bf67b1543e"
+          "sha256": "f19b9214306b5265f5234269f1de807b79767f5f44fd320785e863cc8163b963"
         },
         {
           "path": "docs/CAPABILITY-MATRIX.md",
-          "sha256": "f8577493ef3995121a9176d6820b00aeddcafd21838b362c3a048241598a7c81"
+          "sha256": "f8d65097e439f2889d9a3f424e70f0b7a2a6ff28ca549d8130e64af3746046a4"
         },
         {
           "path": "docs/CASE-FILES.md",
-          "sha256": "a6e3f7441a7ef69af7660809cb9c6a6ae3051cc99d4196c5ae7da8e4a7314fb7"
+          "sha256": "b5e5ee01c8df55638b069d182940c9742e7b1412f8a205a12abe5941c8a90a55"
         },
         {
           "path": "docs/DOCUMENTATION-MAINTENANCE.md",
-          "sha256": "4ebd05a2b39a01ebfa818423180c4bddf6aef6ef562d36b0ec36a5d21e9d2373"
+          "sha256": "ecffbee4c655d332c638b430b256ddca8d14e8e83f5139d6243769c50f0ba0c3"
         },
         {
           "path": "docs/INSTALLATION.md",
-          "sha256": "e9e0915376c590cfd46d1ee55bfb1d793d6ad4f54cf3d5d89316b161ca070f6e"
+          "sha256": "5f1986e15dc1ffb08e88ecbf34aab802e2c5cbd10b51552afa9ca9653dccb3b6"
         },
         {
           "path": "docs/LIMITATIONS.md",
-          "sha256": "a9295d558f3cf60348f16e3a6c427d62830df4401b99850f2841c0c34f7bbac7"
+          "sha256": "cb9172f2c6126472cb7e9fe20ccdfb71fbb77b222e39362d8685040faba6020b"
         },
         {
           "path": "docs/QUICK-START.md",
-          "sha256": "5662ad863ea603a36447add618f2a019e3283a1c9393f14412426b8fa125f4cd"
+          "sha256": "56398261ac5445572992eed51e8f9ee33998f1ca5660b563f40ffd831089a84f"
         },
         {
           "path": "docs/RELEASE-NOTES.md",
-          "sha256": "810c358d0f1f31794e3a8ff92930c78a320a0632a153acff1c5653cb7e326dbf"
+          "sha256": "226e2c67ffd3d2a55fea85d967a43418d615d1f969757ef3a353a0605f0ca85f"
         },
         {
           "path": "docs/SAFETY-AND-DATA.md",
-          "sha256": "7b37e73cabc85d6e963fdecc8042ead2d6aa7aa6cbc600d89ae7ba4bf09194e1"
+          "sha256": "d748bf70a899946cbd22c03267c82ee28712aa934cef92941f0ea20a73175b94"
         },
         {
           "path": "docs/TROUBLESHOOTING.md",
-          "sha256": "ee9ff3368bbc842382e0174a4ecefa64d29e6ce1425aefffc9d5b6a254867eca"
+          "sha256": "b4fdb818a1e3b3654d4cb8923ba1328182a4f45a65a4f912f02809f061cc04b2"
         },
         {
           "path": "docs/USER-GUIDE.md",
@@ -2687,7 +3041,7 @@
         },
         {
           "path": "docs/VALIDATION-AND-EVALUATION.md",
-          "sha256": "c75af41e7737e3ab93590638c34d12fe56a4af9c733bae33bd5474428a17c0e2"
+          "sha256": "db855159ca1ffd7d825f693d950aec0dfa0f0efc6c7229bb499ea545e85e2ff3"
         },
         {
           "path": "evals/core-transfer-cases.yaml",
@@ -2791,7 +3145,7 @@
         },
         {
           "path": "release-manifest.json",
-          "sha256": "79b971d4aee79f5d1b78ccc45c3884ee192815941ddea3701984977eb5f41091"
+          "sha256": "ecf41d57813d7f30147aef781553a1968b5a1f777e0af2a694a288ca5e340fdd"
         },
         {
           "path": "schemas/it-case.schema.json",
@@ -2815,7 +3169,7 @@
         },
         {
           "path": "scripts/validate_release.py",
-          "sha256": "f22a01fd9f2683b8ab33a58d63bb6978013c71c94af0a7c15c01ae67aa1cab0e"
+          "sha256": "bf230214319d5d189f066ec9212f0081bc0ef5252590e8c09a5b5dfe861ba821"
         }
       ],
       "baseline_source_coordinates": {
@@ -2828,20 +3182,28 @@
         "source_commit": "9bc943c48fcd1448827d301c9440d2808663adbf",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
-      "current_standalone_release": {
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "baseline_standalone_release": {
         "id": "beryl-it-benchcraft",
         "version": "0.4.1",
         "source_skill_sha256": "011cecc89b378b5d0c29881c5e63f19a9e43c47bf9d5dc825c7ede6005c8238f",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "current_standalone_release": {
+        "id": "beryl-it-benchcraft",
+        "version": "0.5.0",
+        "canonical_runtime_root": "E:/Github/beryl-it-benchcraft/source/working/beryl-it-benchcraft-v0.5.0/skills/it-work-reviewer",
+        "source_skill_sha256": "011cecc89b378b5d0c29881c5e63f19a9e43c47bf9d5dc825c7ede6005c8238f",
+        "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "job-application-builder",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/job-application-builder",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/job-application-builder",
       "imported_tree": {
         "file_count": 41,
         "tree_sha256": "2e7f197323f798e3e3e656d1abd06d9c3e3811af6d5b314c20a3bb02b8b68c62"
@@ -3022,20 +3384,21 @@
         "source_commit": "0cb64b372bf9b6034910c6db4706c16ab86eaf08",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "nova-emergent-job-application-builder",
         "version": "0.2.0",
         "source_skill_sha256": "d04bb31b65fd039407dfa3206d2cda0a125df2bb9bc4e522a4a14f4261ecc319",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "lex-foster-language-companion",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/lex-foster-language-companion",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/lex-foster-language-companion",
       "imported_tree": {
         "file_count": 30,
         "tree_sha256": "23a119593738a43f8444b5570392dfc639a2dd14cfea547cd8afe52a0f8abda9"
@@ -3173,13 +3536,14 @@
         "source_commit": "c605b5867a48e22523334e1b8f94b70d7b7b8cd8",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "lex-foster-language-companion",
         "version": "0.1.2",
         "source_skill_sha256": "f298c4c3f02ee6d7c637cb692554c20318d6a1aa241383c79fb6ae5c9b46ab56",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "nova",
@@ -3190,15 +3554,15 @@
         "retain-Free28-owner-index",
         "omit-four-Emergent-only-product-references"
       ],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/nova",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 51,
-        "tree_sha256": "85887de9af48abcfdcdd64b01daeb52d91ca860e45d957e4512fd8d6dab74576"
+        "tree_sha256": "a22d4e79caaaab68183d54557ac4918d24fb7c1ef4279fb31b8a538ee4180f9b"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "76e1cfba1a8b44eb08888735c8eafd0cdbb2b48b840cfbe6c7da51d13fbaa78f"
+          "sha256": "4de20f4a98d8838f41fc51d5d5dc3482897f4abf151386f32fd9e307a03f183a"
         },
         {
           "path": "agents/openai.yaml",
@@ -3270,7 +3634,7 @@
         },
         {
           "path": "references/edition/index.md",
-          "sha256": "32a44a25283413efbba20b64ddde2f617b89e5188106324ad90e8a267a80af72"
+          "sha256": "74c153d82e4df185d82add4a3b72823ea45aedf62aa4974d81c30ee78629eb41"
         },
         {
           "path": "references/mind/core-adaptation-ledger.json",
@@ -3411,7 +3775,8 @@
         "source_commit": "509fc043c381ba029e34328392d84df159b9cc7c",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "nova-operations",
@@ -3420,7 +3785,7 @@
       "edition_overlays": [
         "retain-Free-service-contract-anchored-version4"
       ],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/nova-operations",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
       "imported_tree": {
         "file_count": 5,
         "tree_sha256": "b7ccdbbc29b87749623e05ac56774ba0f08f9e65da8b94c0a931875a4af5b432"
@@ -3455,14 +3820,15 @@
         "source_file_count": 5,
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "officecraft-reviewer",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/officecraft-reviewer",
       "imported_tree": {
         "file_count": 9,
         "tree_sha256": "e59bc203bd5ee52f642b8a6c3f26878819bb446d8c9582334b61e28818f6cd9a"
@@ -3515,69 +3881,28 @@
         "source_commit": "beb96cc1fcbd0645fcf2cb33992ba6de2eb5e987",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "owen-burnett-officecraft",
         "version": "0.2.1",
         "source_skill_sha256": "daacf6d4915537865ec5cab0879d414a04b4696bc208c6ef922ad59d78276fed",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "omnara-deep-research",
-      "source_state": "prepared_current_estate_owner_selection",
-      "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/omnara-deep-research",
+      "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
+      "composition_origin": "exact-accepted-current-owner",
+      "edition_overlays": [
+        "accepted-component-archive-sha256:1c59c7673ced19077df329812d7cf187f78ac1aef820cfaf8d5c4cb590090575"
+      ],
+      "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
-        "file_count": 113,
-        "tree_sha256": "470bf56983d452597b0ec88e3c76bb5ce0b88614736e1fe8779b717175871ea6"
+        "file_count": 183,
+        "tree_sha256": "576861f4bbedf4be9eec8a7e160cade96d78ea7109eeace2ce68f523f636d8bd"
       },
       "selection": [
-        {
-          "path": "CONTRIBUTING.md",
-          "sha256": "0ccbfd8b6b762d174064b7ec6d789dfebc2400b2634788e989b74fb874ca4084"
-        },
-        {
-          "path": "LICENSE.md",
-          "sha256": "2fca94eb398b7232ffef41f9cb0aaaca84afde2ce50a55bd1053acb73e85b10b"
-        },
-        {
-          "path": "Open.cmd",
-          "sha256": "aa55ea1a9a003516fddf2ba47701b2ce1a8aaa7ace634b49658a97dae7eebc0e"
-        },
-        {
-          "path": "Open.command",
-          "sha256": "6967b4d0ff9ed5293953ecd2d0fd073943dbbe90ce5dd5e86f38e848dfa014d2"
-        },
-        {
-          "path": "README.md",
-          "sha256": "d028858bd4f7aee3cf4e683f0c7d30b1a0d410658b1fb382d7c9d06b33e218c5"
-        },
-        {
-          "path": "RELEASE-NOTES.md",
-          "sha256": "a7fad6ea32c281fe944469eba07a27d6f03e6c18414a87ae77e151bca5579b46"
-        },
-        {
-          "path": "SECURITY.md",
-          "sha256": "7fc9ec35941abafd70a97db804096e1b792d5d8081f0e941ea2ebdebedc82739"
-        },
-        {
-          "path": "SKILL.md",
-          "sha256": "a518b088426e6e676e247f754d2b2d40d207dbea1e138bf2cfa3234570fcae21"
-        },
-        {
-          "path": "START-HERE.md",
-          "sha256": "7fe9ce3f4b82b98881f53704e19ecad33d27d4747ebe581bf4281082ad0f5d9a"
-        },
-        {
-          "path": "SUPPORT.md",
-          "sha256": "d239f876c19d69b353b5391ddecc9cd1ff617ecc4fa7cf80549847b0a8fa5195"
-        },
-        {
-          "path": "VERSION",
-          "sha256": "10e2e117b01523891ca271a615ae36e9d5e52348fd7d642f66727602c1b8dcbe"
-        },
         {
           "path": "agents/openai.yaml",
           "sha256": "83101cd935e2a64da42ddc4af3b823fc991547e68d2ecfa960f110d08d20308e"
@@ -3643,6 +3968,10 @@
           "sha256": "ecd7e812f9ff4b0e34a11587965f0dfa4751cb6ab66548d6a7d762924edb8e3b"
         },
         {
+          "path": "CONTRIBUTING.md",
+          "sha256": "0ccbfd8b6b762d174064b7ec6d789dfebc2400b2634788e989b74fb874ca4084"
+        },
+        {
           "path": "docs/.nojekyll",
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
@@ -3652,59 +3981,7 @@
         },
         {
           "path": "docs/APP-ENTRY.md",
-          "sha256": "47a71c2a6f987533392300c9c19808579106ce12fd6692de617b7e822195d7fd"
-        },
-        {
-          "path": "docs/CAMPAIGN-ROOM.md",
-          "sha256": "aeb2b5626863d9600e32df00cc9c3f2e9bb92dd6a1aed8817c6189f396ee0edd"
-        },
-        {
-          "path": "docs/CAMPAIGN-VAULT.md",
-          "sha256": "2bc8ec4dc3521e1a6cbb8b4b119a2245be4c63cb50daa7b69f42ae00e73326dc"
-        },
-        {
-          "path": "docs/INSTALLATION.md",
-          "sha256": "9209c677194fbacb3bde10658e495ba1d547e54ed9552db30c28f699cbe3846e"
-        },
-        {
-          "path": "docs/LIFECYCLE.md",
-          "sha256": "fbd20ccbd712c0561b418dcad2a98b58497155b28642077ae263b68185f71813"
-        },
-        {
-          "path": "docs/LIMITATIONS.md",
-          "sha256": "739ba4bcffee81b37260bd1a57edecc07cb683efa1256be31882456c2b45cb6f"
-        },
-        {
-          "path": "docs/MAINTAINERS.md",
-          "sha256": "757e1b7578d3929ea0769a9ab3f5f571d7236edbbc3983f02a30b6e195a573d8"
-        },
-        {
-          "path": "docs/PROMPT-RECIPES.md",
-          "sha256": "ae08f24a4157620a5e268745d6f38474fc30c008683ac87d7c07ba7413885247"
-        },
-        {
-          "path": "docs/README.md",
-          "sha256": "7adb48f5b30d6d503b5d7af778867ac4b8e1be40f4f4b56b9bd7d151e3077fdd"
-        },
-        {
-          "path": "docs/SECURITY-AND-PRIVACY.md",
-          "sha256": "4af161d27adfb3fee8820c4d5a35ce5ca2f0ddd9818d0c922afa81d8844f7fb4"
-        },
-        {
-          "path": "docs/SITE-SOURCE.md",
-          "sha256": "95c7813b267496b9988845e7d9e1db89ebc8e6f13d6f8e1cc0a666c8a2369199"
-        },
-        {
-          "path": "docs/TROUBLESHOOTING.md",
-          "sha256": "ba2b0b18161febb91ed25620b1b23628ea62b42e068b4936c32cc9be8ad7f686"
-        },
-        {
-          "path": "docs/VALIDATION.md",
-          "sha256": "7ad972e5597ffe0d1414d57adb71b5b229fa45e4ac2f9b82326cb649d89385f2"
-        },
-        {
-          "path": "docs/WORKFLOW.md",
-          "sha256": "4e860386927a5d99db4051336598fb2dfafbb34beea7daf2890fc0497518269f"
+          "sha256": "c5453d82a83e0e43c2b8fa6a5bd52f5090c472124faedaf8c99a5b22d76c054b"
         },
         {
           "path": "docs/assets/omnara-pages-hero.png",
@@ -3723,12 +4000,52 @@
           "sha256": "968853189f9afc892206d3132e82d83ffb26fd1af476e263d41b207cc1d98cfc"
         },
         {
+          "path": "docs/CAMPAIGN-ROOM.md",
+          "sha256": "6602892799f2d4cf0957eeac659ec0d8b20ccf9e6ce1a94129111c714616302b"
+        },
+        {
+          "path": "docs/CAMPAIGN-VAULT.md",
+          "sha256": "300cfd7cc1478c4b98d08f53b0c2c740d46855acc45d6e3889c4e175034dcb20"
+        },
+        {
           "path": "docs/index.html",
-          "sha256": "9ab24d7e40b99f952769b2df4a396449d8eea90564bd0cae3dd1d420588e0be8"
+          "sha256": "68699ef4d3850fdab60d24b816b41c780400a88ad99ac43d2148f88f849d43af"
         },
         {
           "path": "docs/install.html",
-          "sha256": "c16443e1fe0eace03f2b1d8b8d02c78a8138223fbc312c217a7e9146e639d213"
+          "sha256": "25d552b5d2af54f26277532e7937d63206c9591fb496d30a238ca4ee038a5aab"
+        },
+        {
+          "path": "docs/INSTALLATION.md",
+          "sha256": "61265fe14ba8bed7c4b28de0225f4d8d580b2e18e1b1fc5631462a8d24ba14b2"
+        },
+        {
+          "path": "docs/LIFECYCLE.md",
+          "sha256": "fbd20ccbd712c0561b418dcad2a98b58497155b28642077ae263b68185f71813"
+        },
+        {
+          "path": "docs/LIMITATIONS.md",
+          "sha256": "739ba4bcffee81b37260bd1a57edecc07cb683efa1256be31882456c2b45cb6f"
+        },
+        {
+          "path": "docs/MAINTAINERS.md",
+          "sha256": "d627476b49e543d38c8734b8c7db3e880f65913c4c85d4077526367bd3818094"
+        },
+        {
+          "path": "docs/PROMPT-RECIPES.md",
+          "sha256": "ae08f24a4157620a5e268745d6f38474fc30c008683ac87d7c07ba7413885247"
+        },
+        {
+          "path": "docs/README.md",
+          "sha256": "50d1f8a928d9f4c7b9d6b5b7db5cfc5e18219f1d6c7cd08d8ccab773124e9666"
+        },
+        {
+          "path": "docs/SECURITY-AND-PRIVACY.md",
+          "sha256": "4af161d27adfb3fee8820c4d5a35ce5ca2f0ddd9818d0c922afa81d8844f7fb4"
+        },
+        {
+          "path": "docs/SITE-SOURCE.md",
+          "sha256": "95c7813b267496b9988845e7d9e1db89ebc8e6f13d6f8e1cc0a666c8a2369199"
         },
         {
           "path": "docs/style.css",
@@ -3739,8 +4056,20 @@
           "sha256": "3cba0ef5b29e45e87d39d7e1ba4ff68ff7efc27b9c794e545947ed97152beee7"
         },
         {
+          "path": "docs/TROUBLESHOOTING.md",
+          "sha256": "ca37f0a81732cf7bea1bb2e929e2bb29e12b68c0354ade36c79e219073f4b101"
+        },
+        {
           "path": "docs/trust.html",
           "sha256": "6a3187094031e0d15889132b99b84f08e5c3ac22bd5534d713716e4d1cac998c"
+        },
+        {
+          "path": "docs/VALIDATION.md",
+          "sha256": "7ad972e5597ffe0d1414d57adb71b5b229fa45e4ac2f9b82326cb649d89385f2"
+        },
+        {
+          "path": "docs/WORKFLOW.md",
+          "sha256": "4e860386927a5d99db4051336598fb2dfafbb34beea7daf2890fc0497518269f"
         },
         {
           "path": "docs/workflows.html",
@@ -3843,8 +4172,28 @@
           "sha256": "44266ef86b073932c8eca8374403ab02b2bd473106bea82bf5b45753d469259a"
         },
         {
+          "path": "LICENSE.md",
+          "sha256": "2fca94eb398b7232ffef41f9cb0aaaca84afde2ce50a55bd1053acb73e85b10b"
+        },
+        {
+          "path": "Open.cmd",
+          "sha256": "aa55ea1a9a003516fddf2ba47701b2ce1a8aaa7ace634b49658a97dae7eebc0e"
+        },
+        {
+          "path": "Open.command",
+          "sha256": "6967b4d0ff9ed5293953ecd2d0fd073943dbbe90ce5dd5e86f38e848dfa014d2"
+        },
+        {
+          "path": "PACKAGE-CONTENTS.json",
+          "sha256": "012cdbe9b4544ab2e6692816a108b2e5185a769b71f57b81c71c9efec5718fce"
+        },
+        {
           "path": "personas/omnara-investigative-research-intelligence.md",
           "sha256": "8f4eec745c37d4dedc8253188fd882f345914a28d94425cfe5724db3a031989f"
+        },
+        {
+          "path": "README.md",
+          "sha256": "8f6597336c6014a0fb3214735dbf5d95600715365e44e3cd8bcd7c6117059596"
         },
         {
           "path": "references/campaign-operations.md",
@@ -3887,6 +4236,10 @@
           "sha256": "29defbe80dc94f732f0ee5da00116d9fbf3517b29d28de44f767ae74dffa3807"
         },
         {
+          "path": "RELEASE-NOTES.md",
+          "sha256": "4c04f5a7994691cedcadc47a29b5d2ade602d01a10f78736bbde85d19c2dc276"
+        },
+        {
           "path": "schemas/research-campaign.schema.json",
           "sha256": "877d13825fe51483737b3b16a1057b31d74f9f1ba72556312535ff9bef6d21c8"
         },
@@ -3912,7 +4265,7 @@
         },
         {
           "path": "scripts/file_ops.py",
-          "sha256": "5784f1d4e3ac7ca9f3dfd7f7c8a68eecb9d708fe7fac0a25cdda94d54d86b82f"
+          "sha256": "035a1d52c6599966f4fbc83f974560e868b6b4c3d18e5b346c96a40fdc564ba4"
         },
         {
           "path": "scripts/product_files.py",
@@ -3927,12 +4280,36 @@
           "sha256": "1a04770b0c07d258b6cde0b41d4f54d387e1134670dc9ae1d197c33beef19de0"
         },
         {
+          "path": "SECURITY.md",
+          "sha256": "7fc9ec35941abafd70a97db804096e1b792d5d8081f0e941ea2ebdebedc82739"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "85c181b6c6365208f8ebbde8ff52b76552cb02e9d0fbc6c88af7dfc37aec091e"
+        },
+        {
+          "path": "START-HERE.md",
+          "sha256": "162669fe7029d288efb257415c14e910ebc98ac657239fd7009500ea1efba939"
+        },
+        {
+          "path": "SUPPORT.md",
+          "sha256": "d239f876c19d69b353b5391ddecc9cd1ff617ecc4fa7cf80549847b0a8fa5195"
+        },
+        {
           "path": "verification/documentation-review.md",
-          "sha256": "f29913f435e0763d1653cc861a2c181b615a60eda2ec164b2a368fdf3c66b819"
+          "sha256": "3efffbf7f841880133eca9fecdf8d14b1a1e622daed05fdb98055003abed6f88"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "acb57a7135b2d7d6e665f67f056e21353023b93835f54def1ae523bf76f1bfb3"
+        },
+        {
+          "path": "workspace/advanced.html",
+          "sha256": "dedd72463a0507b47b725c3fdd93155eea7cb1036a210ac87a415208398929e6"
         },
         {
           "path": "workspace/app.js",
-          "sha256": "6294b70f9a33c82d75f7d1e4e5a99f5c95d4650e7818b68da8eb49f032f65de5"
+          "sha256": "5d81cf421f57635f7dd936d31e214373eb5269512277495b84c9f84073d80cbb"
         },
         {
           "path": "workspace/assets/omnara-icon.png",
@@ -3960,7 +4337,11 @@
         },
         {
           "path": "workspace/campaign.py",
-          "sha256": "299cda4be058da03a62277256217cdac5d4650722b1458e1fa968e0d8935e507"
+          "sha256": "14ecbd3bd0d21e029c21165273fc6850f50f0a6f41be0d67a4c37574b3ae7053"
+        },
+        {
+          "path": "workspace/common.js",
+          "sha256": "c48f15d77fd17f3c8621373985cd69e22ccdd399daca9bc59bd7f7b656e7d755"
         },
         {
           "path": "workspace/create_entry.py",
@@ -3968,15 +4349,35 @@
         },
         {
           "path": "workspace/index.html",
-          "sha256": "f682ef985c135accbb7043d23f8e7c86e1da76835119c42b8dde353b05e05088"
+          "sha256": "fdf351f9a2a31344a7daeb395af7ba421dd8d82e0a37096183d11eb5c718b69e"
         },
         {
           "path": "workspace/open.py",
-          "sha256": "ab0c0c2e2ec3251626cd9d3e3aedb4df954a7b0f63b9b4cf29f40577888ddee5"
+          "sha256": "0abe0efe558ea399cb63412aecc34e236c96c65d2873cb96202e6c232b7b3b03"
+        },
+        {
+          "path": "workspace/reading-room.css",
+          "sha256": "9382278fdff920cfe50d40e732b8a5fb6f9dbe1cfc8463357881fe253629160a"
+        },
+        {
+          "path": "workspace/reading-room.html",
+          "sha256": "b6dfd89ddcc176ec2c49fd871dceb5b2608fbfbf25c7d8fd0453a11e4bc74681"
+        },
+        {
+          "path": "workspace/reading-room.js",
+          "sha256": "ca48a758061ff90697b41c0bf067e5adfc2b69b9dc2e3e1a33683a17cb417b37"
+        },
+        {
+          "path": "workspace/reading_room.py",
+          "sha256": "cf5abdd4474dd9e3da556618d3daf6f88d5514d3346998131ac89134597f0101"
+        },
+        {
+          "path": "workspace/README.md",
+          "sha256": "760a1a28d1d176db67a15def6d118efec7b3c6c9293b23e6d8139102a82ff853"
         },
         {
           "path": "workspace/runtime.py",
-          "sha256": "599d113c9b964ab28ed268cee65c7f9bbdf572c88081b10e1317ef9f5e5645d2"
+          "sha256": "6d0df2946dd88664ebac9c19779bed40046f6c86c717ab5d936f86cd2785b947"
         },
         {
           "path": "workspace/skins.css",
@@ -3984,7 +4385,251 @@
         },
         {
           "path": "workspace/style.css",
-          "sha256": "d6bb9533be501880ae5e6a2a5dd8a61cb9a382e28bedcb87324943ccd1567a59"
+          "sha256": "2814b6f1f82d7302f70a65f94c748236c27fdfe35e9e56905e351f931b2bdb32"
+        },
+        {
+          "path": "workspace/vendor/pypdf/__init__.py",
+          "sha256": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_cmap.py",
+          "sha256": "0b8eea205808d522a7e4bad3e222b39c6964752b58a3a3b7259904292ee09241"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/__init__.py",
+          "sha256": "035d44440b70b56ae91953b34d296b0b56b74fd1c29562c1591c067b7fcf7eed"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/_codecs.py",
+          "sha256": "e3aa11649c92c06c42269d648c87abee3b3f4d84a38f81acda2d9471edeff9e1"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/adobe_glyphs.py",
+          "sha256": "b7770314f0eac08cf5c3d07481d5738dd73c7842bd02e4639397fb95a130fdf6"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/core_font_metrics.py",
+          "sha256": "14b3d66d3678871790597820d63a397b8a972821642846397bce54d9b2c533a9"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/pdfdoc.py",
+          "sha256": "c5f4af30562cbf1b9a490d14bbdbd90ca681d16bbce61d6e0a20758bdac07145"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/std.py",
+          "sha256": "0f240cb84a40184a52f6ecb58d67f87278fe92a4a13ce0228f9b08ed0d580fc1"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/symbol.py",
+          "sha256": "9c86864089615822623cc1ebc149661871fefdf397c842af82e466b8a5dc1809"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_codecs/zapfding.py",
+          "sha256": "3d0c63c510bad7a778d711777b15713f55bc9cce10ad97e33b7966b4bc6913fb"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/__init__.py",
+          "sha256": "2b767a02e5e15d579780b7adf93ba4ab682df47eba3a076ea6cbf1212d429a42"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_base.py",
+          "sha256": "fdfe77323eaf8af84464c438bcdc4de46d083a0158fa7e7f95e91ed1cfea88d5"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_cryptography.py",
+          "sha256": "f733a4933312b17e1a974454934a8cd1d29f7dc1e47b8c1f9845caf64c28450f"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_fallback.py",
+          "sha256": "bec628a30475602015feaf87add21986451cac26fa1ef44134c626d3742d094f"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_crypt_providers/_pycryptodome.py",
+          "sha256": "bb8bed2e8ecdbfa02a6513671f5a0d3425af4d86a8c1f4957febe5916def4fab"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_doc_common.py",
+          "sha256": "54a5f4cd06ba5f658a9ed175b9c6224134b3dcf9f98ab11fc4da1f36e02a262e"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_encryption.py",
+          "sha256": "319f3e012455b473ceb9c51df87f4a45f94eab902f88f14f8e5769901540a1ce"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_font.py",
+          "sha256": "50ad53071d7979e53daa4661bf38a0e1823eb6365382007eca20b414b73767bb"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_page.py",
+          "sha256": "f93c459a77c433dbd2541e94d1fdfa599e486ca5fe3e3efe9348eaf94552639c"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_page_labels.py",
+          "sha256": "bfa0a9bba3495c2f5143f05e19d866d39695f19eb3c623d1367eaa129d41b951"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_protocols.py",
+          "sha256": "eeacfdd8b55d3eb6244a97543e9029f54e065b98f13414df55ca545b052110ea"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_reader.py",
+          "sha256": "9aaa6780e62c061509f0d3b658dbdac185404fecadac01f7f9d35ac009ce2024"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/__init__.py",
+          "sha256": "6b7677deb4154e230a1adc2deff6df5e53e8b1b493f2bcc42e8367b74e77fd0c"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/__init__.py",
+          "sha256": "454408c22530ce778db5c9639d533a8e445a7a6ea980fee6383dbe3019ada6fc"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_fixed_width_page.py",
+          "sha256": "789bde0dbc8ca281bdef4a893a13394706fd668cb2243ca7cd6a55f5aec84b6d"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_manager.py",
+          "sha256": "5d5ac88de4dde6349d31ec41431b34b4be48e5150e8ad4663759842ce70a626e"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_params.py",
+          "sha256": "872c3aa670bcba9064a055542772c7f21048207acdc22a9aa9c632cc8232afa6"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_text_extraction/_text_extractor.py",
+          "sha256": "b54a9bbc2ebd305706406501b7f63caeab1535ffbcb0c171003c8a9da8b4a232"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_utils.py",
+          "sha256": "2df8188c0ad153b97d19201bb681b3bbdbd507e7243e2d657b4eb543a7072656"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_version.py",
+          "sha256": "2416f2ebd53fb332339ad719e9569c95eedc0157bb9e1573ee0205d0d07716aa"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_writer.py",
+          "sha256": "1819e02d0b0bcd9c1fa483dc5c22e2a7849be22c93474c33c235dd6dd076a4e3"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/__init__.py",
+          "sha256": "7f693ffa3027dfd082076ecac50fdef771a29e7ce40076d49e749e1899758f21"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/_base.py",
+          "sha256": "79ea1cf6fdb0d798c05212978f8f25d5b07ae98801815fb6bf92085091febf0b"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/_markup_annotations.py",
+          "sha256": "b162a1181086ed7f688c0bc4691304a093fe7d8e8572b94574e9ad79f219066d"
+        },
+        {
+          "path": "workspace/vendor/pypdf/annotations/_non_markup_annotations.py",
+          "sha256": "676214bdc08e713729261497adec7ff6b8983360fae17c4543fbda735d013515"
+        },
+        {
+          "path": "workspace/vendor/pypdf/constants.py",
+          "sha256": "9f672ef873a6a16e7feb14165442a8e36ad2249d0ff7484bd6cf33fa9174a1cb"
+        },
+        {
+          "path": "workspace/vendor/pypdf/errors.py",
+          "sha256": "070d56f61c4eb03830ab053a628436974f89894c93aba979423542afe5b81850"
+        },
+        {
+          "path": "workspace/vendor/pypdf/filters.py",
+          "sha256": "237c2d528bdaeccdd68233730b2a74ac634854a9899a34bcebc8d8af5c0b347f"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/__init__.py",
+          "sha256": "56ba9d61fb5010278f0d4dab5d532012a45a60547ccce57f7ef260a35f71feec"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_appearance_stream.py",
+          "sha256": "31c0cbd2070a34df4d5cd53a64fc60b7b398a25dbe168356615980c20030e0f3"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_base.py",
+          "sha256": "f488de45b70b1eb73f94b1947d564c8ee83ca3eb7af17ece35295f9c32a73e64"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_data_structures.py",
+          "sha256": "35f76eb49aa9f253fb1cd3e5eb9e3875b80f9bbc2616c755e376bde054e7b782"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_files.py",
+          "sha256": "36d4a4468e890608ac8b840ecab56778ef3dd5ba15b2e636e614708a3e97f510"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_fit.py",
+          "sha256": "5ff8800c98f5618e0f512b52eeb1560b6c51d8b5154af2ad500932d001402033"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_image_inline.py",
+          "sha256": "2a5000fd91a2446ce368f1b74af6eda8619e36a6d065517e515536302f2efd28"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_image_xobject.py",
+          "sha256": "7f560334bae2f927a5faaa72ca75c0ee7c7e662493a8061433ce9338414883af"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_link.py",
+          "sha256": "b4da99d86616c6a80566c948d032d97a85e59ed6b182c1c2f1791615f496c781"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_outline.py",
+          "sha256": "a8a6cc5f8d8e59faa7a2922213a054cba12f7532c67b766d8da89637ce49a5a6"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_rectangle.py",
+          "sha256": "94ea927c58af43180137d2d4f5aa87a313c7f1a08f4c350d81166c34451de9f7"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_utils.py",
+          "sha256": "bd30c07ac7c6f9c24d0ca8a5cff91b805a1d0084f37797a3a695871a3bc2a279"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_viewerpref.py",
+          "sha256": "b6a5445a6bddfc359316848ca51393b25d528a338d9ef71267e8d74e8fdc8cea"
+        },
+        {
+          "path": "workspace/vendor/pypdf/pagerange.py",
+          "sha256": "d9bb76d634199bef5aab66d57f74d7b87f3fc06571edbf53e94acc1570842614"
+        },
+        {
+          "path": "workspace/vendor/pypdf/papersizes.py",
+          "sha256": "e93cf9b1f34dff724e51aa58f3753e95a928867a57600d2148440d98e54b14bf"
+        },
+        {
+          "path": "workspace/vendor/pypdf/py.typed",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "workspace/vendor/pypdf/types.py",
+          "sha256": "b09ef01f393b111fc227b90ffacf2ef5ac459e40979c5a6bf27cdc8f50314dab"
+        },
+        {
+          "path": "workspace/vendor/pypdf/xmp.py",
+          "sha256": "00289e95b3fb680b03cb67e67b8a3d61de32ec7e0a7c46d4337494c4c97c8c8e"
+        },
+        {
+          "path": "workspace/vendor/pypdf-LICENSE",
+          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
+        },
+        {
+          "path": "workspace/work.css",
+          "sha256": "a0e13345167c6a22aa0c86f8ce4128bcb4e08fc5cc3e9a01cdc288d80f02b7bf"
+        },
+        {
+          "path": "workspace/work.js",
+          "sha256": "c379e76eb752ff89d042c9580054ee25fa787fcd5167acf513d61d23fb4d09f8"
+        },
+        {
+          "path": "workspace/work_io.py",
+          "sha256": "3f1667f66e9d55d10ac0f750b5440427a8f6411fe8d5443021b6930b9d3bf1cc"
+        },
+        {
+          "path": "workspace/WORKING-GUIDE.md",
+          "sha256": "21e1fdb2c168c43952974234682881a172c251e017f80e956cc368c9165252c2"
         }
       ],
       "baseline_source_coordinates": {
@@ -3997,23 +4642,33 @@
         "source_commit": "d5cc64a258ef440395e3fa39dc650ef5b63f706c",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
-      "current_standalone_release": {
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "baseline_standalone_release": {
         "id": "omnara-deep-research",
         "version": "1.3.1",
         "source_skill_sha256": "a518b088426e6e676e247f754d2b2d40d207dbea1e138bf2cfa3234570fcae21",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "current_standalone_release": {
+        "id": "omnara-deep-research",
+        "version": "1.5.0",
+        "canonical_runtime_root": "E:/Github/omnara-deep-research/verification/p14/omnara-deep-research",
+        "source_skill_sha256": "d709a6a31ad9d7143473c64838732097a9828495c8ea6f73053c96cd6f872c41",
+        "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
+      },
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "oracle-reading",
-      "source_state": "prepared_current_estate_owner_selection",
+      "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
       "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/oracle-reading",
+      "edition_overlays": [
+        "accepted-component-archive-sha256:524c5a223f48fb29c852f789c2696865a2ee9e5a27b026b46b1f39806a97185b"
+      ],
+      "imported_path": "plugins/nova-the-optimal-ai/skills/oracle-reading",
       "imported_tree": {
-        "file_count": 111,
-        "tree_sha256": "9613ae2050b7e34ef8e3d3e02844f8d10575f6ddddabba4972b6d06877854486"
+        "file_count": 112,
+        "tree_sha256": "1c5641436cb8ae90eb83d2d42b563788501741da08f4e1b2c096f7e76fe1980e"
       },
       "selection": [
         {
@@ -4026,7 +4681,7 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "012098954225b53326c794bc23a1ae26a154df2f2c31e83e2ed92c80f0de0546"
+          "sha256": "a3f58d41939781bbd313c83af124a80c95b10e89f9468ce78b0acf0487ce32c0"
         },
         {
           "path": "agents/openai.yaml",
@@ -4471,20 +5126,21 @@
         "source_commit": "0d3c5bfaac40d557f51f8cf098ffbb4e00f8e04f",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "oracle-reading",
         "version": "0.2.1",
         "source_skill_sha256": "012098954225b53326c794bc23a1ae26a154df2f2c31e83e2ed92c80f0de0546",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "edition_overlay"
     },
     {
       "id": "owen-burnett-officecraft",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/owen-burnett-officecraft",
       "imported_tree": {
         "file_count": 81,
         "tree_sha256": "1463b47a960770259898922a17ca0f9dd019be8d21713c2b82355aaf890ef924"
@@ -4825,20 +5481,21 @@
         "source_commit": "beb96cc1fcbd0645fcf2cb33992ba6de2eb5e987",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "owen-burnett-officecraft",
         "version": "0.2.1",
         "source_skill_sha256": "e628f4fece5edfedce068b400c9acde0cb28c3174940e3b623080ad8be639700",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "privacy-redline",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/privacy-redline",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
         "file_count": 41,
         "tree_sha256": "e17b26e3497e0cf099338e99ed887757d34d254ec1b00e52e5a6250ff3e24e52"
@@ -5019,20 +5676,21 @@
         "source_commit": "65730d9ebbcacc5ad59ab10ca8888bec991ac7e8",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "privacy-redline",
         "version": "0.1.1",
         "source_skill_sha256": "690cb1078efc7542c08d62af749da3c068b59d3aa2ce9d3e5451cfbc12824551",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "promptcraft",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/promptcraft",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/promptcraft",
       "imported_tree": {
         "file_count": 2,
         "tree_sha256": "55519afadeb6f78c590ff6d714775b9856f9e76b9c9a34e8ff27e1c20b0baac2"
@@ -5057,14 +5715,15 @@
         "source_commit": "c2c524aa31f4f19c9b418af7dad9cf253fff08eb",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "retrieval-intelligence",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
       "imported_tree": {
         "file_count": 14,
         "tree_sha256": "9753a832a4865a30b53fbad63935accb5fb09ea3c7df8c20ef21d255ddc171fc"
@@ -5137,14 +5796,15 @@
         "source_commit": "e7fc8587dee6e0975854e5f399cc83a13304d46d",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "retrieval-reviewer",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-reviewer",
       "imported_tree": {
         "file_count": 3,
         "tree_sha256": "1f50126fadfc3370fa51ef6e3f5d4a8df5d3245b8e3cf26aabe9d4b2ce995a89"
@@ -5173,17 +5833,18 @@
         "source_commit": "a394c4aad513399f434481755c7f907f305dc850",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "rupert-giles-knowledge-steward",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
       "imported_tree": {
-        "file_count": 41,
-        "tree_sha256": "04f173f855dfbc07d1206dab1752ae3dbdcf2ca2b16d2a30014aef1076abf447"
+        "file_count": 43,
+        "tree_sha256": "0c63386faf691ad9d942334137e392bf0559a09ab194954c427fd815f23b5fd7"
       },
       "selection": [
         {
@@ -5335,6 +5996,14 @@
           "sha256": "16eacc845f375217e8abd494c01db2679f6642bbd05dd1b34b91946b990e8851"
         },
         {
+          "path": "workspace/assets/giles.ico",
+          "sha256": "c46d54d2baafcdc0d41f8a7b7e54c2a1a6b6933fe6ea42328c7b6c78676a27c3"
+        },
+        {
+          "path": "workspace/assets/giles.png",
+          "sha256": "abaef9e44adccc4f91c28e2d8a92544d9808502f2b3fb557771c728161b5e4c5"
+        },
+        {
           "path": "workspace/assets/mirrorloop-material.png",
           "sha256": "e83f5d76311267d57ee550e8f741d8918d1190eae23372f56e77709d8b28b524"
         },
@@ -5361,14 +6030,16 @@
         "source_commit": "56e431ffe6767b7cca97c2461d44d5d60fbaf17f",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "edition_asset_delta": "Native owner ICO and PNG copied from current canonical owner; all other owner bytes preserved.",
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "software-verification",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "accepted-TestForge-PP-r1-r9",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/software-verification",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/software-verification",
       "imported_tree": {
         "file_count": 101,
         "tree_sha256": "fc5eaa6fdabcf70f547dc61324476999015a1d749153a15e02cf90545532c772"
@@ -5790,20 +6461,21 @@
         "source_commit": "1b6857e8d94a95e312b60960775d8c138659e10a",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "testforge",
         "version": "2.0.1",
         "source_skill_sha256": "dd56282bac220fd003d85758ec39c4aed5c583a27775669a8f96e482dd32b27e",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     },
     {
       "id": "verification-reviewer",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "accepted-TestForge-PP-r1-r9",
       "edition_overlays": [],
-      "imported_path": "codex/plugins/nova-the-optimal-ai/skills/verification-reviewer",
+      "imported_path": "plugins/nova-the-optimal-ai/skills/verification-reviewer",
       "imported_tree": {
         "file_count": 13,
         "tree_sha256": "4c92bfe82b1cec6fcd69104bfcfcd20ae8dd792eef92c362c6d6f9f4642a63e0"
@@ -5873,18 +6545,19 @@
         "source_commit": "1b6857e8d94a95e312b60960775d8c138659e10a",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current bytes inventoried; inherited baseline coordinates do not claim these bytes were committed or released.",
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "testforge",
         "version": "2.0.1",
         "source_skill_sha256": "8c058059f83d1b22f8f38cbe20023497d91c0029a6828c5d8610f83892642f6e",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
-      }
+      },
+      "overlay_state": "exact_selected_source"
     }
   ],
   "plugin_skill_tree": {
-    "file_count": 1274,
-    "tree_sha256": "c4a54866313abb3ca3ae9f6ec60bf0727c6bf53de21c9f8c06c3c56cd7b13441"
+    "file_count": 1429,
+    "tree_sha256": "fed57acf41f7652f5b2de996aec5254c7ca109be804a472d0aaeb3d056076d2a"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {
@@ -5911,21 +6584,20 @@
   },
   "rights_bundle": {
     "files": {
-      "LICENSE.md": "6577b13f8d0b9d871e13020b7d6038d6bd092d1f8fd28ccc7590e686c4677a4c",
+      "LICENSE.md": "d6690ea6469d5b1b4c4435c1340fa39068c5d313ada9319b23473da57caedce4",
       "ATTRIBUTION.md": "22fbf0a5a7958f42a2fc85a571de4af1aeed63993aeabcc59bff9262d626f1bf",
-      "NOTICE.md": "c780b95bc69d56306544dd73f8403b4d20ab066f418fc59b309d51de3e891b4b",
+      "NOTICE.md": "80f210cd2a33ff75b83f5189fb007b07412ae3e5640b80ebc438bb9cbfcbb0a9",
       "TRADEMARKS.md": "a1250ee28c5f9f41288118df443170a3a5b7c8841723e6fc37138829f8d115b7",
-      "PROVENANCE.md": "ce51ae64f103f6077c6d13324892ad9217edf981567115cc38278546c4ad00f5",
-      "THIRD-PARTY-NOTICES.md": "485665e03030c2542ddcb269cc480584c94d4f79965b8a658367ca79a2aec8a6"
+      "PROVENANCE.md": "cf97318477383a9baa79bf28c827904d8d2e0510dbb9914ebb7c7d119eca7830",
+      "THIRD-PARTY-NOTICES.md": "a7aef3d27ffdc23311e4735a3f30602f2089a2e1248e8fef799b2700e310da86"
     },
     "state": "public_split_license_applied",
     "redistribution_state": "permitted_under_included_licenses",
     "external_rights_blockers": []
   },
   "open_evidence_boundaries": [
-    "finished-candidate situated observations and TestForge review remain",
-    "final package acceptance, installation and delivery remain",
-    "publication requires established owner authority"
+    "fresh-host discovery and invocation require separate observation",
+    "publication is a separate authorized and observed action"
   ],
-  "evidence_boundary": "Source byte identity only; no READY verdict, release seal or delivery claim."
+  "evidence_boundary": "Imported package bytes, source identity, and product-rights bundle custody. This lock does not establish live-host behavior or external publication."
 }

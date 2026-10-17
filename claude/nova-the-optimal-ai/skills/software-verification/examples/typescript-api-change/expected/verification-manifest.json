@@ -1,0 +1,27 @@
+{
+  "manifest_version": "1.0",
+  "target": {"name": "subscription cancellation", "revision": "synthetic-ts-v1", "target_class": "change"},
+  "scope": {"included": ["tenant authorization", "billing cancellation", "state persistence", "event publication"], "excluded": ["email rendering"], "constraints": ["Vitest dependencies are declared but not installed in the release environment"], "safety_boundary": ["synthetic local example only"]},
+  "claim_custody": {
+    "observed": [{"id": "O-001", "statement": "provider.cancel executes before local cancelled state is saved", "basis": "input/src/subscriptionService.ts", "confidence": "high"}],
+    "inferred": [{"id": "I-001", "statement": "a timeout after remote completion permits duplicate remote cancellation on retry", "basis": "ordering plus requirement retry guarantee", "confidence": "high"}],
+    "assumed": [{"id": "A-001", "statement": "provider timeout may occur after remote commit", "basis": "explicit reliability scenario", "confidence": "medium", "consequence": "requires an idempotency mechanism or reconciliation"}],
+    "unresolved": []
+  },
+  "impact_map": ["API caller -> authorization -> cancellation service -> billing provider -> repository -> event publisher"],
+  "invariants": [{"id": "INV-001", "statement": "one logical cancellation causes at most one remote cancellation and one event"}, {"id": "INV-002", "statement": "a cross-tenant request changes no state and performs no downstream call"}],
+  "risks": [
+    {"id": "R-001", "statement": "ambiguous provider timeout -> retry repeats remote cancellation -> duplicate billing-side effect", "severity": "critical", "likelihood": "medium", "confidence": "high", "disposition": "unresolved", "verification": ["S-RETRY-001", "T-TS-001"]},
+    {"id": "R-002", "statement": "cross-tenant identifier -> unauthorized cancellation -> tenant boundary violation", "severity": "critical", "likelihood": "low", "confidence": "high", "disposition": "planned", "verification": ["S-AUTH-001", "T-TS-001"]}
+  ],
+  "scenarios": [
+    {"id": "S-RETRY-001", "risk_ids": ["R-001"], "title": "ambiguous provider timeout and retry", "layer": "integration", "preconditions": ["subscription is active", "first provider call commits remotely then times out"], "action": ["cancel", "retry same cancellation"], "expected": ["subscription becomes cancelled", "one cancellation event"], "forbidden": ["second remote cancellation"], "evidence": ["T-TS-001"], "status": "implemented"},
+    {"id": "S-AUTH-001", "risk_ids": ["R-002"], "title": "cross-tenant cancellation denial", "layer": "integration", "preconditions": ["tenant A owns subscription", "tenant B is authenticated"], "action": ["tenant B requests cancellation"], "expected": ["not-found denial"], "forbidden": ["repository save", "provider call", "event publication"], "evidence": ["T-TS-001"], "status": "implemented"}
+  ],
+  "tests": [{"id": "T-TS-001", "scenario_ids": ["S-RETRY-001", "S-AUTH-001"], "path": "expected/cancelSubscription.integration.test.ts", "status": "unexecuted", "execution_id": "E-001"}],
+  "executions": [{"id": "E-001", "command": ["npm", "test", "--", "--run", "expected/cancelSubscription.integration.test.ts"], "working_directory": ".", "status": "blocked", "exit_code": null, "raw_evidence": null}],
+  "findings": [{"id": "F-001", "classification": "PRODUCT_DEFECT", "severity": "critical", "statement": "remote effect precedes durable idempotency state, leaving an ambiguous-timeout duplicate window", "evidence": ["input/src/subscriptionService.ts", "S-RETRY-001"], "confidence": "high", "next_action": "introduce provider idempotency/reconciliation and execute the repeated-delivery test", "status": "open"}],
+  "residual_risks": [{"id": "RR-001", "statement": "provider sandbox idempotency semantics are not supplied", "treatment": "verify provider contract before release", "owner": "service owner", "revisit_condition": "provider contract or sandbox evidence available"}],
+  "review": {"status": "REVIEW_PASS", "reviewer": "example skeptical pass", "findings": ["NOT_READY is supported by the critical ordering defect; execution remains blocked"]},
+  "decision": {"status": "NOT_READY", "basis": ["critical duplicate-side-effect window remains open", "decision-critical test is unexecuted"], "authority_required": ["service owner approves remediation", "dependency installation before execution"]}
+}

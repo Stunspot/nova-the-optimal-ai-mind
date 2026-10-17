@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/dream-report-v1.json",
+  "title": "Agent DREAM Report",
+  "type": "object",
+  "required": ["format", "id", "created_at", "target", "source_ids", "modes", "dream_image", "candidates", "canonical_write_permitted"],
+  "properties": {
+    "format": {"const": "cd-agent-dream/v1"},
+    "id": {"type": "string", "pattern": "^DR-[A-Za-z0-9-]+$"},
+    "created_at": {"type": "string", "format": "date-time"},
+    "target": {"type": "string", "minLength": 1},
+    "source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "modes": {"type": "array", "items": {"enum": ["replay", "down-selection", "perturbation", "threat-rehearsal", "incubation"]}, "minItems": 1, "uniqueItems": true},
+    "dream_image": {
+      "type": "object",
+      "required": ["mode", "status"],
+      "properties": {
+        "mode": {"enum": ["off", "on"], "default": "off"},
+        "status": {"enum": ["disabled", "generated", "brief-only", "failed"]},
+        "illustrative_subject": {"type": "string"},
+        "privacy_safe_brief": {"type": "string"},
+        "artifact_reference": {"type": "string"},
+        "boundary_note": {"const": "illustration only; not evidence, perception, permission, or canonical state"}
+      },
+      "allOf": [
+        {"if": {"properties": {"mode": {"const": "off"}}}, "then": {"properties": {"status": {"const": "disabled"}}}},
+        {"if": {"properties": {"status": {"const": "generated"}}}, "then": {"required": ["illustrative_subject", "privacy_safe_brief", "artifact_reference", "boundary_note"]}},
+        {"if": {"properties": {"status": {"const": "brief-only"}}}, "then": {"required": ["illustrative_subject", "privacy_safe_brief", "boundary_note"]}}
+      ],
+      "additionalProperties": false
+    },
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "candidate", "source_anchors", "leap", "counterevidence", "next_test", "expiry"],
+        "properties": {
+          "id": {"type": "string"},
+          "candidate": {"type": "string"},
+          "source_anchors": {"type": "array", "items": {"type": "string"}},
+          "leap": {"type": "string"},
+          "counterevidence": {"type": "string"},
+          "next_test": {"type": "string"},
+          "expiry": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "canonical_write_permitted": {"const": false}
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,38 @@
+{
+  "format": "officecraft-review/v2",
+  "operator_review": {
+    "record_version": "officecraft-review-entry/v2",
+    "status": "PASS",
+    "officefile_state": "reviewable",
+    "intended_use": "Inspect fictional teaching example locally",
+    "reviewer_role": "Root operator actual self-review",
+    "reviewed_at": "2026-10-08T18:19:55.488688+00:00",
+    "reviewed_artifacts": [
+      {
+        "artifact_id": "BRIEF",
+        "sha256": "2b0a0978d330a10a9c58c6f0aed020dc5e508c4963cd904ba3f57bf8d6ebd977",
+        "input_basis_sha256": "2c58c32e8fcd0ba402a898d61c7499698357c9f9526b796cf7bc5736b9129830"
+      },
+      {
+        "artifact_id": "PDF",
+        "sha256": "a4bc033fdcfbe5dfbaf19b024c0061d84e17c066ec3d9eaa52bced13c667bdf5",
+        "input_basis_sha256": "d18b9af1597b758d61bfc71882c77b4883140cc2bb0c2d3137876d61586b641a"
+      }
+    ],
+    "material_findings": [],
+    "conditions": [],
+    "evidence_basis": {
+      "observed": [
+        "review/inspect.json",
+        "review/visual.md"
+      ],
+      "unobserved": [
+        "Independent product acceptance and representative user use"
+      ]
+    }
+  },
+  "independent_review": {
+    "status": "not_run"
+  },
+  "approval_records": []
+}

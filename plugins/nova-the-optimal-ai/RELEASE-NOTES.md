@@ -1,4 +1,14 @@
-# Nova the Optimal AI Free 4.0.0
+# Nova the Optimal AI Free 4.1.0
+
+Free 4.1.0 updates the apps already included in the 28-owner edition. OMNARA 1.4.0 supports a question-to-sourced-answer workflow; Observatory 0.4.0 supports current inquiry, source connections, time distinctions and editable briefs; AnswerLayer 0.4.0 helps maintain relied-on wording; Beryl 0.5.0 helps investigate a device problem and preserve actual tests, changes and retesting. Their launchers open the useful working app directly, and native icon resources travel with the edition.
+
+Start from ordinary questions, text and observations. Add documents or images where they serve the task. Working data stays outside installation; older native viewers and exports remain available for advanced records. The apps do not invent AI responses, execute device tests, send handoffs, publish or silently monitor.
+
+The edition retains one Nova front door, the same 28 owners, ambient MIND, seventeen nested Faculty Cores, existing owner adapters, privacy choices and parked Arm's Reach. No data migration is required. Follow [Upgrade](docs/UPGRADE.md) and [Open the native workspaces](docs/VISUAL-WORKSPACES.md).
+
+## Previous edition
+
+### Nova the Optimal AI Free 4.0.0
 
 Free 4 brings the repaired capability estate into Nova's smaller generalist edition: one plugin, 28 native skills and ambient MIND. Start with a real task in ordinary conversation; optional saved-work tools and seven workspaces are available when the work benefits from them.
 

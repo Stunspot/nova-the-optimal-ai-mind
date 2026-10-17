@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/worldline-policy-v1.json",
+  "title": "Worldline capture authority policy",
+  "type": "object",
+  "required": [
+    "format",
+    "mode",
+    "authority_source"
+  ],
+  "properties": {
+    "format": {
+      "const": "cd-worldline-policy/v1"
+    },
+    "mode": {
+      "enum": [
+        "ordinary",
+        "off"
+      ]
+    },
+    "authority_source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    }
+  },
+  "additionalProperties": false
+}

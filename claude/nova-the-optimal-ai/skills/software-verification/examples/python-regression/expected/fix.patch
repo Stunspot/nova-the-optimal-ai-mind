@@ -1,0 +1,5 @@
+--- a/input/reporting.py
++++ b/input/reporting.py
+@@
+-    return [row for row in rows if start < row["date"] <= end]
++    return [row for row in rows if start <= row["date"] <= end]

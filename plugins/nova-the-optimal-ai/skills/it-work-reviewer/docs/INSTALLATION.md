@@ -1,5 +1,7 @@
 # Install the reviewer
 
-Use the complete bundle's `claude/it-work-reviewer-v0.4.0.zip` or the `it-work-reviewer` folder within its Codex plugin. SKILL.md must be at the skill's root. Preserve an existing install and use your host's supported local installation route; then invoke `$it-work-reviewer` in a fresh task with one supplied case.
+Use `claude/it-work-reviewer-v0.6.0.zip` from the complete product, or its `it-work-reviewer` folder inside the Codex plugin. SKILL.md belongs at this skill's root. Preserve an existing installation and use your host's supported local route.
 
-This skill is usable without the Studio. The optional visual review display belongs to the separate beryl-it-tech skill. No automatic independent reviewer execution, gate authority or product activation is implied by copying files.
+Open a fresh task and invoke `$it-work-reviewer` with the decision, exact artifact/revision and evidence. Confirm the response stays within that request. A package check does not establish host discovery or reviewer independence.
+
+The reviewer works without the Beryl operator app. Optional visual display is provided by the separately installed Repair Companion, which binds a supplied review to the exact native case and labels its stated authorship. Copying files or displaying review never grants gate authority or performs device work.

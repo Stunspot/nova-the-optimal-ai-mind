@@ -1,0 +1,14 @@
+{
+  "item_id": "item.example.preference",
+  "person": "person.example",
+  "category": "preference",
+  "text": "Prefers a short written brief before planning calls.",
+  "evidence_state": "reported",
+  "importance": 60,
+  "sensitivity": "private",
+  "tags": ["communication", "meetings"],
+  "source": {
+    "source_kind": "user_supplied",
+    "label": "Synthetic package example"
+  }
+}

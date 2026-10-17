@@ -1,33 +1,35 @@
-# OMNARA Deep Research
+# OMNARA Deep Research 1.5.0
 
-![An inquiry, connected sources and a bounded report.](docs/assets/omnara-readme-hero.png)
+**Understand what your research rests on.** OMNARA investigates consequential questions and writes source-grounded reports. The Reading Room lets you follow a conclusion back to its cited passage, inspect the retained note and source details, compare two sources, search the inquiry and return to your place.
 
-OMNARA helps investigate consequential questions and write source-grounded reports. Its campaign room keeps claims, reading notes, competing explanations and the current answer inspectable. The agent does the research; the local room displays and edits the same native files.
+Start by asking OMNARA to investigate the question you actually have. The research agent does the framing, source work and synthesis; you do not need to fill campaign records to begin. Then open the local Reading Room to study the saved report and evidence. A worked sea-level inquiry is included and clearly marked as an example.
 
-Start with [one useful inquiry](START-HERE.md). To open the room, extract this complete package and run **Open.cmd** on Windows, or `python3 workspace/open.py` on macOS/Linux. Python 3.10+ is required for the room and helpers. [Installation](docs/INSTALLATION.md) covers the individual skill, existing Nova Free/Emergent distribution and [plain-chat fallback](fallbacks/universal-copy-paste-workflow.md).
+## Open your research
 
-Ask: “Use $omnara-deep-research. Investigate [question] for [audience/decision], within [scope and time]. Return [deliverable].” Supply what you know; Omnara asks only for missing information that changes the next consequential move. A small question need not become a large campaign.
+Extract the complete package. With Python 3.10 or newer, double-click Open.cmd on Windows, or run python3 workspace/open.py on macOS or Linux. The room opens the active Nova estate research folder by default, or the existing location selected by OMNARA_HOME. Portable installations fall back to Documents/OMNARA Campaigns. To open another folder explicitly, run:
 
-The report is an answer, not a pile of summaries. [Read a complete worked inquiry](examples/sea-level-comparison/report.md): it distinguishes an apparent local/global measurement conflict, records an excluded source and identifies the evidence needed for a different decision. [Practice and return](examples/README.md) show why a source on the same topic cannot verify a different mechanism.
+```text
+python workspace/open.py --data-root "your research folder"
+```
 
-## Find your next task
+Use Open again after reboot; it reconnects to the matching local service. Do not bookmark its temporary address. Your research folder stays outside the application, so keep it when updating the app.
 
-| Task | Destination |
-|---|---|
-| Create, browse or return to investigations; choose an environment | [Campaign room](docs/CAMPAIGN-ROOM.md) |
-| Install, discover and invoke the skill | [Installation](docs/INSTALLATION.md) |
-| Understand source states and completion | [Native campaign files](docs/CAMPAIGN-VAULT.md) |
-| Check the package, assemble or review a report | [Validation](docs/VALIDATION.md) |
-| Recover rejected edits or damaged records | [Troubleshooting](docs/TROUBLESHOOTING.md) |
-| Update, remove or preserve research | [Lifecycle](docs/LIFECYCLE.md) |
-| See methods, prompts and all guides | [Documentation index](docs/README.md) |
-| Understand limits and data custody | [Limitations](docs/LIMITATIONS.md), [Privacy](docs/SECURITY-AND-PRIVACY.md) |
-| Get help or maintain the product | [Support](SUPPORT.md), [Maintainers](docs/MAINTAINERS.md) |
+## What the Reading Room lets you do
 
-Source counts are recorded work, not confidence. Citation integrity checks visible markers, sources and bibliography. A content-bound semantic review records a reviewer's actual judgment about the current inquiry, notes and report; software cannot authenticate that judgment or establish source truth. Long reports and broad source counts must be earned by the question.
+- Read the saved report with its question and evidence cutoff in view.
+- Open an in-report citation beside the report and inspect the exact retained reading note, source metadata and recorded web original.
+- Select two sources for side-by-side comparison, or search report passages, source records and retained notes.
+- Return from a citation to the same report passage; preserve your selected source, appearance and reading position across refresh and restart.
+- Refresh after native research changes. The current report and review binding update together; an earlier supported report and notes remain available as a historical reading view.
+- Preview and download a private HTML reading copy for offline reading. It includes report, retained notes and references, not unbundled source originals.
+- Prepare a useful unsent continuation request for your research conversation. Copying is explicit; the room makes no provider call.
 
-Version 1.3.1 carries the accepted campaign and research-room repairs under a distinct updateable identity. See [release notes](RELEASE-NOTES.md) and the [current documentation boundary](verification/documentation-review.md). Historical ancestry includes the original Nova + MIND distribution; standalone MIND is deprecated and is not an installation requirement. Omnara remains an individual skill and complete local room, not a universal plugin installer.
+Tracework, Survey Folio and Proof Cabinet change the reading environment while keeping the same research records. An included research note is not the full original page; when a supported live URL exists, the room labels it as a web link and opening it requires a connection.
 
-[MIT license](LICENSE.md). Retrieved sources retain their own rights. [Repository](https://github.com/Stunspot/omnara-deep-research) · [Project site](https://stunspot.github.io/omnara-deep-research/) · [Security reporting](SECURITY.md).
+## Research remains honest
 
-Optional [Windows and Mac entries](docs/APP-ENTRY.md) reuse the package launchers and approved globe icon. They are created only by your explicit command; the browser room and site carry the same icon.
+The room does not research the web, invent findings, certify citations or create a new semantic review. Declared review is attributed to its author and bound to the saved inquiry and evidence. A source count is not confidence. New inquiry work begins with the OMNARA skill and arrives in the same native campaign format.
+
+[Start with a useful question](START-HERE.md) · [Read the room guide](docs/CAMPAIGN-ROOM.md) · [Install and verify](docs/INSTALLATION.md) · [Read the complete worked inquiry](examples/sea-level-comparison/report.md) · [All documentation](docs/README.md)
+
+[MIT license](LICENSE.md). Retrieved materials retain their own rights. [Repository](https://github.com/Stunspot/omnara-deep-research) · [Project site](https://stunspot.github.io/omnara-deep-research/) · [Security reporting](SECURITY.md).

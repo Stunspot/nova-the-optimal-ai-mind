@@ -1,0 +1,4 @@
+source_id,source_type,title_or_identity,path_or_url,source_date,retrieved_at,custody,use,notes
+SRC-001,authored-fictional,Fictional vacancy,sources/SRC-001.md,2026-10-05,2026-10-06,included fictional source copy,role criteria,No real research or person
+SRC-002,authored-fictional,Fictional work-history self-report,sources/SRC-002.md,2026-10-06,2026-10-06,included fictional source copy,bounded answer claims,No real research or person
+SRC-003,authored-fictional,Fictional recruiter instruction,sources/SRC-003.md,2026-10-06,2026-10-06,included fictional source copy,confirmed topic and known format,No real research or person

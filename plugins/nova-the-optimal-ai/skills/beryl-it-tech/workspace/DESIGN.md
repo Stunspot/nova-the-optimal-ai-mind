@@ -1,9 +1,0 @@
-# A case workspace organized around evidence
-
-Version 0.4.0 begins with the user's own complaint or an existing native case. Guided intake creates an explicitly incomplete record and a visible handoff to Beryl in the Agent host. The Studio does not run that Agent. Investigation places rival explanations, a selected discriminator and recorded results beside the original fault. Evidence exposes provenance; Recovery & proof distinguishes intervention from retest; IT review retains an advisory artifact separately.
-
-The user's document is authoritative data, not an instruction source. Import preserves unknown fields and historical state/value/test aliases; conflicting aliases are visible. Recording a rerun or correction retains the prior result and source. A changed basis marks prior verification for reassessment instead of rewriting it as a current pass. A deliberate JSON reconciliation can change declarations, but neither UI nor checker authenticates them.
-
-Mossglass retains suspended glass, asymmetric panes and serif hierarchy. Night Probe retains instrument housing and a recessed comparison. Cinder Relay retains the dark fired-clay workbench and horizontal navigation. These are the accepted 0.3.0 material assets and native CSS treatments; this repair does not claim newly generated art or renewed owner visual approval. The legacy porcelain asset filename is preserved for byte custody, while the user-facing name is Cinder Relay.
-
-Native labels, keyboard controls, named dialogs and a skip link support the tested journeys. The update's actual isolated Edge checks use synthetic records and selected desktop/narrow widths; they are not a participant study, physical diagnosis, accessibility-conformance finding or other-platform result. Current package and source hashes identify the tested cutoff separately from historical visual reviews.

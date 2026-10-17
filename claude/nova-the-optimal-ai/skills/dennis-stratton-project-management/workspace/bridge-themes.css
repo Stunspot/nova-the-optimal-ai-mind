@@ -1,0 +1,97 @@
+/* Scoped Project Bridge appearances. Theme tokens target the settled reader DOM only. */
+:root[data-theme="proofspan"]{color-scheme:light;--ink:#172b36;--muted:#56707a;--paper:#f4f7f7;--panel:#fff;--line:#d8e2de;--accent:#006e70;--accent2:#bf7940;--soft:#e4f1ed;--shadow:0 12px 36px #15364012;--reader-font:"Segoe UI",Arial,sans-serif;--reader-radius:10px}
+:root[data-theme="bridge"]{color-scheme:dark;--ink:#f0ead9;--muted:#b8bea9;--paper:#151712;--panel:#24291f;--line:#59624e;--accent:#e4b368;--accent2:#e7bb73;--soft:#2c3228;--shadow:0 12px 36px #0005;--reader-font:"Segoe UI",Arial,sans-serif;--reader-radius:8px}
+:root[data-theme="folio"]{color-scheme:light;--ink:#37382e;--muted:#696b57;--paper:#f1eddd;--panel:#faf7eb;--line:#b6ad8f;--accent:#536d60;--accent2:#9a6d35;--soft:#ebe5d1;--shadow:5px 6px 0 #55503a20;--reader-font:Georgia,"Times New Roman",serif;--reader-radius:0}
+:root[data-theme="redline"]{color-scheme:dark;--ink:#f5e8d2;--muted:#d0b9a4;--paper:#211b18;--panel:#302824;--line:#765b4b;--accent:#f2a45b;--accent2:#f07150;--soft:#40302a;--shadow:0 10px 24px #0005;--reader-font:"Arial Narrow","Segoe UI",Arial,sans-serif;--reader-radius:0}
+:root[data-theme="proofspan"],:root[data-theme="bridge"],:root[data-theme="folio"],:root[data-theme="redline"]{font-family:var(--reader-font);background:var(--paper)}
+:root[data-theme] body{font-family:var(--reader-font);color:var(--ink);background:var(--paper)}
+:root[data-theme] .topbar{background:var(--panel);color:var(--ink);border-color:var(--line)}
+:root[data-theme] .layout{color:var(--ink)}
+:root[data-theme] .portfolio,:root[data-theme] .welcome,:root[data-theme] .panel,:root[data-theme] .closed-screen{background:var(--panel);color:var(--ink);border-color:var(--line);border-radius:var(--reader-radius);box-shadow:var(--shadow)}
+:root[data-theme] .portfolio{position:static}
+:root[data-theme] .routeNode,:root[data-theme] .projectCard,:root[data-theme] .sourceButton,:root[data-theme] .textLink,:root[data-theme] .top-actions button,:root[data-theme] input,:root[data-theme] select{background:var(--panel);color:var(--ink);border-color:var(--line);border-radius:var(--reader-radius)}
+:root[data-theme] .routeNode.selected,:root[data-theme] .routeNode:hover,:root[data-theme] .projectCard:hover,:root[data-theme] .sourceButton:hover,:root[data-theme] .textLink:hover{background:var(--soft);border-color:var(--accent);color:var(--ink)}
+:root[data-theme] .source-content{background:var(--soft);color:var(--ink);border:1px solid var(--line);border-radius:var(--reader-radius)}
+:root[data-theme] .purpose-connection,:root[data-theme] .next-action,:root[data-theme] .next-decision{color:var(--ink)}
+:root[data-theme] .brand img{border-radius:var(--reader-radius)}
+:root[data-theme] .skip:focus{background:var(--accent);color:var(--paper)}
+:root[data-theme] button:focus-visible,:root[data-theme] input:focus-visible,:root[data-theme] select:focus-visible,:root[data-theme] a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+:root[data-theme="bridge"] .topbar{border-bottom:2px solid var(--accent);background:linear-gradient(90deg,#1d211b,#24291f)}
+:root[data-theme="bridge"] .welcome,:root[data-theme="bridge"] .panel,:root[data-theme="bridge"] .closed-screen{background:linear-gradient(145deg,#2c3228,#24291f 65%)}
+:root[data-theme="bridge"] .routeNode{border-left:3px solid var(--line)}
+:root[data-theme="bridge"] .routeNode.selected{border-left-color:var(--accent);box-shadow:inset 3px 0 #e4b36833}
+:root[data-theme="folio"] body{background:repeating-linear-gradient(0deg,transparent 0 31px,#8e846012 32px),var(--paper)}
+:root[data-theme="folio"] .topbar{border-bottom:4px double var(--line)}
+:root[data-theme="folio"] .brand strong,:root[data-theme="folio"] h1,:root[data-theme="folio"] h2,:root[data-theme="folio"] h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+:root[data-theme="folio"] .project-topline{font-family:Georgia,"Times New Roman",serif}
+:root[data-theme="folio"] .title-block{border-bottom:3px double var(--line)}
+:root[data-theme="folio"] .panel,:root[data-theme="folio"] .welcome{border-top:3px double var(--accent);border-bottom:3px double var(--accent)}
+:root[data-theme="folio"] .routeNode{border:0;border-bottom:1px solid var(--line);border-left:2px solid var(--line);background:transparent}
+:root[data-theme="folio"] .routeNode.selected{border-left:5px solid var(--accent);background:#536d6014}
+:root[data-theme="folio"] button,:root[data-theme="folio"] input,:root[data-theme="folio"] select{font-family:Georgia,"Times New Roman",serif}
+:root[data-theme="redline"] .topbar{border-bottom:5px solid var(--accent);background:#171513}
+:root[data-theme="redline"] .brand strong,:root[data-theme="redline"] h1,:root[data-theme="redline"] h2,:root[data-theme="redline"] h3{text-transform:uppercase;letter-spacing:.045em}
+:root[data-theme="redline"] .panel,:root[data-theme="redline"] .welcome,:root[data-theme="redline"] .closed-screen{border-left:4px solid var(--accent);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+:root[data-theme="redline"] .routeNode{border-radius:0;border-left:3px solid var(--accent2)}
+:root[data-theme="redline"] .routeNode.selected{border-left:6px solid var(--accent);background:#f2a45b1c}
+:root[data-theme="redline"] .top-actions button{border-radius:0}
+@media(max-width:920px){:root[data-theme] .portfolio{position:static}}
+@media(max-width:600px){:root[data-theme="folio"] .title-block{padding:16px 0}:root[data-theme="redline"] .panel,:root[data-theme="redline"] .welcome,:root[data-theme="redline"] .closed-screen{clip-path:none}}
+:root[data-theme=bridge] .forecast-card,:root[data-theme=redline] .forecast-card{background:var(--soft);color:var(--ink);border-color:var(--accent2)}
+:root[data-theme=bridge] .forecast-card p,:root[data-theme=redline] .forecast-card p{color:var(--ink)}
+
+/* Restored predecessor material, translated to the current Project Bridge DOM. */
+:root[data-theme="proofspan"]{color-scheme:dark;--ink:#efe8da;--muted:#c0c2b4;--paper:#0e100f;--panel:#1a201b;--line:#65716a;--accent:#d99451;--accent2:#a8754b;--soft:#2a302a;--shadow:inset 0 1px #ffffff12,0 15px 32px #0009;--reader-font:"Arial Narrow","Segoe UI",Arial,sans-serif;--reader-radius:3px}
+:root[data-theme="proofspan"] body{background:radial-gradient(ellipse at 55% -28%,#6a674726,transparent 50%),repeating-linear-gradient(90deg,transparent 0 159px,#c6d4c307 160px),var(--paper)}
+:root[data-theme="proofspan"] .topbar{position:sticky;top:0;background:linear-gradient(180deg,#242a26,#141815);border-bottom:1px solid #7b7466;box-shadow:0 8px 20px #0008}
+:root[data-theme="proofspan"] .brand img{border-radius:3px;box-shadow:0 0 0 1px #c98f5f,3px 4px 0 #0008}
+:root[data-theme="proofspan"] .brand strong,:root[data-theme="proofspan"] h1,:root[data-theme="proofspan"] h2{font-family:"Arial Narrow","Segoe UI",Arial,sans-serif;text-transform:uppercase;letter-spacing:.015em}
+:root[data-theme="proofspan"] .portfolio{background:linear-gradient(90deg,#121714,#1e2520);border-right:1px solid #818b7b;box-shadow:inset -6px 0 12px #0005,9px 0 20px #0004}
+:root[data-theme="proofspan"] .current-context{background:linear-gradient(125deg,#3a4037,#282d29 55%,#202721);border:1px solid #8a9183;border-bottom:4px solid #8d7150;border-radius:3px;box-shadow:inset 0 1px #ffffff20,inset 0 -3px #1118,0 10px 20px #0008;padding:18px 22px}
+:root[data-theme="proofspan"] .route-panel{background:#171e19;border-color:#657568;border-radius:3px;box-shadow:0 15px 30px #0008}
+:root[data-theme="proofspan"] .route{background:radial-gradient(ellipse at 49% 3%,#be9b5921,transparent 60%),repeating-linear-gradient(0deg,transparent 0 42px,#9baa9511 43px),repeating-linear-gradient(90deg,transparent 0 95px,#9baa9511 96px),#202923;padding:22px 18px}
+:root[data-theme="proofspan"] .routeNode{border:1px solid #68796c;border-top:3px solid #8c9886;border-radius:2px;background:linear-gradient(130deg,#303b32,#222c25 55%,#1c251f);box-shadow:inset 0 1px #ffffff24,inset 0 0 0 3px #1c241d,5px 6px 0 #131a14,8px 10px 14px #0009;padding:13px 15px}
+:root[data-theme="proofspan"] .routeNode.selected,:root[data-theme="proofspan"] .routeNode:hover{border-color:#b78a5d;border-top-color:#d99451;background:linear-gradient(120deg,#493d30,#273029 70%);box-shadow:inset 4px 0 #d99451,inset 0 1px #ebba8280,4px 6px 12px #0008;color:var(--ink)}
+:root[data-theme="proofspan"] .inspector{background:linear-gradient(145deg,#30372f,#1d251f);border-color:#657568;border-left:3px solid #a8754b}
+:root[data-theme="proofspan"] .source-panel{background:#191f1a;border-color:#657568}
+
+:root[data-theme="bridge"] .topbar{background:linear-gradient(100deg,#1d211b,#272b22 55%,#1b211b);border-bottom:2px solid #c9904c;box-shadow:0 6px 18px #0006}
+:root[data-theme="bridge"] .brand strong,:root[data-theme="bridge"] h1{font-weight:620;letter-spacing:-.025em}
+:root[data-theme="bridge"] .portfolio{background:linear-gradient(155deg,#252b22,#1c211b 72%);border-color:#60684e;box-shadow:inset 0 1px #ffffff12,8px 10px 26px #0005}
+:root[data-theme="bridge"] .current-context{background:linear-gradient(120deg,#343a2c,#282e24);border:1px solid #5e664e;border-left:4px solid #e4b368;box-shadow:inset 0 1px #ffffff12}
+:root[data-theme="bridge"] .route-panel,:root[data-theme="bridge"] .inspector{background:linear-gradient(145deg,#2c3228,#20251e 68%);border-color:#59624e;box-shadow:inset 0 1px #ffffff14,0 12px 36px #0005}
+:root[data-theme="bridge"] .routeNode{background:linear-gradient(110deg,#30372b,#252b23);border-color:#59624e;border-left:3px solid #687354;box-shadow:inset 0 1px #ffffff0d}
+:root[data-theme="bridge"] .routeNode.selected,:root[data-theme="bridge"] .routeNode:hover{background:linear-gradient(105deg,#4a402b,#30372a);border-left-color:#e4b368;box-shadow:inset 0 1px #f3d49b30,0 5px 12px #0005}
+:root[data-theme="bridge"] .source-content{background:#191e18;border-color:#59624e}
+
+:root[data-theme="folio"] body{background:repeating-linear-gradient(0deg,transparent 0 31px,#8e846012 32px),radial-gradient(ellipse at 72% 0,#fffdf080,transparent 55%),var(--paper)}
+:root[data-theme="folio"] .topbar{border-bottom:4px double var(--line);background:#f5f1e5}
+:root[data-theme="folio"] .portfolio{border:0;border-right:3px double var(--line);border-radius:0;background:#ece7d6;box-shadow:7px 8px 0 #55503a20}
+:root[data-theme="folio"] .title-block{border-bottom:3px double var(--line);padding-bottom:20px}
+:root[data-theme="folio"] .title-row h1{font:400 clamp(2.3rem,4vw,3.5rem)/1.05 Georgia,"Times New Roman",serif}
+:root[data-theme="folio"] .current-context{background:#ebe5d1;border:1px solid #c7bd9f;border-radius:0;box-shadow:4px 5px 0 #55503a16;padding:15px 18px}
+:root[data-theme="folio"] .route-panel,:root[data-theme="folio"] .inspector,:root[data-theme="folio"] .source-panel{border:0;border-top:3px double var(--accent);border-bottom:3px double var(--accent);border-radius:0;background:#faf7eb;box-shadow:7px 9px 0 #4a49311d}
+:root[data-theme="folio"] .route{background:repeating-linear-gradient(0deg,transparent 0 34px,#8e846012 35px),#faf7eb;padding:12px}
+:root[data-theme="folio"] .routeNode{border:0;border-bottom:1px solid #b6ad8f;border-left:2px solid #b6ad8f;border-radius:0;background:transparent;font-family:Georgia,"Times New Roman",serif;padding:13px 15px}
+:root[data-theme="folio"] .routeNode.selected,:root[data-theme="folio"] .routeNode:hover{border-left:5px solid #536d60;background:#536d6014;color:var(--ink)}
+:root[data-theme="folio"] .source-content{background:#f1eddd;border:1px solid #c7bd9f;border-radius:0}
+
+:root[data-theme="redline"] .topbar{background:#171513;border-bottom:5px solid #f2a45b}
+:root[data-theme="redline"] .brand strong,:root[data-theme="redline"] h1,:root[data-theme="redline"] h2{font-family:"Arial Narrow","Segoe UI",Arial,sans-serif;text-transform:uppercase;letter-spacing:.045em}
+:root[data-theme="redline"] .portfolio{background:#171513;border:0;border-right:1px solid #765b4b;border-radius:0;box-shadow:none}
+:root[data-theme="redline"] .current-context{background:#40302a;border:0;border-left:5px solid #f07150;border-radius:0;box-shadow:none}
+:root[data-theme="redline"] .route-panel,:root[data-theme="redline"] .inspector,:root[data-theme="redline"] .source-panel{background:#302824;border:0;border-left:4px solid #f2a45b;border-radius:0;box-shadow:0 10px 24px #0005;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+:root[data-theme="redline"] .route{background:#211b18;padding:12px}
+:root[data-theme="redline"] .routeNode{background:#302824;border:1px solid #765b4b;border-left:3px solid #f07150;border-radius:0}
+:root[data-theme="redline"] .routeNode.selected,:root[data-theme="redline"] .routeNode:hover{background:#40302a;border-left:6px solid #f2a45b;box-shadow:inset 0 0 0 1px #f2a45b50}
+:root[data-theme="redline"] .source-content{background:#211b18;border-color:#765b4b;border-radius:0}
+@media(max-width:920px){:root[data-theme="proofspan"] .route,:root[data-theme="bridge"] .route,:root[data-theme="folio"] .route,:root[data-theme="redline"] .route{padding:9px}}
+/* The primary fictional-example action stays legible across all four skins. */
+:root[data-theme] #walkButton,:root[data-theme] #walkWelcome{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+:root[data-theme] #walkButton:hover,:root[data-theme] #walkWelcome:hover{background:var(--accent2);color:var(--paper);border-color:var(--accent2)}
+:root[data-theme] #walkButton:focus-visible,:root[data-theme] #walkWelcome:focus-visible{outline:3px solid var(--accent2);outline-offset:3px}
+/* The timing warning must remain readable in every material, including Proofspan and Survey Folio. */
+:root[data-theme] .forecast-card{background:var(--panel);color:var(--ink);border:1px solid var(--line);border-left:4px solid var(--accent2);box-shadow:var(--shadow)}
+:root[data-theme] .forecast-card strong,:root[data-theme] .forecast-card p{color:var(--ink)}
+:root[data-theme] .forecast-card a,:root[data-theme] .forecast-card button{color:var(--ink)}
+:root[data-theme] .forecast-card button:hover,:root[data-theme] .forecast-card button:focus-visible{background:var(--soft);color:var(--ink);outline-color:var(--accent2)}

@@ -1,11 +1,11 @@
 """Native vault adapter. Local recoverable saves; coordinate external agent writers."""
-import hashlib,io,json,re,tempfile,threading,uuid
+import hashlib,io,json,re,tempfile,threading,uuid,zipfile
 from pathlib import Path
 from datetime import datetime,timezone
 import research_campaign as native
 from evidence_contract import native_files,review_status,NATIVE_JSON,LEDGERS,text
 from custody import reject_links,valid_name,namespace
-from file_ops import atomic
+from file_ops import atomic,staged_write
 
 class CampaignRoom:
     class Conflict(ValueError):pass
@@ -36,27 +36,39 @@ class CampaignRoom:
         original={p.relative_to(destination).as_posix():p.read_bytes() for p in native_files(destination)}
         with tempfile.TemporaryDirectory(prefix='.omnara-save-',dir=self.root) as tmp:
             staged=Path(tmp)/'vault';staged.mkdir()
-            for name,value in {**before,**files}.items():atomic(staged/name,value)
+            for name,value in {**before,**files}.items():staged_write(staged/name,value)
             c=native.read_json(staged/'campaign.json');counts=native.source_counts(staged)
             if not isinstance(c.get('counters'),dict):raise ValueError('campaign counters must be an object')
-            c['counters'].update({state.replace('-','_'):counts[state] for state in native.SOURCE_STATES});c['counters']['queries']=len(native.read_jsonl(staged/'query-ledger.jsonl'));c['updated_at']=datetime.now(timezone.utc).isoformat();atomic(staged/'campaign.json',json.dumps(c,indent=2)+'\n')
+            c['counters'].update({state.replace('-','_'):counts[state] for state in native.SOURCE_STATES});c['counters']['queries']=len(native.read_jsonl(staged/'query-ledger.jsonl'));c['updated_at']=datetime.now(timezone.utc).isoformat();staged_write(staged/'campaign.json',json.dumps(c,indent=2)+'\n')
             errors=native.validate(staged)
             if errors:raise ValueError('Save refused by native validator: '+'; '.join(errors))
             if self.revision(self.files(destination))!=revision:raise self.Conflict('Vault changed while validating; download draft and reload.')
+            staged_bytes={p.relative_to(staged).as_posix():p.read_bytes() for p in native_files(staged)}
+            changed={name:value for name,value in staged_bytes.items() if original.get(name)!=value}
             snapshot=reject_links(self.root/'.workspace/history'/key/uuid.uuid4().hex);snapshot.mkdir(parents=True)
-            for name,value in original.items():atomic(snapshot/name,value)
-            written=[]
+            archive_buffer=io.BytesIO()
+            with zipfile.ZipFile(archive_buffer,'w',compression=zipfile.ZIP_STORED) as archive:
+                manifest={'format':'omnara-native-snapshot/v1','campaign':key,'created_at':datetime.now(timezone.utc).isoformat(),'files':{name:{'bytes':len(value),'sha256':hashlib.sha256(value).hexdigest()} for name,value in sorted(original.items())}}
+                archive.writestr('manifest.json',json.dumps(manifest,ensure_ascii=False,sort_keys=True,indent=2)+'\n')
+                for name,value in sorted(original.items()):archive.writestr(name,value)
+            recovery=reject_links(snapshot/'native-before.zip')
+            try:atomic(recovery,archive_buffer.getvalue())
+            except OSError as exc:raise ValueError('Save could not create the durable native recovery snapshot; draft remains in browser. '+str(exc)) from exc
+            if self.revision(self.files(destination))!=revision:raise self.Conflict('Vault changed before native replacement; draft and recovery snapshot are preserved.')
+            attempted=[]
             try:
-                for name,value in self.files(staged).items():atomic(destination/name,value);written.append(name)
+                for name,value in sorted(changed.items()):
+                    attempted.append(name)
+                    atomic(destination/name,value)
             except OSError as exc:
                 rollback=[]
-                for name in reversed(written):
+                for name in reversed(attempted):
                     try:
                         if name in original:atomic(destination/name,original[name])
                         else:reject_links(destination/name).unlink(missing_ok=True)
                     except OSError as error:rollback.append(str(error))
-                if rollback:raise ValueError('Save failed and rollback incomplete. Preserve draft; restore native files from '+str(snapshot)+': '+'; '.join(rollback)) from exc
-                raise ValueError('Save failed; prior native files restored. Draft remains in browser. '+str(exc)) from exc
+                if rollback:raise ValueError('Save failed and rollback incomplete. Preserve draft; restore native files from '+str(recovery)+': '+'; '.join(rollback)) from exc
+                raise ValueError('Save failed; prior native files restored from '+str(recovery)+'. Draft remains in browser. '+str(exc)) from exc
         return self.load(key)
     def request(self,method,path,data):
         if not isinstance(data,dict):raise ValueError('Request body must be an object')

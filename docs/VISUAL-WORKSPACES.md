@@ -1,89 +1,58 @@
 # Open the native workspaces
 
-Nova Free 4.0.0 includes seven optional workspaces attached to existing capability owners. They show real supplied artifacts, not live connected systems. Ordinary Nova conversation requires no workspace or persistent estate. Extract or install the complete edition before using a launcher; keep native folders together. Launcher paths are relative to the plugin root: `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
+Nova Free 4.3.0 includes four optional visual companions under their existing capability owners. Choose by the work you want to understand. Ordinary Nova conversation needs no app or persistent estate. Extract the complete edition first. The paths below start at `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
 
-## Choose the owner and starting artifact
+## Choose a useful starting point
 
-| Workspace | Windows launcher | Starting artifact and change boundary |
+| Your task | App and Windows launcher | First useful outcome |
 | --- | --- | --- |
-| Giles Knowledge Atlas | `skills/rupert-giles-knowledge-steward/Open Giles.cmd` | Registered knowledge stores and exact subsection routes; persistent catalog metadata, read-only source previews and portable import/export. |
-| Dennis Project Bridge | `skills/dennis-stratton-project-management/Open Project Bridge.cmd` | Registry-discovered Nova project records; native edit/save/export. |
-| OMNARA campaign room | `skills/omnara-deep-research/Open.cmd` | Native campaign vaults; native import/edit/save/export under the research owner. |
-| AnswerLayer Baseline Inspector | `skills/answerlayer/workspace/Open.cmd` | Supplied Reality Ledger JSON; memory-only working copy and download, no adoption. |
-| Beryl IT Case Bench | `skills/beryl-it-tech/workspace/Open.cmd` | Supplied IT case JSON and optional reviewer artifact; memory-only working copy and download, no device action. |
-| Observatory Case | `skills/current-intelligence-observatory/workspace/Open.cmd` | Supplied dated case JSON and optional baseline; read-only comparison. |
-| Knowledge Desk | `skills/commonplace/workspace/Open.cmd` | Explicit reads from the existing Commonplace, Corkboard and Dunbar owners; no record writes. |
+| Follow a project outcome | Project Bridge: `skills/dennis-stratton-project-management/Open Project Bridge.cmd` | Read the current commitment, declared dependencies, blockers and linked evidence. |
+| Read saved research | OMNARA Reading Room: `skills/omnara-deep-research/Open.cmd` | Read a saved report beside cited notes, compare sources and refresh after an author update. |
+| Diagnose a device problem | Beryl: `skills/beryl-it-tech/workspace/Open.cmd` | Compare explanations, plan a discriminating test and retain what actually happened. |
+| Read across retained knowledge and context | Knowledge Desk: `skills/commonplace/workspace/Open.cmd` | Collect useful source material into a temporary working set and download a reading packet. |
 
-Each launcher has a neighboring `.command` route for macOS/Linux. Observatory can also open `workspace/index.html` directly without Python or a server. The other local hosts need Python 3.10+ already installed; they require no pip dependencies. macOS wrappers are supplied, not live-tested by this qualification.
+These local companions use their packaged launchers and the prerequisites in their owner guides. macOS wrappers are supplied where included but were not executed on this Windows qualification host. Open the launcher rather than directly opening HTML when the companion uses a local reading service.
 
-## Open safely and recognize the correct instance
+Open Project Bridge to see what can move your projects forward and what depends on it. Follow an OMNARA report from its conclusions into the passages behind them. Compare computer observations with their original logs in Beryl, or find and read retained material in Knowledge Desk. Ask Nova in conversation to prepare or change the work, then refresh the relevant companion.
 
-1. Choose the owner and preserve your original artifact. Use a supplied labeled example to explore without treating it as your data.
-2. Open the matching launcher. The existing workspace hosts reconnect only their exact matching private loopback instance. Giles starts its own server and reports an occupied port; use its recovery procedure if that happens. Reopen the launcher after reboot.
-3. Check the workspace name and the selected native artifact before editing or reading. A successful page load is not proof of an installation's agent discovery or real external behavior.
-4. Follow the guide for that owner. Before closing, distinguish a native save receipt, a downloaded working file and a read-only view.
+## Open, save and return
 
-No desktop shortcut is created automatically. Do not publish private loopback session URLs. If launch fails, inspect the terminal error or invoke that workspace's supported `--no-browser` route; do not kill an unrelated service or reset owner data.
+1. Open the matching launcher. Check the app title and selected work location. Keep a private loopback session address private.
+2. For Project Bridge or OMNARA, choose an existing project or research home and read its supplied records, sources and retained notes. To author or change native work, use Nova in conversation; do not enter it into the read companion.
+3. Browse, search, compare or refresh within the companion. Reading position and view preferences are separate from native owner records.
+4. Preview supported private exports before downloading. A reading copy is not a complete backup of original attachments or a native-record update.
 
-## Giles: recover a store and give Nova the right route
+The package includes each app's own native icon resources. Installation does not automatically create desktop shortcuts. Existing shortcuts should point to the current packaged launcher and that app's included icon. See the skill's guide for any supplied shortcut helper.
 
-Start with your collections. Knowledge Atlas makes retained archives, notebooks and reference stores recognizable by name and purpose. Its map shows recorded shared subjects; the list offers another way to browse. Searching a remembered fragment is optional. A catalog description helps you choose a source; it is not a claim that the source has been read or verified.
+## Conversational capabilities
 
-### Open and read
+The Giles knowledge steward and Oracle Reading remain installed skills for work in conversation. Their standalone visual apps are not part of this edition's app presentation.
 
-Keep the complete edition together and have Python 3.10+ available. From the plugin root, open `skills/rupert-giles-knowledge-steward/Open Giles.cmd` on Windows or its neighboring `.command` launcher on macOS/Linux. The page should say **Knowledge Atlas**. Choose a collection, then **Read entry point** or **Browse source**. Open a named section to stay oriented within a larger collection. Unsupported files remain routes for the appropriate native reader.
-
-A new catalog is empty until you register an existing store or import catalog metadata. If an upgrade appears empty, check the selected catalog before registering everything again. `GILES_CATALOG_HOME` selects a catalog directory; a corroborated Nova estate selects its existing `knowledge/giles/catalog.json`; otherwise the platform application-data default applies. To choose a particular catalog, run the following from the plugin root:
-
-    python skills/rupert-giles-knowledge-steward/scripts/giles.py --catalog "<your data>/catalog.json" serve --port 0
-
-Port 0 selects an available local port. If a fixed port is occupied, use that route or stop only your own prior Giles process. Keep private session URLs private.
-
-### Put the reading to work
-
-1. Open a supported source and select a useful passage, then choose **Collect selected passage**. **Collect this text chunk** keeps the displayed text when you need the whole bounded excerpt. Its source route and verification information travel with it.
-2. Open the **Working tray**. Give the work a title and describe the question or task. Add interpretation in the tray's annotations; the original source is preserved.
-3. Collect a second source and choose **Compare two sources** to read the retained passages together. This shows their contents without inventing agreement or a verdict.
-4. Choose **Save task & notes** to retain the working material. **Export working tray** downloads a recoverable JSON copy; **Import working tray** restores it and shows current source verification separately.
-5. Choose **Compile knowledge packet**, then **Download Markdown packet** or **Copy packet for Nova**. Check the question, quoted material and original routes before asking Nova to continue the work.
-
-You are done when the useful material can be followed back to its sources and carried into the next task. The tray lives beside the catalog, separately from the original archives. Reopening a collected source can reveal that it changed; your retained quotation remains a snapshot.
-
-### Keep collections findable
-
-Open **Catalog tools** when you need to register or maintain a pointer. Give an existing collection a recognizable name, its actual location, a plain description and useful entry points. Preserve honest inspection states. Export the catalog for recovery; back up the source collection separately.
-
-Catalog imports merge stable store identities. Conflicts and stale saves stop for inspection rather than silently replacing newer metadata. If a catalog cannot be read, preserve it, inspect the startup error and restore a known export to the intended data path. Removing a catalog record removes the pointer, not its source. The supplied skill's `workspace/README.md` is the detailed reference.
-
-## Dennis: follow an outcome to its next action
+## Dennis / Project Bridge: follow an outcome to its next action
 
 Project Bridge reuses the exact `DENNIS_PROJECT_HOME` discovered through Nova Operations. Its equivalent agent route is `python skills/nova-operations/scripts/nova_estate.py run project-bridge --`. If the existing project selector is missing, use Nova Operations' supported estate setup under the approved root. The Free edition does not create a standalone fallback.
 
-Select the actual project and read its outcome, next action, milestone/dependency route and evidence before changing the native record. Missing dates or unfinished acceptance remain missing or unfinished. Use the native save/export flow, then reload the record to confirm the intended field persisted. Ember bridge, Survey folio and Redline present the same records through distinct working surfaces; the focused route exposes live work first and Show all stations reveals declared-complete work. A skin never changes completion.
+Select an existing project through the approved `DENNIS_PROJECT_HOME` estate selector. Read its outcome, current next action, declared milestone/dependency route and linked evidence. Unknown dates and incomplete acceptance remain unknown or incomplete. Project Bridge is a read-only companion: ask Nova in conversation to author or update native project records, then choose **Refresh project** to see the result. Ember bridge, Survey folio and Redline present the same source through distinct reading surfaces; a theme never changes project state.
 
-## OMNARA: work from campaign evidence
+## OMNARA Reading Room: understand a saved inquiry
 
-Open or import a native campaign vault, then follow its research question, evidence and claim-support gaps. Supply dated sources; a source count never proves reading or support. Use the campaign room's native save/export path and reopen the saved campaign when resuming. The default or selected campaign home stays outside installation and adds no Nova selector. Back up that owner data, not merely the installed files.
+Open **OMNARA Reading Room** through its launcher and choose a saved inquiry or the clearly labelled included worked inquiry. Use **Choose research folder** and **Browse folder** to select an existing OMNARA research home. **Find a report** searches saved inquiries and retained notes; it does not begin a web search.
 
-## AnswerLayer: compare wording and prepare a working file
+Read the saved report first. Select a citation to open its retained note and source details; choose two source records to **Compare two selected sources**. Search the inquiry, inspect the review recorded for the report and choose **Refresh inquiry** after an update. A saved reading copy can be previewed and downloaded as a private HTML file. The companion does not create inquiries, edit reports, conduct research or fetch linked pages.
 
-Choose **Open an answer record** for an existing ledger or **Example** for the synthetic teaching ledger. **Current answer** and **Proposed wording** keep the baseline, cutoff, exact before/after text and referenced evidence together. Select a proposed change to inspect its recorded status, scope and authority; missing source IDs remain missing. **Changes & exclusions**, **Evidence** and **Recheck triggers** reveal the retained states and conditions without running a monitor.
+The Reading Room opens the existing OMNARA research home. Its `workspace/WORKING-GUIDE.md` documents source selection, reading, comparison, refresh, saved position and the exact contents of private exports. The research home and retained originals stay with their existing owner; browsing never rewrites them.
 
-**Edit working file** opens the complete native JSON. **Apply to working copy** changes only page memory; **Validate** checks structure, not truth, approval or freshness. **Save working file** downloads your copy without changing the original or adopting a proposal. Save before closing/reloading, then reopen that file to resume. **Cancel** preserves the prior working document. Strata and Switchyard are distinct dark environments for the same ledger.
+## AnswerLayer: use the capability in conversation
 
-## Beryl: compare predictions against recorded tests
+Ask Nova in conversation to revisit guidance when a new development may change wording. AnswerLayer is a capability Nova can use during the conversation; it is not a separate visual app in Nova Free. Share the current wording, relevant source and audience, then review any proposed change in chat.
 
-Choose **Open case** or **Explore example**. The diagnostic field keeps the reported fault and original conditions beside rival predictions, a selected test and its actual recorded result. **Compare predictions** restores equal emphasis; open an evidence receipt to inspect its source and limits while preserving orientation. A planned test remains distinct from a performed test; an unknown result remains unknown.
+## Beryl Repair Companion: catch and compare what changed
 
-**Recovery & proof** shows interventions and retesting. **IT review** opens a separate advisory artifact whose selected binding is not authenticated. Recording a test result requires a performed confirmation, actual result, evidence kind and source; it changes the tab's working copy and marks an existing review stale. It does not perform a physical test or repair.
+Open Beryl when a Windows problem is happening and you want a bounded observation, a comparison between two moments, or a prepared investigation beside its exact sources. On **Start & return**, **Check this Windows PC** runs a clearly scoped three-second sample; choose **Compare samples** to read two saved moments side by side. The sample does not capture your workload or establish a cause.
 
-**Edit case JSON**, **Use working copy**, **Check structure** and **Download copy** preserve the original file and the in-memory/download boundaries. Save before replacing edited work or closing. Mossglass, Night Probe and Cinder Relay change the comparison environment while preserving the case and selection.
+To explore existing material, select a log or screenshot in **Sources & Beryl**. The original stays available unchanged; Beryl interprets it in your existing conversation. Copy the local request there, ask Beryl to prepare an investigation, then choose **Refresh prepared work** and read it under **Investigations**. Follow its evidence, rival explanations, next useful move and exact sources. The supplied examples are labelled fictional. You do not enter or edit cases in the companion.
 
-## Observatory: follow an evidence snapshot
-
-Use **Investigation files** to open a native `cd-observatory-case/v1` JSON and, if useful, a supplied comparison baseline. The synthetic Harbor Lantern example is dated teaching material. **Situation** keeps the latest recorded assessment beside the next human move; **Sequence** separates event, observation, publication and retrieval clocks. **Evidence chains**, **Challenge** and **Sources** follow recorded claims, references and rival explanations. Selecting an item reveals its exact record without losing the broader view.
-
-**Compare** shows structural differences by typed ID as **NEW**, **CHANGED** or **NO LONGER REPRESENTED**. Those labels are not reviewed material-change judgments. Invalid formats, duplicate IDs and files over5 MB leave the prior case selected. **Clear private case data**, close or reload discards memory. The atlas does not collect, monitor, edit, save or publish. Signal room and Evidence folio are dark views of the same supplied snapshot.
+Read the packaged `docs/FIRST-USE.md` and `docs/READ-AN-INVESTIGATION.md` for the full walkthrough. Beryl does not inspect or control the computer beyond the specifically described observation, execute proposed commands, or send your request.
 
 ## Knowledge Desk: browse the retained material
 
@@ -97,11 +66,8 @@ Personal context comes through the existing read-only owner adapters. Their avai
 
 ## Recovery and evidence limits
 
-For a memory-only desk, download intended work before reload; the original file remains unchanged. For a persistent native owner, use its save/export receipt and confirm by reopening. For a missing private session, reopen the existing launcher rather than changing a database. Do not confuse a saved revision with validated truth, permission or real-world completion.
+If an app looks empty after upgrading, check its displayed work location before creating a replacement store. Open the known existing folder with its chooser or supported `--data-home` option. An inaccessible or unreadable folder is an error to inspect, not proof that your work is gone. Preserve the original folder before recovery.
 
-Windows review exercised native data and persistence workflows and inspected actual wide and narrow screenshots across the supplied themes. Package checks establish the exercised byte, path and contract properties. Fresh-host discovery, macOS live launch and assistive-technology conformance remain separate observations. Consult the included owner's workspace guide when its labels, schema or launcher changes.
+When another window has saved newer work, a stale-save refusal protects that newer revision. Before reloading, copy any unsaved text and notes to a separate local file. A server backup protects the last saved version; rely on an app export for unsaved edits only when that specific export says it includes them. Once the unsaved work is preserved, reload and reconcile deliberately. Do not overwrite the newer data to clear the message. Knowledge Desk's working set remains temporary: download its reading packet before closing. Dennis retains its existing owner-specific save and recovery behavior.
 
-
-## Oracle Reading
-
-Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Oracle Reading receives the question conversationally, casts with its included tools and lays symbols beside the conversation when a visual view helps. The AI conducts the interpretation; the table supports shared attention. Astrology interpretation uses supplied or verified chart data.
+Windows checks exercise the packaged launch and ordinary work paths. macOS live launch, fresh-host model discovery and assistive-technology conformance remain separate observations. Follow the included skill guide when a schema, label or launcher changes.

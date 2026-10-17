@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/worldline-capture-v2.json",
+  "title": "Governed Worldline capture request",
+  "type": "object",
+  "required": [
+    "format",
+    "scope",
+    "authority",
+    "expected_generation",
+    "idempotency_key",
+    "event",
+    "capture_mode",
+    "retention_guard"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workspace": {
+      "type": "object",
+      "required": [
+        "selection_mode"
+      ],
+      "properties": {
+        "selection_mode": {
+          "enum": [
+            "generic_explicit",
+            "nova_ambient",
+            "nova_explicit_authorized"
+          ]
+        },
+        "path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "grant_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "required": [
+        "user",
+        "agent"
+      ],
+      "properties": {
+        "user": {
+          "type": "string",
+          "minLength": 1
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "project": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "thread": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "authority": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expected_generation": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "idempotency_key": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "format": {
+      "const": "cd-worldline-capture/v2"
+    },
+    "event": {
+      "$ref": "worldline-event-v2.schema.json"
+    },
+    "source_kind": {
+      "enum": [
+        "user",
+        "agent",
+        "tool",
+        "file",
+        "import",
+        "system"
+      ]
+    },
+    "sensitivity": {
+      "$ref": "common-v2.schema.json#/$defs/sensitivity"
+    },
+    "retention": {
+      "type": "string",
+      "minLength": 1
+    },
+    "expires_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "capture_mode": {
+      "enum": [
+        "explicit",
+        "routine"
+      ]
+    },
+    "retention_guard": {
+      "type": "boolean"
+    },
+    "privacy_change_authorized": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": false
+}

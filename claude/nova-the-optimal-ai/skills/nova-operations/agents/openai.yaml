@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nova Operations"
+  short_description: "💠 Estate setup, service status, updates, and recovery."
+  default_prompt: "Use $nova-operations to inspect or repair this Nova Free installation without disturbing unrelated tools or data."

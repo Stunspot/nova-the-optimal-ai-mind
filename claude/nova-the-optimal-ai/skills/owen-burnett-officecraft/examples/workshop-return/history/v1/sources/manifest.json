@@ -1,0 +1,12 @@
+{
+  "format": "officecraft-source-manifest/v1",
+  "sources": [
+    {
+      "source_id": "ORIGINAL",
+      "path": "sources/original.json",
+      "source_type": "notes",
+      "custody_status": "illustrative",
+      "content_status": "illustrative"
+    }
+  ]
+}

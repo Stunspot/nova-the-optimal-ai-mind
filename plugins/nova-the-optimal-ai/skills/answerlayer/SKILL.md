@@ -33,7 +33,7 @@ In native v2 records, approval assertions bind a patch hash, starting baseline h
 
 A focused answer may need one paragraph and a precise replacement sentence. A governed review needs the current baseline, considered changes, reasons for exclusions, unresolved decisions, exact patch and next trigger. Provide only sections that help this reader decide or continue. Preserve full details in the ledger when it exists; keep implementation bookkeeping backstage unless it changes trust or recovery.
 
-Run the smallest material check and report its actual scope. Read [the workspace guide](workspace/README.md) for a visual request, [fallbacks](fallbacks/degraded-capability.md) when tools are unavailable, and [portfolio routing](knowledge/portfolio-routing.md) when research or surveillance is the main task. The browser inspects and edits a transient copy; downloads need user-visible file confirmation before closing.
+Run the smallest material check and report its actual scope. Use [native operations](knowledge/native-ledger-reference.md) when the work needs durable state, [fallbacks](fallbacks/degraded-capability.md) when tools are unavailable, and [portfolio routing](knowledge/portfolio-routing.md) when research or surveillance is the main task. Present a visual comparison directly when it helps the person understand a consequential change.
 
 ## Preserve the source and test the judgment
 

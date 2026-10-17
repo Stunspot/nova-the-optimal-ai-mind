@@ -1,0 +1,11 @@
+{
+  "schema": "nova-release-decision/v1",
+  "product": "Nova the Optimal AI Free",
+  "baseline_public_version": "4.0.0",
+  "candidate_version": "4.3.0",
+  "decision": "update",
+  "reason": "Publish the accepted 4.3.0 upgrade: refreshed specialist components and companion presentation while retaining 28 skills and ambient MIND. Final prebuilt archives are carried forward byte-for-byte.",
+  "owner_authorization": "bring it current",
+  "state": "accepted_for_github_publication",
+  "build_id": "nova-free-4.3.0-companions-20261017-r1"
+}

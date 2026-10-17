@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestForge Scenario",
+  "type": "object",
+  "required": ["id", "risk_ids", "title", "layer", "preconditions", "action", "expected", "forbidden", "status"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^S-[A-Z0-9-]+$"},
+    "risk_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "title": {"type": "string", "minLength": 1},
+    "layer": {"enum": ["static", "unit", "property", "contract", "integration", "api", "browser", "migration", "reliability", "security_negative", "exploratory", "observability"]},
+    "preconditions": {"type": "array", "items": {"type": "string"}},
+    "action": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "expected": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "forbidden": {"type": "array", "items": {"type": "string"}},
+    "evidence": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["proposed", "designed", "implemented", "executed", "blocked"]}
+  },
+  "additionalProperties": true
+}

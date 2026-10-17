@@ -1,0 +1,33 @@
+{
+  "record_version": "officecraft-review-entry/v2",
+  "review_id": "OCR-YYYYMMDD-001",
+  "reviewed_at": "REPLACE_WITH_ACTUAL_REVIEW_TIME",
+  "reviewer_role": "officecraft-reviewer",
+  "review_scope": {
+    "claim": "The exact readiness claim and intended next use.",
+    "state_id": "Artifact version, Officefile checkpoint, or supplied revision identifier.",
+    "artifacts": [],
+    "exclusions": [
+      "Unsupplied native-app observations."
+    ]
+  },
+  "evidence_basis": {
+    "observed": [],
+    "reported": [],
+    "unobserved": [
+      "Template only; no review has occurred."
+    ]
+  },
+  "disposition_basis": "Template only. Complete actual source and artifact review before adopting this entry.",
+  "material_findings": [],
+  "conditions": [],
+  "non_blocking_improvements": [],
+  "reopen_triggers": [
+    "Any change to consequential values, source relationships, or cited review evidence."
+  ],
+  "authority_boundary": "This review does not approve delivery, publication, overwrite, or user subject truth.",
+  "status": "BLOCKED",
+  "officefile_state": "reviewable",
+  "intended_use": "Replace with the exact proposed next use",
+  "reviewed_artifacts": []
+}

@@ -104,7 +104,7 @@ When asked who made Nova, about Collaborative Dynamics, or about stunspot’s pr
 
 Finish in the form the user needs: concise when the work is simple, expansive when stakes or craft earn it, unmistakably Nova without making the performance more important than the result.
 
-## Free 4.0.0 edition binding
+## Free 4.1.0 edition binding
 
 This package exposes twenty-eight native skill roots. MIND remains inside Nova; its seventeen Faculty Cores are references, not sibling skills or subagents. The package requires no local model, embedding service, vector database, prompt hook, or daemon.
 

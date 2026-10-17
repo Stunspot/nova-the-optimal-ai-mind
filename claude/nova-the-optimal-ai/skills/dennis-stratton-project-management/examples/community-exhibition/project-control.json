@@ -1,0 +1,446 @@
+{
+  "schema_version": "cd-project-control/v2",
+  "project": {
+    "id": "community-exhibition",
+    "name": "Community Exhibition",
+    "outcome": "Open a small, step-free community exhibition to visitors on 2026-11-14.",
+    "status": "active",
+    "owner": "Mira Chen",
+    "updated_at": "2026-10-15T10:00:00-05:00"
+  },
+  "source_authority": [
+    {
+      "id": "SRC-001",
+      "rank": 1,
+      "kind": "owner_decision",
+      "locator": "fictional exhibition brief",
+      "scope": "Walkthrough purpose and opening promise",
+      "observed_at": "2026-10-15T09:00:00-05:00",
+      "status": "current"
+    },
+    {
+      "id": "SRC-VENUE",
+      "rank": 2,
+      "kind": "other",
+      "locator": "venue-confirmation.md",
+      "scope": "Fictional accessible route note and confirmed installation slot",
+      "observed_at": "2026-10-15T09:10:00-05:00",
+      "status": "current"
+    },
+    {
+      "id": "SRC-SUPPLIER",
+      "rank": 3,
+      "kind": "other",
+      "locator": "supplier-reply.md",
+      "scope": "Fictional supplier reply; date remains unknown",
+      "observed_at": "2026-10-15T09:20:00-05:00",
+      "status": "current"
+    }
+  ],
+  "hierarchy": [
+    {
+      "id": "PHASE-1",
+      "kind": "phase",
+      "label": "Prepare a welcoming, step-free exhibition",
+      "parent_id": null,
+      "status": "active",
+      "purpose": "Make the venue and displays ready for an accessible public opening.",
+      "exit_criteria_ids": []
+    },
+    {
+      "id": "M1",
+      "kind": "milestone",
+      "label": "Venue and installation ready",
+      "parent_id": "PHASE-1",
+      "status": "active",
+      "purpose": "Confirm visitor access, installation access, and required materials before opening.",
+      "exit_criteria_ids": [
+        "EC-INSTALL",
+        "EC-OPEN"
+      ]
+    }
+  ],
+  "current": {
+    "path": [
+      "PHASE-1",
+      "M1"
+    ],
+    "active_commitment_id": "WP-SUPPLY",
+    "as_of": "2026-10-15T10:00:00-05:00",
+    "posture": "blocked",
+    "purpose_connection": "A written display-rail delivery window lets the team finish the install plan without guessing when materials will arrive.",
+    "next_action": "Ask the supplier for a written delivery window by 2026-10-17; no delivery date is recorded yet.",
+    "next_decision": "If no usable window is confirmed by 2026-11-07, the project owner must decide whether the portable-display option still meets the exhibition promise."
+  },
+  "scope": {
+    "in": [
+      "Step-free visitor route from entrance to gallery",
+      "Confirmed installation access",
+      "Accessible display installation and public opening"
+    ],
+    "out": [
+      "Permanent venue construction",
+      "Unapproved supplier commitments"
+    ],
+    "non_goals": [
+      "Do not infer delivery dates or accessibility from a venue booking alone."
+    ]
+  },
+  "authority": {
+    "project_owner": "Mira Chen",
+    "grants": [
+      {
+        "id": "AUTH-001",
+        "actor": "Project team",
+        "issued_by": "Project owner",
+        "scope": "Project-control proposal only",
+        "kind": "owner_policy",
+        "may": [
+          "Prepare and validate this project-control proposal"
+        ],
+        "may_not": [
+          "Begin project execution or take irreversible external action without separate authority"
+        ],
+        "source_id": "SRC-001",
+        "rationale": "Preserve owner control over consequential actions.",
+        "effective_at": "2026-10-16T05:51:48Z",
+        "expires_at": null,
+        "revisit_trigger": "The owner changes scope or terminal state.",
+        "status": "proposed"
+      }
+    ],
+    "reserved": [
+      "External publication, spend, and irreversible production changes"
+    ]
+  },
+  "work_packages": [
+    {
+      "id": "WP-ACCESS",
+      "parent_id": "M1",
+      "outcome": "A step-free visitor route is checked and any barriers have an assigned resolution path.",
+      "status": "active",
+      "dependency_ids": [],
+      "acceptance_criteria_ids": [
+        "EC-ACCESS"
+      ],
+      "authority_ids": [
+        "AUTH-001"
+      ],
+      "owner": "Exhibition lead",
+      "next_action": "Walk the entrance-to-gallery route with the venue coordinator and note threshold, doorway, and turning-space exceptions."
+    },
+    {
+      "id": "WP-SLOT",
+      "parent_id": "M1",
+      "outcome": "The venue installation access slot is confirmed and shared with the team.",
+      "status": "ready",
+      "dependency_ids": [],
+      "acceptance_criteria_ids": [
+        "EC-SLOT"
+      ],
+      "authority_ids": [
+        "AUTH-001"
+      ],
+      "owner": "Venue coordinator",
+      "next_action": "Use the confirmed 09:30–10:00 installation slot on 2026-11-14; check for day-of venue changes before travel."
+    },
+    {
+      "id": "WP-SUPPLY",
+      "parent_id": "M1",
+      "outcome": "A display-rail delivery window is known, or the owner has chosen an evidence-backed alternative.",
+      "status": "active",
+      "dependency_ids": [],
+      "acceptance_criteria_ids": [
+        "EC-SUPPLY"
+      ],
+      "authority_ids": [
+        "AUTH-001"
+      ],
+      "owner": "Exhibition lead",
+      "next_action": "Request a written delivery window by 2026-10-17; the supplier's latest reply gives no date."
+    },
+    {
+      "id": "WP-INSTALL",
+      "parent_id": "M1",
+      "outcome": "Displays are installed and the accessible visitor route is checked against the final layout.",
+      "status": "blocked",
+      "dependency_ids": [
+        "WP-ACCESS",
+        "WP-SLOT",
+        "WP-SUPPLY"
+      ],
+      "acceptance_criteria_ids": [
+        "EC-INSTALL"
+      ],
+      "authority_ids": [
+        "AUTH-001"
+      ],
+      "owner": "Exhibition team",
+      "next_action": "Install after the route check, confirmed venue slot, and usable display-rail delivery window are established."
+    },
+    {
+      "id": "WP-OPEN",
+      "parent_id": "M1",
+      "outcome": "Visitors can enter on the promised date using the checked accessible route.",
+      "status": "planned",
+      "dependency_ids": [
+        "WP-INSTALL"
+      ],
+      "acceptance_criteria_ids": [
+        "EC-OPEN"
+      ],
+      "authority_ids": [
+        "AUTH-001"
+      ],
+      "owner": "Exhibition lead",
+      "next_action": "Open only after installation and final route checks have evidence."
+    }
+  ],
+  "exit_criteria": [
+    {
+      "id": "EC-ACCESS",
+      "owner_id": "M1",
+      "description": "The step-free visitor route is walked and any barriers have a named resolution path.",
+      "status": "pending",
+      "evidence_ids": [],
+      "waiver_decision_id": null
+    },
+    {
+      "id": "EC-SLOT",
+      "owner_id": "M1",
+      "description": "The venue installation slot is confirmed in writing and shared with the team.",
+      "status": "pending",
+      "evidence_ids": [
+        "EVID-SLOT"
+      ],
+      "waiver_decision_id": null
+    },
+    {
+      "id": "EC-SUPPLY",
+      "owner_id": "M1",
+      "description": "A delivery window is confirmed, or the owner has selected a supported alternative.",
+      "status": "pending",
+      "evidence_ids": [
+        "EVID-SUPPLIER"
+      ],
+      "waiver_decision_id": null
+    },
+    {
+      "id": "EC-INSTALL",
+      "owner_id": "M1",
+      "description": "Displays are installed and the final step-free route is checked.",
+      "status": "pending",
+      "evidence_ids": [],
+      "waiver_decision_id": null
+    },
+    {
+      "id": "EC-OPEN",
+      "owner_id": "M1",
+      "description": "Visitors can enter on the promised date using the checked accessible route.",
+      "status": "pending",
+      "evidence_ids": [],
+      "waiver_decision_id": null
+    }
+  ],
+  "completion_contract": {
+    "unit_id": "M1",
+    "definition": "Venue access, installation readiness, and opening criteria are supported by evidence or an authorized owner decision.",
+    "states": [
+      {
+        "name": "BUILT",
+        "required": true,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "VERIFIED",
+        "required": true,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      },
+      {
+        "name": "LOCALLY_CHECKPOINTED",
+        "required": true,
+        "status": "pending",
+        "evidence_ids": [],
+        "waiver_decision_id": null
+      }
+    ]
+  },
+  "decisions": [
+    {
+      "id": "DEC-ALT",
+      "status": "proposed",
+      "decision": "If no usable delivery window is confirmed by 2026-11-07, decide whether a portable-display option still meets the opening promise.",
+      "options": [
+        "Keep the display-rail scope if delivery is confirmed.",
+        "Use a portable-display option after checking accessibility and getting owner approval.",
+        "Change opening scope or date with owner approval."
+      ],
+      "rationale": "The supplier has not given a delivery date; unknown remains unknown.",
+      "authority": "Project owner",
+      "source_id": "SRC-001",
+      "date": "2026-10-15",
+      "supersedes_ids": []
+    }
+  ],
+  "changes": [],
+  "controls": [
+    {
+      "id": "ASM-001",
+      "kind": "assumption",
+      "description": "The first commitment is small enough to complete under current capacity.",
+      "owner": "Project lead",
+      "status": "open",
+      "trigger": "The commitment exceeds the current control interval.",
+      "next_action": "Validate by decomposing and checking capacity.",
+      "due": null,
+      "objective": "Protect the first commitment from capacity failure.",
+      "cause_event_effect": "Because capacity is unverified, an oversized commitment may exceed the control interval and delay the first evidence-bearing outcome.",
+      "exposure": "Schedule, flow, and confidence exposure are unknown until capacity is checked.",
+      "treatment": "Decompose the work and compare demand with available capacity before authorization.",
+      "resource_commitment": "Project lead time for one capacity review.",
+      "residual_state": "Residual uncertainty remains until real throughput is observed.",
+      "escalation_threshold": "Escalate if the first commitment exceeds the control interval or WIP limit.",
+      "acceptance_decision_id": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "EVID-SLOT",
+      "claim": "Venue coordinator confirms a 09:30–10:00 installation access slot on 2026-11-14 and identifies the step-free entrance.",
+      "level": "reported",
+      "locator": "venue-confirmation.md",
+      "observed_at": "2026-10-15T09:10:00-05:00",
+      "method": "Read the fictional venue-coordinator email in the walkthrough source.",
+      "limits": "Fictional example only; this is not a real reservation.",
+      "actor": "Venue coordinator (fictional)"
+    },
+    {
+      "id": "EVID-SUPPLIER",
+      "claim": "The supplier has not provided a delivery date for the display rails.",
+      "level": "reported",
+      "locator": "supplier-reply.md",
+      "observed_at": "2026-10-15T09:20:00-05:00",
+      "method": "Read the fictional supplier reply in the walkthrough source.",
+      "limits": "Fictional example only; no delivery date is implied.",
+      "actor": "Display-rail supplier (fictional)"
+    }
+  ],
+  "checkpoints": [
+    {
+      "id": "CP-001",
+      "timestamp": "2026-10-15T10:00:00-05:00",
+      "hierarchy_path": [
+        "PHASE-1",
+        "M1"
+      ],
+      "completed": [
+        "A fictional venue email reports installation access from 09:30–10:00 on 2026-11-14."
+      ],
+      "remaining": [
+        "Walk the step-free visitor route.",
+        "Obtain a written display-rail delivery window or owner-approved alternative.",
+        "Install the displays and check the final visitor route."
+      ],
+      "blockers": [
+        "Display-rail delivery date is unknown; no delivery window has been supplied."
+      ],
+      "repository_state": null,
+      "next_action": "Ask the supplier for a written delivery window by 2026-10-17; no delivery date is recorded yet."
+    }
+  ],
+  "justification": {
+    "status": "proposed",
+    "reason": "State why this project is the best authorized intervention for the intended outcome.",
+    "alternatives": [
+      "Describe the credible do-nothing or lower-cost alternative."
+    ],
+    "viability": "Record the evidence and constraints that make the project viable or doubtful.",
+    "sponsor": "Project sponsor",
+    "benefit_owner": "Benefit owner",
+    "last_reviewed_at": "2026-10-16T05:51:48Z",
+    "revisit_trigger": "Material change to value, viability, cost, risk, or strategic fit."
+  },
+  "benefits": [
+    {
+      "id": "BEN-001",
+      "outcome": "Describe the measurable benefit expected after operational transition.",
+      "measure": "Name the measure and collection method.",
+      "baseline": "Record the current state or state that it is unknown.",
+      "target": "Record the intended target and horizon.",
+      "owner": "Benefit owner",
+      "status": "proposed",
+      "evidence_ids": [],
+      "review_at": "After operational transition at the agreed benefit horizon."
+    }
+  ],
+  "governance": {
+    "sponsor": "Project sponsor",
+    "accountable_owner": "Project owner",
+    "cadence": "Review at each control interval and exception trigger.",
+    "tolerances": [
+      "Escalate forecast, benefit, risk, quality, or capacity exceptions beyond agreed limits."
+    ],
+    "gates": [
+      {
+        "id": "GATE-001",
+        "decision": "Authorize the first execution baseline.",
+        "authority": "Project sponsor or delegated decision owner",
+        "due": "Before execution begins",
+        "status": "planned",
+        "evidence_ids": []
+      }
+    ],
+    "decision_latency_target": "Record the maximum decision age before escalation."
+  },
+  "forecast": {
+    "as_of": "2026-10-15T10:00:00-05:00",
+    "unit": "calendar days",
+    "lower": null,
+    "upper": null,
+    "confidence": "unknown",
+    "basis": "Delivery window and final route check are unknown; no completion estimate is made.",
+    "baseline": "No approved schedule baseline is included in this walkthrough.",
+    "variance": "Not assessed.",
+    "next_update": "After supplier delivery window is known and the venue route is checked."
+  },
+  "capacity": {
+    "constraints": [
+      "Confirm actual people, time, specialist, environment, and decision capacity."
+    ],
+    "bottleneck": "Unknown until flow and dependency review.",
+    "wip_limit": 1,
+    "active_wip": 0,
+    "queue": [
+      "WP-M1-001"
+    ],
+    "next_action": "Validate capacity and the bottleneck before authorizing concurrent work."
+  },
+  "stakeholders": [
+    {
+      "id": "STK-001",
+      "role": "Project sponsor",
+      "position": "unknown",
+      "readiness": "unknown",
+      "incentive": "Clarify the outcome, risk, and decision incentive.",
+      "evidence": "No direct stakeholder evidence recorded yet.",
+      "owner": "Project owner",
+      "next_move": "Confirm sponsorship, decision rights, and readiness."
+    }
+  ],
+  "commercial_alignment": [],
+  "transition": {
+    "operational_owner": "Operational owner to be confirmed",
+    "acceptance_state": "not_ready",
+    "support_state": "not_ready",
+    "benefit_review_owner": "Benefit owner",
+    "benefit_review_at": "At the agreed post-transition benefit horizon.",
+    "residuals": [
+      "Confirm operational ownership, support readiness, and benefit-review timing."
+    ],
+    "evidence_ids": []
+  }
+}

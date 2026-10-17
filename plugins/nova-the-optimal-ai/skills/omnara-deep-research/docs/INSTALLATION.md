@@ -1,6 +1,6 @@
 # Install or open Omnara
 
-The complete package has one `omnara-deep-research` folder containing SKILL.md, customer guides, references, scripts, examples and the campaign room. Keep it together. This is a portable individual skill, not a standalone universal Codex plugin manifest.
+The complete package has one `omnara-deep-research` folder containing SKILL.md, customer guides, references, scripts, examples and the Reading Room. Keep it together. This is a portable individual skill, not a standalone universal Codex plugin manifest.
 
 ## Existing Nova Free or Emergent
 
@@ -12,11 +12,11 @@ Attach the complete ZIP and ask “Install this Augment.” The host should insp
 
 Try: “Use $omnara-deep-research. Frame this question and identify the evidence that would change the answer. Do not browse yet.” Verify that the inquiry is preserved, scope is bounded and the no-browse limit is respected. That is one bounded invocation, not universal model qualification.
 
-## Campaign room
+## Reading Room
 
 Python 3.10+ is required. Extract to a stable writable application folder. On Windows run **Open.cmd**; on macOS/Linux use `python3 workspace/open.py`. **Open.command** invokes the same entry after `chmod +x Open.command`. Native macOS execution has not been exercised.
 
-Choose existing research with `python workspace/open.py --data-root "your research folder"` or `OMNARA_HOME`. Otherwise the default is `Documents/OMNARA Campaigns`. The launcher starts/reconnects a private loopback service and opens its matching data home. Keep that folder outside the application. Shortcuts are optional and require the owner's request.
+Choose existing research with `python workspace/open.py --data-root "your research folder"` or `OMNARA_HOME`. Otherwise, Nova resolves its default from active estate research; portable installations fall back to Documents/OMNARA Campaigns. The launcher starts or reconnects a private loopback service and opens the matching research home. The Reading Room opens existing inquiries; use OMNARA in a research conversation to conduct new inquiry work. Keep the research home outside the application. Shortcuts are optional and require the owner's request.
 
 ## Plain chat
 

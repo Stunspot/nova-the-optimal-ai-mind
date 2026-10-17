@@ -1,7 +1,7 @@
-# Reviewer: capability matrix
+# Match review to the decision
 
-This is the reviewer skill, which inspects supplied evidence. The optional Studio belongs to beryl-it-tech; it is not bundled in this folder.
+Plan review asks whether the next proposed action is ready within its stated limits. Work-claim review asks what was actually performed and observed. Repair-closure review needs the original failure conditions and relevant retest. Name which decision is being reviewed before requesting a verdict.
 
-Plan review, evidence sufficiency review and closure review require different evidence. Name the decision first. A plan can be ready while physical execution remains future; repair closure requires the actual original-envelope result. Review never supplies execution, authority or authenticated provenance by itself.
+A plan can be ready while physical execution remains future; repair closure cannot borrow that future evidence. Review does not supply execution, authorization or authenticated provenance. The exact supplied case and its revision set the boundary.
 
-See [the reviewer quick start](QUICK-START.md) and [review method](USER-GUIDE.md).
+The separate Beryl Repair Companion can display an independent, self-check or imported review bound to a native record fingerprint. Those are stated attribution labels; the app cannot authenticate them. [Review one decision](QUICK-START.md).

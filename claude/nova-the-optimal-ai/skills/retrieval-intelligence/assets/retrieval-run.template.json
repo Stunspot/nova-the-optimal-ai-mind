@@ -1,0 +1,17 @@
+{
+  "schema": "retrieval-run-v1",
+  "question": "",
+  "decision_supported": "",
+  "corpus": "",
+  "index_id": "",
+  "engine": "",
+  "queries": [],
+  "filters": {},
+  "top_k": 0,
+  "context_budget_chars": 0,
+  "result_artifact": "",
+  "context_artifact": "",
+  "retrieval_sufficient": null,
+  "limits": [],
+  "review": null
+}

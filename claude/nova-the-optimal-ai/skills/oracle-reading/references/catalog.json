@@ -1,0 +1,1678 @@
+{
+  "schema": "oracle-catalog/v1",
+  "version": "0.1.0",
+  "tarot": [
+    {
+      "id": "major-0",
+      "name": "The Fool",
+      "number": 0,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "beginning, trust",
+      "meaning": "Explore a new direction with a small, grounded first step.",
+      "reflection": "Where does beginning meet your question?"
+    },
+    {
+      "id": "major-1",
+      "name": "The Magician",
+      "number": 1,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "agency, skill",
+      "meaning": "Bring the resources you already have into deliberate use.",
+      "reflection": "Where does agency meet your question?"
+    },
+    {
+      "id": "major-2",
+      "name": "The High Priestess",
+      "number": 2,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "intuition, silence",
+      "meaning": "Listen before forcing an answer; some context is still unfolding.",
+      "reflection": "Where does intuition meet your question?"
+    },
+    {
+      "id": "major-3",
+      "name": "The Empress",
+      "number": 3,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "care, creativity",
+      "meaning": "Nurture what can grow through sustained, embodied attention.",
+      "reflection": "Where does care meet your question?"
+    },
+    {
+      "id": "major-4",
+      "name": "The Emperor",
+      "number": 4,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "structure, boundaries",
+      "meaning": "Build a dependable container without controlling every outcome.",
+      "reflection": "Where does structure meet your question?"
+    },
+    {
+      "id": "major-5",
+      "name": "The Hierophant",
+      "number": 5,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "tradition, learning",
+      "meaning": "Examine the teachings and communities that shape your choices.",
+      "reflection": "Where does tradition meet your question?"
+    },
+    {
+      "id": "major-6",
+      "name": "The Lovers",
+      "number": 6,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "alignment, choice",
+      "meaning": "Choose in accordance with your values and communicate them.",
+      "reflection": "Where does alignment meet your question?"
+    },
+    {
+      "id": "major-7",
+      "name": "The Chariot",
+      "number": 7,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "direction, discipline",
+      "meaning": "Coordinate competing pulls around a chosen direction.",
+      "reflection": "Where does direction meet your question?"
+    },
+    {
+      "id": "major-8",
+      "name": "Strength",
+      "number": 8,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "courage, compassion",
+      "meaning": "Meet intensity with steady kindness and a firm centre.",
+      "reflection": "Where does courage meet your question?"
+    },
+    {
+      "id": "major-9",
+      "name": "The Hermit",
+      "number": 9,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "reflection, discernment",
+      "meaning": "Step back enough to hear your own judgment.",
+      "reflection": "Where does reflection meet your question?"
+    },
+    {
+      "id": "major-10",
+      "name": "Wheel of Fortune",
+      "number": 10,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "cycles, contingency",
+      "meaning": "Notice changing conditions and adapt without assuming control.",
+      "reflection": "Where does cycles meet your question?"
+    },
+    {
+      "id": "major-11",
+      "name": "Justice",
+      "number": 11,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "fairness, accountability",
+      "meaning": "Examine the facts and your responsibilities before deciding.",
+      "reflection": "Where does fairness meet your question?"
+    },
+    {
+      "id": "major-12",
+      "name": "The Hanged Man",
+      "number": 12,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "pause, perspective",
+      "meaning": "Release a fixed angle and use the pause to see differently.",
+      "reflection": "Where does pause meet your question?"
+    },
+    {
+      "id": "major-13",
+      "name": "Death",
+      "number": 13,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "ending, renewal",
+      "meaning": "Recognize what has run its course and make room for a new form.",
+      "reflection": "Where does ending meet your question?"
+    },
+    {
+      "id": "major-14",
+      "name": "Temperance",
+      "number": 14,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "integration, balance",
+      "meaning": "Find a sustainable rhythm between extremes.",
+      "reflection": "Where does integration meet your question?"
+    },
+    {
+      "id": "major-15",
+      "name": "The Devil",
+      "number": 15,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "attachment, constraint",
+      "meaning": "Inspect a pattern that trades freedom for short-term comfort.",
+      "reflection": "Where does attachment meet your question?"
+    },
+    {
+      "id": "major-16",
+      "name": "The Tower",
+      "number": 16,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "disruption, revelation",
+      "meaning": "Ground yourself while examining an unstable structure.",
+      "reflection": "Where does disruption meet your question?"
+    },
+    {
+      "id": "major-17",
+      "name": "The Star",
+      "number": 17,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "hope, renewal",
+      "meaning": "Restore trust through small acts of care and honest aspiration.",
+      "reflection": "Where does hope meet your question?"
+    },
+    {
+      "id": "major-18",
+      "name": "The Moon",
+      "number": 18,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "ambiguity, imagination",
+      "meaning": "Check what is known against what is feared before acting.",
+      "reflection": "Where does ambiguity meet your question?"
+    },
+    {
+      "id": "major-19",
+      "name": "The Sun",
+      "number": 19,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "clarity, vitality",
+      "meaning": "Give what is healthy and clear room for expression.",
+      "reflection": "Where does clarity meet your question?"
+    },
+    {
+      "id": "major-20",
+      "name": "Judgement",
+      "number": 20,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "reckoning, response",
+      "meaning": "Revisit the story, accept what you have learned, and respond afresh.",
+      "reflection": "Where does reckoning meet your question?"
+    },
+    {
+      "id": "major-21",
+      "name": "The World",
+      "number": 21,
+      "suit": "Major Arcana",
+      "glyph": "✦",
+      "keywords": "integration, completion",
+      "meaning": "Recognize a completed cycle and carry its learning forward.",
+      "reflection": "Where does integration meet your question?"
+    },
+    {
+      "id": "wands-1",
+      "name": "Ace of Wands",
+      "number": 1,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "creative spark",
+      "meaning": "Give an idea a modest beginning.",
+      "reflection": "How does creative spark appear in this situation?"
+    },
+    {
+      "id": "wands-2",
+      "name": "Two of Wands",
+      "number": 2,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "planning",
+      "meaning": "Compare possible paths before committing.",
+      "reflection": "How does planning appear in this situation?"
+    },
+    {
+      "id": "wands-3",
+      "name": "Three of Wands",
+      "number": 3,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "horizons",
+      "meaning": "Prepare for the next stage of expansion.",
+      "reflection": "How does horizons appear in this situation?"
+    },
+    {
+      "id": "wands-4",
+      "name": "Four of Wands",
+      "number": 4,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "celebration",
+      "meaning": "Recognize the shared foundation already built.",
+      "reflection": "How does celebration appear in this situation?"
+    },
+    {
+      "id": "wands-5",
+      "name": "Five of Wands",
+      "number": 5,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "competition",
+      "meaning": "Distinguish useful challenge from needless friction.",
+      "reflection": "How does competition appear in this situation?"
+    },
+    {
+      "id": "wands-6",
+      "name": "Six of Wands",
+      "number": 6,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "recognition",
+      "meaning": "Receive progress and praise without losing perspective.",
+      "reflection": "How does recognition appear in this situation?"
+    },
+    {
+      "id": "wands-7",
+      "name": "Seven of Wands",
+      "number": 7,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "defence",
+      "meaning": "Choose which boundaries deserve your energy.",
+      "reflection": "How does defence appear in this situation?"
+    },
+    {
+      "id": "wands-8",
+      "name": "Eight of Wands",
+      "number": 8,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "momentum",
+      "meaning": "Clarify your message before accelerating.",
+      "reflection": "How does momentum appear in this situation?"
+    },
+    {
+      "id": "wands-9",
+      "name": "Nine of Wands",
+      "number": 9,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "persistence",
+      "meaning": "Protect your capacity while continuing after difficulty.",
+      "reflection": "How does persistence appear in this situation?"
+    },
+    {
+      "id": "wands-10",
+      "name": "Ten of Wands",
+      "number": 10,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "burden",
+      "meaning": "Redistribute a load that has become excessive.",
+      "reflection": "How does burden appear in this situation?"
+    },
+    {
+      "id": "wands-11",
+      "name": "Page of Wands",
+      "number": 11,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "curiosity",
+      "meaning": "Explore without promising more than you can sustain.",
+      "reflection": "How does curiosity appear in this situation?"
+    },
+    {
+      "id": "wands-12",
+      "name": "Knight of Wands",
+      "number": 12,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "bold pursuit",
+      "meaning": "Balance momentum with attention to consequences.",
+      "reflection": "How does bold pursuit appear in this situation?"
+    },
+    {
+      "id": "wands-13",
+      "name": "Queen of Wands",
+      "number": 13,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "confidence",
+      "meaning": "Encourage others through warm creative presence.",
+      "reflection": "How does confidence appear in this situation?"
+    },
+    {
+      "id": "wands-14",
+      "name": "King of Wands",
+      "number": 14,
+      "suit": "Wands",
+      "element": "Fire",
+      "glyph": "↑",
+      "keywords": "vision",
+      "meaning": "Take responsibility for the direction you inspire.",
+      "reflection": "How does vision appear in this situation?"
+    },
+    {
+      "id": "cups-1",
+      "name": "Ace of Cups",
+      "number": 1,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "emotional opening",
+      "meaning": "Make room for an honest feeling.",
+      "reflection": "How does emotional opening appear in this situation?"
+    },
+    {
+      "id": "cups-2",
+      "name": "Two of Cups",
+      "number": 2,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "connection",
+      "meaning": "Notice reciprocity and shared intention.",
+      "reflection": "How does connection appear in this situation?"
+    },
+    {
+      "id": "cups-3",
+      "name": "Three of Cups",
+      "number": 3,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "community",
+      "meaning": "Receive support and contribute yours.",
+      "reflection": "How does community appear in this situation?"
+    },
+    {
+      "id": "cups-4",
+      "name": "Four of Cups",
+      "number": 4,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "disengagement",
+      "meaning": "Ask what an emotional pause is telling you.",
+      "reflection": "How does disengagement appear in this situation?"
+    },
+    {
+      "id": "cups-5",
+      "name": "Five of Cups",
+      "number": 5,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "grief",
+      "meaning": "Acknowledge loss without erasing what remains.",
+      "reflection": "How does grief appear in this situation?"
+    },
+    {
+      "id": "cups-6",
+      "name": "Six of Cups",
+      "number": 6,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "memory",
+      "meaning": "Take nourishment from the past without living there.",
+      "reflection": "How does memory appear in this situation?"
+    },
+    {
+      "id": "cups-7",
+      "name": "Seven of Cups",
+      "number": 7,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "possibilities",
+      "meaning": "Test desire against practical reality.",
+      "reflection": "How does possibilities appear in this situation?"
+    },
+    {
+      "id": "cups-8",
+      "name": "Eight of Cups",
+      "number": 8,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "departure",
+      "meaning": "Leave what no longer nourishes for a meaningful horizon.",
+      "reflection": "How does departure appear in this situation?"
+    },
+    {
+      "id": "cups-9",
+      "name": "Nine of Cups",
+      "number": 9,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "satisfaction",
+      "meaning": "Enjoy enough without expecting it to solve everything.",
+      "reflection": "How does satisfaction appear in this situation?"
+    },
+    {
+      "id": "cups-10",
+      "name": "Ten of Cups",
+      "number": 10,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "belonging",
+      "meaning": "Explore the conditions of a life that feels emotionally whole.",
+      "reflection": "How does belonging appear in this situation?"
+    },
+    {
+      "id": "cups-11",
+      "name": "Page of Cups",
+      "number": 11,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "sensitivity",
+      "meaning": "Approach a new feeling with curiosity.",
+      "reflection": "How does sensitivity appear in this situation?"
+    },
+    {
+      "id": "cups-12",
+      "name": "Knight of Cups",
+      "number": 12,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "romantic pursuit",
+      "meaning": "Bring sincerity alongside imagination.",
+      "reflection": "How does romantic pursuit appear in this situation?"
+    },
+    {
+      "id": "cups-13",
+      "name": "Queen of Cups",
+      "number": 13,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "receptivity",
+      "meaning": "Care for others while honouring your limits.",
+      "reflection": "How does receptivity appear in this situation?"
+    },
+    {
+      "id": "cups-14",
+      "name": "King of Cups",
+      "number": 14,
+      "suit": "Cups",
+      "element": "Water",
+      "glyph": "≈",
+      "keywords": "emotional steadiness",
+      "meaning": "Hold feeling without being ruled by it.",
+      "reflection": "How does emotional steadiness appear in this situation?"
+    },
+    {
+      "id": "swords-1",
+      "name": "Ace of Swords",
+      "number": 1,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "insight",
+      "meaning": "Use new clarity and truth with care.",
+      "reflection": "How does insight appear in this situation?"
+    },
+    {
+      "id": "swords-2",
+      "name": "Two of Swords",
+      "number": 2,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "indecision",
+      "meaning": "Identify the information or feeling being held at bay.",
+      "reflection": "How does indecision appear in this situation?"
+    },
+    {
+      "id": "swords-3",
+      "name": "Three of Swords",
+      "number": 3,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "heartache",
+      "meaning": "Allow honesty and support to coexist.",
+      "reflection": "How does heartache appear in this situation?"
+    },
+    {
+      "id": "swords-4",
+      "name": "Four of Swords",
+      "number": 4,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "rest",
+      "meaning": "Pause before returning to the problem.",
+      "reflection": "How does rest appear in this situation?"
+    },
+    {
+      "id": "swords-5",
+      "name": "Five of Swords",
+      "number": 5,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "costly conflict",
+      "meaning": "Ask whether winning serves what matters.",
+      "reflection": "How does costly conflict appear in this situation?"
+    },
+    {
+      "id": "swords-6",
+      "name": "Six of Swords",
+      "number": 6,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "passage",
+      "meaning": "Carry your learning into calmer conditions.",
+      "reflection": "How does passage appear in this situation?"
+    },
+    {
+      "id": "swords-7",
+      "name": "Seven of Swords",
+      "number": 7,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "strategy",
+      "meaning": "Examine the difference between privacy and evasion.",
+      "reflection": "How does strategy appear in this situation?"
+    },
+    {
+      "id": "swords-8",
+      "name": "Eight of Swords",
+      "number": 8,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "confinement",
+      "meaning": "Distinguish real constraints from revisable beliefs.",
+      "reflection": "How does confinement appear in this situation?"
+    },
+    {
+      "id": "swords-9",
+      "name": "Nine of Swords",
+      "number": 9,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "anxiety",
+      "meaning": "Seek grounded reassurance and practical support.",
+      "reflection": "How does anxiety appear in this situation?"
+    },
+    {
+      "id": "swords-10",
+      "name": "Ten of Swords",
+      "number": 10,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "ending",
+      "meaning": "Acknowledge a painful limit and allow recovery to begin.",
+      "reflection": "How does ending appear in this situation?"
+    },
+    {
+      "id": "swords-11",
+      "name": "Page of Swords",
+      "number": 11,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "inquiry",
+      "meaning": "Investigate before making an accusation.",
+      "reflection": "How does inquiry appear in this situation?"
+    },
+    {
+      "id": "swords-12",
+      "name": "Knight of Swords",
+      "number": 12,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "forceful argument",
+      "meaning": "Check whether speed is outrunning judgment.",
+      "reflection": "How does forceful argument appear in this situation?"
+    },
+    {
+      "id": "swords-13",
+      "name": "Queen of Swords",
+      "number": 13,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "discernment",
+      "meaning": "Pair honest boundaries with humanity.",
+      "reflection": "How does discernment appear in this situation?"
+    },
+    {
+      "id": "swords-14",
+      "name": "King of Swords",
+      "number": 14,
+      "suit": "Swords",
+      "element": "Air",
+      "glyph": "◇",
+      "keywords": "principled judgment",
+      "meaning": "Use expertise responsibly and remain open to correction.",
+      "reflection": "How does principled judgment appear in this situation?"
+    },
+    {
+      "id": "pentacles-1",
+      "name": "Ace of Pentacles",
+      "number": 1,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "opportunity",
+      "meaning": "Nurture a tangible practical beginning.",
+      "reflection": "How does opportunity appear in this situation?"
+    },
+    {
+      "id": "pentacles-2",
+      "name": "Two of Pentacles",
+      "number": 2,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "balance",
+      "meaning": "Adjust the rhythm of competing demands.",
+      "reflection": "How does balance appear in this situation?"
+    },
+    {
+      "id": "pentacles-3",
+      "name": "Three of Pentacles",
+      "number": 3,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "collaboration",
+      "meaning": "Value complementary skill and shared craft.",
+      "reflection": "How does collaboration appear in this situation?"
+    },
+    {
+      "id": "pentacles-4",
+      "name": "Four of Pentacles",
+      "number": 4,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "holding",
+      "meaning": "Compare security with rigidity.",
+      "reflection": "How does holding appear in this situation?"
+    },
+    {
+      "id": "pentacles-5",
+      "name": "Five of Pentacles",
+      "number": 5,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "material strain",
+      "meaning": "Identify available help without shame.",
+      "reflection": "How does material strain appear in this situation?"
+    },
+    {
+      "id": "pentacles-6",
+      "name": "Six of Pentacles",
+      "number": 6,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "exchange",
+      "meaning": "Examine fairness in giving and receiving.",
+      "reflection": "How does exchange appear in this situation?"
+    },
+    {
+      "id": "pentacles-7",
+      "name": "Seven of Pentacles",
+      "number": 7,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "assessment",
+      "meaning": "Review the harvest before investing more.",
+      "reflection": "How does assessment appear in this situation?"
+    },
+    {
+      "id": "pentacles-8",
+      "name": "Eight of Pentacles",
+      "number": 8,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "practice",
+      "meaning": "Let consistency deepen skill.",
+      "reflection": "How does practice appear in this situation?"
+    },
+    {
+      "id": "pentacles-9",
+      "name": "Nine of Pentacles",
+      "number": 9,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "independence",
+      "meaning": "Appreciate what sustained care has built.",
+      "reflection": "How does independence appear in this situation?"
+    },
+    {
+      "id": "pentacles-10",
+      "name": "Ten of Pentacles",
+      "number": 10,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "legacy",
+      "meaning": "Consider the resources and belonging your choices pass on.",
+      "reflection": "How does legacy appear in this situation?"
+    },
+    {
+      "id": "pentacles-11",
+      "name": "Page of Pentacles",
+      "number": 11,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "learning",
+      "meaning": "Begin with a manageable practical commitment.",
+      "reflection": "How does learning appear in this situation?"
+    },
+    {
+      "id": "pentacles-12",
+      "name": "Knight of Pentacles",
+      "number": 12,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "steady effort",
+      "meaning": "Favour reliable progress over spectacle.",
+      "reflection": "How does steady effort appear in this situation?"
+    },
+    {
+      "id": "pentacles-13",
+      "name": "Queen of Pentacles",
+      "number": 13,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "resourceful care",
+      "meaning": "Make daily life more supportive and workable.",
+      "reflection": "How does resourceful care appear in this situation?"
+    },
+    {
+      "id": "pentacles-14",
+      "name": "King of Pentacles",
+      "number": 14,
+      "suit": "Pentacles",
+      "element": "Earth",
+      "glyph": "○",
+      "keywords": "stewardship",
+      "meaning": "Use stability to support more than yourself.",
+      "reflection": "How does stewardship appear in this situation?"
+    }
+  ],
+  "runes": [
+    {
+      "id": "rune-1",
+      "name": "Fehu",
+      "glyph": "ᚠ",
+      "keywords": "resources",
+      "meaning": "Notice how value circulates, including care and effort.",
+      "reflection": "What does resources ask of you here?"
+    },
+    {
+      "id": "rune-2",
+      "name": "Uruz",
+      "glyph": "ᚢ",
+      "keywords": "resilience",
+      "meaning": "Develop capacity through grounded effort.",
+      "reflection": "What does resilience ask of you here?"
+    },
+    {
+      "id": "rune-3",
+      "name": "Thurisaz",
+      "glyph": "ᚦ",
+      "keywords": "threshold",
+      "meaning": "Pause at a boundary and choose a careful response.",
+      "reflection": "What does threshold ask of you here?"
+    },
+    {
+      "id": "rune-4",
+      "name": "Ansuz",
+      "glyph": "ᚨ",
+      "keywords": "speech",
+      "meaning": "Listen for a useful message and communicate attentively.",
+      "reflection": "What does speech ask of you here?"
+    },
+    {
+      "id": "rune-5",
+      "name": "Raidho",
+      "glyph": "ᚱ",
+      "keywords": "journey",
+      "meaning": "Align direction and timing through a practical step.",
+      "reflection": "What does journey ask of you here?"
+    },
+    {
+      "id": "rune-6",
+      "name": "Kenaz",
+      "glyph": "ᚲ",
+      "keywords": "illumination",
+      "meaning": "Let insight become a craft you can practise.",
+      "reflection": "What does illumination ask of you here?"
+    },
+    {
+      "id": "rune-7",
+      "name": "Gebo",
+      "glyph": "ᚷ",
+      "keywords": "exchange",
+      "meaning": "Examine the reciprocity of what you give and receive.",
+      "reflection": "What does exchange ask of you here?"
+    },
+    {
+      "id": "rune-8",
+      "name": "Wunjo",
+      "glyph": "ᚹ",
+      "keywords": "fellowship",
+      "meaning": "Notice what sustains shared wellbeing.",
+      "reflection": "What does fellowship ask of you here?"
+    },
+    {
+      "id": "rune-9",
+      "name": "Hagalaz",
+      "glyph": "ᚺ",
+      "keywords": "disruption",
+      "meaning": "Adapt to interruption while protecting what matters.",
+      "reflection": "What does disruption ask of you here?"
+    },
+    {
+      "id": "rune-10",
+      "name": "Nauthiz",
+      "glyph": "ᚾ",
+      "keywords": "need",
+      "meaning": "Distinguish the essential from what pressure makes urgent.",
+      "reflection": "What does need ask of you here?"
+    },
+    {
+      "id": "rune-11",
+      "name": "Isa",
+      "glyph": "ᛁ",
+      "keywords": "stillness",
+      "meaning": "Use limited movement to clarify and conserve.",
+      "reflection": "What does stillness ask of you here?"
+    },
+    {
+      "id": "rune-12",
+      "name": "Jera",
+      "glyph": "ᛃ",
+      "keywords": "harvest",
+      "meaning": "Respect the timing of sustained work and gradual results.",
+      "reflection": "What does harvest ask of you here?"
+    },
+    {
+      "id": "rune-13",
+      "name": "Eihwaz",
+      "glyph": "ᛇ",
+      "keywords": "endurance",
+      "meaning": "Hold a steady centre through transition.",
+      "reflection": "What does endurance ask of you here?"
+    },
+    {
+      "id": "rune-14",
+      "name": "Perthro",
+      "glyph": "ᛈ",
+      "keywords": "uncertainty",
+      "meaning": "Make space for what is not yet known.",
+      "reflection": "What does uncertainty ask of you here?"
+    },
+    {
+      "id": "rune-15",
+      "name": "Algiz",
+      "glyph": "ᛉ",
+      "keywords": "protection",
+      "meaning": "Strengthen a boundary and notice your support network.",
+      "reflection": "What does protection ask of you here?"
+    },
+    {
+      "id": "rune-16",
+      "name": "Sowilo",
+      "glyph": "ᛊ",
+      "keywords": "clarity",
+      "meaning": "Move toward coherence and purposeful energy.",
+      "reflection": "What does clarity ask of you here?"
+    },
+    {
+      "id": "rune-17",
+      "name": "Tiwaz",
+      "glyph": "ᛏ",
+      "keywords": "principle",
+      "meaning": "Ask what responsible action your values require.",
+      "reflection": "What does principle ask of you here?"
+    },
+    {
+      "id": "rune-18",
+      "name": "Berkano",
+      "glyph": "ᛒ",
+      "keywords": "growth",
+      "meaning": "Protect a beginning through patient practical care.",
+      "reflection": "What does growth ask of you here?"
+    },
+    {
+      "id": "rune-19",
+      "name": "Ehwaz",
+      "glyph": "ᛖ",
+      "keywords": "partnership",
+      "meaning": "Find the cooperation that makes progress possible.",
+      "reflection": "What does partnership ask of you here?"
+    },
+    {
+      "id": "rune-20",
+      "name": "Mannaz",
+      "glyph": "ᛗ",
+      "keywords": "humanity",
+      "meaning": "Consider your place among others and their perspectives.",
+      "reflection": "What does humanity ask of you here?"
+    },
+    {
+      "id": "rune-21",
+      "name": "Laguz",
+      "glyph": "ᛚ",
+      "keywords": "flow",
+      "meaning": "Attend to emotional movement while keeping your footing.",
+      "reflection": "What does flow ask of you here?"
+    },
+    {
+      "id": "rune-22",
+      "name": "Ingwaz",
+      "glyph": "ᛜ",
+      "keywords": "gestation",
+      "meaning": "Allow potential to mature before demanding an outcome.",
+      "reflection": "What does gestation ask of you here?"
+    },
+    {
+      "id": "rune-23",
+      "name": "Dagaz",
+      "glyph": "ᛞ",
+      "keywords": "dawn",
+      "meaning": "Recognize a shift in understanding and explore its opening.",
+      "reflection": "What does dawn ask of you here?"
+    },
+    {
+      "id": "rune-24",
+      "name": "Othala",
+      "glyph": "ᛟ",
+      "keywords": "inheritance",
+      "meaning": "Examine what you carry and choose to pass on.",
+      "reflection": "What does inheritance ask of you here?"
+    }
+  ],
+  "iching": [
+    {
+      "id": "hex-1",
+      "number": 1,
+      "name": "The Creative",
+      "glyph": "䷀",
+      "bits": "111111",
+      "keywords": "initiative, disciplined power",
+      "meaning": "Attend to initiative, disciplined power. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could initiative change your approach?"
+    },
+    {
+      "id": "hex-2",
+      "number": 2,
+      "name": "The Receptive",
+      "glyph": "䷁",
+      "bits": "000000",
+      "keywords": "responsiveness, supportive ground",
+      "meaning": "Attend to responsiveness, supportive ground. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could responsiveness change your approach?"
+    },
+    {
+      "id": "hex-3",
+      "number": 3,
+      "name": "Difficulty at the Beginning",
+      "glyph": "䷂",
+      "bits": "100010",
+      "keywords": "uncertain beginnings, patient organisation",
+      "meaning": "Attend to uncertain beginnings, patient organisation. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could uncertain beginnings change your approach?"
+    },
+    {
+      "id": "hex-4",
+      "number": 4,
+      "name": "Youthful Learning",
+      "glyph": "䷃",
+      "bits": "010001",
+      "keywords": "teachability, sincere inquiry",
+      "meaning": "Attend to teachability, sincere inquiry. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could teachability change your approach?"
+    },
+    {
+      "id": "hex-5",
+      "number": 5,
+      "name": "Waiting",
+      "glyph": "䷄",
+      "bits": "111010",
+      "keywords": "patience, readiness",
+      "meaning": "Attend to patience, readiness. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could patience change your approach?"
+    },
+    {
+      "id": "hex-6",
+      "number": 6,
+      "name": "Conflict",
+      "glyph": "䷅",
+      "bits": "010111",
+      "keywords": "disagreement, wise restraint",
+      "meaning": "Attend to disagreement, wise restraint. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could disagreement change your approach?"
+    },
+    {
+      "id": "hex-7",
+      "number": 7,
+      "name": "The Army",
+      "glyph": "䷆",
+      "bits": "010000",
+      "keywords": "organisation, responsible leadership",
+      "meaning": "Attend to organisation, responsible leadership. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could organisation change your approach?"
+    },
+    {
+      "id": "hex-8",
+      "number": 8,
+      "name": "Holding Together",
+      "glyph": "䷇",
+      "bits": "000010",
+      "keywords": "affiliation, shared purpose",
+      "meaning": "Attend to affiliation, shared purpose. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could affiliation change your approach?"
+    },
+    {
+      "id": "hex-9",
+      "number": 9,
+      "name": "Small Taming",
+      "glyph": "䷈",
+      "bits": "111011",
+      "keywords": "gentle restraint, incremental influence",
+      "meaning": "Attend to gentle restraint, incremental influence. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could gentle restraint change your approach?"
+    },
+    {
+      "id": "hex-10",
+      "number": 10,
+      "name": "Treading",
+      "glyph": "䷉",
+      "bits": "110111",
+      "keywords": "careful conduct, awareness of power",
+      "meaning": "Attend to careful conduct, awareness of power. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could careful conduct change your approach?"
+    },
+    {
+      "id": "hex-11",
+      "number": 11,
+      "name": "Peace",
+      "glyph": "䷊",
+      "bits": "111000",
+      "keywords": "exchange, balanced cooperation",
+      "meaning": "Attend to exchange, balanced cooperation. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could exchange change your approach?"
+    },
+    {
+      "id": "hex-12",
+      "number": 12,
+      "name": "Standstill",
+      "glyph": "䷋",
+      "bits": "000111",
+      "keywords": "blocked exchange, preserving integrity",
+      "meaning": "Attend to blocked exchange, preserving integrity. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could blocked exchange change your approach?"
+    },
+    {
+      "id": "hex-13",
+      "number": 13,
+      "name": "Fellowship",
+      "glyph": "䷌",
+      "bits": "101111",
+      "keywords": "common purpose, open cooperation",
+      "meaning": "Attend to common purpose, open cooperation. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could common purpose change your approach?"
+    },
+    {
+      "id": "hex-14",
+      "number": 14,
+      "name": "Great Possession",
+      "glyph": "䷍",
+      "bits": "111101",
+      "keywords": "resources, generous stewardship",
+      "meaning": "Attend to resources, generous stewardship. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could resources change your approach?"
+    },
+    {
+      "id": "hex-15",
+      "number": 15,
+      "name": "Modesty",
+      "glyph": "䷎",
+      "bits": "001000",
+      "keywords": "proportion, quiet competence",
+      "meaning": "Attend to proportion, quiet competence. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could proportion change your approach?"
+    },
+    {
+      "id": "hex-16",
+      "number": 16,
+      "name": "Enthusiasm",
+      "glyph": "䷏",
+      "bits": "000100",
+      "keywords": "mobilisation, grounded inspiration",
+      "meaning": "Attend to mobilisation, grounded inspiration. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could mobilisation change your approach?"
+    },
+    {
+      "id": "hex-17",
+      "number": 17,
+      "name": "Following",
+      "glyph": "䷐",
+      "bits": "100110",
+      "keywords": "adaptation, discerning allegiance",
+      "meaning": "Attend to adaptation, discerning allegiance. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could adaptation change your approach?"
+    },
+    {
+      "id": "hex-18",
+      "number": 18,
+      "name": "Repairing Decay",
+      "glyph": "䷑",
+      "bits": "011001",
+      "keywords": "neglected patterns, restorative work",
+      "meaning": "Attend to neglected patterns, restorative work. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could neglected patterns change your approach?"
+    },
+    {
+      "id": "hex-19",
+      "number": 19,
+      "name": "Approach",
+      "glyph": "䷒",
+      "bits": "110000",
+      "keywords": "engagement, attentive leadership",
+      "meaning": "Attend to engagement, attentive leadership. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could engagement change your approach?"
+    },
+    {
+      "id": "hex-20",
+      "number": 20,
+      "name": "Contemplation",
+      "glyph": "䷓",
+      "bits": "000011",
+      "keywords": "observation, wider perspective",
+      "meaning": "Attend to observation, wider perspective. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could observation change your approach?"
+    },
+    {
+      "id": "hex-21",
+      "number": 21,
+      "name": "Biting Through",
+      "glyph": "䷔",
+      "bits": "100101",
+      "keywords": "obstruction, decisive clarity",
+      "meaning": "Attend to obstruction, decisive clarity. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could obstruction change your approach?"
+    },
+    {
+      "id": "hex-22",
+      "number": 22,
+      "name": "Grace",
+      "glyph": "䷕",
+      "bits": "101001",
+      "keywords": "form, substance beneath appearance",
+      "meaning": "Attend to form, substance beneath appearance. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could form change your approach?"
+    },
+    {
+      "id": "hex-23",
+      "number": 23,
+      "name": "Splitting Apart",
+      "glyph": "䷖",
+      "bits": "000001",
+      "keywords": "erosion, protecting foundations",
+      "meaning": "Attend to erosion, protecting foundations. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could erosion change your approach?"
+    },
+    {
+      "id": "hex-24",
+      "number": 24,
+      "name": "Return",
+      "glyph": "䷗",
+      "bits": "100000",
+      "keywords": "renewal, modest re-entry",
+      "meaning": "Attend to renewal, modest re-entry. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could renewal change your approach?"
+    },
+    {
+      "id": "hex-25",
+      "number": 25,
+      "name": "Innocence",
+      "glyph": "䷘",
+      "bits": "100111",
+      "keywords": "sincerity, unforced action",
+      "meaning": "Attend to sincerity, unforced action. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could sincerity change your approach?"
+    },
+    {
+      "id": "hex-26",
+      "number": 26,
+      "name": "Great Taming",
+      "glyph": "䷙",
+      "bits": "111001",
+      "keywords": "cultivation, stored strength",
+      "meaning": "Attend to cultivation, stored strength. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could cultivation change your approach?"
+    },
+    {
+      "id": "hex-27",
+      "number": 27,
+      "name": "Nourishment",
+      "glyph": "䷚",
+      "bits": "100001",
+      "keywords": "sustenance, words and habits",
+      "meaning": "Attend to sustenance, words and habits. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could sustenance change your approach?"
+    },
+    {
+      "id": "hex-28",
+      "number": 28,
+      "name": "Great Excess",
+      "glyph": "䷛",
+      "bits": "011110",
+      "keywords": "overload, structural adjustment",
+      "meaning": "Attend to overload, structural adjustment. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could overload change your approach?"
+    },
+    {
+      "id": "hex-29",
+      "number": 29,
+      "name": "Repeated Water",
+      "glyph": "䷜",
+      "bits": "010010",
+      "keywords": "difficulty, steady navigation",
+      "meaning": "Attend to difficulty, steady navigation. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could difficulty change your approach?"
+    },
+    {
+      "id": "hex-30",
+      "number": 30,
+      "name": "The Clinging",
+      "glyph": "䷝",
+      "bits": "101101",
+      "keywords": "clarity, sustaining what illuminates",
+      "meaning": "Attend to clarity, sustaining what illuminates. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could clarity change your approach?"
+    },
+    {
+      "id": "hex-31",
+      "number": 31,
+      "name": "Influence",
+      "glyph": "䷞",
+      "bits": "001110",
+      "keywords": "receptivity, mutual responsiveness",
+      "meaning": "Attend to receptivity, mutual responsiveness. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could receptivity change your approach?"
+    },
+    {
+      "id": "hex-32",
+      "number": 32,
+      "name": "Duration",
+      "glyph": "䷟",
+      "bits": "011100",
+      "keywords": "continuity, adaptable commitment",
+      "meaning": "Attend to continuity, adaptable commitment. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could continuity change your approach?"
+    },
+    {
+      "id": "hex-33",
+      "number": 33,
+      "name": "Retreat",
+      "glyph": "䷠",
+      "bits": "001111",
+      "keywords": "withdrawal, strategic boundaries",
+      "meaning": "Attend to withdrawal, strategic boundaries. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could withdrawal change your approach?"
+    },
+    {
+      "id": "hex-34",
+      "number": 34,
+      "name": "Great Power",
+      "glyph": "䷡",
+      "bits": "111100",
+      "keywords": "strength, responsible restraint",
+      "meaning": "Attend to strength, responsible restraint. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could strength change your approach?"
+    },
+    {
+      "id": "hex-35",
+      "number": 35,
+      "name": "Progress",
+      "glyph": "䷢",
+      "bits": "000101",
+      "keywords": "visibility, useful contribution",
+      "meaning": "Attend to visibility, useful contribution. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could visibility change your approach?"
+    },
+    {
+      "id": "hex-36",
+      "number": 36,
+      "name": "Darkening of the Light",
+      "glyph": "䷣",
+      "bits": "101000",
+      "keywords": "discretion, preserving inner clarity",
+      "meaning": "Attend to discretion, preserving inner clarity. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could discretion change your approach?"
+    },
+    {
+      "id": "hex-37",
+      "number": 37,
+      "name": "The Family",
+      "glyph": "䷤",
+      "bits": "101011",
+      "keywords": "relationships, dependable roles",
+      "meaning": "Attend to relationships, dependable roles. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could relationships change your approach?"
+    },
+    {
+      "id": "hex-38",
+      "number": 38,
+      "name": "Opposition",
+      "glyph": "䷥",
+      "bits": "110101",
+      "keywords": "difference, workable common ground",
+      "meaning": "Attend to difference, workable common ground. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could difference change your approach?"
+    },
+    {
+      "id": "hex-39",
+      "number": 39,
+      "name": "Obstruction",
+      "glyph": "䷦",
+      "bits": "001010",
+      "keywords": "impediment, another route",
+      "meaning": "Attend to impediment, another route. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could impediment change your approach?"
+    },
+    {
+      "id": "hex-40",
+      "number": 40,
+      "name": "Deliverance",
+      "glyph": "䷧",
+      "bits": "010100",
+      "keywords": "release, timely resolution",
+      "meaning": "Attend to release, timely resolution. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could release change your approach?"
+    },
+    {
+      "id": "hex-41",
+      "number": 41,
+      "name": "Decrease",
+      "glyph": "䷨",
+      "bits": "110001",
+      "keywords": "simplification, meaningful sacrifice",
+      "meaning": "Attend to simplification, meaningful sacrifice. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could simplification change your approach?"
+    },
+    {
+      "id": "hex-42",
+      "number": 42,
+      "name": "Increase",
+      "glyph": "䷩",
+      "bits": "100011",
+      "keywords": "support, purposeful growth",
+      "meaning": "Attend to support, purposeful growth. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could support change your approach?"
+    },
+    {
+      "id": "hex-43",
+      "number": 43,
+      "name": "Breakthrough",
+      "glyph": "䷪",
+      "bits": "111110",
+      "keywords": "declaration, clear accountability",
+      "meaning": "Attend to declaration, clear accountability. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could declaration change your approach?"
+    },
+    {
+      "id": "hex-44",
+      "number": 44,
+      "name": "Coming to Meet",
+      "glyph": "䷫",
+      "bits": "011111",
+      "keywords": "unexpected influence, discernment",
+      "meaning": "Attend to unexpected influence, discernment. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could unexpected influence change your approach?"
+    },
+    {
+      "id": "hex-45",
+      "number": 45,
+      "name": "Gathering",
+      "glyph": "䷬",
+      "bits": "000110",
+      "keywords": "community, shared focus",
+      "meaning": "Attend to community, shared focus. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could community change your approach?"
+    },
+    {
+      "id": "hex-46",
+      "number": 46,
+      "name": "Pushing Upward",
+      "glyph": "䷭",
+      "bits": "011000",
+      "keywords": "gradual advance, sustained effort",
+      "meaning": "Attend to gradual advance, sustained effort. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could gradual advance change your approach?"
+    },
+    {
+      "id": "hex-47",
+      "number": 47,
+      "name": "Exhaustion",
+      "glyph": "䷮",
+      "bits": "010110",
+      "keywords": "depletion, preserving dignity",
+      "meaning": "Attend to depletion, preserving dignity. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could depletion change your approach?"
+    },
+    {
+      "id": "hex-48",
+      "number": 48,
+      "name": "The Well",
+      "glyph": "䷯",
+      "bits": "011010",
+      "keywords": "shared nourishment, renewing the source",
+      "meaning": "Attend to shared nourishment, renewing the source. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could shared nourishment change your approach?"
+    },
+    {
+      "id": "hex-49",
+      "number": 49,
+      "name": "Revolution",
+      "glyph": "䷰",
+      "bits": "101110",
+      "keywords": "change, readiness and legitimacy",
+      "meaning": "Attend to change, readiness and legitimacy. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could change change your approach?"
+    },
+    {
+      "id": "hex-50",
+      "number": 50,
+      "name": "The Cauldron",
+      "glyph": "䷱",
+      "bits": "011101",
+      "keywords": "transformation, culture and nourishment",
+      "meaning": "Attend to transformation, culture and nourishment. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could transformation change your approach?"
+    },
+    {
+      "id": "hex-51",
+      "number": 51,
+      "name": "Thunder",
+      "glyph": "䷲",
+      "bits": "100100",
+      "keywords": "shock, recovering composure",
+      "meaning": "Attend to shock, recovering composure. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could shock change your approach?"
+    },
+    {
+      "id": "hex-52",
+      "number": 52,
+      "name": "Keeping Still",
+      "glyph": "䷳",
+      "bits": "001001",
+      "keywords": "restraint, settled attention",
+      "meaning": "Attend to restraint, settled attention. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could restraint change your approach?"
+    },
+    {
+      "id": "hex-53",
+      "number": 53,
+      "name": "Gradual Development",
+      "glyph": "䷴",
+      "bits": "001011",
+      "keywords": "patient progress, lasting roots",
+      "meaning": "Attend to patient progress, lasting roots. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could patient progress change your approach?"
+    },
+    {
+      "id": "hex-54",
+      "number": 54,
+      "name": "The Marrying Maiden",
+      "glyph": "䷵",
+      "bits": "110100",
+      "keywords": "unequal roles, realistic expectations",
+      "meaning": "Attend to unequal roles, realistic expectations. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could unequal roles change your approach?"
+    },
+    {
+      "id": "hex-55",
+      "number": 55,
+      "name": "Abundance",
+      "glyph": "䷶",
+      "bits": "101100",
+      "keywords": "fullness, changing conditions",
+      "meaning": "Attend to fullness, changing conditions. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could fullness change your approach?"
+    },
+    {
+      "id": "hex-56",
+      "number": 56,
+      "name": "The Wanderer",
+      "glyph": "䷷",
+      "bits": "001101",
+      "keywords": "transience, considerate conduct",
+      "meaning": "Attend to transience, considerate conduct. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could transience change your approach?"
+    },
+    {
+      "id": "hex-57",
+      "number": 57,
+      "name": "The Gentle",
+      "glyph": "䷸",
+      "bits": "011011",
+      "keywords": "persistent influence, subtle entry",
+      "meaning": "Attend to persistent influence, subtle entry. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could persistent influence change your approach?"
+    },
+    {
+      "id": "hex-58",
+      "number": 58,
+      "name": "The Joyous",
+      "glyph": "䷹",
+      "bits": "110110",
+      "keywords": "communication, shared enjoyment",
+      "meaning": "Attend to communication, shared enjoyment. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could communication change your approach?"
+    },
+    {
+      "id": "hex-59",
+      "number": 59,
+      "name": "Dispersion",
+      "glyph": "䷺",
+      "bits": "010011",
+      "keywords": "loosening division, reconnecting",
+      "meaning": "Attend to loosening division, reconnecting. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could loosening division change your approach?"
+    },
+    {
+      "id": "hex-60",
+      "number": 60,
+      "name": "Limitation",
+      "glyph": "䷻",
+      "bits": "110010",
+      "keywords": "boundaries, sustainable measure",
+      "meaning": "Attend to boundaries, sustainable measure. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could boundaries change your approach?"
+    },
+    {
+      "id": "hex-61",
+      "number": 61,
+      "name": "Inner Truth",
+      "glyph": "䷼",
+      "bits": "110011",
+      "keywords": "sincerity, trustworthy connection",
+      "meaning": "Attend to sincerity, trustworthy connection. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could sincerity change your approach?"
+    },
+    {
+      "id": "hex-62",
+      "number": 62,
+      "name": "Small Exceeding",
+      "glyph": "䷽",
+      "bits": "001100",
+      "keywords": "small steps, careful attention",
+      "meaning": "Attend to small steps, careful attention. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could small steps change your approach?"
+    },
+    {
+      "id": "hex-63",
+      "number": 63,
+      "name": "After Completion",
+      "glyph": "䷾",
+      "bits": "101010",
+      "keywords": "order achieved, continued care",
+      "meaning": "Attend to order achieved, continued care. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could order achieved change your approach?"
+    },
+    {
+      "id": "hex-64",
+      "number": 64,
+      "name": "Before Completion",
+      "glyph": "䷿",
+      "bits": "010101",
+      "keywords": "unfinished passage, patient coordination",
+      "meaning": "Attend to unfinished passage, patient coordination. Read the situation as a changing relationship, and choose a response suited to the conditions.",
+      "reflection": "Where could unfinished passage change your approach?"
+    }
+  ]
+}

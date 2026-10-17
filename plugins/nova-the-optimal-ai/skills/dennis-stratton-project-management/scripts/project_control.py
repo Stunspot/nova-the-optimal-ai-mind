@@ -1032,9 +1032,9 @@ def resolve_store(
         raw = Path(environment[STORE_ENV_VAR].strip())
         source = "environment"
     else:
-        raise ValueError(
-            "DENNIS_PROJECT_HOME is required in Nova; use Nova Operations to configure the governed Nova estate"
-        )
+        base = Path.home() if home is None else home
+        raw = base.joinpath(*DEFAULT_STORE_PARTS)
+        source = "default"
     return raw.expanduser().resolve(strict=False), source
 
 

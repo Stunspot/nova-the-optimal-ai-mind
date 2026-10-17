@@ -1,6 +1,6 @@
 # Native campaign records
 
-Campaign room and agent share ordinary files, not parallel evidence stores. [The room guide](CAMPAIGN-ROOM.md) explains actions; [the review contract](../references/review-contract.md) defines exact current-review identity.
+The Reading Room and research agent share the same native files, not parallel evidence stores. [The room guide](CAMPAIGN-ROOM.md) explains actions; [the review contract](../references/review-contract.md) defines exact current-review identity.
 
 | File | Purpose |
 |---|---|

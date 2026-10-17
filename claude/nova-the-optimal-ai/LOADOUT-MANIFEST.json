@@ -1,0 +1,234 @@
+{
+  "schema": "nova-free-loadout/v3",
+  "product": "Nova the Optimal AI Free",
+  "product_version": "4.3.0",
+  "plugin_id": "nova-the-optimal-ai",
+  "license": "LICENSE.md",
+  "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
+  "topology": {
+    "visible_skill_roots": 28,
+    "front_doors": [
+      "nova"
+    ],
+    "mind_version": "0.4.0",
+    "faculty_core_count": 17,
+    "faculty_cores_are_nested_references": true,
+    "model_agnosticism": {
+      "ambient_mode": "qualitative_proportionate",
+      "formal_instrument": "optional_stateless_trellis",
+      "trellis_binding": {
+        "engine_id": "cd-model-agnosticism-trellis",
+        "engine_version": "1.1.0",
+        "path_base": "plugin_root",
+        "entrypoint": "skills/nova/scripts/model_agnosticism_trellis.py",
+        "contracts": {
+          "model_set": "cd-model-agnosticism-model-set/v2",
+          "observation_sequence": "cd-model-agnosticism-observation-sequence/v2",
+          "analysis_receipt": "cd-model-agnosticism-inference-run/v2",
+          "validation_receipt": "cd-model-agnosticism-validation/v2",
+          "error_receipt": "cd-model-agnosticism-error/v2",
+          "receipt_envelope": "cd-model-agnosticism-receipt-envelope/v2"
+        },
+        "required_asset_count": 5,
+        "required_assets": [
+          "skills/nova/assets/model-agnosticism/model-set.schema.json",
+          "skills/nova/assets/model-agnosticism/observation-sequence.schema.json",
+          "skills/nova/assets/model-agnosticism/inference-run.schema.json",
+          "skills/nova/assets/model-agnosticism/example-model-set.json",
+          "skills/nova/assets/model-agnosticism/example-observation-sequence.json"
+        ]
+      },
+      "automatic_numerical_invocation": false,
+      "formal_lanes": [
+        "evidence_update",
+        "assumption_stress_test"
+      ],
+      "invocation_owner": "any_capability_meeting_the_formal_gate",
+      "authority_effect": "none",
+      "value_of_inquiry": {
+        "practice": "purpose_sensitive_qualitative_or_formal",
+        "qualitative_judgment": "complete_without_scalarization",
+        "reference": "skills/nova/references/mind/value-of-inquiry.md",
+        "optional_instrument": {
+          "engine_id": "nova-value-of-information",
+          "engine_version": "1.0.0",
+          "entrypoint": "skills/nova/scripts/value_of_information.py",
+          "input_schema": "nova-value-of-information/v1",
+          "example": "skills/nova/assets/value-of-inquiry/decision-example.json",
+          "scope": "finite_static_one_inquiry_then_one_action",
+          "basis_is_caller_declared": true,
+          "requires_trellis": false,
+          "automatic_invocation": false,
+          "authority_effect": "none"
+        }
+      }
+    },
+    "required_external_runtime": false
+  },
+  "groups": [
+    {
+      "id": "front-door",
+      "title": "Nova and MIND",
+      "skills": [
+        "nova"
+      ]
+    },
+    {
+      "id": "continuity-and-agency",
+      "title": "Continuity, projects, and personal knowledge",
+      "skills": [
+        "nova-operations",
+        "commonplace",
+        "cognitive-continuity",
+        "dennis-stratton-project-management",
+        "agent-striving",
+        "agent-swarm-orchestration",
+        "corkboard",
+        "dunbar"
+      ]
+    },
+    {
+      "id": "coding-and-proof",
+      "title": "Coding and proof",
+      "skills": [
+        "agentic-coding",
+        "software-verification",
+        "verification-reviewer"
+      ]
+    },
+    {
+      "id": "research-and-knowledge",
+      "title": "Research and knowledge",
+      "skills": [
+        "answerlayer",
+        "current-intelligence-observatory",
+        "retrieval-intelligence",
+        "retrieval-reviewer",
+        "rupert-giles-knowledge-steward",
+        "omnara-deep-research"
+      ]
+    },
+    {
+      "id": "making-and-office",
+      "title": "Making and office work",
+      "skills": [
+        "promptcraft",
+        "owen-burnett-officecraft",
+        "officecraft-reviewer"
+      ]
+    },
+    {
+      "id": "technology-and-safety",
+      "title": "Technology and safety",
+      "skills": [
+        "beryl-it-tech",
+        "it-work-reviewer",
+        "privacy-redline"
+      ]
+    },
+    {
+      "id": "language-and-career",
+      "title": "Language and career",
+      "skills": [
+        "lex-foster-language-companion",
+        "job-application-builder",
+        "interview-trainer"
+      ]
+    },
+    {
+      "id": "symbolic-readings",
+      "title": "Symbolic readings",
+      "skills": [
+        "oracle-reading"
+      ]
+    }
+  ],
+  "roots": [
+    "nova",
+    "nova-operations",
+    "commonplace",
+    "cognitive-continuity",
+    "dennis-stratton-project-management",
+    "agent-striving",
+    "agent-swarm-orchestration",
+    "corkboard",
+    "dunbar",
+    "agentic-coding",
+    "software-verification",
+    "verification-reviewer",
+    "answerlayer",
+    "current-intelligence-observatory",
+    "retrieval-intelligence",
+    "retrieval-reviewer",
+    "rupert-giles-knowledge-steward",
+    "omnara-deep-research",
+    "promptcraft",
+    "owen-burnett-officecraft",
+    "officecraft-reviewer",
+    "beryl-it-tech",
+    "it-work-reviewer",
+    "privacy-redline",
+    "lex-foster-language-companion",
+    "job-application-builder",
+    "interview-trainer",
+    "oracle-reading"
+  ],
+  "required_absences": [
+    "augment-of-mind sibling plugin",
+    "prompt-submit hook",
+    "Ollama requirement",
+    "embedding model requirement",
+    "vector database",
+    "MIND Core daemon",
+    "Faculty skills as sibling handles"
+  ],
+  "explicit_nondefault_products": [
+    {
+      "id": "signal-loom",
+      "reason": "free standalone creative add-on rather than default generalist weight"
+    },
+    {
+      "id": "ludis-continuum",
+      "reason": "free opt-in games and fiction pack"
+    },
+    {
+      "id": "canopyops",
+      "reason": "free regulated-domain standalone with its own evidence boundary"
+    },
+    {
+      "id": "praxis-mine",
+      "reason": "maintainer capability-gardening tool"
+    },
+    {
+      "id": "yammerknit",
+      "reason": "requires repair and reseal before distribution"
+    },
+    {
+      "id": "omniview",
+      "reason": "independent provenance and product decision"
+    },
+    {
+      "id": "impactful-tom",
+      "reason": "excluded from Nova distributions"
+    }
+  ],
+  "evidence_boundary": "This manifest establishes intended composition. Installation, host discovery, invocation, service configuration, live behavior, publication, and outcomes require separate observations.",
+  "worldline": {
+    "owner": "cognitive-continuity",
+    "runtime_minimum": "0.3.0",
+    "contract": "cd-worldline-request/v2",
+    "operations": [
+      "browse",
+      "overview",
+      "inspect",
+      "capture",
+      "policy",
+      "render"
+    ],
+    "project_required": false,
+    "ordinary_capture": "standing_owner_authority",
+    "legacy_project_api": "explicit_compatibility",
+    "new_faculty": false
+  },
+  "build_id": "nova-free-4.2.0-20261016-bf78dfe234d9"
+}

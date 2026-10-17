@@ -1,0 +1,12 @@
+{
+  "theharvester": {
+    "url": "https://codeload.github.com/laramies/theHarvester/zip/49a38f8d33c32336bbf6a111ea723ea223116265",
+    "commit": "49a38f8d33c32336bbf6a111ea723ea223116265",
+    "sha256": "f3ab5d1d3dc6f67481dfed3f420c995bb6f0cc2bada758b5766112ab4ea3e591"
+  },
+  "spiderfoot": {
+    "url": "https://codeload.github.com/smicallef/spiderfoot/zip/0f815a203afebf05c98b605dba5cf0475a0ee5fd",
+    "commit": "0f815a203afebf05c98b605dba5cf0475a0ee5fd",
+    "sha256": "67f24cf0d9a54ae6f0635af65555951cc3ab64eb9fb76779d02b41a482fc6a3c"
+  }
+}

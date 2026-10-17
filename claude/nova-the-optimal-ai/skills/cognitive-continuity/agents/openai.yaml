@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cognitive Continuity"
+  short_description: "🧵 Worldline timeline, memory, and failure recall."
+  default_prompt: "Use $cognitive-continuity to find temporal bearings in the retained Worldline, follow the useful sources, and carry the present work forward with honest scope and coverage."

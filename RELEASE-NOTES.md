@@ -1,4 +1,26 @@
-# Nova the Optimal AI Free 4.0.0
+# Nova the Optimal AI Free 4.3.0
+
+October 17, 2026. This release updates Nova Free's specialist skills and optional visual companions while retaining one Nova, 28 native skills, and ambient MIND 0.4.0 with 17 nested Faculty Cores.
+
+Project Bridge and OMNARA Reading Room bring project dependencies and source-linked research into view. Beryl and Knowledge Desk support device investigation and retained reading. Companion catalogs follow the current presentation decisions: withdrawn standalone apps are no longer offered, while their skills remain available through conversation.
+
+The complete customer package and separate Codex and Claude-compatible downloads carry the same accepted 4.3.0 build. Existing saved work remains outside the installation; see [Upgrade](docs/UPGRADE.md) before replacing an older installation.
+
+Package structure, rights, all three final archive hashes and CRCs, and native Windows extraction/equality passed. These checks do not establish native macOS or Linux execution or fresh-host behavior.
+
+[Download 4.3.0](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/tag/v4.3.0).
+
+## Previous edition: Nova the Optimal AI Free 4.1.0
+
+Free 4.1.0 updates the apps already included in the 28-owner edition. OMNARA 1.4.0 supports a question-to-sourced-answer workflow; Observatory 0.4.0 supports current inquiry, source connections, time distinctions and editable briefs; AnswerLayer 0.4.0 helps maintain relied-on wording; Beryl 0.5.0 helps investigate a device problem and preserve actual tests, changes and retesting. Their launchers open the useful working app directly, and native icon resources travel with the edition.
+
+Start from ordinary questions, text and observations. Add documents or images where they serve the task. Working data stays outside installation; older native viewers and exports remain available for advanced records. The apps do not invent AI responses, execute device tests, send handoffs, publish or silently monitor.
+
+The edition retains one Nova front door, the same 28 owners, ambient MIND, seventeen nested Faculty Cores, existing owner adapters, privacy choices and parked Arm's Reach. No data migration is required. Follow [Upgrade](docs/UPGRADE.md) and [Open the native workspaces](docs/VISUAL-WORKSPACES.md).
+
+## Previous edition
+
+### Nova the Optimal AI Free 4.0.0
 
 Free 4 brings the repaired capability estate into Nova's smaller generalist edition: one plugin, 28 native skills and ambient MIND. Start with a real task in ordinary conversation; optional saved-work tools and seven workspaces are available when the work benefits from them.
 

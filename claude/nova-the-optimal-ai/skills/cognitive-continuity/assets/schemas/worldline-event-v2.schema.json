@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/worldline-event-v2.json",
+  "title": "Worldline occurrence metadata v2",
+  "type": "object",
+  "required": [
+    "format",
+    "title",
+    "kind",
+    "disposition",
+    "occurred_at",
+    "ended_at",
+    "time_basis",
+    "time_precision",
+    "sources",
+    "topics",
+    "related_ids",
+    "supersedes"
+  ],
+  "properties": {
+    "format": {
+      "const": "cd-worldline-event/v2"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 180
+    },
+    "kind": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "disposition": {
+      "enum": [
+        "recorded",
+        "retracted"
+      ]
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ended_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "time_basis": {
+      "enum": [
+        "observed",
+        "source_reported",
+        "inferred",
+        "recorded"
+      ]
+    },
+    "time_precision": {
+      "enum": [
+        "instant",
+        "day",
+        "range",
+        "unknown"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "locator",
+          "label",
+          "owner"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "conversation",
+              "artifact",
+              "repository",
+              "url",
+              "other"
+            ]
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "topics": {
+      "type": "array",
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      }
+    },
+    "related_ids": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^EP-[A-Za-z0-9-]+$"
+      }
+    },
+    "supersedes": {
+      "type": "array",
+      "maxItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^EP-[A-Za-z0-9-]+$"
+      }
+    }
+  },
+  "additionalProperties": false
+}

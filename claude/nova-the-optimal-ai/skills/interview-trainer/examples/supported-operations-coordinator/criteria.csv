@@ -1,0 +1,4 @@
+criterion_id,criterion,source_ids,priority,notes
+CRIT-001,Maintain reliable changed bookings and confirmed owners,SRC-001;SRC-003,high,Central criterion; manager owns priority conflicts
+CRIT-002,Coordinate vendor dependencies and communicate status,SRC-001,high,Method question; do not invent formal vendor management authority
+CRIT-003,Learn the facilities platform accurately,SRC-001,medium,Preferred experience; training is available

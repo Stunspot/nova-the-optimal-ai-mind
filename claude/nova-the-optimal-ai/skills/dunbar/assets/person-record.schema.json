@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.local/dunbar/person-record.schema.json",
+  "title": "Dunbar person input",
+  "type": "object",
+  "required": ["display_name"],
+  "properties": {
+    "person_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,159}$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "full_name": {"type": ["string", "null"]},
+    "aliases": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "circle": {"enum": ["support-5", "close-15", "active-50", "network-150", "acquaintance-500", "recognized-1500", "unplaced"]},
+    "status": {"enum": ["active", "inactive", "deceased", "unknown", "identity-shell"]},
+    "sensitivity": {"enum": ["public", "internal", "private", "restricted"]},
+    "summary": {"type": ["string", "null"]},
+    "revision_reason": {"type": "string", "minLength": 1},
+    "source": {"type": "object"}
+  },
+  "additionalProperties": true
+}

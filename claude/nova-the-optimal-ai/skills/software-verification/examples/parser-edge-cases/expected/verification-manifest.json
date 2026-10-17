@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1.0",
+  "target": {"name": "escaped-delimiter configuration parser", "revision": "synthetic-parser-v1", "target_class": "bug_fix"},
+  "scope": {"included": ["pair separation", "escaped semicolon handling", "backslash preservation"], "excluded": ["Unicode normalization", "resource exhaustion"], "constraints": ["synthetic Python parser"], "safety_boundary": ["inert local strings only"]},
+  "claim_custody": {
+    "observed": [{"id": "O-001", "statement": "input is split on every semicolon before escape interpretation", "basis": "input/parser.py", "confidence": "high"}],
+    "inferred": [{"id": "I-001", "statement": "escaped semicolons create malformed pair fragments", "basis": "lexical operation order", "confidence": "high"}],
+    "assumed": [],
+    "unresolved": [{"id": "U-001", "statement": "the canonical escaping rules for consecutive backslashes are not fully specified", "basis": "example contract covers only representative forms", "confidence": "high", "consequence": "broader grammar remains provisional"}]
+  },
+  "impact_map": ["configuration text -> lexical separation -> key/value split -> runtime configuration"],
+  "invariants": [{"id": "INV-001", "statement": "only unescaped semicolons separate pairs"}, {"id": "INV-002", "statement": "escape processing preserves the intended literal value"}],
+  "risks": [{"id": "R-001", "statement": "escaped delimiter -> premature lexical split -> malformed or incorrect configuration", "severity": "high", "likelihood": "high", "confidence": "high", "disposition": "covered", "verification": ["S-PARSE-001", "T-PARSER-001", "E-001"]}],
+  "scenarios": [{"id": "S-PARSE-001", "risk_ids": ["R-001"], "title": "escaped delimiter remains literal", "layer": "unit", "preconditions": ["value contains an escaped semicolon followed by another pair"], "action": ["parse input"], "expected": ["escaped semicolon remains in first value", "following pair parses independently"], "forbidden": ["escaped delimiter creates a pair boundary"], "evidence": ["T-PARSER-001", "E-001"], "status": "executed"}],
+  "tests": [{"id": "T-PARSER-001", "scenario_ids": ["S-PARSE-001"], "path": "expected/test_parser.py", "status": "failed", "execution_id": "E-001"}],
+  "executions": [{"id": "E-001", "command": ["python", "-m", "unittest", "expected.test_parser", "-v"], "working_directory": ".", "status": "failed", "exit_code": 1, "raw_evidence": "expected/execution-record.json"}],
+  "findings": [{"id": "F-001", "classification": "PRODUCT_DEFECT", "severity": "high", "statement": "lexical splitting occurs before escape recognition and breaks escaped delimiter values", "evidence": ["input/parser.py", "expected/execution-record.json"], "confidence": "high", "next_action": "tokenize with escape-aware scanning, then rerun example and grammar-boundary tests", "status": "open"}],
+  "residual_risks": [{"id": "RR-001", "statement": "complete consecutive-backslash and malformed-input grammar is unspecified", "treatment": "obtain grammar authority and add properties before broad release", "owner": "parser owner", "revisit_condition": "grammar contract supplied"}],
+  "review": {"status": "REVIEW_PASS", "reviewer": "example skeptical pass", "findings": ["NOT_READY is supported; broader grammar claim remains intentionally bounded"]},
+  "decision": {"status": "NOT_READY", "basis": ["high-severity escaped-delimiter contract fails reproducibly"], "authority_required": ["parser owner confirms full escape grammar before generalized fix"]}
+}

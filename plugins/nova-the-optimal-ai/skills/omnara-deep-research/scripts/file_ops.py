@@ -3,6 +3,11 @@ import os,secrets
 from pathlib import Path
 from custody import reject_links
 
+def staged_write(path,content):
+    """Write disposable validation scratch without forcing it to stable storage."""
+    path=reject_links(path);path.parent.mkdir(parents=True,exist_ok=True)
+    path.write_bytes(content if isinstance(content,bytes) else content.encode('utf-8'))
+
 def atomic(path,content):
     path=reject_links(path);path.parent.mkdir(parents=True,exist_ok=True)
     temp=path.with_name(path.name+'.'+secrets.token_hex(6)+'.tmp')

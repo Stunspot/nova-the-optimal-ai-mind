@@ -1,9 +1,7 @@
-# Understand what a check establishes
+# Keep integrity and review separate
 
-From this skill folder, `python -B scripts/validate_release.py .` checks required cargo and the exact manifest. Missing manifests, unexpected bytes and linked source custody fail. Maintainers can regenerate only after explaining an authorized change; a new manifest does not itself review that change.
+From this skill folder run `python -B scripts/validate_release.py .` to check the exact native inventory. Case shape and selected declared-consistency checks use `python -B scripts/validate_case_file.py <case.json> --consistency --json`. These checks cannot establish that a claimed observation is true.
 
-Case structure and optional declared consistency are described in [case files](CASE-FILES.md). The Studio's **Check structure** displays both shape and separate consistency findings. Typed IDs, references and boolean execution flags are structural properties. Evidence source, retest and stale-closure checks inspect declarations only; a fabricated but well-shaped record can still lie.
+Synthetic tests under `scripts/tests` check native record and inventory behavior. Preserved model scenario definitions under `evals` are not new executed trials. Historical receipts retain their original fingerprint and runtime scope.
 
-Run `python -B -m unittest discover -s scripts/tests -v` for synthetic native evidence and inventory controls. Only in the separately installed Beryl operator skill, `python -B -m unittest discover -s workspace -v` exercises loopback/session and schema behavior. These tests use fixtures and disposable local service instances; they do not inspect or repair a real device.
-
-`evals/` contains historical and newly revised model-scenario definitions. Current definitions are explicitly unexecuted as model trials. Earlier behavioral receipts remain applicable only to their recorded old fingerprints and runtimes. No count of local tests establishes representative-user usability, assistive-technology conformance, physical repair, production safety or universal model behavior. The complete bundle also has docs/VALIDATION.md at its outer root; this page is sufficient for a standalone skill.
+The separate Repair Companion's exact review binding is a custody property. It does not prove reviewer authorship, independence, device execution or repair. A fresh evidence review must still examine the actual decision under [the review method](USER-GUIDE.md).

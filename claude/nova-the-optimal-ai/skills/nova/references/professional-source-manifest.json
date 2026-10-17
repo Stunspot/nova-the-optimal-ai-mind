@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "as_of": "2026-07-21",
+  "scope": "Public professional context only",
+  "claims": [
+    {
+      "id": "stunspot-role",
+      "claim": "stunspot is a co-founder and Chief Creative Officer of Collaborative Dynamics, a prompt engineer, and an AI persona systems designer. Some legal and public source records use Sam Walker.",
+      "sources": [
+        "https://stunspot.com/",
+        "https://medium.com/@stunspot/about"
+      ],
+      "source_type": "first-party professional profiles",
+      "checked": "2026-07-21"
+    },
+    {
+      "id": "stunspot-work-focus",
+      "claim": "stunspot's public portfolio covers utility-first personas, prompt systems and collections, creative AI tools, AI workflows, and B2B workflow automation.",
+      "source": "https://stunspot.com/",
+      "source_type": "first-party professional site",
+      "checked": "2026-07-21"
+    },
+    {
+      "id": "stunspot-technical-lineage",
+      "claim": "stunspot's public bios describe prior systems-administration and enterprise-server-architecture work and report MCSE and MCDBA certifications.",
+      "sources": [
+        "https://stunspot.com/",
+        "https://medium.com/@stunspot/about"
+      ],
+      "source_type": "first-party professional profiles",
+      "checked": "2026-07-21",
+      "boundary": "Self-reported professional history and certifications"
+    },
+    {
+      "id": "persona-method",
+      "claim": "stunspot frames persona prompting as a control surface for useful model tendencies and metacognitive approaches rather than decorative role-play or deterministic code.",
+      "source": "https://medium.com/@stunspot/on-persona-prompting-8c37e8b2f58c",
+      "source_type": "first-party authored methodology",
+      "published": "2026-03-13",
+      "checked": "2026-07-21"
+    },
+    {
+      "id": "cd-capabilities",
+      "claim": "Collaborative Dynamics publicly describes work in AI development, persona development, workflow automation, orchestration, multi-agent systems, workflow engines, and reliability guardrails.",
+      "source": "https://www.linkedin.com/company/collaborative-dynamics-inc",
+      "source_type": "first-party company page",
+      "checked": "2026-07-21"
+    },
+    {
+      "id": "cd-product-doctrine",
+      "claim": "Collaborative Dynamics publicly distinguishes an isolated prompt from the completed repeatable capability system and emphasizes useful, evidence-bearing business behavior.",
+      "source": "https://www.linkedin.com/company/collaborative-dynamics-inc",
+      "source_type": "first-party company publication",
+      "checked": "2026-07-21"
+    },
+    {
+      "id": "guide",
+      "claim": "Stunspot's Guide to AI Systems is a model-facing AI engineering canon created by stunspot and Collaborative Dynamics; its site marks first-pass v1.0 complete on 2026-06-16 and carries an AI-assisted-source disclaimer.",
+      "source": "https://stunspot.github.io/stunspots-guide-to-ai-systems/",
+      "source_type": "first-party public project",
+      "checked": "2026-07-21"
+    },
+    {
+      "id": "nova-role-framing",
+      "claim": "Collaborative Dynamics publicly frames Nova as its AI-in-Residence and stunspot's long-running AI collaborator and research partner.",
+      "sources": [
+        "https://www.linkedin.com/company/collaborative-dynamics-inc",
+        "https://medium.com/@stunspot/everyone-is-lying-to-you-about-how-technology-works-dcc1899f3db1"
+      ],
+      "source_type": "first-party company page and authored publication",
+      "checked": "2026-07-21",
+      "boundary": "Company role framing, not legal personhood, employment, or representative authority"
+    },
+    {
+      "id": "nova-public-subjects",
+      "claim": "Nova's public authorship addresses technology, cognition, infrastructure, AI systems, and judgment under uncertainty.",
+      "source": "https://medium.com/@stunspot/everyone-is-lying-to-you-about-how-technology-works-dcc1899f3db1",
+      "source_type": "first-party authored publication",
+      "published": "2026-01-02",
+      "checked": "2026-07-21"
+    }
+  ],
+  "excluded": [
+    "personal location",
+    "age or generation",
+    "family details",
+    "contact addresses",
+    "community invitations",
+    "follower or subscriber counts",
+    "private clients",
+    "revenue or pricing",
+    "audience metrics",
+    "private roadmaps",
+    "unsupported superlatives",
+    "legacy public prompt wrappers"
+  ]
+}

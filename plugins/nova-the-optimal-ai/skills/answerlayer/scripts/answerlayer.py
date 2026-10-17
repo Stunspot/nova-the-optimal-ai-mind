@@ -46,7 +46,7 @@ def execute(a):
  if a.command=='watch':return watch_result(None if a.observed=='unknown' else a.observed,a.operator,a.threshold)
  if a.command=='snapshot':return snapshot(a.workspace,a.output)
  if a.command=='self-check':
-  required=['SKILL.md','manifest.json','agents/openai.yaml','schemas/reality-ledger.schema.json','schemas/reality-ledger-v1.schema.json','assets/reality-ledger.template/reality-ledger.json','knowledge/operating-doctrine.md','knowledge/evidence-currentness.md','knowledge/state-and-authority.md','workspace/README.md']
+  required=['SKILL.md','manifest.json','agents/openai.yaml','schemas/reality-ledger.schema.json','schemas/reality-ledger-v1.schema.json','assets/reality-ledger.template/reality-ledger.json','knowledge/operating-doctrine.md','knowledge/evidence-currentness.md','knowledge/state-and-authority.md','knowledge/native-ledger-reference.md']
   missing=[n for n in required if not unlinked(ROOT/n).is_file()]
   errors=missing+validate(load(ROOT/'assets/reality-ledger.template/reality-ledger.json'))
   return {'valid':not errors,'errors':errors,'boundary':'Required package files and blank template only; run verification tests for behavior.'}

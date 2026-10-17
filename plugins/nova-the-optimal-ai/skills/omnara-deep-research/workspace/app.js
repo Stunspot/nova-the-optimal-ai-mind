@@ -157,3 +157,15 @@ window.addEventListener('resize',()=>{if(tab==='atlas'&&vault)requestAnimationFr
 
 
 
+
+let researchBrowseVersion=0,selectedResearchPath='';
+async function showResearchFolder(){
+ if(dirty&&!confirm('Discard unsaved changes and choose a different research folder?'))return;
+ const d=await api('location');selectedResearchPath=d.path;$('#location-path').value=d.path;$('#location-error').textContent='';$('#location-dialog').showModal();await browseResearchFolder(d.path);
+}
+async function browseResearchFolder(path){const version=++researchBrowseVersion,controls=[$('#location-path'),$('#location-open'),$('#location-up'),$('#location-use')];controls.forEach(x=>x.disabled=true);$('#location-items').replaceChildren();$('#location-error').textContent='';try{const d=await api('browse',{path});if(version!==researchBrowseVersion)return;selectedResearchPath=d.path;$('#location-path').value=d.path;const list=$('#location-items');if(!d.items.length){const p=document.createElement('p');p.textContent='No folders here yet. You can use this location or enter another path.';list.append(p)}for(const item of d.items){if(!item.directory)continue;const b=document.createElement('button');b.type='button';b.className='folder-entry';b.textContent='▸ '+item.name;b.onclick=()=>browseResearchFolder(item.path);list.append(b)}}catch(e){if(version===researchBrowseVersion)$('#location-error').textContent=e.message}finally{if(version===researchBrowseVersion)controls.forEach(x=>x.disabled=false)}}
+$('#choose-location').onclick=()=>act(showResearchFolder);
+$('#location-open').onclick=()=>act(()=>browseResearchFolder($('#location-path').value));
+$('#location-up').onclick=()=>act(async()=>{const path=$('#location-path').value.replace(/[\\/]+$/,'');const i=Math.max(path.lastIndexOf('\\'),path.lastIndexOf('/'));if(i<0){$('#location-error').textContent='Enter a folder path first.';return}const parent=path.slice(0,i)||path.slice(0,3);await browseResearchFolder(parent)});
+$('#location-use').onclick=()=>act(async()=>{const path=$('#location-path').value.trim();if(!path)throw Error('Choose an existing folder path.');if(dirty&&!confirm('Discard unsaved changes and switch research folders?'))return;const d=await api('location',{path});$('#location-dialog').close();location.assign(d.url)});
+

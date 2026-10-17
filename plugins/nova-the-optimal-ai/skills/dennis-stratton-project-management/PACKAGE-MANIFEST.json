@@ -1,0 +1,424 @@
+{
+  "format": "nova-companion-standalone-package/v1",
+  "product": "Project Bridge",
+  "component": "dennis-stratton-project-management",
+  "version": "0.6.0",
+  "build": "dennis-project-bridge-0.6.0-c3-package-20261016",
+  "baseline": "0.5.1",
+  "release_decision": "Update: adds a source-linked read-only project-reading workflow, native refresh/change comparison, durable reading preferences, and a first-use community exhibition walkthrough.",
+  "runtime": "Python 3.10+ standard library; local loopback only",
+  "native_preservation": "The accepted native project-control engine, schemas, authored guidance, templates, examples, and CLI are preserved. Of 35 compared pre-existing native files, 34 are byte-identical; scripts/project_bridge.py is intentionally replaced by the read-only compatibility launcher. The old editor is not part of the served companion route.",
+  "file_count": 82,
+  "files": [
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 418,
+      "sha256": "7340940591b92b1a00418af6b686e6defdb85b86c255019eae5373b3b124ca1f"
+    },
+    {
+      "path": "assets/benefits-transition-review.md",
+      "bytes": 709,
+      "sha256": "544675f8e9eea2be03d404e09f5e3b09ec6356a0731ad9ab4be3e709583bd3fe"
+    },
+    {
+      "path": "assets/change-record.md",
+      "bytes": 1499,
+      "sha256": "306c422318b7d38012d758a031722d031ec2a23e46692189bc74d4627b0c7a21"
+    },
+    {
+      "path": "assets/decision-record.md",
+      "bytes": 1399,
+      "sha256": "c9e70b55dc3e7f2982434634e1087d8c6ad9d8e29b05d1b7dd099f8b84c0b6c0"
+    },
+    {
+      "path": "assets/forecast-capacity-brief.md",
+      "bytes": 503,
+      "sha256": "66b81fb0243eac2b48b6aa55a7a558dde52e2944cf13a8db93242b9b16196754"
+    },
+    {
+      "path": "assets/gate-review.md",
+      "bytes": 782,
+      "sha256": "8582cbc490e868e1b463b4ce633e1ebaa9d51fb2cad17cf117016d82ce72f26a"
+    },
+    {
+      "path": "assets/governance-exception-record.md",
+      "bytes": 599,
+      "sha256": "2b1f99f6ff8734aed5be7b1c8b486da69d2e43dd023f39a430e1bafa9ae9fb4f"
+    },
+    {
+      "path": "assets/milestone-closeout.md",
+      "bytes": 1837,
+      "sha256": "6eceb9e62d466550ad66b01853d9246d2b813010412dfbd67dc0878c0a17afb6"
+    },
+    {
+      "path": "assets/project-authorization-benefits.md",
+      "bytes": 772,
+      "sha256": "eb65f6bf3f33b4aa3e0d42741ee69fe3d0c1a2671d8e6f252969f59dfb803375"
+    },
+    {
+      "path": "assets/project-charter.md",
+      "bytes": 2242,
+      "sha256": "377ce731406752edc3ebacd5aea2c0402a7cb817d2c76e4770494ae1c4637445"
+    },
+    {
+      "path": "assets/project-control.template.json",
+      "bytes": 9221,
+      "sha256": "84db7cff04dfe63c8003f0012a5584f821d28a4de07e38473c619b040eb5b03e"
+    },
+    {
+      "path": "assets/recovery-checkpoint.md",
+      "bytes": 2239,
+      "sha256": "79ace0d15a4c9be9a61ad536c8bfb03d68819e398e185065d52492082a953eaf"
+    },
+    {
+      "path": "assets/stakeholder-adoption-brief.md",
+      "bytes": 551,
+      "sha256": "0c896caa2607aafdce17e9e7711a0ba26fcabfa56accd42d2f2500eb1fd04ab3"
+    },
+    {
+      "path": "assets/status-brief.md",
+      "bytes": 1442,
+      "sha256": "4ec06416eb7c52af242234d1c3a1948496ebdc78461eb89a34079351b8be8a99"
+    },
+    {
+      "path": "assets/work-package.md",
+      "bytes": 1616,
+      "sha256": "5a7080454a3e732ccbe922b5f260fd01a20f7be7abaa15a5d453493f469abf3a"
+    },
+    {
+      "path": "bridge_runtime.py",
+      "bytes": 6268,
+      "sha256": "e36f5d270da84aa0f62c848b24b544c5060712f40126c6abadc959350f4cb29b"
+    },
+    {
+      "path": "CHANGELOG-0.6.0.md",
+      "bytes": 783,
+      "sha256": "9892c6a415bd519cf0ef9bc0bc2f29cf4e2834324b16377aac76a9271513bc6e"
+    },
+    {
+      "path": "Create Project Bridge Shortcut.vbs",
+      "bytes": 1721,
+      "sha256": "2a60528be9f031f2f6cb4f02cbe20740c39b627991c9493740c0f611307d32f4"
+    },
+    {
+      "path": "DATA-AND-PRIVACY.md",
+      "bytes": 2566,
+      "sha256": "4e2f5a577168b0bfdb860567e5f2dc4c1aaab91d5fc21a3a69a3d89c324b47ac"
+    },
+    {
+      "path": "Dennis Project Bridge.app/Contents/Info.plist",
+      "bytes": 760,
+      "sha256": "62eb23075abccfd8e8467a74cdd16bee6bb7e08c66f58ad759762188c8bd006f"
+    },
+    {
+      "path": "Dennis Project Bridge.app/Contents/MacOS/launch.command",
+      "bytes": 309,
+      "sha256": "95a773ed765c77430802f7e00d14a1c3cc388f88b891bd193aa30f1d3bcb9a7f"
+    },
+    {
+      "path": "Dennis Project Bridge.app/Contents/Resources/dennis.icns",
+      "bytes": 2141003,
+      "sha256": "31c122d56f76ea5fe218bdcd2e4a737b0dccc382c7f61543bdea15388c38586a"
+    },
+    {
+      "path": "evals/dennis-core-behavior-cases.yaml",
+      "bytes": 30403,
+      "sha256": "131d7f708bc33c6662fda55bb53f0e5ad50b8d32f88171a82e5c2f539e0f0135"
+    },
+    {
+      "path": "evals/eval-manifest.yaml",
+      "bytes": 1249,
+      "sha256": "7ca25ee883e66e77e01911c2dc4ece94352f9b4fca1e3bc70ac4b061d7534ad7"
+    },
+    {
+      "path": "examples/authorization-and-steering/demonstration.md",
+      "bytes": 984,
+      "sha256": "d1111994c77dd49dbf1572824254531f6819e8b140d24fbab6e865e534af71a4"
+    },
+    {
+      "path": "examples/authorization-and-steering/project-control.json",
+      "bytes": 9321,
+      "sha256": "5faa2f139a8c7bb7575672b8749be0809cd3cc2050c9e12e1c52d59e8e295afe"
+    },
+    {
+      "path": "examples/community-exhibition/build_fixture.py",
+      "bytes": 8709,
+      "sha256": "9369779c1bbf09ad67fbc9b6a35532593479def7a700fc415a09cf970bee63f6"
+    },
+    {
+      "path": "examples/community-exhibition/project-control.json",
+      "bytes": 15846,
+      "sha256": "f0eaccd9ce451e86b9b7322a2a8a6e1298c481e3b216b833eeee2de54b2c0e9e"
+    },
+    {
+      "path": "examples/community-exhibition/supplier-reply.md",
+      "bytes": 381,
+      "sha256": "a8b07efcdfe1c514930b34b140aee062023ece66bf11c9e911f7e781cdf92f67"
+    },
+    {
+      "path": "examples/community-exhibition/venue-confirmation.md",
+      "bytes": 577,
+      "sha256": "05b1a695cda98d8170ad1616eaf5f6a8d0cfe185c73e44ac32ceb7dd54de03ac"
+    },
+    {
+      "path": "examples/phase-milestone-recovery/demonstration.md",
+      "bytes": 3080,
+      "sha256": "fb136e2144ae0d8942bc1bb8a3321c79acf20211d60e6d9d9e26938493ca76e3"
+    },
+    {
+      "path": "examples/phase-milestone-recovery/project-control.json",
+      "bytes": 15766,
+      "sha256": "76f74ce721660306d2bf835eafbe8c27f4d0f89ef0d59b3269e647af943856a7"
+    },
+    {
+      "path": "examples/phase-milestone-recovery/status.md",
+      "bytes": 2812,
+      "sha256": "2c05858fec81bc4d89cea71ded069f4837b53b1bd6c39bc136368ea0b66faab3"
+    },
+    {
+      "path": "fallbacks/universal-copy-paste-workflow.md",
+      "bytes": 2774,
+      "sha256": "956ac5e81918cfa19cf3a57cf1829ee333cdd2ffc403cca385dbb8ac012882a3"
+    },
+    {
+      "path": "knowledge/authorization-benefits.md",
+      "bytes": 1826,
+      "sha256": "1496a6bd7a58308951646ed579771a32e53590c47f17341ca58578f2202e4276"
+    },
+    {
+      "path": "knowledge/dennis-stratton-operating-persona.md",
+      "bytes": 3962,
+      "sha256": "bfb33ef423fd5d5649b34f186d51023be5e0474ccb75e909b3d503ba22721cca"
+    },
+    {
+      "path": "knowledge/framework-fit.md",
+      "bytes": 6502,
+      "sha256": "fb76141d2af51b38348ef5d96549142ea6821b6cd9753b215e84e1b332f13299"
+    },
+    {
+      "path": "knowledge/governance-forecast-capacity.md",
+      "bytes": 2002,
+      "sha256": "d65540d9be361499abfaa7986150fac69b2cc3a02a395273e56de69387f66cc0"
+    },
+    {
+      "path": "knowledge/project-bridge.md",
+      "bytes": 670,
+      "sha256": "9a263ab531d7d84151aed2a14cdb581287e8dd2b5e479642cc798892e1807b64"
+    },
+    {
+      "path": "knowledge/project-control-spine.md",
+      "bytes": 5917,
+      "sha256": "1025c8502887c472c86d207e9226e7aaecf3631226d864f02b38c3f7ac392588"
+    },
+    {
+      "path": "knowledge/project-management-doctrine.md",
+      "bytes": 7071,
+      "sha256": "f30190b61522e617710cd7057a193976dc4cf30032e2630767513f34231e2e78"
+    },
+    {
+      "path": "knowledge/project-record-estate.md",
+      "bytes": 4832,
+      "sha256": "b1f2a494e52faae2cc98eeeb1c44592ab3b07d325e2e90afa63cdf648605ffb2"
+    },
+    {
+      "path": "knowledge/project-recovery.md",
+      "bytes": 5855,
+      "sha256": "16d0be2b02d98362b32ff0ba552840ec1ba6763882ca69fa45dd1e0772ad8826"
+    },
+    {
+      "path": "knowledge/stakeholders-adoption-incentives.md",
+      "bytes": 1642,
+      "sha256": "de6040f342f0c8eb469f6f5034b5fad37b9dbf5af93b54696601aaf164a647ad"
+    },
+    {
+      "path": "knowledge/status-and-communication.md",
+      "bytes": 4039,
+      "sha256": "cb46ed834140c968a89d92cbaf6938d8a5c249c309e6b9a854f669a98b5dcda8"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 754,
+      "sha256": "d1a8c488287541941cdd0e87df421776e32faf4fc407e82db7a8d49c11e03431"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1130,
+      "sha256": "b8dabb9755ffa95b24b0f21103f9f569e0e4c9b0b92a12fd847f836235108ec3"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 683,
+      "sha256": "1c8ece1fade87f3a1658fa3088108d4fcf0810fd1b13281345a749abeb35f15f"
+    },
+    {
+      "path": "Open Project Bridge.cmd",
+      "bytes": 182,
+      "sha256": "2a6ba597446b576aecfd13ca417eaa0c60a8a5acb748f36da8b4b06380520cae"
+    },
+    {
+      "path": "Open Project Bridge.command",
+      "bytes": 233,
+      "sha256": "4900fa501123e4a307d9f47ff9e0b383eaab2c263eec4b6a609b864a21e2563c"
+    },
+    {
+      "path": "references/canonical/dennis-judgment-engine.md",
+      "bytes": 99670,
+      "sha256": "eac93e100148ebdf458bd2c8ec5d9bf316643214607433e7d9b356808ba86ef2"
+    },
+    {
+      "path": "references/canonical/Project Management Virtuoso - Dennis Stratton T3 v1.1.txt",
+      "bytes": 9156,
+      "sha256": "6ae881b07c246360511aac6d1dacece9a727a06e8573ad0429d2543e34cbff4d"
+    },
+    {
+      "path": "schemas/project-control-v1.schema.json",
+      "bytes": 12918,
+      "sha256": "e172ff90b98fb398281a8aa28332f3aaeac303392d5b7975d58c2b8deacde39f"
+    },
+    {
+      "path": "schemas/project-control.schema.json",
+      "bytes": 31349,
+      "sha256": "632422a6151f61a0573f63fc6990f396618f8845627332aa8de85bbe5f8de603"
+    },
+    {
+      "path": "scripts/project_bridge.py",
+      "bytes": 254,
+      "sha256": "d7acfdaa40c27a7406a706e8a08aeada5c825ca4da31e76ed0c57b61d7db0406"
+    },
+    {
+      "path": "scripts/project_control.py",
+      "bytes": 85588,
+      "sha256": "361dd279ab0e7233ffae63e0120ba2344e068ef81beffa0a6af5de29b2816501"
+    },
+    {
+      "path": "scripts/workspace_host.py",
+      "bytes": 12191,
+      "sha256": "8daeefded9c303a3d1e030fe5a7fbacc10200ee50d90bb1840458812fb4502ca"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1211,
+      "sha256": "fd3b3f621167403a732fefba55be569f95e193436ee78f95a4123d623223a566"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 13082,
+      "sha256": "c0823f635ae6e90bd68b9bf489e6c445ca7850149dd1b97a5bd95173f0e9e856"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 2924,
+      "sha256": "7985247064a80d64025aaae5c7b1797812eb046d71a99dd2ecf1433524aa729a"
+    },
+    {
+      "path": "SUPPORT.md",
+      "bytes": 986,
+      "sha256": "bf2a4a2202479e6e4eb6bc22137155a8ee8e2de656dbaaea50a9022b33b506f6"
+    },
+    {
+      "path": "TERMS-OF-USE.md",
+      "bytes": 1418,
+      "sha256": "efc22c1a1e5a90a2569c2e03bb8238b33dc7743fe7a5fc3aa1d7f80f6118bf96"
+    },
+    {
+      "path": "tests/test_project_control.py",
+      "bytes": 35956,
+      "sha256": "c60c16ea4540af36e852c25d1e63c94437f4e037b2b24434d4a19e993ee34cd7"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.md",
+      "bytes": 905,
+      "sha256": "84b427421183344473fe3f2c453e8dafe46e515ea614929ea8c803bb662f594b"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "97a5d6e540a6120d09c39ddb667e0e8e2bac7fcc2ffef813b82e08fd60365bce"
+    },
+    {
+      "path": "workspace/app.js",
+      "bytes": 19469,
+      "sha256": "956cbac18b35baa693a5c2e29b2486f81fb864a9d8aeb3617c31b2469a3ca27e"
+    },
+    {
+      "path": "workspace/assets/dennis.ico",
+      "bytes": 192487,
+      "sha256": "da3ed30739147b01ac5fffa9d784ce9176fb3ee65171a77c7b0a6bbbbe19b206"
+    },
+    {
+      "path": "workspace/assets/dennis.png",
+      "bytes": 133871,
+      "sha256": "50ce9024934ba7db1695e3f1d8e301cbde4cdf8ca0cffc191fa40a7d1982f0e4"
+    },
+    {
+      "path": "workspace/bridge-themes.css",
+      "bytes": 14198,
+      "sha256": "44015f87c346e9a43e328f7701d6e7ecdbb20321243ad712bfc411f3a1ecdf18"
+    },
+    {
+      "path": "workspace/bridge.css",
+      "bytes": 16397,
+      "sha256": "a9ee87099203a3f20b8d861066a370f9dc3eb8b0d02b26df5757bcac08f74000"
+    },
+    {
+      "path": "workspace/bridge.js",
+      "bytes": 17425,
+      "sha256": "90995e8922217706339384f02d7f7c629bbb25120eaae8cd08daa91ee271def0"
+    },
+    {
+      "path": "workspace/bridge_runtime.py",
+      "bytes": 18527,
+      "sha256": "d7b5cf1a737172698e1f44320f999fa4fce19d79de8c9204dfaab1d4d6396588"
+    },
+    {
+      "path": "workspace/bridge_server.py",
+      "bytes": 11346,
+      "sha256": "c335718e58d7b2ffddf7d34980ae9cacc318d2e51c1037419a8efc5fb6ee3dbe"
+    },
+    {
+      "path": "workspace/index.html",
+      "bytes": 6270,
+      "sha256": "56e2c40051342ddcd6a8d45bcf4e59f2b633f8b4d6da074e289e2e3b009f3b1f"
+    },
+    {
+      "path": "workspace/launch.py",
+      "bytes": 4630,
+      "sha256": "32e5007bac6a35b0235de80317504dd167cbde8154d8bd38297d7d3dc4333e99"
+    },
+    {
+      "path": "workspace/pick_folder.py",
+      "bytes": 506,
+      "sha256": "03a27bf2b577947b71b164dd16426584403f3cb8921b3b3f54514b4830ee3543"
+    },
+    {
+      "path": "workspace/proofspan.css",
+      "bytes": 18531,
+      "sha256": "347f52383f84763875d5cb9f98a9967d2edf1694202d7e8d99ad6caa8f06ff41"
+    },
+    {
+      "path": "workspace/route.css",
+      "bytes": 9319,
+      "sha256": "9aece665f7de185d7a70e0f673699dde225583ff0085b0dc05e378e16f9dbce4"
+    },
+    {
+      "path": "workspace/route.js",
+      "bytes": 7709,
+      "sha256": "600eff62a7e95efb26d1b216c5a16268254c9b2a15f9f041790c37d1a9e6a1a3"
+    },
+    {
+      "path": "workspace/skin.css",
+      "bytes": 17239,
+      "sha256": "42a252d952ff790e734fed03492b604ecc7b0fbc2ed291fdfe3775acf2ba9a9a"
+    },
+    {
+      "path": "workspace/storage_io.py",
+      "bytes": 1538,
+      "sha256": "0daf27b7ff8433477e4b77577068295149f20ff2e56839d33a90864d8cbe74a3"
+    },
+    {
+      "path": "workspace/WORKSPACE-GUIDE.md",
+      "bytes": 1625,
+      "sha256": "76436977f55de43c96712d0792876f8cd1594d5a83e5cb72c14e257a8e55d091"
+    }
+  ]
+}

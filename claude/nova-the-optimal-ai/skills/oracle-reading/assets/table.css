@@ -1,0 +1,30 @@
+/* Table geometry, shared by native inline and standalone display. */
+.oracle-table{color:var(--foreground);background:transparent;text-align:center;padding:24px 8px;overflow-wrap:anywhere}
+.oracle-table figure{margin:0;min-width:0}
+.oracle-question{margin:0 auto 28px;max-width:640px}
+.oracle-stage{display:flex;justify-content:center;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.oracle-symbol{flex:1 1 150px;max-width:220px}
+.oracle-position{margin:0 0 12px;min-height:3em}
+.oracle-card{display:block;width:100%;height:auto;aspect-ratio:330/570;object-fit:contain}
+.oracle-unrevealed{border:1px solid var(--border);background:var(--muted)}
+.oracle-name-only{display:flex;align-items:center;justify-content:center;border:1px solid var(--border)}
+.oracle-reversed{transform:rotate(180deg)}
+.oracle-caption{margin-top:12px}
+.oracle-phrase{margin:8px 0 0}
+.oracle-resting{opacity:.72}
+.oracle-thread{margin:28px auto 0;max-width:600px}
+.oracle-basis,.oracle-source{margin:28px 0 0;color:var(--muted-foreground)}
+.oracle-hexagrams{gap:70px}
+.oracle-hexagram{min-width:160px}
+.oracle-lines{width:150px;margin:12px auto 24px}
+.oracle-line{display:flex;justify-content:space-between;height:8px;gap:18px;margin:16px 0;position:relative}
+.oracle-yang,.oracle-yin{background:currentColor;display:block;height:8px}
+.oracle-yang{width:100%}.oracle-yin{width:calc(50% - 9px)}
+.oracle-change-mark{position:absolute;left:calc(100% + 10px);width:60px;top:-5px;text-align:left}
+.oracle-changing{color:var(--viz-series-1,var(--foreground))}
+.oracle-movement{margin:18px 0}
+.oracle-planet{flex:0 1 220px}
+.oracle-planet-glyph,.oracle-rune{margin:16px 0}
+.oracle-relations{margin:28px auto 0;max-width:600px}
+.oracle-silence{margin:36px auto;max-width:500px}
+@media(max-width:420px){.oracle-stage{gap:14px}.oracle-symbol{flex-basis:120px;max-width:160px}.oracle-position{min-height:0}.oracle-hexagrams{gap:45px}.oracle-lines{width:120px}.oracle-hexagram{min-width:135px}}

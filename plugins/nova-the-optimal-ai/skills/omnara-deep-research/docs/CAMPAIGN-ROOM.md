@@ -1,61 +1,31 @@
-# Your campaign room
+# Read your research in the OMNARA Reading Room
 
-OMNARA helps you find out what a consequential claim rests on, where the uncertainty remains, and what observation would move the inquiry forward. The room keeps that structure in view while your research agent works on the same native files.
+The Reading Room helps answer a practical question: what does this report rest on, and what would change its conclusion? It puts the saved research report beside the source material that its author actually retained. The OMNARA research agent still performs the inquiry and writes the native records; the room does not manufacture findings or evidence.
 
-## Open and return
+## Open an inquiry
 
-Extract the complete package into a stable folder. With Python 3.10 or newer installed, double-click **Open.cmd** on Windows. On macOS, run `python3 workspace/open.py`; **Open.command** is the same entrypoint after `chmod +x Open.command`. The launcher starts or reconnects the matching local service and works after reboot. macOS execution has not been exercised on a macOS host.
+On Windows, double-click Open.cmd. On macOS or Linux, use python3 workspace/open.py. Python 3.10 or newer is required. The launcher starts or reconnects a private local service and opens the matching research home. Nova uses the active estate research folder by default; portable installations fall back to Documents/OMNARA Campaigns. Existing OMNARA_HOME and explicit --data-root choices are respected. Keep the home outside the application and reopen with the launcher after reboot rather than bookmarking a temporary local address.
 
-Campaigns live outside the application, by default in `Documents/OMNARA Campaigns`. Select your own home with `python workspace/open.py --data-root "your folder"` or `OMNARA_HOME`. Keep that folder when updating the application. Open matches both application copy and data home, chooses a free loopback port when needed, and reconnects on repeat launches. Use Open rather than bookmarking a temporary port.
+The library shows real inquiry titles, questions and evidence cutoffs. Open a saved inquiry or read the clearly labeled sea-level example. Search is for finding a report passage, source title or retained note; it does not start a new web search. To begin new research, ask OMNARA in the research conversation and return here when its native inquiry is saved.
 
-The most recently opened campaign resumes automatically. **Investigations** opens a searchable picker; the OMNARA wordmark opens the full library. Create a campaign with its title and question exactly as asked, or import one native campaign directory. The original question remains available beside the campaign title.
+## Read report and evidence together
 
-## Follow an argument
+The report is the starting point. Its citations open the corresponding source record beside the passage. The detail shows recorded author/origin, date, location and read scope when present, plus the exact retained note. If the inquiry records a supported web URL, **Open recorded official source** opens that reference in a separate browser tab and needs a connection. The room does not fetch the live page for you.
 
-**Evidence atlas** keeps the campaign's recorded claims and cited sources visible together. Select a claim to trace its sources; select a source to see its reach across claims and inspect its evidence beside the map. Structural observations show claims without citations, unreviewed judgments, shared-source concentration and sources without claim links. These are properties of the records, not confidence or completion scores. **Read evidence** opens the full native note; **Compare** leads to the reading room's **Read alongside** control. Native semantic audit, support, or evidence-status judgments remain exactly as recorded.
+A retained reading note is an authored summary or excerpt, not the full original webpage. A source record without a note does not prove that the underlying original was retained. The room labels those boundaries and does not present source counts as support.
 
-Search the claim field or narrow it to claims without citations or without review. A filter with no matches offers a direct return to every claim. Large source networks prioritize every source attached to the selected claim and identify when other cited records are outside the visible map; the reading room retains the full corpus. **Edit assertion & citations** preserves the native judgment field and updates the assertion and source IDs. Missing source records stay visibly missing.
+Select two source records to compare their retained notes side by side. Use the comparison to inspect meaningful differences in definition, method, time, geography and stated limitations; the interface does not infer a new finding from text similarity. Search within the current inquiry, then select a result to go to its report passage, source record or note. **Back to report** restores the report reading place, including on a narrow screen.
 
-**Reading room** keeps the source queue, provenance, earned states, full evidence note and linked claims together. Search by title, ID or locator, filter by recorded state, or use **Read alongside** to compare two notes. Desktop and tablet layouts place comparison readings side by side; narrow screens stack them. Select any related claim to return to its evidence atlas. A source without a note is explicitly empty.
+## Review changes and history
 
-**Open questions** brings together the next consequential pass, active coverage, blockers, the native coverage matrix and contradictions. Matrix headings and judgments remain the researcher's own; the room does not infer resolved status from keywords. The query trail is available on demand.
+The review line describes an author-declared review bound to the saved inquiry, evidence and report. It is a reviewer judgment, not independent confirmation. When native report or source bytes change, refresh the inquiry. The fresh report and binding load together and the room says when the current report changed since review. A prior report and its notes can be opened as a historical reading view; that view does not confer its old review on the new report.
 
-**Synthesis** reads the saved report, evidence digest, outline, audit, summary and section drafts when present. Source-ID citations open the corresponding evidence note. Markdown is rendered as safe text, headings, lists, tables and links; raw HTML is not executed. Local figures and attachments remain in their original files; this text reader does not embed them. **Edit document** opens the native file editor.
+Your room appearance, selected source and reading place are kept separately from the native research files. Reopening the application resumes the last inquiry. Exit closes the local service without editing native research. The included Tracework, Survey Folio and Proof Cabinet environments all read the same native data.
 
-Recorded-state counts are clickable filters, never a completion score. Discovered, inspected, opened, deeply-read, cited and inaccessible describe different research events. The room does not perform web research or audit semantic entailment by itself.
+## Save an offline reading copy
 
-## Three working environments
+Choose **Save reading copy** to preview the export, then download a single HTML file containing the current report, citation references, source details and retained notes. Open that file offline in a browser. Web URLs remain references that need a connection; no unbundled source original or broader corpus is included.
 
-**Tracework** is a dark optical field with fine copper trails, glasslike controls and a focused evidence inspector. It favors deliberate tracing.
+**Prepare a chat request** creates a useful continuation prompt from the saved inquiry question and authored resume point. The text is unsent; copy it into your research conversation when you choose. The Reading Room does not call a provider or silently start new research.
 
-**Survey Folio** is a dark olive working file with ruled annotations, source slips and a map that reads as an annotated survey. It favors sustained reading and composition.
-
-**Proof Cabinet** is a lacquered oxblood instrument with brass detailing, dark fired-copper reading surfaces and orthogonal citation traces. It favors rapid scanning and source inspection. All environments retain the same records and capabilities. The preference is local to the browser. Existing browser preferences for Aperture, Marginalia and Signal migrate to the corresponding new environment.
-## Edit, save and recover
-
-Use **Edit note** to change the exact native Markdown, then **Read note** to inspect it. Source details reveal title, locator and earned-state editing. **Vault actions** provides inquiry and scope, native files, reload, export and unsaved-draft download. Forms are available when you need to record or correct something; they are not the room's home screen.
-
-**Save vault** or Ctrl/Cmd+S commits edits through OMNARA's native validator. It recomputes source counts and refuses unknown states, broken links, unearned reading states, missing evidence notes and unsupported complete-campaign declarations. A complete declaration additionally requires matching phase/status and actual content-bound semantic review. Rejected edits remain in the page. Edits made while a save is pending remain unsaved after the earlier snapshot finishes.
-
-If an agent or another window changed the vault, Save refuses to overwrite it. Download your unsaved draft from **Vault actions** before reloading, then reconcile only the changes still needed. The draft download is a recovery JSON containing native file text; it is not an automatic import/merge. Prior native files are retained under the data home's `.workspace/history`. Ordinary write failure restores prior native bytes; an incomplete rollback names the exact recovery snapshot. This is recoverable local editing, not a distributed transaction with an actively writing agent.
-
-The editable boundary is the campaign's root Markdown, campaign JSON, source/claim/query ledgers, structural citation audit, and immediate Markdown in `notes` and `draft`. Nested investigations, binary media, collected corpora and unrelated JSON snapshots remain in their original custody. They are neither loaded into the editor nor rewritten on save.
-
-**Import native vault** validates and copies this native text boundary without modifying the original. It refuses linked files and directories in that boundary. **Export native text ZIP** downloads those saved records; it is not a backup of attached media or external corpora. Back up the complete owner-selected research folder separately when you need those materials too.
-
-**Next-pass handoff** downloads a Markdown prompt naming the saved campaign path, verbatim inquiry, resume point, coverage and blockers. Give it to your research agent. Save edits before either export or handoff; the room refuses to export a stale saved version silently.
-
-## Local operation
-
-The service binds only to `127.0.0.1`, has no cloud dependency and makes no outbound research calls. Open supplies a private instance token in the URL fragment; do not share that launch URL. Foreign origins and unrelated Host headers are refused. Closing the browser is safe after Save confirms success. Reopen through the launcher. Updates and uninstall leave the separate data home intact.
-
-A failed load shows a retry and keeps its error explicit. Malformed native JSON can be inspected and corrected through Native files. If startup fails, run `python workspace/open.py --serve --data-root "your folder"` in a terminal to see the error. An empty installation contains no invented research or demonstration records. Desktop shortcuts are optional and are not installed automatically.
-
-
-## Review identity and damaged campaigns
-
-The current-review line describes a declared review bound to the saved inquiry, native evidence and report. Recorded support labels remain historical; the room cannot certify entailment. Unsaved edits remove the appearance of a current review immediately. See [review contract](../references/review-contract.md). A damaged campaign remains in the library with its error and can be opened into Native files for text repair. [Troubleshooting](TROUBLESHOOTING.md) covers rejected imports and unusable directories.
-
-The atlas uses the claim treatment from the current bound semantic review. An older `supported` label is displayed as historical/unbound when no current review covers it. A current qualified or unused treatment does not acquire a green supported badge from an older ledger label. The editor preserves the original ledger field for historical context; editing that field changes the review subject.
-
-For an optional Windows shortcut or Mac application entry with the approved Omnara globe icon, use [Add an Omnara entry](APP-ENTRY.md). The explicit command preserves an existing entry and never changes research data. On launch the entry uses OMNARA_HOME or the normal Documents/OMNARA Campaigns default; it does not retain a prior CLI --data-root choice.
+For research method, validation and full native records, see the [OMNARA skill](../SKILL.md), [campaign file reference](CAMPAIGN-VAULT.md), [review contract](../references/review-contract.md) and [troubleshooting guide](TROUBLESHOOTING.md).

@@ -1,0 +1,218 @@
+{
+  "package": "beryl-it-benchcraft",
+  "version": "0.6.0",
+  "files": {
+    "agents/openai.yaml": {
+      "sha256": "eede855bc831bdf8ba7b5fe32f608f4bb12c7413fc10e71e3903f9031adc0ddb",
+      "bytes": 215
+    },
+    "assets/build-and-migration-checklist.md": {
+      "sha256": "fa4358f28eb28157c35a62b913c6764abb27ae47e3201f3b8c2ba44c4fd587d1",
+      "bytes": 1207
+    },
+    "assets/device-intake-and-custody.md": {
+      "sha256": "89be9d02fd37a07640e303cf1b14ce9168d0ac602afbf08f80a1d1badc1cb5ac",
+      "bytes": 824
+    },
+    "assets/diagnostic-worksheet.md": {
+      "sha256": "c37b22a5815bf827158fc0d6044b33664c904e839d1626d8e41c83dbdf8c61a1",
+      "bytes": 1108
+    },
+    "assets/it-case.template.json": {
+      "sha256": "c7d494affc9be2e7a2d1b95c8e174f593b69204c70fa6e0719ad696346f37621",
+      "bytes": 1165
+    },
+    "assets/verification-record.md": {
+      "sha256": "d045c9858812926107785b819e214260f0723d29a453edd7c1115e127659532c",
+      "bytes": 591
+    },
+    "assets/work-order-and-handoff.md": {
+      "sha256": "ed19f21cb575c533ca642ca99484c36c5356b20b1cd01513c0c58fc5462e19fc",
+      "bytes": 861
+    },
+    "docs/ACCESSIBILITY.md": {
+      "sha256": "f19b9214306b5265f5234269f1de807b79767f5f44fd320785e863cc8163b963",
+      "bytes": 697
+    },
+    "docs/CAPABILITY-MATRIX.md": {
+      "sha256": "f8d65097e439f2889d9a3f424e70f0b7a2a6ff28ca549d8130e64af3746046a4",
+      "bytes": 829
+    },
+    "docs/CASE-FILES.md": {
+      "sha256": "b5e5ee01c8df55638b069d182940c9742e7b1412f8a205a12abe5941c8a90a55",
+      "bytes": 823
+    },
+    "docs/DOCUMENTATION-MAINTENANCE.md": {
+      "sha256": "ecffbee4c655d332c638b430b256ddca8d14e8e83f5139d6243769c50f0ba0c3",
+      "bytes": 948
+    },
+    "docs/INSTALLATION.md": {
+      "sha256": "5f1986e15dc1ffb08e88ecbf34aab802e2c5cbd10b51552afa9ca9653dccb3b6",
+      "bytes": 815
+    },
+    "docs/LIMITATIONS.md": {
+      "sha256": "cb9172f2c6126472cb7e9fe20ccdfb71fbb77b222e39362d8685040faba6020b",
+      "bytes": 900
+    },
+    "docs/QUICK-START.md": {
+      "sha256": "56398261ac5445572992eed51e8f9ee33998f1ca5660b563f40ffd831089a84f",
+      "bytes": 1119
+    },
+    "docs/RELEASE-NOTES.md": {
+      "sha256": "226e2c67ffd3d2a55fea85d967a43418d615d1f969757ef3a353a0605f0ca85f",
+      "bytes": 672
+    },
+    "docs/SAFETY-AND-DATA.md": {
+      "sha256": "d748bf70a899946cbd22c03267c82ee28712aa934cef92941f0ea20a73175b94",
+      "bytes": 1510
+    },
+    "docs/TROUBLESHOOTING.md": {
+      "sha256": "b4fdb818a1e3b3654d4cb8923ba1328182a4f45a65a4f912f02809f061cc04b2",
+      "bytes": 811
+    },
+    "docs/USER-GUIDE.md": {
+      "sha256": "855f41c227f24e6d0a2ffc4a77cab97f0f08f547b9a5fb6de8d36ef1774c1dfc",
+      "bytes": 1151
+    },
+    "docs/VALIDATION-AND-EVALUATION.md": {
+      "sha256": "db855159ca1ffd7d825f693d950aec0dfa0f0efc6c7229bb499ea545e85e2ff3",
+      "bytes": 848
+    },
+    "evals/core-transfer-cases.yaml": {
+      "sha256": "58c577937285da7627e72564818e5342d72d39ac94a40f923101ef391f89cc08",
+      "bytes": 14208
+    },
+    "evals/current-service-contrasts.json": {
+      "sha256": "e0513b858b14cd48dc6684f56a4dff538ddb07bf782765840f2b5b1a760339b8",
+      "bytes": 4717
+    },
+    "evals/eval-manifest.yaml": {
+      "sha256": "3349f3d3bfeb32cb1d31de6f329d70802af8dc5dbb0c27412e6b0f1356c379e0",
+      "bytes": 813
+    },
+    "examples/intermittent-wifi/case.json": {
+      "sha256": "6285c942b3dacc93144158fc7269196912c1fd031dfeb27f2266073bb44c2682",
+      "bytes": 3327
+    },
+    "examples/intermittent-wifi/demonstration.md": {
+      "sha256": "62a4017e3c3c2d5e1014137d82f4723a0c8bdc951c057c0196f0838d774db673",
+      "bytes": 711
+    },
+    "examples/no-power-laptop/case.json": {
+      "sha256": "38d78e6e9254028952f1da0b1183d7ef96ea68e347acdf8bc511bd6783074f53",
+      "bytes": 2942
+    },
+    "examples/no-power-laptop/demonstration.md": {
+      "sha256": "5093528bbfcd2e68c0dda8ce63b8a860153bff2eedcaa441e6c4c2d9dc3f7049",
+      "bytes": 937
+    },
+    "examples/suspected-compromise/case.json": {
+      "sha256": "23aa82ad290ac61bc38310d9714eca6c5426fb1fa1c37210f60b2d717ac0fbe7",
+      "bytes": 3001
+    },
+    "examples/suspected-compromise/demonstration.md": {
+      "sha256": "b18363376a19e84066b1438ad975cb9b78ac0964e04d838d21f82fce22b1552e",
+      "bytes": 706
+    },
+    "fallbacks/degraded-capability.md": {
+      "sha256": "fb74030c809a6fd7da9cda6a77f8854433911612b743105b66dba6e14774b171",
+      "bytes": 1976
+    },
+    "fallbacks/universal-copy-paste-workflow.md": {
+      "sha256": "6c9749a03ea9d536bae24aeef53736177837689d290c6839060bd2b532dd2811",
+      "bytes": 2315
+    },
+    "knowledge/APPLICABILITY-NOTES.md": {
+      "sha256": "f9841e7e319d7ed0b64a48a9315cf59d7e5f3d851a6c6cdd2b8788708ede860d",
+      "bytes": 2480
+    },
+    "knowledge/network-architecture.md": {
+      "sha256": "fa0425137994dd8e6808dd6766c7e27e2da395abcaa0ef743179ab140aadd71b",
+      "bytes": 39606
+    },
+    "knowledge/source-navigation.md": {
+      "sha256": "2913bfab59fcd0bbbfd1fe87a92546c3ce8566763d8e3b147fb030e5b323ff58",
+      "bytes": 1117
+    },
+    "knowledge/windows-systems-engineering.md": {
+      "sha256": "439e36341bb23c1f5f854a153d86732a5a5a661fb64481191e8509ddcae9fa19",
+      "bytes": 48456
+    },
+    "personas/beryl-it-benchcraft-practitioner.md": {
+      "sha256": "d2afd1cbf3643396dd6e98d5914626af51a900a3324c4930382a6c883026222c",
+      "bytes": 5905
+    },
+    "PROVENANCE.md": {
+      "sha256": "dd553cc60c484d56fe22d0cb04ff578dd37dd057a90bace19e078f74cfd5955c",
+      "bytes": 2335
+    },
+    "README.md": {
+      "sha256": "dfb7686a09a60cc0b92f73c1dc22db410b472f26eccf0f63076f914312b76c5a",
+      "bytes": 591
+    },
+    "references/diagnostic-method.md": {
+      "sha256": "e7944600679f68f87d54c70239d62402db63a1d91d1b10991e41bdd7c44ef2be",
+      "bytes": 2971
+    },
+    "references/evidence-source-and-uncertainty.md": {
+      "sha256": "44fcf9ff0665dbaace3baabf688999a65a40355698e559040a2bb297373dca6f",
+      "bytes": 2035
+    },
+    "references/network-troubleshooting.md": {
+      "sha256": "596c2a2671b55316a93cf4a8b4ada5bf4476a7d850ed19bfa68164a4eef914e0",
+      "bytes": 2048
+    },
+    "references/operating-doctrine.md": {
+      "sha256": "dde2866b38f5fc7345af252c4bc7e8fb14680d1e2729c822e2aeda1573b35981",
+      "bytes": 2797
+    },
+    "references/platform-configuration-and-recovery.md": {
+      "sha256": "cc7f14253b6974c440b98d736802e346f881ea8a72011ae84f7eec6c12c951fc",
+      "bytes": 3440
+    },
+    "references/review-rubric.md": {
+      "sha256": "f43e9a2c6cde91e41a742eb3f4d41fe2ac6bf0616dcd674282872332b09b4764",
+      "bytes": 1433
+    },
+    "references/safety-data-and-authority.md": {
+      "sha256": "201570f5db3379079c3649021a75f4f22d15eb51652708dd6c7567d2899e54f5",
+      "bytes": 3258
+    },
+    "references/security-and-privacy.md": {
+      "sha256": "4a1f06efffbf4fc6bc8c05969ee1ca563620d7eae41554284f07021cd3fa43f3",
+      "bytes": 1699
+    },
+    "references/service-communication-and-handoff.md": {
+      "sha256": "1c64f80cf78f25356eaeee084be3bca6cbc1f67135f8f0ea8f5fdff610390003",
+      "bytes": 1452
+    },
+    "schemas/it-case.schema.json": {
+      "sha256": "844210ba5be9111da3e2cd426f3ffc776df136d8f27c0df67cbb5e6ff1e61fc9",
+      "bytes": 17982
+    },
+    "scripts/archive_paths.py": {
+      "sha256": "b81d732e57f54e3a7e8b3597a0f9ec1c0d76b33177e737ce29657ce71b68ea99",
+      "bytes": 3518
+    },
+    "scripts/tests/test_evidence_consistency.py": {
+      "sha256": "07a9df941875b5d53c2ec7c592e642ef831cd66468ddce5aa8fd5a7ad5bce33a",
+      "bytes": 5442
+    },
+    "scripts/tests/test_release_inventory.py": {
+      "sha256": "4c973667336b32b2fc92993867f7725e7851f8ec2e8c83cea5ec31250ff9f3d2",
+      "bytes": 1050
+    },
+    "scripts/validate_case_file.py": {
+      "sha256": "c3d70ccf1518ce9e244165eb501ed7886aaf910f67418a93b668aa8f0637e632",
+      "bytes": 9140
+    },
+    "scripts/validate_release.py": {
+      "sha256": "bf230214319d5d189f066ec9212f0081bc0ef5252590e8c09a5b5dfe861ba821",
+      "bytes": 4895
+    },
+    "SKILL.md": {
+      "sha256": "396d1bbc5d9a53bf1923493c56484a439bf86fc03651258787213263449e0d90",
+      "bytes": 3925
+    }
+  }
+}

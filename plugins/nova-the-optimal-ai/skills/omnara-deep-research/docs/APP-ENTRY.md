@@ -15,4 +15,4 @@ The helper refuses an existing entry, linked package/destination paths and missi
 
 Keep the extracted package at its stable location. If you move or remove it, create a new entry at a new path for that installation. Remove only the entry you created to uninstall that entry; leave your separate research home intact. Normal launch and data selection remain in [the room guide](CAMPAIGN-ROOM.md).
 
-Entries inherit OMNARA_HOME from their launch environment, or use Documents/OMNARA Campaigns. A prior CLI --data-root choice is not stored in an entry. Keep using the original launcher with --data-root for that explicit home, or supply OMNARA_HOME in the environment that launches the entry.
+Entries inherit OMNARA_HOME from their launch environment. Without it, Nova resolves the active estate research folder; portable installations fall back to Documents/OMNARA Campaigns. A prior CLI --data-root choice is not stored in an entry. Keep using the original launcher with --data-root for that explicit home, or supply OMNARA_HOME in the environment that launches the entry.

@@ -1,3 +1,6 @@
 #!/bin/sh
-TASK_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
-exec python3 "$TASK_DIR/../nova-operations/scripts/nova_estate.py" run project-bridge -- "$@"
+cd "$(dirname "$0")" || exit 1
+python3 workspace/launch.py "$@"
+result=$?
+if [ "$result" -ne 0 ]; then printf '\nInstall Python 3.10+ or read the reported Project Bridge startup error.\n'; read -r reply; fi
+exit "$result"

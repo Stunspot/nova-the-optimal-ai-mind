@@ -1,7 +1,7 @@
-# Use the workspace at your pace
+# Use the companion at your pace
 
-The Studio provides native buttons, labeled inputs/selects, named dialogs, a skip link, keyboard focus and status text. Labels do not require recognizing a theme color. Mossglass, Night Probe and Cinder Relay preserve the same case data and actions; choose **Workspace theme** to change the environment.
+Beryl Repair Companion provides native buttons and selects, a skip link, named source dialogs, keyboard focus and status text. **Environment** selects Mossglass, Night Probe or Cinder Relay. The same content and actions remain available in each environment; meaning does not depend on color.
 
-Use Tab/Shift+Tab to move between controls, Enter/Space to activate the focused control, and Escape to close a dialog without applying it. Complete JSON editing is an advanced alternative, not the first-case requirement. The guided intake accepts unknown owner/risk facts rather than demanding invented data.
+Use Tab and Shift+Tab to move between controls, Enter or Space to activate a focused button, and Escape or **Close** to leave a source dialog. **Skip to the bench** reaches the main content. The small **Exit** control remains reachable while reading on desktop and narrow screens; confirm closure before replacing or moving saved material.
 
-The available maintenance review uses real desktop and narrow browser rendering plus selected keyboard checks. That does not establish WCAG conformance, screen-reader compatibility, participant usability or other operating systems. If a control is unusable in your environment, preserve/download the case if possible and continue by native JSON or text handoff; report the control label, input method and exact failure.
+Desktop and 390 px rendering and selected keyboard/dialog checks were observed on Windows with headless Edge. These are bounded checks, not screen-reader compatibility, WCAG conformance or representative-user research. If a control is unusable, keep the saved folder and continue in Beryl's chat with the source material. Report the control label, browser, input method and observed failure without private source contents.

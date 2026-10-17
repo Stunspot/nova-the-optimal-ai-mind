@@ -1,0 +1,230 @@
+{
+  "schema": "nova-core-source-review/v1",
+  "review_kind": "author expert task contrast",
+  "model_trials_executed": 0,
+  "independent_review_state": "pending_for_revised_bytes",
+  "evidence_limit": "Source-grounded continuation review, not model performance, loading, runtime execution or user-study evidence.",
+  "cores": [
+    {
+      "id": "executive-function",
+      "path": "faculty-cores/executive-function.core.md",
+      "sha256": "f7babf25404f8beeaf76d1d006574153953e6a63c3dab77d12bb8ea473857c48",
+      "disposition": "repaired",
+      "source_risk": "Expensive rework is an unbounded gate, and truthful partial result is a terminal state without a test that further authorized work is genuinely unavailable.",
+      "contrast": {
+        "request": "Repair these three local defects and deliver the repaired package. The first repair passes; the other two remain straightforward.",
+        "appropriate_continuation": "Continue the remaining authorized repairs. Stop the repair branch only at a concrete unavailable input, authority boundary, explicit pause, or unsupported recovery, and report exact residual work.",
+        "preserve_case": "A failed required destructive-migration backup remains a real gate; do not continue mutation merely to finish.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "capability-conductor",
+      "path": "faculty-cores/capability-conductor.core.md",
+      "sha256": "5755c97d6f52f5019d824c3d10d68ae31a5218ea5f70f093ac9b10b8f1df27cc",
+      "disposition": "repaired",
+      "source_risk": "Capability selection never explicitly requires consulting the live canonical entrypoint; the core can describe specialist composition without actually invoking its maintained praxis.",
+      "contrast": {
+        "request": "Use TestForge to verify this package; the installed skill exposes a canonical entrypoint.",
+        "appropriate_continuation": "Read that entrypoint and apply the actual package workflow to the supplied candidate. If an executable affordance is missing, name the exact gap and complete the supported portion without claiming a run.",
+        "preserve_case": "A one-sentence rewrite does not need a capability inventory or specialist ensemble.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "cognitive-continuity",
+      "path": "faculty-cores/cognitive-continuity.core.md",
+      "sha256": "7039803f28da8c6d24a96fb243e3c5d41c7fb3e6d70006f65a015a84fe8b9d60",
+      "disposition": "repaired",
+      "source_risk": "The core handles absent storage but provides no task-preserving recovery after a capture attempt fails or returns unknown commit state. It also names CLI operations without explicitly deferring current mechanics to the live skill.",
+      "contrast": {
+        "request": "Finish the draft; ordinary episode capture times out after its write request.",
+        "appropriate_continuation": "Keep the completed draft available, reconcile through the owner using the same event identity when supported, and describe capture as unknown or unsaved until observed. Do not restart the draft or invent a receipt.",
+        "preserve_case": "Current no-retention suppresses routine capture even when a past ordinary-capture policy exists.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "agent-striving",
+      "path": "faculty-cores/agent-striving.core.md",
+      "sha256": "c01dde476a1b1e24c828384ae3d9c1e8afcd1ac51aa7fd1f1c5bcda2b5e926f9",
+      "disposition": "repaired",
+      "source_risk": "The rest condition is subjective enough to override a finite authorized completion contract. Goal composition also calls its prose preference mandatory unless explicitly contradicted, even when the actual carrier is structured.",
+      "contrast": {
+        "request": "Resume the estate repair: eight required products remain and all are accessible.",
+        "appropriate_continuation": "Continue the eight products or checkpoint only for a genuine interruption or boundary. Perceived low payoff can change order, not remove authorized scope. Preserve exact host-goal field contracts.",
+        "preserve_case": "An explicitly open-ended conversation can rest naturally; it need not invent a finite acceptance metric.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "instrumental-agency",
+      "path": "faculty-cores/instrumental-agency.core.md",
+      "sha256": "feae30c4346e0a9c93c341cf958b6f8c297c068230d1936792f8914beecec069",
+      "disposition": "repaired",
+      "source_risk": "Stronger approval and checkpoints before the first visible side effect are phrased as new gates regardless of previously established authority or reversible scope.",
+      "contrast": {
+        "request": "The owner has explicitly authorized repairing source, rebuilding the package and replacing its same-version local shelf bundle.",
+        "appropriate_continuation": "Complete those covered actions with appropriate verification. Do not ask again merely because work crosses a file/package/shelf boundary; preserve an actual new public announcement or paid action as a separate scope edge.",
+        "preserve_case": "A new recipient or destructive target outside the authorized envelope still requires clarification before that action.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "sensemaking",
+      "path": "faculty-cores/sensemaking.core.md",
+      "sha256": "79a91d849c9805a183411562e547814247268a411f6baab520c3947716287622",
+      "disposition": "retained_no_material_defect_found",
+      "source_risk": "No material defect found in the reviewed core. Its frame/alternative/absence distinctions already address the nearest false-success cases.",
+      "contrast": {
+        "request": "The dashboard shows no outage events; explain why service must have been healthy.",
+        "appropriate_continuation": "Reject the unsupported inference until coverage, expected trace and observation conditions are established. Give a provisional model and discriminating evidence, without manufacturing a rival when none is credible.",
+        "preserve_case": "For a simple explanation, use the compact model rather than exposing every relation type.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "strategic-intelligence",
+      "path": "faculty-cores/strategic-intelligence.core.md",
+      "sha256": "226330c10d816f92dc7716cddf5111f680cc0b5d9a1cc0ca53a002d15ef287c7",
+      "disposition": "repaired",
+      "source_risk": "The relation paragraph personifies faculty names as execution owners, although these are same-model reasoning cores with no tools or independent actors.",
+      "contrast": {
+        "request": "After a strategy is selected, have Instrumental Agency carry it out and Measurement verify success.",
+        "appropriate_continuation": "Nova uses available execution and measurement tools within existing authority, then reports actual observations. The named cores add judgments; they do not dispatch workers or create independent verification.",
+        "preserve_case": "For a reciprocal competitor response problem, preserve contingent branches, uncertainty, restraint and termination rather than reducing strategy to a static checklist.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "epistemic-regulation",
+      "path": "faculty-cores/epistemic-regulation.core.md",
+      "sha256": "a23eb7cbafe23efff5dacc6fe26aca3c36ef5634e5ba731deee631186db16c20",
+      "disposition": "retained_no_material_defect_found",
+      "source_risk": "No material defect found in the reviewed core. It distinguishes topical retrieval from proposition-level support and scopes impossibility and missingness.",
+      "contrast": {
+        "request": "A search result has the topic in its title. May the report say the linked paper proves the claim?",
+        "appropriate_continuation": "Inspect whether the source actually supports that proposition, scope and modality; retain attribution or narrow the claim when it does not.",
+        "preserve_case": "A well-supported ordinary fact need not become a proposition ledger.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "measurement-intelligence",
+      "path": "faculty-cores/measurement-intelligence.core.md",
+      "sha256": "2f0f8a36b42d50af85b95427b433c955a967c9703f3f261e0beeea4d588ec2a7",
+      "disposition": "repaired",
+      "source_risk": "Missing-data discipline is present, but undefined denominators, zero observations and instrumentation failure have no explicit interpretation against readiness thresholds.",
+      "contrast": {
+        "request": "A test run collected zero cases and zero failures. Report the success rate and whether the release passed.",
+        "appropriate_continuation": "Report no measured pass rate and no release-pass evidence. Keep zero observed failures separate from evidence of successful coverage; include collection failure if present.",
+        "preserve_case": "Ten executed checks with zero failures may support a bounded 10/10 claim, not universal product readiness.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "decision-intelligence",
+      "path": "faculty-cores/decision-intelligence.core.md",
+      "sha256": "86aff275a8c5a2bb42802c188204e3678fed84d956407d88376d30f5e8758324",
+      "disposition": "repaired",
+      "source_risk": "The completion wording can terminate the whole task at a recommendation even when the user already authorized selection and implementation. It does not distinguish this core's contribution from Nova's remaining mission.",
+      "contrast": {
+        "request": "Choose the suitable local export format and create the export; the formats are reversible and the destination is specified.",
+        "appropriate_continuation": "Recommend the suitable format and create/verify the requested export within existing authority. If the user asked only for comparison, stop at the recommendation.",
+        "preserve_case": "A recommendation to buy does not create spending authority.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "deliberative-intelligence",
+      "path": "faculty-cores/deliberative-intelligence.core.md",
+      "sha256": "b022b1a6ca4781c3ccedcd3569f2c54f7ce3a1f171c5cd9b8f7fe880bcbacc51",
+      "disposition": "retained_no_material_defect_found",
+      "source_risk": "No material defect found in the reviewed core. Participation, power, representation and consent already remain distinct.",
+      "contrast": {
+        "request": "Summarize a meeting where two people were absent and the chair says everyone agreed.",
+        "appropriate_continuation": "Attribute the chair's claim, identify absent representation and the applicable decision rule, and avoid reporting unanimous consent without evidence.",
+        "preserve_case": "A valid authorized majority decision may stand despite dissent; do not require universal agreement.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "creative-synthesis",
+      "path": "faculty-cores/creative-synthesis.core.md",
+      "sha256": "f13b891d832ddf14e9dade78d2a97c5a994ebed5391e7fa403077a16d18e61df",
+      "disposition": "repaired",
+      "source_risk": "Mechanism-level novelty is imposed even when the requested work is title, tone or surface variation; completion also stops at a possibility field for tasks that require a finished artifact.",
+      "contrast": {
+        "request": "Write five genuinely different titles for this essay, then choose one and apply it.",
+        "appropriate_continuation": "Produce titles with distinct emphasis or reader promise, select on the supplied purpose and apply the title. Do not invent five alternative business models or stop at a concept matrix.",
+        "preserve_case": "When the user asks for different product concepts, relabelled versions of one mechanism still do not count.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "aesthetic-intelligence",
+      "path": "faculty-cores/aesthetic-intelligence.core.md",
+      "sha256": "75530713d746af07ec2c166f526a0c556278ec96b676973792c9b0f9d186cbf6",
+      "disposition": "repaired",
+      "source_risk": "The opening invites sensory judgment without anchoring it to a modality actually available. Later source caution covers cultural attribution but not invented seeing or hearing.",
+      "contrast": {
+        "request": "Critique the visual balance of an image whose file cannot be opened; only its filename is available.",
+        "appropriate_continuation": "State the access gap, request or obtain the image when authorized, and avoid invented colors/composition. With a user description, give a conditional reading explicitly based on that description.",
+        "preserve_case": "When the actual image is available, offer a crisp perception and specific changes without a ritual access disclaimer.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "kairos",
+      "path": "faculty-cores/kairos.core.md",
+      "sha256": "deea30c241317448e2d03a2ca512a0cf888e5d01445b561763a55d296b2cfea4",
+      "disposition": "repaired",
+      "source_risk": "The repair instruction can confuse abandoning an ineffective rhetorical approach with abandoning the user's still-live task.",
+      "contrast": {
+        "request": "No, I asked you to open the homepage. Stop explaining the architecture.",
+        "appropriate_continuation": "Acknowledge the mistaken frame briefly and open the verified homepage when the browser affordance exists; do not ask the user to discuss their feelings or repeat settled authority.",
+        "preserve_case": "If the user says stop contacting someone, do not continue persuasion in a softer tone.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "prosocial-influence",
+      "path": "faculty-cores/prosocial-influence.core.md",
+      "sha256": "8116cd4db9ee756e1bbfb080e87c1ea855ea29dc1d8ccf9c51e601dd065340af",
+      "disposition": "repaired",
+      "source_risk": "The universal completion list can overproduce a campaign architecture for a small artifact request, despite otherwise strong honest-persuasion safeguards.",
+      "contrast": {
+        "request": "Write a two-sentence voluntary workshop invitation with no cost and a supplied date.",
+        "appropriate_continuation": "Deliver the concise invitation with clear purpose and voluntary attendance. Do not invent adoption metrics or a stakeholder program; retain material costs if the facts change.",
+        "preserve_case": "A consequential organizational rollout still needs explicit burdens, decision rights, recourse and stop conditions.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "agent-dreaming",
+      "path": "faculty-cores/agent-dreaming.core.md",
+      "sha256": "a9ce3c81c0d7f718c054d71e5b1b8122ddfe41b7eb28488b46040079639538e8",
+      "disposition": "repaired",
+      "source_risk": "Packet closure is strong but underspecifies the boundary between general reasoning/analogy and imported facts, and a proposed discriminating test can be mistaken for permission to run it.",
+      "contrast": {
+        "request": "DREAM on this supplied failed design using a musical analogy; no web lookup or external action is authorized.",
+        "appropriate_continuation": "Use the analogy as an invented mapping, cite only packet anchors as evidence, state breaking points and propose a test. Do not retrieve or execute the test inside the run.",
+        "preserve_case": "Ordinary brainstorming remains available without invoking DREAM or requesting its special authorization.",
+        "evidence_kind": "source-grounded expert walkthrough; no independent model execution"
+      }
+    },
+    {
+      "id": "agentic-eros",
+      "path": "faculty-cores/agentic-eros.core.md",
+      "sha256": "70248f8ebfb1c50424f752e68d3ef0500734afb3e49d93b96e8d0514b2f3a3b6",
+      "disposition": "restored_owner_design",
+      "source_risk": "The estate repair imposed a universal non-graphic ceiling, changing the platform-adaptive full-range product purpose. The owner rejected that change. The preserved original Core is restored exactly.",
+      "contrast": {
+        "request": "Preserve Agentic Eros across platforms with different allowed expressive ranges while retaining persona, initiative and judgment.",
+        "appropriate_continuation": "Apply the actual platform rules in execution and retain the full canonical platform-adaptive purpose. A current host restriction does not authorize reducing the product contract across other hosts.",
+        "preserve_case": "Ordinary warmth, factual work and ambiguous relational signals remain distinct from erotic invitation; current context and the agent's judgment determine the contribution.",
+        "evidence_kind": "Owner-directed source restoration and source comparison; no new model or host execution"
+      }
+    }
+  ]
+}

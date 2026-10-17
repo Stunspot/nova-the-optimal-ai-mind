@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/worldline-request-v1.json",
+  "title": "Worldline Request v1",
+  "type": "object",
+  "required": ["format", "request_id", "correlation_id", "operation", "mode", "task", "scope", "authority", "sensitivity_ceiling", "as_of", "expiry_minutes", "budget", "deadline_ms", "required_ids", "workspace", "environment", "unreachable_source_ids"],
+  "properties": {
+    "format": {"const": "cd-worldline-request/v1"},
+    "request_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "correlation_id": {"type": "string", "minLength": 1, "maxLength": 200},
+    "operation": {"const": "worldline.compile"},
+    "mode": {"enum": ["resume", "status", "checkpoint", "inspect"]},
+    "task": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "scope": {"$ref": "common-v2.schema.json#/$defs/scope"},
+    "authority": {"type": "string", "minLength": 1, "maxLength": 200},
+    "sensitivity_ceiling": {"$ref": "common-v2.schema.json#/$defs/sensitivity"},
+    "as_of": {"type": "string", "format": "date-time"},
+    "expiry_minutes": {"type": "integer", "minimum": 1, "maximum": 1440},
+    "budget": {"type": "integer", "minimum": 4000, "maximum": 200000},
+    "deadline_ms": {"type": "integer", "minimum": 1, "maximum": 60000},
+    "required_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "workspace": {"$ref": "#/$defs/workspace"},
+    "environment": {"$ref": "#/$defs/environment"},
+    "unreachable_source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "portable_material": {"$ref": "#/$defs/portable_material"}
+  },
+  "$defs": {
+    "workspace": {
+      "type": "object",
+      "required": ["selection_mode", "path", "grant_id"],
+      "properties": {
+        "selection_mode": {"enum": ["generic_explicit", "nova_ambient", "nova_explicit_authorized"]},
+        "path": {"type": ["string", "null"]},
+        "grant_id": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "environment": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "portable_item": {
+      "type": "object",
+      "required": ["id", "statement", "source_ids"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "authority": {"type": ["string", "null"]},
+        "recorded_at": {"type": ["string", "null"], "format": "date-time"},
+        "conflicts_with": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "portable_artifact": {
+      "type": "object",
+      "required": ["id", "locator", "source_ids", "owner"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "locator": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "owner": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "portable_chronology": {
+      "type": "object",
+      "required": ["id", "at", "event_type", "summary", "source_ids"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "at": {"type": "string", "format": "date-time"},
+        "event_type": {"type": "string", "minLength": 1},
+        "summary": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "portable_pointer": {
+      "type": "object",
+      "required": ["text", "source_ids", "record_ids"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1, "maxLength": 1000},
+        "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "record_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "portable_material": {
+      "type": "object",
+      "required": ["source_ids", "decisions", "commitments", "blockers", "next_actions", "artifact_locators", "chronology", "conflicts", "resumption_pointer"],
+      "properties": {
+        "source_ids": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1, "uniqueItems": true},
+        "decisions": {"type": "array", "items": {"$ref": "#/$defs/portable_item"}},
+        "commitments": {"type": "array", "items": {"$ref": "#/$defs/portable_item"}},
+        "blockers": {"type": "array", "items": {"$ref": "#/$defs/portable_item"}},
+        "next_actions": {"type": "array", "items": {"$ref": "#/$defs/portable_item"}},
+        "artifact_locators": {"type": "array", "items": {"$ref": "#/$defs/portable_artifact"}},
+        "chronology": {"type": "array", "items": {"$ref": "#/$defs/portable_chronology"}},
+        "conflicts": {"type": "array", "items": {"$ref": "#/$defs/portable_item"}},
+        "resumption_pointer": {"$ref": "#/$defs/portable_pointer"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

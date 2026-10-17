@@ -2,7 +2,7 @@
 
 ## Supported candidate
 
-This policy accompanies the Nova the Optimal AI Free 4.0.0 source candidate: one plugin with 28 source-locked native skill roots and ambient MIND. Final edition qualification and delivery remain pending; this candidate identity does not establish a released or installed edition. Report the exact affected edition and component version. Local verification covers the recorded checks; this policy does not claim an independent security audit of the whole edition.
+This policy accompanies the Nova the Optimal AI Free 4.1.0 source candidate: one plugin with 28 source-locked native skill roots and ambient MIND. Final edition qualification and delivery remain pending; this candidate identity does not establish a released or installed edition. Report the exact affected edition and component version. Local verification covers the recorded checks; this policy does not claim an independent security audit of the whole edition.
 
 ## Boundary
 

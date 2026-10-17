@@ -1,9 +1,9 @@
 # Begin with one real problem
 
-In your Agent host, invoke `$beryl-it-tech` and describe the device, what happens, when it happens and what you need to do. For example: “My dock loses Ethernet after wake; Wi-Fi still works. Help me find a safe next test.” Say whether changes are permitted. Do not supply passwords or recovery keys.
+Invoke `$beryl-it-tech` in your assistant and describe the device, what happens, when it happens and what you need to do. For example: “My dock loses Ethernet after wake; Wi-Fi still works. Help me choose a safe next test.” State the permitted scope without sharing passwords or recovery keys.
 
-A useful first response separates your reported facts from unknowns, identifies any safety/data/authority boundary, and gives one observation that can change the diagnosis. It need not invent a cause. A simple reversible task should not demand a full formal case.
+A useful first response separates reported facts from unknowns, names consequential safety/data/authority boundaries and gives one observation that can change the next decision. A simple reversible task does not need a full formal case.
 
-For a visual record, open `workspace/Open.cmd` on Windows or run `python -B workspace/host.py` from this skill folder with Python 3.10 or newer. Select **Start a case**, enter the device, reported behavior and desired outcome, then **Create working case**. Owner/scope and risk can remain unknown. This creates an incomplete intake with no invented hypotheses, test results or permission.
+Open [Beryl Repair Companion](../workspace/README.md) when actual observation, comparison or visible source reading helps. You can take the fixed Windows check without creating a case, or select an existing log or screenshot. Use **Sources & Beryl** to copy the exact local request; paste it into the existing conversation so the assistant can prepare a supported investigation. The companion has no manual record-entry form.
 
-Select **Download copy** and confirm the JSON reached your files. Attach that file when asking Beryl to continue. The Studio itself displays and edits records; it does not converse, diagnose or execute device commands. **Explore example** is explicitly synthetic. See [case files](CASE-FILES.md) and [the user guide](USER-GUIDE.md) for the next turn.
+[First use](FIRST-USE.md) gives the complete short path. **Explore example** opens a labelled fictional demonstration, separate from actual samples and your material. [Case files](CASE-FILES.md) are a host-maintained native format, not a customer intake requirement.

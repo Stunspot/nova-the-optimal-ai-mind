@@ -1,0 +1,15 @@
+{
+  "format": "cd-agent-striving-handoff/v2",
+  "pursuit_ref": "",
+  "authority_source": "",
+  "current_direction": "",
+  "disposition": "live",
+  "continuity": {
+    "persistence": "prepared",
+    "persistence_receipt": null,
+    "reactivation": "unavailable",
+    "reactivation_cue": null,
+    "lost_guarantee": ""
+  },
+  "updated_at": ""
+}

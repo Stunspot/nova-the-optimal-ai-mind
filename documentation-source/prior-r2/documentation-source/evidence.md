@@ -1,0 +1,5 @@
+# Corrected first-use evidence
+
+Independent reviewer root found START-HERE retained a4.0 statement that AnswerLayer and Beryl used only browser memory and Observatory was read-only. The current4.1 actual Windows launch journeys prove authored work persists in local private data folders. OMNARA uses an inquiry and ordinary sources; AnswerLayer keeps and revises guidance; Beryl investigates a device fault; Observatory authors an inquiry and brief. The corrected paragraph sends the reader to actual local work, same-folder resumption and backup controls. No user data or runtime implementation changed.
+
+Every current shipped root guide, HTML guide and plugin document was searched for matching obsolete persistence/native-input/read-only claims; the only exact stale first-use statement occurred in root and plugin START-HERE, now synchronized. Other read-only descriptions correctly concern owner adapters or status operations. Earlier r1 authorship and document bytes are retained under prior-r1.

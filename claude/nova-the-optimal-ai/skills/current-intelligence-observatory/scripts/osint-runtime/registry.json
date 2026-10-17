@@ -1,0 +1,86 @@
+{
+  "checked_at": "2026-10-05",
+  "custody": "customer-selected local OSINT home",
+  "tools": [
+    {
+      "name": "Blackbird",
+      "repo": "blackbird",
+      "url": "https://github.com/antoniaci/blackbird",
+      "commit": "b45505080ef51bb3ef52dc29879ee6bef31e5b94",
+      "commit_date": "2025-07-13T10:48:11-03:00",
+      "license": "GPL-3.0 text in docs/LICENSE; WhatsMyName attribution applies separately",
+      "installation_state": "excluded",
+      "disposition": "reject",
+      "capability_delta": "Email/account discovery overlaps username tooling; hosted AI adds no needed capability.",
+      "risk": "TLS verification disabled in both transports; hosted AI receives site names and key provisioning records IP.",
+      "next_test": "Reassess a maintained revision with verified TLS before any runtime enablement."
+    },
+    {
+      "name": "Maigret",
+      "repo": "maigret",
+      "url": "https://github.com/soxoj/maigret",
+      "commit": "d7f83f9b7ce9956cef1a9c2e41bece8796b13fa8",
+      "commit_date": "2026-10-04T22:01:52+05:00",
+      "license": "MIT",
+      "installation_state": "not installed; run the bundled setup",
+      "disposition": "pilot",
+      "capability_delta": "Username discovery, report exports and optional recursive identity pivots beyond the existing Sherlock source baseline.",
+      "risk": "Matched handles are candidate links, not established identity; recursive expansion is explicit.",
+      "next_test": "Compare a scoped, authorized account set with Sherlock and verify false positives."
+    },
+    {
+      "name": "SpiderFoot",
+      "repo": "spiderfoot",
+      "url": "https://github.com/smicallef/spiderfoot",
+      "commit": "0f815a203afebf05c98b605dba5cf0475a0ee5fd",
+      "commit_date": "2023-11-05T19:36:23+01:00",
+      "license": "MIT",
+      "installation_state": "not installed; run the bundled setup",
+      "disposition": "pilot",
+      "capability_delta": "Native domain enrichment through chained certificate/registry events, contact extraction, correlations and interactive relationship reports.",
+      "risk": "2023 source; modern dependency override and verified-TLS provider boundary are local adapters. Only four reviewed modules are loaded. Provider compatibility and accuracy remain unqualified.",
+      "next_test": "Query an owner-supplied domain within the request budget and independently verify certificate/registry/contact results.",
+      "python_version": "3.12.2",
+      "modules": [
+        "sfp_crt",
+        "sfp_arin",
+        "sfp_email",
+        "sfp__stor_db"
+      ],
+      "provider_hosts": [
+        "crt.sh",
+        "whois.arin.net"
+      ]
+    },
+    {
+      "name": "theHarvester",
+      "repo": "theHarvester",
+      "url": "https://github.com/laramies/theHarvester",
+      "commit": "49a38f8d33c32336bbf6a111ea723ea223116265",
+      "commit_date": "2026-10-02T03:48:14+01:00",
+      "license": "GPL-2.0-only",
+      "installation_state": "not installed; run the bundled setup",
+      "disposition": "pilot",
+      "capability_delta": "Domain/organization discovery with normalized evidence and per-source outcomes.",
+      "risk": "Provider queries reveal the domain to providers; credentialed sources and active actions are separate choices.",
+      "next_test": "Run the two default passive sources against an authorized domain and assess outcomes, coverage and report quality."
+    },
+    {
+      "name": "Shodan Python",
+      "repo": "shodan-python",
+      "url": "https://github.com/achillean/shodan-python",
+      "commit": "87a0688d1e5b7e4bb13ae4f5fd7cb937a671cba8",
+      "commit_date": "2023-12-16T17:29:15-08:00",
+      "license": "MIT",
+      "installation_state": "not installed; run the bundled setup",
+      "disposition": "pilot",
+      "capability_delta": "Programmatic reads of indexed network services without scanning the target.",
+      "risk": "Account/API permissions and credits govern live data; setuptools 80.9.0 is pinned for CLI pkg_resources compatibility.",
+      "next_test": "Use an owner-supplied key to validate one known IP lookup and confirm account entitlement."
+    }
+  ],
+  "evidence_boundary": "CLI startup and local/mocked acceptance only; no live third-party investigations or authenticated provider checks.",
+  "site_database_sha256": "fd0902ca6b4be44bd13ca459156a73440580ca829588e1e5bae7255c039f7167",
+  "maigret_site_definitions": 7922,
+  "harvester_source_count": 60
+}

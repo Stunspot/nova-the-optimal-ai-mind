@@ -1,0 +1,14 @@
+{
+  "format": "interview-practice/v1",
+  "interview_id": "replace-with-interview-identity",
+  "as_of": "REPLACE_WITH_TIMESTAMP_AND_OFFSET",
+  "session_state": "not-started",
+  "attempts": [],
+  "drills": [],
+  "readiness": {
+    "claim": "preparation-only",
+    "question_ids": [],
+    "remaining_gaps": "Practice unobserved; record actual role-specific gaps.",
+    "next_action": "Ask one selected question and wait for the candidate."
+  }
+}

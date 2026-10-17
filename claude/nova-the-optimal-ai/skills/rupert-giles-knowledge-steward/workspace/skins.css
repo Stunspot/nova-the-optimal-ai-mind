@@ -1,0 +1,236 @@
+/* Giles material environments. The art is decorative; the map is catalog data. */
+:root {
+  --base:#151310; --surface:#24201b; --raised:#302a22; --reading:#2b2721;
+  --text:#d7cbb7; --muted:#b9a98f; --accent:#d2b373; --line:#62543f;
+  --focus:#efd093; --error:#f2afa0; --radius:4px;
+}
+body { background:linear-gradient(90deg,#151310c4,#151310c9),url('/assets/atlas-material.png') center top/cover fixed; }
+.mast,.orientation,main,footer,#notice { max-width:1720px; }
+button { transition:background .16s,border-color .16s,box-shadow .16s,transform .16s; }
+button:active:not(:disabled) { box-shadow:inset 0 2px 5px #0008; }
+input,textarea,select { box-shadow:inset 0 2px 6px #0004; }
+select { appearance:none; padding-right:28px; background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%); background-position:calc(100% - 15px) 52%,calc(100% - 11px) 52%; background-size:4px 4px; background-repeat:no-repeat; }
+option { background:var(--surface);color:var(--text); }
+.mast { padding:23px 0; }
+.orientation { margin:26px auto 12px; padding:18px 0 24px; }
+.orientation h2 { font-size:43px; }
+.searchbox { border:1px solid var(--line);border-radius:var(--radius);padding:2px 13px;margin-top:10px;box-shadow:inset 0 2px 7px #0005; background:#151310d9; }
+.searchbox input { box-shadow:none; }
+.searchbox:focus-within { border-color:var(--focus);box-shadow:inset 0 2px 7px #0005,0 0 0 2px #d2b37325; }
+.searchbox input:focus-visible { outline-offset:-3px; }
+.search-area p { padding-left:1px; }
+.folio,.workbench,.estate-map { isolation:isolate; }
+.folio { padding:27px 29px; }
+.dock-heading { align-items:flex-start; }
+.dock-heading h2 { font-size:35px; }
+.entry { min-height:33px; }
+#source-view { padding-top:2px; }
+.sample { border:0;line-height:1.8;box-shadow:inset 0 2px 10px #0005; }
+.reader-actions .primary { letter-spacing:.2px; }
+#work-count,#tray-count { font:11px var(--mono); padding:3px 7px;border:1px solid var(--line);border-radius:30px;white-space:nowrap; }
+.file-kind { min-width:30px; }
+.workbench label { margin-top:16px; }
+.workbench-heading { align-items:flex-start; }
+.working-excerpt { overflow-wrap:anywhere; }
+.working-excerpt blockquote { padding:8px 0; }
+.source-list button { transition:background .16s; }
+.source-list button:hover { background:var(--raised); }
+.source-state { border-radius:var(--radius);background:var(--base); }
+.loading { border-left:2px solid var(--accent);margin:15px 0; }
+::selection { background:var(--accent);color:var(--base); }
+:focus-visible { outline-color:var(--focus); }
+/* ARCHIVAL DESK: worn material, engraving, drawer handles, page-edge mass. */
+html[data-theme=atlas] .mast { border-bottom:1px solid #8a7250;box-shadow:0 1px 0 #000,inset 0 -4px 0 #342919; }
+html[data-theme=atlas] .seal { border-radius:50%;width:62px;height:62px;display:grid;place-content:center;padding:0;border:3px double #8f7546;background:radial-gradient(circle at 32% 24%,#806c42,#2b2318 55%,#16120e);box-shadow:inset 0 1px 3px #e4c17a66,inset 0 -3px 6px #000,0 3px 9px #0009; text-shadow:0 2px 2px #000; }
+html[data-theme=atlas] button { background:linear-gradient(170deg,#42372b,#29221b 45%,#231d17);border-color:#6d5940 #483b2b #362c21;box-shadow:inset 0 1px 0 #d4b47a22,0 2px 3px #0006;text-shadow:0 1px 1px #000; }
+html[data-theme=atlas] button:hover { border-color:#b3945d;box-shadow:inset 0 1px 0 #d4b47a33,0 3px 8px #0008; }
+html[data-theme=atlas] button.primary { background:linear-gradient(#705630,#493820);color:#ead4a6;border-color:#a78550 #775d35 #4c3b22; }
+html[data-theme=atlas] .view-controls { padding:3px;border:1px solid #4f4230;background:#100e0bd9;box-shadow:inset 0 2px 4px #0007; }
+html[data-theme=atlas] .view-controls button { box-shadow:none;border-color:transparent;background:transparent; }
+html[data-theme=atlas] .view-controls [aria-pressed=true] { background:linear-gradient(#4d3f2b,#30271b);border-color:#786343;box-shadow:inset 0 1px 0 #cab17822,0 2px 4px #000; }
+html[data-theme=atlas] .topic { background:transparent;border:0;box-shadow:none;text-shadow:none; }
+html[data-theme=atlas] .topic.active { background:#443724;box-shadow:inset 0 0 0 1px #816a45; }
+html[data-theme=atlas] .estate-map { aspect-ratio:1.55;border:5px solid #302719;border-radius:5px;background:linear-gradient(90deg,#130f0970,#130f0940),url('/assets/atlas-material.png') 20% 50%/cover;box-shadow:0 0 0 1px #977c4b66,inset 0 3px 15px #000c,0 14px 24px #0007; }
+html[data-theme=atlas] .estate-map::after { content:'';position:absolute;inset:9px;border:1px solid #b799592c;pointer-events:none; }
+html[data-theme=atlas] .map-center { width:118px;height:118px;border:4px double #a08758;background:radial-gradient(circle at 25% 25%,#5b4b31,#292116 58%,#18130d);box-shadow:inset 0 2px 3px #e5c88b22,inset 0 -4px 8px #0009,0 6px 15px #000b; }
+html[data-theme=atlas] .map-center strong { text-shadow:0 2px 2px #000;font-size:42px; }
+html[data-theme=atlas] .map-node { background:linear-gradient(135deg,#3c3025f2,#19150ff5);border:1px solid #89734e;border-radius:2px;box-shadow:inset 0 1px 0 #ddbc812a,0 5px 10px #000b;padding:10px; }
+html[data-theme=atlas] .map-node.active { background:linear-gradient(135deg,#665336,#33291b);box-shadow:inset 3px 0 0 #d5b777,inset 0 1px 0 #e3c3834d,0 5px 12px #000b; }
+html[data-theme=atlas] .map-node:hover { transform:translate(-50%,-50%) translateY(-2px); }
+html[data-theme=atlas] .map-basis { margin:12px 0 15px; }
+html[data-theme=atlas] .spine { border-left:5px solid #5b482e; border-radius:3px; background:linear-gradient(100deg,#3c3024ed,#211b15f5);box-shadow:inset 0 1px 0 #bba17826,inset 0 -1px 0 #0c0907,0 3px 6px #0005; }
+html[data-theme=atlas] .spine .number { border:1px solid #97784b;padding:4px 2px;height:24px;text-align:center;background:linear-gradient(#53432b,#292116);box-shadow:inset 0 1px 0 #c9a46b33; }
+html[data-theme=atlas] .spine.active { border-left-color:#d2b373; background:linear-gradient(100deg,#50412ced,#2e261bf5); }
+html[data-theme=atlas] .folio { border:1px solid #857154;border-top:5px solid #786144;border-radius:2px 5px 5px 2px; background:linear-gradient(135deg,#b19a6e0b,transparent 50%),#2b2721;box-shadow:inset 7px 0 9px #0004,inset 0 1px 0 #c9b38a44,4px 3px 0 #594c39,6px 5px 0 #1b1712,8px 7px 0 #4a3d2d,10px 9px 0 #16130f,0 20px 35px #000a; }
+html[data-theme=atlas] .folio .eyebrow { letter-spacing:2px; }
+html[data-theme=atlas] .summary { font-size:17px; }
+html[data-theme=atlas] .sample { background:#201d18;border-left:2px solid #8b7350; }
+html[data-theme=atlas] .entry { border-radius:2px 2px 0 0; }
+html[data-theme=atlas] .entry.active { color:#eed6a7;background:linear-gradient(#58462d,#332a1d);border-bottom:2px solid #d2b373; }
+html[data-theme=atlas] .workbench { background:linear-gradient(135deg,#211b16ed,#16120ff5);border:4px solid #3d3022;border-radius:8px;box-shadow:0 0 0 1px #78624677,inset 0 2px 14px #0008,0 12px 25px #0008; }
+html[data-theme=atlas] .working-excerpt { background:#30291f;border-left:3px solid #a58a59;box-shadow:2px 3px 0 #17120d,0 5px 8px #0005; }
+html[data-theme=atlas] dialog { background:linear-gradient(135deg,#4a3e2b,#282219 55%);border:4px double #9a8158;box-shadow:0 30px 100px #000d,inset 0 1px 0 #bda87b33; }
+/* BLACKGLASS: recessed optical well, suspended slabs, localized signal. */
+html[data-theme=circuit] { --base:#08090a;--surface:#151718;--raised:#26292b;--reading:#161819;--text:#d1d3d3;--muted:#a5aaad;--accent:#e0867d;--line:#484b4e;--focus:#e6a29b;--error:#efb16f;--display:'Segoe UI Light','Segoe UI',sans-serif;--radius:12px; }
+html[data-theme=circuit] body { background:linear-gradient(90deg,#08090abc,#08090aeb 75%),url('/assets/blackglass-material.png') center top/cover fixed;font-size:13px; }
+html[data-theme=circuit] main { grid-template-columns:minmax(300px,.85fr) minmax(400px,1.28fr) minmax(250px,.72fr);gap:24px; }
+html[data-theme=circuit] .mast { border-bottom:1px solid #71777b40;box-shadow:0 1px 0 #000; }
+html[data-theme=circuit] .seal { border:1px solid #7f68654d;border-radius:50%;width:54px;height:54px;display:grid;place-content:center;padding:0;font:29px 'Segoe UI Light','Segoe UI',sans-serif;background:radial-gradient(circle at 30% 20%,#5d555533,#101112 60%);box-shadow:inset 0 1px 0 #b4b4b43d,inset 0 -2px 2px #000,0 3px 10px #000b; }
+html[data-theme=circuit] h1 { font-size:29px;letter-spacing:-.5px; }
+html[data-theme=circuit] .orientation { grid-template-columns:1.1fr 1fr; }
+html[data-theme=circuit] .orientation h2 { font-size:41px; }
+html[data-theme=circuit] .eyebrow { font:9px/1.5 var(--mono);letter-spacing:1.7px;color:#c3a19c; }
+html[data-theme=circuit] button { background:linear-gradient(145deg,#3b3e412f,transparent 65%),#181a1b;border-color:#64686b85 #44484b70 #292c2f;box-shadow:inset 0 1px 0 #ffffff0d,0 3px 8px #0007;border-radius:9px; }
+html[data-theme=circuit] button:hover { background:linear-gradient(145deg,#9b9f9f26,transparent),#202223;box-shadow:inset 0 1px 0 #ffffff26,0 5px 12px #000b;border-color:#9196998c; }
+html[data-theme=circuit] button.primary { background:linear-gradient(135deg,#850b0b,#3e0909);border:1px solid #c05a51;color:#f0d2ce;box-shadow:inset 0 1px 0 #f2b0a422,0 3px 10px #0008; }
+html[data-theme=circuit] :is(input,select,textarea) { background-color:#0c0e0f;border-color:#4b5054; }
+html[data-theme=circuit] .searchbox { background:#0b0d0ee8;border-color:#51565c;box-shadow:inset 0 3px 10px #000c,0 1px 0 #8a929329; }
+html[data-theme=circuit] .searchbox:focus-within { border-color:#c4736a;box-shadow:inset 0 3px 10px #000c,0 0 15px #82000024; }
+html[data-theme=circuit] .estate-map { aspect-ratio:1.18;border:6px solid #1d2022;border-radius:20px;background:linear-gradient(#08090a30,#08090a55),url('/assets/blackglass-material.png') 35% center/cover;box-shadow:inset 0 0 25px #000c,0 0 0 1px #737b814d,inset 0 1px 0 #fff3,0 17px 28px #000b; }
+html[data-theme=circuit] .estate-map::after { content:'';position:absolute;inset:8px;border:1px solid #7c858520;border-radius:10px;pointer-events:none; }
+html[data-theme=circuit] .estate-map path { stroke:#b42a20;opacity:.85;filter:drop-shadow(0 0 3px #9b090960); }
+html[data-theme=circuit] .map-center { width:96px;height:96px;border:1px solid #777d8377;background:radial-gradient(circle at 30% 20%,#555a5c70,#0d1011 70%);box-shadow:inset 0 1px 0 #fff3,inset 0 -4px 9px #0009,0 0 0 5px #02030388,0 0 0 6px #6c73732b,0 5px 14px #000b; }
+html[data-theme=circuit] .map-center strong { font:36px var(--display);color:var(--text); }
+html[data-theme=circuit] .map-center .eyebrow { font-size:6px;letter-spacing:1px; }
+html[data-theme=circuit] .map-center>span:last-child { font-size:8px; }
+html[data-theme=circuit] .map-node { width:29%;min-height:49px;padding:8px 7px;gap:5px;background:linear-gradient(130deg,#454a4d8c,#101213ee 72%);border:1px solid #81868c7d;border-radius:10px;box-shadow:inset 0 1px 0 #ffffff2b,0 4px 9px #000c; }
+html[data-theme=circuit] .map-node strong { font:11px/1.35 var(--sans);font-weight:500; }
+html[data-theme=circuit] .map-node.active { border-color:#bd4940;background:linear-gradient(130deg,#69413c7a,#151011eb 72%);box-shadow:inset 0 1px 0 #ffffff20,0 0 0 3px #82000055,0 0 20px #82000026,0 4px 9px #000c; }
+html[data-theme=circuit] .node-index { font-size:8px;color:#bdaca8; }
+html[data-theme=circuit] .spine { background:linear-gradient(120deg,#44494b33,#111314f0);border:1px solid #64696d55;border-radius:10px;padding:12px;grid-template-columns:21px 1fr;box-shadow:inset 0 1px 0 #fff1,0 3px 7px #0008; }
+html[data-theme=circuit] .spine.active { border-color:#8b3d38;box-shadow:inset 3px 0 0 #9f2520,inset 0 1px 0 #fff1,0 4px 9px #0009; }
+html[data-theme=circuit] .spine h4 { font:16px/1.3 var(--display); }
+html[data-theme=circuit] .spine p { font-size:11px; }
+html[data-theme=circuit] #stores { max-height:360px; }
+html[data-theme=circuit] .folio { grid-column:2;grid-row:1;padding:25px;border:1px solid #777f8590;border-radius:20px;background:linear-gradient(140deg,#a5adb819,transparent 55%),#141617;box-shadow:inset 0 1px 0 #fff3,inset 0 -1px 0 #000,0 3px 0 #07090a,0 5px 0 #494e5244,0 20px 40px #000b; }
+html[data-theme=circuit] .dock-heading h2 { font-size:32px;font-weight:300; }
+html[data-theme=circuit] .summary { font:14px/1.7 var(--sans); }
+html[data-theme=circuit] .section-tabs { padding:4px;background:#090b0c;border:1px solid #575e6338;border-radius:12px;gap:4px;box-shadow:inset 0 2px 5px #0007; }
+html[data-theme=circuit] .entry { border:0;border-radius:8px;box-shadow:none;font-size:10px; }
+html[data-theme=circuit] .entry.active { color:#efd3cd;background:linear-gradient(120deg,#86332d55,#381817aa);box-shadow:inset 0 0 0 1px #a84c4380; }
+html[data-theme=circuit] .sample { background:#0b0e0f;border:1px solid #363d4177;border-radius:9px;font-size:12px; }
+html[data-theme=circuit] .workbench { grid-column:3;grid-row:1;margin:0;padding:20px;border-radius:20px;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto;background:linear-gradient(140deg,#87909a15,transparent 50%),#141617;border:1px solid #69727870;box-shadow:inset 0 1px 0 #fff2,0 18px 32px #0009; }
+html[data-theme=circuit] .workbench h2 { font-size:25px; }
+html[data-theme=circuit] .working-excerpt { border-left:2px solid #a14136;background:linear-gradient(120deg,#8d919718,#191b1c);border-color:#60676c70; }
+html[data-theme=circuit] .compare-columns { grid-template-columns:1fr; }
+html[data-theme=circuit] dialog { background:linear-gradient(145deg,#626c7430,transparent 60%),#16191b;border:1px solid #899297aa;border-radius:20px;box-shadow:inset 0 1px 0 #fff3,0 30px 100px #000e; }
+/* MIRRORLOOP: faceted planes, echo edges and depth around a quiet reading field. */
+html[data-theme=relay] { --base:#101316;--surface:#1e2529;--raised:#2c363c;--reading:#20272c;--text:#d0d7d9;--muted:#a9b8be;--accent:#d3b991;--line:#56666d;--focus:#e5cba6;--error:#f1afa1;--display:'Segoe UI Light','Segoe UI',sans-serif;--radius:3px; }
+html[data-theme=relay] body { background:linear-gradient(90deg,#10131699,#10131624),url('/assets/mirrorloop-material.png') center top/cover fixed; }
+html[data-theme=relay] .mast { border:0;box-shadow:0 1px 0 #92aab44d,0 4px 0 #0b101333; }
+html[data-theme=relay] .seal { width:58px;height:58px;padding:0;display:grid;place-content:center;border:1px solid #8faaa787;border-radius:2px 20px 2px 20px;background:linear-gradient(140deg,#6e8b974d,#1c282ec9 50%,#4b667340);box-shadow:inset 0 1px 0 #d9edf966,3px 3px 0 #0e1417,4px 4px 0 #86999e55,0 7px 12px #0008;font:30px var(--display); }
+html[data-theme=relay] h1 { font-size:32px;font-weight:300;letter-spacing:-.4px; }
+html[data-theme=relay] .orientation { grid-template-columns:1fr 1fr;margin-top:36px;margin-bottom:20px; }
+html[data-theme=relay] .orientation h2 { font-size:46px;font-weight:300;letter-spacing:-1.4px; }
+html[data-theme=relay] .eyebrow { letter-spacing:2.3px;font-size:9px; }
+html[data-theme=relay] button { background:linear-gradient(135deg,#b5c9d31a,transparent 60%),#263238cf;border:1px solid #8ba0a557;border-radius:2px 12px 2px 12px;box-shadow:inset 0 1px 0 #cee2eb29,2px 2px 0 #080f1399; }
+html[data-theme=relay] button:hover { background:linear-gradient(135deg,#b5c9d332,transparent),#2d3b41e6;border-color:#b2c0c28c;box-shadow:inset 0 1px 0 #cee2eb66,3px 4px 8px #0006; }
+html[data-theme=relay] button.primary { background:linear-gradient(125deg,#756044b3,#394145);color:#f0dabc;border-color:#a99a80; }
+html[data-theme=relay] input,html[data-theme=relay] textarea,html[data-theme=relay] select { background-color:#10191ecf;border:1px solid #6c818e8c;border-radius:2px 12px 2px 12px;box-shadow:inset 0 2px 7px #0007,0 1px 0 #b2c3cb1f; }
+html[data-theme=relay] .searchbox { background:#11191fcc;border-radius:2px 18px 2px 18px;border-color:#75909f88;box-shadow:inset 0 3px 9px #0008,3px 3px 0 #07101470,4px 4px 0 #a5c0ca33; }
+html[data-theme=relay] .searchbox input { background:transparent;border-radius:0;box-shadow:none;border:0; }
+html[data-theme=relay] .estate-map { aspect-ratio:1.48;margin-top:24px;border:1px solid #b8cdd387;border-radius:2px 32px 2px 32px;background:linear-gradient(90deg,#10191e44,#10191e55),url('/assets/mirrorloop-material.png') right center/cover;box-shadow:inset 0 1px 0 #d1e7ee44,6px 6px 0 #0e171dd9,7px 7px 0 #829eaa55,0 18px 30px #0009; }
+html[data-theme=relay] .estate-map::after { content:'';position:absolute;inset:8px;border:1px solid #d1e7ee26;border-radius:2px 26px 2px 26px;pointer-events:none; }
+html[data-theme=relay] .estate-map path { stroke:#c2a67e;stroke-width:1.6px;opacity:.7; }
+html[data-theme=relay] .map-node { padding:11px;width:26%;border-radius:2px 17px 2px 17px;background:linear-gradient(135deg,#b3ccd135,transparent 60%),#1b2930e6;box-shadow:inset 0 1px 0 #e8f4f447,3px 3px 0 #051015b3,4px 4px 0 #9bb6bf40; }
+html[data-theme=relay] .map-node strong { font:12px/1.4 var(--sans);font-weight:500; }
+html[data-theme=relay] .map-node.active { border-color:#cfb18a;background:linear-gradient(135deg,#b5aa9042,transparent 60%),#2a3439ee;box-shadow:inset 0 1px 0 #ecdbc844,3px 3px 0 #0d1519,4px 4px 0 #a690744f,0 0 20px #adbdc315; }
+html[data-theme=relay] .map-center { width:112px;height:104px;border-radius:2px 30px 2px 30px;border:1px solid #c4dbe887;background:linear-gradient(140deg,#8babb740,#1c2a30e8 60%);box-shadow:inset 0 1px 0 #d2e7ee66,5px 5px 0 #0a141a99,6px 6px 0 #9eb6c244; }
+html[data-theme=relay] .map-center strong { font:43px var(--display);font-weight:300; }
+html[data-theme=relay] .map-center .eyebrow { font-size:7px;letter-spacing:1px; }
+html[data-theme=relay] .spine { padding:15px;background:linear-gradient(130deg,#a1bdc320,transparent 65%),#1b272dcf;border:1px solid #88a0ab50;border-radius:2px 18px 2px 18px;box-shadow:inset 0 1px 0 #cedfe52b,3px 3px 0 #0a1317b0; }
+html[data-theme=relay] .spine.active { border-color:#bca480;box-shadow:inset 3px 0 0 #d3b991,inset 0 1px 0 #dfd6c329,3px 3px 0 #0a1317b0; }
+html[data-theme=relay] .spine h4 { font:18px/1.3 var(--display);font-weight:300; }
+html[data-theme=relay] .folio { padding:30px 32px;border:1px solid #a4bbc47d;border-radius:2px 32px 2px 32px;background:linear-gradient(135deg,#a1bdc319,transparent 40%),#20282df5;box-shadow:inset 0 1px 0 #d5e9f155,6px 6px 0 #0e171dd9,7px 7px 0 #839aa555,12px 12px 0 #13212880,13px 13px 0 #7b98a733,0 24px 35px #0009; }
+html[data-theme=relay] .dock-heading h2 { font-size:36px;font-weight:300; }
+html[data-theme=relay] .summary { font:15px/1.8 var(--sans); }
+html[data-theme=relay] .entry { background:transparent;border:0;border-bottom:1px solid #849da955;box-shadow:none;border-radius:0;padding:9px 12px; }
+html[data-theme=relay] .entry.active { border-bottom:2px solid #d3b991;background:linear-gradient(140deg,#d3b99126,transparent 80%);color:#e4ceb0; }
+html[data-theme=relay] .sample { background:#152027;border:1px solid #69828e50;border-radius:2px 16px 2px 16px;padding:20px; }
+html[data-theme=relay] .workbench { padding:26px;background:linear-gradient(140deg,#b9ccd317,transparent 50%),#18252be8;border:1px solid #819ba766;border-radius:2px 26px 2px 26px;box-shadow:inset 0 1px 0 #d5e9f13b,4px 4px 0 #0a141acc,5px 5px 0 #839aa555,0 15px 28px #0009; }
+html[data-theme=relay] .workbench h2 { font-size:29px;font-weight:300; }
+html[data-theme=relay] .working-excerpt { background:#25343bcc;border:1px solid #6e8e9d66;border-radius:2px 16px 2px 16px;box-shadow:3px 3px 0 #0c1820a6; }
+html[data-theme=relay] .working-excerpt blockquote { font-family:var(--sans); }
+html[data-theme=relay] dialog { background:linear-gradient(140deg,#b9ccd322,transparent 45%),#1c292ff5;border:1px solid #b5cbd599;border-radius:2px 32px 2px 32px;box-shadow:inset 0 1px 0 #e5f5ff66,9px 9px 0 #09151ce6,10px 10px 0 #8197a055,0 30px 100px #000d; }
+/* Mirrorloop's working planes have thickness, edge refraction and grazing light.
+   Opaque source/annotation interiors remain separate from the optical frame. */
+html[data-theme=relay] .folio {
+ background:linear-gradient(105deg,#1b282fee 0%,#1b282ff2 55%,#233741e8 82%,#91b0bf57),url('/assets/mirrorloop-material.png') right top/auto 780px;
+ border-top-color:#d0e5ec9c;border-right:3px solid #abc4cf8c;
+ box-shadow:inset 0 2px 0 #e4f4fb35,inset -9px 0 16px #b5d9e621,inset -1px 0 0 #e4f4fb99,5px 6px 0 #101c23,7px 8px 0 #9bb3bd69,10px 11px 0 #1d333f,12px 13px 0 #b9d4de33,0 24px 35px #000b;
+}
+html[data-theme=relay] .folio::before {
+ content:'';position:absolute;left:0;right:0;top:0;height:18px;z-index:-1;pointer-events:none;
+ background:linear-gradient(110deg,#aac4d329,transparent 50%,#dae9ee61 86%,#152931a8),url('/assets/mirrorloop-material.png') right 24%/cover;
+ border-bottom:1px solid #a2c1cf29;opacity:.8;
+}
+html[data-theme=relay] .folio::after {
+ content:'';position:absolute;right:0;top:18px;width:58px;height:320px;z-index:-1;pointer-events:none;
+ clip-path:polygon(70% 0,100% 0,100% 100%,0 35%);
+ background:linear-gradient(160deg,#dceaf233,#91acb326 34%,#142d3a29 38%,#dceaf261 40%,#91acb309 55%);
+}
+html[data-theme=relay] .workbench {
+ background:linear-gradient(118deg,#1b2c34f2 0%,#1c2c34ed 65%,#718d9d3d),url('/assets/mirrorloop-material.png') right center/auto 620px;
+ border-top-color:#c6dde79c;border-right:3px solid #94afbe8a;
+ box-shadow:inset 0 1px 0 #ecf8ff55,inset -8px 0 14px #b5d9e617,4px 4px 0 #0a141acc,6px 6px 0 #b2c9d05c,9px 9px 0 #1c313cc0,0 15px 28px #000a;
+}
+html[data-theme=relay] .working-excerpt {
+ background:linear-gradient(130deg,#3d576555,#20343de8);border-top-color:#aec8d377;
+ box-shadow:inset 0 1px 0 #e4f4ff2b,inset -1px 0 0 #a7c7d344,3px 3px 0 #0c1820a6;
+}
+html[data-theme=relay] dialog {
+ background:linear-gradient(110deg,#192a33f2,#1c303af5 70%,#8aa6b357),url('/assets/mirrorloop-material.png') right top/cover;
+ border-right:3px solid #b3cad38c;
+ box-shadow:inset 0 2px 0 #e5f5ff44,inset -8px 0 12px #b5d9e622,6px 6px 0 #09151ce6,8px 8px 0 #abc4ce66,11px 11px 0 #142a35cc,0 30px 100px #000e;
+}
+/* Supporting states share the material's body without obscuring their meaning. */
+html[data-theme] button:disabled { opacity:.55;box-shadow:none;transform:none; }
+html[data-theme] .map-node.dimmed { opacity:.55; }
+html[data-theme] button:active:not(:disabled) { box-shadow:inset 0 2px 7px #0008; }
+html[data-theme] .danger { color:var(--error); }
+html[data-theme] .source-state.error { border:1px dashed var(--error); }
+html[data-theme] .custody,html[data-theme] .related { border-top-color:var(--line); }
+html[data-theme] #breadcrumbs button { background:transparent;border:0;box-shadow:none;padding:3px; }
+html[data-theme] .source-list button { border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;background:transparent; }
+html[data-theme] .source-list button:hover { background:var(--raised); }
+html[data-theme] .catalog-tools nav { background:var(--reading);box-shadow:0 10px 30px #000c; }
+html[data-theme] dialog::backdrop { background:#050708c9;backdrop-filter:blur(8px); }
+@media(max-width:1190px) {
+ html[data-theme=circuit] main { grid-template-columns:minmax(310px,1fr) minmax(390px,1.2fr);gap:20px; }
+ html[data-theme=circuit] .workbench { grid-column:1;grid-row:2;position:static;max-height:none; }
+ html[data-theme=circuit] .folio { grid-row:1/span 2; }
+ html[data-theme=circuit] .estate-map { aspect-ratio:1.25; }
+}
+@media(max-width:900px) {
+ .orientation h2,html[data-theme=circuit] .orientation h2,html[data-theme=relay] .orientation h2 { font-size:35px; }
+ html[data-theme=circuit] main { grid-template-columns:minmax(260px,.9fr) minmax(320px,1.1fr); }
+ html[data-theme] .folio { padding:22px; }
+ html[data-theme] .dock-heading h2 { font-size:30px; }
+}
+@media(max-width:760px) {
+ html[data-theme] body { background-attachment:scroll;background-size:auto 100vh; }
+ html[data-theme] .mast { padding:18px 0; }
+ html[data-theme] .orientation { display:block;padding-top:0;margin:24px auto 5px; }
+ html[data-theme] .orientation h2 { font-size:34px; }
+ html[data-theme] .seal { width:50px;height:50px;font-size:27px; }
+ html[data-theme] .brand h1 { font-size:27px; }
+ html[data-theme] main { display:flex;flex-direction:column;gap:26px; }
+ html[data-theme] .estate-map { aspect-ratio:1.1;margin-top:18px; }
+ html[data-theme] .map-center { width:87px;height:90px; }
+ html[data-theme] .map-center strong { font-size:32px; }
+ html[data-theme] .map-center .eyebrow { font-size:6px; }
+ html[data-theme] .map-center>span:last-child { font-size:8px; }
+ html[data-theme] .map-node { width:28%;padding:7px 6px;gap:4px;min-height:49px; }
+ html[data-theme] .map-node strong { font-size:11px; }
+ html[data-theme] .node-index { font-size:8px; }
+ html[data-theme] .folio { padding:20px;position:static;max-height:none; }
+ html[data-theme] .dock-heading h2 { font-size:28px; }
+ html[data-theme] .workbench { position:static;max-height:none;padding:20px; }
+ html[data-theme] .spine h4 { font-size:18px; }
+ html[data-theme] .toolbar button,html[data-theme] .entry,html[data-theme] .reader-actions button,html[data-theme] .pagination button { min-height:44px; }
+ html[data-theme] .sample { padding:14px;font-size:12px; }
+ html[data-theme] dialog { padding:20px; }
+ html[data-theme] .compare-columns { grid-template-columns:1fr; }
+ html[data-theme=relay] .folio { box-shadow:inset 0 1px 0 #d5e9f155,3px 3px 0 #0e171dd9,4px 4px 0 #839aa555,0 15px 25px #0009; }
+}
+@media(prefers-reduced-motion:reduce) { html[data-theme] button { transition:none; } }

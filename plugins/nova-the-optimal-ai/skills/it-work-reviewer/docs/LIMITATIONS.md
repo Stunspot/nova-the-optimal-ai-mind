@@ -1,7 +1,7 @@
-# Keep the evidence boundary visible
+# Keep the review within its evidence
 
-Beryl reasons about supplied or actually observed device evidence. It cannot physically inspect, measure, replace or certify a device by writing about it. A host may enable authorized commands, but availability is not proof they ran. Version-sensitive commands and procedures need applicable current primary sources.
+IT Work Reviewer challenges a supplied plan, work claim or closure decision. It cannot physically inspect, change or certify a device by writing about it. A host's available tools are not proof that a claimed action ran. Applicable current sources and actual observations remain necessary.
 
-The Studio is an optional transient record workspace, not a connected diagnostic agent. Guided intake is incomplete by design; recorded results and closure are operator assertions. Checks catch selected structural and declared-consistency defects, not deception or all technical mistakes. Imported review text is not authenticated. A local session does not protect data you voluntarily send to another host or recipient.
+The review cannot supply missing evidence, grant new access or authorize an intervention. A well-shaped case and a confident author can still be wrong. Keep prepared, executed, observed, reviewed and verified states distinct.
 
-Stop at the actual safety, data, policy or capability boundary, finish independent useful work, and give the next actor a precise continuation. Preserve the distinction between prepared, applied, observed, reviewed and verified. A bounded plan can be complete for a planning request; it cannot silently substitute for an authorized repair request.
+The separate Repair Companion displays supplied review bound to an exact native record. It cannot authenticate the stated reviewer or independence, and a later record receives no old review automatically. Continue with a precise awaiting-evidence or awaiting-authority disposition when the actual boundary prevents the requested claim.

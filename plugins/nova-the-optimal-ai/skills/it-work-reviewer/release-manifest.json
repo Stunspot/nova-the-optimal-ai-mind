@@ -1,6 +1,6 @@
 {
   "package": "beryl-it-benchcraft",
-  "version": "0.4.1",
+  "version": "0.6.0",
   "files": {
     "agents/openai.yaml": {
       "sha256": "eede855bc831bdf8ba7b5fe32f608f4bb12c7413fc10e71e3903f9031adc0ddb",
@@ -31,52 +31,52 @@
       "bytes": 861
     },
     "docs/ACCESSIBILITY.md": {
-      "sha256": "b6f7dbffa032890f1f4ec0ceefc4f438a074f85f80a05035aa7e50bf67b1543e",
-      "bytes": 418
+      "sha256": "f19b9214306b5265f5234269f1de807b79767f5f44fd320785e863cc8163b963",
+      "bytes": 697
     },
     "docs/CAPABILITY-MATRIX.md": {
-      "sha256": "f8577493ef3995121a9176d6820b00aeddcafd21838b362c3a048241598a7c81",
-      "bytes": 575
+      "sha256": "f8d65097e439f2889d9a3f424e70f0b7a2a6ff28ca549d8130e64af3746046a4",
+      "bytes": 829
     },
     "docs/CASE-FILES.md": {
-      "sha256": "a6e3f7441a7ef69af7660809cb9c6a6ae3051cc99d4196c5ae7da8e4a7314fb7",
-      "bytes": 647
+      "sha256": "b5e5ee01c8df55638b069d182940c9742e7b1412f8a205a12abe5941c8a90a55",
+      "bytes": 823
     },
     "docs/DOCUMENTATION-MAINTENANCE.md": {
-      "sha256": "4ebd05a2b39a01ebfa818423180c4bddf6aef6ef562d36b0ec36a5d21e9d2373",
-      "bytes": 763
+      "sha256": "ecffbee4c655d332c638b430b256ddca8d14e8e83f5139d6243769c50f0ba0c3",
+      "bytes": 948
     },
     "docs/INSTALLATION.md": {
-      "sha256": "e9e0915376c590cfd46d1ee55bfb1d793d6ad4f54cf3d5d89316b161ca070f6e",
-      "bytes": 573
+      "sha256": "5f1986e15dc1ffb08e88ecbf34aab802e2c5cbd10b51552afa9ca9653dccb3b6",
+      "bytes": 815
     },
     "docs/LIMITATIONS.md": {
-      "sha256": "a9295d558f3cf60348f16e3a6c427d62830df4401b99850f2841c0c34f7bbac7",
-      "bytes": 1126
+      "sha256": "cb9172f2c6126472cb7e9fe20ccdfb71fbb77b222e39362d8685040faba6020b",
+      "bytes": 900
     },
     "docs/QUICK-START.md": {
-      "sha256": "5662ad863ea603a36447add618f2a019e3283a1c9393f14412426b8fa125f4cd",
-      "bytes": 1073
+      "sha256": "56398261ac5445572992eed51e8f9ee33998f1ca5660b563f40ffd831089a84f",
+      "bytes": 1119
     },
     "docs/RELEASE-NOTES.md": {
-      "sha256": "810c358d0f1f31794e3a8ff92930c78a320a0632a153acff1c5653cb7e326dbf",
-      "bytes": 477
+      "sha256": "226e2c67ffd3d2a55fea85d967a43418d615d1f969757ef3a353a0605f0ca85f",
+      "bytes": 672
     },
     "docs/SAFETY-AND-DATA.md": {
-      "sha256": "7b37e73cabc85d6e963fdecc8042ead2d6aa7aa6cbc600d89ae7ba4bf09194e1",
-      "bytes": 1491
+      "sha256": "d748bf70a899946cbd22c03267c82ee28712aa934cef92941f0ea20a73175b94",
+      "bytes": 1510
     },
     "docs/TROUBLESHOOTING.md": {
-      "sha256": "ee9ff3368bbc842382e0174a4ecefa64d29e6ce1425aefffc9d5b6a254867eca",
-      "bytes": 527
+      "sha256": "b4fdb818a1e3b3654d4cb8923ba1328182a4f45a65a4f912f02809f061cc04b2",
+      "bytes": 811
     },
     "docs/USER-GUIDE.md": {
       "sha256": "855f41c227f24e6d0a2ffc4a77cab97f0f08f547b9a5fb6de8d36ef1774c1dfc",
       "bytes": 1151
     },
     "docs/VALIDATION-AND-EVALUATION.md": {
-      "sha256": "c75af41e7737e3ab93590638c34d12fe56a4af9c733bae33bd5474428a17c0e2",
-      "bytes": 1622
+      "sha256": "db855159ca1ffd7d825f693d950aec0dfa0f0efc6c7229bb499ea545e85e2ff3",
+      "bytes": 848
     },
     "evals/core-transfer-cases.yaml": {
       "sha256": "58c577937285da7627e72564818e5342d72d39ac94a40f923101ef391f89cc08",
@@ -147,8 +147,8 @@
       "bytes": 2335
     },
     "README.md": {
-      "sha256": "fa182b34b831c0bfcb46c7be5c6d2692cdfbd72785faa82109c25659887e2958",
-      "bytes": 333
+      "sha256": "dfb7686a09a60cc0b92f73c1dc22db410b472f26eccf0f63076f914312b76c5a",
+      "bytes": 591
     },
     "references/diagnostic-method.md": {
       "sha256": "e7944600679f68f87d54c70239d62402db63a1d91d1b10991e41bdd7c44ef2be",
@@ -207,12 +207,12 @@
       "bytes": 9140
     },
     "scripts/validate_release.py": {
-      "sha256": "f22a01fd9f2683b8ab33a58d63bb6978013c71c94af0a7c15c01ae67aa1cab0e",
-      "bytes": 4779
+      "sha256": "bf230214319d5d189f066ec9212f0081bc0ef5252590e8c09a5b5dfe861ba821",
+      "bytes": 4895
     },
     "SKILL.md": {
-      "sha256": "011cecc89b378b5d0c29881c5e63f19a9e43c47bf9d5dc825c7ede6005c8238f",
-      "bytes": 4060
+      "sha256": "396d1bbc5d9a53bf1923493c56484a439bf86fc03651258787213263449e0d90",
+      "bytes": 3925
     }
   }
 }

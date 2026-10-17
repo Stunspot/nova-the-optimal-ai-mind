@@ -1,0 +1,3 @@
+source_id,source_type,title_or_identity,path_or_url,source_date,retrieved_at,custody,use,notes,origin,subject,state,sha256
+SRC-001,fictional teaching record,posting.md,file:sources/posting.md,2026-10-07,2026-10-07,Retained exact practice input,vacancy,Not an actual employer or applicant,fictional,,current,ae4a8964ae31294d0f4ba6baab7af57fd7b02ecd8ffd9bac3b11c3fa934837f5
+SRC-002,fictional teaching record,history.md,file:sources/history.md,2026-10-07,2026-10-07,Retained exact practice input,candidate-evidence,Not an actual employer or applicant,fictional,jane-example,current,c7a3f802bfdb4eeff1603d38e1dadcb77c5247042f12748cd39c11955a10aa99

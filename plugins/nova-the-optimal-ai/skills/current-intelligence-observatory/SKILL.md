@@ -43,6 +43,10 @@ End with the answer or artifact and the exact next action only when something re
 
 ## Optional tools and views
 
-[Evidence Atlas](workspace/index.html) browses cases, exact records, all clock types, support chains and revisions. Home returns to orientation without discarding the loaded case; Help explains the first task. A displayed posture is declared native data, not a browser verification. The viewer neither saves nor uploads cases.
+Open `workspace/Open.cmd`, `workspace/Open.command`, or `python workspace/launch.py` for the persistent inquiry workspace. Begin with a question, ordinary source documents or pasted passages. Read and connect exact support to claims, keep the relevant clocks distinct, compare explanations, and prepare an editable brief with a next discriminating observation. **Work folder** selects saved work outside the installation. A manual return plan does not schedule monitoring. Read [the application guide](workspace/README.md) for controls and recovery.
+
+The separate [Evidence Atlas](workspace/advanced.html) retains the typed native-case graph, exact records, clocks, support chains and revisions. Its displayed posture is declared data, not browser verification; it does not edit or upload native cases. Use that detail when it serves the inquiry, rather than requiring a native packet before a useful answer.
 
 Use [the OSINT bridge](knowledge/osint-tools.md) only if bounded public-source tooling advances this inquiry. Reports remain tool-reported and unrated until independently assessed. Setup is optional and separate from ordinary source reading. Missing tools or provider access should leave a useful bounded answer and [recovery route](fallbacks/degraded-capability.md), not stall unrelated work.
+
+> **Companion app presentation:** This native skill remains installed for in-chat use. Do not install, register, or recommend its standalone companion app.

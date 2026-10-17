@@ -1,0 +1,15 @@
+{
+  "schema": "nova-companion-presentation/v1",
+  "skill": "current-intelligence-observatory",
+  "companion_app": {
+    "title": "Intelligence Observatory",
+    "presented": false,
+    "reason": "Owner disposition: companion apps are not being presented; preserve and install the native skill for in-chat use."
+  },
+  "maintenance": {
+    "kind": "edit",
+    "effect": "presentation",
+    "version": "0.4.0",
+    "note": "Same-version maintenance: standalone companion presentation is disabled. Keep the native current-intelligence-observatory skill available for in-chat use; preserve app implementation and user data. Do not install, register, or recommend the companion."
+  }
+}

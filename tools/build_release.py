@@ -180,7 +180,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
     version = str(plugin_manifest["version"])
     contract = json.loads((repo / "design/product-contract.json").read_text(encoding="utf-8"))
-    if version not in {"3.8.1", "4.0.0"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
+    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
     if loadout.get("license") != "LICENSE.md":
         raise RuntimeError("Loadout does not identify the Nova Free product license")
@@ -215,6 +215,27 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
             raise RuntimeError(f"Required customer document missing: {name}")
         target = package_root / name
         target.write_bytes(source.read_bytes())
+
+    if version in {"4.1.0", "4.3.0"}:
+        for name in ("documentation-manifest.json", "documentation-authorship.json"):
+            (package_root / name).write_bytes((repo / name).read_bytes())
+        copy_tree(repo / "documentation-source", package_root / "documentation-source")
+        receipt = json.loads((repo / "documentation-authorship.json").read_text(encoding="utf-8"))
+        snapshot = receipt["authoring"]["capability_snapshot"]["path"]
+        target = package_root / snapshot
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((repo / snapshot).read_bytes())
+        for name in (f"Nova the Optimal AI Free T-Free v{version}.md", f"Nova the Optimal AI Free T-Free v{version} Extra.md", "Nova the Optimal AI Free.png"):
+            target = package_root / "delivery-sidecars" / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((repo / "delivery-sidecars" / name).read_bytes())
+
+    presentation_policy = repo / "companion-presentation.json"
+    if presentation_policy.is_file():
+        policy = json.loads(presentation_policy.read_text(encoding="utf-8-sig"))
+        if policy.get("schema") != "nova-companion-presentation/v1" or policy.get("preserve_skill_installation") is not True:
+            raise RuntimeError("Companion presentation policy is malformed or does not preserve skills")
+        (package_root / "companion-presentation.json").write_bytes(presentation_policy.read_bytes())
 
     docs_source = repo / "docs"
     if not docs_source.is_dir():
@@ -392,3 +413,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

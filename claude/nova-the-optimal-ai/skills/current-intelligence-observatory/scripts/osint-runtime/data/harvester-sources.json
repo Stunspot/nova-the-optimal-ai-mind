@@ -1,0 +1,410 @@
+{
+  "apis-guru": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains",
+      "urls"
+    ]
+  },
+  "arquivo": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "baidu": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "bevigil": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains",
+      "urls"
+    ]
+  },
+  "brave": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "bufferoverun": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "builtwith": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains",
+      "urls"
+    ]
+  },
+  "censys": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "certspotter": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "commoncrawl": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "criminalip": {
+    "activity": "P2",
+    "capabilities": [
+      "asns",
+      "ips",
+      "subdomains"
+    ]
+  },
+  "crt-name": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "crtsh": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "dehashed": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "ips"
+    ]
+  },
+  "dnsdb": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "dnsdumpster": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "duckduckgo": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "dymo": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "fofa": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "fullhunt": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "github-code": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "gitlab": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains",
+      "urls"
+    ]
+  },
+  "hackertarget": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "haveibeenpwned": {
+    "activity": "P0",
+    "capabilities": [
+      "breaches"
+    ]
+  },
+  "hibpverified": {
+    "activity": "P0",
+    "capabilities": [
+      "breaches",
+      "emails"
+    ]
+  },
+  "hudsonrock": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "ips",
+      "subdomains"
+    ]
+  },
+  "hunter": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "hunterhow": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "intelx": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains",
+      "urls"
+    ]
+  },
+  "jsmon": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "leakix": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "leaklookup": {
+    "activity": "P0",
+    "capabilities": [
+      "breaches",
+      "emails"
+    ]
+  },
+  "mojeek": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "netlas": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "onyphe": {
+    "activity": "P0",
+    "capabilities": [
+      "asns",
+      "ips",
+      "subdomains"
+    ]
+  },
+  "otx": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "pentesttools": {
+    "activity": "P1",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "projectdiscovery": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "rapiddns": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "robtex": {
+    "activity": "P0",
+    "capabilities": [
+      "ips"
+    ]
+  },
+  "rocketreach": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "urls"
+    ]
+  },
+  "securityTrails": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "securityscorecard": {
+    "activity": "P0",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "sherlockeye": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "ips",
+      "subdomains"
+    ]
+  },
+  "shodan": {
+    "activity": "P1",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "shodanInternetDB": {
+    "activity": "P1",
+    "capabilities": [
+      "ips",
+      "subdomains"
+    ]
+  },
+  "shodanct": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "sourcegraph": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "subdomainapi": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "subdomaincenter": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "subdomainfinderc99": {
+    "activity": "P1",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "thc": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "tomba": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "urlscan": {
+    "activity": "P0",
+    "capabilities": [
+      "asns",
+      "ips",
+      "subdomains",
+      "urls"
+    ]
+  },
+  "virustotal": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "waybackarchive": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "whoisxml": {
+    "activity": "P0",
+    "capabilities": [
+      "subdomains"
+    ]
+  },
+  "windvane": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "ips",
+      "subdomains"
+    ]
+  },
+  "yahoo": {
+    "activity": "P0",
+    "capabilities": [
+      "emails",
+      "subdomains"
+    ]
+  },
+  "zoomeye": {
+    "activity": "P0",
+    "capabilities": [
+      "asns",
+      "emails",
+      "ips",
+      "subdomains",
+      "urls"
+    ]
+  }
+}

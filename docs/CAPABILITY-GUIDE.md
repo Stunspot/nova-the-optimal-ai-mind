@@ -24,16 +24,20 @@ For an explicit finite decision, Nova can use an optional local calculator to co
 
 ## Recover a collection you half remember
 
-Use “Where did we put that research?” or a subject you remember. Giles searches registered descriptions, names, aliases, use cues and sections before Nova reads a broad corpus. The result should tell you which collection to open and the exact entry point to inspect; it does not establish what every source contains.
+Ask Nova in conversation which knowledge collections or source routes may help. Rupert Giles Knowledge Steward remains an in-chat skill; this edition does not present its separate visual app.
 
-For visual recognition, follow the [Giles store-to-source journey](VISUAL-WORKSPACES.md#giles-recover-a-store-and-give-nova-the-right-route). Register one collection you own, verify its catalog save, then select a section and prepare a retrieval brief for the current question. Source archives remain with their owners. Catalog role, inspection basis and location availability help judge the route without treating metadata as content already read.
+
 
 A new customer's catalog is empty. Choose an existing catalog path when resuming, or import your own export. Ordinary conversation and direct source work remain available without the optional Python host.
 
-## Oracle Reading
-
-Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Oracle Reading receives the question conversationally, casts with its included tools and lays symbols beside the conversation when a visual view helps. The AI conducts the interpretation; the table supports shared attention. Astrology interpretation uses supplied or verified chart data.
+Oracle Reading remains an in-chat skill. Its standalone visual app is not presented in this edition.
 
 ## Optional OSINT collection
 
-The Observatory includes a portable installer and case bridge for Maigret, theHarvester, Shodan and the bounded SpiderFoot domain profile. Ask Nova to set up the optional OSINT tools. See [OSINT setup](OSINT.md) for prerequisites, first-run checks and recovery.
+Current Intelligence Observatory remains a conversational skill. Its standalone app is not included in this edition’s app presentation.
+
+## Work in the optional apps
+
+Open Project Bridge to see what can move your projects forward and what depends on it. Follow an OMNARA report from its conclusions into the passages behind them. Compare computer observations with their original logs in Beryl, or find and read retained material in Knowledge Desk. Ask Nova in conversation to prepare or change the work, then refresh the relevant companion.
+
+Use [Open the native workspaces](VISUAL-WORKSPACES.md) for the packaged launcher and one complete first task. Native structured records remain advanced interoperability routes.

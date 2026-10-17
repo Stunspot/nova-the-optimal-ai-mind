@@ -1,8 +1,8 @@
 {
   "name": "answerlayer",
-  "product_name": "AnswerLayer \u2014 Operational Reality Patching for Decision Systems",
-  "version": "0.3.1",
-  "description": "A governed decision-integrity instrument for admitting only answer-changing deltas and maintaining traceable operational reality patches.",
+  "product_name": "AnswerLayer — Operational Reality Patching for Decision Systems",
+  "version": "0.5.0",
+  "description": "Trace new evidence to warranted changes in relied-on guidance, confidence and practical action.",
   "entrypoint": "SKILL.md",
   "hosts": [
     "codex",
@@ -13,8 +13,7 @@
     "dependencies": []
   },
   "publication": "manual_only",
-  "license": "Nova Free 4.0.0 public split license; see the containing product LICENSE.md",
-  "visual_workspace": "workspace/host.py",
+  "license": "Nova Free 4.3.0 public split license; see the containing product LICENSE.md",
   "native_format": "answerlayer/reality-ledger/v2",
-  "rights_status": "public-inclusion-authorized-for-nova-free-4.0.0"
+  "rights_status": "public-inclusion-authorized-for-nova-free-4.3.0"
 }

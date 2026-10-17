@@ -1,0 +1,4 @@
+interface:
+  display_name: "Interview Trainer"
+  short_description: "🎤 Role questions backed by work evidence."
+  default_prompt: "Use $interview-trainer to prepare me for this interview and run a realistic mock session."

@@ -1,0 +1,3 @@
+# Campaign summary
+
+The scoped question is answered conceptually, not empirically at a station. Three records were discovered, inspected, opened and read; two are cited; one is excluded after reading. Two query routes and three direct page opens were used. Coverage is sufficient for the definition distinction, not raw-data validation or future local design. No money or authenticated access was used. No unresolved material defect remains in the limited answer; the unexecuted station comparison and future-design branch are explicit boundaries. Resume with actual series/reference/period or a changed decision. Source URLs are live, not frozen originals.

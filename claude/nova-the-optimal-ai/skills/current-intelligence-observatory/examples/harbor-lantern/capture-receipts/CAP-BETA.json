@@ -1,0 +1,14 @@
+{
+  "id": "CAP-BETA",
+  "source_ids": [
+    "SRC-BETA"
+  ],
+  "original_url": "https://fixtures.invalid/harbor/beta#latest",
+  "canonical_url": "https://fixtures.invalid/harbor/beta",
+  "published_at": "2026-07-18T10:15:00Z",
+  "retrieved_at": "2026-07-18T12:05:00Z",
+  "artifact_path": "source-beta.txt",
+  "sha256": "247A69DE7346275961C514C095FE61D648B371AD5F01E8D0CA68A56DE428015C",
+  "preservation_status": "preserved",
+  "failure": null
+}

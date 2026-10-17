@@ -1,0 +1,5 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://collaborative-dynamics.com/schemas/cognitive-continuity/idempotency-v1.json","title":"Continuity Canonical Idempotency Result","type":"object",
+ "required":["format","workspace_id","operation_family","idempotency_key","payload_digest","transaction_id","prior_generation","new_generation","receipt_id","status","result","result_digest","committed_at"],
+ "properties":{"format":{"const":"cd-continuity-idempotency/v1"},"workspace_id":{"type":"string"},"operation_family":{"type":"string"},"idempotency_key":{"type":"string"},"caller_idempotency_key":{"type":["string","null"]},"payload_digest":{"type":"string","pattern":"^[a-f0-9]{64}$"},"transaction_id":{"type":"string"},"prior_generation":{"type":"integer","minimum":-1},"new_generation":{"type":"integer","minimum":0},"receipt_id":{"type":"string"},"status":{"const":"committed"},"result":{"type":"object"},"result_digest":{"type":"string","pattern":"^[a-f0-9]{64}$"},"committed_at":{"type":"string","format":"date-time"}},"additionalProperties":false
+}

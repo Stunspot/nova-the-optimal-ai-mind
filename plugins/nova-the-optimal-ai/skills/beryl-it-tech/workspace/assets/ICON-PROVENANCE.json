@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen",
+  "generated_original": "C:/Users/user/.codex/generated_images/01a141d0-8e43-7633-9d83-3382d360d1ab/exec-e344eed7-99e0-40e4-843e-c773b1013759.png",
+  "decision": "Existing poster failed legibility at 32 pixels; replacement original copper-ring and green-lens emblem. Retained three existing theme backgrounds unchanged.",
+  "conversion": "Pillow format/size conversion only; generated alpha preserved; ICO 16,24,32,48,64,128,256; ICNS and PNG.",
+  "sha256": "b6a81df755d70d6e39cc4555e8909c1c1de8a8c71b503326adc86aab7104d125",
+  "prompt": "Original native desktop icon for Beryl Repair Companion: a single sage-green beryl lens in a warm brushed-copper ring, small integrated dark diagnostic probe, bold readable silhouette at 16/32 pixels, restrained tactile highlights, no text/person/scene/circuit background/health checkmark, centered at about 82 percent of square canvas, transparent background."
+}

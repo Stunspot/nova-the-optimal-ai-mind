@@ -5,10 +5,10 @@ Preserve the campaign and exact error before resetting anything. [Validation](VA
 | Symptom | Recovery |
 |---|---|
 | Skill is not discoverable | Confirm complete import and fresh session; use [Installation](INSTALLATION.md) or [copy/paste fallback](../fallbacks/universal-copy-paste-workflow.md). |
-| Open does not launch | Confirm Python3.10+; run `python workspace/open.py --serve --data-root "your folder"` from the package root to expose the error. |
+| Open does not launch | Confirm Python 3.10+ and inspect `<research home>/.workspace/last-startup.log` for the latest child-process output. Run `python workspace/open.py --serve --data-root "your folder"` from the package root to see startup errors in the terminal. Open waits up to 30 seconds and stops only the child it started if readiness fails. Preserve the log when reporting a repeatable failure. |
 | Campaign says needs repair in library | Open it, use Vault actions → Native files and repair malformed text. If the native directory itself is linked/unreadable, preserve the original and repair a regular-directory copy. |
 | Save reports revision conflict | Download unsaved draft, reload saved vault, compare changes and reapply only what is still needed. Coordinate the other writer. |
-| Save fails during writing | Ordinary write failure restores prior native bytes. If rollback is incomplete, the error gives the history snapshot; preserve your draft and restore those exact native files before further editing. |
+| Save fails during writing | Ordinary write failure restores prior native bytes. If rollback is incomplete, the error gives `native-before.zip` in the campaign history folder; preserve your draft and restore those exact native files before further editing. |
 | Complete campaign has stale review | Preserve the historical result. Set phase review and status active in a working copy. Review actual changed evidence/report; use [review contract](../references/review-contract.md). Do not bulk recompute verdicts. |
 | Counter mismatch | Correct the underlying record first, then synchronize counts. Room Save computes them from ledgers. |
 | Deeply-read note missing | Read the source and record its actual scope and limitations, or remove the unearned reading state. Padding a note proves nothing. |

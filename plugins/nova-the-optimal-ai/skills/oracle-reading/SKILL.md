@@ -64,3 +64,4 @@ Keep consequential factual decisions grounded in actual evidence. Meet distress 
 
 Close when the person has something they can hold, or when quiet is what the encounter needs.
 
+> **Companion app presentation:** This native skill remains installed for in-chat use. Do not install, register, or recommend its standalone companion app.

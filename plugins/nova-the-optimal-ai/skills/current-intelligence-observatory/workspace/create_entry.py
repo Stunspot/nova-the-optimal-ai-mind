@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create an optional no-clobber native entry for the offline Evidence Atlas."""
+"""Create an optional no-clobber native entry for the local inquiry workspace."""
 from __future__ import annotations
 import argparse
 import os
@@ -13,7 +13,7 @@ import tempfile
 from pathlib import Path
 
 NAME = "Current Intelligence Observatory"
-VERSION = "0.3.1"
+VERSION = "0.4.0"
 WORKSPACE = Path(__file__).absolute().parent
 
 def local_path(value: str | Path, directory: bool = False) -> Path:
@@ -34,7 +34,7 @@ def ps_quote(path: Path | str) -> str:
 def create_entry(directory: str | Path, platform: str) -> Path:
     directory = local_path(directory, directory=True)
     workspace = local_path(WORKSPACE, directory=True)
-    target = local_path(workspace / "index.html")
+    target = local_path(workspace / ("Open.cmd" if platform == "windows" else "launch.py"))
     if platform not in ("windows", "mac"):
         raise ValueError("Platform must be windows or mac")
     icon = local_path(workspace / ("observatory.ico" if platform == "windows" else "observatory.icns"))
@@ -49,7 +49,7 @@ def create_entry(directory: str | Path, platform: str) -> Path:
             raise ValueError("Windows PowerShell is unavailable")
         with tempfile.TemporaryDirectory(prefix=".observatory-entry-", dir=directory) as scratch:
             temp = Path(scratch) / "entry.lnk"
-            command = "$ErrorActionPreference='Stop';$shell=New-Object -ComObject WScript.Shell;$link=$shell.CreateShortcut(" + ps_quote(temp) + ");$link.TargetPath=" + ps_quote(target) + ";$link.Arguments='';$link.WorkingDirectory=" + ps_quote(workspace) + ";$link.IconLocation=" + ps_quote(str(icon) + ",0") + ";$link.Description='Offline read-only Evidence Atlas';$link.Save()"
+            command = "$ErrorActionPreference='Stop';$shell=New-Object -ComObject WScript.Shell;$link=$shell.CreateShortcut(" + ps_quote(temp) + ");$link.TargetPath=" + ps_quote(target) + ";$link.Arguments='';$link.WorkingDirectory=" + ps_quote(workspace) + ";$link.IconLocation=" + ps_quote(str(icon) + ",0") + ";$link.Description='Current Intelligence Observatory inquiry workspace';$link.Save()"
             subprocess.run([powershell, "-NoProfile", "-NonInteractive", "-Command", command], check=True, capture_output=True, text=True)
             with entry.open("xb") as output:
                 output.write(temp.read_bytes())
@@ -65,7 +65,7 @@ def create_entry(directory: str | Path, platform: str) -> Path:
             plist = {"CFBundleName": NAME, "CFBundleDisplayName": NAME, "CFBundleIdentifier": "com.collaborative-dynamics.observatory", "CFBundlePackageType": "APPL", "CFBundleExecutable": "EvidenceAtlas", "CFBundleIconFile": "observatory.icns", "CFBundleShortVersionString": VERSION, "CFBundleVersion": VERSION}
             (contents / "Info.plist").write_bytes(plistlib.dumps(plist))
             relative = os.path.relpath(target, macos).replace(os.sep, "/")
-            script = '#!/bin/sh\nset -eu\nHERE="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"\nexec /usr/bin/open "$HERE"/' + shlex.quote(relative) + '\n'
+            script = '#!/bin/sh\nset -eu\nHERE="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"\nexec python3 "$HERE"/' + shlex.quote(relative) + '\n'
             launcher = macos / "EvidenceAtlas"
             launcher.write_bytes(script.encode("utf-8"))
             launcher.chmod(0o755)

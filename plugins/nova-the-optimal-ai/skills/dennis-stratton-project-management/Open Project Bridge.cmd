@@ -1,9 +1,9 @@
 @echo off
 where py >nul 2>nul
 if errorlevel 1 goto python
-py -3 "%~dp0..\nova-operations\scripts\nova_estate.py" run project-bridge -- %*
+py -3 "%~dp0workspace\launch.py" %*
 goto finish
 :python
-python "%~dp0..\nova-operations\scripts\nova_estate.py" run project-bridge -- %*
+python "%~dp0workspace\launch.py" %*
 :finish
 if errorlevel 1 pause

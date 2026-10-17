@@ -37,3 +37,9 @@ If you have the source repository, rebuild and rerun `tools/verify_package.py` a
 Keep the exact diagnostic. User and agent scope selectors are exact: `Nova` and `nova` can name different scopes. A `scope_denied` result does not establish an empty or lost store. Use the identity recorded by the owner.
 
 For `nova_root_mismatch`, inspect the estate locator, registry and caller launch context read-only. Use the registry-backed Nova Operations route; a direct caller must be launched with the selected registry's values. Correct only the authorized caller context, without globally changing environment settings or initializing another estate. A timeline occurrence and represented project state are different: a project-resumption view may accurately report `project_scope_unrepresented` while returning retained events. Do not turn an event into a completion or project-state claim.
+
+## An app opens empty or cannot save
+
+Check the app title and displayed work folder. An empty view can mean a different location was selected. Use its **Work folder** chooser when supplied, or the documented `--data-home` launch option. Keep the original folder intact. Confirm the selected folder is writable before relying on a save, then reload and check that the work returns.
+
+If another window changed the saved state, preserve your working copy with backup/export before reloading and reconciling. If a document has no extractable text, keep its original and add a reading note or use an appropriate OCR tool; a scan is not an empty source. Ordinary file support differs by task. The [workspace guide](VISUAL-WORKSPACES.md) links each app's supported flow.

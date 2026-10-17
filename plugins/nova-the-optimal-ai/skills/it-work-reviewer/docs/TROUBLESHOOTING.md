@@ -1,7 +1,7 @@
-# Reviewer: troubleshooting
+# Recover a review that cannot yet finish
 
-This is the reviewer skill, which inspects supplied evidence. The optional Studio belongs to beryl-it-tech; it is not bundled in this folder.
+If discovery fails, confirm SKILL.md is at the installed skill root and open a fresh host task. If the case, decision or binding is missing, retain an awaiting-evidence result and name the exact artifact required. Do not invent a pass or repeatedly retry unavailable tools.
 
-If discovery fails, confirm SKILL.md is at the installed folder root and open a fresh task. If the case or binding is missing, retain an awaiting-evidence review and specify the exact supplied artifact needed. Do not invent a pass or continually retry unavailable tools.
+If the Repair Companion rejects a review fingerprint, inspect the intended current native record and original review evidence. Obtain an affected-claim review for that revision; do not merely change a fingerprint to force an old verdict onto new work.
 
-See [the reviewer quick start](QUICK-START.md) and [review method](USER-GUIDE.md).
+The optional app belongs to the Beryl operator skill. This reviewer can continue through the host's text interface without it. Preserve the actual scope, findings and next accountable action using [the review method](USER-GUIDE.md).

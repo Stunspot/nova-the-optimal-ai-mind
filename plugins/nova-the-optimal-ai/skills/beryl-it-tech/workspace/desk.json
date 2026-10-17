@@ -1,7 +1,0 @@
-{
-  "id": "beryl-it-bench",
-  "title": "Beryl IT Studio",
-  "version": "0.4.1",
-  "port": 8871,
-  "validator": "validate_case_file.py"
-}

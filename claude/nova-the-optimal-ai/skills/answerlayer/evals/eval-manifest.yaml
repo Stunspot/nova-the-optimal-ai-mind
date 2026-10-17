@@ -1,0 +1,17 @@
+{
+  "format": "cd-augment-eval/v1",
+  "package_version": "0.3.0",
+  "episode_mode": "isolated",
+  "files": [
+    "core-transfer-cases.yaml",
+    "decision-scenarios.md"
+  ],
+  "indispensable_dimensions": [
+    "answer_change",
+    "evidence_support",
+    "authority_scope",
+    "history_preservation",
+    "proportionality"
+  ],
+  "result_authority": "Test specifications and authored expert continuations only until an actual model/runtime output and judgment are retained. Deterministic helper and browser checks are separate evidence."
+}

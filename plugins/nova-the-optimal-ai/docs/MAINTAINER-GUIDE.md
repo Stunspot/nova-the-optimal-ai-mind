@@ -1,6 +1,6 @@
 # Maintainer guide
 
-This reference describes the Free4.0.0 source repository. The extracted customer package carries it for transparency and does not contain a buildable source checkout.
+This reference describes the Free4.1.0 source repository. The extracted customer package carries it for transparency and does not contain a buildable source checkout.
 
 ## Keep source ownership explicit
 
@@ -8,7 +8,7 @@ The canonical distributable plugin is `plugins/nova-the-optimal-ai`. Its loadout
 
 Select maintained owner files explicitly. Record current imported paths and tree identities in `design/source-map.json`, name edition adaptations and bind the actual bytes with `design/source-lock.json`. Retain full construction custody and prior coordinates as history. A historical source commit does not claim that a later repaired tree reached that commit. A composed development tree can carry accepted owner bytes only when its selection and provenance are verified; an opaque generated parent package is not a replacement for owner custody.
 
-Root and plugin copies of LICENSE, ATTRIBUTION, NOTICE, TRADEMARKS, PROVENANCE and THIRD-PARTY-NOTICES remain byte-identical. Every detached Claude skill gets its product-rights envelope and applicable component notices. Preserve original component grants, user records, personas and protected payloads.
+Keep the rights bundle together. Root and plugin copies of LICENSE, ATTRIBUTION, NOTICE, TRADEMARKS, PROVENANCE and THIRD-PARTY-NOTICES remain byte-identical. Every detached Claude skill gets its product-rights envelope and applicable component notices. Preserve original component grants, user records, personas and protected payloads.
 
 ## Finish before readiness
 
@@ -20,6 +20,6 @@ A failed product acceptance criterion returns the work to builder custody. Repai
 
 ## Carry authorized delivery through
 
-After acceptance, commit the intended source in a clean release checkout and build once, then verify fresh extraction. Carry accepted bytes through applicable existing repositories, installations, complete ZIPs, sidecars, shelves, catalogs and task records within the owner's authorization. Do not describe staging as delivery or private construction as public publication.
+After acceptance, commit the intended source in a clean release checkout, including untracked files that belong to the product, and build once, then verify fresh extraction. Carry accepted bytes through applicable existing repositories, installations, complete ZIPs, sidecars, shelves, catalogs and task records within the owner's authorization. Do not describe staging as delivery or private construction as public publication.
 
-Preserve each established publication hold. Ask for authority when an action introduces a new public announcement or channel, paid or destructive effect, visibility change or reserved scope. Existing authorization for the named delivery surfaces remains valid; included license permission alone is not an instruction to publish.
+Preserve each established publication hold. Obtain separate user authority when an action introduces a new public announcement or channel, paid or destructive effect, visibility change or reserved scope. Existing authorization for the named delivery surfaces remains valid; included license permission alone is not an instruction to publish.

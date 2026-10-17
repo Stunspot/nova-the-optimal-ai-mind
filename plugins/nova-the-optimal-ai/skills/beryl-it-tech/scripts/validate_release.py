@@ -90,7 +90,7 @@ def main() -> int:
         return 1
     errors = validate_paths(root, files)
     if args.write_manifest and not errors:
-        payload = {"package": "beryl-it-benchcraft", "version": "0.4.1", "files": files}
+        payload = {"package": "beryl-it-benchcraft", "version": "0.6.0", "files": files}
         (root / MANIFEST).write_bytes((json.dumps(payload, indent=2) + "\n").encode("utf-8"))
     manifest_path = root / MANIFEST
     if not manifest_path.exists() and not args.write_manifest:
@@ -98,7 +98,7 @@ def main() -> int:
     if manifest_path.exists() and not args.write_manifest:
         try:
             manifest = json.loads(manifest_path.read_text(encoding="utf-8-sig"))
-            if manifest.get("version") != "0.4.1" or manifest.get("package") != "beryl-it-benchcraft":
+            if manifest.get("version") != "0.6.0" or manifest.get("package") != "beryl-it-benchcraft":
                 errors.append("release identity differs")
             if manifest.get("files") != files:
                 errors.append("release manifest does not match current file inventory")

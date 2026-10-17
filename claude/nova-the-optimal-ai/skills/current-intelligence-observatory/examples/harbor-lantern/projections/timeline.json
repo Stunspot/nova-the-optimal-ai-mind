@@ -1,0 +1,139 @@
+{
+  "format": "cd-observatory-timeline/v1",
+  "case_id": "OBS-HARBOR-LANTERN-UPDATE",
+  "items": [
+    {
+      "id": "CAP-ALPHA-V1",
+      "kind": "capture",
+      "status": "superseded",
+      "confidence": "unrated",
+      "uncertainty": "retained as superseded capture",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "time": "2026-07-18T09:00:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-ALPHA-V1"
+    },
+    {
+      "id": "CAP-BETA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "depends on Alpha",
+      "provenance_ids": [
+        "SRC-BETA"
+      ],
+      "time": "2026-07-18T10:15:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-BETA"
+    },
+    {
+      "id": "CAP-ALPHA-V1",
+      "kind": "capture",
+      "status": "superseded",
+      "confidence": "unrated",
+      "uncertainty": "retained as superseded capture",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "time": "2026-07-18T12:00:00Z",
+      "time_kind": "retrieved_at",
+      "label": "CAP-ALPHA-V1"
+    },
+    {
+      "id": "CLM-72H-CLOSURE",
+      "kind": "claim",
+      "status": "corrected",
+      "confidence": "high",
+      "uncertainty": "false duration within fixture; prior capture retained",
+      "provenance_ids": [
+        "CAP-ALPHA-V1",
+        "CAP-BETA",
+        "CAP-ALPHA-V2"
+      ],
+      "time": "2026-07-18T12:00:00Z",
+      "time_kind": "first_seen_at",
+      "label": "North Harbor terminal will close for 72 hours"
+    },
+    {
+      "id": "CAP-BETA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "depends on Alpha",
+      "provenance_ids": [
+        "SRC-BETA"
+      ],
+      "time": "2026-07-18T12:05:00Z",
+      "time_kind": "retrieved_at",
+      "label": "CAP-BETA"
+    },
+    {
+      "id": "CAP-GAMMA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "contains adversarial embedded text",
+      "provenance_ids": [
+        "SRC-GAMMA"
+      ],
+      "time": "2026-07-18T14:00:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-GAMMA"
+    },
+    {
+      "id": "CAP-ALPHA-V2",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "correction is fixture-scoped",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "time": "2026-07-18T15:30:00Z",
+      "time_kind": "published_at",
+      "label": "CAP-ALPHA-V2"
+    },
+    {
+      "id": "CAP-GAMMA",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "contains adversarial embedded text",
+      "provenance_ids": [
+        "SRC-GAMMA"
+      ],
+      "time": "2026-07-18T16:00:00Z",
+      "time_kind": "retrieved_at",
+      "label": "CAP-GAMMA"
+    },
+    {
+      "id": "CLM-SIX-HOUR-PAUSE",
+      "kind": "claim",
+      "status": "supported",
+      "confidence": "medium",
+      "uncertainty": "This is what the fictional notice schedules, not an observed completed pause; its local timezone is absent.",
+      "provenance_ids": [
+        "CAP-GAMMA",
+        "CAP-ALPHA-V2"
+      ],
+      "time": "2026-07-18T16:00:00Z",
+      "time_kind": "first_seen_at",
+      "label": "Gate B vehicle entry is scheduled to pause for six hours while vessel operations continue"
+    },
+    {
+      "id": "CAP-ALPHA-V2",
+      "kind": "capture",
+      "status": "preserved",
+      "confidence": "unrated",
+      "uncertainty": "correction is fixture-scoped",
+      "provenance_ids": [
+        "SRC-ALPHA"
+      ],
+      "time": "2026-07-18T16:05:00Z",
+      "time_kind": "retrieved_at",
+      "label": "CAP-ALPHA-V2"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://collaborative-dynamics.com/schemas/cognitive-continuity/export-v1.json",
+  "title": "Portable Continuity Export",
+  "type": "object",
+  "required": ["format", "package_version", "exported_at", "source_workspace_id", "scope", "episodes", "state", "proposals", "capability_boundary"],
+  "properties": {
+    "format": {"const": "cd-cognitive-continuity-export/v1"},
+    "package_version": {"type": "string"},
+    "exported_at": {"type": "string", "format": "date-time"},
+    "source_workspace_id": {"type": "string"},
+    "scope": {"$ref": "state-record.schema.json#/$defs/scope"},
+    "episodes": {"type": "array", "items": {"type": "object"}},
+    "state": {"type": "array", "items": {"type": "object"}},
+    "proposals": {"type": "array", "items": {"type": "object"}},
+    "capability_boundary": {"type": "string"},
+    "checksum": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

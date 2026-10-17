@@ -24,11 +24,6 @@ Use the smallest review that could change this decision. A clean pass is legitim
 
 ## View a supplied review
 
-Use the separately installed `beryl-it-tech` skill's `workspace/host.py` IT review view for a supplied advisory review. It is a transient display bound to the case the operator selected; an imported review does not authorize work, mutate the case, or prove repair.
+Use the separately installed `beryl-it-tech` skill's Beryl Repair Companion (`workspace/launch.py`) to read a supplied advisory review beside its exact investigation revision. Read `workspace/HOST-PATHS.md` in that skill for the local publication contract. Preserve the distinction between an independent review you actually performed, an operator self-check and an imported opinion. The supplied author and independence are not authenticated by the companion.
 
-
-## Visual review practice
-
-Review the device investigation through the original condition, rival explanations, test predictions, recorded observations, and final verification. A saved investigation organizes evidence; it is not itself proof that a repair was performed. Preserve unsupported and unknown fields in native imports. The Cinder Relay, Mossglass, and Night Probe environments share the same evidence semantics.
-
-The supplied review display uses an operator-selected case. It flags an explicit JSON case/revision mismatch when supplied, but does not authenticate the author, evidence or independence. Markdown/text with no machine-readable binding remains unverified rather than silently matched. Review text is retained separately; download or retain that original file along with the case.
+The native record fingerprint must match the displayed revision. A later revision receives no earlier review automatically. Review the reported device condition, source evidence, rival explanations, predicted test distinction, recorded result and original-envelope verification. A recorded investigation is not proof of physical work. Preserve unknown and extension fields, source limitations and unresolved authority. The three visual environments share these semantics.

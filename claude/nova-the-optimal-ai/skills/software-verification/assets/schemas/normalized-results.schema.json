@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TestForge Normalized Results",
+  "type": "object",
+  "required": ["format_version", "source", "summary", "cases", "parse_warnings"],
+  "properties": {
+    "format_version": {"const": "1.0"},
+    "source": {
+      "type": "object",
+      "required": ["format", "path"],
+      "properties": {"format": {"enum": ["junit_xml", "jest_json", "generic_json", "command_record", "unparsed"]}, "path": {"type": "string"}},
+      "additionalProperties": true
+    },
+    "summary": {
+      "type": "object",
+      "required": ["total", "passed", "failed", "skipped", "errors", "status"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0}, "passed": {"type": "integer", "minimum": 0}, "failed": {"type": "integer", "minimum": 0}, "skipped": {"type": "integer", "minimum": 0}, "errors": {"type": "integer", "minimum": 0},
+        "status": {"enum": ["passed", "failed", "blocked", "interrupted", "unparsed"]}
+      },
+      "additionalProperties": true
+    },
+    "cases": {"type": "array", "items": {"type": "object"}},
+    "parse_warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": true
+}

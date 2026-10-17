@@ -1,0 +1,13 @@
+{
+  "format_version": "1.0",
+  "command": ["REPLACE"],
+  "working_directory": "REPLACE",
+  "started_at": null,
+  "finished_at": null,
+  "duration_seconds": null,
+  "exit_code": null,
+  "timed_out": false,
+  "stdout": "",
+  "stderr": "",
+  "status": "not_run"
+}

@@ -1,6 +1,8 @@
 # Keep a usable native case
 
-Use **Start a case** in the Studio for a short guided intake, or copy `assets/it-case.template.json` from this skill folder into an owner-controlled location. The template is an incomplete starting document; populate `case_id`, update time and a usable `next_move.action`. Do not turn unknowns into measurements to satisfy a checker.
+The assistant maintains the native case during the actual troubleshooting conversation. The person can start with a symptom, a real observation or an ordinary source file; no manual case-entry form is required. The Repair Companion reads locally published case revisions beside their originals.
+
+For host preparation or experienced maintenance, copy `assets/it-case.template.json` into an owner-controlled location and follow [the local publication contract](../workspace/HOST-PATHS.md). The template is incomplete: its case identity, update time and useful `next_move.action` must come from the actual work. Do not turn unknowns into measurements to satisfy a checker.
 
 The native record keeps device/complaint/custody, evidence, hypotheses, tests, changes, sources, verification and next move. Every member of the five record collections needs a nonempty unique `id`. Supplied ID references are arrays of nonempty strings; a missing referenced record remains visible for review. Additional owner fields are preserved. Arrays may be empty when nothing is known or performed.
 

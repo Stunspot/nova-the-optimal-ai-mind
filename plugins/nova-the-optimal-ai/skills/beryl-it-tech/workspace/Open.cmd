@@ -1,9 +1,13 @@
 @echo off
-cd /d "%~dp0"
 where py >nul 2>nul
-if errorlevel 1 (
-  python -B -X utf8 host.py %*
+if not errorlevel 1 (
+  py -3 "%~dp0launch.py" %*
 ) else (
-  py -3 -B -X utf8 host.py %*
+  python "%~dp0launch.py" %*
 )
-if errorlevel 1 pause
+if errorlevel 1 (
+  echo.
+  echo Beryl Repair Companion could not open. Python 3.10 or newer is required.
+  echo Install Python from https://www.python.org/downloads/ and retry.
+  pause
+)

@@ -29,3 +29,12 @@ verification/giles-atlas-3.6/hesperos/evidence/** -text
 
 # Current complete native plugin bytes remain source-locked on checkout.
 /plugins/nova-the-optimal-ai/** -text
+
+# Qualified Claude host closure is byte-preserved as well.
+/claude/nova-the-optimal-ai/** -text
+/documentation-source/** -text
+/verification/hesperos-capabilities/** -text
+
+# Source map and lock bind accepted raw bytes, including existing line endings.
+/design/source-map.json -text
+/design/source-lock.json -text

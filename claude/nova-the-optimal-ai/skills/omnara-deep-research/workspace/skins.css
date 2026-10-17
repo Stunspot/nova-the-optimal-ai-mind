@@ -1,0 +1,366 @@
+/* Bloomfield application: three materially distinct environments over one native evidence record.
+   Background images are decorative. All citation paths come from app.js. */
+body[data-skin=tracework]{
+  color-scheme:dark;
+  --bg:#090d0e;--surface:#151d1f;--raised:#263034;--ink:#f3f0e7;
+  --muted:#b6c2bc;--line:#5b6b69;--accent:#e4b887;--accent-ink:#24170f;
+  --soft:#2c2b27;--good:#c0d9b7;--danger:#f0aba1;--radius:20px;
+  --display:Georgia,"Times New Roman",serif;
+  background-color:#090d0e;background-image:linear-gradient(#090d0eb8,#090d0ed0),url("assets/tracework.png");background-position:center top;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;
+}
+body[data-skin=tracework] .masthead{
+  background:linear-gradient(90deg,#090d0eea,#172024df);
+  border-bottom:1px solid #d5c29f59;
+  box-shadow:0 1px 35px #dfbd8950;
+  backdrop-filter:blur(18px);
+}
+body[data-skin=tracework] .wordmark{font-weight:500;letter-spacing:.19em}
+body[data-skin=tracework] .brand-mark{text-shadow:0 0 18px #e4b8878c}
+body[data-skin=tracework] .mast-caption{font-size:1.08rem}
+body[data-skin=tracework] .campaign-head{border-bottom:1px solid #d3b68e58;padding-bottom:18px}
+body[data-skin=tracework] .campaign-head h1{font-size:clamp(2rem,3vw,3.5rem);line-height:1.12}
+body[data-skin=tracework] button{
+  border-radius:3px 18px 3px 18px;
+  box-shadow:inset 0 1px #fff6e880,0 5px 18px #0005;
+}
+body[data-skin=tracework] button.secondary,
+body[data-skin=tracework] input,
+body[data-skin=tracework] select,
+body[data-skin=tracework] textarea{
+  background:linear-gradient(145deg,#202b2be8,#111a1cef);
+  border:1px solid #8c9b8d8a;color:var(--ink);
+  box-shadow:inset 0 1px #ffffff16,0 6px 18px #0003;
+}
+body[data-skin=tracework] button.quiet,
+body[data-skin=tracework] .text-link{box-shadow:none}
+body[data-skin=tracework] .view-nav{border-bottom-color:#c7b18a66}
+body[data-skin=tracework] .view-nav button{box-shadow:none;border-radius:20px 3px 20px 3px}
+body[data-skin=tracework] .view-nav button[aria-current=page]{box-shadow:0 0 25px #e4b88748,inset 0 1px #ffffff80}
+body[data-skin=tracework] .atlas-map{
+  border:1px solid #a9a99a8a;border-radius:34px 3px 34px 3px;
+  background:linear-gradient(135deg,#253034b8,#101819e6 46%,#090f11ef);
+  box-shadow:inset 1px 1px #fcf2dc32,inset 0 0 70px #b0c1b418,0 22px 75px #000b;
+  backdrop-filter:blur(20px);padding:26px;
+}
+body[data-skin=tracework] .map-canvas{
+  border-top:1px solid #d6bc8a4f;border-bottom:1px solid #d6bc8a4f;
+  padding:12px 0;background:radial-gradient(ellipse at 50% 48%,#ecd4a10b,transparent 70%);
+}
+body[data-skin=tracework] .map-canvas .claim-choice{
+  background:#101a1c8a;border-left-width:3px;border-left-color:#657577;
+  margin-bottom:8px;border-radius:2px 12px 2px 12px;
+}
+body[data-skin=tracework] .map-canvas .claim-choice[aria-pressed=true]{
+  background:linear-gradient(90deg,#42413b,#202c2ded);
+  border-color:#c5ac83;border-left-color:var(--accent);
+  box-shadow:0 0 24px #e4b88728,inset 0 1px #ffffff22;
+}
+body[data-skin=tracework] .map-canvas .source-node{
+  background:linear-gradient(135deg,#334045e0,#182123ea);
+  border:1px solid #aab2a27a;border-radius:16px 3px 16px 3px;
+  box-shadow:inset 0 1px #ffffff22,0 9px 24px #0006;
+}
+body[data-skin=tracework] .map-canvas .source-node[aria-pressed=true],
+body[data-skin=tracework] .map-canvas .source-node.is-related{
+  border-color:#e4b887;box-shadow:inset 3px 0 var(--accent),0 0 24px #e4b8874a;
+}
+body[data-skin=tracework] .map-links .is-context{stroke:#a6b7b0;opacity:.48}
+body[data-skin=tracework] .map-links .is-active{stroke:#ffe5ba;filter:drop-shadow(0 0 4px #f1bf80);opacity:1}
+body[data-skin=tracework] #focus-claim{border-top-color:#f2d0a3}
+body[data-skin=tracework] .atlas-inspector .source-peek{
+  border:1px solid #a4b5af7a;border-left:3px solid #e4b887;border-radius:3px 24px 3px 24px;
+  background:linear-gradient(145deg,#354143ed,#162022f5 54%,#11191bf5);
+  box-shadow:inset 1px 1px #ffffff27,14px 18px 40px #0009;
+  backdrop-filter:blur(22px);
+}
+body[data-skin=tracework] .campaign-card,
+body[data-skin=tracework] .reading-leaf,
+body[data-skin=tracework] .report-paper,
+body[data-skin=tracework] .coverage-card,
+body[data-skin=tracework] .editor-surface,
+body[data-skin=tracework] dialog,
+body[data-skin=tracework] .tools>div{
+  background:linear-gradient(145deg,#293234f5,#111a1bf8 65%);
+  border:1px solid #87948a9c;border-radius:3px 22px 3px 22px;
+  box-shadow:inset 1px 1px #ffffff1f,0 18px 42px #0008;
+}
+body[data-skin=tracework] .reading-leaf,
+body[data-skin=tracework] .report-paper{background:linear-gradient(150deg,#26302ffb,#151d1cfb);max-width:1100px}
+body[data-skin=tracework] .manuscript{font-family:Georgia,"Times New Roman",serif;font-size:1.07rem;line-height:1.8}
+body[data-skin=tracework] .source-choice[aria-pressed=true]{box-shadow:inset 3px 0 var(--accent);background:#263331}
+body[data-skin=tracework] dialog::backdrop{background:#05090be8;backdrop-filter:blur(10px)}
+
+body[data-skin=surveyfolio]{
+  color-scheme:dark;
+  --bg:#2b2f1d;--surface:#2c301d;--raised:#2d311e;--ink:#c8d2a3;
+  --muted:#c8d2a3;--line:#8b9859;--accent:#c8d2a3;--accent-ink:#1e2112;
+  --soft:#2c2f1d;--good:#c8d2a3;--danger:#c8d2a3;--radius:2px;
+  --display:Cambria,Georgia,"Times New Roman",serif;
+  background-color:#2b2f1d;background-image:linear-gradient(#2c2f1dbb,#2c2f1dbb),url("assets/survey-folio.png");background-position:center top;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;
+  font-family:Cambria,Georgia,"Times New Roman",serif;
+}
+body[data-skin=surveyfolio] .masthead{
+  background:#2c301ded;border-bottom:1px solid #8a9759;
+  box-shadow:0 7px 18px #1e211222;backdrop-filter:blur(7px);
+}
+body[data-skin=surveyfolio] .wordmark{font-family:Cambria,Georgia,serif;font-size:1.45rem;letter-spacing:.13em}
+body[data-skin=surveyfolio] .brand-mark{display:inline-block;font-size:2rem;color:#c8d2a3}
+body[data-skin=surveyfolio] .mast-caption{font-size:1.1rem}
+body[data-skin=surveyfolio] .campaign-head{
+  border:0;border-left:6px double #8a9759;padding:12px 0 12px 22px;
+  background:linear-gradient(90deg,#2c301dae,transparent 80%);
+}
+body[data-skin=surveyfolio] .campaign-head h1{font-size:clamp(2rem,3.2vw,3.65rem);max-width:950px}
+body[data-skin=surveyfolio] button{border-radius:1px;font-family:"Segoe UI",system-ui,sans-serif;box-shadow:2px 3px #1e211224}
+body[data-skin=surveyfolio] button.quiet,
+body[data-skin=surveyfolio] .text-link{box-shadow:none}
+body[data-skin=surveyfolio] input,
+body[data-skin=surveyfolio] select,
+body[data-skin=surveyfolio] textarea{
+  color:var(--ink);background:#2d311eed;border:1px solid #8b9859;
+  border-radius:1px;box-shadow:inset 0 1px 3px #1e21121c;
+}
+body[data-skin=surveyfolio] .view-nav{
+  border-top:1px solid #8b9759;border-bottom:3px double #8b9759;
+  padding-top:8px;
+}
+body[data-skin=surveyfolio] .view-nav button{box-shadow:none;font-family:Cambria,Georgia,serif;font-size:1rem}
+body[data-skin=surveyfolio] .view-nav button[aria-current=page]{
+  background:#2d301e;color:#c8d2a3;box-shadow:inset 0 -3px #1e2112;
+}
+body[data-skin=surveyfolio] .atlas-intro{border-bottom:3px double #8b9859}
+body[data-skin=surveyfolio] .atlas-map{
+  position:relative;padding:24px 25px;background:#2d301eed;
+  border:1px solid #8b9859;border-left:10px solid #8b9859;border-radius:1px;
+  box-shadow:5px 7px 0 #1e21122b,11px 14px 26px #1e21122b;
+}
+body[data-skin=surveyfolio] .atlas-map::before{
+  content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;
+  background:linear-gradient(90deg,#272b1a30,transparent);pointer-events:none;opacity:.35;
+}
+body[data-skin=surveyfolio] .map-canvas{
+  border-top:1px solid #8b9859;border-bottom:1px solid #8b9859;
+  background:repeating-linear-gradient(0deg,#272b1a0d 0 1px,transparent 1px 27px);
+}
+body[data-skin=surveyfolio] .map-canvas .claim-choice{
+  border-left:3px solid #8b9859;border-bottom:1px solid #8c9859;
+  background:#2d311e91;margin-bottom:6px;
+}
+body[data-skin=surveyfolio] .map-canvas .claim-choice[aria-pressed=true]{
+  background:#2d311e;border-left-color:#8a9759;border-right:1px solid #8a9759;
+  box-shadow:3px 4px #1e211227;
+}
+body[data-skin=surveyfolio] .map-canvas .source-node{
+  border:1px solid #8c9859;border-top:3px solid #8a9759;
+  border-radius:1px;background:#2d311e;box-shadow:2px 4px #1e21122f;
+}
+body[data-skin=surveyfolio] .map-canvas .source-node.is-related,
+body[data-skin=surveyfolio] .map-canvas .source-node[aria-pressed=true]{
+  border-color:#8a9759;background:#2d311e;box-shadow:inset 3px 0 #1e2112,3px 4px #1e21123c;
+}
+body[data-skin=surveyfolio] .claim-copy,
+body[data-skin=surveyfolio] .source-copy{font-family:Cambria,Georgia,serif;font-size:1rem;line-height:1.24}
+body[data-skin=surveyfolio] .map-links .is-context{stroke:#282b1a;opacity:.65}
+body[data-skin=surveyfolio] .map-links .is-active{stroke:#272a1a;opacity:1}
+body[data-skin=surveyfolio] .atlas-inspector{
+  border-top:3px double #8a9758;padding-top:4px;
+}
+body[data-skin=surveyfolio] #focus-claim{
+  border-top:0;border-bottom:1px solid #8b9859;
+}
+body[data-skin=surveyfolio] .atlas-inspector .source-peek{
+  border:0;border-left:4px solid #8a9759;border-radius:0;
+  background:#2d301eed;box-shadow:5px 7px #1e211229;
+  padding:24px;
+}
+body[data-skin=surveyfolio] .campaign-card,
+body[data-skin=surveyfolio] .reading-leaf,
+body[data-skin=surveyfolio] .report-paper,
+body[data-skin=surveyfolio] .coverage-card,
+body[data-skin=surveyfolio] .editor-surface,
+body[data-skin=surveyfolio] dialog,
+body[data-skin=surveyfolio] .tools>div{
+  background:#2d301eed;border:1px solid #8b9859;border-radius:1px;
+  box-shadow:4px 6px #1e21122b,0 14px 28px #1e211222;
+}
+body[data-skin=surveyfolio] .campaign-card,
+body[data-skin=surveyfolio] .coverage-card{
+  border-top:4px solid #8a9759;
+}
+body[data-skin=surveyfolio] .reading-leaf,
+body[data-skin=surveyfolio] .report-paper{
+  background:#2d311e;box-shadow:5px 6px #1e211236,11px 14px 28px #1e211229;
+  border-left:8px solid #8d995a;padding:clamp(24px,4vw,50px);
+}
+body[data-skin=surveyfolio] .manuscript{font-family:Cambria,Georgia,serif;font-size:1.1rem;line-height:1.86}
+body[data-skin=surveyfolio] .source-choice[aria-pressed=true]{
+  background:#2d311e;box-shadow:inset 4px 0 #1e2112;
+}
+body[data-skin=surveyfolio] .coverage-card h3{font-size:1.65rem}
+body[data-skin=surveyfolio] dialog::backdrop{background:#252819a6;backdrop-filter:blur(3px)}
+
+body[data-skin=proofcabinet]{
+  color-scheme:dark;
+  --bg:#1c0b0d;--surface:#34191b;--raised:#532a2c;--ink:#f7eddf;
+  --muted:#dcc4b1;--line:#9e7567;--accent:#ecc488;--accent-ink:#321916;
+  --soft:#5b2a2a;--good:#cad7b0;--danger:#ffb7a5;--radius:5px;
+  --display:"Segoe UI",system-ui,sans-serif;
+  background-color:#1c0b0d;background-image:linear-gradient(#19080aba,#19080aca),url("assets/proof-cabinet.png");background-position:center top;background-size:cover;background-attachment:fixed;background-repeat:no-repeat;
+  font-family:"Segoe UI",system-ui,sans-serif;
+}
+body[data-skin=proofcabinet] .masthead{
+  background:linear-gradient(180deg,#3d1718ee,#210d10f3);
+  border-bottom:3px solid #b98f6b;box-shadow:0 8px 25px #10040599;
+}
+body[data-skin=proofcabinet] .wordmark{
+  font-weight:650;font-size:1.12rem;letter-spacing:.13em;
+}
+body[data-skin=proofcabinet] .brand-mark{color:#efc98c}
+body[data-skin=proofcabinet] .mast-caption{font-family:var(--mono);font-size:.69rem;letter-spacing:.07em}
+body[data-skin=proofcabinet] .campaign-head{
+  background:linear-gradient(90deg,#4e2022cf,#210e0e00);
+  border-left:5px solid #e1b777;padding:14px 0 14px 20px;
+}
+body[data-skin=proofcabinet] .campaign-head h1{
+  font-size:clamp(1.9rem,2.75vw,3.15rem);font-weight:500;line-height:1.12;
+}
+body[data-skin=proofcabinet] button{
+  border-radius:3px;min-height:40px;box-shadow:inset 0 1px #fff0cb88,0 3px 0 #100708b3;
+}
+body[data-skin=proofcabinet] button.secondary,
+body[data-skin=proofcabinet] input,
+body[data-skin=proofcabinet] select,
+body[data-skin=proofcabinet] textarea{
+  background:linear-gradient(180deg,#5a3233,#2d1719);border:1px solid #a87e6f;
+  color:var(--ink);border-radius:3px;box-shadow:inset 0 2px 5px #100708a3;
+}
+body[data-skin=proofcabinet] button.quiet,
+body[data-skin=proofcabinet] .text-link{box-shadow:none}
+body[data-skin=proofcabinet] .view-nav{
+  border:1px solid #a77e67;background:#2b1417e8;padding:5px;
+  box-shadow:inset 0 1px #d3a68463,0 6px 18px #10070877;
+}
+body[data-skin=proofcabinet] .view-nav button{
+  box-shadow:none;border-radius:2px;border-right:1px solid #77544a;
+}
+body[data-skin=proofcabinet] .view-nav button[aria-current=page]{
+  background:#e5d5b5;color:#391b18;box-shadow:inset 0 -3px #bd7348;
+}
+body[data-skin=proofcabinet] .atlas-map{
+  padding:18px 22px;border:2px solid #ad8471;border-radius:5px;
+  background:linear-gradient(135deg,#58282ccc,#210e10ee 58%,#321619ea);
+  box-shadow:inset 0 0 0 5px #1b0b0dbb,inset 0 1px #f4d8ac9c,0 16px 36px #0b0202c7;
+}
+body[data-skin=proofcabinet] .map-heading{
+  padding:5px 0 10px;border-bottom:2px solid #ad8471;
+}
+body[data-skin=proofcabinet] .map-canvas{
+  background:repeating-linear-gradient(90deg,#e7bb7d0b 0 1px,transparent 1px 33px);
+  border-bottom:1px solid #9c7563;padding:8px 0;
+}
+body[data-skin=proofcabinet] .map-canvas .claim-choice{
+  border:1px solid #705050;border-left:5px solid #ab816a;
+  border-radius:2px;background:#371b1edb;margin-bottom:5px;
+}
+body[data-skin=proofcabinet] .map-canvas .claim-choice[aria-pressed=true]{
+  background:#653336;border-color:#e4bc82;border-left-color:#f6d19a;
+  box-shadow:inset 0 1px #f5dabc47,0 5px 12px #08020388;
+}
+body[data-skin=proofcabinet] .map-canvas .source-node{
+  background:linear-gradient(#efe2c7,#d8c5a7);color:#2c1b17;
+  border:1px solid #7e5140;border-top:4px solid #ad6045;border-radius:2px;
+  box-shadow:inset 0 1px #fffdf0,2px 4px 0 #1007088c;
+}
+body[data-skin=proofcabinet] .map-canvas .source-node .source-id{color:#782f25}
+body[data-skin=proofcabinet] .map-canvas .source-node .source-reach{color:#5f453b}
+body[data-skin=proofcabinet] .map-canvas .source-node:hover,
+body[data-skin=proofcabinet] .map-canvas .source-node[aria-pressed=true],
+body[data-skin=proofcabinet] .map-canvas .source-node.is-related{
+  background:#fff0d0;border-color:#ecc488;box-shadow:inset 4px 0 #b1583e,0 5px 12px #08020388;
+}
+body[data-skin=proofcabinet] .map-links .is-context{stroke:#ba9275;opacity:.55}
+body[data-skin=proofcabinet] .map-links .is-active{stroke:#ffe1a3;filter:drop-shadow(0 0 3px #edb960);opacity:1}
+body[data-skin=proofcabinet] #focus-claim{
+  border:1px solid #a47868;border-top:4px solid #edc389;
+  background:linear-gradient(145deg,#542a2c,#2d1719);padding:22px;
+  box-shadow:inset 0 1px #ffffff22,0 8px 20px #10040590;
+}
+body[data-skin=proofcabinet] .atlas-inspector .source-peek{
+  background:linear-gradient(145deg,#efe2ca,#d7c3a5);color:#2b201b;
+  --ink:#2b201b;--muted:#5c5147;--line:#9a8572;--accent:#773227;
+  --accent-ink:#fff7e6;--soft:#d8c6ac;--good:#35533d;--danger:#9c342d;
+  border:1px solid #b68b65;border-left:8px solid #a14c35;
+  border-radius:2px;box-shadow:5px 7px 0 #1408089c,0 20px 36px #090203ad;
+}
+body[data-skin=proofcabinet] .atlas-inspector .source-peek button.secondary{
+  background:#eee2cb;color:#3b241e;border-color:#887361;box-shadow:2px 3px #4933264a;
+}
+body[data-skin=proofcabinet] .campaign-card,
+body[data-skin=proofcabinet] .reading-leaf,
+body[data-skin=proofcabinet] .report-paper,
+body[data-skin=proofcabinet] .coverage-card,
+body[data-skin=proofcabinet] .editor-surface,
+body[data-skin=proofcabinet] dialog,
+body[data-skin=proofcabinet] .tools>div{
+  border:1px solid #af806c;border-top:4px solid #d9ac77;border-radius:3px;
+  background:linear-gradient(140deg,#56282bdc,#291416f4);
+  box-shadow:inset 0 1px #f0c49e49,5px 8px 0 #0e040586,0 18px 35px #0b02028c;
+}
+body[data-skin=proofcabinet] .reading-leaf,
+body[data-skin=proofcabinet] .report-paper{
+  background:linear-gradient(145deg,#f0e3cb,#d8c4a5);color:#2b201b;
+  --ink:#2b201b;--muted:#5c5147;--line:#9a8572;--accent:#773227;
+  --accent-ink:#fff7e6;--soft:#dac8ac;--good:#35533d;--danger:#9c342d;
+  box-shadow:5px 7px 0 #100506a6,0 20px 35px #0b0202a1;
+}
+body[data-skin=proofcabinet] .reading-leaf h2,
+body[data-skin=proofcabinet] .report-paper h2{font-weight:600}
+body[data-skin=proofcabinet] .reading-leaf button.secondary,
+body[data-skin=proofcabinet] .report-paper button.secondary,
+body[data-skin=proofcabinet] .reading-leaf input,
+body[data-skin=proofcabinet] .reading-leaf textarea{
+  background:#f9f0dc;color:#291b18;border-color:#a78c73;
+}
+body[data-skin=proofcabinet] .source-choice[aria-pressed=true]{
+  background:#653536;box-shadow:inset 4px 0 #e9bd80;
+}
+body[data-skin=proofcabinet] .coverage-card{background:#412124;border-top:4px solid #e1b879}
+body[data-skin=proofcabinet] dialog::backdrop{background:#140708e3;backdrop-filter:blur(7px)}
+
+@media(max-width:760px){
+  body[data-skin=tracework],
+  body[data-skin=surveyfolio],
+  body[data-skin=proofcabinet]{background-attachment:scroll;background-size:auto 100vh}
+  body[data-skin=tracework] .atlas-map,
+  body[data-skin=surveyfolio] .atlas-map,
+  body[data-skin=proofcabinet] .atlas-map{padding:16px}
+  body[data-skin=surveyfolio] .atlas-map{border-left-width:5px}
+  body[data-skin=surveyfolio] .reading-leaf,
+  body[data-skin=surveyfolio] .report-paper{border-left-width:4px}
+  body[data-skin=proofcabinet] .atlas-inspector .source-peek{border-left-width:4px}
+}
+@media(prefers-reduced-motion:reduce){
+  body[data-skin=tracework] *,body[data-skin=surveyfolio] *,
+  body[data-skin=proofcabinet] *{transition:none!important}
+}
+
+
+body[data-skin=surveyfolio]{--bg:#242718;--surface:#282b1a;--raised:#2b2e1c;--ink:#c8d2a3;--muted:#c8d2a3;--line:#8b9859;--accent:#c8d2a3;--accent-ink:#1e2112;--soft:#2b2e1c;--good:#c8d2a3;--danger:#c8d2a3;color-scheme:dark;background-image:linear-gradient(#252818eb,#252818eb),url("assets/survey-folio.png")}
+body[data-skin=surveyfolio] button.primary{color:var(--accent-ink)}
+body[data-skin=proofcabinet] .map-canvas .source-node{background:linear-gradient(#724236,#442821);color:#f4e0bf}body[data-skin=proofcabinet] .map-canvas .source-node .source-id{color:#ecc488}body[data-skin=proofcabinet] .map-canvas .source-node .source-reach{color:#d9c0a0}body[data-skin=proofcabinet] .map-canvas .source-node:is(:hover,[aria-pressed=true],.is-related){background:#704b38}
+
+body[data-skin=surveyfolio]{--bg:#1e231b;--surface:#30372a;--raised:#3e4635;--ink:#eae9cc;--muted:#c7cbb0;--line:#7e8c69;--accent:#e0ab7a;--accent-ink:#2a1d13;--soft:#414835;--good:#becd8b;--danger:#e9a082;color-scheme:dark;background-image:linear-gradient(#20271eeb,#20271eeb),url("assets/survey-folio.png")}
+body[data-skin=surveyfolio] button.primary{color:var(--accent-ink)}
+body[data-skin=proofcabinet] .map-canvas .source-node{background:linear-gradient(#724236,#442821);color:#f4e0bf}body[data-skin=proofcabinet] .map-canvas .source-node .source-id{color:#ecc488}body[data-skin=proofcabinet] .map-canvas .source-node .source-reach{color:#d9c0a0}body[data-skin=proofcabinet] .map-canvas .source-node:is(:hover,[aria-pressed=true],.is-related){background:#704b38}
+
+/* Reviewed source comparison: fired-copper pages retain readable dark material. */
+body[data-skin="surveyfolio"] .map-links .is-context{stroke:#b1bc8b;opacity:.65}
+body[data-skin="surveyfolio"] .map-links .is-active{stroke:#dfb579;opacity:1}
+body[data-skin="proofcabinet"] .atlas-inspector .source-peek,
+body[data-skin="proofcabinet"] .reading-leaf,
+body[data-skin="proofcabinet"] .report-paper{background:linear-gradient(155deg,#5a3729,#3c261f);color:#f0ddbe;--ink:#f0ddbe;--muted:#d3b99a;--line:#96705a;--accent:#e4b47a;--accent-ink:#2e211b;--soft:#493126;--good:#b7c19a;--danger:#efaa8f;border-color:#a77f60;box-shadow:inset 0 1px 0 #b68a5a44,0 13px 30px #130c0970}
+body[data-skin="proofcabinet"] .atlas-inspector .source-peek button.secondary,
+body[data-skin="proofcabinet"] .reading-leaf button.secondary,
+body[data-skin="proofcabinet"] .report-paper button.secondary,
+body[data-skin="proofcabinet"] .reading-leaf input,
+body[data-skin="proofcabinet"] .reading-leaf textarea{background:#32221c;color:#f0ddbe;border-color:#96705a}

@@ -1,0 +1,11 @@
+{
+  "format": "cd-cognitive-continuity/v1",
+  "version": "0.1.0",
+  "workspace_id": "CC-WORKSPACE-EXAMPLE",
+  "created_at": "2026-01-01T00:00:00Z",
+  "updated_at": "2026-01-01T00:00:00Z",
+  "scope": {"user": "user-key", "project": "project-key", "agent": "agent-key", "thread": null},
+  "policies": {"storage": "local-only", "default_sensitivity": "ordinary", "default_retention": "until-user-changes", "semantic_retrieval": false, "background_consolidation": false},
+  "capabilities": {"filesystem": true, "deterministic_scripts": true, "semantic_ranking": false, "scheduler": false},
+  "last_consolidated_episode": null
+}
