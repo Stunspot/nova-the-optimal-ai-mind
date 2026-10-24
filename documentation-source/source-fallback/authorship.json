@@ -1,0 +1,72 @@
+{
+  "authored_files": [
+    {
+      "bytes": 8540,
+      "path": "docs/index.html",
+      "sha256": "f274362a561416eebac98bdd85018f4109a9710671f4b358c1fb21754d021b5c"
+    },
+    {
+      "bytes": 5886,
+      "path": "docs/install.html",
+      "sha256": "e90e64777cff42fcf7066d6344481400b71957b1b4d73da3459ed68204c2f781"
+    },
+    {
+      "bytes": 4600,
+      "path": "docs/upgrade.html",
+      "sha256": "0fa850d43de906c2e89529f55728a3167f2ff85ee79ac1e59aed12b83d482ac7"
+    },
+    {
+      "bytes": 3693,
+      "path": "docs/troubleshooting.html",
+      "sha256": "632f4084db3824faf7fc5d7957f544c7267b9c0b8435a835800822343e8ab22b"
+    }
+  ],
+  "authoring": {
+    "authorship_scope": "materially-revised",
+    "capability": "hesperos-documentation",
+    "capability_entrypoint_sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_revision": "sha256:21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_snapshot": {
+      "bytes": 7306,
+      "path": "verification/hesperos-capabilities/21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f/SKILL.md",
+      "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
+    },
+    "mode": "in-process",
+    "run_id": "nova-free-4.3.1-source-release-fallback-20261023-r2"
+  },
+  "authoring_response": {
+    "bytes": 390,
+    "path": "documentation-source/source-fallback/response.md",
+    "sha256": "57f274a66b515f371fa6459714047ec13ba78cb7f980b2fbdf4ce51f94a485fd"
+  },
+  "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
+  "created_at": "2026-10-24T02:05:45+00:00",
+  "documentation_fingerprint": "7250244115f1e6bf4a917f279609fa2b89103ffa32c8edbb1788fef425eb1153",
+  "documentation_manifest": {
+    "bytes": 226,
+    "path": "documentation-source/source-fallback/manifest.json",
+    "sha256": "a128fcbbdd123b90d851ced1e6080fc562bdd2cc4538d337014e2dcfebd060d0"
+  },
+  "evidence_packet": {
+    "bytes": 554,
+    "path": "documentation-source/source-fallback/evidence.md",
+    "sha256": "f24b426fc3bfafb58b834fb29dac9b9d4ddf081172fafc6b598fa8221fe86f5e"
+  },
+  "execution_evidence": [
+    {
+      "bytes": 437,
+      "path": "documentation-source/source-fallback/execution.md",
+      "sha256": "c61c0049ae531f216a980948046aced16c31bdfa83ac1db53ab980f4369fce46"
+    },
+    {
+      "bytes": 390,
+      "path": "documentation-source/source-fallback/response.md",
+      "sha256": "57f274a66b515f371fa6459714047ec13ba78cb7f980b2fbdf4ce51f94a485fd"
+    }
+  ],
+  "format": "cd-hesperos-documentation-authorship/v1",
+  "product": {
+    "slug": "Nova Free",
+    "version": "4.3.1"
+  }
+}
