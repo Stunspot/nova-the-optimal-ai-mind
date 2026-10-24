@@ -50,3 +50,5 @@ The separate [Evidence Atlas](workspace/advanced.html) retains the typed native-
 Use [the OSINT bridge](knowledge/osint-tools.md) only if bounded public-source tooling advances this inquiry. Reports remain tool-reported and unrated until independently assessed. Setup is optional and separate from ordinary source reading. Missing tools or provider access should leave a useful bounded answer and [recovery route](fallbacks/degraded-capability.md), not stall unrelated work.
 
 > **Companion app presentation:** This native skill remains installed for in-chat use. Do not install, register, or recommend its standalone companion app.
+
+For Maigret network work, use the packaged bridge and guarded workbench route. Upgrade an existing environment through [OSINT setup](knowledge/osint-setup.md#upgrade-an-existing-maigret-workbench) before querying. A decoder safety failure is a runtime repair task; preserve its refusal rather than invoking the raw third-party executable or bypassing the guard.

@@ -1,4 +1,4 @@
-# Current Intelligence Observatory 0.4.0
+# Current Intelligence Observatory 0.4.1
 
 Bring a question and the sources you have. Open `workspace/Open.cmd`, `workspace/Open.command`, or run `python workspace/launch.py` for the persistent inquiry app. The [workspace guide](workspace/README.md) takes you from ordinary material through exact claim support to a useful answer and next observation. No prepared case is required.
 

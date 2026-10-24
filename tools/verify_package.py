@@ -242,7 +242,7 @@ def verify_checksum_inventory(package: Path, findings: list[str]) -> int:
 def version_from_contract(package: Path, findings: list[str]) -> str:
     contract=json.loads((package / "design/product-contract.json").read_text(encoding="utf-8"))
     version=str(contract.get("product_version", ""))
-    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0"}:
+    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0", "4.3.1"}:
         findings.append("unsupported product contract version")
     return version
 

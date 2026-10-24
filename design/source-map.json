@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-source-map/v4",
   "product": "Nova the Optimal AI Free",
-  "product_version": "4.3.0",
+  "product_version": "4.3.1",
   "records": [
     {
       "id": "agent-striving",
@@ -295,7 +295,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 54,
-        "tree_sha256": "1b8a5f58abf9cc8b2fe410e8681e190fedd7ce03416f345546f06c8f8008b9ca"
+        "tree_sha256": "a2dd53f028f0b5ac9839c9fd79f0983aac8b80fa6a59c5e51d48e0eff6b18efe"
       },
       "selection": [
         {
@@ -432,7 +432,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "ae76f24ae10afa6d05dc44f28c43820cc2a105b5bf3dac2b3fb7b399cb135b04"
+          "sha256": "9c78139c502df1a1e961e90fccf26909f430c0b5bcf506af865224b6cc983c4e"
         },
         {
           "path": "schemas/reality-ledger-v1.schema.json",
@@ -539,7 +539,8 @@
         "source_skill_sha256": "77dc147d03619b02670c6dcb2c9513a8a9943a7e3438d7523309e78d46cadb62",
         "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
       },
-      "retirement_disposition": "retired companion app; capability-only skill retained"
+      "retirement_disposition": "retired companion app; capability-only skill retained",
+      "security_selection_state": "sealed_after_independent_ready"
     },
     {
       "id": "beryl-it-tech",
@@ -1507,28 +1508,32 @@
     },
     {
       "id": "current-intelligence-observatory",
-      "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
+      "source_state": "accepted_security_component_with_Free_rights_overlay",
       "composition_origin": "current-purpose-led-owner-with-Free-rights",
       "edition_overlays": [
-        "accepted-component-archive-sha256:6824a8d2ca3636e8a8a99b4e318c2b784765b296837ffc78787084bf9fdac79d"
+        "accepted-component-archive-sha256:773e2999db639fb1e9fa865b5a97a5705077da44b58b8886c6c1b01ed7baa1c1"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
-        "file_count": 184,
-        "tree_sha256": "7308a07c8a331e7ff88414427afe404b1938feaa482f2d47058669d9deec7bb6"
+        "file_count": 189,
+        "tree_sha256": "1dcb08094b2dc010c1289e361c9b8c4aa69e1418abb3841e7d2c3dfdf981f102"
       },
       "selection": [
         {
+          "path": "APP-PRESENTATION.json",
+          "sha256": "e300830ad10bf4dea5017bf7a67e49c372ba723421a5fef29d202ec41cc968ff"
+        },
+        {
           "path": "README.md",
-          "sha256": "aee3a6c1a41bf913498ac7b7f73339a74bf4439feae8c06ef6325db3985abfd1"
+          "sha256": "f6b3c63c0dbe1b6c867b3729dbf7f4da438ea80c28e627578312583a5f9c8c47"
         },
         {
           "path": "SKILL.md",
-          "sha256": "516d7eb1d1cdf456a2fa335a80faf16341ddec191ca07f1336ef8b9e0a84664f"
+          "sha256": "d78b7532a3a2cfbbcb13456cae1ec2d16597aa9d798e805ce1962226215425a6"
         },
         {
           "path": "VERSION",
-          "sha256": "40b8eb4000a913a7791090535f291d3d369874162a89ef3c9e3d4e887a1b9e79"
+          "sha256": "21a71f6eb4facd7d9182e569b7c940e33f8021b5c83ac93796746587100e14ab"
         },
         {
           "path": "agents/openai.yaml",
@@ -1704,7 +1709,7 @@
         },
         {
           "path": "knowledge/osint-setup.md",
-          "sha256": "71d0036d0a73d3c4d888ec98b733019eacfe6c428cec0185f2edf7437d294fdc"
+          "sha256": "255a8b5f39803795b56740b8ec794b060b69e6da3c19356a2fcb792496b1e49c"
         },
         {
           "path": "knowledge/osint-tools.md",
@@ -1728,7 +1733,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "0f14bf5f2b303b3abd54943bb2708f8eac137308e197ad279dde0b79eedde1ce"
+          "sha256": "08bf73f31da30bf9b79601f2d5c8086506181bb4ebb50f0d347063be13962813"
         },
         {
           "path": "references/almanac/delta-sweep.md",
@@ -1840,7 +1845,7 @@
         },
         {
           "path": "scripts/osint-runtime/data/maigret-requirements.lock",
-          "sha256": "eb9a0186146730a6986b4fc7e9550d589807c15d69d6e33a4b2974b67ba62be6"
+          "sha256": "d396fa44262a43556fb52d09c92cfa64cb3c8cb86257c2f8caddbe32c85f6d77"
         },
         {
           "path": "scripts/osint-runtime/data/maigret-sites.json",
@@ -1863,6 +1868,10 @@
           "sha256": "16785de9a838629161ddd39d2a2bd3ec742712a67251ae93bdd563edec6ba08c"
         },
         {
+          "path": "scripts/osint-runtime/drivers/maigret_safe.py",
+          "sha256": "4b1491e8d4c0f70fb9978332cec060f9a0997b466397725b3138be709cfcc619"
+        },
+        {
           "path": "scripts/osint-runtime/drivers/shodan_query.py",
           "sha256": "93d1239eb4dd598e373533ef17d20151ac6ff5dfb69077c74fcfe8ec28041b2c"
         },
@@ -1880,11 +1889,15 @@
         },
         {
           "path": "scripts/osint-runtime/osint.py",
-          "sha256": "5a1ea6d194790b25518002e55c8c7cfc9e6c0997aebe74aa68a7caf3a67831e2"
+          "sha256": "69c6abb316f75780f9ce1a782759537253b710d91900a150b1f813db88c655aa"
         },
         {
           "path": "scripts/osint-runtime/registry.json",
           "sha256": "3e700f15ea0766fadba9fd19753a915c97ffa7ac668186a48ea92693f587bb82"
+        },
+        {
+          "path": "scripts/osint-runtime/safe_http.py",
+          "sha256": "ca2cefd80715bd16488b46104b77cbbf694334f55498a0841ed9445cece37492"
         },
         {
           "path": "scripts/osint-sources.json",
@@ -1923,6 +1936,18 @@
           "sha256": "113d356ba1a94facc35ba2c878781ea290f5035ba3afc6cfd26f9d09b9b6dd4c"
         },
         {
+          "path": "scripts/tests/test_safe_http.py",
+          "sha256": "901ac8917f7c3f229e53c9eaa263753c0e620c69410c3780b6bc2d4e9e498941"
+        },
+        {
+          "path": "scripts/tests/test_security_upgrade.py",
+          "sha256": "f8d539f4f1a4959e559e9c738859282574062540fb593f3798977f9361a4dcc1"
+        },
+        {
+          "path": "scripts/upgrade_osint_security.py",
+          "sha256": "a36fa7989f8d70326e7bbe0d06a725716d39a907fbb210f7848ab15fe2bd8f01"
+        },
+        {
           "path": "workspace/DESIGN.md",
           "sha256": "03c511a9455292a3fcfa90e01744b4a04299e8f3fe6346b2b71374aaab8e67d1"
         },
@@ -1940,7 +1965,7 @@
         },
         {
           "path": "workspace/README.md",
-          "sha256": "f0f5d09fa26044984ab702393b1562c7da81741375df5788664bff936ffb31e5"
+          "sha256": "f479da499d3b9183ac54d1374ad49b3c3dc56dee9d4a6ac063b492f9ba97b5f4"
         },
         {
           "path": "workspace/advanced.html",
@@ -1960,7 +1985,7 @@
         },
         {
           "path": "workspace/create_entry.py",
-          "sha256": "f5faa985ca594f5a93fd174a1b9157a3b392aa00021473a81dbfe6b77cf7966b"
+          "sha256": "0ff006a01a8dbbea1726f52fd3089037d0013de5560356bd80d3d18e087d6e04"
         },
         {
           "path": "workspace/guide.html",
@@ -2227,6 +2252,14 @@
           "sha256": "00289e95b3fb680b03cb67e67b8a3d61de32ec7e0a7c46d4337494c4c97c8c8e"
         },
         {
+          "path": "workspace/visual-restoration.css",
+          "sha256": "6de06c227aa8964bac8e1fc793d005b893a18d17e87fa277a125df5520eb901b"
+        },
+        {
+          "path": "workspace/visual-restoration.js",
+          "sha256": "91c9cbfdaa78022c3d74f9d98e43b434fa471b1ddd341a46f32b4f9765dbeced"
+        },
+        {
           "path": "workspace/work-host.py",
           "sha256": "3cf0f5fbaea3a4a87115a29ef6df58af5248fced24d515455bd1736620da3a55"
         },
@@ -2262,11 +2295,12 @@
       },
       "current_standalone_release": {
         "id": "current-intelligence-observatory",
-        "version": "0.4.0",
+        "version": "0.4.1",
         "canonical_runtime_root": "E:/Github/current-intelligence-observatory/source/current-intelligence-observatory",
-        "source_skill_sha256": "de965a5833ae30a61833bc9ba32afce6a64e420d01414469cafc8da89ba75f0d",
+        "source_skill_sha256": "d78b7532a3a2cfbbcb13456cae1ec2d16597aa9d798e805ce1962226215425a6",
         "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
-      }
+      },
+      "security_selection_state": "sealed_after_independent_ready"
     },
     {
       "id": "dennis-stratton-project-management",
@@ -3770,7 +3804,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
       "imported_tree": {
         "file_count": 5,
-        "tree_sha256": "b7ccdbbc29b87749623e05ac56774ba0f08f9e65da8b94c0a931875a4af5b432"
+        "tree_sha256": "bcd2ed7d4884e80bda2a0aa53a13ea41ba2f84d7fb0f0d957dbf36c052990aa3"
       },
       "selection": [
         {
@@ -3787,7 +3821,7 @@
         },
         {
           "path": "scripts/nova_estate.py",
-          "sha256": "094a7ee4837975faf9ee25950d99f00b08d25b84edbd67decb4533789b0523b8"
+          "sha256": "d877ff7504e15010c107db340ee695419905e9648f8b6267dbb866fbbf50d690"
         },
         {
           "path": "scripts/probe_continuity_mutation.py",
@@ -3802,7 +3836,8 @@
         "source_file_count": 5,
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "security_selection_state": "sealed_after_independent_ready"
     },
     {
       "id": "officecraft-reviewer",
@@ -6562,11 +6597,14 @@
     "boundary": "Current identity annotations only; no standalone overwrite of maintained edition derivatives or new missing-leaf obligation."
   },
   "current_metadata_binding": {
-    "candidate": "free-4.2.0-final-batch-proposal",
-    "input_manifest": "verification/purpose-free-4.1.0/REVIEW-INPUTS.json",
-    "scope": "Proposed 4.2.0 current owner selection with exact accepted prior repairs, explicit AnswerLayer companion retirement, and accepted Dennis/OMNARA bytes; not yet built or shelf committed.",
-    "observed_at": "2026-10-16T07:08:15.517730+00:00",
-    "shelf_manifest_sha256": "83f59697ada599680a5a82852b586d776ca64bd1104ae02428ac373a7f1d87e7",
-    "sidecar_matrix_sha256": "77b0ef950b961b1bea1640ec13b18dc15fb35b01ae0ed903333ae58d9676c76e"
+    "candidate": "free-4.3.1-security-r1",
+    "scope": "Owner-requested 4.3.1 security inclusion with current Free rights overlay and parent version identity; unchanged owners retain their accepted source coordinates.",
+    "state": "independently_ready_source_sealed"
+  },
+  "security_update": {
+    "cve": "CVE-2026-111497",
+    "baseline": "4.3.0",
+    "owner_authorized_new_release": true,
+    "state": "independently_ready_source_sealed"
   }
 }

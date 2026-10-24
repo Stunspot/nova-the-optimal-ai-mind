@@ -13,7 +13,7 @@ import tempfile
 from pathlib import Path
 
 NAME = "Current Intelligence Observatory"
-VERSION = "0.4.0"
+VERSION = "0.4.1"
 WORKSPACE = Path(__file__).absolute().parent
 
 def local_path(value: str | Path, directory: bool = False) -> Path:

@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-loadout/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "4.3.0",
+  "product_version": "4.3.1",
   "plugin_id": "nova-the-optimal-ai",
   "license": "LICENSE.md",
   "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
@@ -230,5 +230,12 @@
     "legacy_project_api": "explicit_compatibility",
     "new_faculty": false
   },
-  "build_id": "nova-free-4.2.0-20261016-bf78dfe234d9"
+  "build_id": "nova-free-4.2.0-20261016-bf78dfe234d9",
+  "security_update": {
+    "cve": "CVE-2026-111497",
+    "selected_components": {
+      "current-intelligence-observatory": "0.4.1"
+    },
+    "state": "independently_ready_source_sealed"
+  }
 }

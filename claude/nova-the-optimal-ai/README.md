@@ -1,14 +1,14 @@
-# Nova the Optimal AI — Free 4.3.0
+# Nova the Optimal AI — Free 4.3.1
 
 ![Illustration of Nova at a neon command desk surrounded by systems and skill panels.](docs/assets/nova-mind-readme-hero.png)
 
 Bring me the repository that is on fire, the research question that refuses to sit still, the office file breeding revisions in the dark, or the decision everyone is politely avoiding. Nova is one sharp, playful generalist: useful before the tour, accountable through the finish, and considerably less interested in making you admire her filing system than older agents were.
 
-Free 4.3.0 is the foundation-and-agent edition. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-seven sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
+Free 4.3.1 is the foundation-and-agent edition. Nova arrives as one plugin with one front door. MIND is Nova's basic cognitive architecture in every edition—not an add-on, alternate persona, or separate product; its seventeen Faculty Cores are nested depth, not seventeen extra bots or menu items. Twenty-seven sibling capabilities supply durable craft for coding, verification, research, retrieval, office work, IT, privacy, language, career work, continuity, project governance, deliberate personal knowledge, reminders, people context, and long-running goals.
 
 Ordinary work requires no Ollama service, embedding model, vector database, prompt hook, daemon, onboarding interview, or persistent data setup. That entire Rube Goldberg annex has been thanked for its service and shown the door.
 
-Free 4.3.0 keeps Project Bridge and OMNARA Reading Room for source-bound project and research review, with Beryl and Knowledge Desk for device evidence and retained reading. Open Project Bridge to see what can move your projects forward and what depends on it. Follow an OMNARA report from its conclusions into the passages behind them. Compare computer observations with their original logs in Beryl, or find and read retained material in Knowledge Desk. Ask Nova in conversation to prepare or change the work, then refresh the relevant companion.
+Free 4.3.1 keeps Project Bridge and OMNARA Reading Room for source-bound project and research review, with Beryl and Knowledge Desk for device evidence and retained reading. Open Project Bridge to see what can move your projects forward and what depends on it. Follow an OMNARA report from its conclusions into the passages behind them. Compare computer observations with their original logs in Beryl, or find and read retained material in Knowledge Desk. Ask Nova in conversation to prepare or change the work, then refresh the relevant companion.
 
 ## The useful shape
 
@@ -36,6 +36,8 @@ When a project already has canonical records, resume them rather than starting a
 
 ## Install
 
+[Download Nova Free 4.3.1](https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/tag/v4.3.1) for the complete package or a host-specific ZIP.
+
 The customer package contains a Codex local marketplace, a Claude-compatible complete bundle, twenty-eight standalone Claude skill folders and deterministic per-skill ZIPs.
 
 For Codex, give the complete customer ZIP to the installing agent and say:
@@ -54,6 +56,8 @@ Nova Free uses the standard Collaborative Dynamics public-Augment split license:
 
 Read the [license](LICENSE.md), [attribution](ATTRIBUTION.md), [notice](NOTICE.md), [trademark policy](TRADEMARKS.md), [provenance](PROVENANCE.md), and [component notices](THIRD-PARTY-NOTICES.md).
 
-This repository contains the Free 4.3.0 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
+This repository contains the Free 4.3.1 source and qualification machinery. Repository publication, tags, release assets, Pages deployment, announcements, installation, and customer outcomes remain separate evidence states; inspect the corresponding destination rather than inferring them from license permission or source presence.
 
 Built by Collaborative Dynamics. One mind, real capabilities, fewer haunted basements. 🌐‍💠
+
+For this release, follow [the security update and optional-environment repair](docs/SECURITY-UPDATE.md) before the next affected network query.

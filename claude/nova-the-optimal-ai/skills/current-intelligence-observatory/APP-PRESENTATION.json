@@ -9,7 +9,7 @@
   "maintenance": {
     "kind": "edit",
     "effect": "presentation",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "note": "Same-version maintenance: standalone companion presentation is disabled. Keep the native current-intelligence-observatory skill available for in-chat use; preserve app implementation and user data. Do not install, register, or recommend the companion."
   }
 }

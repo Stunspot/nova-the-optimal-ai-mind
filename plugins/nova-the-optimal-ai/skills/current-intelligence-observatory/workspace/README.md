@@ -1,4 +1,4 @@
-# Investigate with Current Intelligence Observatory 0.4.0
+# Investigate with Current Intelligence Observatory 0.4.1
 
 Start with a question, follow the actual evidence, and leave with an answer whose limits and next observation are clear. The app helps you perform inquiry. It does not browse, reason, monitor or publish autonomously.
 

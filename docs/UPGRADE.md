@@ -1,6 +1,6 @@
-# Upgrade to Free 4.3.0
+# Upgrade to Free 4.3.1
 
-Free 4.3.0 preserves the single Nova front door and 28 installed skills. Companion presentation reflects current owner dispositions: Project Bridge, OMNARA, Beryl, and Knowledge Desk are presented; the Intelligence Observatory, Oracle Reading, AnswerLayer, and Giles standalone apps are not. Their in-chat skills remain installed.
+Free 4.3.1 preserves the single Nova front door and 28 installed skills. Companion presentation reflects current owner dispositions: Project Bridge, OMNARA, Beryl, and Knowledge Desk are presented; the Intelligence Observatory, Oracle Reading, AnswerLayer, and Giles standalone apps are not. Their in-chat skills remain installed.
 
 Back up any owner-managed work before replacing the package. This edition does not scan unrelated folders, import data, or remove skill files. Continue using each owner’s canonical store and ask Nova to prepare or change work in conversation.
 
@@ -16,7 +16,7 @@ Record the currently installed version, marketplace source, enabled state and co
 
 Extract the new complete package to a stable staging location. Inspect the chosen host route, then have the installing agent apply it through the live host's supported plugin installation or refresh mechanism. For Codex, the local marketplace must point to this edition's `codex` folder; use the [installation route](../START-HERE.md#manual-codex-recovery). Marketplace `upgrade` refreshes Git snapshots, not a local ZIP. If an actual competing installation requires a choice, resolve it within existing authority or obtain that choice before replacement.
 
-Preserve the operation result. Restart the host, open a new conversation and verify the intended installed 4.3.0 version and enabled state. Ask Nova for one small real result and read-only status of the existing estate if configured. If the old version is still installed, return to the supported installation/refresh surface with that diagnostic. Do not delete a cache or service store to force the result.
+Preserve the operation result. Restart the host, open a new conversation and verify the intended installed 4.3.1 version and enabled state. Ask Nova for one small real result and read-only status of the existing estate if configured. If the old version is still installed, return to the supported installation/refresh surface with that diagnostic. Do not delete a cache or service store to force the result.
 
 Confirm a known project, catalog route or retained item still resolves through its owner. An empty default path does not establish lost data. No update step should silently import, merge, move, migrate or delete records.
 

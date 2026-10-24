@@ -2,7 +2,7 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "4.3.0",
+  "product_version": "4.3.1",
   "state": "candidate_preparation_pending_qualification",
   "plugin": {
     "count": 1,
@@ -160,5 +160,11 @@
     "legacy_project_api": "explicit_compatibility",
     "new_faculty": false
   },
-  "build_id": "nova-free-4.2.0-20261016-bf78dfe234d9"
+  "build_id": "nova-free-4.2.0-20261016-bf78dfe234d9",
+  "security_update": {
+    "cve": "CVE-2026-111497",
+    "baseline": "4.3.0",
+    "owner_authorized_new_release": true,
+    "state": "prepared_pending_qualification"
+  }
 }

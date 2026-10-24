@@ -81,6 +81,7 @@ def main():
     if args.command=='help':
         if args.tool=='theharvester': command=[python('theharvester'),str(ROOT/'drivers/harvester.py'),'--help']
         elif args.tool=='spiderfoot': command=[python('spiderfoot'),str(ROOT/'drivers/spiderfoot.py'),'--help']
+        elif args.tool=='maigret': command=[python('maigret'),str(ROOT/'drivers/maigret_safe.py'),'--help']
         else: command=[exe(args.tool),'--help']
         return subprocess.run(command,cwd=ROOT).returncode
     if args.command in ['spiderfoot','spiderfoot-demo']:
@@ -99,7 +100,7 @@ def main():
         if not 1<=args.top<=500: parser.error('--top must be between 1 and 500; use explicit sites for larger scoped work.')
         db=args.database.resolve()
         if not db.is_file(): parser.error('Local site database not found.')
-        command=[exe('maigret'),args.target,'--db',str(db),'--no-autoupdate','--top-sites',str(args.top),'--max-connections','5','--timeout','15','--retries','0','--json','ndjson','--html','--folderoutput','{REPORTS}']
+        command=[python('maigret'),str(ROOT/'drivers/maigret_safe.py'),args.target,'--db',str(db),'--no-autoupdate','--top-sites',str(args.top),'--max-connections','5','--timeout','15','--retries','0','--json','ndjson','--html','--folderoutput','{REPORTS}']
         if not args.recursive: command+=['--no-recursion','--no-extracting']
         if args.sites:
             for site in args.sites.split(','):
