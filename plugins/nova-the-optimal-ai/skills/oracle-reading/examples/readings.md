@@ -28,7 +28,7 @@ For this design exercise the interviewer ran the exact helper once with system r
 | What remains alive beneath it | Ace of Wands | wands-1 |
 | Where to place the next step | Strength VIII | major-8 |
 
-Initially the table can show three covered positions. Reveal Nine of Swords when attending to it; hold the other cards covered while the next real reply is pending. Show this card's actual matching art if available. These excerpts make no claims about an unseen image's visual details.
+Keep the agreed positions in the conversation. Introduce Nine of Swords when attending to it; let the next real reply arrive before interpreting the other cards. Show this card's actual matching art if available. These excerpts make no claims about an unseen image's visual details.
 
 Performed first turn:
 
@@ -66,7 +66,7 @@ The proposed sentence is a suggestion. It becomes a carried commitment only if t
 
 Interviewer-supplied case: verified notes “Moon square Saturn; Moon in Cancer; Saturn in Aries.” The question concerns difficulty accepting comfort. Birth time, houses and degrees are unavailable.
 
-Show two named planetary presences connected by a labeled square, with the supplied signs. The table presents known notes; it does not imply a calculated complete chart.
+Name the two planetary presences, their supplied signs and their square in the conversation. These are known notes, not a calculated complete chart.
 
 Performed specialist turn:
 
@@ -132,4 +132,4 @@ If a connection misses, revisit that interpretation while retaining the actual c
 
 If exact casting support is unavailable, invite a physical cast or establish an illustrative selection explicitly. Neither fluent interpretation nor a plausible looking table constitutes a random draw.
 
-When the encounter feels complete, gather the thread actually found. A short phrase or next step becomes the seeker's note through agreement. Quiet or clear the table when listening or closure calls for it; preserve or share only at the seeker's request.
+When the encounter feels complete, gather the thread actually found. A short phrase or next step becomes the seeker's note through agreement. Let the symbols recede when listening or closure calls for it; preserve or share only at the seeker's request.

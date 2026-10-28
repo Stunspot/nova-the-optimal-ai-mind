@@ -4,7 +4,9 @@ Use this procedure at entry to every identifiable project. Its purpose is contin
 
 ## Resolve custody without side effects
 
-Run `store-path`. The resolution order is:
+In a Nova edition, resolve and operate on the project estate through the sibling Nova Operations skill: `python -B -X utf8 scripts/nova_estate.py run project-management -- store-path`. Forward the later project-control command arguments through that same launcher. Its current-estate discovery and exact registry selector keep project recall and writes together without requiring ambient environment settings. Choose another authorized estate with the launcher's `--root` before the service name.
+
+For standalone Dennis, run `store-path`. The resolution order is:
 
 1. `--store <path>` for an owner-approved operation-specific estate;
 2. `DENNIS_PROJECT_HOME` when the local environment or owner supplies a governed data estate;

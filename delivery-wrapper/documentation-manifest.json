@@ -1,9 +1,9 @@
 {
   "format": "cd-customer-documentation/v1",
   "product": "nova-free-wrapper",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "customer_docs": [
     "INSTALL.md"
   ],
-  "scope": "Short outer-wrapper entry note; native guides remain authoritative"
+  "scope": "Same Hesperos integration authoring pass; wrapper entry note updated to the new native archive identities and current build."
 }

@@ -2,7 +2,7 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "4.3.1",
+  "product_version": "4.3.2",
   "state": "candidate_preparation_pending_qualification",
   "plugin": {
     "count": 1,
@@ -166,5 +166,13 @@
     "baseline": "4.3.0",
     "owner_authorized_new_release": true,
     "state": "prepared_pending_qualification"
+  },
+  "integration_update": {
+    "kind": "update",
+    "effect": "restored_behavior",
+    "baseline_version": "4.3.1",
+    "target_version": "4.3.2",
+    "owner_requested_increment": true,
+    "reason": "Owner-requested patch release restoring integrated state handoffs, truthful included-companion routes and usable native installation guidance; no data-format, persona or optional-service compatibility change."
   }
 }

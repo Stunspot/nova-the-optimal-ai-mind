@@ -1,0 +1,9 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "nova-free-wrapper",
+  "version": "4.3.1",
+  "customer_docs": [
+    "INSTALL.md"
+  ],
+  "scope": "Short outer-wrapper entry note; native guides remain authoritative"
+}

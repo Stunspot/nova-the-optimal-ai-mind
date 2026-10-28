@@ -1,0 +1,82 @@
+{
+  "authored_files": [
+    {
+      "bytes": 4512,
+      "path": "docs/SECURITY-UPDATE.md",
+      "sha256": "6672a7ed50d617669751d29ff6fee82e83f81d7c0e6f31a9250e9ad93e43aa23"
+    },
+    {
+      "bytes": 24872,
+      "path": "RELEASE-NOTES.md",
+      "sha256": "84c5a7760b985b76226e84aad254de13b3aa9e8f335e84c06f51a5497e22e642"
+    },
+    {
+      "bytes": 4197,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1.md",
+      "sha256": "67712fb6699e645972a7d8f08efab48ac95be4985f0e225e417c57bfc8a10e36"
+    },
+    {
+      "bytes": 4351,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1 Extra.md",
+      "sha256": "a65009e3eec59e10bca005370c436dd2a241fa83a0418074e4b35d036abe8551"
+    },
+    {
+      "bytes": 4512,
+      "path": "plugins/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
+      "sha256": "6672a7ed50d617669751d29ff6fee82e83f81d7c0e6f31a9250e9ad93e43aa23"
+    },
+    {
+      "bytes": 24872,
+      "path": "plugins/nova-the-optimal-ai/RELEASE-NOTES.md",
+      "sha256": "84c5a7760b985b76226e84aad254de13b3aa9e8f335e84c06f51a5497e22e642"
+    }
+  ],
+  "authoring": {
+    "authorship_scope": "materially-revised",
+    "capability": "hesperos-documentation",
+    "capability_entrypoint_sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_revision": "sha256:21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_snapshot": {
+      "bytes": 7306,
+      "path": "verification/hesperos-capabilities/21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f/SKILL.md",
+      "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
+    },
+    "mode": "in-process",
+    "run_id": "nova-free-boundary-repair-20261027"
+  },
+  "authoring_response": {
+    "bytes": 671,
+    "path": "documentation-source/boundary-repair-20261027/authoring-response.md",
+    "sha256": "3032693d2bf72c13132526644f9bc0f3ccdd4ac40ca8abcc0083ca291addc614"
+  },
+  "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
+  "created_at": "2026-10-28T00:14:30+00:00",
+  "documentation_fingerprint": "ce17403d19fbc79068dac4bec7840ebe76ee9c1f53d2eb2bb936eb89a74928b7",
+  "documentation_manifest": {
+    "bytes": 863,
+    "path": "documentation-manifest.json",
+    "sha256": "e89067be3b85b266dda6dd561a15ab54f210835023fa3c2b7a2503fef739ff98"
+  },
+  "evidence_packet": {
+    "bytes": 1430,
+    "path": "documentation-source/boundary-repair-20261027/evidence.md",
+    "sha256": "1b026fff7a781419a616a0bc9a824b4daccace5d8b581c84df541fcc43497efb"
+  },
+  "execution_evidence": [
+    {
+      "bytes": 655,
+      "path": "documentation-source/boundary-repair-20261027/execution.md",
+      "sha256": "6e03e59cd56b42ec21d2a98cfe0e934c5b2c7fc0bb3cecc669ca495891503758"
+    },
+    {
+      "bytes": 671,
+      "path": "documentation-source/boundary-repair-20261027/authoring-response.md",
+      "sha256": "3032693d2bf72c13132526644f9bc0f3ccdd4ac40ca8abcc0083ca291addc614"
+    }
+  ],
+  "format": "cd-hesperos-documentation-authorship/v1",
+  "product": {
+    "slug": "nova-free",
+    "version": "4.3.1"
+  }
+}

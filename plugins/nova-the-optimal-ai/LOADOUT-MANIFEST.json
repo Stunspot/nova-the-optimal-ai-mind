@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-loadout/v3",
   "product": "Nova the Optimal AI Free",
-  "product_version": "4.3.1",
+  "product_version": "4.3.2",
   "plugin_id": "nova-the-optimal-ai",
   "license": "LICENSE.md",
   "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
@@ -230,7 +230,7 @@
     "legacy_project_api": "explicit_compatibility",
     "new_faculty": false
   },
-  "build_id": "nova-free-4.3.1-boundary-repair-20261027-r1",
+  "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
   "security_update": {
     "cve": "CVE-2026-111497",
     "selected_components": {
@@ -245,5 +245,14 @@
     "baseline_version": "4.3.1",
     "target_version": "4.3.1",
     "reason": "Restore supported acquisition safety, dependency integrity and first-use lexical recall; preserve the accepted edition roster, data formats and optional-service choices."
+  },
+  "candidate_state": "qualified_source",
+  "integration_update": {
+    "kind": "update",
+    "effect": "restored_behavior",
+    "baseline_version": "4.3.1",
+    "target_version": "4.3.2",
+    "owner_requested_increment": true,
+    "reason": "Owner-requested patch release restoring integrated state handoffs, truthful included-companion routes and usable native installation guidance; no data-format, persona or optional-service compatibility change."
   }
 }

@@ -81,7 +81,7 @@ _BUILTIN_ADAPTER_MANIFEST: dict[str, Any] = {'schema': 'nova-commonplace.federat
                             'dependencies': [],
                             'package': None},
               'Dennis': {'relative_path': 'dennis-stratton-project-management/scripts/project_control.py',
-                         'sha256': '8aecb9a09e20801c41eba0cab1138465fe90372f462bebb2f53b8c4ae1c398e7',
+                         'sha256': '361dd279ab0e7233ffae63e0120ba2344e068ef81beffa0a6af5de29b2816501',
                          'dependencies': [],
                          'package': None},
               'Continuity': {'relative_path': 'cognitive-continuity/scripts/worldline.py',

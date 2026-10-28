@@ -1,3 +1,11 @@
+# Nova Free 4.3.2 — system integration repair
+
+27 October 2026. Corrects the joins between Nova Operations, project records, personal state and the skills that consume them. Approved Dennis adapter bindings remain integrity-checked; project creation, correction and return use the resolved estate. Project Bridge is described as the read-only reader it actually provides. Clarifies projectless Worldline versus scoped Continuity, removes duplicated Commonplace retrieval guidance, and aligns Dunbar and Corkboard with both editions. Ordinary work remains available without optional persistent services.
+
+Reconciles withdrawn companion instructions with the edition presentation: the skills retain their conversational and native-file methods, while their entry points no longer recommend withdrawn apps. Giles keeps catalog discovery and the shared Knowledge Desk route; Oracle Reading retains its conversational practice, casting tools and card art. Corrects native Codex and Claude installation paths, including the local-marketplace root. Keeps the 28-skill roster, shared Nova persona, ambient MIND and existing saved-work formats.
+
+Carries forward the 4.3.1 TLS, response-limit, dependency, media and model-free retrieval repairs described below. Existing optional Python environments still need their applicable [security-update procedure](docs/SECURITY-UPDATE.md); replacing plugin files alone does not update those environments.
+
 # Nova 4.3.1 — security update
 
 ## Maintenance repair — 27 October 2026

@@ -1,20 +1,36 @@
 {
   "format": "cd-customer-documentation/v1",
   "product": "nova-free",
-  "version": "4.3.1",
+  "version": "4.3.2",
   "customer_docs": [
-    "docs/SECURITY-UPDATE.md",
-    "RELEASE-NOTES.md",
-    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1.md",
-    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1 Extra.md",
-    "plugins/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
-    "plugins/nova-the-optimal-ai/RELEASE-NOTES.md"
-  ],
-  "retained_customer_docs": [
     "README.md",
+    "RELEASE-NOTES.md",
     "START-HERE.md",
+    "claude/nova-the-optimal-ai/README.md",
+    "claude/nova-the-optimal-ai/RELEASE-NOTES.md",
+    "claude/nova-the-optimal-ai/START-HERE.md",
+    "claude/nova-the-optimal-ai/docs/INSTALL-CLAUDE.md",
+    "claude/nova-the-optimal-ai/docs/INSTALL-CODEX.md",
+    "claude/nova-the-optimal-ai/docs/UPGRADE.md",
+    "claude/nova-the-optimal-ai/docs/VERIFICATION.md",
+    "claude/nova-the-optimal-ai/docs/VISUAL-WORKSPACES.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.2 Extra.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.2.md",
+    "delivery-wrapper/INSTALL.md",
+    "docs/INSTALL-CLAUDE.md",
+    "docs/INSTALL-CODEX.md",
+    "docs/MAINTAINER-GUIDE.md",
+    "docs/UPGRADE.md",
+    "docs/VERIFICATION.md",
+    "docs/VISUAL-WORKSPACES.md",
     "plugins/nova-the-optimal-ai/README.md",
-    "plugins/nova-the-optimal-ai/START-HERE.md"
+    "plugins/nova-the-optimal-ai/RELEASE-NOTES.md",
+    "plugins/nova-the-optimal-ai/START-HERE.md",
+    "plugins/nova-the-optimal-ai/docs/INSTALL-CLAUDE.md",
+    "plugins/nova-the-optimal-ai/docs/INSTALL-CODEX.md",
+    "plugins/nova-the-optimal-ai/docs/UPGRADE.md",
+    "plugins/nova-the-optimal-ai/docs/VERIFICATION.md",
+    "plugins/nova-the-optimal-ai/docs/VISUAL-WORKSPACES.md"
   ],
-  "scope": "Exact documents materially revised by Hesperos in this maintenance pass. Retained entry guides are unchanged in this pass; the preserved prior receipt is historical and is not reissued as new authorship. Native packaged copies derive from these same bytes."
+  "scope": "Customer documents materially revised in this Hesperos in-process pass. Unchanged SECURITY-UPDATE.md evidence remains historical; no installation, publication or final package claim."
 }

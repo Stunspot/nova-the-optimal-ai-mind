@@ -1,6 +1,6 @@
 # Open the native workspaces
 
-Nova Free 4.3.0 includes four optional visual companions under their existing capability owners. Choose by the work you want to understand. Ordinary Nova conversation needs no app or persistent estate. Extract the complete edition first. The paths below start at `codex/plugins/nova-the-optimal-ai` or `claude/nova-the-optimal-ai` in the customer package.
+Nova Free 4.3.2 includes four optional visual companions under their existing capability owners. Choose by the work you want to understand. Ordinary Nova conversation needs no app or persistent estate. Extract the complete edition first. The workspace paths start at the plugin folder: `plugins/nova-the-optimal-ai` in the extracted Codex download, or `nova-the-optimal-ai` in the extracted Claude download. In the full source/staging kit, those folders sit under `codex` and `claude` respectively.
 
 ## Choose a useful starting point
 

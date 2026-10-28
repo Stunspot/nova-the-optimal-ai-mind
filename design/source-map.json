@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-source-map/v4",
   "product": "Nova the Optimal AI Free",
-  "product_version": "4.3.1",
+  "product_version": "4.3.2",
   "records": [
     {
       "id": "agent-striving",
@@ -290,12 +290,13 @@
       "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
       "composition_origin": "prior-accepted-owner",
       "edition_overlays": [
-        "accepted-component-archive-sha256:46f982225bf45554a7e6c899e9490a9942cb0095e1858254001c9a1232367e50"
+        "accepted-component-archive-sha256:46f982225bf45554a7e6c899e9490a9942cb0095e1858254001c9a1232367e50",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/answerlayer",
       "imported_tree": {
         "file_count": 54,
-        "tree_sha256": "a2dd53f028f0b5ac9839c9fd79f0983aac8b80fa6a59c5e51d48e0eff6b18efe"
+        "tree_sha256": "32cd0519b516f919596db45c0843696b14492e9dd96e3b953604d4d7190513b5"
       },
       "selection": [
         {
@@ -432,7 +433,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "9c78139c502df1a1e961e90fccf26909f430c0b5bcf506af865224b6cc983c4e"
+          "sha256": "cbaa515a5e840c47346b43c2581f331e671bff6409336e92565187c526891ea6"
         },
         {
           "path": "schemas/reality-ledger-v1.schema.json",
@@ -540,7 +541,15 @@
         "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
       },
       "retirement_disposition": "retired companion app; capability-only skill retained",
-      "security_selection_state": "sealed_after_independent_ready"
+      "security_selection_state": "sealed_after_independent_ready",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "manifest.json"
+        ],
+        "selected_tree_sha256": "32cd0519b516f919596db45c0843696b14492e9dd96e3b953604d4d7190513b5",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "beryl-it-tech",
@@ -1301,17 +1310,18 @@
       "composition_origin": "accepted-owner-plus-explicit-edition-native-binding",
       "edition_overlays": [
         "selected-four-owner-pins-with-Free-approval-identity",
-        "boundary-repair-20261027"
+        "boundary-repair-20261027",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
         "file_count": 37,
-        "tree_sha256": "ad8bc110bd73ebface73a88666f29fc64da6d9f897400e7977b496094b8618a5"
+        "tree_sha256": "45a3133caa58ce6318bd654ae2eeedb6fb8056233cd88854a8bc89f18053d80a"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "c6c4eeebb50487ec6ee4f486d5cae30c061fbe18e6f3f9c628f83ca4aa1db33b"
+          "sha256": "ed432d18f68faa5ee14eb88e8fd9a6c978d59360e702fdaecbc7f4f8171002f8"
         },
         {
           "path": "agents/openai.yaml",
@@ -1363,7 +1373,7 @@
         },
         {
           "path": "scripts/nova_commonplace/federation.py",
-          "sha256": "94758b10bfca902b0426d522b8f95488aae680b4a9e091e335033cc10d2d1e17"
+          "sha256": "47258503b20b68b923b2f5b0c434611cb203937f2d2a4df8afdf1f1465b3ea56"
         },
         {
           "path": "scripts/nova_commonplace/federation_worker.py",
@@ -1469,22 +1479,33 @@
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
       "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
-      "edition_asset_delta": "Native owner ICO and PNG copied from current canonical owner; all other owner bytes preserved."
+      "edition_asset_delta": "Native owner ICO and PNG copied from current canonical owner; all other owner bytes preserved.",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md",
+          "scripts/nova_commonplace/federation.py"
+        ],
+        "selected_tree_sha256": "45a3133caa58ce6318bd654ae2eeedb6fb8056233cd88854a8bc89f18053d80a",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "corkboard",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
+      "edition_overlays": [
+        "system-integration-20261027"
+      ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/corkboard",
       "imported_tree": {
         "file_count": 3,
-        "tree_sha256": "90007250ec76ae85b2ab042e14c5ccebbea8812fd1091f36b4a69afd7fe1b78f"
+        "tree_sha256": "fb0f2861443754a1316c540df9305e6837ec69675ede866d819c8c944fe8ff1c"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "a6532b6092e82494536772be57dede7938d3f3afc59c011550b8a82faee5e40e"
+          "sha256": "919a61ebfaca75076a2f9c0b3c789016624d7f78060b3aea85e736ca97d38e0a"
         },
         {
           "path": "agents/openai.yaml",
@@ -1505,7 +1526,15 @@
         "source_commit": "460ac80d622a1893085818baee8336c825f0ec82",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md"
+        ],
+        "selected_tree_sha256": "fb0f2861443754a1316c540df9305e6837ec69675ede866d819c8c944fe8ff1c",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "current-intelligence-observatory",
@@ -1513,12 +1542,13 @@
       "composition_origin": "current-purpose-led-owner-with-Free-rights",
       "edition_overlays": [
         "accepted-component-archive-sha256:773e2999db639fb1e9fa865b5a97a5705077da44b58b8886c6c1b01ed7baa1c1",
-        "boundary-repair-20261027"
+        "boundary-repair-20261027",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
         "file_count": 199,
-        "tree_sha256": "ce50a8940c36a6f9c61b778ebbbbd2f206b540bf9d2a1b4e05de4778f6e84113"
+        "tree_sha256": "05664beb5d17cf2f26b86ad88b54ffd232bf2a6d95249ae2d4e54e6aed62b1bb"
       },
       "selection": [
         {
@@ -1531,7 +1561,7 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "d78b7532a3a2cfbbcb13456cae1ec2d16597aa9d798e805ce1962226215425a6"
+          "sha256": "20183301d80fcf94371a914f791de64ee13e33a2344bceab58ae5fba6783ca2f"
         },
         {
           "path": "VERSION",
@@ -1735,7 +1765,7 @@
         },
         {
           "path": "manifest.json",
-          "sha256": "08bf73f31da30bf9b79601f2d5c8086506181bb4ebb50f0d347063be13962813"
+          "sha256": "2d9cd69052bf7c7b9f7e4cfbf343da9944c6ca75a3734bc02ff04c2c33ed85fd"
         },
         {
           "path": "references/almanac/delta-sweep.md",
@@ -2342,19 +2372,29 @@
         "source_skill_sha256": "d78b7532a3a2cfbbcb13456cae1ec2d16597aa9d798e805ce1962226215425a6",
         "scope": "Current authorized standalone update integrated into Free, with explicit edition overlay where named."
       },
-      "security_selection_state": "sealed_after_independent_ready"
+      "security_selection_state": "sealed_after_independent_ready",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md",
+          "manifest.json"
+        ],
+        "selected_tree_sha256": "05664beb5d17cf2f26b86ad88b54ffd232bf2a6d95249ae2d4e54e6aed62b1bb",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "dennis-stratton-project-management",
       "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
       "composition_origin": "exact-accepted-current-owner",
       "edition_overlays": [
-        "accepted-component-archive-sha256:686a8d1777e8e1c003864440d1d9b3e8a07ceb8a250ac4a5a6250cd557e09078"
+        "accepted-component-archive-sha256:686a8d1777e8e1c003864440d1d9b3e8a07ceb8a250ac4a5a6250cd557e09078",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/dennis-stratton-project-management",
       "imported_tree": {
         "file_count": 83,
-        "tree_sha256": "bb29f8d2774f42a981aa96b04167488e9ff1e57528316763bb61a9c7f99afa34"
+        "tree_sha256": "da94704feec11fd3da4c6f7735976afd507101d8befb89e5b7d6da7bd984aaab"
       },
       "selection": [
         {
@@ -2407,7 +2447,7 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "c0823f635ae6e90bd68b9bf489e6c445ca7850149dd1b97a5bd95173f0e9e856"
+          "sha256": "21840a672bd8dfd5e3474cec86695fcd34ced239ca06bb49d3dc3a4eb6e33244"
         },
         {
           "path": "START-HERE.md",
@@ -2559,7 +2599,7 @@
         },
         {
           "path": "knowledge/project-bridge.md",
-          "sha256": "9a263ab531d7d84151aed2a14cdb581287e8dd2b5e479642cc798892e1807b64"
+          "sha256": "b2d38b986cc1fff6a5bf35bad1cd71dffdab960e3e66719c6dcf9661162d3a72"
         },
         {
           "path": "knowledge/project-control-spine.md",
@@ -2571,7 +2611,7 @@
         },
         {
           "path": "knowledge/project-record-estate.md",
-          "sha256": "b1f2a494e52faae2cc98eeeb1c44592ab3b07d325e2e90afa63cdf648605ffb2"
+          "sha256": "216b876b463f07459793b4486edd2ffae696f1b29768672e3465246833e4ae5d"
         },
         {
           "path": "knowledge/project-recovery.md",
@@ -2706,22 +2746,34 @@
         "version": "0.6.0",
         "source_skill_sha256": "c0823f635ae6e90bd68b9bf489e6c445ca7850149dd1b97a5bd95173f0e9e856",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
+      },
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md",
+          "knowledge/project-bridge.md",
+          "knowledge/project-record-estate.md"
+        ],
+        "selected_tree_sha256": "da94704feec11fd3da4c6f7735976afd507101d8befb89e5b7d6da7bd984aaab",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
       }
     },
     {
       "id": "dunbar",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
+      "edition_overlays": [
+        "system-integration-20261027"
+      ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/dunbar",
       "imported_tree": {
         "file_count": 13,
-        "tree_sha256": "ae65dc7ecde698e72a9b0602f7b2f830d9807c9f636c4a27d4dede0b175cd62a"
+        "tree_sha256": "363c645483f2dfeee47e68f440f15e822e7272b4393c064785fc2b6f04668e00"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "025ddba9b3634a79889d842d117b460275494e3b8f29326c7f3d074141939a8a"
+          "sha256": "34dbd4adc9eb4241ebbe4803b04fee76d9694a73a403e54a41c429b41c1883bf"
         },
         {
           "path": "agents/openai.yaml",
@@ -2782,7 +2834,15 @@
         "source_commit": "54598f18388f7938880371dfc0cf1c53f598188e",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md"
+        ],
+        "selected_tree_sha256": "363c645483f2dfeee47e68f440f15e822e7272b4393c064785fc2b6f04668e00",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "interview-trainer",
@@ -3612,12 +3672,13 @@
         "exact-shared-body-plus-Free-only-terminal-binding",
         "retain-Free28-owner-index",
         "omit-four-Emergent-only-product-references",
-        "boundary-repair-20261027"
+        "boundary-repair-20261027",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 51,
-        "tree_sha256": "3fe14e094c968b95dacbbf417a7bbaf5ca1d9069de439c57767c02783e5ff51a"
+        "tree_sha256": "8bbec64978f3df312c7e0fa405e0f7e445359cd7674ffdd1ac9fbc01d28e3ccc"
       },
       "selection": [
         {
@@ -3694,7 +3755,7 @@
         },
         {
           "path": "references/edition/index.md",
-          "sha256": "04452311edf37b1f6b6667611e0d637cbd3eecc07898bfb4b4496b0ce3b72171"
+          "sha256": "ba2a40ebac75cbd65abf5b5cf086ec2a2dd1ac51731bf2563d51bea7a3db65c0"
         },
         {
           "path": "references/mind/core-adaptation-ledger.json",
@@ -3835,24 +3896,33 @@
         "source_commit": "509fc043c381ba029e34328392d84df159b9cc7c",
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
-      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim."
+      "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "references/edition/index.md"
+        ],
+        "selected_tree_sha256": "8bbec64978f3df312c7e0fa405e0f7e445359cd7674ffdd1ac9fbc01d28e3ccc",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "nova-operations",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "accepted-Free-Operations",
       "edition_overlays": [
-        "retain-Free-service-contract-anchored-version4"
+        "retain-Free-service-contract-anchored-version4",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova-operations",
       "imported_tree": {
         "file_count": 5,
-        "tree_sha256": "bcd2ed7d4884e80bda2a0aa53a13ea41ba2f84d7fb0f0d957dbf36c052990aa3"
+        "tree_sha256": "150773bb550fc1281334d5ac89c9f58415f14bed248df8edc3f769eb79831702"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "817abf10adad68f428d9bee3f7763e9798712d2e44dc41ce2aa82c54f20d18f8"
+          "sha256": "89b559e99a8f7d2b3953058958fa4f520df7a3cb13d79060927cb9c2731dc943"
         },
         {
           "path": "agents/openai.yaml",
@@ -3864,7 +3934,7 @@
         },
         {
           "path": "scripts/nova_estate.py",
-          "sha256": "d877ff7504e15010c107db340ee695419905e9648f8b6267dbb866fbbf50d690"
+          "sha256": "88388b1f20b45aa69c4dd3c873cbb9c317061752071bb28d3df1edd38c5829a8"
         },
         {
           "path": "scripts/probe_continuity_mutation.py",
@@ -3880,7 +3950,16 @@
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
       "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
-      "security_selection_state": "sealed_after_independent_ready"
+      "security_selection_state": "sealed_after_independent_ready",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md",
+          "scripts/nova_estate.py"
+        ],
+        "selected_tree_sha256": "150773bb550fc1281334d5ac89c9f58415f14bed248df8edc3f769eb79831702",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "officecraft-reviewer",
@@ -4757,12 +4836,13 @@
       "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [
-        "accepted-component-archive-sha256:524c5a223f48fb29c852f789c2696865a2ee9e5a27b026b46b1f39806a97185b"
+        "accepted-component-archive-sha256:524c5a223f48fb29c852f789c2696865a2ee9e5a27b026b46b1f39806a97185b",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/oracle-reading",
       "imported_tree": {
-        "file_count": 112,
-        "tree_sha256": "1c5641436cb8ae90eb83d2d42b563788501741da08f4e1b2c096f7e76fe1980e"
+        "file_count": 111,
+        "tree_sha256": "d9f75c095eb5e0b851e3005688516c5b7ea4042636678b9d51bc79b09ccff31f"
       },
       "selection": [
         {
@@ -4775,7 +4855,7 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "a3f58d41939781bbd313c83af124a80c95b10e89f9468ce78b0acf0487ce32c0"
+          "sha256": "583a06c6549741e60b53f59b393221a80960566defccd93976d327895feaefae"
         },
         {
           "path": "agents/openai.yaml",
@@ -5139,7 +5219,7 @@
         },
         {
           "path": "examples/readings.md",
-          "sha256": "f6be6559885daab8effdb79d10c6d9053dab0c1e0831dd67336f5e9a341a5185"
+          "sha256": "344eaf62ec5aefaf2d8108554abfaac8f8d721215687ac440e778e2ca8bce91c"
         },
         {
           "path": "examples/tables/astrology.json",
@@ -5187,7 +5267,7 @@
         },
         {
           "path": "references/selene-practice.md",
-          "sha256": "62c72005cca9bbc390139b3f78a98ab6c64876bbaa7d15fa023b7446a3dc7737"
+          "sha256": "11fc4844957d64bdb9a524bc9361902ab3b1f70c1eefee33ca776308f57e3771"
         },
         {
           "path": "references/table-contract.md",
@@ -5226,6 +5306,16 @@
         "version": "0.2.1",
         "source_skill_sha256": "012098954225b53326c794bc23a1ae26a154df2f2c31e83e2ed92c80f0de0546",
         "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
+      },
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md",
+          "examples/readings.md",
+          "references/selene-practice.md"
+        ],
+        "selected_tree_sha256": "d9f75c095eb5e0b851e3005688516c5b7ea4042636678b9d51bc79b09ccff31f",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
       }
     },
     {
@@ -5947,12 +6037,13 @@
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
       "edition_overlays": [
-        "boundary-repair-20261027"
+        "boundary-repair-20261027",
+        "system-integration-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
       "imported_tree": {
         "file_count": 43,
-        "tree_sha256": "1a751d5c285e9f24ae548a2827dd9eee951ce97f8f206c0a7c2a2cfefc88ce85"
+        "tree_sha256": "92f22db390dd27cdff33888cd8eb2bc79b098c34f02455c1773166538b86eb44"
       },
       "selection": [
         {
@@ -5977,7 +6068,7 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "caa03157710caed9495a6305fee7ddff4a308d9c751cba572429b963c9e2ca57"
+          "sha256": "07ca264e602ac642775a6f5c58e5bce47aefd9704a004e5e339e4da746538069"
         },
         {
           "path": "VERSION",
@@ -6013,7 +6104,7 @@
         },
         {
           "path": "references/knowledge-atlas.md",
-          "sha256": "73f2c46009251c76404260213ab288fd6546648ffc3532f2d42ad7db0e893889"
+          "sha256": "9e085a31b3777af6bff4a89d6e008d1c53bd9ac4af3b31e1bcc1e05c5db64c72"
         },
         {
           "path": "references/retrieval-and-compilation.md",
@@ -6139,7 +6230,16 @@
         "scope": "Historical baseline coordinates only; current included bytes are the explicit owner selection."
       },
       "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
-      "edition_asset_delta": "Native owner ICO and PNG copied from current canonical owner; all other owner bytes preserved."
+      "edition_asset_delta": "Native owner ICO and PNG copied from current canonical owner; all other owner bytes preserved.",
+      "integration_overlay": {
+        "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+        "files": [
+          "SKILL.md",
+          "references/knowledge-atlas.md"
+        ],
+        "selected_tree_sha256": "92f22db390dd27cdff33888cd8eb2bc79b098c34f02455c1773166538b86eb44",
+        "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
+      }
     },
     {
       "id": "software-verification",
@@ -6697,9 +6797,9 @@
     "boundary": "Current identity annotations only; no standalone overwrite of maintained edition derivatives or new missing-leaf obligation."
   },
   "current_metadata_binding": {
-    "candidate": "nova-free-4.3.1-boundary-repair-20261027-r1",
-    "scope": "Scoped repair of accepted acquisition/dependency and first-use recall behavior; unmodified owners retain their selected source coordinates.",
-    "state": "qualified_source"
+    "candidate": "nova-free-4.3.2-system-integration-20261027-r1",
+    "state": "qualified_source",
+    "scope": "Exact refreshed current native selection; structural validation is separate from independent readiness and construction."
   },
   "security_update": {
     "cve": "CVE-2026-111497",
@@ -6714,5 +6814,13 @@
     "baseline_version": "4.3.1",
     "target_version": "4.3.1",
     "reason": "Restore supported acquisition safety, dependency integrity and first-use lexical recall; preserve the accepted edition roster, data formats and optional-service choices."
+  },
+  "integration_update": {
+    "kind": "update",
+    "effect": "restored_behavior",
+    "baseline_version": "4.3.1",
+    "target_version": "4.3.2",
+    "owner_requested_increment": true,
+    "reason": "Owner-requested patch release restoring integrated state handoffs, truthful included-companion routes and usable native installation guidance; no data-format, persona or optional-service compatibility change."
   }
 }

@@ -1,34 +1,144 @@
 {
   "authored_files": [
     {
-      "bytes": 4512,
-      "path": "docs/SECURITY-UPDATE.md",
-      "sha256": "6672a7ed50d617669751d29ff6fee82e83f81d7c0e6f31a9250e9ad93e43aa23"
+      "bytes": 7704,
+      "path": "README.md",
+      "sha256": "b205a36cd46029a7faa8f0ccce068a43e01d1780907ce6cf7bea00e46b00803e"
     },
     {
-      "bytes": 24872,
+      "bytes": 26312,
       "path": "RELEASE-NOTES.md",
-      "sha256": "84c5a7760b985b76226e84aad254de13b3aa9e8f335e84c06f51a5497e22e642"
+      "sha256": "a3df746b3d1b3c36468b120dc22cf182a238a63a65bcfc3947fc1fff0280296f"
+    },
+    {
+      "bytes": 6800,
+      "path": "START-HERE.md",
+      "sha256": "4164503d717aaaeb9cd97028d2dde07af5c4a4ebff9e19ef7137e0c2a631873c"
+    },
+    {
+      "bytes": 7704,
+      "path": "claude/nova-the-optimal-ai/README.md",
+      "sha256": "b205a36cd46029a7faa8f0ccce068a43e01d1780907ce6cf7bea00e46b00803e"
+    },
+    {
+      "bytes": 26312,
+      "path": "claude/nova-the-optimal-ai/RELEASE-NOTES.md",
+      "sha256": "a3df746b3d1b3c36468b120dc22cf182a238a63a65bcfc3947fc1fff0280296f"
+    },
+    {
+      "bytes": 6800,
+      "path": "claude/nova-the-optimal-ai/START-HERE.md",
+      "sha256": "4164503d717aaaeb9cd97028d2dde07af5c4a4ebff9e19ef7137e0c2a631873c"
+    },
+    {
+      "bytes": 1644,
+      "path": "claude/nova-the-optimal-ai/docs/INSTALL-CLAUDE.md",
+      "sha256": "015aaa518b1450f500b833f5d2ef300e6a00d72cb34e1db92c3c100ec158ff5a"
+    },
+    {
+      "bytes": 1810,
+      "path": "claude/nova-the-optimal-ai/docs/INSTALL-CODEX.md",
+      "sha256": "115be5fdb1c5e77038d46c40d0e07b6e6ab154d765113b6a1240a473d09d303a"
+    },
+    {
+      "bytes": 7414,
+      "path": "claude/nova-the-optimal-ai/docs/UPGRADE.md",
+      "sha256": "9ff37de7502b5cf041c052c472ade0c12ef5d202ebfdcc8def04b204ab866291"
+    },
+    {
+      "bytes": 3584,
+      "path": "claude/nova-the-optimal-ai/docs/VERIFICATION.md",
+      "sha256": "d5809bb630d7163f76075d4f1fcb1f730558aa6d603ec6bd61cb831feffca0fb"
+    },
+    {
+      "bytes": 9443,
+      "path": "claude/nova-the-optimal-ai/docs/VISUAL-WORKSPACES.md",
+      "sha256": "84b120093bff92ce0eb439ae5e39875937bd5c8a289e4597b26498e75efab5b3"
+    },
+    {
+      "bytes": 4778,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.2 Extra.md",
+      "sha256": "f77b8947da85a2bf671a4cabfc9674afb5f96cc323bfc1a60afe1c7c1a3b80e6"
     },
     {
       "bytes": 4197,
-      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1.md",
-      "sha256": "67712fb6699e645972a7d8f08efab48ac95be4985f0e225e417c57bfc8a10e36"
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.2.md",
+      "sha256": "8a08340bdae3eb7f4641dd4431ab474c21a142ff187231f7420b4604f1a7b9c6"
     },
     {
-      "bytes": 4351,
-      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1 Extra.md",
-      "sha256": "a65009e3eec59e10bca005370c436dd2a241fa83a0418074e4b35d036abe8551"
+      "bytes": 1692,
+      "path": "delivery-wrapper/INSTALL.md",
+      "sha256": "426c62be7e9b97f556d8c67dcf0bc171bf4ad52406ee7540d79166ab97bee0fb"
     },
     {
-      "bytes": 4512,
-      "path": "plugins/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
-      "sha256": "6672a7ed50d617669751d29ff6fee82e83f81d7c0e6f31a9250e9ad93e43aa23"
+      "bytes": 1644,
+      "path": "docs/INSTALL-CLAUDE.md",
+      "sha256": "015aaa518b1450f500b833f5d2ef300e6a00d72cb34e1db92c3c100ec158ff5a"
     },
     {
-      "bytes": 24872,
+      "bytes": 1810,
+      "path": "docs/INSTALL-CODEX.md",
+      "sha256": "115be5fdb1c5e77038d46c40d0e07b6e6ab154d765113b6a1240a473d09d303a"
+    },
+    {
+      "bytes": 3253,
+      "path": "docs/MAINTAINER-GUIDE.md",
+      "sha256": "80a8f21fa2bca3a60369befa5cae9d0c90bf6ccc2dcfa242f6b30bbbff9ceaa2"
+    },
+    {
+      "bytes": 7414,
+      "path": "docs/UPGRADE.md",
+      "sha256": "9ff37de7502b5cf041c052c472ade0c12ef5d202ebfdcc8def04b204ab866291"
+    },
+    {
+      "bytes": 3584,
+      "path": "docs/VERIFICATION.md",
+      "sha256": "b4965a7f89d41fd785cb4c50d1ccbd114c30d488cfc36b2f1cb1fd72b73e796f"
+    },
+    {
+      "bytes": 9443,
+      "path": "docs/VISUAL-WORKSPACES.md",
+      "sha256": "84b120093bff92ce0eb439ae5e39875937bd5c8a289e4597b26498e75efab5b3"
+    },
+    {
+      "bytes": 7704,
+      "path": "plugins/nova-the-optimal-ai/README.md",
+      "sha256": "b205a36cd46029a7faa8f0ccce068a43e01d1780907ce6cf7bea00e46b00803e"
+    },
+    {
+      "bytes": 26312,
       "path": "plugins/nova-the-optimal-ai/RELEASE-NOTES.md",
-      "sha256": "84c5a7760b985b76226e84aad254de13b3aa9e8f335e84c06f51a5497e22e642"
+      "sha256": "a3df746b3d1b3c36468b120dc22cf182a238a63a65bcfc3947fc1fff0280296f"
+    },
+    {
+      "bytes": 6800,
+      "path": "plugins/nova-the-optimal-ai/START-HERE.md",
+      "sha256": "4164503d717aaaeb9cd97028d2dde07af5c4a4ebff9e19ef7137e0c2a631873c"
+    },
+    {
+      "bytes": 1644,
+      "path": "plugins/nova-the-optimal-ai/docs/INSTALL-CLAUDE.md",
+      "sha256": "015aaa518b1450f500b833f5d2ef300e6a00d72cb34e1db92c3c100ec158ff5a"
+    },
+    {
+      "bytes": 1810,
+      "path": "plugins/nova-the-optimal-ai/docs/INSTALL-CODEX.md",
+      "sha256": "115be5fdb1c5e77038d46c40d0e07b6e6ab154d765113b6a1240a473d09d303a"
+    },
+    {
+      "bytes": 7414,
+      "path": "plugins/nova-the-optimal-ai/docs/UPGRADE.md",
+      "sha256": "9ff37de7502b5cf041c052c472ade0c12ef5d202ebfdcc8def04b204ab866291"
+    },
+    {
+      "bytes": 3584,
+      "path": "plugins/nova-the-optimal-ai/docs/VERIFICATION.md",
+      "sha256": "d5809bb630d7163f76075d4f1fcb1f730558aa6d603ec6bd61cb831feffca0fb"
+    },
+    {
+      "bytes": 9443,
+      "path": "plugins/nova-the-optimal-ai/docs/VISUAL-WORKSPACES.md",
+      "sha256": "84b120093bff92ce0eb439ae5e39875937bd5c8a289e4597b26498e75efab5b3"
     }
   ],
   "authoring": {
@@ -42,41 +152,41 @@
       "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
     },
     "mode": "in-process",
-    "run_id": "nova-free-boundary-repair-20261027"
+    "run_id": "nova-free-4.3.2-system-integration-docs-20261027"
   },
   "authoring_response": {
-    "bytes": 671,
-    "path": "documentation-source/boundary-repair-20261027/authoring-response.md",
-    "sha256": "3032693d2bf72c13132526644f9bc0f3ccdd4ac40ca8abcc0083ca291addc614"
+    "bytes": 1903,
+    "path": "documentation-source/system-integration-20261027/authoring-response.md",
+    "sha256": "bb6d597ff8b33f5f2dc8b577ac815d1891529aa8e6f55f79271d9345a5131b13"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-28T00:14:30+00:00",
-  "documentation_fingerprint": "ce17403d19fbc79068dac4bec7840ebe76ee9c1f53d2eb2bb936eb89a74928b7",
+  "created_at": "2026-10-28T02:52:51+00:00",
+  "documentation_fingerprint": "e9ba3b97ebe3a0107897ba2d2053dbf7810f201f885173e2782233456c6dc3e2",
   "documentation_manifest": {
-    "bytes": 863,
+    "bytes": 1615,
     "path": "documentation-manifest.json",
-    "sha256": "e89067be3b85b266dda6dd561a15ab54f210835023fa3c2b7a2503fef739ff98"
+    "sha256": "9fec8242085bcb34b082dab4cc45a47088c7a760f819d0a26ebbce738b6bd393"
   },
   "evidence_packet": {
-    "bytes": 1430,
-    "path": "documentation-source/boundary-repair-20261027/evidence.md",
-    "sha256": "1b026fff7a781419a616a0bc9a824b4daccace5d8b581c84df541fcc43497efb"
+    "bytes": 1669,
+    "path": "documentation-source/system-integration-20261027/evidence.md",
+    "sha256": "b21ded4e76a1cace5953496e496031b185771ba4bbcef872a82d4ae70f1a35fa"
   },
   "execution_evidence": [
     {
-      "bytes": 655,
-      "path": "documentation-source/boundary-repair-20261027/execution.md",
-      "sha256": "6e03e59cd56b42ec21d2a98cfe0e934c5b2c7fc0bb3cecc669ca495891503758"
+      "bytes": 1301,
+      "path": "documentation-source/system-integration-20261027/execution.md",
+      "sha256": "72a8af75fbd2ae60e5b6faeced99baf52d495a114205e0815b201a7fd0d41b39"
     },
     {
-      "bytes": 671,
-      "path": "documentation-source/boundary-repair-20261027/authoring-response.md",
-      "sha256": "3032693d2bf72c13132526644f9bc0f3ccdd4ac40ca8abcc0083ca291addc614"
+      "bytes": 1903,
+      "path": "documentation-source/system-integration-20261027/authoring-response.md",
+      "sha256": "bb6d597ff8b33f5f2dc8b577ac815d1891529aa8e6f55f79271d9345a5131b13"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",
   "product": {
     "slug": "nova-free",
-    "version": "4.3.1"
+    "version": "4.3.2"
   }
 }

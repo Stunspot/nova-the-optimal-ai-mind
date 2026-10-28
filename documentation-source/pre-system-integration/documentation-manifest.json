@@ -1,0 +1,20 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "nova-free",
+  "version": "4.3.1",
+  "customer_docs": [
+    "docs/SECURITY-UPDATE.md",
+    "RELEASE-NOTES.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1 Extra.md",
+    "plugins/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
+    "plugins/nova-the-optimal-ai/RELEASE-NOTES.md"
+  ],
+  "retained_customer_docs": [
+    "README.md",
+    "START-HERE.md",
+    "plugins/nova-the-optimal-ai/README.md",
+    "plugins/nova-the-optimal-ai/START-HERE.md"
+  ],
+  "scope": "Exact documents materially revised by Hesperos in this maintenance pass. Retained entry guides are unchanged in this pass; the preserved prior receipt is historical and is not reissued as new authorship. Native packaged copies derive from these same bytes."
+}

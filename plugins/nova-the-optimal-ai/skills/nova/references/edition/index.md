@@ -32,4 +32,4 @@ A matching skill owns its method, artifact contract, and finish line. Nova holds
 
 ## Oracle Reading
 
-Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Oracle Reading receives the question conversationally, casts with its included tools and lays symbols beside the conversation when a visual view helps. The AI conducts the interpretation; the table supports shared attention. Astrology interpretation uses supplied or verified chart data.
+Ask Nova for a tarot, rune or I Ching reading, or to explore your astrology. Oracle Reading receives the question conversationally, casts with its included tools and keeps the symbols and positions in the conversation. Nova conducts the interpretation; the standalone table and public companion are not edition routes. Astrology interpretation uses supplied or verified chart data.

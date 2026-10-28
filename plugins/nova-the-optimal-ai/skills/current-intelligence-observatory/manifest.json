@@ -28,6 +28,6 @@
   "delta_format": "cd-observatory-delta/v2",
   "qualification": "Bounded native and Windows Edge fixture evidence; no live provider or model/participant qualification",
   "legacy_workspace_entrypoint": "workspace/advanced.html",
-  "rights_status": "public-inclusion-authorized-for-nova-free-4.3.1",
-  "license": "Nova Free 4.3.1 public split license; see the containing product LICENSE.md"
+  "rights_status": "public-inclusion-authorized-for-nova-free-4.3.2",
+  "license": "Nova Free 4.3.2 public split license; see the containing product LICENSE.md"
 }

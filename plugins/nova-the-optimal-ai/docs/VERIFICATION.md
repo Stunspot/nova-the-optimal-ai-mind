@@ -1,6 +1,6 @@
 # Verification and evidence
 
-Nova Free 4.3.0 separates source qualification from final archive construction. This guide is for maintainers with the source repository; the extracted customer package does not include a buildable checkout. Current source preparation is not a READY verdict or a delivered release.
+Nova Free 4.3.2 separates source qualification from final archive construction. This guide is for maintainers with the source repository; the extracted customer package does not include a buildable checkout. Current source preparation is not a READY verdict or a delivered release.
 
 ## Qualify the actual source
 

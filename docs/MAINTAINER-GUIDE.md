@@ -1,6 +1,6 @@
 # Maintainer guide
 
-This reference describes the Free 4.3.0 source repository. The extracted customer package carries it for transparency and does not contain a buildable source checkout.
+This reference describes the Free 4.3.2 source repository. The extracted customer package carries it for transparency and does not contain a buildable source checkout.
 
 ## Keep source ownership explicit
 

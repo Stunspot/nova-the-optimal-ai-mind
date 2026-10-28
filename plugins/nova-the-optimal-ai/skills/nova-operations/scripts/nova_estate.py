@@ -19,7 +19,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Sequence
 
-PRODUCT_VERSION = "4.3.1"
+PRODUCT_VERSION = "4.3.2"
 REGISTRY_FORMAT = "nova-path-selectors/v1"
 MANIFEST_FORMAT = "nova-estate-manifest/v1"
 LEGACY_MANIFEST_FORMAT = "nova-data-estate/v1"

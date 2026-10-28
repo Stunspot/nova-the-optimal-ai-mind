@@ -38,3 +38,7 @@ verification/giles-atlas-3.6/hesperos/evidence/** -text
 # Source map and lock bind accepted raw bytes, including existing line endings.
 /design/source-map.json -text
 /design/source-lock.json -text
+
+# Hash-bound current authoring evidence retains exact source bytes.
+/delivery-wrapper/documentation-source/** -text
+/delivery-wrapper/verification/hesperos-capabilities/** -text

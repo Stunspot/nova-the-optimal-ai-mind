@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -169,6 +171,20 @@ def resolve_claude_source(repo: Path, plugin_source: Path, version: str) -> Path
     return source
 
 
+def verify_state_composition(repo, plugin_source, claude_source):
+    """Exercise the maintained native adapter join before creating package output."""
+    test = repo / "tests/test_state_composition.py"
+    if not test.is_file():
+        raise RuntimeError("Current native composition regression is missing")
+    env = os.environ.copy()
+    env.update(NOVA_STATE_TEST_ROOT=str(repo), NOVA_STATE_TEST_SKILL_ROOTS=json.dumps([str(root / "skills") for root in dict.fromkeys([plugin_source, claude_source])]), PYTHONDONTWRITEBYTECODE="1")
+    result = subprocess.run([sys.executable, "-B", "-X", "utf8", str(test)],
+                            env=env, capture_output=True, text=True, encoding="utf-8", timeout=240)
+    if result.returncode:
+        raise RuntimeError("Current native composition regression failed:\n" + result.stdout + result.stderr)
+    print(result.stdout + result.stderr, end="", flush=True)
+
+
 def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean: bool, plugin_source: Path | None = None) -> dict[str, object]:
     plugin_source = plugin_source or repo / "plugins" / PLUGIN_ID
     plugin_manifest_path = plugin_source / ".codex-plugin" / "plugin.json"
@@ -180,7 +196,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
     version = str(plugin_manifest["version"])
     contract = json.loads((repo / "design/product-contract.json").read_text(encoding="utf-8"))
-    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0", "4.3.1"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
+    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0", "4.3.1", "4.3.2"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
     if loadout.get("license") != "LICENSE.md":
         raise RuntimeError("Loadout does not identify the Nova Free product license")
@@ -204,6 +220,8 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     if require_clean and not source_clean:
         raise RuntimeError("Source is not clean, including untracked files; refusing clean-checkpoint build")
 
+    verify_state_composition(repo, plugin_source, claude_source)
+
     package_name = f"{PRODUCT_SLUG}-{version}"
     output_parent.mkdir(parents=True, exist_ok=True)
     artifact_parent.mkdir(parents=True, exist_ok=True)
@@ -216,7 +234,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         target = package_root / name
         target.write_bytes(source.read_bytes())
 
-    if version in {"4.1.0", "4.3.0", "4.3.1"}:
+    if version in {"4.1.0", "4.3.0", "4.3.1", "4.3.2"}:
         for name in ("documentation-manifest.json", "documentation-authorship.json"):
             (package_root / name).write_bytes((repo / name).read_bytes())
         copy_tree(repo / "documentation-source", package_root / "documentation-source")
