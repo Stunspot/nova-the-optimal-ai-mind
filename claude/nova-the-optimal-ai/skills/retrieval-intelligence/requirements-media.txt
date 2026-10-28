@@ -1,2 +1,2 @@
-yt-dlp[default]==2026.8.19
-openai-whisper==20250625
+# Caption/audio capture. Local transcription has its own optional environment.
+-r requirements-capture.txt

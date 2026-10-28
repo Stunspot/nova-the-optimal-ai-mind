@@ -240,8 +240,13 @@ def preview(store,rel='',offset=0,page=0):
             result['source_fingerprint']=fingerprint(stat,data)
             if suffix=='.pdf':
                 try:
-                    from pypdf import PdfReader
-                except ImportError: fail('PDF text preview requires pypdf 6.10.0; install the supplied requirements.txt with your Python runtime')
+                    import pypdf
+                except ImportError:
+                    fail('PDF preview needs pypdf 6.21.2 or newer. In this launcher Python, run: python -m pip install --require-hashes --only-binary=:all: -r requirements.txt')
+                parser_version = str(getattr(pypdf, '__version__', ''))
+                if not re.fullmatch(r'\d+\.\d+\.\d+', parser_version) or tuple(map(int, parser_version.split('.'))) < (6, 21, 2):
+                    fail('PDF preview refused an outdated or unidentified pypdf (' + (parser_version or 'unknown') + '). In this launcher Python, run: python -m pip install --require-hashes --only-binary=:all: -r requirements.txt; then restart Giles. Other source readers remain available.')
+                PdfReader = pypdf.PdfReader
                 try:
                     reader=PdfReader(io.BytesIO(data),strict=False)
                     if reader.is_encrypted: fail('Encrypted PDF text cannot be previewed here; use its owning reader')

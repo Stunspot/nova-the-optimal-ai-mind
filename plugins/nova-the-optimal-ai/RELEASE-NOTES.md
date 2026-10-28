@@ -1,5 +1,9 @@
 # Nova 4.3.1 — security update
 
+## Maintenance repair — 27 October 2026
+
+Repairs TLS verification and response limits across both Maigret transports, updates PDF dependency routes and optional dependency locks, applies media runtime checks consistently, and makes default Commonplace combined search work without an embedding service. Preserves saved work, the existing roster and optional-service choices. Build: `nova-free-4.3.1-boundary-repair-20261027-r1`. See [the repair guide](docs/SECURITY-UPDATE.md).
+
 Updates Observatory to 0.4.1 for CVE-2026-111497. The supported Maigret transport disables native curl decoding and uses patched Python Brotli; optional unsafe decoder environments fail before requests. See the security update guide for existing environments. The roster and existing user work are preserved.
 
 ## Nova the Optimal AI Free 4.3.0

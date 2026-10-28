@@ -1,0 +1,3 @@
+# Hesperos authoring execution
+
+Mode: in-process. Read the Hesperos canonical seed, grown practitioner, skill and recovery doctrine, then inspected the affected current source, maintainer reports and real test outputs. Materially revised the optional-environment update journey, first-use note-search explanation, recovery branches, current change notes and sidecar upkeep instructions. Preserved persona text and unchanged entry guides. A fresh independent reviewer checked commands against implementation and executed the corrected no-write doctor command. This record describes the actual authoring work; automated lint is a separate structural check.

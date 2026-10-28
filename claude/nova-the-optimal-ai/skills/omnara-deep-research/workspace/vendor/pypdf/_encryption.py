@@ -26,9 +26,11 @@
 # POSSIBILITY OF SUCH DAMAGE.
 import hashlib
 import secrets
+import stringprep
 import struct
+import unicodedata
 from enum import Enum, IntEnum
-from typing import Any, Optional, Union, cast
+from typing import Any, Optional, Union
 
 from pypdf._crypt_providers import (
     CryptAES,
@@ -44,11 +46,14 @@ from pypdf._crypt_providers import (
 )
 
 from ._utils import logger_warning
+from .errors import PdfReadError
 from .generic import (
     ArrayObject,
+    BooleanObject,
     ByteStringObject,
     DictionaryObject,
     NameObject,
+    NullObject,
     NumberObject,
     PdfObject,
     StreamObject,
@@ -79,11 +84,11 @@ class CryptFilter:
             obj2 = StreamObject()
             obj2.update(obj)
             obj2.set_data(self.stm_crypt.encrypt(obj._data))
-            for key, value in obj.items():  # Dont forget the Stream dict.
+            for key, value in obj.items():  # Don't forget the Stream dict.
                 obj2[key] = self.encrypt_object(value)
             obj = obj2
         elif isinstance(obj, DictionaryObject):
-            obj2 = DictionaryObject()  # type: ignore
+            obj2 = DictionaryObject()  # type: ignore[assignment]
             for key, value in obj.items():
                 obj2[key] = self.encrypt_object(value)
             obj = obj2
@@ -91,20 +96,20 @@ class CryptFilter:
             obj = ArrayObject(self.encrypt_object(x) for x in obj)
         return obj
 
-    def decrypt_object(self, obj: PdfObject) -> PdfObject:
+    def decrypt_object(self, obj: PdfObject, *, strict: bool = True) -> PdfObject:
         if isinstance(obj, (ByteStringObject, TextStringObject)):
-            data = self.str_crypt.decrypt(obj.original_bytes)
+            data = self.str_crypt.decrypt(obj.original_bytes, strict=strict)
             obj = create_string_object(data)
         elif isinstance(obj, StreamObject):
-            obj._data = self.stm_crypt.decrypt(obj._data)
-            for key, value in obj.items():  # Dont forget the Stream dict.
-                obj[key] = self.decrypt_object(value)
+            obj._data = self.stm_crypt.decrypt(obj._data, strict=strict)
+            for key, value in obj.items():  # Don't forget the Stream dict.
+                obj[key] = self.decrypt_object(value, strict=strict)
         elif isinstance(obj, DictionaryObject):
             for key, value in obj.items():
-                obj[key] = self.decrypt_object(value)
+                obj[key] = self.decrypt_object(value, strict=strict)
         elif isinstance(obj, ArrayObject):
             for i in range(len(obj)):
-                obj[i] = self.decrypt_object(obj[i])
+                obj[i] = self.decrypt_object(obj[i], strict=strict)
         return obj
 
 
@@ -116,6 +121,22 @@ _PADDING = (
 
 def _padding(data: bytes) -> bytes:
     return (data + _PADDING)[:32]
+
+
+# Module-level constant for SASLprep prohibited character checks (RFC 4013 §2.3)
+_SASLPREP_PROHIBITED_CHECKS = (
+    (stringprep.in_table_c12, "non-ASCII space character"),
+    (stringprep.in_table_c21, "ASCII control character"),
+    (stringprep.in_table_c22, "non-ASCII control character"),
+    (stringprep.in_table_c3, "private use character"),
+    (stringprep.in_table_c4, "non-character code point"),
+    (stringprep.in_table_c5, "surrogate code point"),
+    (stringprep.in_table_c6, "inappropriate for plain text"),
+    (stringprep.in_table_c7, "inappropriate for canonical representation"),
+    (stringprep.in_table_c8, "change display properties/deprecated"),
+    (stringprep.in_table_c9, "tagging character"),
+    (stringprep.in_table_a1, "unassigned code point"),
+)
 
 
 class AlgV4:
@@ -144,7 +165,6 @@ class AlgV4:
            of the password string. If the password string is empty
            (zero-length), meaning there is no user password,
            substitute the entire padding string in its place.
-
         b) Initialize the MD5 hash function and pass the result of step (a)
            as input to this function.
         c) Pass the value of the encryption dictionary’s O entry to the
@@ -767,6 +787,73 @@ class PasswordType(IntEnum):
     OWNER_PASSWORD = 2
 
 
+def _saslprep(password: str) -> str:
+    """
+    Apply the SASLprep profile (RFC 4013) of stringprep (RFC 3454).
+
+    This normalizes Unicode passwords for PDF 2.0 (AES-256, revision 5/6)
+    encryption as required by the PDF specification.
+
+    Args:
+        password: The Unicode password string to normalize.
+
+    Returns:
+        The SASLprep-normalized string.
+
+    Raises:
+        ValueError: If the password contains prohibited characters
+            or fails the bidirectional character check.
+
+    """
+    # Mapping (RFC 4013 §2.1)
+    #    - Map characters in table B.1 to nothing
+    #    - Map characters in table C.1.2 (non-ASCII spaces) to U+0020 (SPACE)
+    mapped: list[str] = []
+    for character in password:
+        if stringprep.in_table_b1(character):
+            continue  # map to nothing
+        if stringprep.in_table_c12(character):
+            mapped.append(" ")  # map to SPACE
+        else:
+            mapped.append(character)
+    password = "".join(mapped)
+
+    # Normalization (RFC 4013 §2.2) — Unicode NFKC
+    password = unicodedata.normalize("NFKC", password)
+
+    for character in password:
+        for check, description in _SASLPREP_PROHIBITED_CHECKS:
+            if check(character):
+                raise ValueError(
+                    f"SASLprep: {description} U+{ord(character):04X}"
+                )
+
+    # Bidirectional check (RFC 4013 §2.4, RFC 3454 §6)
+    has_r_and_al = False
+    has_l = False
+    for character in password:
+        if stringprep.in_table_d1(character):
+            has_r_and_al = True
+        if stringprep.in_table_d2(character):
+            has_l = True
+
+    if has_r_and_al:
+        if has_l:
+            raise ValueError(
+                "SASLprep: string with RandALCat characters must not "
+                "contain LCat characters"
+            )
+        if not stringprep.in_table_d1(password[0]) or not stringprep.in_table_d1(
+            password[-1]
+        ):
+            raise ValueError(
+                "SASLprep: string with RandALCat characters must start "
+                "and end with RandALCat characters"
+            )
+
+    return password
+
+
 class EncryptAlgorithm(tuple, Enum):  # type: ignore # noqa: SLOT001
     # V, R, Length
     RC4_40 = (1, 2, 40)
@@ -782,6 +869,33 @@ class EncryptionValues:
     OE: bytes
     UE: bytes
     Perms: bytes
+
+
+def _get_entry(
+    dictionary: DictionaryObject,
+    key: str,
+    *,
+    expected_types: tuple[type, ...],
+    type_name: str,
+    default: Optional[Any] = None,
+    required: bool = False,
+) -> Any:
+    """Fetch an entry of the encryption dictionary, treating null as absent."""
+    value = dictionary.get(key, NullObject()).get_object()
+    if isinstance(value, NullObject):
+        if required:
+            raise PdfReadError(f"{key} entry of the encryption dictionary is missing")
+        return default
+    if not isinstance(value, expected_types):
+        raise PdfReadError(f"{key} entry of the encryption dictionary is not a {type_name}")
+    return value
+
+
+def _get_crypt_filter(filters: DictionaryObject, name: str) -> DictionaryObject:
+    crypt_filter = filters.get(name, NullObject()).get_object()
+    if not isinstance(crypt_filter, DictionaryObject):
+        raise PdfReadError(f"Crypt filter {name} is missing from /CF or not a dictionary")
+    return crypt_filter
 
 
 class Encryption:
@@ -851,13 +965,13 @@ class Encryption:
         cf = self._make_crypt_filter(idnum, generation)
         return cf.encrypt_object(obj)
 
-    def decrypt_object(self, obj: PdfObject, idnum: int, generation: int) -> PdfObject:
+    def decrypt_object(self, obj: PdfObject, idnum: int, generation: int, *, strict: bool = True) -> PdfObject:
         # skip calculate key
         if not self._is_encryption_object(obj):
             return obj
 
         cf = self._make_crypt_filter(idnum, generation)
-        return cf.decrypt_object(obj)
+        return cf.decrypt_object(obj, strict=strict)
 
     @staticmethod
     def _is_encryption_object(obj: PdfObject) -> bool:
@@ -916,8 +1030,8 @@ class Encryption:
            that is stored as the first 16 bytes of the encrypted stream or string.
            The output is the encrypted data to be stored in the PDF file.
         """
-        pack1 = struct.pack("<i", idnum)[:3]
-        pack2 = struct.pack("<i", generation)[:2]
+        pack1 = (idnum & 0xFFFFFF).to_bytes(3, "little")
+        pack2 = (generation & 0xFFFF).to_bytes(2, "little")
 
         assert self._key
         key = self._key
@@ -958,19 +1072,39 @@ class Encryption:
 
         return CryptRC4(rc4_key)
 
-    @staticmethod
-    def _encode_password(password: Union[bytes, str]) -> bytes:
+    def _encode_password(
+        self, password: Union[bytes, str], *, strict: bool = False
+    ) -> bytes:
         if isinstance(password, str):
-            try:
-                pwd = password.encode("latin-1")
-            except Exception:
+            if self.V >= 5:
+                # PDF 2.0 §7.6.4.3.3: AES-256 (R5/R6) requires SASLprep
+                # normalization followed by UTF-8 encoding.
+                try:
+                    password = _saslprep(password)
+                except (ValueError, IndexError) as exception:
+                    if strict:
+                        raise ValueError(
+                            f"Password SASLprep normalization failed: {exception}"
+                        ) from exception
+                    logger_warning(
+                        "SASLprep normalization failed, using plain UTF-8: %(err)s",
+                        source=__name__,
+                        err=str(exception),
+                    )
                 pwd = password.encode("utf-8")
+            else:
+                try:
+                    pwd = password.encode("latin-1")
+                except Exception:
+                    pwd = password.encode("utf-8")
         else:
             pwd = password
         return pwd
 
-    def verify(self, password: Union[bytes, str]) -> PasswordType:
-        pwd = self._encode_password(password)
+    def verify(
+        self, password: Union[bytes, str], *, strict: bool = False
+    ) -> PasswordType:
+        pwd = self._encode_password(password, strict=strict)
         key, rc = self.verify_v4(pwd) if self.V <= 4 else self.verify_v5(pwd)
         if rc != PasswordType.NOT_DECRYPTED:
             self._password_type = rc
@@ -1006,7 +1140,6 @@ class Encryption:
         return b"", PasswordType.NOT_DECRYPTED
 
     def verify_v5(self, password: bytes) -> tuple[bytes, PasswordType]:
-        # TODO: use SASLprep process
         # verify owner password first
         key = AlgV5.verify_owner_password(
             self.R, password, self.values.O, self.values.OE, self.values.U
@@ -1023,14 +1156,22 @@ class Encryption:
         # verify Perms
         self._are_permissions_valid = AlgV5.verify_perms(key, self.values.Perms, self.P, self.EncryptMetadata)
         if not self._are_permissions_valid:
-            logger_warning("ignore '/Perms' verify failed", __name__)
+            logger_warning("ignore '/Perms' verify failed", source=__name__)
         return key, rc
 
     def write_entry(
-        self, user_password: str, owner_password: Optional[str]
+        self,
+        user_password: str,
+        owner_password: Optional[str],
+        *,
+        strict: bool = False,
     ) -> DictionaryObject:
-        user_pwd = self._encode_password(user_password)
-        owner_pwd = self._encode_password(owner_password) if owner_password else None
+        user_pwd = self._encode_password(user_password, strict=strict)
+        owner_pwd = (
+            self._encode_password(owner_password, strict=strict)
+            if owner_password
+            else None
+        )
         if owner_pwd is None:
             owner_pwd = user_pwd
 
@@ -1113,19 +1254,39 @@ class Encryption:
         alg_ver = encryption_entry.get("/V", 0)
         if alg_ver not in (1, 2, 3, 4, 5):
             raise NotImplementedError(f"Encryption V={alg_ver} NOT supported")
+        stm_crypt_filter: Optional[DictionaryObject] = None
         if alg_ver >= 4:
-            filters = encryption_entry["/CF"]
+            # /CF is only needed to look up named crypt filters;
+            # /StmF, /StrF and /EFF default to /Identity.
+            filters = encryption_entry.get("/CF", DictionaryObject()).get_object()
+            if not isinstance(filters, DictionaryObject):
+                raise PdfReadError("/CF entry of the encryption dictionary is not a dictionary")
 
-            stm_filter = encryption_entry.get("/StmF", "/Identity")
-            str_filter = encryption_entry.get("/StrF", "/Identity")
-            ef_filter = encryption_entry.get("/EFF", stm_filter)
+            stm_filter = _get_entry(
+                encryption_entry, "/StmF", expected_types=(str,), type_name="name", default="/Identity"
+            )
+            str_filter = _get_entry(
+                encryption_entry, "/StrF", expected_types=(str,), type_name="name", default="/Identity"
+            )
+            ef_filter = _get_entry(
+                encryption_entry, "/EFF", expected_types=(str,), type_name="name", default=stm_filter
+            )
 
             if stm_filter != "/Identity":
-                stm_filter = filters[stm_filter]["/CFM"]  # type: ignore
+                stm_crypt_filter = _get_crypt_filter(filters, stm_filter)
+                stm_filter = _get_entry(
+                    stm_crypt_filter, "/CFM", expected_types=(str,), type_name="name", default="/None"
+                )
             if str_filter != "/Identity":
-                str_filter = filters[str_filter]["/CFM"]  # type: ignore
+                str_filter = _get_entry(
+                    _get_crypt_filter(filters, str_filter), "/CFM", expected_types=(str,), type_name="name",
+                    default="/None",
+                )
             if ef_filter != "/Identity":
-                ef_filter = filters[ef_filter]["/CFM"]  # type: ignore
+                ef_filter = _get_entry(
+                    _get_crypt_filter(filters, ef_filter), "/CFM", expected_types=(str,), type_name="name",
+                    default="/None",
+                )
 
             allowed_methods = ("/Identity", "/V2", "/AESV2", "/AESV3")
             if stm_filter not in allowed_methods:
@@ -1135,23 +1296,53 @@ class Encryption:
             if ef_filter not in allowed_methods:
                 raise NotImplementedError(f"EFF Method {ef_filter} NOT supported!")
 
-        alg_rev = cast(int, encryption_entry["/R"])
-        perm_flags = cast(int, encryption_entry["/P"])
-        key_bits = encryption_entry.get("/Length", 40)
-        if alg_ver == 4 and stm_filter == "/AESV2":
-            cf_dict = cast(DictionaryObject, filters[encryption_entry["/StmF"]])  # type: ignore[index]
-            # CF /Length is in bytes (default 16 for AES-128), convert to bits
-            key_bits = cast(int, cf_dict.get("/Length", 16)) * 8
-        encrypt_metadata = encryption_entry.get("/EncryptMetadata")
-        encrypt_metadata = (
-            encrypt_metadata.value if encrypt_metadata is not None else True
+        alg_rev = int(
+            _get_entry(encryption_entry, "/R", expected_types=(int, float), type_name="number", required=True)
         )
+        perm_flags = int(
+            _get_entry(encryption_entry, "/P", expected_types=(int, float), type_name="number", required=True)
+        )
+        key_bits = int(
+            _get_entry(encryption_entry, "/Length", expected_types=(int, float), type_name="number", default=40)
+        )
+        if alg_ver == 4 and stm_filter == "/AESV2" and stm_crypt_filter is not None:
+            # CF /Length is in bytes (default 16 for AES-128), convert to bits
+            key_bits = int(
+                _get_entry(stm_crypt_filter, "/Length", expected_types=(int, float), type_name="number", default=16)
+            ) * 8
+        if key_bits % 8 != 0 or not (40 <= key_bits <= 128 or key_bits == 256):
+            # ISO 32000-1:2008, 7.6.2 limits legacy key lengths to 40 to 128 bits
+            # in 8-bit increments. ISO 32000-2:2020, 7.6.6 allows 256-bit
+            # AESV3 keys. Reject other lengths before they reach cryptography.
+            raise PdfReadError(f"Invalid encryption key length: {key_bits} bits")
+        encrypt_metadata = encryption_entry.get("/EncryptMetadata", NullObject()).get_object()
+        if isinstance(encrypt_metadata, BooleanObject):
+            encrypt_metadata = encrypt_metadata.value
+        else:
+            if not isinstance(encrypt_metadata, NullObject):
+                logger_warning(
+                    "Ignoring non-boolean /EncryptMetadata entry of the encryption dictionary",
+                    source=__name__,
+                )
+            encrypt_metadata = True
+        string_types = (ByteStringObject, TextStringObject)
+        empty_string = ByteStringObject()
         values = EncryptionValues()
-        values.O = cast(ByteStringObject, encryption_entry["/O"]).original_bytes
-        values.U = cast(ByteStringObject, encryption_entry["/U"]).original_bytes
-        values.OE = encryption_entry.get("/OE", ByteStringObject()).original_bytes
-        values.UE = encryption_entry.get("/UE", ByteStringObject()).original_bytes
-        values.Perms = encryption_entry.get("/Perms", ByteStringObject()).original_bytes
+        values.O = _get_entry(
+            encryption_entry, "/O", expected_types=string_types, type_name="string", required=True
+        ).original_bytes
+        values.U = _get_entry(
+            encryption_entry, "/U", expected_types=string_types, type_name="string", required=True
+        ).original_bytes
+        values.OE = _get_entry(
+            encryption_entry, "/OE", expected_types=string_types, type_name="string", default=empty_string
+        ).original_bytes
+        values.UE = _get_entry(
+            encryption_entry, "/UE", expected_types=string_types, type_name="string", default=empty_string
+        ).original_bytes
+        values.Perms = _get_entry(
+            encryption_entry, "/Perms", expected_types=string_types, type_name="string", default=empty_string
+        ).original_bytes
         return Encryption(
             V=alg_ver,
             R=alg_rev,

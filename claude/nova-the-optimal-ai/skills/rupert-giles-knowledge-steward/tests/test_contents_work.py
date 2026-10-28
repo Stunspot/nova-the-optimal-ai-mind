@@ -71,6 +71,23 @@ class ContentTests(Fixture):
         pdf_file(self.source/'long.pdf',['START '+('Evidence '*6000)+'END'])
         one=g.preview(self.store,'long.pdf');two=g.preview(self.store,'long.pdf',one['next_offset']);self.assertIn('END',two['text']);self.assertLessEqual(one['bytes_loaded'],32768)
         with self.assertRaises(g.CatalogError):g.preview(self.store,'pages.pdf',page=8)
+    def test_outdated_or_unidentified_pdf_parser_is_refused_before_parsing(self):
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        import sys
+        (self.source/'parser-gate.pdf').write_bytes(b'%PDF-1.4\nfixture')
+        for version in ('6.10.0', '6.18.0', '6.21.1', '', 'unknown', '6.22.0rc1'):
+            parser=Mock(side_effect=AssertionError('Unsafe parser must not run'))
+            fake=SimpleNamespace(__version__=version,PdfReader=parser)
+            with patch.dict(sys.modules,{'pypdf':fake}):
+                with self.assertRaisesRegex(g.CatalogError,'outdated or unidentified'):
+                    g.preview(self.store,'parser-gate.pdf')
+            parser.assert_not_called()
+        with patch.dict(sys.modules,{'pypdf':None}):
+            with self.assertRaisesRegex(g.CatalogError,'require-hashes'):
+                g.preview(self.store,'parser-gate.pdf')
+        self.assertIn('Quoted evidence',g.preview(self.store,'record.md')['text'])
+
     def test_pdf_encrypted_malformed_and_size_limits(self):
         from pypdf import PdfWriter
         writer=PdfWriter();writer.add_blank_page(width=100,height=100);writer.encrypt('secret')

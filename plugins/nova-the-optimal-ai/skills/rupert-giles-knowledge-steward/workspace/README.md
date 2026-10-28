@@ -1,6 +1,6 @@
 # Open Giles Knowledge Atlas
 
-Double-click `Open Giles.cmd` on Windows, or run `Open Giles.command` on macOS/Linux with Python 3.10+. The local explorer opens on `127.0.0.1:8808`. Stop its console with Ctrl+C; reopen the launcher after reboot. A conflicting port fails visibly. Basic text, DOCX, image and catalog workflows use Python's standard library. For PDF text reading, install `python -m pip install -r requirements.txt` with the same Python used by the launcher; the pinned parser is pypdf 6.10.0.
+Double-click `Open Giles.cmd` on Windows, or run `Open Giles.command` on macOS/Linux with Python 3.10+. The local explorer opens on `127.0.0.1:8808`. Stop its console with Ctrl+C; reopen the launcher after reboot. A conflicting port fails visibly. Basic text, DOCX, image and catalog workflows use Python's standard library. For PDF text reading, install `python -m pip install --require-hashes --only-binary=:all: -r requirements.txt` with the same Python used by the launcher; the pinned parser is pypdf 6.21.2. Existing environments need this update too: replacing the skill does not update Python packages. Giles checks the actual imported parser before reading a PDF and refuses an older or unidentified version; text, DOCX, image and catalog workflows remain available. Restart Giles after updating its environment.
 
 ## Find → read → put to work
 

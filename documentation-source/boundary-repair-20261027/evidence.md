@@ -1,0 +1,7 @@
+# Product evidence for the maintenance guide
+
+Readers are existing Nova customers updating an installed edition and optional Python environments. The guide must preserve saved work and lead to ordinary usable service without mandatory setup, new encryption or a data reset.
+
+Source facts inspected: the recognized-adapter upgrader checks prior bytes, backs up entrypoint/adapter/driver, installs a hashed Brotli lock, preserves reports, and emits TLS/body-limit/decoding/no-query fields. Actual supported command is upgrade_osint_security.py --home. Giles reads the imported pypdf version before parsing and rejects old/unknown versions. Requirements now carry hashes; the selected interpreter and skill folder matter. Retrieval caption dependencies and optional Whisper transcription setup are separate. Commonplace defaults federation to lexical while explicit hybrid requirements retain their normal meaning. Archive Loom doctor is loom.py --vault <existing archive> doctor; it does not initialize the path. Optional local stores retain their existing custody and capture policy.
+
+The same product versions remain; build identifiers distinguish this exact repair. The guide does not certify all dependencies, live-provider availability, arbitrary-PDF safety, fresh-host installation, or application-level encryption. The independent reviewer reproduced and corrected the missing-vault documentation argument before completion.

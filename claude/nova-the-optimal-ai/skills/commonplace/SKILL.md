@@ -7,7 +7,7 @@ description: "💠 Saved thoughts, excerpts, recall, and personal knowledge."
 
 Use Commonplace when the user explicitly wants to save a note, thought, excerpt, source packet, question, learning, or personally meaningful fragment; when the user asks what they saved, knew, noticed, decided, or thought; or when current work strongly brushes a distinctive saved idea. Commonplace is Nova's general personal-knowledge owner. It does not replace specialist owners.
 
-Invoke it through the sibling `$nova-operations` launcher when installed in Nova Emergent. That launcher resolves the exact estate registry and isolates managed selectors:
+Invoke it through the sibling `$nova-operations` launcher when installed in a Nova edition. That launcher resolves the exact estate registry and isolates managed selectors:
 
     python -B -X utf8 scripts/nova_estate.py run commonplace -- <commonplace arguments>
 
@@ -29,10 +29,10 @@ Do not merge records merely because their text or embeddings are similar. Identi
 
 ## Recall without pretending
 
-Use lexical search for exact names, phrases, ids, and known-item recall. Use semantic search when likely paraphrase matters. Use hybrid for broad associative recall when the local semantic index is current. Request graph hops only for a relationship-dependent question, and never more than the supported two. Semantic or graph work does not create links or facts.
+Begin with lexical search, available in an ordinary estate without a local model, for names, phrases, ids, and known-item recall. When the optional local semantic index is configured and current, use semantic search for paraphrase or hybrid search for broad associative recall. Request graph hops only for a relationship-dependent question, and never more than the supported two. Semantic or graph work does not create links or facts.
 
     python -X utf8 scripts/commonplace.py search --stdin-json --json
-    {"query":"<meaningful query>","mode":"hybrid","allow_degraded":false,"graph_hops":0,"limit":8,"allowed_sensitivities":["public","personal","private"]}
+    {"query":"<meaningful query>","mode":"lexical","allow_degraded":false,"graph_hops":0,"limit":8,"allowed_sensitivities":["public","personal","private"]}
 
 Concordance is derived. Every result binds to the canonical workspace, generation, snapshot, index, and—when used—embedding model digest. If the index or provider is stale, unavailable, scope-denied, incompatible, or degraded, say so. Degrade only when the caller explicitly permits it.
 
@@ -40,7 +40,7 @@ Use `context` only when synthesis materially helps. Keep the packet bounded, pre
 
 ## Compose the existing owners
 
-Use `federated-search` when one question plausibly spans Commonplace, Dunbar, Corkboard, Dennis, Continuity, or a route-only owner such as Striving. It executes only the fixed owners' published read interfaces and returns an explicit unavailable result for a route-only owner; it is not synchronization. Preserve each owner's status and sensitivity. Missing, partial, degraded, stale, incompatible, and empty-current are different outcomes.
+Use `federated-search` when one question plausibly spans Commonplace, Dunbar, Corkboard, Dennis, Continuity, or a route-only owner such as Striving. It executes only the fixed owners' published read interfaces and returns an explicit unavailable result for a route-only owner; it is not synchronization. Its Commonplace read defaults to lexical search; set `commonplace_mode` to `semantic` or `hybrid` only when that optional capability is ready or its declared degradation is permitted. Its Commonplace read defaults to lexical search; set `commonplace_mode` to `semantic` or `hybrid` only when that optional capability is ready or its declared degradation is permitted. Its Commonplace read defaults to lexical search; set `commonplace_mode` to `semantic` or `hybrid` only when that optional capability is ready or its declared degradation is permitted. Preserve each owner's status and sensitivity. Missing, partial, degraded, stale, incompatible, and empty-current are different outcomes.
 
 Giles owns file inventory, authority, provenance, and disposition. Dex owns governed data systems and lineage. Dunbar owns people and relationships. Corkboard owns loose reminders. Dennis owns governed projects. Continuity owns consequential cross-task state, corrections, forgetting, and Worldline. Striving owns authorized durable pursuits and long-term goals. Commonplace may hold deliberate reflections or source notes about those pursuits only when provenance is preserved; it does not become their canonical owner. Skills own executable procedure. Repositories and external corpora keep their own custody. Owners without admitted adapters remain route-only.
 

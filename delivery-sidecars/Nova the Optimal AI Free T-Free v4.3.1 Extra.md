@@ -12,11 +12,13 @@ Start a fresh task after installation and give Nova the actual work. Read START-
 
 Keep the previous edition and external backups for rollback. A saved working answer, source claim or repair conclusion is not publication, independent certification or an external action.
 
-- After updating the complete edition, repair any existing optional Observatory Python workbench using the packaged security update guide before its next Maigret query. Keep separate data homes and existing work; use the guarded helper routes and preserve unsafe-decoder refusals.
+- After updating, follow the packaged security update guide to repair any existing optional OSINT, PDF or media Python environment you use. Plugin replacement alone does not update external dependencies. Preserve your data homes and use the guarded helpers. Ordinary conversation and saved-file work remain available without optional network setup.
 
 Support: https://collaborative-dynamics.com or contact@collaborative-dynamics.com.
 
 # Changelog
+
+v4.3.1 maintenance — 2026-10-27. Repairs TLS verification and response limits across both Maigret transports, updates PDF dependency routes and optional dependency locks, applies media runtime checks consistently, and makes default Commonplace combined search work without an embedding service. Preserves saved work, the existing roster and optional-service choices.
 
 v4.3.1 - Integrates the guarded Observatory 0.4.1 security update for CVE-2026-111497; adds existing-environment repair instructions while preserving the edition roster and saved work.
 

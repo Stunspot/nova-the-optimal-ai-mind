@@ -1,0 +1,122 @@
+{
+  "authored_files": [
+    {
+      "bytes": 7715,
+      "path": "README.md",
+      "sha256": "e697699885f0c93f8ca96c35666c8889414cb30261cb8a80f4b98ac83a2d68c4"
+    },
+    {
+      "bytes": 7108,
+      "path": "START-HERE.md",
+      "sha256": "4e5ad06b604a5369adf2bf6114b6ef8f3dd466952ce875f90378b8cc0ed4838a"
+    },
+    {
+      "bytes": 24391,
+      "path": "RELEASE-NOTES.md",
+      "sha256": "32bf2a2d0b7f20fd207ab89518d772580a8fe201d29874474655076cf33fbcbd"
+    },
+    {
+      "bytes": 1802,
+      "path": "docs/SECURITY-UPDATE.md",
+      "sha256": "e5157ca74b954b29e7bd3cf336e0b4d4f17e9d8682cefdc3467a671f14ace35e"
+    },
+    {
+      "bytes": 4129,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1.md",
+      "sha256": "81b9d951c54b8e224cc9a5c1bd74186cdd301298b59373b4b6029c03b040dfed"
+    },
+    {
+      "bytes": 3913,
+      "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1 Extra.md",
+      "sha256": "b6e2085c7a9c029c8ca39de62aea865a4655d6b714346716725310f8d1e31139"
+    },
+    {
+      "bytes": 7715,
+      "path": "plugins/nova-the-optimal-ai/README.md",
+      "sha256": "e697699885f0c93f8ca96c35666c8889414cb30261cb8a80f4b98ac83a2d68c4"
+    },
+    {
+      "bytes": 7108,
+      "path": "plugins/nova-the-optimal-ai/START-HERE.md",
+      "sha256": "4e5ad06b604a5369adf2bf6114b6ef8f3dd466952ce875f90378b8cc0ed4838a"
+    },
+    {
+      "bytes": 24391,
+      "path": "plugins/nova-the-optimal-ai/RELEASE-NOTES.md",
+      "sha256": "32bf2a2d0b7f20fd207ab89518d772580a8fe201d29874474655076cf33fbcbd"
+    },
+    {
+      "bytes": 1802,
+      "path": "plugins/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
+      "sha256": "e5157ca74b954b29e7bd3cf336e0b4d4f17e9d8682cefdc3467a671f14ace35e"
+    },
+    {
+      "bytes": 7715,
+      "path": "claude/nova-the-optimal-ai/README.md",
+      "sha256": "e697699885f0c93f8ca96c35666c8889414cb30261cb8a80f4b98ac83a2d68c4"
+    },
+    {
+      "bytes": 7108,
+      "path": "claude/nova-the-optimal-ai/START-HERE.md",
+      "sha256": "4e5ad06b604a5369adf2bf6114b6ef8f3dd466952ce875f90378b8cc0ed4838a"
+    },
+    {
+      "bytes": 24391,
+      "path": "claude/nova-the-optimal-ai/RELEASE-NOTES.md",
+      "sha256": "32bf2a2d0b7f20fd207ab89518d772580a8fe201d29874474655076cf33fbcbd"
+    },
+    {
+      "bytes": 1802,
+      "path": "claude/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
+      "sha256": "e5157ca74b954b29e7bd3cf336e0b4d4f17e9d8682cefdc3467a671f14ace35e"
+    }
+  ],
+  "authoring": {
+    "authorship_scope": "materially-revised",
+    "capability": "hesperos-documentation",
+    "capability_entrypoint_sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_revision": "sha256:21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_snapshot": {
+      "bytes": 7306,
+      "path": "verification/hesperos-capabilities/21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f/SKILL.md",
+      "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
+    },
+    "mode": "in-process",
+    "run_id": "nova-security-20261023-4.3.1"
+  },
+  "authoring_response": {
+    "bytes": 831,
+    "path": "documentation-source/security-20261023/authoring-response.md",
+    "sha256": "a299bea56bd529e7e2d39a5dff4b3241ce11d1ae34f369e56657fb8841a4a1cd"
+  },
+  "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
+  "created_at": "2026-10-24T01:20:23+00:00",
+  "documentation_fingerprint": "6b9e7563e3e211cb748d6bdc79de6fe818ce54deeaf24c40de694f460fb9118e",
+  "documentation_manifest": {
+    "bytes": 1043,
+    "path": "documentation-manifest.json",
+    "sha256": "b0f0cc314aa0051007c205d8c53b71d7933ff25231004df86f3f53bc47b6848e"
+  },
+  "evidence_packet": {
+    "bytes": 700,
+    "path": "documentation-source/security-20261023/evidence.md",
+    "sha256": "7bf2de9b2c53b5213bc587caf07e542f5f1f7ccfe3d411c458e657dcc9fd85e8"
+  },
+  "execution_evidence": [
+    {
+      "bytes": 436,
+      "path": "documentation-source/security-20261023/execution.md",
+      "sha256": "3ff6b07c07753d15be9ef7e9bcec9f2306095047f0aee37afbeb38d712af9f9b"
+    },
+    {
+      "bytes": 831,
+      "path": "documentation-source/security-20261023/authoring-response.md",
+      "sha256": "a299bea56bd529e7e2d39a5dff4b3241ce11d1ae34f369e56657fb8841a4a1cd"
+    }
+  ],
+  "format": "cd-hesperos-documentation-authorship/v1",
+  "product": {
+    "slug": "Nova the Optimal AI Free",
+    "version": "4.3.1"
+  }
+}

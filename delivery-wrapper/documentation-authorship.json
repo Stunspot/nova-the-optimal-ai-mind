@@ -1,0 +1,57 @@
+{
+  "authored_files": [
+    {
+      "bytes": 1728,
+      "path": "INSTALL.md",
+      "sha256": "55f48600a4eafcedf2af99ad6204caf46d6b826fd4ae1230616fcbf77ee303ce"
+    }
+  ],
+  "authoring": {
+    "authorship_scope": "materially-revised",
+    "capability": "hesperos-documentation",
+    "capability_entrypoint_sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_revision": "sha256:21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f",
+    "capability_snapshot": {
+      "bytes": 7306,
+      "path": "verification/hesperos-capabilities/21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f/SKILL.md",
+      "sha256": "21606903702db1eae375cb8e05dcad821616d399a574488f0f1be738d6dab42f"
+    },
+    "mode": "in-process",
+    "run_id": "nova-free-wrapper-boundary-repair-20261027"
+  },
+  "authoring_response": {
+    "bytes": 412,
+    "path": "documentation-source/response.md",
+    "sha256": "a4e7afd8a803d329f3b97e5888179d1a28ba96e49f57cba3d6714abfac570ab8"
+  },
+  "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
+  "created_at": "2026-10-28T00:50:07+00:00",
+  "documentation_fingerprint": "521d4dea5bae2b053d4c01329e897d4029d07feb189ed56b25f339f60c504b6b",
+  "documentation_manifest": {
+    "bytes": 236,
+    "path": "documentation-manifest.json",
+    "sha256": "94836073e71372e4cd1633cc56370106fcb7fe11ed52ed71fdc2f33a5dc0c596"
+  },
+  "evidence_packet": {
+    "bytes": 595,
+    "path": "documentation-source/evidence.md",
+    "sha256": "64f30e1c0e2c5a6900bb2e57f51e8ae9e366218fb81e095b7d5d5ee329e6ff3c"
+  },
+  "execution_evidence": [
+    {
+      "bytes": 404,
+      "path": "documentation-source/execution.md",
+      "sha256": "0bb949c3a50b7bee52c8cf0880cfb4d2b9c27907a8b7517b9e40920cc3bb2ea2"
+    },
+    {
+      "bytes": 412,
+      "path": "documentation-source/response.md",
+      "sha256": "a4e7afd8a803d329f3b97e5888179d1a28ba96e49f57cba3d6714abfac570ab8"
+    }
+  ],
+  "format": "cd-hesperos-documentation-authorship/v1",
+  "product": {
+    "slug": "nova-free-wrapper",
+    "version": "4.3.1"
+  }
+}

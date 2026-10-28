@@ -685,7 +685,7 @@ def federated_search(
     allowed_sensitivities: Sequence[str] = ("public", "personal"),
     limit: int = 8,
     owner_options: Mapping[str, Any] | None = None,
-    commonplace_mode: str = "hybrid",
+    commonplace_mode: str = "lexical",
     allow_degraded: bool = False,
     graph_hops: int = 0,
     timeout_ms: int = 5_000,

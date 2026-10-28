@@ -1300,17 +1300,18 @@
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "accepted-owner-plus-explicit-edition-native-binding",
       "edition_overlays": [
-        "selected-four-owner-pins-with-Free-approval-identity"
+        "selected-four-owner-pins-with-Free-approval-identity",
+        "boundary-repair-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/commonplace",
       "imported_tree": {
         "file_count": 37,
-        "tree_sha256": "753c5fc3b0e2452bccd1423d65ac397045a9d7ef432c70360fa22674b84e8d88"
+        "tree_sha256": "ad8bc110bd73ebface73a88666f29fc64da6d9f897400e7977b496094b8618a5"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "5bd1dd230c39bed5a897299ee6a637ffe1dfda07fc1aa7ad497353c0c579f2ac"
+          "sha256": "c6c4eeebb50487ec6ee4f486d5cae30c061fbe18e6f3f9c628f83ca4aa1db33b"
         },
         {
           "path": "agents/openai.yaml",
@@ -1354,7 +1355,7 @@
         },
         {
           "path": "scripts/nova_commonplace/cli.py",
-          "sha256": "e8aaa438cca7899277651660bd2da92022aafb1375b8a88a9daf35cc37d4865d"
+          "sha256": "bcba3d32114c9dd00bd0afc4c037365714d55ec20bf6b1f0a7a3211b69eee2dc"
         },
         {
           "path": "scripts/nova_commonplace/concordance.py",
@@ -1362,7 +1363,7 @@
         },
         {
           "path": "scripts/nova_commonplace/federation.py",
-          "sha256": "56d2a4b782c4e17ae7a9ab4e5a7c3e509217f3f689078f05572ce9e18980fbaf"
+          "sha256": "94758b10bfca902b0426d522b8f95488aae680b4a9e091e335033cc10d2d1e17"
         },
         {
           "path": "scripts/nova_commonplace/federation_worker.py",
@@ -1511,12 +1512,13 @@
       "source_state": "accepted_security_component_with_Free_rights_overlay",
       "composition_origin": "current-purpose-led-owner-with-Free-rights",
       "edition_overlays": [
-        "accepted-component-archive-sha256:773e2999db639fb1e9fa865b5a97a5705077da44b58b8886c6c1b01ed7baa1c1"
+        "accepted-component-archive-sha256:773e2999db639fb1e9fa865b5a97a5705077da44b58b8886c6c1b01ed7baa1c1",
+        "boundary-repair-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/current-intelligence-observatory",
       "imported_tree": {
-        "file_count": 189,
-        "tree_sha256": "1dcb08094b2dc010c1289e361c9b8c4aa69e1418abb3841e7d2c3dfdf981f102"
+        "file_count": 199,
+        "tree_sha256": "ce50a8940c36a6f9c61b778ebbbbd2f206b540bf9d2a1b4e05de4778f6e84113"
       },
       "selection": [
         {
@@ -1840,6 +1842,10 @@
           "sha256": "509ed5f5cd3875993cdd084d2678dd56fa5aaaa37484242b1bc3cfb7231be11b"
         },
         {
+          "path": "scripts/osint-runtime/data/brotli-security-requirements.lock",
+          "sha256": "828810c887597ae6cf4f2b5c43966708ed0ddec64bae38d91fdc1d5f9f4c7f59"
+        },
+        {
           "path": "scripts/osint-runtime/data/harvester-sources.json",
           "sha256": "05830519ab97abca8e63f5f5de465db576704533fd8796fc26246c76b2bbe7bf"
         },
@@ -1897,7 +1903,7 @@
         },
         {
           "path": "scripts/osint-runtime/safe_http.py",
-          "sha256": "ca2cefd80715bd16488b46104b77cbbf694334f55498a0841ed9445cece37492"
+          "sha256": "14af16d2c90c1f8783760afd70411b6b3b348a36890074ed54061babb4145f85"
         },
         {
           "path": "scripts/osint-sources.json",
@@ -1941,11 +1947,15 @@
         },
         {
           "path": "scripts/tests/test_security_upgrade.py",
-          "sha256": "f8d539f4f1a4959e559e9c738859282574062540fb593f3798977f9361a4dcc1"
+          "sha256": "f422e3e83ee437b0caca6baba4f240ffa89a027b68685957ca783a4ba3604438"
+        },
+        {
+          "path": "scripts/tests/test_transport_boundaries.py",
+          "sha256": "aeb1b9e22ca3c2e6c34d4b54ac0c92c781dcad4eb5091fdd8eb1e3dc9b7afcde"
         },
         {
           "path": "scripts/upgrade_osint_security.py",
-          "sha256": "a36fa7989f8d70326e7bbe0d06a725716d39a907fbb210f7848ab15fe2bd8f01"
+          "sha256": "badc815e08c952b3bf2fba5fa37ab269b961281b03fe878f04d0bc99a864709f"
         },
         {
           "path": "workspace/DESIGN.md",
@@ -2024,32 +2034,48 @@
           "sha256": "eda81b81a7400d4016748772c6be7ee666e5b03f072cf25c3173fc3e886d45d3"
         },
         {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/METADATA",
+          "sha256": "9011b30e80b0f8b61bc5d1e9542dcc8378a19886b2de297b800c1318d51df564"
+        },
+        {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/RECORD",
+          "sha256": "b11fbf4dd1fd2bfdff4ed7e87842aeadb2bc3a594dcdcca286128db0f0e537d8"
+        },
+        {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/WHEEL",
+          "sha256": "96a37c8d7b7f425a05386731f644adbd66ebca17c45e8236176cfe614466df9d"
+        },
+        {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/licenses/LICENSE",
+          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
+        },
+        {
           "path": "workspace/vendor/pypdf-LICENSE",
           "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
         },
         {
           "path": "workspace/vendor/pypdf/__init__.py",
-          "sha256": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c"
+          "sha256": "d7786f1b3cb2e52e28b1085f0ea150fa7f029baad252b29af7415c790871f7df"
         },
         {
           "path": "workspace/vendor/pypdf/_cmap.py",
-          "sha256": "0b8eea205808d522a7e4bad3e222b39c6964752b58a3a3b7259904292ee09241"
+          "sha256": "6529a007c5c2708e7722dbf191fa005859ae5c2990c1ad7c07c2052d6c9bcb0b"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/__init__.py",
-          "sha256": "035d44440b70b56ae91953b34d296b0b56b74fd1c29562c1591c067b7fcf7eed"
+          "sha256": "bd56ce01215af54c771e42b4228dd415aba640fe0970d2f1f63341353351d980"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/_codecs.py",
-          "sha256": "e3aa11649c92c06c42269d648c87abee3b3f4d84a38f81acda2d9471edeff9e1"
+          "sha256": "ead39a397326cd52a6e0a433e33bbf6cd0cae6e24fb6ab06b93e069c4a764c43"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/adobe_glyphs.py",
-          "sha256": "b7770314f0eac08cf5c3d07481d5738dd73c7842bd02e4639397fb95a130fdf6"
+          "sha256": "69ac4e46ea50409ee46cb0c76e35a280b67aa60f06f7fe5ea832a2349c72923e"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/core_font_metrics.py",
-          "sha256": "14b3d66d3678871790597820d63a397b8a972821642846397bce54d9b2c533a9"
+          "sha256": "dbb26cac9a39511246215ed90ce09427259f066e8b0567aaeefdce5b3a05f21f"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/pdfdoc.py",
@@ -2061,95 +2087,103 @@
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/symbol.py",
-          "sha256": "9c86864089615822623cc1ebc149661871fefdf397c842af82e466b8a5dc1809"
+          "sha256": "08fe958d172c72b9bcca6007f74c6977155a7a5c22e8c49bd536f5c0d0e1d359"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/zapfding.py",
-          "sha256": "3d0c63c510bad7a778d711777b15713f55bc9cce10ad97e33b7966b4bc6913fb"
+          "sha256": "e39a9c635d716c1c2da21ebfb7467fef33631bbfaa238d752d14155d828faf65"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_configuration.py",
+          "sha256": "bb46eff45e5d8dcd4a88f4c5f4b57e3c58f25a8798852b2ae83c4626b191f2ce"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/__init__.py",
-          "sha256": "2b767a02e5e15d579780b7adf93ba4ab682df47eba3a076ea6cbf1212d429a42"
+          "sha256": "c5441b160310bca31a38e4f7454756ddb4bc7d94a147c3c13b3eab7ac7f05855"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_base.py",
-          "sha256": "fdfe77323eaf8af84464c438bcdc4de46d083a0158fa7e7f95e91ed1cfea88d5"
+          "sha256": "34505711d85bae0f64d353d57cd37f93b94401897606481720e8b9a1f53ff91f"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_cryptography.py",
-          "sha256": "f733a4933312b17e1a974454934a8cd1d29f7dc1e47b8c1f9845caf64c28450f"
+          "sha256": "33183bb4201aa15e950085a97ee874e2af254be0aaeb9ab0de643d7e93100526"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_fallback.py",
-          "sha256": "bec628a30475602015feaf87add21986451cac26fa1ef44134c626d3742d094f"
+          "sha256": "81772ba3f2bbab82180cbe57195471a059978d75cc6ba4e57830f0c56c828f81"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_pycryptodome.py",
-          "sha256": "bb8bed2e8ecdbfa02a6513671f5a0d3425af4d86a8c1f4957febe5916def4fab"
+          "sha256": "bd9102129a13f4ebe9a46ebb74aec456de51e5aa491bd5fce588a3479ed2a6f6"
         },
         {
           "path": "workspace/vendor/pypdf/_doc_common.py",
-          "sha256": "54a5f4cd06ba5f658a9ed175b9c6224134b3dcf9f98ab11fc4da1f36e02a262e"
+          "sha256": "ece49395930e1fe657a9540466188fe42091ffe2b448afdef8883ad1894e086b"
         },
         {
           "path": "workspace/vendor/pypdf/_encryption.py",
-          "sha256": "319f3e012455b473ceb9c51df87f4a45f94eab902f88f14f8e5769901540a1ce"
-        },
-        {
-          "path": "workspace/vendor/pypdf/_font.py",
-          "sha256": "50ad53071d7979e53daa4661bf38a0e1823eb6365382007eca20b414b73767bb"
+          "sha256": "f10a2d457faf30ec041d38c50084fa9ebac05609f18a69ddb327970d7583f041"
         },
         {
           "path": "workspace/vendor/pypdf/_page.py",
-          "sha256": "f93c459a77c433dbd2541e94d1fdfa599e486ca5fe3e3efe9348eaf94552639c"
+          "sha256": "ad59b17c00677813aa7da96c721385c729637a0845056e4de69af928b753227a"
         },
         {
           "path": "workspace/vendor/pypdf/_page_labels.py",
-          "sha256": "bfa0a9bba3495c2f5143f05e19d866d39695f19eb3c623d1367eaa129d41b951"
+          "sha256": "55ae47e2e1fcec75ea33d3f97478c1fae1684883414cd8ee04a0a066dec40e06"
         },
         {
           "path": "workspace/vendor/pypdf/_protocols.py",
-          "sha256": "eeacfdd8b55d3eb6244a97543e9029f54e065b98f13414df55ca545b052110ea"
+          "sha256": "4e4ea32b83d1f71cc4ec44e7a9a7f6ef5494299913b3a2254672d118f9588ff7"
         },
         {
           "path": "workspace/vendor/pypdf/_reader.py",
-          "sha256": "9aaa6780e62c061509f0d3b658dbdac185404fecadac01f7f9d35ac009ce2024"
+          "sha256": "0f65aa59c8b2dc89b67a07a076de21ccab56a7a385d52220f260b5fce366b066"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/__init__.py",
-          "sha256": "6b7677deb4154e230a1adc2deff6df5e53e8b1b493f2bcc42e8367b74e77fd0c"
+          "sha256": "08ee4beeccbae52c021c87c61eed6f9bbfeaef5a9ea1f994170921a2de15e4fb"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/__init__.py",
-          "sha256": "454408c22530ce778db5c9639d533a8e445a7a6ea980fee6383dbe3019ada6fc"
+          "sha256": "56adb80f37575f9af91995d319579011c9212ed332099acdf207db4a506efecc"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_fixed_width_page.py",
-          "sha256": "789bde0dbc8ca281bdef4a893a13394706fd668cb2243ca7cd6a55f5aec84b6d"
+          "sha256": "514b42d0e71ebdc73cdab592136b0582e23ad274b8d4f435759b5906692577e1"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_manager.py",
-          "sha256": "5d5ac88de4dde6349d31ec41431b34b4be48e5150e8ad4663759842ce70a626e"
+          "sha256": "28dad5586bb9ef50ae0a7cdc30c4294868d92d89284e4775a84a7f4541441ef9"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_params.py",
-          "sha256": "872c3aa670bcba9064a055542772c7f21048207acdc22a9aa9c632cc8232afa6"
+          "sha256": "a0c4b8cb2f4763835c4ebded2f1272235182e1c759e46cc3ad43f425ac5f5261"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_text_extractor.py",
-          "sha256": "b54a9bbc2ebd305706406501b7f63caeab1535ffbcb0c171003c8a9da8b4a232"
+          "sha256": "8e13a075dc992d1ecdd658f840607107a2a61f63202bf2007e5ad97e82650e12"
         },
         {
           "path": "workspace/vendor/pypdf/_utils.py",
-          "sha256": "2df8188c0ad153b97d19201bb681b3bbdbd507e7243e2d657b4eb543a7072656"
+          "sha256": "451a37fa5e6765a5e2dbf8014564b4e3e3bac43651d8b2318a4277ab4003ae19"
         },
         {
           "path": "workspace/vendor/pypdf/_version.py",
-          "sha256": "2416f2ebd53fb332339ad719e9569c95eedc0157bb9e1573ee0205d0d07716aa"
+          "sha256": "3a227d5c7fd3409a87a53f5d2ff97faab164a7bf985b755591533dd7586701d7"
         },
         {
           "path": "workspace/vendor/pypdf/_writer.py",
-          "sha256": "1819e02d0b0bcd9c1fa483dc5c22e2a7849be22c93474c33c235dd6dd076a4e3"
+          "sha256": "9fff679312b41b2fa5b7fe8998f6a161494fa27fc09b0dc4e312c6cd089808f5"
+        },
+        {
+          "path": "workspace/vendor/pypdf/actions/__init__.py",
+          "sha256": "d8bdd81ef60846bab097640490991e4b63bd6b521eb0356ed696e24854299518"
+        },
+        {
+          "path": "workspace/vendor/pypdf/actions/_actions.py",
+          "sha256": "9ad300bde70c006ba9484e0d78296103c0dcdafa75038248f3bde6a988cd6c4b"
         },
         {
           "path": "workspace/vendor/pypdf/annotations/__init__.py",
@@ -2157,19 +2191,19 @@
         },
         {
           "path": "workspace/vendor/pypdf/annotations/_base.py",
-          "sha256": "79ea1cf6fdb0d798c05212978f8f25d5b07ae98801815fb6bf92085091febf0b"
+          "sha256": "608453cd3764aa3f035164939b2d1fae47d3af88e87b91d41b344e5287f8a08a"
         },
         {
           "path": "workspace/vendor/pypdf/annotations/_markup_annotations.py",
-          "sha256": "b162a1181086ed7f688c0bc4691304a093fe7d8e8572b94574e9ad79f219066d"
+          "sha256": "c210635217f7c5195cae67829cd82a1679ad2767fb07c2289f82b8e88f74a079"
         },
         {
           "path": "workspace/vendor/pypdf/annotations/_non_markup_annotations.py",
-          "sha256": "676214bdc08e713729261497adec7ff6b8983360fae17c4543fbda735d013515"
+          "sha256": "fd2cd3ce864ce01dff1bf57a33ff266c9e7b630d2d024f601db347ea5211ab70"
         },
         {
           "path": "workspace/vendor/pypdf/constants.py",
-          "sha256": "9f672ef873a6a16e7feb14165442a8e36ad2249d0ff7484bd6cf33fa9174a1cb"
+          "sha256": "579bd3b09defab4b63ac63f7effb4713ade10722c8c7799b8566aa80917c3624"
         },
         {
           "path": "workspace/vendor/pypdf/errors.py",
@@ -2177,63 +2211,71 @@
         },
         {
           "path": "workspace/vendor/pypdf/filters.py",
-          "sha256": "237c2d528bdaeccdd68233730b2a74ac634854a9899a34bcebc8d8af5c0b347f"
+          "sha256": "7567a0838190cd5e03508d9e945ab11bf4fe1822a80834b5bf958c58efa76aa9"
         },
         {
           "path": "workspace/vendor/pypdf/generic/__init__.py",
-          "sha256": "56ba9d61fb5010278f0d4dab5d532012a45a60547ccce57f7ef260a35f71feec"
+          "sha256": "3bbfbe5ca9a0e6fd1f3f7718960def531794e3c35ceec6b204cb03119eb546b5"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_appearance_stream.py",
-          "sha256": "31c0cbd2070a34df4d5cd53a64fc60b7b398a25dbe168356615980c20030e0f3"
+          "sha256": "4f572ec49a2c290b0389ed7b30758ac21855f1c3b8efc71eeb013e29ebfe22b4"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_base.py",
-          "sha256": "f488de45b70b1eb73f94b1947d564c8ee83ca3eb7af17ece35295f9c32a73e64"
+          "sha256": "90c50d931fdc97db44bf57894fa2fe6239ece307e1b831896e54e5c2de6698b7"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_color.py",
+          "sha256": "2b10852d96453098d4b9b2f437ad85042a552b37038403c1f6719ba29e3c795c"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_data_structures.py",
-          "sha256": "35f76eb49aa9f253fb1cd3e5eb9e3875b80f9bbc2616c755e376bde054e7b782"
+          "sha256": "68e58bac82fde745fbc3fdb4f84dd1a67b4cd819065499c5b4d9d41eef781841"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_files.py",
-          "sha256": "36d4a4468e890608ac8b840ecab56778ef3dd5ba15b2e636e614708a3e97f510"
+          "sha256": "d28b3ece6aa1cec4ed623e83ab52e2cd70fd592118e5855508415352223d9ebd"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_fit.py",
-          "sha256": "5ff8800c98f5618e0f512b52eeb1560b6c51d8b5154af2ad500932d001402033"
+          "sha256": "607a2571a31e1c67d84fdb0d1a3dbfd04b52a09619d9a261b4aa9525c03887f9"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_font.py",
+          "sha256": "21c48386bbf2a91b23f482bb8f5049c743a8fd6f1d965f8f3194846367a3a4f5"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_image_inline.py",
-          "sha256": "2a5000fd91a2446ce368f1b74af6eda8619e36a6d065517e515536302f2efd28"
+          "sha256": "a708cc06e98c88b0972a6367e6513282b0fd35599c8429c26ff0573a0058f7cc"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_image_xobject.py",
-          "sha256": "7f560334bae2f927a5faaa72ca75c0ee7c7e662493a8061433ce9338414883af"
+          "sha256": "4217d830e34cb64e02e692ffbf9b6718fc3a8637b6370077341dca759eefa432"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_link.py",
-          "sha256": "b4da99d86616c6a80566c948d032d97a85e59ed6b182c1c2f1791615f496c781"
+          "sha256": "90835ae593a2a461f163f616fdf231178cf44d134a970c388d161a1822d34116"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_outline.py",
-          "sha256": "a8a6cc5f8d8e59faa7a2922213a054cba12f7532c67b766d8da89637ce49a5a6"
+          "sha256": "3c4b924f86fe2a6010203009d05872c4dec036626376c59a4ddc4aa3b862ab78"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_rectangle.py",
-          "sha256": "94ea927c58af43180137d2d4f5aa87a313c7f1a08f4c350d81166c34451de9f7"
+          "sha256": "ec7ac97ce31ab906ad0368245a17074a4cc1ec5e245a671afba90d03a1d5a3a3"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_utils.py",
-          "sha256": "bd30c07ac7c6f9c24d0ca8a5cff91b805a1d0084f37797a3a695871a3bc2a279"
+          "sha256": "33c8bde72a42e65d9eef5d74f157aaf74bdb6d4b65427beefbe256fc0b32c793"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_viewerpref.py",
-          "sha256": "b6a5445a6bddfc359316848ca51393b25d528a338d9ef71267e8d74e8fdc8cea"
+          "sha256": "20912ec8cd304ebd6a36004e0bede202e3c1e4f9630ee771f7de14a2c3eb05dc"
         },
         {
           "path": "workspace/vendor/pypdf/pagerange.py",
-          "sha256": "d9bb76d634199bef5aab66d57f74d7b87f3fc06571edbf53e94acc1570842614"
+          "sha256": "0209c3144e2959cf34d1800cfec3dc1afcb6f747f70f93588abaf6e478753b46"
         },
         {
           "path": "workspace/vendor/pypdf/papersizes.py",
@@ -2249,7 +2291,7 @@
         },
         {
           "path": "workspace/vendor/pypdf/xmp.py",
-          "sha256": "00289e95b3fb680b03cb67e67b8a3d61de32ec7e0a7c46d4337494c4c97c8c8e"
+          "sha256": "0fb1996e355223d8ad669d289f16eb7e0ad9cd3314e8005cdb4c03defd876fea"
         },
         {
           "path": "workspace/visual-restoration.css",
@@ -3569,17 +3611,18 @@
       "edition_overlays": [
         "exact-shared-body-plus-Free-only-terminal-binding",
         "retain-Free28-owner-index",
-        "omit-four-Emergent-only-product-references"
+        "omit-four-Emergent-only-product-references",
+        "boundary-repair-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/nova",
       "imported_tree": {
         "file_count": 51,
-        "tree_sha256": "a22d4e79caaaab68183d54557ac4918d24fb7c1ef4279fb31b8a538ee4180f9b"
+        "tree_sha256": "3fe14e094c968b95dacbbf417a7bbaf5ca1d9069de439c57767c02783e5ff51a"
       },
       "selection": [
         {
           "path": "SKILL.md",
-          "sha256": "4de20f4a98d8838f41fc51d5d5dc3482897f4abf151386f32fd9e307a03f183a"
+          "sha256": "8db736b2218c95fa6fdce744623371a7ce88401a2e633045049124454f30b356"
         },
         {
           "path": "agents/openai.yaml",
@@ -3651,7 +3694,7 @@
         },
         {
           "path": "references/edition/index.md",
-          "sha256": "74c153d82e4df185d82add4a3b72823ea45aedf62aa4974d81c30ee78629eb41"
+          "sha256": "04452311edf37b1f6b6667611e0d637cbd3eecc07898bfb4b4496b0ce3b72171"
         },
         {
           "path": "references/mind/core-adaptation-ledger.json",
@@ -3910,14 +3953,63 @@
       "source_state": "accepted_component_overlay_applied_to_current_selected_skill",
       "composition_origin": "exact-accepted-current-owner",
       "edition_overlays": [
-        "accepted-component-archive-sha256:1c59c7673ced19077df329812d7cf187f78ac1aef820cfaf8d5c4cb590090575"
+        "accepted-component-archive-sha256:1c59c7673ced19077df329812d7cf187f78ac1aef820cfaf8d5c4cb590090575",
+        "boundary-repair-20261027"
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/omnara-deep-research",
       "imported_tree": {
-        "file_count": 183,
-        "tree_sha256": "576861f4bbedf4be9eec8a7e160cade96d78ea7109eeace2ce68f523f636d8bd"
+        "file_count": 191,
+        "tree_sha256": "9ef250a500ede08f3fcc8fbb18c5e60ea51bd8f0504b239c1d40eb87cfb1ba7c"
       },
       "selection": [
+        {
+          "path": "CONTRIBUTING.md",
+          "sha256": "0ccbfd8b6b762d174064b7ec6d789dfebc2400b2634788e989b74fb874ca4084"
+        },
+        {
+          "path": "LICENSE.md",
+          "sha256": "2fca94eb398b7232ffef41f9cb0aaaca84afde2ce50a55bd1053acb73e85b10b"
+        },
+        {
+          "path": "Open.cmd",
+          "sha256": "aa55ea1a9a003516fddf2ba47701b2ce1a8aaa7ace634b49658a97dae7eebc0e"
+        },
+        {
+          "path": "Open.command",
+          "sha256": "6967b4d0ff9ed5293953ecd2d0fd073943dbbe90ce5dd5e86f38e848dfa014d2"
+        },
+        {
+          "path": "PACKAGE-CONTENTS.json",
+          "sha256": "012cdbe9b4544ab2e6692816a108b2e5185a769b71f57b81c71c9efec5718fce"
+        },
+        {
+          "path": "README.md",
+          "sha256": "8f6597336c6014a0fb3214735dbf5d95600715365e44e3cd8bcd7c6117059596"
+        },
+        {
+          "path": "RELEASE-NOTES.md",
+          "sha256": "4c04f5a7994691cedcadc47a29b5d2ade602d01a10f78736bbde85d19c2dc276"
+        },
+        {
+          "path": "SECURITY.md",
+          "sha256": "7fc9ec35941abafd70a97db804096e1b792d5d8081f0e941ea2ebdebedc82739"
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "85c181b6c6365208f8ebbde8ff52b76552cb02e9d0fbc6c88af7dfc37aec091e"
+        },
+        {
+          "path": "START-HERE.md",
+          "sha256": "162669fe7029d288efb257415c14e910ebc98ac657239fd7009500ea1efba939"
+        },
+        {
+          "path": "SUPPORT.md",
+          "sha256": "d239f876c19d69b353b5391ddecc9cd1ff617ecc4fa7cf80549847b0a8fa5195"
+        },
+        {
+          "path": "VERSION",
+          "sha256": "acb57a7135b2d7d6e665f67f056e21353023b93835f54def1ae523bf76f1bfb3"
+        },
         {
           "path": "agents/openai.yaml",
           "sha256": "83101cd935e2a64da42ddc4af3b823fc991547e68d2ecfa960f110d08d20308e"
@@ -3983,10 +4075,6 @@
           "sha256": "ecd7e812f9ff4b0e34a11587965f0dfa4751cb6ab66548d6a7d762924edb8e3b"
         },
         {
-          "path": "CONTRIBUTING.md",
-          "sha256": "0ccbfd8b6b762d174064b7ec6d789dfebc2400b2634788e989b74fb874ca4084"
-        },
-        {
           "path": "docs/.nojekyll",
           "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
         },
@@ -3999,36 +4087,12 @@
           "sha256": "c5453d82a83e0e43c2b8fa6a5bd52f5090c472124faedaf8c99a5b22d76c054b"
         },
         {
-          "path": "docs/assets/omnara-pages-hero.png",
-          "sha256": "351df35906ec321c9d69cdb8d772b2bd914138ab0955f99e6530d8bae898b615"
-        },
-        {
-          "path": "docs/assets/omnara-readme-hero.png",
-          "sha256": "d018e1e1a8d388628f117ac2c174511c83f0a8d9d613cb5d422abc6e3a892392"
-        },
-        {
-          "path": "docs/assets/omnara-social-card.png",
-          "sha256": "18aede37df70582bd4d5fbe138b1c4cc251c4c63e2ddc13be822ca3143475b16"
-        },
-        {
-          "path": "docs/assets/omnara.ico",
-          "sha256": "968853189f9afc892206d3132e82d83ffb26fd1af476e263d41b207cc1d98cfc"
-        },
-        {
           "path": "docs/CAMPAIGN-ROOM.md",
           "sha256": "6602892799f2d4cf0957eeac659ec0d8b20ccf9e6ce1a94129111c714616302b"
         },
         {
           "path": "docs/CAMPAIGN-VAULT.md",
           "sha256": "300cfd7cc1478c4b98d08f53b0c2c740d46855acc45d6e3889c4e175034dcb20"
-        },
-        {
-          "path": "docs/index.html",
-          "sha256": "68699ef4d3850fdab60d24b816b41c780400a88ad99ac43d2148f88f849d43af"
-        },
-        {
-          "path": "docs/install.html",
-          "sha256": "25d552b5d2af54f26277532e7937d63206c9591fb496d30a238ca4ee038a5aab"
         },
         {
           "path": "docs/INSTALLATION.md",
@@ -4063,20 +4127,8 @@
           "sha256": "95c7813b267496b9988845e7d9e1db89ebc8e6f13d6f8e1cc0a666c8a2369199"
         },
         {
-          "path": "docs/style.css",
-          "sha256": "62b2225e38f7e17909a03bba4ee56bfbcb1a6bdd6eb235ffdc8fa71ea53f91c2"
-        },
-        {
-          "path": "docs/support.html",
-          "sha256": "3cba0ef5b29e45e87d39d7e1ba4ff68ff7efc27b9c794e545947ed97152beee7"
-        },
-        {
           "path": "docs/TROUBLESHOOTING.md",
           "sha256": "ca37f0a81732cf7bea1bb2e929e2bb29e12b68c0354ade36c79e219073f4b101"
-        },
-        {
-          "path": "docs/trust.html",
-          "sha256": "6a3187094031e0d15889132b99b84f08e5c3ac22bd5534d713716e4d1cac998c"
         },
         {
           "path": "docs/VALIDATION.md",
@@ -4085,6 +4137,42 @@
         {
           "path": "docs/WORKFLOW.md",
           "sha256": "4e860386927a5d99db4051336598fb2dfafbb34beea7daf2890fc0497518269f"
+        },
+        {
+          "path": "docs/assets/omnara-pages-hero.png",
+          "sha256": "351df35906ec321c9d69cdb8d772b2bd914138ab0955f99e6530d8bae898b615"
+        },
+        {
+          "path": "docs/assets/omnara-readme-hero.png",
+          "sha256": "d018e1e1a8d388628f117ac2c174511c83f0a8d9d613cb5d422abc6e3a892392"
+        },
+        {
+          "path": "docs/assets/omnara-social-card.png",
+          "sha256": "18aede37df70582bd4d5fbe138b1c4cc251c4c63e2ddc13be822ca3143475b16"
+        },
+        {
+          "path": "docs/assets/omnara.ico",
+          "sha256": "968853189f9afc892206d3132e82d83ffb26fd1af476e263d41b207cc1d98cfc"
+        },
+        {
+          "path": "docs/index.html",
+          "sha256": "68699ef4d3850fdab60d24b816b41c780400a88ad99ac43d2148f88f849d43af"
+        },
+        {
+          "path": "docs/install.html",
+          "sha256": "25d552b5d2af54f26277532e7937d63206c9591fb496d30a238ca4ee038a5aab"
+        },
+        {
+          "path": "docs/style.css",
+          "sha256": "62b2225e38f7e17909a03bba4ee56bfbcb1a6bdd6eb235ffdc8fa71ea53f91c2"
+        },
+        {
+          "path": "docs/support.html",
+          "sha256": "3cba0ef5b29e45e87d39d7e1ba4ff68ff7efc27b9c794e545947ed97152beee7"
+        },
+        {
+          "path": "docs/trust.html",
+          "sha256": "6a3187094031e0d15889132b99b84f08e5c3ac22bd5534d713716e4d1cac998c"
         },
         {
           "path": "docs/workflows.html",
@@ -4187,28 +4275,8 @@
           "sha256": "44266ef86b073932c8eca8374403ab02b2bd473106bea82bf5b45753d469259a"
         },
         {
-          "path": "LICENSE.md",
-          "sha256": "2fca94eb398b7232ffef41f9cb0aaaca84afde2ce50a55bd1053acb73e85b10b"
-        },
-        {
-          "path": "Open.cmd",
-          "sha256": "aa55ea1a9a003516fddf2ba47701b2ce1a8aaa7ace634b49658a97dae7eebc0e"
-        },
-        {
-          "path": "Open.command",
-          "sha256": "6967b4d0ff9ed5293953ecd2d0fd073943dbbe90ce5dd5e86f38e848dfa014d2"
-        },
-        {
-          "path": "PACKAGE-CONTENTS.json",
-          "sha256": "012cdbe9b4544ab2e6692816a108b2e5185a769b71f57b81c71c9efec5718fce"
-        },
-        {
           "path": "personas/omnara-investigative-research-intelligence.md",
           "sha256": "8f4eec745c37d4dedc8253188fd882f345914a28d94425cfe5724db3a031989f"
-        },
-        {
-          "path": "README.md",
-          "sha256": "8f6597336c6014a0fb3214735dbf5d95600715365e44e3cd8bcd7c6117059596"
         },
         {
           "path": "references/campaign-operations.md",
@@ -4251,10 +4319,6 @@
           "sha256": "29defbe80dc94f732f0ee5da00116d9fbf3517b29d28de44f767ae74dffa3807"
         },
         {
-          "path": "RELEASE-NOTES.md",
-          "sha256": "4c04f5a7994691cedcadc47a29b5d2ade602d01a10f78736bbde85d19c2dc276"
-        },
-        {
           "path": "schemas/research-campaign.schema.json",
           "sha256": "877d13825fe51483737b3b16a1057b31d74f9f1ba72556312535ff9bef6d21c8"
         },
@@ -4295,28 +4359,16 @@
           "sha256": "1a04770b0c07d258b6cde0b41d4f54d387e1134670dc9ae1d197c33beef19de0"
         },
         {
-          "path": "SECURITY.md",
-          "sha256": "7fc9ec35941abafd70a97db804096e1b792d5d8081f0e941ea2ebdebedc82739"
-        },
-        {
-          "path": "SKILL.md",
-          "sha256": "85c181b6c6365208f8ebbde8ff52b76552cb02e9d0fbc6c88af7dfc37aec091e"
-        },
-        {
-          "path": "START-HERE.md",
-          "sha256": "162669fe7029d288efb257415c14e910ebc98ac657239fd7009500ea1efba939"
-        },
-        {
-          "path": "SUPPORT.md",
-          "sha256": "d239f876c19d69b353b5391ddecc9cd1ff617ecc4fa7cf80549847b0a8fa5195"
-        },
-        {
           "path": "verification/documentation-review.md",
           "sha256": "3efffbf7f841880133eca9fecdf8d14b1a1e622daed05fdb98055003abed6f88"
         },
         {
-          "path": "VERSION",
-          "sha256": "acb57a7135b2d7d6e665f67f056e21353023b93835f54def1ae523bf76f1bfb3"
+          "path": "workspace/README.md",
+          "sha256": "760a1a28d1d176db67a15def6d118efec7b3c6c9293b23e6d8139102a82ff853"
+        },
+        {
+          "path": "workspace/WORKING-GUIDE.md",
+          "sha256": "21e1fdb2c168c43952974234682881a172c251e017f80e956cc368c9165252c2"
         },
         {
           "path": "workspace/advanced.html",
@@ -4367,6 +4419,10 @@
           "sha256": "fdf351f9a2a31344a7daeb395af7ba421dd8d82e0a37096183d11eb5c718b69e"
         },
         {
+          "path": "workspace/omnara_app.py",
+          "sha256": "28d74c123848ef4080cefcc2856230cb59b262b015bcf89990faf567993e5065"
+        },
+        {
           "path": "workspace/open.py",
           "sha256": "0abe0efe558ea399cb63412aecc34e236c96c65d2873cb96202e6c232b7b3b03"
         },
@@ -4387,10 +4443,6 @@
           "sha256": "cf5abdd4474dd9e3da556618d3daf6f88d5514d3346998131ac89134597f0101"
         },
         {
-          "path": "workspace/README.md",
-          "sha256": "760a1a28d1d176db67a15def6d118efec7b3c6c9293b23e6d8139102a82ff853"
-        },
-        {
           "path": "workspace/runtime.py",
           "sha256": "6d0df2946dd88664ebac9c19779bed40046f6c86c717ab5d936f86cd2785b947"
         },
@@ -4403,28 +4455,48 @@
           "sha256": "2814b6f1f82d7302f70a65f94c748236c27fdfe35e9e56905e351f931b2bdb32"
         },
         {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/METADATA",
+          "sha256": "9011b30e80b0f8b61bc5d1e9542dcc8378a19886b2de297b800c1318d51df564"
+        },
+        {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/RECORD",
+          "sha256": "b11fbf4dd1fd2bfdff4ed7e87842aeadb2bc3a594dcdcca286128db0f0e537d8"
+        },
+        {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/WHEEL",
+          "sha256": "96a37c8d7b7f425a05386731f644adbd66ebca17c45e8236176cfe614466df9d"
+        },
+        {
+          "path": "workspace/vendor/pypdf-6.21.2.dist-info/licenses/LICENSE",
+          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
+        },
+        {
+          "path": "workspace/vendor/pypdf-LICENSE",
+          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
+        },
+        {
           "path": "workspace/vendor/pypdf/__init__.py",
-          "sha256": "612ff566b4378c13c7b1180cb2da89ac0b6cde5500a63fe530e30ae6a88b1b9c"
+          "sha256": "d7786f1b3cb2e52e28b1085f0ea150fa7f029baad252b29af7415c790871f7df"
         },
         {
           "path": "workspace/vendor/pypdf/_cmap.py",
-          "sha256": "0b8eea205808d522a7e4bad3e222b39c6964752b58a3a3b7259904292ee09241"
+          "sha256": "6529a007c5c2708e7722dbf191fa005859ae5c2990c1ad7c07c2052d6c9bcb0b"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/__init__.py",
-          "sha256": "035d44440b70b56ae91953b34d296b0b56b74fd1c29562c1591c067b7fcf7eed"
+          "sha256": "bd56ce01215af54c771e42b4228dd415aba640fe0970d2f1f63341353351d980"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/_codecs.py",
-          "sha256": "e3aa11649c92c06c42269d648c87abee3b3f4d84a38f81acda2d9471edeff9e1"
+          "sha256": "ead39a397326cd52a6e0a433e33bbf6cd0cae6e24fb6ab06b93e069c4a764c43"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/adobe_glyphs.py",
-          "sha256": "b7770314f0eac08cf5c3d07481d5738dd73c7842bd02e4639397fb95a130fdf6"
+          "sha256": "69ac4e46ea50409ee46cb0c76e35a280b67aa60f06f7fe5ea832a2349c72923e"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/core_font_metrics.py",
-          "sha256": "14b3d66d3678871790597820d63a397b8a972821642846397bce54d9b2c533a9"
+          "sha256": "dbb26cac9a39511246215ed90ce09427259f066e8b0567aaeefdce5b3a05f21f"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/pdfdoc.py",
@@ -4436,95 +4508,103 @@
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/symbol.py",
-          "sha256": "9c86864089615822623cc1ebc149661871fefdf397c842af82e466b8a5dc1809"
+          "sha256": "08fe958d172c72b9bcca6007f74c6977155a7a5c22e8c49bd536f5c0d0e1d359"
         },
         {
           "path": "workspace/vendor/pypdf/_codecs/zapfding.py",
-          "sha256": "3d0c63c510bad7a778d711777b15713f55bc9cce10ad97e33b7966b4bc6913fb"
+          "sha256": "e39a9c635d716c1c2da21ebfb7467fef33631bbfaa238d752d14155d828faf65"
+        },
+        {
+          "path": "workspace/vendor/pypdf/_configuration.py",
+          "sha256": "bb46eff45e5d8dcd4a88f4c5f4b57e3c58f25a8798852b2ae83c4626b191f2ce"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/__init__.py",
-          "sha256": "2b767a02e5e15d579780b7adf93ba4ab682df47eba3a076ea6cbf1212d429a42"
+          "sha256": "c5441b160310bca31a38e4f7454756ddb4bc7d94a147c3c13b3eab7ac7f05855"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_base.py",
-          "sha256": "fdfe77323eaf8af84464c438bcdc4de46d083a0158fa7e7f95e91ed1cfea88d5"
+          "sha256": "34505711d85bae0f64d353d57cd37f93b94401897606481720e8b9a1f53ff91f"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_cryptography.py",
-          "sha256": "f733a4933312b17e1a974454934a8cd1d29f7dc1e47b8c1f9845caf64c28450f"
+          "sha256": "33183bb4201aa15e950085a97ee874e2af254be0aaeb9ab0de643d7e93100526"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_fallback.py",
-          "sha256": "bec628a30475602015feaf87add21986451cac26fa1ef44134c626d3742d094f"
+          "sha256": "81772ba3f2bbab82180cbe57195471a059978d75cc6ba4e57830f0c56c828f81"
         },
         {
           "path": "workspace/vendor/pypdf/_crypt_providers/_pycryptodome.py",
-          "sha256": "bb8bed2e8ecdbfa02a6513671f5a0d3425af4d86a8c1f4957febe5916def4fab"
+          "sha256": "bd9102129a13f4ebe9a46ebb74aec456de51e5aa491bd5fce588a3479ed2a6f6"
         },
         {
           "path": "workspace/vendor/pypdf/_doc_common.py",
-          "sha256": "54a5f4cd06ba5f658a9ed175b9c6224134b3dcf9f98ab11fc4da1f36e02a262e"
+          "sha256": "ece49395930e1fe657a9540466188fe42091ffe2b448afdef8883ad1894e086b"
         },
         {
           "path": "workspace/vendor/pypdf/_encryption.py",
-          "sha256": "319f3e012455b473ceb9c51df87f4a45f94eab902f88f14f8e5769901540a1ce"
-        },
-        {
-          "path": "workspace/vendor/pypdf/_font.py",
-          "sha256": "50ad53071d7979e53daa4661bf38a0e1823eb6365382007eca20b414b73767bb"
+          "sha256": "f10a2d457faf30ec041d38c50084fa9ebac05609f18a69ddb327970d7583f041"
         },
         {
           "path": "workspace/vendor/pypdf/_page.py",
-          "sha256": "f93c459a77c433dbd2541e94d1fdfa599e486ca5fe3e3efe9348eaf94552639c"
+          "sha256": "ad59b17c00677813aa7da96c721385c729637a0845056e4de69af928b753227a"
         },
         {
           "path": "workspace/vendor/pypdf/_page_labels.py",
-          "sha256": "bfa0a9bba3495c2f5143f05e19d866d39695f19eb3c623d1367eaa129d41b951"
+          "sha256": "55ae47e2e1fcec75ea33d3f97478c1fae1684883414cd8ee04a0a066dec40e06"
         },
         {
           "path": "workspace/vendor/pypdf/_protocols.py",
-          "sha256": "eeacfdd8b55d3eb6244a97543e9029f54e065b98f13414df55ca545b052110ea"
+          "sha256": "4e4ea32b83d1f71cc4ec44e7a9a7f6ef5494299913b3a2254672d118f9588ff7"
         },
         {
           "path": "workspace/vendor/pypdf/_reader.py",
-          "sha256": "9aaa6780e62c061509f0d3b658dbdac185404fecadac01f7f9d35ac009ce2024"
+          "sha256": "0f65aa59c8b2dc89b67a07a076de21ccab56a7a385d52220f260b5fce366b066"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/__init__.py",
-          "sha256": "6b7677deb4154e230a1adc2deff6df5e53e8b1b493f2bcc42e8367b74e77fd0c"
+          "sha256": "08ee4beeccbae52c021c87c61eed6f9bbfeaef5a9ea1f994170921a2de15e4fb"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/__init__.py",
-          "sha256": "454408c22530ce778db5c9639d533a8e445a7a6ea980fee6383dbe3019ada6fc"
+          "sha256": "56adb80f37575f9af91995d319579011c9212ed332099acdf207db4a506efecc"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_fixed_width_page.py",
-          "sha256": "789bde0dbc8ca281bdef4a893a13394706fd668cb2243ca7cd6a55f5aec84b6d"
+          "sha256": "514b42d0e71ebdc73cdab592136b0582e23ad274b8d4f435759b5906692577e1"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_manager.py",
-          "sha256": "5d5ac88de4dde6349d31ec41431b34b4be48e5150e8ad4663759842ce70a626e"
+          "sha256": "28dad5586bb9ef50ae0a7cdc30c4294868d92d89284e4775a84a7f4541441ef9"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_layout_mode/_text_state_params.py",
-          "sha256": "872c3aa670bcba9064a055542772c7f21048207acdc22a9aa9c632cc8232afa6"
+          "sha256": "a0c4b8cb2f4763835c4ebded2f1272235182e1c759e46cc3ad43f425ac5f5261"
         },
         {
           "path": "workspace/vendor/pypdf/_text_extraction/_text_extractor.py",
-          "sha256": "b54a9bbc2ebd305706406501b7f63caeab1535ffbcb0c171003c8a9da8b4a232"
+          "sha256": "8e13a075dc992d1ecdd658f840607107a2a61f63202bf2007e5ad97e82650e12"
         },
         {
           "path": "workspace/vendor/pypdf/_utils.py",
-          "sha256": "2df8188c0ad153b97d19201bb681b3bbdbd507e7243e2d657b4eb543a7072656"
+          "sha256": "451a37fa5e6765a5e2dbf8014564b4e3e3bac43651d8b2318a4277ab4003ae19"
         },
         {
           "path": "workspace/vendor/pypdf/_version.py",
-          "sha256": "2416f2ebd53fb332339ad719e9569c95eedc0157bb9e1573ee0205d0d07716aa"
+          "sha256": "3a227d5c7fd3409a87a53f5d2ff97faab164a7bf985b755591533dd7586701d7"
         },
         {
           "path": "workspace/vendor/pypdf/_writer.py",
-          "sha256": "1819e02d0b0bcd9c1fa483dc5c22e2a7849be22c93474c33c235dd6dd076a4e3"
+          "sha256": "9fff679312b41b2fa5b7fe8998f6a161494fa27fc09b0dc4e312c6cd089808f5"
+        },
+        {
+          "path": "workspace/vendor/pypdf/actions/__init__.py",
+          "sha256": "d8bdd81ef60846bab097640490991e4b63bd6b521eb0356ed696e24854299518"
+        },
+        {
+          "path": "workspace/vendor/pypdf/actions/_actions.py",
+          "sha256": "9ad300bde70c006ba9484e0d78296103c0dcdafa75038248f3bde6a988cd6c4b"
         },
         {
           "path": "workspace/vendor/pypdf/annotations/__init__.py",
@@ -4532,19 +4612,19 @@
         },
         {
           "path": "workspace/vendor/pypdf/annotations/_base.py",
-          "sha256": "79ea1cf6fdb0d798c05212978f8f25d5b07ae98801815fb6bf92085091febf0b"
+          "sha256": "608453cd3764aa3f035164939b2d1fae47d3af88e87b91d41b344e5287f8a08a"
         },
         {
           "path": "workspace/vendor/pypdf/annotations/_markup_annotations.py",
-          "sha256": "b162a1181086ed7f688c0bc4691304a093fe7d8e8572b94574e9ad79f219066d"
+          "sha256": "c210635217f7c5195cae67829cd82a1679ad2767fb07c2289f82b8e88f74a079"
         },
         {
           "path": "workspace/vendor/pypdf/annotations/_non_markup_annotations.py",
-          "sha256": "676214bdc08e713729261497adec7ff6b8983360fae17c4543fbda735d013515"
+          "sha256": "fd2cd3ce864ce01dff1bf57a33ff266c9e7b630d2d024f601db347ea5211ab70"
         },
         {
           "path": "workspace/vendor/pypdf/constants.py",
-          "sha256": "9f672ef873a6a16e7feb14165442a8e36ad2249d0ff7484bd6cf33fa9174a1cb"
+          "sha256": "579bd3b09defab4b63ac63f7effb4713ade10722c8c7799b8566aa80917c3624"
         },
         {
           "path": "workspace/vendor/pypdf/errors.py",
@@ -4552,63 +4632,71 @@
         },
         {
           "path": "workspace/vendor/pypdf/filters.py",
-          "sha256": "237c2d528bdaeccdd68233730b2a74ac634854a9899a34bcebc8d8af5c0b347f"
+          "sha256": "7567a0838190cd5e03508d9e945ab11bf4fe1822a80834b5bf958c58efa76aa9"
         },
         {
           "path": "workspace/vendor/pypdf/generic/__init__.py",
-          "sha256": "56ba9d61fb5010278f0d4dab5d532012a45a60547ccce57f7ef260a35f71feec"
+          "sha256": "3bbfbe5ca9a0e6fd1f3f7718960def531794e3c35ceec6b204cb03119eb546b5"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_appearance_stream.py",
-          "sha256": "31c0cbd2070a34df4d5cd53a64fc60b7b398a25dbe168356615980c20030e0f3"
+          "sha256": "4f572ec49a2c290b0389ed7b30758ac21855f1c3b8efc71eeb013e29ebfe22b4"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_base.py",
-          "sha256": "f488de45b70b1eb73f94b1947d564c8ee83ca3eb7af17ece35295f9c32a73e64"
+          "sha256": "90c50d931fdc97db44bf57894fa2fe6239ece307e1b831896e54e5c2de6698b7"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_color.py",
+          "sha256": "2b10852d96453098d4b9b2f437ad85042a552b37038403c1f6719ba29e3c795c"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_data_structures.py",
-          "sha256": "35f76eb49aa9f253fb1cd3e5eb9e3875b80f9bbc2616c755e376bde054e7b782"
+          "sha256": "68e58bac82fde745fbc3fdb4f84dd1a67b4cd819065499c5b4d9d41eef781841"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_files.py",
-          "sha256": "36d4a4468e890608ac8b840ecab56778ef3dd5ba15b2e636e614708a3e97f510"
+          "sha256": "d28b3ece6aa1cec4ed623e83ab52e2cd70fd592118e5855508415352223d9ebd"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_fit.py",
-          "sha256": "5ff8800c98f5618e0f512b52eeb1560b6c51d8b5154af2ad500932d001402033"
+          "sha256": "607a2571a31e1c67d84fdb0d1a3dbfd04b52a09619d9a261b4aa9525c03887f9"
+        },
+        {
+          "path": "workspace/vendor/pypdf/generic/_font.py",
+          "sha256": "21c48386bbf2a91b23f482bb8f5049c743a8fd6f1d965f8f3194846367a3a4f5"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_image_inline.py",
-          "sha256": "2a5000fd91a2446ce368f1b74af6eda8619e36a6d065517e515536302f2efd28"
+          "sha256": "a708cc06e98c88b0972a6367e6513282b0fd35599c8429c26ff0573a0058f7cc"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_image_xobject.py",
-          "sha256": "7f560334bae2f927a5faaa72ca75c0ee7c7e662493a8061433ce9338414883af"
+          "sha256": "4217d830e34cb64e02e692ffbf9b6718fc3a8637b6370077341dca759eefa432"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_link.py",
-          "sha256": "b4da99d86616c6a80566c948d032d97a85e59ed6b182c1c2f1791615f496c781"
+          "sha256": "90835ae593a2a461f163f616fdf231178cf44d134a970c388d161a1822d34116"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_outline.py",
-          "sha256": "a8a6cc5f8d8e59faa7a2922213a054cba12f7532c67b766d8da89637ce49a5a6"
+          "sha256": "3c4b924f86fe2a6010203009d05872c4dec036626376c59a4ddc4aa3b862ab78"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_rectangle.py",
-          "sha256": "94ea927c58af43180137d2d4f5aa87a313c7f1a08f4c350d81166c34451de9f7"
+          "sha256": "ec7ac97ce31ab906ad0368245a17074a4cc1ec5e245a671afba90d03a1d5a3a3"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_utils.py",
-          "sha256": "bd30c07ac7c6f9c24d0ca8a5cff91b805a1d0084f37797a3a695871a3bc2a279"
+          "sha256": "33c8bde72a42e65d9eef5d74f157aaf74bdb6d4b65427beefbe256fc0b32c793"
         },
         {
           "path": "workspace/vendor/pypdf/generic/_viewerpref.py",
-          "sha256": "b6a5445a6bddfc359316848ca51393b25d528a338d9ef71267e8d74e8fdc8cea"
+          "sha256": "20912ec8cd304ebd6a36004e0bede202e3c1e4f9630ee771f7de14a2c3eb05dc"
         },
         {
           "path": "workspace/vendor/pypdf/pagerange.py",
-          "sha256": "d9bb76d634199bef5aab66d57f74d7b87f3fc06571edbf53e94acc1570842614"
+          "sha256": "0209c3144e2959cf34d1800cfec3dc1afcb6f747f70f93588abaf6e478753b46"
         },
         {
           "path": "workspace/vendor/pypdf/papersizes.py",
@@ -4624,11 +4712,7 @@
         },
         {
           "path": "workspace/vendor/pypdf/xmp.py",
-          "sha256": "00289e95b3fb680b03cb67e67b8a3d61de32ec7e0a7c46d4337494c4c97c8c8e"
-        },
-        {
-          "path": "workspace/vendor/pypdf-LICENSE",
-          "sha256": "a97ac230e5f33ef10a5367a850eb01f91f1a0b064e34742c7794d2294557f524"
+          "sha256": "0fb1996e355223d8ad669d289f16eb7e0ad9cd3314e8005cdb4c03defd876fea"
         },
         {
           "path": "workspace/work.css",
@@ -4641,10 +4725,6 @@
         {
           "path": "workspace/work_io.py",
           "sha256": "3f1667f66e9d55d10ac0f750b5440427a8f6411fe8d5443021b6930b9d3bf1cc"
-        },
-        {
-          "path": "workspace/WORKING-GUIDE.md",
-          "sha256": "21e1fdb2c168c43952974234682881a172c251e017f80e956cc368c9165252c2"
         }
       ],
       "baseline_source_coordinates": {
@@ -5732,11 +5812,13 @@
       "id": "retrieval-intelligence",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
+      "edition_overlays": [
+        "boundary-repair-20261027"
+      ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/retrieval-intelligence",
       "imported_tree": {
-        "file_count": 14,
-        "tree_sha256": "9753a832a4865a30b53fbad63935accb5fb09ea3c7df8c20ef21d255ddc171fc"
+        "file_count": 18,
+        "tree_sha256": "5c39910fe2a09fa0f7709898f5ae895f17570de1480c71823843780f622aa77a"
       },
       "selection": [
         {
@@ -5761,7 +5843,7 @@
         },
         {
           "path": "references/media-evidence.md",
-          "sha256": "eaf61f6ed453031e7ff0c08a624b3e0dc8e9e2ca2f60745e33646b92eba4212f"
+          "sha256": "fdee6ff578cf27083810db555a0a5202b3af5e06132720fce8d8906ea4538348"
         },
         {
           "path": "references/retrieval-doctrine.md",
@@ -5772,8 +5854,20 @@
           "sha256": "7557c02a2f5c94850e24b216f5e2808e7dcc79108d7dcf6fe70e75766662626e"
         },
         {
+          "path": "requirements-capture.txt",
+          "sha256": "4f75ce26d185ee0db2db2aff75a33b9666e74fdaa321b4b464d4f31aa5254aba"
+        },
+        {
           "path": "requirements-media.txt",
-          "sha256": "34daa5c3f20fae0622d62d8645f79a1f1c8ffb821fa50d5f8c475d42c75ee562"
+          "sha256": "46e7d3e75df408936747f70ec901a20a2ebcee03bd380682a9780699e5162181"
+        },
+        {
+          "path": "requirements-transcribe-build.txt",
+          "sha256": "3436923f2710f6f3227e5c00213f0e5b37d70dcbb545491b2b23c0dfad2c8540"
+        },
+        {
+          "path": "requirements-transcribe.txt",
+          "sha256": "30b8cdc9670684c54ab5c4e1075e9030aec76ef3cb53b6f65eac96b507acf15a"
         },
         {
           "path": "scripts/evaluate_retrieval.py",
@@ -5781,15 +5875,19 @@
         },
         {
           "path": "scripts/media_evidence.py",
-          "sha256": "b83545f67e0731d14fc3556afba4ca74052671f08b901b28e2c2855e44e6546c"
+          "sha256": "653868da3141a1c5417457ca9abacdc2209f766b63113e3a67dd734cffb3c2ca"
         },
         {
           "path": "scripts/rag.py",
           "sha256": "21d4218022dd4b100c1e9b591784f1dee24f8d1a41a755d0ec4d73505772065e"
         },
         {
+          "path": "scripts/runtime_safety.py",
+          "sha256": "029e1f1ab24fb2ddea99911e8498d1293eb86fd86b995e5f4f3c38e590726e35"
+        },
+        {
           "path": "scripts/tests/test_media_evidence.py",
-          "sha256": "1477b4c0a7623200d109da48cb85672f11dce0c4126f2eb9f02ae04fb5b3eb0d"
+          "sha256": "bf6e60221ce2993db62ab761b908f20fe5af80a340857cba11bb89ab00347700"
         },
         {
           "path": "scripts/tests/test_rag_refresh.py",
@@ -5848,11 +5946,13 @@
       "id": "rupert-giles-knowledge-steward",
       "source_state": "prepared_current_estate_owner_selection",
       "composition_origin": "exact-accepted-shared-owner",
-      "edition_overlays": [],
+      "edition_overlays": [
+        "boundary-repair-20261027"
+      ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/rupert-giles-knowledge-steward",
       "imported_tree": {
         "file_count": 43,
-        "tree_sha256": "0c63386faf691ad9d942334137e392bf0559a09ab194954c427fd815f23b5fd7"
+        "tree_sha256": "1a751d5c285e9f24ae548a2827dd9eee951ce97f8f206c0a7c2a2cfefc88ce85"
       },
       "selection": [
         {
@@ -5925,7 +6025,7 @@
         },
         {
           "path": "requirements.txt",
-          "sha256": "3ec8922905dc4e3a10c3b46bd7fba023c37ffc309d51c6bed2a13ec3e98177fd"
+          "sha256": "84c2df9025c88d5c407bfbadc4b9079fee39dba00c79cdd40e4730719dcf8bd1"
         },
         {
           "path": "scripts/archive_reader.py",
@@ -5933,7 +6033,7 @@
         },
         {
           "path": "scripts/giles.py",
-          "sha256": "eabfb779b8eed2f330d1138510b1f3b208db4489e9f4c15cd13cdf72e7ac34b6"
+          "sha256": "f0a28e37ea5270da9b3ab349b495712c728a5fb74cac2b9584689d306289855e"
         },
         {
           "path": "tests/browser.cjs",
@@ -5957,7 +6057,7 @@
         },
         {
           "path": "tests/test_contents_work.py",
-          "sha256": "18eacc037fe86f72ca52e391695e5e447cfe934d355d6186bde920180d3debbf"
+          "sha256": "37699f5404e2977859ad01ef3f16bdaf79df3d9ad3ab79e29352dd8d3817a51a"
         },
         {
           "path": "tests/test_giles.py",
@@ -5973,7 +6073,7 @@
         },
         {
           "path": "workspace/README.md",
-          "sha256": "78cdc9ab2f5a944b3d03f2047e5884d7936bb9656ffbe049f88c36c48d4381df"
+          "sha256": "9929d892289cb664951424d6152285c8d88affaa982fc40a566119cb7e38c3a4"
         },
         {
           "path": "workspace/THEME-INDEX-CIRCUIT.md",
@@ -6597,14 +6697,22 @@
     "boundary": "Current identity annotations only; no standalone overwrite of maintained edition derivatives or new missing-leaf obligation."
   },
   "current_metadata_binding": {
-    "candidate": "free-4.3.1-security-r1",
-    "scope": "Owner-requested 4.3.1 security inclusion with current Free rights overlay and parent version identity; unchanged owners retain their accepted source coordinates.",
-    "state": "independently_ready_source_sealed"
+    "candidate": "nova-free-4.3.1-boundary-repair-20261027-r1",
+    "scope": "Scoped repair of accepted acquisition/dependency and first-use recall behavior; unmodified owners retain their selected source coordinates.",
+    "state": "qualified_source"
   },
   "security_update": {
     "cve": "CVE-2026-111497",
     "baseline": "4.3.0",
     "owner_authorized_new_release": true,
     "state": "independently_ready_source_sealed"
+  },
+  "maintenance": {
+    "date": "2026-10-27",
+    "kind": "edit",
+    "effect": "behavior_repair",
+    "baseline_version": "4.3.1",
+    "target_version": "4.3.1",
+    "reason": "Restore supported acquisition safety, dependency integrity and first-use lexical recall; preserve the accepted edition roster, data formats and optional-service choices."
   }
 }

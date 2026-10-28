@@ -4,15 +4,16 @@ from collections import ChainMap, Counter
 from collections import ChainMap as ChainMapType
 from collections import Counter as CounterType
 from collections.abc import MutableMapping
-from typing import Any, Union
+from typing import Any, Literal, Union
 
-from ..._font import Font
 from ...errors import PdfReadError
+from ...generic._font import Font
 from .. import mult
 from ._text_state_params import TextStateParams
 
-TextStateManagerChainMapType = ChainMapType[Union[int, str], Union[float, bool]]
-TextStateManagerDictType = MutableMapping[Union[int, str], Union[float, bool]]
+TextStateManagerKeyType = Union[int, Literal["is_text", "is_render"]]
+TextStateManagerChainMapType = ChainMapType[TextStateManagerKeyType, Union[float, bool]]
+TextStateManagerDictType = MutableMapping[TextStateManagerKeyType, Union[float, bool]]
 
 
 class TextStateManager:
@@ -61,7 +62,11 @@ class TextStateManager:
         """
         if op not in [b"Tc", b"Tz", b"Tw", b"TL", b"Ts"]:
             return
-        self.__setattr__(op.decode(), value[0] if isinstance(value, list) else value)
+        name = op.decode()
+        raw = value[0] if isinstance(value, list) else value
+        # a non-numeric operand (e.g. a name from a malformed content stream)
+        # leaves the parameter unchanged, matching the ROB handling of Td/Tm/Tf
+        self.__setattr__(name, self._as_float(raw, getattr(self, name)))
 
     def set_font(self, font: Font, size: float) -> None:
         """
@@ -94,26 +99,8 @@ class TextStateManager:
             raise PdfReadError(
                 "font not set: is PDF missing a Tf operator?"
             )  # pragma: no cover
-        if isinstance(value, bytes):
-            try:
-                if isinstance(self.font.encoding, str):
-                    txt = value.decode(self.font.encoding, "surrogatepass")
-                else:
-                    txt = "".join(
-                        self.font.encoding[x]
-                        if x in self.font.encoding
-                        else bytes((x,)).decode()
-                        for x in value
-                    )
-            except (UnicodeEncodeError, UnicodeDecodeError):
-                txt = value.decode("utf-8", "replace")
-            txt = "".join(
-                self.font.character_map.get(x, x) for x in txt
-            )
-        else:
-            txt = value
         return TextStateParams(
-            txt,
+            value,
             self.font,
             self.font_size,
             self.Tc,
@@ -125,6 +112,16 @@ class TextStateManager:
         )
 
     @staticmethod
+    def _as_float(value: Any, default: float = 0.0) -> float:
+        """An operand as a float, or default if it is not a number
+        (e.g. a name from a malformed content stream).
+        """
+        try:
+            return float(value)
+        except (TypeError, ValueError):
+            return default
+
+    @staticmethod
     def raw_transform(
         _a: float = 1.0,
         _b: float = 0.0,
@@ -132,9 +129,11 @@ class TextStateManager:
         _d: float = 1.0,
         _e: float = 0.0,
         _f: float = 0.0,
-    ) -> dict[int, float]:
+    ) -> TextStateManagerDictType:
         """Only a/b/c/d/e/f matrix params"""
-        return dict(zip(range(6), map(float, (_a, _b, _c, _d, _e, _f))))
+        defaults = (1.0, 0.0, 0.0, 1.0, 0.0, 0.0)
+        values = (_a, _b, _c, _d, _e, _f)
+        return dict(zip(range(6), (TextStateManager._as_float(v, d) for v, d in zip(values, defaults))))
 
     @staticmethod
     def new_transform(
@@ -148,7 +147,7 @@ class TextStateManager:
         is_render: bool = False,
     ) -> TextStateManagerDictType:
         """Standard a/b/c/d/e/f matrix params + 'is_text' and 'is_render' keys"""
-        result: Any = TextStateManager.raw_transform(_a, _b, _c, _d, _e, _f)
+        result = TextStateManager.raw_transform(_a, _b, _c, _d, _e, _f)
         result.update({"is_text": is_text, "is_render": is_render})
         return result
 
@@ -217,5 +216,5 @@ class TextStateManager:
         """Current effective transform accounting for cm, tm, and trm transforms"""
         eff_transform = [*self.transform_stack.maps[0].values()]
         for transform in self.transform_stack.maps[1:]:
-            eff_transform = mult(eff_transform, transform)  # type: ignore[arg-type]  # dict has int keys 0-5
+            eff_transform = mult(eff_transform, transform)
         return eff_transform

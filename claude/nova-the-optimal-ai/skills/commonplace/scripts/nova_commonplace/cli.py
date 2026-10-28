@@ -713,7 +713,7 @@ def _federated_search(args: argparse.Namespace) -> Any:
         for value in (limit, timeout_ms, graph_hops)
     ):
         raise CliInputError("limit, timeout_ms, and graph_hops must be integers")
-    mode = payload.get("commonplace_mode", "hybrid")
+    mode = payload.get("commonplace_mode", "lexical")
     if mode not in {"lexical", "semantic", "hybrid"}:
         raise CliInputError("commonplace_mode must be lexical, semantic, or hybrid")
     return federated_search(

@@ -1,0 +1,384 @@
+{
+  "schema": "nova-free-release-manifest/v3",
+  "product": "Nova the Optimal AI Free",
+  "brand": "Nova the Optimal AI",
+  "product_version": "4.3.1",
+  "plugin_id": "nova-the-optimal-ai",
+  "topology": {
+    "plugin_count": 1,
+    "visible_skill_roots": 28,
+    "mind_version": "0.4.0",
+    "faculty_core_count": 17
+  },
+  "source": {
+    "base_commit": "7b77349eff08caad6a4080086add115864227c9f",
+    "clean": false,
+    "source_lock": "design/source-lock.json",
+    "source_lock_sha256": "5c4c1234f30b949889c9385a3506d4f584a326b61bc5075db2c0f90881484538",
+    "source_map_sha256": "583524f9a4b0961175e88f0194c99b9579be0ece208cca2568fb4e8106ea247e"
+  },
+  "host_trees": {
+    "codex_plugin": {
+      "file_count": 1518,
+      "tree_sha256": "96e40e3d9eaf07745056bc2583813f83bc46b4fa568dbcaff947f507421f9543"
+    },
+    "claude_plugin": {
+      "file_count": 1518,
+      "tree_sha256": "688f7971867a8631227181bb11fea1902fd6335012d57c32acb27f3df565b2c8"
+    },
+    "codex_claude_skill_bytes_identical": true
+  },
+  "skills": [
+    {
+      "id": "agent-striving",
+      "payload_tree": {
+        "file_count": 17,
+        "tree_sha256": "863d024ed5b5b51273d8c07c758f3604331393c69811b03e1823c61a6dc7a7c4"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/agent-striving-4.3.1.zip",
+      "claude_zip_sha256": "abe5f0ef1b232b5b13fd5078acaca1e22f9f51aedc4d9937c637b57fc5b95c8f"
+    },
+    {
+      "id": "agent-swarm-orchestration",
+      "payload_tree": {
+        "file_count": 28,
+        "tree_sha256": "5f046a7d08df59b6c069b4c51d57d339ab0c304c6dae9f15fa6cd783151fd0c7"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": "agent-swarm-orchestration",
+      "claude_zip": "claude/zips/agent-swarm-orchestration-4.3.1.zip",
+      "claude_zip_sha256": "255268f838ce7259d2b0e2d5f1c7ed8b5f9e87277988c49ef554888c070aaae9"
+    },
+    {
+      "id": "agentic-coding",
+      "payload_tree": {
+        "file_count": 6,
+        "tree_sha256": "c3888d95147f6532cc8fd65c52dd134b5f3d68773fbe9f8ff67ae4a2f345ec0e"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/agentic-coding-4.3.1.zip",
+      "claude_zip_sha256": "300fc4be8f0318c7ff3fa8d811f9084ec6ef4061575b5d34b528593ffc25f786"
+    },
+    {
+      "id": "answerlayer",
+      "payload_tree": {
+        "file_count": 54,
+        "tree_sha256": "a2dd53f028f0b5ac9839c9fd79f0983aac8b80fa6a59c5e51d48e0eff6b18efe"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/answerlayer-4.3.1.zip",
+      "claude_zip_sha256": "6fe96f2d4f8653f21d9e1322eaafc7f906477d8460c5054fe9e84bfee2eb71b6"
+    },
+    {
+      "id": "beryl-it-tech",
+      "payload_tree": {
+        "file_count": 87,
+        "tree_sha256": "28f89f5a8c6d534945cc6a500700f2ca06eb25536b933643130fd2083153ff30"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/beryl-it-tech-4.3.1.zip",
+      "claude_zip_sha256": "dccb85311dbb09087bc5996b8acde7a917fea3f986af5ad2a6b7f990deef6c7a"
+    },
+    {
+      "id": "cognitive-continuity",
+      "payload_tree": {
+        "file_count": 86,
+        "tree_sha256": "828a8adf63c8c95efa71af2d58be7b8e7c2d1768ff691f64273a8bd8a92fbc0f"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/cognitive-continuity-4.3.1.zip",
+      "claude_zip_sha256": "82bcdb3a7dd02a8eece37898b61331375051e64f857c1dc26749d6f2a4dfb4d7"
+    },
+    {
+      "id": "commonplace",
+      "payload_tree": {
+        "file_count": 37,
+        "tree_sha256": "ad8bc110bd73ebface73a88666f29fc64da6d9f897400e7977b496094b8618a5"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/commonplace-4.3.1.zip",
+      "claude_zip_sha256": "8cc9ba80299cb5394a3908d9a49b71aa4cc18d612efafc01c688aad9d25c9cab"
+    },
+    {
+      "id": "corkboard",
+      "payload_tree": {
+        "file_count": 3,
+        "tree_sha256": "90007250ec76ae85b2ab042e14c5ccebbea8812fd1091f36b4a69afd7fe1b78f"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/corkboard-4.3.1.zip",
+      "claude_zip_sha256": "1b1e12608e7cfde4250a3cc80ab09a30b6da8b736d07a262517bae541cb21642"
+    },
+    {
+      "id": "current-intelligence-observatory",
+      "payload_tree": {
+        "file_count": 199,
+        "tree_sha256": "ce50a8940c36a6f9c61b778ebbbbd2f206b540bf9d2a1b4e05de4778f6e84113"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/current-intelligence-observatory-4.3.1.zip",
+      "claude_zip_sha256": "ca457005a6fbbffb66001259252fb8ce1d53225ab22536f0a12251153e5b7d0b"
+    },
+    {
+      "id": "dennis-stratton-project-management",
+      "payload_tree": {
+        "file_count": 83,
+        "tree_sha256": "bb29f8d2774f42a981aa96b04167488e9ff1e57528316763bb61a9c7f99afa34"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/dennis-stratton-project-management-4.3.1.zip",
+      "claude_zip_sha256": "6842a992f50fe0cea89fcdec13e83c37c6ea849eb567b9b7e4904605bc298e44"
+    },
+    {
+      "id": "dunbar",
+      "payload_tree": {
+        "file_count": 13,
+        "tree_sha256": "ae65dc7ecde698e72a9b0602f7b2f830d9807c9f636c4a27d4dede0b175cd62a"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/dunbar-4.3.1.zip",
+      "claude_zip_sha256": "9303428155e1e86b58d956c27df168b5d900d8a299c06defa22d8c8a8cdd24fc"
+    },
+    {
+      "id": "interview-trainer",
+      "payload_tree": {
+        "file_count": 48,
+        "tree_sha256": "a431ad167729bac135810b0d2803e21a4039ca0f280f1b2b2b6fcbb3c0076cb9"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": "interview-trainer",
+      "claude_zip": "claude/zips/interview-trainer-4.3.1.zip",
+      "claude_zip_sha256": "f614f9815a5fd3cfe3ace6deeaee44a723d0404e182d46506fba2f7dd6f338da"
+    },
+    {
+      "id": "it-work-reviewer",
+      "payload_tree": {
+        "file_count": 54,
+        "tree_sha256": "4512f6d5a93beed77650e6e6239a38614aa363f0ced030a18139e2f977077305"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/it-work-reviewer-4.3.1.zip",
+      "claude_zip_sha256": "d4527ce31b7a1d672667fc59f461e24cb5182784a86677a3d92adb0306752147"
+    },
+    {
+      "id": "job-application-builder",
+      "payload_tree": {
+        "file_count": 41,
+        "tree_sha256": "2e7f197323f798e3e3e656d1abd06d9c3e3811af6d5b314c20a3bb02b8b68c62"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": "job-application-builder",
+      "claude_zip": "claude/zips/job-application-builder-4.3.1.zip",
+      "claude_zip_sha256": "c58fc5bc81923600f6b8ffb5e9d9b71270c95396fb44e3cb688be00f132fe269"
+    },
+    {
+      "id": "lex-foster-language-companion",
+      "payload_tree": {
+        "file_count": 30,
+        "tree_sha256": "23a119593738a43f8444b5570392dfc639a2dd14cfea547cd8afe52a0f8abda9"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/lex-foster-language-companion-4.3.1.zip",
+      "claude_zip_sha256": "108c36c320f745b3f57177e555f77ea86f7b1a3e190d830c07a96fa27c5b5253"
+    },
+    {
+      "id": "nova",
+      "payload_tree": {
+        "file_count": 51,
+        "tree_sha256": "3fe14e094c968b95dacbbf417a7bbaf5ca1d9069de439c57767c02783e5ff51a"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/nova-4.3.1.zip",
+      "claude_zip_sha256": "283478e460d81904e457445cb1f84ea4ad64eb55240059032e20c5b301c4b8b6"
+    },
+    {
+      "id": "nova-operations",
+      "payload_tree": {
+        "file_count": 5,
+        "tree_sha256": "bcd2ed7d4884e80bda2a0aa53a13ea41ba2f84d7fb0f0d957dbf36c052990aa3"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/nova-operations-4.3.1.zip",
+      "claude_zip_sha256": "cc3ade17856fc40e615e2422dab4e0babe3c5af9aa759d1e8110dca7b3011a54"
+    },
+    {
+      "id": "officecraft-reviewer",
+      "payload_tree": {
+        "file_count": 9,
+        "tree_sha256": "e59bc203bd5ee52f642b8a6c3f26878819bb446d8c9582334b61e28818f6cd9a"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/officecraft-reviewer-4.3.1.zip",
+      "claude_zip_sha256": "5ee00845b00ad0fac2fe1481d0ab36725a3ddef7807cbf638c553ae8b8cf96e1"
+    },
+    {
+      "id": "omnara-deep-research",
+      "payload_tree": {
+        "file_count": 191,
+        "tree_sha256": "9ef250a500ede08f3fcc8fbb18c5e60ea51bd8f0504b239c1d40eb87cfb1ba7c"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/omnara-deep-research-4.3.1.zip",
+      "claude_zip_sha256": "7b5857131befb9f3082d9ae93434ec60b6c156ed506e4d6a1024fb22841ad818"
+    },
+    {
+      "id": "oracle-reading",
+      "payload_tree": {
+        "file_count": 112,
+        "tree_sha256": "1c5641436cb8ae90eb83d2d42b563788501741da08f4e1b2c096f7e76fe1980e"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": "oracle-reading",
+      "claude_zip": "claude/zips/oracle-reading-4.3.1.zip",
+      "claude_zip_sha256": "566e51a0ce795bc730232129fa385e9fc4e2c73b2aadda269706125603c2e283"
+    },
+    {
+      "id": "owen-burnett-officecraft",
+      "payload_tree": {
+        "file_count": 81,
+        "tree_sha256": "1463b47a960770259898922a17ca0f9dd019be8d21713c2b82355aaf890ef924"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/owen-burnett-officecraft-4.3.1.zip",
+      "claude_zip_sha256": "8f19f7c6e6fa5c4b0e41d84c36d3e98d81370bd5e89eb6025df12aedf66f5417"
+    },
+    {
+      "id": "privacy-redline",
+      "payload_tree": {
+        "file_count": 41,
+        "tree_sha256": "e17b26e3497e0cf099338e99ed887757d34d254ec1b00e52e5a6250ff3e24e52"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/privacy-redline-4.3.1.zip",
+      "claude_zip_sha256": "fed2f65cf0490d682eca1290ba58492eaacd1ee91680023f6a2f283a288ae4fc"
+    },
+    {
+      "id": "promptcraft",
+      "payload_tree": {
+        "file_count": 2,
+        "tree_sha256": "55519afadeb6f78c590ff6d714775b9856f9e76b9c9a34e8ff27e1c20b0baac2"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/promptcraft-4.3.1.zip",
+      "claude_zip_sha256": "2280c4ba229586421f67af5cec4e908c5feb3a2c4ed03ec1282e756062ae48ba"
+    },
+    {
+      "id": "retrieval-intelligence",
+      "payload_tree": {
+        "file_count": 18,
+        "tree_sha256": "5c39910fe2a09fa0f7709898f5ae895f17570de1480c71823843780f622aa77a"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/retrieval-intelligence-4.3.1.zip",
+      "claude_zip_sha256": "d8e9e14004c4679a1052ff6b28ef28fc7589a2cd36a50a31ae39cc3ee2524e96"
+    },
+    {
+      "id": "retrieval-reviewer",
+      "payload_tree": {
+        "file_count": 3,
+        "tree_sha256": "1f50126fadfc3370fa51ef6e3f5d4a8df5d3245b8e3cf26aabe9d4b2ce995a89"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/retrieval-reviewer-4.3.1.zip",
+      "claude_zip_sha256": "5c54196eed25f2ad1b4a8f90001a671273af8c539f5843d97aa17a7df5ee86d2"
+    },
+    {
+      "id": "rupert-giles-knowledge-steward",
+      "payload_tree": {
+        "file_count": 43,
+        "tree_sha256": "1a751d5c285e9f24ae548a2827dd9eee951ce97f8f206c0a7c2a2cfefc88ce85"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": null,
+      "claude_zip": "claude/zips/rupert-giles-knowledge-steward-4.3.1.zip",
+      "claude_zip_sha256": "1548f837ce00e0bab9c240422728a9f23d49c3196bcb893f87b00aa8618d91bc"
+    },
+    {
+      "id": "software-verification",
+      "payload_tree": {
+        "file_count": 101,
+        "tree_sha256": "fc5eaa6fdabcf70f547dc61324476999015a1d749153a15e02cf90545532c772"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": "testforge",
+      "claude_zip": "claude/zips/software-verification-4.3.1.zip",
+      "claude_zip_sha256": "c6c3863aedeb4d9ba050e96b3397776e54dd0e7a039808a12e3b9bbd0d5ea90b"
+    },
+    {
+      "id": "verification-reviewer",
+      "payload_tree": {
+        "file_count": 13,
+        "tree_sha256": "4c92bfe82b1cec6fcd69104bfcfcd20ae8dd792eef92c362c6d6f9f4642a63e0"
+      },
+      "standalone_rights_envelope": "nova-free-rights",
+      "component_notice_bundle": "testforge",
+      "claude_zip": "claude/zips/verification-reviewer-4.3.1.zip",
+      "claude_zip_sha256": "657c480dda1410dd47be1aa2ab27150bb9aa522c8c5ab9ad6fa6d6f940e71b65"
+    }
+  ],
+  "host_artifacts": [
+    {
+      "binding": "codex",
+      "file": "nova-the-optimal-ai-free-4.3.1-codex.zip",
+      "sha256": "c007b455d2916a290cd1cedd1dcab2e4e52604ec5bb07db894f17e0d0f95d31a"
+    },
+    {
+      "binding": "claude-compatible",
+      "file": "nova-the-optimal-ai-free-4.3.1-claude.zip",
+      "sha256": "33a01daaa2186d536a520e879dc7c1728dc09e3fcbd9ac31d3fa819c7a66b661"
+    }
+  ],
+  "required_absences": [
+    "augment-of-mind sibling plugin",
+    "prompt-submit hook",
+    "Ollama requirement",
+    "embedding model requirement",
+    "vector database",
+    "MIND Core daemon",
+    "Faculty skills as sibling handles"
+  ],
+  "archive_filename_encoding": "strict_utf8_local_and_central_headers",
+  "rights": {
+    "license": "LICENSE.md",
+    "rights_status": "Free public split license: MIT deterministic software and schemas; CC BY-ND 4.0 authored Augment material; separate attribution, notice, trademark, provenance, and component custody.",
+    "redistribution_state": "permitted_under_included_licenses",
+    "external_rights_blockers": [],
+    "rights_bundle": {
+      "LICENSE.md": "d6690ea6469d5b1b4c4435c1340fa39068c5d313ada9319b23473da57caedce4",
+      "ATTRIBUTION.md": "22fbf0a5a7958f42a2fc85a571de4af1aeed63993aeabcc59bff9262d626f1bf",
+      "NOTICE.md": "80f210cd2a33ff75b83f5189fb007b07412ae3e5640b80ebc438bb9cbfcbb0a9",
+      "TRADEMARKS.md": "a1250ee28c5f9f41288118df443170a3a5b7c8841723e6fc37138829f8d115b7",
+      "PROVENANCE.md": "cf97318477383a9baa79bf28c827904d8d2e0510dbb9914ebb7c7d119eca7830",
+      "THIRD-PARTY-NOTICES.md": "a7aef3d27ffdc23311e4735a3f30602f2089a2e1248e8fef799b2700e310da86"
+    }
+  },
+  "release_blockers": [],
+  "open_evidence_boundaries": [
+    "fresh-host discovery and invocation require separate observation",
+    "publication is a separate authorized and observed action"
+  ],
+  "publication_state": "not_published",
+  "evidence_boundary": "This manifest establishes built bytes, rights custody, and internal parity. Installation, discovery, enabled state, restart state, invocation, service configuration, behavior, publication, and customer outcomes remain separate observations."
+}

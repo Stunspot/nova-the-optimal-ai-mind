@@ -1,10 +1,12 @@
 import importlib.util
+import sys
 import json
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 P=Path(__file__).resolve().parents[1]/'media_evidence.py'
+sys.path.insert(0,str(P.parent))
 spec=importlib.util.spec_from_file_location('media',P); m=importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
 CAPTION='WEBVTT\n\n00:00.000 --> 00:02.000\nThe sample contains 42 items.\n\n00:01.500 --> 00:03.000\nOverlap stays visible.\n'
 class MediaEvidenceTests(unittest.TestCase):
@@ -54,16 +56,24 @@ class MediaEvidenceTests(unittest.TestCase):
             out=Path(temp)/'capture'
             def run(cmd,**kwargs):
                 self.assertIn('--skip-download',cmd); self.assertIn('--ignore-config',cmd); self.assertIn('--no-plugin-dirs',cmd); self.assertIn('--no-playlist',cmd)
+                self.assertIn('--no-remote-components',cmd); self.assertIn('--no-js-runtimes',cmd); self.assertIn('deno:qualified',cmd)
                 self.assertNotIn('--cookies-from-browser',cmd); self.assertFalse(kwargs['shell'])
                 raw=out/'raw'; (raw/'id.info.json').write_text(json.dumps({'id':'id','extractor_key':'Test','webpage_url':'https://example.test/video','subtitles':{'en':[]}})); (raw/'id.en.vtt').write_text(CAPTION)
                 return type('Result',(),{'returncode':0,'stdout':'','stderr':''})()
-            with patch.object(m.subprocess,'run',side_effect=run),patch.object(m.importlib.metadata,'version',return_value='fixture'):
+            with patch.object(m,'media_runtime',return_value={'javascript':['--no-js-runtimes','--js-runtimes','deno:qualified']}),patch.object(m.subprocess,'run',side_effect=run),patch.object(m.importlib.metadata,'version',return_value='fixture'):
                 result=m.capture('https://example.test/video',out)
             self.assertEqual(result['transcripts'],1)
     def test_failed_capture_retains_failure_receipt(self):
         with tempfile.TemporaryDirectory() as temp:
             out=Path(temp)/'capture'
-            with patch.object(m.subprocess,'run',return_value=type('R',(),{'returncode':1,'stdout':'','stderr':'fixture failure'})()):
+            with patch.object(m,'media_runtime',return_value={'javascript':['--no-js-runtimes']}),patch.object(m.subprocess,'run',return_value=type('R',(),{'returncode':1,'stdout':'','stderr':'fixture failure'})()):
                 with self.assertRaises(m.MediaError): m.capture('https://example.test/video',out)
             self.assertEqual(json.loads((out/'capture.json').read_text())['status'],'failed')
+    def test_unsafe_runtime_stops_before_capture_directory_or_downloader(self):
+        with tempfile.TemporaryDirectory() as temp:
+            out=Path(temp)/'capture'
+            with patch.object(m,'media_runtime',side_effect=m.UnsafeRuntime('fixture unsafe decoder')),patch.object(m.subprocess,'run') as run:
+                with self.assertRaisesRegex(m.MediaError,'UNSAFE_MEDIA_RUNTIME'):m.capture('https://example.test/video',out)
+                run.assert_not_called()
+                self.assertFalse(out.exists())
 if __name__=='__main__': unittest.main()

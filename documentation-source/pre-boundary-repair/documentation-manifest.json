@@ -1,0 +1,22 @@
+{
+  "format": "cd-customer-documentation/v1",
+  "product": "Nova the Optimal AI Free",
+  "version": "4.3.1",
+  "customer_docs": [
+    "README.md",
+    "START-HERE.md",
+    "RELEASE-NOTES.md",
+    "docs/SECURITY-UPDATE.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1.md",
+    "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.1 Extra.md",
+    "plugins/nova-the-optimal-ai/README.md",
+    "plugins/nova-the-optimal-ai/START-HERE.md",
+    "plugins/nova-the-optimal-ai/RELEASE-NOTES.md",
+    "plugins/nova-the-optimal-ai/docs/SECURITY-UPDATE.md",
+    "claude/nova-the-optimal-ai/README.md",
+    "claude/nova-the-optimal-ai/START-HERE.md",
+    "claude/nova-the-optimal-ai/RELEASE-NOTES.md",
+    "claude/nova-the-optimal-ai/docs/SECURITY-UPDATE.md"
+  ],
+  "scope": "Only current security release entry, upgrade/recovery guide and sidecars materially authored/revised in this in-process pass. Existing unchanged guides and license prose retain accepted-baseline authorship; numeric filename substitutions are maintenance."
+}

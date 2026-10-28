@@ -13,6 +13,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlsplit
+from runtime_safety import UnsafeRuntime, media_runtime
 
 class MediaError(ValueError): pass
 
@@ -114,12 +115,15 @@ def ingest(source, output, origin, source_ref, language=None, model=None, parent
 def capture(url,output,language="en.*",audio=False,timeout=180):
     parsed=urlsplit(url)
     if parsed.scheme not in ("http","https") or not parsed.hostname or parsed.username or parsed.password: raise MediaError("use an http(s) source URL without embedded credentials")
+    try: javascript=media_runtime()["javascript"]
+    except (UnsafeRuntime,ImportError) as exc: raise MediaError("UNSAFE_MEDIA_RUNTIME: "+str(exc)) from exc
     output=Path(output)
     if output.exists(): raise MediaError("capture output must be a new directory; reuse existing evidence or choose a fresh capture")
     output.mkdir(parents=True)
     raw=output/"raw"
     raw.mkdir()
-    cmd=[sys.executable,"-m","yt_dlp","--ignore-config","--no-plugin-dirs","--no-playlist","--no-progress","--socket-timeout","20","--retries","2","--write-info-json","--write-subs","--write-auto-subs","--sub-langs",language,"--sub-format","vtt","--paths",str(raw),"-o","%(id)s.%(ext)s"]
+    cmd=[sys.executable,"-m","yt_dlp","--ignore-config","--no-plugin-dirs","--no-remote-components","--no-playlist","--no-progress","--socket-timeout","20","--retries","2","--write-info-json","--write-subs","--write-auto-subs","--sub-langs",language,"--sub-format","vtt","--paths",str(raw),"-o","%(id)s.%(ext)s"]
+    cmd+=javascript
     cmd+= ["-f","bestaudio"] if audio else ["--skip-download"]
     cmd+= ["--",url]
     try:
@@ -144,7 +148,7 @@ def capture(url,output,language="en.*",audio=False,timeout=180):
 
 def transcribe(audio,output,model,model_dir,download_model=False,device="cpu",language=None):
     try: import whisper
-    except ImportError as exc: raise MediaError("install requirements-media.txt in the selected media Python environment") from exc
+    except ImportError as exc: raise MediaError("Local transcription needs its separate environment: follow the hash-checked requirements-transcribe-build.txt and requirements-transcribe.txt setup in references/media-evidence.md") from exc
     if model not in whisper.available_models(): raise MediaError("use an official named Whisper model")
     cache=Path(model_dir)
     checkpoint=cache/(model+".pt")

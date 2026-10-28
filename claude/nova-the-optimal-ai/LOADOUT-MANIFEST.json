@@ -230,12 +230,20 @@
     "legacy_project_api": "explicit_compatibility",
     "new_faculty": false
   },
-  "build_id": "nova-free-4.2.0-20261016-bf78dfe234d9",
+  "build_id": "nova-free-4.3.1-boundary-repair-20261027-r1",
   "security_update": {
     "cve": "CVE-2026-111497",
     "selected_components": {
       "current-intelligence-observatory": "0.4.1"
     },
     "state": "independently_ready_source_sealed"
+  },
+  "maintenance": {
+    "date": "2026-10-27",
+    "kind": "edit",
+    "effect": "behavior_repair",
+    "baseline_version": "4.3.1",
+    "target_version": "4.3.1",
+    "reason": "Restore supported acquisition safety, dependency integrity and first-use lexical recall; preserve the accepted edition roster, data formats and optional-service choices."
   }
 }
