@@ -42,3 +42,5 @@ verification/giles-atlas-3.6/hesperos/evidence/** -text
 # Hash-bound current authoring evidence retains exact source bytes.
 /delivery-wrapper/documentation-source/** -text
 /delivery-wrapper/verification/hesperos-capabilities/** -text
+/documentation-manifest.json -text
+/delivery-wrapper/documentation-manifest.json -text
