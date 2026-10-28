@@ -18,7 +18,7 @@ Support: https://collaborative-dynamics.com or contact@collaborative-dynamics.co
 
 # Changelog
 
-v4.3.2 System integration repair — 2026-10-27. Corrects registry-backed project handoffs and edition state guidance, describes Project Bridge as its actual read-only reader, reconciles withdrawn-app routing while retaining conversational skills, and aligns native host installation guides with the delivered layouts. Preserves the roster, shared persona, ambient MIND, saved-work formats and the preceding security repairs.
+v4.3.2 - System integration repair — 2026-10-27. Corrects registry-backed project handoffs and edition state guidance, describes Project Bridge as its actual read-only reader, reconciles withdrawn-app routing while retaining conversational skills, and aligns native host installation guides with the delivered layouts. Preserves the roster, shared persona, ambient MIND, saved-work formats and the preceding security repairs.
 
 v4.3.1 maintenance — 2026-10-27. Repairs TLS verification and response limits across both Maigret transports, updates PDF dependency routes and optional dependency locks, applies media runtime checks consistently, and makes default Commonplace combined search work without an embedding service. Preserves saved work, the existing roster and optional-service choices.
 

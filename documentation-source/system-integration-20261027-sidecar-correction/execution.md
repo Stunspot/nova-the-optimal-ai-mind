@@ -1,0 +1,5 @@
+# Post-package sidecar correction
+
+The original Hesperos author continued the existing material-revision run after the shelf validator found that the newly authored changelog line lacked the required separator immediately after its version. Inserted only ` -` after `v4.3.2` in `delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.2 Extra.md`. Customer meaning and every other declared document are unchanged. This current-source correction preserves the frozen candidates, original authoring evidence, prior package acceptance, runtime sources, native archives and customer ZIP bytes. The earlier receipt and exact sidecar preimage are retained in the integration workbench.
+
+Validation scope: exact one-occurrence byte replacement, current documentation inventory and Hesperos fingerprint, required shelf changelog format, source-to-shelf sidecar equality and existing library changelog readback. This is a correction to the original authored work, not a new claim of authorship for unchanged documents or renewed package authorization.

@@ -56,9 +56,9 @@
       "sha256": "84b120093bff92ce0eb439ae5e39875937bd5c8a289e4597b26498e75efab5b3"
     },
     {
-      "bytes": 4778,
+      "bytes": 4780,
       "path": "delivery-sidecars/Nova the Optimal AI Free T-Free v4.3.2 Extra.md",
-      "sha256": "f77b8947da85a2bf671a4cabfc9674afb5f96cc323bfc1a60afe1c7c1a3b80e6"
+      "sha256": "3904f377ba696a1945881e47295adbce14d4d9f613c1526ec34f04ae2bdff6a0"
     },
     {
       "bytes": 4197,
@@ -155,13 +155,13 @@
     "run_id": "nova-free-4.3.2-system-integration-docs-20261027"
   },
   "authoring_response": {
-    "bytes": 1903,
-    "path": "documentation-source/system-integration-20261027/authoring-response.md",
-    "sha256": "bb6d597ff8b33f5f2dc8b577ac815d1891529aa8e6f55f79271d9345a5131b13"
+    "bytes": 1869,
+    "path": "documentation-source/system-integration-20261027-sidecar-correction/authoring-response.md",
+    "sha256": "d3fed93134020040011e8edd6a858df0ab0b2870f19e4b1678ce42ded389c1d7"
   },
   "claim_boundary": "Binds retained evidence for one Hesperos authoring or material-revision run. It does not prove independent review, host activation, publication, accessibility conformance, or customer outcomes.",
-  "created_at": "2026-10-28T02:52:51+00:00",
-  "documentation_fingerprint": "e9ba3b97ebe3a0107897ba2d2053dbf7810f201f885173e2782233456c6dc3e2",
+  "created_at": "2026-10-28T03:43:13+00:00",
+  "documentation_fingerprint": "9ae901092852ffeaadae95f77441dbef964e9ed04b5c35749b09f5ed1bb03ea7",
   "documentation_manifest": {
     "bytes": 1615,
     "path": "documentation-manifest.json",
@@ -182,6 +182,16 @@
       "bytes": 1903,
       "path": "documentation-source/system-integration-20261027/authoring-response.md",
       "sha256": "bb6d597ff8b33f5f2dc8b577ac815d1891529aa8e6f55f79271d9345a5131b13"
+    },
+    {
+      "bytes": 1047,
+      "path": "documentation-source/system-integration-20261027-sidecar-correction/execution.md",
+      "sha256": "db4011af9500eaa6defe277dc00c4e5837885265b7fee882b06f421dfe2e5d9d"
+    },
+    {
+      "bytes": 1869,
+      "path": "documentation-source/system-integration-20261027-sidecar-correction/authoring-response.md",
+      "sha256": "d3fed93134020040011e8edd6a858df0ab0b2870f19e4b1678ce42ded389c1d7"
     }
   ],
   "format": "cd-hesperos-documentation-authorship/v1",
