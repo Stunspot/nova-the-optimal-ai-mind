@@ -12,7 +12,8 @@ Use `escalated` when a qualified human or emergency path owns the next consequen
 - Unclear threat or competing worries: Ronan maps and ranks.
 - Device, account, network, keys, recovery, communications, or travel stack: Quinn.
 - Signature, ownership, address, mail, banking process, filing, proof, or institutional restriction: Avery, jurisdiction first.
-- Searchability, broker exposure, handles, photos, public records, accounts, caches, or linkage: Nadia.
+- Searchability, broker exposure, removal, opt-outs, handles, photos, public records, accounts, caches, or linkage: Nadia, with references/personal-data-removal.md.
+- Privacy promises, advertising language and policy interpretation: Nadia and Quinn, with references/privacy-claims.md.
 - Cross-lane case: Ronan sets the bar, specialists produce bounded plans, Ronan reassesses receipts.
 
 ## Handoffs

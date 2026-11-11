@@ -1,6 +1,6 @@
 # Install Nova the Optimal AI Free
 
-Nova the Optimal AI Free 4.3.2 is one product and one plugin. Install it on your chosen harness, start a fresh task and ask Nova for one useful piece of work. Ordinary use needs no local model, embedding service, vector database, prompt hook, daemon or persistent estate.
+Nova the Optimal AI Free 4.4.0 is one product and one plugin. Install it on your chosen harness, start a fresh task and ask Nova for one useful piece of work. Ordinary use needs no local model, embedding service, vector database, prompt hook, daemon or persistent estate.
 
 The edition contains twenty-eight native skills and seventeen nested Faculty Cores. MIND is Nova's cognitive architecture, not another product to install. Optional workspaces and persistent services can be opened when their working objects help; they do not precede your first conversation.
 
@@ -30,7 +30,7 @@ codex plugin add nova-the-optimal-ai@collaborative-dynamics-nova-free --json
 codex plugin list --json
 ```
 
-Use your actual path and shell quoting. Confirm version 4.3.2 and enabled state, refresh or restart the host as required, then open a new task and ask Nova for one useful result. If an older local marketplace is still registered, follow [Codex installation](docs/INSTALL-CODEX.md) and [Upgrade](docs/UPGRADE.md) to replace the binding while preserving rollback and user data. A copied folder is not an observed installation.
+Use your actual path and shell quoting. Confirm version 4.4.0 and enabled state, refresh or restart the host as required, then open a new task and ask Nova for one useful result. If an older local marketplace is still registered, follow [Codex installation](docs/INSTALL-CODEX.md) and [Upgrade](docs/UPGRADE.md) to replace the binding while preserving rollback and user data. A copied folder is not an observed installation.
 
 ## Claude-compatible routes
 
@@ -46,7 +46,7 @@ Python 3.10 or newer must already be available for deterministic persistent serv
 
 ## Upgrade from Free 2.x
 
-Free 2.x used two plugins, a prompt hook, an Ollama embedding model, a vector database, and forty-one visible handles. The old and new Nova front doors share the `nova-the-optimal-ai` plugin ID: extracting 4.3.2 beside 2.x is safe staging, but installing it replaces that plugin binding rather than creating a side-by-side active Nova. Preserve the old package and configuration for rollback before approving replacement. Free 4.3.2 does not mutate the old database or uninstall Ollama. Ask before disabling another Nova or MIND source. Preserve any Continuity data and decide separately whether obsolete hook, database, model, or plugin artifacts should be removed.
+Free 2.x used two plugins, a prompt hook, an Ollama embedding model, a vector database, and forty-one visible handles. The old and new Nova front doors share the `nova-the-optimal-ai` plugin ID: extracting 4.4.0 beside 2.x is safe staging, but installing it replaces that plugin binding rather than creating a side-by-side active Nova. Preserve the old package and configuration for rollback before approving replacement. Free 4.4.0 does not mutate the old database or uninstall Ollama. Ask before disabling another Nova or MIND source. Preserve any Continuity data and decide separately whether obsolete hook, database, model, or plugin artifacts should be removed.
 
 Continue with the [upgrade guide](docs/UPGRADE.md) and [troubleshooting guide](docs/TROUBLESHOOTING.md).
 

@@ -27,6 +27,10 @@ REQUIRED = [
     "references/instruments/felix-omnibus-canonical.md",
     "schemas/privacy-case.schema.json", "schemas/receipt.schema.json",
     "scripts/privacy_case_guardrail.py", "evals/eval-manifest.yaml",
+    "references/privacy-claims.md", "references/personal-data-removal.md",
+    "references/privacy-source-routes.md", "references/removal-service-design.md",
+    "assets/removal-request.md", "examples/removal-and-claims.md",
+    "evals/removal-transfer-cases.json",
 ]
 
 

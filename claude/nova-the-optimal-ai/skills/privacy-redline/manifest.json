@@ -1,15 +1,23 @@
 {
   "format": "cd-augment-manifest/v1",
   "product": "Privacy Redline",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "skill": "privacy-redline",
   "category": "Personal Privacy Posture & Incident Readiness Augment",
-  "targets": ["Codex", "Claude"],
+  "targets": [
+    "Codex",
+    "Claude"
+  ],
   "visible_operator": "Ronan Redline — Privacy Posture Steward",
-  "specialists": ["Ronan Redline", "Quinn Airlock", "Avery Docket", "Nadia Traceveil", "Felix Garrison"],
+  "specialists": [
+    "Ronan Redline",
+    "Quinn Airlock",
+    "Avery Docket",
+    "Nadia Traceveil",
+    "Felix Garrison"
+  ],
   "runtime_canonical_files": 15,
   "canonical_instruments": 44,
   "launcher_conversation": "https://chatgpt.com/g/g-p-67fd9b41fafc8191bb590916a0e8f417/c/6a5d9a81-bd48-83ea-ac54-4f03ecb7ffb0",
-  "claim_boundary": "Planning, prioritization, artifact maintenance, and bounded verification support; not legal advice, scanning, emergency response, action execution, or a guarantee of privacy."
+  "claim_boundary": "Privacy assessment, claim analysis, host-assisted authorized removal and bounded verification. Standing service architecture is supplied as a design. Live coverage and runtime enforcement require separate evidence."
 }
-

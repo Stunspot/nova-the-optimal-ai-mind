@@ -1,0 +1,17 @@
+[
+  {
+    "edition": "F",
+    "root": "../..",
+    "old": "4.3.2",
+    "version": "4.4.0",
+    "build_id": "nova-free-4.4.0-privacy-20261110",
+    "baseline_archives": {
+      "codex": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Archives\\nova-the-optimal-ai-free-4.3.2-codex.zip",
+      "claude": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Archives\\nova-the-optimal-ai-free-4.3.2-claude.zip"
+    },
+    "overlays": {
+      "codex": "overlays/codex",
+      "claude": "overlays/claude"
+    }
+  }
+]

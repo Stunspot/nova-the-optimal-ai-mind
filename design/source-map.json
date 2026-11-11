@@ -1,7 +1,7 @@
 {
   "schema": "nova-free-source-map/v4",
   "product": "Nova the Optimal AI Free",
-  "product_version": "4.3.2",
+  "product_version": "4.4.0",
   "records": [
     {
       "id": "agent-striving",
@@ -4841,10 +4841,14 @@
       ],
       "imported_path": "plugins/nova-the-optimal-ai/skills/oracle-reading",
       "imported_tree": {
-        "file_count": 111,
-        "tree_sha256": "d9f75c095eb5e0b851e3005688516c5b7ea4042636678b9d51bc79b09ccff31f"
+        "file_count": 112,
+        "tree_sha256": "808fc5edafbb0dedae0f481edee155ad7cbf8c66b10d7eb99cbcd66b7fa77377"
       },
       "selection": [
+        {
+          "path": "APP-PRESENTATION.json",
+          "sha256": "85cf05aa679b7baed97396dcb01a2ae8ab12065f0ee3946b55ab6879bd73415a"
+        },
         {
           "path": "LICENSE",
           "sha256": "0a381295d890367d250cd869738b467d704591e8eba7cf57165b1acedbe8a262"
@@ -5316,7 +5320,8 @@
         ],
         "selected_tree_sha256": "d9f75c095eb5e0b851e3005688516c5b7ea4042636678b9d51bc79b09ccff31f",
         "scope": "Current edition-native adaptation; retained historical owner coordinates are unchanged."
-      }
+      },
+      "privacy_update_metadata_reconciliation": "Includes already-shipped APP-PRESENTATION.json omitted from the prior source-map list; runtime bytes unchanged."
     },
     {
       "id": "owen-burnett-officecraft",
@@ -5679,21 +5684,21 @@
       "edition_overlays": [],
       "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
-        "file_count": 41,
-        "tree_sha256": "e17b26e3497e0cf099338e99ed887757d34d254ec1b00e52e5a6250ff3e24e52"
+        "file_count": 48,
+        "tree_sha256": "f7d9cc670f30ae45a15652726cedb8fab256a910993bb15ade46cbcac3971fa2"
       },
       "selection": [
         {
           "path": "README.md",
-          "sha256": "84db8e40aa3d3cbc964b9149d962d60c3330f737e87ad21c32ebdd5aa3d70a48"
+          "sha256": "08f4ddd1f56469e47ebf16b307623a9e8504076cd8af892478953f5d992d31f2"
         },
         {
           "path": "SKILL.md",
-          "sha256": "690cb1078efc7542c08d62af749da3c068b59d3aa2ce9d3e5451cfbc12824551"
+          "sha256": "f02e9eafad58582321a64082e16080572a498896b2f1d7d5fbf638b07d093365"
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "4fcce324654ffe3c476844f549ed00eb42e276ab34ddb13e5b42ea559868dec1"
+          "sha256": "f8647862ba1f3564afcb4a8b6c84d9fe9ffa9366a21bafbdb28cab58b5af6d06"
         },
         {
           "path": "assets/ledger.md",
@@ -5716,16 +5721,24 @@
           "sha256": "b814a6dd557faf7953df488f7c261331d56dfaf214732f8565b24c016ccb7861"
         },
         {
+          "path": "assets/removal-request.md",
+          "sha256": "e668d070fbd7593c84e1089212661c2dce5a9c38e0c31d7e8a23ea4bc4aa834b"
+        },
+        {
           "path": "assets/triggers.md",
           "sha256": "9cd0661c60cad026a871e9ad6eee8a368fc68450c86e828766c01ca701a15c6c"
         },
         {
           "path": "evals/core-transfer-cases.yaml",
-          "sha256": "05b267c5872109b3fc86dcdb03a34d2ba868d6a1d5fe4022544cb97ed1c73bd8"
+          "sha256": "05b53e13184a592c7a6a344361d7ba238129022f1a32578c2a36dd458b472bad"
         },
         {
           "path": "evals/eval-manifest.yaml",
-          "sha256": "7a0a48503c3685c557238b3315402bb6b8c057b85315fb1e9afec9e91cdd2f13"
+          "sha256": "016c41528d4b551fa745e6128aa0fc285f9086b94cfeca5a377fe0700ed740c8"
+        },
+        {
+          "path": "evals/removal-transfer-cases.json",
+          "sha256": "8dbf2945e277c0a3cd44959f2ff819ea9d925ab4ce62755d8d68b0b623e53fff"
         },
         {
           "path": "examples/boundary-cases/active-danger.md",
@@ -5744,12 +5757,16 @@
           "sha256": "e27db5adb7f1f7f25c043cc2fdce50cca98723c28a46951852cf111180ad2a21"
         },
         {
+          "path": "examples/removal-and-claims.md",
+          "sha256": "a15e76e3dd99e59bd7bbcc6667a73b8d5cb11a9537b160a844bc99591c8ef319"
+        },
+        {
           "path": "fallbacks/degraded-capability.md",
-          "sha256": "cd7112a8f4f5914aa3dcb4a144f6b1358ff71f41f63c945b410cf89faba5aa2a"
+          "sha256": "8f175f7784b9dbd04095a1f44d4d68f87b92703504020fe6f5f9bb5e99dfc791"
         },
         {
           "path": "fallbacks/universal-copy-paste-workflow.md",
-          "sha256": "471a40baee5a5ecadb3f2bb79a0ee6f496f62fa7ef6a7c214d846c5c9e13b962"
+          "sha256": "4da3cf7cd51eb21cc3ee4d943bbb1cfc557bc71d37b01ec186fe15d62abfe02e"
         },
         {
           "path": "knowledge/avery-structuring-canonical.md",
@@ -5769,7 +5786,7 @@
         },
         {
           "path": "knowledge/operating-doctrine.md",
-          "sha256": "c2e69441c18b9f86e5339c2d3fe3663391105664d76edc4565f526ec9192855c"
+          "sha256": "7076b65e106cfb709a6cbb973c089e090e4f3afdbc44ad2d3c31fbaf3706505c"
         },
         {
           "path": "knowledge/quinn-hardening-canonical.md",
@@ -5781,11 +5798,11 @@
         },
         {
           "path": "knowledge/state-and-routing.md",
-          "sha256": "287c744409e9b8acff6b3341bfa06d48a75c287e8ffe9dd4a3fa9111a87f7319"
+          "sha256": "95939ebfa57aa8fd3060321a26e7822c39617af64d1421e5b19c2799c7e00ff5"
         },
         {
           "path": "manifest.json",
-          "sha256": "8ec0ce0137ca567bcd69667d3d4f6f2b13e3db1acbfa51229a7d52215da9731c"
+          "sha256": "a0cec43f59bfc93f08025a71a4d95db77f48dff5cc3653df60ff85f3a431e53d"
         },
         {
           "path": "personas/avery-docket-canonical.md",
@@ -5828,6 +5845,22 @@
           "sha256": "f7672bb3978ed6189bddcf4f6eb9be2c98fa407c9057b2b18b9e765f77242e9b"
         },
         {
+          "path": "references/personal-data-removal.md",
+          "sha256": "26f9a07084d4fe1ddf5eae595416c1ae7be3c7358694c16209ae7b96f36e6f9f"
+        },
+        {
+          "path": "references/privacy-claims.md",
+          "sha256": "4afa4952fac35d1ccaa6a92e258d737bddda9007b6861d4ab98cff816d3b366c"
+        },
+        {
+          "path": "references/privacy-source-routes.md",
+          "sha256": "d298165472d158b738da61bc8c2cfbf3f68aae0ac7802495ef17a18cdd8d2ff1"
+        },
+        {
+          "path": "references/removal-service-design.md",
+          "sha256": "948f460d0d7a6e8cc34e461e5b4e885050c65e5332d360a626be9afa8e135424"
+        },
+        {
           "path": "schemas/privacy-case.schema.json",
           "sha256": "69168c9384b8127dc1f240809afe7e3de13e1524b88da0ce8d0d8ab7d607255c"
         },
@@ -5841,7 +5874,7 @@
         },
         {
           "path": "scripts/self_check.py",
-          "sha256": "fe15a33b7678cf69a4fee5281b6aa4fdffd53379a2b5325ee1b93b8992d1068c"
+          "sha256": "9e62b002a14bb197ac7c23539e6bd7ca2a1eb8038acd5cc6b13ff3ffb2678a09"
         },
         {
           "path": "scripts/tests/test_privacy_case_guardrail.py",
@@ -5861,9 +5894,9 @@
       "qualification": "Current included byte selection, independently reviewed source candidate. Historical Git and standalone coordinates are preserved separately; no clean-repository or live-host claim.",
       "current_standalone_release": {
         "id": "privacy-redline",
-        "version": "0.1.1",
-        "source_skill_sha256": "690cb1078efc7542c08d62af749da3c068b59d3aa2ce9d3e5451cfbc12824551",
-        "scope": "Current standalone delivery identity; preserved composition overlays and baseline ancestry remain distinct."
+        "version": "0.2.0",
+        "source_skill_sha256": "f02e9eafad58582321a64082e16080572a498896b2f1d7d5fbf638b07d093365",
+        "scope": "Exact accepted standalone 0.2.0 runtime."
       }
     },
     {
@@ -6797,9 +6830,9 @@
     "boundary": "Current identity annotations only; no standalone overwrite of maintained edition derivatives or new missing-leaf obligation."
   },
   "current_metadata_binding": {
-    "candidate": "nova-free-4.3.2-system-integration-20261027-r1",
-    "state": "qualified_source",
-    "scope": "Exact refreshed current native selection; structural validation is separate from independent readiness and construction."
+    "candidate": "nova-free-4.4.0-privacy-20261110",
+    "state": "qualified_component_update",
+    "scope": "Accepted baseline selection plus independently reviewed Privacy Redline 0.2.0."
   },
   "security_update": {
     "cve": "CVE-2026-111497",
@@ -6822,5 +6855,15 @@
     "target_version": "4.3.2",
     "owner_requested_increment": true,
     "reason": "Owner-requested patch release restoring integrated state handoffs, truthful included-companion routes and usable native installation guidance; no data-format, persona or optional-service compatibility change."
+  },
+  "privacy_update": {
+    "kind": "update",
+    "effect": "expanded_workflow",
+    "baseline_version": "4.3.2",
+    "target_version": "4.4.0",
+    "component": "privacy-redline",
+    "component_version": "0.2.0",
+    "reason": "Adds precise privacy-claim analysis and authorized data-removal workflows through the existing host, plus a future service design.",
+    "compatibility": "Existing case-v1 formats and other component behavior retained."
   }
 }

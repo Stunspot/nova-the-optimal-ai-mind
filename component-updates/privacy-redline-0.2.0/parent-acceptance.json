@@ -1,0 +1,44 @@
+{
+  "schema": "nova-parent-component-acceptance/v1",
+  "decision": "READY_WITH_RESIDUAL_RISK",
+  "reviewed_at": "2026-11-10T19:03:33-06:00",
+  "source_scope": "Exact accepted Privacy Redline 0.2.0 48-file runtime composed with hash-pinned accepted Emergent 2.0.3 and Free 4.3.2 native archives; only declared identity, documentation and rights-envelope metadata plus the Emergent Nova Operations product-version constant change. This is independent component composition and artifact acceptance, not new whole-product TestForge or live-host behavioral qualification.",
+  "component": {
+    "id": "privacy-redline",
+    "version": "0.2.0",
+    "files": 48,
+    "tree_sha256": "f7d9cc670f30ae45a15652726cedb8fab256a910993bb15ade46cbcac3971fa2"
+  },
+  "editions": {
+    "nova-mind": {
+      "version": "4.4.0",
+      "build_id": "nova-free-4.4.0-privacy-20261110",
+      "runtime_files_per_host": 1463,
+      "artifacts": {
+        "customer": {
+          "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+          "sha256": "9fd6c26eb88ed40fff86bcd15476c3513761ea3ac6e8e98e55743d8551595aef"
+        },
+        "codex": {
+          "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+          "sha256": "19cffbd51a9ec1f7b1819f1a135feb2c2822e20973e8544930c5bdd629494b1c"
+        },
+        "claude": {
+          "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+          "sha256": "421c0130db4512fd316b0c0db86c480c1384fcc5a169172ac479786898852656"
+        }
+      }
+    }
+  },
+  "human_review": "parent-integration-review.md",
+  "evidence": [
+    "parent-artifact-checks-E.json",
+    "parent-artifact-checks-F.json",
+    "parent-outer-checks.json",
+    "native-extraction-E.json",
+    "native-extraction-F.json"
+  ],
+  "residuals": [
+    "No new whole-product behavioral qualification, live privacy removal or host activation was performed by this review. Installation and publication require their own observations."
+  ]
+}

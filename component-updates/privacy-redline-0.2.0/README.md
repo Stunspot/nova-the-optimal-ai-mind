@@ -1,0 +1,5 @@
+# Privacy Redline 0.2.0 component composition
+
+The accepted prior native archives are the byte baseline. The recipe imports the exact reviewed standalone runtime, changes release identity and customer metadata, and preserves other owner payloads. Emergent also updates its Nova Operations product-version constant. Free retains its detached rights envelopes and records the already-shipped Oracle presentation file omitted from the earlier source-map list.
+
+The independent component review governs the new skill instructions. The archive review governs this bounded composition and does not claim a new full-product TestForge run, live removal effectiveness or a deployed background service. Runtime and customer artifact hashes are in construction.json. The replay plan names the retained baseline downloads. Run the recipe with --skill pointing at the current included privacy-redline folder and --output pointing at a new directory. The local shelf-baseline.json is a frozen input; the active shelf manifest is never changed for replay. Each repository retains only its own edition input. Do not overwrite existing accepted outputs.

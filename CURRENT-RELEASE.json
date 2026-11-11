@@ -1,52 +1,57 @@
 {
   "schema": "nova-current-release-pointer/v1",
-  "version": "4.3.2",
+  "version": "4.4.0",
   "repository": "Stunspot/nova-the-optimal-ai-mind",
-  "release_tag": "v4.3.2",
-  "release_tag_kind": "source version tag; GitHub Release assets are a separate delivery state",
-  "customer_guide": "START-HERE.md",
+  "build_id": "nova-free-4.4.0-privacy-20261110",
   "current_native_codex_source": "plugins/nova-the-optimal-ai",
-  "source_snapshot": "design/source-lock.json; exact 28-owner runtime closure qualified in the 2026-10-27 integration campaign",
-  "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
-  "tested_build_source_commit": "db4bb9b98c191155d1602d28ce15aed2fbee61df",
-  "candidate_state": "qualified_source_verified_archives_and_disposable_installation",
-  "source_readiness": "READY_WITH_RESIDUAL_RISK",
-  "independent_review": "REVIEW_PASS",
-  "package_acceptance": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\delivery-acceptance.json",
-  "shelf_readback": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\shelf-version-transition-readback.json",
-  "library_readback": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\library-version-transition-readback.json",
-  "source_publication_record": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\source-publication-final.json",
-  "customer_zip": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Final\\nova-the-optimal-ai-free-4.3.2.zip",
-  "customer_zip_sha256": "ef5cb3c29dffb42594076c12cf9606ce67c52f3cff9cd3143dc13f290b8eb773",
-  "codex_zip": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Archives\\nova-the-optimal-ai-free-4.3.2-codex.zip",
-  "codex_zip_sha256": "991cc2293059c750d1615839202be71d8fa98596010fa9abf38776fc3ae45beb",
-  "claude_zip": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Archives\\nova-the-optimal-ai-free-4.3.2-claude.zip",
-  "claude_zip_sha256": "6e44013a166e998178061c63949e3523db9f497340b18600c589ec3d196542fd",
-  "current_shelf_archive": "E:\\Indranet\\Augments\\0 Free\\Nova the Optimal AI Free v4.3.2.zip",
-  "library_attachment": {
-    "product_id": "nova-mind",
-    "card_id": "1874912029668542008",
-    "attachment_id": "1895547704063296739",
-    "filename": "Nova the Optimal AI Free v4.3.2.zip",
-    "bytes": 290223620,
-    "local_shelf_sha256": "ef5cb3c29dffb42594076c12cf9606ce67c52f3cff9cd3143dc13f290b8eb773",
-    "remote_verification": "fresh attachment metadata readback; bytes not downloaded",
-    "version": "4.3.2"
+  "current_native_claude_source": "claude/nova-the-optimal-ai",
+  "source_snapshot": "design/source-lock.json",
+  "baseline_release": {
+    "version": "4.3.2",
+    "build_id": "nova-free-4.3.2-system-integration-20261027-r1",
+    "source_pointer_commit": "origin/main before privacy update"
   },
-  "native_extraction_record": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\free-native-acceptance.json",
-  "installed_readback": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\free-disposable-installed-readback.json",
-  "governing_installation": "Free 4.3.2 installed and enabled in an isolated Codex profile and verified. This user profile remains governed by Emergent 2.0.3.",
-  "historical_github_release": {
-    "version": "4.3.1",
-    "url": "https://github.com/Stunspot/nova-the-optimal-ai-mind/releases/tag/v4.3.1",
-    "github_release_id": 422453923,
-    "published_at": "2026-10-24T02:01:46Z",
-    "source_commit": "c0fd55bb94ff8d71550425c321e2c20a3c182bfa",
-    "scope": "Retained previous published release; not relabeled as 4.3.2."
+  "privacy_update": {
+    "kind": "update",
+    "effect": "expanded_workflow",
+    "baseline_version": "4.3.2",
+    "target_version": "4.4.0",
+    "component": "privacy-redline",
+    "component_version": "0.2.0",
+    "reason": "Adds precise privacy-claim analysis and authorized data-removal workflows through the existing host, plus a future service design.",
+    "compatibility": "Existing case-v1 formats and other component behavior retained."
   },
+  "publication_state": "Accepted source and customer downloads; the governed shelf is current. Storefront publication and host activation are separate observations.",
   "github_release_assets": {
     "state": "not_uploaded",
-    "reason": "Prior independent Go TLS and HTTP1 Windows10053 failures; unchanged route not retried."
+    "reason": "No GitHub binary upload was attempted in this update; prior release records retain their transport limitations."
   },
-  "publication_state": "Versioned source, accepted local and shelf downloads and existing library card updated. No new GitHub Release publication or large-ZIP asset upload is claimed."
+  "host_archives": {
+    "codex": {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+      "sha256": "19cffbd51a9ec1f7b1819f1a135feb2c2822e20973e8544930c5bdd629494b1c",
+      "bytes": 74718383,
+      "baseline_sha256": "991cc2293059c750d1615839202be71d8fa98596010fa9abf38776fc3ae45beb"
+    },
+    "claude": {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+      "sha256": "421c0130db4512fd316b0c0db86c480c1384fcc5a169172ac479786898852656",
+      "bytes": 216280989,
+      "baseline_sha256": "6e44013a166e998178061c63949e3523db9f497340b18600c589ec3d196542fd"
+    }
+  },
+  "customer_archive": {
+    "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+    "sha256": "9fd6c26eb88ed40fff86bcd15476c3513761ea3ac6e8e98e55743d8551595aef",
+    "bytes": 291001892
+  },
+  "package_acceptance": "component-updates/privacy-redline-0.2.0/parent-acceptance.json",
+  "construction_recipe": "component-updates/privacy-redline-0.2.0/build_parent_component_update.py",
+  "source_readiness": "READY_WITH_RESIDUAL_RISK",
+  "readiness_scope": "Exact accepted Privacy Redline 0.2.0 48-file runtime composed with hash-pinned accepted Emergent 2.0.3 and Free 4.3.2 native archives; only declared identity, documentation and rights-envelope metadata plus the Emergent Nova Operations product-version constant change. This is independent component composition and artifact acceptance, not new whole-product TestForge or live-host behavioral qualification.",
+  "current_shelf_archive": "E:\\Indranet\\Augments\\0 Free\\Nova the Optimal AI Free v4.4.0.zip",
+  "shelf_bundle_fingerprint": "sha256:e95d9d490280fbbee574fa0ec1807052f65d1a3341e26e02c23a3971490988b6",
+  "component_source_commit": "ac25b78",
+  "release_tag": "v4.4.0",
+  "release_tag_kind": "source version tag; GitHub Release assets are a separate delivery state"
 }

@@ -1,0 +1,56 @@
+{
+  "rows": [
+    {
+      "id": "nova-mind",
+      "version": "4.3.2",
+      "source_path": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Final\\nova-the-optimal-ai-free-4.3.2.zip",
+      "sha256": "ef5cb3c29dffb42594076c12cf9606ce67c52f3cff9cd3143dc13f290b8eb773",
+      "additional_files": [
+        {
+          "host": "codex",
+          "role": "host-archive",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.3.2-codex.zip",
+          "source_path": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Archives\\nova-the-optimal-ai-free-4.3.2-codex.zip",
+          "source_name": "nova-the-optimal-ai-free-4.3.2-codex.zip",
+          "sha256": "991cc2293059c750d1615839202be71d8fa98596010fa9abf38776fc3ae45beb",
+          "bytes": 74567858,
+          "transformation": "Owner-requested patch version increment for the completed system integration repair: restore cross-owner state handoffs, truthful companion routing and host-specific installation guidance while retaining the accepted roster, saved-work formats and prior security repairs.",
+          "version": "4.3.2"
+        },
+        {
+          "host": "codex",
+          "role": "checksum",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.3.2-codex.zip.sha256",
+          "source_path": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\shelf-source-artifacts\\nova-mind\\nova-the-optimal-ai-free-4.3.2-codex.zip.sha256",
+          "source_name": "nova-the-optimal-ai-free-4.3.2-codex.zip.sha256",
+          "sha256": "e5011fd7465c36b612239343d8773ccd13d7ae175b38d357719a8df5cdd4c4d7",
+          "bytes": 108,
+          "transformation": "Owner-requested patch version increment for the completed system integration repair: restore cross-owner state handoffs, truthful companion routing and host-specific installation guidance while retaining the accepted roster, saved-work formats and prior security repairs.",
+          "version": "4.3.2"
+        },
+        {
+          "host": "claude",
+          "role": "host-archive",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.3.2-claude.zip",
+          "source_path": "E:\\NovaBuild\\20261027\\SystemIntegration\\F-Archives\\nova-the-optimal-ai-free-4.3.2-claude.zip",
+          "source_name": "nova-the-optimal-ai-free-4.3.2-claude.zip",
+          "sha256": "6e44013a166e998178061c63949e3523db9f497340b18600c589ec3d196542fd",
+          "bytes": 215653239,
+          "transformation": "Owner-requested patch version increment for the completed system integration repair: restore cross-owner state handoffs, truthful companion routing and host-specific installation guidance while retaining the accepted roster, saved-work formats and prior security repairs.",
+          "version": "4.3.2"
+        },
+        {
+          "host": "claude",
+          "role": "checksum",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.3.2-claude.zip.sha256",
+          "source_path": "E:\\Indranet\\Nova\\workbench\\nova-system-integration-2026-10-27\\shelf-source-artifacts\\nova-mind\\nova-the-optimal-ai-free-4.3.2-claude.zip.sha256",
+          "source_name": "nova-the-optimal-ai-free-4.3.2-claude.zip.sha256",
+          "sha256": "779d6cf21f5763d0cdc2786f1ce7f031f02717890b00bf78e71e26e0166ffbb4",
+          "bytes": 109,
+          "transformation": "Owner-requested patch version increment for the completed system integration repair: restore cross-owner state handoffs, truthful companion routing and host-specific installation guidance while retaining the accepted roster, saved-work formats and prior security repairs.",
+          "version": "4.3.2"
+        }
+      ]
+    }
+  ]
+}

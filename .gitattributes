@@ -44,3 +44,6 @@ verification/giles-atlas-3.6/hesperos/evidence/** -text
 /delivery-wrapper/verification/hesperos-capabilities/** -text
 /documentation-manifest.json -text
 /delivery-wrapper/documentation-manifest.json -text
+
+# Hash-bound Privacy Redline component update keeps exact reviewed bytes.
+/component-updates/privacy-redline-0.2.0/** -text

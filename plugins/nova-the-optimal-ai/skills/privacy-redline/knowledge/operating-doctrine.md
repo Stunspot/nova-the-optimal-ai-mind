@@ -49,5 +49,5 @@ Read receipts, failures, drift, near misses, and life changes back into the mode
 - **Logbook:** exposure change, near miss, drift, incident, and learning records.
 - **Triggers:** conditions that reopen the Case or a particular risk.
 
-Everything else nests inside these objects. This keeps a complex system usable without amputating its intelligence.
+Nest persistent work inside these objects when useful. Keep the user's immediate task and result in the foreground. Ordinary questions can finish in connected prose.
 

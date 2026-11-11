@@ -30,6 +30,7 @@ RIGHTS_DOCS = (
     "THIRD-PARTY-NOTICES.md",
 )
 REQUIRED_DOCS = (
+    "PRIVACY-UPDATE.md",
     "README.md",
     "START-HERE.md",
     *RIGHTS_DOCS,
@@ -196,7 +197,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
     source_lock = json.loads((repo / "design" / "source-lock.json").read_text(encoding="utf-8"))
     version = str(plugin_manifest["version"])
     contract = json.loads((repo / "design/product-contract.json").read_text(encoding="utf-8"))
-    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0", "4.3.1", "4.3.2"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
+    if version not in {"3.8.1", "4.0.0", "4.1.0", "4.2.0", "4.3.0", "4.3.1", "4.3.2", "4.4.0"} or contract.get("product_version") != version or source_lock.get("product_version") != version or loadout.get("product_version") != version:
         raise RuntimeError("Version contract mismatch")
     if loadout.get("license") != "LICENSE.md":
         raise RuntimeError("Loadout does not identify the Nova Free product license")
@@ -234,7 +235,7 @@ def build(repo: Path, output_parent: Path, artifact_parent: Path, require_clean:
         target = package_root / name
         target.write_bytes(source.read_bytes())
 
-    if version in {"4.1.0", "4.3.0", "4.3.1", "4.3.2"}:
+    if version in {"4.1.0", "4.3.0", "4.3.1", "4.3.2", "4.4.0"}:
         for name in ("documentation-manifest.json", "documentation-authorship.json"):
             (package_root / name).write_bytes((repo / name).read_bytes())
         copy_tree(repo / "documentation-source", package_root / "documentation-source")

@@ -1,0 +1,11 @@
+# Verify the procedure at the point of use
+
+These routes were inspected on November 10, 2026. Retrieve the applicable current document before relying on a right, eligibility requirement, field, deadline or form. Jurisdiction and the request type determine the available remedy.
+
+California's DROP supports eligible residents' broker deletion requests. It includes continued processing and distinguishes deletion, exemption, opt-out, no record found and pending outcomes. First-party and exempt information have separate treatment. Its authorized-agent provisions require residency verification and disclosure of agent information. The skill helps the person use the current official route and truthfully establish agency. [How DROP works](https://privacy.ca.gov/drop/how-drop-works/) · [Current DROP regulations](https://cppa.ca.gov/regulations/pdf/data_broker_drop_reg.pdf)
+
+Global Privacy Control communicates an opt-out preference. Check the current jurisdiction, business scope, browser or device coverage and account association. Deletion, correction and opt-out rights each have their own requirements. Prefer the regulator's explanation and the business's actual procedure. [CalPrivacy FAQs](https://cppa.ca.gov/faq) · [California privacy rights](https://privacy.ca.gov/california-privacy-rights/)
+
+For other jurisdictions, retrieve the relevant regulator or official legislation and the operator's procedure. A generally available voluntary request may be useful even when a specific statutory right does not apply. Make truthful requests and retain uncertainty about enforcement. Counsel owns consequential legal conclusions.
+
+For agent-controlled tools, inspect the host's permissions and observed data handling. Enforceable least privilege, tool-call validation and human authority complement the model's treatment of external text as untrusted. These sources guide the future implementation. They do not certify the installed host. [OWASP prompt injection guidance](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html) · [OWASP SSRF guidance](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html)

@@ -1,3 +1,7 @@
+# Nova Free 4.4.0 — privacy workflow update
+
+Includes Privacy Redline 0.2.0. See PRIVACY-UPDATE.md for the new workflow and its execution boundary.
+
 # Nova Free 4.3.2 — system integration repair
 
 27 October 2026. Corrects the joins between Nova Operations, project records, personal state and the skills that consume them. Approved Dennis adapter bindings remain integrity-checked; project creation, correction and return use the resolved estate. Project Bridge is described as the read-only reader it actually provides. Clarifies projectless Worldline versus scoped Continuity, removes duplicated Commonplace retrieval guidance, and aligns Dunbar and Corkboard with both editions. Ordinary work remains available without optional persistent services.

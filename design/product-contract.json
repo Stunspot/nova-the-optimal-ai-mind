@@ -2,7 +2,7 @@
   "schema": "nova-free-product-contract/v3",
   "product": "Nova the Optimal AI Free",
   "brand": "Nova the Optimal AI",
-  "product_version": "4.3.2",
+  "product_version": "4.4.0",
   "state": "candidate_preparation_pending_qualification",
   "plugin": {
     "count": 1,
@@ -174,5 +174,15 @@
     "target_version": "4.3.2",
     "owner_requested_increment": true,
     "reason": "Owner-requested patch release restoring integrated state handoffs, truthful included-companion routes and usable native installation guidance; no data-format, persona or optional-service compatibility change."
+  },
+  "privacy_update": {
+    "kind": "update",
+    "effect": "expanded_workflow",
+    "baseline_version": "4.3.2",
+    "target_version": "4.4.0",
+    "component": "privacy-redline",
+    "component_version": "0.2.0",
+    "reason": "Adds precise privacy-claim analysis and authorized data-removal workflows through the existing host, plus a future service design.",
+    "compatibility": "Existing case-v1 formats and other component behavior retained."
   }
 }

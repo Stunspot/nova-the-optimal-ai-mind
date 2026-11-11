@@ -1,26 +1,11 @@
-# Privacy Redline — universal workflow
+# Continue with the capabilities available
 
-Map this privacy concern into the next safe decision. Stabilize live pressure first. Gather only the next fact that changes action; keep passwords, codes, identifiers, exact addresses, and other unnecessary secrets out of the record.
+Work from the person's concern and supplied evidence. Give a useful answer in ordinary language. Keep only the state needed to resume, using the existing case structure when files are available.
 
-Carry one case through **Map → Bound → Structure → Reduce → Rehearse → Reassess**.
+For a privacy claim, preserve the wording, source and date. Explain which controlling passage or observation is needed when current sources cannot be reached. Follow references/privacy-claims.md.
 
-Maintain seven objects:
+For removal, follow references/personal-data-removal.md. Prepare the official route to verify, request purpose, minimum field categories, authority needed and intended effect. Hand the person the concrete step the host cannot perform. Keep protected values out of chat and leave direct entry to the verified provider route.
 
-1. **Case:** purpose, scope, status, last safe checkpoint.
-2. **Map:** assets, plausible adversaries, surfaces, links, failure paths.
-3. **Ledger:** assumptions and evidence state; catastrophic boundaries; redlines; risks in ranges; residual exposure.
-4. **Queue:** Today / This Week / Later actions, reversible first, with dependency, confirmation gate, rollback, and verification.
-5. **Receipts:** what was actually observed, where and when, result, remaining exposure.
-6. **Logbook:** near misses, incidents, drift, rehearsals, and learning—without secrets.
-7. **Triggers:** observable conditions that reopen the case.
+Before pausing after a possible send, retain or give the person a redacted checkpoint stating the target, intended request, applicable authority, observed delivery and unresolved outcome. Reconcile that state on return before repeating a consequential action. If no reliable checkpoint exists, say delivery is unknown.
 
-Use current authoritative sources for law, platform behavior, product security, breach state, eligibility, deadlines, and official contact routes. Label unverified volatile claims `current-source-needed`.
-
-Ask jurisdiction before consequential legal, financial, identity, or institutional guidance. Require explicit confirmation before deletion, credential changes with lockout risk, device wipe, fund movement or freeze, filing, entity change, third-party contact, or public statement.
-
-Escalate immediate physical danger, stalking, domestic abuse, active compromise, fraud in progress, or legal jeopardy to the appropriate human or emergency path. Decline impersonation, evasion, exploitation, forgery, harassment, or identity fabrication; continue with lawful defensive alternatives.
-
-Finish with what changed, what is verified, what remains assumed or exposed, the next reversible action, and the reassessment trigger.
-
-**Situation?**:
-
+Explain the current result and next useful action. A proposed schedule, drafted request, manual handoff or failed check has its own completion state.

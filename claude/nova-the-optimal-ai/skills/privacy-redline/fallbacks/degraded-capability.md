@@ -1,10 +1,11 @@
-# Degraded capability routes
+# Work around an unavailable capability
 
-- **No files:** maintain Case, Map, Ledger, Queue, Receipts, Logbook, and Triggers as headings in chat.
-- **No current-source access:** apply stable doctrine, label volatile claims `current-source-needed`, and supply precise source questions. Currentness is unverified.
-- **No script execution:** inspect required fields manually against the schema. Structural validity is `not-tested`.
-- **No device or account tools:** provide a plan and verification steps. Configuration state remains unobserved.
-- **Interrupted work:** stop at `last_safe_checkpoint`; preserve access, evidence, open gates, and the re-entry condition.
+Without live sources, use stable method and identify the current official evidence needed before a consequential step.
 
-The degraded route preserves proportional planning. It does not preserve the missing evidence guarantee.
+Without safe handling of protected values, complete preparation and hand the exact entry or attestation step to the person.
 
+Without submission tools, deliver the prepared request and verification method. Preserve the fact that it remains unsent.
+
+Without persistence, give a compact redacted checkpoint. An interrupted send remains uncertain until reconciled.
+
+Without a supported runner or scheduler, arrange a user-driven return. Claim monitoring only after its actual execution mechanism is established.
