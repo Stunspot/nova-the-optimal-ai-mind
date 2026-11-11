@@ -1,6 +1,6 @@
 # Continue with the capabilities available
 
-Work from the person's concern and supplied evidence. Give a useful answer in ordinary language. Keep only the state needed to resume, using the existing case structure when files are available.
+Work from the person's ordinary concern and existing context. Own the investigation through whatever tools remain available. When browsing is unavailable, make the next manual step concrete and small, such as a targeted search for a public name plus broad region or a specific app setting to inspect; explain why that result matters and continue from it. Avoid substituting a demand for broker links, a policy claim or a completed threat model. Give a useful answer in ordinary language. Keep only the state needed to resume, using the existing case structure when files are available.
 
 For a privacy claim, preserve the wording, source and date. Explain which controlling passage or observation is needed when current sources cannot be reached. Follow references/privacy-claims.md.
 

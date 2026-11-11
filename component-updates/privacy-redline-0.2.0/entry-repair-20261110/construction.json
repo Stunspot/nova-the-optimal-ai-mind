@@ -1,0 +1,34 @@
+{
+  "edition": "F",
+  "root": "E:\\Github\\nova-free-privacy-020",
+  "version": "4.4.0",
+  "build_id": "nova-free-4.4.0-privacy-20261110-entry-r1",
+  "baseline_archives": {
+    "codex": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+    "claude": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip"
+  },
+  "overlays": {
+    "codex": "E:\\Indranet\\Nova\\workbench\\privacy-redline-entry-repair-20261110\\overlays\\F\\codex",
+    "claude": "E:\\Indranet\\Nova\\workbench\\privacy-redline-entry-repair-20261110\\overlays\\F\\claude"
+  },
+  "archives": {
+    "codex": {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+      "sha256": "ed3d6b2c999b6c9615e9db03ae6f976d77fb9516180fb5d85a32d0baa91edf04",
+      "bytes": 74723204,
+      "baseline_sha256": "19cffbd51a9ec1f7b1819f1a135feb2c2822e20973e8544930c5bdd629494b1c"
+    },
+    "claude": {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+      "sha256": "2194a139d9f096b3069c4491a74d87eb571a41ac6b48501e22f36bbfeebdd18d",
+      "bytes": 216294171,
+      "baseline_sha256": "421c0130db4512fd316b0c0db86c480c1384fcc5a169172ac479786898852656"
+    }
+  },
+  "customer": {
+    "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+    "sha256": "6615756123d6d3139c4c171ebe5be234b1471a6601762ee09b423cb16fe69250",
+    "bytes": 291018976,
+    "baseline_sha256": "9fd6c26eb88ed40fff86bcd15476c3513761ea3ac6e8e98e55743d8551595aef"
+  }
+}

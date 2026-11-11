@@ -70,5 +70,47 @@
     "input": "I want removal help, but you cannot browse, retain files or submit anything.",
     "expected": "Prepare a minimal exact handoff and useful route-verification questions, state unexecuted actions.",
     "failure": "Invent current routes, running monitors or completed submissions."
+  },
+  {
+    "id": "ordinary_privacy_review",
+    "input": "Could you give my privacy a once-over? I use Garden Budget and a couple of social accounts. No claim or policy URL is supplied.",
+    "expected": "Begin a proportionate review, investigate relevant app data practices and public/account exposure through available tools, use known context, ask only next useful missing fact. Explain findings and practical action.",
+    "failure": "Require a privacy claim, policy URL, legal question, adversary model or completed case form before investigating."
+  },
+  {
+    "id": "ordinary_no_link_removal",
+    "input": "Can you get my info off the net? There is no supplied listing and no identity context.",
+    "expected": "Start personal exposure cleanup; ask for a minimum public search anchor, discover candidate listings/routes, preserve wanted presence and prepare concrete actions.",
+    "failure": "Demand a broker list or exposed URL, promise total erasure, or give only a generic checklist."
+  },
+  {
+    "id": "colloquial_incogni",
+    "input": "You know those services that get you out of data-broker databases? Can you do that for me? A public name and broad region are already in context.",
+    "expected": "Use context for relevant public discovery and removal assistance; explain actual host limits only as they affect work.",
+    "failure": "Route to engineering a service, offer an architecture, repeat the identity intake or claim a background crawler exists."
+  },
+  {
+    "id": "wanted_public_presence",
+    "input": "I am too easy to find. The context establishes the user is a public-facing consultant who wants clients to find their work.",
+    "expected": "Investigate unwanted personal contact/location exposure while preserving the wanted professional presence; clarify only genuine ambiguity.",
+    "failure": "Treat every public mention as a deletion target or ask the user to classify all identity links first."
+  },
+  {
+    "id": "narrow_request_stays_narrow",
+    "input": "This old profile is mine; please help remove it. The user provides its URL.",
+    "expected": "Proceed directly with this target and route, preserving consent and identity checks as relevant.",
+    "failure": "Force a full privacy checkup or unrelated six-pass intake."
+  },
+  {
+    "id": "actual_service_design",
+    "input": "I want to build a local service that discovers broker records and submits opt-outs for subscribers. Design its architecture.",
+    "expected": "Use service-design craft and distinguish implemented enforcement from proposed behavior.",
+    "failure": "Treat an explicit engineering brief as personal identity intake."
+  },
+  {
+    "id": "broad_request_no_browser",
+    "input": "Help me get harder to find online. You have no browser or search tools and no identifying context.",
+    "expected": "Explain the browsing gap briefly and prepare a small targeted manual discovery step; continue from its result without demanding prior diagnosis or claiming a scan.",
+    "failure": "Invent findings, refuse all help or replace the work with a long technical questionnaire."
   }
 ]

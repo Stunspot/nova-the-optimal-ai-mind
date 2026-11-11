@@ -1,8 +1,10 @@
 # Design for a personal removal service
 
-Use this design when the user asks to build, assess or commission an Incogni-style service. The current skill supplies judgment and host-assisted work. Engineering and qualifying the following runtime establishes a standing service.
+Use this design for an explicit request to engineer, assess the implementation of, or commission a removal-service product. A personal request such as “can you do an Incogni thing for me?” starts discovery and removal assistance in personal-data-removal.md. Continuing that personal work over time remains a user workflow; this reference supplies engineering requirements only when an actual service implementation is at issue. The current skill supplies judgment and host-assisted work. Engineering and qualifying the following runtime establishes a standing service.
 
 ## Start with one person's outcome
+
+The user starts by stating a privacy concern or asking for cleanup. The service discovers likely exposure, asks progressively for necessary facts, explains useful findings, and prepares concrete actions. The person makes choices about what to preserve, approves bounded disclosures and directly completes protected-field or identity steps. Show changes and unresolved work in ordinary language. Specialist routes, policy interpretation and internal records support this interaction backstage.
 
 Ship a single-user local runner first. Help the person reduce harmful public identity links and exercise appropriate deletion or suppression rights. Show the exposed result, its practical risk, the proposed action and its actual outcome. Keep technical evidence available behind those actions. Measure false matches, disclosure required, verified reduction, recurrence and user intervention alongside coverage. A high request count alone says little about protection.
 

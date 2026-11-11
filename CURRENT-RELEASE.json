@@ -2,7 +2,7 @@
   "schema": "nova-current-release-pointer/v1",
   "version": "4.4.0",
   "repository": "Stunspot/nova-the-optimal-ai-mind",
-  "build_id": "nova-free-4.4.0-privacy-20261110",
+  "build_id": "nova-free-4.4.0-privacy-20261110-entry-r1",
   "current_native_codex_source": "plugins/nova-the-optimal-ai",
   "current_native_claude_source": "claude/nova-the-optimal-ai",
   "source_snapshot": "design/source-lock.json",
@@ -21,37 +21,47 @@
     "reason": "Adds precise privacy-claim analysis and authorized data-removal workflows through the existing host, plus a future service design.",
     "compatibility": "Existing case-v1 formats and other component behavior retained."
   },
-  "publication_state": "Accepted source and customer downloads; the governed shelf is current. Storefront publication and host activation are separate observations.",
+  "publication_state": "Same-version interaction repair accepted on the governed shelf. Storefront publication remains a separate observation.",
   "github_release_assets": {
     "state": "not_uploaded",
     "reason": "No GitHub binary upload was attempted in this update; prior release records retain their transport limitations."
   },
   "host_archives": {
     "codex": {
-      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
-      "sha256": "19cffbd51a9ec1f7b1819f1a135feb2c2822e20973e8544930c5bdd629494b1c",
-      "bytes": 74718383,
-      "baseline_sha256": "991cc2293059c750d1615839202be71d8fa98596010fa9abf38776fc3ae45beb"
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+      "sha256": "ed3d6b2c999b6c9615e9db03ae6f976d77fb9516180fb5d85a32d0baa91edf04",
+      "bytes": 74723204,
+      "baseline_sha256": "19cffbd51a9ec1f7b1819f1a135feb2c2822e20973e8544930c5bdd629494b1c"
     },
     "claude": {
-      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
-      "sha256": "421c0130db4512fd316b0c0db86c480c1384fcc5a169172ac479786898852656",
-      "bytes": 216280989,
-      "baseline_sha256": "6e44013a166e998178061c63949e3523db9f497340b18600c589ec3d196542fd"
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+      "sha256": "2194a139d9f096b3069c4491a74d87eb571a41ac6b48501e22f36bbfeebdd18d",
+      "bytes": 216294171,
+      "baseline_sha256": "421c0130db4512fd316b0c0db86c480c1384fcc5a169172ac479786898852656"
     }
   },
   "customer_archive": {
-    "path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
-    "sha256": "9fd6c26eb88ed40fff86bcd15476c3513761ea3ac6e8e98e55743d8551595aef",
-    "bytes": 291001892
+    "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+    "sha256": "6615756123d6d3139c4c171ebe5be234b1471a6601762ee09b423cb16fe69250",
+    "bytes": 291018976,
+    "baseline_sha256": "9fd6c26eb88ed40fff86bcd15476c3513761ea3ac6e8e98e55743d8551595aef"
   },
-  "package_acceptance": "component-updates/privacy-redline-0.2.0/parent-acceptance.json",
-  "construction_recipe": "component-updates/privacy-redline-0.2.0/build_parent_component_update.py",
+  "package_acceptance": "component-updates/privacy-redline-0.2.0/entry-repair-20261110/artifact-acceptance.json",
+  "construction_recipe": "component-updates/privacy-redline-0.2.0/entry-repair-20261110/repackage.py",
   "source_readiness": "READY_WITH_RESIDUAL_RISK",
-  "readiness_scope": "Exact accepted Privacy Redline 0.2.0 48-file runtime composed with hash-pinned accepted Emergent 2.0.3 and Free 4.3.2 native archives; only declared identity, documentation and rights-envelope metadata plus the Emergent Nova Operations product-version constant change. This is independent component composition and artifact acceptance, not new whole-product TestForge or live-host behavioral qualification.",
+  "readiness_scope": "Independent ordinary-entry instruction review and exact bounded component propagation; inherited other-owner payloads preserved. No live removal or fresh-host activation claim.",
   "current_shelf_archive": "E:\\Indranet\\Augments\\0 Free\\Nova the Optimal AI Free v4.4.0.zip",
-  "shelf_bundle_fingerprint": "sha256:e95d9d490280fbbee574fa0ec1807052f65d1a3341e26e02c23a3971490988b6",
-  "component_source_commit": "ac25b78",
+  "shelf_bundle_fingerprint": "sha256:2c907dec83c62c5ab6d4c54c4dcbfbed080ba15e97ad02c0461805b0f32e1d60",
+  "component_source_commit": "1b05e3597b785e3e8c8fde52b1bdd08a402337c4",
   "release_tag": "v4.4.0",
-  "release_tag_kind": "source version tag; GitHub Release assets are a separate delivery state"
+  "release_tag_kind": "Original source version tag retained; this same-version repair is identified by main revision and build_id.",
+  "interaction_repair": {
+    "kind": "edit",
+    "effect": "restored_behavior",
+    "component": "privacy-redline",
+    "component_version": "0.2.0",
+    "reason": "Restore ordinary privacy-review and no-link cleanup requests, agent-owned discovery, and personal Incogni intent. No new runtime service or authority.",
+    "baseline_build_id": "nova-free-4.4.0-privacy-20261110",
+    "build_id": "nova-free-4.4.0-privacy-20261110-entry-r1"
+  }
 }

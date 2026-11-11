@@ -1,0 +1,57 @@
+{
+  "rows": [
+    {
+      "id": "nova-mind",
+      "version": "4.4.0",
+      "source_path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+      "sha256": "9fd6c26eb88ed40fff86bcd15476c3513761ea3ac6e8e98e55743d8551595aef",
+      "bytes": 291001892,
+      "additional_files": [
+        {
+          "host": "codex",
+          "role": "host-archive",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+          "source_path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+          "source_name": "nova-the-optimal-ai-free-4.4.0-codex.zip",
+          "sha256": "19cffbd51a9ec1f7b1819f1a135feb2c2822e20973e8544930c5bdd629494b1c",
+          "bytes": 74718383,
+          "transformation": "Privacy Redline 0.2.0 adds precise privacy-claim analysis and host-assisted authorized data removal with scoped consent, recovery and qualified verification, plus a staged recurring-service design.",
+          "version": "4.4.0"
+        },
+        {
+          "host": "codex",
+          "role": "checksum",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.4.0-codex.zip.sha256",
+          "source_path": "E:\\Indranet\\Nova\\workbench\\privacy-redline-20261110\\shelf-checksums\\nova-the-optimal-ai-free-4.4.0-codex.zip.sha256",
+          "source_name": "nova-the-optimal-ai-free-4.4.0-codex.zip.sha256",
+          "sha256": "4433335f65d6f112f8a6d6356cf8ad22ef5d199ca8a0682927eccaabe686cf66",
+          "bytes": 108,
+          "transformation": "Privacy Redline 0.2.0 adds precise privacy-claim analysis and host-assisted authorized data removal with scoped consent, recovery and qualified verification, plus a staged recurring-service design.",
+          "version": "4.4.0"
+        },
+        {
+          "host": "claude",
+          "role": "host-archive",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+          "source_path": "E:\\NovaBuild\\20261110\\Privacy-Redline\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+          "source_name": "nova-the-optimal-ai-free-4.4.0-claude.zip",
+          "sha256": "421c0130db4512fd316b0c0db86c480c1384fcc5a169172ac479786898852656",
+          "bytes": 216280989,
+          "transformation": "Privacy Redline 0.2.0 adds precise privacy-claim analysis and host-assisted authorized data removal with scoped consent, recovery and qualified verification, plus a staged recurring-service design.",
+          "version": "4.4.0"
+        },
+        {
+          "host": "claude",
+          "role": "checksum",
+          "target_path": "0 Free\\nova-the-optimal-ai-free-4.4.0-claude.zip.sha256",
+          "source_path": "E:\\Indranet\\Nova\\workbench\\privacy-redline-20261110\\shelf-checksums\\nova-the-optimal-ai-free-4.4.0-claude.zip.sha256",
+          "source_name": "nova-the-optimal-ai-free-4.4.0-claude.zip.sha256",
+          "sha256": "0cc3cdeb36aab19f4c04c1c33f9eda9b3a0c6b92bea3bb2d262ea6c40b9518b1",
+          "bytes": 109,
+          "transformation": "Privacy Redline 0.2.0 adds precise privacy-claim analysis and host-assisted authorized data removal with scoped consent, recovery and qualified verification, plus a staged recurring-service design.",
+          "version": "4.4.0"
+        }
+      ]
+    }
+  ]
+}

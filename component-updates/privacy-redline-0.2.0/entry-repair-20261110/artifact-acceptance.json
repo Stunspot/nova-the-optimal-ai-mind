@@ -1,0 +1,27 @@
+{
+  "decision": "PASS",
+  "scope": "Bounded same-version Privacy Redline ordinary-entry repair artifact verification",
+  "artifacts": [
+    {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+      "sha256": "ed3d6b2c999b6c9615e9db03ae6f976d77fb9516180fb5d85a32d0baa91edf04",
+      "bytes": 74723204
+    },
+    {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+      "sha256": "2194a139d9f096b3069c4491a74d87eb571a41ac6b48501e22f36bbfeebdd18d",
+      "bytes": 216294171
+    },
+    {
+      "path": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+      "sha256": "6615756123d6d3139c4c171ebe5be234b1471a6601762ee09b423cb16fe69250",
+      "bytes": 291018976
+    }
+  ],
+  "evidence": "artifact-review-results.json",
+  "limits": [
+    "Artifact acceptance only; interaction review is separate.",
+    "No fresh-host activation, live removal, unrelated-service behavior, or future runner enforcement was exercised.",
+    "Selective native Windows tar extraction tested every changed member plus nested Privacy payloads; Windows Explorer UI was not exercised."
+  ]
+}

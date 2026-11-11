@@ -1,0 +1,6 @@
+{
+  "decision": "READY_WITH_RESIDUAL_RISK",
+  "runtime_tree_sha256": "cbe8e601f1cf273c1ed8b414babed1cfe3701ac23127178726e07d1d3c26b80c",
+  "review": "interaction-review.md",
+  "scope": "Independent qualitative instruction continuations and onboarding review; no live activation or removals."
+}

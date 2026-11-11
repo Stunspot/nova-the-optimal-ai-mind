@@ -2,7 +2,7 @@
   "schema": "nova-free-source-lock/v3",
   "product": "Nova the Optimal AI Free",
   "product_version": "4.4.0",
-  "source_map_sha256": "24be3a153b67b85399638fe799fd7cbfeef22548bba512008f3c62d79453fd61",
+  "source_map_sha256": "2c8b7400eaa4e29daf15119c983e152bb9b92b2ce12b4422fabb9b4c71b6eca7",
   "tree_algorithm": "sha256 over skill-relative UTF-8 POSIX path in ordinal exact-case order, one NUL byte, and raw 32-byte file sha256; Python caches excluded",
   "records": [
     {
@@ -5708,7 +5708,7 @@
       "imported_path": "plugins/nova-the-optimal-ai/skills/privacy-redline",
       "imported_tree": {
         "file_count": 48,
-        "tree_sha256": "f7d9cc670f30ae45a15652726cedb8fab256a910993bb15ade46cbcac3971fa2"
+        "tree_sha256": "cbe8e601f1cf273c1ed8b414babed1cfe3701ac23127178726e07d1d3c26b80c"
       },
       "selection": [
         {
@@ -5717,11 +5717,11 @@
         },
         {
           "path": "SKILL.md",
-          "sha256": "f02e9eafad58582321a64082e16080572a498896b2f1d7d5fbf638b07d093365"
+          "sha256": "27197c3e3508494012c3676fec2d40b41de368c1f8b556f335c986e416c9325f"
         },
         {
           "path": "agents/openai.yaml",
-          "sha256": "f8647862ba1f3564afcb4a8b6c84d9fe9ffa9366a21bafbdb28cab58b5af6d06"
+          "sha256": "68271630fae2868f11fb80d7b75b8f0235f73dbb95aa492166c109cfadd4c754"
         },
         {
           "path": "assets/ledger.md",
@@ -5761,7 +5761,7 @@
         },
         {
           "path": "evals/removal-transfer-cases.json",
-          "sha256": "8dbf2945e277c0a3cd44959f2ff819ea9d925ab4ce62755d8d68b0b623e53fff"
+          "sha256": "3822e6327184a40182620957ff92e8a3a3812f8854a4449ad49336c54f40011d"
         },
         {
           "path": "examples/boundary-cases/active-danger.md",
@@ -5781,7 +5781,7 @@
         },
         {
           "path": "examples/removal-and-claims.md",
-          "sha256": "a15e76e3dd99e59bd7bbcc6667a73b8d5cb11a9537b160a844bc99591c8ef319"
+          "sha256": "540e631fca70c6fc5436091e2e15b38d0309ac85dd33317bc0f82f449b0b6afc"
         },
         {
           "path": "fallbacks/degraded-capability.md",
@@ -5789,7 +5789,7 @@
         },
         {
           "path": "fallbacks/universal-copy-paste-workflow.md",
-          "sha256": "4da3cf7cd51eb21cc3ee4d943bbb1cfc557bc71d37b01ec186fe15d62abfe02e"
+          "sha256": "c2e57f8a82d961ac7d74c1445e3b90a3904e291aa3787418404ebef4c31a9941"
         },
         {
           "path": "knowledge/avery-structuring-canonical.md",
@@ -5821,7 +5821,7 @@
         },
         {
           "path": "knowledge/state-and-routing.md",
-          "sha256": "95939ebfa57aa8fd3060321a26e7822c39617af64d1421e5b19c2799c7e00ff5"
+          "sha256": "3c87402cd4420676cc3edd5c3dd7ef6091fc7bc6a141a3cfe30430ed42407f92"
         },
         {
           "path": "manifest.json",
@@ -5869,11 +5869,11 @@
         },
         {
           "path": "references/personal-data-removal.md",
-          "sha256": "26f9a07084d4fe1ddf5eae595416c1ae7be3c7358694c16209ae7b96f36e6f9f"
+          "sha256": "13bc9b518f550ec4a2bf240d2a55ecbf81597b86f3fd95377b806d39805b4fee"
         },
         {
           "path": "references/privacy-claims.md",
-          "sha256": "4afa4952fac35d1ccaa6a92e258d737bddda9007b6861d4ab98cff816d3b366c"
+          "sha256": "dd8aa4c0f87e7384f7f672a497fcb8c8060601bab758c39309a3b74c74a49dbf"
         },
         {
           "path": "references/privacy-source-routes.md",
@@ -5881,7 +5881,7 @@
         },
         {
           "path": "references/removal-service-design.md",
-          "sha256": "948f460d0d7a6e8cc34e461e5b4e885050c65e5332d360a626be9afa8e135424"
+          "sha256": "7d6d80f90f8bd84a1a54945e8ca9b3b2b6718a1b229811504fe5bd499cc78522"
         },
         {
           "path": "schemas/privacy-case.schema.json",
@@ -5918,7 +5918,7 @@
       "current_standalone_release": {
         "id": "privacy-redline",
         "version": "0.2.0",
-        "source_skill_sha256": "f02e9eafad58582321a64082e16080572a498896b2f1d7d5fbf638b07d093365",
+        "source_skill_sha256": "27197c3e3508494012c3676fec2d40b41de368c1f8b556f335c986e416c9325f",
         "scope": "Exact accepted standalone 0.2.0 runtime."
       },
       "overlay_state": "exact_selected_source"
@@ -6825,7 +6825,7 @@
   ],
   "plugin_skill_tree": {
     "file_count": 1463,
-    "tree_sha256": "98f4104aba75ef351bd787d98a55e676d1bf5c7e0ec34718a04f0cae414e778d"
+    "tree_sha256": "c4e2a5aeac303df0db81d84c76964d3a7f78ddfbae87a7fb1f181e0d73355218"
   },
   "persona_sha256": "b91b39b4122e76d0b01f9425581d2098c1434d69e851979064ddd4d9cef888c6",
   "notices": {

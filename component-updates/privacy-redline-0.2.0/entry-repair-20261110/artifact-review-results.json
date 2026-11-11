@@ -1,0 +1,131 @@
+{
+  "scope": "Same-version Privacy Redline ordinary-entry repair only",
+  "candidate_files": 48,
+  "changed_component_files": [
+    "SKILL.md",
+    "agents/openai.yaml",
+    "evals/removal-transfer-cases.json",
+    "examples/removal-and-claims.md",
+    "fallbacks/universal-copy-paste-workflow.md",
+    "knowledge/state-and-routing.md",
+    "references/personal-data-removal.md",
+    "references/privacy-claims.md",
+    "references/removal-service-design.md"
+  ],
+  "preserved_canonical_files": 15,
+  "native": [
+    {
+      "edition": "F",
+      "host": "codex",
+      "archive": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-codex.zip",
+      "sha256": "ed3d6b2c999b6c9615e9db03ae6f976d77fb9516180fb5d85a32d0baa91edf04",
+      "members": 1528,
+      "changed_member_count": 13,
+      "unchanged_members": 1515,
+      "native_extraction": {
+        "extractor": "C:/Windows/System32/tar.exe",
+        "exit_code": 0,
+        "members": 13,
+        "destination": "E:\\NovaBuild\\privacy-entry-review-20261110\\F-codex"
+      },
+      "evidence": "Completed initial checker pass, exec session 43473",
+      "file_state": [
+        74723204,
+        1794363663937889100,
+        1794363660582957300
+      ]
+    },
+    {
+      "edition": "F",
+      "host": "claude",
+      "archive": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0-claude.zip",
+      "sha256": "2194a139d9f096b3069c4491a74d87eb571a41ac6b48501e22f36bbfeebdd18d",
+      "members": 3238,
+      "changed_members": [
+        "nova-the-optimal-ai-free-4.4.0-claude/BUILD-MANIFEST.json",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/SKILL.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/agents/openai.yaml",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/fallbacks/universal-copy-paste-workflow.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/knowledge/state-and-routing.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/.claude-plugin/plugin.json",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/LOADOUT-MANIFEST.json",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/SKILL.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/agents/openai.yaml",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/fallbacks/universal-copy-paste-workflow.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/knowledge/state-and-routing.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/zips/privacy-redline-4.4.0.zip",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/evals/removal-transfer-cases.json",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/examples/removal-and-claims.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/references/personal-data-removal.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/references/privacy-claims.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/folders/privacy-redline/references/removal-service-design.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/PRIVACY-UPDATE.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/evals/removal-transfer-cases.json",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/examples/removal-and-claims.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/references/personal-data-removal.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/references/privacy-claims.md",
+        "nova-the-optimal-ai-free-4.4.0-claude/nova-the-optimal-ai/skills/privacy-redline/references/removal-service-design.md"
+      ],
+      "unchanged_members": 3215,
+      "other_nested_zips_preserved": 27,
+      "checksum_entries": null,
+      "native_extraction": {
+        "extractor": "C:\\Windows\\System32\\tar.exe",
+        "exit_code": 0,
+        "members": 23,
+        "destination": "E:\\NovaBuild\\privacy-entry-review-20261110\\F-claude"
+      },
+      "nested_native_extraction": {
+        "extractor": "C:\\Windows\\System32\\tar.exe",
+        "exit_code": 0,
+        "members": 9,
+        "destination": "E:\\NovaBuild\\privacy-entry-review-20261110\\F-claude-privacy-nested"
+      },
+      "file_state": [
+        216294171,
+        1794363699415904500,
+        1794363693715777500
+      ]
+    }
+  ],
+  "outer": [
+    {
+      "edition": "F",
+      "archive": "E:\\NovaBuild\\20261110\\Privacy-Redline-entry-repair\\packages\\nova-the-optimal-ai-free-4.4.0.zip",
+      "sha256": "6615756123d6d3139c4c171ebe5be234b1471a6601762ee09b423cb16fe69250",
+      "members": 4,
+      "guide_unchanged": true,
+      "checksum_entries": 3,
+      "file_state": [
+        291018976,
+        1794363739222865600,
+        1794363736085389600
+      ]
+    }
+  ],
+  "verifier_recovery": {
+    "classification": "TEST_DEFECT",
+    "cause": "The first checker omitted seven inherited nova-free-rights files from detached/nested Privacy inventories.",
+    "executed_evidence": "exec session 43473: E codex PASS 13 changes/7600 preserved; E claude PASS 13/7599; E customer wrapper PASS; F codex PASS 13/1515. Each PASS followed member, identity, checksum and native extraction assertions.",
+    "correction": "Allow exactly the seven inherited rights files and require their byte identity; retain completed artifact checks while continuing pending artifacts."
+  },
+  "standalone": {
+    "archive": "E:\\Github\\privacy-redline\\dist\\privacy-redline-customer-kit-v0.2.0.zip",
+    "sha256": "45fc02184e486c15a38db38ed0da45bc52028e67d86079ddabd854c7a36fa80d",
+    "runtime_surfaces": 3,
+    "files_per_surface": 48,
+    "native_extraction": {
+      "extractor": "C:\\Windows\\System32\\tar.exe",
+      "exit_code": 0,
+      "members": 19,
+      "destination": "E:\\NovaBuild\\privacy-entry-review-20261110\\standalone"
+    },
+    "nested_native_extraction": {
+      "extractor": "C:\\Windows\\System32\\tar.exe",
+      "exit_code": 0,
+      "members": 9,
+      "destination": "E:\\NovaBuild\\privacy-entry-review-20261110\\standalone-claude-nested"
+    }
+  },
+  "decision": "PASS"
+}

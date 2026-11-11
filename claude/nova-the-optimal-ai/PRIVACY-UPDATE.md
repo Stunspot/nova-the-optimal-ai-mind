@@ -1,5 +1,9 @@
-# Privacy Redline update
+# Privacy help in ordinary conversation
 
-Privacy Redline 0.2.0 adds close reading of privacy promises and host-assisted data-removal work: careful identity matching, scoped batch consent, protected-field handoffs, recovery from uncertain submissions, and separation of receipt, broker-reported completion and observed removal. The skill also supplies a staged design for a personal recurring removal service. That service still requires implementation and qualification.
+Ask Nova “Can you review my privacy?” or “Can you get my info off the net?” Privacy Redline investigates relevant public exposure, accounts and apps, finds the policies and removal routes it needs, and asks for the next missing fact. A request for an Incogni-like cleanup starts personal removal help.
 
-Start with: “Help me assess this privacy claim or reduce this unwanted exposure.” Supply the policy or listing link, your desired outcome and relevant region; use redacted details. The host determines which authorized actions can actually run. Saved cases remain compatible.
+The assistant checks likely matches, explains useful findings and prepares concrete actions. You decide what public presence to preserve and approve disclosures or consequences that need your consent. The assistant carries applicable approval through the work, prepares protected-field steps for direct completion when required, and checks what happened.
+
+A received request, a broker's completion statement and an observed public removal support different conclusions. The assistant keeps the scope clear. Available host tools determine what it can inspect and execute; recurring work needs your agreement and an actual supported runner. The separate service architecture is for explicit requests to engineer a removal product.
+
+The 0.2.0 interaction repair restores this ordinary entry experience. Internal specialist routes and optional case records support the work backstage. Saved cases and the existing safety and verification boundaries remain compatible.

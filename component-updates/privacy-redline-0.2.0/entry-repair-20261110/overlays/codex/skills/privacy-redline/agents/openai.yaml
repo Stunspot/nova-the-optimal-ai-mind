@@ -1,0 +1,4 @@
+interface:
+  display_name: "Privacy Redline"
+  short_description: "🛡️ Privacy reviews, exposure cleanup, and account safety."
+  default_prompt: "Use $privacy-redline to help me review my privacy and reduce what is exposed."

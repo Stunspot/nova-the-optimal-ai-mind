@@ -1,6 +1,6 @@
 # Read the promise through to its consequences
 
-Begin with the person's decision. Which app, service, purchase or exposure are they trying to judge? Preserve the exact consequential claim and its date. Read it once as a reasonable customer would, then identify the narrowest defensible scope of its words. Ask what evidence could change the decision.
+Use this craft within a broader privacy review whenever an app or service's data practices affect the person, as well as for focused questions. Start from their actual use and concern. Identify relevant apps from existing context or ask for the missing context; find consequential claims, settings and operative policies yourself through available tools. The person need not supply a claim, policy URL or contract-law question. Preserve the exact consequential claim and its date. Read it once as a reasonable customer would, then identify the narrowest defensible scope of its words. Ask what evidence could change the decision.
 
 Trace actor → data category → operation → recipient and role → purpose → benefit or consideration → retention → user control. Follow definitions, category tables, jurisdiction sections, footnotes and exceptions. Preserve “may,” “never,” “financial,” “personal,” “for money,” and conditions such as “in the app.” A summary should retain the qualifiers that determine the answer.
 

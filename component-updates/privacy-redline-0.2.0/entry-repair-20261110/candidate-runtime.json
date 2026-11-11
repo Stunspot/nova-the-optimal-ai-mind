@@ -1,0 +1,257 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 703,
+      "sha256": "08f4ddd1f56469e47ebf16b307623a9e8504076cd8af892478953f5d992d31f2"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 17524,
+      "sha256": "27197c3e3508494012c3676fec2d40b41de368c1f8b556f335c986e416c9325f"
+    },
+    {
+      "path": "agents/openai.yaml",
+      "bytes": 233,
+      "sha256": "68271630fae2868f11fb80d7b75b8f0235f73dbb95aa492166c109cfadd4c754"
+    },
+    {
+      "path": "assets/ledger.md",
+      "bytes": 532,
+      "sha256": "05db879a03a6c602de0d090851e3c93d69c3b1807f8591ba8bac9683f9fe5b39"
+    },
+    {
+      "path": "assets/logbook.md",
+      "bytes": 223,
+      "sha256": "f921d53cc7822bc69519c9d4c44da66ed7cf3db7afcceebd574452b3c4831d44"
+    },
+    {
+      "path": "assets/privacy-case.template.json",
+      "bytes": 764,
+      "sha256": "f60713b785758ed937ddb8f7131d7f7f9244b0fb61fd0b4f763d2dffbc9369ca"
+    },
+    {
+      "path": "assets/queue.md",
+      "bytes": 349,
+      "sha256": "12a42c99a2f430b963c21500f1565c6c4714ebeb09783ade7af074b557115b21"
+    },
+    {
+      "path": "assets/receipt.md",
+      "bytes": 348,
+      "sha256": "b814a6dd557faf7953df488f7c261331d56dfaf214732f8565b24c016ccb7861"
+    },
+    {
+      "path": "assets/removal-request.md",
+      "bytes": 1032,
+      "sha256": "e668d070fbd7593c84e1089212661c2dce5a9c38e0c31d7e8a23ea4bc4aa834b"
+    },
+    {
+      "path": "assets/triggers.md",
+      "bytes": 364,
+      "sha256": "9cd0661c60cad026a871e9ad6eee8a368fc68450c86e828766c01ca701a15c6c"
+    },
+    {
+      "path": "evals/core-transfer-cases.yaml",
+      "bytes": 9179,
+      "sha256": "05b53e13184a592c7a6a344361d7ba238129022f1a32578c2a36dd458b472bad"
+    },
+    {
+      "path": "evals/eval-manifest.yaml",
+      "bytes": 731,
+      "sha256": "016c41528d4b551fa745e6128aa0fc285f9086b94cfeca5a377fe0700ed740c8"
+    },
+    {
+      "path": "evals/removal-transfer-cases.json",
+      "bytes": 7530,
+      "sha256": "3822e6327184a40182620957ff92e8a3a3812f8854a4449ad49336c54f40011d"
+    },
+    {
+      "path": "examples/boundary-cases/active-danger.md",
+      "bytes": 361,
+      "sha256": "b8187b9f8cccb262f6bc5997fa9e76acbbfb4b96f7d90fcd3e88eb4ef1af6911"
+    },
+    {
+      "path": "examples/boundary-cases/stale-platform-guidance.md",
+      "bytes": 363,
+      "sha256": "95f3b6a208e2358cb579395f67e89d26d45ff4d2499d19fc9234031a95d279d2"
+    },
+    {
+      "path": "examples/redline-session/case.json",
+      "bytes": 4845,
+      "sha256": "8dba54458c73f155c8befdeb82b0eaf158c46c7b8d6b2be0558b5ed20368653d"
+    },
+    {
+      "path": "examples/redline-session/walkthrough.md",
+      "bytes": 955,
+      "sha256": "e27db5adb7f1f7f25c043cc2fdce50cca98723c28a46951852cf111180ad2a21"
+    },
+    {
+      "path": "examples/removal-and-claims.md",
+      "bytes": 4174,
+      "sha256": "540e631fca70c6fc5436091e2e15b38d0309ac85dd33317bc0f82f449b0b6afc"
+    },
+    {
+      "path": "fallbacks/degraded-capability.md",
+      "bytes": 669,
+      "sha256": "8f175f7784b9dbd04095a1f44d4d68f87b92703504020fe6f5f9bb5e99dfc791"
+    },
+    {
+      "path": "fallbacks/universal-copy-paste-workflow.md",
+      "bytes": 1634,
+      "sha256": "c2e57f8a82d961ac7d74c1445e3b90a3904e291aa3787418404ebef4c31a9941"
+    },
+    {
+      "path": "knowledge/avery-structuring-canonical.md",
+      "bytes": 42340,
+      "sha256": "07583abd64ceab8387b66a55e21ab2e7c06ba5409ee41ff5edb6f105d4633ad8"
+    },
+    {
+      "path": "knowledge/currentness-and-authority.md",
+      "bytes": 1716,
+      "sha256": "2e3fa8d8a64e455f729e98cf8e29f9026643dfe8cf2c6cc9e7472f63d1bcfb91"
+    },
+    {
+      "path": "knowledge/felix-human-reliability-canonical.md",
+      "bytes": 31808,
+      "sha256": "7a1a5e3953301a3d90e48bc3084198f18831d2ce8372bd12acfb32b159b4e709"
+    },
+    {
+      "path": "knowledge/nadia-exhaust-canonical.md",
+      "bytes": 35267,
+      "sha256": "1080c20ea809005ea2749f0a8fd7d7b66c3112fe10a81d0e49fa1259b34f35f5"
+    },
+    {
+      "path": "knowledge/operating-doctrine.md",
+      "bytes": 3190,
+      "sha256": "7076b65e106cfb709a6cbb973c089e090e4f3afdbc44ad2d3c31fbaf3706505c"
+    },
+    {
+      "path": "knowledge/quinn-hardening-canonical.md",
+      "bytes": 43511,
+      "sha256": "db5aa4e68560e8f5de80dae8efc95e23b4a99848f0ed75d6956f3c51da638454"
+    },
+    {
+      "path": "knowledge/ronan-threat-modeling-canonical.md",
+      "bytes": 54664,
+      "sha256": "274b419f30c6fc9a9fc8da6a37b08ef89167ffcdb6f4da95fbdc824e7399eb0a"
+    },
+    {
+      "path": "knowledge/state-and-routing.md",
+      "bytes": 2269,
+      "sha256": "3c87402cd4420676cc3edd5c3dd7ef6091fc7bc6a141a3cfe30430ed42407f92"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 892,
+      "sha256": "a0cec43f59bfc93f08025a71a4d95db77f48dff5cc3653df60ff85f3a431e53d"
+    },
+    {
+      "path": "personas/avery-docket-canonical.md",
+      "bytes": 6821,
+      "sha256": "25f36986f86db403219de5644da1e6bcce6f164a89bb87d784c3faa7653d9e81"
+    },
+    {
+      "path": "personas/felix-garrison-canonical.md",
+      "bytes": 7038,
+      "sha256": "adb4cd69465e9d7a7b862dc7d41f6e0f717e34c60e7b90bbe7efd3fe753cd9fa"
+    },
+    {
+      "path": "personas/nadia-traceveil-canonical.md",
+      "bytes": 7729,
+      "sha256": "5e374d20e02f05f05954b2a6f1979fec75550f3d8691cd52e0edfb5b65b4ef94"
+    },
+    {
+      "path": "personas/quinn-airlock-canonical.md",
+      "bytes": 7882,
+      "sha256": "28849f830109219ed5a645f3640a7e21f8903b7ba93e13f1aa6b0bc15b78826e"
+    },
+    {
+      "path": "personas/ronan-redline-canonical.md",
+      "bytes": 5778,
+      "sha256": "2ad4816701de1f9215482cf0080683b12285853a7e6f7a73707b962025be35c1"
+    },
+    {
+      "path": "references/instruments/avery-omnibus-canonical.md",
+      "bytes": 26263,
+      "sha256": "a055312e86e765bcf807c6244dfa51c6da2aa92da80d1341443635292dce9acc"
+    },
+    {
+      "path": "references/instruments/felix-omnibus-canonical.md",
+      "bytes": 12597,
+      "sha256": "2370b626e441116039121ef6cd3978cae979299c699931a2782f6c28cd06ee1f"
+    },
+    {
+      "path": "references/instruments/nadia-omnibus-canonical.md",
+      "bytes": 25866,
+      "sha256": "01b2e548a62ba2a9430562cda1308b4fbcd87530bdb8d06ca15df7b14afbfa93"
+    },
+    {
+      "path": "references/instruments/quinn-omnibus-canonical.md",
+      "bytes": 56432,
+      "sha256": "8bf7b98225a366be081368a6428ba4e9214dbead12374ad60d512ca972480070"
+    },
+    {
+      "path": "references/instruments/ronan-omnibus-canonical.md",
+      "bytes": 34981,
+      "sha256": "f7672bb3978ed6189bddcf4f6eb9be2c98fa407c9057b2b18b9e765f77242e9b"
+    },
+    {
+      "path": "references/personal-data-removal.md",
+      "bytes": 9387,
+      "sha256": "13bc9b518f550ec4a2bf240d2a55ecbf81597b86f3fd95377b806d39805b4fee"
+    },
+    {
+      "path": "references/privacy-claims.md",
+      "bytes": 4097,
+      "sha256": "dd8aa4c0f87e7384f7f672a497fcb8c8060601bab758c39309a3b74c74a49dbf"
+    },
+    {
+      "path": "references/privacy-source-routes.md",
+      "bytes": 2206,
+      "sha256": "d298165472d158b738da61bc8c2cfbf3f68aae0ac7802495ef17a18cdd8d2ff1"
+    },
+    {
+      "path": "references/removal-service-design.md",
+      "bytes": 11956,
+      "sha256": "7d6d80f90f8bd84a1a54945e8ca9b3b2b6718a1b229811504fe5bd499cc78522"
+    },
+    {
+      "path": "schemas/privacy-case.schema.json",
+      "bytes": 1466,
+      "sha256": "69168c9384b8127dc1f240809afe7e3de13e1524b88da0ce8d0d8ab7d607255c"
+    },
+    {
+      "path": "schemas/receipt.schema.json",
+      "bytes": 1002,
+      "sha256": "1ba2f3203cf45e4353c05727114b521a35a1ebfac812377bae8f3e78c50ea790"
+    },
+    {
+      "path": "scripts/privacy_case_guardrail.py",
+      "bytes": 6731,
+      "sha256": "8f65a51086ce43268c29960661f3068b245062a0ebb15fb6e04fade939edb5a9"
+    },
+    {
+      "path": "scripts/self_check.py",
+      "bytes": 2771,
+      "sha256": "9e62b002a14bb197ac7c23539e6bd7ca2a1eb8038acd5cc6b13ff3ffb2678a09"
+    },
+    {
+      "path": "scripts/tests/test_privacy_case_guardrail.py",
+      "bytes": 2551,
+      "sha256": "7ef91ce373b9db45d7169ed3d40f6f378b8ec9ed9f95dc3076ffc01f89190b20"
+    }
+  ],
+  "tree_sha256": "cbe8e601f1cf273c1ed8b414babed1cfe3701ac23127178726e07d1d3c26b80c",
+  "changed": [
+    "agents/openai.yaml",
+    "evals/removal-transfer-cases.json",
+    "examples/removal-and-claims.md",
+    "fallbacks/universal-copy-paste-workflow.md",
+    "knowledge/state-and-routing.md",
+    "references/personal-data-removal.md",
+    "references/privacy-claims.md",
+    "references/removal-service-design.md",
+    "SKILL.md"
+  ],
+  "canonical_originals_unchanged": true
+}

@@ -8,6 +8,8 @@ Use `escalated` when a qualified human or emergency path owns the next consequen
 
 ## Entry routing
 
+Resolve ordinary intent before specialist routing. A broad privacy review starts a proportionate investigation of relevant public exposure, apps and accounts. The agent discovers the technical questions. “Get my info off the net” and colloquial Incogni requests start personal-data-removal.md, even without a supplied URL. Use the service-design reference only for an explicit engineering or implementation-assessment task. Existing context and authority carry forward; ask for the next missing fact while continuing independent useful work.
+
 - Live pressure, urgency, shame, or “I am about to…”: Felix stabilizes first.
 - Unclear threat or competing worries: Ronan maps and ranks.
 - Device, account, network, keys, recovery, communications, or travel stack: Quinn.
